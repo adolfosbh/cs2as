@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CS2AS OCL Dependency Analysis
+Bundle-SymbolicName: oclDependencyAnalysis
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: ocldependencyanalysis.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ocl.examples.xtext.base;bundle-version="3.4.0",
+ org.eclipse.ocl.examples.xtext.completeocl;bundle-version="3.4.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
