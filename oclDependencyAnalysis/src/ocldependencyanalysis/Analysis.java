@@ -28,8 +28,8 @@ public class Analysis {
 		OCL ocl = OCL.newInstance(environmentFactory);
 
 		// OCL Document URI
-		// URI uri = URI.createURI("platform:/resource/org.eclipse.ocl.examples.xtext.base/model/BaseCS.ocl");
-		URI uri = URI.createURI("platform:/resource/org.eclipse.ocl.examples.xtext.essentialocl/model/EssentialOCLCS.ocl");
+		URI uri = URI.createURI("platform:/resource/org.eclipse.ocl.examples.xtext.base/model/BaseCS.ocl");
+		// URI uri = URI.createURI("platform:/resource/org.eclipse.ocl.examples.xtext.essentialocl/model/EssentialOCLCS.ocl");
 
 		// parse the contents as an OCL document
 		Resource pivotResource = ocl.parse(uri);

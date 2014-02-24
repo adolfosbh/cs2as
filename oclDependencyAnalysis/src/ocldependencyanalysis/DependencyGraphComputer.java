@@ -35,6 +35,8 @@ public class DependencyGraphComputer {
 	
 	private void initializeMaps(Resource resource) {
 		Root root = (Root) resource.getContents().get(0) ;
+		// TODO access to the real packages and types.
+		// Be careful with 
 		for (Package aPackage : root.getNestedPackage()) {
 			computeType2SuperTypes(aPackage);
 		}
