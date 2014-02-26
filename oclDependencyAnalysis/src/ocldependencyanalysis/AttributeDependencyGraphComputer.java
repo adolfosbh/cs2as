@@ -3,13 +3,8 @@ package ocldependencyanalysis;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.ocl.examples.pivot.CallExp;
-import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.ConstructorPart;
-import org.eclipse.ocl.examples.pivot.Element;
 import org.eclipse.ocl.examples.pivot.Feature;
 import org.eclipse.ocl.examples.pivot.Operation;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
@@ -47,90 +42,18 @@ import org.eclipse.ocl.examples.pivot.Root;
  * 
  * @author asbh500
  */
-public class AttributeDependencyGraphComputer {
-	
-	
-	public class FeatureObj {
-		private static final String SEPARATOR = " -> ";
-		private Class context;
-		private Feature property;
-		/**
-		 * @param context the source class context in which this property is being used
-		 * @param feature a feature of the dependency graph 
-		 */
-		public FeatureObj(Class context, Feature property) {
-			this.context = context;
-			this.property = property;
-		}
-		
-		@Override
-		public String toString() {		
-			return context.toString() + SEPARATOR + property.toString(); 
-		}
-	}
-	
-	public IGraph<FeatureObj> computeDependencyGraph (Resource pivotResource) {
-		
-		assert(pivotResource.getContents().get(0) instanceof Root);
-		
-		IGraph<FeatureObj> depedencyGraph = createDependencyGraph();
-		
-		for (TreeIterator<EObject> tit = pivotResource.getAllContents(); tit.hasNext(); ) {
-			EObject next = tit.next();
-			if (next instanceof Element
-				&& astCall((Element) next)) {
-				OperationCallExp astCall = (OperationCallExp) next;
-				FeatureObj from = getFromObj(astCall);
-				// if (isElementRefCS(to)) {
-				List<FeatureObj> toObjs = getToObj(astCall);
-				for (FeatureObj to : toObjs) {
-					depedencyGraph.addEdge(from, to);	
-				}
-				
-				// }
-			}
-		}
-		return depedencyGraph;
-	}
-	
-//	private boolean isElementRefCS(Type to) {
-//		
-//		for (Type type : to.getSuperClass()) {
-//			if ("ElementRefCS".equals(type.getName())) {
-//				return true;
-//			} else {
-//				if (isElementRefCS(type)) {
-//					return true;
-//				}
-//			}
-//		}
-//		return false;
-//	}
+public class AttributeDependencyGraphComputer extends AbstractDependencyGraphComputer<FeatureObj> {
 
-	protected IGraph<FeatureObj> createDependencyGraph() {
-		return new Graph<FeatureObj>();
-	}
-	
-	private boolean astCall(Element element) {
-		if (element instanceof OperationCallExp) {
-			Operation op = ((OperationCallExp)element).getReferredOperation();
-			if (op != null) {
-				return "ast".equals(op.getName());
-			}
-		}
-		return false;
-	}
-	
-	private Class getContextElement(CallExp astCall) {
+
+	@Override
+	protected void processAstCall(IGraph<FeatureObj> dependencyGraph,
+			OperationCallExp astOpCall) {
 		
-		EObject container = astCall.eContainer();
-		while (container != null) {
-			if (container instanceof Class) {
-				return (Class) container;
-			}
-			container = container.eContainer();
+		FeatureObj from = getFromObj(astOpCall);
+		List<FeatureObj> toObjs = getToObj(astOpCall);
+		for (FeatureObj to : toObjs) {
+			dependencyGraph.addEdge(from, to);	
 		}
-		throw new RuntimeException("I should have found the containing Context Class");
 	}	
 	
 	private FeatureObj getFromObj(OperationCallExp astCall) {
