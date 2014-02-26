@@ -28,4 +28,9 @@ public interface IGraph<C> {
 	 * @param to
 	 */
 	public void addEdge(C from, C to);
+	
+	/**
+	 * @return A set with the subgraphs comprising a cycle
+	 */
+	public Set<IGraph<C>> getCycles();
 }

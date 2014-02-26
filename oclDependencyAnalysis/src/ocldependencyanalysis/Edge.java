@@ -10,6 +10,7 @@ package ocldependencyanalysis;
  */
 public class Edge<C> implements IEdge<C> {
 
+	private static final String DEPENDENCY_SYMBOL = " => ";
 	private INode<C> from;
 	private INode<C> to;
 	
@@ -30,7 +31,7 @@ public class Edge<C> implements IEdge<C> {
 
 	@Override
 	public String toString() {			
-		return from.toString() + " -> " + to.toString();
+		return from.toString() + DEPENDENCY_SYMBOL + to.toString();
 	}
 	
 	public int hashCode() {

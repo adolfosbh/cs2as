@@ -6,7 +6,18 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
-public class CyclesDetector<C> {
+/**
+ * Cycles detector algorithm for an {@link IGraph}
+ * 
+ * Adaptation of Targan's Algorithm:
+ * 
+ * http://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm
+ *
+ * @author asbh500
+ *
+ * @param <C> see {@link INode}
+ */
+public class CyclesDetector<C> implements ICyclesDetector<C>{
 
 	private class TarjanNode extends Node<C> {
 	
@@ -40,12 +51,14 @@ public class CyclesDetector<C> {
 	private Map<INode<C>, TarjanNode> visitedNodes = new HashMap<INode<C>, CyclesDetector<C>.TarjanNode>();
 	
 	
+	@Override
 	public Set<IGraph<C>> run(IGraph<C> input) {
 		
 		index = 0;
 		stack.clear();
+		visitedNodes.clear();
+		
 		Set<IGraph<C>> output = new HashSet<IGraph<C>>();
-	
 		for (INode<C> node : input.getNodes()) {
 			if (visitedNodes.get(node) == null) {
 				strongConnect(node, input, output);
@@ -78,7 +91,6 @@ public class CyclesDetector<C> {
 	    	} else {
 	    		if (stack.contains(w)) {
 	    			v.setLowindex(min(v.getLowLink(), w.getIndex()));
-
 	    		}
 	    	}
 	    }

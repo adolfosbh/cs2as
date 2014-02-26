@@ -1,12 +1,12 @@
 package ocldependencyanalysis;
 
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageRegistryImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.OCL;
 import org.eclipse.ocl.examples.pivot.utilities.PivotEnvironmentFactory;
 import org.eclipse.ocl.examples.xtext.completeocl.CompleteOCLStandaloneSetup;
@@ -34,14 +34,14 @@ public class Analysis {
 		// parse the contents as an OCL document
 		Resource pivotResource = ocl.parse(uri);
 		
-		IGraph<Class> depedencyGraph = new DependencyGraphComputer().computeDependencyGraph(pivotResource);
+		// IGraph<Class> depedencyGraph = new DependencyGraphComputer().computeDependencyGraph(pivotResource);
+		IGraph<?> dependencyGraph = new AttributeDependencyGraphComputer().computeDependencyGraph(pivotResource);
 		
 		System.out.println("******** Dependency Graph **********");
-		System.out.println(depedencyGraph.toString());
+		System.out.println(dependencyGraph.toString());
 
 		System.out.println("******** Cycles **********");
-		CyclesDetector<Class> cycleComputator = new CyclesDetector<Class>();
-		for (IGraph<Class> cycle : cycleComputator.run(depedencyGraph)) {
+		for (IGraph<?> cycle : dependencyGraph.getCycles()) {
 			System.out.println(cycle.toString());
 		}
 		

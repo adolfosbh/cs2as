@@ -22,6 +22,7 @@ public class Graph<C> implements IGraph<C> {
 	private Set<INode<C>> nodes= new HashSet<INode<C>>();
 	private Map<INode<C>, Set<IEdge<C>>> node2outputEdges = new HashMap<INode<C>, Set<IEdge<C>>>();
 	private Map<INode<C>, Set<IEdge<C>>> node2inputEdges = new HashMap<INode<C>, Set<IEdge<C>>>();
+	private ICyclesDetector<C> cyclesDetector;
 
 	private Set<IEdge<C>> edges= new HashSet<IEdge<C>>();
 	
@@ -100,4 +101,17 @@ public class Graph<C> implements IGraph<C> {
 	protected IEdge<C> createEdge(INode<C> from, INode<C> to) {
 		return new Edge<C>(from, to);
 	}
+
+	@Override
+	public Set<IGraph<C>> getCycles() {		
+		if (cyclesDetector == null) {
+			cyclesDetector = createCyclesDetector();
+		}
+		return cyclesDetector.run(this);
+	}
+	
+	protected ICyclesDetector<C> createCyclesDetector() {
+		return new CyclesDetector<C>();
+	}
+		
 }
