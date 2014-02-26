@@ -69,13 +69,14 @@ public class AttributeDependencyGraphComputer extends AbstractDependencyGraphCom
 			}
 			if (container instanceof Operation) {// We found the ast() operation
 				fromFeature = (Operation) container;
+				break;
 			}
 			container = container.eContainer();
 		}
 		if (container != null) {
 			return new FeatureObj(getContextElement(astCall), fromFeature);
 		}
-		throw new RuntimeException("I should have found either a ConstructorPart or an Operation");
+		throw new RuntimeException("I should have found either a ConstructorPart or an Operation when processing: " + astCall.toString());
 	}
 	
 	private List<FeatureObj> getToObj(OperationCallExp opCall) {
