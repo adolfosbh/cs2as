@@ -34,7 +34,7 @@ public class Analysis {
 		// parse the contents as an OCL document
 		Resource pivotResource = ocl.parse(uri);
 		
-		// IGraph<Class> depedencyGraph = new DependencyGraphComputer().computeDependencyGraph(pivotResource);
+		//IGraph<?> dependencyGraph = new ClassDependencyGraphComputer().computeDependencyGraph(pivotResource);
 		IGraph<?> dependencyGraph = new AttributeDependencyGraphComputer().computeDependencyGraph(pivotResource);
 		
 		System.out.println("******** Dependency Graph **********");

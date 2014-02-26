@@ -2,8 +2,10 @@ package ocldependencyanalysis;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.ConstructorPart;
 import org.eclipse.ocl.examples.pivot.Feature;
 import org.eclipse.ocl.examples.pivot.Operation;
@@ -76,14 +78,25 @@ public class AttributeDependencyGraphComputer extends AbstractDependencyGraphCom
 		throw new RuntimeException("I should have found either a ConstructorPart or an Operation");
 	}
 	
-	private List<FeatureObj> getToObj(OperationCallExp callExp) {
+	private List<FeatureObj> getToObj(OperationCallExp opCall) {
 		
 		List<FeatureObj> result = new ArrayList<FeatureObj>();
-		result.add(new FeatureObj(getContextElement(callExp), callExp.getReferredOperation()));
+		Class opCallClass = (Class) opCall.getSource().getType();
+		if (!opCallClass.isAbstract()) {
+			result.add(new FeatureObj(getContextElement(opCall), opCall.getReferredOperation()));	
+		}
+		Set<Class> instantiableSubclasses = getInstantiableSubclasses(opCallClass);
+		if (instantiableSubclasses != null) {
+			for (Class subType : instantiableSubclasses) {
+				Operation astOp = getAstOperation(subType);
+				result.add(new FeatureObj(subType, astOp));
+			}
+		}
+		
 		
 		// If the ast call is source of another PropertyCallExp, we 
 		// are interested in that AS property rather that AS object 
-		EObject container = callExp.eContainer();		
+		EObject container = opCall.eContainer();		
 		if (container instanceof PropertyCallExp) {
 			PropertyCallExp propCall = (PropertyCallExp) container; 
 			result.add(new FeatureObj(getContextElement(propCall), propCall.getReferredProperty()));

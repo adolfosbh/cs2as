@@ -50,7 +50,7 @@ public class ClassDependencyGraphComputer extends AbstractDependencyGraphCompute
 		if (! to.isAbstract()) {	
 			dependencyGraph.addEdge(from, to);
 		}
-		Set<Class> instantiableSubclasses = getInstantiableSubcalsses(to);
+		Set<Class> instantiableSubclasses = getInstantiableSubclasses(to);
 		if (instantiableSubclasses != null) {
 			for (Class subType : instantiableSubclasses) {
 				dependencyGraph.addEdge(from, subType);

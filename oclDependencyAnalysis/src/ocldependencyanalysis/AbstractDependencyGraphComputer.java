@@ -8,6 +8,7 @@ import java.util.Set;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.ocl.examples.domain.elements.DomainOperation;
 import org.eclipse.ocl.examples.pivot.CallExp;
 import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.Element;
@@ -16,6 +17,7 @@ import org.eclipse.ocl.examples.pivot.OperationCallExp;
 import org.eclipse.ocl.examples.pivot.Package;
 import org.eclipse.ocl.examples.pivot.Root;
 import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
 
 public abstract class AbstractDependencyGraphComputer<C> {
 
@@ -23,6 +25,8 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	
 	private Map<Type , Set<Class>> type2instantiableSubClasses = new HashMap<Type, Set<Class>>();
 	
+	private MetaModelManager mManager;
+		
 	private void initializeMaps(Resource resource) {
 		Root root = (Root) resource.getContents().get(0) ;
 		// TODO access to the real packages and types.
@@ -39,7 +43,8 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	private void computeType2SuperTypes(Package p) {
 		
 		for (Type type : p.getOwnedType()) {
-			computeType2SuperTypes(type);
+			Type prymaryType = mManager.getPrimaryType(type);
+			computeType2SuperTypes(prymaryType);
 		}
 		for (Package nestedPackage : p.getNestedPackage()) {
 			computeType2SuperTypes(nestedPackage);
@@ -47,6 +52,9 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	}
 	
 	private Set<Type> computeType2SuperTypes(Type type) {
+		
+		
+		
 		Set<Type> result = type2superTypes.get(type);
 		if (result != null) {
 			return result;
@@ -82,6 +90,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		
 		assert(pivotResource.getContents().get(0) instanceof Root);
 		
+		mManager = MetaModelManager.getAdapter(pivotResource.getResourceSet());
 		initializeMaps(pivotResource);
 		IGraph<C> dependencyGraph = createDependencyGraph();
 		
@@ -119,10 +128,39 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return new Graph<C>();
 	}
 		
-	protected Set<Class> getInstantiableSubcalsses(Type type) {
-		return type2instantiableSubClasses.get(type);
+	protected Set<Class> getInstantiableSubclasses(Type type) {
+		Type primaryType = mManager.getPrimaryType(type);
+		return type2instantiableSubClasses.get(primaryType);
 	}
 
+	protected boolean typeIsSupertypeOf(Type t1, Type t2) {
+		Type primaryT1 = mManager.getPrimaryType(t1);
+		Type primaryT2 = mManager.getPrimaryType(t2);
+		return type2superTypes.get(primaryT1).contains(primaryT2);
+	}
+	
+	protected Operation getAstOperation(Class opAstClass) {
+		Operation bestOp=null;	// The best op will be the one owned by the type the 
+								// closer to opAstClass in the class hierarchy 
+		// TODO move to mManager ?
+		for (DomainOperation op : mManager.getAllOperations(opAstClass, false, "ast")){
+			if (op instanceof Operation
+				&& op.getOwnedParameter().isEmpty()) {
+				Operation candidateOp = (Operation) op;
+				if (bestOp == null) {
+					bestOp = candidateOp;
+				}else{
+					if (typeIsSupertypeOf(candidateOp.getOwningType(), bestOp.getOwningType())) {
+						bestOp = candidateOp;
+					}
+				} 
+			}
+		}
+		if (bestOp != null) {
+			return bestOp;
+		} 
+		throw new RuntimeException("I should have found the ast operation");
+	}
 	
 //	protected boolean isElementRefCS(Type to) {
 //		
