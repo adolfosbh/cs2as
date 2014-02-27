@@ -7,7 +7,6 @@ import ocldependencyanalysis.IGraph;
 import org.eclipse.emf.common.util.URI;
 import org.junit.Test;
 
-// TODO move to proper tests project
 public class AttributeDependencyGraphTestCases {
 
 	@Test

@@ -1,5 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Tests
+Bundle-Name: CS2AS OCL Dependency Analysis Tests
 Bundle-SymbolicName: oclDependencyAnalysis.tests
 Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.junit;bundle-version="[4.11.0,5.0.0)",
+ oclDependencyAnalysis;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.emf.common;bundle-version="[2.10.0,3.0.0)"

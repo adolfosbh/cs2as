@@ -16,5 +16,5 @@ README.TXT
   defined AS created from A, the associated AS from B should be previously be created.
   
 Notes: 
-  - To execute run analysis program in an workspace with Eclipse OCL (Examples) installed
+  - To try this dependency graph computer run "Analysis" program in an workspace with Eclipse OCL (Examples) installed
   - For the time being, the URL of the OCL document is handcoded.
