@@ -6,12 +6,12 @@ import TargetMM: 'TargetMM1.ecore'::target;
 -- semantically "equivalent" to SMM1c.ocl specification describing a transformation between SourceMM
 -- and TargetMM.
 --
--- For simplicity I've removed the traceability middle-
+-- For simplicity I've removed the traceability middle model
 --
 
 transformation source2target {
     source imports SourceMM;
-    target imports TargetMM;
+    middle imports TargetMM;
 }
 --
 -- micro-mapping corresponding to partial 
@@ -21,7 +21,7 @@ map X_To_A1 in source2target {
         x.isA1;) {
     }
     
-    enforce target (b : B |) {
+    enforce middle (b : B |) {
         realize a:A1 |
     }
     
@@ -33,7 +33,7 @@ map X_To_A1 in source2target {
 map X_To_A2 in source2target {
     source (x:X | not x.isA1;) {}
     
-    enforce target (c : C |) {
+    enforce middle (c : C |) {
         realize a:A2 |
     }
     
@@ -45,7 +45,7 @@ map X_To_A2 in source2target {
 map Y1_To_B in source2target {
 	source (y:Y1 |) {}
     
-    enforce target (d : D  |) {
+    enforce middle (d : D  |) {
         realize b:B |
     }
     
@@ -57,7 +57,7 @@ map Y1_To_B in source2target {
 map Y2_To_C in source2target {
 	source (y:Y2 |) {}
     
-    enforce target (d : D  |) {
+    enforce middle (d : D  |) {
         realize c:C |
     }
     
@@ -76,12 +76,12 @@ map Z_to_D_1 in source2target {
 	-- So I temporarily change the guard to use source meta-model information
 	-- rather
 	--source () {
-	--	z : Z |  z.toY."access trace".b.oclIsKindOf(target::B)
+	--	z : Z |  z.toY."access trace".b.oclIsKindOf(middle::B)
 	--}
 	
 	source (z : Z | z.toY.oclIsKindOf(Y1);) {}
 	
-	enforce target (b:B |) {
+	enforce middle (b:B |) {
 		realize d:D |
 	}
 	
@@ -94,12 +94,12 @@ map Z_to_D_2 in source2target {
 	-- I'd need the middle model to access to Y2-C trace
 	-- So I temporarily change the guard to use source meta-model information
 	--source () {
-	--	z : Z |  z.toY."access trace".c.oclIsKindOf(target::C)
+	--	z : Z |  z.toY."access trace".c.oclIsKindOf(middle::C)
 	--}
 	
 	source (z : Z | not z.toY.oclIsKindOf(Y1);) { }	
 	
-	enforce target (c:C |) {
+	enforce middle (c:C |) {
 		realize d:D |
 	}
 	
