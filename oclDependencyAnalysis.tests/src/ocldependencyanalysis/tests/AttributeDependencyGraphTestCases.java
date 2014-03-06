@@ -1,5 +1,6 @@
 package ocldependencyanalysis.tests;
 
+import static org.junit.Assert.*;
 import ocldependencyanalysis.Analysis;
 import ocldependencyanalysis.FeatureObj;
 import ocldependencyanalysis.IGraph;
@@ -9,6 +10,7 @@ import org.junit.Test;
 
 public class AttributeDependencyGraphTestCases {
 
+	// TODO complete assertions
 	@Test
 	public void testSMM1a() {
 		
@@ -31,6 +33,16 @@ public class AttributeDependencyGraphTestCases {
 		URI uri = URI.createURI("platform:/resource/oclDependencyAnalysis.tests/src/ocldependencyanalysis/tests/SMM1c.ocl");
 		IGraph<FeatureObj> graph = Analysis.createFeaturesDependencyGraph(uri);
 		Analysis.printGraphAndCycles(graph);
+		assertTrue(graph.getCycles().isEmpty());
+	}
+	
+	@Test
+	public void testSMM1d() {
+		
+		URI uri = URI.createURI("platform:/resource/oclDependencyAnalysis.tests/src/ocldependencyanalysis/tests/SMM1d.ocl");
+		IGraph<FeatureObj> graph = Analysis.createFeaturesDependencyGraph(uri);
+		Analysis.printGraphAndCycles(graph);
+		assertTrue(graph.getCycles().isEmpty());
 	}
 
 }

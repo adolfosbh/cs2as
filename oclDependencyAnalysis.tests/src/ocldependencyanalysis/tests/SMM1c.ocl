@@ -39,6 +39,4 @@ def : ast() : target::D =
 			toA = toY.ast().oclAsType(target::C).toA2
 		} 
 	endif
-
-		
 endpackage

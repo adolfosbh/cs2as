@@ -30,7 +30,7 @@ import org.eclipse.ocl.examples.pivot.Root;
  * 
  * <p>
  * As note, a OCL document based mappings description is based on the notion of an ast operation on source classes.
- * Those operations are meant to retrugn the corresponding the target class instance. 
+ * Those operations are meant to return the corresponding target class instance. 
  * </p>
  * 
  * Assumptions:
@@ -46,7 +46,7 @@ public class ClassDependencyGraphComputer extends AbstractDependencyGraphCompute
 			OperationCallExp astOpCall) {
 		org.eclipse.ocl.examples.pivot.Class to = (org.eclipse.ocl.examples.pivot.Class) astOpCall.getSource().getType();
 		// if (isElementRefCS(to)) {
-		org.eclipse.ocl.examples.pivot.Class from = getContextElement(astOpCall);
+		org.eclipse.ocl.examples.pivot.Class from = getElementContext(astOpCall);
 		if (! to.isAbstract()) {	
 			dependencyGraph.addEdge(from, to);
 		}

@@ -9,12 +9,12 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.examples.domain.elements.DomainOperation;
-import org.eclipse.ocl.examples.pivot.CallExp;
 import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.Element;
 import org.eclipse.ocl.examples.pivot.Operation;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
 import org.eclipse.ocl.examples.pivot.Package;
+import org.eclipse.ocl.examples.pivot.PropertyCallExp;
 import org.eclipse.ocl.examples.pivot.Root;
 import org.eclipse.ocl.examples.pivot.Type;
 import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
@@ -96,7 +96,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		
 		for (TreeIterator<EObject> tit = pivotResource.getAllContents(); tit.hasNext(); ) {
 			EObject next = tit.next();
-			if (astCall((Element) next)) {
+			if (astCall(next)) {
 				processAstCall(dependencyGraph, (OperationCallExp) next);
 			}
 		}
@@ -113,8 +113,8 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return false;
 	}
 	
-	protected Class getContextElement(CallExp callExp) {
-		EObject container = callExp.eContainer();
+	protected Class getElementContext(Element element) {
+		EObject container = element.eContainer();
 		while (container != null) {
 			if (container instanceof Class) {
 				return (Class) container;
@@ -122,6 +122,22 @@ public abstract class AbstractDependencyGraphComputer<C> {
 			container = container.eContainer();
 		}
 		throw new RuntimeException("I should have found the containing Context Class");
+	}
+	
+	
+	/**
+	 * @param element  
+	 * @return the containing {@link PropertyCallExp} if it's contained in any, <code>null</code> otherwise
+	 */
+	protected PropertyCallExp getContainingPropertyCallExp(Element element) {
+		EObject container = element.eContainer();
+		while (container != null) {
+			if (container instanceof PropertyCallExp) {
+				return (PropertyCallExp) container;
+			}
+			container = container.eContainer();
+		}
+		return null;
 	}
 
 	protected IGraph<C> createDependencyGraph() {
@@ -161,6 +177,8 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		} 
 		throw new RuntimeException("I should have found the ast operation");
 	}
+	
+	
 	
 //	protected boolean isElementRefCS(Type to) {
 //		
