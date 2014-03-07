@@ -91,10 +91,13 @@ public class AttributeDependencyGraphComputer extends AbstractDependencyGraphCom
 		
 		// The class of the source ast call, i.e. the CS element owning the ast operation
 		Class astCallSourceClass = (Class) astCall.getSource().getType();
-		Operation astCallSourceClassAstOp = astCall.getReferredOperation();
-		
-		
+		Class astCallContextClass = getElementContext(astCall);
+		Operation astCallSourceClassAstOp = astCall.getReferredOperation();		
 		PropertyCallExp propCall = getContainingPropertyCallExp(astCall);
+		
+		
+		// There is always a dependency between the fromFeatureObj and the the astCallContextClass ast operation
+		dependencyGraph.addEdge(fromFeatureObj, new FeatureObj(astCallContextClass, getAstOperation(astCallContextClass)));
 		
 		
 		// if the operation call exp is not contained in any property call exp 
@@ -102,6 +105,7 @@ public class AttributeDependencyGraphComputer extends AbstractDependencyGraphCom
 		if (propCall == null) {
 			if (!astCallSourceClass.isAbstract()) {
 				dependencyGraph.addEdge(fromFeatureObj, new FeatureObj(astCallSourceClass, astCallSourceClassAstOp));
+				
 				if (opposite != null) { // FIXME refactor this add edge and the opposite one
 					dependencyGraph.addEdge(new FeatureObj(astCallSourceClass, opposite), fromFeatureObj);
 				}
