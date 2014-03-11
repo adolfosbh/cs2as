@@ -7,6 +7,8 @@ import java.util.List;
 import ocldependencyanalysis.Analysis;
 import ocldependencyanalysis.FeatureObj;
 import ocldependencyanalysis.IGraph;
+import ocldependencyanalysis.graphml.providers.AttributeDependenciesTypeProvider;
+import ocldependencyanalysis.graphml.providers.ClassDependenciesTypeProvider;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
@@ -18,6 +20,7 @@ import org.eclipse.epsilon.emc.emf.InMemoryEmfModel;
 import org.eclipse.epsilon.eol.EolModule;
 import org.eclipse.epsilon.eol.IEolExecutableModule;
 import org.eclipse.epsilon.eol.models.IModel;
+import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.qvtd.build.etl.graph.Graph;
 import org.eclipse.qvtd.build.etl.graph.GraphPackage;
 
@@ -26,12 +29,17 @@ public class GraphmlGenerator {
 	
 	public static void main(String[] args) {
 				
-		if (args.length != 2) {
+		if (args.length != 3) {
 			printUsage();
 			return;
 		}
 		try {
-			generateGraphmlFile(URI.createURI(args[0]), args[1]);
+			if ("CLASS".equalsIgnoreCase(args[0]))
+				generateClassDependencyGraphmlFile(URI.createURI(args[1]), args[2]);
+			else if ("FEATURES".equalsIgnoreCase(args[0]))
+				generateFeaturesDependencyGraphmlFile(URI.createURI(args[1]), args[2]);
+			else 
+				printUsage();
 		} catch (Exception e) {		
 			e.printStackTrace();
 		}
@@ -44,13 +52,31 @@ public class GraphmlGenerator {
 	 * 
 	 * @throws Exception from  {@link AbstractEolLauncher#execute()}
 	 */
-	public static void generateGraphmlFile(URI inputOclDocUri, final String outputGaprhmlFilePath ) throws Exception  {
+	public static void generateFeaturesDependencyGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath ) throws Exception  {
 		// URI uri = URI.createURI("platform:/resource/oclDependencyAnalysis.tests/src/ocldependencyanalysis/tests/SMM1d.ocl");
 		IGraph<FeatureObj> graph = Analysis.createFeaturesDependencyGraph(inputOclDocUri);
 		
 		System.out.println(graph.toString());
-		Graph graphModel = Graph2GraphModel.createGraphModel(graph);
-		
+		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new AttributeDependenciesTypeProvider());
+		launchGraph2GraphMLScript(graphModel, outputGaprhmlFilePath);
+	}
+	
+	/**
+	 * @param inputOclDocUri input Complete OCL document URI. e.g. file:/C:/temp/myOCLdocument.ocl
+	 * @param outputGaprhmlFilePath output Graphml model path. e.g. C:/temp/myGraph.graphml
+	 * 
+	 * @throws Exception from  {@link AbstractEolLauncher#execute()}
+	 */
+	public static void generateClassDependencyGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath ) throws Exception  {
+		// URI uri = URI.createURI("platform:/resource/oclDependencyAnalysis.tests/src/ocldependencyanalysis/tests/SMM1d.ocl");
+		IGraph<Class> graph = Analysis.createClassDependencyGraph(inputOclDocUri);
+				
+		System.out.println(graph.toString());
+		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new ClassDependenciesTypeProvider(graph));
+		launchGraph2GraphMLScript(graphModel, outputGaprhmlFilePath);
+	}
+	
+	private static void launchGraph2GraphMLScript(Graph graphModel, final String outputGaprhmlFilePath) throws Exception{
 		
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(".aninmemoryoclresource", new XMIResourceFactoryImpl());
@@ -91,7 +117,8 @@ public class GraphmlGenerator {
 	
 	private static final void printUsage() {
 		System.out.println("Program args:");
-		System.out.println("    1. input Complete OCL document URI. e.g. file:/C:/temp/myOCLdocument.ocl");
-		System.out.println("    2. output Graphml model path. e.g C:/temp/myGraph.graphml");
+		System.out.println("    1. CLASS (for class dependencies graph) or FEATURES (for features dependencies graph)");
+		System.out.println("    2. input Complete OCL document URI. e.g. file:/C:/temp/myOCLdocument.ocl");
+		System.out.println("    3. output Graphml model path. e.g C:/temp/myGraph.graphml");
 	}
 }

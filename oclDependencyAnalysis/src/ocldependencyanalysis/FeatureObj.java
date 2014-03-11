@@ -1,10 +1,14 @@
 package ocldependencyanalysis;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.Feature;
+import org.eclipse.ocl.examples.pivot.NamedElement;
 
 public class FeatureObj {
-	private static final String LEFT_BRACKET = "[";
+	private static final String NAMESPACE_SEP = "::";
+	private static final String EMPTY_STRING = "";
+	private static final String LEFT_BRACKET = " [";
 	private static final String RIGHT_BRACKET = "]";
 	private Class context;
 	private Feature feature;
@@ -19,9 +23,10 @@ public class FeatureObj {
 	
 	@Override
 	public String toString() {		
-		return context.toString() + 
-				LEFT_BRACKET + 
-				feature.toString() +
+		return context.getName() + 
+				LEFT_BRACKET +
+				getFeaturePrefix() +
+				feature.getName() +
 				RIGHT_BRACKET; 
 	}
 	
@@ -32,4 +37,10 @@ public class FeatureObj {
 	public Feature getFeature() {
 		return feature;
 	}
+	
+	private String getFeaturePrefix() {
+		EObject container = feature.eContainer();
+		return container == null ? EMPTY_STRING : ((NamedElement)container).getName() + NAMESPACE_SEP;
+	}
+
 }

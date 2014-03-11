@@ -30,13 +30,11 @@ context Z
 def : ast() : target::D =
 	-- if toY.ast().oclIsKindOf(target::B)
 	if toY.oclIsKindOf(source::Y1)
-	then target::D {		
+	then target::D {
 			toA = toY.oclAsType(source::Y1).ast().toA1
 		} 
 	else target::D {
 			toA = toY.oclAsType(source::Y2).ast().toA2
-		} 
+		}
 	endif
-
-		
 endpackage
