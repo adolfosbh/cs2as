@@ -113,5 +113,25 @@ public class Graph<C> implements IGraph<C> {
 	protected ICyclesDetector<C> createCyclesDetector() {
 		return new CyclesDetector<C>();
 	}
+
+	@Override
+	public boolean removeNode(INode<C> node) {		
+		
+		boolean nodeRemoved = nodes.remove(node);
+		if (nodeRemoved) {
+			for (IEdge<C> outputEdge : getOutputEdges(node)) {
+				edges.remove(outputEdge);
+			}
+			for (IEdge<C> inputEdge : getOutputEdges(node)) {
+				edges.remove(inputEdge);
+			}
+		}
+		return nodeRemoved;
+	}
+
+	@Override
+	public boolean removeEdge(IEdge<C> edge) {
+		return edges.remove(edge);
+	}
 		
 }

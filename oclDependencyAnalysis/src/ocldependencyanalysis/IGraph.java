@@ -2,6 +2,7 @@ package ocldependencyanalysis;
 
 import java.util.Set;
 
+
 /**
  * @author asbh500
  *
@@ -20,7 +21,22 @@ public interface IGraph<C> {
 	public INode<C> addNode(C c);
 	
 	/**
-	 * Implementations will ensure that a graph will
+	 * Implementation must ensure that a graph will have no edge referring to nodes
+	 * which are not part of this graph
+	 * 
+	 * @param c
+	 * @return <code>true</code> if the node (or equivalent) was removed, otherwise <code>false</code>
+	 */
+	public boolean removeNode(INode<C> node);
+	
+	/**
+	 * @param edge
+	 * @return <code>true</code> if the edge (or equivalent) was removed, otherwise <code>false</code>
+	 */
+	public boolean removeEdge(IEdge<C> edge);
+	
+	/**
+	 * Implementations must ensure that a graph will
 	 * have no edge referring to nodes which are not part
 	 * of this graph 
 	 *  

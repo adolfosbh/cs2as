@@ -94,12 +94,16 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		initializeMaps(pivotResource);
 		IGraph<C> dependencyGraph = createDependencyGraph();
 		
+		preprocess(pivotResource, dependencyGraph);
+		
 		for (TreeIterator<EObject> tit = pivotResource.getAllContents(); tit.hasNext(); ) {
 			EObject next = tit.next();
 			if (astCall(next)) {
 				processAstCall(dependencyGraph, (OperationCallExp) next);
 			}
 		}
+		
+		postprocess(pivotResource, dependencyGraph);
 		return dependencyGraph;
 	}
 	
@@ -195,4 +199,34 @@ public abstract class AbstractDependencyGraphComputer<C> {
 //	}
 	
 	abstract protected void processAstCall(IGraph<C> dependencyGraph, OperationCallExp astOpCall);
+	
+	/**
+	 * Method called prior to process the resource to look for 
+	 * ast calls.
+	 * 
+	 * By default does nothing.
+	 * 
+	 * Derived classes may override
+	 * 
+	 * @param resource
+	 * @param dependenyGraph
+	 */
+	protected void preprocess(Resource resource, IGraph<C> dependencyGraph) {
+		
+	}
+	
+	/**
+	 * Method called after processing the resource 
+	 * 
+	 * By default does nothing.
+	 * 
+	 * Derived classes may override to provide custom
+	 * implementation
+	 * 
+	 * @param resource
+	 * @param dependenyGraph
+	 */
+	protected void postprocess(Resource resource, IGraph<C> dependencyGraph) {
+		
+	}
 }

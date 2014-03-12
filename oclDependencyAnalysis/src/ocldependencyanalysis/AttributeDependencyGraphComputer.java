@@ -1,8 +1,11 @@
 package ocldependencyanalysis;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.ConstructorPart;
 import org.eclipse.ocl.examples.pivot.Element;
@@ -45,9 +48,29 @@ public class AttributeDependencyGraphComputer extends AbstractDependencyGraphCom
 	protected void processAstCall(IGraph<FeatureObj> dependencyGraph,
 			OperationCallExp astOpCall) {
 		
-		FeatureObj from = getTargetFeature(astOpCall);		
+		FeatureObj from = getTargetFeature(astOpCall);
 		createDependenciesOnFromFeatureObject(astOpCall, from, dependencyGraph);
-	}	
+	}
+	
+	/** 
+	 * postprocess is overriden to prune unused computed opposite properties
+	 */
+	@Override
+	protected void postprocess(Resource resource,
+			IGraph<FeatureObj> dependencyGraph) {
+		
+		List<INode<FeatureObj>> nodesToRemove = new ArrayList<INode<FeatureObj>>();
+		for (INode<FeatureObj> node : dependencyGraph.getNodes()) {
+			if (node.getObject() instanceof OppositePropertyObj
+				&& dependencyGraph.getInputEdges(node).isEmpty()) {
+				nodesToRemove.add(node);
+			}
+		}
+				
+		for (INode<FeatureObj> node : nodesToRemove) { 
+			dependencyGraph.removeNode(node);
+		}
+	}
 	
 	/**
 	 * Get the initial feature which will be the Edge.from of a dependency graph:
