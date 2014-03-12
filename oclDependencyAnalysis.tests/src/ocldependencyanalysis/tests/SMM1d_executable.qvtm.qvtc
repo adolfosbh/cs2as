@@ -3,7 +3,7 @@ import TargetMM: 'TargetMM1.ecore'::target;
 
 --
 -- This QVTm transformation, comprises the micro-mappings of a partitioned QVTm specification
--- semantically "equivalent" to SMM1c.ocl specification describing a transformation between SourceMM
+-- semantically "equivalent" to SMM1d.ocl specification describing a transformation between SourceMM
 -- and TargetMM.
 --
 -- For simplicity I've removed the traceability middle model
@@ -37,7 +37,7 @@ map X_To_A2 in source2target {
         realize a:A2 |
     }
     
-    where () {        
+    where () {
         a.ownsC := c;
     }
 }
@@ -67,13 +67,13 @@ map Y2_To_C in source2target {
 }
 
 --
--- Z to D have two micro-mappings since the there is if-condition-depending
--- on what created 
+-- Z to D have two micro-mappings since there is an if-condition-depending
+-- on the type of the parent 
 
-map Z_to_D_1 in source2target {
+map Z_to_D_1_creation in source2target {
 	
 	-- I'd need the middle model to access to Y1-B trace
-	-- So I temporarily change the guard to use source meta-model information
+	-- So I temporarily change the guard to only use source meta-model information
 	-- rather
 	--source () {
 	--	z : Z |  z.toY."access trace".b.oclIsKindOf(middle::B)
@@ -81,8 +81,20 @@ map Z_to_D_1 in source2target {
 	
 	source (z : Z | z.toY.oclIsKindOf(Y1);) {}
 	
-	enforce middle (b:B |) {
+	enforce middle () {
 		realize d:D |
+	}
+	
+	where () {		
+	}	
+}
+
+map Z_to_D_1_update in source2target {
+		
+	source (z : Z | z.toY.oclIsKindOf(Y1);) {}
+	
+	enforce middle (b:B, d:D |) {
+		
 	}
 	
 	where () {
@@ -90,17 +102,27 @@ map Z_to_D_1 in source2target {
 	}	
 }
 
-map Z_to_D_2 in source2target {
+map Z_to_D_2_creation in source2target {
 	-- I'd need the middle model to access to Y2-C trace
-	-- So I temporarily change the guard to use source meta-model information
+	-- So I temporarily change the guard to only use source meta-model information
 	--source () {
 	--	z : Z |  z.toY."access trace".c.oclIsKindOf(middle::C)
 	--}
 	
 	source (z : Z | not z.toY.oclIsKindOf(Y1);) { }	
 	
-	enforce middle (c:C |) {
+	enforce middle () {
 		realize d:D |
+	}
+	
+	where () { }
+}
+
+map Z_to_D_2_update in source2target {	
+	
+	source (z : Z | not z.toY.oclIsKindOf(Y1);) { }	
+	
+	enforce middle (c:C, d :D|) {
 	}
 	
 	where () {
