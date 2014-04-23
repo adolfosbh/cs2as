@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<completeoclcs:CompleteOCLDocumentCS xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basecs="http://www.eclipse.org/ocl/3.1.0/BaseCST" xmlns:completeoclcs="http://www.eclipse.org/ocl/3.1.0/CompleteOCLCST" xmlns:essentialoclcs="http://www.eclipse.org/ocl/3.1.0/EssentialOCLCST" xmlns:pivot="http://www.eclipse.org/ocl/3.1.0/Pivot">
+  <ownedImport>
+    <pathName>
+      <path xsi:type="basecs:PathElementWithURICS">
+        <element xsi:type="pivot:Root" href="Test.ecore.oclas#/"/>
+      </path>
+    </pathName>
+  </ownedImport>
+  <packages>
+    <pathName>
+      <path>
+        <element xsi:type="pivot:Package" href="Test.ecore.oclas#//@nestedPackage.0"/>
+      </path>
+    </pathName>
+    <contexts xsi:type="completeoclcs:ClassifierContextDeclCS">
+      <pathName>
+        <path>
+          <element xsi:type="pivot:Class" href="Test.ecore.oclas#//@nestedPackage.0/@ownedType.0"/>
+        </path>
+      </pathName>
+      <invariants>
+        <specification xsi:type="essentialoclcs:ExpSpecificationCS">
+          <ownedExpression xsi:type="essentialoclcs:LetExpCS">
+            <variable name="a">
+              <ownedType xsi:type="basecs:PrimitiveTypeRefCS" name="Boolean"/>
+              <initExpression xsi:type="essentialoclcs:BooleanLiteralExpCS" name="true"/>
+            </variable>
+            <in xsi:type="essentialoclcs:InfixExpCS">
+              <ownedExpression xsi:type="essentialoclcs:NameExpCS">
+                <pathName>
+                  <path>
+                    <element xsi:type="pivot:Variable" href="LetExp.ocl.oclas#//@nestedPackage.0/@ownedType.0/@ownedInvariant.0/@specification/@bodyExpression/@variable"/>
+                  </path>
+                </pathName>
+              </ownedExpression>
+              <ownedExpression xsi:type="essentialoclcs:BooleanLiteralExpCS" name="true"/>
+              <ownedOperator name="="/>
+            </in>
+          </ownedExpression>
+        </specification>
+      </invariants>
+    </contexts>
+  </packages>
+</completeoclcs:CompleteOCLDocumentCS>

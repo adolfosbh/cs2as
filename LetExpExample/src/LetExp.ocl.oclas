@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pivot:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pivot="http://www.eclipse.org/ocl/3.1.0/Pivot" xsi:schemaLocation="http://www.eclipse.org/ocl/3.1.0/Pivot java://org.eclipse.ocl.examples.pivot.PivotPackage"
+    name="LetExp.ocl" externalURI="platform:/resource/LetExpExample/src/LetExp.ocl">
+  <nestedPackage xmi:id="P.test" name="test" nsURI="http://testLetExp">
+    <ownedType xsi:type="pivot:Class" xmi:id="T.test.C1" name="C1">
+      <ownedInvariant constrainedElement="#T.test.C1">
+        <specification xsi:type="pivot:ExpressionInOCL" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean">
+          <body>
+	let a : Boolean = true
+	in a = true
+
+</body>
+          <language>OCL</language>
+          <bodyExpression xsi:type="pivot:LetExp" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean">
+            <in xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
+                referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.Boolean.%61%..ocl.OclSelf">
+              <source xsi:type="pivot:VariableExp" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
+                  referredVariable="#//@nestedPackage.0/@ownedType.0/@ownedInvariant.0/@specification/@bodyExpression/@variable"/>
+              <argument xsi:type="pivot:BooleanLiteralExp" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
+                  booleanSymbol="true"/>
+            </in>
+            <variable name="a" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean">
+              <initExpression xsi:type="pivot:BooleanLiteralExp" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
+                  booleanSymbol="true"/>
+            </variable>
+          </bodyExpression>
+          <contextVariable name="self" type="Test.ecore.oclas#T.test.C1"/>
+        </specification>
+      </ownedInvariant>
+    </ownedType>
+  </nestedPackage>
+</pivot:Root>
