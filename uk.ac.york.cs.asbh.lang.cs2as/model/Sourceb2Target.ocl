@@ -1,0 +1,66 @@
+import 'SourceMM1b.ecore'
+import 'TargetMM1.ecore'
+import 'Environment.ecore'
+
+package ocl
+
+context OclElement
+def : env() : env::Environment =
+	null 
+endpackage
+
+package source
+
+context AmbX 
+def : cst() : X =
+	if isA1
+	then X1 {
+		ownsY = ownsY
+	}
+	else X2 {
+		ownsY = ownsY
+	}
+	endif
+
+context X1
+def : ast() : target::A1 =
+	target::A1 {
+		ownsB = ownsY.oclAsType(Y1).ast()
+	}
+	
+context X2
+def : ast() : target::A2 =
+	target::A2 {
+		ownsC = ownsY.oclAsType(Y2).ast()
+	}
+
+context Y1	
+def : ast() : target::B =
+	target::B {
+		ownsD = ownsZ.ast(),
+		name = name
+	}
+	
+context Y2	
+def : ast() : target::C =
+	target::C {
+		ownsD = ownsZ.ast(),
+		name = name
+	}
+
+context Z 
+def : ast() : target::D =
+	-- if toY.ast().oclIsKindOf(target::B)
+	if toY.oclIsKindOf(source::Y1)
+	then target::D {
+			toA = toY.oclAsType(source::Y1).ast().toA1,
+			name = name,
+			refsB = env().lookupB(name)
+		} 
+	else target::D {
+			toA = toY.oclAsType(source::Y2).ast().toA2,
+			name = name,
+			refsC = env().lookupC(name)
+		}
+	endif
+endpackage
