@@ -17,4 +17,5 @@ README.TXT
   
 Notes: 
   - To try this dependency graph computer run "Dependency Analysis" program in an workspace with Eclipse OCL (Examples) installed
-  - run Dependency Analysis java class to see program usage. There is an existing example launch configuration in the "example" folder which can be launched 
+  - run Dependency Analysis java class to see program usage. There is an existing example launch configuration in the "example" folder which can be launched
+  - Remember to add the project which contains the Complete OCL document to the java class path 
