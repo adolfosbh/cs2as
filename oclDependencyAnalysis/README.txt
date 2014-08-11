@@ -10,11 +10,11 @@ Contributors:
 
 README.TXT
 
-- Simple project to compute the a dependency graph and to detect cycles in such a depedency graph
+- Simple project to compute the a dependency graph and to detect cycles in such a dependency graph
 - The dependency graph is constructed from a Complete OCL document depicting a Concrete Syntax to Abstract Syntax (CS2AS) specification. 
 - The dependencies are established between CS nodes, so that if CS node A depends on CS node B, that means that in order to have a properly 
   defined AS created from A, the associated AS from B should be previously be created.
   
 Notes: 
-  - To try this dependency graph computer run "Analysis" program in an workspace with Eclipse OCL (Examples) installed
-  - For the time being, the URL of the OCL document is handcoded.
+  - To try this dependency graph computer run "Dependency Analysis" program in an workspace with Eclipse OCL (Examples) installed
+  - run Dependency Analysis java class to see program usage. There is an existing example launch configuration in the "example" folder which can be launched 
