@@ -1,0 +1,49 @@
+import 'Environment.ecore'
+--import 'Environment.ocl' FIXME imported ocls don't work
+import 'SourceMM1.ecore'
+import 'TargetMM1.ecore'
+
+package ocl
+
+context OclElement
+def: parentEnv() : env::Environment =
+	let parent = oclContainer() in if parent = null then Environment { } else parent._env(self) endif
+
+context OclElement
+def: _env(child : OclElement) : env::Environment =
+	parentEnv()
+	
+endpackage
+
+package target
+
+context Root
+def : _env(child : OclElement) : env::Environment =
+	parentEnv()
+	
+context A1
+def : _env(child : OclElement) : env::Environment =
+	let ownedBs = self.ownsB
+	in parentEnv().nestedEnv()
+		.addElement(ownedBs->select(x| ownedBs.indexOf(x) < ownedBs.indexOf(child)))
+		
+
+context A2
+def : _env(child : OclElement) : env::Environment =
+	let ownedCs = self.ownsC
+	in parentEnv().nestedEnv()
+		.addElement(ownedCs->select(x| ownedCs.indexOf(x) < ownedCs.indexOf(child)))
+
+context B
+def : _env(child : OclElement) : env::Environment =
+	parentEnv()
+	
+context C
+def : _env(child : OclElement) : env::Environment =
+	parentEnv()
+
+context D
+def : _env(child : OclElement) : env::Environment =
+	parentEnv()
+	
+endpackage
