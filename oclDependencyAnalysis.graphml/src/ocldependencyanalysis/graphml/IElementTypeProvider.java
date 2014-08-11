@@ -2,8 +2,8 @@ package ocldependencyanalysis.graphml;
 
 import java.util.List;
 
-import ocldependencyanalysis.IEdge;
-import ocldependencyanalysis.INode;
+import ocldependencyanalysis.graph.IEdge;
+import ocldependencyanalysis.graph.INode;
 
 import org.eclipse.qvtd.build.etl.graph.EdgeType;
 import org.eclipse.qvtd.build.etl.graph.ElementType;

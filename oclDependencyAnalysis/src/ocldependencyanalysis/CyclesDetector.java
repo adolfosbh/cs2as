@@ -6,6 +6,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
+import ocldependencyanalysis.graph.Graph;
+import ocldependencyanalysis.graph.IEdge;
+import ocldependencyanalysis.graph.IGraph;
+import ocldependencyanalysis.graph.INode;
+import ocldependencyanalysis.graph.Node;
+
 /**
  * Cycles detector algorithm for an {@link IGraph}
  * 

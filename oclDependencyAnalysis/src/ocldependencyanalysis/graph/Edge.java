@@ -1,4 +1,5 @@
-package ocldependencyanalysis;
+package ocldependencyanalysis.graph;
+
 
 /**
  * Basic implementation of {@link IEdge} establishing a String identity 

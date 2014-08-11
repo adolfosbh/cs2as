@@ -2,6 +2,8 @@ package ocldependencyanalysis;
 
 import java.util.Set;
 
+import ocldependencyanalysis.graph.IGraph;
+
 import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
 import org.eclipse.ocl.examples.pivot.Root;

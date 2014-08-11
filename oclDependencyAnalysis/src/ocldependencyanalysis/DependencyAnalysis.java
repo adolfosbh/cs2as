@@ -1,8 +1,9 @@
 package ocldependencyanalysis;
 
 
-import org.eclipse.emf.common.util.URI;
+import ocldependencyanalysis.graph.IGraph;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageRegistryImpl;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -13,7 +14,7 @@ import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.utilities.PivotEnvironmentFactory;
 import org.eclipse.ocl.examples.xtext.completeocl.CompleteOCLStandaloneSetup;
 
-public class Analysis {
+public class DependencyAnalysis {
 	
 	private static Resource getPivotResource(URI oclDocumentURI) {
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -37,10 +38,10 @@ public class Analysis {
 		return new ClassDependencyGraphComputer().computeDependencyGraph(pivotResource);
 	}
 	
-	public static IGraph<FeatureObj> createFeaturesDependencyGraph(URI oclDocumentURI) {
+	public static IGraph<FeatureObj> createFeatureDependencyGraph(URI oclDocumentURI) {
 		
 		Resource pivotResource = getPivotResource(oclDocumentURI);
-		return new AttributeDependencyGraphComputer().computeDependencyGraph(pivotResource);
+		return new FeatureDependencyGraphComputer().computeDependencyGraph(pivotResource);
 	}
 	
 	public static void printGraphAndCycles(IGraph<?> graph) {
@@ -55,17 +56,19 @@ public class Analysis {
 	
 	public static void main(String[] args) {
 		
-		System.out.println("Starting...");
-
-		// OCL Document URI
-		URI uri = URI.createURI("platform:/resource/org.eclipse.ocl.examples.xtext.base/model/BaseCS.ocl");
-		// URI uri = URI.createURI("platform:/resource/org.eclipse.ocl.examples.xtext.essentialocl/model/EssentialOCLCS.ocl");
+		if (args.length != 1) {
+			System.out.println("Incorrect program arguments.\n"
+								+ "Usage:\n"+
+							"\tjava Analysis <Complete-OCL document URI>\n"
+							+ "Example:\n"
+							+ "\tjava Analysis platform:/resource/oclDependencyAnalysis/example/Source2Target.ocl");
+			return;
+		}
 		
+		System.out.println("Starting...");						
+		URI uri = URI.createURI(args[0]); // OCL Document URI
 		IGraph<?> depedencyGraph = createClassDependencyGraph(uri);
-		
 		printGraphAndCycles(depedencyGraph);
-		
-		
 		System.out.println("...Finished");
 	}
 }

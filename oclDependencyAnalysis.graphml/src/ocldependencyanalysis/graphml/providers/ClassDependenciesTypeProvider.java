@@ -5,9 +5,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import ocldependencyanalysis.IEdge;
-import ocldependencyanalysis.IGraph;
-import ocldependencyanalysis.INode;
+import ocldependencyanalysis.graph.IEdge;
+import ocldependencyanalysis.graph.IGraph;
+import ocldependencyanalysis.graph.INode;
 import ocldependencyanalysis.graphml.IElementTypeProvider;
 
 import org.eclipse.ocl.examples.pivot.Class;

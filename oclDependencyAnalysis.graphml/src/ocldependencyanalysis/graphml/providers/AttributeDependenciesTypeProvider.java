@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ocldependencyanalysis.FeatureObj;
-import ocldependencyanalysis.IEdge;
-import ocldependencyanalysis.INode;
 import ocldependencyanalysis.OppositePropertyObj;
+import ocldependencyanalysis.graph.IEdge;
+import ocldependencyanalysis.graph.INode;
 import ocldependencyanalysis.graphml.IElementTypeProvider;
 
 import org.eclipse.ocl.examples.pivot.Feature;

@@ -1,10 +1,13 @@
-package ocldependencyanalysis;
+package ocldependencyanalysis.graph;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import ocldependencyanalysis.CyclesDetector;
+import ocldependencyanalysis.ICyclesDetector;
 
 /**
  * Basic implementation of {@link IGraph}

@@ -10,4 +10,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.junit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: ocldependencyanalysis
+Export-Package: ocldependencyanalysis,
+ ocldependencyanalysis.graph

@@ -1,4 +1,4 @@
-package ocldependencyanalysis;
+package ocldependencyanalysis.graph;
 
 /**
  * A parametrised graph node wrapping a real object

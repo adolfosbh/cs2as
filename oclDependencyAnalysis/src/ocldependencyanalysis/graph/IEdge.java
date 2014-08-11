@@ -1,4 +1,4 @@
-package ocldependencyanalysis;
+package ocldependencyanalysis.graph;
 
 /**
  * A graph edge between two graph nodes 

@@ -3,9 +3,9 @@ package ocldependencyanalysis.graphml;
 import java.util.HashMap;
 import java.util.Map;
 
-import ocldependencyanalysis.IEdge;
-import ocldependencyanalysis.IGraph;
-import ocldependencyanalysis.INode;
+import ocldependencyanalysis.graph.IEdge;
+import ocldependencyanalysis.graph.IGraph;
+import ocldependencyanalysis.graph.INode;
 import ocldependencyanalysis.graphml.providers.DefaultElementTypeProvider;
 
 import org.eclipse.emf.common.util.EList;

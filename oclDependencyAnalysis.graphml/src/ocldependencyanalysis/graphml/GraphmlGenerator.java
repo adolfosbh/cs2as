@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import ocldependencyanalysis.Analysis;
+import ocldependencyanalysis.DependencyAnalysis;
 import ocldependencyanalysis.FeatureObj;
-import ocldependencyanalysis.IGraph;
+import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graphml.providers.AttributeDependenciesTypeProvider;
 import ocldependencyanalysis.graphml.providers.ClassDependenciesTypeProvider;
 
@@ -54,7 +54,7 @@ public class GraphmlGenerator {
 	 */
 	public static void generateFeaturesDependencyGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath ) throws Exception  {
 		// URI uri = URI.createURI("platform:/resource/oclDependencyAnalysis.tests/src/ocldependencyanalysis/tests/SMM1d.ocl");
-		IGraph<FeatureObj> graph = Analysis.createFeaturesDependencyGraph(inputOclDocUri);
+		IGraph<FeatureObj> graph = DependencyAnalysis.createFeatureDependencyGraph(inputOclDocUri);
 		
 		System.out.println(graph.toString());
 		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new AttributeDependenciesTypeProvider());
@@ -69,7 +69,7 @@ public class GraphmlGenerator {
 	 */
 	public static void generateClassDependencyGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath ) throws Exception  {
 		// URI uri = URI.createURI("platform:/resource/oclDependencyAnalysis.tests/src/ocldependencyanalysis/tests/SMM1d.ocl");
-		IGraph<Class> graph = Analysis.createClassDependencyGraph(inputOclDocUri);
+		IGraph<Class> graph = DependencyAnalysis.createClassDependencyGraph(inputOclDocUri);
 				
 		System.out.println(graph.toString());
 		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new ClassDependenciesTypeProvider(graph));

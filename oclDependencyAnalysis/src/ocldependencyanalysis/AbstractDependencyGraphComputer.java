@@ -5,10 +5,14 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import ocldependencyanalysis.graph.Graph;
+import ocldependencyanalysis.graph.IGraph;
+
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.examples.domain.elements.DomainOperation;
+import org.eclipse.ocl.examples.domain.elements.FeatureFilter;
 import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.Element;
 import org.eclipse.ocl.examples.pivot.Operation;
@@ -163,7 +167,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		Operation bestOp=null;	// The best op will be the one owned by the type the 
 								// closer to opAstClass in the class hierarchy 
 		// TODO move to mManager ?
-		for (DomainOperation op : mManager.getAllOperations(opAstClass, false, "ast")){
+		for (DomainOperation op : mManager.getAllOperations(opAstClass, FeatureFilter.SELECT_NON_STATIC, "ast")){
 			if (op instanceof Operation
 				&& op.getOwnedParameter().isEmpty()) {
 				Operation candidateOp = (Operation) op;

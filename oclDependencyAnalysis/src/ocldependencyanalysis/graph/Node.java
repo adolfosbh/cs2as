@@ -1,4 +1,5 @@
-package ocldependencyanalysis;
+package ocldependencyanalysis.graph;
+
 
 /**
  * A basic {@link INode} implementation node establishing a String identity 

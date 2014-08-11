@@ -1,4 +1,4 @@
-package ocldependencyanalysis;
+package ocldependencyanalysis.graph;
 
 import java.util.Set;
 
