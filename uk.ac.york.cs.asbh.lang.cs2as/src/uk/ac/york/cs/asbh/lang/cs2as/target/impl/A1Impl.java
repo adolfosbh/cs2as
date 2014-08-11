@@ -2,14 +2,13 @@
  */
 package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.york.cs.asbh.lang.cs2as.target.A1;
 import uk.ac.york.cs.asbh.lang.cs2as.target.B;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
@@ -29,14 +28,14 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
  */
 public class A1Impl extends AImpl implements A1 {
 	/**
-	 * The cached value of the '{@link #getOwnsB() <em>Owns B</em>}' containment reference.
+	 * The cached value of the '{@link #getOwnsB() <em>Owns B</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOwnsB()
 	 * @generated
 	 * @ordered
 	 */
-	protected B ownsB;
+	protected EList<B> ownsB;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +61,10 @@ public class A1Impl extends AImpl implements A1 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public B getOwnsB() {
+	public EList<B> getOwnsB() {
+		if (ownsB == null) {
+			ownsB = new EObjectContainmentWithInverseEList<B>(B.class, this, TargetPackage.A1__OWNS_B, TargetPackage.B__TO_A1);
+		}
 		return ownsB;
 	}
 
@@ -71,47 +73,12 @@ public class A1Impl extends AImpl implements A1 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOwnsB(B newOwnsB, NotificationChain msgs) {
-		B oldOwnsB = ownsB;
-		ownsB = newOwnsB;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TargetPackage.A1__OWNS_B, oldOwnsB, newOwnsB);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOwnsB(B newOwnsB) {
-		if (newOwnsB != ownsB) {
-			NotificationChain msgs = null;
-			if (ownsB != null)
-				msgs = ((InternalEObject)ownsB).eInverseRemove(this, TargetPackage.B__TO_A1, B.class, msgs);
-			if (newOwnsB != null)
-				msgs = ((InternalEObject)newOwnsB).eInverseAdd(this, TargetPackage.B__TO_A1, B.class, msgs);
-			msgs = basicSetOwnsB(newOwnsB, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TargetPackage.A1__OWNS_B, newOwnsB, newOwnsB));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TargetPackage.A1__OWNS_B:
-				if (ownsB != null)
-					msgs = ((InternalEObject)ownsB).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TargetPackage.A1__OWNS_B, null, msgs);
-				return basicSetOwnsB((B)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnsB()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -125,7 +92,7 @@ public class A1Impl extends AImpl implements A1 {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TargetPackage.A1__OWNS_B:
-				return basicSetOwnsB(null, msgs);
+				return ((InternalEList<?>)getOwnsB()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -149,11 +116,13 @@ public class A1Impl extends AImpl implements A1 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TargetPackage.A1__OWNS_B:
-				setOwnsB((B)newValue);
+				getOwnsB().clear();
+				getOwnsB().addAll((Collection<? extends B>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -168,7 +137,7 @@ public class A1Impl extends AImpl implements A1 {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TargetPackage.A1__OWNS_B:
-				setOwnsB((B)null);
+				getOwnsB().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -183,7 +152,7 @@ public class A1Impl extends AImpl implements A1 {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case TargetPackage.A1__OWNS_B:
-				return ownsB != null;
+				return ownsB != null && !ownsB.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

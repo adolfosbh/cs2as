@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
 import uk.ac.york.cs.asbh.lang.cs2as.target.Root;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetFactory;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
@@ -68,6 +69,13 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 	 * @generated
 	 */
 	private EClass rootEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass namedElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -207,15 +215,6 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getB_Name() {
-		return (EAttribute)bEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getC() {
 		return cEClass;
 	}
@@ -236,15 +235,6 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 	 */
 	public EReference getC_OwnsD() {
 		return (EReference)cEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getC_Name() {
-		return (EAttribute)cEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -297,17 +287,8 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getD_Name() {
-		return (EAttribute)dEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getD_RefsC() {
-		return (EReference)dEClass.getEStructuralFeatures().get(5);
+		return (EReference)dEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -326,6 +307,24 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 	 */
 	public EReference getRoot_OwnedA() {
 		return (EReference)rootEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNamedElement() {
+		return namedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNamedElement_Name() {
+		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -367,23 +366,23 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 		bEClass = createEClass(B);
 		createEReference(bEClass, B__TO_A1);
 		createEReference(bEClass, B__OWNS_D);
-		createEAttribute(bEClass, B__NAME);
 
 		cEClass = createEClass(C);
 		createEReference(cEClass, C__TO_A2);
 		createEReference(cEClass, C__OWNS_D);
-		createEAttribute(cEClass, C__NAME);
 
 		dEClass = createEClass(D);
 		createEReference(dEClass, D__TO_C);
 		createEReference(dEClass, D__TO_B);
 		createEReference(dEClass, D__TO_A);
 		createEReference(dEClass, D__REFS_B);
-		createEAttribute(dEClass, D__NAME);
 		createEReference(dEClass, D__REFS_C);
 
 		rootEClass = createEClass(ROOT);
 		createEReference(rootEClass, ROOT__OWNED_A);
+
+		namedElementEClass = createEClass(NAMED_ELEMENT);
+		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 	}
 
 	/**
@@ -416,36 +415,39 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 		// Add supertypes to classes
 		a1EClass.getESuperTypes().add(this.getA());
 		a2EClass.getESuperTypes().add(this.getA());
+		bEClass.getESuperTypes().add(this.getNamedElement());
+		cEClass.getESuperTypes().add(this.getNamedElement());
+		dEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(aEClass, uk.ac.york.cs.asbh.lang.cs2as.target.A.class, "A", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(a1EClass, uk.ac.york.cs.asbh.lang.cs2as.target.A1.class, "A1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getA1_OwnsB(), this.getB(), this.getB_ToA1(), "ownsB", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.A1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getA1_OwnsB(), this.getB(), this.getB_ToA1(), "ownsB", null, 0, -1, uk.ac.york.cs.asbh.lang.cs2as.target.A1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(a2EClass, uk.ac.york.cs.asbh.lang.cs2as.target.A2.class, "A2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getA2_OwnsC(), this.getC(), this.getC_ToA2(), "ownsC", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.A2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getA2_OwnsC(), this.getC(), this.getC_ToA2(), "ownsC", null, 0, -1, uk.ac.york.cs.asbh.lang.cs2as.target.A2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bEClass, uk.ac.york.cs.asbh.lang.cs2as.target.B.class, "B", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getB_ToA1(), this.getA1(), this.getA1_OwnsB(), "toA1", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.B.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getB_OwnsD(), this.getD(), this.getD_ToB(), "ownsD", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.B.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getB_Name(), ecorePackage.getEString(), "name", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.B.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cEClass, uk.ac.york.cs.asbh.lang.cs2as.target.C.class, "C", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getC_ToA2(), this.getA2(), this.getA2_OwnsC(), "toA2", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.C.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getC_OwnsD(), this.getD(), this.getD_ToC(), "ownsD", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.C.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getC_Name(), ecorePackage.getEString(), "name", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.C.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dEClass, uk.ac.york.cs.asbh.lang.cs2as.target.D.class, "D", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getD_ToC(), this.getC(), this.getC_OwnsD(), "toC", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.D.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getD_ToB(), this.getB(), this.getB_OwnsD(), "toB", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.D.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getD_ToA(), this.getA(), null, "toA", null, 1, 1, uk.ac.york.cs.asbh.lang.cs2as.target.D.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getD_RefsB(), this.getB(), null, "refsB", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.D.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getD_Name(), ecorePackage.getEString(), "name", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.D.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getD_RefsC(), this.getC(), null, "refsC", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.target.D.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoot_OwnedA(), this.getA(), null, "ownedA", null, 0, -1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

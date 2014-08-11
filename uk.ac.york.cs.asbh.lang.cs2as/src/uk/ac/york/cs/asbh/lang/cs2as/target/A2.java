@@ -2,6 +2,8 @@
  */
 package uk.ac.york.cs.asbh.lang.cs2as.target;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +23,8 @@ package uk.ac.york.cs.asbh.lang.cs2as.target;
  */
 public interface A2 extends A {
 	/**
-	 * Returns the value of the '<em><b>Owns C</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Owns C</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.york.cs.asbh.lang.cs2as.target.C}.
 	 * It is bidirectional and its opposite is '{@link uk.ac.york.cs.asbh.lang.cs2as.target.C#getToA2 <em>To A2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -29,23 +32,12 @@ public interface A2 extends A {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owns C</em>' containment reference.
-	 * @see #setOwnsC(C)
+	 * @return the value of the '<em>Owns C</em>' containment reference list.
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getA2_OwnsC()
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.C#getToA2
 	 * @model opposite="toA2" containment="true"
 	 * @generated
 	 */
-	C getOwnsC();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.A2#getOwnsC <em>Owns C</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owns C</em>' containment reference.
-	 * @see #getOwnsC()
-	 * @generated
-	 */
-	void setOwnsC(C value);
+	EList<C> getOwnsC();
 
 } // A2

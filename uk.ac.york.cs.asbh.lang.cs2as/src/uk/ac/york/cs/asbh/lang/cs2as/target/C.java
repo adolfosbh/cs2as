@@ -2,7 +2,6 @@
  */
 package uk.ac.york.cs.asbh.lang.cs2as.target;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.C#getToA2 <em>To A2</em>}</li>
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.C#getOwnsD <em>Owns D</em>}</li>
- *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.C#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface C extends EObject {
+public interface C extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>To A2</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.york.cs.asbh.lang.cs2as.target.A2#getOwnsC <em>Owns C</em>}'.
@@ -78,31 +76,5 @@ public interface C extends EObject {
 	 * @generated
 	 */
 	void setOwnsD(D value);
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getC_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.C#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 } // C

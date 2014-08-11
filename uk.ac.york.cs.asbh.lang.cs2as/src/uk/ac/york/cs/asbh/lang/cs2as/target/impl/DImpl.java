@@ -4,15 +4,10 @@ package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import uk.ac.york.cs.asbh.lang.cs2as.target.A;
 import uk.ac.york.cs.asbh.lang.cs2as.target.B;
 import uk.ac.york.cs.asbh.lang.cs2as.target.C;
@@ -30,14 +25,13 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.DImpl#getToB <em>To B</em>}</li>
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.DImpl#getToA <em>To A</em>}</li>
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.DImpl#getRefsB <em>Refs B</em>}</li>
- *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.DImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.DImpl#getRefsC <em>Refs C</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DImpl extends MinimalEObjectImpl.Container implements D {
+public class DImpl extends NamedElementImpl implements D {
 	/**
 	 * The cached value of the '{@link #getToA() <em>To A</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -57,24 +51,6 @@ public class DImpl extends MinimalEObjectImpl.Container implements D {
 	 * @ordered
 	 */
 	protected B refsB;
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getRefsC() <em>Refs C</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -267,27 +243,6 @@ public class DImpl extends MinimalEObjectImpl.Container implements D {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TargetPackage.D__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public C getRefsC() {
 		if (refsC != null && refsC.eIsProxy()) {
 			InternalEObject oldRefsC = (InternalEObject)refsC;
@@ -391,8 +346,6 @@ public class DImpl extends MinimalEObjectImpl.Container implements D {
 			case TargetPackage.D__REFS_B:
 				if (resolve) return getRefsB();
 				return basicGetRefsB();
-			case TargetPackage.D__NAME:
-				return getName();
 			case TargetPackage.D__REFS_C:
 				if (resolve) return getRefsC();
 				return basicGetRefsC();
@@ -419,9 +372,6 @@ public class DImpl extends MinimalEObjectImpl.Container implements D {
 				return;
 			case TargetPackage.D__REFS_B:
 				setRefsB((B)newValue);
-				return;
-			case TargetPackage.D__NAME:
-				setName((String)newValue);
 				return;
 			case TargetPackage.D__REFS_C:
 				setRefsC((C)newValue);
@@ -450,9 +400,6 @@ public class DImpl extends MinimalEObjectImpl.Container implements D {
 			case TargetPackage.D__REFS_B:
 				setRefsB((B)null);
 				return;
-			case TargetPackage.D__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case TargetPackage.D__REFS_C:
 				setRefsC((C)null);
 				return;
@@ -476,28 +423,10 @@ public class DImpl extends MinimalEObjectImpl.Container implements D {
 				return toA != null;
 			case TargetPackage.D__REFS_B:
 				return refsB != null;
-			case TargetPackage.D__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case TargetPackage.D__REFS_C:
 				return refsC != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DImpl

@@ -14,11 +14,13 @@
     <genClasses image="false" ecoreClass="SourceMM1.ecore#//Y">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SourceMM1.ecore#//Y/ownsZ"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SourceMM1.ecore#//Y/toX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SourceMM1.ecore#//Y/name"/>
     </genClasses>
     <genClasses ecoreClass="SourceMM1.ecore#//Y1"/>
     <genClasses ecoreClass="SourceMM1.ecore#//Y2"/>
     <genClasses ecoreClass="SourceMM1.ecore#//Z">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SourceMM1.ecore#//Z/toY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SourceMM1.ecore#//Z/name"/>
     </genClasses>
     <genClasses ecoreClass="SourceMM1.ecore#//Root">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SourceMM1.ecore#//Root/ownedX"/>

@@ -76,7 +76,7 @@ public interface SourcePackage extends EPackage {
 	int X__IS_A1 = 0;
 
 	/**
-	 * The feature id for the '<em><b>Owns Y</b></em>' containment reference.
+	 * The feature id for the '<em><b>Owns Y</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -373,10 +373,10 @@ public interface SourcePackage extends EPackage {
 	EAttribute getX_IsA1();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.york.cs.asbh.lang.cs2as.source.X#getOwnsY <em>Owns Y</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.asbh.lang.cs2as.source.X#getOwnsY <em>Owns Y</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Owns Y</em>'.
+	 * @return the meta object for the containment reference list '<em>Owns Y</em>'.
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.X#getOwnsY()
 	 * @see #getX()
 	 * @generated
@@ -541,7 +541,7 @@ public interface SourcePackage extends EPackage {
 		EAttribute X__IS_A1 = eINSTANCE.getX_IsA1();
 
 		/**
-		 * The meta object literal for the '<em><b>Owns Y</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Owns Y</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

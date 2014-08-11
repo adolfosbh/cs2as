@@ -4,15 +4,10 @@ package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import uk.ac.york.cs.asbh.lang.cs2as.target.A2;
 import uk.ac.york.cs.asbh.lang.cs2as.target.C;
 import uk.ac.york.cs.asbh.lang.cs2as.target.D;
@@ -27,13 +22,12 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
  * <ul>
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.CImpl#getToA2 <em>To A2</em>}</li>
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.CImpl#getOwnsD <em>Owns D</em>}</li>
- *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.CImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CImpl extends MinimalEObjectImpl.Container implements C {
+public class CImpl extends NamedElementImpl implements C {
 	/**
 	 * The cached value of the '{@link #getOwnsD() <em>Owns D</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -43,26 +37,6 @@ public class CImpl extends MinimalEObjectImpl.Container implements C {
 	 * @ordered
 	 */
 	protected D ownsD;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,27 +146,6 @@ public class CImpl extends MinimalEObjectImpl.Container implements C {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TargetPackage.C__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -250,8 +203,6 @@ public class CImpl extends MinimalEObjectImpl.Container implements C {
 				return getToA2();
 			case TargetPackage.C__OWNS_D:
 				return getOwnsD();
-			case TargetPackage.C__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,9 +220,6 @@ public class CImpl extends MinimalEObjectImpl.Container implements C {
 				return;
 			case TargetPackage.C__OWNS_D:
 				setOwnsD((D)newValue);
-				return;
-			case TargetPackage.C__NAME:
-				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -291,9 +239,6 @@ public class CImpl extends MinimalEObjectImpl.Container implements C {
 			case TargetPackage.C__OWNS_D:
 				setOwnsD((D)null);
 				return;
-			case TargetPackage.C__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -310,26 +255,8 @@ public class CImpl extends MinimalEObjectImpl.Container implements C {
 				return getToA2() != null;
 			case TargetPackage.C__OWNS_D:
 				return ownsD != null;
-			case TargetPackage.C__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //CImpl

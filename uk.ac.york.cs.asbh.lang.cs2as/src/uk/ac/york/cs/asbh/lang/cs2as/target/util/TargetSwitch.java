@@ -89,24 +89,33 @@ public class TargetSwitch<T> extends Switch<T> {
 			case TargetPackage.B: {
 				B b = (B)theEObject;
 				T result = caseB(b);
+				if (result == null) result = caseNamedElement(b);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TargetPackage.C: {
 				C c = (C)theEObject;
 				T result = caseC(c);
+				if (result == null) result = caseNamedElement(c);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TargetPackage.D: {
 				D d = (D)theEObject;
 				T result = caseD(d);
+				if (result == null) result = caseNamedElement(d);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TargetPackage.ROOT: {
 				Root root = (Root)theEObject;
 				T result = caseRoot(root);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TargetPackage.NAMED_ELEMENT: {
+				NamedElement namedElement = (NamedElement)theEObject;
+				T result = caseNamedElement(namedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -216,6 +225,21 @@ public class TargetSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRoot(Root object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

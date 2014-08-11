@@ -62,6 +62,7 @@ public class TargetFactoryImpl extends EFactoryImpl implements TargetFactory {
 			case TargetPackage.C: return createC();
 			case TargetPackage.D: return createD();
 			case TargetPackage.ROOT: return createRoot();
+			case TargetPackage.NAMED_ELEMENT: return createNamedElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -125,6 +126,16 @@ public class TargetFactoryImpl extends EFactoryImpl implements TargetFactory {
 	public Root createRoot() {
 		RootImpl root = new RootImpl();
 		return root;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NamedElement createNamedElement() {
+		NamedElementImpl namedElement = new NamedElementImpl();
+		return namedElement;
 	}
 
 	/**

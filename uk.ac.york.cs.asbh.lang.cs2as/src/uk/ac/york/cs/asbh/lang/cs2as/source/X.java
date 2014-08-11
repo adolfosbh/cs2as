@@ -2,6 +2,7 @@
  */
 package uk.ac.york.cs.asbh.lang.cs2as.source;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -49,7 +50,8 @@ public interface X extends EObject {
 	void setIsA1(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Owns Y</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Owns Y</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.york.cs.asbh.lang.cs2as.source.Y}.
 	 * It is bidirectional and its opposite is '{@link uk.ac.york.cs.asbh.lang.cs2as.source.Y#getToX <em>To X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -57,23 +59,12 @@ public interface X extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owns Y</em>' containment reference.
-	 * @see #setOwnsY(Y)
+	 * @return the value of the '<em>Owns Y</em>' containment reference list.
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage#getX_OwnsY()
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.Y#getToX
 	 * @model opposite="toX" containment="true"
 	 * @generated
 	 */
-	Y getOwnsY();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.X#getOwnsY <em>Owns Y</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owns Y</em>' containment reference.
-	 * @see #getOwnsY()
-	 * @generated
-	 */
-	void setOwnsY(Y value);
+	EList<Y> getOwnsY();
 
 } // X

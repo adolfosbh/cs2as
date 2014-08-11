@@ -2,15 +2,19 @@
  */
 package uk.ac.york.cs.asbh.lang.cs2as.source.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;
 import uk.ac.york.cs.asbh.lang.cs2as.source.X;
 import uk.ac.york.cs.asbh.lang.cs2as.source.Y;
@@ -51,14 +55,14 @@ public class XImpl extends MinimalEObjectImpl.Container implements X {
 	protected boolean isA1 = IS_A1_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOwnsY() <em>Owns Y</em>}' containment reference.
+	 * The cached value of the '{@link #getOwnsY() <em>Owns Y</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOwnsY()
 	 * @generated
 	 * @ordered
 	 */
-	protected Y ownsY;
+	protected EList<Y> ownsY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,7 +109,10 @@ public class XImpl extends MinimalEObjectImpl.Container implements X {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Y getOwnsY() {
+	public EList<Y> getOwnsY() {
+		if (ownsY == null) {
+			ownsY = new EObjectContainmentWithInverseEList<Y>(Y.class, this, SourcePackage.X__OWNS_Y, SourcePackage.Y__TO_X);
+		}
 		return ownsY;
 	}
 
@@ -114,47 +121,12 @@ public class XImpl extends MinimalEObjectImpl.Container implements X {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOwnsY(Y newOwnsY, NotificationChain msgs) {
-		Y oldOwnsY = ownsY;
-		ownsY = newOwnsY;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SourcePackage.X__OWNS_Y, oldOwnsY, newOwnsY);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOwnsY(Y newOwnsY) {
-		if (newOwnsY != ownsY) {
-			NotificationChain msgs = null;
-			if (ownsY != null)
-				msgs = ((InternalEObject)ownsY).eInverseRemove(this, SourcePackage.Y__TO_X, Y.class, msgs);
-			if (newOwnsY != null)
-				msgs = ((InternalEObject)newOwnsY).eInverseAdd(this, SourcePackage.Y__TO_X, Y.class, msgs);
-			msgs = basicSetOwnsY(newOwnsY, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SourcePackage.X__OWNS_Y, newOwnsY, newOwnsY));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SourcePackage.X__OWNS_Y:
-				if (ownsY != null)
-					msgs = ((InternalEObject)ownsY).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SourcePackage.X__OWNS_Y, null, msgs);
-				return basicSetOwnsY((Y)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnsY()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -168,7 +140,7 @@ public class XImpl extends MinimalEObjectImpl.Container implements X {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SourcePackage.X__OWNS_Y:
-				return basicSetOwnsY(null, msgs);
+				return ((InternalEList<?>)getOwnsY()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -194,6 +166,7 @@ public class XImpl extends MinimalEObjectImpl.Container implements X {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -201,7 +174,8 @@ public class XImpl extends MinimalEObjectImpl.Container implements X {
 				setIsA1((Boolean)newValue);
 				return;
 			case SourcePackage.X__OWNS_Y:
-				setOwnsY((Y)newValue);
+				getOwnsY().clear();
+				getOwnsY().addAll((Collection<? extends Y>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,7 +193,7 @@ public class XImpl extends MinimalEObjectImpl.Container implements X {
 				setIsA1(IS_A1_EDEFAULT);
 				return;
 			case SourcePackage.X__OWNS_Y:
-				setOwnsY((Y)null);
+				getOwnsY().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -236,7 +210,7 @@ public class XImpl extends MinimalEObjectImpl.Container implements X {
 			case SourcePackage.X__IS_A1:
 				return isA1 != IS_A1_EDEFAULT;
 			case SourcePackage.X__OWNS_Y:
-				return ownsY != null;
+				return ownsY != null && !ownsY.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

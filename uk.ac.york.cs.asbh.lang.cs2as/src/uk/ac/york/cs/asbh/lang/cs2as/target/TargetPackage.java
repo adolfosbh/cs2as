@@ -95,7 +95,7 @@ public interface TargetPackage extends EPackage {
 	int A1 = 1;
 
 	/**
-	 * The feature id for the '<em><b>Owns B</b></em>' containment reference.
+	 * The feature id for the '<em><b>Owns B</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,7 +132,7 @@ public interface TargetPackage extends EPackage {
 	int A2 = 2;
 
 	/**
-	 * The feature id for the '<em><b>Owns C</b></em>' containment reference.
+	 * The feature id for the '<em><b>Owns C</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -159,6 +159,43 @@ public interface TargetPackage extends EPackage {
 	int A2_OPERATION_COUNT = A_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamedElementImpl <em>Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamedElementImpl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getNamedElement()
+	 * @generated
+	 */
+	int NAMED_ELEMENT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.BImpl <em>B</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,13 +206,22 @@ public interface TargetPackage extends EPackage {
 	int B = 3;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int B__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>To A1</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int B__TO_A1 = 0;
+	int B__TO_A1 = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Owns D</b></em>' containment reference.
@@ -184,16 +230,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__OWNS_D = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int B__NAME = 2;
+	int B__OWNS_D = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>B</em>' class.
@@ -202,7 +239,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B_FEATURE_COUNT = 3;
+	int B_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>B</em>' class.
@@ -211,7 +248,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B_OPERATION_COUNT = 0;
+	int B_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.CImpl <em>C</em>}' class.
@@ -224,13 +261,22 @@ public interface TargetPackage extends EPackage {
 	int C = 4;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int C__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>To A2</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int C__TO_A2 = 0;
+	int C__TO_A2 = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Owns D</b></em>' containment reference.
@@ -239,16 +285,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__OWNS_D = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int C__NAME = 2;
+	int C__OWNS_D = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>C</em>' class.
@@ -257,7 +294,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C_FEATURE_COUNT = 3;
+	int C_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>C</em>' class.
@@ -266,7 +303,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C_OPERATION_COUNT = 0;
+	int C_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.DImpl <em>D</em>}' class.
@@ -279,13 +316,22 @@ public interface TargetPackage extends EPackage {
 	int D = 5;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int D__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>To C</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int D__TO_C = 0;
+	int D__TO_C = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To B</b></em>' container reference.
@@ -294,7 +340,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D__TO_B = 1;
+	int D__TO_B = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>To A</b></em>' reference.
@@ -303,7 +349,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D__TO_A = 2;
+	int D__TO_A = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Refs B</b></em>' reference.
@@ -312,16 +358,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D__REFS_B = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int D__NAME = 4;
+	int D__REFS_B = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Refs C</b></em>' reference.
@@ -330,7 +367,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D__REFS_C = 5;
+	int D__REFS_C = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>D</em>' class.
@@ -339,7 +376,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D_FEATURE_COUNT = 6;
+	int D_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>D</em>' class.
@@ -348,7 +385,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D_OPERATION_COUNT = 0;
+	int D_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -410,10 +447,10 @@ public interface TargetPackage extends EPackage {
 	EClass getA1();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.york.cs.asbh.lang.cs2as.target.A1#getOwnsB <em>Owns B</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.asbh.lang.cs2as.target.A1#getOwnsB <em>Owns B</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Owns B</em>'.
+	 * @return the meta object for the containment reference list '<em>Owns B</em>'.
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.A1#getOwnsB()
 	 * @see #getA1()
 	 * @generated
@@ -431,10 +468,10 @@ public interface TargetPackage extends EPackage {
 	EClass getA2();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.york.cs.asbh.lang.cs2as.target.A2#getOwnsC <em>Owns C</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.asbh.lang.cs2as.target.A2#getOwnsC <em>Owns C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Owns C</em>'.
+	 * @return the meta object for the containment reference list '<em>Owns C</em>'.
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.A2#getOwnsC()
 	 * @see #getA2()
 	 * @generated
@@ -474,17 +511,6 @@ public interface TargetPackage extends EPackage {
 	EReference getB_OwnsD();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.york.cs.asbh.lang.cs2as.target.B#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.B#getName()
-	 * @see #getB()
-	 * @generated
-	 */
-	EAttribute getB_Name();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.C <em>C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -515,17 +541,6 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getC_OwnsD();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.york.cs.asbh.lang.cs2as.target.C#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.C#getName()
-	 * @see #getC()
-	 * @generated
-	 */
-	EAttribute getC_Name();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.D <em>D</em>}'.
@@ -582,17 +597,6 @@ public interface TargetPackage extends EPackage {
 	EReference getD_RefsB();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.york.cs.asbh.lang.cs2as.target.D#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.D#getName()
-	 * @see #getD()
-	 * @generated
-	 */
-	EAttribute getD_Name();
-
-	/**
 	 * Returns the meta object for the reference '{@link uk.ac.york.cs.asbh.lang.cs2as.target.D#getRefsC <em>Refs C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -623,6 +627,27 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoot_OwnedA();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Named Element</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement
+	 * @generated
+	 */
+	EClass getNamedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement#getName()
+	 * @see #getNamedElement()
+	 * @generated
+	 */
+	EAttribute getNamedElement_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -668,7 +693,7 @@ public interface TargetPackage extends EPackage {
 		EClass A1 = eINSTANCE.getA1();
 
 		/**
-		 * The meta object literal for the '<em><b>Owns B</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Owns B</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -686,7 +711,7 @@ public interface TargetPackage extends EPackage {
 		EClass A2 = eINSTANCE.getA2();
 
 		/**
-		 * The meta object literal for the '<em><b>Owns C</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Owns C</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -720,14 +745,6 @@ public interface TargetPackage extends EPackage {
 		EReference B__OWNS_D = eINSTANCE.getB_OwnsD();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute B__NAME = eINSTANCE.getB_Name();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.CImpl <em>C</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -752,14 +769,6 @@ public interface TargetPackage extends EPackage {
 		 * @generated
 		 */
 		EReference C__OWNS_D = eINSTANCE.getC_OwnsD();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute C__NAME = eINSTANCE.getC_Name();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.DImpl <em>D</em>}' class.
@@ -804,14 +813,6 @@ public interface TargetPackage extends EPackage {
 		EReference D__REFS_B = eINSTANCE.getD_RefsB();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute D__NAME = eINSTANCE.getD_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Refs C</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -836,6 +837,24 @@ public interface TargetPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOT__OWNED_A = eINSTANCE.getRoot_OwnedA();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamedElementImpl <em>Named Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamedElementImpl
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getNamedElement()
+		 * @generated
+		 */
+		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
 
 	}
 
