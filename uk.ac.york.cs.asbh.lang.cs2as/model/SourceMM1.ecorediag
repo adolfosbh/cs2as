@@ -75,6 +75,10 @@
   <children xmi:type="notation:Node" xmi:id="_JUHZCP4JEeO6SZ5AkELrbQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_JUIAEP4JEeO6SZ5AkELrbQ" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_JUIAEf4JEeO6SZ5AkELrbQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_GHge8CE7EeS2hNKHE5lWQw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="SourceMM1.ecore#//Z/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GHge8SE7EeS2hNKHE5lWQw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_JUIAEv4JEeO6SZ5AkELrbQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_JUIAE_4JEeO6SZ5AkELrbQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_JUIAFP4JEeO6SZ5AkELrbQ"/>

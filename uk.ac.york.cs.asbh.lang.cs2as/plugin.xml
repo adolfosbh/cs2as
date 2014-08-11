@@ -14,4 +14,12 @@
             genModel="model/SourceMM1.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TargetMM1 -->
+      <package
+            uri="http://ocldependencyanalysis/targetMM/1.0"
+            class="uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage"
+            genModel="model/TargetMM1.genmodel"/>
+   </extension>
+
 </plugin>

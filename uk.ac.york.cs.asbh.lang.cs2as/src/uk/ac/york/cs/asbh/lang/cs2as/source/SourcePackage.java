@@ -287,13 +287,22 @@ public interface SourcePackage extends EPackage {
 	int Z__TO_Y = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int Z__NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>Z</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int Z_FEATURE_COUNT = 1;
+	int Z_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Z</em>' class.
@@ -459,6 +468,17 @@ public interface SourcePackage extends EPackage {
 	EReference getZ_ToY();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.york.cs.asbh.lang.cs2as.source.Z#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.Z#getName()
+	 * @see #getZ()
+	 * @generated
+	 */
+	EAttribute getZ_Name();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.Root <em>Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -599,6 +619,14 @@ public interface SourcePackage extends EPackage {
 		 * @generated
 		 */
 		EReference Z__TO_Y = eINSTANCE.getZ_ToY();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute Z__NAME = eINSTANCE.getZ_Name();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.RootImpl <em>Root</em>}' class.

@@ -227,6 +227,15 @@ public class SourcePackageImpl extends EPackageImpl implements SourcePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getZ_Name() {
+		return (EAttribute)zEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoot() {
 		return rootEClass;
 	}
@@ -283,6 +292,7 @@ public class SourcePackageImpl extends EPackageImpl implements SourcePackage {
 
 		zEClass = createEClass(Z);
 		createEReference(zEClass, Z__TO_Y);
+		createEAttribute(zEClass, Z__NAME);
 
 		rootEClass = createEClass(ROOT);
 		createEReference(rootEClass, ROOT__OWNED_X);
@@ -335,6 +345,7 @@ public class SourcePackageImpl extends EPackageImpl implements SourcePackage {
 
 		initEClass(zEClass, uk.ac.york.cs.asbh.lang.cs2as.source.Z.class, "Z", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getZ_ToY(), this.getY(), this.getY_OwnsZ(), "toY", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.source.Z.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getZ_Name(), ecorePackage.getEString(), "name", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.source.Z.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoot_OwnedX(), this.getX(), null, "ownedX", null, 0, -1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

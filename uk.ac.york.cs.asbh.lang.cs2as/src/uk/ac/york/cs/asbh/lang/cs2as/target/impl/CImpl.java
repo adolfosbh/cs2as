@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.york.cs.asbh.lang.cs2as.source.impl;
+package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -13,25 +13,37 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Y;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Z;
+import uk.ac.york.cs.asbh.lang.cs2as.target.A2;
+import uk.ac.york.cs.asbh.lang.cs2as.target.C;
+import uk.ac.york.cs.asbh.lang.cs2as.target.D;
+import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Z</b></em>'.
+ * An implementation of the model object '<em><b>C</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.ZImpl#getToY <em>To Y</em>}</li>
- *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.ZImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.CImpl#getToA2 <em>To A2</em>}</li>
+ *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.CImpl#getOwnsD <em>Owns D</em>}</li>
+ *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.CImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ZImpl extends MinimalEObjectImpl.Container implements Z {
+public class CImpl extends MinimalEObjectImpl.Container implements C {
+	/**
+	 * The cached value of the '{@link #getOwnsD() <em>Owns D</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnsD()
+	 * @generated
+	 * @ordered
+	 */
+	protected D ownsD;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -41,6 +53,7 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -56,7 +69,7 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ZImpl() {
+	protected CImpl() {
 		super();
 	}
 
@@ -67,7 +80,7 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SourcePackage.Literals.Z;
+		return TargetPackage.Literals.C;
 	}
 
 	/**
@@ -75,9 +88,9 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Y getToY() {
-		if (eContainerFeatureID() != SourcePackage.Z__TO_Y) return null;
-		return (Y)eInternalContainer();
+	public A2 getToA2() {
+		if (eContainerFeatureID() != TargetPackage.C__TO_A2) return null;
+		return (A2)eInternalContainer();
 	}
 
 	/**
@@ -85,8 +98,8 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetToY(Y newToY, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newToY, SourcePackage.Z__TO_Y, msgs);
+	public NotificationChain basicSetToA2(A2 newToA2, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newToA2, TargetPackage.C__TO_A2, msgs);
 		return msgs;
 	}
 
@@ -95,20 +108,63 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToY(Y newToY) {
-		if (newToY != eInternalContainer() || (eContainerFeatureID() != SourcePackage.Z__TO_Y && newToY != null)) {
-			if (EcoreUtil.isAncestor(this, newToY))
+	public void setToA2(A2 newToA2) {
+		if (newToA2 != eInternalContainer() || (eContainerFeatureID() != TargetPackage.C__TO_A2 && newToA2 != null)) {
+			if (EcoreUtil.isAncestor(this, newToA2))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newToY != null)
-				msgs = ((InternalEObject)newToY).eInverseAdd(this, SourcePackage.Y__OWNS_Z, Y.class, msgs);
-			msgs = basicSetToY(newToY, msgs);
+			if (newToA2 != null)
+				msgs = ((InternalEObject)newToA2).eInverseAdd(this, TargetPackage.A2__OWNS_C, A2.class, msgs);
+			msgs = basicSetToA2(newToA2, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SourcePackage.Z__TO_Y, newToY, newToY));
+			eNotify(new ENotificationImpl(this, Notification.SET, TargetPackage.C__TO_A2, newToA2, newToA2));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public D getOwnsD() {
+		return ownsD;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOwnsD(D newOwnsD, NotificationChain msgs) {
+		D oldOwnsD = ownsD;
+		ownsD = newOwnsD;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TargetPackage.C__OWNS_D, oldOwnsD, newOwnsD);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOwnsD(D newOwnsD) {
+		if (newOwnsD != ownsD) {
+			NotificationChain msgs = null;
+			if (ownsD != null)
+				msgs = ((InternalEObject)ownsD).eInverseRemove(this, TargetPackage.D__TO_C, D.class, msgs);
+			if (newOwnsD != null)
+				msgs = ((InternalEObject)newOwnsD).eInverseAdd(this, TargetPackage.D__TO_C, D.class, msgs);
+			msgs = basicSetOwnsD(newOwnsD, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TargetPackage.C__OWNS_D, newOwnsD, newOwnsD));
 	}
 
 	/**
@@ -129,7 +185,7 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SourcePackage.Z__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TargetPackage.C__NAME, oldName, name));
 	}
 
 	/**
@@ -140,10 +196,14 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SourcePackage.Z__TO_Y:
+			case TargetPackage.C__TO_A2:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetToY((Y)otherEnd, msgs);
+				return basicSetToA2((A2)otherEnd, msgs);
+			case TargetPackage.C__OWNS_D:
+				if (ownsD != null)
+					msgs = ((InternalEObject)ownsD).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TargetPackage.C__OWNS_D, null, msgs);
+				return basicSetOwnsD((D)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -156,8 +216,10 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SourcePackage.Z__TO_Y:
-				return basicSetToY(null, msgs);
+			case TargetPackage.C__TO_A2:
+				return basicSetToA2(null, msgs);
+			case TargetPackage.C__OWNS_D:
+				return basicSetOwnsD(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -170,8 +232,8 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case SourcePackage.Z__TO_Y:
-				return eInternalContainer().eInverseRemove(this, SourcePackage.Y__OWNS_Z, Y.class, msgs);
+			case TargetPackage.C__TO_A2:
+				return eInternalContainer().eInverseRemove(this, TargetPackage.A2__OWNS_C, A2.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -184,9 +246,11 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SourcePackage.Z__TO_Y:
-				return getToY();
-			case SourcePackage.Z__NAME:
+			case TargetPackage.C__TO_A2:
+				return getToA2();
+			case TargetPackage.C__OWNS_D:
+				return getOwnsD();
+			case TargetPackage.C__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -200,10 +264,13 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SourcePackage.Z__TO_Y:
-				setToY((Y)newValue);
+			case TargetPackage.C__TO_A2:
+				setToA2((A2)newValue);
 				return;
-			case SourcePackage.Z__NAME:
+			case TargetPackage.C__OWNS_D:
+				setOwnsD((D)newValue);
+				return;
+			case TargetPackage.C__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -218,10 +285,13 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SourcePackage.Z__TO_Y:
-				setToY((Y)null);
+			case TargetPackage.C__TO_A2:
+				setToA2((A2)null);
 				return;
-			case SourcePackage.Z__NAME:
+			case TargetPackage.C__OWNS_D:
+				setOwnsD((D)null);
+				return;
+			case TargetPackage.C__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -236,9 +306,11 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SourcePackage.Z__TO_Y:
-				return getToY() != null;
-			case SourcePackage.Z__NAME:
+			case TargetPackage.C__TO_A2:
+				return getToA2() != null;
+			case TargetPackage.C__OWNS_D:
+				return ownsD != null;
+			case TargetPackage.C__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -260,4 +332,4 @@ public class ZImpl extends MinimalEObjectImpl.Container implements Z {
 		return result.toString();
 	}
 
-} //ZImpl
+} //CImpl

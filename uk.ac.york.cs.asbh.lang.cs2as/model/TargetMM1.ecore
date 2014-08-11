@@ -14,15 +14,24 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="toA1" eType="#//A1" eOpposite="#//A1/ownsB"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownsD" eType="#//D" containment="true"
         eOpposite="#//D/toB"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="C">
     <eStructuralFeatures xsi:type="ecore:EReference" name="toA2" eType="#//A2" eOpposite="#//A2/ownsC"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownsD" eType="#//D" containment="true"
         eOpposite="#//D/toC"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="D">
     <eStructuralFeatures xsi:type="ecore:EReference" name="toC" eType="#//C" eOpposite="#//C/ownsD"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toB" eType="#//B" eOpposite="#//B/ownsD"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toA" lowerBound="1" eType="#//A"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refsB" eType="#//B"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refsC" eType="#//C"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedA" upperBound="-1"
+        eType="#//A" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
