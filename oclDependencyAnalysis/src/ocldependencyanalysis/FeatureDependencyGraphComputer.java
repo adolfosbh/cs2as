@@ -18,6 +18,7 @@ import org.eclipse.ocl.examples.pivot.OperationCallExp;
 import org.eclipse.ocl.examples.pivot.Property;
 import org.eclipse.ocl.examples.pivot.PropertyCallExp;
 import org.eclipse.ocl.examples.pivot.Root;
+import org.eclipse.ocl.examples.pivot.Type;
 
 /**
  * <p>
@@ -208,7 +209,7 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 	 * @param property
 	 * @return
 	 */
-	final protected FeatureObj createFeatureObj(Class context, Feature property) {
+	protected FeatureObj createFeatureObj(Type context, Feature property) {
 		return new FeatureObj(context, property);
 	}
 	
@@ -222,7 +223,21 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 	 * @param isComputedOpposite
 	 * @return
 	 */
-	protected FeatureObj createOppositePropertyObj(FeatureObj featureObj, Class context, Property property) {
+	protected FeatureObj createOppositePropertyObj(FeatureObj featureObj, Type context, Property property) {
 		return new OppositePropertyObj(featureObj, context, property);
+	}
+
+	
+	@Override
+	protected void processLookupCall(IGraph<FeatureObj> dependencyGraph,
+			OperationCallExp lookupOpCall) {		
+		
+		FeatureObj from = getTargetFeature(lookupOpCall);
+		
+		Type asType =  lookupOpCall.getType();
+		for (Type csType : getCSTypes(asType)) {
+			Operation astOperation = getAstOperation(csType); // the CS type ast() operation which creates the required AS type 
+			dependencyGraph.addEdge(from, createFeatureObj(csType, astOperation));
+		}
 	}
 }

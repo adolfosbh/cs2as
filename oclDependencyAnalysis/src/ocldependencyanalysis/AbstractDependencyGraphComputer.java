@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.examples.domain.elements.DomainOperation;
 import org.eclipse.ocl.examples.domain.elements.FeatureFilter;
 import org.eclipse.ocl.examples.pivot.Class;
+import org.eclipse.ocl.examples.pivot.ConstructorExp;
 import org.eclipse.ocl.examples.pivot.Element;
 import org.eclipse.ocl.examples.pivot.Operation;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
@@ -29,14 +30,15 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	
 	private Map<Type , Set<Class>> type2instantiableSubClasses = new HashMap<Type, Set<Class>>();
 	
+	private Map<Type , Set<Type>> asType2csTypes = new HashMap<Type, Set<Type>>();
+	
 	private MetaModelManager mManager;
 		
 	private void initializeMaps(Resource resource) {
 		Root root = (Root) resource.getContents().get(0) ;
-		// TODO access to the real packages and types.
-		// Be careful with 
 		for (Package aPackage : root.getNestedPackage()) {
 			computeType2SuperTypes(aPackage);
+			computeAsType2CsType(aPackage);
 		}
 		for (Type type : type2superTypes.keySet()) {
 			computeType2InstantiableClasses(type);
@@ -90,6 +92,26 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		}
 	}
 	
+	private void computeAsType2CsType(Package p) {
+		for (Type type : p.getOwnedType()) {
+			Operation astOp = getAstOperation(type);
+			if (astOp != null) {
+				for (TreeIterator<EObject> tit = astOp.eAllContents(); tit.hasNext();) {
+					EObject next = tit.next();
+					if (next instanceof ConstructorExp) {					
+						Type asType = ((ConstructorExp)next).getType();
+						Set<Type> csTypes = asType2csTypes.get(asType);
+						if (csTypes == null) {
+							csTypes = new HashSet<Type>();
+							asType2csTypes.put(asType, csTypes);
+						}
+						csTypes.add(type);
+						tit.prune(); // Don't need to explore children
+					}
+				}	
+			}
+		}
+	}
 	public IGraph<C> computeDependencyGraph (Resource pivotResource) {
 		
 		assert(pivotResource.getContents().get(0) instanceof Root);
@@ -102,26 +124,43 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		
 		for (TreeIterator<EObject> tit = pivotResource.getAllContents(); tit.hasNext(); ) {
 			EObject next = tit.next();
-			if (astCall(next)) {
+			if (isAstCall(next)) {
 				processAstCall(dependencyGraph, (OperationCallExp) next);
+			} else if (isLookupCall(next)) {
+				processLookupCall(dependencyGraph, (OperationCallExp) next);
 			}
 		}
 		
 		postprocess(pivotResource, dependencyGraph);
 		return dependencyGraph;
 	}
-	
-	protected boolean astCall(EObject element) {
+
+
+	protected boolean isAstCall(EObject element) {
 		if (element instanceof OperationCallExp) {
-			Operation op = ((OperationCallExp)element).getReferredOperation();
-			if (op != null) {
-				return "ast".equals(op.getName());
-			}
+			return isAstOp(((OperationCallExp)element).getReferredOperation());
 		}
 		return false;
 	}
 	
-	protected Class getElementContext(Element element) {
+	protected boolean isAstOp(Operation op) {
+		return op == null ? false : "ast".equals(op.getName());
+	}
+	
+	protected boolean isLookupCall(EObject element) {
+		if (element instanceof OperationCallExp) {
+			return isLookupOp(((OperationCallExp)element).getReferredOperation());
+		}
+		return false;
+	}
+	
+	protected boolean isLookupOp(Operation op) {
+		if (op == null) return false;
+		String opName = op.getName();
+		return opName == null ? false : opName.startsWith("lookup");
+	}
+	
+	protected Class getElementContext(Element element) { // FIXME this should return/consider Type rather than just Class
 		EObject container = element.eContainer();
 		while (container != null) {
 			if (container instanceof Class) {
@@ -163,7 +202,16 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return type2superTypes.get(primaryT1).contains(primaryT2);
 	}
 	
-	protected Operation getAstOperation(Class opAstClass) {
+	/**
+	 * @param asType
+	 * @return all the CS types which may create the provided AS type
+	 */
+	protected Set<Type> getCSTypes(Type asType) {
+		Type asPrimaryType = mManager.getPrimaryType(asType);
+		return asType2csTypes.get(asPrimaryType);
+	}
+	
+	protected Operation getAstOperation(Type opAstClass) {
 		Operation bestOp=null;	// The best op will be the one owned by the type the 
 								// closer to opAstClass in the class hierarchy 
 		// TODO move to mManager ?
@@ -177,13 +225,10 @@ public abstract class AbstractDependencyGraphComputer<C> {
 					if (typeIsSupertypeOf(candidateOp.getOwningType(), bestOp.getOwningType())) {
 						bestOp = candidateOp;
 					}
-				} 
+				}
 			}
 		}
-		if (bestOp != null) {
-			return bestOp;
-		} 
-		throw new RuntimeException("I should have found the ast operation");
+		return bestOp;
 	}
 	
 	
@@ -203,6 +248,8 @@ public abstract class AbstractDependencyGraphComputer<C> {
 //	}
 	
 	abstract protected void processAstCall(IGraph<C> dependencyGraph, OperationCallExp astOpCall);
+	
+	abstract protected void processLookupCall(IGraph<C> dependencyGraph, OperationCallExp lookupOpCall);
 	
 	/**
 	 * Method called prior to process the resource to look for 

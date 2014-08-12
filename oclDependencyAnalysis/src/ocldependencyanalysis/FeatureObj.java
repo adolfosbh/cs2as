@@ -1,22 +1,22 @@
 package ocldependencyanalysis;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.Feature;
 import org.eclipse.ocl.examples.pivot.NamedElement;
+import org.eclipse.ocl.examples.pivot.Type;
 
 public class FeatureObj {
 	private static final String NAMESPACE_SEP = "::";
 	private static final String EMPTY_STRING = "";
 	private static final String LEFT_BRACKET = " [";
 	private static final String RIGHT_BRACKET = "]";
-	private Class context;
+	private Type context;
 	private Feature feature;
 	/**
 	 * @param context the source class context in which this property is being used
 	 * @param feature a feature of the dependency graph 
 	 */
-	public FeatureObj(Class context, Feature property) {
+	public FeatureObj(Type context, Feature property) {
 		this.context = context;
 		this.feature = property;
 	}
@@ -30,7 +30,7 @@ public class FeatureObj {
 				RIGHT_BRACKET; 
 	}
 	
-	public Class getContext() {
+	public Type getContext() {
 		return context;
 	}
 	

@@ -10,7 +10,7 @@ import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graph.INode;
 import ocldependencyanalysis.graphml.IElementTypeProvider;
 
-import org.eclipse.ocl.examples.pivot.Class;
+import org.eclipse.ocl.examples.pivot.Type;
 import org.eclipse.qvtd.build.etl.graph.EdgeType;
 import org.eclipse.qvtd.build.etl.graph.ElementType;
 import org.eclipse.qvtd.build.etl.graph.NodeType;
@@ -25,15 +25,15 @@ import org.eclipse.qvtd.build.etl.graphmltypes.ShapeType;
  * @author asbh500
  *
  */
-public class ClassDependenciesTypeProvider implements IElementTypeProvider<Class>{
+public class ClassDependenciesTypeProvider implements IElementTypeProvider<Type>{
 
-	Set<INode<Class>> cycleNodes = new HashSet<INode<Class>>();
-	Set<IEdge<Class>> cycleEdges = new HashSet<IEdge<Class>>();
+	Set<INode<Type>> cycleNodes = new HashSet<INode<Type>>();
+	Set<IEdge<Type>> cycleEdges = new HashSet<IEdge<Type>>();
 	private List<ElementType> elementTypes;	
 	private GraphMLNodeType cycleNodeType;
 	private GraphMLEdgeType cycleEdgeType;
 	
-	public ClassDependenciesTypeProvider(IGraph<Class> graph) {
+	public ClassDependenciesTypeProvider(IGraph<Type> graph) {
 		preComputeCycleNodesAndEdges(graph);
 		elementTypes = new ArrayList<ElementType>();
 		cycleNodeType = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
@@ -53,8 +53,8 @@ public class ClassDependenciesTypeProvider implements IElementTypeProvider<Class
 	
 		
 	
-	private void preComputeCycleNodesAndEdges(IGraph<Class> graph) {
-		for (IGraph<Class> cycle : graph.getCycles()) {
+	private void preComputeCycleNodesAndEdges(IGraph<Type> graph) {
+		for (IGraph<Type> cycle : graph.getCycles()) {
 			cycleNodes.addAll(cycle.getNodes());
 			cycleEdges.addAll(cycle.getEdges());
 		}
@@ -66,12 +66,12 @@ public class ClassDependenciesTypeProvider implements IElementTypeProvider<Class
 	}
 
 	@Override
-	public NodeType getNodeType(INode<Class> node) {
+	public NodeType getNodeType(INode<Type> node) {
 		return cycleNodes.contains(node) ? cycleNodeType : null;
 	}
 
 	@Override
-	public EdgeType getEdgeType(IEdge<Class> edge) {
+	public EdgeType getEdgeType(IEdge<Type> edge) {
 		return cycleEdges.contains(edge) ? cycleEdgeType : null;
 	}
 

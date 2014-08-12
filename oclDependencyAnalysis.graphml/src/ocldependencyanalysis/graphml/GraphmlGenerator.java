@@ -20,7 +20,7 @@ import org.eclipse.epsilon.emc.emf.InMemoryEmfModel;
 import org.eclipse.epsilon.eol.EolModule;
 import org.eclipse.epsilon.eol.IEolExecutableModule;
 import org.eclipse.epsilon.eol.models.IModel;
-import org.eclipse.ocl.examples.pivot.Class;
+import org.eclipse.ocl.examples.pivot.Type;
 import org.eclipse.qvtd.build.etl.graph.Graph;
 import org.eclipse.qvtd.build.etl.graph.GraphPackage;
 
@@ -34,9 +34,9 @@ public class GraphmlGenerator {
 			return;
 		}
 		try {
-			if ("CLASS".equalsIgnoreCase(args[0]))
+			if ("TYPE".equalsIgnoreCase(args[0]))
 				generateClassDependencyGraphmlFile(URI.createURI(args[1]), args[2]);
-			else if ("FEATURES".equalsIgnoreCase(args[0]))
+			else if ("FEATURE".equalsIgnoreCase(args[0]))
 				generateFeaturesDependencyGraphmlFile(URI.createURI(args[1]), args[2]);
 			else 
 				printUsage();
@@ -69,7 +69,7 @@ public class GraphmlGenerator {
 	 */
 	public static void generateClassDependencyGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath ) throws Exception  {
 		// URI uri = URI.createURI("platform:/resource/oclDependencyAnalysis.tests/src/ocldependencyanalysis/tests/SMM1d.ocl");
-		IGraph<Class> graph = DependencyAnalysis.createClassDependencyGraph(inputOclDocUri);
+		IGraph<Type> graph = DependencyAnalysis.createClassDependencyGraph(inputOclDocUri);
 				
 		System.out.println(graph.toString());
 		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new ClassDependenciesTypeProvider(graph));
@@ -117,7 +117,7 @@ public class GraphmlGenerator {
 	
 	private static final void printUsage() {
 		System.out.println("Program args:");
-		System.out.println("    1. CLASS (for class dependencies graph) or FEATURES (for features dependencies graph)");
+		System.out.println("    1. TYPE (for class dependencies graph) or FEATURE (for features dependencies graph)");
 		System.out.println("    2. input Complete OCL document URI. e.g. file:/C:/temp/myOCLdocument.ocl");
 		System.out.println("    3. output Graphml model path. e.g C:/temp/myGraph.graphml");
 	}

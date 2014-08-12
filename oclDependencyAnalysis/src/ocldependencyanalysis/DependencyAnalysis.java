@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.ocl.examples.pivot.OCL;
-import org.eclipse.ocl.examples.pivot.Class;
+import org.eclipse.ocl.examples.pivot.Type;
 import org.eclipse.ocl.examples.pivot.utilities.PivotEnvironmentFactory;
 import org.eclipse.ocl.examples.xtext.completeocl.CompleteOCLStandaloneSetup;
 
@@ -32,7 +32,7 @@ public class DependencyAnalysis {
 		return ocl.parse(oclDocumentURI);
 	}
 
-	public static IGraph<Class> createClassDependencyGraph(URI oclDocumentURI) {
+	public static IGraph<Type> createClassDependencyGraph(URI oclDocumentURI) {
 			
 		Resource pivotResource = getPivotResource(oclDocumentURI);
 		return new ClassDependencyGraphComputer().computeDependencyGraph(pivotResource);
@@ -56,19 +56,33 @@ public class DependencyAnalysis {
 	
 	public static void main(String[] args) {
 		
-		if (args.length != 1) {
-			System.out.println("Incorrect program arguments.\n"
-								+ "Usage:\n"+
-							"\tjava Analysis <Complete-OCL document URI>\n"
-							+ "Example:\n"
-							+ "\tjava Analysis platform:/resource/oclDependencyAnalysis/example/Source2Target.ocl");
+		if (args.length != 2) {
+			printUsage();
 			return;
 		}
 		
-		System.out.println("Starting...");						
-		URI uri = URI.createURI(args[0]); // OCL Document URI
-		IGraph<?> depedencyGraph = createClassDependencyGraph(uri);
-		printGraphAndCycles(depedencyGraph);
-		System.out.println("...Finished");
+		try {
+			if ("TYPE".equalsIgnoreCase(args[0])) {
+				System.out.println("Starting...");
+				printGraphAndCycles(createClassDependencyGraph(URI.createURI(args[1])));
+				System.out.println("...Finished");
+			}				
+			else if ("FEATURE".equalsIgnoreCase(args[0])) {
+				System.out.println("Starting...");
+				printGraphAndCycles(createFeatureDependencyGraph(URI.createURI(args[1])));
+				System.out.println("...Finished");
+			}
+			else { 
+				printUsage();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static final void printUsage() {
+		System.out.println("Program args:");
+		System.out.println("    1. TYPE (for type dependencies graph) or FEATURE (for feature dependencies graph)");
+		System.out.println("    2. input Complete OCL document URI. e.g. platform:/resource/oclDependencyAnalysis/example/Source2Target.ocl");
 	}
 }

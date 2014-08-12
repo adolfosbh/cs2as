@@ -7,6 +7,7 @@ import ocldependencyanalysis.graph.IGraph;
 import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
 import org.eclipse.ocl.examples.pivot.Root;
+import org.eclipse.ocl.examples.pivot.Type;
 
 /**
  * <p>
@@ -41,25 +42,42 @@ import org.eclipse.ocl.examples.pivot.Root;
  *  
  * @author asbh500
  */
-public class ClassDependencyGraphComputer extends AbstractDependencyGraphComputer<Class>{
+public class ClassDependencyGraphComputer extends AbstractDependencyGraphComputer<Type>{
 
 	@Override
-	protected void processAstCall(IGraph<Class> dependencyGraph,
+	protected void processAstCall(IGraph<Type> dependencyGraph,
 			OperationCallExp astOpCall) {
-		org.eclipse.ocl.examples.pivot.Class to = (org.eclipse.ocl.examples.pivot.Class) astOpCall.getSource().getType();
+		Type to =  astOpCall.getSource().getType();
 		// if (isElementRefCS(to)) {
-		org.eclipse.ocl.examples.pivot.Class from = getElementContext(astOpCall);
-		if (! to.isAbstract()) {	
+		Class from = getElementContext(astOpCall);
+		if (to instanceof Class) {
+			Class toClass = (Class) to; 
+			if (! toClass.isAbstract()) { 
+				dependencyGraph.addEdge(from, to);
+			}
+			
+			Set<Class> instantiableSubclasses = getInstantiableSubclasses(to);
+			if (instantiableSubclasses != null) {
+				for (Class subType : instantiableSubclasses) {
+					dependencyGraph.addEdge(from, subType);
+				}
+			}	
+			dependencyGraph.addEdge(from, to);
+		} else { 
 			dependencyGraph.addEdge(from, to);
 		}
-		Set<Class> instantiableSubclasses = getInstantiableSubclasses(to);
-		if (instantiableSubclasses != null) {
-			for (Class subType : instantiableSubclasses) {
-				dependencyGraph.addEdge(from, subType);
-			}
-		}
-		dependencyGraph.addEdge(from, to);
 		// }
 	}	
+	
+	@Override
+	protected void processLookupCall(IGraph<Type> dependencyGraph,
+			OperationCallExp lookupOpCall) {
+		
+		Type asType =  lookupOpCall.getType();
+		Class from = getElementContext(lookupOpCall);
+		for (Type csType : getCSTypes(asType)) {
+			dependencyGraph.addEdge(from, csType);
+		}
+	}
 	
 }
