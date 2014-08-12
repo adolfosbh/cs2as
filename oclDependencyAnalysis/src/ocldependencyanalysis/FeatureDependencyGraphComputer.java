@@ -112,40 +112,30 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 	 * @param dependencyGraph
 	 */
 	private void createDependenciesOnFromFeatureObject(OperationCallExp astCall, FeatureObj fromFeatureObj,
-			IGraph<FeatureObj> dependencyGraph) {
-		
-		Property opposite = getOppositeProperty(fromFeatureObj);
-		
-		// The class of the source ast call, i.e. the CS element owning the ast operation
-		Class astCallSourceClass = (Class) astCall.getSource().getType();
-		Class astCallContextClass = getElementContext(astCall);
-		Operation astCallSourceClassAstOp = astCall.getReferredOperation();		
-		PropertyCallExp propCall = getContainingPropertyCallExp(astCall);
-		
+			IGraph<FeatureObj> dependencyGraph) {		
 		
 		// There is always a dependency between the fromFeatureObj and the the astCallContextClass ast operation
-		dependencyGraph.addEdge(fromFeatureObj, createFeatureObj(astCallContextClass, getAstOperation(astCallContextClass)));
+		createDependencyWithAstCallContext(astCall, fromFeatureObj, dependencyGraph);
 		
+		// The class of the source ast call, i.e. the CS element owning the ast operation // FIXME Type should considered rather than type
+		Class astCallSourceType = (Class) astCall.getSource().getType();		
+		Operation astCallSourceClassAstOp = astCall.getReferredOperation();		
+		PropertyCallExp propCall = getContainingPropertyCallExp(astCall);
+
 		
 		// if the operation call exp is not contained in any property call exp 
 		// we will depend on ast operation of the astCall source Class   
 		if (propCall == null) {
-			if (!astCallSourceClass.isAbstract()) {
-				dependencyGraph.addEdge(fromFeatureObj, createFeatureObj(astCallSourceClass, astCallSourceClassAstOp));
-				
-				if (opposite != null) { // FIXME refactor this add edge and the opposite one
-					dependencyGraph.addEdge(createOppositePropertyObj(fromFeatureObj, astCallSourceClass, opposite), fromFeatureObj);
-				}
+			if (!astCallSourceType.isAbstract()) {
+				dependencyGraph.addEdge(fromFeatureObj, createFeatureObj(astCallSourceType, astCallSourceClassAstOp));				
+				createDependencyWithOppositeProperty(fromFeatureObj, astCallSourceType, dependencyGraph);
 			}
 			// We need to consider subtypes of the 
-			Set<Class> instantiableSubclasses = getInstantiableSubclasses(astCallSourceClass);
+			Set<Class> instantiableSubclasses = getInstantiableSubclasses(astCallSourceType);
 			if (instantiableSubclasses != null) {
 				for (Class subType : instantiableSubclasses) {
 					dependencyGraph.addEdge(fromFeatureObj, createFeatureObj(subType,  getAstOperation(subType)));
-					if (opposite != null) {
-						dependencyGraph.addEdge(createOppositePropertyObj(fromFeatureObj, subType, opposite), fromFeatureObj);
-					}
-					
+					createDependencyWithOppositeProperty(fromFeatureObj, subType, dependencyGraph);
 				}
 			}
 		} else { 
@@ -153,19 +143,16 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 			// We look for the first containing PropertyCallExp of the ast call, which will 
 			// correspond with an AS property of a created AS element.
 			Property property = propCall.getReferredProperty();
-			if (!astCallSourceClass.isAbstract()) {
-				FeatureObj asFeatureObj = createFeatureObj(astCallSourceClass, property);
+			if (!astCallSourceType.isAbstract()) {
+				FeatureObj asFeatureObj = createFeatureObj(astCallSourceType, property);
 				// Dependency on the AS property in the context of the ast call source class...
 				dependencyGraph.addEdge(fromFeatureObj, asFeatureObj);
 				// ... and we create the dependency of that AS property and the ast() operation which 
 				// should create the corresponding AS element
-				dependencyGraph.addEdge(asFeatureObj, createFeatureObj(astCallSourceClass, astCallSourceClassAstOp));
-				if (opposite != null) {
-					dependencyGraph.addEdge(createOppositePropertyObj(fromFeatureObj, astCallSourceClass, opposite), 
-							fromFeatureObj);
-				}
+				dependencyGraph.addEdge(asFeatureObj, createFeatureObj(astCallSourceType, astCallSourceClassAstOp));
+				createDependencyWithOppositeProperty(fromFeatureObj, astCallSourceType, dependencyGraph);
 			}
-			Set<Class> instantiableSubclasses = getInstantiableSubclasses(astCallSourceClass);
+			Set<Class> instantiableSubclasses = getInstantiableSubclasses(astCallSourceType);
 			if (instantiableSubclasses != null) {
 				for (Class subType : instantiableSubclasses) {
 					
@@ -175,15 +162,30 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 					// ... and we create the dependency of that AS property and the ast() operation which 
 					// should create the corresponding AS element
 					dependencyGraph.addEdge(asFeatureObj, createFeatureObj(subType, getAstOperation(subType)));
-					// Dependency between 
-					if (opposite != null) {
-						dependencyGraph.addEdge(createOppositePropertyObj(fromFeatureObj, subType, opposite), fromFeatureObj);
-					}
+					
+					createDependencyWithOppositeProperty(fromFeatureObj, subType, dependencyGraph);
 				}
 			}
 		}
 	}
 
+	private void createDependencyWithAstCallContext(OperationCallExp astCall, FeatureObj fromFeatureObj,
+			IGraph<FeatureObj> dependencyGraph) {
+
+		Class astCallContextClass = getElementContext(astCall);
+		dependencyGraph.addEdge(fromFeatureObj, createFeatureObj(astCallContextClass, getAstOperation(astCallContextClass)));
+	}
+	
+	private void createDependencyWithOppositeProperty(FeatureObj fromFeatureObj, Type context, IGraph<FeatureObj> dependencyGraph) {
+		
+		Property opposite = getOppositeProperty(fromFeatureObj);
+		if (opposite != null) {
+			dependencyGraph.addEdge(createOppositePropertyObj(fromFeatureObj, context, opposite), 
+					fromFeatureObj);
+		}
+	}
+	
+	
 	private Property getOppositeProperty(FeatureObj featureObject) {
 	
 		Feature fromFeature = featureObject.getFeature();
@@ -218,9 +220,6 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 	 * 
 	 * Clients my override.
 	 * 
-	 * @param context
-	 * @param property
-	 * @param isComputedOpposite
 	 * @return
 	 */
 	protected FeatureObj createOppositePropertyObj(FeatureObj featureObj, Type context, Property property) {
@@ -233,6 +232,11 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 			OperationCallExp lookupOpCall) {		
 		
 		FeatureObj from = getTargetFeature(lookupOpCall);
+		
+		// There is always a dependency between the fromFeatureObj and the astCallContextClass ast operation
+		createDependencyWithAstCallContext(lookupOpCall, from, dependencyGraph);
+		
+		// createDependencyWithOppositeProperty(from, context, dependencyGraph);
 		
 		Type asType =  lookupOpCall.getType();
 		for (Type csType : getCSTypes(asType)) {

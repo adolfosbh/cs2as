@@ -1,12 +1,14 @@
 package ocldependencyanalysis;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.ocl.examples.pivot.CollectionType;
 import org.eclipse.ocl.examples.pivot.Feature;
 import org.eclipse.ocl.examples.pivot.NamedElement;
 import org.eclipse.ocl.examples.pivot.Type;
 
 public class FeatureObj {
 	private static final String NAMESPACE_SEP = "::";
+	private static final String TYPE_SEP = " : ";
 	private static final String EMPTY_STRING = "";
 	private static final String LEFT_BRACKET = " [";
 	private static final String RIGHT_BRACKET = "]";
@@ -22,11 +24,15 @@ public class FeatureObj {
 	}
 	
 	@Override
-	public String toString() {		
+	public String toString() {
+		Type fType = feature.getType();
+		fType = fType instanceof CollectionType ? ((CollectionType)fType).getElementType() : fType;
 		return context.getName() + 
 				LEFT_BRACKET +
 				getFeaturePrefix() +
 				feature.getName() +
+				TYPE_SEP +
+				fType.getName() +
 				RIGHT_BRACKET; 
 	}
 	
