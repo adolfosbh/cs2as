@@ -16,7 +16,7 @@
     <eOperations name="lookupC" eType="ecore:EClass TargetMM1.ecore#//C">
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="lookupB" eType="ecore:EClass TargetMM1.ecore#//D">
+    <eOperations name="lookupB" eType="ecore:EClass TargetMM1.ecore#//B">
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
   </eClassifiers>
