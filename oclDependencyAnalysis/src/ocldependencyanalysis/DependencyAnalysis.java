@@ -35,7 +35,7 @@ public class DependencyAnalysis {
 	public static IGraph<Type> createClassDependencyGraph(URI oclDocumentURI) {
 			
 		Resource pivotResource = getPivotResource(oclDocumentURI);
-		return new ClassDependencyGraphComputer().computeDependencyGraph(pivotResource);
+		return new TypeDependencyGraphComputer().computeDependencyGraph(pivotResource);
 	}
 	
 	public static IGraph<FeatureObj> createFeatureDependencyGraph(URI oclDocumentURI) {

@@ -7,8 +7,8 @@ import java.util.List;
 import ocldependencyanalysis.DependencyAnalysis;
 import ocldependencyanalysis.FeatureObj;
 import ocldependencyanalysis.graph.IGraph;
-import ocldependencyanalysis.graphml.providers.AttributeDependenciesTypeProvider;
-import ocldependencyanalysis.graphml.providers.ClassDependenciesTypeProvider;
+import ocldependencyanalysis.graphml.providers.FeatureDependenciesTypeProvider;
+import ocldependencyanalysis.graphml.providers.TypeDependenciesTypeProvider;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
@@ -57,7 +57,7 @@ public class GraphmlGenerator {
 		IGraph<FeatureObj> graph = DependencyAnalysis.createFeatureDependencyGraph(inputOclDocUri);
 		
 		System.out.println(graph.toString());
-		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new AttributeDependenciesTypeProvider());
+		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new FeatureDependenciesTypeProvider());
 		launchGraph2GraphMLScript(graphModel, outputGaprhmlFilePath);
 	}
 	
@@ -72,7 +72,7 @@ public class GraphmlGenerator {
 		IGraph<Type> graph = DependencyAnalysis.createClassDependencyGraph(inputOclDocUri);
 				
 		System.out.println(graph.toString());
-		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new ClassDependenciesTypeProvider(graph));
+		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new TypeDependenciesTypeProvider(graph));
 		launchGraph2GraphMLScript(graphModel, outputGaprhmlFilePath);
 	}
 	

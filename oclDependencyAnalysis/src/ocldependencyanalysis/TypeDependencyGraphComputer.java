@@ -42,7 +42,7 @@ import org.eclipse.ocl.examples.pivot.Type;
  *  
  * @author asbh500
  */
-public class ClassDependencyGraphComputer extends AbstractDependencyGraphComputer<Type>{
+public class TypeDependencyGraphComputer extends AbstractDependencyGraphComputer<Type>{
 
 	@Override
 	protected void processAstCall(IGraph<Type> dependencyGraph,

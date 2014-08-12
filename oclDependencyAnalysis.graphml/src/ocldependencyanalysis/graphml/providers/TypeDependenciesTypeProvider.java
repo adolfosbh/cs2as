@@ -25,7 +25,7 @@ import org.eclipse.qvtd.build.etl.graphmltypes.ShapeType;
  * @author asbh500
  *
  */
-public class ClassDependenciesTypeProvider implements IElementTypeProvider<Type>{
+public class TypeDependenciesTypeProvider implements IElementTypeProvider<Type>{
 
 	Set<INode<Type>> cycleNodes = new HashSet<INode<Type>>();
 	Set<IEdge<Type>> cycleEdges = new HashSet<IEdge<Type>>();
@@ -33,7 +33,7 @@ public class ClassDependenciesTypeProvider implements IElementTypeProvider<Type>
 	private GraphMLNodeType cycleNodeType;
 	private GraphMLEdgeType cycleEdgeType;
 	
-	public ClassDependenciesTypeProvider(IGraph<Type> graph) {
+	public TypeDependenciesTypeProvider(IGraph<Type> graph) {
 		preComputeCycleNodesAndEdges(graph);
 		elementTypes = new ArrayList<ElementType>();
 		cycleNodeType = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();

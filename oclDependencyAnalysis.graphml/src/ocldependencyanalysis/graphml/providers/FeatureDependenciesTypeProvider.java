@@ -19,7 +19,7 @@ import org.eclipse.qvtd.build.etl.graphmltypes.GraphMLNodeType;
 import org.eclipse.qvtd.build.etl.graphmltypes.GraphmltypesFactory;
 import org.eclipse.qvtd.build.etl.graphmltypes.ShapeType;
 
-public class AttributeDependenciesTypeProvider implements  IElementTypeProvider<FeatureObj>{
+public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<FeatureObj>{
 	
 	private List<ElementType> elementTypes;	
 	private GraphMLNodeType astOperation;
@@ -27,7 +27,7 @@ public class AttributeDependenciesTypeProvider implements  IElementTypeProvider<
 	private GraphMLNodeType astNonContainmentProperty;
 	private GraphMLNodeType astOppositeProperty;
 	
-	public AttributeDependenciesTypeProvider() {
+	public FeatureDependenciesTypeProvider() {
 		elementTypes = new ArrayList<ElementType>();
 		astOperation = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
 		astOperation.setName("AstOperation");
