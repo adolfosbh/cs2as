@@ -48,19 +48,35 @@ def : ast() : target::C =
 		name = name
 	}
 
-context Z 
-def : ast() : target::D =
-	-- if toY.ast().oclIsKindOf(target::B)
-	if toY.oclIsKindOf(source::Y1)
-	then target::D {
-			toA = toY.oclAsType(source::Y1).ast().toA1,
-			name = name,
-			refsB = env().lookupB(name)
-		} 
-	else target::D {
-			toA = toY.oclAsType(source::Y2).ast().toA2,
-			name = name,
-			refsC = env().lookupC(name)
-		}
+context AmbZ
+def :  cst() : Z =
+	if toY.oclIsKindOf(source::Y1) 
+	then Z1 {
+		name = name
+	}
+	else Z2 {
+		name = name
+	}
 	endif
+
+context Z
+def : ast() : target::D =
+	null -- To be overriden by Z1/Z2
+	
+context Z1 
+def : ast() : target::D =
+	target::D {
+		toA = toY.oclAsType(source::Y1).ast().toA1,
+		name = name,
+		refsB = env().lookupB(name)
+	}
+	
+context Z2
+def : ast() : target::D =
+	target::D {
+		toA = toY.oclAsType(source::Y2).ast().toA2,
+		name = name,
+		refsC = env().lookupC(name)
+	}
+
 endpackage

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="source" nsURI="http://ocldependencyanalysis/sourceMM/1.0" nsPrefix="source">
-  <eClassifiers xsi:type="ecore:EClass" name="X">
+  <eClassifiers xsi:type="ecore:EClass" name="X" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownsY" upperBound="-1"
         eType="#//Y" containment="true" eOpposite="#//Y/toX"/>
   </eClassifiers>
@@ -13,7 +13,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Y1" eSuperTypes="#//Y"/>
   <eClassifiers xsi:type="ecore:EClass" name="Y2" eSuperTypes="#//Y"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Z">
+  <eClassifiers xsi:type="ecore:EClass" name="Z" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="toY" eType="#//Y" eOpposite="#//Y/ownsZ"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -26,4 +26,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="X1" eSuperTypes="#//X"/>
   <eClassifiers xsi:type="ecore:EClass" name="X2" eSuperTypes="#//X"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AmbZ" eSuperTypes="#//Z"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Z1" eSuperTypes="#//Z"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Z2" eSuperTypes="#//Z"/>
 </ecore:EPackage>
