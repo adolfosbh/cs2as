@@ -25,7 +25,7 @@ import org.eclipse.ocl.examples.pivot.Type;
 import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
 
 public abstract class AbstractDependencyGraphComputer<C> {
-
+ 
 	private Map<Type , Set<Type>> type2superTypes = new HashMap<Type, Set<Type>>();
 	
 	private Map<Type , Set<Class>> type2instantiableSubClasses = new HashMap<Type, Set<Class>>();
@@ -112,6 +112,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 			}
 		}
 	}
+	
 	public IGraph<C> computeDependencyGraph (Resource pivotResource) {
 		
 		assert(pivotResource.getContents().get(0) instanceof Root);
@@ -126,8 +127,10 @@ public abstract class AbstractDependencyGraphComputer<C> {
 			EObject next = tit.next();
 			if (isAstCall(next)) {
 				processAstCall(dependencyGraph, (OperationCallExp) next);
+				tit.prune(); // prune children iteration
 			} else if (isLookupCall(next)) {
 				processLookupCall(dependencyGraph, (OperationCallExp) next);
+				tit.prune(); // prune children iteration
 			}
 		}
 		

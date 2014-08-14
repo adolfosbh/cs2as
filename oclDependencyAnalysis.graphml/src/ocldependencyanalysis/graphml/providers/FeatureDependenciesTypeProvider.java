@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ocldependencyanalysis.FeatureObj;
+import ocldependencyanalysis.NameResoPropertyObj;
 import ocldependencyanalysis.OppositePropertyObj;
 import ocldependencyanalysis.graph.IEdge;
 import ocldependencyanalysis.graph.INode;
@@ -15,6 +16,8 @@ import org.eclipse.ocl.examples.pivot.Property;
 import org.eclipse.qvtd.build.etl.graph.EdgeType;
 import org.eclipse.qvtd.build.etl.graph.ElementType;
 import org.eclipse.qvtd.build.etl.graph.NodeType;
+import org.eclipse.qvtd.build.etl.graphmltypes.EdgeLineStyle;
+import org.eclipse.qvtd.build.etl.graphmltypes.GraphMLEdgeType;
 import org.eclipse.qvtd.build.etl.graphmltypes.GraphMLNodeType;
 import org.eclipse.qvtd.build.etl.graphmltypes.GraphmltypesFactory;
 import org.eclipse.qvtd.build.etl.graphmltypes.ShapeType;
@@ -25,8 +28,12 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 	private GraphMLNodeType astOperation;
 	private GraphMLNodeType astContainmentProperty;
 	private GraphMLNodeType astNonContainmentProperty;
-	private GraphMLNodeType astOppositeProperty;
+	// private GraphMLNodeType astOppositeProperty;	
+	private GraphMLNodeType astContainmentNameResoProperty;
+	private GraphMLNodeType astNonContainmentNameResoProperty;
 	
+	private GraphMLEdgeType astOutgoingFromOppositeProperty;
+
 	public FeatureDependenciesTypeProvider() {
 		elementTypes = new ArrayList<ElementType>();
 		astOperation = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
@@ -44,15 +51,26 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 		astNonContainmentProperty.setColor("#FFFF00");
 		astNonContainmentProperty.setShape(ShapeType.ELLIPSE);
 		
-		astOppositeProperty = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
-		astOppositeProperty.setName("ComputedOppositeASproperty");
-		astOppositeProperty.setColor("#50B4FF");
-		astOppositeProperty.setShape(ShapeType.ELLIPSE);
+		astContainmentNameResoProperty = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
+		astContainmentNameResoProperty.setName("ContainmentASNameResoProperty");
+		astContainmentNameResoProperty.setColor("#FF6600");
+		astContainmentNameResoProperty.setShape(ShapeType.HEXAGON);
+		
+		astNonContainmentNameResoProperty = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
+		astNonContainmentNameResoProperty.setName("NonContainmentASNameResoProperty");
+		astNonContainmentNameResoProperty.setColor("#FFFF00");
+		astNonContainmentNameResoProperty.setShape(ShapeType.HEXAGON);
+
+		astOutgoingFromOppositeProperty = GraphmltypesFactory.eINSTANCE.createGraphMLEdgeType();
+		astOutgoingFromOppositeProperty.setName("astOutgoingFromOppositeProperty");
+		astOutgoingFromOppositeProperty.setLineStyle(EdgeLineStyle.DOTTED);
 		
 		elementTypes.add(astOperation);
 		elementTypes.add(astContainmentProperty);
 		elementTypes.add(astNonContainmentProperty);
-		elementTypes.add(astOppositeProperty);
+		elementTypes.add(astContainmentNameResoProperty);
+		elementTypes.add(astNonContainmentNameResoProperty);
+		elementTypes.add(astOutgoingFromOppositeProperty);
 	}
 
 	@Override
@@ -64,8 +82,14 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 	public NodeType getNodeType(INode<FeatureObj> node) {
 		FeatureObj featureObj = node.getObject();
 		
-		if (featureObj instanceof OppositePropertyObj) {
-			return astOppositeProperty;
+		if (featureObj instanceof NameResoPropertyObj) {
+			Property prop = (Property) featureObj.getFeature();
+			if (prop.isComposite()) {
+				return astContainmentNameResoProperty;
+			} else {
+				return astNonContainmentNameResoProperty;
+			}
+			
 		} else {
 			Feature feature = featureObj.getFeature();
 			if (feature instanceof Operation) {
@@ -83,7 +107,11 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 
 	@Override
 	public EdgeType getEdgeType(IEdge<FeatureObj> edge) {
-		// TODO
+		
+		if (edge.getFrom().getObject() instanceof OppositePropertyObj) {
+			return astOutgoingFromOppositeProperty;
+		}
+		// else default edge style
 		return null;
 	}
 }

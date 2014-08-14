@@ -20,6 +20,8 @@ public interface IGraph<C> {
 	
 	public INode<C> addNode(C c);
 	
+	public INode<C> addNode(C c, boolean replace);
+	
 	/**
 	 * Implementation must ensure that a graph will have no edge referring to nodes
 	 * which are not part of this graph
@@ -39,12 +41,25 @@ public interface IGraph<C> {
 	 * Implementations must ensure that a graph will
 	 * have no edge referring to nodes which are not part
 	 * of this graph 
+	 * 
+	 * The same as {@link #addEdge(Object, Object, boolean) addEdge(Object, Object, false) } 
 	 *  
 	 * @param from
 	 * @param to
 	 */
 	public void addEdge(C from, C to);
 	
+	/**
+	 * Implementations must ensure that a graph will
+	 * have no edge referring to nodes which are not part
+	 * of this graph 
+	 * @param from
+	 * @param to
+	 * @param replace true if the new edge (referring the given wrapped node objects) can replace the previous
+	 * one (referring the same wrapped node objects)
+	 */
+	public void addEdge(C from, C to, boolean replace);
+
 	/**
 	 * @return A set with the subgraphs comprising a cycle
 	 */

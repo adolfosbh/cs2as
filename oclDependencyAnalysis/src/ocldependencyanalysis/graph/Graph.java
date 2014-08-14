@@ -23,6 +23,7 @@ import ocldependencyanalysis.ICyclesDetector;
 public class Graph<C> implements IGraph<C> {
 
 	private Set<INode<C>> nodes= new HashSet<INode<C>>();
+	private Map<C, Node<C>> object2node = new HashMap<C, Node<C>>();
 	private Map<INode<C>, Set<IEdge<C>>> node2outputEdges = new HashMap<INode<C>, Set<IEdge<C>>>();
 	private Map<INode<C>, Set<IEdge<C>>> node2inputEdges = new HashMap<INode<C>, Set<IEdge<C>>>();
 	private ICyclesDetector<C> cyclesDetector;
@@ -53,16 +54,33 @@ public class Graph<C> implements IGraph<C> {
 	
 	@Override
 	public  INode<C> addNode(C c) {
-		INode<C> newNode = createNode(c);
-		nodes.add(newNode);
-		return newNode;
+		return addNode(c, false);
+	}
+	
+	@Override
+	public  INode<C> addNode(C c, boolean replacement) {
+		Node<C> node = object2node.get(c);
+		if (node == null) {
+			node = createNode(c);
+			nodes.add(node);
+			object2node.put(c, node);
+		} else {
+			if (replacement) {
+				node.replaceObject(c);
+			}
+		}
+		
+		return node;
 	}
 	
 	@Override
 	public void addEdge(C from, C to) {
-		
-		INode<C> fromNode = addNode(from);
-		INode<C> toNode = addNode(to);
+		addEdge(from, to, false);		
+	}
+	
+	public void addEdge(C from, C to, boolean replace) {
+		INode<C> fromNode = addNode(from, replace);
+		INode<C> toNode = addNode(to, replace);
 		IEdge<C> newEdge = createEdge(fromNode, toNode);
 		if (edges.add(newEdge)) {
 			Set<IEdge<C>> outputEdges = node2outputEdges.get(fromNode);
@@ -98,7 +116,7 @@ public class Graph<C> implements IGraph<C> {
 		return sb.toString();
 	}
 	
-	protected INode<C> createNode(C object) {
+	protected Node<C> createNode(C object) {
 		return new Node<C>(object);
 	}
 	protected IEdge<C> createEdge(INode<C> from, INode<C> to) {
@@ -106,7 +124,7 @@ public class Graph<C> implements IGraph<C> {
 	}
 
 	@Override
-	public Set<IGraph<C>> getCycles() {		
+	public Set<IGraph<C>> getCycles() {
 		if (cyclesDetector == null) {
 			cyclesDetector = createCyclesDetector();
 		}
@@ -122,6 +140,7 @@ public class Graph<C> implements IGraph<C> {
 		
 		boolean nodeRemoved = nodes.remove(node);
 		if (nodeRemoved) {
+			object2node.remove(node.getObject());
 			for (IEdge<C> outputEdge : getOutputEdges(node)) {
 				edges.remove(outputEdge);
 			}

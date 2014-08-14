@@ -52,7 +52,7 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 	protected void processAstCall(IGraph<FeatureObj> dependencyGraph,
 			OperationCallExp astOpCall) {
 		
-		FeatureObj from = getTargetFeature(astOpCall);
+		FeatureObj from = getTargetFeature(astOpCall, false);
 		createDependenciesOnFromFeatureObject(astOpCall, from, dependencyGraph);
 	}
 	
@@ -83,7 +83,7 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 	 * @param astCall
 	 * @return
 	 */
-	private FeatureObj getTargetFeature(OperationCallExp astCall) {
+	private FeatureObj getTargetFeature(OperationCallExp astCall, boolean isNameResolution) {
 		EObject container = astCall.eContainer();
 		Feature fromFeature = null; 
 		while (container != null) {
@@ -98,7 +98,9 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 			container = container.eContainer();
 		}
 		if (container != null) {
-			return createFeatureObj(getElementContext((Element)container), fromFeature);
+			Type context = getElementContext((Element)container);
+			return isNameResolution ? createNameResolutionPropertyObj(context, fromFeature, astCall.getType())
+					: createFeatureObj(context, fromFeature);
 		}
 		throw new RuntimeException("I should have found either a ConstructorPart or an Operation when processing: " + astCall.toString());
 	}
@@ -181,9 +183,9 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 		Property opposite = getOppositeProperty(fromFeatureObj);
 		if (opposite != null) {
 			dependencyGraph.addEdge(createOppositePropertyObj(fromFeatureObj, context, opposite), 
-					fromFeatureObj);
+					fromFeatureObj, true);
 		}
-	}
+	}	
 	
 	
 	private Property getOppositeProperty(FeatureObj featureObject) {
@@ -226,12 +228,15 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 		return new OppositePropertyObj(featureObj, context, property);
 	}
 
+	protected FeatureObj createNameResolutionPropertyObj(Type context, Feature property, Type lookupType) {
+		return new NameResoPropertyObj(context, property, lookupType);
+	}
 	
 	@Override
 	protected void processLookupCall(IGraph<FeatureObj> dependencyGraph,
 			OperationCallExp lookupOpCall) {		
 		
-		FeatureObj from = getTargetFeature(lookupOpCall);
+		FeatureObj from = getTargetFeature(lookupOpCall, true);
 		
 		// There is always a dependency between the fromFeatureObj and the astCallContextClass ast operation
 		createDependencyWithAstCallContext(lookupOpCall, from, dependencyGraph);

@@ -69,7 +69,7 @@ public class GraphmlGenerator {
 	 */
 	public static void generateClassDependencyGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath ) throws Exception  {
 		// URI uri = URI.createURI("platform:/resource/oclDependencyAnalysis.tests/src/ocldependencyanalysis/tests/SMM1d.ocl");
-		IGraph<Type> graph = DependencyAnalysis.createClassDependencyGraph(inputOclDocUri);
+		IGraph<Type> graph = DependencyAnalysis.createTypeDependencyGraph(inputOclDocUri);
 				
 		System.out.println(graph.toString());
 		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new TypeDependenciesTypeProvider(graph));

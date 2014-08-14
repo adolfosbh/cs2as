@@ -32,7 +32,7 @@ public class DependencyAnalysis {
 		return ocl.parse(oclDocumentURI);
 	}
 
-	public static IGraph<Type> createClassDependencyGraph(URI oclDocumentURI) {
+	public static IGraph<Type> createTypeDependencyGraph(URI oclDocumentURI) {
 			
 		Resource pivotResource = getPivotResource(oclDocumentURI);
 		return new TypeDependencyGraphComputer().computeDependencyGraph(pivotResource);
@@ -64,7 +64,7 @@ public class DependencyAnalysis {
 		try {
 			if ("TYPE".equalsIgnoreCase(args[0])) {
 				System.out.println("Starting...");
-				printGraphAndCycles(createClassDependencyGraph(URI.createURI(args[1])));
+				printGraphAndCycles(createTypeDependencyGraph(URI.createURI(args[1])));
 				System.out.println("...Finished");
 			}				
 			else if ("FEATURE".equalsIgnoreCase(args[0])) {

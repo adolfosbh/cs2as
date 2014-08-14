@@ -37,4 +37,9 @@ public class Node<C> implements INode<C>{
 	public C getObject() {
 		return object;
 	}
+	
+	// package method
+	void replaceObject(C object) {
+		this.object = object;
+	}
 }
