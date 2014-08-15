@@ -11,6 +11,17 @@ endpackage
 
 package source
 
+
+context Root
+def : ast() : target::Root=
+	target::Root {
+		ownedA = ownedX.ast()
+	}
+
+context X
+def : ast() : target::A =
+	invalid -- To be overriden by X1/X2
+	
 context AmbX 
 def : cst() : X =
 	if isA1
@@ -61,7 +72,7 @@ def :  cst() : Z =
 
 context Z
 def : ast() : target::D =
-	null -- To be overriden by Z1/Z2
+	invalid -- To be overriden by Z1/Z2
 	
 context Z1 
 def : ast() : target::D =

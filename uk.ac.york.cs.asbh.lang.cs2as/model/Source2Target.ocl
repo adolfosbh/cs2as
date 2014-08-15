@@ -11,6 +11,12 @@ endpackage
 
 package source
 
+context Root
+def : ast() : target::Root=
+	target::Root {
+		ownedA = ownedX.ast()
+	}
+
 context X
 def : ast() : target::A =
 	if isA1
