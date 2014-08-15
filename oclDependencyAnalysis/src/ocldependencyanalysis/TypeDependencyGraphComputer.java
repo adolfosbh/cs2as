@@ -5,6 +5,7 @@ import java.util.Set;
 import ocldependencyanalysis.graph.IGraph;
 
 import org.eclipse.ocl.examples.pivot.Class;
+import org.eclipse.ocl.examples.pivot.ConstructorExp;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
 import org.eclipse.ocl.examples.pivot.Root;
 import org.eclipse.ocl.examples.pivot.Type;
@@ -80,4 +81,9 @@ public class TypeDependencyGraphComputer extends AbstractDependencyGraphComputer
 		}
 	}
 	
+	@Override
+	protected void processConstructorExp(IGraph<Type> dependencyGraph,
+			ConstructorExp next) {		
+		// Not of my interest
+	}
 }

@@ -10,6 +10,7 @@ import ocldependencyanalysis.graph.INode;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.examples.pivot.Class;
+import org.eclipse.ocl.examples.pivot.ConstructorExp;
 import org.eclipse.ocl.examples.pivot.ConstructorPart;
 import org.eclipse.ocl.examples.pivot.Element;
 import org.eclipse.ocl.examples.pivot.Feature;
@@ -119,7 +120,7 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 		// There is always a dependency between the fromFeatureObj and the the astCallContextClass ast operation
 		createDependencyWithAstCallContext(astCall, fromFeatureObj, dependencyGraph);
 		
-		// The class of the source ast call, i.e. the CS element owning the ast operation // FIXME Type should considered rather than type
+		// The class of the source ast call, i.e. the CS element owning the ast operation // FIXME Type should considered rather than class
 		Class astCallSourceType = (Class) astCall.getSource().getType();		
 		Operation astCallSourceClassAstOp = astCall.getReferredOperation();		
 		PropertyCallExp propCall = getContainingPropertyCallExp(astCall);
@@ -174,8 +175,12 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 	private void createDependencyWithAstCallContext(OperationCallExp astCall, FeatureObj fromFeatureObj,
 			IGraph<FeatureObj> dependencyGraph) {
 
-		Class astCallContextClass = getElementContext(astCall);
-		dependencyGraph.addEdge(fromFeatureObj, createFeatureObj(astCallContextClass, getAstOperation(astCallContextClass)));
+		Type astCallContextClass = getElementContext(astCall);
+		Operation astOperation = getAstOperation(astCallContextClass);
+		ConstructorExp astCallContainingConstructor= getContainingConstructor(astCall);
+		FeatureObj toFeatureObj = astCallContainingConstructor == null ? createFeatureObj(astCallContextClass, astOperation)
+				: createConstructionTypeFeatureObj(astCallContextClass, astOperation, astCallContainingConstructor.getType());
+		dependencyGraph.addEdge(fromFeatureObj, toFeatureObj);
 	}
 	
 	private void createDependencyWithOppositeProperty(FeatureObj fromFeatureObj, Type context, IGraph<FeatureObj> dependencyGraph) {
@@ -232,9 +237,13 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 		return new NameResoPropertyObj(context, property, lookupType);
 	}
 	
+	protected FeatureObj createConstructionTypeFeatureObj(Type context, Operation astOperation, Type constructedType) {
+		return new ConstructionTypeFeatureObj(context, astOperation, constructedType);
+	}
+	
 	@Override
 	protected void processLookupCall(IGraph<FeatureObj> dependencyGraph,
-			OperationCallExp lookupOpCall) {		
+			OperationCallExp lookupOpCall) {
 		
 		FeatureObj from = getTargetFeature(lookupOpCall, true);
 		
@@ -247,6 +256,20 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 		for (Type csType : getCSTypes(asType)) {
 			Operation astOperation = getAstOperation(csType); // the CS type ast() operation which creates the required AS type 
 			dependencyGraph.addEdge(from, createFeatureObj(csType, astOperation));
+		}
+	}
+	
+	@Override
+	protected void processConstructorExp(IGraph<FeatureObj> dependencyGraph,
+			ConstructorExp constrExp) {
+		
+		Type csContext = getElementContext(constrExp);				
+		Operation astOp = getAstOperation(csContext);		
+		if (!constrExp.getType().equals(astOp.getType())) {	// The created type should be a subtype
+			// What to do if the created type is the same of the ast type. We can't create it twice
+			FeatureObj from = createFeatureObj(csContext, astOp);
+			FeatureObj to = createConstructionTypeFeatureObj(csContext, astOp, constrExp.getType());
+			dependencyGraph.addEdge(from, to);
 		}
 	}
 }

@@ -24,6 +24,11 @@ import org.eclipse.ocl.examples.pivot.Root;
 import org.eclipse.ocl.examples.pivot.Type;
 import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
 
+/**
+ * @author asbh500
+ *
+ * @param <C>
+ */
 public abstract class AbstractDependencyGraphComputer<C> {
  
 	private Map<Type , Set<Type>> type2superTypes = new HashMap<Type, Set<Type>>();
@@ -131,13 +136,14 @@ public abstract class AbstractDependencyGraphComputer<C> {
 			} else if (isLookupCall(next)) {
 				processLookupCall(dependencyGraph, (OperationCallExp) next);
 				tit.prune(); // prune children iteration
+			} else if (isConstructorExp(next)) {
+				processConstructorExp(dependencyGraph,(ConstructorExp) next);
 			}
 		}
 		
 		postprocess(pivotResource, dependencyGraph);
 		return dependencyGraph;
 	}
-
 
 	protected boolean isAstCall(EObject element) {
 		if (element instanceof OperationCallExp) {
@@ -163,6 +169,10 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return opName == null ? false : opName.startsWith("lookup");
 	}
 	
+	protected boolean isConstructorExp(EObject element) {
+		return element instanceof ConstructorExp;
+	}
+	
 	protected Class getElementContext(Element element) { // FIXME this should return/consider Type rather than just Class
 		EObject container = element.eContainer();
 		while (container != null) {
@@ -172,6 +182,26 @@ public abstract class AbstractDependencyGraphComputer<C> {
 			container = container.eContainer();
 		}
 		throw new RuntimeException("I should have found the containing Context Class");
+	}
+	
+ 
+	/**
+	 * If the opCallExp is performed as the right hand side of a constructor part, it will return the corresponding
+	 * ConstructorExp, otherwise <code>null</code>. 
+	 *
+	 * @param callExp a given {@link OperationCallExp}
+	 * @return the containing constructor expression, or null
+	 */
+	protected ConstructorExp getContainingConstructor(OperationCallExp callExp) {
+	
+		EObject container = callExp.eContainer();
+		while (container != null) {
+			if (container instanceof ConstructorExp) {
+				return ((ConstructorExp)container);
+			}			
+			container = container.eContainer();
+		}
+		return null;
 	}
 	
 	
@@ -250,10 +280,14 @@ public abstract class AbstractDependencyGraphComputer<C> {
 //		return false;
 //	}
 	
-	abstract protected void processAstCall(IGraph<C> dependencyGraph, OperationCallExp astOpCall);
+	abstract protected void processAstCall(IGraph<C> dependencyGraph, 
+			OperationCallExp astOpCall);
 	
-	abstract protected void processLookupCall(IGraph<C> dependencyGraph, OperationCallExp lookupOpCall);
+	abstract protected void processLookupCall(IGraph<C> dependencyGraph, 
+			OperationCallExp lookupOpCall);
 	
+	abstract protected void processConstructorExp(IGraph<C> dependencyGraph,
+			ConstructorExp next);		
 	/**
 	 * Method called prior to process the resource to look for 
 	 * ast calls.
@@ -268,6 +302,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	protected void preprocess(Resource resource, IGraph<C> dependencyGraph) {
 		
 	}
+	
 	
 	/**
 	 * Method called after processing the resource 

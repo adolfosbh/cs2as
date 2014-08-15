@@ -5,7 +5,6 @@ import java.util.List;
 
 import ocldependencyanalysis.FeatureObj;
 import ocldependencyanalysis.NameResoPropertyObj;
-import ocldependencyanalysis.OppositePropertyObj;
 import ocldependencyanalysis.graph.IEdge;
 import ocldependencyanalysis.graph.INode;
 import ocldependencyanalysis.graphml.IElementTypeProvider;
@@ -32,7 +31,7 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 	private GraphMLNodeType astContainmentNameResoProperty;
 	private GraphMLNodeType astNonContainmentNameResoProperty;
 	
-	private GraphMLEdgeType astOutgoingFromOppositeProperty;
+	private GraphMLEdgeType astOutgoingToConstructionOperation;
 
 	public FeatureDependenciesTypeProvider() {
 		elementTypes = new ArrayList<ElementType>();
@@ -61,16 +60,16 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 		astNonContainmentNameResoProperty.setColor("#FFFF00");
 		astNonContainmentNameResoProperty.setShape(ShapeType.HEXAGON);
 
-		astOutgoingFromOppositeProperty = GraphmltypesFactory.eINSTANCE.createGraphMLEdgeType();
-		astOutgoingFromOppositeProperty.setName("astOutgoingFromOppositeProperty");
-		astOutgoingFromOppositeProperty.setLineStyle(EdgeLineStyle.DOTTED);
+		astOutgoingToConstructionOperation = GraphmltypesFactory.eINSTANCE.createGraphMLEdgeType();
+		astOutgoingToConstructionOperation.setName("astOutgoingToConstructionOperation");
+		astOutgoingToConstructionOperation.setLineStyle(EdgeLineStyle.DOTTED);
 		
 		elementTypes.add(astOperation);
 		elementTypes.add(astContainmentProperty);
 		elementTypes.add(astNonContainmentProperty);
 		elementTypes.add(astContainmentNameResoProperty);
 		elementTypes.add(astNonContainmentNameResoProperty);
-		elementTypes.add(astOutgoingFromOppositeProperty);
+		elementTypes.add(astOutgoingToConstructionOperation);
 	}
 
 	@Override
@@ -108,8 +107,12 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 	@Override
 	public EdgeType getEdgeType(IEdge<FeatureObj> edge) {
 		
-		if (edge.getFrom().getObject() instanceof OppositePropertyObj) {
-			return astOutgoingFromOppositeProperty;
+		// For the time being, an edge between ast operations are dotted
+		FeatureObj fromFeature = edge.getFrom().getObject();
+		FeatureObj toFeature = edge.getTo().getObject();
+		if (fromFeature.getFeature() instanceof Operation &&
+			toFeature.getFeature() instanceof Operation) {
+			return astOutgoingToConstructionOperation;
 		}
 		// else default edge style
 		return null;

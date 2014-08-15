@@ -7,11 +7,11 @@ import org.eclipse.ocl.examples.pivot.NamedElement;
 import org.eclipse.ocl.examples.pivot.Type;
 
 public class FeatureObj {
-	private static final String NAMESPACE_SEP = "::";
-	private static final String TYPE_SEP = " : ";
-	private static final String EMPTY_STRING = "";
-	private static final String LEFT_BRACKET = " [";
-	private static final String RIGHT_BRACKET = "]";
+	protected static final String NAMESPACE_SEP = "::";
+	protected static final String TYPE_SEP = " : ";
+	protected static final String EMPTY_STRING = "";
+	protected static final String LEFT_BRACKET = " [";
+	protected static final String RIGHT_BRACKET = "]";
 	private Type context;
 	private Feature feature;
 	/**
@@ -44,7 +44,7 @@ public class FeatureObj {
 		return feature;
 	}
 	
-	private String getFeaturePrefix() {
+	protected String getFeaturePrefix() {
 		EObject container = feature.eContainer();
 		return container == null ? EMPTY_STRING : ((NamedElement)container).getName() + NAMESPACE_SEP;
 	}
