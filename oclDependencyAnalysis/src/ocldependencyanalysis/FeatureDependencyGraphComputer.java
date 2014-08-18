@@ -178,9 +178,12 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 		Type astCallContextClass = getElementContext(astCall);
 		Operation astOperation = getAstOperation(astCallContextClass);
 		ConstructorExp astCallContainingConstructor= getContainingConstructor(astCall);
-		FeatureObj toFeatureObj = astCallContainingConstructor == null ? createFeatureObj(astCallContextClass, astOperation)
-				: createConstructionTypeFeatureObj(astCallContextClass, astOperation, astCallContainingConstructor.getType());
-		dependencyGraph.addEdge(fromFeatureObj, toFeatureObj);
+		if (astCallContainingConstructor == null) {
+			dependencyGraph.addEdge(fromFeatureObj, createFeatureObj(astCallContextClass, astOperation));
+		} else {
+			dependencyGraph.addEdge(fromFeatureObj, createConstructionTypeFeatureObj(astCallContextClass, astOperation, astCallContainingConstructor)
+					, true);
+		}
 	}
 	
 	private void createDependencyWithOppositeProperty(FeatureObj fromFeatureObj, Type context, IGraph<FeatureObj> dependencyGraph) {
@@ -237,8 +240,8 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 		return new NameResoPropertyObj(context, property, lookupType);
 	}
 	
-	protected FeatureObj createConstructionTypeFeatureObj(Type context, Operation astOperation, Type constructedType) {
-		return new ConstructionTypeFeatureObj(context, astOperation, constructedType);
+	protected FeatureObj createConstructionTypeFeatureObj(Type context, Operation astOperation, ConstructorExp constructorExp) {
+		return new ConstructorExpFeatureObj(context, astOperation, constructorExp);
 	}
 	
 	@Override
@@ -268,7 +271,7 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 		if (!constrExp.getType().equals(astOp.getType())) {	// The created type should be a subtype
 			// What to do if the created type is the same of the ast type. We can't create it twice
 			FeatureObj from = createFeatureObj(csContext, astOp);
-			FeatureObj to = createConstructionTypeFeatureObj(csContext, astOp, constrExp.getType());
+			FeatureObj to = createConstructionTypeFeatureObj(csContext, astOp, constrExp);
 			dependencyGraph.addEdge(from, to);
 		}
 	}
