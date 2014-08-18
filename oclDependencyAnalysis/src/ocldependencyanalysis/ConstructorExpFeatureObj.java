@@ -41,21 +41,21 @@ public class ConstructorExpFeatureObj extends FeatureObj {
 	}
 	
 
-//	FIXME 	
-//  For the time being, I disable the index based ConstructionTypeFeatureObj, because I'm going 
-//	to try the analysis of cst operations, which may the need of these index vanish. 
-//	If we finally go for that CS2CS remove all thhese ConstructorExp2Index static information
-//	@Override
-//	public String toString() {
-//		Integer lastIndex = hash2nextIndex.get(computeHash());
-//		// String index = lastIndex > 2 ? String.valueOf(this.index) : EMPTY_STRING;
-//		return getContext().getName() + 
-//				LEFT_BRACKET +
-//				getFeaturePrefix() +
-//				getFeature().getName() +
-//				TYPE_SEP +
-//				constructorExp.getType().getName() +
-//				RIGHT_BRACKET +
-//				index; 
-//	}
+	//	FIXME 	
+	//  For the time being, I disable the index based ConstructionTypeFeatureObj, because I'm going 
+	//	to try the analysis of cst operations, which may the need of these index vanish. 
+	//	If we finally go for that CS2CS remove all thhese ConstructorExp2Index static information
+	@Override
+	public String toString() {
+		//Integer lastIndex = hash2nextIndex.get(computeHash());
+		// String index = lastIndex > 2 ? String.valueOf(this.index) : EMPTY_STRING;
+		return getContext().getName() + 
+				LEFT_BRACKET +
+				getFeaturePrefix() +
+				getFeature().getName() +
+				TYPE_SEP +
+				constructorExp.getType().getName() +
+				RIGHT_BRACKET;
+		//		+ index; 
+	}
 }
