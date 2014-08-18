@@ -30,10 +30,12 @@ import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
  * @param <C>
  */
 public abstract class AbstractDependencyGraphComputer<C> {
- 
+ 	
 	private Map<Type , Set<Type>> type2superTypes = new HashMap<Type, Set<Type>>();
 	
 	private Map<Type , Set<Class>> type2instantiableSubClasses = new HashMap<Type, Set<Class>>();
+	
+	private Map<Type , Set<Type>> type2directSubTypes = new HashMap<Type, Set<Type>>();
 	
 	private Map<Type , Set<Type>> asType2csTypes = new HashMap<Type, Set<Type>>();
 	
@@ -47,6 +49,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		}
 		for (Type type : type2superTypes.keySet()) {
 			computeType2InstantiableClasses(type);
+			computeType2DirectTypes(type);
 		}
 	}
 	
@@ -93,6 +96,20 @@ public abstract class AbstractDependencyGraphComputer<C> {
 					type2instantiableSubClasses.put(superType, subClasses);
 				}
 				subClasses.add(subClass);
+			}
+		}
+	}
+	
+	private void computeType2DirectTypes(Type type) {
+		
+		if (type instanceof Class) {			 
+			for (Type superType : type.getSuperClass()) {
+				Set<Type> subTypes = type2directSubTypes.get(superType);
+				if (subTypes == null) {
+					subTypes = new HashSet<Type>();
+					type2directSubTypes.put(superType, subTypes);
+				}
+				subTypes.add(type);
 			}
 		}
 	}
@@ -153,7 +170,11 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	}
 	
 	protected boolean isAstOp(Operation op) {
-		return op == null ? false : "ast".equals(op.getName());
+		return op == null ? false : "ast".equals(op.getName()) && op.getOwnedParameter().isEmpty();
+	}
+	
+	protected boolean isCstOp(Operation op) {
+		return op == null ? false : "cst".equals(op.getName()) && op.getOwnedParameter().isEmpty();
 	}
 	
 	protected boolean isLookupCall(EObject element) {
@@ -204,6 +225,17 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return null;
 	}
 	
+	protected Operation getContainingOperation(Element element) {
+		
+		EObject container = element.eContainer();
+		while (container != null) {
+			if (container instanceof Operation) {
+				return ((Operation)container);
+			}			
+			container = container.eContainer();
+		}
+		return null;
+	}
 	
 	/**
 	 * @param element  
@@ -235,6 +267,10 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return type2superTypes.get(primaryT1).contains(primaryT2);
 	}
 	
+	protected Set<Type> getSubtypes(Type type) {
+		Type primaryType = mManager.getPrimaryType(type);
+		return type2directSubTypes.get(primaryType);
+	}
 	/**
 	 * @param asType
 	 * @return all the CS types which may create the provided AS type
@@ -263,8 +299,6 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		}
 		return bestOp;
 	}
-	
-	
 	
 //	protected boolean isElementRefCS(Type to) {
 //		

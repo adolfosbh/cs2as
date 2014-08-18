@@ -23,6 +23,9 @@ def : ast() : target::A =
 	invalid -- To be overriden by X1/X2
 	
 context AmbX 
+--def : ast() : target::A =
+--	cst().ast()
+	
 def : cst() : X =
 	if isA1
 	then X1 {
@@ -59,9 +62,17 @@ def : ast() : target::C =
 		name = name
 	}
 
+context Z
+def : ast() : target::D =
+	invalid -- To be overriden by Z1/Z2
+
+
 context AmbZ
-def :  cst() : Z =
-	if toY.oclIsKindOf(source::Y1) 
+--def : ast() : target::D =
+--	cst().ast()
+	
+def : cst() : Z =
+	if toY.oclIsKindOf(source::Y1)
 	then Z1 {
 		name = name
 	}
@@ -69,10 +80,6 @@ def :  cst() : Z =
 		name = name
 	}
 	endif
-
-context Z
-def : ast() : target::D =
-	invalid -- To be overriden by Z1/Z2
 	
 context Z1 
 def : ast() : target::D =

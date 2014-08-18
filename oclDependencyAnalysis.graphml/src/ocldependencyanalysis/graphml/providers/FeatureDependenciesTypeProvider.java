@@ -25,6 +25,7 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 	
 	private List<ElementType> elementTypes;	
 	private GraphMLNodeType astOperation;
+	private GraphMLNodeType cstOperation;
 	private GraphMLNodeType astContainmentProperty;
 	private GraphMLNodeType astNonContainmentProperty;
 	// private GraphMLNodeType astOppositeProperty;	
@@ -39,6 +40,11 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 		astOperation.setName("AstOperation");
 		astOperation.setColor("#FF0000");
 		astOperation.setShape(ShapeType.ELLIPSE);
+		
+		cstOperation = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
+		cstOperation.setName("CstOperation");
+		cstOperation.setColor("#00FF00");
+		cstOperation.setShape(ShapeType.ELLIPSE);
 		
 		astContainmentProperty = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
 		astContainmentProperty.setName("ContainmentASproperty");
@@ -92,7 +98,12 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 		} else {
 			Feature feature = featureObj.getFeature();
 			if (feature instanceof Operation) {
-				return astOperation;
+				if ("ast".equals(feature.getName()))
+					return astOperation;
+				else if ("cst".equals(feature.getName())) 
+					return cstOperation;
+				else
+					return null;
 			} else {
 				Property prop = (Property) feature;
 				if (prop.isComposite()) {
@@ -112,7 +123,11 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 		FeatureObj toFeature = edge.getTo().getObject();
 		if (fromFeature.getFeature() instanceof Operation &&
 			toFeature.getFeature() instanceof Operation) {
-			return astOutgoingToConstructionOperation;
+			Operation fromOp = (Operation) fromFeature.getFeature();
+			Operation toOp = (Operation) toFeature.getFeature();
+			if ("ast".equals(fromOp.getName()) && "ast".equals(toOp.getName())) {
+				return astOutgoingToConstructionOperation;
+			}
 		}
 		// else default edge style
 		return null;
