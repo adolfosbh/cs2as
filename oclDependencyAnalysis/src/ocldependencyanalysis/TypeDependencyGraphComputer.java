@@ -4,6 +4,7 @@ import java.util.Set;
 
 import ocldependencyanalysis.graph.IGraph;
 
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.ConstructorExp;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
@@ -85,5 +86,12 @@ public class TypeDependencyGraphComputer extends AbstractDependencyGraphComputer
 	protected void processConstructorExp(IGraph<Type> dependencyGraph,
 			ConstructorExp next) {		
 		// Not of my interest
+	}
+	
+	@Override
+	protected void updateDependencyGraphFromLookupDescription(
+			IGraph<Type> dependencyGraph, Resource lookupDescription) {
+		
+		// Nothing to do to the dependency graph from the lookup description
 	}
 }

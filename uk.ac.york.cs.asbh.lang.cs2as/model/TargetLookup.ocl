@@ -1,7 +1,12 @@
 import 'Environment.ecore'
 --import 'Environment.ocl' FIXME imported OCL doesn't work
-import 'SourceMM1.ecore'
 import 'TargetMM1.ecore'
+
+--package env
+-- FIXME this description should describe which property name should be used
+--context Environment::addElement(namedElement : target::NamedElement)
+--pre : not self.namedElements->exists(x | x.name = namedElement.name)
+--endpackage
 
 package ocl
 
@@ -26,7 +31,6 @@ def : _env(child : ocl::OclElement) : env::Environment =
 	let ownedBs = self.ownsB
 	in parentEnv().nestedEnv()
 		.addElements(ownedBs->select(x | ownedBs->indexOf(x) < ownedBs->indexOf(child)))
-		
 
 context A2
 def : _env(child : ocl::OclElement) : env::Environment =

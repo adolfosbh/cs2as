@@ -39,7 +39,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	
 	private Map<Type , Set<Type>> asType2csTypes = new HashMap<Type, Set<Type>>();
 	
-	private MetaModelManager mManager;
+	protected MetaModelManager mManager;
 		
 	private void initializeMaps(Resource resource) {
 		Root root = (Root) resource.getContents().get(0) ;
@@ -135,17 +135,36 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		}
 	}
 	
-	public IGraph<C> computeDependencyGraph (Resource pivotResource) {
+	public IGraph<C> computeDependencyGraph (Resource cs2asResource, Resource lookupResource) {
 		
-		assert(pivotResource.getContents().get(0) instanceof Root);
+		assert(cs2asResource.getContents().get(0) instanceof Root);
+		if (lookupResource != null) { assert(lookupResource.getContents().get(0) instanceof Root);}
 		
-		mManager = MetaModelManager.getAdapter(pivotResource.getResourceSet());
-		initializeMaps(pivotResource);
+		mManager = MetaModelManager.getAdapter(cs2asResource.getResourceSet());
 		IGraph<C> dependencyGraph = createDependencyGraph();
 		
-		preprocess(pivotResource, dependencyGraph);
+		initializeMaps(cs2asResource);		
+		preprocess(cs2asResource, dependencyGraph);			
+		updateDependencyGraphFromCS2ASDescription(dependencyGraph, cs2asResource);		
+		postprocess(cs2asResource, dependencyGraph);
 		
-		for (TreeIterator<EObject> tit = pivotResource.getAllContents(); tit.hasNext(); ) {
+		if (lookupResource != null) {
+			initializeMaps(lookupResource);		
+			preprocess(lookupResource, dependencyGraph);			
+			updateDependencyGraphFromLookupDescription(dependencyGraph, lookupResource);		
+			postprocess(lookupResource, dependencyGraph);
+		}
+		return dependencyGraph;
+	}
+	
+	public IGraph<C> computeDependencyGraph (Resource cs2asResource) {
+		return computeDependencyGraph(cs2asResource, null);
+	}
+	
+	
+	private void updateDependencyGraphFromCS2ASDescription(IGraph<C> dependencyGraph, Resource cs2asDescription) {
+		
+		for (TreeIterator<EObject> tit = cs2asDescription.getAllContents(); tit.hasNext(); ) {
 			EObject next = tit.next();
 			if (isAstCall(next)) {
 				processAstCall(dependencyGraph, (OperationCallExp) next);
@@ -157,9 +176,6 @@ public abstract class AbstractDependencyGraphComputer<C> {
 				processConstructorExp(dependencyGraph,(ConstructorExp) next);
 			}
 		}
-		
-		postprocess(pivotResource, dependencyGraph);
-		return dependencyGraph;
 	}
 
 	protected boolean isAstCall(EObject element) {
@@ -322,6 +338,10 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	
 	abstract protected void processConstructorExp(IGraph<C> dependencyGraph,
 			ConstructorExp next);		
+	
+	// FIXME Refactor this. Decouple CS2AS/Lookup in different graph udpaters
+	abstract protected void updateDependencyGraphFromLookupDescription(IGraph<C> dependencyGraph, Resource lookupDescription);
+
 	/**
 	 * Method called prior to process the resource to look for 
 	 * ast calls.

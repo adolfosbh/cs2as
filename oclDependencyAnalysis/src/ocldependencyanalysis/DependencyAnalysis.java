@@ -16,7 +16,7 @@ import org.eclipse.ocl.examples.xtext.completeocl.CompleteOCLStandaloneSetup;
 
 public class DependencyAnalysis {
 	
-	private static Resource getPivotResource(URI oclDocumentURI) {
+	private static OCL getOCL() {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		
 		org.eclipse.ocl.examples.pivot.OCL.initialize(resourceSet);		
@@ -26,23 +26,36 @@ public class DependencyAnalysis {
 
 		EPackage.Registry registry = new EPackageRegistryImpl();
 		PivotEnvironmentFactory environmentFactory = new PivotEnvironmentFactory(registry, null);
-		OCL ocl = OCL.newInstance(environmentFactory);
-
-		// parse the contents as an OCL document
-		return ocl.parse(oclDocumentURI);
+		return OCL.newInstance(environmentFactory);
 	}
 
-	public static IGraph<Type> createTypeDependencyGraph(URI oclDocumentURI) {
+	public static IGraph<Type> createTypeDependencyGraph(URI cs2asDocURI) {
 			
-		Resource pivotResource = getPivotResource(oclDocumentURI);
-		return new TypeDependencyGraphComputer().computeDependencyGraph(pivotResource);
+		OCL ocl = getOCL();
+		Resource cs2asResource = ocl.parse(cs2asDocURI);
+		TypeDependencyGraphComputer inputTypeGraphComp = new TypeDependencyGraphComputer();
+		return inputTypeGraphComp.computeDependencyGraph(cs2asResource);
 	}
 	
-	public static IGraph<FeatureObj> createFeatureDependencyGraph(URI oclDocumentURI) {
+	public static IGraph<FeatureObj> createFeatureDependencyGraph(URI cs2asDocURI) {
 		
-		Resource pivotResource = getPivotResource(oclDocumentURI);
-		return new FeatureDependencyGraphComputer().computeDependencyGraph(pivotResource);
+		OCL ocl = getOCL();		
+		Resource cs2asResource = ocl.parse(cs2asDocURI);		
+		FeatureDependencyGraphComputer featGraphComp = new FeatureDependencyGraphComputer();
+		return featGraphComp.computeDependencyGraph(cs2asResource);
 	}
+	
+	public static IGraph<FeatureObj> createFeatureDependencyGraph(URI cs2asDocURI, URI lookupDocURI) {
+		
+		OCL ocl = getOCL();	
+		Resource cs2asResource = ocl.parse(cs2asDocURI);
+		Resource lookupResoource = ocl.parse(lookupDocURI);
+		FeatureDependencyGraphComputer featGraphComp = new FeatureDependencyGraphComputer();
+				
+				
+		return featGraphComp.computeDependencyGraph(cs2asResource, lookupResoource);
+	}
+	
 	
 	public static void printGraphAndCycles(IGraph<?> graph) {
 		System.out.println("******** Dependency Graph **********");

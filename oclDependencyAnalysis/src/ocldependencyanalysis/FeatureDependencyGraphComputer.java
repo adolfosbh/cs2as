@@ -268,11 +268,57 @@ public class FeatureDependencyGraphComputer extends AbstractDependencyGraphCompu
 				FeatureObj to = createConstructionTypeFeatureObj(csContext, op, constructorExp);
 				dependencyGraph.addEdge(from, to, true);
 			}
-		}else if (isCstOp(op)) {
+		} else if (isCstOp(op)) {
 			Type constructedType = constructorExp.getType();
 			FeatureObj from = createFeatureObj(constructedType, getAstOperation(constructedType));
 			FeatureObj to = createConstructionTypeFeatureObj(csContext, op, constructorExp);
 			dependencyGraph.addEdge(from, to);
 		}
 	}
+	
+	
+	
+	///// FIXME Refactor and move to proper class
+	@Override
+	protected void updateDependencyGraphFromLookupDescription(
+			IGraph<FeatureObj> dependencyGraph, Resource lookupDescription) {
+				
+//		Set<INode<NameResoPropertyObj>> lookupPropertyObjs = new HashSet<INode<NameResoPropertyObj>>(); 
+//		
+//		for (INode<FeatureObj> node : dependencyGraph.getNodes()) {
+//			FeatureObj featureObj = node.getObject();
+//			if (featureObj instanceof NameResoPropertyObj) {
+//				lookupPropertyObjs.add((NameResoPropertyObj)node);
+//			}
+//		}
+//		Property property = (Property) featureObj.getFeature();
+//		Type asContext = property.getOwningType();
+//		Type lookupType = ((NameResoPropertyObj) featureObj).getLookupType();
+//		Set<Type> contributingTypes = new HashSet<Type>();
+//		for (TreeIterator<EObject> tit = lookupDescription.getAllContents(); tit.hasNext(); ) {
+//			EObject next = tit.next();
+//			if (isAddElementCall(next)) {
+//				OperationCallExp addElementCall = (OperationCallExp) next;
+//				OCLExpression argument = addElementCall.getArgument().get(0); // FIXME Make it more robust
+//				if (argument.getType().equals(lookupType) ) { // FIXME what about subtypes ?
+//					Type contextType = getElementContext(addElementCall);
+//					contributingTypes.add(contextType);
+//					
+//				}
+//			} 
+//		}
+	}
+	
+	
+	protected boolean isAddElementCall(EObject element) {
+		if (element instanceof OperationCallExp) {
+			return isAddElementOp(((OperationCallExp)element).getReferredOperation());
+		}
+		return false;
+	}
+	
+	protected boolean isAddElementOp(Operation op) {
+		return op == null ? false : "addElement".equals(op.getName()) || "addElements".equals(op.getName());
+	}
+	
 }
