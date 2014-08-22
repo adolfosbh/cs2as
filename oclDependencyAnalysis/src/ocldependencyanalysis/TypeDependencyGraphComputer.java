@@ -44,7 +44,7 @@ import org.eclipse.ocl.examples.pivot.Type;
  *  
  * @author asbh500
  */
-public class TypeDependencyGraphComputer extends AbstractDependencyGraphComputer<Type>{
+public class TypeDependencyGraphComputer extends OldDependencyGraphComputer<Type>{
 
 	@Override
 	protected void processAstCall(IGraph<Type> dependencyGraph,
@@ -89,8 +89,8 @@ public class TypeDependencyGraphComputer extends AbstractDependencyGraphComputer
 	}
 	
 	@Override
-	protected void updateDependencyGraphFromLookupDescription(
-			IGraph<Type> dependencyGraph, Resource lookupDescription) {
+	protected void updateDependencyGraphFromLookupDescription(IGraph<Type> dependencyGraph,
+			Resource lookupDescription) {
 		
 		// Nothing to do to the dependency graph from the lookup description
 	}

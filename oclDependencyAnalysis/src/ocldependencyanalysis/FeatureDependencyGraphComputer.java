@@ -47,7 +47,7 @@ import org.eclipse.ocl.examples.pivot.Type;
  * 
  * @author asbh500
  */
-public class FeatureDependencyGraphComputer extends AbstractDependencyGraphComputer<FeatureObj> {
+public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<FeatureObj> {
 
 	@Override
 	protected void processAstCall(IGraph<FeatureObj> dependencyGraph,

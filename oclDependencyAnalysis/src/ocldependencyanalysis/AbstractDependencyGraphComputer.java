@@ -15,6 +15,7 @@ import org.eclipse.ocl.examples.domain.elements.DomainOperation;
 import org.eclipse.ocl.examples.domain.elements.FeatureFilter;
 import org.eclipse.ocl.examples.pivot.Class;
 import org.eclipse.ocl.examples.pivot.ConstructorExp;
+import org.eclipse.ocl.examples.pivot.ConstructorPart;
 import org.eclipse.ocl.examples.pivot.Element;
 import org.eclipse.ocl.examples.pivot.Operation;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
@@ -30,7 +31,8 @@ import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
  * @param <C>
  */
 public abstract class AbstractDependencyGraphComputer<C> {
- 	
+ 		
+
 	private Map<Type , Set<Type>> type2superTypes = new HashMap<Type, Set<Type>>();
 	
 	private Map<Type , Set<Class>> type2instantiableSubClasses = new HashMap<Type, Set<Class>>();
@@ -135,143 +137,6 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		}
 	}
 	
-	public IGraph<C> computeDependencyGraph (Resource cs2asResource, Resource lookupResource) {
-		
-		assert(cs2asResource.getContents().get(0) instanceof Root);
-		if (lookupResource != null) { assert(lookupResource.getContents().get(0) instanceof Root);}
-		
-		mManager = MetaModelManager.getAdapter(cs2asResource.getResourceSet());
-		IGraph<C> dependencyGraph = createDependencyGraph();
-		
-		initializeMaps(cs2asResource);		
-		preprocess(cs2asResource, dependencyGraph);			
-		updateDependencyGraphFromCS2ASDescription(dependencyGraph, cs2asResource);		
-		postprocess(cs2asResource, dependencyGraph);
-		
-		if (lookupResource != null) {
-			initializeMaps(lookupResource);		
-			preprocess(lookupResource, dependencyGraph);			
-			updateDependencyGraphFromLookupDescription(dependencyGraph, lookupResource);		
-			postprocess(lookupResource, dependencyGraph);
-		}
-		return dependencyGraph;
-	}
-	
-	public IGraph<C> computeDependencyGraph (Resource cs2asResource) {
-		return computeDependencyGraph(cs2asResource, null);
-	}
-	
-	
-	private void updateDependencyGraphFromCS2ASDescription(IGraph<C> dependencyGraph, Resource cs2asDescription) {
-		
-		for (TreeIterator<EObject> tit = cs2asDescription.getAllContents(); tit.hasNext(); ) {
-			EObject next = tit.next();
-			if (isAstCall(next)) {
-				processAstCall(dependencyGraph, (OperationCallExp) next);
-				tit.prune(); // prune children iteration
-			} else if (isLookupCall(next)) {
-				processLookupCall(dependencyGraph, (OperationCallExp) next);
-				tit.prune(); // prune children iteration
-			} else if (isConstructorExp(next)) {
-				processConstructorExp(dependencyGraph,(ConstructorExp) next);
-			}
-		}
-	}
-
-	protected boolean isAstCall(EObject element) {
-		if (element instanceof OperationCallExp) {
-			return isAstOp(((OperationCallExp)element).getReferredOperation());
-		}
-		return false;
-	}
-	
-	protected boolean isAstOp(Operation op) {
-		return op == null ? false : "ast".equals(op.getName()) && op.getOwnedParameter().isEmpty();
-	}
-	
-	protected boolean isCstOp(Operation op) {
-		return op == null ? false : "cst".equals(op.getName()) && op.getOwnedParameter().isEmpty();
-	}
-	
-	protected boolean isLookupCall(EObject element) {
-		if (element instanceof OperationCallExp) {
-			return isLookupOp(((OperationCallExp)element).getReferredOperation());
-		}
-		return false;
-	}
-	
-	protected boolean isLookupOp(Operation op) {
-		if (op == null) return false;
-		String opName = op.getName();
-		return opName == null ? false : opName.startsWith("lookup");
-	}
-	
-	protected boolean isConstructorExp(EObject element) {
-		return element instanceof ConstructorExp;
-	}
-	
-	protected Class getElementContext(Element element) { // FIXME this should return/consider Type rather than just Class
-		EObject container = element.eContainer();
-		while (container != null) {
-			if (container instanceof Class) {
-				return (Class) container;
-			}
-			container = container.eContainer();
-		}
-		throw new RuntimeException("I should have found the containing Context Class");
-	}
-	
- 
-	/**
-	 * If the opCallExp is performed as the right hand side of a constructor part, it will return the corresponding
-	 * ConstructorExp, otherwise <code>null</code>. 
-	 *
-	 * @param callExp a given {@link OperationCallExp}
-	 * @return the containing constructor expression, or null
-	 */
-	protected ConstructorExp getContainingConstructor(OperationCallExp callExp) {
-	
-		EObject container = callExp.eContainer();
-		while (container != null) {
-			if (container instanceof ConstructorExp) {
-				return ((ConstructorExp)container);
-			}			
-			container = container.eContainer();
-		}
-		return null;
-	}
-	
-	protected Operation getContainingOperation(Element element) {
-		
-		EObject container = element.eContainer();
-		while (container != null) {
-			if (container instanceof Operation) {
-				return ((Operation)container);
-			}			
-			container = container.eContainer();
-		}
-		return null;
-	}
-	
-	/**
-	 * @param element  
-	 * @return the containing {@link PropertyCallExp} if it's contained in any, <code>null</code> otherwise
-	 */
-	protected PropertyCallExp getContainingPropertyCallExp(Element element) {
-		EObject container = element.eContainer();
-		while (container != null) {
-			if (container instanceof PropertyCallExp) {
-				return (PropertyCallExp) container;
-			}
-			container = container.eContainer();
-		}
-		return null;
-	}
-
-	protected IGraph<C> createDependencyGraph() {
-		return new Graph<C>();
-	}
-		
 	protected Set<Class> getInstantiableSubclasses(Type type) {
 		Type primaryType = mManager.getPrimaryType(type);
 		return type2instantiableSubClasses.get(primaryType);
@@ -316,32 +181,40 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return bestOp;
 	}
 	
-//	protected boolean isElementRefCS(Type to) {
-//		
-//		for (Type type : to.getSuperClass()) {
-//			if ("ElementRefCS".equals(type.getName())) {
-//				return true;
-//			} else {
-//				if (isElementRefCS(type)) {
-//					return true;
-//				}
-//			}
-//		}
-//		return false;
-//	}
+	public IGraph<C> computeDependencyGraph (Resource cs2asResource, Resource lookupResource) {
+		
+		assert(cs2asResource.getContents().get(0) instanceof Root);
+		if (lookupResource != null) { assert(lookupResource.getContents().get(0) instanceof Root);}
+		
+		mManager = MetaModelManager.getAdapter(cs2asResource.getResourceSet());
+		IGraph<C> dependencyGraph = createDependencyGraph();
+		
+		initializeMaps(cs2asResource);		
+		preprocess(cs2asResource, dependencyGraph);			
+		updateDependencyGraphFromCS2ASDescription(dependencyGraph, cs2asResource);		
+		postprocess(cs2asResource, dependencyGraph);
+		
+		if (lookupResource != null) {
+			initializeMaps(lookupResource);		
+			preprocess(lookupResource, dependencyGraph);			
+			updateDependencyGraphFromLookupDescription(dependencyGraph, lookupResource);		
+			postprocess(lookupResource, dependencyGraph);
+		}
+		
+		mManager = null;
+		
+		return dependencyGraph;
+	}
 	
-	abstract protected void processAstCall(IGraph<C> dependencyGraph, 
-			OperationCallExp astOpCall);
+	public IGraph<C> computeDependencyGraph (Resource cs2asResource) {
+		return computeDependencyGraph(cs2asResource, null);
+	}
 	
-	abstract protected void processLookupCall(IGraph<C> dependencyGraph, 
-			OperationCallExp lookupOpCall);
+	protected IGraph<C> createDependencyGraph() {
+		return new Graph<C>();
+	}
+		
 	
-	abstract protected void processConstructorExp(IGraph<C> dependencyGraph,
-			ConstructorExp next);		
-	
-	// FIXME Refactor this. Decouple CS2AS/Lookup in different graph udpaters
-	abstract protected void updateDependencyGraphFromLookupDescription(IGraph<C> dependencyGraph, Resource lookupDescription);
-
 	/**
 	 * Method called prior to process the resource to look for 
 	 * ast calls.
@@ -353,9 +226,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	 * @param resource
 	 * @param dependenyGraph
 	 */
-	protected void preprocess(Resource resource, IGraph<C> dependencyGraph) {
-		
-	}
+	protected void preprocess(Resource resource, IGraph<C> dependencyGraph) {}
 	
 	
 	/**
@@ -369,7 +240,125 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	 * @param resource
 	 * @param dependenyGraph
 	 */
-	protected void postprocess(Resource resource, IGraph<C> dependencyGraph) {
-		
+	protected void postprocess(Resource resource, IGraph<C> dependencyGraph) {}
+	
+	abstract protected void updateDependencyGraphFromCS2ASDescription(IGraph<C> dependencyGraph, Resource cs2asResource);		
+	// FIXME Refactor this. Decouple CS2AS/Lookup in different graph udpaters
+	abstract protected void updateDependencyGraphFromLookupDescription(IGraph<C> dependencyGraph, Resource lookupDescription);
+	
+	// Some utility routines
+	
+	protected Class getElementContext(Element element) { // FIXME this should return/consider Type rather than just Class
+		EObject container = element.eContainer();
+		while (container != null) {
+			if (container instanceof Class) {
+				return (Class) container;
+			}
+			container = container.eContainer();
+		}
+		throw new RuntimeException("I should have found the containing Context Class");
 	}
+	
+	protected boolean isAstCall(EObject element) {
+		if (element instanceof OperationCallExp) {
+			return isAstOp(((OperationCallExp)element).getReferredOperation());
+		}
+		return false;
+	}
+	
+	protected boolean isAstOp(Operation op) {
+		return op == null ? false : "ast".equals(op.getName()) && op.getOwnedParameter().isEmpty();
+	}
+	
+	protected boolean isAstOp(EObject element) {
+		return element instanceof Operation ? isAstOp((Operation) element) : false; 
+	}
+	
+	protected boolean isCstOp(Operation op) {
+		return op == null ? false : "cst".equals(op.getName()) && op.getOwnedParameter().isEmpty();
+	}
+	
+	protected boolean isCstOp(EObject element) {
+		return element instanceof Operation ? isCstOp((Operation) element) : false; 
+	}
+	
+	protected boolean isLookupCall(EObject element) {
+		if (element instanceof OperationCallExp) {
+			return isLookupOp(((OperationCallExp)element).getReferredOperation());
+		}
+		return false;
+	}
+	
+	protected boolean isLookupOp(Operation op) {
+		if (op == null) return false;
+		String opName = op.getName();
+		return opName == null ? false : opName.startsWith("lookup");
+	}
+	
+	protected boolean isConstructorExp(EObject element) {
+		return element instanceof ConstructorExp;
+	}
+	
+	protected boolean isConstrucorPart(EObject element) {
+		return element instanceof ConstructorPart;
+	}
+	
+	/**
+	 * If the opCallExp is performed as the right hand side of a constructor part, it will return the corresponding
+	 * ConstructorExp, otherwise <code>null</code>. 
+	 *
+	 * @param callExp a given {@link OperationCallExp}
+	 * @return the containing constructor expression, or null
+	 */
+	protected ConstructorExp getContainingConstructor(Element callExp) {
+	
+		EObject container = callExp.eContainer();
+		while (container != null) {
+			if (container instanceof ConstructorExp) {
+				return ((ConstructorExp)container);
+			}			
+			container = container.eContainer();
+		}
+		return null;
+	}
+	
+	protected ConstructorPart getContainingConstructorPart(Element callExp) {
+		
+		EObject container = callExp.eContainer();
+		while (container != null) {
+			if (container instanceof ConstructorPart) {
+				return ((ConstructorPart)container);
+			}			
+			container = container.eContainer();
+		}
+		return null;
+	}
+	
+	protected Operation getContainingOperation(Element element) {
+		
+		EObject container = element.eContainer();
+		while (container != null) {
+			if (container instanceof Operation) {
+				return ((Operation)container);
+			}			
+			container = container.eContainer();
+		}
+		return null;
+	}
+	
+	/**
+	 * @param element  
+	 * @return the containing {@link PropertyCallExp} if it's contained in any, <code>null</code> otherwise
+	 */
+	protected PropertyCallExp getContainingPropertyCallExp(Element element) {
+		EObject container = element.eContainer();
+		while (container != null) {
+			if (container instanceof PropertyCallExp) {
+				return (PropertyCallExp) container;
+			}
+			container = container.eContainer();
+		}
+		return null;
+	}
+	
 }
