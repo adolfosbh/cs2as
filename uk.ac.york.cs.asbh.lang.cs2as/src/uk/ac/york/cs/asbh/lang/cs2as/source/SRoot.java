@@ -8,21 +8,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Root</b></em>'.
+ * A representation of the model object '<em><b>SRoot</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.source.Root#getOwnedX <em>Owned X</em>}</li>
+ *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.source.SRoot#getOwnedX <em>Owned X</em>}</li>
  * </ul>
  * </p>
  *
- * @see uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage#getRoot()
+ * @see uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage#getSRoot()
  * @model
  * @generated
  */
-public interface Root extends EObject {
+public interface SRoot extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Owned X</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.york.cs.asbh.lang.cs2as.source.X}.
@@ -33,10 +33,10 @@ public interface Root extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned X</em>' containment reference list.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage#getRoot_OwnedX()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage#getSRoot_OwnedX()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<X> getOwnedX();
 
-} // Root
+} // SRoot

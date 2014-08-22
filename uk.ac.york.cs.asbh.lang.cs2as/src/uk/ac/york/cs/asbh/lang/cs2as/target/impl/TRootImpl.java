@@ -17,23 +17,23 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.york.cs.asbh.lang.cs2as.target.A;
-import uk.ac.york.cs.asbh.lang.cs2as.target.Root;
+import uk.ac.york.cs.asbh.lang.cs2as.target.TRoot;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Root</b></em>'.
+ * An implementation of the model object '<em><b>TRoot</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.RootImpl#getOwnedA <em>Owned A</em>}</li>
+ *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.TRootImpl#getOwnedA <em>Owned A</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RootImpl extends MinimalEObjectImpl.Container implements Root {
+public class TRootImpl extends MinimalEObjectImpl.Container implements TRoot {
 	/**
 	 * The cached value of the '{@link #getOwnedA() <em>Owned A</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RootImpl() {
+	protected TRootImpl() {
 		super();
 	}
 
@@ -60,7 +60,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TargetPackage.Literals.ROOT;
+		return TargetPackage.Literals.TROOT;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	 */
 	public EList<A> getOwnedA() {
 		if (ownedA == null) {
-			ownedA = new EObjectContainmentEList<A>(A.class, this, TargetPackage.ROOT__OWNED_A);
+			ownedA = new EObjectContainmentEList<A>(A.class, this, TargetPackage.TROOT__OWNED_A);
 		}
 		return ownedA;
 	}
@@ -83,7 +83,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TargetPackage.ROOT__OWNED_A:
+			case TargetPackage.TROOT__OWNED_A:
 				return ((InternalEList<?>)getOwnedA()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -97,7 +97,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TargetPackage.ROOT__OWNED_A:
+			case TargetPackage.TROOT__OWNED_A:
 				return getOwnedA();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -112,7 +112,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TargetPackage.ROOT__OWNED_A:
+			case TargetPackage.TROOT__OWNED_A:
 				getOwnedA().clear();
 				getOwnedA().addAll((Collection<? extends A>)newValue);
 				return;
@@ -128,7 +128,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TargetPackage.ROOT__OWNED_A:
+			case TargetPackage.TROOT__OWNED_A:
 				getOwnedA().clear();
 				return;
 		}
@@ -143,10 +143,10 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TargetPackage.ROOT__OWNED_A:
+			case TargetPackage.TROOT__OWNED_A:
 				return ownedA != null && !ownedA.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RootImpl
+} //TRootImpl

@@ -60,7 +60,7 @@ public class SourceFactoryImpl extends EFactoryImpl implements SourceFactory {
 			case SourcePackage.Y1: return createY1();
 			case SourcePackage.Y2: return createY2();
 			case SourcePackage.Z: return createZ();
-			case SourcePackage.ROOT: return createRoot();
+			case SourcePackage.SROOT: return createSRoot();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -111,9 +111,9 @@ public class SourceFactoryImpl extends EFactoryImpl implements SourceFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Root createRoot() {
-		RootImpl root = new RootImpl();
-		return root;
+	public SRoot createSRoot() {
+		SRootImpl sRoot = new SRootImpl();
+		return sRoot;
 	}
 
 	/**

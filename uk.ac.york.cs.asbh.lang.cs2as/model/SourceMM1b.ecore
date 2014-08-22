@@ -17,7 +17,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="toY" eType="#//Y" eOpposite="#//Y/ownsZ"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Root">
+  <eClassifiers xsi:type="ecore:EClass" name="SRoot">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedX" upperBound="-1"
         eType="#//X" containment="true"/>
   </eClassifiers>

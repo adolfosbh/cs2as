@@ -29,8 +29,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TargetMM1.ecore#//D/refsB"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TargetMM1.ecore#//D/refsC"/>
     </genClasses>
-    <genClasses ecoreClass="TargetMM1.ecore#//Root">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TargetMM1.ecore#//Root/ownedA"/>
+    <genClasses ecoreClass="TargetMM1.ecore#//TRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TargetMM1.ecore#//TRoot/ownedA"/>
     </genClasses>
     <genClasses ecoreClass="TargetMM1.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TargetMM1.ecore#//NamedElement/name"/>

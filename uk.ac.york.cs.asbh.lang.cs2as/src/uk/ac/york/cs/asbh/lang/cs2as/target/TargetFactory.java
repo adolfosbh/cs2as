@@ -67,13 +67,13 @@ public interface TargetFactory extends EFactory {
 	D createD();
 
 	/**
-	 * Returns a new object of class '<em>Root</em>'.
+	 * Returns a new object of class '<em>TRoot</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Root</em>'.
+	 * @return a new object of class '<em>TRoot</em>'.
 	 * @generated
 	 */
-	Root createRoot();
+	TRoot createTRoot();
 
 	/**
 	 * Returns a new object of class '<em>Named Element</em>'.

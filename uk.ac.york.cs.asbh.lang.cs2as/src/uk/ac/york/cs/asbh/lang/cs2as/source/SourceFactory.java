@@ -58,13 +58,13 @@ public interface SourceFactory extends EFactory {
 	Z createZ();
 
 	/**
-	 * Returns a new object of class '<em>Root</em>'.
+	 * Returns a new object of class '<em>SRoot</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Root</em>'.
+	 * @return a new object of class '<em>SRoot</em>'.
 	 * @generated
 	 */
-	Root createRoot();
+	SRoot createSRoot();
 
 	/**
 	 * Returns the package supported by this factory.

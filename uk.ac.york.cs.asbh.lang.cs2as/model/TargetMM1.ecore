@@ -27,7 +27,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="refsB" eType="#//B"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refsC" eType="#//C"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Root">
+  <eClassifiers xsi:type="ecore:EClass" name="TRoot">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedA" upperBound="-1"
         eType="#//A" containment="true"/>
   </eClassifiers>

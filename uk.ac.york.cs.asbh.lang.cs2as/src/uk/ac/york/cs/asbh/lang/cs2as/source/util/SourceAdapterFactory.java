@@ -88,8 +88,8 @@ public class SourceAdapterFactory extends AdapterFactoryImpl {
 				return createZAdapter();
 			}
 			@Override
-			public Adapter caseRoot(Root object) {
-				return createRootAdapter();
+			public Adapter caseSRoot(SRoot object) {
+				return createSRootAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -182,16 +182,16 @@ public class SourceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.Root <em>Root</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.SRoot <em>SRoot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.Root
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.SRoot
 	 * @generated
 	 */
-	public Adapter createRootAdapter() {
+	public Adapter createSRootAdapter() {
 		return null;
 	}
 

@@ -109,7 +109,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_30lhAyE8EeS2hNKHE5lWQw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_30jr0SE8EeS2hNKHE5lWQw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="TargetMM1.ecore#//Root"/>
+    <element xmi:type="ecore:EClass" href="TargetMM1.ecore#//TRoot"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_30jr0iE8EeS2hNKHE5lWQw" x="470" y="20"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Ng-YICFBEeS2hNKHE5lWQw" type="1001">
@@ -285,7 +285,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_6n_cwSE8EeS2hNKHE5lWQw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_6n_cwiE8EeS2hNKHE5lWQw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="TargetMM1.ecore#//Root/ownedA"/>
+    <element xmi:type="ecore:EReference" href="TargetMM1.ecore#//TRoot/ownedA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6n_cwyE8EeS2hNKHE5lWQw" points="[-4, 4, 254, 1]$[-256, -8, 2, -11]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6oCgECE8EeS2hNKHE5lWQw" id="(0.049019607843137254,0.32558139534883723)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6oCgESE8EeS2hNKHE5lWQw" id="(0.8823529411764706,0.27906976744186046)"/>

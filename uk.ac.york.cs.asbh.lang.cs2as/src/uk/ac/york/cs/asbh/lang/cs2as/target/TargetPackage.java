@@ -389,14 +389,14 @@ public interface TargetPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.RootImpl <em>Root</em>}' class.
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.TRootImpl <em>TRoot</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.RootImpl
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getRoot()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TRootImpl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getTRoot()
 	 * @generated
 	 */
-	int ROOT = 6;
+	int TROOT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Owned A</b></em>' containment reference list.
@@ -405,26 +405,25 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT__OWNED_A = 0;
+	int TROOT__OWNED_A = 0;
 
 	/**
-	 * The number of structural features of the '<em>Root</em>' class.
+	 * The number of structural features of the '<em>TRoot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_FEATURE_COUNT = 1;
+	int TROOT_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Root</em>' class.
+	 * The number of operations of the '<em>TRoot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_OPERATION_COUNT = 0;
-
+	int TROOT_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.A <em>A</em>}'.
@@ -608,25 +607,25 @@ public interface TargetPackage extends EPackage {
 	EReference getD_RefsC();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.Root <em>Root</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.TRoot <em>TRoot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Root</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.Root
+	 * @return the meta object for class '<em>TRoot</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TRoot
 	 * @generated
 	 */
-	EClass getRoot();
+	EClass getTRoot();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.asbh.lang.cs2as.target.Root#getOwnedA <em>Owned A</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.asbh.lang.cs2as.target.TRoot#getOwnedA <em>Owned A</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Owned A</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.Root#getOwnedA()
-	 * @see #getRoot()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TRoot#getOwnedA()
+	 * @see #getTRoot()
 	 * @generated
 	 */
-	EReference getRoot_OwnedA();
+	EReference getTRoot_OwnedA();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement <em>Named Element</em>}'.
@@ -821,14 +820,14 @@ public interface TargetPackage extends EPackage {
 		EReference D__REFS_C = eINSTANCE.getD_RefsC();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.RootImpl <em>Root</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.TRootImpl <em>TRoot</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.RootImpl
-		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getRoot()
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TRootImpl
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getTRoot()
 		 * @generated
 		 */
-		EClass ROOT = eINSTANCE.getRoot();
+		EClass TROOT = eINSTANCE.getTRoot();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned A</b></em>' containment reference list feature.
@@ -836,7 +835,7 @@ public interface TargetPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROOT__OWNED_A = eINSTANCE.getRoot_OwnedA();
+		EReference TROOT__OWNED_A = eINSTANCE.getTRoot_OwnedA();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamedElementImpl <em>Named Element</em>}' class.

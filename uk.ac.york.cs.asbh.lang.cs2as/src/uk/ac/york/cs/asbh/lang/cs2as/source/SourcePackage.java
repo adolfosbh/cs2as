@@ -314,14 +314,14 @@ public interface SourcePackage extends EPackage {
 	int Z_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.RootImpl <em>Root</em>}' class.
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.SRootImpl <em>SRoot</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.RootImpl
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.SourcePackageImpl#getRoot()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.SRootImpl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.SourcePackageImpl#getSRoot()
 	 * @generated
 	 */
-	int ROOT = 5;
+	int SROOT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Owned X</b></em>' containment reference list.
@@ -330,26 +330,25 @@ public interface SourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT__OWNED_X = 0;
+	int SROOT__OWNED_X = 0;
 
 	/**
-	 * The number of structural features of the '<em>Root</em>' class.
+	 * The number of structural features of the '<em>SRoot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_FEATURE_COUNT = 1;
+	int SROOT_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Root</em>' class.
+	 * The number of operations of the '<em>SRoot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_OPERATION_COUNT = 0;
-
+	int SROOT_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.X <em>X</em>}'.
@@ -479,25 +478,25 @@ public interface SourcePackage extends EPackage {
 	EAttribute getZ_Name();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.Root <em>Root</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.SRoot <em>SRoot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Root</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.Root
+	 * @return the meta object for class '<em>SRoot</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.SRoot
 	 * @generated
 	 */
-	EClass getRoot();
+	EClass getSRoot();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.asbh.lang.cs2as.source.Root#getOwnedX <em>Owned X</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.asbh.lang.cs2as.source.SRoot#getOwnedX <em>Owned X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Owned X</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.Root#getOwnedX()
-	 * @see #getRoot()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.SRoot#getOwnedX()
+	 * @see #getSRoot()
 	 * @generated
 	 */
-	EReference getRoot_OwnedX();
+	EReference getSRoot_OwnedX();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -629,14 +628,14 @@ public interface SourcePackage extends EPackage {
 		EAttribute Z__NAME = eINSTANCE.getZ_Name();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.RootImpl <em>Root</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.SRootImpl <em>SRoot</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.RootImpl
-		 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.SourcePackageImpl#getRoot()
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.SRootImpl
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.SourcePackageImpl#getSRoot()
 		 * @generated
 		 */
-		EClass ROOT = eINSTANCE.getRoot();
+		EClass SROOT = eINSTANCE.getSRoot();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned X</b></em>' containment reference list feature.
@@ -644,7 +643,7 @@ public interface SourcePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROOT__OWNED_X = eINSTANCE.getRoot_OwnedX();
+		EReference SROOT__OWNED_X = eINSTANCE.getSRoot_OwnedX();
 
 	}
 

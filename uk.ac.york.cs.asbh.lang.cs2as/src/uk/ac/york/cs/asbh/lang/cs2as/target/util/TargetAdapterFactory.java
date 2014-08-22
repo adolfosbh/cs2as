@@ -92,8 +92,8 @@ public class TargetAdapterFactory extends AdapterFactoryImpl {
 				return createDAdapter();
 			}
 			@Override
-			public Adapter caseRoot(Root object) {
-				return createRootAdapter();
+			public Adapter caseTRoot(TRoot object) {
+				return createTRootAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -204,16 +204,16 @@ public class TargetAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.Root <em>Root</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.TRoot <em>TRoot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.Root
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TRoot
 	 * @generated
 	 */
-	public Adapter createRootAdapter() {
+	public Adapter createTRootAdapter() {
 		return null;
 	}
 

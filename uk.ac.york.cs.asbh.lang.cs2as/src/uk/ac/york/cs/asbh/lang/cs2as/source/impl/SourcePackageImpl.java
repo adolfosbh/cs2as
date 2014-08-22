@@ -6,10 +6,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import uk.ac.york.cs.asbh.lang.cs2as.source.Root;
+import uk.ac.york.cs.asbh.lang.cs2as.source.SRoot;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SourceFactory;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;
 
@@ -60,7 +58,7 @@ public class SourcePackageImpl extends EPackageImpl implements SourcePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rootEClass = null;
+	private EClass sRootEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -236,8 +234,8 @@ public class SourcePackageImpl extends EPackageImpl implements SourcePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRoot() {
-		return rootEClass;
+	public EClass getSRoot() {
+		return sRootEClass;
 	}
 
 	/**
@@ -245,8 +243,8 @@ public class SourcePackageImpl extends EPackageImpl implements SourcePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoot_OwnedX() {
-		return (EReference)rootEClass.getEStructuralFeatures().get(0);
+	public EReference getSRoot_OwnedX() {
+		return (EReference)sRootEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -294,8 +292,8 @@ public class SourcePackageImpl extends EPackageImpl implements SourcePackage {
 		createEReference(zEClass, Z__TO_Y);
 		createEAttribute(zEClass, Z__NAME);
 
-		rootEClass = createEClass(ROOT);
-		createEReference(rootEClass, ROOT__OWNED_X);
+		sRootEClass = createEClass(SROOT);
+		createEReference(sRootEClass, SROOT__OWNED_X);
 	}
 
 	/**
@@ -347,8 +345,8 @@ public class SourcePackageImpl extends EPackageImpl implements SourcePackage {
 		initEReference(getZ_ToY(), this.getY(), this.getY_OwnsZ(), "toY", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.source.Z.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZ_Name(), ecorePackage.getEString(), "name", null, 0, 1, uk.ac.york.cs.asbh.lang.cs2as.source.Z.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoot_OwnedX(), this.getX(), null, "ownedX", null, 0, -1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(sRootEClass, SRoot.class, "SRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSRoot_OwnedX(), this.getX(), null, "ownedX", null, 0, -1, SRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
