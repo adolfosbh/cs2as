@@ -11,9 +11,9 @@ endpackage
 
 package source
 
-context Root
-def : ast() : target::Root=
-	target::Root {
+context SRoot
+def : ast() : target::TRoot=
+	target::TRoot {
 		ownedA = ownedX.ast()
 	}
 

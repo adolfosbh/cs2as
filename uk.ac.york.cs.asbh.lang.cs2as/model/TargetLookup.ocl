@@ -22,7 +22,7 @@ endpackage
 
 package target
 
-context Root
+context TRoot
 def : _env(child : ocl::OclElement) : env::Environment =
 	parentEnv()
 	
