@@ -8,7 +8,7 @@ public abstract class ComputationOperation extends Computation {
 	private Operation operation;
 	
 	public ComputationOperation(Type context, Operation operation) {
-		super(context);
+		super(context, operation);
 		this.operation = operation;
 	}
 	

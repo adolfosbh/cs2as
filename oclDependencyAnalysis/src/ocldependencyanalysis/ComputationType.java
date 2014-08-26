@@ -7,7 +7,7 @@ public abstract class ComputationType extends Computation {
 	private Type type;
 	
 	public ComputationType(Type context, Type type) {
-		super(context);
+		super(context, type);
 		this.type = type;
 	}
 	

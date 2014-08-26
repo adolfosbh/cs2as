@@ -68,7 +68,7 @@ public class GraphmlGenerator {
 		IGraph<Computation> graph = DependencyAnalysis.createComputationsDependencyGraph(inputOclDocUri);
 		
 		System.out.println(graph.toString());
-		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new ComputationDependenciesTypeProvider());
+		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new ComputationDependenciesTypeProvider(graph));
 		launchGraph2GraphMLScript(graphModel, outputGaprhmlFilePath);
 	}
 	
@@ -85,8 +85,6 @@ public class GraphmlGenerator {
 		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new TypeDependenciesTypeProvider(graph));
 		launchGraph2GraphMLScript(graphModel, outputGaprhmlFilePath);
 	}
-	
-	
 	
 	
 	private static void launchGraph2GraphMLScript(Graph graphModel, final String outputGaprhmlFilePath) throws Exception{

@@ -7,9 +7,13 @@ public abstract class ComputationProperty extends Computation {
 
 	private Property property;
 	
-	public ComputationProperty(Type context, Property cPart) {
-		super(context);
-		this.property = cPart;
+	public ComputationProperty(Type context, Property property) {
+		super(context, property);
+		this.property = property;
+	}
+	
+	public Property getProperty() {
+		return property;
 	}
 	
 	@Override

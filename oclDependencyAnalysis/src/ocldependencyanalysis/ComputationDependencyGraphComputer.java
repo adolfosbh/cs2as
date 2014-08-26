@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.examples.pivot.ConstructorExp;
 import org.eclipse.ocl.examples.pivot.ConstructorPart;
+import org.eclipse.ocl.examples.pivot.OCLExpression;
 import org.eclipse.ocl.examples.pivot.Operation;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
 import org.eclipse.ocl.examples.pivot.PropertyCallExp;
@@ -47,15 +48,23 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		dependencyGraph.addEdge(typeInfo, action);
 		dependencyGraph.addEdge(action, propInfo);
 		
+		updateGraphFromInnerOCLExpression(dependencyGraph, context, action, cPart.getInitExpression());
 		for (TreeIterator<EObject> tit = cPart.getInitExpression().eAllContents(); tit.hasNext(); ) {
 			EObject next = tit.next();
-			if (isAstCall(next)) {
-				ComputationType astCallTypeInfo = createTypeInfo(context, ((OperationCallExp)next).getType());
-				dependencyGraph.addEdge(astCallTypeInfo, action);
-			} else if (next instanceof PropertyCallExp) {
-				PropertyCallExpInfo pcePropInfo = createPropertyCallExp(context, (PropertyCallExp)next);
-				dependencyGraph.addEdge(pcePropInfo, action);
-			}
+			if (next instanceof OCLExpression) {
+				updateGraphFromInnerOCLExpression(dependencyGraph, context, action, (OCLExpression)next);
+			}			
+		}
+	}
+	
+	private void  updateGraphFromInnerOCLExpression(IGraph<Computation> dependencyGraph, 
+			Type context, ConstructorPartAction action, OCLExpression oclExp) {
+		if (isAstCall(oclExp)) {
+			ComputationType astCallTypeInfo = createTypeInfo(context, ((OperationCallExp)oclExp).getType());
+			dependencyGraph.addEdge(astCallTypeInfo, action);
+		} else if (oclExp instanceof PropertyCallExp) {
+			PropertyCallExpInfo pcePropInfo = createPropertyCallExp(context, (PropertyCallExp)oclExp);
+			dependencyGraph.addEdge(pcePropInfo, action);
 		}
 	}
 	
