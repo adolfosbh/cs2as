@@ -74,10 +74,12 @@ context AmbZ
 def : cst() : Z =
 	if toY.oclIsKindOf(source::Y1)
 	then Z1 {
-		name = name
+		name = name,
+		toY = toY
 	}
 	else Z2 {
-		name = name
+		name = name,
+		toY = toY
 	}
 	endif
 	
