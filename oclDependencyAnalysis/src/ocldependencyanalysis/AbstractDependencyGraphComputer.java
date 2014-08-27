@@ -303,6 +303,10 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return element instanceof ConstructorPart;
 	}
 	
+	protected boolean isPropertyCallExp(EObject element) {
+		return element instanceof PropertyCallExp;
+	}
+	
 	/**
 	 * If the opCallExp is performed as the right hand side of a constructor part, it will return the corresponding
 	 * ConstructorExp, otherwise <code>null</code>. 

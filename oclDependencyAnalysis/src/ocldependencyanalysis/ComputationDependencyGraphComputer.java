@@ -11,6 +11,7 @@ import org.eclipse.ocl.examples.pivot.ConstructorPart;
 import org.eclipse.ocl.examples.pivot.OCLExpression;
 import org.eclipse.ocl.examples.pivot.Operation;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
+import org.eclipse.ocl.examples.pivot.Property;
 import org.eclipse.ocl.examples.pivot.PropertyCallExp;
 import org.eclipse.ocl.examples.pivot.Type;
 
@@ -25,17 +26,21 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 			EObject next = tit.next();
 			if (isConstrucorPart(next)) {
 				updateGraphFromConstructorPart(dependencyGraph, (ConstructorPart) next);
-				tit.next();
+				tit.next(); // routine above will process contained relevant expressions
 			} else if (isConstructorExp(next)) {
 				updateGraphFromConstructorExp(dependencyGraph, (ConstructorExp) next);
 			} else if (isAstOp(next)) {
 				updateGraphFromMappingOperation(dependencyGraph, (Operation) next);
 			} else if (isCstOp(next)) {
 				updateGraphFromMappingOperation(dependencyGraph, (Operation) next); 
+			} 
+			else if (isPropertyCallExp(next)) {
+				updateGraphFromPropertyCallExp(dependencyGraph, (PropertyCallExp) next);
 			}
 		}
 	}
-	
+
+
 	private void updateGraphFromConstructorPart(IGraph<Computation> dependencyGraph, ConstructorPart cPart ) {
 	
 		ConstructorExp cExp = (ConstructorExp) cPart.eContainer(); 
@@ -48,6 +53,8 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		dependencyGraph.addEdge(typeInfo, action);
 		dependencyGraph.addEdge(action, propInfo);
 		
+		updateGraphFromOpposite(dependencyGraph, context, action, cPart.getReferredProperty());
+		
 		updateGraphFromInnerOCLExpression(dependencyGraph, context, action, cPart.getInitExpression());
 		for (TreeIterator<EObject> tit = cPart.getInitExpression().eAllContents(); tit.hasNext(); ) {
 			EObject next = tit.next();
@@ -57,12 +64,23 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		}
 	}
 	
+	private void updateGraphFromOpposite(IGraph<Computation> dependencyGraph,
+			Type context, ConstructorPartAction fromAction,
+			Property referredProperty) {
+		Property opposite = referredProperty.getOpposite();
+		if (opposite != null) {
+			OppositePropertyInfo to = createOppositePropertyInfo(context, opposite);
+			dependencyGraph.addEdge(fromAction, to);
+		}
+	}
+
+
 	private void  updateGraphFromInnerOCLExpression(IGraph<Computation> dependencyGraph, 
 			Type context, ConstructorPartAction action, OCLExpression oclExp) {
 		if (isAstCall(oclExp)) {
 			ComputationType astCallTypeInfo = createTypeInfo(context, ((OperationCallExp)oclExp).getType());
 			dependencyGraph.addEdge(astCallTypeInfo, action);
-		} else if (oclExp instanceof PropertyCallExp) {
+		} else if (isPropertyCallExp(oclExp)) {
 			PropertyCallExpInfo pcePropInfo = createPropertyCallExp(context, (PropertyCallExp)oclExp);
 			dependencyGraph.addEdge(pcePropInfo, action);
 		}
@@ -108,9 +126,11 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 			if (!constructorExp.getType().equals(op.getType())) {	// The created type should be a subtype
 				// FIXME What to do if the created type is the same of the ast type. We can't create it twice
 				// Note, if we have CS2CS, this should not happen
-				ComputationType from = createTypeInfo(csContext, op.getType());
-				ConstructorExpTypeInfo to = createConstructorTypeInfo(csContext,  constructorExp);								
-				dependencyGraph.addEdge(from, to);
+				OperationAction opAction = createOperationAction(csContext, op);
+				ConstructorExpTypeInfo constructedType = createConstructorTypeInfo(csContext,  constructorExp);
+				ComputationType opType = createTypeInfo(csContext, op.getType());
+				dependencyGraph.addEdge(constructedType, opType);
+				dependencyGraph.addEdge(opAction, constructedType);				
 			}
 		} 
 //		else if (isCstOp(op)) {
@@ -120,6 +140,20 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 //			dependencyGraph.addEdge(from, to);
 //		}
 	}
+	
+	private void updateGraphFromPropertyCallExp(
+			IGraph<Computation> dependencyGraph, PropertyCallExp propCallExp) {
+		// This propertyCallExp will be a prerequisite of the containing operation (cst/ast)
+		Operation op = getContainingOperation(propCallExp);
+		Type csContext = op.getOwningType();
+		if (isAstOp(op)
+				|| isCstOp(op)) {
+			PropertyCallExpInfo from = createPropertyCallExp(csContext, propCallExp);
+			OperationAction to = createOperationAction(csContext, op);
+			dependencyGraph.addEdge(from, to);
+		}
+	}
+	
 	@Override
 	protected void updateDependencyGraphFromLookupDescription(
 			IGraph<Computation> dependencyGraph, Resource lookupDescription) {
@@ -148,5 +182,9 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 	
 	protected OperationAction createOperationAction(Type context, Operation op) {
 		return new OperationAction(context, op);
+	}
+	
+	protected OppositePropertyInfo createOppositePropertyInfo(Type context, Property opposite) {
+		return new OppositePropertyInfo(context, opposite);
 	}
 }

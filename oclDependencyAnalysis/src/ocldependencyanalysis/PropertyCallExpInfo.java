@@ -19,5 +19,10 @@ public class PropertyCallExpInfo extends ComputationProperty implements IInfoNod
 	@Override
 	public String toString() {
 		return propertyCallExp.getSource().getType().getName() + "::" + getProperty().getName();
+//		Property prop = getProperty();
+//		Property mainProp = getMainProperty(prop);
+//		return mainProp == prop ?				
+//			 propertyCallExp.getSource().getType().getName() + "::" + mainProp.getName()
+//			 : super.toString();
 	}
 }
