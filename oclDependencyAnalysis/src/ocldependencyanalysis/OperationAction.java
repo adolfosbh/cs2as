@@ -9,4 +9,9 @@ public class OperationAction extends ComputationOperation implements   IActionNo
 		super(context, operation);
 	}
 
+	@Override
+	public String toString() {
+		Operation operation = getOperation();
+		return operation.getOwningType().getName() + "_" + operation.getName() + "_0";
+	}
 }
