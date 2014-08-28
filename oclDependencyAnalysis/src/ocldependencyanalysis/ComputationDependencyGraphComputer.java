@@ -4,7 +4,6 @@ package ocldependencyanalysis;
 import java.util.ArrayList;
 import java.util.List;
 
-import ocldependencyanalysis.graph.IEdge;
 import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graph.INode;
 
@@ -210,36 +209,29 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 	protected void postprocess(Resource resource,
 			IGraph<Computation> dependencyGraph) {
 		List<INode<Computation>> nodesToRemove = new ArrayList<>();
-		for (INode<Computation> node: dependencyGraph.getNodes()) {
-			// We remove all the TypeInfo which are not required/produced by an action			
-			if (node.getObject() instanceof TypeInfo) {
-				boolean isActionInputOutput = false;
-				for (IEdge<Computation> edge : dependencyGraph.getInputEdges(node)) {
-					if (edge.getFrom().getObject() instanceof IActionNode) {
-						isActionInputOutput = true;
-					}
-				}
-				for (IEdge<Computation> edge : dependencyGraph.getOutputEdges(node)) {
-					if (edge.getTo().getObject() instanceof IActionNode) {
-						isActionInputOutput = true;
+		boolean graphChanged = true;
+		while (graphChanged) {
+			nodesToRemove.clear();
+			for (INode<Computation> node: dependencyGraph.getNodes()) { 
+				// We remove all the TypeInfo which are not consumed			
+				if (node.getObject() instanceof TypeInfo) {
+					if(dependencyGraph.getOutputEdges(node).size() == 0) {
+						nodesToRemove.add(node);
 					}
 				}
 				
-				if (!isActionInputOutput) {
-					nodesToRemove.add(node);
+				// We remove all the OppositePropertyInfo which are not computed
+				if (node.getObject() instanceof OppositePropertyInfo) {
+					if(dependencyGraph.getOutputEdges(node).size() == 0) {
+						nodesToRemove.add(node);
+					}
 				}
 			}
 			
-			// We remove all the OppositePropertyInfo which are not computed
-			if (node.getObject() instanceof OppositePropertyInfo) {
-				if(dependencyGraph.getOutputEdges(node).size() == 0) {
-					nodesToRemove.add(node);
-				}
+			for  (INode<Computation> node: nodesToRemove) {
+				dependencyGraph.removeNode(node);
 			}
-		}
-		
-		for  (INode<Computation> node: nodesToRemove) {
-			dependencyGraph.removeNode(node);
+			graphChanged = nodesToRemove.size() > 0;
 		}
 	}
 }

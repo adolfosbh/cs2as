@@ -1,8 +1,10 @@
 package ocldependencyanalysis.graph;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -141,18 +143,24 @@ public class Graph<C> implements IGraph<C> {
 		boolean nodeRemoved = nodes.remove(node);
 		if (nodeRemoved) {
 			object2node.remove(node.getObject());
+			List<IEdge<C>> edgesToRemove = new ArrayList<IEdge<C>>();
 			for (IEdge<C> outputEdge : getOutputEdges(node)) {
-				edges.remove(outputEdge);
+				edgesToRemove.add(outputEdge);
 			}
 			for (IEdge<C> inputEdge : getInputEdges(node)) {
-				edges.remove(inputEdge);
+				edgesToRemove.add(inputEdge);
+			}
+			for (IEdge<C> edge : edgesToRemove) {
+				removeEdge(edge);
 			}
 		}
 		return nodeRemoved;
 	}
-
+	
 	@Override
 	public boolean removeEdge(IEdge<C> edge) {
+		node2outputEdges.get(edge.getFrom()).remove(edge);
+		node2inputEdges.get(edge.getTo()).remove(edge);
 		return edges.remove(edge);
 	}
 		
