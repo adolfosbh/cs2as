@@ -28,8 +28,9 @@ public class ConstructorPartAction extends ComputationProperty implements IActio
 	public String toString() {
 		ConstructorExp constructorExp = (ConstructorExp) constructorPart.eContainer();
 		Operation operation = getContainingOperation();
-		return getContext().getName() + "_" + operation.getName() + "_" 
-			  + (constructorExp.getPart().indexOf(constructorPart)+1);				
+		return getContext().getName() + "_" + operation.getName() +"_" 
+			  + (constructorExp.getPart().indexOf(constructorPart)+1)
+			  + "_" + constructorExp.getType().getName();				
 //		Property prop = constructorPart.getReferredProperty();
 //		ConstructorExp constructorExp = (ConstructorExp) constructorPart.eContainer();
 //		return constructorExp.getType().getName() + "::" + prop.getName() + " (" + getContext().getName() + ")";
