@@ -137,8 +137,13 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 		EObject container = element.eContainer();
 		while (container != null) {
 			if (container instanceof Package) {
-				Package pPackage = (Package)container;
-				return (Package) PivotUtil.findMetaModelManager(pPackage).getPrimaryPackage(pPackage);
+				try {
+					Package pPackage = (Package)container;
+					return (Package) PivotUtil.findMetaModelManager(pPackage).getPrimaryPackage(pPackage);	
+				} catch (Exception e) {
+					int i = 0;
+				}
+				
 			}
 			container = container.eContainer();
 		}

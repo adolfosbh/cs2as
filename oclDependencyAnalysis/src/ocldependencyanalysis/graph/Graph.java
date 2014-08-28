@@ -144,7 +144,7 @@ public class Graph<C> implements IGraph<C> {
 			for (IEdge<C> outputEdge : getOutputEdges(node)) {
 				edges.remove(outputEdge);
 			}
-			for (IEdge<C> inputEdge : getOutputEdges(node)) {
+			for (IEdge<C> inputEdge : getInputEdges(node)) {
 				edges.remove(inputEdge);
 			}
 		}

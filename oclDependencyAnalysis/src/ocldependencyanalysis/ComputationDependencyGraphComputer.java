@@ -1,7 +1,12 @@
 package ocldependencyanalysis;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ocldependencyanalysis.graph.IEdge;
 import ocldependencyanalysis.graph.IGraph;
+import ocldependencyanalysis.graph.INode;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -29,11 +34,12 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 				tit.next(); // routine above will process contained relevant expressions
 			} else if (isConstructorExp(next)) {
 				updateGraphFromConstructorExp(dependencyGraph, (ConstructorExp) next);
-			} else if (isAstOp(next)) {
-				updateGraphFromMappingOperation(dependencyGraph, (Operation) next);
-			} else if (isCstOp(next)) {
-				updateGraphFromMappingOperation(dependencyGraph, (Operation) next); 
 			} 
+//			else if (isAstOp(next)) {
+//				updateGraphFromMappingOperation(dependencyGraph, (Operation) next);
+//			} else if (isCstOp(next)) {
+//				updateGraphFromMappingOperation(dependencyGraph, (Operation) next); 
+//			} 
 			else if (isPropertyCallExp(next)) {
 				updateGraphFromPropertyCallExp(dependencyGraph, (PropertyCallExp) next);
 			}
@@ -86,17 +92,17 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		}
 	}
 	
-	private void updateGraphFromMappingOperation(IGraph<Computation> dependencyGraph, Operation operation ) {
-		
-		Type context = getElementContext(operation);
-		
-		TypeInfo fromInfo = createTypeInfo(context, context);
-		OperationAction opAction = createOperationAction(context, operation);
-		TypeInfo toInfo = createTypeInfo(context, operation.getType());
-				
-		dependencyGraph.addEdge(fromInfo, opAction);
-		dependencyGraph.addEdge(opAction, toInfo);
-	}
+//	private void updateGraphFromMappingOperation(IGraph<Computation> dependencyGraph, Operation operation ) {
+//		
+//		Type context = getElementContext(operation);
+//		
+//		TypeInfo fromInfo = createTypeInfo(context, context);
+//		OperationAction opAction = createOperationAction(context, operation);
+//		TypeInfo toInfo = createTypeInfo(context, operation.getType()); 
+//				
+//		dependencyGraph.addEdge(fromInfo, opAction);
+//		dependencyGraph.addEdge(opAction, toInfo);
+//	}
 	
 	
 //	private void updateGraphFromOperationCallExp(IGraph<Computation> dependencyGraph, ComputationAction action,  OperationCallExp opCall) {
@@ -118,27 +124,30 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 
 	private void updateGraphFromConstructorExp(IGraph<Computation> dependencyGraph, ConstructorExp constructorExp) {
 		
+		
 		Operation op = getContainingOperation(constructorExp);
 		Type csContext = op.getOwningType();
+		// If the create a narrower type
 		if (isAstOp(op)
 			|| isCstOp(op)) {
-			
-			if (!constructorExp.getType().equals(op.getType())) {	// The created type should be a subtype
-				// FIXME What to do if the created type is the same of the ast type. We can't create it twice
-				// Note, if we have CS2CS, this should not happen
+			//if (!constructorExp.getType().equals(op.getType())) {
 				OperationAction opAction = createOperationAction(csContext, op);
 				ConstructorExpTypeInfo constructedType = createConstructorTypeInfo(csContext,  constructorExp);
-				ComputationType opType = createTypeInfo(csContext, op.getType());
-				dependencyGraph.addEdge(constructedType, opType);
 				dependencyGraph.addEdge(opAction, constructedType);				
-			}
-		} 
-//		else if (isCstOp(op)) {
-//			Type constructedType = constructorExp.getType();
-//			FeatureObj from = createFeatureObj(constructedType, getAstOperation(constructedType));
-//			FeatureObj to = createConstructionTypeFeatureObj(csContext, op, constructorExp);
-//			dependencyGraph.addEdge(from, to);
-//		}
+			//}
+		}
+		// We always create pre-requiste dependency between a constructed type and it's subtypes
+		ConstructorExpTypeInfo constructedType = createConstructorTypeInfo(csContext,  constructorExp);
+		updateGraphFromSupertTypes(dependencyGraph, csContext, constructedType); 	
+	}
+	
+	private void updateGraphFromSupertTypes(IGraph<Computation> dependencyGraph, Type context, ComputationType from) {
+		
+		for (Type superType : from.getType().getSuperClass()) {
+			TypeInfo to = createTypeInfo(context, superType);
+			dependencyGraph.addEdge(from, to);
+			updateGraphFromSupertTypes(dependencyGraph, context, to);
+		}
 	}
 	
 	private void updateGraphFromPropertyCallExp(
@@ -186,5 +195,35 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 	
 	protected OppositePropertyInfo createOppositePropertyInfo(Type context, Property opposite) {
 		return new OppositePropertyInfo(context, opposite);
+	}
+	
+	@Override
+	protected void postprocess(Resource resource,
+			IGraph<Computation> dependencyGraph) {
+		List<INode<Computation>> nodesToRemove = new ArrayList<>();
+		for (INode<Computation> node: dependencyGraph.getNodes()) {
+			// We remove all the TypeIndo which are not required by an action			
+			if (node.getObject() instanceof TypeInfo) {
+				boolean isActionInputOutput = false;
+				for (IEdge<Computation> edge : dependencyGraph.getInputEdges(node)) {
+					if (edge.getTo().getObject() instanceof IActionNode) {
+						isActionInputOutput = true;
+					}
+				}
+				for (IEdge<Computation> edge : dependencyGraph.getOutputEdges(node)) {
+					if (edge.getTo().getObject() instanceof IActionNode) {
+						isActionInputOutput = true;
+					}
+				}
+				
+				if (!isActionInputOutput) {
+					nodesToRemove.add(node);
+				}
+			}
+		}
+		
+		for  (INode<Computation> node: nodesToRemove) {
+			dependencyGraph.removeNode(node);
+		}
 	}
 }

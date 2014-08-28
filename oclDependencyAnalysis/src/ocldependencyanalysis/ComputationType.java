@@ -11,6 +11,10 @@ public abstract class ComputationType extends Computation {
 		this.type = type;
 	}
 	
+	public Type getType() {
+		return type;
+	}
+	
 	@Override
 	public String toString() {
 		return type.getName();
