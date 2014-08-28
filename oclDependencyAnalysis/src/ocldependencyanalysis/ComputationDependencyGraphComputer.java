@@ -31,15 +31,15 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 			EObject next = tit.next();
 			if (isConstrucorPart(next)) {
 				updateGraphFromConstructorPart(dependencyGraph, (ConstructorPart) next);
-				tit.next(); // routine above will process contained relevant expressions
+				tit.prune(); // routine above will process contained relevant expressions-> prune
 			} else if (isConstructorExp(next)) {
 				updateGraphFromConstructorExp(dependencyGraph, (ConstructorExp) next);
 			} 
-//			else if (isAstOp(next)) {
-//				updateGraphFromMappingOperation(dependencyGraph, (Operation) next);
-//			} else if (isCstOp(next)) {
-//				updateGraphFromMappingOperation(dependencyGraph, (Operation) next); 
-//			} 
+			else if (isAstOp(next)) {
+				updateGraphFromMappingOperation(dependencyGraph, (Operation) next);
+			} else if (isCstOp(next)) {
+				updateGraphFromMappingOperation(dependencyGraph, (Operation) next); 
+			} 
 			else if (isPropertyCallExp(next)) {
 				updateGraphFromPropertyCallExp(dependencyGraph, (PropertyCallExp) next);
 			}
@@ -59,7 +59,7 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		dependencyGraph.addEdge(typeInfo, action);
 		dependencyGraph.addEdge(action, propInfo);
 		
-		updateGraphFromOpposite(dependencyGraph, context, action, cPart.getReferredProperty());
+		updateGraphFromOpposite(dependencyGraph, context, propInfo);
 		
 		updateGraphFromInnerOCLExpression(dependencyGraph, context, action, cPart.getInitExpression());
 		for (TreeIterator<EObject> tit = cPart.getInitExpression().eAllContents(); tit.hasNext(); ) {
@@ -71,12 +71,11 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 	}
 	
 	private void updateGraphFromOpposite(IGraph<Computation> dependencyGraph,
-			Type context, ConstructorPartAction fromAction,
-			Property referredProperty) {
-		Property opposite = referredProperty.getOpposite();
+			Type context, ConstructorPartPropertyInfo propertyInfo) {
+		Property opposite = propertyInfo.getProperty().getOpposite();
 		if (opposite != null) {
 			OppositePropertyInfo to = createOppositePropertyInfo(context, opposite);
-			dependencyGraph.addEdge(fromAction, to);
+			dependencyGraph.addEdge(propertyInfo, to);
 		}
 	}
 
@@ -92,17 +91,27 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		}
 	}
 	
-//	private void updateGraphFromMappingOperation(IGraph<Computation> dependencyGraph, Operation operation ) {
-//		
-//		Type context = getElementContext(operation);
-//		
-//		TypeInfo fromInfo = createTypeInfo(context, context);
-//		OperationAction opAction = createOperationAction(context, operation);
-//		TypeInfo toInfo = createTypeInfo(context, operation.getType()); 
-//				
-//		dependencyGraph.addEdge(fromInfo, opAction);
-//		dependencyGraph.addEdge(opAction, toInfo);
-//	}
+	private void updateGraphFromMappingOperation(IGraph<Computation> dependencyGraph, Operation operation ) {
+		
+		// We want to ensure some type will be constructed prior to create a dependency
+		// with the context and the operation
+		boolean constructsAType = false;
+		for (TreeIterator<EObject> tit = operation.eAllContents(); tit.hasNext(); ) {
+			EObject next = tit.next();
+			if (next instanceof ConstructorExp) {
+				constructsAType = true;
+			}
+		}
+		
+		if (constructsAType) {
+			Type context = getElementContext(operation);
+			TypeInfo fromInfo = createTypeInfo(context, context);
+			OperationAction opAction = createOperationAction(context, operation);					
+			dependencyGraph.addEdge(fromInfo, opAction);
+			// Note the dependency with the constructed type will be done when
+			// the constructor expression is analysed
+		}
+	}
 	
 	
 //	private void updateGraphFromOperationCallExp(IGraph<Computation> dependencyGraph, ComputationAction action,  OperationCallExp opCall) {
@@ -202,11 +211,11 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 			IGraph<Computation> dependencyGraph) {
 		List<INode<Computation>> nodesToRemove = new ArrayList<>();
 		for (INode<Computation> node: dependencyGraph.getNodes()) {
-			// We remove all the TypeIndo which are not required by an action			
+			// We remove all the TypeInfo which are not required/produced by an action			
 			if (node.getObject() instanceof TypeInfo) {
 				boolean isActionInputOutput = false;
 				for (IEdge<Computation> edge : dependencyGraph.getInputEdges(node)) {
-					if (edge.getTo().getObject() instanceof IActionNode) {
+					if (edge.getFrom().getObject() instanceof IActionNode) {
 						isActionInputOutput = true;
 					}
 				}
@@ -217,6 +226,13 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 				}
 				
 				if (!isActionInputOutput) {
+					nodesToRemove.add(node);
+				}
+			}
+			
+			// We remove all the OppositePropertyInfo which are not computed
+			if (node.getObject() instanceof OppositePropertyInfo) {
+				if(dependencyGraph.getOutputEdges(node).size() == 0) {
 					nodesToRemove.add(node);
 				}
 			}
