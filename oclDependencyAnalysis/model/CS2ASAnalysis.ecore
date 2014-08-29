@@ -2,12 +2,12 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cs2asanalysis" nsURI="http://cs2asanalysis" nsPrefix="cs2asana">
   <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ContextualNode" eSuperTypes="#//Node">
+  <eClassifiers xsi:type="ecore:EClass" name="ContextualNode" abstract="true" eSuperTypes="#//Node">
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionNode" abstract="true" eSuperTypes="#//Node"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InfoNode" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InfoNode" abstract="true" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="OperationRef" abstract="true" eSuperTypes="#//ContextualNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Operation"/>
