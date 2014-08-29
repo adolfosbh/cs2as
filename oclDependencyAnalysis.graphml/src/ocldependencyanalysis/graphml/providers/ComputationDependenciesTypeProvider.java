@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import ocldependencyanalysis.Computation;
-import ocldependencyanalysis.ExtendedPropertyInfo;
-import ocldependencyanalysis.IActionNode;
-import ocldependencyanalysis.IInfoNode;
+import ocldependencyanalysis.cs2asanalysis.ActionNode;
+import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
+import ocldependencyanalysis.cs2asanalysis.ExtendedPropertyInfo;
+import ocldependencyanalysis.cs2asanalysis.InfoNode;
 import ocldependencyanalysis.graph.IEdge;
 import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graph.INode;
@@ -28,7 +28,7 @@ import org.eclipse.qvtd.build.etl.graphmltypes.GraphMLNodeType;
 import org.eclipse.qvtd.build.etl.graphmltypes.GraphmltypesFactory;
 import org.eclipse.qvtd.build.etl.graphmltypes.ShapeType;
 
-public class ComputationDependenciesTypeProvider implements  IElementTypeProvider<Computation>{
+public class ComputationDependenciesTypeProvider implements  IElementTypeProvider<CS2ASAnalysisNode>{
 	
 	static final List<String> infoNodeColours = new ArrayList<>();	
 	{infoNodeColours.add("#FF00FF"); // PINK
@@ -49,10 +49,10 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 	private GraphMLEdgeType infoInheritance;
 	private GraphMLEdgeType bidirectionalOpposite;
 
-	public ComputationDependenciesTypeProvider(IGraph<Computation> graph) {
+	public ComputationDependenciesTypeProvider(IGraph<CS2ASAnalysisNode> graph) {
 		
 		List<Package> involvedPackages = new ArrayList<Package>();		
-		for (INode<Computation> node : graph.getNodes()) {
+		for (INode<CS2ASAnalysisNode> node : graph.getNodes()) {
 			Package pPackage = getContainingPackage(node.getObject().getReferredElement());
 			if (!involvedPackages.contains(pPackage)) {
 				involvedPackages.add(pPackage);	
@@ -110,12 +110,12 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 	}
 
 	@Override
-	public NodeType getNodeType(INode<Computation> node) {
-		Computation computation = node.getObject();
+	public NodeType getNodeType(INode<CS2ASAnalysisNode> node) {
+		CS2ASAnalysisNode computation = node.getObject();
 		
-		if (computation instanceof IActionNode) {
+		if (computation instanceof ActionNode) {
 			return actionNode;
-		} else if (computation instanceof IInfoNode){
+		} else if (computation instanceof InfoNode){
 			Package pPackage = getContainingPackage(computation.getReferredElement());
 			return package2InfoNodes.get(pPackage);
 		} else {
@@ -124,14 +124,14 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 	}
 
 	@Override
-	public EdgeType getEdgeType(IEdge<Computation> edge) {
+	public EdgeType getEdgeType(IEdge<CS2ASAnalysisNode> edge) {
 		
 		// For the time being, an edge between ast operations are dotted
-		Computation fromComp = edge.getFrom().getObject();
-		Computation toComp = edge.getTo().getObject();
-		if (fromComp instanceof IActionNode) {
+		CS2ASAnalysisNode fromComp = edge.getFrom().getObject();
+		CS2ASAnalysisNode toComp = edge.getTo().getObject();
+		if (fromComp instanceof ActionNode) {
 			return actionOutput;
-		} else if (toComp instanceof IActionNode) {
+		} else if (toComp instanceof ActionNode) {
 			return actionInput;
 		} else if (fromComp instanceof ExtendedPropertyInfo &&
 				toComp instanceof ExtendedPropertyInfo) {
@@ -142,8 +142,8 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 			} else { // must bet aggregation/inheritance link
 				return infoInheritance;
 			}
-		} else if (fromComp instanceof IInfoNode &&
-					toComp instanceof IInfoNode){
+		} else if (fromComp instanceof InfoNode &&
+					toComp instanceof InfoNode){
 			return infoInheritance;
 		}
 		

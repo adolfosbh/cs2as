@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import ocldependencyanalysis.Computation;
 import ocldependencyanalysis.DependencyAnalysis;
 import ocldependencyanalysis.FeatureObj;
+import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graphml.providers.ComputationDependenciesTypeProvider;
 import ocldependencyanalysis.graphml.providers.FeatureDependenciesTypeProvider;
@@ -65,7 +65,7 @@ public class GraphmlGenerator {
 	}
 	
 	public static void generateComputationDependencyGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath ) throws Exception  {
-		IGraph<Computation> graph = DependencyAnalysis.createComputationsDependencyGraph(inputOclDocUri);
+		IGraph<CS2ASAnalysisNode> graph = DependencyAnalysis.createComputationsDependencyGraph(inputOclDocUri);
 		
 		System.out.println(graph.toString());
 		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new ComputationDependenciesTypeProvider(graph));

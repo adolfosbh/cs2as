@@ -1,6 +1,7 @@
 package ocldependencyanalysis;
 
 
+import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.graph.IGraph;
 
 import org.eclipse.emf.common.util.URI;
@@ -56,7 +57,7 @@ public class DependencyAnalysis {
 		return featGraphComp.computeDependencyGraph(cs2asResource, lookupResoource);
 	}
 	
-	public static IGraph<Computation> createComputationsDependencyGraph(URI cs2asDocURI) {
+	public static IGraph<CS2ASAnalysisNode> createComputationsDependencyGraph(URI cs2asDocURI) {
 		
 		OCL ocl = getOCL();		
 		Resource cs2asResource = ocl.parse(cs2asDocURI);

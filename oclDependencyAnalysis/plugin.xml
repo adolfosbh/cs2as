@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CS2ASAnalysis -->
+      <package
+            uri="http://cs2asanalysis"
+            class="ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage"
+            genModel="model/CS2ASAnalysis.genmodel"/>
+   </extension>
+
+</plugin>

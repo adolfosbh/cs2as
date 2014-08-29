@@ -6,6 +6,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
+import ocldependencyanalysis.cs2asanalysis.CS2ASNodesFactory;
+import ocldependencyanalysis.cs2asanalysis.ConstructorExpTypeInfo;
+import ocldependencyanalysis.cs2asanalysis.ConstructorPartAction;
+import ocldependencyanalysis.cs2asanalysis.ConstructorPartPropertyInfo;
+import ocldependencyanalysis.cs2asanalysis.ExtendedPropertyInfo;
+import ocldependencyanalysis.cs2asanalysis.OperationAction;
+import ocldependencyanalysis.cs2asanalysis.PropertyCallExpInfo;
+import ocldependencyanalysis.cs2asanalysis.TypeInfo;
 import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graph.INode;
 
@@ -22,12 +31,12 @@ import org.eclipse.ocl.examples.pivot.Property;
 import org.eclipse.ocl.examples.pivot.PropertyCallExp;
 import org.eclipse.ocl.examples.pivot.Type;
 
-public class ComputationDependencyGraphComputer extends AbstractDependencyGraphComputer<Computation>{
+public class ComputationDependencyGraphComputer extends AbstractDependencyGraphComputer<CS2ASAnalysisNode>{
 
 	
 	@Override
 	protected void updateDependencyGraphFromCS2ASDescription(
-			IGraph<Computation> dependencyGraph, Resource cs2asResource) {
+			IGraph<CS2ASAnalysisNode> dependencyGraph, Resource cs2asResource) {
 		
 		for (TreeIterator<EObject> tit = cs2asResource.getAllContents(); tit.hasNext(); ) {
 			EObject next = tit.next();
@@ -49,7 +58,7 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 	}
 
 
-	private void updateGraphFromConstructorPart(IGraph<Computation> dependencyGraph, ConstructorPart cPart ) {
+	private void updateGraphFromConstructorPart(IGraph<CS2ASAnalysisNode> dependencyGraph, ConstructorPart cPart ) {
 	
 		ConstructorExp cExp = (ConstructorExp) cPart.eContainer(); 
 		Type context = getElementContext(cExp);
@@ -73,7 +82,7 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		}
 	}
 	
-//	private void updateGraphFromOpposite(IGraph<Computation> dependencyGraph,
+//	private void updateGraphFromOpposite(IGraph<CS2ASAnalysisNode> dependencyGraph,
 //			Type context, ConstructorPartPropertyInfo propertyInfo, ConstructorPartAction action) {
 //		Property opposite = propertyInfo.getProperty().getOpposite();
 //		if (opposite != null) {
@@ -85,18 +94,18 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 //	}
 
 
-	private void  updateGraphFromInnerOCLExpression(IGraph<Computation> dependencyGraph, 
+	private void  updateGraphFromInnerOCLExpression(IGraph<CS2ASAnalysisNode> dependencyGraph, 
 			Type context, ConstructorPartAction action, OCLExpression oclExp) {
 		if (isAstCall(oclExp)) {
-			ComputationType astCallTypeInfo = createTypeInfo(context, ((OperationCallExp)oclExp).getType());
+			TypeInfo astCallTypeInfo = createTypeInfo(context, ((OperationCallExp)oclExp).getType());
 			dependencyGraph.addEdge(astCallTypeInfo, action);
 		} else if (isPropertyCallExp(oclExp)) {
-			PropertyCallExpInfo pcePropInfo = createPropertyCallExp(context, (PropertyCallExp)oclExp);
+			PropertyCallExpInfo pcePropInfo = createPropertyCallExpInfo(context, (PropertyCallExp)oclExp);
 			dependencyGraph.addEdge(pcePropInfo, action);
 		}
 	}
 	
-	private void updateGraphFromMappingOperation(IGraph<Computation> dependencyGraph, Operation operation ) {
+	private void updateGraphFromMappingOperation(IGraph<CS2ASAnalysisNode> dependencyGraph, Operation operation ) {
 		
 		// We want to ensure some type will be constructed prior to create a dependency
 		// with the context and the operation
@@ -136,7 +145,7 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 //		} while (element != null);
 //	}
 
-	private void updateGraphFromConstructorExp(IGraph<Computation> dependencyGraph, ConstructorExp constructorExp) {
+	private void updateGraphFromConstructorExp(IGraph<CS2ASAnalysisNode> dependencyGraph, ConstructorExp constructorExp) {
 		
 		
 		Operation op = getContainingOperation(constructorExp);
@@ -155,7 +164,7 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		updateGraphFromSuperTypes(dependencyGraph, csContext, constructedType); 	
 	}
 	
-	private void updateGraphFromSuperTypes(IGraph<Computation> dependencyGraph, Type context, ComputationType from) {
+	private void updateGraphFromSuperTypes(IGraph<CS2ASAnalysisNode> dependencyGraph, Type context, TypeInfo from) {
 		
 		for (Type superType : from.getType().getSuperClass()) {
 			TypeInfo to = createTypeInfo(context, superType);
@@ -164,7 +173,7 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		}
 	}
 	
-	private void updateGraphFromSuperTypesProperty(IGraph<Computation> dependencyGraph, Type context, ExtendedPropertyInfo propInfo) {
+	private void updateGraphFromSuperTypesProperty(IGraph<CS2ASAnalysisNode> dependencyGraph, Type context, ExtendedPropertyInfo propInfo) {
 
 		Set<Type> propOwnerDirectSubTypes = getDirectSubtypes(propInfo.getPropertyType());
 		if (propOwnerDirectSubTypes != null) {
@@ -177,13 +186,13 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 	}
 	
 	private void updateGraphFromPropertyCallExp(
-			IGraph<Computation> dependencyGraph, PropertyCallExp propCallExp) {
+			IGraph<CS2ASAnalysisNode> dependencyGraph, PropertyCallExp propCallExp) {
 		// This propertyCallExp will be a prerequisite of the containing operation (cst/ast)
 		Operation op = getContainingOperation(propCallExp);
 		Type csContext = op.getOwningType();
 		if (isAstOp(op)
 				|| isCstOp(op)) {
-			PropertyCallExpInfo from = createPropertyCallExp(csContext, propCallExp);
+			PropertyCallExpInfo from = createPropertyCallExpInfo(csContext, propCallExp);
 			OperationAction to = createOperationAction(csContext, op);
 			dependencyGraph.addEdge(from, to);
 		}
@@ -191,46 +200,46 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 	
 	@Override
 	protected void updateDependencyGraphFromLookupDescription(
-			IGraph<Computation> dependencyGraph, Resource lookupDescription) {
+			IGraph<CS2ASAnalysisNode> dependencyGraph, Resource lookupDescription) {
 
 	}
 	
 	protected ConstructorPartAction createAction(Type context, ConstructorPart cPart) {
-		return new ConstructorPartAction(context, cPart);
+		return CS2ASNodesFactory.INSTANCE.createAction(context, cPart);
 	}
 	
 	protected ConstructorPartPropertyInfo createConstructorPropertyInfo(Type context, ConstructorPart cPart) {
-		return new ConstructorPartPropertyInfo(context, cPart);
+		return CS2ASNodesFactory.INSTANCE.createConstructorPropertyInfo(context, cPart);
 	}
 	
 	protected ConstructorExpTypeInfo createConstructorTypeInfo(Type context, ConstructorExp cExp) {
-		return new ConstructorExpTypeInfo(context, cExp);
+		return CS2ASNodesFactory.INSTANCE.createConstructorTypeInfo(context, cExp);
 	}
 	
 	protected TypeInfo createTypeInfo(Type context, Type type) {
-		return new TypeInfo(context, type);
+		return CS2ASNodesFactory.INSTANCE.createTypeInfo(context, type);
 	}
 	
-	protected PropertyCallExpInfo createPropertyCallExp(Type context, PropertyCallExp propCallExp) {
-		return new PropertyCallExpInfo(context, propCallExp);
+	protected PropertyCallExpInfo createPropertyCallExpInfo(Type context, PropertyCallExp propCallExp) {
+		return CS2ASNodesFactory.INSTANCE.createPropertyCallExp(context, propCallExp);
 	}
 	
 	protected OperationAction createOperationAction(Type context, Operation op) {
-		return new OperationAction(context, op);
+		return CS2ASNodesFactory.INSTANCE.createOperationAction(context, op);
 	}
 	
-	protected OppositePropertyInfo createOppositePropertyInfo(Type context, Property opposite) {
-		return new OppositePropertyInfo(context, opposite);
-	}
+//	protected OppositePropertyInfo createOppositePropertyInfo(Type context, Property opposite) {
+//		return new OppositePropertyInfo(context, opposite);
+//	}
 	
 	protected ExtendedPropertyInfo createPropertyInfo(Type context, Type type, Property property) {
-		return new ExtendedPropertyInfo(context, type, property);
+		return CS2ASNodesFactory.INSTANCE.createPropertyInfo(context, type, property);
 	}
 	
 	
 	@Override
 	protected void preprocess(Resource resource,
-			IGraph<Computation> dependencyGraph) {
+			IGraph<CS2ASAnalysisNode> dependencyGraph) {
 		
 		// For every computed property We firstly build the aggregation links
 		// FIXME do the same with the types, now ?
@@ -264,12 +273,12 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 	
 	@Override
 	protected void postprocess(Resource resource,
-			IGraph<Computation> dependencyGraph) {
-		List<INode<Computation>> nodesToRemove = new ArrayList<>();
+			IGraph<CS2ASAnalysisNode> dependencyGraph) {
+		List<INode<CS2ASAnalysisNode>> nodesToRemove = new ArrayList<>();
 		boolean graphChanged = true;
 		while (graphChanged) {
 			nodesToRemove.clear();
-			for (INode<Computation> node: dependencyGraph.getNodes()) { 
+			for (INode<CS2ASAnalysisNode> node: dependencyGraph.getNodes()) { 
 				// We remove all the TypeInfo which are not consumed			
 				if (node.getObject() instanceof TypeInfo) {
 					if(dependencyGraph.getOutputEdges(node).size() == 0) {
@@ -285,7 +294,7 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 //				}
 			}
 			
-			for  (INode<Computation> node: nodesToRemove) {
+			for  (INode<CS2ASAnalysisNode> node: nodesToRemove) {
 				dependencyGraph.removeNode(node);
 			}
 			graphChanged = nodesToRemove.size() > 0;

@@ -1,14 +1,22 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: CS2AS OCL Dependency Analysis
-Bundle-SymbolicName: oclDependencyAnalysis
+Bundle-Name: %pluginName
+Bundle-SymbolicName: oclDependencyAnalysis;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-Activator: ocldependencyanalysis.Activator
 Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.examples.pivot;visibility:=reexport,
  org.eclipse.ocl.examples.xtext.base;bundle-version="3.4.0",
  org.eclipse.ocl.examples.xtext.completeocl;bundle-version="3.4.0",
  org.junit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: ocldependencyanalysis,
- ocldependencyanalysis.graph
+ ocldependencyanalysis.graph,
+ ocldependencyanalysis.cs2asanalysis,
+ ocldependencyanalysis.cs2asanalysis.impl,
+ ocldependencyanalysis.cs2asanalysis.util
