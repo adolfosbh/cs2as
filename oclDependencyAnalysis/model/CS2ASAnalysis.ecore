@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cs2asanalysis" nsURI="http://cs2asanalysis" nsPrefix="cs2asana">
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextualNode" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionNode" abstract="true" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InfoNode" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationRef" abstract="true" eSuperTypes="#//ContextualNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Operation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyRef" abstract="true" eSuperTypes="#//ContextualNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Property"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeRef" abstract="true" eSuperTypes="#//ContextualNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorPartPropRef" abstract="true"
+      eSuperTypes="#//PropertyRef"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeInfo" eSuperTypes="#//TypeRef #//InfoNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorExpTypeInfo" eSuperTypes="#//TypeInfo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constructorExp" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//ConstructorExp"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorPartAction" eSuperTypes="#//ConstructorPartPropRef #//ActionNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorPartPropertyInfo" eSuperTypes="#//ConstructorPartPropRef #//InfoNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedPropertyInfo" eSuperTypes="#//PropertyRef #//InfoNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyType" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationAction" eSuperTypes="#//OperationRef #//ActionNode"/>
+</ecore:EPackage>
