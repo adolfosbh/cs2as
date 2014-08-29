@@ -148,7 +148,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return type2superTypes.get(primaryT1).contains(primaryT2);
 	}
 	
-	protected Set<Type> getSubtypes(Type type) {
+	protected Set<Type> getDirectSubtypes(Type type) {
 		Type primaryType = mManager.getPrimaryType(type);
 		return type2directSubTypes.get(primaryType);
 	}

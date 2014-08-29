@@ -2,7 +2,9 @@ package ocldependencyanalysis;
 
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graph.INode;
@@ -12,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.examples.pivot.ConstructorExp;
 import org.eclipse.ocl.examples.pivot.ConstructorPart;
+import org.eclipse.ocl.examples.pivot.Element;
 import org.eclipse.ocl.examples.pivot.OCLExpression;
 import org.eclipse.ocl.examples.pivot.Operation;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
@@ -56,9 +59,10 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		ConstructorPartAction action = createAction(context, cPart);
 		
 		dependencyGraph.addEdge(typeInfo, action);
-		dependencyGraph.addEdge(action, propInfo);
+		dependencyGraph.addEdge(action, propInfo, true); // true to replace the basic ExtendedPropInfo
 		
-		updateGraphFromOpposite(dependencyGraph, context, propInfo);
+		// updateGraphFromOpposite(dependencyGraph, context, propInfo, action);
+		// updateGraphFromSuperTypesProperty(dependencyGraph, context, propInfo.getProperty().getOwningType(), propInfo);
 		
 		updateGraphFromInnerOCLExpression(dependencyGraph, context, action, cPart.getInitExpression());
 		for (TreeIterator<EObject> tit = cPart.getInitExpression().eAllContents(); tit.hasNext(); ) {
@@ -69,14 +73,16 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		}
 	}
 	
-	private void updateGraphFromOpposite(IGraph<Computation> dependencyGraph,
-			Type context, ConstructorPartPropertyInfo propertyInfo) {
-		Property opposite = propertyInfo.getProperty().getOpposite();
-		if (opposite != null) {
-			OppositePropertyInfo to = createOppositePropertyInfo(context, opposite);
-			dependencyGraph.addEdge(propertyInfo, to);
-		}
-	}
+//	private void updateGraphFromOpposite(IGraph<Computation> dependencyGraph,
+//			Type context, ConstructorPartPropertyInfo propertyInfo, ConstructorPartAction action) {
+//		Property opposite = propertyInfo.getProperty().getOpposite();
+//		if (opposite != null) {
+//			OppositePropertyInfo to = createOppositePropertyInfo(context, opposite);
+//			dependencyGraph.addEdge(action, to, true); // true to replace the basic ExtendedPropInfo
+//			dependencyGraph.addEdge(propertyInfo, to);
+//			// updateGraphFromSuperTypesProperty(dependencyGraph, context, opposite.getOwningType(), to);
+//		}
+//	}
 
 
 	private void  updateGraphFromInnerOCLExpression(IGraph<Computation> dependencyGraph, 
@@ -146,15 +152,27 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		}
 		// We always create pre-requiste dependency between a constructed type and it's subtypes
 		ConstructorExpTypeInfo constructedType = createConstructorTypeInfo(csContext,  constructorExp);
-		updateGraphFromSupertTypes(dependencyGraph, csContext, constructedType); 	
+		updateGraphFromSuperTypes(dependencyGraph, csContext, constructedType); 	
 	}
 	
-	private void updateGraphFromSupertTypes(IGraph<Computation> dependencyGraph, Type context, ComputationType from) {
+	private void updateGraphFromSuperTypes(IGraph<Computation> dependencyGraph, Type context, ComputationType from) {
 		
 		for (Type superType : from.getType().getSuperClass()) {
 			TypeInfo to = createTypeInfo(context, superType);
 			dependencyGraph.addEdge(from, to);
-			updateGraphFromSupertTypes(dependencyGraph, context, to);
+			updateGraphFromSuperTypes(dependencyGraph, context, to);
+		}
+	}
+	
+	private void updateGraphFromSuperTypesProperty(IGraph<Computation> dependencyGraph, Type context, ExtendedPropertyInfo propInfo) {
+
+		Set<Type> propOwnerDirectSubTypes = getDirectSubtypes(propInfo.getPropertyType());
+		if (propOwnerDirectSubTypes != null) {
+			for (Type subtype : propOwnerDirectSubTypes) {
+				ExtendedPropertyInfo from = createPropertyInfo(context, subtype, propInfo.getProperty());
+				dependencyGraph.addEdge(from, propInfo);
+				updateGraphFromSuperTypesProperty(dependencyGraph, context, from);
+			}
 		}
 	}
 	
@@ -205,6 +223,45 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 		return new OppositePropertyInfo(context, opposite);
 	}
 	
+	protected ExtendedPropertyInfo createPropertyInfo(Type context, Type type, Property property) {
+		return new ExtendedPropertyInfo(context, type, property);
+	}
+	
+	
+	@Override
+	protected void preprocess(Resource resource,
+			IGraph<Computation> dependencyGraph) {
+		
+		// For every computed property We firstly build the aggregation links
+		// FIXME do the same with the types, now ?
+		Set<Property> computedProperties = new HashSet<Property>();
+		for (TreeIterator<EObject> tit = resource.getAllContents(); tit.hasNext(); ) {
+			EObject next = tit.next();
+			Property property = null;
+			if (isConstrucorPart(next)) {
+				property =  ((ConstructorPart) next).getReferredProperty();
+			} else if (isPropertyCallExp(next))  {
+				property = ((PropertyCallExp)next).getReferredProperty();
+			}
+			
+			if (property != null && !computedProperties.contains(property)) {
+				Type context = getElementContext((Element)next);
+				ExtendedPropertyInfo propInfo = createPropertyInfo(context, property.getOwningType() , property); 
+				updateGraphFromSuperTypesProperty(dependencyGraph, context, propInfo);
+				computedProperties.add(property);
+				
+				Property opposite = property.getOpposite();
+				if (opposite != null && !computedProperties.contains(opposite)) {
+					ExtendedPropertyInfo oppPropInfo = createPropertyInfo(context, opposite.getOwningType(), opposite);
+					updateGraphFromSuperTypesProperty(dependencyGraph, context, oppPropInfo);					
+					dependencyGraph.addEdge(propInfo, oppPropInfo); // Link between opposites
+					computedProperties.add(opposite);
+				}
+			}
+		}		
+	}
+	
+	
 	@Override
 	protected void postprocess(Resource resource,
 			IGraph<Computation> dependencyGraph) {
@@ -220,12 +277,12 @@ public class ComputationDependencyGraphComputer extends AbstractDependencyGraphC
 					}
 				}
 				
-				// We remove all the OppositePropertyInfo which are not computed
-				if (node.getObject() instanceof OppositePropertyInfo) {
-					if(dependencyGraph.getOutputEdges(node).size() == 0) {
-						nodesToRemove.add(node);
-					}
-				}
+//				// We remove all the OppositePropertyInfo which are not computed
+//				if (node.getObject() instanceof OppositePropertyInfo) {
+//					if(dependencyGraph.getOutputEdges(node).size() == 0) {
+//						nodesToRemove.add(node);
+//					}
+//				}
 			}
 			
 			for  (INode<Computation> node: nodesToRemove) {

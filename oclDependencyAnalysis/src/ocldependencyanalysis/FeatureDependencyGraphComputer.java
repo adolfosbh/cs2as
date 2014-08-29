@@ -178,7 +178,7 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 	
 	private void createDependencyWithOverridingAstOps(FeatureObj fromFeatureObj, Type astOpContext, IGraph<FeatureObj> dependencyGraph ) {
 		
-		Set<Type> subTypes = getSubtypes(astOpContext);
+		Set<Type> subTypes = getDirectSubtypes(astOpContext);
 		if (subTypes != null) {
 			for (Type subType : subTypes) {
 				Operation astOp = getAstOperation(subType);

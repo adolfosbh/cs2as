@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import ocldependencyanalysis.Computation;
-import ocldependencyanalysis.ComputationType;
+import ocldependencyanalysis.ExtendedPropertyInfo;
 import ocldependencyanalysis.IActionNode;
 import ocldependencyanalysis.IInfoNode;
 import ocldependencyanalysis.graph.IEdge;
@@ -21,6 +21,7 @@ import org.eclipse.ocl.examples.pivot.utilities.PivotUtil;
 import org.eclipse.qvtd.build.etl.graph.EdgeType;
 import org.eclipse.qvtd.build.etl.graph.ElementType;
 import org.eclipse.qvtd.build.etl.graph.NodeType;
+import org.eclipse.qvtd.build.etl.graphmltypes.EdgeEndStyle;
 import org.eclipse.qvtd.build.etl.graphmltypes.EdgeLineStyle;
 import org.eclipse.qvtd.build.etl.graphmltypes.GraphMLEdgeType;
 import org.eclipse.qvtd.build.etl.graphmltypes.GraphMLNodeType;
@@ -46,6 +47,7 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 	private GraphMLEdgeType actionInput;
 	private GraphMLEdgeType actionOutput;
 	private GraphMLEdgeType infoInheritance;
+	private GraphMLEdgeType bidirectionalOpposite;
 
 	public ComputationDependenciesTypeProvider(IGraph<Computation> graph) {
 		
@@ -89,6 +91,13 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 		infoInheritance.setColor("#000000");
 		infoInheritance.setLineStyle(EdgeLineStyle.DOTTED);
 		
+		bidirectionalOpposite = GraphmltypesFactory.eINSTANCE.createGraphMLEdgeType();
+		bidirectionalOpposite.setName("bidirectionalOpposite");
+		bidirectionalOpposite.setColor("#000000");
+		bidirectionalOpposite.setLineStyle(EdgeLineStyle.LINE);
+		bidirectionalOpposite.setFromStyle(EdgeEndStyle.STANDARD);
+		
+		elementTypes.add(bidirectionalOpposite);
 		elementTypes.add(actionNode);
 		elementTypes.add(actionInput);
 		elementTypes.add(actionOutput);
@@ -124,8 +133,17 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 			return actionOutput;
 		} else if (toComp instanceof IActionNode) {
 			return actionInput;
-		} else if (fromComp instanceof ComputationType &&
-					toComp instanceof ComputationType){
+		} else if (fromComp instanceof ExtendedPropertyInfo &&
+				toComp instanceof ExtendedPropertyInfo) {
+			ExtendedPropertyInfo fromProp = (ExtendedPropertyInfo) fromComp;
+			ExtendedPropertyInfo toProp = (ExtendedPropertyInfo) toComp;
+			if (fromProp.getProperty() != toProp.getProperty()) {
+				return bidirectionalOpposite;
+			} else { // must bet aggregation/inheritance link
+				return infoInheritance;
+			}
+		} else if (fromComp instanceof IInfoNode &&
+					toComp instanceof IInfoNode){
 			return infoInheritance;
 		}
 		
@@ -137,13 +155,8 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 		EObject container = element.eContainer();
 		while (container != null) {
 			if (container instanceof Package) {
-				try {
-					Package pPackage = (Package)container;
-					return (Package) PivotUtil.findMetaModelManager(pPackage).getPrimaryPackage(pPackage);	
-				} catch (Exception e) {
-					int i = 0;
-				}
-				
+				Package pPackage = (Package)container;
+				return (Package) PivotUtil.findMetaModelManager(pPackage).getPrimaryPackage(pPackage);				
 			}
 			container = container.eContainer();
 		}
