@@ -48,4 +48,14 @@ public abstract class NodeImpl extends MinimalEObjectImpl.Container implements N
 		return ToString.INSTANCE.doSwitch(this);
 	}
 	
+	@Override
+	public boolean equals(Object obj) {		
+		return toString().equals(obj.toString());
+	}
+	
+	@Override
+	public int hashCode() {
+		return toString().hashCode();
+	}
+	
 } //NodeImpl

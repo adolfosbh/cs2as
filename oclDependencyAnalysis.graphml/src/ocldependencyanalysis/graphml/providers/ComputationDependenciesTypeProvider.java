@@ -137,9 +137,7 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 				toComp instanceof ExtendedPropertyInfo) {
 			ExtendedPropertyInfo fromProp = (ExtendedPropertyInfo) fromComp;
 			ExtendedPropertyInfo toProp = (ExtendedPropertyInfo) toComp;
-			if (fromProp.getProperty() != toProp.getProperty()) {
-				return bidirectionalOpposite;
-			} else { // must bet aggregation/inheritance link
+			if (fromProp.getProperty() == toProp.getProperty()) {  // must bet aggregation/inheritance link
 				return infoInheritance;
 			}
 		} else if (fromComp instanceof InfoNode &&

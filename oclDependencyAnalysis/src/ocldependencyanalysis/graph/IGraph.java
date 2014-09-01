@@ -64,4 +64,11 @@ public interface IGraph<C> {
 	 * @return A set with the subgraphs comprising a cycle
 	 */
 	public Set<IGraph<C>> getCycles();
+	
+	
+	public boolean invertEdge(IEdge<C> edge);
+	
+	public INode<C> getNode(C object);
+	
+	
 }

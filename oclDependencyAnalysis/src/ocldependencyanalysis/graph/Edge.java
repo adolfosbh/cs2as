@@ -43,4 +43,12 @@ public class Edge<C> implements IEdge<C> {
 	public boolean equals(Object obj) {
 		return toString().equals(obj.toString());
 	}
+	
+	void setFrom(INode<C> from) {
+		this.from = from;
+	}
+	
+	void setTo(INode<C> to) {
+		this.to = to;
+	}
 }

@@ -39,19 +39,19 @@ public class Graph<C> implements IGraph<C> {
 	
 	@Override
 	public Set<IEdge<C>> getEdges() {
-		return edges;
+		return Collections.unmodifiableSet(edges);
 	}
 	
 	@Override
 	public Set<IEdge<C>> getOutputEdges(INode<C> node) {
 		Set<IEdge<C>> result = node2outputEdges.get(node);
-		return result == null ? Collections.<IEdge<C>>emptySet() : result;
+		return result == null ? Collections.<IEdge<C>>emptySet() : Collections.unmodifiableSet(result);
 	}
 	
 	@Override
 	public Set<IEdge<C>> getInputEdges(INode<C> node) {
 		Set<IEdge<C>> result = node2inputEdges.get(node);
-		return result == null ? Collections.<IEdge<C>>emptySet() : result;
+		return result == null ? Collections.<IEdge<C>>emptySet() : Collections.unmodifiableSet(result);
 	}
 	
 	@Override
@@ -121,7 +121,7 @@ public class Graph<C> implements IGraph<C> {
 	protected Node<C> createNode(C object) {
 		return new Node<C>(object);
 	}
-	protected IEdge<C> createEdge(INode<C> from, INode<C> to) {
+	protected Edge<C> createEdge(INode<C> from, INode<C> to) {
 		return new Edge<C>(from, to);
 	}
 
@@ -163,5 +163,17 @@ public class Graph<C> implements IGraph<C> {
 		node2inputEdges.get(edge.getTo()).remove(edge);
 		return edges.remove(edge);
 	}
-		
+	
+	public INode<C> getNode(C object) {
+		return object2node.get(object);
+	}
+	
+	public boolean invertEdge(IEdge<C> edge) {
+		if (edges.contains(edge)) {
+			removeEdge(edge);
+			addEdge(edge.getTo().getObject(), edge.getFrom().getObject());
+			return true;
+		};
+		return false;
+	}
 }
