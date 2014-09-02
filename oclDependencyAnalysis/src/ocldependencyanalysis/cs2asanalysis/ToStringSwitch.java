@@ -7,9 +7,9 @@ import org.eclipse.ocl.examples.pivot.Operation;
 
 import ocldependencyanalysis.cs2asanalysis.util.CS2ASAnalysisSwitch;
 
-public class ToString extends CS2ASAnalysisSwitch<String> {
+public class ToStringSwitch extends CS2ASAnalysisSwitch<String> {
 	
-	public static final ToString INSTANCE = new ToString(); 
+	public static final ToStringSwitch INSTANCE = new ToStringSwitch(); 
 			
 	@Override
 	public String caseConstructorExpTypeInfo(ConstructorExpTypeInfo object) {

@@ -4,7 +4,7 @@ package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.Node;
-import ocldependencyanalysis.cs2asanalysis.ToString;
+import ocldependencyanalysis.cs2asanalysis.ToStringSwitch;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -45,7 +45,7 @@ public abstract class NodeImpl extends MinimalEObjectImpl.Container implements N
 	 */
 	@Override
 	public String toString() {
-		return ToString.INSTANCE.doSwitch(this);
+		return ToStringSwitch.INSTANCE.doSwitch(this);
 	}
 	
 	@Override

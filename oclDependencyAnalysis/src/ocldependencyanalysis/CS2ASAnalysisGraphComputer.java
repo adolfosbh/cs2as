@@ -34,7 +34,7 @@ import org.eclipse.ocl.examples.pivot.Property;
 import org.eclipse.ocl.examples.pivot.PropertyCallExp;
 import org.eclipse.ocl.examples.pivot.Type;
 
-public class ComputationDependencyGraphComputer extends AbstractDependencyGraphComputer<CS2ASAnalysisNode>{
+public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<CS2ASAnalysisNode>{
 
 	
 	@Override

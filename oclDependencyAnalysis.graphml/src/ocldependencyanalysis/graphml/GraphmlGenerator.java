@@ -8,7 +8,7 @@ import ocldependencyanalysis.DependencyAnalysis;
 import ocldependencyanalysis.FeatureObj;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.graph.IGraph;
-import ocldependencyanalysis.graphml.providers.ComputationDependenciesTypeProvider;
+import ocldependencyanalysis.graphml.providers.CS2ASAnalysisTypeProvider;
 import ocldependencyanalysis.graphml.providers.FeatureDependenciesTypeProvider;
 import ocldependencyanalysis.graphml.providers.TypeDependenciesTypeProvider;
 
@@ -40,8 +40,8 @@ public class GraphmlGenerator {
 				generateClassDependencyGraphmlFile(URI.createURI(args[1]), args[2]);
 			else if ("FEATURE".equalsIgnoreCase(args[0]))
 				generateFeaturesDependencyGraphmlFile(URI.createURI(args[1]), args[2]);
-			else if ("COMPUTATION".equalsIgnoreCase(args[0]))
-				generateComputationDependencyGraphmlFile(URI.createURI(args[1]), args[2]);
+			else if ("CS2ASAnalysis".equalsIgnoreCase(args[0]))
+				generateCS2ASAnalysisGraphmlFile(URI.createURI(args[1]), args[2]);
 			else 
 				printUsage();
 		} catch (Exception e) {		
@@ -64,11 +64,11 @@ public class GraphmlGenerator {
 		launchGraph2GraphMLScript(graphModel, outputGaprhmlFilePath);
 	}
 	
-	public static void generateComputationDependencyGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath ) throws Exception  {
-		IGraph<CS2ASAnalysisNode> graph = DependencyAnalysis.createComputationsDependencyGraph(inputOclDocUri);
+	public static void generateCS2ASAnalysisGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath ) throws Exception  {
+		IGraph<CS2ASAnalysisNode> graph = DependencyAnalysis.createCS2ASAnalysisGraph(inputOclDocUri);
 		
 		System.out.println(graph.toString());
-		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new ComputationDependenciesTypeProvider(graph));
+		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new CS2ASAnalysisTypeProvider(graph));
 		launchGraph2GraphMLScript(graphModel, outputGaprhmlFilePath);
 	}
 	
@@ -127,7 +127,7 @@ public class GraphmlGenerator {
 	
 	private static final void printUsage() {
 		System.out.println("Program args:");
-		System.out.println("    1. TYPE (for class dependencies graph) or FEATURE (for features dependencies graph)");
+		System.out.println("    1. TYPE (for class dependencies graph) or FEATURE (for features dependencies graph) or CS2ASAnalysis (CS2AS analysis graph)");
 		System.out.println("    2. input Complete OCL document URI. e.g. file:/C:/temp/myOCLdocument.ocl");
 		System.out.println("    3. output Graphml model path. e.g C:/temp/myGraph.graphml");
 	}

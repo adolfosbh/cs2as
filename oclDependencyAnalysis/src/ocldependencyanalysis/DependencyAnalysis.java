@@ -57,11 +57,11 @@ public class DependencyAnalysis {
 		return featGraphComp.computeDependencyGraph(cs2asResource, lookupResoource);
 	}
 	
-	public static IGraph<CS2ASAnalysisNode> createComputationsDependencyGraph(URI cs2asDocURI) {
+	public static IGraph<CS2ASAnalysisNode> createCS2ASAnalysisGraph(URI cs2asDocURI) {
 		
 		OCL ocl = getOCL();		
 		Resource cs2asResource = ocl.parse(cs2asDocURI);
-		ComputationDependencyGraphComputer featGraphComp = new ComputationDependencyGraphComputer();
+		CS2ASAnalysisGraphComputer featGraphComp = new CS2ASAnalysisGraphComputer();
 		return featGraphComp.computeDependencyGraph(cs2asResource);
 	}
 	
@@ -93,9 +93,9 @@ public class DependencyAnalysis {
 				printGraphAndCycles(createFeatureDependencyGraph(URI.createURI(args[1])));
 				System.out.println("...Finished");
 			}
-			else if ("COMPUTATION".equalsIgnoreCase(args[0])) { 
+			else if ("CS2ASAnalysis".equalsIgnoreCase(args[0])) { 
 				System.out.println("Starting...");
-				printGraphAndCycles(createComputationsDependencyGraph(URI.createURI(args[1])));
+				printGraphAndCycles(createCS2ASAnalysisGraph(URI.createURI(args[1])));
 				System.out.println("...Finished");
 			} else {
 				printUsage();
@@ -107,7 +107,7 @@ public class DependencyAnalysis {
 	
 	private static final void printUsage() {
 		System.out.println("Program args:");
-		System.out.println("    1. TYPE (for type dependencies graph) or FEATURE (for feature dependencies graph) or COMPUTATION (for computation dependencies graph)");
+		System.out.println("    1. TYPE (for type dependencies graph) or FEATURE (for feature dependencies graph) or CS2ASAnalysis (for CS2AS analysis graph)");
 		System.out.println("    2. input Complete OCL document URI. e.g. platform:/resource/oclDependencyAnalysis/example/Source2Target.ocl");
 	}
 }

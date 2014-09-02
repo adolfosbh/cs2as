@@ -28,7 +28,7 @@ import org.eclipse.qvtd.build.etl.graphmltypes.GraphMLNodeType;
 import org.eclipse.qvtd.build.etl.graphmltypes.GraphmltypesFactory;
 import org.eclipse.qvtd.build.etl.graphmltypes.ShapeType;
 
-public class ComputationDependenciesTypeProvider implements  IElementTypeProvider<CS2ASAnalysisNode>{
+public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAnalysisNode>{
 	
 	static final List<String> infoNodeColours = new ArrayList<>();	
 	{infoNodeColours.add("#FF00FF"); // PINK
@@ -49,7 +49,7 @@ public class ComputationDependenciesTypeProvider implements  IElementTypeProvide
 	private GraphMLEdgeType infoInheritance;
 	private GraphMLEdgeType bidirectionalOpposite;
 
-	public ComputationDependenciesTypeProvider(IGraph<CS2ASAnalysisNode> graph) {
+	public CS2ASAnalysisTypeProvider(IGraph<CS2ASAnalysisNode> graph) {
 		
 		List<Package> involvedPackages = new ArrayList<Package>();		
 		for (INode<CS2ASAnalysisNode> node : graph.getNodes()) {
