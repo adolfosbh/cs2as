@@ -267,11 +267,11 @@ rule__Root__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getRootAccess().getRootAction_0()); }
+{ before(grammarAccess.getRootAccess().getSRootAction_0()); }
 (
 
 )
-{ after(grammarAccess.getRootAccess().getRootAction_0()); }
+{ after(grammarAccess.getRootAccess().getSRootAction_0()); }
 )
 
 ;

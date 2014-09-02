@@ -80,7 +80,7 @@ ruleRoot returns [EObject current=null]
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getRootAccess().getRootAction_0(),
+            grammarAccess.getRootAccess().getSRootAction_0(),
             $current);
     }
 )	otherlv_1='Root' 
@@ -250,7 +250,7 @@ ruleX returns [EObject current=null]
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXRule());
 	        }
-       		set(
+       		add(
        			$current, 
        			"ownsY",
         		lv_ownsY_5_0, 

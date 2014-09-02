@@ -11,7 +11,7 @@ import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import uk.ac.yor.cs.asbh.services.ASBHLangGrammarAccess;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Root;
+import uk.ac.york.cs.asbh.lang.cs2as.source.SRoot;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;
 import uk.ac.york.cs.asbh.lang.cs2as.source.X;
 import uk.ac.york.cs.asbh.lang.cs2as.source.Y1;
@@ -26,9 +26,9 @@ public abstract class AbstractASBHLangSemanticSequencer extends AbstractDelegati
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == SourcePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case SourcePackage.ROOT:
+			case SourcePackage.SROOT:
 				if(context == grammarAccess.getRootRule()) {
-					sequence_Root(context, (Root) semanticObject); 
+					sequence_Root(context, (SRoot) semanticObject); 
 					return; 
 				}
 				else break;
@@ -66,14 +66,14 @@ public abstract class AbstractASBHLangSemanticSequencer extends AbstractDelegati
 	 * Constraint:
 	 *     ((ownedX+=X ownedX+=X*)?)
 	 */
-	protected void sequence_Root(EObject context, Root semanticObject) {
+	protected void sequence_Root(EObject context, SRoot semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (isA1?='isA1'? ownsY=Y?)
+	 *     (isA1?='isA1'? ownsY+=Y?)
 	 */
 	protected void sequence_X(EObject context, X semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

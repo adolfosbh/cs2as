@@ -149,7 +149,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             {
 
                     current = forceCreateModelElement(
-                        grammarAccess.getRootAccess().getRootAction_0(),
+                        grammarAccess.getRootAccess().getSRootAction_0(),
                         current);
                 
 
@@ -574,7 +574,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                     	        if (current==null) {
                     	            current = createModelElementForParent(grammarAccess.getXRule());
                     	        }
-                           		set(
+                           		add(
                            			current, 
                            			"ownsY",
                             		lv_ownsY_5_0, 

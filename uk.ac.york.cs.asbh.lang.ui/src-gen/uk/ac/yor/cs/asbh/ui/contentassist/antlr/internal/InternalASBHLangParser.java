@@ -674,13 +674,13 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:269:1: ( () )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:270:1: ()
             {
-             before(grammarAccess.getRootAccess().getRootAction_0()); 
+             before(grammarAccess.getRootAccess().getSRootAction_0()); 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:271:1: ()
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:273:1: 
             {
             }
 
-             after(grammarAccess.getRootAccess().getRootAction_0()); 
+             after(grammarAccess.getRootAccess().getSRootAction_0()); 
 
             }
 

@@ -21,7 +21,7 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 	public class RootElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Root");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cRootAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cSRootAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cRootKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
@@ -36,15 +36,15 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//Root:
-		//	{Root} "Root" "{" ("ownedX" "{" ownedX+=X ("," ownedX+=X)* "}")? "}";
+		//Root returns SRoot:
+		//	{SRoot} "Root" "{" ("ownedX" "{" ownedX+=X ("," ownedX+=X)* "}")? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{Root} "Root" "{" ("ownedX" "{" ownedX+=X ("," ownedX+=X)* "}")? "}"
+		//{SRoot} "Root" "{" ("ownedX" "{" ownedX+=X ("," ownedX+=X)* "}")? "}"
 		public Group getGroup() { return cGroup; }
 
-		//{Root}
-		public Action getRootAction_0() { return cRootAction_0; }
+		//{SRoot}
+		public Action getSRootAction_0() { return cSRootAction_0; }
 
 		//"Root"
 		public Keyword getRootKeyword_1() { return cRootKeyword_1; }
@@ -121,10 +121,10 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//X:
-		//	{X} isA1?="isA1"? "X" "{" ("ownsY" ownsY=Y)? "}";
+		//	{X} isA1?="isA1"? "X" "{" ("ownsY" ownsY+=Y)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{X} isA1?="isA1"? "X" "{" ("ownsY" ownsY=Y)? "}"
+		//{X} isA1?="isA1"? "X" "{" ("ownsY" ownsY+=Y)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{X}
@@ -142,13 +142,13 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("ownsY" ownsY=Y)?
+		//("ownsY" ownsY+=Y)?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"ownsY"
 		public Keyword getOwnsYKeyword_4_0() { return cOwnsYKeyword_4_0; }
 
-		//ownsY=Y
+		//ownsY+=Y
 		public Assignment getOwnsYAssignment_4_1() { return cOwnsYAssignment_4_1; }
 
 		//Y
@@ -330,8 +330,8 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Root:
-	//	{Root} "Root" "{" ("ownedX" "{" ownedX+=X ("," ownedX+=X)* "}")? "}";
+	//Root returns SRoot:
+	//	{SRoot} "Root" "{" ("ownedX" "{" ownedX+=X ("," ownedX+=X)* "}")? "}";
 	public RootElements getRootAccess() {
 		return (pRoot != null) ? pRoot : (pRoot = new RootElements());
 	}
@@ -351,7 +351,7 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//X:
-	//	{X} isA1?="isA1"? "X" "{" ("ownsY" ownsY=Y)? "}";
+	//	{X} isA1?="isA1"? "X" "{" ("ownsY" ownsY+=Y)? "}";
 	public XElements getXAccess() {
 		return (pX != null) ? pX : (pX = new XElements());
 	}
