@@ -17,7 +17,6 @@ import ocldependencyanalysis.graphml.IElementTypeProvider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.examples.pivot.Element;
 import org.eclipse.ocl.examples.pivot.Package;
-import org.eclipse.ocl.examples.pivot.utilities.PivotUtil;
 import org.eclipse.qvtd.build.etl.graph.EdgeType;
 import org.eclipse.qvtd.build.etl.graph.ElementType;
 import org.eclipse.qvtd.build.etl.graph.NodeType;
@@ -36,7 +35,7 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 	 infoNodeColours.add("#FFFFFF"); // DEFAULT - White
 	} 
 	
-	private Map<Package, GraphMLNodeType> package2InfoNodes= new HashMap<Package, GraphMLNodeType>();
+	private Map<String, GraphMLNodeType> packageName2InfoNodes= new HashMap<String, GraphMLNodeType>();
 	
 	//FF00FF - PINK (input)
 	//99CCFF - Blue (output)
@@ -51,9 +50,9 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 
 	public CS2ASAnalysisTypeProvider(IGraph<CS2ASAnalysisNode> graph) {
 		
-		List<Package> involvedPackages = new ArrayList<Package>();		
+		List<String> involvedPackages = new ArrayList<String>();		
 		for (INode<CS2ASAnalysisNode> node : graph.getNodes()) {
-			Package pPackage = getContainingPackage(node.getObject().getReferredElement());
+			String pPackage = getContainingPackageName(node.getObject().getReferredElement());
 			if (!involvedPackages.contains(pPackage)) {
 				involvedPackages.add(pPackage);	
 			}
@@ -67,7 +66,7 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 			infoNode.setColor(infoNodeColours.get(index));
 			infoNode.setShape(ShapeType.RECTANGLE);	
 			
-			package2InfoNodes.put(involvedPackages.get(i), infoNode);
+			packageName2InfoNodes.put(involvedPackages.get(i), infoNode);
 			elementTypes.add(infoNode);
 		}
 	
@@ -116,8 +115,8 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 		if (computation instanceof ActionNode) {
 			return actionNode;
 		} else if (computation instanceof InfoNode){
-			Package pPackage = getContainingPackage(computation.getReferredElement());
-			return package2InfoNodes.get(pPackage);
+			String pPackage = getContainingPackageName(computation.getReferredElement());
+			return packageName2InfoNodes.get(pPackage);
 		} else {
 			throw new IllegalStateException("Unexpected computation element");
 		}
@@ -149,12 +148,13 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 		return null;
 	}
 	
-	private Package getContainingPackage(Element element) {		
+	private String getContainingPackageName(Element element) {		
 		EObject container = element.eContainer();
 		while (container != null) {
 			if (container instanceof Package) {
-				Package pPackage = (Package)container;
-				return (Package) PivotUtil.findMetaModelManager(pPackage).getPrimaryPackage(pPackage);				
+				return ((Package)container).getName();
+//				Package pPackage = (Package)container;
+//				return (Package) PivotUtil.findMetaModelManager(pPackage).getPrimaryPackage(pPackage);				
 			}
 			container = container.eContainer();
 		}

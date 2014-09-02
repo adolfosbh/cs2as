@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import ocldependencyanalysis.CS2ASAnalysisGraphComputer;
 import ocldependencyanalysis.DependencyAnalysis;
 import ocldependencyanalysis.FeatureObj;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
@@ -31,17 +32,27 @@ public class GraphmlGenerator {
 	
 	public static void main(String[] args) {
 				
-		if (args.length != 3) {
+		if (args.length != 4) {
 			printUsage();
 			return;
 		}
 		try {
+			Boolean bothVersions = null;
+			if ("PRUNED_AND_FULL".equalsIgnoreCase(args[1]))
+				bothVersions = true;
+			else if ("PRUNED_ONLY".equalsIgnoreCase(args[1])) {
+				bothVersions = false;
+			} else {
+				printUsage();
+				return;
+			}
+			
 			if ("TYPE".equalsIgnoreCase(args[0]))
-				generateClassDependencyGraphmlFile(URI.createURI(args[1]), args[2]);
+				generateClassDependencyGraphmlFile(URI.createURI(args[2]), args[3]);
 			else if ("FEATURE".equalsIgnoreCase(args[0]))
-				generateFeaturesDependencyGraphmlFile(URI.createURI(args[1]), args[2]);
+				generateFeaturesDependencyGraphmlFile(URI.createURI(args[2]), args[3]);
 			else if ("CS2ASAnalysis".equalsIgnoreCase(args[0]))
-				generateCS2ASAnalysisGraphmlFile(URI.createURI(args[1]), args[2]);
+				generateCS2ASAnalysisGraphmlFile(URI.createURI(args[2]), args[3], bothVersions);
 			else 
 				printUsage();
 		} catch (Exception e) {		
@@ -64,7 +75,20 @@ public class GraphmlGenerator {
 		launchGraph2GraphMLScript(graphModel, outputGaprhmlFilePath);
 	}
 	
-	public static void generateCS2ASAnalysisGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath ) throws Exception  {
+	public static void generateCS2ASAnalysisGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath, boolean bothVersions ) throws Exception  {
+		
+		if (bothVersions) {
+			generateCS2ASAnalysisGraphmlFile(inputOclDocUri, outputGaprhmlFilePath.replaceFirst("(\\.[^.]*$)", "_pruned$1"));
+			CS2ASAnalysisGraphComputer.CLEAN_GRAPH = false;
+			generateCS2ASAnalysisGraphmlFile(inputOclDocUri, outputGaprhmlFilePath.replaceFirst("(\\.[^.]*$)", "_full$1"));
+			CS2ASAnalysisGraphComputer.CLEAN_GRAPH = true;
+		} else {
+			generateCS2ASAnalysisGraphmlFile(inputOclDocUri, outputGaprhmlFilePath);
+		}
+		
+	}
+	
+	public static void generateCS2ASAnalysisGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath) throws Exception {		
 		IGraph<CS2ASAnalysisNode> graph = DependencyAnalysis.createCS2ASAnalysisGraph(inputOclDocUri);
 		
 		System.out.println(graph.toString());
@@ -128,7 +152,9 @@ public class GraphmlGenerator {
 	private static final void printUsage() {
 		System.out.println("Program args:");
 		System.out.println("    1. TYPE (for class dependencies graph) or FEATURE (for features dependencies graph) or CS2ASAnalysis (CS2AS analysis graph)");
-		System.out.println("    2. input Complete OCL document URI. e.g. file:/C:/temp/myOCLdocument.ocl");
-		System.out.println("    3. output Graphml model path. e.g C:/temp/myGraph.graphml");
+		System.out.println("    2. PRUNED_AND_FULL (generate pruned and complete graph version) or PRUNED_ONLY (generate pruned version only");
+		System.out.println("    3. input Complete OCL document URI. e.g. file:/C:/temp/myOCLdocument.ocl");
+		System.out.println("    4. output Graphml model path. e.g C:/temp/myGraph.graphml");
+		
 	}
 }

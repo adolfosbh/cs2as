@@ -36,6 +36,9 @@ import org.eclipse.ocl.examples.pivot.Type;
 
 public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<CS2ASAnalysisNode>{
 
+	// FIXME Quick workaround for ed's requirement 
+	// if more options are needed, refactor and increase API to accept them
+	public static boolean CLEAN_GRAPH = true;
 	
 	@Override
 	protected void updateDependencyGraphFromCS2ASDescription(
@@ -318,38 +321,41 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 	@Override
 	protected void postprocess(Resource resource,
 			IGraph<CS2ASAnalysisNode> dependencyGraph) {
-		List<INode<CS2ASAnalysisNode>> nodesToRemove = new ArrayList<>();
-		boolean graphChanged = true;
-		while (graphChanged) {
-			nodesToRemove.clear();
-			for (INode<CS2ASAnalysisNode> node: dependencyGraph.getNodes()) { 
-				// We remove all the TypeInfo which are not consumed			
-				if (node.getObject() instanceof TypeInfo) {
-					if(dependencyGraph.getOutputEdges(node).size() == 0) {
-						nodesToRemove.add(node);
-					}
-				}
-				
-				// We remove all the ExtendedPropertyInfo which are not consumed (and not produced)
-				if (node.getObject() instanceof ExtendedPropertyInfo) {
-					if(dependencyGraph.getOutputEdges(node).size() == 0) {
-						boolean isOutputOfAction = false;
-						for (IEdge<CS2ASAnalysisNode> edge : dependencyGraph.getInputEdges(node)) {
-							if (edge.getFrom().getObject() instanceof ActionNode) {
-								isOutputOfAction = true;
-							}
-						}
-						if (!isOutputOfAction){
+		
+		if (CLEAN_GRAPH) {
+			List<INode<CS2ASAnalysisNode>> nodesToRemove = new ArrayList<>();
+			boolean graphChanged = true;
+			while (graphChanged) {
+				nodesToRemove.clear();
+				for (INode<CS2ASAnalysisNode> node: dependencyGraph.getNodes()) { 
+					// We remove all the TypeInfo which are not consumed			
+					if (node.getObject() instanceof TypeInfo) {
+						if(dependencyGraph.getOutputEdges(node).size() == 0) {
 							nodesToRemove.add(node);
 						}
 					}
+					
+					// We remove all the ExtendedPropertyInfo which are not consumed (and not produced by an action)
+					if (node.getObject() instanceof ExtendedPropertyInfo) {
+						if(dependencyGraph.getOutputEdges(node).size() == 0) {
+							boolean isOutputOfAction = false;
+							for (IEdge<CS2ASAnalysisNode> edge : dependencyGraph.getInputEdges(node)) {
+								if (edge.getFrom().getObject() instanceof ActionNode) {
+									isOutputOfAction = true;
+								}
+							}
+							if (!isOutputOfAction){
+								nodesToRemove.add(node);
+							}
+						}
+					}
 				}
+				
+				for  (INode<CS2ASAnalysisNode> node: nodesToRemove) {
+					dependencyGraph.removeNode(node);
+				}				
+				graphChanged = nodesToRemove.size() > 0;				
 			}
-			
-			for  (INode<CS2ASAnalysisNode> node: nodesToRemove) {
-				dependencyGraph.removeNode(node);
-			}
-			graphChanged = nodesToRemove.size() > 0;
 		}
 	}
 }
