@@ -91,16 +91,15 @@ public class GraphmlGenerator {
 		
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(".aninmemoryoclresource", new XMIResourceFactoryImpl());
-		final Resource resource = resourceSet.createResource(URI.createURI("input.inmemoryoclresource"));
+		final Resource resource = resourceSet.createResource(URI.createURI("input.aninmemoryoclresource"));
 		resource.getContents().add(graphModel);	
 		
 
 		AbstractEolLauncher launcher = new AbstractEolLauncher() {
-
-			// TODO improve the Standalone Epsilon Launcher to avoid having the a duplicated eol script
+		
 			@Override
 			public String getSource() throws Exception {
-				return "GraphToGraphML.eol";
+				return "transf/GraphToGraphML.eol";
 			}
 			
 			@Override
@@ -111,7 +110,7 @@ public class GraphmlGenerator {
 						resource, Collections.<EPackage>singletonList(GraphPackage.eINSTANCE)));
 				models.add(createXmlModel("gml",
 						outputGaprhmlFilePath,
-						"D:/Eclipse/eclipse-modeling-luna-M4/workspace_luna_QVTo/org.eclipse.qvtd.build.etl.extras/schema/ygraphml.xsd",
+						getClass().getResource("schema/ygraphml.xsd").getPath(),
 						false, true));
 				return models;
 			}
