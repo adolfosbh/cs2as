@@ -13,6 +13,6 @@
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ocldependencyanalysis.graphml.GraphmlGenerator"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="FEATURE&#13;&#10;platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/Source2Target.ocl&#13;&#10;${git_work_tree}/uk.ac.york.cs.asbh.lang.cs2as/model/Source2Target_FeatureDependencies.graphml"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="FEATURE&#13;&#10;PRUNED_ONLY&#13;&#10;platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/Sourceb2Target.ocl&#13;&#10;${git_work_tree}/uk.ac.york.cs.asbh.lang.cs2as/model/Sourceb2Target_FeatureDependencies.graphml"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="oclDependencyAnalysis.graphml"/>
 </launchConfiguration>
