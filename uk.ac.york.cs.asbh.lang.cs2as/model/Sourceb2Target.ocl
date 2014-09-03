@@ -1,16 +1,9 @@
 import 'SourceMM1b.ecore'
 import 'TargetMM1.ecore'
 import 'Environment.ecore'
-
-package ocl
-
-context OclElement
-def : env() : env::Environment =
-	null 
-endpackage
+import 'TargetLookup.ocl'
 
 package source
-
 
 context SRoot
 def : ast() : target::TRoot=
@@ -88,7 +81,8 @@ def : ast() : target::D =
 	target::D {
 		toA = toY.oclAsType(source::Y1).ast().toA1,
 		name = name,
-		refsB = env().lookupB(name)
+		refsB = ast().lookupB(name) -- Lookups are performed from the created ast element
+									-- Problem : disambiguating lookups need to start from the container 
 	}
 	
 context Z2
@@ -96,7 +90,8 @@ def : ast() : target::D =
 	target::D {
 		toA = toY.oclAsType(source::Y2).ast().toA2,
 		name = name,
-		refsC = env().lookupC(name)
+		refsC = ast().lookupC(name) -- Lookups are performed from the created ast element
+									-- Problem : disambiguating lookups need to start from the container 
 	}
 
 endpackage

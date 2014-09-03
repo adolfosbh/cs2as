@@ -2,11 +2,15 @@ import 'Environment.ecore'
 --import 'Environment.ocl' FIXME imported OCL doesn't work
 import 'TargetMM1.ecore'
 
---package env
--- FIXME this description should describe which property name should be used
---context Environment::addElement(namedElement : target::NamedElement)
---pre : not self.namedElements->exists(x | x.name = namedElement.name)
---endpackage
+package env
+
+context Environment
+def : getBs(bName : String) : OrderedSet(target::B) =
+	namedElement->selectByKind(target::B)->select(name = bName)
+
+def : getCs(cName : String) : OrderedSet(target::C) =
+	namedElement->selectByKind(target::C)->select(name = cName)
+endpackage
 
 package ocl
 
@@ -14,10 +18,14 @@ context OclElement
 def: parentEnv() : env::Environment =
 	let parent = oclContainer() in if parent = null then env::Environment { } else parent._env(self) endif
 
-context OclElement
 def: _env(child : OclElement) : env::Environment =
 	parentEnv()
 	
+def: lookupB(name : String) : target::B =
+	self.oclContainer()._env(self).getBs(name)->first()
+
+def: lookupC(name : String) : target::C =
+	self.oclContainer()._env(self).getCs(name)->first()
 endpackage
 
 package target

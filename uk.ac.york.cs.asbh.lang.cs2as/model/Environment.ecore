@@ -14,14 +14,25 @@
     </eOperations>
     <eOperations name="hasFinalResult" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="nestedEnv" lowerBound="1" eType="#//Environment"/>
-    <eOperations name="lookupName" eType="ecore:EClass TargetMM1.ecore#//NamedElement">
+    <eOperations name="getNamedElements">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib#//OrderedSet">
+        <eTypeArguments eClassifier="ecore:EClass TargetMM1.ecore#//NamedElement"/>
+      </eGenericType>
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="lookupC" eType="ecore:EClass TargetMM1.ecore#//C">
+    <eOperations name="getCs">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib#//OrderedSet">
+        <eTypeArguments eClassifier="ecore:EClass TargetMM1.ecore#//C"/>
+      </eGenericType>
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="lookupB" eType="ecore:EClass TargetMM1.ecore#//B">
+    <eOperations name="getBs">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib#//OrderedSet">
+        <eTypeArguments eClassifier="ecore:EClass TargetMM1.ecore#//B"/>
+      </eGenericType>
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="namedElements" upperBound="-1"
+        eType="ecore:EClass TargetMM1.ecore#//NamedElement"/>
   </eClassifiers>
 </ecore:EPackage>
