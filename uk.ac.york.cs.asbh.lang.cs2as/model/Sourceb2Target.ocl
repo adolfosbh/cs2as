@@ -1,6 +1,7 @@
 import 'SourceMM1b.ecore'
 import 'TargetMM1.ecore'
 import 'Environment.ecore'
+import 'Sourceb2Sourceb.ocl'
 import 'TargetLookup.ocl'
 
 package source
@@ -14,20 +15,6 @@ def : ast() : target::TRoot=
 context X
 def : ast() : target::A =
 	invalid -- To be overriden by X1/X2
-	
-context AmbX 
---def : ast() : target::A =
---	cst().ast()
-	
-def : cst() : X =
-	if isA1
-	then X1 {
-		ownsY = ownsY
-	}
-	else X2 {
-		ownsY = ownsY
-	}
-	endif
 
 context X1
 def : ast() : target::A1 =
@@ -59,23 +46,6 @@ context Z
 def : ast() : target::D =
 	invalid -- To be overriden by Z1/Z2
 
-
-context AmbZ
---def : ast() : target::D =
---	cst().ast()
-	
-def : cst() : Z =
-	if toY.oclIsKindOf(source::Y1)
-	then Z1 {
-		name = name,
-		toY = toY
-	}
-	else Z2 {
-		name = name,
-		toY = toY
-	}
-	endif
-	
 context Z1 
 def : ast() : target::D =
 	target::D {

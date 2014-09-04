@@ -1,7 +1,9 @@
 package ocldependencyanalysis;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -46,8 +48,9 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	private void initializeMaps(Resource resource) {
 		Root root = (Root) resource.getContents().get(0) ;
 		for (Package aPackage : root.getNestedPackage()) {
-			computeType2SuperTypes(aPackage);
-			computeAsType2CsType(aPackage);
+			Package primPckg = (Package)mManager.getPrimaryPackage(aPackage);
+			computeType2SuperTypes(primPckg);
+			computeAsType2CsType(primPckg);
 		}
 		for (Type type : type2superTypes.keySet()) {
 			computeType2InstantiableClasses(type);
@@ -58,9 +61,8 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	
 	private void computeType2SuperTypes(Package p) {
 		
-		for (Type type : p.getOwnedType()) {
-			Type prymaryType = mManager.getPrimaryType(type);
-			computeType2SuperTypes(prymaryType);
+		for (Type type : p.getOwnedType()) {			
+			computeType2SuperTypes(type);
 		}
 		for (Package nestedPackage : p.getNestedPackage()) {
 			computeType2SuperTypes(nestedPackage);
@@ -68,8 +70,6 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	}
 	
 	private Set<Type> computeType2SuperTypes(Type type) {
-		
-		
 		
 		Set<Type> result = type2superTypes.get(type);
 		if (result != null) {
@@ -116,6 +116,18 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		}
 	}
 	
+	protected List<Type> getTypesInvolvedInOCLDocPackages(Resource oclResource) {
+		
+		List<Type> result = new ArrayList<Type>();
+		Root root = (Root) oclResource.getContents().get(0);
+		for (Package pckg : root.getNestedPackage()) {
+			Package primaryPckg = (Package) mManager.getPrimaryPackage(pckg);
+			for (Type ownedType : primaryPckg.getOwnedType()) {
+				result.add(ownedType);
+			}
+		}
+		return result;
+	}
 	private void computeAsType2CsType(Package p) {
 		for (Type type : p.getOwnedType()) {
 			Operation astOp = getAstOperation(type);

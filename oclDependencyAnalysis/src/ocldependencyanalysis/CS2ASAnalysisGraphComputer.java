@@ -36,10 +36,8 @@ import org.eclipse.ocl.examples.pivot.OCLExpression;
 import org.eclipse.ocl.examples.pivot.OpaqueExpression;
 import org.eclipse.ocl.examples.pivot.Operation;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
-import org.eclipse.ocl.examples.pivot.Package;
 import org.eclipse.ocl.examples.pivot.Property;
 import org.eclipse.ocl.examples.pivot.PropertyCallExp;
-import org.eclipse.ocl.examples.pivot.Root;
 import org.eclipse.ocl.examples.pivot.Type;
 import org.eclipse.ocl.examples.pivot.utilities.PivotUtil;
 
@@ -53,17 +51,14 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 	protected void updateDependencyGraphFromCS2ASDescription(
 			IGraph<CS2ASAnalysisNode> dependencyGraph, Resource cs2asResource) {
 		
-		Root root = (Root) cs2asResource.getContents().get(0);
-		for (Package pckg : root.getNestedPackage()) {
-			Package primaryPckg = (Package) mManager.getPrimaryPackage(pckg);
-			for (Type ownedType : primaryPckg.getOwnedType()) {
-				for (DomainOperation op : mManager.getAllOperations(ownedType, null)) {
-					Operation pivotOp = (Operation)op;
-					if (isAstOp(pivotOp)) {
-						updateGraphFromMappingOperation(dependencyGraph, pivotOp);
-					} else if (isCstOp(pivotOp)) {
-						updateGraphFromMappingOperation(dependencyGraph, pivotOp);
-					}
+		
+		for (Type ownedType : getTypesInvolvedInOCLDocPackages(cs2asResource)) {
+			for (DomainOperation op : mManager.getAllOperations(ownedType, null)) {
+				Operation pivotOp = (Operation)op;
+				if (isAstOp(pivotOp)) {
+					updateGraphFromMappingOperation(dependencyGraph, pivotOp);
+				} else if (isCstOp(pivotOp)) {
+					updateGraphFromMappingOperation(dependencyGraph, pivotOp);
 				}
 			}
 		}
@@ -389,7 +384,20 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 		// For every computed property We firstly build the aggregation links
 		// FIXME do the same with the types, now ?
 		Set<Property> computedProperties = new HashSet<Property>();
-		for (TreeIterator<EObject> tit = resource.getAllContents(); tit.hasNext(); ) {
+		for (Type ownedType : getTypesInvolvedInOCLDocPackages(resource)) {
+			for (DomainOperation op : mManager.getAllOperations(ownedType, null)) {
+				Operation pivotOp = (Operation)op;
+				if (isAstOp(pivotOp)) {
+					updateGraphFromInvolvedProperties(dependencyGraph, pivotOp, computedProperties);
+				} else if (isCstOp(pivotOp)) {
+					updateGraphFromInvolvedProperties(dependencyGraph, pivotOp, computedProperties);
+				}
+			}
+		}
+	}
+	
+	private void updateGraphFromInvolvedProperties(IGraph<CS2ASAnalysisNode> dependencyGraph, Operation op, Set<Property> computedProperties) {
+		for (TreeIterator<EObject> tit = EcoreUtil.getAllContents(op, true); tit.hasNext(); ) {
 			EObject next = tit.next();
 			Property property = null;
 			if (isConstrucorPart(next)) {
@@ -412,9 +420,8 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 //					computedProperties.add(opposite);
 //				}
 			}
-		}		
+		}
 	}
-	
 	
 	@Override
 	protected void postprocess(Resource resource,
@@ -426,7 +433,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 			while (graphChanged) {
 				nodesToRemove.clear();
 				for (INode<CS2ASAnalysisNode> node: dependencyGraph.getNodes()) {
-					// We remove all the TypeInfo which are not consumed			
+					// We remove all the TypeInfo which are not consumed
 					if (node.getObject() instanceof TypeInfo) {
 						if(dependencyGraph.getOutputEdges(node).size() == 0) {
 							nodesToRemove.add(node);
