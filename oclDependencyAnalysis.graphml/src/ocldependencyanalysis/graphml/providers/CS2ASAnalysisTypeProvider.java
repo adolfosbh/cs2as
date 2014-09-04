@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import ocldependencyanalysis.NameResoPropertyObj;
 import ocldependencyanalysis.cs2asanalysis.ActionNode;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.cs2asanalysis.ConstructorPartAction;
@@ -52,8 +51,9 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 	private GraphMLNodeType containmentPropertyActionNode;
 	private GraphMLNodeType nonContainmentPropertyActionNode;
 
-	private GraphMLNodeType containmentNameResoPropertyActionNode;
-	private GraphMLNodeType nonContainmentNameResoPropertyActionNode;
+	private GraphMLNodeType attributeLookupPropertyActionNode;
+	private GraphMLNodeType containmentLookupPropertyActionNode;
+	private GraphMLNodeType nonContainmentLookupPropertyActionNode;
 	
 	private GraphMLEdgeType actionInput;
 	private GraphMLEdgeType actionOutput;
@@ -107,15 +107,20 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 		nonContainmentPropertyActionNode.setColor("#FFFF00");
 		nonContainmentPropertyActionNode.setShape(ShapeType.ELLIPSE);
 		
-		containmentNameResoPropertyActionNode = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
-		containmentNameResoPropertyActionNode.setName("containmentNameResoPropertyAction");
-		containmentNameResoPropertyActionNode.setColor("#FF6600");
-		containmentNameResoPropertyActionNode.setShape(ShapeType.HEXAGON);
+		attributeLookupPropertyActionNode = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
+		attributeLookupPropertyActionNode.setName("attributeLookupPropertyActionNode");
+		attributeLookupPropertyActionNode.setColor("#0000EE");
+		attributeLookupPropertyActionNode.setShape(ShapeType.HEXAGON);
 		
-		nonContainmentNameResoPropertyActionNode = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
-		nonContainmentNameResoPropertyActionNode.setName("nonContainmentNameResoPropertyAction");
-		nonContainmentNameResoPropertyActionNode.setColor("#FFFF00");
-		nonContainmentNameResoPropertyActionNode.setShape(ShapeType.HEXAGON);
+		containmentLookupPropertyActionNode = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
+		containmentLookupPropertyActionNode.setName("containmentNameResoPropertyAction");
+		containmentLookupPropertyActionNode.setColor("#FF6600");
+		containmentLookupPropertyActionNode.setShape(ShapeType.HEXAGON);
+		
+		nonContainmentLookupPropertyActionNode = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
+		nonContainmentLookupPropertyActionNode.setName("nonContainmentNameResoPropertyAction");
+		nonContainmentLookupPropertyActionNode.setColor("#FFFF00");
+		nonContainmentLookupPropertyActionNode.setShape(ShapeType.HEXAGON);
 		
 		actionInput = GraphmltypesFactory.eINSTANCE.createGraphMLEdgeType();
 		actionInput.setName("actionInput");
@@ -142,10 +147,11 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 		elementTypes.add(astElementActionNode);
 		elementTypes.add(cstElementActionNode);
 		elementTypes.add(attributePropertyActionNode);
+		elementTypes.add(attributeLookupPropertyActionNode);
 		elementTypes.add(containmentPropertyActionNode);
-		elementTypes.add(containmentNameResoPropertyActionNode);
+		elementTypes.add(containmentLookupPropertyActionNode);
 		elementTypes.add(nonContainmentPropertyActionNode);
-		elementTypes.add(nonContainmentNameResoPropertyActionNode);		
+		elementTypes.add(nonContainmentLookupPropertyActionNode);		
 		elementTypes.add(actionInput);
 		elementTypes.add(actionOutput);
 		elementTypes.add(infoAggregation);
@@ -158,44 +164,46 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 
 	@Override
 	public NodeType getNodeType(INode<CS2ASAnalysisNode> node) {
-		CS2ASAnalysisNode computation = node.getObject();
+		CS2ASAnalysisNode analysisNode = node.getObject();
 		
-		if (computation instanceof ActionNode) {
-			if (computation instanceof NameResoPropertyObj) {
-				// TODO
-//				Property prop = (Property) featureObj.getFeature();
-//				if (prop.isComposite()) {
-//					return astContainmentNameResoProperty;
-//				} else {
-//					return astNonContainmentNameResoProperty;
-//				}
-				return null;
-			} else {			
-				if (computation instanceof OperationAction) {
-					Operation operation = ((OperationAction)computation).getOperation();
-					if ("ast".equals(operation.getName()))
-						return astElementActionNode;
-					else if ("cst".equals(operation.getName())) 
-						return cstElementActionNode;
-					else
-						return null;
-				} if (computation instanceof ConstructorPartAction) {
-					Property prop = ((ConstructorPartAction) computation).getProperty();
-					if (prop.getOpposite() == null) { 	// FIXME how to know that a prop is Class attribute or an Association end ?
-														// This is not ideal, but seems reasonably working
+		if (analysisNode instanceof ActionNode) {
+			if (analysisNode instanceof OperationAction) {
+				Operation operation = ((OperationAction)analysisNode).getOperation();
+				if ("ast".equals(operation.getName()))
+					return astElementActionNode;
+				else if ("cst".equals(operation.getName())) 
+					return cstElementActionNode;
+				else
+					return null;
+			} if (analysisNode instanceof ConstructorPartAction) {
+				ConstructorPartAction action = (ConstructorPartAction) analysisNode; 
+				Property prop = action.getProperty();
+				if (prop.getOpposite() == null) { 	// FIXME how to know that a prop is Class attribute or an Association end ?
+													// This is not ideal, but seems reasonably working
+					if (action.getNeedsLookup()) {
+						return attributeLookupPropertyActionNode;
+					} else {
 						return attributePropertyActionNode;
-					} else if (prop.isComposite()) {
+					}
+				} else if (prop.isComposite()) {
+					if (action.getNeedsLookup()) {
+						return containmentLookupPropertyActionNode;
+					} else {
 						return containmentPropertyActionNode;
+					}
+				} else {
+					if (action.getNeedsLookup()) {
+						return nonContainmentLookupPropertyActionNode;
 					} else {
 						return nonContainmentPropertyActionNode;
 					}
-				} else {
-					throw new IllegalStateException("Unexpected computation element");
 				}
-			}			
+			} else {
+				throw new IllegalStateException("Unexpected computation element");
+			}
 			
-		} else if (computation instanceof InfoNode){
-			String pPackage = getContainingPackageName(computation.getReferredElement());
+		} else if (analysisNode instanceof InfoNode){
+			String pPackage = getContainingPackageName(analysisNode.getReferredElement());
 			return packageName2InfoNodes.get(pPackage);
 		} else {
 			throw new IllegalStateException("Unexpected computation element");

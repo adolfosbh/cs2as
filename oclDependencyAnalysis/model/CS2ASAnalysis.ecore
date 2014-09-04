@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cs2asanalysis" nsURI="http://cs2asanalysis" nsPrefix="cs2asana">
-  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
+    <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return ToStringSwitch.INSTANCE.doSwitch(this);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="hashCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return toString().hashCode();"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return toString().equals(object.toString());"/>
+      </eAnnotations>
+      <eParameters name="object" eType="ecore:EDataType platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Object"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CS2ASAnalysisNode" abstract="true" eSuperTypes="#//Node">
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Type"/>
@@ -29,7 +46,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="constructorExp" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//ConstructorExp"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstructorPartAction" eSuperTypes="#//ConstructorPartPropRef #//ActionNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorPartAction" eSuperTypes="#//ConstructorPartPropRef #//ActionNode">
+    <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return super.toString();"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="needsLookup" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorPartPropertyInfo" eSuperTypes="#//ExtendedPropertyInfo #//ConstructorPartPropRef"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExtendedPropertyInfo" eSuperTypes="#//PropertyRef #//InfoNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="propertyType" lowerBound="1"

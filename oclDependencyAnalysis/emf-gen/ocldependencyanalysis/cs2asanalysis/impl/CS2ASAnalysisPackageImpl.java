@@ -20,7 +20,9 @@ import ocldependencyanalysis.cs2asanalysis.PropertyRef;
 import ocldependencyanalysis.cs2asanalysis.TypeInfo;
 import ocldependencyanalysis.cs2asanalysis.TypeRef;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -218,6 +220,33 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getNode__ToString() {
+		return nodeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getNode__HashCode() {
+		return nodeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getNode__Equals__Object() {
+		return nodeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCS2ASAnalysisNode() {
 		return cs2ASAnalysisNodeEClass;
 	}
@@ -371,6 +400,24 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getConstructorPartAction_NeedsLookup() {
+		return (EAttribute)constructorPartActionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getConstructorPartAction__ToString() {
+		return constructorPartActionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConstructorPartPropertyInfo() {
 		return constructorPartPropertyInfoEClass;
 	}
@@ -449,6 +496,9 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 
 		// Create classes and their features
 		nodeEClass = createEClass(NODE);
+		createEOperation(nodeEClass, NODE___TO_STRING);
+		createEOperation(nodeEClass, NODE___HASH_CODE);
+		createEOperation(nodeEClass, NODE___EQUALS__OBJECT);
 
 		cs2ASAnalysisNodeEClass = createEClass(CS2AS_ANALYSIS_NODE);
 		createEReference(cs2ASAnalysisNodeEClass, CS2AS_ANALYSIS_NODE__CONTEXT);
@@ -476,6 +526,8 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		createEReference(constructorExpTypeInfoEClass, CONSTRUCTOR_EXP_TYPE_INFO__CONSTRUCTOR_EXP);
 
 		constructorPartActionEClass = createEClass(CONSTRUCTOR_PART_ACTION);
+		createEAttribute(constructorPartActionEClass, CONSTRUCTOR_PART_ACTION__NEEDS_LOOKUP);
+		createEOperation(constructorPartActionEClass, CONSTRUCTOR_PART_ACTION___TO_STRING);
 
 		constructorPartPropertyInfoEClass = createEClass(CONSTRUCTOR_PART_PROPERTY_INFO);
 
@@ -543,6 +595,13 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		// Initialize classes, features, and operations; add parameters
 		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEOperation(getNode__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getNode__HashCode(), ecorePackage.getEInt(), "hashCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		EOperation op = initEOperation(getNode__Equals__Object(), ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, thePivotPackage.getObject(), "object", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(cs2ASAnalysisNodeEClass, CS2ASAnalysisNode.class, "CS2ASAnalysisNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCS2ASAnalysisNode_Context(), thePivotPackage.getType(), null, "context", null, 1, 1, CS2ASAnalysisNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCS2ASAnalysisNode_ReferredElement(), thePivotPackage.getElement(), null, "referredElement", null, 0, 1, CS2ASAnalysisNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -569,6 +628,9 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		initEReference(getConstructorExpTypeInfo_ConstructorExp(), thePivotPackage.getConstructorExp(), null, "constructorExp", null, 1, 1, ConstructorExpTypeInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constructorPartActionEClass, ConstructorPartAction.class, "ConstructorPartAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConstructorPartAction_NeedsLookup(), ecorePackage.getEBooleanObject(), "needsLookup", "false", 0, 1, ConstructorPartAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getConstructorPartAction__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(constructorPartPropertyInfoEClass, ConstructorPartPropertyInfo.class, "ConstructorPartPropertyInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

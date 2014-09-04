@@ -1,13 +1,7 @@
 import 'SourceMM1.ecore'
 import 'TargetMM1.ecore'
 import 'Environment.ecore'
-
-package ocl
-
-context OclElement
-def : env() : env::Environment =
-	null 
-endpackage
+import 'TargetLookup.ocl'
 
 package source
 
@@ -49,12 +43,12 @@ def : ast() : target::D =
 	then target::D {
 			toA = toY.oclAsType(source::Y1).ast().toA1,
 			name = name,
-			refsB = env().lookupB(name)
+			refsB = lookupB(name)
 		} 
 	else target::D {
 			toA = toY.oclAsType(source::Y2).ast().toA2,
 			name = name,
-			refsC = env().lookupC(name)
+			refsC = lookupC(name)
 		}
 	endif
 endpackage

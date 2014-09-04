@@ -1,9 +1,11 @@
 package ocldependencyanalysis;
 
-
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -24,45 +26,77 @@ import ocldependencyanalysis.graph.INode;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.ocl.examples.domain.elements.DomainOperation;
 import org.eclipse.ocl.examples.pivot.ConstructorExp;
 import org.eclipse.ocl.examples.pivot.ConstructorPart;
 import org.eclipse.ocl.examples.pivot.Element;
+import org.eclipse.ocl.examples.pivot.ExpressionInOCL;
 import org.eclipse.ocl.examples.pivot.OCLExpression;
+import org.eclipse.ocl.examples.pivot.OpaqueExpression;
 import org.eclipse.ocl.examples.pivot.Operation;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
+import org.eclipse.ocl.examples.pivot.Package;
 import org.eclipse.ocl.examples.pivot.Property;
 import org.eclipse.ocl.examples.pivot.PropertyCallExp;
+import org.eclipse.ocl.examples.pivot.Root;
 import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.examples.pivot.utilities.PivotUtil;
 
 public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<CS2ASAnalysisNode>{
 
 	// FIXME Quick workaround for ed's requirement 
-	// if more options are needed, refactor and increase API to accept them
+	// Refactor and increase API to accept options
 	public static boolean CLEAN_GRAPH = true;
 	
 	@Override
 	protected void updateDependencyGraphFromCS2ASDescription(
 			IGraph<CS2ASAnalysisNode> dependencyGraph, Resource cs2asResource) {
 		
-		for (TreeIterator<EObject> tit = cs2asResource.getAllContents(); tit.hasNext(); ) {
-			EObject next = tit.next();
-			if (isConstrucorPart(next)) {
-				updateGraphFromConstructorPart(dependencyGraph, (ConstructorPart) next);
-				tit.prune(); // routine above will process contained relevant expressions-> prune
-			} else if (isConstructorExp(next)) {
-				updateGraphFromConstructorExp(dependencyGraph, (ConstructorExp) next);
-			} 
-			else if (isAstOp(next)) {
-				updateGraphFromMappingOperation(dependencyGraph, (Operation) next);
-			} else if (isCstOp(next)) {
-				updateGraphFromMappingOperation(dependencyGraph, (Operation) next); 
-			} 
-			else if (isPropertyCallExp(next)) {
-				updateGraphFromPropertyCallExp(dependencyGraph, (PropertyCallExp) next);
+		Root root = (Root) cs2asResource.getContents().get(0);
+		for (Package pckg : root.getNestedPackage()) {
+			Package primaryPckg = (Package) mManager.getPrimaryPackage(pckg);
+			for (Type ownedType : primaryPckg.getOwnedType()) {
+				for (DomainOperation op : mManager.getAllOperations(ownedType, null)) {
+					Operation pivotOp = (Operation)op;
+					if (isAstOp(pivotOp)) {
+						updateGraphFromMappingOperation(dependencyGraph, pivotOp);
+					} else if (isCstOp(pivotOp)) {
+						updateGraphFromMappingOperation(dependencyGraph, pivotOp);
+					}
+				}
 			}
 		}
+		
+		updateDependencyGraphFromLookupDescription(dependencyGraph);
 	}
 
+	private void updateGraphFromOperationBody(IGraph<CS2ASAnalysisNode> dependencyGraph, Operation operation) {
+		
+		OpaqueExpression opExp = operation.getBodyExpression();
+		if (opExp != null) {
+			ExpressionInOCL expInOCL = PivotUtil.getExpressionInOCL(mManager,opExp);
+			OCLExpression exp = expInOCL.getBodyExpression();
+			if (isConstructorExp(exp)) {
+				updateGraphFromConstructorExp(dependencyGraph, (ConstructorExp) exp);
+			} else if (isPropertyCallExp(exp)) {
+				updateGraphFromPropertyCallExp(dependencyGraph, (PropertyCallExp) exp);
+			}
+			for (TreeIterator<EObject> tit = EcoreUtil.getAllContents(exp, false); tit.hasNext(); ) {
+				EObject next = tit.next();			
+				if (isConstrucorPart(next)) {
+					updateGraphFromConstructorPart(dependencyGraph, (ConstructorPart) next);
+					tit.prune(); // routine above will process contained relevant expressions-> prune
+				} else if (isConstructorExp(next)) {
+					updateGraphFromConstructorExp(dependencyGraph, (ConstructorExp) next);
+				} 
+				else if (isPropertyCallExp(next)) {
+					updateGraphFromPropertyCallExp(dependencyGraph, (PropertyCallExp) next);
+				}
+			}
+		}		
+	}
+	
 
 	private void updateGraphFromConstructorPart(IGraph<CS2ASAnalysisNode> dependencyGraph, ConstructorPart cPart ) {
 	
@@ -88,13 +122,21 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 		updateGraphFromOpposite(dependencyGraph, context, propInfo);
 		// updateGraphFromOpposite(dependencyGraph, context, cPartPropInfo, action);
 		// updateGraphFromSuperTypesProperty(dependencyGraph, context, cPartPropInfo.getProperty().getOwningType(), cPartPropInfo);
-		
+				
 		updateGraphFromInnerOCLExpression(dependencyGraph, context, action, cPart.getInitExpression());
+		boolean containsLookupCall = isLookupCall(cPart.getInitExpression());
 		for (TreeIterator<EObject> tit = cPart.getInitExpression().eAllContents(); tit.hasNext(); ) {
 			EObject next = tit.next();
 			if (next instanceof OCLExpression) {
 				updateGraphFromInnerOCLExpression(dependencyGraph, context, action, (OCLExpression)next);
-			}			
+				if (isLookupCall(next)) {
+					containsLookupCall = true;
+				}
+			}
+		}
+		
+		if (containsLookupCall) {
+			action.setNeedsLookup(Boolean.TRUE);
 		}
 	}
 	
@@ -140,6 +182,8 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 			// Note the dependency with the constructed type will be done when
 			// the constructor expression is analysed
 		}
+		
+		updateGraphFromOperationBody(dependencyGraph,operation);
 	}
 	
 	
@@ -245,12 +289,70 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 		}
 	}
 	
-	@Override
+ 
 	protected void updateDependencyGraphFromLookupDescription(
-			IGraph<CS2ASAnalysisNode> dependencyGraph, Resource lookupDescription) {
+			IGraph<CS2ASAnalysisNode> dependencyGraph) {
 
+		Map<ConstructorPartAction, Operation> lookupCPartAction2Operations = new HashMap<ConstructorPartAction, Operation>();
+		
+		for (INode<CS2ASAnalysisNode> node : dependencyGraph.getNodes()) {
+			CS2ASAnalysisNode analysisNode = node.getObject();
+			if (analysisNode instanceof ConstructorPartAction
+				&& ((ConstructorPartAction) analysisNode).getNeedsLookup()) {
+				ConstructorPartAction cPartAction = (ConstructorPartAction)analysisNode;
+				OCLExpression initExp = cPartAction.getConstructorPart().getInitExpression();
+				
+				// FIXME can we have more that one lookup operation call ? Why not ?
+				if (isLookupCall(initExp)) {
+					lookupCPartAction2Operations.put(cPartAction, ((OperationCallExp)initExp).getReferredOperation());
+				} else { 
+					for (TreeIterator<EObject> tit = initExp.eAllContents(); tit.hasNext(); ) {
+						EObject next = tit.next();
+						if (isLookupCall(next)) {
+							lookupCPartAction2Operations.put(cPartAction, ((OperationCallExp)next).getReferredOperation());
+						}
+					}
+				}
+			}
+		}
+
+		for (Entry<ConstructorPartAction,Operation> entry : lookupCPartAction2Operations.entrySet()) {
+			updateGraphFromLookupOperation(dependencyGraph, entry.getKey(), entry.getValue());
+		}
 	}
 	
+	private void updateGraphFromLookupOperation(IGraph<CS2ASAnalysisNode> dependencyGraph, ConstructorPartAction action,
+								Operation lookupOp) {
+		
+		Set<ExtendedPropertyInfo> propInfos = new HashSet<ExtendedPropertyInfo>();
+		updateExtendedPropertyInfosInvolvedInOperation(propInfos, new HashSet<Operation>(), lookupOp);		
+		for (ExtendedPropertyInfo propInfo : propInfos) {
+			dependencyGraph.addEdge(propInfo, action);
+		}
+	}
+	
+	// FIXME cache
+	private void updateExtendedPropertyInfosInvolvedInOperation(Set<ExtendedPropertyInfo> properties, Set<Operation> visitedOps, Operation op) {
+		
+		visitedOps.add(op);
+		OpaqueExpression opExp = op.getBodyExpression();
+		if (opExp != null) {
+			OCLExpression bodyExpression = opExp.getExpressionInOCL().getBodyExpression();
+			for (TreeIterator<EObject> tit = bodyExpression.eAllContents(); tit.hasNext(); ) {
+				EObject next = tit.next();
+				if (isPropertyCallExp(next)) {
+					PropertyCallExp propCallExp = (PropertyCallExp) next;
+					properties.add(createPropertyInfo(null, propCallExp.getSource().getType(), propCallExp.getReferredProperty())); // FIXME wait for studying if we finally need the context or not				
+				} else if (isOperationCallExp(next)) {
+					Operation referredOp = ((OperationCallExp)next).getReferredOperation();
+					if (!visitedOps.contains(referredOp)) {
+						updateExtendedPropertyInfosInvolvedInOperation(properties, visitedOps, referredOp);
+					}
+				}
+			}
+		}
+	}
+
 	protected ConstructorPartAction createAction(Type context, ConstructorPart cPart) {
 		return CS2ASNodesFactory.INSTANCE.createAction(context, cPart);
 	}
@@ -274,10 +376,6 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 	protected OperationAction createOperationAction(Type context, Operation op) {
 		return CS2ASNodesFactory.INSTANCE.createOperationAction(context, op);
 	}
-	
-//	protected OppositePropertyInfo createOppositePropertyInfo(Type context, Property opposite) {
-//		return new OppositePropertyInfo(context, opposite);
-//	}
 	
 	protected ExtendedPropertyInfo createPropertyInfo(Type context, Type type, Property property) {
 		return CS2ASNodesFactory.INSTANCE.createPropertyInfo(context, type, property);
@@ -327,7 +425,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 			boolean graphChanged = true;
 			while (graphChanged) {
 				nodesToRemove.clear();
-				for (INode<CS2ASAnalysisNode> node: dependencyGraph.getNodes()) { 
+				for (INode<CS2ASAnalysisNode> node: dependencyGraph.getNodes()) {
 					// We remove all the TypeInfo which are not consumed			
 					if (node.getObject() instanceof TypeInfo) {
 						if(dependencyGraph.getOutputEdges(node).size() == 0) {
@@ -344,7 +442,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 									isOutputOfAction = true;
 								}
 							}
-							if (!isOutputOfAction){
+							if (!isOutputOfAction) {
 								nodesToRemove.add(node);
 							}
 						}
@@ -353,7 +451,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractDependencyGraphComputer<
 				
 				for  (INode<CS2ASAnalysisNode> node: nodesToRemove) {
 					dependencyGraph.removeNode(node);
-				}				
+				}
 				graphChanged = nodesToRemove.size() > 0;				
 			}
 		}

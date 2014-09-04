@@ -46,17 +46,6 @@ public class DependencyAnalysis {
 		return featGraphComp.computeDependencyGraph(cs2asResource);
 	}
 	
-	public static IGraph<FeatureObj> createFeatureDependencyGraph(URI cs2asDocURI, URI lookupDocURI) {
-		
-		OCL ocl = getOCL();	
-		Resource cs2asResource = ocl.parse(cs2asDocURI);
-		Resource lookupResoource = ocl.parse(lookupDocURI);
-		FeatureDependencyGraphComputer featGraphComp = new FeatureDependencyGraphComputer();
-				
-				
-		return featGraphComp.computeDependencyGraph(cs2asResource, lookupResoource);
-	}
-	
 	public static IGraph<CS2ASAnalysisNode> createCS2ASAnalysisGraph(URI cs2asDocURI) {
 		
 		OCL ocl = getOCL();		

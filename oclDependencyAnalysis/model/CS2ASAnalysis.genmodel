@@ -25,19 +25,23 @@
     <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//TypeRef">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//TypeRef/type"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//ConstructorPartPropRef"/>
+    <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//ConstructorPartPropRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//ConstructorPartPropRef/constructorPart"/>
+    </genClasses>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//TypeInfo"/>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//ConstructorExpTypeInfo">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//ConstructorExpTypeInfo/constructorExp"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASAnalysis.ecore#//ConstructorPartAction"/>
+    <genClasses ecoreClass="CS2ASAnalysis.ecore#//ConstructorPartAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASAnalysis.ecore#//ConstructorPartAction/needsLookup"/>
+    </genClasses>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//ConstructorPartPropertyInfo"/>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//ExtendedPropertyInfo">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//ExtendedPropertyInfo/propertyType"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//OperationAction"/>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//PropertyCallExpInfo">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//PropertyCallExpInfo/propertyType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//PropertyCallExpInfo/propertyCallExp"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

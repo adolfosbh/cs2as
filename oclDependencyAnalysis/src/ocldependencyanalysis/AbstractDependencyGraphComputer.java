@@ -181,11 +181,8 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return bestOp;
 	}
 	
-	public IGraph<C> computeDependencyGraph (Resource cs2asResource, Resource lookupResource) {
-		
-		assert(cs2asResource.getContents().get(0) instanceof Root);
-		if (lookupResource != null) { assert(lookupResource.getContents().get(0) instanceof Root);}
-		
+	public IGraph<C> computeDependencyGraph (Resource cs2asResource) {
+		assert(cs2asResource.getContents().get(0) instanceof Root);	
 		mManager = MetaModelManager.getAdapter(cs2asResource.getResourceSet());
 		IGraph<C> dependencyGraph = createDependencyGraph();
 		
@@ -194,20 +191,9 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		updateDependencyGraphFromCS2ASDescription(dependencyGraph, cs2asResource);		
 		postprocess(cs2asResource, dependencyGraph);
 		
-		if (lookupResource != null) {
-			initializeMaps(lookupResource);		
-			preprocess(lookupResource, dependencyGraph);			
-			updateDependencyGraphFromLookupDescription(dependencyGraph, lookupResource);		
-			postprocess(lookupResource, dependencyGraph);
-		}
-		
 		mManager = null;
 		
 		return dependencyGraph;
-	}
-	
-	public IGraph<C> computeDependencyGraph (Resource cs2asResource) {
-		return computeDependencyGraph(cs2asResource, null);
 	}
 	
 	protected IGraph<C> createDependencyGraph() {
@@ -242,10 +228,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	 */
 	protected void postprocess(Resource resource, IGraph<C> dependencyGraph) {}
 	
-	abstract protected void updateDependencyGraphFromCS2ASDescription(IGraph<C> dependencyGraph, Resource cs2asResource);		
-	// FIXME Refactor this. Decouple CS2AS/Lookup in different graph udpaters
-	abstract protected void updateDependencyGraphFromLookupDescription(IGraph<C> dependencyGraph, Resource lookupDescription);
-	
+	abstract protected void updateDependencyGraphFromCS2ASDescription(IGraph<C> dependencyGraph, Resource cs2asResource);			
 	// Some utility routines
 	
 	protected Class getElementContext(Element element) { // FIXME this should return/consider Type rather than just Class
@@ -260,7 +243,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	}
 	
 	protected boolean isAstCall(EObject element) {
-		if (element instanceof OperationCallExp) {
+		if (isOperationCallExp(element)) {
 			return isAstOp(((OperationCallExp)element).getReferredOperation());
 		}
 		return false;
@@ -283,7 +266,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	}
 	
 	protected boolean isLookupCall(EObject element) {
-		if (element instanceof OperationCallExp) {
+		if (isOperationCallExp(element)) {
 			return isLookupOp(((OperationCallExp)element).getReferredOperation());
 		}
 		return false;
@@ -303,6 +286,9 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return element instanceof ConstructorPart;
 	}
 	
+	protected boolean isOperationCallExp(EObject element) {
+		return element instanceof OperationCallExp;
+	}
 	protected boolean isPropertyCallExp(EObject element) {
 		return element instanceof PropertyCallExp;
 	}

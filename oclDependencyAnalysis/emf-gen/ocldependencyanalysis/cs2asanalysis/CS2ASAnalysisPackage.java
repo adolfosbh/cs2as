@@ -2,7 +2,9 @@
  */
 package ocldependencyanalysis.cs2asanalysis;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -75,13 +77,40 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int NODE_FEATURE_COUNT = 0;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE___TO_STRING = 0;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE___HASH_CODE = 1;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE___EQUALS__OBJECT = 2;
+
+	/**
 	 * The number of operations of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_OPERATION_COUNT = 0;
+	int NODE_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisNodeImpl <em>Node</em>}' class.
@@ -121,6 +150,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CS2AS_ANALYSIS_NODE_FEATURE_COUNT = NODE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_NODE___TO_STRING = NODE___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_NODE___HASH_CODE = NODE___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_NODE___EQUALS__OBJECT = NODE___EQUALS__OBJECT;
+
+	/**
 	 * The number of operations of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,6 +205,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int ACTION_NODE_FEATURE_COUNT = NODE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_NODE___TO_STRING = NODE___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_NODE___HASH_CODE = NODE___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_NODE___EQUALS__OBJECT = NODE___EQUALS__OBJECT;
+
+	/**
 	 * The number of operations of the '<em>Action Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,6 +258,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @ordered
 	 */
 	int INFO_NODE_FEATURE_COUNT = NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFO_NODE___TO_STRING = NODE___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFO_NODE___HASH_CODE = NODE___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFO_NODE___EQUALS__OBJECT = NODE___EQUALS__OBJECT;
 
 	/**
 	 * The number of operations of the '<em>Info Node</em>' class.
@@ -232,6 +342,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int OPERATION_REF_FEATURE_COUNT = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REF___HASH_CODE = CS2AS_ANALYSIS_NODE___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REF___EQUALS__OBJECT = CS2AS_ANALYSIS_NODE___EQUALS__OBJECT;
+
+	/**
 	 * The number of operations of the '<em>Operation Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -287,6 +424,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int PROPERTY_REF_FEATURE_COUNT = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REF___HASH_CODE = CS2AS_ANALYSIS_NODE___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REF___EQUALS__OBJECT = CS2AS_ANALYSIS_NODE___EQUALS__OBJECT;
+
+	/**
 	 * The number of operations of the '<em>Property Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,6 +504,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @ordered
 	 */
 	int TYPE_REF_FEATURE_COUNT = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_REF___HASH_CODE = CS2AS_ANALYSIS_NODE___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_REF___EQUALS__OBJECT = CS2AS_ANALYSIS_NODE___EQUALS__OBJECT;
 
 	/**
 	 * The number of operations of the '<em>Type Ref</em>' class.
@@ -406,6 +597,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_PART_PROP_REF_FEATURE_COUNT = PROPERTY_REF_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROP_REF___TO_STRING = PROPERTY_REF___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROP_REF___HASH_CODE = PROPERTY_REF___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROP_REF___EQUALS__OBJECT = PROPERTY_REF___EQUALS__OBJECT;
+
+	/**
 	 * The number of operations of the '<em>Constructor Part Prop Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -459,6 +677,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @ordered
 	 */
 	int TYPE_INFO_FEATURE_COUNT = TYPE_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_INFO___TO_STRING = TYPE_REF___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_INFO___HASH_CODE = TYPE_REF___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_INFO___EQUALS__OBJECT = TYPE_REF___EQUALS__OBJECT;
 
 	/**
 	 * The number of operations of the '<em>Type Info</em>' class.
@@ -525,6 +770,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_EXP_TYPE_INFO_FEATURE_COUNT = TYPE_INFO_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_EXP_TYPE_INFO___TO_STRING = TYPE_INFO___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_EXP_TYPE_INFO___HASH_CODE = TYPE_INFO___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_EXP_TYPE_INFO___EQUALS__OBJECT = TYPE_INFO___EQUALS__OBJECT;
+
+	/**
 	 * The number of operations of the '<em>Constructor Exp Type Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -580,13 +852,49 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_PART_ACTION__CONSTRUCTOR_PART = CONSTRUCTOR_PART_PROP_REF__CONSTRUCTOR_PART;
 
 	/**
+	 * The feature id for the '<em><b>Needs Lookup</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_ACTION__NEEDS_LOOKUP = CONSTRUCTOR_PART_PROP_REF_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Constructor Part Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_PART_ACTION_FEATURE_COUNT = CONSTRUCTOR_PART_PROP_REF_FEATURE_COUNT + 0;
+	int CONSTRUCTOR_PART_ACTION_FEATURE_COUNT = CONSTRUCTOR_PART_PROP_REF_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_ACTION___HASH_CODE = CONSTRUCTOR_PART_PROP_REF___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_ACTION___EQUALS__OBJECT = CONSTRUCTOR_PART_PROP_REF___EQUALS__OBJECT;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_ACTION___TO_STRING = CONSTRUCTOR_PART_PROP_REF_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Constructor Part Action</em>' class.
@@ -595,7 +903,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_PART_ACTION_OPERATION_COUNT = CONSTRUCTOR_PART_PROP_REF_OPERATION_COUNT + 0;
+	int CONSTRUCTOR_PART_ACTION_OPERATION_COUNT = CONSTRUCTOR_PART_PROP_REF_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorPartPropertyInfoImpl <em>Constructor Part Property Info</em>}' class.
@@ -663,6 +971,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int EXTENDED_PROPERTY_INFO_FEATURE_COUNT = PROPERTY_REF_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_PROPERTY_INFO___TO_STRING = PROPERTY_REF___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_PROPERTY_INFO___HASH_CODE = PROPERTY_REF___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_PROPERTY_INFO___EQUALS__OBJECT = PROPERTY_REF___EQUALS__OBJECT;
+
+	/**
 	 * The number of operations of the '<em>Extended Property Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -726,6 +1061,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_PART_PROPERTY_INFO_FEATURE_COUNT = EXTENDED_PROPERTY_INFO_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROPERTY_INFO___TO_STRING = EXTENDED_PROPERTY_INFO___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROPERTY_INFO___HASH_CODE = EXTENDED_PROPERTY_INFO___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROPERTY_INFO___EQUALS__OBJECT = EXTENDED_PROPERTY_INFO___EQUALS__OBJECT;
+
+	/**
 	 * The number of operations of the '<em>Constructor Part Property Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -779,6 +1141,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @ordered
 	 */
 	int OPERATION_ACTION_FEATURE_COUNT = OPERATION_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ACTION___TO_STRING = OPERATION_REF___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ACTION___HASH_CODE = OPERATION_REF___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ACTION___EQUALS__OBJECT = OPERATION_REF___EQUALS__OBJECT;
 
 	/**
 	 * The number of operations of the '<em>Operation Action</em>' class.
@@ -846,6 +1235,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int PROPERTY_CALL_EXP_INFO_FEATURE_COUNT = PROPERTY_REF_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CALL_EXP_INFO___TO_STRING = PROPERTY_REF___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CALL_EXP_INFO___HASH_CODE = PROPERTY_REF___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CALL_EXP_INFO___EQUALS__OBJECT = PROPERTY_REF___EQUALS__OBJECT;
+
+	/**
 	 * The number of operations of the '<em>Property Call Exp Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -864,6 +1280,36 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getNode();
+
+	/**
+	 * Returns the meta object for the '{@link ocldependencyanalysis.cs2asanalysis.Node#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see ocldependencyanalysis.cs2asanalysis.Node#toString()
+	 * @generated
+	 */
+	EOperation getNode__ToString();
+
+	/**
+	 * Returns the meta object for the '{@link ocldependencyanalysis.cs2asanalysis.Node#hashCode() <em>Hash Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Hash Code</em>' operation.
+	 * @see ocldependencyanalysis.cs2asanalysis.Node#hashCode()
+	 * @generated
+	 */
+	EOperation getNode__HashCode();
+
+	/**
+	 * Returns the meta object for the '{@link ocldependencyanalysis.cs2asanalysis.Node#equals(java.lang.Object) <em>Equals</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Equals</em>' operation.
+	 * @see ocldependencyanalysis.cs2asanalysis.Node#equals(java.lang.Object)
+	 * @generated
+	 */
+	EOperation getNode__Equals__Object();
 
 	/**
 	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode <em>Node</em>}'.
@@ -1043,6 +1489,27 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	EClass getConstructorPartAction();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ocldependencyanalysis.cs2asanalysis.ConstructorPartAction#getNeedsLookup <em>Needs Lookup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Needs Lookup</em>'.
+	 * @see ocldependencyanalysis.cs2asanalysis.ConstructorPartAction#getNeedsLookup()
+	 * @see #getConstructorPartAction()
+	 * @generated
+	 */
+	EAttribute getConstructorPartAction_NeedsLookup();
+
+	/**
+	 * Returns the meta object for the '{@link ocldependencyanalysis.cs2asanalysis.ConstructorPartAction#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see ocldependencyanalysis.cs2asanalysis.ConstructorPartAction#toString()
+	 * @generated
+	 */
+	EOperation getConstructorPartAction__ToString();
+
+	/**
 	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.ConstructorPartPropertyInfo <em>Constructor Part Property Info</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1136,6 +1603,30 @@ public interface CS2ASAnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NODE = eINSTANCE.getNode();
+
+		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NODE___TO_STRING = eINSTANCE.getNode__ToString();
+
+		/**
+		 * The meta object literal for the '<em><b>Hash Code</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NODE___HASH_CODE = eINSTANCE.getNode__HashCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Equals</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NODE___EQUALS__OBJECT = eINSTANCE.getNode__Equals__Object();
 
 		/**
 		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisNodeImpl <em>Node</em>}' class.
@@ -1292,6 +1783,22 @@ public interface CS2ASAnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONSTRUCTOR_PART_ACTION = eINSTANCE.getConstructorPartAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Needs Lookup</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTRUCTOR_PART_ACTION__NEEDS_LOOKUP = eINSTANCE.getConstructorPartAction_NeedsLookup();
+
+		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONSTRUCTOR_PART_ACTION___TO_STRING = eINSTANCE.getConstructorPartAction__ToString();
 
 		/**
 		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorPartPropertyInfoImpl <em>Constructor Part Property Info</em>}' class.

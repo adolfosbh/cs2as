@@ -2,10 +2,12 @@
  */
 package ocldependencyanalysis.cs2asanalysis.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.Node;
 import ocldependencyanalysis.cs2asanalysis.ToStringSwitch;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -37,25 +39,50 @@ public abstract class NodeImpl extends MinimalEObjectImpl.Container implements N
 	protected EClass eStaticClass() {
 		return CS2ASAnalysisPackage.Literals.NODE;
 	}
-
-	/** (non-Javadoc)
-	 * @see org.eclipse.emf.ecore.impl.BasicEObjectImpl#toString()
-	 * 
-	 * @generated NOT
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
-	@Override
 	public String toString() {
 		return ToStringSwitch.INSTANCE.doSwitch(this);
 	}
-	
-	@Override
-	public boolean equals(Object obj) {		
-		return toString().equals(obj.toString());
-	}
-	
-	@Override
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public int hashCode() {
 		return toString().hashCode();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean equals(final Object object) {
+		return toString().equals(object.toString());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CS2ASAnalysisPackage.NODE___TO_STRING:
+				return toString();
+			case CS2ASAnalysisPackage.NODE___HASH_CODE:
+				return hashCode();
+			case CS2ASAnalysisPackage.NODE___EQUALS__OBJECT:
+				return equals(arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 	
 } //NodeImpl
