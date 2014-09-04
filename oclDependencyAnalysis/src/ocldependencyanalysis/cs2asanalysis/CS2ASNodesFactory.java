@@ -52,6 +52,7 @@ public class CS2ASNodesFactory {
 		pceInfo.setContext(context);
 		pceInfo.setPropertyCallExp(propCallExp);
 		pceInfo.setProperty(propCallExp.getReferredProperty());
+		pceInfo.setPropertyClass(propCallExp.getSource().getType().isClass());
 		pceInfo.setReferredElement(propCallExp.getReferredProperty());
 		return pceInfo;
 	}

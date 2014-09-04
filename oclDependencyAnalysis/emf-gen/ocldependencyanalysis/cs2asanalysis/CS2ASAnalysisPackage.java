@@ -1196,7 +1196,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CALL_EXP_INFO__CONTEXT = PROPERTY_REF__CONTEXT;
+	int PROPERTY_CALL_EXP_INFO__CONTEXT = EXTENDED_PROPERTY_INFO__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Referred Element</b></em>' reference.
@@ -1205,7 +1205,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CALL_EXP_INFO__REFERRED_ELEMENT = PROPERTY_REF__REFERRED_ELEMENT;
+	int PROPERTY_CALL_EXP_INFO__REFERRED_ELEMENT = EXTENDED_PROPERTY_INFO__REFERRED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' reference.
@@ -1214,7 +1214,16 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CALL_EXP_INFO__PROPERTY = PROPERTY_REF__PROPERTY;
+	int PROPERTY_CALL_EXP_INFO__PROPERTY = EXTENDED_PROPERTY_INFO__PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Property Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CALL_EXP_INFO__PROPERTY_CLASS = EXTENDED_PROPERTY_INFO__PROPERTY_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Property Call Exp</b></em>' reference.
@@ -1223,7 +1232,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CALL_EXP_INFO__PROPERTY_CALL_EXP = PROPERTY_REF_FEATURE_COUNT + 0;
+	int PROPERTY_CALL_EXP_INFO__PROPERTY_CALL_EXP = EXTENDED_PROPERTY_INFO_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Property Call Exp Info</em>' class.
@@ -1232,7 +1241,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CALL_EXP_INFO_FEATURE_COUNT = PROPERTY_REF_FEATURE_COUNT + 1;
+	int PROPERTY_CALL_EXP_INFO_FEATURE_COUNT = EXTENDED_PROPERTY_INFO_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -1241,7 +1250,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CALL_EXP_INFO___TO_STRING = PROPERTY_REF___TO_STRING;
+	int PROPERTY_CALL_EXP_INFO___TO_STRING = EXTENDED_PROPERTY_INFO___TO_STRING;
 
 	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
@@ -1250,7 +1259,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CALL_EXP_INFO___HASH_CODE = PROPERTY_REF___HASH_CODE;
+	int PROPERTY_CALL_EXP_INFO___HASH_CODE = EXTENDED_PROPERTY_INFO___HASH_CODE;
 
 	/**
 	 * The operation id for the '<em>Equals</em>' operation.
@@ -1259,7 +1268,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CALL_EXP_INFO___EQUALS__OBJECT = PROPERTY_REF___EQUALS__OBJECT;
+	int PROPERTY_CALL_EXP_INFO___EQUALS__OBJECT = EXTENDED_PROPERTY_INFO___EQUALS__OBJECT;
 
 	/**
 	 * The number of operations of the '<em>Property Call Exp Info</em>' class.
@@ -1268,7 +1277,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CALL_EXP_INFO_OPERATION_COUNT = PROPERTY_REF_OPERATION_COUNT + 0;
+	int PROPERTY_CALL_EXP_INFO_OPERATION_COUNT = EXTENDED_PROPERTY_INFO_OPERATION_COUNT + 0;
 
 
 	/**

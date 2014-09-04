@@ -193,6 +193,7 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 			case CS2ASAnalysisPackage.PROPERTY_CALL_EXP_INFO: {
 				PropertyCallExpInfo propertyCallExpInfo = (PropertyCallExpInfo)theEObject;
 				T result = casePropertyCallExpInfo(propertyCallExpInfo);
+				if (result == null) result = caseExtendedPropertyInfo(propertyCallExpInfo);
 				if (result == null) result = casePropertyRef(propertyCallExpInfo);
 				if (result == null) result = caseInfoNode(propertyCallExpInfo);
 				if (result == null) result = caseCS2ASAnalysisNode(propertyCallExpInfo);

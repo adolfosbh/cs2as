@@ -53,7 +53,7 @@ public class ToStringSwitch extends CS2ASAnalysisSwitch<String> {
 	
 	@Override
 	public String casePropertyCallExpInfo(PropertyCallExpInfo object) {
-		return object.getPropertyCallExp().getSource().getType().getName() + "::" + object.getProperty().getName();
+		return caseExtendedPropertyInfo(object);
 	}
 	
 	// FIXME refactor

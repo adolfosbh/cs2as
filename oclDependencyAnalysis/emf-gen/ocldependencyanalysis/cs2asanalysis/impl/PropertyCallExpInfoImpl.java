@@ -24,7 +24,7 @@ import org.eclipse.ocl.examples.pivot.PropertyCallExp;
  *
  * @generated
  */
-public class PropertyCallExpInfoImpl extends PropertyRefImpl implements PropertyCallExpInfo {
+public class PropertyCallExpInfoImpl extends ExtendedPropertyInfoImpl implements PropertyCallExpInfo {
 	/**
 	 * The cached value of the '{@link #getPropertyCallExp() <em>Property Call Exp</em>}' reference.
 	 * <!-- begin-user-doc -->

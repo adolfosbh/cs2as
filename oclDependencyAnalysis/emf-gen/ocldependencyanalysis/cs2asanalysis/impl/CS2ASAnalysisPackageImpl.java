@@ -586,7 +586,7 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		extendedPropertyInfoEClass.getESuperTypes().add(this.getInfoNode());
 		operationActionEClass.getESuperTypes().add(this.getOperationRef());
 		operationActionEClass.getESuperTypes().add(this.getActionNode());
-		propertyCallExpInfoEClass.getESuperTypes().add(this.getPropertyRef());
+		propertyCallExpInfoEClass.getESuperTypes().add(this.getExtendedPropertyInfo());
 		propertyCallExpInfoEClass.getESuperTypes().add(this.getInfoNode());
 
 		// Initialize classes, features, and operations; add parameters
