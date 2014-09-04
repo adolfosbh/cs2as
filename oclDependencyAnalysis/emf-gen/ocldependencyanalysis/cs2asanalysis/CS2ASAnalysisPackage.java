@@ -460,14 +460,14 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int PROPERTY_REF_OPERATION_COUNT = CS2AS_ANALYSIS_NODE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.TypeRefImpl <em>Type Ref</em>}' class.
+	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ClassRefImpl <em>Class Ref</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ocldependencyanalysis.cs2asanalysis.impl.TypeRefImpl
-	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getTypeRef()
+	 * @see ocldependencyanalysis.cs2asanalysis.impl.ClassRefImpl
+	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getClassRef()
 	 * @generated
 	 */
-	int TYPE_REF = 6;
+	int CLASS_REF = 6;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -476,7 +476,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_REF__CONTEXT = CS2AS_ANALYSIS_NODE__CONTEXT;
+	int CLASS_REF__CONTEXT = CS2AS_ANALYSIS_NODE__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Referred Element</b></em>' reference.
@@ -485,25 +485,25 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_REF__REFERRED_ELEMENT = CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT;
+	int CLASS_REF__REFERRED_ELEMENT = CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_REF__TYPE = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 0;
+	int CLASS_REF__CLASS = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Type Ref</em>' class.
+	 * The number of structural features of the '<em>Class Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_REF_FEATURE_COUNT = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 1;
+	int CLASS_REF_FEATURE_COUNT = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -512,7 +512,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
+	int CLASS_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
 
 	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
@@ -521,7 +521,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_REF___HASH_CODE = CS2AS_ANALYSIS_NODE___HASH_CODE;
+	int CLASS_REF___HASH_CODE = CS2AS_ANALYSIS_NODE___HASH_CODE;
 
 	/**
 	 * The operation id for the '<em>Equals</em>' operation.
@@ -530,16 +530,16 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_REF___EQUALS__OBJECT = CS2AS_ANALYSIS_NODE___EQUALS__OBJECT;
+	int CLASS_REF___EQUALS__OBJECT = CS2AS_ANALYSIS_NODE___EQUALS__OBJECT;
 
 	/**
-	 * The number of operations of the '<em>Type Ref</em>' class.
+	 * The number of operations of the '<em>Class Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_REF_OPERATION_COUNT = CS2AS_ANALYSIS_NODE_OPERATION_COUNT + 0;
+	int CLASS_REF_OPERATION_COUNT = CS2AS_ANALYSIS_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorPartPropRefImpl <em>Constructor Part Prop Ref</em>}' class.
@@ -633,14 +633,14 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_PART_PROP_REF_OPERATION_COUNT = PROPERTY_REF_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.TypeInfoImpl <em>Type Info</em>}' class.
+	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ClassInfoImpl <em>Class Info</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ocldependencyanalysis.cs2asanalysis.impl.TypeInfoImpl
-	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getTypeInfo()
+	 * @see ocldependencyanalysis.cs2asanalysis.impl.ClassInfoImpl
+	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getClassInfo()
 	 * @generated
 	 */
-	int TYPE_INFO = 8;
+	int CLASS_INFO = 8;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -649,7 +649,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_INFO__CONTEXT = TYPE_REF__CONTEXT;
+	int CLASS_INFO__CONTEXT = CLASS_REF__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Referred Element</b></em>' reference.
@@ -658,25 +658,25 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_INFO__REFERRED_ELEMENT = TYPE_REF__REFERRED_ELEMENT;
+	int CLASS_INFO__REFERRED_ELEMENT = CLASS_REF__REFERRED_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_INFO__TYPE = TYPE_REF__TYPE;
+	int CLASS_INFO__CLASS = CLASS_REF__CLASS;
 
 	/**
-	 * The number of structural features of the '<em>Type Info</em>' class.
+	 * The number of structural features of the '<em>Class Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_INFO_FEATURE_COUNT = TYPE_REF_FEATURE_COUNT + 0;
+	int CLASS_INFO_FEATURE_COUNT = CLASS_REF_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -685,7 +685,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_INFO___TO_STRING = TYPE_REF___TO_STRING;
+	int CLASS_INFO___TO_STRING = CLASS_REF___TO_STRING;
 
 	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
@@ -694,7 +694,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_INFO___HASH_CODE = TYPE_REF___HASH_CODE;
+	int CLASS_INFO___HASH_CODE = CLASS_REF___HASH_CODE;
 
 	/**
 	 * The operation id for the '<em>Equals</em>' operation.
@@ -703,26 +703,26 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_INFO___EQUALS__OBJECT = TYPE_REF___EQUALS__OBJECT;
+	int CLASS_INFO___EQUALS__OBJECT = CLASS_REF___EQUALS__OBJECT;
 
 	/**
-	 * The number of operations of the '<em>Type Info</em>' class.
+	 * The number of operations of the '<em>Class Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_INFO_OPERATION_COUNT = TYPE_REF_OPERATION_COUNT + 0;
+	int CLASS_INFO_OPERATION_COUNT = CLASS_REF_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpTypeInfoImpl <em>Constructor Exp Type Info</em>}' class.
+	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpClassInfoImpl <em>Constructor Exp Class Info</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpTypeInfoImpl
-	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getConstructorExpTypeInfo()
+	 * @see ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpClassInfoImpl
+	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getConstructorExpClassInfo()
 	 * @generated
 	 */
-	int CONSTRUCTOR_EXP_TYPE_INFO = 9;
+	int CONSTRUCTOR_EXP_CLASS_INFO = 9;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -731,7 +731,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_EXP_TYPE_INFO__CONTEXT = TYPE_INFO__CONTEXT;
+	int CONSTRUCTOR_EXP_CLASS_INFO__CONTEXT = CLASS_INFO__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Referred Element</b></em>' reference.
@@ -740,16 +740,16 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_EXP_TYPE_INFO__REFERRED_ELEMENT = TYPE_INFO__REFERRED_ELEMENT;
+	int CONSTRUCTOR_EXP_CLASS_INFO__REFERRED_ELEMENT = CLASS_INFO__REFERRED_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_EXP_TYPE_INFO__TYPE = TYPE_INFO__TYPE;
+	int CONSTRUCTOR_EXP_CLASS_INFO__CLASS = CLASS_INFO__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Constructor Exp</b></em>' reference.
@@ -758,16 +758,16 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_EXP_TYPE_INFO__CONSTRUCTOR_EXP = TYPE_INFO_FEATURE_COUNT + 0;
+	int CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP = CLASS_INFO_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Constructor Exp Type Info</em>' class.
+	 * The number of structural features of the '<em>Constructor Exp Class Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_EXP_TYPE_INFO_FEATURE_COUNT = TYPE_INFO_FEATURE_COUNT + 1;
+	int CONSTRUCTOR_EXP_CLASS_INFO_FEATURE_COUNT = CLASS_INFO_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -776,7 +776,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_EXP_TYPE_INFO___TO_STRING = TYPE_INFO___TO_STRING;
+	int CONSTRUCTOR_EXP_CLASS_INFO___TO_STRING = CLASS_INFO___TO_STRING;
 
 	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
@@ -785,7 +785,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_EXP_TYPE_INFO___HASH_CODE = TYPE_INFO___HASH_CODE;
+	int CONSTRUCTOR_EXP_CLASS_INFO___HASH_CODE = CLASS_INFO___HASH_CODE;
 
 	/**
 	 * The operation id for the '<em>Equals</em>' operation.
@@ -794,16 +794,16 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_EXP_TYPE_INFO___EQUALS__OBJECT = TYPE_INFO___EQUALS__OBJECT;
+	int CONSTRUCTOR_EXP_CLASS_INFO___EQUALS__OBJECT = CLASS_INFO___EQUALS__OBJECT;
 
 	/**
-	 * The number of operations of the '<em>Constructor Exp Type Info</em>' class.
+	 * The number of operations of the '<em>Constructor Exp Class Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_EXP_TYPE_INFO_OPERATION_COUNT = TYPE_INFO_OPERATION_COUNT + 0;
+	int CONSTRUCTOR_EXP_CLASS_INFO_OPERATION_COUNT = CLASS_INFO_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorPartActionImpl <em>Constructor Part Action</em>}' class.
@@ -953,13 +953,13 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int EXTENDED_PROPERTY_INFO__PROPERTY = PROPERTY_REF__PROPERTY;
 
 	/**
-	 * The feature id for the '<em><b>Property Type</b></em>' reference.
+	 * The feature id for the '<em><b>Property Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDED_PROPERTY_INFO__PROPERTY_TYPE = PROPERTY_REF_FEATURE_COUNT + 0;
+	int EXTENDED_PROPERTY_INFO__PROPERTY_CLASS = PROPERTY_REF_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Extended Property Info</em>' class.
@@ -1034,13 +1034,13 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_PART_PROPERTY_INFO__PROPERTY = EXTENDED_PROPERTY_INFO__PROPERTY;
 
 	/**
-	 * The feature id for the '<em><b>Property Type</b></em>' reference.
+	 * The feature id for the '<em><b>Property Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_PART_PROPERTY_INFO__PROPERTY_TYPE = EXTENDED_PROPERTY_INFO__PROPERTY_TYPE;
+	int CONSTRUCTOR_PART_PROPERTY_INFO__PROPERTY_CLASS = EXTENDED_PROPERTY_INFO__PROPERTY_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Constructor Part</b></em>' reference.
@@ -1406,25 +1406,25 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	EReference getPropertyRef_Property();
 
 	/**
-	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.TypeRef <em>Type Ref</em>}'.
+	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.ClassRef <em>Class Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Type Ref</em>'.
-	 * @see ocldependencyanalysis.cs2asanalysis.TypeRef
+	 * @return the meta object for class '<em>Class Ref</em>'.
+	 * @see ocldependencyanalysis.cs2asanalysis.ClassRef
 	 * @generated
 	 */
-	EClass getTypeRef();
+	EClass getClassRef();
 
 	/**
-	 * Returns the meta object for the reference '{@link ocldependencyanalysis.cs2asanalysis.TypeRef#getType <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link ocldependencyanalysis.cs2asanalysis.ClassRef#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see ocldependencyanalysis.cs2asanalysis.TypeRef#getType()
-	 * @see #getTypeRef()
+	 * @return the meta object for the reference '<em>Class</em>'.
+	 * @see ocldependencyanalysis.cs2asanalysis.ClassRef#getClass_()
+	 * @see #getClassRef()
 	 * @generated
 	 */
-	EReference getTypeRef_Type();
+	EReference getClassRef_Class();
 
 	/**
 	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.ConstructorPartPropRef <em>Constructor Part Prop Ref</em>}'.
@@ -1448,35 +1448,35 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	EReference getConstructorPartPropRef_ConstructorPart();
 
 	/**
-	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.TypeInfo <em>Type Info</em>}'.
+	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.ClassInfo <em>Class Info</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Type Info</em>'.
-	 * @see ocldependencyanalysis.cs2asanalysis.TypeInfo
+	 * @return the meta object for class '<em>Class Info</em>'.
+	 * @see ocldependencyanalysis.cs2asanalysis.ClassInfo
 	 * @generated
 	 */
-	EClass getTypeInfo();
+	EClass getClassInfo();
 
 	/**
-	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.ConstructorExpTypeInfo <em>Constructor Exp Type Info</em>}'.
+	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo <em>Constructor Exp Class Info</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Constructor Exp Type Info</em>'.
-	 * @see ocldependencyanalysis.cs2asanalysis.ConstructorExpTypeInfo
+	 * @return the meta object for class '<em>Constructor Exp Class Info</em>'.
+	 * @see ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo
 	 * @generated
 	 */
-	EClass getConstructorExpTypeInfo();
+	EClass getConstructorExpClassInfo();
 
 	/**
-	 * Returns the meta object for the reference '{@link ocldependencyanalysis.cs2asanalysis.ConstructorExpTypeInfo#getConstructorExp <em>Constructor Exp</em>}'.
+	 * Returns the meta object for the reference '{@link ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo#getConstructorExp <em>Constructor Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Constructor Exp</em>'.
-	 * @see ocldependencyanalysis.cs2asanalysis.ConstructorExpTypeInfo#getConstructorExp()
-	 * @see #getConstructorExpTypeInfo()
+	 * @see ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo#getConstructorExp()
+	 * @see #getConstructorExpClassInfo()
 	 * @generated
 	 */
-	EReference getConstructorExpTypeInfo_ConstructorExp();
+	EReference getConstructorExpClassInfo_ConstructorExp();
 
 	/**
 	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.ConstructorPartAction <em>Constructor Part Action</em>}'.
@@ -1530,15 +1530,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	EClass getExtendedPropertyInfo();
 
 	/**
-	 * Returns the meta object for the reference '{@link ocldependencyanalysis.cs2asanalysis.ExtendedPropertyInfo#getPropertyType <em>Property Type</em>}'.
+	 * Returns the meta object for the reference '{@link ocldependencyanalysis.cs2asanalysis.ExtendedPropertyInfo#getPropertyClass <em>Property Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Property Type</em>'.
-	 * @see ocldependencyanalysis.cs2asanalysis.ExtendedPropertyInfo#getPropertyType()
+	 * @return the meta object for the reference '<em>Property Class</em>'.
+	 * @see ocldependencyanalysis.cs2asanalysis.ExtendedPropertyInfo#getPropertyClass()
 	 * @see #getExtendedPropertyInfo()
 	 * @generated
 	 */
-	EReference getExtendedPropertyInfo_PropertyType();
+	EReference getExtendedPropertyInfo_PropertyClass();
 
 	/**
 	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.OperationAction <em>Operation Action</em>}'.
@@ -1711,22 +1711,22 @@ public interface CS2ASAnalysisPackage extends EPackage {
 		EReference PROPERTY_REF__PROPERTY = eINSTANCE.getPropertyRef_Property();
 
 		/**
-		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.TypeRefImpl <em>Type Ref</em>}' class.
+		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ClassRefImpl <em>Class Ref</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ocldependencyanalysis.cs2asanalysis.impl.TypeRefImpl
-		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getTypeRef()
+		 * @see ocldependencyanalysis.cs2asanalysis.impl.ClassRefImpl
+		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getClassRef()
 		 * @generated
 		 */
-		EClass TYPE_REF = eINSTANCE.getTypeRef();
+		EClass CLASS_REF = eINSTANCE.getClassRef();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPE_REF__TYPE = eINSTANCE.getTypeRef_Type();
+		EReference CLASS_REF__CLASS = eINSTANCE.getClassRef_Class();
 
 		/**
 		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorPartPropRefImpl <em>Constructor Part Prop Ref</em>}' class.
@@ -1747,24 +1747,24 @@ public interface CS2ASAnalysisPackage extends EPackage {
 		EReference CONSTRUCTOR_PART_PROP_REF__CONSTRUCTOR_PART = eINSTANCE.getConstructorPartPropRef_ConstructorPart();
 
 		/**
-		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.TypeInfoImpl <em>Type Info</em>}' class.
+		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ClassInfoImpl <em>Class Info</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ocldependencyanalysis.cs2asanalysis.impl.TypeInfoImpl
-		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getTypeInfo()
+		 * @see ocldependencyanalysis.cs2asanalysis.impl.ClassInfoImpl
+		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getClassInfo()
 		 * @generated
 		 */
-		EClass TYPE_INFO = eINSTANCE.getTypeInfo();
+		EClass CLASS_INFO = eINSTANCE.getClassInfo();
 
 		/**
-		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpTypeInfoImpl <em>Constructor Exp Type Info</em>}' class.
+		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpClassInfoImpl <em>Constructor Exp Class Info</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpTypeInfoImpl
-		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getConstructorExpTypeInfo()
+		 * @see ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpClassInfoImpl
+		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getConstructorExpClassInfo()
 		 * @generated
 		 */
-		EClass CONSTRUCTOR_EXP_TYPE_INFO = eINSTANCE.getConstructorExpTypeInfo();
+		EClass CONSTRUCTOR_EXP_CLASS_INFO = eINSTANCE.getConstructorExpClassInfo();
 
 		/**
 		 * The meta object literal for the '<em><b>Constructor Exp</b></em>' reference feature.
@@ -1772,7 +1772,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONSTRUCTOR_EXP_TYPE_INFO__CONSTRUCTOR_EXP = eINSTANCE.getConstructorExpTypeInfo_ConstructorExp();
+		EReference CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP = eINSTANCE.getConstructorExpClassInfo_ConstructorExp();
 
 		/**
 		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorPartActionImpl <em>Constructor Part Action</em>}' class.
@@ -1821,12 +1821,12 @@ public interface CS2ASAnalysisPackage extends EPackage {
 		EClass EXTENDED_PROPERTY_INFO = eINSTANCE.getExtendedPropertyInfo();
 
 		/**
-		 * The meta object literal for the '<em><b>Property Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Property Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDED_PROPERTY_INFO__PROPERTY_TYPE = eINSTANCE.getExtendedPropertyInfo_PropertyType();
+		EReference EXTENDED_PROPERTY_INFO__PROPERTY_CLASS = eINSTANCE.getExtendedPropertyInfo_PropertyClass();
 
 		/**
 		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.OperationActionImpl <em>Operation Action</em>}' class.

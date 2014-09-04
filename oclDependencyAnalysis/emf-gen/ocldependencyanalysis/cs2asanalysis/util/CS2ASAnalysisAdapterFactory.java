@@ -92,20 +92,20 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 				return createPropertyRefAdapter();
 			}
 			@Override
-			public Adapter caseTypeRef(TypeRef object) {
-				return createTypeRefAdapter();
+			public Adapter caseClassRef(ClassRef object) {
+				return createClassRefAdapter();
 			}
 			@Override
 			public Adapter caseConstructorPartPropRef(ConstructorPartPropRef object) {
 				return createConstructorPartPropRefAdapter();
 			}
 			@Override
-			public Adapter caseTypeInfo(TypeInfo object) {
-				return createTypeInfoAdapter();
+			public Adapter caseClassInfo(ClassInfo object) {
+				return createClassInfoAdapter();
 			}
 			@Override
-			public Adapter caseConstructorExpTypeInfo(ConstructorExpTypeInfo object) {
-				return createConstructorExpTypeInfoAdapter();
+			public Adapter caseConstructorExpClassInfo(ConstructorExpClassInfo object) {
+				return createConstructorExpClassInfoAdapter();
 			}
 			@Override
 			public Adapter caseConstructorPartAction(ConstructorPartAction object) {
@@ -232,16 +232,16 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.TypeRef <em>Type Ref</em>}'.
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.ClassRef <em>Class Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ocldependencyanalysis.cs2asanalysis.TypeRef
+	 * @see ocldependencyanalysis.cs2asanalysis.ClassRef
 	 * @generated
 	 */
-	public Adapter createTypeRefAdapter() {
+	public Adapter createClassRefAdapter() {
 		return null;
 	}
 
@@ -260,30 +260,30 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.TypeInfo <em>Type Info</em>}'.
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.ClassInfo <em>Class Info</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ocldependencyanalysis.cs2asanalysis.TypeInfo
+	 * @see ocldependencyanalysis.cs2asanalysis.ClassInfo
 	 * @generated
 	 */
-	public Adapter createTypeInfoAdapter() {
+	public Adapter createClassInfoAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.ConstructorExpTypeInfo <em>Constructor Exp Type Info</em>}'.
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo <em>Constructor Exp Class Info</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ocldependencyanalysis.cs2asanalysis.ConstructorExpTypeInfo
+	 * @see ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo
 	 * @generated
 	 */
-	public Adapter createConstructorExpTypeInfoAdapter() {
+	public Adapter createConstructorExpClassInfoAdapter() {
 		return null;
 	}
 

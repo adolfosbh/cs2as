@@ -3,7 +3,7 @@
 package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
-import ocldependencyanalysis.cs2asanalysis.TypeRef;
+import ocldependencyanalysis.cs2asanalysis.ClassRef;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,38 +13,36 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.ocl.examples.pivot.Type;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Type Ref</b></em>'.
+ * An implementation of the model object '<em><b>Class Ref</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.TypeRefImpl#getType <em>Type</em>}</li>
+ *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.ClassRefImpl#getClass_ <em>Class</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class TypeRefImpl extends CS2ASAnalysisNodeImpl implements TypeRef {
+public abstract class ClassRefImpl extends CS2ASAnalysisNodeImpl implements ClassRef {
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * The cached value of the '{@link #getClass_() <em>Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getClass_()
 	 * @generated
 	 * @ordered
 	 */
-	protected Type type;
+	protected org.eclipse.ocl.examples.pivot.Class class_;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TypeRefImpl() {
+	protected ClassRefImpl() {
 		super();
 	}
 
@@ -55,7 +53,7 @@ public abstract class TypeRefImpl extends CS2ASAnalysisNodeImpl implements TypeR
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CS2ASAnalysisPackage.Literals.TYPE_REF;
+		return CS2ASAnalysisPackage.Literals.CLASS_REF;
 	}
 
 	/**
@@ -63,16 +61,16 @@ public abstract class TypeRefImpl extends CS2ASAnalysisNodeImpl implements TypeR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Type getType() {
-		if (type != null && ((EObject)type).eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (Type)eResolveProxy(oldType);
-			if (type != oldType) {
+	public org.eclipse.ocl.examples.pivot.Class getClass_() {
+		if (class_ != null && ((EObject)class_).eIsProxy()) {
+			InternalEObject oldClass = (InternalEObject)class_;
+			class_ = (org.eclipse.ocl.examples.pivot.Class)eResolveProxy(oldClass);
+			if (class_ != oldClass) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.TYPE_REF__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CLASS_REF__CLASS, oldClass, class_));
 			}
 		}
-		return type;
+		return class_;
 	}
 
 	/**
@@ -80,8 +78,8 @@ public abstract class TypeRefImpl extends CS2ASAnalysisNodeImpl implements TypeR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Type basicGetType() {
-		return type;
+	public org.eclipse.ocl.examples.pivot.Class basicGetClass() {
+		return class_;
 	}
 
 	/**
@@ -89,11 +87,11 @@ public abstract class TypeRefImpl extends CS2ASAnalysisNodeImpl implements TypeR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(Type newType) {
-		Type oldType = type;
-		type = newType;
+	public void setClass(org.eclipse.ocl.examples.pivot.Class newClass) {
+		org.eclipse.ocl.examples.pivot.Class oldClass = class_;
+		class_ = newClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.TYPE_REF__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CLASS_REF__CLASS, oldClass, class_));
 	}
 
 	/**
@@ -104,9 +102,9 @@ public abstract class TypeRefImpl extends CS2ASAnalysisNodeImpl implements TypeR
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CS2ASAnalysisPackage.TYPE_REF__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+			case CS2ASAnalysisPackage.CLASS_REF__CLASS:
+				if (resolve) return getClass_();
+				return basicGetClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,8 +117,8 @@ public abstract class TypeRefImpl extends CS2ASAnalysisNodeImpl implements TypeR
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CS2ASAnalysisPackage.TYPE_REF__TYPE:
-				setType((Type)newValue);
+			case CS2ASAnalysisPackage.CLASS_REF__CLASS:
+				setClass((org.eclipse.ocl.examples.pivot.Class)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,8 +132,8 @@ public abstract class TypeRefImpl extends CS2ASAnalysisNodeImpl implements TypeR
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CS2ASAnalysisPackage.TYPE_REF__TYPE:
-				setType((Type)null);
+			case CS2ASAnalysisPackage.CLASS_REF__CLASS:
+				setClass((org.eclipse.ocl.examples.pivot.Class)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -149,10 +147,10 @@ public abstract class TypeRefImpl extends CS2ASAnalysisNodeImpl implements TypeR
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CS2ASAnalysisPackage.TYPE_REF__TYPE:
-				return type != null;
+			case CS2ASAnalysisPackage.CLASS_REF__CLASS:
+				return class_ != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TypeRefImpl
+} //ClassRefImpl

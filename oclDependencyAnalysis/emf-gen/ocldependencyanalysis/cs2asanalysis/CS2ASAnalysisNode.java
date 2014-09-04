@@ -3,7 +3,6 @@
 package ocldependencyanalysis.cs2asanalysis;
 
 import org.eclipse.ocl.examples.pivot.Element;
-import org.eclipse.ocl.examples.pivot.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,12 +31,12 @@ public interface CS2ASAnalysisNode extends Node {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context</em>' reference.
-	 * @see #setContext(Type)
+	 * @see #setContext(org.eclipse.ocl.examples.pivot.Class)
 	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getCS2ASAnalysisNode_Context()
 	 * @model required="true"
 	 * @generated
 	 */
-	Type getContext();
+	org.eclipse.ocl.examples.pivot.Class getContext();
 
 	/**
 	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#getContext <em>Context</em>}' reference.
@@ -47,7 +46,7 @@ public interface CS2ASAnalysisNode extends Node {
 	 * @see #getContext()
 	 * @generated
 	 */
-	void setContext(Type value);
+	void setContext(org.eclipse.ocl.examples.pivot.Class value);
 
 	/**
 	 * Returns the value of the '<em><b>Referred Element</b></em>' reference.

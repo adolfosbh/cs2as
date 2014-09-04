@@ -109,11 +109,11 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CS2ASAnalysisPackage.TYPE_REF: {
-				TypeRef typeRef = (TypeRef)theEObject;
-				T result = caseTypeRef(typeRef);
-				if (result == null) result = caseCS2ASAnalysisNode(typeRef);
-				if (result == null) result = caseNode(typeRef);
+			case CS2ASAnalysisPackage.CLASS_REF: {
+				ClassRef classRef = (ClassRef)theEObject;
+				T result = caseClassRef(classRef);
+				if (result == null) result = caseCS2ASAnalysisNode(classRef);
+				if (result == null) result = caseNode(classRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -126,24 +126,24 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CS2ASAnalysisPackage.TYPE_INFO: {
-				TypeInfo typeInfo = (TypeInfo)theEObject;
-				T result = caseTypeInfo(typeInfo);
-				if (result == null) result = caseTypeRef(typeInfo);
-				if (result == null) result = caseInfoNode(typeInfo);
-				if (result == null) result = caseCS2ASAnalysisNode(typeInfo);
-				if (result == null) result = caseNode(typeInfo);
+			case CS2ASAnalysisPackage.CLASS_INFO: {
+				ClassInfo classInfo = (ClassInfo)theEObject;
+				T result = caseClassInfo(classInfo);
+				if (result == null) result = caseClassRef(classInfo);
+				if (result == null) result = caseInfoNode(classInfo);
+				if (result == null) result = caseCS2ASAnalysisNode(classInfo);
+				if (result == null) result = caseNode(classInfo);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_TYPE_INFO: {
-				ConstructorExpTypeInfo constructorExpTypeInfo = (ConstructorExpTypeInfo)theEObject;
-				T result = caseConstructorExpTypeInfo(constructorExpTypeInfo);
-				if (result == null) result = caseTypeInfo(constructorExpTypeInfo);
-				if (result == null) result = caseTypeRef(constructorExpTypeInfo);
-				if (result == null) result = caseInfoNode(constructorExpTypeInfo);
-				if (result == null) result = caseCS2ASAnalysisNode(constructorExpTypeInfo);
-				if (result == null) result = caseNode(constructorExpTypeInfo);
+			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO: {
+				ConstructorExpClassInfo constructorExpClassInfo = (ConstructorExpClassInfo)theEObject;
+				T result = caseConstructorExpClassInfo(constructorExpClassInfo);
+				if (result == null) result = caseClassInfo(constructorExpClassInfo);
+				if (result == null) result = caseClassRef(constructorExpClassInfo);
+				if (result == null) result = caseInfoNode(constructorExpClassInfo);
+				if (result == null) result = caseCS2ASAnalysisNode(constructorExpClassInfo);
+				if (result == null) result = caseNode(constructorExpClassInfo);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -295,17 +295,17 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type Ref</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Class Ref</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type Ref</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Class Ref</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTypeRef(TypeRef object) {
+	public T caseClassRef(ClassRef object) {
 		return null;
 	}
 
@@ -325,32 +325,32 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type Info</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Class Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type Info</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Class Info</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTypeInfo(TypeInfo object) {
+	public T caseClassInfo(ClassInfo object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constructor Exp Type Info</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Constructor Exp Class Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constructor Exp Type Info</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Constructor Exp Class Info</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConstructorExpTypeInfo(ConstructorExpTypeInfo object) {
+	public T caseConstructorExpClassInfo(ConstructorExpClassInfo object) {
 		return null;
 	}
 

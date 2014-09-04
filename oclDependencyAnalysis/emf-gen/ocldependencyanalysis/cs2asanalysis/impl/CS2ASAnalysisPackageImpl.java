@@ -6,7 +6,9 @@ import ocldependencyanalysis.cs2asanalysis.ActionNode;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisFactory;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
-import ocldependencyanalysis.cs2asanalysis.ConstructorExpTypeInfo;
+import ocldependencyanalysis.cs2asanalysis.ClassInfo;
+import ocldependencyanalysis.cs2asanalysis.ClassRef;
+import ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo;
 import ocldependencyanalysis.cs2asanalysis.ConstructorPartAction;
 import ocldependencyanalysis.cs2asanalysis.ConstructorPartPropRef;
 import ocldependencyanalysis.cs2asanalysis.ConstructorPartPropertyInfo;
@@ -17,17 +19,12 @@ import ocldependencyanalysis.cs2asanalysis.OperationAction;
 import ocldependencyanalysis.cs2asanalysis.OperationRef;
 import ocldependencyanalysis.cs2asanalysis.PropertyCallExpInfo;
 import ocldependencyanalysis.cs2asanalysis.PropertyRef;
-import ocldependencyanalysis.cs2asanalysis.TypeInfo;
-import ocldependencyanalysis.cs2asanalysis.TypeRef;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.ocl.examples.pivot.PivotPackage;
 
 /**
@@ -84,7 +81,7 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass typeRefEClass = null;
+	private EClass classRefEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,14 +95,14 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass typeInfoEClass = null;
+	private EClass classInfoEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass constructorExpTypeInfoEClass = null;
+	private EClass constructorExpClassInfoEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -328,8 +325,8 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTypeRef() {
-		return typeRefEClass;
+	public EClass getClassRef() {
+		return classRefEClass;
 	}
 
 	/**
@@ -337,8 +334,8 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTypeRef_Type() {
-		return (EReference)typeRefEClass.getEStructuralFeatures().get(0);
+	public EReference getClassRef_Class() {
+		return (EReference)classRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -364,8 +361,8 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTypeInfo() {
-		return typeInfoEClass;
+	public EClass getClassInfo() {
+		return classInfoEClass;
 	}
 
 	/**
@@ -373,8 +370,8 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConstructorExpTypeInfo() {
-		return constructorExpTypeInfoEClass;
+	public EClass getConstructorExpClassInfo() {
+		return constructorExpClassInfoEClass;
 	}
 
 	/**
@@ -382,8 +379,8 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConstructorExpTypeInfo_ConstructorExp() {
-		return (EReference)constructorExpTypeInfoEClass.getEStructuralFeatures().get(0);
+	public EReference getConstructorExpClassInfo_ConstructorExp() {
+		return (EReference)constructorExpClassInfoEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -436,7 +433,7 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExtendedPropertyInfo_PropertyType() {
+	public EReference getExtendedPropertyInfo_PropertyClass() {
 		return (EReference)extendedPropertyInfoEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -514,16 +511,16 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		propertyRefEClass = createEClass(PROPERTY_REF);
 		createEReference(propertyRefEClass, PROPERTY_REF__PROPERTY);
 
-		typeRefEClass = createEClass(TYPE_REF);
-		createEReference(typeRefEClass, TYPE_REF__TYPE);
+		classRefEClass = createEClass(CLASS_REF);
+		createEReference(classRefEClass, CLASS_REF__CLASS);
 
 		constructorPartPropRefEClass = createEClass(CONSTRUCTOR_PART_PROP_REF);
 		createEReference(constructorPartPropRefEClass, CONSTRUCTOR_PART_PROP_REF__CONSTRUCTOR_PART);
 
-		typeInfoEClass = createEClass(TYPE_INFO);
+		classInfoEClass = createEClass(CLASS_INFO);
 
-		constructorExpTypeInfoEClass = createEClass(CONSTRUCTOR_EXP_TYPE_INFO);
-		createEReference(constructorExpTypeInfoEClass, CONSTRUCTOR_EXP_TYPE_INFO__CONSTRUCTOR_EXP);
+		constructorExpClassInfoEClass = createEClass(CONSTRUCTOR_EXP_CLASS_INFO);
+		createEReference(constructorExpClassInfoEClass, CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP);
 
 		constructorPartActionEClass = createEClass(CONSTRUCTOR_PART_ACTION);
 		createEAttribute(constructorPartActionEClass, CONSTRUCTOR_PART_ACTION__NEEDS_LOOKUP);
@@ -532,7 +529,7 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		constructorPartPropertyInfoEClass = createEClass(CONSTRUCTOR_PART_PROPERTY_INFO);
 
 		extendedPropertyInfoEClass = createEClass(EXTENDED_PROPERTY_INFO);
-		createEReference(extendedPropertyInfoEClass, EXTENDED_PROPERTY_INFO__PROPERTY_TYPE);
+		createEReference(extendedPropertyInfoEClass, EXTENDED_PROPERTY_INFO__PROPERTY_CLASS);
 
 		operationActionEClass = createEClass(OPERATION_ACTION);
 
@@ -576,11 +573,11 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		infoNodeEClass.getESuperTypes().add(this.getNode());
 		operationRefEClass.getESuperTypes().add(this.getCS2ASAnalysisNode());
 		propertyRefEClass.getESuperTypes().add(this.getCS2ASAnalysisNode());
-		typeRefEClass.getESuperTypes().add(this.getCS2ASAnalysisNode());
+		classRefEClass.getESuperTypes().add(this.getCS2ASAnalysisNode());
 		constructorPartPropRefEClass.getESuperTypes().add(this.getPropertyRef());
-		typeInfoEClass.getESuperTypes().add(this.getTypeRef());
-		typeInfoEClass.getESuperTypes().add(this.getInfoNode());
-		constructorExpTypeInfoEClass.getESuperTypes().add(this.getTypeInfo());
+		classInfoEClass.getESuperTypes().add(this.getClassRef());
+		classInfoEClass.getESuperTypes().add(this.getInfoNode());
+		constructorExpClassInfoEClass.getESuperTypes().add(this.getClassInfo());
 		constructorPartActionEClass.getESuperTypes().add(this.getConstructorPartPropRef());
 		constructorPartActionEClass.getESuperTypes().add(this.getActionNode());
 		constructorPartPropertyInfoEClass.getESuperTypes().add(this.getExtendedPropertyInfo());
@@ -603,7 +600,7 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		addEParameter(op, thePivotPackage.getObject(), "object", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(cs2ASAnalysisNodeEClass, CS2ASAnalysisNode.class, "CS2ASAnalysisNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCS2ASAnalysisNode_Context(), thePivotPackage.getType(), null, "context", null, 1, 1, CS2ASAnalysisNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCS2ASAnalysisNode_Context(), thePivotPackage.getClass_(), null, "context", null, 1, 1, CS2ASAnalysisNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCS2ASAnalysisNode_ReferredElement(), thePivotPackage.getElement(), null, "referredElement", null, 0, 1, CS2ASAnalysisNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionNodeEClass, ActionNode.class, "ActionNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -616,16 +613,16 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		initEClass(propertyRefEClass, PropertyRef.class, "PropertyRef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPropertyRef_Property(), thePivotPackage.getProperty(), null, "property", null, 1, 1, PropertyRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(typeRefEClass, TypeRef.class, "TypeRef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTypeRef_Type(), thePivotPackage.getType(), null, "type", null, 1, 1, TypeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(classRefEClass, ClassRef.class, "ClassRef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getClassRef_Class(), thePivotPackage.getClass_(), null, "class", null, 1, 1, ClassRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constructorPartPropRefEClass, ConstructorPartPropRef.class, "ConstructorPartPropRef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstructorPartPropRef_ConstructorPart(), thePivotPackage.getConstructorPart(), null, "constructorPart", null, 0, 1, ConstructorPartPropRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(typeInfoEClass, TypeInfo.class, "TypeInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(classInfoEClass, ClassInfo.class, "ClassInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(constructorExpTypeInfoEClass, ConstructorExpTypeInfo.class, "ConstructorExpTypeInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConstructorExpTypeInfo_ConstructorExp(), thePivotPackage.getConstructorExp(), null, "constructorExp", null, 1, 1, ConstructorExpTypeInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(constructorExpClassInfoEClass, ConstructorExpClassInfo.class, "ConstructorExpClassInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConstructorExpClassInfo_ConstructorExp(), thePivotPackage.getConstructorExp(), null, "constructorExp", null, 1, 1, ConstructorExpClassInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constructorPartActionEClass, ConstructorPartAction.class, "ConstructorPartAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConstructorPartAction_NeedsLookup(), ecorePackage.getEBooleanObject(), "needsLookup", "false", 0, 1, ConstructorPartAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -635,7 +632,7 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		initEClass(constructorPartPropertyInfoEClass, ConstructorPartPropertyInfo.class, "ConstructorPartPropertyInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(extendedPropertyInfoEClass, ExtendedPropertyInfo.class, "ExtendedPropertyInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtendedPropertyInfo_PropertyType(), thePivotPackage.getType(), null, "propertyType", null, 1, 1, ExtendedPropertyInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtendedPropertyInfo_PropertyClass(), thePivotPackage.getClass_(), null, "propertyClass", null, 1, 1, ExtendedPropertyInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationActionEClass, OperationAction.class, "OperationAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

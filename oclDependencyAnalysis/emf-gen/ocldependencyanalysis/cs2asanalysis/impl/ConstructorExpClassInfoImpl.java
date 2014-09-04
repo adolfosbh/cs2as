@@ -3,7 +3,7 @@
 package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
-import ocldependencyanalysis.cs2asanalysis.ConstructorExpTypeInfo;
+import ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,18 +17,18 @@ import org.eclipse.ocl.examples.pivot.ConstructorExp;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Constructor Exp Type Info</b></em>'.
+ * An implementation of the model object '<em><b>Constructor Exp Class Info</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpTypeInfoImpl#getConstructorExp <em>Constructor Exp</em>}</li>
+ *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpClassInfoImpl#getConstructorExp <em>Constructor Exp</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ConstructorExpTypeInfoImpl extends TypeInfoImpl implements ConstructorExpTypeInfo {
+public class ConstructorExpClassInfoImpl extends ClassInfoImpl implements ConstructorExpClassInfo {
 	/**
 	 * The cached value of the '{@link #getConstructorExp() <em>Constructor Exp</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -44,7 +44,7 @@ public class ConstructorExpTypeInfoImpl extends TypeInfoImpl implements Construc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConstructorExpTypeInfoImpl() {
+	protected ConstructorExpClassInfoImpl() {
 		super();
 	}
 
@@ -55,7 +55,7 @@ public class ConstructorExpTypeInfoImpl extends TypeInfoImpl implements Construc
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CS2ASAnalysisPackage.Literals.CONSTRUCTOR_EXP_TYPE_INFO;
+		return CS2ASAnalysisPackage.Literals.CONSTRUCTOR_EXP_CLASS_INFO;
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class ConstructorExpTypeInfoImpl extends TypeInfoImpl implements Construc
 			constructorExp = (ConstructorExp)eResolveProxy(oldConstructorExp);
 			if (constructorExp != oldConstructorExp) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CONSTRUCTOR_EXP_TYPE_INFO__CONSTRUCTOR_EXP, oldConstructorExp, constructorExp));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP, oldConstructorExp, constructorExp));
 			}
 		}
 		return constructorExp;
@@ -93,7 +93,7 @@ public class ConstructorExpTypeInfoImpl extends TypeInfoImpl implements Construc
 		ConstructorExp oldConstructorExp = constructorExp;
 		constructorExp = newConstructorExp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CONSTRUCTOR_EXP_TYPE_INFO__CONSTRUCTOR_EXP, oldConstructorExp, constructorExp));
+			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP, oldConstructorExp, constructorExp));
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class ConstructorExpTypeInfoImpl extends TypeInfoImpl implements Construc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_TYPE_INFO__CONSTRUCTOR_EXP:
+			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP:
 				if (resolve) return getConstructorExp();
 				return basicGetConstructorExp();
 		}
@@ -119,7 +119,7 @@ public class ConstructorExpTypeInfoImpl extends TypeInfoImpl implements Construc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_TYPE_INFO__CONSTRUCTOR_EXP:
+			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP:
 				setConstructorExp((ConstructorExp)newValue);
 				return;
 		}
@@ -134,7 +134,7 @@ public class ConstructorExpTypeInfoImpl extends TypeInfoImpl implements Construc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_TYPE_INFO__CONSTRUCTOR_EXP:
+			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP:
 				setConstructorExp((ConstructorExp)null);
 				return;
 		}
@@ -149,10 +149,10 @@ public class ConstructorExpTypeInfoImpl extends TypeInfoImpl implements Construc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_TYPE_INFO__CONSTRUCTOR_EXP:
+			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP:
 				return constructorExp != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ConstructorExpTypeInfoImpl
+} //ConstructorExpClassInfoImpl

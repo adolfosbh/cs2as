@@ -99,7 +99,7 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 			container = container.eContainer();
 		}
 		if (container != null) {
-			Type context = getElementContext((Element)container);
+			Class context = getElementContext((Element)container);
 			return isNameResolution ? createNameResolutionPropertyObj(context, fromFeature, astCall.getType())
 					: createFeatureObj(context, fromFeature);
 		}
@@ -120,8 +120,8 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 		// There is always a dependency between the fromFeatureObj and the the astCallContextClass ast operation
 		createDependencyWithAstCallContext(astCall, fromFeatureObj, dependencyGraph);
 		
-		// The class of the source ast call, i.e. the CS element owning the ast operation // FIXME Type should considered rather than class
-		Class astCallSourceType = (Class) astCall.getSource().getType();		
+		// The class of the source ast call, i.e. the CS element owning the ast operation // FIXME Class should considered rather than class
+		Class astCallSourceClass = astCall.getSource().getType().isClass();		
 		Operation astCallSourceClassAstOp = astCall.getReferredOperation();		
 		PropertyCallExp propCall = getContainingPropertyCallExp(astCall);
 
@@ -129,34 +129,34 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 		// if the operation call exp is not contained in any property call exp 
 		// we will depend on ast operation of the astCall source Class   
 		if (propCall == null) {
-			FeatureObj astOpFeatureObj = createFeatureObj(astCallSourceType, astCallSourceClassAstOp);
+			FeatureObj astOpFeatureObj = createFeatureObj(astCallSourceClass, astCallSourceClassAstOp);
 			dependencyGraph.addEdge(fromFeatureObj, astOpFeatureObj);				
-			createDependencyWithOppositeProperty(fromFeatureObj, astCallSourceType, dependencyGraph);			
+			createDependencyWithOppositeProperty(fromFeatureObj, astCallSourceClass, dependencyGraph);			
 			// We create a dependency between the called ast() operation and the overriding ast() operations of the subtypes
-			createDependencyWithOverridingAstOps(astOpFeatureObj, astCallSourceType, dependencyGraph);
+			createDependencyWithOverridingAstOps(astOpFeatureObj, astCallSourceClass, dependencyGraph);
 		} else { 
 			// the AS element is navigated => look for the proper AS property
 			// We look for the first containing PropertyCallExp of the ast call, which will 
 			// correspond with an AS property of a created AS element.
 			Property property = propCall.getReferredProperty();
-			FeatureObj asFeatureObj = createFeatureObj(astCallSourceType, property);
-			FeatureObj astOpFeatureObj = createFeatureObj(astCallSourceType, astCallSourceClassAstOp);
+			FeatureObj asFeatureObj = createFeatureObj(astCallSourceClass, property);
+			FeatureObj astOpFeatureObj = createFeatureObj(astCallSourceClass, astCallSourceClassAstOp);
 			// Dependency on the AS property in the context of the ast call source class...
 			dependencyGraph.addEdge(fromFeatureObj, asFeatureObj);
 			// ... and we create the dependency of that AS property and the ast() operation which 
 			// should create the corresponding AS element
 			dependencyGraph.addEdge(asFeatureObj, astOpFeatureObj);
-			createDependencyWithOppositeProperty(fromFeatureObj, astCallSourceType, dependencyGraph);
+			createDependencyWithOppositeProperty(fromFeatureObj, astCallSourceClass, dependencyGraph);
 
 			// We create a dependency between the called ast() operation and the overriding ast() operations (subtypes)
-			createDependencyWithOverridingAstOps(astOpFeatureObj, astCallSourceType, dependencyGraph);
+			createDependencyWithOverridingAstOps(astOpFeatureObj, astCallSourceClass, dependencyGraph);
 		}
 	}
 
 	private void createDependencyWithAstCallContext(OperationCallExp astCall, FeatureObj fromFeatureObj,
 			IGraph<FeatureObj> dependencyGraph) {
 
-		Type astCallContextClass = getElementContext(astCall);
+		Class astCallContextClass = getElementContext(astCall);
 		Operation astOperation = getAstOperation(astCallContextClass);
 		ConstructorExp astCallContainingConstructor= getContainingConstructor(astCall);
 		if (astCallContainingConstructor == null) {
@@ -167,7 +167,7 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 		}
 	}
 	
-	private void createDependencyWithOppositeProperty(FeatureObj fromFeatureObj, Type context, IGraph<FeatureObj> dependencyGraph) {
+	private void createDependencyWithOppositeProperty(FeatureObj fromFeatureObj, Class context, IGraph<FeatureObj> dependencyGraph) {
 		
 		Property opposite = getOppositeProperty(fromFeatureObj);
 		if (opposite != null) {
@@ -176,14 +176,14 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 		}
 	}	
 	
-	private void createDependencyWithOverridingAstOps(FeatureObj fromFeatureObj, Type astOpContext, IGraph<FeatureObj> dependencyGraph ) {
+	private void createDependencyWithOverridingAstOps(FeatureObj fromFeatureObj, Class astOpContext, IGraph<FeatureObj> dependencyGraph ) {
 		
-		Set<Type> subTypes = getDirectSubtypes(astOpContext);
-		if (subTypes != null) {
-			for (Type subType : subTypes) {
-				Operation astOp = getAstOperation(subType);
-				FeatureObj  subTypeOpFeatureObj = createFeatureObj(subType, astOp);
-				dependencyGraph.addEdge(fromFeatureObj, subTypeOpFeatureObj);
+		Set<Class> subClasses = getDirectSubClasses(astOpContext);
+		if (subClasses != null) {
+			for (Class subClass : subClasses) {
+				Operation astOp = getAstOperation(subClass);
+				FeatureObj  subClassOpFeatureObj = createFeatureObj(subClass, astOp);
+				dependencyGraph.addEdge(fromFeatureObj, subClassOpFeatureObj);
 			}
 		}
 	}
@@ -247,10 +247,10 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 		
 		// createDependencyWithOppositeProperty(from, context, dependencyGraph);
 		
-		Type asType =  lookupOpCall.getType();
-		for (Type csType : getCSTypes(asType)) {
-			Operation astOperation = getAstOperation(csType); // the CS type ast() operation which creates the required AS type 
-			dependencyGraph.addEdge(from, createFeatureObj(csType, astOperation));
+		Class asClass =  lookupOpCall.getType().isClass();
+		for (Class csClass : getCSClasses(asClass)) {
+			Operation astOperation = getAstOperation(csClass); // the CS type ast() operation which creates the required AS type 
+			dependencyGraph.addEdge(from, createFeatureObj(csClass, astOperation));
 		}
 	}
 	
@@ -259,7 +259,7 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 			ConstructorExp constructorExp) {
 		
 		Operation op = getContainingOperation(constructorExp);
-		Type csContext = op.getOwningType();
+		Class csContext = op.getOwningClass();
 		if (isAstOp(op)) {
 			if (!constructorExp.getType().equals(op.getType())) {	// The created type should be a subtype
 				// FIXME What to do if the created type is the same of the ast type. We can't create it twice
@@ -269,8 +269,8 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 				dependencyGraph.addEdge(from, to, true);
 			}
 		} else if (isCstOp(op)) {
-			Type constructedType = constructorExp.getType();
-			FeatureObj from = createFeatureObj(constructedType, getAstOperation(constructedType));
+			Class constructedClass = constructorExp.getType();
+			FeatureObj from = createFeatureObj(constructedClass, getAstOperation(constructedClass));
 			FeatureObj to = createConstructionTypeFeatureObj(csContext, op, constructorExp);
 			dependencyGraph.addEdge(from, to);
 		}

@@ -3,26 +3,26 @@
 package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
-import ocldependencyanalysis.cs2asanalysis.TypeInfo;
+import ocldependencyanalysis.cs2asanalysis.ClassInfo;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Type Info</b></em>'.
+ * An implementation of the model object '<em><b>Class Info</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class TypeInfoImpl extends TypeRefImpl implements TypeInfo {
+public class ClassInfoImpl extends ClassRefImpl implements ClassInfo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TypeInfoImpl() {
+	protected ClassInfoImpl() {
 		super();
 	}
 
@@ -33,7 +33,7 @@ public class TypeInfoImpl extends TypeRefImpl implements TypeInfo {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CS2ASAnalysisPackage.Literals.TYPE_INFO;
+		return CS2ASAnalysisPackage.Literals.CLASS_INFO;
 	}
 
-} //TypeInfoImpl
+} //ClassInfoImpl

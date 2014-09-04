@@ -4,17 +4,12 @@ package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.ocl.examples.pivot.Element;
-import org.eclipse.ocl.examples.pivot.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +34,7 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * @generated
 	 * @ordered
 	 */
-	protected Type context;
+	protected org.eclipse.ocl.examples.pivot.Class context;
 
 	/**
 	 * The cached value of the '{@link #getReferredElement() <em>Referred Element</em>}' reference.
@@ -75,10 +70,10 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Type getContext() {
+	public org.eclipse.ocl.examples.pivot.Class getContext() {
 		if (context != null && ((EObject)context).eIsProxy()) {
 			InternalEObject oldContext = (InternalEObject)context;
-			context = (Type)eResolveProxy(oldContext);
+			context = (org.eclipse.ocl.examples.pivot.Class)eResolveProxy(oldContext);
 			if (context != oldContext) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT, oldContext, context));
@@ -92,7 +87,7 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Type basicGetContext() {
+	public org.eclipse.ocl.examples.pivot.Class basicGetContext() {
 		return context;
 	}
 
@@ -101,8 +96,8 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContext(Type newContext) {
-		Type oldContext = context;
+	public void setContext(org.eclipse.ocl.examples.pivot.Class newContext) {
+		org.eclipse.ocl.examples.pivot.Class oldContext = context;
 		context = newContext;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT, oldContext, context));
@@ -173,7 +168,7 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT:
-				setContext((Type)newValue);
+				setContext((org.eclipse.ocl.examples.pivot.Class)newValue);
 				return;
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT:
 				setReferredElement((Element)newValue);
@@ -191,7 +186,7 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT:
-				setContext((Type)null);
+				setContext((org.eclipse.ocl.examples.pivot.Class)null);
 				return;
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT:
 				setReferredElement((Element)null);

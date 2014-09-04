@@ -48,7 +48,7 @@ public class TypeDependencyGraphComputer extends OldDependencyGraphComputer<Type
 	@Override
 	protected void processAstCall(IGraph<Type> dependencyGraph,
 			OperationCallExp astOpCall) {
-		Type to =  astOpCall.getSource().getType();
+		Class to =  astOpCall.getSource().getType().isClass();
 		// if (isElementRefCS(to)) {
 		Class from = getElementContext(astOpCall);
 		if (to instanceof Class) {
@@ -57,10 +57,10 @@ public class TypeDependencyGraphComputer extends OldDependencyGraphComputer<Type
 				dependencyGraph.addEdge(from, to);
 			}
 			
-			Set<Class> instantiableSubclasses = getInstantiableSubclasses(to);
+			Set<Class> instantiableSubclasses = getInstantiableSubClasses(to);
 			if (instantiableSubclasses != null) {
-				for (Class subType : instantiableSubclasses) {
-					dependencyGraph.addEdge(from, subType);
+				for (Class subClass : instantiableSubclasses) {
+					dependencyGraph.addEdge(from, subClass);
 				}
 			}	
 			dependencyGraph.addEdge(from, to);
@@ -74,10 +74,10 @@ public class TypeDependencyGraphComputer extends OldDependencyGraphComputer<Type
 	protected void processLookupCall(IGraph<Type> dependencyGraph,
 			OperationCallExp lookupOpCall) {
 		
-		Type asType =  lookupOpCall.getType();
+		Class asClass =  lookupOpCall.getType().isClass();
 		Class from = getElementContext(lookupOpCall);
-		for (Type csType : getCSTypes(asType)) {
-			dependencyGraph.addEdge(from, csType);
+		for (Class csClass : getCSClasses(asClass)) {
+			dependencyGraph.addEdge(from, csClass);
 		}
 	}
 	

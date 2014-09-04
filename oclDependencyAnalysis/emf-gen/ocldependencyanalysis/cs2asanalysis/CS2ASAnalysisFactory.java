@@ -22,22 +22,22 @@ public interface CS2ASAnalysisFactory extends EFactory {
 	CS2ASAnalysisFactory eINSTANCE = ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Type Info</em>'.
+	 * Returns a new object of class '<em>Class Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type Info</em>'.
+	 * @return a new object of class '<em>Class Info</em>'.
 	 * @generated
 	 */
-	TypeInfo createTypeInfo();
+	ClassInfo createClassInfo();
 
 	/**
-	 * Returns a new object of class '<em>Constructor Exp Type Info</em>'.
+	 * Returns a new object of class '<em>Constructor Exp Class Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Constructor Exp Type Info</em>'.
+	 * @return a new object of class '<em>Constructor Exp Class Info</em>'.
 	 * @generated
 	 */
-	ConstructorExpTypeInfo createConstructorExpTypeInfo();
+	ConstructorExpClassInfo createConstructorExpClassInfo();
 
 	/**
 	 * Returns a new object of class '<em>Constructor Part Action</em>'.

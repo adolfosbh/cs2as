@@ -9,7 +9,13 @@
   <foreignModel>CS2ASAnalysis.ecore</foreignModel>
   <genPackages prefix="CS2ASAnalysis" basePackage="ocldependencyanalysis" disposableProviderFactory="true"
       ecorePackage="CS2ASAnalysis.ecore#/">
-    <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//Node"/>
+    <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//Node">
+      <genOperations ecoreOperation="CS2ASAnalysis.ecore#//Node/toString"/>
+      <genOperations ecoreOperation="CS2ASAnalysis.ecore#//Node/hashCode"/>
+      <genOperations ecoreOperation="CS2ASAnalysis.ecore#//Node/equals">
+        <genParameters ecoreParameter="CS2ASAnalysis.ecore#//Node/equals/object"/>
+      </genOperations>
+    </genClasses>
     <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//CS2ASAnalysisNode">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//CS2ASAnalysisNode/context"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//CS2ASAnalysisNode/referredElement"/>
@@ -22,22 +28,23 @@
     <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//PropertyRef">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//PropertyRef/property"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//TypeRef">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//TypeRef/type"/>
+    <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//ClassRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//ClassRef/class"/>
     </genClasses>
     <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//ConstructorPartPropRef">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//ConstructorPartPropRef/constructorPart"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASAnalysis.ecore#//TypeInfo"/>
-    <genClasses ecoreClass="CS2ASAnalysis.ecore#//ConstructorExpTypeInfo">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//ConstructorExpTypeInfo/constructorExp"/>
+    <genClasses ecoreClass="CS2ASAnalysis.ecore#//ClassInfo"/>
+    <genClasses ecoreClass="CS2ASAnalysis.ecore#//ConstructorExpClassInfo">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//ConstructorExpClassInfo/constructorExp"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//ConstructorPartAction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASAnalysis.ecore#//ConstructorPartAction/needsLookup"/>
+      <genOperations ecoreOperation="CS2ASAnalysis.ecore#//ConstructorPartAction/toString"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//ConstructorPartPropertyInfo"/>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//ExtendedPropertyInfo">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//ExtendedPropertyInfo/propertyType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//ExtendedPropertyInfo/propertyClass"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//OperationAction"/>
     <genClasses ecoreClass="CS2ASAnalysis.ecore#//PropertyCallExpInfo">

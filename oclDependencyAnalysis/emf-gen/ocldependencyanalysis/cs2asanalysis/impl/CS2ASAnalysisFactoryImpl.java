@@ -56,8 +56,8 @@ public class CS2ASAnalysisFactoryImpl extends EFactoryImpl implements CS2ASAnaly
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CS2ASAnalysisPackage.TYPE_INFO: return createTypeInfo();
-			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_TYPE_INFO: return createConstructorExpTypeInfo();
+			case CS2ASAnalysisPackage.CLASS_INFO: return createClassInfo();
+			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO: return createConstructorExpClassInfo();
 			case CS2ASAnalysisPackage.CONSTRUCTOR_PART_ACTION: return createConstructorPartAction();
 			case CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROPERTY_INFO: return createConstructorPartPropertyInfo();
 			case CS2ASAnalysisPackage.EXTENDED_PROPERTY_INFO: return createExtendedPropertyInfo();
@@ -73,9 +73,9 @@ public class CS2ASAnalysisFactoryImpl extends EFactoryImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypeInfo createTypeInfo() {
-		TypeInfoImpl typeInfo = new TypeInfoImpl();
-		return typeInfo;
+	public ClassInfo createClassInfo() {
+		ClassInfoImpl classInfo = new ClassInfoImpl();
+		return classInfo;
 	}
 
 	/**
@@ -83,9 +83,9 @@ public class CS2ASAnalysisFactoryImpl extends EFactoryImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConstructorExpTypeInfo createConstructorExpTypeInfo() {
-		ConstructorExpTypeInfoImpl constructorExpTypeInfo = new ConstructorExpTypeInfoImpl();
-		return constructorExpTypeInfo;
+	public ConstructorExpClassInfo createConstructorExpClassInfo() {
+		ConstructorExpClassInfoImpl constructorExpClassInfo = new ConstructorExpClassInfoImpl();
+		return constructorExpClassInfo;
 	}
 
 	/**

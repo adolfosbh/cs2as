@@ -35,113 +35,111 @@ import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
 public abstract class AbstractDependencyGraphComputer<C> {
  		
 
-	private Map<Type , Set<Type>> type2superTypes = new HashMap<Type, Set<Type>>();
+	private Map<Class , Set<Class>> type2superClasses = new HashMap<Class, Set<Class>>();
 	
-	private Map<Type , Set<Class>> type2instantiableSubClasses = new HashMap<Type, Set<Class>>();
+	private Map<Class , Set<Class>> type2instantiableSubClasses = new HashMap<Class, Set<Class>>();
 	
-	private Map<Type , Set<Type>> type2directSubTypes = new HashMap<Type, Set<Type>>();
+	private Map<Class , Set<Class>> type2directSubClasses = new HashMap<Class, Set<Class>>();
 	
-	private Map<Type , Set<Type>> asType2csTypes = new HashMap<Type, Set<Type>>();
+	private Map<Class , Set<Class>> asClass2csClasses = new HashMap<Class, Set<Class>>();
 	
 	protected MetaModelManager mManager;
 		
 	private void initializeMaps(Resource resource) {
 		Root root = (Root) resource.getContents().get(0) ;
-		for (Package aPackage : root.getNestedPackage()) {
+		for (Package aPackage : root.getOwnedPackages()) {
 			Package primPckg = (Package)mManager.getPrimaryPackage(aPackage);
-			computeType2SuperTypes(primPckg);
-			computeAsType2CsType(primPckg);
+			computeClass2SuperClasses(primPckg);
+			computeAsClass2CsClass(primPckg);
 		}
-		for (Type type : type2superTypes.keySet()) {
-			computeType2InstantiableClasses(type);
-			computeType2DirectTypes(type);
-		}
-	}
-	
-	
-	private void computeType2SuperTypes(Package p) {
-		
-		for (Type type : p.getOwnedType()) {			
-			computeType2SuperTypes(type);
-		}
-		for (Package nestedPackage : p.getNestedPackage()) {
-			computeType2SuperTypes(nestedPackage);
+		for (Class type : type2superClasses.keySet()) {
+			computeClass2InstantiableClasses(type);
+			computeClass2DirectClasses(type);
 		}
 	}
 	
-	private Set<Type> computeType2SuperTypes(Type type) {
+	
+	private void computeClass2SuperClasses(Package p) {
 		
-		Set<Type> result = type2superTypes.get(type);
+		for (Class aClass : p.getOwnedClasses()) {
+			computeClass2SuperClasses(aClass);
+		}
+		for (Package nestedPackage : p.getOwnedPackages()) {
+			computeClass2SuperClasses(nestedPackage);
+		}
+	}
+	
+	private Set<Class> computeClass2SuperClasses(Class aClass) {
+		
+		Set<Class> result = type2superClasses.get(aClass);
 		if (result != null) {
 			return result;
 		} else {
-			result = new HashSet<Type>();
-			type2superTypes.put(type, result);
+			result = new HashSet<Class>();
+			type2superClasses.put(aClass, result);
 		}
 		
-		for (Type superType : type.getSuperClass()) {
-			result.add(superType);
-			result.addAll(computeType2SuperTypes(superType));
+		for (Class superClass : aClass.getSuperClasses()) {
+			result.add(superClass);
+			result.addAll(computeClass2SuperClasses(superClass));
 		}
 		return result;
 	}
 	
-	private void computeType2InstantiableClasses(Type type) {
+	private void computeClass2InstantiableClasses(Class type) {
 		
 		if (type instanceof Class
 			&& !((Class) type).isAbstract()) {
 			Class subClass = (Class) type; 
-			for (Type superType : type2superTypes.get(type)) {
-				Set<Class> subClasses = type2instantiableSubClasses.get(superType);
+			for (Class superClass : type2superClasses.get(type)) {
+				Set<Class> subClasses = type2instantiableSubClasses.get(superClass);
 				if (subClasses == null) {
 					subClasses = new HashSet<Class>();
-					type2instantiableSubClasses.put(superType, subClasses);
+					type2instantiableSubClasses.put(superClass, subClasses);
 				}
 				subClasses.add(subClass);
 			}
 		}
 	}
 	
-	private void computeType2DirectTypes(Type type) {
-		
-		if (type instanceof Class) {			 
-			for (Type superType : type.getSuperClass()) {
-				Set<Type> subTypes = type2directSubTypes.get(superType);
-				if (subTypes == null) {
-					subTypes = new HashSet<Type>();
-					type2directSubTypes.put(superType, subTypes);
-				}
-				subTypes.add(type);
+	private void computeClass2DirectClasses(Class aClass) {
+			 
+		for (Class superClass : aClass.getSuperClasses()) {
+			Set<Class> subClass = type2directSubClasses.get(superClass);
+			if (subClass == null) {
+				subClass = new HashSet<Class>();
+				type2directSubClasses.put(superClass, subClass);
 			}
+			subClass.add(aClass);
 		}
 	}
 	
-	protected List<Type> getTypesInvolvedInOCLDocPackages(Resource oclResource) {
+	protected List<Class> getClassesInvolvedInOCLDocPackages(Resource oclResource) {
 		
-		List<Type> result = new ArrayList<Type>();
+		List<Class> result = new ArrayList<Class>();
 		Root root = (Root) oclResource.getContents().get(0);
-		for (Package pckg : root.getNestedPackage()) {
+		for (Package pckg : root.getOwnedPackages()) {
 			Package primaryPckg = (Package) mManager.getPrimaryPackage(pckg);
-			for (Type ownedType : primaryPckg.getOwnedType()) {
-				result.add(ownedType);
+			for (Class ownedClass : primaryPckg.getOwnedClasses()) {
+				result.add(ownedClass);
 			}
 		}
 		return result;
 	}
-	private void computeAsType2CsType(Package p) {
-		for (Type type : p.getOwnedType()) {
+	private void computeAsClass2CsClass(Package p) {
+		for (Class type : p.getOwnedClasses()) {
 			Operation astOp = getAstOperation(type);
 			if (astOp != null) {
 				for (TreeIterator<EObject> tit = astOp.eAllContents(); tit.hasNext();) {
 					EObject next = tit.next();
 					if (next instanceof ConstructorExp) {					
-						Type asType = ((ConstructorExp)next).getType();
-						Set<Type> csTypes = asType2csTypes.get(asType);
-						if (csTypes == null) {
-							csTypes = new HashSet<Type>();
-							asType2csTypes.put(asType, csTypes);
+						Class asClass = ((ConstructorExp)next).getType();
+						Set<Class> csClasses = asClass2csClasses.get(asClass);
+						if (csClasses == null) {
+							csClasses = new HashSet<Class>();
+							asClass2csClasses.put(asClass, csClasses);
 						}
-						csTypes.add(type);
+						csClasses.add(type);
 						tit.prune(); // Don't need to explore children
 					}
 				}	
@@ -149,31 +147,31 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		}
 	}
 	
-	protected Set<Class> getInstantiableSubclasses(Type type) {
-		Type primaryType = mManager.getPrimaryType(type);
-		return type2instantiableSubClasses.get(primaryType);
+	protected Set<Class> getInstantiableSubClasses(Class type) {
+		Class primaryClass = mManager.getPrimaryType(type);
+		return type2instantiableSubClasses.get(primaryClass);
 	}
 
-	protected boolean typeIsSupertypeOf(Type t1, Type t2) {
+	protected boolean typeIsSupertypeOf(Class t1, Class t2) {
 		Type primaryT1 = mManager.getPrimaryType(t1);
 		Type primaryT2 = mManager.getPrimaryType(t2);
-		return type2superTypes.get(primaryT1).contains(primaryT2);
+		return type2superClasses.get(primaryT1).contains(primaryT2);
 	}
 	
-	protected Set<Type> getDirectSubtypes(Type type) {
+	protected Set<Class> getDirectSubClasses(Class type) {
 		Type primaryType = mManager.getPrimaryType(type);
-		return type2directSubTypes.get(primaryType);
+		return type2directSubClasses.get(primaryType);
 	}
 	/**
-	 * @param asType
+	 * @param asClass
 	 * @return all the CS types which may create the provided AS type
 	 */
-	protected Set<Type> getCSTypes(Type asType) {
-		Type asPrimaryType = mManager.getPrimaryType(asType);
-		return asType2csTypes.get(asPrimaryType);
+	protected Set<Class> getCSClasses(Class asClass) {
+		Type asPrimaryType = mManager.getPrimaryType(asClass);
+		return asClass2csClasses.get(asPrimaryType);
 	}
 	
-	protected Operation getAstOperation(Type opAstClass) {
+	protected Operation getAstOperation(Class opAstClass) {
 		Operation bestOp=null;	// The best op will be the one owned by the type the 
 								// closer to opAstClass in the class hierarchy 
 		// TODO move to mManager ?
@@ -184,7 +182,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 				if (bestOp == null) {
 					bestOp = candidateOp;
 				}else{
-					if (typeIsSupertypeOf(candidateOp.getOwningType(), bestOp.getOwningType())) {
+					if (typeIsSupertypeOf(candidateOp.getOwningClass(), bestOp.getOwningClass())) {
 						bestOp = candidateOp;
 					}
 				}
