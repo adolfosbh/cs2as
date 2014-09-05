@@ -2,6 +2,7 @@
  */
 package ocldependencyanalysis.cs2asanalysis;
 
+import ocldependencyanalysis.graph2.GraphPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -39,7 +40,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://cs2asanalysis";
+	String eNS_URI = "http://uk.ac.york.cs/cs2asanalysis";
 
 	/**
 	 * The package namespace name.
@@ -58,61 +59,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	CS2ASAnalysisPackage eINSTANCE = ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.NodeImpl <em>Node</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ocldependencyanalysis.cs2asanalysis.impl.NodeImpl
-	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getNode()
-	 * @generated
-	 */
-	int NODE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Node</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE___TO_STRING = 0;
-
-	/**
-	 * The operation id for the '<em>Hash Code</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE___HASH_CODE = 1;
-
-	/**
-	 * The operation id for the '<em>Equals</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE___EQUALS__OBJECT = 2;
-
-	/**
-	 * The number of operations of the '<em>Node</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE_OPERATION_COUNT = 3;
-
-	/**
 	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisNodeImpl <em>Node</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,7 +66,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getCS2ASAnalysisNode()
 	 * @generated
 	 */
-	int CS2AS_ANALYSIS_NODE = 1;
+	int CS2AS_ANALYSIS_NODE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_NODE__INCOMING = GraphPackage.NODE__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_NODE__OUTGOING = GraphPackage.NODE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_NODE__GRAPH = GraphPackage.NODE__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -129,7 +102,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CS2AS_ANALYSIS_NODE__CONTEXT = NODE_FEATURE_COUNT + 0;
+	int CS2AS_ANALYSIS_NODE__CONTEXT = GraphPackage.NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Referred Element</b></em>' reference.
@@ -138,7 +111,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT = NODE_FEATURE_COUNT + 1;
+	int CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT = GraphPackage.NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Node</em>' class.
@@ -147,16 +120,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CS2AS_ANALYSIS_NODE_FEATURE_COUNT = NODE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CS2AS_ANALYSIS_NODE___TO_STRING = NODE___TO_STRING;
+	int CS2AS_ANALYSIS_NODE_FEATURE_COUNT = GraphPackage.NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
@@ -165,7 +129,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CS2AS_ANALYSIS_NODE___HASH_CODE = NODE___HASH_CODE;
+	int CS2AS_ANALYSIS_NODE___HASH_CODE = GraphPackage.NODE___HASH_CODE;
 
 	/**
 	 * The operation id for the '<em>Equals</em>' operation.
@@ -174,7 +138,16 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CS2AS_ANALYSIS_NODE___EQUALS__OBJECT = NODE___EQUALS__OBJECT;
+	int CS2AS_ANALYSIS_NODE___EQUALS__OBJECT = GraphPackage.NODE___EQUALS__OBJECT;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_NODE___TO_STRING = GraphPackage.NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Node</em>' class.
@@ -183,7 +156,126 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CS2AS_ANALYSIS_NODE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+	int CS2AS_ANALYSIS_NODE_OPERATION_COUNT = GraphPackage.NODE_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisEdgeImpl <em>Edge</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisEdgeImpl
+	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getCS2ASAnalysisEdge()
+	 * @generated
+	 */
+	int CS2AS_ANALYSIS_EDGE = 1;
+
+	/**
+	 * The feature id for the '<em><b>To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_EDGE__TO = GraphPackage.EDGE__TO;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_EDGE__FROM = GraphPackage.EDGE__FROM;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_EDGE__GRAPH = GraphPackage.EDGE__GRAPH;
+
+	/**
+	 * The number of structural features of the '<em>Edge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_EDGE_FEATURE_COUNT = GraphPackage.EDGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Hash Code</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_EDGE___HASH_CODE = GraphPackage.EDGE___HASH_CODE;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_EDGE___EQUALS__OBJECT = GraphPackage.EDGE___EQUALS__OBJECT;
+
+	/**
+	 * The number of operations of the '<em>Edge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_EDGE_OPERATION_COUNT = GraphPackage.EDGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisGraphImpl <em>Graph</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisGraphImpl
+	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getCS2ASAnalysisGraph()
+	 * @generated
+	 */
+	int CS2AS_ANALYSIS_GRAPH = 2;
+
+	/**
+	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_GRAPH__NODES = GraphPackage.GRAPH__NODES;
+
+	/**
+	 * The feature id for the '<em><b>Edges</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_GRAPH__EDGES = GraphPackage.GRAPH__EDGES;
+
+	/**
+	 * The number of structural features of the '<em>Graph</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_GRAPH_FEATURE_COUNT = GraphPackage.GRAPH_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Graph</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS2AS_ANALYSIS_GRAPH_OPERATION_COUNT = GraphPackage.GRAPH_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ActionNodeImpl <em>Action Node</em>}' class.
@@ -193,7 +285,52 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getActionNode()
 	 * @generated
 	 */
-	int ACTION_NODE = 2;
+	int ACTION_NODE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_NODE__INCOMING = CS2AS_ANALYSIS_NODE__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_NODE__OUTGOING = CS2AS_ANALYSIS_NODE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_NODE__GRAPH = CS2AS_ANALYSIS_NODE__GRAPH;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_NODE__CONTEXT = CS2AS_ANALYSIS_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Referred Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_NODE__REFERRED_ELEMENT = CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT;
 
 	/**
 	 * The number of structural features of the '<em>Action Node</em>' class.
@@ -202,16 +339,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_NODE_FEATURE_COUNT = NODE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_NODE___TO_STRING = NODE___TO_STRING;
+	int ACTION_NODE_FEATURE_COUNT = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
@@ -220,7 +348,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_NODE___HASH_CODE = NODE___HASH_CODE;
+	int ACTION_NODE___HASH_CODE = CS2AS_ANALYSIS_NODE___HASH_CODE;
 
 	/**
 	 * The operation id for the '<em>Equals</em>' operation.
@@ -229,7 +357,16 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_NODE___EQUALS__OBJECT = NODE___EQUALS__OBJECT;
+	int ACTION_NODE___EQUALS__OBJECT = CS2AS_ANALYSIS_NODE___EQUALS__OBJECT;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_NODE___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
 
 	/**
 	 * The number of operations of the '<em>Action Node</em>' class.
@@ -238,7 +375,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_NODE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+	int ACTION_NODE_OPERATION_COUNT = CS2AS_ANALYSIS_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.InfoNodeImpl <em>Info Node</em>}' class.
@@ -248,7 +385,52 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getInfoNode()
 	 * @generated
 	 */
-	int INFO_NODE = 3;
+	int INFO_NODE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFO_NODE__INCOMING = CS2AS_ANALYSIS_NODE__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFO_NODE__OUTGOING = CS2AS_ANALYSIS_NODE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFO_NODE__GRAPH = CS2AS_ANALYSIS_NODE__GRAPH;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFO_NODE__CONTEXT = CS2AS_ANALYSIS_NODE__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Referred Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFO_NODE__REFERRED_ELEMENT = CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT;
 
 	/**
 	 * The number of structural features of the '<em>Info Node</em>' class.
@@ -257,16 +439,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFO_NODE_FEATURE_COUNT = NODE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFO_NODE___TO_STRING = NODE___TO_STRING;
+	int INFO_NODE_FEATURE_COUNT = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
@@ -275,7 +448,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFO_NODE___HASH_CODE = NODE___HASH_CODE;
+	int INFO_NODE___HASH_CODE = CS2AS_ANALYSIS_NODE___HASH_CODE;
 
 	/**
 	 * The operation id for the '<em>Equals</em>' operation.
@@ -284,7 +457,16 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFO_NODE___EQUALS__OBJECT = NODE___EQUALS__OBJECT;
+	int INFO_NODE___EQUALS__OBJECT = CS2AS_ANALYSIS_NODE___EQUALS__OBJECT;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFO_NODE___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
 
 	/**
 	 * The number of operations of the '<em>Info Node</em>' class.
@@ -293,7 +475,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFO_NODE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+	int INFO_NODE_OPERATION_COUNT = CS2AS_ANALYSIS_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.OperationRefImpl <em>Operation Ref</em>}' class.
@@ -303,7 +485,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getOperationRef()
 	 * @generated
 	 */
-	int OPERATION_REF = 4;
+	int OPERATION_REF = 5;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REF__INCOMING = CS2AS_ANALYSIS_NODE__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REF__OUTGOING = CS2AS_ANALYSIS_NODE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REF__GRAPH = CS2AS_ANALYSIS_NODE__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -342,15 +551,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int OPERATION_REF_FEATURE_COUNT = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
-
-	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -369,6 +569,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int OPERATION_REF___EQUALS__OBJECT = CS2AS_ANALYSIS_NODE___EQUALS__OBJECT;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Operation Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -385,7 +594,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getPropertyRef()
 	 * @generated
 	 */
-	int PROPERTY_REF = 5;
+	int PROPERTY_REF = 6;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REF__INCOMING = CS2AS_ANALYSIS_NODE__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REF__OUTGOING = CS2AS_ANALYSIS_NODE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REF__GRAPH = CS2AS_ANALYSIS_NODE__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -424,15 +660,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int PROPERTY_REF_FEATURE_COUNT = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
-
-	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -451,6 +678,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int PROPERTY_REF___EQUALS__OBJECT = CS2AS_ANALYSIS_NODE___EQUALS__OBJECT;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Property Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -467,7 +703,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getClassRef()
 	 * @generated
 	 */
-	int CLASS_REF = 6;
+	int CLASS_REF = 7;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_REF__INCOMING = CS2AS_ANALYSIS_NODE__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_REF__OUTGOING = CS2AS_ANALYSIS_NODE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_REF__GRAPH = CS2AS_ANALYSIS_NODE__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -506,15 +769,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CLASS_REF_FEATURE_COUNT = CS2AS_ANALYSIS_NODE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
-
-	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -533,6 +787,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CLASS_REF___EQUALS__OBJECT = CS2AS_ANALYSIS_NODE___EQUALS__OBJECT;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_REF___TO_STRING = CS2AS_ANALYSIS_NODE___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Class Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -549,7 +812,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getConstructorPartPropRef()
 	 * @generated
 	 */
-	int CONSTRUCTOR_PART_PROP_REF = 7;
+	int CONSTRUCTOR_PART_PROP_REF = 8;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROP_REF__INCOMING = PROPERTY_REF__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROP_REF__OUTGOING = PROPERTY_REF__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROP_REF__GRAPH = PROPERTY_REF__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -597,15 +887,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_PART_PROP_REF_FEATURE_COUNT = PROPERTY_REF_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRUCTOR_PART_PROP_REF___TO_STRING = PROPERTY_REF___TO_STRING;
-
-	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -624,6 +905,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_PART_PROP_REF___EQUALS__OBJECT = PROPERTY_REF___EQUALS__OBJECT;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROP_REF___TO_STRING = PROPERTY_REF___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Constructor Part Prop Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -640,7 +930,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getClassInfo()
 	 * @generated
 	 */
-	int CLASS_INFO = 8;
+	int CLASS_INFO = 9;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_INFO__INCOMING = CLASS_REF__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_INFO__OUTGOING = CLASS_REF__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_INFO__GRAPH = CLASS_REF__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -679,15 +996,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CLASS_INFO_FEATURE_COUNT = CLASS_REF_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS_INFO___TO_STRING = CLASS_REF___TO_STRING;
-
-	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -706,6 +1014,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CLASS_INFO___EQUALS__OBJECT = CLASS_REF___EQUALS__OBJECT;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_INFO___TO_STRING = CLASS_REF___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Class Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -722,7 +1039,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getConstructorExpClassInfo()
 	 * @generated
 	 */
-	int CONSTRUCTOR_EXP_CLASS_INFO = 9;
+	int CONSTRUCTOR_EXP_CLASS_INFO = 10;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_EXP_CLASS_INFO__INCOMING = CLASS_INFO__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_EXP_CLASS_INFO__OUTGOING = CLASS_INFO__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_EXP_CLASS_INFO__GRAPH = CLASS_INFO__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -770,15 +1114,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_EXP_CLASS_INFO_FEATURE_COUNT = CLASS_INFO_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRUCTOR_EXP_CLASS_INFO___TO_STRING = CLASS_INFO___TO_STRING;
-
-	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -797,6 +1132,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_EXP_CLASS_INFO___EQUALS__OBJECT = CLASS_INFO___EQUALS__OBJECT;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_EXP_CLASS_INFO___TO_STRING = CLASS_INFO___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Constructor Exp Class Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -813,7 +1157,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getConstructorPartAction()
 	 * @generated
 	 */
-	int CONSTRUCTOR_PART_ACTION = 10;
+	int CONSTRUCTOR_PART_ACTION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_ACTION__INCOMING = CONSTRUCTOR_PART_PROP_REF__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_ACTION__OUTGOING = CONSTRUCTOR_PART_PROP_REF__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_ACTION__GRAPH = CONSTRUCTOR_PART_PROP_REF__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -913,7 +1284,7 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getConstructorPartPropertyInfo()
 	 * @generated
 	 */
-	int CONSTRUCTOR_PART_PROPERTY_INFO = 11;
+	int CONSTRUCTOR_PART_PROPERTY_INFO = 12;
 
 	/**
 	 * The meta object id for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ExtendedPropertyInfoImpl <em>Extended Property Info</em>}' class.
@@ -923,7 +1294,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getExtendedPropertyInfo()
 	 * @generated
 	 */
-	int EXTENDED_PROPERTY_INFO = 12;
+	int EXTENDED_PROPERTY_INFO = 13;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_PROPERTY_INFO__INCOMING = PROPERTY_REF__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_PROPERTY_INFO__OUTGOING = PROPERTY_REF__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_PROPERTY_INFO__GRAPH = PROPERTY_REF__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -971,15 +1369,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int EXTENDED_PROPERTY_INFO_FEATURE_COUNT = PROPERTY_REF_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENDED_PROPERTY_INFO___TO_STRING = PROPERTY_REF___TO_STRING;
-
-	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -998,6 +1387,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int EXTENDED_PROPERTY_INFO___EQUALS__OBJECT = PROPERTY_REF___EQUALS__OBJECT;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_PROPERTY_INFO___TO_STRING = PROPERTY_REF___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Extended Property Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1005,6 +1403,33 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTENDED_PROPERTY_INFO_OPERATION_COUNT = PROPERTY_REF_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROPERTY_INFO__INCOMING = EXTENDED_PROPERTY_INFO__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROPERTY_INFO__OUTGOING = EXTENDED_PROPERTY_INFO__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROPERTY_INFO__GRAPH = EXTENDED_PROPERTY_INFO__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -1061,15 +1486,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_PART_PROPERTY_INFO_FEATURE_COUNT = EXTENDED_PROPERTY_INFO_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRUCTOR_PART_PROPERTY_INFO___TO_STRING = EXTENDED_PROPERTY_INFO___TO_STRING;
-
-	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1088,6 +1504,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int CONSTRUCTOR_PART_PROPERTY_INFO___EQUALS__OBJECT = EXTENDED_PROPERTY_INFO___EQUALS__OBJECT;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PART_PROPERTY_INFO___TO_STRING = EXTENDED_PROPERTY_INFO___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Constructor Part Property Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1104,7 +1529,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getOperationAction()
 	 * @generated
 	 */
-	int OPERATION_ACTION = 13;
+	int OPERATION_ACTION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ACTION__INCOMING = OPERATION_REF__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ACTION__OUTGOING = OPERATION_REF__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ACTION__GRAPH = OPERATION_REF__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -1143,15 +1595,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int OPERATION_ACTION_FEATURE_COUNT = OPERATION_REF_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_ACTION___TO_STRING = OPERATION_REF___TO_STRING;
-
-	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1168,6 +1611,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @ordered
 	 */
 	int OPERATION_ACTION___EQUALS__OBJECT = OPERATION_REF___EQUALS__OBJECT;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ACTION___TO_STRING = OPERATION_REF___TO_STRING;
 
 	/**
 	 * The number of operations of the '<em>Operation Action</em>' class.
@@ -1187,7 +1639,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getPropertyCallExpInfo()
 	 * @generated
 	 */
-	int PROPERTY_CALL_EXP_INFO = 14;
+	int PROPERTY_CALL_EXP_INFO = 15;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CALL_EXP_INFO__INCOMING = EXTENDED_PROPERTY_INFO__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CALL_EXP_INFO__OUTGOING = EXTENDED_PROPERTY_INFO__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CALL_EXP_INFO__GRAPH = EXTENDED_PROPERTY_INFO__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -1244,15 +1723,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int PROPERTY_CALL_EXP_INFO_FEATURE_COUNT = EXTENDED_PROPERTY_INFO_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_CALL_EXP_INFO___TO_STRING = EXTENDED_PROPERTY_INFO___TO_STRING;
-
-	/**
 	 * The operation id for the '<em>Hash Code</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1271,6 +1741,15 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	int PROPERTY_CALL_EXP_INFO___EQUALS__OBJECT = EXTENDED_PROPERTY_INFO___EQUALS__OBJECT;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CALL_EXP_INFO___TO_STRING = EXTENDED_PROPERTY_INFO___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Property Call Exp Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1279,46 +1758,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 */
 	int PROPERTY_CALL_EXP_INFO_OPERATION_COUNT = EXTENDED_PROPERTY_INFO_OPERATION_COUNT + 0;
 
-
-	/**
-	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.Node <em>Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Node</em>'.
-	 * @see ocldependencyanalysis.cs2asanalysis.Node
-	 * @generated
-	 */
-	EClass getNode();
-
-	/**
-	 * Returns the meta object for the '{@link ocldependencyanalysis.cs2asanalysis.Node#toString() <em>To String</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>To String</em>' operation.
-	 * @see ocldependencyanalysis.cs2asanalysis.Node#toString()
-	 * @generated
-	 */
-	EOperation getNode__ToString();
-
-	/**
-	 * Returns the meta object for the '{@link ocldependencyanalysis.cs2asanalysis.Node#hashCode() <em>Hash Code</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Hash Code</em>' operation.
-	 * @see ocldependencyanalysis.cs2asanalysis.Node#hashCode()
-	 * @generated
-	 */
-	EOperation getNode__HashCode();
-
-	/**
-	 * Returns the meta object for the '{@link ocldependencyanalysis.cs2asanalysis.Node#equals(java.lang.Object) <em>Equals</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Equals</em>' operation.
-	 * @see ocldependencyanalysis.cs2asanalysis.Node#equals(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getNode__Equals__Object();
 
 	/**
 	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode <em>Node</em>}'.
@@ -1351,6 +1790,36 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCS2ASAnalysisNode_ReferredElement();
+
+	/**
+	 * Returns the meta object for the '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#toString()
+	 * @generated
+	 */
+	EOperation getCS2ASAnalysisNode__ToString();
+
+	/**
+	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisEdge <em>Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Edge</em>'.
+	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisEdge
+	 * @generated
+	 */
+	EClass getCS2ASAnalysisEdge();
+
+	/**
+	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisGraph <em>Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Graph</em>'.
+	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisGraph
+	 * @generated
+	 */
+	EClass getCS2ASAnalysisGraph();
 
 	/**
 	 * Returns the meta object for class '{@link ocldependencyanalysis.cs2asanalysis.ActionNode <em>Action Node</em>}'.
@@ -1604,40 +2073,6 @@ public interface CS2ASAnalysisPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.NodeImpl <em>Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ocldependencyanalysis.cs2asanalysis.impl.NodeImpl
-		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getNode()
-		 * @generated
-		 */
-		EClass NODE = eINSTANCE.getNode();
-
-		/**
-		 * The meta object literal for the '<em><b>To String</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation NODE___TO_STRING = eINSTANCE.getNode__ToString();
-
-		/**
-		 * The meta object literal for the '<em><b>Hash Code</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation NODE___HASH_CODE = eINSTANCE.getNode__HashCode();
-
-		/**
-		 * The meta object literal for the '<em><b>Equals</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation NODE___EQUALS__OBJECT = eINSTANCE.getNode__Equals__Object();
-
-		/**
 		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisNodeImpl <em>Node</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1662,6 +2097,34 @@ public interface CS2ASAnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT = eINSTANCE.getCS2ASAnalysisNode_ReferredElement();
+
+		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CS2AS_ANALYSIS_NODE___TO_STRING = eINSTANCE.getCS2ASAnalysisNode__ToString();
+
+		/**
+		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisEdgeImpl <em>Edge</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisEdgeImpl
+		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getCS2ASAnalysisEdge()
+		 * @generated
+		 */
+		EClass CS2AS_ANALYSIS_EDGE = eINSTANCE.getCS2ASAnalysisEdge();
+
+		/**
+		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisGraphImpl <em>Graph</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisGraphImpl
+		 * @see ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisPackageImpl#getCS2ASAnalysisGraph()
+		 * @generated
+		 */
+		EClass CS2AS_ANALYSIS_GRAPH = eINSTANCE.getCS2ASAnalysisGraph();
 
 		/**
 		 * The meta object literal for the '{@link ocldependencyanalysis.cs2asanalysis.impl.ActionNodeImpl <em>Action Node</em>}' class.

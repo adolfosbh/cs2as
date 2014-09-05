@@ -56,6 +56,8 @@ public class CS2ASAnalysisFactoryImpl extends EFactoryImpl implements CS2ASAnaly
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_EDGE: return createCS2ASAnalysisEdge();
+			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_GRAPH: return createCS2ASAnalysisGraph();
 			case CS2ASAnalysisPackage.CLASS_INFO: return createClassInfo();
 			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO: return createConstructorExpClassInfo();
 			case CS2ASAnalysisPackage.CONSTRUCTOR_PART_ACTION: return createConstructorPartAction();
@@ -66,6 +68,26 @@ public class CS2ASAnalysisFactoryImpl extends EFactoryImpl implements CS2ASAnaly
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CS2ASAnalysisEdge createCS2ASAnalysisEdge() {
+		CS2ASAnalysisEdgeImpl cs2ASAnalysisEdge = new CS2ASAnalysisEdgeImpl();
+		return cs2ASAnalysisEdge;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CS2ASAnalysisGraph createCS2ASAnalysisGraph() {
+		CS2ASAnalysisGraphImpl cs2ASAnalysisGraph = new CS2ASAnalysisGraphImpl();
+		return cs2ASAnalysisGraph;
 	}
 
 	/**

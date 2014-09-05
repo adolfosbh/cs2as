@@ -13,5 +13,5 @@ package ocldependencyanalysis.cs2asanalysis;
  * @model abstract="true"
  * @generated
  */
-public interface ActionNode extends Node {
+public interface ActionNode extends CS2ASAnalysisNode {
 } // ActionNode

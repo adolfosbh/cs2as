@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import ocldependencyanalysis.CS2ASAnalysisGraphComputer;
 import ocldependencyanalysis.DependencyAnalysis;
 import ocldependencyanalysis.FeatureObj;
-import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
+import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisGraphComputer;
 import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graphml.providers.CS2ASAnalysisTypeProvider;
 import ocldependencyanalysis.graphml.providers.FeatureDependenciesTypeProvider;
@@ -89,7 +88,7 @@ public class GraphmlGenerator {
 	}
 	
 	public static void generateCS2ASAnalysisGraphmlFile(URI inputOclDocUri, String outputGaprhmlFilePath) throws Exception {		
-		IGraph<CS2ASAnalysisNode> graph = DependencyAnalysis.createCS2ASAnalysisGraph(inputOclDocUri);
+		ocldependencyanalysis.graph2.Graph graph = DependencyAnalysis.createCS2ASAnalysisGraph(inputOclDocUri);
 		
 		System.out.println(graph.toString());
 		Graph graphModel = Graph2GraphModel.createSpecificGraphModel(graph, new CS2ASAnalysisTypeProvider(graph));

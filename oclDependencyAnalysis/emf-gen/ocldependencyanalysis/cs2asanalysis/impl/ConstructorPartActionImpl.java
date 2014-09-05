@@ -4,10 +4,9 @@ package ocldependencyanalysis.cs2asanalysis.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import ocldependencyanalysis.cs2asanalysis.ActionNode;
+import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.ConstructorPartAction;
-
-import ocldependencyanalysis.cs2asanalysis.Node;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -150,9 +149,9 @@ public class ConstructorPartActionImpl extends ConstructorPartPropRefImpl implem
 	 */
 	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Node.class) {
+		if (baseClass == CS2ASAnalysisNode.class) {
 			switch (baseOperationID) {
-				case CS2ASAnalysisPackage.NODE___TO_STRING: return CS2ASAnalysisPackage.CONSTRUCTOR_PART_ACTION___TO_STRING;
+				case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE___TO_STRING: return CS2ASAnalysisPackage.CONSTRUCTOR_PART_ACTION___TO_STRING;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}

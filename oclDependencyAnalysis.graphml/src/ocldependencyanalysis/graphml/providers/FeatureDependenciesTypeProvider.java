@@ -7,6 +7,8 @@ import ocldependencyanalysis.FeatureObj;
 import ocldependencyanalysis.NameResoPropertyObj;
 import ocldependencyanalysis.graph.IEdge;
 import ocldependencyanalysis.graph.INode;
+import ocldependencyanalysis.graph2.Edge;
+import ocldependencyanalysis.graph2.Node;
 import ocldependencyanalysis.graphml.IElementTypeProvider;
 
 import org.eclipse.ocl.examples.pivot.Feature;
@@ -130,6 +132,16 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 			}
 		}
 		// else default edge style
+		return null;
+	}
+	
+	@Override
+	public EdgeType getEdgeType(Edge edge) {
+		return null;
+	}
+	
+	@Override
+	public NodeType getNodeType(Node node) {
 		return null;
 	}
 }

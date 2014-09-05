@@ -20,7 +20,7 @@ import org.eclipse.ocl.examples.pivot.PropertyCallExp;
  * @model
  * @generated
  */
-public interface PropertyCallExpInfo extends ExtendedPropertyInfo, InfoNode {
+public interface PropertyCallExpInfo extends ExtendedPropertyInfo {
 	/**
 	 * Returns the value of the '<em><b>Property Call Exp</b></em>' reference.
 	 * <!-- begin-user-doc -->

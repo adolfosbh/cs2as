@@ -4,22 +4,18 @@
     editorDirectory="/oclDependencyAnalysis.editor/emf-gen" modelPluginID="oclDependencyAnalysis"
     modelName="CS2ASAnalysis" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/oclDependencyAnalysis.tests/emf-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.eclipse.ocl.examples.pivot/model/Pivot.merged.genmodel#//pivot"
+    complianceLevel="7.0" copyrightFields="false" usedGenPackages="graph.genmodel#//graph2 ../../org.eclipse.ocl.examples.pivot/model/Pivot.merged.genmodel#//pivot"
     operationReflection="true" importOrganizing="true">
   <foreignModel>CS2ASAnalysis.ecore</foreignModel>
   <genPackages prefix="CS2ASAnalysis" basePackage="ocldependencyanalysis" disposableProviderFactory="true"
       ecorePackage="CS2ASAnalysis.ecore#/">
-    <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//Node">
-      <genOperations ecoreOperation="CS2ASAnalysis.ecore#//Node/toString"/>
-      <genOperations ecoreOperation="CS2ASAnalysis.ecore#//Node/hashCode"/>
-      <genOperations ecoreOperation="CS2ASAnalysis.ecore#//Node/equals">
-        <genParameters ecoreParameter="CS2ASAnalysis.ecore#//Node/equals/object"/>
-      </genOperations>
-    </genClasses>
     <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//CS2ASAnalysisNode">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//CS2ASAnalysisNode/context"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS2ASAnalysis.ecore#//CS2ASAnalysisNode/referredElement"/>
+      <genOperations ecoreOperation="CS2ASAnalysis.ecore#//CS2ASAnalysisNode/toString"/>
     </genClasses>
+    <genClasses ecoreClass="CS2ASAnalysis.ecore#//CS2ASAnalysisEdge"/>
+    <genClasses ecoreClass="CS2ASAnalysis.ecore#//CS2ASAnalysisGraph"/>
     <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//ActionNode"/>
     <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//InfoNode"/>
     <genClasses image="false" ecoreClass="CS2ASAnalysis.ecore#//OperationRef">

@@ -4,6 +4,9 @@ package ocldependencyanalysis.cs2asanalysis.util;
 
 import ocldependencyanalysis.cs2asanalysis.*;
 
+import ocldependencyanalysis.graph2.Edge;
+import ocldependencyanalysis.graph2.Graph;
+import ocldependencyanalysis.graph2.Node;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,12 +69,6 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CS2ASAnalysisPackage.NODE: {
-				Node node = (Node)theEObject;
-				T result = caseNode(node);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE: {
 				CS2ASAnalysisNode cs2ASAnalysisNode = (CS2ASAnalysisNode)theEObject;
 				T result = caseCS2ASAnalysisNode(cs2ASAnalysisNode);
@@ -79,9 +76,24 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_EDGE: {
+				CS2ASAnalysisEdge cs2ASAnalysisEdge = (CS2ASAnalysisEdge)theEObject;
+				T result = caseCS2ASAnalysisEdge(cs2ASAnalysisEdge);
+				if (result == null) result = caseEdge(cs2ASAnalysisEdge);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_GRAPH: {
+				CS2ASAnalysisGraph cs2ASAnalysisGraph = (CS2ASAnalysisGraph)theEObject;
+				T result = caseCS2ASAnalysisGraph(cs2ASAnalysisGraph);
+				if (result == null) result = caseGraph(cs2ASAnalysisGraph);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CS2ASAnalysisPackage.ACTION_NODE: {
 				ActionNode actionNode = (ActionNode)theEObject;
 				T result = caseActionNode(actionNode);
+				if (result == null) result = caseCS2ASAnalysisNode(actionNode);
 				if (result == null) result = caseNode(actionNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -89,6 +101,7 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 			case CS2ASAnalysisPackage.INFO_NODE: {
 				InfoNode infoNode = (InfoNode)theEObject;
 				T result = caseInfoNode(infoNode);
+				if (result == null) result = caseCS2ASAnalysisNode(infoNode);
 				if (result == null) result = caseNode(infoNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -221,6 +234,36 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Edge</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEdge(Edge object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Graph</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Graph</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGraph(Graph object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -232,6 +275,36 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCS2ASAnalysisNode(CS2ASAnalysisNode object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Edge</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCS2ASAnalysisEdge(CS2ASAnalysisEdge object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Graph</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Graph</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCS2ASAnalysisGraph(CS2ASAnalysisGraph object) {
 		return null;
 	}
 

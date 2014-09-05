@@ -13,5 +13,5 @@ package ocldependencyanalysis.cs2asanalysis;
  * @model abstract="true"
  * @generated
  */
-public interface InfoNode extends Node {
+public interface InfoNode extends CS2ASAnalysisNode {
 } // InfoNode

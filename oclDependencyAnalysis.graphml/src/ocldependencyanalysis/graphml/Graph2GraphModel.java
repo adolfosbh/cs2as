@@ -17,12 +17,15 @@ import org.eclipse.qvtd.build.etl.graph.Node;
 
 public class Graph2GraphModel {
 	
-	private static Map<INode<?>, Node> iNode2modelNode = new HashMap<INode<?>, Node>(); 
+	private static Map<INode<?>, Node> iNode2modelNode = new HashMap<INode<?>, Node>();
+	
+	private static Map<ocldependencyanalysis.graph2.Node, Node> node2modelNode = new HashMap<ocldependencyanalysis.graph2.Node, Node>();
 
 	/**
 	 * Creates a Graph Model without any node/edge types creation, therefore
 	 * without graphml-specific visualization information 
 	 * 
+	 * @deprecated to remove
 	 * @param graph
 	 * @return
 	 */
@@ -31,6 +34,7 @@ public class Graph2GraphModel {
 	}
 
 	/**
+	 * @deprecated to remove
 	 * @param graph an {@link IGraph}
 	 * @param typesProvider provides the types for the graph nodes/edges
 	 * @return
@@ -57,6 +61,31 @@ public class Graph2GraphModel {
 			elements.add(modelEdge);
 		}
 		iNode2modelNode.clear();
+		return graphModel;
+	}
+	
+	public static <T> Graph createSpecificGraphModel(ocldependencyanalysis.graph2.Graph graph, IElementTypeProvider<T> typesProvider)  {
+		
+		Graph graphModel = GraphFactory.eINSTANCE.createGraph();
+		graphModel.getElementType().addAll(typesProvider.getProvidedElementTypes());
+		EList<Element> elements = graphModel.getElement();
+		
+		for (ocldependencyanalysis.graph2.Node node : graph.getNodes()) {
+			Node modelNode = GraphFactory.eINSTANCE.createNode();
+			modelNode.setLabel(node.toString());
+			modelNode.setType(typesProvider.getNodeType(node));
+			node2modelNode.put(node, modelNode);
+			elements.add(modelNode);
+		}
+		
+		for (ocldependencyanalysis.graph2.Edge edge : graph.getEdges()) {
+			Edge modelEdge = GraphFactory.eINSTANCE.createEdge();			
+			modelEdge.setSource(node2modelNode.get(edge.getFrom()));
+			modelEdge.setTarget(node2modelNode.get(edge.getTo()));
+			modelEdge.setType(typesProvider.getEdgeType(edge));
+			elements.add(modelEdge);
+		}
+		node2modelNode.clear();
 		return graphModel;
 	}
 	

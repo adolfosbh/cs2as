@@ -2,6 +2,7 @@
  */
 package ocldependencyanalysis.cs2asanalysis;
 
+import ocldependencyanalysis.graph2.Node;
 import org.eclipse.ocl.examples.pivot.Element;
 
 /**
@@ -73,5 +74,13 @@ public interface CS2ASAnalysisNode extends Node {
 	 * @generated
 	 */
 	void setReferredElement(Element value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return ToStringSwitch.INSTANCE.doSwitch(this);'"
+	 * @generated
+	 */
+	String toString();
 
 } // CS2ASAnalysisNode

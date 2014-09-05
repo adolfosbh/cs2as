@@ -2,9 +2,15 @@
  */
 package ocldependencyanalysis.cs2asanalysis.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
+import ocldependencyanalysis.cs2asanalysis.ToStringSwitch;
+import ocldependencyanalysis.graph2.impl.NodeImpl;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -146,6 +152,15 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String toString() {
+		return ToStringSwitch.INSTANCE.doSwitch(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -209,6 +224,20 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 				return referredElement != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE___TO_STRING:
+				return toString();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //CS2ASAnalysisNodeImpl

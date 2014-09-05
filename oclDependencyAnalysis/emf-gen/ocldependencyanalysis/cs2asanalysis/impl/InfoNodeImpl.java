@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class InfoNodeImpl extends NodeImpl implements InfoNode {
+public abstract class InfoNodeImpl extends CS2ASAnalysisNodeImpl implements InfoNode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

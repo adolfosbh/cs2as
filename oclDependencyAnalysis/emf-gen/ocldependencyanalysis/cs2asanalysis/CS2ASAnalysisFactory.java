@@ -22,6 +22,24 @@ public interface CS2ASAnalysisFactory extends EFactory {
 	CS2ASAnalysisFactory eINSTANCE = ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Edge</em>'.
+	 * @generated
+	 */
+	CS2ASAnalysisEdge createCS2ASAnalysisEdge();
+
+	/**
+	 * Returns a new object of class '<em>Graph</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Graph</em>'.
+	 * @generated
+	 */
+	CS2ASAnalysisGraph createCS2ASAnalysisGraph();
+
+	/**
 	 * Returns a new object of class '<em>Class Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

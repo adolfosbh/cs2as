@@ -8,6 +8,8 @@ import java.util.Set;
 import ocldependencyanalysis.graph.IEdge;
 import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graph.INode;
+import ocldependencyanalysis.graph2.Edge;
+import ocldependencyanalysis.graph2.Node;
 import ocldependencyanalysis.graphml.IElementTypeProvider;
 
 import org.eclipse.ocl.examples.pivot.Type;
@@ -75,4 +77,13 @@ public class TypeDependenciesTypeProvider implements IElementTypeProvider<Type>{
 		return cycleEdges.contains(edge) ? cycleEdgeType : null;
 	}
 
+	@Override
+	public EdgeType getEdgeType(Edge edge) {
+		return null;
+	}
+	
+	@Override
+	public NodeType getNodeType(Node node) {
+		return null;
+	}
 }

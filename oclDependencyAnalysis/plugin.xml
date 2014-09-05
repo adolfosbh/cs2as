@@ -9,9 +9,17 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated CS2ASAnalysis -->
       <package
-            uri="http://cs2asanalysis"
+            uri="http://uk.ac.york.cs/cs2asanalysis"
             class="ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage"
             genModel="model/CS2ASAnalysis.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graph -->
+      <package
+            uri="http://uk.ac.york.cs/graph"
+            class="ocldependencyanalysis.graph2.GraphPackage"
+            genModel="model/graph.genmodel"/>
    </extension>
 
 </plugin>

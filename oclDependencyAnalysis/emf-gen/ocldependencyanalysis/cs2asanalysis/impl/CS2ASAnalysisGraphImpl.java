@@ -2,27 +2,27 @@
  */
 package ocldependencyanalysis.cs2asanalysis.impl;
 
-import ocldependencyanalysis.cs2asanalysis.ActionNode;
+import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisGraph;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
-
+import ocldependencyanalysis.graph2.impl.GraphImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Action Node</b></em>'.
+ * An implementation of the model object '<em><b>Graph</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class ActionNodeImpl extends CS2ASAnalysisNodeImpl implements ActionNode {
+public class CS2ASAnalysisGraphImpl extends GraphImpl implements CS2ASAnalysisGraph {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActionNodeImpl() {
+	protected CS2ASAnalysisGraphImpl() {
 		super();
 	}
 
@@ -33,7 +33,7 @@ public abstract class ActionNodeImpl extends CS2ASAnalysisNodeImpl implements Ac
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CS2ASAnalysisPackage.Literals.ACTION_NODE;
+		return CS2ASAnalysisPackage.Literals.CS2AS_ANALYSIS_GRAPH;
 	}
 
-} //ActionNodeImpl
+} //CS2ASAnalysisGraphImpl

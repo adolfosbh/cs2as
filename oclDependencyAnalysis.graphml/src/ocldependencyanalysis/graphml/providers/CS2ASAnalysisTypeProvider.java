@@ -12,8 +12,10 @@ import ocldependencyanalysis.cs2asanalysis.InfoNode;
 import ocldependencyanalysis.cs2asanalysis.OperationAction;
 import ocldependencyanalysis.cs2asanalysis.PropertyRef;
 import ocldependencyanalysis.graph.IEdge;
-import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graph.INode;
+import ocldependencyanalysis.graph2.Edge;
+import ocldependencyanalysis.graph2.Graph;
+import ocldependencyanalysis.graph2.Node;
 import ocldependencyanalysis.graphml.IElementTypeProvider;
 
 import org.eclipse.emf.ecore.EObject;
@@ -60,11 +62,11 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 	private GraphMLEdgeType infoAggregation;
 //	private GraphMLEdgeType bidirectionalOpposite;
 
-	public CS2ASAnalysisTypeProvider(IGraph<CS2ASAnalysisNode> graph) {
+	public CS2ASAnalysisTypeProvider(Graph graph) {
 		
 		List<String> involvedPackages = new ArrayList<String>();		
-		for (INode<CS2ASAnalysisNode> node : graph.getNodes()) {
-			String pPackage = getContainingPackageName(node.getObject().getReferredElement());
+		for (Node node : graph.getNodes()) {
+			String pPackage = getContainingPackageName(((CS2ASAnalysisNode)node).getReferredElement());
 			if (!involvedPackages.contains(pPackage)) {
 				involvedPackages.add(pPackage);	
 			}
@@ -164,19 +166,23 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 
 	@Override
 	public NodeType getNodeType(INode<CS2ASAnalysisNode> node) {
-		CS2ASAnalysisNode analysisNode = node.getObject();
-		
-		if (analysisNode instanceof ActionNode) {
-			if (analysisNode instanceof OperationAction) {
-				Operation operation = ((OperationAction)analysisNode).getOperation();
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public NodeType getNodeType(Node node) {
+
+		if (node instanceof ActionNode) {
+			if (node instanceof OperationAction) {
+				Operation operation = ((OperationAction)node).getOperation();
 				if ("ast".equals(operation.getName()))
 					return astElementActionNode;
 				else if ("cst".equals(operation.getName())) 
 					return cstElementActionNode;
 				else
 					return null;
-			} if (analysisNode instanceof ConstructorPartAction) {
-				ConstructorPartAction action = (ConstructorPartAction) analysisNode; 
+			} if (node instanceof ConstructorPartAction) {
+				ConstructorPartAction action = (ConstructorPartAction) node; 
 				Property prop = action.getProperty();
 				if (prop.getOpposite() == null) { 	// FIXME how to know that a prop is Class attribute or an Association end ?
 													// This is not ideal, but seems reasonably working
@@ -202,20 +208,24 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 				throw new IllegalStateException("Unexpected computation element");
 			}
 			
-		} else if (analysisNode instanceof InfoNode){
-			String pPackage = getContainingPackageName(analysisNode.getReferredElement());
+		} else if (node instanceof InfoNode){
+			String pPackage = getContainingPackageName(((CS2ASAnalysisNode)node).getReferredElement());
 			return packageName2InfoNodes.get(pPackage);
 		} else {
 			throw new IllegalStateException("Unexpected computation element");
 		}
 	}
-
 	@Override
 	public EdgeType getEdgeType(IEdge<CS2ASAnalysisNode> edge) {
+		throw new UnsupportedOperationException();
+	}
+	
+	@Override
+	public EdgeType getEdgeType(Edge edge) {
 		
 		// For the time being, an edge between ast operations are dotted
-		CS2ASAnalysisNode fromComp = edge.getFrom().getObject();
-		CS2ASAnalysisNode toComp = edge.getTo().getObject();
+		Node fromComp = edge.getFrom();
+		Node toComp = edge.getTo();
 		if (fromComp instanceof ActionNode
 			|| toComp instanceof ActionNode) {
 			return actionOutput;
@@ -236,7 +246,6 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 		// else default edge style
 		return null;
 	}
-	
 	private String getContainingPackageName(Element element) {		
 		EObject container = element.eContainer();
 		while (container != null) {

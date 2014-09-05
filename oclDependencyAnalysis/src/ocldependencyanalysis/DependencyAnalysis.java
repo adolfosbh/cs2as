@@ -1,8 +1,9 @@
 package ocldependencyanalysis;
 
 
-import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
+import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisGraphComputer;
 import ocldependencyanalysis.graph.IGraph;
+import ocldependencyanalysis.graph2.Graph;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
@@ -46,12 +47,12 @@ public class DependencyAnalysis {
 		return featGraphComp.computeDependencyGraph(cs2asResource);
 	}
 	
-	public static IGraph<CS2ASAnalysisNode> createCS2ASAnalysisGraph(URI cs2asDocURI) {
+	public static Graph createCS2ASAnalysisGraph(URI cs2asDocURI) {
 		
 		OCL ocl = getOCL();		
 		Resource cs2asResource = ocl.parse(cs2asDocURI);
-		CS2ASAnalysisGraphComputer featGraphComp = new CS2ASAnalysisGraphComputer();
-		return featGraphComp.computeDependencyGraph(cs2asResource);
+		CS2ASAnalysisGraphComputer cs2asAnalysisGraphComp = new CS2ASAnalysisGraphComputer();
+		return cs2asAnalysisGraphComp.computeDependencyGraph(cs2asResource);
 	}
 	
 	public static void printGraphAndCycles(IGraph<?> graph) {
@@ -84,7 +85,10 @@ public class DependencyAnalysis {
 			}
 			else if ("CS2ASAnalysis".equalsIgnoreCase(args[0])) { 
 				System.out.println("Starting...");
-				printGraphAndCycles(createCS2ASAnalysisGraph(URI.createURI(args[1])));
+				Graph graph = createCS2ASAnalysisGraph(URI.createURI(args[1]));
+				System.out.println(graph.toString());
+				System.out.println("Nodes: " + graph.getNodes().size());
+				System.out.println("Edges: " + graph.getEdges().size());
 				System.out.println("...Finished");
 			} else {
 				printUsage();

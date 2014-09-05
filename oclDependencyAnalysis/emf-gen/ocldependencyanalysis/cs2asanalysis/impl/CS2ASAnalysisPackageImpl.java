@@ -3,7 +3,9 @@
 package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.ActionNode;
+import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisEdge;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisFactory;
+import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisGraph;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.ClassInfo;
@@ -14,11 +16,11 @@ import ocldependencyanalysis.cs2asanalysis.ConstructorPartPropRef;
 import ocldependencyanalysis.cs2asanalysis.ConstructorPartPropertyInfo;
 import ocldependencyanalysis.cs2asanalysis.ExtendedPropertyInfo;
 import ocldependencyanalysis.cs2asanalysis.InfoNode;
-import ocldependencyanalysis.cs2asanalysis.Node;
 import ocldependencyanalysis.cs2asanalysis.OperationAction;
 import ocldependencyanalysis.cs2asanalysis.OperationRef;
 import ocldependencyanalysis.cs2asanalysis.PropertyCallExpInfo;
 import ocldependencyanalysis.cs2asanalysis.PropertyRef;
+import ocldependencyanalysis.graph2.GraphPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -39,14 +41,21 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass nodeEClass = null;
+	private EClass cs2ASAnalysisNodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass cs2ASAnalysisNodeEClass = null;
+	private EClass cs2ASAnalysisEdgeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass cs2ASAnalysisGraphEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,7 +195,7 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		isInited = true;
 
 		// Initialize simple dependencies
-		PivotPackage.eINSTANCE.eClass();
+		GraphPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theCS2ASAnalysisPackage.createPackageContents();
@@ -201,42 +210,6 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CS2ASAnalysisPackage.eNS_URI, theCS2ASAnalysisPackage);
 		return theCS2ASAnalysisPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNode() {
-		return nodeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getNode__ToString() {
-		return nodeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getNode__HashCode() {
-		return nodeEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getNode__Equals__Object() {
-		return nodeEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -264,6 +237,33 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 	 */
 	public EReference getCS2ASAnalysisNode_ReferredElement() {
 		return (EReference)cs2ASAnalysisNodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getCS2ASAnalysisNode__ToString() {
+		return cs2ASAnalysisNodeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCS2ASAnalysisEdge() {
+		return cs2ASAnalysisEdgeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCS2ASAnalysisGraph() {
+		return cs2ASAnalysisGraphEClass;
 	}
 
 	/**
@@ -492,14 +492,14 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		isCreated = true;
 
 		// Create classes and their features
-		nodeEClass = createEClass(NODE);
-		createEOperation(nodeEClass, NODE___TO_STRING);
-		createEOperation(nodeEClass, NODE___HASH_CODE);
-		createEOperation(nodeEClass, NODE___EQUALS__OBJECT);
-
 		cs2ASAnalysisNodeEClass = createEClass(CS2AS_ANALYSIS_NODE);
 		createEReference(cs2ASAnalysisNodeEClass, CS2AS_ANALYSIS_NODE__CONTEXT);
 		createEReference(cs2ASAnalysisNodeEClass, CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT);
+		createEOperation(cs2ASAnalysisNodeEClass, CS2AS_ANALYSIS_NODE___TO_STRING);
+
+		cs2ASAnalysisEdgeEClass = createEClass(CS2AS_ANALYSIS_EDGE);
+
+		cs2ASAnalysisGraphEClass = createEClass(CS2AS_ANALYSIS_GRAPH);
 
 		actionNodeEClass = createEClass(ACTION_NODE);
 
@@ -561,6 +561,7 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		GraphPackage theGraphPackage = (GraphPackage)EPackage.Registry.INSTANCE.getEPackage(GraphPackage.eNS_URI);
 		PivotPackage thePivotPackage = (PivotPackage)EPackage.Registry.INSTANCE.getEPackage(PivotPackage.eNS_URI);
 
 		// Create type parameters
@@ -568,9 +569,11 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		cs2ASAnalysisNodeEClass.getESuperTypes().add(this.getNode());
-		actionNodeEClass.getESuperTypes().add(this.getNode());
-		infoNodeEClass.getESuperTypes().add(this.getNode());
+		cs2ASAnalysisNodeEClass.getESuperTypes().add(theGraphPackage.getNode());
+		cs2ASAnalysisEdgeEClass.getESuperTypes().add(theGraphPackage.getEdge());
+		cs2ASAnalysisGraphEClass.getESuperTypes().add(theGraphPackage.getGraph());
+		actionNodeEClass.getESuperTypes().add(this.getCS2ASAnalysisNode());
+		infoNodeEClass.getESuperTypes().add(this.getCS2ASAnalysisNode());
 		operationRefEClass.getESuperTypes().add(this.getCS2ASAnalysisNode());
 		propertyRefEClass.getESuperTypes().add(this.getCS2ASAnalysisNode());
 		classRefEClass.getESuperTypes().add(this.getCS2ASAnalysisNode());
@@ -587,21 +590,17 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 		operationActionEClass.getESuperTypes().add(this.getOperationRef());
 		operationActionEClass.getESuperTypes().add(this.getActionNode());
 		propertyCallExpInfoEClass.getESuperTypes().add(this.getExtendedPropertyInfo());
-		propertyCallExpInfoEClass.getESuperTypes().add(this.getInfoNode());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getNode__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getNode__HashCode(), ecorePackage.getEInt(), "hashCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		EOperation op = initEOperation(getNode__Equals__Object(), ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, thePivotPackage.getObject(), "object", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(cs2ASAnalysisNodeEClass, CS2ASAnalysisNode.class, "CS2ASAnalysisNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCS2ASAnalysisNode_Context(), thePivotPackage.getClass_(), null, "context", null, 1, 1, CS2ASAnalysisNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCS2ASAnalysisNode_ReferredElement(), thePivotPackage.getElement(), null, "referredElement", null, 0, 1, CS2ASAnalysisNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getCS2ASAnalysisNode__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(cs2ASAnalysisEdgeEClass, CS2ASAnalysisEdge.class, "CS2ASAnalysisEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(cs2ASAnalysisGraphEClass, CS2ASAnalysisGraph.class, "CS2ASAnalysisGraph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(actionNodeEClass, ActionNode.class, "ActionNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

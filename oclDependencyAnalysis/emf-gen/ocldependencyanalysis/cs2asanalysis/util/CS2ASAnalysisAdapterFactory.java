@@ -4,6 +4,9 @@ package ocldependencyanalysis.cs2asanalysis.util;
 
 import ocldependencyanalysis.cs2asanalysis.*;
 
+import ocldependencyanalysis.graph2.Edge;
+import ocldependencyanalysis.graph2.Graph;
+import ocldependencyanalysis.graph2.Node;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -68,12 +71,16 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 	protected CS2ASAnalysisSwitch<Adapter> modelSwitch =
 		new CS2ASAnalysisSwitch<Adapter>() {
 			@Override
-			public Adapter caseNode(Node object) {
-				return createNodeAdapter();
-			}
-			@Override
 			public Adapter caseCS2ASAnalysisNode(CS2ASAnalysisNode object) {
 				return createCS2ASAnalysisNodeAdapter();
+			}
+			@Override
+			public Adapter caseCS2ASAnalysisEdge(CS2ASAnalysisEdge object) {
+				return createCS2ASAnalysisEdgeAdapter();
+			}
+			@Override
+			public Adapter caseCS2ASAnalysisGraph(CS2ASAnalysisGraph object) {
+				return createCS2ASAnalysisGraphAdapter();
 			}
 			@Override
 			public Adapter caseActionNode(ActionNode object) {
@@ -128,6 +135,18 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 				return createPropertyCallExpInfoAdapter();
 			}
 			@Override
+			public Adapter caseNode(Node object) {
+				return createNodeAdapter();
+			}
+			@Override
+			public Adapter caseEdge(Edge object) {
+				return createEdgeAdapter();
+			}
+			@Override
+			public Adapter caseGraph(Graph object) {
+				return createGraphAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -148,16 +167,44 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.Node <em>Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.graph2.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ocldependencyanalysis.cs2asanalysis.Node
+	 * @see ocldependencyanalysis.graph2.Node
 	 * @generated
 	 */
 	public Adapter createNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.graph2.Edge <em>Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ocldependencyanalysis.graph2.Edge
+	 * @generated
+	 */
+	public Adapter createEdgeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.graph2.Graph <em>Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ocldependencyanalysis.graph2.Graph
+	 * @generated
+	 */
+	public Adapter createGraphAdapter() {
 		return null;
 	}
 
@@ -172,6 +219,34 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCS2ASAnalysisNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisEdge <em>Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisEdge
+	 * @generated
+	 */
+	public Adapter createCS2ASAnalysisEdgeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisGraph <em>Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisGraph
+	 * @generated
+	 */
+	public Adapter createCS2ASAnalysisGraphAdapter() {
 		return null;
 	}
 
