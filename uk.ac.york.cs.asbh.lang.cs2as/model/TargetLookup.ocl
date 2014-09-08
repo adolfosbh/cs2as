@@ -20,12 +20,18 @@ def: parentEnv() : env::Environment =
 
 def: _env(child : OclElement) : env::Environment =
 	parentEnv()
-	
-def: lookupB(name : String) : target::B =
-	self._env(null).getBs(name)->first()
 
+def: lookupB(name : String) : target::B =
+	lookupBs(name)->first()
+	
 def: lookupC(name : String) : target::C =
-	self._env(null).getCs(name)->first()
+	lookupCs(name)->first()
+
+def: lookupBs(name : String) : OrderedSet(target::B) =
+	self._env(null).getBs(name)
+
+def: lookupCs(name : String) : OrderedSet(target::C) =
+	self._env(null).getCs(name)
 endpackage
 
 package target
