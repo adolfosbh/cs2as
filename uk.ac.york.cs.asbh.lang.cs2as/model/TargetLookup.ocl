@@ -6,10 +6,10 @@ package env
 
 context Environment
 def : getBs(bName : String) : OrderedSet(target::B) =
-	namedElement->selectByKind(target::B)->select(name = bName)
+	namedElements->selectByKind(target::B)->select(name = bName)
 
 def : getCs(cName : String) : OrderedSet(target::C) =
-	namedElement->selectByKind(target::C)->select(name = cName)
+	namedElements->selectByKind(target::C)->select(name = cName)
 endpackage
 
 package ocl
@@ -22,10 +22,10 @@ def: _env(child : OclElement) : env::Environment =
 	parentEnv()
 	
 def: lookupB(name : String) : target::B =
-	self.oclContainer()._env(self).getBs(name)->first()
+	self._env(null).getBs(name)->first()
 
 def: lookupC(name : String) : target::C =
-	self.oclContainer()._env(self).getCs(name)->first()
+	self._env(null).getCs(name)->first()
 endpackage
 
 package target
@@ -36,12 +36,18 @@ def : _env(child : ocl::OclElement) : env::Environment =
 	
 context A1
 def : _env(child : ocl::OclElement) : env::Environment =
+	_env_B(child)
+	
+def : _env_B(child : ocl::OclElement) : env::Environment =
 	let ownedBs = self.ownsB
 	in parentEnv().nestedEnv()
 		.addElements(ownedBs->select(x | ownedBs->indexOf(x) < ownedBs->indexOf(child)))
 
 context A2
 def : _env(child : ocl::OclElement) : env::Environment =
+	_env_C(child)
+	
+def : _env_C(child : ocl::OclElement) : env::Environment =
 	let ownedCs = self.ownsC
 	in parentEnv().nestedEnv()
 		.addElements(ownedCs->select(x| ownedCs->indexOf(x) < ownedCs->indexOf(child)))
