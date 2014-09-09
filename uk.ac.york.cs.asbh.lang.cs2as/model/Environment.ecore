@@ -14,6 +14,9 @@
     </eOperations>
     <eOperations name="hasFinalResult" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="nestedEnv" lowerBound="1" eType="#//Environment"/>
+    <eOperations name="mergeEnv" eType="#//Environment">
+      <eParameters name="env" eType="#//Environment"/>
+    </eOperations>
     <eOperations name="getNamedElements">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib#//OrderedSet">
         <eTypeArguments eClassifier="ecore:EClass TargetMM1.ecore#//NamedElement"/>
