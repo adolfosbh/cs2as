@@ -1,0 +1,27 @@
+import 'Classes.ecore'
+import 'ClassesCS.ecore'
+import 'ClassesLookup.ocl'
+
+package classescs
+
+context PackageCS
+def : ast() : classes::Package =
+	classes::Package {	
+		name = name,
+		ownedClasses = ownedClasses.ast()
+	}
+
+context ClassCS
+def : ast() : classes::Class =
+	classes::Class {
+		name = name,
+		superClass = ast().lookupClass(extends)
+	}
+	
+context RootCS
+def : ast() : classes::Root =
+	classes::Root {
+		ownedPackages = ownedPackages.ast()
+	}
+
+endpackage

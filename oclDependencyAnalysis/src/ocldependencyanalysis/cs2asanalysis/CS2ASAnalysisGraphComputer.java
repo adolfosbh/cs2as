@@ -184,7 +184,6 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 		}
 	}
 	
-	
 	private void updateGraphFromPropertyUpwardsAggregation(ExtendedPropertyInfo propInfo) {
 						
 		for (Edge edge : new CopyOnWriteArrayList<Edge>(getOutgoing(propInfo))) {
@@ -252,39 +251,38 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 		}
 
 		for (Entry<ConstructorPartAction,OperationCallExp> entry : lookupCPartAction2Operations.entrySet()) {
-			OperationCallExp lookupCallOp = entry.getValue();
-			Operation lookupOp = lookupCallOp.getReferredOperation();		
-			Type typeToLookup = lookupOp.getType(); // The type of the operation will tell us the partioned type we are interested in
-			Type lookupOpType = lookupCallOp.getSource().getType();
 			Set<EnvironmentAction> visitedActions = new HashSet<EnvironmentAction>();
-			updateGraphFromLookupOpOperation(visitedActions, lookupOpType.isClass(), typeToLookup.isClass(), lookupOp, entry.getKey());
+			Set<Operation> visitedNonEnvOps = new HashSet<Operation>();
+			updateGraphFromLookupOpLookupCallExp(visitedActions, visitedNonEnvOps, entry.getValue(), entry.getKey());
 		}
 	}
 	
-	private void updateGraphFromLookupOpOperation(Set<EnvironmentAction> visitedActions, Class context, Class typeToLookup, Operation op, ActionNode action) {
+	private void updateGraphFromLookupOpOperation(Set<EnvironmentAction> visitedActions, Set<Operation> visitedNonEnvOps, Class context, Class typeToLookup, Operation op, ActionNode action) {
 		ExpressionInOCL expInOCL = (ExpressionInOCL)op.getBodyExpression();
 		if (expInOCL != null) {
 			OCLExpression oclExp = expInOCL.getBodyExpression();
-			updagrGraphFromLookupOpOCLExpression(visitedActions, oclExp, context, typeToLookup, op, action);			
+			updagrGraphFromLookupOpOCLExpression(visitedActions, visitedNonEnvOps, oclExp, context, typeToLookup, op, action);			
 			for (TreeIterator<EObject> tit = oclExp.eAllContents(); tit.hasNext(); ) {
 				EObject next = tit.next();
 				if (next instanceof OCLExpression) {
-					updagrGraphFromLookupOpOCLExpression(visitedActions, (OCLExpression) next, context, typeToLookup, op, action);
+					updagrGraphFromLookupOpOCLExpression(visitedActions, visitedNonEnvOps, (OCLExpression) next, context, typeToLookup, op, action);
 				}
 			}
 		}
 	}
 	
-	private void updagrGraphFromLookupOpOCLExpression(Set<EnvironmentAction> visitedActions, OCLExpression oclExp, Class context, 
-			Class typeToLookup, Operation op, ActionNode action) {
+	private void updagrGraphFromLookupOpOCLExpression(Set<EnvironmentAction> visitedActions, Set<Operation> visitedNonEnvOps, OCLExpression oclExp, 
+			Class context, Class typeToLookup, Operation op, ActionNode action) {
 		if (isPropertyCallExp(oclExp)) {
 			updateGraphFromLookupOpPropertyCallExp((PropertyCallExp) oclExp, action);
+		} else if (isLookupCall(oclExp)){
+			updateGraphFromLookupOpLookupCallExp(visitedActions, visitedNonEnvOps, (OperationCallExp) oclExp, action);
 		} else if (isEnvCall(oclExp)) {
-			updateGraphFromLookupOpEnvCallExp(visitedActions, (OperationCallExp) oclExp, context,typeToLookup,action);
+			updateGraphFromLookupOpEnvCallExp(visitedActions, visitedNonEnvOps, (OperationCallExp) oclExp, context,typeToLookup,action);
 		} else if (isParentEnvCall(oclExp) ) { 
-			udpateGraphFromLookupOpParentEnvCallExp(visitedActions, (OperationCallExp) oclExp, context,typeToLookup,action);
+			udpateGraphFromLookupOpParentEnvCallExp(visitedActions, visitedNonEnvOps, (OperationCallExp) oclExp, context,typeToLookup,action);
 		} else if (isOperationCallExp(oclExp)) {
-			udpateGraphFromLookupOpOperationCallExp(visitedActions, (OperationCallExp) oclExp, context,typeToLookup,action);
+			udpateGraphFromLookupOpOperationCallExp(visitedActions, visitedNonEnvOps, (OperationCallExp) oclExp, context,typeToLookup,action);
 		}
 	}
 	
@@ -294,7 +292,21 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 		addEdge(propInfo, action);
 	}
 
-	private void updateGraphFromLookupOpEnvCallExp(Set<EnvironmentAction> visitedActions, OperationCallExp envCallExp, Class context, Class typeToLookup, ActionNode action) {
+	private void updateGraphFromLookupOpLookupCallExp(Set<EnvironmentAction> visitedActions, Set<Operation> visitedNonEnvOps, OperationCallExp lookupCallExp,
+			ActionNode action) {
+
+		Operation lookupOp = lookupCallExp.getReferredOperation();
+		if (!visitedNonEnvOps.contains(lookupOp)) {
+			visitedNonEnvOps.add(lookupOp);
+			Type typeToLookup = lookupOp.getType(); // The type of the operation will tell us the partioned type we are interested in
+			Type lookupOpType = lookupCallExp.getSource().getType();
+			updateGraphFromLookupOpOperation(visitedActions, visitedNonEnvOps, lookupOpType.isClass(), typeToLookup.isClass(), lookupOp, action);
+		}
+		
+
+	}
+	private void updateGraphFromLookupOpEnvCallExp(Set<EnvironmentAction> visitedActions, Set<Operation> visitedNonEnvOps, OperationCallExp envCallExp, 
+			Class context, Class typeToLookup, ActionNode action) {
 
 		Operation contextualOp = getEnvOperation(context, "_env_" + typeToLookup.getName()); // FIXME constant
 		EnvironmentAction envAction = createEnvironmentAction(context, context, contextualOp);		
@@ -305,23 +317,30 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 			visitedActions.add(envAction);
 			ClassInfo classInfo = createClassInfo(context, context);
 			addEdge(classInfo, envAction);
-			updateGraphFromLookupOpOperation(visitedActions, context, typeToLookup, contextualOp, envAction);	
+			updateGraphFromLookupOpOperation(visitedActions, visitedNonEnvOps, context, typeToLookup, contextualOp, envAction);	
 		}
 	}
 	
-	private void udpateGraphFromLookupOpParentEnvCallExp(Set<EnvironmentAction> visitedActions, OperationCallExp parentEnvCallExp, Class context, Class typeToLookup, ActionNode action) {
+	private void udpateGraphFromLookupOpParentEnvCallExp(Set<EnvironmentAction> visitedActions, Set<Operation> visitedNonEnvOps, OperationCallExp parentEnvCallExp,
+			Class context, Class typeToLookup, ActionNode action) {
 		
 		for (ContainerClass contClass : getContainerClasses(context)) {
 			ExtendedPropertyInfo propInfo = createPropertyInfo(context, contClass.getContainerClass(), contClass.getContainmentProperty());
 			addEdge(propInfo, action);
-			updateGraphFromLookupOpOperation(visitedActions, contClass.getContainerClass(), typeToLookup, parentEnvCallExp.getReferredOperation(), action);
+			updateGraphFromLookupOpOperation(visitedActions, visitedNonEnvOps, contClass.getContainerClass(), typeToLookup, parentEnvCallExp.getReferredOperation(), action);
 		}
 	}
 	
-	private void udpateGraphFromLookupOpOperationCallExp(Set<EnvironmentAction> visitedActions, OperationCallExp envCallExp, Class context, Class typeToLookup, ActionNode action) {
+	private void udpateGraphFromLookupOpOperationCallExp(Set<EnvironmentAction> visitedActions, Set<Operation> visitedNonEnvOps, OperationCallExp envCallExp,
+			Class context, Class typeToLookup, ActionNode action) {
 		
-		Operation referredOp = envCallExp.getReferredOperation();					
-		updateGraphFromLookupOpOperation(visitedActions, context, typeToLookup, referredOp, action);
+		Operation referredOp = envCallExp.getReferredOperation();
+		if (!visitedNonEnvOps.contains(referredOp)) {
+			visitedNonEnvOps.add(referredOp);
+			updateGraphFromLookupOpOperation(visitedActions, visitedNonEnvOps, context, typeToLookup, referredOp, action);	
+		}
+			
+		
 	}
 
 	@Override

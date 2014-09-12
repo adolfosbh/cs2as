@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<stringAttribute key="bad_container_name" value="\oclDependencyAnalysis.graphml\example\example"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/oclDependencyAnalysis.graphml/src/ocldependencyanalysis/graphml/GraphmlGenerator.java"/>
 </listAttribute>
@@ -13,6 +14,6 @@
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ocldependencyanalysis.graphml.GraphmlGenerator"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="CS2ASAnalysis&#13;&#10;PRUNED_ONLY&#13;&#10;platform:/resource/oclDependencyAnalysis/example/Source2Target.ocl&#13;&#10;${git_work_tree}/oclDependencyAnalysis.graphml/example/Source2Target_CS2ASAnalysis.graphml"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="CS2ASAnalysis&#13;&#10;PRUNED_AND_FULL&#13;&#10;platform:/resource/oclDependencyAnalysis/example/example2/ClassesCS2Classes.ocl&#13;&#10;${git_work_tree}/oclDependencyAnalysis.graphml/example/example2/ClassesCS2Classes_CS2ASAnalysis.graphml"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="oclDependencyAnalysis.graphml"/>
 </launchConfiguration>
