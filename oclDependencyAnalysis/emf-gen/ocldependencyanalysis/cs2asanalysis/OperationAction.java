@@ -10,7 +10,7 @@ package ocldependencyanalysis.cs2asanalysis;
  *
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getOperationAction()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface OperationAction extends OperationRef, ActionNode {

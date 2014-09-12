@@ -1,6 +1,7 @@
 package ocldependencyanalysis.graph2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -16,12 +17,14 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.examples.domain.elements.DomainOperation;
 import org.eclipse.ocl.examples.domain.elements.FeatureFilter;
 import org.eclipse.ocl.examples.pivot.Class;
+import org.eclipse.ocl.examples.pivot.CollectionType;
 import org.eclipse.ocl.examples.pivot.ConstructorExp;
 import org.eclipse.ocl.examples.pivot.ConstructorPart;
 import org.eclipse.ocl.examples.pivot.Element;
 import org.eclipse.ocl.examples.pivot.Operation;
 import org.eclipse.ocl.examples.pivot.OperationCallExp;
 import org.eclipse.ocl.examples.pivot.Package;
+import org.eclipse.ocl.examples.pivot.Property;
 import org.eclipse.ocl.examples.pivot.PropertyCallExp;
 import org.eclipse.ocl.examples.pivot.Root;
 import org.eclipse.ocl.examples.pivot.Type;
@@ -33,30 +36,58 @@ import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
  * @param <C>
  */
 public abstract class AbstractGraphComputer {
-		
 
-	private Map<Class , Set<Class>> type2superClasses = new HashMap<Class, Set<Class>>();
+	public static class ContainerClass {
+		
+		private Class containerClass;
+		
+		private Property containmentProperty;
+		
+		public ContainerClass(Class containerClass, Property containmentProperty) {
+			this.containerClass = containerClass;
+			this.containmentProperty = containmentProperty;
+		}
+		
+		public Class getContainerClass() {
+			return containerClass;
+		}
+		
+		public Property getContainmentProperty() {
+			return containmentProperty;
+		}
+		
+		@Override
+		public String toString() {
+			
+			return containerClass.getName() + " - " + containmentProperty.getName();
+		}
+	}
 	
-	private Map<Class , Set<Class>> type2instantiableSubClasses = new HashMap<Class, Set<Class>>();
+	private Map<Class, Set<Class>> class2superClasses = new HashMap<Class, Set<Class>>();
 	
-	private Map<Class , Set<Class>> type2directSubClasses = new HashMap<Class, Set<Class>>();
+	private Map<Class, Set<Class>> class2instantiableSubClasses = new HashMap<Class, Set<Class>>();
 	
-	private Map<Class , Set<Class>> asClass2csClasses = new HashMap<Class, Set<Class>>();
+	private Map<Class, Set<Class>> class2directSubClasses = new HashMap<Class, Set<Class>>();
+	
+	private Map<Class, Set<Class>> asClass2csClasses = new HashMap<Class, Set<Class>>();
+	
+	private Map<Class, Set<ContainerClass>> class2containerClasses = new HashMap<Class, Set<ContainerClass>>();
 	
 	protected MetaModelManager mManager;
 	
 	protected AbstractGraphManager gManager;
 		
 	private void initializeMaps(Resource resource) {
-		Root root = (Root) resource.getContents().get(0) ;
-		for (Package aPackage : root.getOwnedPackages()) {
+	
+		for (Package aPackage : getPackageInvolvedInOCLDoc(resource)) {
 			Package primPckg = (Package)mManager.getPrimaryPackage(aPackage);
 			computeClass2SuperClasses(primPckg);
-			computeAsClass2CsClass(primPckg);
+			computeAsClass2CsClass(primPckg);			
 		}
-		for (Class type : type2superClasses.keySet()) {
+		for (Class type : class2superClasses.keySet()) {
 			computeClass2InstantiableClasses(type);
-			computeClass2DirectClasses(type);
+			computeClass2DirectSubClasses(type);
+			computeClass2ContainerClasses(type);
 		}
 	}
 	
@@ -73,12 +104,12 @@ public abstract class AbstractGraphComputer {
 	
 	private Set<Class> computeClass2SuperClasses(Class aClass) {
 		
-		Set<Class> result = type2superClasses.get(aClass);
+		Set<Class> result = class2superClasses.get(aClass);
 		if (result != null) {
 			return result;
 		} else {
 			result = new HashSet<Class>();
-			type2superClasses.put(aClass, result);
+			class2superClasses.put(aClass, result);
 		}
 		
 		for (Class superClass : aClass.getSuperClasses()) {
@@ -93,41 +124,17 @@ public abstract class AbstractGraphComputer {
 		if (type instanceof Class
 			&& !((Class) type).isAbstract()) {
 			Class subClass = (Class) type; 
-			for (Class superClass : type2superClasses.get(type)) {
-				Set<Class> subClasses = type2instantiableSubClasses.get(superClass);
+			for (Class superClass : class2superClasses.get(type)) {
+				Set<Class> subClasses = class2instantiableSubClasses.get(superClass);
 				if (subClasses == null) {
 					subClasses = new HashSet<Class>();
-					type2instantiableSubClasses.put(superClass, subClasses);
+					class2instantiableSubClasses.put(superClass, subClasses);
 				}
 				subClasses.add(subClass);
 			}
 		}
 	}
 	
-	private void computeClass2DirectClasses(Class aClass) {
-			 
-		for (Class superClass : aClass.getSuperClasses()) {
-			Set<Class> subClass = type2directSubClasses.get(superClass);
-			if (subClass == null) {
-				subClass = new HashSet<Class>();
-				type2directSubClasses.put(superClass, subClass);
-			}
-			subClass.add(aClass);
-		}
-	}
-	
-	protected List<Class> getClassesInvolvedInOCLDocPackages(Resource oclResource) {
-		
-		List<Class> result = new ArrayList<Class>();
-		Root root = (Root) oclResource.getContents().get(0);
-		for (Package pckg : root.getOwnedPackages()) {
-			Package primaryPckg = (Package) mManager.getPrimaryPackage(pckg);
-			for (Class ownedClass : primaryPckg.getOwnedClasses()) {
-				result.add(ownedClass);
-			}
-		}
-		return result;
-	}
 	private void computeAsClass2CsClass(Package p) {
 		for (Class type : p.getOwnedClasses()) {
 			Operation astOp = getAstOperation(type);
@@ -149,20 +156,100 @@ public abstract class AbstractGraphComputer {
 		}
 	}
 	
+	private void computeClass2DirectSubClasses(Class aClass) {
+			 
+		for (Class superClass : aClass.getSuperClasses()) {
+			Set<Class> subClass = class2directSubClasses.get(superClass);
+			if (subClass == null) {
+				subClass = new HashSet<Class>();
+				class2directSubClasses.put(superClass, subClass);
+			}
+			subClass.add(aClass);
+		}
+	}
+	
+	private void computeClass2ContainerClasses(Class aClass) {
+		 
+		for (Property property : aClass.getOwnedProperties()) {
+			Type propType = property.getType();
+			if (propType instanceof CollectionType) {
+				propType = ((CollectionType) propType).getElementType();
+			}			
+			
+			if (property.isComposite() && propType instanceof Class) {
+				addContainerClassForTypeAndSubtypes(aClass, property, propType.isClass());
+			}
+		}
+	}
+	
+	private void addContainerClassForTypeAndSubtypes(Class containerClass, Property containmentProperty, Class type) {
+		
+		Set<ContainerClass> containerClasses = class2containerClasses.get(type);
+		if (containerClasses == null) {
+			containerClasses = new HashSet<ContainerClass>();
+			class2containerClasses.put(type, containerClasses);
+		}
+		
+		containerClasses.add(new ContainerClass(containerClass, containmentProperty));
+		
+		Set<Class> subTypes = getDirectSubClasses(type);
+		if (subTypes != null) {
+			for (Class subType : class2directSubClasses.get(type)) {
+				addContainerClassForTypeAndSubtypes(containerClass, containmentProperty, subType);
+			}	
+		}
+	}
+	
+	protected List<Class> getUserClassesInvolvedInOCLDocPackages(Resource oclResource) {
+			
+		List<Class> result = new ArrayList<Class>();
+		for (Package pckg : getPackageInvolvedInOCLDoc(oclResource)) {
+			Package primaryPckg = (Package) mManager.getPrimaryPackage(pckg);
+			String pckgName = primaryPckg.getName();
+			if (!"ocl".equals(pckgName) && !"pivot".equals(pckgName) &&
+				!"env".equals(pckgName)) { // We are ONLY interested in user classes
+				for (Class ownedClass : primaryPckg.getOwnedClasses()) {
+					result.add(ownedClass);
+				}
+			}
+		}
+		return result;
+	}
+	
+	protected List<Package> getPackageInvolvedInOCLDoc(Resource oclResource) {
+	
+		List<Root> oclRoots = new ArrayList<Root>();
+		for (Resource resource : oclResource.getResourceSet().getResources()) {
+			for (EObject root : resource.getContents()) {
+				if (root instanceof Root) {
+					oclRoots.add((Root)root);
+				}
+			}
+		}		
+		
+		List<Package> result = new ArrayList<Package>();
+		for (Root root : oclRoots) {
+			for (Package pckg : root.getOwnedPackages()) { // FIXME we are not including nested packages, yet
+				result.add(pckg);
+			}
+		}
+		return result;
+	}
+	
 	protected Set<Class> getInstantiableSubClasses(Class type) {
 		Class primaryClass = mManager.getPrimaryType(type);
-		return type2instantiableSubClasses.get(primaryClass);
+		return class2instantiableSubClasses.get(primaryClass);
 	}
 
 	protected boolean typeIsSupertypeOf(Class t1, Class t2) {
 		Type primaryT1 = mManager.getPrimaryType(t1);
 		Type primaryT2 = mManager.getPrimaryType(t2);
-		return type2superClasses.get(primaryT1).contains(primaryT2);
+		return class2superClasses.get(primaryT1).contains(primaryT2);
 	}
 	
 	protected Set<Class> getDirectSubClasses(Class type) {
 		Type primaryType = mManager.getPrimaryType(type);
-		return type2directSubClasses.get(primaryType);
+		return class2directSubClasses.get(primaryType);
 	}
 	/**
 	 * @param asClass
@@ -173,13 +260,36 @@ public abstract class AbstractGraphComputer {
 		return asClass2csClasses.get(asPrimaryType);
 	}
 	
-	protected Operation getAstOperation(Class opAstClass) {
+	protected Set<ContainerClass> getContainerClasses(Class aClass) {
+		Type asPrimaryType = mManager.getPrimaryType(aClass);
+		Set<ContainerClass> containerClasses = class2containerClasses.get(asPrimaryType);
+		return containerClasses == null ? Collections.<ContainerClass>emptySet() : containerClasses;
+	}
+	
+	protected Operation getAstOperation(Class opAstClass) {	
 		Operation bestOp=null;	// The best op will be the one owned by the type the 
-								// closer to opAstClass in the class hierarchy 
-		// TODO move to mManager ?
 		for (DomainOperation op : mManager.getAllOperations(opAstClass, FeatureFilter.SELECT_NON_STATIC, "ast")){
 			if (op instanceof Operation
 				&& op.getOwnedParameter().isEmpty()) {
+				Operation candidateOp = (Operation) op;
+				if (bestOp == null) {
+					bestOp = candidateOp;
+				}else{
+					if (typeIsSupertypeOf(candidateOp.getOwningClass(), bestOp.getOwningClass())) {
+						bestOp = candidateOp;
+					}
+				}
+			}
+		}
+		return bestOp;
+	}
+	
+	protected Operation getEnvOperation(Class opEnvClass, String envOpName) {
+		Operation bestOp=null;	// The best op will be the one owned by the type the 
+		// closer to opAstClass in the class hierarchy 
+		// TODO move to mManager ?
+		for (DomainOperation op : mManager.getAllOperations(opEnvClass, FeatureFilter.SELECT_NON_STATIC, envOpName)){
+			if (op instanceof Operation) {
 				Operation candidateOp = (Operation) op;
 				if (bestOp == null) {
 					bestOp = candidateOp;
@@ -247,8 +357,6 @@ public abstract class AbstractGraphComputer {
 	
 	abstract protected void updateDependencyGraphFromCS2ASDescription(Graph dependencyGraph, Resource cs2asResource);			
 	
-	
-	
 	// Some utility routines
 	
 	protected Class getElementContext(Element element) { // FIXME this should return/consider Type rather than just Class
@@ -296,6 +404,47 @@ public abstract class AbstractGraphComputer {
 		if (op == null) return false;
 		String opName = op.getName();
 		return opName == null ? false : opName.startsWith("lookup");
+	}
+	
+	protected boolean isEnvCall(EObject element) {
+		if (isOperationCallExp(element)) {
+			return isEnvOp(((OperationCallExp)element).getReferredOperation());
+		}
+		return false;
+	}
+	
+	protected boolean isParentEnvCall(EObject element) {
+		if (isOperationCallExp(element)) {
+			return isParenEnvOp(((OperationCallExp)element).getReferredOperation());
+		}
+		return false;
+	}
+	
+	private boolean isParenEnvOp(Operation op) {
+		if (op == null) return false;
+		String opName = op.getName();
+		return opName == null ? false : opName.equals("parentEnv") && op.getOwnedParameter().isEmpty();
+	}
+
+
+	protected boolean isEnvOp(Operation op) {
+		if (op == null) return false;
+		String opName = op.getName();
+		return opName == null ? false : opName.contains("_env");
+	}
+	
+	protected Class getEnvLookupClass(Operation op) {
+		String envMark = "_env_";
+		String opName = op.getName();
+		if (opName.contains(envMark)) {
+			String className = opName.substring(opName.indexOf(envMark) + envMark.length());
+			for (Class aClass : class2superClasses.keySet()) { // FIXME cache
+				if (className.equals(aClass.getName())) {
+					return aClass;
+				}
+			}	
+		}
+		return mManager.getOclElementType();
 	}
 	
 	protected boolean isConstructorExp(EObject element) {

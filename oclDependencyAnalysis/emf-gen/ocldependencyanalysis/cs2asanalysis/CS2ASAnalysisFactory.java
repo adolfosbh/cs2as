@@ -85,15 +85,6 @@ public interface CS2ASAnalysisFactory extends EFactory {
 	ExtendedPropertyInfo createExtendedPropertyInfo();
 
 	/**
-	 * Returns a new object of class '<em>Operation Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operation Action</em>'.
-	 * @generated
-	 */
-	OperationAction createOperationAction();
-
-	/**
 	 * Returns a new object of class '<em>Property Call Exp Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,6 +92,33 @@ public interface CS2ASAnalysisFactory extends EFactory {
 	 * @generated
 	 */
 	PropertyCallExpInfo createPropertyCallExpInfo();
+
+	/**
+	 * Returns a new object of class '<em>Environment Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Environment Info</em>'.
+	 * @generated
+	 */
+	EnvironmentInfo createEnvironmentInfo();
+
+	/**
+	 * Returns a new object of class '<em>Mapping Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping Action</em>'.
+	 * @generated
+	 */
+	MappingAction createMappingAction();
+
+	/**
+	 * Returns a new object of class '<em>Environment Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Environment Action</em>'.
+	 * @generated
+	 */
+	EnvironmentAction createEnvironmentAction();
 
 	/**
 	 * Returns the package supported by this factory.

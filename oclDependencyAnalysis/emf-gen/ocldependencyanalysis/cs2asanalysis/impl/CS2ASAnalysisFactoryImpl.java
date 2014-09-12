@@ -63,8 +63,10 @@ public class CS2ASAnalysisFactoryImpl extends EFactoryImpl implements CS2ASAnaly
 			case CS2ASAnalysisPackage.CONSTRUCTOR_PART_ACTION: return createConstructorPartAction();
 			case CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROPERTY_INFO: return createConstructorPartPropertyInfo();
 			case CS2ASAnalysisPackage.EXTENDED_PROPERTY_INFO: return createExtendedPropertyInfo();
-			case CS2ASAnalysisPackage.OPERATION_ACTION: return createOperationAction();
 			case CS2ASAnalysisPackage.PROPERTY_CALL_EXP_INFO: return createPropertyCallExpInfo();
+			case CS2ASAnalysisPackage.ENVIRONMENT_INFO: return createEnvironmentInfo();
+			case CS2ASAnalysisPackage.MAPPING_ACTION: return createMappingAction();
+			case CS2ASAnalysisPackage.ENVIRONMENT_ACTION: return createEnvironmentAction();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -145,9 +147,9 @@ public class CS2ASAnalysisFactoryImpl extends EFactoryImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OperationAction createOperationAction() {
-		OperationActionImpl operationAction = new OperationActionImpl();
-		return operationAction;
+	public PropertyCallExpInfo createPropertyCallExpInfo() {
+		PropertyCallExpInfoImpl propertyCallExpInfo = new PropertyCallExpInfoImpl();
+		return propertyCallExpInfo;
 	}
 
 	/**
@@ -155,9 +157,29 @@ public class CS2ASAnalysisFactoryImpl extends EFactoryImpl implements CS2ASAnaly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyCallExpInfo createPropertyCallExpInfo() {
-		PropertyCallExpInfoImpl propertyCallExpInfo = new PropertyCallExpInfoImpl();
-		return propertyCallExpInfo;
+	public EnvironmentInfo createEnvironmentInfo() {
+		EnvironmentInfoImpl environmentInfo = new EnvironmentInfoImpl();
+		return environmentInfo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MappingAction createMappingAction() {
+		MappingActionImpl mappingAction = new MappingActionImpl();
+		return mappingAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnvironmentAction createEnvironmentAction() {
+		EnvironmentActionImpl environmentAction = new EnvironmentActionImpl();
+		return environmentAction;
 	}
 
 	/**

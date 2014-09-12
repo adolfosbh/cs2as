@@ -9,7 +9,7 @@ import ocldependencyanalysis.cs2asanalysis.ActionNode;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.cs2asanalysis.ConstructorPartAction;
 import ocldependencyanalysis.cs2asanalysis.InfoNode;
-import ocldependencyanalysis.cs2asanalysis.OperationAction;
+import ocldependencyanalysis.cs2asanalysis.OperationRef;
 import ocldependencyanalysis.cs2asanalysis.PropertyRef;
 import ocldependencyanalysis.graph.IEdge;
 import ocldependencyanalysis.graph.INode;
@@ -18,10 +18,7 @@ import ocldependencyanalysis.graph2.Graph;
 import ocldependencyanalysis.graph2.Node;
 import ocldependencyanalysis.graphml.IElementTypeProvider;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.ocl.examples.pivot.Element;
 import org.eclipse.ocl.examples.pivot.Operation;
-import org.eclipse.ocl.examples.pivot.Package;
 import org.eclipse.ocl.examples.pivot.Property;
 import org.eclipse.qvtd.build.etl.graph.EdgeType;
 import org.eclipse.qvtd.build.etl.graph.ElementType;
@@ -34,20 +31,19 @@ import org.eclipse.qvtd.build.etl.graphmltypes.ShapeType;
 
 public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAnalysisNode>{
 	
-	static final List<String> infoNodeColours = new ArrayList<>();	
-	{infoNodeColours.add("#FF00FF"); // PINK
+	private static final List<String> infoNodeColours = new ArrayList<>();	
+	static {
+	 infoNodeColours.add("#FF00FF"); // PINK
 	 infoNodeColours.add("#99CCFF"); // BLUE
 	 infoNodeColours.add("#FFFFFF"); // DEFAULT - White
-	} 
+	}
 	
 	private Map<String, GraphMLNodeType> packageName2InfoNodes= new HashMap<String, GraphMLNodeType>();
-	
-	//FF00FF - PINK (input)
-	//99CCFF - Blue (output)
 	
 	private List<ElementType> elementTypes;	
 	private GraphMLNodeType cstElementActionNode;
 	private GraphMLNodeType astElementActionNode;
+	private GraphMLNodeType envActionNode;
 	
 	private GraphMLNodeType attributePropertyActionNode;
 	private GraphMLNodeType containmentPropertyActionNode;
@@ -66,7 +62,7 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 		
 		List<String> involvedPackages = new ArrayList<String>();		
 		for (Node node : graph.getNodes()) {
-			String pPackage = getContainingPackageName(((CS2ASAnalysisNode)node).getReferredElement());
+			String pPackage = getAssociatedPackageName(((CS2ASAnalysisNode)node));
 			if (!involvedPackages.contains(pPackage)) {
 				involvedPackages.add(pPackage);	
 			}
@@ -74,7 +70,7 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 		elementTypes = new ArrayList<ElementType>();
 		
 		for (int i = 0; i < involvedPackages.size(); i++) {
-			int index = i >= infoNodeColours.size() ? infoNodeColours.size() - 1 : i; 
+			int index = i >= infoNodeColours.size() ? infoNodeColours.size() - 1 : i;
 			GraphMLNodeType infoNode = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
 			infoNode.setName("infoNode"+i);
 			infoNode.setColor(infoNodeColours.get(index));
@@ -93,6 +89,11 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 		cstElementActionNode.setName("CstOperation");
 		cstElementActionNode.setColor("#00FF00");
 		cstElementActionNode.setShape(ShapeType.ELLIPSE);
+		
+		envActionNode = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
+		envActionNode.setName("EnvOperation");
+		envActionNode.setColor("#AA7755");
+		envActionNode.setShape(ShapeType.ELLIPSE);
 		
 		attributePropertyActionNode = GraphmltypesFactory.eINSTANCE.createGraphMLNodeType();
 		attributePropertyActionNode.setName("attributePropertyAction");
@@ -148,6 +149,7 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 //		elementTypes.add(bidirectionalOpposite);
 		elementTypes.add(astElementActionNode);
 		elementTypes.add(cstElementActionNode);
+		elementTypes.add(envActionNode);
 		elementTypes.add(attributePropertyActionNode);
 		elementTypes.add(attributeLookupPropertyActionNode);
 		elementTypes.add(containmentPropertyActionNode);
@@ -173,14 +175,14 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 	public NodeType getNodeType(Node node) {
 
 		if (node instanceof ActionNode) {
-			if (node instanceof OperationAction) {
-				Operation operation = ((OperationAction)node).getOperation();
+			if (node instanceof OperationRef) {
+				Operation operation = ((OperationRef)node).getOperation();
 				if ("ast".equals(operation.getName()))
 					return astElementActionNode;
 				else if ("cst".equals(operation.getName())) 
 					return cstElementActionNode;
-				else
-					return null;
+				else if (operation.getName().contains("_env"))
+					return envActionNode;
 			} if (node instanceof ConstructorPartAction) {
 				ConstructorPartAction action = (ConstructorPartAction) node; 
 				Property prop = action.getProperty();
@@ -205,14 +207,14 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 					}
 				}
 			} else {
-				throw new IllegalStateException("Unexpected computation element");
+				throw new IllegalStateException("Unexpected computation element: " + node.toString());
 			}
 			
 		} else if (node instanceof InfoNode){
-			String pPackage = getContainingPackageName(((CS2ASAnalysisNode)node).getReferredElement());
+			String pPackage = getAssociatedPackageName(((CS2ASAnalysisNode)node));
 			return packageName2InfoNodes.get(pPackage);
 		} else {
-			throw new IllegalStateException("Unexpected computation element");
+			throw new IllegalStateException("Unexpected computation element: " + node.toString());
 		}
 	}
 	@Override
@@ -246,16 +248,7 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 		// else default edge style
 		return null;
 	}
-	private String getContainingPackageName(Element element) {		
-		EObject container = element.eContainer();
-		while (container != null) {
-			if (container instanceof Package) {
-				return ((Package)container).getName();
-//				Package pPackage = (Package)container;
-//				return (Package) PivotUtil.findMetaModelManager(pPackage).getPrimaryPackage(pPackage);				
-			}
-			container = container.eContainer();
-		}
-		return null;
+	private String getAssociatedPackageName(CS2ASAnalysisNode node) {		
+		return node.getAssociatedPackage().getName();
 	}
 }

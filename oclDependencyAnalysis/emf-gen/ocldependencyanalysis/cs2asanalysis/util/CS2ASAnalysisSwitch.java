@@ -114,11 +114,29 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CS2ASAnalysisPackage.EXTENDED_OPERATION_REF: {
+				ExtendedOperationRef extendedOperationRef = (ExtendedOperationRef)theEObject;
+				T result = caseExtendedOperationRef(extendedOperationRef);
+				if (result == null) result = caseOperationRef(extendedOperationRef);
+				if (result == null) result = caseCS2ASAnalysisNode(extendedOperationRef);
+				if (result == null) result = caseNode(extendedOperationRef);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CS2ASAnalysisPackage.PROPERTY_REF: {
 				PropertyRef propertyRef = (PropertyRef)theEObject;
 				T result = casePropertyRef(propertyRef);
 				if (result == null) result = caseCS2ASAnalysisNode(propertyRef);
 				if (result == null) result = caseNode(propertyRef);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CS2ASAnalysisPackage.EXTENDED_PROPERTY_REF: {
+				ExtendedPropertyRef extendedPropertyRef = (ExtendedPropertyRef)theEObject;
+				T result = caseExtendedPropertyRef(extendedPropertyRef);
+				if (result == null) result = casePropertyRef(extendedPropertyRef);
+				if (result == null) result = caseCS2ASAnalysisNode(extendedPropertyRef);
+				if (result == null) result = caseNode(extendedPropertyRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -176,8 +194,9 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 				T result = caseConstructorPartPropertyInfo(constructorPartPropertyInfo);
 				if (result == null) result = caseExtendedPropertyInfo(constructorPartPropertyInfo);
 				if (result == null) result = caseConstructorPartPropRef(constructorPartPropertyInfo);
-				if (result == null) result = casePropertyRef(constructorPartPropertyInfo);
+				if (result == null) result = caseExtendedPropertyRef(constructorPartPropertyInfo);
 				if (result == null) result = caseInfoNode(constructorPartPropertyInfo);
+				if (result == null) result = casePropertyRef(constructorPartPropertyInfo);
 				if (result == null) result = caseCS2ASAnalysisNode(constructorPartPropertyInfo);
 				if (result == null) result = caseNode(constructorPartPropertyInfo);
 				if (result == null) result = defaultCase(theEObject);
@@ -186,8 +205,9 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 			case CS2ASAnalysisPackage.EXTENDED_PROPERTY_INFO: {
 				ExtendedPropertyInfo extendedPropertyInfo = (ExtendedPropertyInfo)theEObject;
 				T result = caseExtendedPropertyInfo(extendedPropertyInfo);
-				if (result == null) result = casePropertyRef(extendedPropertyInfo);
+				if (result == null) result = caseExtendedPropertyRef(extendedPropertyInfo);
 				if (result == null) result = caseInfoNode(extendedPropertyInfo);
+				if (result == null) result = casePropertyRef(extendedPropertyInfo);
 				if (result == null) result = caseCS2ASAnalysisNode(extendedPropertyInfo);
 				if (result == null) result = caseNode(extendedPropertyInfo);
 				if (result == null) result = defaultCase(theEObject);
@@ -207,10 +227,44 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 				PropertyCallExpInfo propertyCallExpInfo = (PropertyCallExpInfo)theEObject;
 				T result = casePropertyCallExpInfo(propertyCallExpInfo);
 				if (result == null) result = caseExtendedPropertyInfo(propertyCallExpInfo);
-				if (result == null) result = casePropertyRef(propertyCallExpInfo);
+				if (result == null) result = caseExtendedPropertyRef(propertyCallExpInfo);
 				if (result == null) result = caseInfoNode(propertyCallExpInfo);
+				if (result == null) result = casePropertyRef(propertyCallExpInfo);
 				if (result == null) result = caseCS2ASAnalysisNode(propertyCallExpInfo);
 				if (result == null) result = caseNode(propertyCallExpInfo);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CS2ASAnalysisPackage.ENVIRONMENT_INFO: {
+				EnvironmentInfo environmentInfo = (EnvironmentInfo)theEObject;
+				T result = caseEnvironmentInfo(environmentInfo);
+				if (result == null) result = caseExtendedOperationRef(environmentInfo);
+				if (result == null) result = caseInfoNode(environmentInfo);
+				if (result == null) result = caseOperationRef(environmentInfo);
+				if (result == null) result = caseCS2ASAnalysisNode(environmentInfo);
+				if (result == null) result = caseNode(environmentInfo);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CS2ASAnalysisPackage.MAPPING_ACTION: {
+				MappingAction mappingAction = (MappingAction)theEObject;
+				T result = caseMappingAction(mappingAction);
+				if (result == null) result = caseOperationAction(mappingAction);
+				if (result == null) result = caseOperationRef(mappingAction);
+				if (result == null) result = caseActionNode(mappingAction);
+				if (result == null) result = caseCS2ASAnalysisNode(mappingAction);
+				if (result == null) result = caseNode(mappingAction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CS2ASAnalysisPackage.ENVIRONMENT_ACTION: {
+				EnvironmentAction environmentAction = (EnvironmentAction)theEObject;
+				T result = caseEnvironmentAction(environmentAction);
+				if (result == null) result = caseExtendedOperationRef(environmentAction);
+				if (result == null) result = caseActionNode(environmentAction);
+				if (result == null) result = caseOperationRef(environmentAction);
+				if (result == null) result = caseCS2ASAnalysisNode(environmentAction);
+				if (result == null) result = caseNode(environmentAction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -354,6 +408,21 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extended Operation Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extended Operation Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtendedOperationRef(ExtendedOperationRef object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Property Ref</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -365,6 +434,21 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePropertyRef(PropertyRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extended Property Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extended Property Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtendedPropertyRef(ExtendedPropertyRef object) {
 		return null;
 	}
 
@@ -500,6 +584,51 @@ public class CS2ASAnalysisSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePropertyCallExpInfo(PropertyCallExpInfo object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Environment Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Environment Info</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnvironmentInfo(EnvironmentInfo object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mapping Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mapping Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMappingAction(MappingAction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Environment Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Environment Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnvironmentAction(EnvironmentAction object) {
 		return null;
 	}
 

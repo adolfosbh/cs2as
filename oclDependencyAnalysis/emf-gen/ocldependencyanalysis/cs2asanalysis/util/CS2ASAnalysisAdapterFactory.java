@@ -95,8 +95,16 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 				return createOperationRefAdapter();
 			}
 			@Override
+			public Adapter caseExtendedOperationRef(ExtendedOperationRef object) {
+				return createExtendedOperationRefAdapter();
+			}
+			@Override
 			public Adapter casePropertyRef(PropertyRef object) {
 				return createPropertyRefAdapter();
+			}
+			@Override
+			public Adapter caseExtendedPropertyRef(ExtendedPropertyRef object) {
+				return createExtendedPropertyRefAdapter();
 			}
 			@Override
 			public Adapter caseClassRef(ClassRef object) {
@@ -133,6 +141,18 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePropertyCallExpInfo(PropertyCallExpInfo object) {
 				return createPropertyCallExpInfoAdapter();
+			}
+			@Override
+			public Adapter caseEnvironmentInfo(EnvironmentInfo object) {
+				return createEnvironmentInfoAdapter();
+			}
+			@Override
+			public Adapter caseMappingAction(MappingAction object) {
+				return createMappingActionAdapter();
+			}
+			@Override
+			public Adapter caseEnvironmentAction(EnvironmentAction object) {
+				return createEnvironmentActionAdapter();
 			}
 			@Override
 			public Adapter caseNode(Node object) {
@@ -293,6 +313,20 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.ExtendedOperationRef <em>Extended Operation Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ocldependencyanalysis.cs2asanalysis.ExtendedOperationRef
+	 * @generated
+	 */
+	public Adapter createExtendedOperationRefAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.PropertyRef <em>Property Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -303,6 +337,20 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPropertyRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.ExtendedPropertyRef <em>Extended Property Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ocldependencyanalysis.cs2asanalysis.ExtendedPropertyRef
+	 * @generated
+	 */
+	public Adapter createExtendedPropertyRefAdapter() {
 		return null;
 	}
 
@@ -429,6 +477,48 @@ public class CS2ASAnalysisAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPropertyCallExpInfoAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.EnvironmentInfo <em>Environment Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ocldependencyanalysis.cs2asanalysis.EnvironmentInfo
+	 * @generated
+	 */
+	public Adapter createEnvironmentInfoAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.MappingAction <em>Mapping Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ocldependencyanalysis.cs2asanalysis.MappingAction
+	 * @generated
+	 */
+	public Adapter createMappingActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ocldependencyanalysis.cs2asanalysis.EnvironmentAction <em>Environment Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ocldependencyanalysis.cs2asanalysis.EnvironmentAction
+	 * @generated
+	 */
+	public Adapter createEnvironmentActionAdapter() {
 		return null;
 	}
 

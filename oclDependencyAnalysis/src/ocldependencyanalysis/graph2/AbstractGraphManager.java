@@ -9,6 +9,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public abstract class AbstractGraphManager {
 	
@@ -92,6 +93,18 @@ public abstract class AbstractGraphManager {
 	public EList<Edge> getIncoming(Node node) {
 		Node gNode = createdNodes.get(node.toString());
 		return gNode == null ? node.getIncoming() : gNode.getIncoming();
+	}
+	
+	public void removeNode(Node node) {
+		EcoreUtil.remove(node);
+		for (Edge edge : node.getOutgoing()) {
+			edge.setTo(null);
+			EcoreUtil.remove(edge);
+		}
+		for (Edge edge : node.getIncoming()) {
+			edge.setFrom(null);
+			EcoreUtil.remove(edge);
+		}	
 	}
 	
 	public void invertEdge(Edge edge) {

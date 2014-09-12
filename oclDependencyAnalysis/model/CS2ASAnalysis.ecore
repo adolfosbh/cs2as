@@ -9,7 +9,8 @@
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
         eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Class"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="referredElement" eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Element"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associatedPackage" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Package"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CS2ASAnalysisEdge" eSuperTypes="graph.ecore#//Edge"/>
   <eClassifiers xsi:type="ecore:EClass" name="CS2ASAnalysisGraph" eSuperTypes="graph.ecore#//Graph"/>
@@ -19,9 +20,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
         eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Operation"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedOperationRef" abstract="true"
+      eSuperTypes="#//OperationRef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="OperationClass" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Class"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyRef" abstract="true" eSuperTypes="#//CS2ASAnalysisNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
         eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Property"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedPropertyRef" abstract="true"
+      eSuperTypes="#//PropertyRef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyClass" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Class"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassRef" abstract="true" eSuperTypes="#//CS2ASAnalysisNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Class"/>
@@ -45,13 +56,15 @@
         defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorPartPropertyInfo" eSuperTypes="#//ExtendedPropertyInfo #//ConstructorPartPropRef"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ExtendedPropertyInfo" eSuperTypes="#//PropertyRef #//InfoNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyClass" lowerBound="1"
-        eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Class"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OperationAction" eSuperTypes="#//OperationRef #//ActionNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedPropertyInfo" eSuperTypes="#//ExtendedPropertyRef #//InfoNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationAction" abstract="true" eSuperTypes="#//OperationRef #//ActionNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyCallExpInfo" eSuperTypes="#//ExtendedPropertyInfo">
     <eStructuralFeatures xsi:type="ecore:EReference" name="propertyCallExp" lowerBound="1"
         eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//PropertyCallExp"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvironmentInfo" eSuperTypes="#//ExtendedOperationRef #//InfoNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lookupClass" eType="ecore:EClass ../../org.eclipse.ocl.examples.pivot/model/Pivot.ecore#//Class"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingAction" eSuperTypes="#//OperationAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvironmentAction" eSuperTypes="#//ExtendedOperationRef #//ActionNode"/>
 </ecore:EPackage>

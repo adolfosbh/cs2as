@@ -23,10 +23,7 @@ public class ToStringSwitch extends CS2ASAnalysisSwitch<String> {
 		Operation operation = getContainingOperation(constructorPart);
 		return object.getContext().getName() + "_" + operation.getName() +"_" 
 			  + (constructorExp.getPart().indexOf(constructorPart)+1)
-			  + "_" + constructorExp.getType().getName();				
-//		Property prop = constructorPart.getReferredProperty();
-//		ConstructorExp constructorExp = (ConstructorExp) constructorPart.eContainer();
-//		return constructorExp.getType().getName() + "::" + prop.getName() + " (" + getContext().getName() + ")";
+			  + "_" + constructorExp.getType().getName();
 	}
 	
 	@Override
@@ -36,9 +33,14 @@ public class ToStringSwitch extends CS2ASAnalysisSwitch<String> {
 	}
 	
 	@Override
-	public String caseOperationAction(OperationAction object) {
+	public String caseMappingAction(MappingAction object) {
 		Operation operation = object.getOperation();
 		return operation.getOwningClass().getName() + "_" + operation.getName() + "_0";
+	}
+
+	@Override
+	public String caseEnvironmentAction(EnvironmentAction object) {		
+		return object.getOperationClass().getName() + object.getOperation().getName();
 	}
 	
 	@Override
@@ -54,6 +56,11 @@ public class ToStringSwitch extends CS2ASAnalysisSwitch<String> {
 	@Override
 	public String casePropertyCallExpInfo(PropertyCallExpInfo object) {
 		return caseExtendedPropertyInfo(object);
+	}
+	
+	@Override
+	public String caseEnvironmentInfo(EnvironmentInfo object) {
+		return object.getOperationClass().getName() + "::env_" + object.getLookupClass().getName();
 	}
 	
 	// FIXME refactor

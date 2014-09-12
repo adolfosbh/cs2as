@@ -3,19 +3,16 @@
 package ocldependencyanalysis.cs2asanalysis.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode;
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.ToStringSwitch;
 import ocldependencyanalysis.graph2.impl.NodeImpl;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.ocl.examples.pivot.Element;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +22,7 @@ import org.eclipse.ocl.examples.pivot.Element;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisNodeImpl#getContext <em>Context</em>}</li>
- *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisNodeImpl#getReferredElement <em>Referred Element</em>}</li>
+ *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisNodeImpl#getAssociatedPackage <em>Associated Package</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,14 +40,14 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	protected org.eclipse.ocl.examples.pivot.Class context;
 
 	/**
-	 * The cached value of the '{@link #getReferredElement() <em>Referred Element</em>}' reference.
+	 * The cached value of the '{@link #getAssociatedPackage() <em>Associated Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReferredElement()
+	 * @see #getAssociatedPackage()
 	 * @generated
 	 * @ordered
 	 */
-	protected Element referredElement;
+	protected org.eclipse.ocl.examples.pivot.Package associatedPackage;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,16 +111,16 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Element getReferredElement() {
-		if (referredElement != null && ((EObject)referredElement).eIsProxy()) {
-			InternalEObject oldReferredElement = (InternalEObject)referredElement;
-			referredElement = (Element)eResolveProxy(oldReferredElement);
-			if (referredElement != oldReferredElement) {
+	public org.eclipse.ocl.examples.pivot.Package getAssociatedPackage() {
+		if (associatedPackage != null && ((EObject)associatedPackage).eIsProxy()) {
+			InternalEObject oldAssociatedPackage = (InternalEObject)associatedPackage;
+			associatedPackage = (org.eclipse.ocl.examples.pivot.Package)eResolveProxy(oldAssociatedPackage);
+			if (associatedPackage != oldAssociatedPackage) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT, oldReferredElement, referredElement));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__ASSOCIATED_PACKAGE, oldAssociatedPackage, associatedPackage));
 			}
 		}
-		return referredElement;
+		return associatedPackage;
 	}
 
 	/**
@@ -131,8 +128,8 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Element basicGetReferredElement() {
-		return referredElement;
+	public org.eclipse.ocl.examples.pivot.Package basicGetAssociatedPackage() {
+		return associatedPackage;
 	}
 
 	/**
@@ -140,11 +137,11 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReferredElement(Element newReferredElement) {
-		Element oldReferredElement = referredElement;
-		referredElement = newReferredElement;
+	public void setAssociatedPackage(org.eclipse.ocl.examples.pivot.Package newAssociatedPackage) {
+		org.eclipse.ocl.examples.pivot.Package oldAssociatedPackage = associatedPackage;
+		associatedPackage = newAssociatedPackage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT, oldReferredElement, referredElement));
+			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__ASSOCIATED_PACKAGE, oldAssociatedPackage, associatedPackage));
 	}
 
 	/**
@@ -167,9 +164,9 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT:
 				if (resolve) return getContext();
 				return basicGetContext();
-			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT:
-				if (resolve) return getReferredElement();
-				return basicGetReferredElement();
+			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__ASSOCIATED_PACKAGE:
+				if (resolve) return getAssociatedPackage();
+				return basicGetAssociatedPackage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,8 +182,8 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT:
 				setContext((org.eclipse.ocl.examples.pivot.Class)newValue);
 				return;
-			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT:
-				setReferredElement((Element)newValue);
+			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__ASSOCIATED_PACKAGE:
+				setAssociatedPackage((org.eclipse.ocl.examples.pivot.Package)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -203,8 +200,8 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT:
 				setContext((org.eclipse.ocl.examples.pivot.Class)null);
 				return;
-			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT:
-				setReferredElement((Element)null);
+			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__ASSOCIATED_PACKAGE:
+				setAssociatedPackage((org.eclipse.ocl.examples.pivot.Package)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -220,8 +217,8 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT:
 				return context != null;
-			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__REFERRED_ELEMENT:
-				return referredElement != null;
+			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__ASSOCIATED_PACKAGE:
+				return associatedPackage != null;
 		}
 		return super.eIsSet(featureID);
 	}

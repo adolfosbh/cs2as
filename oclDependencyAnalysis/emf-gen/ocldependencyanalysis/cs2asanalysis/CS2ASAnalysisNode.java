@@ -3,7 +3,6 @@
 package ocldependencyanalysis.cs2asanalysis;
 
 import ocldependencyanalysis.graph2.Node;
-import org.eclipse.ocl.examples.pivot.Element;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +13,7 @@ import org.eclipse.ocl.examples.pivot.Element;
  * The following features are supported:
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#getContext <em>Context</em>}</li>
- *   <li>{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#getReferredElement <em>Referred Element</em>}</li>
+ *   <li>{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#getAssociatedPackage <em>Associated Package</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,30 +49,30 @@ public interface CS2ASAnalysisNode extends Node {
 	void setContext(org.eclipse.ocl.examples.pivot.Class value);
 
 	/**
-	 * Returns the value of the '<em><b>Referred Element</b></em>' reference.
+	 * Returns the value of the '<em><b>Associated Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Referred Element</em>' reference isn't clear,
+	 * If the meaning of the '<em>Associated Package</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Referred Element</em>' reference.
-	 * @see #setReferredElement(Element)
-	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getCS2ASAnalysisNode_ReferredElement()
-	 * @model
+	 * @return the value of the '<em>Associated Package</em>' reference.
+	 * @see #setAssociatedPackage(org.eclipse.ocl.examples.pivot.Package)
+	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getCS2ASAnalysisNode_AssociatedPackage()
+	 * @model required="true"
 	 * @generated
 	 */
-	Element getReferredElement();
+	org.eclipse.ocl.examples.pivot.Package getAssociatedPackage();
 
 	/**
-	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#getReferredElement <em>Referred Element</em>}' reference.
+	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#getAssociatedPackage <em>Associated Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Referred Element</em>' reference.
-	 * @see #getReferredElement()
+	 * @param value the new value of the '<em>Associated Package</em>' reference.
+	 * @see #getAssociatedPackage()
 	 * @generated
 	 */
-	void setReferredElement(Element value);
+	void setAssociatedPackage(org.eclipse.ocl.examples.pivot.Package value);
 
 	/**
 	 * <!-- begin-user-doc -->

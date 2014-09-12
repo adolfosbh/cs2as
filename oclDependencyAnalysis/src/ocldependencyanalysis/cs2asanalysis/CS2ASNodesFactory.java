@@ -16,7 +16,7 @@ public class CS2ASNodesFactory {
 		action.setContext(context);
 		action.setConstructorPart(cPart);
 		action.setProperty(cPart.getReferredProperty());
-		action.setReferredElement(cPart.getReferredProperty());
+		action.setAssociatedPackage(((ConstructorExp)cPart.eContainer()).getType().getOwningPackage());
 		return action;
 	}
 	
@@ -26,7 +26,7 @@ public class CS2ASNodesFactory {
 		propInfo.setConstructorPart(cPart);
 		propInfo.setProperty(cPart.getReferredProperty());
 		propInfo.setPropertyClass(((ConstructorExp)cPart.eContainer()).getType());
-		propInfo.setReferredElement(cPart.getReferredProperty());
+		propInfo.setAssociatedPackage(((ConstructorExp)cPart.eContainer()).getType().getOwningPackage());
 		return propInfo;
 	}
 	
@@ -35,7 +35,7 @@ public class CS2ASNodesFactory {
 		typeInfo.setContext(context);
 		typeInfo.setConstructorExp(cExp);
 		typeInfo.setClass(cExp.getType());
-		typeInfo.setReferredElement(cExp.getType());
+		typeInfo.setAssociatedPackage(cExp.getType().getOwningPackage());
 		return typeInfo;
 	}
 	
@@ -43,7 +43,7 @@ public class CS2ASNodesFactory {
 		ClassInfo typeInfo = CS2ASAnalysisFactory.eINSTANCE.createClassInfo();
 		typeInfo.setContext(context);
 		typeInfo.setClass(aClass);
-		typeInfo.setReferredElement(aClass);
+		typeInfo.setAssociatedPackage(aClass.getOwningPackage());
 		return typeInfo;
 	}
 	
@@ -53,15 +53,24 @@ public class CS2ASNodesFactory {
 		pceInfo.setPropertyCallExp(propCallExp);
 		pceInfo.setProperty(propCallExp.getReferredProperty());
 		pceInfo.setPropertyClass(propCallExp.getSource().getType().isClass());
-		pceInfo.setReferredElement(propCallExp.getReferredProperty());
+		pceInfo.setAssociatedPackage(propCallExp.getSource().getType().isClass().getOwningPackage());
 		return pceInfo;
 	}
 	
-	public OperationAction createOperationAction(Class context, Operation op) {
-		OperationAction opAction = CS2ASAnalysisFactory.eINSTANCE.createOperationAction();
+	public MappingAction createMappingAction(Class context, Operation op) {
+		MappingAction opAction = CS2ASAnalysisFactory.eINSTANCE.createMappingAction();
 		opAction.setContext(context);
 		opAction.setOperation(op);
-		opAction.setReferredElement(op);
+		opAction.setAssociatedPackage(op.getOwningClass().getOwningPackage());
+		return opAction;
+	}
+	
+	public EnvironmentAction createEnvironmentAction(Class context, Class opClass, Operation op) {
+		EnvironmentAction opAction = CS2ASAnalysisFactory.eINSTANCE.createEnvironmentAction();
+		opAction.setContext(context);
+		opAction.setOperationClass(opClass);
+		opAction.setOperation(op);
+		opAction.setAssociatedPackage(opClass.getOwningPackage());
 		return opAction;
 	}
 	
@@ -71,8 +80,18 @@ public class CS2ASNodesFactory {
 		propInfo.setContext(context);
 		propInfo.setProperty(property);
 		propInfo.setPropertyClass(propClass);
-		propInfo.setReferredElement(property);
+		propInfo.setAssociatedPackage(propClass.getOwningPackage());
 		return propInfo;
+	}
+	
+	public EnvironmentInfo createEnvironmentInfo(Class context, Class lookupClass, Class opClass, Operation op) {
+		EnvironmentInfo envInfo = CS2ASAnalysisFactory.eINSTANCE.createEnvironmentInfo();		
+		envInfo.setContext(context);
+		envInfo.setLookupClass(lookupClass);
+		envInfo.setOperation(op);
+		envInfo.setOperationClass(opClass);
+		envInfo.setAssociatedPackage(lookupClass.getOwningPackage());
+		return envInfo;
 	}
 
 }
