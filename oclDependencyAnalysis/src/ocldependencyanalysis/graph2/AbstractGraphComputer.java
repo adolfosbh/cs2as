@@ -8,10 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import ocldependencyanalysis.graph2.Graph;
-import ocldependencyanalysis.graph2.GraphFactory;
-
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.examples.domain.elements.DomainOperation;
@@ -64,12 +60,8 @@ public abstract class AbstractGraphComputer {
 	}
 	
 	private Map<Class, Set<Class>> class2superClasses = new HashMap<Class, Set<Class>>();
-	
-	private Map<Class, Set<Class>> class2instantiableSubClasses = new HashMap<Class, Set<Class>>();
-	
+		
 	private Map<Class, Set<Class>> class2directSubClasses = new HashMap<Class, Set<Class>>();
-	
-	private Map<Class, Set<Class>> asClass2csClasses = new HashMap<Class, Set<Class>>();
 	
 	private Map<Class, Set<ContainerClass>> class2containerClasses = new HashMap<Class, Set<ContainerClass>>();
 	
@@ -82,10 +74,8 @@ public abstract class AbstractGraphComputer {
 		for (Package aPackage : getPackageInvolvedInOCLDoc(resource)) {
 			Package primPckg = (Package)mManager.getPrimaryPackage(aPackage);
 			computeClass2SuperClasses(primPckg);
-			computeAsClass2CsClass(primPckg);			
 		}
 		for (Class type : class2superClasses.keySet()) {
-			computeClass2InstantiableClasses(type);
 			computeClass2DirectSubClasses(type);
 			computeClass2ContainerClasses(type);
 		}
@@ -117,43 +107,6 @@ public abstract class AbstractGraphComputer {
 			result.addAll(computeClass2SuperClasses(superClass));
 		}
 		return result;
-	}
-	
-	private void computeClass2InstantiableClasses(Class type) {
-		
-		if (type instanceof Class
-			&& !((Class) type).isAbstract()) {
-			Class subClass = (Class) type; 
-			for (Class superClass : class2superClasses.get(type)) {
-				Set<Class> subClasses = class2instantiableSubClasses.get(superClass);
-				if (subClasses == null) {
-					subClasses = new HashSet<Class>();
-					class2instantiableSubClasses.put(superClass, subClasses);
-				}
-				subClasses.add(subClass);
-			}
-		}
-	}
-	
-	private void computeAsClass2CsClass(Package p) {
-		for (Class type : p.getOwnedClasses()) {
-			Operation astOp = getAstOperation(type);
-			if (astOp != null) {
-				for (TreeIterator<EObject> tit = astOp.eAllContents(); tit.hasNext();) {
-					EObject next = tit.next();
-					if (next instanceof ConstructorExp) {					
-						Class asClass = ((ConstructorExp)next).getType();
-						Set<Class> csClasses = asClass2csClasses.get(asClass);
-						if (csClasses == null) {
-							csClasses = new HashSet<Class>();
-							asClass2csClasses.put(asClass, csClasses);
-						}
-						csClasses.add(type);
-						tit.prune(); // Don't need to explore children
-					}
-				}	
-			}
-		}
 	}
 	
 	private void computeClass2DirectSubClasses(Class aClass) {
@@ -235,11 +188,6 @@ public abstract class AbstractGraphComputer {
 		}
 		return result;
 	}
-	
-	protected Set<Class> getInstantiableSubClasses(Class type) {
-		Class primaryClass = mManager.getPrimaryType(type);
-		return class2instantiableSubClasses.get(primaryClass);
-	}
 
 	protected boolean typeIsSupertypeOf(Class t1, Class t2) {
 		Type primaryT1 = mManager.getPrimaryType(t1);
@@ -250,14 +198,6 @@ public abstract class AbstractGraphComputer {
 	protected Set<Class> getDirectSubClasses(Class type) {
 		Type primaryType = mManager.getPrimaryType(type);
 		return class2directSubClasses.get(primaryType);
-	}
-	/**
-	 * @param asClass
-	 * @return all the CS types which may create the provided AS type
-	 */
-	protected Set<Class> getCSClasses(Class asClass) {
-		Type asPrimaryType = mManager.getPrimaryType(asClass);
-		return asClass2csClasses.get(asPrimaryType);
 	}
 	
 	protected Set<ContainerClass> getContainerClasses(Class aClass) {

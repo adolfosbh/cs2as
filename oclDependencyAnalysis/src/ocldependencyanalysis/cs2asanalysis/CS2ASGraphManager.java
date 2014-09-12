@@ -6,7 +6,6 @@ import ocldependencyanalysis.graph2.Graph;
 
 public class CS2ASGraphManager extends AbstractGraphManager {
 	
-	
 	public CS2ASGraphManager(Graph graph) {
 		super(graph);
 	}
@@ -15,7 +14,4 @@ public class CS2ASGraphManager extends AbstractGraphManager {
 	protected Edge createEdge() {		
 		return CS2ASAnalysisFactory.eINSTANCE.createCS2ASAnalysisEdge();
 	}
-
-	
-	
 }
