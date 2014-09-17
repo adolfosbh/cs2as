@@ -54,5 +54,13 @@ def : _env_Package(child : ocl::OclElement) : env::Environment =
 	parentEnv().nestedEnv().
 		addElements(self.ownedPackages)
 		
+context Root
+def : _env(child : ocl::OclElement) : env::Environment =
+	_env_Package(child)
+
+def : _env_Package(child : ocl::OclElement) : env::Environment =
+	parentEnv().nestedEnv().
+		addElements(self.ownedPackages)
+
 endpackage
 

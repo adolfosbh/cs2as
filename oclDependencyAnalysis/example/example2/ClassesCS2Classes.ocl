@@ -1,5 +1,5 @@
-import 'Classes.ecore'
 import 'ClassesCS.ecore'
+import 'Classes.ecore'
 import 'ClassesLookup.ocl'
 
 package classescs
