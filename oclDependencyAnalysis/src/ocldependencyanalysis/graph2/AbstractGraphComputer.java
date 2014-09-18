@@ -178,7 +178,7 @@ public abstract class AbstractGraphComputer {
 					oclRoots.add((Root)root);
 				}
 			}
-		}		
+		}
 		
 		List<Package> result = new ArrayList<Package>();
 		for (Root root : oclRoots) {
@@ -353,6 +353,12 @@ public abstract class AbstractGraphComputer {
 		return false;
 	}
 	
+	protected boolean isEnvOp(Operation op) {
+		if (op == null) return false;
+		String opName = op.getName();
+		return opName == null ? false : opName.contains("_env");
+	}
+	
 	protected boolean isParentEnvCall(EObject element) {
 		if (isOperationCallExp(element)) {
 			return isParenEnvOp(((OperationCallExp)element).getReferredOperation());
@@ -365,13 +371,22 @@ public abstract class AbstractGraphComputer {
 		String opName = op.getName();
 		return opName == null ? false : opName.equals("parentEnv") && op.getOwnedParameter().isEmpty();
 	}
-
-
-	protected boolean isEnvOp(Operation op) {
+	
+	protected boolean isOclContainerCall(EObject element) {
+		if (isOperationCallExp(element)) {
+			return isOclContainerOp(((OperationCallExp)element).getReferredOperation());
+		}
+		return false;
+	}
+	
+	protected boolean isOclContainerOp(Operation op) {
 		if (op == null) return false;
 		String opName = op.getName();
-		return opName == null ? false : opName.contains("_env");
+		return opName == null ? false : opName.equals("oclContainer") && op.getOwnedParameter().isEmpty();
 	}
+
+
+
 	
 	protected Class getEnvLookupClass(Operation op) {
 		String envMark = "_env_";
