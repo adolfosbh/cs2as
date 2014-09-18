@@ -4,6 +4,12 @@ import 'KiamaAS.ecore'
 
 package kiamacs
 
+context TopCS
+def : ast() : kiamaas::Top =
+	kiamaas::Top {
+		node = node.ast()
+	}
+	
 context NodeCS
 def : ast() : kiamaas::Node =
 	invalid -- to be overriden
