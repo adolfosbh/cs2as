@@ -9,7 +9,8 @@ def: parentEnv() : env::Environment =
 	let parent = oclContainer() in if parent = null then env::Environment { } else parent._env(self) endif
 
 def : _env(child : OclElement) : env::Environment =
-	_env_Class(child)
+	_env_Class(child).mergeEnv(
+	_env_Package(child))
 
 def : _env_Class(child : OclElement) : env::Environment =
 	parentEnv()
