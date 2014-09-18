@@ -21,7 +21,8 @@ def : ast() : kiamaas::Plus =
 		right = right.ast(),
 		deep = let container = ast().oclContainer() in 
 				if container.oclIsKindOf(kiamaas::Node)  then container.oclAsType(kiamaas::Node).deep + 1 else 0 endif,
-		height = ast().left.height->including(ast().right.height)->max() + 1    
+		height = ast().left.height->including(ast().right.height)->max() + 1
+		--height = left.ast().height->including(right.ast().height)->max() + 1    
 	}
 
 context NumCS
@@ -31,7 +32,6 @@ def : ast() : kiamaas::Num =
 		deep = let container = ast().oclContainer() in 
 				if container.oclIsKindOf(kiamaas::Node)  then container.oclAsType(kiamaas::Node).deep + 1 else 0 endif,
 		height = 0
-		
 	}
 	
 endpackage

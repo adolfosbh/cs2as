@@ -24,6 +24,7 @@ import org.eclipse.ocl.examples.pivot.Property;
 import org.eclipse.ocl.examples.pivot.PropertyCallExp;
 import org.eclipse.ocl.examples.pivot.Root;
 import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.examples.pivot.TypedElement;
 import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
 
 /**
@@ -77,6 +78,9 @@ public abstract class AbstractGraphComputer {
 		}
 		for (Class type : class2superClasses.keySet()) {
 			computeClass2DirectSubClasses(type);
+		}
+
+		for (Class type : class2superClasses.keySet()) { // subtypes need to be previously computed
 			computeClass2ContainerClasses(type);
 		}
 	}
@@ -94,6 +98,7 @@ public abstract class AbstractGraphComputer {
 	
 	private Set<Class> computeClass2SuperClasses(Class aClass) {
 		
+		//aClass = mManager.getPrimaryType(aClass);
 		Set<Class> result = class2superClasses.get(aClass);
 		if (result != null) {
 			return result;
@@ -103,6 +108,7 @@ public abstract class AbstractGraphComputer {
 		}
 		
 		for (Class superClass : aClass.getSuperClasses()) {
+			//superClass = mManager.getPrimaryType(superClass);
 			result.add(superClass);
 			result.addAll(computeClass2SuperClasses(superClass));
 		}
@@ -112,6 +118,7 @@ public abstract class AbstractGraphComputer {
 	private void computeClass2DirectSubClasses(Class aClass) {
 			 
 		for (Class superClass : aClass.getSuperClasses()) {
+			//superClass = mManager.getPrimaryType(superClass);
 			Set<Class> subClass = class2directSubClasses.get(superClass);
 			if (subClass == null) {
 				subClass = new HashSet<Class>();
@@ -124,11 +131,7 @@ public abstract class AbstractGraphComputer {
 	private void computeClass2ContainerClasses(Class aClass) {
 		 
 		for (Property property : aClass.getOwnedProperties()) {
-			Type propType = property.getType();
-			if (propType instanceof CollectionType) {
-				propType = ((CollectionType) propType).getElementType();
-			}			
-			
+			Type propType = getType(property);
 			if (property.isComposite() && propType instanceof Class) {
 				addContainerClassForTypeAndSubtypes(aClass, property, propType.isClass());
 			}
@@ -137,6 +140,7 @@ public abstract class AbstractGraphComputer {
 	
 	private void addContainerClassForTypeAndSubtypes(Class containerClass, Property containmentProperty, Class type) {
 		
+		//type = mManager.getPrimaryType(type);
 		Set<ContainerClass> containerClasses = class2containerClasses.get(type);
 		if (containerClasses == null) {
 			containerClasses = new HashSet<ContainerClass>();
@@ -147,10 +151,18 @@ public abstract class AbstractGraphComputer {
 		
 		Set<Class> subTypes = getDirectSubClasses(type);
 		if (subTypes != null) {
-			for (Class subType : class2directSubClasses.get(type)) {
+			for (Class subType : subTypes) {
 				addContainerClassForTypeAndSubtypes(containerClass, containmentProperty, subType);
 			}	
 		}
+	}
+	
+	protected Type getType(TypedElement typedElement) {
+		Type type = typedElement.getType();
+		if (type instanceof CollectionType) {
+			type = ((CollectionType) type).getElementType();
+		}
+		return type;
 	}
 	
 	protected List<Class> getUserClassesInvolvedInOCLDocPackages(Resource oclResource) {
@@ -197,7 +209,8 @@ public abstract class AbstractGraphComputer {
 	
 	protected Set<Class> getDirectSubClasses(Class type) {
 		Type primaryType = mManager.getPrimaryType(type);
-		return class2directSubClasses.get(primaryType);
+		Set<Class> directSubClasses = class2directSubClasses.get(primaryType);
+		return directSubClasses == null ? Collections.<Class>emptySet() : directSubClasses;
 	}
 	
 	protected Set<ContainerClass> getContainerClasses(Class aClass) {
