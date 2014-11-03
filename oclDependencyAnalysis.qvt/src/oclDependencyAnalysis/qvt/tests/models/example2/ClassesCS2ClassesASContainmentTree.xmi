@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eCoreContainemntTree="http://www.eclipse.org/qvt/examples/0.1/ECoreContainemntTree">
+  <eCoreContainemntTree:Node EClassName="cCS2cAS" children="/1 /2 /3"/>
+  <eCoreContainemntTree:Node EClassName="RootCS2RootAS" parent="/0"/>
+  <eCoreContainemntTree:Node EClassName="ClassCS2ClassAS" parent="/0"/>
+  <eCoreContainemntTree:Node EClassName="PackageCS2PackageAS" parent="/0"/>
+</xmi:XMI>

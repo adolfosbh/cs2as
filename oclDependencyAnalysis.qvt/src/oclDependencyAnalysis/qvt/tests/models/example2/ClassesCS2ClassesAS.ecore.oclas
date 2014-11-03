@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pivot:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pivot="http://www.eclipse.org/ocl/3.1.0/Pivot" xsi:schemaLocation="http://www.eclipse.org/ocl/3.1.0/Pivot java://org.eclipse.ocl.examples.pivot.PivotPackage"
+    name="ClassesCS2ClassesAS.ecore.oclas" externalURI="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS2ClassesAS.ecore.oclas">
+  <nestedPackage xmi:id="P.cCS2cAS" name="cCS2cAS" nsPrefix="cCS2cAS" nsURI="http://classesCs2classesAS">
+    <ownedType xsi:type="pivot:Class" xmi:id="T.cCS2cAS.RootCS2RootAS" name="RootCS2RootAS"
+        superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
+      <ownedAttribute xmi:id="p.cCS2cAS.RootCS2RootAS.rootCS" name="rootCS" isRequired="false"
+          type="ClassesCS.ecore.oclas#T.classescs.RootCS" opposite="ClassesCS.ecore.oclas#p.classescs.RootCS.RootCS2RootAS"/>
+      <ownedAttribute xmi:id="p.cCS2cAS.RootCS2RootAS.rootAS" name="rootAS" isRequired="false"
+          type="Classes.ecore.oclas#T.classes.Root" opposite="Classes.ecore.oclas#p.classes.Root.RootCS2RootAS"/>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.cCS2cAS.ClassCS2ClassAS" name="ClassCS2ClassAS"
+        superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
+      <ownedAttribute xmi:id="p.cCS2cAS.ClassCS2ClassAS.classCS" name="classCS" isRequired="false"
+          type="ClassesCS.ecore.oclas#T.classescs.ClassCS" opposite="ClassesCS.ecore.oclas#p.classescs.ClassCS.ClassCS2ClassAS"/>
+      <ownedAttribute xmi:id="p.cCS2cAS.ClassCS2ClassAS.classAS" name="classAS" isRequired="false"
+          type="Classes.ecore.oclas#T.classes.Class" opposite="Classes.ecore.oclas#p.classes.Class.ClassCS2ClassAS"/>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.cCS2cAS.PackageCS2PackageAS" name="PackageCS2PackageAS"
+        superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
+      <ownedAttribute xmi:id="p.cCS2cAS.PackageCS2PackageAS.packageCS" name="packageCS"
+          isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS" opposite="ClassesCS.ecore.oclas#p.classescs.PackageCS.PackageCS2PackageAS"/>
+      <ownedAttribute xmi:id="p.cCS2cAS.PackageCS2PackageAS.packageAS" name="packageAS"
+          isRequired="false" type="Classes.ecore.oclas#T.classes.Package" opposite="Classes.ecore.oclas#p.classes.Package.PackageCS2PackageAS"/>
+    </ownedType>
+  </nestedPackage>
+</pivot:Root>

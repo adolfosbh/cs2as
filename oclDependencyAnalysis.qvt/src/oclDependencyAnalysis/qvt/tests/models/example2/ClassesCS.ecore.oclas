@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pivot:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pivot="http://www.eclipse.org/ocl/3.1.0/Pivot" xsi:schemaLocation="http://www.eclipse.org/ocl/3.1.0/Pivot java://org.eclipse.ocl.examples.pivot.PivotPackage"
+    name="ClassesCS.ecore.oclas" externalURI="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS.ecore.oclas">
+  <nestedPackage xmi:id="P.classescs" name="classescs" nsPrefix="classescs" nsURI="http://ocldependencyanalysis/classescs/1.0">
+    <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.NamedElementCS" name="NamedElementCS"
+        superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement"
+        isAbstract="true">
+      <ownedAttribute xmi:id="p.classescs.NamedElementCS.name" name="name" isRequired="false"
+          type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"/>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.PackageCS" name="PackageCS"
+        superClass="#T.classescs.NamedElementCS">
+      <ownedAttribute xmi:id="p.classescs.PackageCS.ownedClasses" name="ownedClasses"
+          type="#//@nestedPackage.1/@ownedType.0" isComposite="true" opposite="#p.classescs.ClassCS.PackageCS"/>
+      <ownedAttribute xmi:id="p.classescs.PackageCS.RootCS" name="RootCS" type="#//@nestedPackage.1/@ownedType.1"
+          implicit="true" opposite="#p.classescs.RootCS.ownedPackages"/>
+      <ownedAttribute xmi:id="p.classescs.PackageCS.PackageCS2PackageAS" name="PackageCS2PackageAS"
+          type="#//@nestedPackage.1/@ownedType.2" implicit="true" opposite="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2PackageAS.packageCS"/>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.ClassCS" name="ClassCS"
+        superClass="#T.classescs.NamedElementCS">
+      <ownedAttribute xmi:id="p.classescs.ClassCS.extends" name="extends" isRequired="false"
+          type="#T.classescs.PathNameCS" isComposite="true" opposite="#p.classescs.PathNameCS.ClassCS"/>
+      <ownedAttribute xmi:id="p.classescs.ClassCS.PackageCS" name="PackageCS" isRequired="false"
+          type="#T.classescs.PackageCS" implicit="true" opposite="#p.classescs.PackageCS.ownedClasses"/>
+      <ownedAttribute xmi:id="p.classescs.ClassCS.ClassCS2ClassAS" name="ClassCS2ClassAS"
+          type="#//@nestedPackage.1/@ownedType.3" implicit="true" opposite="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.ClassCS2ClassAS.classCS"/>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.PathNameCS" name="PathNameCS"
+        superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
+      <ownedAttribute xmi:id="p.classescs.PathNameCS.path" name="path" type="#//@nestedPackage.1/@ownedType.4"
+          isComposite="true" opposite="#p.classescs.PathElementCS.PathNameCS"/>
+      <ownedAttribute xmi:id="p.classescs.PathNameCS.ClassCS" name="ClassCS" isRequired="false"
+          type="#T.classescs.ClassCS" implicit="true" opposite="#p.classescs.ClassCS.extends"/>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.PathElementCS" name="PathElementCS"
+        superClass="#T.classescs.NamedElementCS">
+      <ownedAttribute xmi:id="p.classescs.PathElementCS.PathNameCS" name="PathNameCS"
+          isRequired="false" type="#T.classescs.PathNameCS" implicit="true" opposite="#p.classescs.PathNameCS.path"/>
+    </ownedType>
+    <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.RootCS" name="RootCS" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
+      <ownedAttribute xmi:id="p.classescs.RootCS.ownedPackages" name="ownedPackages"
+          isRequired="false" type="#T.classescs.PackageCS" opposite="#p.classescs.PackageCS.RootCS"/>
+      <ownedAttribute xmi:id="p.classescs.RootCS.RootCS2RootAS" name="RootCS2RootAS"
+          type="#//@nestedPackage.1/@ownedType.5" implicit="true" opposite="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.RootCS2RootAS.rootCS"/>
+    </ownedType>
+  </nestedPackage>
+  <nestedPackage xmi:id="P.$$" name="$$" nsPrefix="orphanage" nsURI="http://www.eclipse.org/ocl/3.1.0/orphanage">
+    <ownedType xsi:type="pivot:OrderedSetType" name="OrderedSet" superClass="#//@nestedPackage.1/@ownedType.6 #//@nestedPackage.1/@ownedType.7"
+        elementType="#T.classescs.ClassCS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedSet">
+        <parameterSubstitution actual="#T.classescs.ClassCS" formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedSetT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:BagType" name="Bag" superClass="#//@nestedPackage.1/@ownedType.8"
+        elementType="#T.classescs.RootCS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
+        <parameterSubstitution actual="#T.classescs.RootCS" formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:BagType" name="Bag" superClass="#//@nestedPackage.1/@ownedType.9"
+        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
+        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:BagType" name="Bag" superClass="#//@nestedPackage.1/@ownedType.10"
+        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.ClassCS2ClassAS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
+        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.ClassCS2ClassAS"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:OrderedSetType" name="OrderedSet" superClass="#//@nestedPackage.1/@ownedType.11 #//@nestedPackage.1/@ownedType.12"
+        elementType="#T.classescs.PathElementCS" lower="1">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedSet">
+        <parameterSubstitution actual="#T.classescs.PathElementCS" formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedSetT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:BagType" name="Bag" superClass="#//@nestedPackage.1/@ownedType.13"
+        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
+        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="OrderedCollection" superClass="#//@nestedPackage.1/@ownedType.14"
+        elementType="#T.classescs.ClassCS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedCollection">
+        <parameterSubstitution actual="#T.classescs.ClassCS" formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="UniqueCollection" superClass="#//@nestedPackage.1/@ownedType.14"
+        elementType="#T.classescs.ClassCS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.UniqueCollection">
+        <parameterSubstitution actual="#T.classescs.ClassCS" formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..UniqueCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
+        elementType="#T.classescs.RootCS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
+        <parameterSubstitution actual="#T.classescs.RootCS" formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
+        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
+        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
+        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.ClassCS2ClassAS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
+        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.ClassCS2ClassAS"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="OrderedCollection" superClass="#//@nestedPackage.1/@ownedType.15"
+        elementType="#T.classescs.PathElementCS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedCollection">
+        <parameterSubstitution actual="#T.classescs.PathElementCS" formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="UniqueCollection" superClass="#//@nestedPackage.1/@ownedType.15"
+        elementType="#T.classescs.PathElementCS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.UniqueCollection">
+        <parameterSubstitution actual="#T.classescs.PathElementCS" formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..UniqueCollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
+        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
+        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
+        elementType="#T.classescs.ClassCS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
+        <parameterSubstitution actual="#T.classescs.ClassCS" formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
+        elementType="#T.classescs.PathElementCS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
+        <parameterSubstitution actual="#T.classescs.PathElementCS" formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
+      </templateBinding>
+    </ownedType>
+  </nestedPackage>
+</pivot:Root>

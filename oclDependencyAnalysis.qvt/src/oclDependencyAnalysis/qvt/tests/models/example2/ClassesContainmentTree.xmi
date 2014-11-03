@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eCoreContainemntTree="http://www.eclipse.org/qvt/examples/0.1/ECoreContainemntTree">
+  <eCoreContainemntTree:Node EClassName="classes" children="/1 /2 /3"/>
+  <eCoreContainemntTree:Node EClassName="Package" parent="/0 /1 /3" children="/2 /1">
+    <superTypes>NamedElement</superTypes>
+    <superTypes>Namespace</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node EClassName="Class" parent="/0 /1">
+    <superTypes>NamedElement</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node EClassName="Root" parent="/0" children="/1"/>
+</xmi:XMI>

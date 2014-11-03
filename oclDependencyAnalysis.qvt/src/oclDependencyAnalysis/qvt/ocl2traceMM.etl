@@ -1,0 +1,9 @@
+pre {
+	-- Ecore!EPackage
+}
+
+rule Constraint2EClass
+	transform s : OCL!Constraint
+	to t : Ecore!EClass {
+	
+}

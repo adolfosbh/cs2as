@@ -1,0 +1,73 @@
+import ClassesCS: 'ClassesCS.ecore'::classescs;
+import ClassesAS: 'Classes.ecore'::classes;
+import ClassesCS2ClassesAS: 'ClassesCS2ClassesAS.ecore'::cCS2cAS;
+
+transformation classesCS2classesAS {
+    cAS imports ClassesAS;
+    cCS imports ClassesCS;
+    middle imports ClassesCS2ClassesAS;    
+}
+
+map rootCS2rootAS_LM in classesCS2classesAS {
+    check cCS (rootCS: RootCS) {}    
+    enforce middle () {
+    	realize rootCS2rootAS:RootCS2RootAS
+    }
+    
+    where () {
+    	rootCS2rootAS.rootCS := rootCS;    	
+    }
+}
+
+map rootCS2rootAS_MR in classesCS2classesAS {
+	check middle(rootCS2rootAS : RootCS2RootAS){}
+	enforce cAS() {
+		realize rootAS: Root 
+	}
+	
+	where () {
+		rootCS2rootAS.rootAS := rootAS;
+	}
+}
+
+map packageCS2packageAS_LM in classesCS2classesAS {
+    check cCS (packageCS: PackageCS) {}    
+    enforce middle () {
+    	realize packageCS2packageAS:PackageCS2PackageAS
+    }
+    
+    where () {
+    	packageCS2packageAS.packageCS := packageCS;    	
+    }
+}
+
+map packageCS2packageAS_MR in classesCS2classesAS {
+	check middle(packageCS2packageAS : PackageCS2PackageAS) {}
+	enforce cAS() {
+		realize packageAS: Package 
+	}
+	
+	where () {
+		packageCS2packageAS.packageAS := packageAS;
+	}
+}
+
+map rootAS_ownedPackages in classesCS2classesAS {
+	check cAS(rootAS: Root, packageAS: Package) {}
+	check middle(rootCS2rootAS:RootCS2RootAS, packageCS2packageAS:PackageCS2PackageAS) {}
+	where (	rootCS2rootAS.rootAS = rootAS;
+			packageCS2packageAS.packageAS = packageAS;
+			rootCS2rootAS.rootCS.ownedPackages->includes(packageCS2packageAS.packageCS);
+	) {
+		rootAS.ownedPackages := rootAS.ownedPackages->including(packageAS);
+	}
+}
+
+map packageAS_name in classesCS2classesAS {
+	check cAS(packageAS: Package) {}
+	check middle(packageCS2packageAS:PackageCS2PackageAS) {}
+	where (packageCS2packageAS.packageAS = packageAS;)
+	{
+		packageAS.name := packageCS2packageAS.packageCS.name;
+	}
+}
