@@ -217,40 +217,6 @@
           <mappingStatements xsi:type="qvti:MappingLoop">
             <source xsi:type="pivot:OperationCallExp" type="#/0/@nestedPackage.1/@ownedType.1"
                 referredOperation="../../../../../../../org.eclipse.ocl.examples.library/model-gen/OCL-2.5.oclas#o.ocl.OclElement.allInstances">
-              <source xsi:type="pivot:TypeExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-                  referredType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
-            </source>
-            <body xsi:type="qvti:MappingSequence"/>
-            <iterator xmi:id="i.classesCS2classesAS.__root__.0.0.packageCS2packageAS"
-                name="packageCS2packageAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
-          </mappingStatements>
-          <mappingStatements xsi:type="qvti:MappingLoop">
-            <source xsi:type="pivot:OperationCallExp" type="#/0/@nestedPackage.1/@ownedType.1"
-                referredOperation="../../../../../../../org.eclipse.ocl.examples.library/model-gen/OCL-2.5.oclas#o.ocl.OclElement.allInstances">
-              <source xsi:type="pivot:TypeExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-                  referredType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
-            </source>
-            <body xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classesCS2classesAS.packageAS_name">
-                <binding boundVariable="#qV.classesCS2classesAS.packageAS_name.middle.guard.packageCS2packageAS">
-                  <value xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-                      referredVariable="#i.classesCS2classesAS.__root__.0.1.packageCS2packageAS"/>
-                </binding>
-                <binding boundVariable="#qV.classesCS2classesAS.packageAS_name.cAS.guard.packageAS">
-                  <value xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Package"
-                      referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2PackageAS.packageAS">
-                    <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-                        referredVariable="#qV.classesCS2classesAS.packageAS_name.middle.guard.packageCS2packageAS"/>
-                  </value>
-                </binding>
-              </mappingStatements>
-            </body>
-            <iterator xmi:id="i.classesCS2classesAS.__root__.0.1.packageCS2packageAS"
-                name="packageCS2packageAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
-          </mappingStatements>
-          <mappingStatements xsi:type="qvti:MappingLoop">
-            <source xsi:type="pivot:OperationCallExp" type="#/0/@nestedPackage.1/@ownedType.1"
-                referredOperation="../../../../../../../org.eclipse.ocl.examples.library/model-gen/OCL-2.5.oclas#o.ocl.OclElement.allInstances">
               <source xsi:type="pivot:TypeExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
                   referredType="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
             </source>
@@ -258,11 +224,11 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classesCS2classesAS.packageCS2packageAS_LM">
                 <binding boundVariable="#qV.classesCS2classesAS.packageCS2packageAS_LM.cCS.guard.packageCS">
                   <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                      referredVariable="#i.classesCS2classesAS.__root__.0.2.packageCS"/>
+                      referredVariable="#i.classesCS2classesAS.__root__.0.0.packageCS"/>
                 </binding>
               </mappingStatements>
             </body>
-            <iterator xmi:id="i.classesCS2classesAS.__root__.0.2.packageCS" name="packageCS"
+            <iterator xmi:id="i.classesCS2classesAS.__root__.0.0.packageCS" name="packageCS"
                 type="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
@@ -275,11 +241,11 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classesCS2classesAS.packageCS2packageAS_MR">
                 <binding boundVariable="#qV.classesCS2classesAS.packageCS2packageAS_MR.middle.guard.packageCS2packageAS">
                   <value xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-                      referredVariable="#i.classesCS2classesAS.__root__.0.3.packageCS2packageAS"/>
+                      referredVariable="#i.classesCS2classesAS.__root__.0.1.packageCS2packageAS"/>
                 </binding>
               </mappingStatements>
             </body>
-            <iterator xmi:id="i.classesCS2classesAS.__root__.0.3.packageCS2packageAS"
+            <iterator xmi:id="i.classesCS2classesAS.__root__.0.1.packageCS2packageAS"
                 name="packageCS2packageAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
@@ -292,11 +258,11 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classesCS2classesAS.rootCS2rootAS_LM">
                 <binding boundVariable="#qV.classesCS2classesAS.rootCS2rootAS_LM.cCS.guard.rootCS">
                   <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
-                      referredVariable="#i.classesCS2classesAS.__root__.0.4.rootCS"/>
+                      referredVariable="#i.classesCS2classesAS.__root__.0.2.rootCS"/>
                 </binding>
               </mappingStatements>
             </body>
-            <iterator xmi:id="i.classesCS2classesAS.__root__.0.4.rootCS" name="rootCS"
+            <iterator xmi:id="i.classesCS2classesAS.__root__.0.2.rootCS" name="rootCS"
                 type="ClassesCS.ecore.oclas#T.classescs.RootCS"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
@@ -309,12 +275,46 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classesCS2classesAS.rootCS2rootAS_MR">
                 <binding boundVariable="#qV.classesCS2classesAS.rootCS2rootAS_MR.middle.guard.rootCS2rootAS">
                   <value xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"
-                      referredVariable="#i.classesCS2classesAS.__root__.0.5.rootCS2rootAS"/>
+                      referredVariable="#i.classesCS2classesAS.__root__.0.3.rootCS2rootAS"/>
                 </binding>
               </mappingStatements>
             </body>
-            <iterator xmi:id="i.classesCS2classesAS.__root__.0.5.rootCS2rootAS" name="rootCS2rootAS"
+            <iterator xmi:id="i.classesCS2classesAS.__root__.0.3.rootCS2rootAS" name="rootCS2rootAS"
                 type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <source xsi:type="pivot:OperationCallExp" type="#/0/@nestedPackage.1/@ownedType.1"
+                referredOperation="../../../../../../../org.eclipse.ocl.examples.library/model-gen/OCL-2.5.oclas#o.ocl.OclElement.allInstances">
+              <source xsi:type="pivot:TypeExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
+                  referredType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
+            </source>
+            <body xsi:type="qvti:MappingSequence"/>
+            <iterator xmi:id="i.classesCS2classesAS.__root__.0.4.packageCS2packageAS"
+                name="packageCS2packageAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <source xsi:type="pivot:OperationCallExp" type="#/0/@nestedPackage.1/@ownedType.1"
+                referredOperation="../../../../../../../org.eclipse.ocl.examples.library/model-gen/OCL-2.5.oclas#o.ocl.OclElement.allInstances">
+              <source xsi:type="pivot:TypeExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
+                  referredType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
+            </source>
+            <body xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classesCS2classesAS.packageAS_name">
+                <binding boundVariable="#qV.classesCS2classesAS.packageAS_name.middle.guard.packageCS2packageAS">
+                  <value xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
+                      referredVariable="#i.classesCS2classesAS.__root__.0.5.packageCS2packageAS"/>
+                </binding>
+                <binding boundVariable="#qV.classesCS2classesAS.packageAS_name.cAS.guard.packageAS">
+                  <value xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Package"
+                      referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2PackageAS.packageAS">
+                    <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
+                        referredVariable="#qV.classesCS2classesAS.packageAS_name.middle.guard.packageCS2packageAS"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </body>
+            <iterator xmi:id="i.classesCS2classesAS.__root__.0.5.packageCS2packageAS"
+                name="packageCS2packageAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
           </mappingStatements>
         </mappingStatement>
       </rule>
@@ -387,7 +387,7 @@
         </binding>
         <binding boundVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.packageCS2packageAS">
           <value xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-              referredVariable="#i.classesCS2classesAS.__root__.0.0.packageCS2packageAS"/>
+              referredVariable="#i.classesCS2classesAS.__root__.0.4.packageCS2packageAS"/>
         </binding>
         <binding boundVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.cAS.guard.rootAS">
           <value xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Root"

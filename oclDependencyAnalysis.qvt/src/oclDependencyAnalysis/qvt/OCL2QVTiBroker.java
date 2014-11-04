@@ -17,11 +17,10 @@ public class OCL2QVTiBroker extends MtcBroker {
 	public void execute() throws QvtMtcExecutionException {
 		loadConfigurationModel();
 		loadOclStdLibModel();
-		// This could be run on editor saves by reading the imports!
-		createContainmentTrees();		
-		pModel = createModel(partitionUri, "QVTp", "QVT", QVTI_FULL_NS, true, false, true);
+		createContainmentTrees();
 		
-		sModel = qvtpToQvts(pModel);		
+		pModel = createModel(partitionUri, "QVTp", "QVT", QVTI_FULL_NS, true, false, true);		
+		sModel = qvtpToQvts(pModel);
 		qvtpScheduling(pModel, sModel);
 		iModel = qvtpQvtsToQvti(pModel, sModel);
 	}

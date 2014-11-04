@@ -56,7 +56,7 @@
     </distinctArguments>
     <mapping href="classescs2as.input.qvtp.qvtias#m.classesCS2classesAS.packageCS2packageAS_MR"/>
   </actions>
-  <actions xsi:type="qvtschedule:MappingAction" parent="//@actions.6">
+  <actions xsi:type="qvtschedule:MappingAction" order="5" parent="//@actions.6">
     <distinctArguments>
       <primaryArguments datum="//@datums.0">
         <variable href="classescs2as.input.qvtp.qvtias#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.rootCS2rootAS"/>
@@ -75,7 +75,7 @@
     </distinctArguments>
     <mapping href="classescs2as.input.qvtp.qvtias#m.classesCS2classesAS.rootAS_ownedPackages"/>
   </actions>
-  <actions xsi:type="qvtschedule:MappingAction" parent="//@actions.6">
+  <actions xsi:type="qvtschedule:MappingAction" order="6" parent="//@actions.6">
     <distinctArguments>
       <primaryArguments datum="//@datums.3">
         <variable href="classescs2as.input.qvtp.qvtias#qV.classesCS2classesAS.packageAS_name.middle.guard.packageCS2packageAS"/>
@@ -86,7 +86,7 @@
     </distinctArguments>
     <mapping href="classescs2as.input.qvtp.qvtias#m.classesCS2classesAS.packageAS_name"/>
   </actions>
-  <actions xsi:type="qvtschedule:MappingAction" children="//@actions.4 //@actions.5 //@actions.2 //@actions.3 //@actions.0 //@actions.1">
+  <actions xsi:type="qvtschedule:MappingAction" children="//@actions.2 //@actions.3 //@actions.0 //@actions.1 //@actions.4 //@actions.5">
     <mapping href="classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.6"/>
   </actions>
 </qvtschedule:Schedule>
