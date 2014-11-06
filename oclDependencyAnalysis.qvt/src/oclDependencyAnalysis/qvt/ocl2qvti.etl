@@ -1,0 +1,79 @@
+import 'ocl2qvtiUtils.eol';
+
+-- Transformation model parameters:
+--     OCL - A CompleteOCL document 
+--     QVTi - The output QVTi model
+rule ConstructorExp2Mapping_LM
+	transform s : OCL!ConstructorExp
+	to t : QVTi!Mapping {
+	
+	t.name = 'm'+s.getTraceElementName()+'_LM';
+	
+	var leftDomain = s.createLM_LeftDomain();
+	var middleDomain = s.createLM_MiddleDomain();
+	t.domain.add(leftDomain);
+	t.domain.add(middleDomain);
+	
+	var guardPattern = QVTi!GuardPattern;
+	var bottomPattern = QVTi!BottomPatten;
+	
+	var pAssignment = QVTi!MiddlePropertyAssignment;
+	
+	t.guardPattern = guardPattern;
+	t.bottomPattern = bottomPattern;
+}
+
+rule ConstructorExp2Mapping_MR
+	transform s : OCL!ConstructorExp
+	to t : QVTi!Mapping {
+	
+	t.name = 'm'+s.getTraceElementName()+'_MR';
+
+}
+
+
+operation OCL!ConstructorExp createLM_LeftDomain ( ) : QVTi!CoreDomain {
+	var contextType = self.getExpressionContextType();
+	var domain = new QVTi!CoreDomain;	
+	
+	var guardPattern = new QVTi!GuardPattern;	
+	var bottomPattern = new QVTi!BottomPattern;
+	
+	var variable = new QVTi!Variable;
+	variable.name = contextType.name.firstToLowerCase();
+	variable.type = contextType;
+	
+	guardPattern.variable.add(variable);	
+	domain.guardPattern = guardPattern;
+	domain.bottomPattern = bottomPattern;
+	return domain;
+}
+
+operation OCL!ConstructorExp createLM_MiddleDomain () : QVTi!CoreDomain {
+	var contextType = self.getExpressionContextType();
+		
+	var domain = new QVTi!CoreDomain;	
+	
+	var guardPattern = new QVTi!GuardPattern;	
+	var bottomPattern = new QVTi!BottomPattern;
+	
+	var variable = new QVTi!RealizedVariable;
+	variable.name = self.getTraceElementName().firstToLowerCase();
+	-- FIXME variable.type = the trace element type;
+
+	bottomPattern.realizedVariable.add(variable);
+	domain.guardPattern = guardPattern;
+	domain.bottomPattern = bottomPattern;
+	return domain;
+}
+
+post {
+	var qvtiModel = new QVTi!ImperativeModel;
+	
+	var qvtiTransf = new QVTi!Transformation;
+	qvtiModel.nestedPackage.add(qvtiTransf);
+
+	qvtiTransf.modelParameter.addAll(QVTi!TypedModel.all());
+	qvtiTransf.`rule`.addAll(QVTi!Mapping.all());
+	
+}

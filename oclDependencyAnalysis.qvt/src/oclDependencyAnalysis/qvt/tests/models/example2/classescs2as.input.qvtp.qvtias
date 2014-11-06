@@ -23,8 +23,8 @@
           typedModel="#qT.classesCS2classesAS.middle">
         <guardPattern/>
         <bottomPattern>
-          <realizedVariable xmi:id="qV.classesCS2classesAS.rootCS2rootAS_LM.middle.bottom.rootCS2rootAS"
-              name="rootCS2rootAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"/>
+          <realizedVariable xmi:id="qV.classesCS2classesAS.rootCS2rootAS_LM.middle.bottom.r2r"
+              name="r2r" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
@@ -33,7 +33,7 @@
           <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
               referredVariable="#qV.classesCS2classesAS.rootCS2rootAS_LM.cCS.guard.rootCS"/>
           <slotExpression xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"
-              referredVariable="#qV.classesCS2classesAS.rootCS2rootAS_LM.middle.bottom.rootCS2rootAS"/>
+              referredVariable="#qV.classesCS2classesAS.rootCS2rootAS_LM.middle.bottom.r2r"/>
         </assignment>
       </bottomPattern>
     </rule>
@@ -42,8 +42,8 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" isEnforceable="false"
           typedModel="#qT.classesCS2classesAS.middle">
         <guardPattern>
-          <variable xmi:id="qV.classesCS2classesAS.rootCS2rootAS_MR.middle.guard.rootCS2rootAS"
-              name="rootCS2rootAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"/>
+          <variable xmi:id="qV.classesCS2classesAS.rootCS2rootAS_MR.middle.guard.r2r"
+              name="r2r" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -61,7 +61,7 @@
           <value xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
               referredVariable="#qV.classesCS2classesAS.rootCS2rootAS_MR.cAS.bottom.rootAS"/>
           <slotExpression xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"
-              referredVariable="#qV.classesCS2classesAS.rootCS2rootAS_MR.middle.guard.rootCS2rootAS"/>
+              referredVariable="#qV.classesCS2classesAS.rootCS2rootAS_MR.middle.guard.r2r"/>
         </assignment>
       </bottomPattern>
     </rule>
@@ -79,8 +79,8 @@
           typedModel="#qT.classesCS2classesAS.middle">
         <guardPattern/>
         <bottomPattern>
-          <realizedVariable xmi:id="qV.classesCS2classesAS.packageCS2packageAS_LM.middle.bottom.packageCS2packageAS"
-              name="packageCS2packageAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
+          <realizedVariable xmi:id="qV.classesCS2classesAS.packageCS2packageAS_LM.middle.bottom.p2p"
+              name="p2p" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
@@ -89,7 +89,7 @@
           <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
               referredVariable="#qV.classesCS2classesAS.packageCS2packageAS_LM.cCS.guard.packageCS"/>
           <slotExpression xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-              referredVariable="#qV.classesCS2classesAS.packageCS2packageAS_LM.middle.bottom.packageCS2packageAS"/>
+              referredVariable="#qV.classesCS2classesAS.packageCS2packageAS_LM.middle.bottom.p2p"/>
         </assignment>
       </bottomPattern>
     </rule>
@@ -98,8 +98,8 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" isEnforceable="false"
           typedModel="#qT.classesCS2classesAS.middle">
         <guardPattern>
-          <variable xmi:id="qV.classesCS2classesAS.packageCS2packageAS_MR.middle.guard.packageCS2packageAS"
-              name="packageCS2packageAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
+          <variable xmi:id="qV.classesCS2classesAS.packageCS2packageAS_MR.middle.guard.p2p"
+              name="p2p" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -117,7 +117,7 @@
           <value xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
               referredVariable="#qV.classesCS2classesAS.packageCS2packageAS_MR.cAS.bottom.packageAS"/>
           <slotExpression xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-              referredVariable="#qV.classesCS2classesAS.packageCS2packageAS_MR.middle.guard.packageCS2packageAS"/>
+              referredVariable="#qV.classesCS2classesAS.packageCS2packageAS_MR.middle.guard.p2p"/>
         </assignment>
       </bottomPattern>
     </rule>
@@ -136,10 +136,10 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" isEnforceable="false"
           typedModel="#qT.classesCS2classesAS.middle">
         <guardPattern>
-          <variable xmi:id="qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.rootCS2rootAS"
-              name="rootCS2rootAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"/>
-          <variable xmi:id="qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.packageCS2packageAS"
-              name="packageCS2packageAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
+          <variable xmi:id="qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.r2r"
+              name="r2r" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"/>
+          <variable xmi:id="qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.p2p"
+              name="p2p" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -150,7 +150,7 @@
             <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="Classes.ecore.oclas#T.classes.Root"
                 referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.RootCS2RootAS.rootAS">
               <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"
-                  referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.rootCS2rootAS"/>
+                  referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.r2r"/>
             </source>
             <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
                 referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.cAS.guard.rootAS"/>
@@ -162,7 +162,7 @@
             <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="Classes.ecore.oclas#T.classes.Package"
                 referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2PackageAS.packageAS">
               <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-                  referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.packageCS2packageAS"/>
+                  referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.p2p"/>
             </source>
             <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
                 referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.cAS.guard.packageAS"/>
@@ -178,14 +178,14 @@
                 <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
                     referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.RootCS2RootAS.rootCS">
                   <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"
-                      referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.rootCS2rootAS"/>
+                      referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.r2r"/>
                 </source>
               </source>
             </source>
             <argument xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
                 referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2PackageAS.packageCS">
               <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-                  referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.packageCS2packageAS"/>
+                  referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.p2p"/>
             </argument>
           </conditionExpression>
         </predicate>
@@ -219,8 +219,8 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" isEnforceable="false"
           typedModel="#qT.classesCS2classesAS.middle">
         <guardPattern>
-          <variable xmi:id="qV.classesCS2classesAS.packageAS_name.middle.guard.packageCS2packageAS"
-              name="packageCS2packageAS" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
+          <variable xmi:id="qV.classesCS2classesAS.packageAS_name.middle.guard.p2p"
+              name="p2p" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -231,7 +231,7 @@
             <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="Classes.ecore.oclas#T.classes.Package"
                 referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2PackageAS.packageAS">
               <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-                  referredVariable="#qV.classesCS2classesAS.packageAS_name.middle.guard.packageCS2packageAS"/>
+                  referredVariable="#qV.classesCS2classesAS.packageAS_name.middle.guard.p2p"/>
             </source>
             <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
                 referredVariable="#qV.classesCS2classesAS.packageAS_name.cAS.guard.packageAS"/>
@@ -245,7 +245,7 @@
             <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
                 referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2PackageAS.packageCS">
               <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
-                  referredVariable="#qV.classesCS2classesAS.packageAS_name.middle.guard.packageCS2packageAS"/>
+                  referredVariable="#qV.classesCS2classesAS.packageAS_name.middle.guard.p2p"/>
             </source>
           </value>
           <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"

@@ -1,0 +1,16 @@
+
+operation OCL!ConstructorExp getExpressionContextType () : OCL!Class {
+	
+	var container = self.eContainer();
+	while (not container.isKindOf(OCL!ExpressionInOCL)) {
+		container = container.eContainer();
+	}
+	return container.contextVariable.type;
+}
+
+operation OCL!ConstructorExp getTraceElementName() : String {
+	var fromType = self.getExpressionContextType();
+	var toType = self.type;
+	
+	return fromType.name + '2' + toType.name;
+}

@@ -9,65 +9,65 @@ transformation classesCS2classesAS {
 }
 
 map rootCS2rootAS_LM in classesCS2classesAS {
-    check cCS (rootCS: RootCS) {}    
+    check cCS (rootCS : RootCS) {}    
     enforce middle () {
-    	realize rootCS2rootAS:RootCS2RootAS
+    	realize r2r : RootCS2RootAS
     }
     
     where () {
-    	rootCS2rootAS.rootCS := rootCS;    	
+    	r2r.rootCS := rootCS;
     }
 }
 
 map rootCS2rootAS_MR in classesCS2classesAS {
-	check middle(rootCS2rootAS : RootCS2RootAS){}
+	check middle(r2r : RootCS2RootAS){}
 	enforce cAS() {
-		realize rootAS: Root 
+		realize rootAS : Root 
 	}
 	
 	where () {
-		rootCS2rootAS.rootAS := rootAS;
+		r2r.rootAS := rootAS;
 	}
 }
 
 map packageCS2packageAS_LM in classesCS2classesAS {
-    check cCS (packageCS: PackageCS) {}    
+    check cCS (packageCS : PackageCS) {}    
     enforce middle () {
-    	realize packageCS2packageAS:PackageCS2PackageAS
+    	realize p2p : PackageCS2PackageAS
     }
     
     where () {
-    	packageCS2packageAS.packageCS := packageCS;    	
+    	p2p.packageCS := packageCS;    	
     }
 }
 
 map packageCS2packageAS_MR in classesCS2classesAS {
-	check middle(packageCS2packageAS : PackageCS2PackageAS) {}
+	check middle(p2p : PackageCS2PackageAS) {}
 	enforce cAS() {
-		realize packageAS: Package 
+		realize packageAS : Package 
 	}
 	
 	where () {
-		packageCS2packageAS.packageAS := packageAS;
+		p2p.packageAS := packageAS;
 	}
 }
 
 map rootAS_ownedPackages in classesCS2classesAS {
-	check cAS(rootAS: Root, packageAS: Package) {}
-	check middle(rootCS2rootAS:RootCS2RootAS, packageCS2packageAS:PackageCS2PackageAS) {}
-	where (	rootCS2rootAS.rootAS = rootAS;
-			packageCS2packageAS.packageAS = packageAS;
-			rootCS2rootAS.rootCS.ownedPackages->includes(packageCS2packageAS.packageCS);
+	check cAS(rootAS : Root, packageAS : Package) {}
+	check middle(r2r : RootCS2RootAS, p2p : PackageCS2PackageAS) {}
+	where (	r2r.rootAS = rootAS;
+			p2p.packageAS = packageAS;
+			r2r.rootCS.ownedPackages->includes(p2p.packageCS);
 	) {
 		rootAS.ownedPackages := rootAS.ownedPackages->including(packageAS);
 	}
 }
 
 map packageAS_name in classesCS2classesAS {
-	check cAS(packageAS: Package) {}
-	check middle(packageCS2packageAS:PackageCS2PackageAS) {}
-	where (packageCS2packageAS.packageAS = packageAS;)
+	check cAS(packageAS : Package) {}
+	check middle(p2p : PackageCS2PackageAS) {}
+	where (p2p.packageAS = packageAS;)
 	{
-		packageAS.name := packageCS2packageAS.packageCS.name;
+		packageAS.name := p2p.packageCS.name;
 	}
 }
