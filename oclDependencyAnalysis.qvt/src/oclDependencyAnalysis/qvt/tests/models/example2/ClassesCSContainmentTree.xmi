@@ -7,9 +7,13 @@
   <eCoreContainemntTree:Node EClassName="ClassCS" parent="/0 /1" children="/3">
     <superTypes>NamedElementCS</superTypes>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node EClassName="PathNameCS" parent="/0 /2" children="/4"/>
+  <eCoreContainemntTree:Node EClassName="PathNameCS" parent="/0 /2" children="/4">
+    <superTypes>ElementCS</superTypes>
+  </eCoreContainemntTree:Node>
   <eCoreContainemntTree:Node EClassName="PathElementCS" parent="/0 /3">
     <superTypes>NamedElementCS</superTypes>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node EClassName="RootCS" parent="/0"/>
+  <eCoreContainemntTree:Node EClassName="RootCS" parent="/0">
+    <superTypes>ElementCS</superTypes>
+  </eCoreContainemntTree:Node>
 </xmi:XMI>

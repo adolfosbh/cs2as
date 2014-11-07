@@ -8,5 +8,7 @@
   <eCoreContainemntTree:Node EClassName="Class" parent="/0 /1">
     <superTypes>NamedElement</superTypes>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node EClassName="Root" parent="/0" children="/1"/>
+  <eCoreContainemntTree:Node EClassName="Root" parent="/0" children="/1">
+    <superTypes>Element</superTypes>
+  </eCoreContainemntTree:Node>
 </xmi:XMI>
