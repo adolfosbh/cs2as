@@ -19,7 +19,7 @@ public class OCL2QVTiBroker extends MtcBroker {
 		loadOclStdLibModel();
 		createContainmentTrees();
 		
-		pModel = createModel(partitionUri, "QVTp", "QVT", QVTI_FULL_NS, true, false, true);		
+		pModel = createModel(partitionUri, "QVTp", "QVT", QVTI_FULL_NS, true, true, true);		
 		sModel = qvtpToQvts(pModel);
 		qvtpScheduling(pModel, sModel);
 		iModel = qvtpQvtsToQvti(pModel, sModel);
