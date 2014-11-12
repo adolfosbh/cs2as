@@ -11,7 +11,7 @@ transformation classesCS2classesAS {
 map rootCS2rootAS_LM in classesCS2classesAS {
     check cCS (rootCS : RootCS) {}    
     enforce middle () {
-    	realize r2r : RootCS2RootAS
+    	realize r2r : RootCS2Root
     }
     
     where () {
@@ -20,20 +20,20 @@ map rootCS2rootAS_LM in classesCS2classesAS {
 }
 
 map rootCS2rootAS_MR in classesCS2classesAS {
-	check middle(r2r : RootCS2RootAS){}
+	check middle(r2r : RootCS2Root){}
 	enforce cAS() {
-		realize rootAS : Root 
+		realize root : Root 
 	}
 	
 	where () {
-		r2r.rootAS := rootAS;
+		r2r.root := root;
 	}
 }
 
 map packageCS2packageAS_LM in classesCS2classesAS {
-    check cCS (packageCS : PackageCS) {}    
+    check cCS (packageCS : PackageCS) {}
     enforce middle () {
-    	realize p2p : PackageCS2PackageAS
+    	realize p2p : PackageCS2Package
     }
     
     where () {
@@ -42,32 +42,32 @@ map packageCS2packageAS_LM in classesCS2classesAS {
 }
 
 map packageCS2packageAS_MR in classesCS2classesAS {
-	check middle(p2p : PackageCS2PackageAS) {}
+	check middle(p2p : PackageCS2Package) {}
 	enforce cAS() {
-		realize packageAS : Package 
+		realize package : Package 
 	}
 	
 	where () {
-		p2p.packageAS := packageAS;
+		p2p.package := package;
 	}
 }
 
 map rootAS_ownedPackages in classesCS2classesAS {
-	check cAS(rootAS : Root, packageAS : Package) {}
-	check middle(r2r : RootCS2RootAS, p2p : PackageCS2PackageAS) {}
-	where (	r2r.rootAS = rootAS;
-			p2p.packageAS = packageAS;
+	check cAS(root : Root, package : Package) {}
+	check middle(r2r : RootCS2Root, p2p : PackageCS2Package) {}
+	where (	r2r.root = root;
+			p2p.package = package;
 			r2r.rootCS.ownedPackages->includes(p2p.packageCS);
 	) {
-		rootAS.ownedPackages := rootAS.ownedPackages->including(packageAS);
+		root.ownedPackages := root.ownedPackages->including(package);
 	}
 }
 
 map packageAS_name in classesCS2classesAS {
-	check cAS(packageAS : Package) {}
-	check middle(p2p : PackageCS2PackageAS) {}
-	where (p2p.packageAS = packageAS;)
+	check cAS(package : Package) {}
+	check middle(p2p : PackageCS2Package) {}
+	where (p2p.package = package;)
 	{
-		packageAS.name := p2p.packageCS.name;
+		package.name := p2p.packageCS.name;
 	}
 }

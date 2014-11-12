@@ -7,36 +7,36 @@
     <modelParameter xmi:id="qT.ClassesCS2Classes.rightAS" name="rightAS" usedPackage="Classes.ecore.oclas#P.classes"/>
     <modelParameter xmi:id="qT.ClassesCS2Classes.middle" name="middle" usedPackage="ClassesCS2ClassesAS.ecore.oclas#P.cCS2cAS"/>
     <rule xsi:type="qvti:Mapping" xmi:id="m.ClassesCS2Classes.mRootCS2Root_LM" name="mRootCS2Root_LM">
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.leftCS">
+      <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.ClassesCS2Classes.leftCS">
         <guardPattern>
           <variable xmi:id="qV.ClassesCS2Classes.mRootCS2Root_LM.leftCS.guard.rootCS"
               name="rootCS" type="ClassesCS.ecore.oclas#T.classescs.RootCS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.middle">
+      <domain xsi:type="qvtcb:CoreDomain" isEnforceable="true" typedModel="#qT.ClassesCS2Classes.middle">
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.ClassesCS2Classes.mRootCS2Root_LM.middle.bottom.rootCS2Root"
-              name="rootCS2Root"/>
+              name="rootCS2Root" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
       <bottomPattern/>
     </rule>
     <rule xsi:type="qvti:Mapping" xmi:id="m.ClassesCS2Classes.mClassCS2Class_LM" name="mClassCS2Class_LM">
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.leftCS">
+      <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.ClassesCS2Classes.leftCS">
         <guardPattern>
           <variable xmi:id="qV.ClassesCS2Classes.mClassCS2Class_LM.leftCS.guard.classCS"
               name="classCS" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.middle">
+      <domain xsi:type="qvtcb:CoreDomain" isEnforceable="true" typedModel="#qT.ClassesCS2Classes.middle">
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.ClassesCS2Classes.mClassCS2Class_LM.middle.bottom.classCS2Class"
-              name="classCS2Class"/>
+              name="classCS2Class" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.ClassCS2ClassAS"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
@@ -44,32 +44,32 @@
     </rule>
     <rule xsi:type="qvti:Mapping" xmi:id="m.ClassesCS2Classes.mPackageCS2Package_LM"
         name="mPackageCS2Package_LM">
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.leftCS">
+      <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.ClassesCS2Classes.leftCS">
         <guardPattern>
           <variable xmi:id="qV.ClassesCS2Classes.mPackageCS2Package_LM.leftCS.guard.packageCS"
               name="packageCS" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.middle">
+      <domain xsi:type="qvtcb:CoreDomain" isEnforceable="true" typedModel="#qT.ClassesCS2Classes.middle">
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.ClassesCS2Classes.mPackageCS2Package_LM.middle.bottom.packageCS2Package"
-              name="packageCS2Package"/>
+              name="packageCS2Package" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
       <bottomPattern/>
     </rule>
     <rule xsi:type="qvti:Mapping" xmi:id="m.ClassesCS2Classes.mRootCS2Root_MR" name="mRootCS2Root_MR">
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.middle">
+      <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.ClassesCS2Classes.middle">
         <guardPattern>
           <variable xmi:id="qV.ClassesCS2Classes.mRootCS2Root_MR.middle.guard.rootCS2Root"
-              name="rootCS2Root" type="ClassesCS.ecore.oclas#T.classescs.RootCS"/>
+              name="rootCS2Root" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.rightAS">
+      <domain xsi:type="qvtcb:CoreDomain" isEnforceable="true" typedModel="#qT.ClassesCS2Classes.rightAS">
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.ClassesCS2Classes.mRootCS2Root_MR.rightAS.bottom.root"
@@ -80,14 +80,14 @@
       <bottomPattern/>
     </rule>
     <rule xsi:type="qvti:Mapping" xmi:id="m.ClassesCS2Classes.mClassCS2Class_MR" name="mClassCS2Class_MR">
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.middle">
+      <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.ClassesCS2Classes.middle">
         <guardPattern>
           <variable xmi:id="qV.ClassesCS2Classes.mClassCS2Class_MR.middle.guard.classCS2Class"
-              name="classCS2Class" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
+              name="classCS2Class" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.ClassCS2ClassAS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.rightAS">
+      <domain xsi:type="qvtcb:CoreDomain" isEnforceable="true" typedModel="#qT.ClassesCS2Classes.rightAS">
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.ClassesCS2Classes.mClassCS2Class_MR.rightAS.bottom.class"
@@ -99,14 +99,14 @@
     </rule>
     <rule xsi:type="qvti:Mapping" xmi:id="m.ClassesCS2Classes.mPackageCS2Package_MR"
         name="mPackageCS2Package_MR">
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.middle">
+      <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.ClassesCS2Classes.middle">
         <guardPattern>
           <variable xmi:id="qV.ClassesCS2Classes.mPackageCS2Package_MR.middle.guard.packageCS2Package"
-              name="packageCS2Package" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
+              name="packageCS2Package" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
-      <domain xsi:type="qvtcb:CoreDomain" typedModel="#qT.ClassesCS2Classes.rightAS">
+      <domain xsi:type="qvtcb:CoreDomain" isEnforceable="true" typedModel="#qT.ClassesCS2Classes.rightAS">
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.ClassesCS2Classes.mPackageCS2Package_MR.rightAS.bottom.package"
