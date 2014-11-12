@@ -1,8 +1,37 @@
 import 'ocl2qvtiUtils.eol';
 
+pre {
+	var qvtiModel = new QVTi!ImperativeModel;
+	
+	var qvtiTransf = new QVTi!Transformation;
+	qvtiTransf.name = OCL!Root.all.first().name.replace(".ocl","");
+	qvtiTransf.modelParameter.addAll(QVTi!TypedModel.all());
+	
+	var typedModel = new QVTi!TypedModel;
+	typedModel.name = "leftCS";
+	typedModel.usedPackage.add(
+		OCL!Import.all.importedNamespace.nestedPackage.flatten().selectOne(x 
+				| x.name = OCL!ConstructorExp.all.selectOne(x|true).getExpressionContextType().package.name));
+	qvtiTransf.modelParameter.add(typedModel);
+	
+	typedModel = new QVTi!TypedModel;
+	typedModel.name = "rightAS";
+	typedModel.usedPackage.add(
+		OCL!Import.all.importedNamespace.nestedPackage.flatten().selectOne(x 
+				| x.name = OCL!ConstructorExp.all.selectOne(x|true).type.package.name));	
+	qvtiTransf.modelParameter.add(typedModel);		
+	
+	typedModel = new QVTi!TypedModel;
+	typedModel.name = "middle";
+	typedModel.usedPackage.add(MiddleMM!Package.all.first());
+	qvtiTransf.modelParameter.add(typedModel);
+	
+	qvtiModel.nestedPackage.add(qvtiTransf);
+}
 -- Transformation model parameters:
 --     OCL - A CompleteOCL document 
 --     QVTi - The output QVTi model
+
 rule ConstructorExp2Mapping_LM
 	transform s : OCL!ConstructorExp
 	to t : QVTi!Mapping {
@@ -11,13 +40,14 @@ rule ConstructorExp2Mapping_LM
 	
 	var leftDomain = s.createLM_LeftDomain();
 	var middleDomain = s.createLM_MiddleDomain();
+	
 	t.domain.add(leftDomain);
 	t.domain.add(middleDomain);
 	
-	var guardPattern = QVTi!GuardPattern;
-	var bottomPattern = QVTi!BottomPatten;
+	var guardPattern = new QVTi!GuardPattern;
+	var bottomPattern = new QVTi!BottomPattern;
 	
-	var pAssignment = QVTi!MiddlePropertyAssignment;
+	--var pAssignment = QVTi!MiddlePropertyAssignment;
 	
 	t.guardPattern = guardPattern;
 	t.bottomPattern = bottomPattern;
@@ -29,12 +59,36 @@ rule ConstructorExp2Mapping_MR
 	
 	t.name = 'm'+s.getTraceElementName()+'_MR';
 
+	var middleDomain = s.createMR_MiddleDomain();
+	var rightDomain = s.createMR_RightDomain();
+		
+	t.domain.add(middleDomain);
+	t.domain.add(rightDomain);
+	
+	var guardPattern = new QVTi!GuardPattern;
+	var bottomPattern = new QVTi!BottomPattern;
+
+	t.guardPattern = guardPattern;
+	t.bottomPattern = bottomPattern;
 }
 
+--rule Root2ImperativeModel 
+--	transform s : OCL!Root
+--	to t : QVTi!ImperativeModel {
+	
+	
+--	var qvtiTransf = new QVTi!Transformation;
+--	qvtiTransf.name = s.name.replace(".ocl","");
+--	qvtiTransf.modelParameter.addAll(QVTi!TypedModel.all());
+--	qvtiTransf.`rule`.addAll(QVTi!Mapping.all());
+	
+--	t.nestedPackage.add(qvtiTransf);
+--}
 
 operation OCL!ConstructorExp createLM_LeftDomain ( ) : QVTi!CoreDomain {
 	var contextType = self.getExpressionContextType();
 	var domain = new QVTi!CoreDomain;	
+	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= "leftCS");
 	
 	var guardPattern = new QVTi!GuardPattern;	
 	var bottomPattern = new QVTi!BottomPattern;
@@ -43,7 +97,8 @@ operation OCL!ConstructorExp createLM_LeftDomain ( ) : QVTi!CoreDomain {
 	variable.name = contextType.name.firstToLowerCase();
 	variable.type = contextType;
 	
-	guardPattern.variable.add(variable);	
+	guardPattern.variable.add(variable);
+	
 	domain.guardPattern = guardPattern;
 	domain.bottomPattern = bottomPattern;
 	return domain;
@@ -53,6 +108,7 @@ operation OCL!ConstructorExp createLM_MiddleDomain () : QVTi!CoreDomain {
 	var contextType = self.getExpressionContextType();
 		
 	var domain = new QVTi!CoreDomain;	
+	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= "middle");
 	
 	var guardPattern = new QVTi!GuardPattern;	
 	var bottomPattern = new QVTi!BottomPattern;
@@ -62,18 +118,53 @@ operation OCL!ConstructorExp createLM_MiddleDomain () : QVTi!CoreDomain {
 	-- FIXME variable.type = the trace element type;
 
 	bottomPattern.realizedVariable.add(variable);
+	
+	domain.guardPattern = guardPattern;
+	domain.bottomPattern = bottomPattern;
+	return domain;
+}
+
+operation OCL!ConstructorExp createMR_MiddleDomain () : QVTi!CoreDomain {
+	var contextType = self.getExpressionContextType();
+		
+	var domain = new QVTi!CoreDomain;	
+	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= "middle");
+	
+	var guardPattern = new QVTi!GuardPattern;	
+	var bottomPattern = new QVTi!BottomPattern;
+	
+	var variable = new QVTi!Variable;
+	variable.name = self.getTraceElementName().firstToLowerCase();
+	variable.type = contextType;
+	
+	guardPattern.variable.add(variable);
+	
+	domain.guardPattern = guardPattern;
+	domain.bottomPattern = bottomPattern;
+	return domain;
+}
+
+operation OCL!ConstructorExp createMR_RightDomain () : QVTi!CoreDomain {
+	var constructedType = self.type;
+		
+	var domain = new QVTi!CoreDomain;
+	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= "rightAS");
+	
+	var guardPattern = new QVTi!GuardPattern;	
+	var bottomPattern = new QVTi!BottomPattern;
+	
+	var variable = new QVTi!RealizedVariable;
+	variable.name = constructedType.name.firstToLowerCase();
+	variable.type = constructedType;
+
+	bottomPattern.realizedVariable.add(variable);
+	
 	domain.guardPattern = guardPattern;
 	domain.bottomPattern = bottomPattern;
 	return domain;
 }
 
 post {
-	var qvtiModel = new QVTi!ImperativeModel;
-	
-	var qvtiTransf = new QVTi!Transformation;
-	qvtiModel.nestedPackage.add(qvtiTransf);
-
-	qvtiTransf.modelParameter.addAll(QVTi!TypedModel.all());
 	qvtiTransf.`rule`.addAll(QVTi!Mapping.all());
-	
+	"OCL 2 QVTi completed".println();
 }
