@@ -33,7 +33,7 @@ public class PivotModelUtil {
 	 */
 	// Copied from MTC broker
 	public PivotModel createPivotModel(String modeUri, String modelName, String modelAliases, String metamodelUris,
-			boolean readOnLoad, boolean storeOnDispoal, boolean cached, boolean isPivotResource) throws QvtMtcExecutionException {
+			boolean readOnLoad, boolean storeOnDispoal, boolean cached, boolean resolveExternalRefs, boolean isPivotResource) throws QvtMtcExecutionException {
 
 		PivotModel model = new PivotModel(mmManager, isPivotResource);
 		StringProperties properties = new StringProperties();
@@ -44,7 +44,7 @@ public class PivotModelUtil {
 		properties.put(EmfModel.PROPERTY_READONLOAD, String.valueOf(readOnLoad));
 		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, String.valueOf(storeOnDispoal));
 		properties.put(EmfModel.PROPERTY_CACHED, String.valueOf(cached));
-		properties.put(EmfModel.PROPERTY_EXPAND, String.valueOf(false));
+		properties.put(EmfModel.PROPERTY_EXPAND, String.valueOf(resolveExternalRefs));
 		try {
 			model.load(properties, "");
 		} catch (EolModelLoadingException e) {

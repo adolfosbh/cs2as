@@ -6,11 +6,13 @@ import 'ocl2qvtiUtils.eol';
 
 pre {
 	var MIDDLE_PACKAGE = MiddleMM!Package.all.first();
-	var LEFTCS_PACKAGE = OCL!Package.all.first();	 
+	var LEFTCS_PACKAGE = OCL!Package.all.first();
 	var RIGHT = "rightAS";
 	var LEFT = "leftCS";
 	var MIDDLE = "middle";
+	var emfTool = new Native("org.eclipse.epsilon.emc.emf.tools.EmfTool");
 	
+	-- transformation begins --
 	var qvtiModel = new QVTi!ImperativeModel;
 	
 	var qvtiTransf = new QVTi!Transformation;
@@ -72,7 +74,7 @@ rule ConstructorExp2Mapping_LM
 	pAssignment.targetProperty = slotExpression.type.ownedAttribute.selectOne(x | x.name = value.type.name.firstToLowerCase());	
 	
 	bottomPattern.assignment.add(pAssignment);
-		
+				
 	t.guardPattern = guardPattern;
 	t.bottomPattern = bottomPattern;
 }
@@ -134,11 +136,54 @@ rule ConstructorPart2UpdateMapping
 	
 	t.domain.add(rightDomain);	
 	t.domain.add(middleDomain);
+	
+	// Mapping Guard and Bottom patterns configuration
+	// Firstly, the guard pattern	
+	var middleVar = middleDomain.guardPattern.variable.first();
+	var rightVar = rightDomain.guardPattern.variable.first();
+	
+	var sourceVarExp = new QVTi!VariableExp;
+	sourceVarExp.referredVariable = middleVar;
+	sourceVarExp.type = middleVar.type;
+	
+	var sourcePropCall = new QVTi!PropertyCallExp;
+	sourcePropCall.referredProperty = middleVar.type.ownedAttribute.selectOne(x | x.name = rightVar.type.name.firstToLowerCase());
+	sourcePropCall.source = sourceVarExp;
+	
+	var argVarExp = new QVTi!VariableExp;
+	argVarExp.referredVariable = rightVar;
+	argVarExp.type = rightVar.type;
+	
+	var eqOpCall = new QVTi!OperationCallExp;	
+	var oclAnyEqualsOp = getOclAnyEqualsOp();
+	
+	eqOpCall.referredOperation = oclAnyEqualsOp;
+	eqOpCall.name = oclAnyEqualsOp.name;
+	eqOpCall.type = oclAnyEqualsOp.type;
+	eqOpCall.source = sourcePropCall;
+	eqOpCall.argument.add(argVarExp);
+	
+	var predicate = new QVTi!Predicate;
+	predicate.conditionExpression = eqOpCall;
 		
 	var guardPattern = new QVTi!GuardPattern;
-	var bottomPattern = new QVTi!BottomPattern;
-
+	guardPattern.predicate.add(predicate);
+	
 	t.guardPattern = guardPattern;
+	
+	// Secondly, the bottom pattern
+	var slotExp = new QVTi!VariableExp;
+	slotExp.referredVariable = rightVar;
+	slotExp.type = rightVar.type;
+	
+	var propAssignment = new QVTi!PropertyAssignment;
+	propAssignment.targetProperty = s.referredProperty;
+	propAssignment.value = s.initExpression.createPropertyAssignmentValue(middleVar);
+	propAssignment.slotExpression = slotExp;
+		
+	var bottomPattern = new QVTi!BottomPattern;
+	bottomPattern.assignment.add(propAssignment);
+	
 	t.bottomPattern = bottomPattern;
 }
 --rule Root2ImperativeModel 
@@ -242,7 +287,7 @@ operation OCL!ConstructorExp createUpdate_RightDomain () : QVTi!CoreDomain {
 		
 	var domain = new QVTi!CoreDomain;
 	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= RIGHT);
-	domain.isEnforceable = true;
+	domain.isCheckable = true;
 	
 	var guardPattern = new QVTi!GuardPattern;
 	var bottomPattern = new QVTi!BottomPattern;
@@ -279,17 +324,46 @@ operation OCL!ConstructorExp createUpdate_MiddleDomain () : QVTi!CoreDomain {
 	return domain;
 }
 
-operation OCL!ConstructorPart getAstCalls() : Collection(OCL!OperationCallExpression) {
-	var result = Sequence {};  
-	for (exp in self.initExpression.getAllContents().including(self.initExpression)) {
-		if (exp.isKindOf(OCL!OperationCallExp) and exp.referredOperation.name = "ast") {
-			result.add(exp);
+operation OCL!OCLExpression createPropertyAssignmentValue(middleVar) : OCL!OCLExpression {
+	-- FIXME what happens with synthetised types ????
+	var eUtil = emfTool.getEcoreUtil();
+	var copiedExp = eUtil.copy(self);
+	-- We need to replace the OCL "self" VarExp by a middle model access
+	for (exp in copiedExp.getAllContents().including(copiedExp)) { 
+		if (exp.isKindOf(QVTi!CallExp)) {
+			var source = exp.source;
+			if (source.isKindOf(QVTi!VariableExp) and source.referredVariable.name = 'self') {
+				var selfVar = source.referredVariable;
+				var sourceVarExp = new QVTi!VariableExp;
+				sourceVarExp.referredVariable = middleVar;
+				sourceVarExp.type = middleVar.type;
+	
+				var propCall = new QVTi!PropertyCallExp;
+				var referredProp =  middleVar.type.ownedAttribute.selectOne(x | x.name = selfVar.type.name.firstToLowerCase());
+				propCall.referredProperty = referredProp;
+				propCall.type = referredProp.type;
+				propCall.source = sourceVarExp;
+							
+				eUtil.replace(source, propCall);
+				eUtil.`delete`(source);
+			}
 		}
-	}
-	return result;
+	} 
+	return copiedExp;
+}
+operation OCL!ConstructorPart getAstCalls() : Collection(OCL!OperationCallExpression) {
+	  
+	return self.initExpression.getAllContents().including(self.initExpression)
+			.select(x | x.isKindOf(OCL!OperationCallExp) and x.referredOperation.name = "ast" );
+}
+
+operation getOclAnyEqualsOp() : OCL!Operation {
+ 	return OclStdLib!Class.all.selectOne(x | x.name = 'OclAny').ownedOperation
+						   .selectOne(x | x.name = '=');
 }
 
 post {
+	-- We add all the declaratively created QVTi mappings to the imperatively created QVTi transformation 
 	qvtiTransf.`rule`.addAll(QVTi!Mapping.all());
 	"OCL 2 QVTi completed".println();
 }

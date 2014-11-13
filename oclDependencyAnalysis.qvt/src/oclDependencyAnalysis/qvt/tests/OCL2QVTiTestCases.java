@@ -22,6 +22,8 @@ import org.junit.Test;
 
 public class OCL2QVTiTestCases {
 
+	protected static final String OCLSTDLIB_URI = "http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas";
+	
 	protected static final String ECORE_URI = "http://www.eclipse.org/emf/2002/Ecore";
 	
 	protected static final String PIVOT_URI = "http://www.eclipse.org/ocl/3.1.0/Pivot";
@@ -55,7 +57,7 @@ public class OCL2QVTiTestCases {
 		pmUtil = new PivotModelUtil(metaModelManager);
         MetaModelManagerResourceSetAdapter.getAdapter(DomainUtil.nonNullState(rSet), metaModelManager);
 	}
-
+	
 	public void test() throws Exception {
 				
 		String qvtcasUri = "platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/classescs2as.qvtc"; 
@@ -80,22 +82,26 @@ public class OCL2QVTiTestCases {
 		// Testing nothing for the time being. Just to be able to debug java code.
 	}
 	
-	@Test
+	
 	protected void runOCL2QVTi (String oclDocURI, String qvtiFileURI, String tracesMMURI) throws QvtMtcExecutionException, URISyntaxException {
 
 		String oclDocModelName = "OCL";
-		PivotModel oclModel = pmUtil.createPivotModel(oclDocURI, oclDocModelName, "", PIVOT_URI, true, false, true, true);
+		PivotModel oclModel = pmUtil.createPivotModel(oclDocURI, oclDocModelName, "", PIVOT_URI, true, false, true, false, true);
 		
 		String qvtiModelName = "QVTi";
-		PivotModel qvtiModel = pmUtil.createPivotModel(qvtiFileURI, qvtiModelName, "", QVTI_FULL_NS, false, true, false, true);
+		PivotModel qvtiModel = pmUtil.createPivotModel(qvtiFileURI, qvtiModelName, "", QVTI_FULL_NS, false, true, false, false, true);
 		
 		String tracesMModelName = "MiddleMM";
-		PivotModel tracesMM = pmUtil.createPivotModel(tracesMMURI, tracesMModelName, "", TRACES_FULL_NS , true, false, true, true);
+		PivotModel tracesMM = pmUtil.createPivotModel(tracesMMURI, tracesMModelName, "", TRACES_FULL_NS , true, false, true, false, true);
 		
-		EtlTask eol = new EtlTask(OCL2QVTiTestCases.class.getResource("/oclDependencyAnalysis/qvt/ocl2qvti.etl").toURI());
-		eol.addModel(oclModel);
-		eol.addModel(qvtiModel);
-		eol.addModel(tracesMM);
-		eol.execute();
+		String oclStdlibName = "OclStdLib";
+		PivotModel oclStdlib = pmUtil.createPivotModel(OCLSTDLIB_URI, oclStdlibName, "", PIVOT_URI, true, false, true, false, true);
+		
+		EtlTask etl = new EtlTask(OCL2QVTiTestCases.class.getResource("/oclDependencyAnalysis/qvt/ocl2qvti.etl").toURI());
+		etl.addModel(oclModel);
+		etl.addModel(qvtiModel);
+		etl.addModel(tracesMM);
+		etl.addModel(oclStdlib);
+		etl.execute();
 	}
 }
