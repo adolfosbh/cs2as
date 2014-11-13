@@ -1,4 +1,4 @@
-
+	
 operation OCL!ConstructorExp getExpressionContextType () : OCL!Class {
 	
 	var container = self.eContainer();
@@ -13,4 +13,9 @@ operation OCL!ConstructorExp getTraceElementName() : String {
 	var toType = self.type;
 	
 	return fromType.name + '2' + toType.name;
+}
+
+
+operation OCL!Element getAllContents() : Sequence  {
+	return self.asSequence().closure(x | x.eContents());
 }

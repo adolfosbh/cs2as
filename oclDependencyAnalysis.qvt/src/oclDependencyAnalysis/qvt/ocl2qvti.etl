@@ -1,7 +1,12 @@
+-- Transformation model parameters:
+--     OCL - A CompleteOCL document 
+--     QVTi - The output QVTi model
+
 import 'ocl2qvtiUtils.eol';
 
 pre {
-	var MIDDLE_PACKAGE = MiddleMM!Package.all.first(); 
+	var MIDDLE_PACKAGE = MiddleMM!Package.all.first();
+	var LEFTCS_PACKAGE = OCL!Package.all.first();	 
 	var RIGHT = "rightAS";
 	var LEFT = "leftCS";
 	var MIDDLE = "middle";
@@ -33,13 +38,15 @@ pre {
 	
 	qvtiModel.nestedPackage.add(qvtiTransf);
 }
--- Transformation model parameters:
---     OCL - A CompleteOCL document 
---     QVTi - The output QVTi model
+
 
 rule ConstructorExp2Mapping_LM
 	transform s : OCL!ConstructorExp
 	to t : QVTi!Mapping {
+	
+	guard {
+		return s.closure(x|x.eContainer()).contains(LEFTCS_PACKAGE); 
+	}
 	
 	t.name = 'm'+s.getTraceElementName()+'_LM';
 	
@@ -61,6 +68,10 @@ rule ConstructorExp2Mapping_LM
 rule ConstructorExp2Mapping_MR
 	transform s : OCL!ConstructorExp
 	to t : QVTi!Mapping {
+	
+	guard {
+		return s.closure(x|x.eContainer()).contains(LEFTCS_PACKAGE); 
+	}
 	
 	t.name = 'm'+s.getTraceElementName()+'_MR';
 
@@ -84,7 +95,7 @@ rule ConstructorPart2UpdateMapping
 	
 	guard { 
 		var astCalls = s.getAstCalls().println();
-		return astCalls.notEmpty();
+		return astCalls.isEmpty() and s.closure(x|x.eContainer()).contains(LEFTCS_PACKAGE);
 	}
 		
 	var constructorExp = s.eContainer();
@@ -247,8 +258,8 @@ operation OCL!ConstructorExp createUpdate_MiddleDomain () : QVTi!CoreDomain {
 
 operation OCL!ConstructorPart getAstCalls() : Collection(OCL!OperationCallExpression) {
 	var result = Sequence {};  
-	for (exp in self.initExpression.eAllContents().including(self.initExpression)) {
-		if (exp.isKindOf(OCL!OperationCallExp) and exp.name = "ast") {
+	for (exp in self.initExpression.getAllContents().println("contents:").including(self.initExpression).println("including:")) {
+		if (exp.isKindOf(OCL!OperationCallExp) and exp.referredOperation.name = "ast") {
 			result.add(exp);
 		}
 	}
