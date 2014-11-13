@@ -4,11 +4,13 @@ Bundle-Name: Qvt
 Bundle-SymbolicName: oclDependencyAnalysis.qvt
 Bundle-Version: 1.0.0.qualifier
 Export-Package: oclDependencyAnalysis.qvt
-Require-Bundle: org.eclipse.qvtd.build.etl;bundle-version="1.0.0",
+Require-Bundle: org.eclipse.qvtd.build.etl,
  oclDependencyAnalysis.qvt,
  org.eclipse.ocl.examples.xtext.completeocl;bundle-version="3.5.0",
  org.junit,
  org.eclipse.qvtd.pivot.qvtimperative;bundle-version="0.12.0",
  org.eclipse.qvtd.pivot.qvtcore;bundle-version="0.12.0",
+ org.eclipse.epsilon.eol.engine;bundle-version="1.2.0",
  org.eclipse.epsilon.etl.engine;bundle-version="1.2.0",
  org.eclipse.epsilon.emc.emf;bundle-version="1.2.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
