@@ -8,11 +8,21 @@ operation OCL!ConstructorExp getExpressionContextType () : OCL!Class {
 	return container.contextVariable.type;
 }
 
+
+// FIXME clash naming
 operation OCL!ConstructorExp getTraceElementName() : String {
 	var fromType = self.getExpressionContextType();
 	var toType = self.type;
 	
 	return fromType.name + '2' + toType.name;
+}
+
+// FIXME clash naming
+operation OCL!ConstructorExp getTraceElementVariableName() : String {
+	var fromType = self.getExpressionContextType();
+	var toType = self.type;
+	
+	return fromType.name.subString(0,1).firstToLowerCase() + '2' + toType.name.subString(0,1).firstToLowerCase();
 }
 
 

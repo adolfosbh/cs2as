@@ -29,7 +29,7 @@ pre {
 	typedModel.usedPackage.add(
 		OCL!Import.all.importedNamespace.nestedPackage.flatten().selectOne(x 
 				| x.name = OCL!ConstructorExp.all.first().type.package.name));
-	qvtiTransf.modelParameter.add(typedModel);		
+	qvtiTransf.modelParameter.add(typedModel);
 	
 	typedModel = new QVTi!TypedModel;
 	typedModel.name = MIDDLE;
@@ -59,8 +59,20 @@ rule ConstructorExp2Mapping_LM
 	var guardPattern = new QVTi!GuardPattern;
 	var bottomPattern = new QVTi!BottomPattern;
 	
-	--var pAssignment = QVTi!MiddlePropertyAssignment;
+	var pAssignment = new QVTi!MiddlePropertyAssignment;
+	var value = new QVTi!VariableExp;
+	value.referredVariable = leftDomain.guardPattern.variable.first();
+	value.type = value.referredVariable.type;
+	var slotExpression = new QVTi!VariableExp;	
+	slotExpression.referredVariable = middleDomain.bottomPattern.realizedVariable.first();
+	slotExpression.type = slotExpression.referredVariable.type;
 	
+	pAssignment.value = value;
+	pAssignment.slotExpression = slotExpression;
+	pAssignment.targetProperty = slotExpression.type.ownedAttribute.selectOne(x | x.name = value.type.name.firstToLowerCase());	
+	
+	bottomPattern.assignment.add(pAssignment);
+		
 	t.guardPattern = guardPattern;
 	t.bottomPattern = bottomPattern;
 }
@@ -84,6 +96,20 @@ rule ConstructorExp2Mapping_MR
 	var guardPattern = new QVTi!GuardPattern;
 	var bottomPattern = new QVTi!BottomPattern;
 
+	var pAssignment = new QVTi!MiddlePropertyAssignment;
+	var value = new QVTi!VariableExp;
+	value.referredVariable = rightDomain.bottomPattern.realizedVariable.first();
+	value.type = value.referredVariable.type;
+	var slotExpression = new QVTi!VariableExp;	
+	slotExpression.referredVariable = middleDomain.guardPattern.variable.first();
+	slotExpression.type = slotExpression.referredVariable.type;
+	
+	pAssignment.value = value;
+	pAssignment.slotExpression = slotExpression;
+	pAssignment.targetProperty = slotExpression.type.ownedAttribute.selectOne(x | x.name = value.type.name.firstToLowerCase());	
+	
+	bottomPattern.assignment.add(pAssignment);
+		
 	t.guardPattern = guardPattern;
 	t.bottomPattern = bottomPattern;
 }
@@ -94,7 +120,7 @@ rule ConstructorPart2UpdateMapping
 	to t : QVTi!Mapping {
 	
 	guard { 
-		var astCalls = s.getAstCalls().println();
+		var astCalls = s.getAstCalls();
 		return astCalls.isEmpty() and s.closure(x|x.eContainer()).contains(LEFTCS_PACKAGE);
 	}
 		
@@ -150,8 +176,7 @@ operation OCL!ConstructorExp createLM_LeftDomain ( ) : QVTi!CoreDomain {
 
 operation OCL!ConstructorExp createLM_MiddleDomain () : QVTi!CoreDomain {
 	var contextType = self.getExpressionContextType();
-	var traceElementName = self.getTraceElementName();
-		
+
 	var domain = new QVTi!CoreDomain;	
 	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= MIDDLE);
 	domain.isEnforceable = true;
@@ -160,8 +185,8 @@ operation OCL!ConstructorExp createLM_MiddleDomain () : QVTi!CoreDomain {
 	var bottomPattern = new QVTi!BottomPattern;
 	
 	var variable = new QVTi!RealizedVariable;
-	variable.name = traceElementName.firstToLowerCase();
-	variable.type = MIDDLE_PACKAGE.ownedType.selectOne(x| x.name = traceElementName);
+	variable.name = self.getTraceElementVariableName();
+	variable.type = MIDDLE_PACKAGE.ownedType.selectOne(x| x.name = self.getTraceElementName());
 
 	bottomPattern.realizedVariable.add(variable);
 	
@@ -172,7 +197,6 @@ operation OCL!ConstructorExp createLM_MiddleDomain () : QVTi!CoreDomain {
 
 operation OCL!ConstructorExp createMR_MiddleDomain () : QVTi!CoreDomain {
 	var contextType = self.getExpressionContextType();
-	var traceElementName = self.getTraceElementName();
 		
 	var domain = new QVTi!CoreDomain;
 	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= MIDDLE);
@@ -182,8 +206,8 @@ operation OCL!ConstructorExp createMR_MiddleDomain () : QVTi!CoreDomain {
 	var bottomPattern = new QVTi!BottomPattern;
 	
 	var variable = new QVTi!Variable;
-	variable.name = traceElementName.firstToLowerCase();
-	variable.type = MIDDLE_PACKAGE.ownedType.selectOne(x| x.name = traceElementName);
+	variable.name = self.getTraceElementVariableName();
+	variable.type = MIDDLE_PACKAGE.ownedType.selectOne(x| x.name = self.getTraceElementName());
 	
 	guardPattern.variable.add(variable);
 	
@@ -236,7 +260,6 @@ operation OCL!ConstructorExp createUpdate_RightDomain () : QVTi!CoreDomain {
 
 operation OCL!ConstructorExp createUpdate_MiddleDomain () : QVTi!CoreDomain {
 	var constructedType = self.type;
-	var traceElementName = self.getTraceElementName();
 		
 	var domain = new QVTi!CoreDomain;
 	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= MIDDLE);
@@ -246,8 +269,8 @@ operation OCL!ConstructorExp createUpdate_MiddleDomain () : QVTi!CoreDomain {
 	var bottomPattern = new QVTi!BottomPattern;
 	
 	var variable = new QVTi!Variable;
-	variable.name = traceElementName.firstToLowerCase();
-	variable.type = MIDDLE_PACKAGE.ownedType.selectOne(x| x.name = traceElementName);
+	variable.name = self.getTraceElementVariableName();
+	variable.type = MIDDLE_PACKAGE.ownedType.selectOne(x| x.name = self.getTraceElementName());
 
 	guardPattern.variable.add(variable);
 	
@@ -258,7 +281,7 @@ operation OCL!ConstructorExp createUpdate_MiddleDomain () : QVTi!CoreDomain {
 
 operation OCL!ConstructorPart getAstCalls() : Collection(OCL!OperationCallExpression) {
 	var result = Sequence {};  
-	for (exp in self.initExpression.getAllContents().println("contents:").including(self.initExpression).println("including:")) {
+	for (exp in self.initExpression.getAllContents().including(self.initExpression)) {
 		if (exp.isKindOf(OCL!OperationCallExp) and exp.referredOperation.name = "ast") {
 			result.add(exp);
 		}
