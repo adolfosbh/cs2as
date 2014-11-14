@@ -132,23 +132,34 @@ rule ConstructorPart2UpdateMapping
 	t.name = 'u'+constructorExp.type.name+'_'+refProp.name;
 
 	var rightDomain = constructorExp.createUpdate_RightDomain();
-	var middleDomain = constructorExp.createUpdate_MiddleDomain();
+	var leftDomain = constructorExp.createUpdate_LeftDomain();
 	
 	t.domain.add(rightDomain);	
-	t.domain.add(middleDomain);
+	t.domain.add(leftDomain);
 	
 	// Mapping Guard and Bottom patterns configuration
 	// Firstly, the guard pattern	
-	var middleVar = middleDomain.guardPattern.variable.first();
+	var leftVar = leftDomain.guardPattern.variable.first();
 	var rightVar = rightDomain.guardPattern.variable.first();
 	
 	var sourceVarExp = new QVTi!VariableExp;
-	sourceVarExp.referredVariable = middleVar;
-	sourceVarExp.type = middleVar.type;
+	sourceVarExp.referredVariable = leftVar;
+	sourceVarExp.type = leftVar.type;
+	
+	
+	var sourceMiddlePropCall = new QVTi!MiddlePropertyCallExp;
+	var middleType = MiddleMM!Class.all.selectOne(x | x.name = constructorExp.getTraceElementName());
+	sourceMiddlePropCall.referredProperty = middleType.ownedAttribute.selectOne(x | x.name = leftVar.name);
+	sourceMiddlePropCall.type = middleType;
+	sourceMiddlePropCall.source = sourceVarExp;
+	
 	
 	var sourcePropCall = new QVTi!PropertyCallExp;
-	sourcePropCall.referredProperty = middleVar.type.ownedAttribute.selectOne(x | x.name = rightVar.type.name.firstToLowerCase());
-	sourcePropCall.source = sourceVarExp;
+	sourcePropCall.referredProperty = middleType.ownedAttribute.selectOne(x | x.name = rightVar.name);
+	sourcePropCall.type = rightVar.type;
+	sourcePropCall.source = sourceMiddlePropCall;
+	
+	
 	
 	var argVarExp = new QVTi!VariableExp;
 	argVarExp.referredVariable = rightVar;
@@ -178,7 +189,7 @@ rule ConstructorPart2UpdateMapping
 	
 	var propAssignment = new QVTi!PropertyAssignment;
 	propAssignment.targetProperty = s.referredProperty;
-	propAssignment.value = s.initExpression.createPropertyAssignmentValue(middleVar);
+	propAssignment.value = s.initExpression.createPropertyAssignmentValue(leftVar);
 	propAssignment.slotExpression = slotExp;
 		
 	var bottomPattern = new QVTi!BottomPattern;
@@ -303,8 +314,8 @@ operation OCL!ConstructorExp createUpdate_RightDomain () : QVTi!CoreDomain {
 	return domain;
 }
 
-operation OCL!ConstructorExp createUpdate_MiddleDomain () : QVTi!CoreDomain {
-	var constructedType = self.type;
+operation OCL!ConstructorExp createUpdate_LeftDomain () : QVTi!CoreDomain {
+	var contextType = self.getExpressionContextType();
 		
 	var domain = new QVTi!CoreDomain;
 	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= MIDDLE);
@@ -314,8 +325,8 @@ operation OCL!ConstructorExp createUpdate_MiddleDomain () : QVTi!CoreDomain {
 	var bottomPattern = new QVTi!BottomPattern;
 	
 	var variable = new QVTi!Variable;
-	variable.name = self.getTraceElementVariableName();
-	variable.type = MIDDLE_PACKAGE.ownedType.selectOne(x| x.name = self.getTraceElementName());
+	variable.name = contextType.name.firstToLowerCase();
+	variable.type = contextType;
 
 	guardPattern.variable.add(variable);
 	
@@ -324,28 +335,17 @@ operation OCL!ConstructorExp createUpdate_MiddleDomain () : QVTi!CoreDomain {
 	return domain;
 }
 
-operation OCL!OCLExpression createPropertyAssignmentValue(middleVar) : OCL!OCLExpression {
+operation OCL!OCLExpression createPropertyAssignmentValue(leftVar) : OCL!OCLExpression {
 	-- FIXME what happens with synthetised types ????
 	var eUtil = emfTool.getEcoreUtil();
 	var copiedExp = eUtil.copy(self);
-	-- We need to replace the OCL "self" VarExp by a middle model access
+	-- We need to replace the OCL refered "self" varible by the QVTi domain "leftVar"
 	for (exp in copiedExp.getAllContents().including(copiedExp)) { 
 		if (exp.isKindOf(QVTi!CallExp)) {
 			var source = exp.source;
 			if (source.isKindOf(QVTi!VariableExp) and source.referredVariable.name = 'self') {
-				var selfVar = source.referredVariable;
-				var sourceVarExp = new QVTi!VariableExp;
-				sourceVarExp.referredVariable = middleVar;
-				sourceVarExp.type = middleVar.type;
-	
-				var propCall = new QVTi!PropertyCallExp;
-				var referredProp =  middleVar.type.ownedAttribute.selectOne(x | x.name = selfVar.type.name.firstToLowerCase());
-				propCall.referredProperty = referredProp;
-				propCall.type = referredProp.type;
-				propCall.source = sourceVarExp;
-							
-				eUtil.replace(source, propCall);
-				eUtil.`delete`(source);
+				source.referredVariable = leftVar;
+				
 			}
 		}
 	} 
