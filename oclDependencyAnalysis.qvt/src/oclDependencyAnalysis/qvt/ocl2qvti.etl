@@ -318,7 +318,7 @@ operation OCL!ConstructorExp createUpdate_LeftDomain () : QVTi!CoreDomain {
 	var contextType = self.getExpressionContextType();
 		
 	var domain = new QVTi!CoreDomain;
-	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= MIDDLE);
+	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= LEFT);
 	domain.isCheckable = true;
 	
 	var guardPattern = new QVTi!GuardPattern;
