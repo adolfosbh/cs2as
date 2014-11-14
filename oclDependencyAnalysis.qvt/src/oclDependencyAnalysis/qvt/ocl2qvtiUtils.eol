@@ -8,13 +8,9 @@ operation OCL!ConstructorExp getExpressionContextType () : OCL!Class {
 	return container.contextVariable.type;
 }
 
-
 // FIXME clash naming
-operation OCL!ConstructorExp getTraceElementName() : String {
-	var fromType = self.getExpressionContextType();
-	var toType = self.type;
-	
-	return fromType.name + '2' + toType.name;
+operation OCL!ConstructorExp getTraceElementName() : String {	
+	return getTraceElementName(self.getExpressionContextType(), self.type);
 }
 
 // FIXME clash naming
@@ -25,6 +21,9 @@ operation OCL!ConstructorExp getTraceElementVariableName() : String {
 	return fromType.name.subString(0,1).firstToLowerCase() + '2' + toType.name.subString(0,1).firstToLowerCase();
 }
 
+operation getTraceElementName(fromType, toType) : String {
+	return fromType.name + '2' + toType.name;
+}
 
 operation OCL!Element getAllContents() : Sequence  {
 	return self.asSequence().closure(x | x.eContents());

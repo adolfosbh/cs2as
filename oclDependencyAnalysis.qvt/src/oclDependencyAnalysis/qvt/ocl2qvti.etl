@@ -123,7 +123,8 @@ rule ConstructorPart2UpdateMapping
 	
 	guard { 
 		var astCalls = s.getAstCalls();
-		return astCalls.isEmpty() and s.closure(x|x.eContainer()).contains(LEFTCS_PACKAGE);
+		return true;
+		--return astCalls.isEmpty() and s.closure(x|x.eContainer()).contains(LEFTCS_PACKAGE);
 	}
 		
 	var constructorExp = s.eContainer();
@@ -338,19 +339,47 @@ operation OCL!ConstructorExp createUpdate_LeftDomain () : QVTi!CoreDomain {
 operation OCL!OCLExpression createPropertyAssignmentValue(leftVar) : OCL!OCLExpression {
 	-- FIXME what happens with synthetised types ????
 	var eUtil = emfTool.getEcoreUtil();
-	var copiedExp = eUtil.copy(self);
+	var newInitExp = eUtil.copy(self);
 	-- We need to replace the OCL refered "self" varible by the QVTi domain "leftVar"
-	for (exp in copiedExp.getAllContents().including(copiedExp)) { 
-		if (exp.isKindOf(QVTi!CallExp)) {
-			var source = exp.source;
-			if (source.isKindOf(QVTi!VariableExp) and source.referredVariable.name = 'self') {
-				source.referredVariable = leftVar;
-				
-			}
+	for (exp in newInitExp.getAllContents().including(newInitExp)) {		
+		switch (true) {
+			case exp.isSelfVarExp():
+				exp.referredVariable = leftVar;
+			case exp.isAstOpCallExp():
+				var middleTypeName = getTraceElementName(exp.source.type, exp.referredOperation.type); // FIXME This doesnt work with ast() op returning an abstract name
+				var middleType = MiddleMM!Class.all.selectOne(x | x.name = middleTypeName);
+				var middlePropCall = new QVTi!MiddlePropertyCallExp;					
+				middlePropCall.referredProperty = middleType.ownedAttribute.selectOne(x | x.name = leftVar.name);
+				middlePropCall.type = middleType;
+				middlePropCall.source = exp.source;
+	
+	
+				var rightPropCall = new QVTi!PropertyCallExp;
+				var rightType = exp.referredOperation.type;
+				rightPropCall.referredProperty = middleType.ownedAttribute.selectOne(x | x.name = rightType.name.firstToLowerCase()); -- FIXME refactor name algorithm
+				rightPropCall.type = rightType;
+				rightPropCall.source = middlePropCall;
+											
+				if (newInitExp = exp) {
+					newInitExp = rightPropCall;
+				} else {
+					eUtil.replace(exp, rightPropCall);
+				}
+				eUtil.`delete`(exp);
 		}
 	} 
-	return copiedExp;
+	return newInitExp;
 }
+
+operation OCL!Element isSelfVarExp() : Boolean {
+	return self.isKindOf(QVTi!VariableExp) and self.referredVariable.name = 'self';
+}
+
+operation OCL!Element isAstOpCallExp() : Boolean {
+	return self.isKindOf(QVTi!OperationCallExp) and self.referredOperation.name = 'ast';
+}
+
+
 operation OCL!ConstructorPart getAstCalls() : Collection(OCL!OperationCallExpression) {
 	  
 	return self.initExpression.getAllContents().including(self.initExpression)
