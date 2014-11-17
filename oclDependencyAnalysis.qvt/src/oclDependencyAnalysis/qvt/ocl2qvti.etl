@@ -160,8 +160,6 @@ rule ConstructorPart2UpdateMapping
 	sourcePropCall.type = rightVar.type;
 	sourcePropCall.source = sourceMiddlePropCall;
 	
-	
-	
 	var argVarExp = new QVTi!VariableExp;
 	argVarExp.referredVariable = rightVar;
 	argVarExp.type = rightVar.type;
@@ -348,8 +346,9 @@ operation OCL!OCLExpression createPropertyAssignmentValue(leftVar) : OCL!OCLExpr
 			case exp.isAstOpCallExp():
 				var middleTypeName = getTraceElementName(exp.source.type, exp.referredOperation.type); // FIXME This doesnt work with ast() op returning an abstract name
 				var middleType = MiddleMM!Class.all.selectOne(x | x.name = middleTypeName);
-				var middlePropCall = new QVTi!MiddlePropertyCallExp;					
-				middlePropCall.referredProperty = middleType.ownedAttribute.selectOne(x | x.name = leftVar.name);
+				var leftPropertyName = exp.source.type.name.firstToLowerCase();
+				var middlePropCall = new QVTi!MiddlePropertyCallExp;
+				middlePropCall.referredProperty = middleType.ownedAttribute.selectOne(x | x.name = leftPropertyName);
 				middlePropCall.type = middleType;
 				middlePropCall.source = exp.source;
 	
@@ -372,11 +371,11 @@ operation OCL!OCLExpression createPropertyAssignmentValue(leftVar) : OCL!OCLExpr
 }
 
 operation OCL!Element isSelfVarExp() : Boolean {
-	return self.isKindOf(QVTi!VariableExp) and self.referredVariable.name = 'self';
+	return self.isKindOf(OCL!VariableExp) and self.referredVariable.name = 'self';
 }
 
 operation OCL!Element isAstOpCallExp() : Boolean {
-	return self.isKindOf(QVTi!OperationCallExp) and self.referredOperation.name = 'ast';
+	return self.isKindOf(OCL!OperationCallExp) and self.referredOperation.name = 'ast';
 }
 
 
