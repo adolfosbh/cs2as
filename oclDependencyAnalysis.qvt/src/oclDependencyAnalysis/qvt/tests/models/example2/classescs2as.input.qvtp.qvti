@@ -53,21 +53,19 @@ map packageCS2packageAS_MR in classesCS2classesAS {
 }
 
 map rootAS_ownedPackages in classesCS2classesAS {
-	check cAS(root : Root, package : Package) {}
-	check middle(r2r : RootCS2Root, p2p : PackageCS2Package) {}
-	where (	r2r.root = root;
-			p2p.package = package;
-			r2r.rootCS.ownedPackages->includes(p2p.packageCS);
-	) {
-		root.ownedPackages := root.ownedPackages->including(package);
+	check cAS(root : Root) {}
+	check cCS(rootCS : RootCS) {}
+	where (rootCS.RootCS2Root.root = root;)
+	{
+		root.ownedPackages := rootCS.ownedPackages->collect(pCS | pCS.PackageCS2Package.package);
 	}
 }
 
 map packageAS_name in classesCS2classesAS {
 	check cAS(package : Package) {}
-	check middle(p2p : PackageCS2Package) {}
-	where (p2p.package = package;)
+	check cCS(packageCS : PackageCS) {}
+	where (package.PackageCS2Package.packageCS = packageCS;)
 	{
-		package.name := p2p.packageCS.name;
+		package.name := packageCS.name;
 	}
 }

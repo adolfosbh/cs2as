@@ -128,18 +128,14 @@
         <guardPattern>
           <variable xmi:id="qV.classesCS2classesAS.rootAS_ownedPackages.cAS.guard.root"
               name="root" type="Classes.ecore.oclas#T.classes.Root"/>
-          <variable xmi:id="qV.classesCS2classesAS.rootAS_ownedPackages.cAS.guard.package"
-              name="package" type="Classes.ecore.oclas#T.classes.Package"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" isEnforceable="false"
-          typedModel="#qT.classesCS2classesAS.middle">
+          typedModel="#qT.classesCS2classesAS.cCS">
         <guardPattern>
-          <variable xmi:id="qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.r2r"
-              name="r2r" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2Root"/>
-          <variable xmi:id="qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.p2p"
-              name="p2p" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2Package"/>
+          <variable xmi:id="qV.classesCS2classesAS.rootAS_ownedPackages.cCS.guard.rootCS"
+              name="rootCS" type="ClassesCS.ecore.oclas#T.classescs.RootCS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -149,58 +145,39 @@
               referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
             <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="Classes.ecore.oclas#T.classes.Root"
                 referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.RootCS2Root.root">
-              <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2Root"
-                  referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.r2r"/>
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2Root"
+                  referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.RootCS2Root.rootCS">
+                <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
+                    referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.cCS.guard.rootCS"/>
+              </source>
             </source>
             <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
                 referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.cAS.guard.root"/>
           </conditionExpression>
         </predicate>
-        <predicate>
-          <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
-              referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-            <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="Classes.ecore.oclas#T.classes.Package"
-                referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2Package.package">
-              <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2Package"
-                  referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.p2p"/>
-            </source>
-            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
-                referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.cAS.guard.package"/>
-          </conditionExpression>
-        </predicate>
-        <predicate>
-          <conditionExpression xsi:type="pivot:OperationCallExp" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
-              referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.Collection.includes..ocl.OclAny">
-            <source xsi:type="pivot:OperationCallExp" name="oclAsSet" type="#//@nestedPackage.1/@ownedType.0"
-                implicit="true" referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.oclAsSet">
-              <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                  referredProperty="ClassesCS.ecore.oclas#p.classescs.RootCS.ownedPackages">
-                <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
-                    referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.RootCS2Root.rootCS">
-                  <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2Root"
-                      referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.r2r"/>
-                </source>
-              </source>
-            </source>
-            <argument xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2Package.packageCS">
-              <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2Package"
-                  referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.middle.guard.p2p"/>
-            </argument>
-          </conditionExpression>
-        </predicate>
       </guardPattern>
       <bottomPattern>
         <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.Root.ownedPackages">
-          <value xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.1"
-              referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OrderedSet.including..T">
-            <source xsi:type="pivot:PropertyCallExp" type="#//@nestedPackage.1/@ownedType.1"
-                referredProperty="Classes.ecore.oclas#p.classes.Root.ownedPackages">
-              <source xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
-                  referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.cAS.guard.root"/>
+          <value xsi:type="pivot:IteratorExp" type="#//@nestedPackage.1/@ownedType.0"
+              referredIteration="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#i.ocl.Set.collect..T">
+            <source xsi:type="pivot:OperationCallExp" name="oclAsSet" type="#//@nestedPackage.1/@ownedType.1"
+                implicit="true" referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.oclAsSet">
+              <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                  referredProperty="ClassesCS.ecore.oclas#p.classescs.RootCS.ownedPackages">
+                <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
+                    referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.cCS.guard.rootCS"/>
+              </source>
             </source>
-            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
-                referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.cAS.guard.package"/>
+            <body xsi:type="pivot:PropertyCallExp" isRequired="false" type="Classes.ecore.oclas#T.classes.Package"
+                referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2Package.package">
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2Package"
+                  referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2Package.packageCS">
+                <source xsi:type="pivot:VariableExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                    referredVariable="#//@nestedPackage.0/@rule.4/@bottomPattern/@assignment.0/@value/@iterator.0"/>
+              </source>
+            </body>
+            <iterator name="pCS" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                representedParameter="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#i0i.ocl.Set.collect..T"/>
           </value>
           <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
               referredVariable="#qV.classesCS2classesAS.rootAS_ownedPackages.cAS.guard.root"/>
@@ -217,10 +194,10 @@
         <bottomPattern/>
       </domain>
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" isEnforceable="false"
-          typedModel="#qT.classesCS2classesAS.middle">
+          typedModel="#qT.classesCS2classesAS.cCS">
         <guardPattern>
-          <variable xmi:id="qV.classesCS2classesAS.packageAS_name.middle.guard.p2p"
-              name="p2p" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2Package"/>
+          <variable xmi:id="qV.classesCS2classesAS.packageAS_name.cCS.guard.packageCS"
+              name="packageCS" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -228,13 +205,16 @@
         <predicate>
           <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
               referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-            <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="Classes.ecore.oclas#T.classes.Package"
-                referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2Package.package">
-              <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2Package"
-                  referredVariable="#qV.classesCS2classesAS.packageAS_name.middle.guard.p2p"/>
+            <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2Package.packageCS">
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2Package"
+                  referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2Package.package">
+                <source xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
+                    referredVariable="#qV.classesCS2classesAS.packageAS_name.cAS.guard.package"/>
+              </source>
             </source>
-            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
-                referredVariable="#qV.classesCS2classesAS.packageAS_name.cAS.guard.package"/>
+            <argument xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                referredVariable="#qV.classesCS2classesAS.packageAS_name.cCS.guard.packageCS"/>
           </conditionExpression>
         </predicate>
       </guardPattern>
@@ -242,11 +222,8 @@
         <assignment xsi:type="qvtcb:PropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.NamedElement.name">
           <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"
               referredProperty="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name">
-            <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                referredProperty="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2Package.packageCS">
-              <source xsi:type="pivot:VariableExp" type="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2Package"
-                  referredVariable="#qV.classesCS2classesAS.packageAS_name.middle.guard.p2p"/>
-            </source>
+            <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                referredVariable="#qV.classesCS2classesAS.packageAS_name.cCS.guard.packageCS"/>
           </value>
           <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
               referredVariable="#qV.classesCS2classesAS.packageAS_name.cAS.guard.package"/>
@@ -255,52 +232,38 @@
     </rule>
   </nestedPackage>
   <nestedPackage xmi:id="P.$$" name="$$" nsPrefix="orphanage" nsURI="http://www.eclipse.org/ocl/3.1.0/orphanage">
-    <ownedType xsi:type="pivot:SetType" name="Set" superClass="#//@nestedPackage.1/@ownedType.2"
+    <ownedType xsi:type="pivot:BagType" name="Bag" superClass="#//@nestedPackage.1/@ownedType.2"
+        elementType="Classes.ecore.oclas#T.classes.Package">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
+        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Package"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
+      </templateBinding>
+    </ownedType>
+    <ownedType xsi:type="pivot:SetType" name="Set" superClass="#//@nestedPackage.1/@ownedType.3"
         elementType="ClassesCS.ecore.oclas#T.classescs.PackageCS">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Set">
         <parameterSubstitution actual="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..SetT"/>
       </templateBinding>
     </ownedType>
-    <ownedType xsi:type="pivot:OrderedSetType" name="OrderedSet" superClass="#//@nestedPackage.1/@ownedType.3 #//@nestedPackage.1/@ownedType.4"
-        elementType="Classes.ecore.oclas#T.classes.Package">
-      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedSet">
-        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Package"
-            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedSetT"/>
-      </templateBinding>
-    </ownedType>
-    <ownedType xsi:type="pivot:CollectionType" name="UniqueCollection" superClass="#//@nestedPackage.1/@ownedType.5"
-        elementType="ClassesCS.ecore.oclas#T.classescs.PackageCS">
-      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.UniqueCollection">
-        <parameterSubstitution actual="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..UniqueCollectionT"/>
-      </templateBinding>
-    </ownedType>
-    <ownedType xsi:type="pivot:CollectionType" name="OrderedCollection" superClass="#//@nestedPackage.1/@ownedType.6"
-        elementType="Classes.ecore.oclas#T.classes.Package">
-      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedCollection">
-        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Package"
-            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedCollectionT"/>
-      </templateBinding>
-    </ownedType>
-    <ownedType xsi:type="pivot:CollectionType" name="UniqueCollection" superClass="#//@nestedPackage.1/@ownedType.6"
-        elementType="Classes.ecore.oclas#T.classes.Package">
-      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.UniqueCollection">
-        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Package"
-            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..UniqueCollectionT"/>
-      </templateBinding>
-    </ownedType>
     <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
-        elementType="ClassesCS.ecore.oclas#T.classescs.PackageCS">
+        elementType="Classes.ecore.oclas#T.classes.Package">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
-        <parameterSubstitution actual="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
+        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Package"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
       </templateBinding>
     </ownedType>
+    <ownedType xsi:type="pivot:CollectionType" name="UniqueCollection" superClass="#//@nestedPackage.1/@ownedType.4"
+        elementType="ClassesCS.ecore.oclas#T.classescs.PackageCS">
+      <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.UniqueCollection">
+        <parameterSubstitution actual="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
+            formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..UniqueCollectionT"/>
+      </templateBinding>
+    </ownedType>
     <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
-        elementType="Classes.ecore.oclas#T.classes.Package">
+        elementType="ClassesCS.ecore.oclas#T.classescs.PackageCS">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
-        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Package"
+        <parameterSubstitution actual="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
       </templateBinding>
     </ownedType>
