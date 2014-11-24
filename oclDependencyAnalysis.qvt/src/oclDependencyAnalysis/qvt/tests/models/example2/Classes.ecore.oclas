@@ -21,7 +21,7 @@
           type="#T.classes.Package" implicit="true" opposite="#p.classes.Package.ownedPackages"/>
       <ownedAttribute xmi:id="p.classes.Package.Root" name="Root" isRequired="false"
           type="#T.classes.Root" implicit="true" opposite="#p.classes.Root.ownedPackages"/>
-      <ownedAttribute xmi:id="p.classes.Package.PackageCS2PackageAS" name="PackageCS2PackageAS"
+      <ownedAttribute xmi:id="p.classes.Package.PackageCS2Package" name="PackageCS2Package"
           type="#//@nestedPackage.1/@ownedType.2" implicit="true" opposite="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package"/>
     </ownedType>
     <ownedType xsi:type="pivot:Class" xmi:id="T.classes.Class" name="Class" superClass="#T.classes.NamedElement">
@@ -31,13 +31,13 @@
           implicit="true" opposite="#p.classes.Class.superClass"/>
       <ownedAttribute xmi:id="p.classes.Class.Package" name="Package" isRequired="false"
           type="#T.classes.Package" implicit="true" opposite="#p.classes.Package.ownedClasses"/>
-      <ownedAttribute xmi:id="p.classes.Class.ClassCS2ClassAS" name="ClassCS2ClassAS"
+      <ownedAttribute xmi:id="p.classes.Class.ClassCS2Class" name="ClassCS2Class"
           type="#//@nestedPackage.1/@ownedType.4" implicit="true" opposite="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class"/>
     </ownedType>
     <ownedType xsi:type="pivot:Class" xmi:id="T.classes.Root" name="Root" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
       <ownedAttribute xmi:id="p.classes.Root.ownedPackages" name="ownedPackages" type="#//@nestedPackage.1/@ownedType.1"
           isComposite="true" opposite="#p.classes.Package.Root"/>
-      <ownedAttribute xmi:id="p.classes.Root.RootCS2RootAS" name="RootCS2RootAS" type="#//@nestedPackage.1/@ownedType.5"
+      <ownedAttribute xmi:id="p.classes.Root.RootCS2Root" name="RootCS2Root" type="#//@nestedPackage.1/@ownedType.5"
           implicit="true" opposite="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.root"/>
     </ownedType>
   </nestedPackage>

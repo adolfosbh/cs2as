@@ -4,7 +4,7 @@
     <type href="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
     <domain href="classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.0/@domain.1"/>
   </datums>
-  <datums xsi:type="qvtschedule:ClassDatum" dataParameter="//@actions.0/@distinctArguments.0/@primaryArguments.0 //@actions.6/@distinctArguments.1/@primaryArguments.0 //@actions.7/@distinctArguments.0/@primaryArguments.0">
+  <datums xsi:type="qvtschedule:ClassDatum" dataParameter="//@actions.0/@distinctArguments.0/@primaryArguments.0 //@actions.6/@distinctArguments.0/@primaryArguments.0 //@actions.7/@distinctArguments.1/@primaryArguments.0">
     <type href="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
     <domain href="classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.0/@domain.0"/>
   </datums>
@@ -20,11 +20,11 @@
     <type href="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
     <domain href="classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.2/@domain.1"/>
   </datums>
-  <datums xsi:type="qvtschedule:ClassDatum" dataParameter="//@actions.2/@distinctArguments.0/@primaryArguments.0 //@actions.9/@distinctArguments.0/@primaryArguments.0">
+  <datums xsi:type="qvtschedule:ClassDatum" dataParameter="//@actions.2/@distinctArguments.0/@primaryArguments.0 //@actions.9/@distinctArguments.1/@primaryArguments.0">
     <type href="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
     <domain href="classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.2/@domain.0"/>
   </datums>
-  <datums xsi:type="qvtschedule:ClassDatum" sources="//@actions.3" dataParameter="//@actions.6/@distinctArguments.0/@primaryArguments.0 //@actions.7/@distinctArguments.1/@primaryArguments.0">
+  <datums xsi:type="qvtschedule:ClassDatum" sources="//@actions.3" dataParameter="//@actions.6/@distinctArguments.1/@primaryArguments.0 //@actions.7/@distinctArguments.0/@primaryArguments.0">
     <type href="Classes.ecore.oclas#T.classes.Package"/>
     <domain href="classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.3/@domain.1"/>
   </datums>
@@ -32,7 +32,7 @@
     <type href="Classes.ecore.oclas#T.classes.Root"/>
     <domain href="classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.4/@domain.1"/>
   </datums>
-  <datums xsi:type="qvtschedule:ClassDatum" sources="//@actions.5" dataParameter="//@actions.9/@distinctArguments.1/@primaryArguments.0">
+  <datums xsi:type="qvtschedule:ClassDatum" sources="//@actions.5" dataParameter="//@actions.9/@distinctArguments.0/@primaryArguments.0">
     <type href="Classes.ecore.oclas#T.classes.Class"/>
     <domain href="classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.5/@domain.1"/>
   </datums>
@@ -86,26 +86,26 @@
   </actions>
   <actions xsi:type="qvtschedule:MappingAction" order="3" parent="//@actions.10">
     <distinctArguments>
-      <primaryArguments datum="//@datums.6">
-        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_name.rightAS.guard.package"/>
+      <primaryArguments datum="//@datums.1">
+        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_name.leftCS.guard.packageCS"/>
       </primaryArguments>
     </distinctArguments>
     <distinctArguments>
-      <primaryArguments datum="//@datums.1">
-        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_name.leftCS.guard.packageCS"/>
+      <primaryArguments datum="//@datums.6">
+        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_name.rightAS.guard.package"/>
       </primaryArguments>
     </distinctArguments>
     <mapping href="classescs2as.qvtp.qvtias#m.classescs2as.uPackage_name"/>
   </actions>
   <actions xsi:type="qvtschedule:MappingAction" order="4" parent="//@actions.10">
     <distinctArguments>
-      <primaryArguments datum="//@datums.1">
-        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"/>
+      <primaryArguments datum="//@datums.6">
+        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_ownedClasses.rightAS.guard.package"/>
       </primaryArguments>
     </distinctArguments>
     <distinctArguments>
-      <primaryArguments datum="//@datums.6">
-        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_ownedClasses.rightAS.guard.package"/>
+      <primaryArguments datum="//@datums.1">
+        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"/>
       </primaryArguments>
     </distinctArguments>
     <mapping href="classescs2as.qvtp.qvtias#m.classescs2as.uPackage_ownedClasses"/>
@@ -125,13 +125,13 @@
   </actions>
   <actions xsi:type="qvtschedule:MappingAction" order="7" parent="//@actions.10">
     <distinctArguments>
-      <primaryArguments datum="//@datums.5">
-        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uClass_name.leftCS.guard.classCS"/>
+      <primaryArguments datum="//@datums.8">
+        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uClass_name.rightAS.guard.class"/>
       </primaryArguments>
     </distinctArguments>
     <distinctArguments>
-      <primaryArguments datum="//@datums.8">
-        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uClass_name.rightAS.guard.class"/>
+      <primaryArguments datum="//@datums.5">
+        <variable href="classescs2as.qvtp.qvtias#qV.classescs2as.uClass_name.leftCS.guard.classCS"/>
       </primaryArguments>
     </distinctArguments>
     <mapping href="classescs2as.qvtp.qvtias#m.classescs2as.uClass_name"/>

@@ -15,7 +15,7 @@
           type="#//@nestedPackage.1/@ownedType.0" isComposite="true" opposite="#p.classescs.ClassCS.PackageCS"/>
       <ownedAttribute xmi:id="p.classescs.PackageCS.RootCS" name="RootCS" type="#//@nestedPackage.1/@ownedType.1"
           implicit="true" opposite="#p.classescs.RootCS.ownedPackages"/>
-      <ownedAttribute xmi:id="p.classescs.PackageCS.PackageCS2PackageAS" name="PackageCS2PackageAS"
+      <ownedAttribute xmi:id="p.classescs.PackageCS.PackageCS2Package" name="PackageCS2Package"
           type="#//@nestedPackage.1/@ownedType.2" implicit="true" opposite="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS"/>
     </ownedType>
     <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.ClassCS" name="ClassCS"
@@ -24,7 +24,7 @@
           type="#T.classescs.PathNameCS" isComposite="true" opposite="#p.classescs.PathNameCS.ClassCS"/>
       <ownedAttribute xmi:id="p.classescs.ClassCS.PackageCS" name="PackageCS" isRequired="false"
           type="#T.classescs.PackageCS" implicit="true" opposite="#p.classescs.PackageCS.ownedClasses"/>
-      <ownedAttribute xmi:id="p.classescs.ClassCS.ClassCS2ClassAS" name="ClassCS2ClassAS"
+      <ownedAttribute xmi:id="p.classescs.ClassCS.ClassCS2Class" name="ClassCS2Class"
           type="#//@nestedPackage.1/@ownedType.3" implicit="true" opposite="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS"/>
     </ownedType>
     <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.PathNameCS" name="PathNameCS"
@@ -42,8 +42,8 @@
     <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.RootCS" name="RootCS" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
       <ownedAttribute xmi:id="p.classescs.RootCS.ownedPackages" name="ownedPackages"
           isRequired="false" type="#T.classescs.PackageCS" opposite="#p.classescs.PackageCS.RootCS"/>
-      <ownedAttribute xmi:id="p.classescs.RootCS.RootCS2RootAS" name="RootCS2RootAS"
-          type="#//@nestedPackage.1/@ownedType.5" implicit="true" opposite="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS"/>
+      <ownedAttribute xmi:id="p.classescs.RootCS.RootCS2Root" name="RootCS2Root" type="#//@nestedPackage.1/@ownedType.5"
+          implicit="true" opposite="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS"/>
     </ownedType>
   </nestedPackage>
   <nestedPackage xmi:id="P.$$" name="$$" nsPrefix="orphanage" nsURI="http://www.eclipse.org/ocl/3.1.0/orphanage">

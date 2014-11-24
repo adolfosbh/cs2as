@@ -25,12 +25,12 @@
           xmi:id="p.classescstraces.PackageCS2Package.packageCS"
           name="packageCS"
           type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
-          opposite="ClassesCS.ecore.oclas#p.classescs.ClassCS.ClassCS2ClassAS"/>
+          opposite="ClassesCS.ecore.oclas#p.classescs.PackageCS.PackageCS2Package"/>
       <ownedAttribute
           xmi:id="p.classescstraces.PackageCS2Package.package"
           name="package"
           type="Classes.ecore.oclas#T.classes.Package"
-          opposite="Classes.ecore.oclas#p.classes.Package.PackageCS2PackageAS"/>
+          opposite="Classes.ecore.oclas#p.classes.Package.PackageCS2Package"/>
     </ownedType>
     <ownedType
         xsi:type="pivot:Class"
@@ -41,12 +41,12 @@
           xmi:id="p.classescstraces.ClassCS2Class.classCS"
           name="classCS"
           type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
-          opposite="ClassesCS.ecore.oclas#//@nestedPackage.0/@ownedType.3/@ownedAttribute.2"/>
+          opposite="ClassesCS.ecore.oclas#p.classescs.ClassCS.ClassCS2Class"/>
       <ownedAttribute
           xmi:id="p.classescstraces.ClassCS2Class.class"
           name="class"
           type="Classes.ecore.oclas#T.classes.Class"
-          opposite="Classes.ecore.oclas#//@nestedPackage.0/@ownedType.4/@ownedAttribute.3"/>
+          opposite="Classes.ecore.oclas#p.classes.Class.ClassCS2Class"/>
     </ownedType>
     <ownedType
         xsi:type="pivot:Class"
@@ -57,12 +57,12 @@
           xmi:id="p.classescstraces.RootCS2Root.rootCS"
           name="rootCS"
           type="ClassesCS.ecore.oclas#T.classescs.RootCS"
-          opposite="ClassesCS.ecore.oclas#//@nestedPackage.0/@ownedType.6/@ownedAttribute.1"/>
+          opposite="ClassesCS.ecore.oclas#p.classescs.RootCS.RootCS2Root"/>
       <ownedAttribute
           xmi:id="p.classescstraces.RootCS2Root.root"
           name="root"
           type="Classes.ecore.oclas#T.classes.Root"
-          opposite="Classes.ecore.oclas#//@nestedPackage.0/@ownedType.5/@ownedAttribute.1"/>
+          opposite="Classes.ecore.oclas#p.classes.Root.RootCS2Root"/>
     </ownedType>
   </nestedPackage>
 </pivot:Root>
