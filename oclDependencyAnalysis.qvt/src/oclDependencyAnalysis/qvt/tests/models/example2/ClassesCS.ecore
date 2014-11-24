@@ -22,6 +22,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PathElementCS" eSuperTypes="#//NamedElementCS"/>
   <eClassifiers xsi:type="ecore:EClass" name="RootCS" eSuperTypes="#//ElementCS">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPackages" eType="#//PackageCS"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPackage" eType="#//PackageCS"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

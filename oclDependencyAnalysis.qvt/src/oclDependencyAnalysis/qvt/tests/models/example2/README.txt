@@ -20,3 +20,4 @@ Notes:
 - Classescs2as_v2.input.qvt.qvti is another QVTp transformation corresponding to the Complete OCL document. In this case, the transformation relies on a cross-reference between
 the CS and the AS so that a middle model doesn't need to be created.
 - There is now a working "Classes Example - (OCL 2 QVTi)" launch conf, which automatically generates 2.c) from 2.a).
+- 24/11 OCL2QVTiTestCases now launches all the transformation chain. 
