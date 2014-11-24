@@ -16,7 +16,7 @@
       <ownedAttribute xmi:id="p.classescs.PackageCS.RootCS" name="RootCS" type="#//@nestedPackage.1/@ownedType.1"
           implicit="true" opposite="#p.classescs.RootCS.ownedPackages"/>
       <ownedAttribute xmi:id="p.classescs.PackageCS.PackageCS2PackageAS" name="PackageCS2PackageAS"
-          type="#//@nestedPackage.1/@ownedType.2" implicit="true" opposite="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.PackageCS2PackageAS.packageCS"/>
+          type="#//@nestedPackage.1/@ownedType.2" implicit="true" opposite="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS"/>
     </ownedType>
     <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.ClassCS" name="ClassCS"
         superClass="#T.classescs.NamedElementCS">
@@ -25,7 +25,7 @@
       <ownedAttribute xmi:id="p.classescs.ClassCS.PackageCS" name="PackageCS" isRequired="false"
           type="#T.classescs.PackageCS" implicit="true" opposite="#p.classescs.PackageCS.ownedClasses"/>
       <ownedAttribute xmi:id="p.classescs.ClassCS.ClassCS2ClassAS" name="ClassCS2ClassAS"
-          type="#//@nestedPackage.1/@ownedType.3" implicit="true" opposite="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.ClassCS2ClassAS.classCS"/>
+          type="#//@nestedPackage.1/@ownedType.3" implicit="true" opposite="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS"/>
     </ownedType>
     <ownedType xsi:type="pivot:Class" xmi:id="T.classescs.PathNameCS" name="PathNameCS"
         superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclElement">
@@ -43,7 +43,7 @@
       <ownedAttribute xmi:id="p.classescs.RootCS.ownedPackages" name="ownedPackages"
           isRequired="false" type="#T.classescs.PackageCS" opposite="#p.classescs.PackageCS.RootCS"/>
       <ownedAttribute xmi:id="p.classescs.RootCS.RootCS2RootAS" name="RootCS2RootAS"
-          type="#//@nestedPackage.1/@ownedType.5" implicit="true" opposite="ClassesCS2ClassesAS.ecore.oclas#p.cCS2cAS.RootCS2RootAS.rootCS"/>
+          type="#//@nestedPackage.1/@ownedType.5" implicit="true" opposite="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS"/>
     </ownedType>
   </nestedPackage>
   <nestedPackage xmi:id="P.$$" name="$$" nsPrefix="orphanage" nsURI="http://www.eclipse.org/ocl/3.1.0/orphanage">
@@ -60,16 +60,16 @@
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:BagType" name="Bag" superClass="#//@nestedPackage.1/@ownedType.9"
-        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS">
+        elementType="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
-        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
+        <parameterSubstitution actual="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:BagType" name="Bag" superClass="#//@nestedPackage.1/@ownedType.10"
-        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.ClassCS2ClassAS">
+        elementType="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
-        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.ClassCS2ClassAS"
+        <parameterSubstitution actual="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
       </templateBinding>
     </ownedType>
@@ -80,9 +80,9 @@
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:BagType" name="Bag" superClass="#//@nestedPackage.1/@ownedType.13"
-        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS">
+        elementType="classescs2as.ecore.oclas#T.classescstraces.RootCS2Root">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Bag">
-        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"
+        <parameterSubstitution actual="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..BagT"/>
       </templateBinding>
     </ownedType>
@@ -105,16 +105,16 @@
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
-        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS">
+        elementType="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
-        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.PackageCS2PackageAS"
+        <parameterSubstitution actual="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
-        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.ClassCS2ClassAS">
+        elementType="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
-        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.ClassCS2ClassAS"
+        <parameterSubstitution actual="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
       </templateBinding>
     </ownedType>
@@ -131,9 +131,9 @@
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
-        elementType="ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS">
+        elementType="classescs2as.ecore.oclas#T.classescstraces.RootCS2Root">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
-        <parameterSubstitution actual="pivot:Class ClassesCS2ClassesAS.ecore.oclas#T.cCS2cAS.RootCS2RootAS"
+        <parameterSubstitution actual="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
       </templateBinding>
     </ownedType>

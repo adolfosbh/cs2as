@@ -10,8 +10,8 @@
     <import name="ClassesAS" metamodelFile="models/example2/Classes.ecore">
       <package>classes</package>
     </import>
-    <import name="ClassesCS2ClassesAS" metamodelFile="models/example2/ClassesCS2ClassesAS.ecore">
-      <package>cCS2cAS</package>
+    <import name="classescs2as.ecore" metamodelFile="models/example2/classescs2as.ecore">
+      <package>classescstraces</package>
     </import>
   </transformation>
 </qvtcconfig:Configuration>

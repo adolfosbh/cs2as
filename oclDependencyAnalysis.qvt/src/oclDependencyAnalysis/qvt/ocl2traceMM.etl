@@ -16,8 +16,6 @@ rule ConstructorExp2EClass
 	t.eStructuralFeatures.add(toType.createEReference());
 }
 
-
-
 operation OCL!Type createEReference() : Ecore!EReference {
 	var newRef = new Ecore!EReference();
 	newRef.name = self.name.firstToLowerCase();
@@ -27,7 +25,6 @@ operation OCL!Type createEReference() : Ecore!EReference {
 	newRef.upperBound = 1;
 	return newRef;
 }
-
 
 -- To obtain the Ecore meta-class corresponding to a Pivot Class
 -- Note that (imported) EPackages should be loaded as an additional resource 

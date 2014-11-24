@@ -1,17 +1,12 @@
 package oclDependencyAnalysis.qvt.tests;
 
-import java.net.URISyntaxException;
-
 import oclDependencyAnalysis.qvt.OCL2QVTiBroker;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.ocl.examples.domain.utilities.DomainUtil;
 import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
-import org.eclipse.ocl.examples.pivot.manager.MetaModelManagerResourceSetAdapter;
 import org.eclipse.ocl.examples.pivot.model.OCLstdlib;
 import org.eclipse.ocl.examples.xtext.completeocl.CompleteOCLStandaloneSetup;
-import org.eclipse.qvtd.build.etl.EtlTask;
 import org.eclipse.qvtd.build.etl.MtcBroker;
 import org.eclipse.qvtd.build.etl.PivotModel;
 import org.eclipse.qvtd.build.etl.QvtMtcExecutionException;
@@ -21,28 +16,24 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class OCL2QVTiTestCases {
+	
+	static class OCL2QVTiBrokerTester extends OCL2QVTiBroker {
 
-	protected static final String OCLSTDLIB_URI = "http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas";
-	
-	protected static final String ECORE_URI = "http://www.eclipse.org/emf/2002/Ecore";
-	
-	protected static final String PIVOT_URI = "http://www.eclipse.org/ocl/3.1.0/Pivot";
-	
-	protected static final String QVTB_URI ="http://www.eclipse.org/qvt/0.9/QVTbase";
-	
-	protected static final String QVTCB_URI = "http://www.eclipse.org/qvt/0.9/QVTcoreBase";
-	
-	protected static final String QVTC_URI = "http://www.eclipse.org/qvt/0.9/QVTcore";
-	
-	protected static final String QVTI_URI = "http://www.eclipse.org/qvt/0.9/QVTimperative";
+		public OCL2QVTiBrokerTester(String oclDocUri, Class<?> owner, MetaModelManager metaModelManager)
+				throws QvtMtcExecutionException {
+			super(oclDocUri, owner, metaModelManager);
+		}
 		
-	protected static final String QVTI_FULL_NS = QVTI_URI + ',' + QVTCB_URI + ',' +  QVTB_URI + ',' +  PIVOT_URI;
-	
-	protected static final String TRACES_FULL_NS = PIVOT_URI + ',' + ECORE_URI;
+		// For testing purpose
+		@Override
+		protected PivotModel runOCL2QVTp(String oclDocURI, String qvtiFileURI, String tracesMMURI)
+				throws QvtMtcExecutionException {
+			return super.runOCL2QVTp(oclDocURI, qvtiFileURI, tracesMMURI);
+		}
+	}
 	
 	private MetaModelManager metaModelManager; 
 	private ResourceSet rSet;
-	private PivotModelUtil pmUtil;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -53,55 +44,36 @@ public class OCL2QVTiTestCases {
 		
 				
 		rSet = new ResourceSetImpl();
-		metaModelManager = new MetaModelManager();
-		pmUtil = new PivotModelUtil(metaModelManager);
-        MetaModelManagerResourceSetAdapter.getAdapter(DomainUtil.nonNullState(rSet), metaModelManager);
+		metaModelManager = new MetaModelManager(rSet);
 	}
 	
+	@Test
 	public void test() throws Exception {
 				
-		String qvtcasUri = "platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/classescs2as.qvtc"; 
+		String oclDocUri = "platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/classescs2as.oclas"; 
 
-    	MtcBroker mtc = new OCL2QVTiBroker(qvtcasUri, this.getClass(), metaModelManager);
+    	MtcBroker mtc = new OCL2QVTiBroker(oclDocUri, this.getClass(), metaModelManager);
     	mtc.execute();
     	
     	System.out.println("finished!!!");
 	}
 		
 	@Test
-	public void testOCL2QVTi_classesExample() throws Exception {
+	public void testOCL2QVTp_classesExample() throws Exception {
 				
-		String oclDocURI = "platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS2Classes.ocl.oclas";
+		String oclDocURI = "platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/classescs2as.oclas";
 		
-		String qvtiFileURI = "platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/classescs2as.output.qvtp.qvtias";
+		String qvtpFileURI = "platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/classescs2as.qvtp.qvtias";
 		
-		String tracesMMURI = "platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS2ClassesAS.ecore.oclas";
+		String tracesMMURI = "platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/classescs2as.ecore.oclas";
 		
-		runOCL2QVTi(oclDocURI, qvtiFileURI, tracesMMURI);
+		OCL2QVTiBrokerTester mtc = new OCL2QVTiBrokerTester(oclDocURI, this.getClass(), metaModelManager);
+		
+		mtc.runOCL2QVTp(oclDocURI, qvtpFileURI, tracesMMURI);
 		
 		// Testing nothing for the time being. Just to be able to debug java code.
 	}
 	
 	
-	protected void runOCL2QVTi (String oclDocURI, String qvtiFileURI, String tracesMMURI) throws QvtMtcExecutionException, URISyntaxException {
-
-		String oclDocModelName = "OCL";
-		PivotModel oclModel = pmUtil.createPivotModel(oclDocURI, oclDocModelName, "", PIVOT_URI, true, false, true, false, true);
-		
-		String qvtiModelName = "QVTi";
-		PivotModel qvtiModel = pmUtil.createPivotModel(qvtiFileURI, qvtiModelName, "", QVTI_FULL_NS, false, true, false, false, true);
-		
-		String tracesMModelName = "MiddleMM";
-		PivotModel tracesMM = pmUtil.createPivotModel(tracesMMURI, tracesMModelName, "", TRACES_FULL_NS , true, false, true, false, true);
-		
-		String oclStdlibName = "OclStdLib";
-		PivotModel oclStdlib = pmUtil.createPivotModel(OCLSTDLIB_URI, oclStdlibName, "", PIVOT_URI, true, false, true, false, true);
-		
-		EtlTask etl = new EtlTask(OCL2QVTiTestCases.class.getResource("/oclDependencyAnalysis/qvt/ocl2qvti.etl").toURI());
-		etl.addModel(oclModel);
-		etl.addModel(qvtiModel);
-		etl.addModel(tracesMM);
-		etl.addModel(oclStdlib);
-		etl.execute();
-	}
+	
 }

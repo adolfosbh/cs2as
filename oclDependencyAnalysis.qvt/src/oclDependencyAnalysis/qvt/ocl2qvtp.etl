@@ -14,9 +14,10 @@ pre {
 	
 	-- transformation begins --
 	var qvtiModel = new QVTi!ImperativeModel;
+	qvtiModel.externalURI = OCL!Root.all.first().name.replace(".ocl",""); -- FIXME	 
 	
 	var qvtiTransf = new QVTi!Transformation;
-	qvtiTransf.name = OCL!Root.all.first().name.replace(".ocl","");
+	qvtiTransf.name = qvtiModel.name;
 	qvtiTransf.modelParameter.addAll(QVTi!TypedModel.all());
 	
 	var typedModel = new QVTi!TypedModel;
@@ -41,6 +42,11 @@ pre {
 	qvtiModel.nestedPackage.add(qvtiTransf);
 }
 
+--rule Import2 
+--	transform s : sourcemodel!sourcetype
+--	to t : targetmodel!targettype {
+--	
+--}
 
 rule ConstructorExp2Mapping_LM
 	transform s : OCL!ConstructorExp
@@ -393,5 +399,5 @@ operation getOclAnyEqualsOp() : OCL!Operation {
 post {
 	-- We add all the declaratively created QVTi mappings to the imperatively created QVTi transformation 
 	qvtiTransf.`rule`.addAll(QVTi!Mapping.all());
-	"OCL 2 QVTi completed".println();
+	"OCL 2 QVTp completed".println();
 }
