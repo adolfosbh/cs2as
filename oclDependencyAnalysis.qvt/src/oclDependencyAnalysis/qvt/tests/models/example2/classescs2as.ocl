@@ -7,7 +7,7 @@ package classescs
 context RootCS
 def : ast() : classes::Root =
 	classes::Root {
-		ownedPackages = ownedPackages.ast()
+		ownedPackages = ownedPackage.ast()
 	}
 
 context PackageCS

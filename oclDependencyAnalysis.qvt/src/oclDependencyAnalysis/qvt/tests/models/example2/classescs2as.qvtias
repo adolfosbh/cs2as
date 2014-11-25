@@ -8,12 +8,12 @@
     <modelParameter xmi:id="qT.classescs2as.leftCS" name="leftCS" usedPackage="ClassesCS.ecore.oclas#P.classescs"/>
     <modelParameter xmi:id="qT.classescs2as.rightAS" name="rightAS" usedPackage="Classes.ecore.oclas#P.classes"/>
     <modelParameter xmi:id="qT.classescs2as.middle" name="middle" usedPackage="classescs2as.ecore.oclas#P.classescstraces"/>
-    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.mPackageCS2Package_LM" name="mPackageCS2Package_LM">
+    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.mClassCS2Class_LM" name="mClassCS2Class_LM">
       <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
           typedModel="#qT.classescs2as.leftCS">
         <guardPattern>
-          <variable xmi:id="qV.classescs2as.mPackageCS2Package_LM.leftCS.guard.packageCS"
-              name="packageCS" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
+          <variable xmi:id="qV.classescs2as.mClassCS2Class_LM.leftCS.guard.classCS"
+              name="classCS" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -21,8 +21,8 @@
           typedModel="#qT.classescs2as.middle">
         <guardPattern/>
         <bottomPattern>
-          <realizedVariable xmi:id="qV.classescs2as.mPackageCS2Package_LM.middle.bottom.p2p"
-              name="p2p" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
+          <realizedVariable xmi:id="qV.classescs2as.mClassCS2Class_LM.middle.bottom.c2c"
+              name="c2c" type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
@@ -48,12 +48,12 @@
       <guardPattern/>
       <bottomPattern/>
     </rule>
-    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.mClassCS2Class_LM" name="mClassCS2Class_LM">
+    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.mPackageCS2Package_LM" name="mPackageCS2Package_LM">
       <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
           typedModel="#qT.classescs2as.leftCS">
         <guardPattern>
-          <variable xmi:id="qV.classescs2as.mClassCS2Class_LM.leftCS.guard.classCS"
-              name="classCS" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
+          <variable xmi:id="qV.classescs2as.mPackageCS2Package_LM.leftCS.guard.packageCS"
+              name="packageCS" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -61,19 +61,19 @@
           typedModel="#qT.classescs2as.middle">
         <guardPattern/>
         <bottomPattern>
-          <realizedVariable xmi:id="qV.classescs2as.mClassCS2Class_LM.middle.bottom.c2c"
-              name="c2c" type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
+          <realizedVariable xmi:id="qV.classescs2as.mPackageCS2Package_LM.middle.bottom.p2p"
+              name="p2p" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
       <bottomPattern/>
     </rule>
-    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.mPackageCS2Package_MR" name="mPackageCS2Package_MR">
+    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.mClassCS2Class_MR" name="mClassCS2Class_MR">
       <domain xsi:type="qvtcb:CoreDomain" name="middle" isCheckable="true" isEnforceable="false"
           typedModel="#qT.classescs2as.middle">
         <guardPattern>
-          <variable xmi:id="qV.classescs2as.mPackageCS2Package_MR.middle.guard.p2p"
-              name="p2p" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
+          <variable xmi:id="qV.classescs2as.mClassCS2Class_MR.middle.guard.c2c" name="c2c"
+              type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -81,8 +81,8 @@
           typedModel="#qT.classescs2as.rightAS">
         <guardPattern/>
         <bottomPattern>
-          <realizedVariable xmi:id="qV.classescs2as.mPackageCS2Package_MR.rightAS.bottom.package"
-              name="package" type="Classes.ecore.oclas#T.classes.Package"/>
+          <realizedVariable xmi:id="qV.classescs2as.mClassCS2Class_MR.rightAS.bottom.class"
+              name="class" type="Classes.ecore.oclas#T.classes.Class"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
@@ -108,12 +108,12 @@
       <guardPattern/>
       <bottomPattern/>
     </rule>
-    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.mClassCS2Class_MR" name="mClassCS2Class_MR">
+    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.mPackageCS2Package_MR" name="mPackageCS2Package_MR">
       <domain xsi:type="qvtcb:CoreDomain" name="middle" isCheckable="true" isEnforceable="false"
           typedModel="#qT.classescs2as.middle">
         <guardPattern>
-          <variable xmi:id="qV.classescs2as.mClassCS2Class_MR.middle.guard.c2c" name="c2c"
-              type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
+          <variable xmi:id="qV.classescs2as.mPackageCS2Package_MR.middle.guard.p2p"
+              name="p2p" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -121,12 +121,110 @@
           typedModel="#qT.classescs2as.rightAS">
         <guardPattern/>
         <bottomPattern>
-          <realizedVariable xmi:id="qV.classescs2as.mClassCS2Class_MR.rightAS.bottom.class"
-              name="class" type="Classes.ecore.oclas#T.classes.Class"/>
+          <realizedVariable xmi:id="qV.classescs2as.mPackageCS2Package_MR.rightAS.bottom.package"
+              name="package" type="Classes.ecore.oclas#T.classes.Package"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
       <bottomPattern/>
+    </rule>
+    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.uClass_name" name="uClass_name">
+      <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="true" isEnforceable="false"
+          typedModel="#qT.classescs2as.rightAS">
+        <guardPattern>
+          <variable xmi:id="qV.classescs2as.uClass_name.rightAS.guard.class" name="class"
+              type="Classes.ecore.oclas#T.classes.Class"/>
+        </guardPattern>
+        <bottomPattern/>
+      </domain>
+      <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
+          typedModel="#qT.classescs2as.leftCS">
+        <guardPattern>
+          <variable xmi:id="qV.classescs2as.uClass_name.leftCS.guard.classCS" name="classCS"
+              type="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
+        </guardPattern>
+        <bottomPattern/>
+      </domain>
+      <guardPattern>
+        <predicate>
+          <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
+              referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
+            <source xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Class"
+                referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
+                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS">
+                <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
+                    referredVariable="#qV.classescs2as.uClass_name.leftCS.guard.classCS"/>
+              </source>
+            </source>
+            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Class"
+                referredVariable="#qV.classescs2as.uClass_name.rightAS.guard.class"/>
+          </conditionExpression>
+        </predicate>
+      </guardPattern>
+      <bottomPattern>
+        <assignment xsi:type="qvtcb:PropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.NamedElement.name">
+          <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"
+              referredProperty="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name">
+            <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
+                implicit="true" referredVariable="#qV.classescs2as.uClass_name.leftCS.guard.classCS"/>
+          </value>
+          <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Class"
+              referredVariable="#qV.classescs2as.uClass_name.rightAS.guard.class"/>
+        </assignment>
+      </bottomPattern>
+    </rule>
+    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.uRoot_ownedPackages" name="uRoot_ownedPackages">
+      <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="true" isEnforceable="false"
+          typedModel="#qT.classescs2as.rightAS">
+        <guardPattern>
+          <variable xmi:id="qV.classescs2as.uRoot_ownedPackages.rightAS.guard.root"
+              name="root" type="Classes.ecore.oclas#T.classes.Root"/>
+        </guardPattern>
+        <bottomPattern/>
+      </domain>
+      <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
+          typedModel="#qT.classescs2as.leftCS">
+        <guardPattern>
+          <variable xmi:id="qV.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"
+              name="rootCS" type="ClassesCS.ecore.oclas#T.classescs.RootCS"/>
+        </guardPattern>
+        <bottomPattern/>
+      </domain>
+      <guardPattern>
+        <predicate>
+          <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
+              referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
+            <source xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Root"
+                referredProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.root">
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
+                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS">
+                <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
+                    referredVariable="#qV.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"/>
+              </source>
+            </source>
+            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
+                referredVariable="#qV.classescs2as.uRoot_ownedPackages.rightAS.guard.root"/>
+          </conditionExpression>
+        </predicate>
+      </guardPattern>
+      <bottomPattern>
+        <assignment xsi:type="qvtcb:PropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.Root.ownedPackages">
+          <value xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Package"
+              referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
+            <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
+                referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS">
+              <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                  referredProperty="ClassesCS.ecore.oclas#p.classescs.RootCS.ownedPackage">
+                <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
+                    implicit="true" referredVariable="#qV.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"/>
+              </source>
+            </source>
+          </value>
+          <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
+              referredVariable="#qV.classescs2as.uRoot_ownedPackages.rightAS.guard.root"/>
+        </assignment>
+      </bottomPattern>
     </rule>
     <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.uPackage_name" name="uPackage_name">
       <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="true" isEnforceable="false"
@@ -222,7 +320,7 @@
               <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
                   referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS">
                 <source xsi:type="pivot:VariableExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                    implicit="true" referredVariable="#//@nestedPackage.0/@rule.7/@bottomPattern/@assignment.0/@value/@iterator.0"/>
+                    implicit="true" referredVariable="#//@nestedPackage.0/@rule.9/@bottomPattern/@assignment.0/@value/@iterator.0"/>
               </source>
             </body>
             <iterator name="1_" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
@@ -230,104 +328,6 @@
           </value>
           <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
               referredVariable="#qV.classescs2as.uPackage_ownedClasses.rightAS.guard.package"/>
-        </assignment>
-      </bottomPattern>
-    </rule>
-    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.uRoot_ownedPackages" name="uRoot_ownedPackages">
-      <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="true" isEnforceable="false"
-          typedModel="#qT.classescs2as.rightAS">
-        <guardPattern>
-          <variable xmi:id="qV.classescs2as.uRoot_ownedPackages.rightAS.guard.root"
-              name="root" type="Classes.ecore.oclas#T.classes.Root"/>
-        </guardPattern>
-        <bottomPattern/>
-      </domain>
-      <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
-          typedModel="#qT.classescs2as.leftCS">
-        <guardPattern>
-          <variable xmi:id="qV.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"
-              name="rootCS" type="ClassesCS.ecore.oclas#T.classescs.RootCS"/>
-        </guardPattern>
-        <bottomPattern/>
-      </domain>
-      <guardPattern>
-        <predicate>
-          <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
-              referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-            <source xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Root"
-                referredProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.root">
-              <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
-                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS">
-                <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
-                    referredVariable="#qV.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"/>
-              </source>
-            </source>
-            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
-                referredVariable="#qV.classescs2as.uRoot_ownedPackages.rightAS.guard.root"/>
-          </conditionExpression>
-        </predicate>
-      </guardPattern>
-      <bottomPattern>
-        <assignment xsi:type="qvtcb:PropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.Root.ownedPackages">
-          <value xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Package"
-              referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
-            <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS">
-              <source xsi:type="pivot:PropertyCallExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                  referredProperty="ClassesCS.ecore.oclas#p.classescs.RootCS.ownedPackages">
-                <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
-                    implicit="true" referredVariable="#qV.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"/>
-              </source>
-            </source>
-          </value>
-          <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
-              referredVariable="#qV.classescs2as.uRoot_ownedPackages.rightAS.guard.root"/>
-        </assignment>
-      </bottomPattern>
-    </rule>
-    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.uClass_name" name="uClass_name">
-      <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="true" isEnforceable="false"
-          typedModel="#qT.classescs2as.rightAS">
-        <guardPattern>
-          <variable xmi:id="qV.classescs2as.uClass_name.rightAS.guard.class" name="class"
-              type="Classes.ecore.oclas#T.classes.Class"/>
-        </guardPattern>
-        <bottomPattern/>
-      </domain>
-      <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
-          typedModel="#qT.classescs2as.leftCS">
-        <guardPattern>
-          <variable xmi:id="qV.classescs2as.uClass_name.leftCS.guard.classCS" name="classCS"
-              type="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
-        </guardPattern>
-        <bottomPattern/>
-      </domain>
-      <guardPattern>
-        <predicate>
-          <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
-              referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-            <source xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Class"
-                referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
-              <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
-                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS">
-                <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                    referredVariable="#qV.classescs2as.uClass_name.leftCS.guard.classCS"/>
-              </source>
-            </source>
-            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Class"
-                referredVariable="#qV.classescs2as.uClass_name.rightAS.guard.class"/>
-          </conditionExpression>
-        </predicate>
-      </guardPattern>
-      <bottomPattern>
-        <assignment xsi:type="qvtcb:PropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.NamedElement.name">
-          <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"
-              referredProperty="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name">
-            <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                implicit="true" referredVariable="#qV.classescs2as.uClass_name.leftCS.guard.classCS"/>
-          </value>
-          <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Class"
-              referredVariable="#qV.classescs2as.uClass_name.rightAS.guard.class"/>
         </assignment>
       </bottomPattern>
     </rule>
