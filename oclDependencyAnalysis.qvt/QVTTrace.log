@@ -1,0 +1,17 @@
+---- Transformation classescs2as ----
+Mapping __root__
+  Visiting Mapping GuardPattern
+    GuardPattern has no predicates.
+  Visiting Mapping BottomPattern
+==============================
+Output Model
+==============================
+  Visiting MappingSequence
+Visiting MappingLoop, calling: packageCS
+  Visiting MappingSequence
+Visiting MappingCall, calling: mPackageCS2Package_LM
+  Mapping mPackageCS2Package_LM
+    CoreDomain middle
+      Visiting CoreDomain GuardPattern
+        GuardPattern has no predicates.
+      Visiting CoreDomain BottomPattern

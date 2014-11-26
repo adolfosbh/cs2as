@@ -1,9 +1,21 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Qvt
-Bundle-SymbolicName: oclDependencyAnalysis.qvt
+Bundle-Name: %pluginName
+Bundle-SymbolicName: oclDependencyAnalysis.qvt;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Export-Package: oclDependencyAnalysis.qvt
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Export-Package: oclDependencyAnalysis.qvt,
+ classes,
+ classes.impl,
+ classes.util,
+ classescs,
+ classescs.impl,
+ classescs.util,
+ classescstraces,
+ classescstraces.impl,
+ classescstraces.util
 Require-Bundle: org.eclipse.qvtd.build.etl,
  oclDependencyAnalysis.qvt,
  org.eclipse.ocl.examples.xtext.completeocl;bundle-version="3.5.0",
@@ -12,5 +24,13 @@ Require-Bundle: org.eclipse.qvtd.build.etl,
  org.eclipse.qvtd.pivot.qvtcore;bundle-version="0.12.0",
  org.eclipse.epsilon.eol.engine;bundle-version="1.2.0",
  org.eclipse.epsilon.etl.engine;bundle-version="1.2.0",
- org.eclipse.epsilon.emc.emf;bundle-version="1.2.0"
+ org.eclipse.epsilon.emc.emf;bundle-version="1.2.0",
+ org.eclipse.qvtd.xtext.qvtimperative;bundle-version="0.12.0",
+ org.eclipse.qvtd.xtext.qvtbase.tests;bundle-version="0.12.0",
+ org.eclipse.qvtd.build.etl.tests;bundle-version="1.0.0",
+ org.eclipse.qvtd.codegen;bundle-version="0.11.100",
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.jdt.annotation7;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
