@@ -124,7 +124,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	URI middleModelURI = samplesBaseUri.appendSegment("example1_middle.xmi");
     	URI expectedAsModelURI = samplesBaseUri.appendSegment("example1_output_expected.xmi");
 
-    	ensurePivot2EcoreConversion(metaModelManager, transformation);
+    	// ensurePivot2EcoreConversion(metaModelManager, transformation);
     	
         QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(DomainUtil.nonNullState(metaModelManager), transformation);
     	testEvaluator.saveTransformation(null);    	
