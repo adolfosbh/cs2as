@@ -8,7 +8,6 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -29,7 +28,6 @@ import org.eclipse.qvtd.build.etl.QvtMtcExecutionException;
 import org.eclipse.qvtd.codegen.qvti.QVTiCodeGenOptions;
 import org.eclipse.qvtd.codegen.qvti.java.QVTiCodeGenerator;
 import org.eclipse.qvtd.pivot.qvtbase.Transformation;
-import org.eclipse.qvtd.pivot.qvtbase.TypedModel;
 import org.eclipse.qvtd.pivot.qvtimperative.ImperativeModel;
 import org.eclipse.qvtd.pivot.qvtimperative.QVTimperativePivotStandaloneSetup;
 import org.eclipse.qvtd.pivot.qvtimperative.evaluation.QVTiPivotEvaluator;
@@ -102,8 +100,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	MtcBroker mtc = new OCL2QVTiBroker(oclDocUri, this.getClass(), metaModelManager);
     	mtc.execute();
     	PivotModel qvtiTransf = mtc.getiModel();
-    	Transformation transformation = qvtiTransf.getTransformation();
-    	URI txURI = DomainUtil.nonNullState(transformation.eResource().getURI());
+    	URI txURI = DomainUtil.nonNullState(qvtiTransf.getResource().getURI());		
     	assertValidModel(txURI);
     			
     	URI samplesBaseUri = baseURI.appendSegment("samples");
@@ -111,11 +108,17 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	URI asModelURI = samplesBaseUri.appendSegment("example1_output.xmi");
     	URI middleModelURI = samplesBaseUri.appendSegment("example1_middle.xmi");
     	URI expectedAsModelURI = samplesBaseUri.appendSegment("example1_output_expected.xmi");
-
-    	// ensurePivot2EcoreConversion(metaModelManager, transformation);
     	
-        QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(DomainUtil.nonNullState(metaModelManager), transformation);
-    	testEvaluator.saveTransformation(null);    	
+    	
+    	// Execute the transformation with a clean resourceSet and MetaModelManager
+//    	ResourceSet localRSet = new ResourceSetImpl();
+//    	MetaModelManager newMManager = new MetaModelManager(localRSet);
+//    	URI txURI = baseURI.appendSegment("classescs2as.qvtias");
+//    	Transformation t = getTransformation(localRSet, txURI);    	
+//      QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(newMManager, t);
+    	    	
+    	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(DomainUtil.nonNullState(metaModelManager), qvtiTransf.getTransformation());
+    	testEvaluator.saveTransformation(null);
         testEvaluator.loadModel("leftCS", csModelURI);
         testEvaluator.createModel("rightAS", asModelURI, null);
         testEvaluator.createModel("middle", middleModelURI, null);
@@ -124,7 +127,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
         testEvaluator.dispose();
                 
         Resource expected =  resourceSet.getResource(expectedAsModelURI, true);
-        assertSameModel(expected, resourceSet.getResource(asModelURI, true));       
+        assertSameModel(expected, resourceSet.getResource(asModelURI, true));
 	}
 	
 	@Test
@@ -143,7 +146,6 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	//
     	// Generate the transformation java code
     	// 
-
 		URI middleGenModelURI= oclDocUri.trimFileExtension().appendFileExtension("genmodel");
 		Class<? extends AbstractTransformation> txClass = generateCode(transformation, middleGenModelURI, "/oclDependencyAnalysis.qvt/tests-gen/");
     	
@@ -155,7 +157,6 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		//
 		// Execute the transformation
 		//
-		metaModelManager.configureLoadFirstStrategy(); // Since the models havea different URI to refer the same meta-model
     	URI samplesBaseUri = baseURI.appendSegment("samples");
     	URI csModelURI = samplesBaseUri.appendSegment("example1_input.xmi");
     	URI asModelURI = samplesBaseUri.appendSegment("example1_output.xmi");
@@ -177,24 +178,12 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		//
     	// Generate the transformation java code
     	//
-		Resource resource = resourceSet.getResource(txURI, true);
-		Class<? extends AbstractTransformation> txClass=null;
-		for (EObject eObject : resource.getContents()) {
-			if (eObject instanceof ImperativeModel) {
-				for (org.eclipse.ocl.examples.pivot.Package pPackage : ((ImperativeModel)eObject).getNestedPackage()) {
-					if (pPackage instanceof Transformation) {
-						txClass = generateCode((Transformation) pPackage,  middleGenModelURI, "../oclDependencyAnalysis.qvt/tests-gen/");
-					}
-				}
-			}
-		}
-    	
-    	
+		Transformation t = getTransformation(resourceSet, txURI);
+		Class<? extends AbstractTransformation> txClass=  generateCode(t,  middleGenModelURI, "../oclDependencyAnalysis.qvt/tests-gen/");
 		
 		//
 		// Execute the transformation
 		//
-		metaModelManager.configureLoadFirstStrategy(); // Since the models havea different URI to refer the same meta-model
 		Constructor<? extends AbstractTransformation> txConstructor = txClass.getConstructor(DomainEvaluator.class);
 		DomainEvaluator evaluator = new TxEvaluator(DomainUtil.nonNullState(metaModelManager));
 		AbstractTransformation tx = txConstructor.newInstance(evaluator);
@@ -240,7 +229,6 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 	protected Class<? extends AbstractTransformation> generateCode(@NonNull Transformation transformation, URI genModelURI, @Nullable String savePath) throws Exception {
 
 		registerGenModels(resourceSet, metaModelManager, genModelURI);
-		//ensurePivot2EcoreConversion(metaModelManager, transformation);
 				
 		QVTiCodeGenerator cg = new QVTiCodeGenerator(DomainUtil.nonNullState(metaModelManager), transformation);
 		QVTiCodeGenOptions options = cg.getOptions();
@@ -253,12 +241,19 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		return  compileTransformation(cg);
 	}
 
-	protected void ensurePivot2EcoreConversion(MetaModelManager mManager, Transformation t) {
-		for (TypedModel tModel : t.getModelParameter()) {
-			for (org.eclipse.ocl.examples.pivot.Package _package : tModel.getUsedPackage()) {
-				mManager.getEcoreOfPivot(EPackage.class, _package);
+	protected Transformation getTransformation(ResourceSet rSet, URI qvtiURI) {
+		
+		Resource resource = rSet.getResource(qvtiURI, true);
+		for (EObject eObject : resource.getContents()) {
+			if (eObject instanceof ImperativeModel) {
+				for (org.eclipse.ocl.examples.pivot.Package pPackage : ((ImperativeModel)eObject).getNestedPackage()) {
+					if (pPackage instanceof Transformation) {
+						return  (Transformation) pPackage;
+					}
+				}
 			}
 		}
+		return null;
 	}
 	
 	protected void registerGenModels(ResourceSet rSet, MetaModelManager mManager, URI genModelURI) {
@@ -272,6 +267,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		}
 	}
 	
+	// Copied from QVTiCompilerTest
 	@SuppressWarnings("unchecked")
 	public Class<? extends AbstractTransformation> compileTransformation(@NonNull QVTiCodeGenerator cg) throws Exception {
 		String qualifiedName = cg.getQualifiedName();

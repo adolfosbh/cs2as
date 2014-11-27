@@ -429,38 +429,6 @@
         <mappingStatements xsi:type="qvti:MappingLoop">
           <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
               referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclElement.allInstances">
-            <source xsi:type="pivot:TypeExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                referredType="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
-          </source>
-          <body xsi:type="qvti:MappingSequence">
-            <mappingStatements xsi:type="qvti:MappingLoop">
-              <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
-                  referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclElement.allInstances">
-                <source xsi:type="pivot:TypeExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
-                    referredType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"/>
-              </source>
-              <body xsi:type="qvti:MappingSequence">
-                <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classescs2as.uPackage_name">
-                  <binding boundVariable="#qV.classescs2as.uPackage_name.rightAS.guard.package">
-                    <value xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
-                        referredVariable="#i.classescs2as.__root__.0.2.0.0.package"/>
-                  </binding>
-                  <binding boundVariable="#qV.classescs2as.uPackage_name.leftCS.guard.packageCS">
-                    <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                        referredVariable="#i.classescs2as.__root__.0.2.packageCS"/>
-                  </binding>
-                </mappingStatements>
-              </body>
-              <iterator xmi:id="i.classescs2as.__root__.0.2.0.0.package" name="package"
-                  type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"/>
-            </mappingStatements>
-          </body>
-          <iterator xmi:id="i.classescs2as.__root__.0.2.packageCS" name="packageCS"
-              type="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
-        </mappingStatements>
-        <mappingStatements xsi:type="qvti:MappingLoop">
-          <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
-              referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclElement.allInstances">
             <source xsi:type="pivot:TypeExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
                 referredType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"/>
           </source>
@@ -472,22 +440,54 @@
                     referredType="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
               </source>
               <body xsi:type="qvti:MappingSequence">
-                <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classescs2as.uPackage_ownedClasses">
-                  <binding boundVariable="#qV.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS">
+                <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classescs2as.uPackage_name">
+                  <binding boundVariable="#qV.classescs2as.uPackage_name.leftCS.guard.packageCS">
                     <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                        referredVariable="#i.classescs2as.__root__.0.3.0.0.packageCS"/>
+                        referredVariable="#i.classescs2as.__root__.0.2.0.0.packageCS"/>
                   </binding>
-                  <binding boundVariable="#qV.classescs2as.uPackage_ownedClasses.rightAS.guard.package">
+                  <binding boundVariable="#qV.classescs2as.uPackage_name.rightAS.guard.package">
                     <value xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
-                        referredVariable="#i.classescs2as.__root__.0.3.package"/>
+                        referredVariable="#i.classescs2as.__root__.0.2.package"/>
                   </binding>
                 </mappingStatements>
               </body>
-              <iterator xmi:id="i.classescs2as.__root__.0.3.0.0.packageCS" name="packageCS"
+              <iterator xmi:id="i.classescs2as.__root__.0.2.0.0.packageCS" name="packageCS"
                   type="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
             </mappingStatements>
           </body>
-          <iterator xmi:id="i.classescs2as.__root__.0.3.package" name="package" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"/>
+          <iterator xmi:id="i.classescs2as.__root__.0.2.package" name="package" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"/>
+        </mappingStatements>
+        <mappingStatements xsi:type="qvti:MappingLoop">
+          <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
+              referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclElement.allInstances">
+            <source xsi:type="pivot:TypeExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                referredType="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
+          </source>
+          <body xsi:type="qvti:MappingSequence">
+            <mappingStatements xsi:type="qvti:MappingLoop">
+              <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
+                  referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclElement.allInstances">
+                <source xsi:type="pivot:TypeExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
+                    referredType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"/>
+              </source>
+              <body xsi:type="qvti:MappingSequence">
+                <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classescs2as.uPackage_ownedClasses">
+                  <binding boundVariable="#qV.classescs2as.uPackage_ownedClasses.rightAS.guard.package">
+                    <value xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
+                        referredVariable="#i.classescs2as.__root__.0.3.0.0.package"/>
+                  </binding>
+                  <binding boundVariable="#qV.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS">
+                    <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                        referredVariable="#i.classescs2as.__root__.0.3.packageCS"/>
+                  </binding>
+                </mappingStatements>
+              </body>
+              <iterator xmi:id="i.classescs2as.__root__.0.3.0.0.package" name="package"
+                  type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"/>
+            </mappingStatements>
+          </body>
+          <iterator xmi:id="i.classescs2as.__root__.0.3.packageCS" name="packageCS"
+              type="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
         </mappingStatements>
         <mappingStatements xsi:type="qvti:MappingLoop">
           <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
@@ -524,33 +524,33 @@
         <mappingStatements xsi:type="qvti:MappingLoop">
           <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
               referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclElement.allInstances">
-            <source xsi:type="pivot:TypeExp" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                referredType="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
+            <source xsi:type="pivot:TypeExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
+                referredType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"/>
           </source>
           <body xsi:type="qvti:MappingSequence">
             <mappingStatements xsi:type="qvti:MappingLoop">
               <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
                   referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclElement.allInstances">
-                <source xsi:type="pivot:TypeExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
-                    referredType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"/>
+                <source xsi:type="pivot:TypeExp" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
+                    referredType="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
               </source>
               <body xsi:type="qvti:MappingSequence">
                 <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classescs2as.uClass_name">
-                  <binding boundVariable="#qV.classescs2as.uClass_name.rightAS.guard.class">
-                    <value xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
-                        referredVariable="#i.classescs2as.__root__.0.6.0.0.class"/>
-                  </binding>
                   <binding boundVariable="#qV.classescs2as.uClass_name.leftCS.guard.classCS">
                     <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                        referredVariable="#i.classescs2as.__root__.0.6.classCS"/>
+                        referredVariable="#i.classescs2as.__root__.0.6.0.0.classCS"/>
+                  </binding>
+                  <binding boundVariable="#qV.classescs2as.uClass_name.rightAS.guard.class">
+                    <value xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
+                        referredVariable="#i.classescs2as.__root__.0.6.class"/>
                   </binding>
                 </mappingStatements>
               </body>
-              <iterator xmi:id="i.classescs2as.__root__.0.6.0.0.class" name="class"
-                  type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"/>
+              <iterator xmi:id="i.classescs2as.__root__.0.6.0.0.classCS" name="classCS"
+                  type="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
             </mappingStatements>
           </body>
-          <iterator xmi:id="i.classescs2as.__root__.0.6.classCS" name="classCS" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
+          <iterator xmi:id="i.classescs2as.__root__.0.6.class" name="class" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"/>
         </mappingStatements>
         <mappingStatements xsi:type="qvti:MappingLoop">
           <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
@@ -587,33 +587,33 @@
         <mappingStatements xsi:type="qvti:MappingLoop">
           <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
               referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclElement.allInstances">
-            <source xsi:type="pivot:TypeExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"
-                referredType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"/>
+            <source xsi:type="pivot:TypeExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
+                referredType="ClassesCS.ecore.oclas#T.classescs.RootCS"/>
           </source>
           <body xsi:type="qvti:MappingSequence">
             <mappingStatements xsi:type="qvti:MappingLoop">
               <source xsi:type="pivot:OperationCallExp" type="#//@nestedPackage.1/@ownedType.4"
                   referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclElement.allInstances">
-                <source xsi:type="pivot:TypeExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
-                    referredType="ClassesCS.ecore.oclas#T.classescs.RootCS"/>
+                <source xsi:type="pivot:TypeExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"
+                    referredType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"/>
               </source>
               <body xsi:type="qvti:MappingSequence">
                 <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.classescs2as.uRoot_ownedPackages">
-                  <binding boundVariable="#qV.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS">
-                    <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
-                        referredVariable="#i.classescs2as.__root__.0.9.0.0.rootCS"/>
-                  </binding>
                   <binding boundVariable="#qV.classescs2as.uRoot_ownedPackages.rightAS.guard.root">
                     <value xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"
-                        referredVariable="#i.classescs2as.__root__.0.9.root"/>
+                        referredVariable="#i.classescs2as.__root__.0.9.0.0.root"/>
+                  </binding>
+                  <binding boundVariable="#qV.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS">
+                    <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
+                        referredVariable="#i.classescs2as.__root__.0.9.rootCS"/>
                   </binding>
                 </mappingStatements>
               </body>
-              <iterator xmi:id="i.classescs2as.__root__.0.9.0.0.rootCS" name="rootCS"
-                  type="ClassesCS.ecore.oclas#T.classescs.RootCS"/>
+              <iterator xmi:id="i.classescs2as.__root__.0.9.0.0.root" name="root"
+                  type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"/>
             </mappingStatements>
           </body>
-          <iterator xmi:id="i.classescs2as.__root__.0.9.root" name="root" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"/>
+          <iterator xmi:id="i.classescs2as.__root__.0.9.rootCS" name="rootCS" type="ClassesCS.ecore.oclas#T.classescs.RootCS"/>
         </mappingStatements>
       </mappingStatement>
     </rule>

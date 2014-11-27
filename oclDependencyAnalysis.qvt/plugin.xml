@@ -5,29 +5,6 @@
 -->
 
 <plugin>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated classescs2as -->
-      <package
-            uri="http://tracesmodel/1.0/classescstraces"
-            class="classescstraces.ClassescstracesPackage"
-            genModel="src/oclDependencyAnalysis/qvt/tests/models/example2/classescs2as.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated classescs2as -->
-      <package
-            uri="http://ocldependencyanalysis/classescs/1.0"
-            class="classescs.ClassescsPackage"
-            genModel="src/oclDependencyAnalysis/qvt/tests/models/example2/classescs2as.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated classescs2as -->
-      <package
-            uri="http://ocldependencyanalysis/classes/1.0"
-            class="classes.ClassesPackage"
-            genModel="src/oclDependencyAnalysis/qvt/tests/models/example2/classescs2as.genmodel"/>
-   </extension>
-
+	<!-- FIXME Plugin.xml contributions temporarily removed to avoid meta-models squizophrenia -->
+  
 </plugin>

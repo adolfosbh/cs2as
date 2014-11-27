@@ -37,7 +37,7 @@
     </genClasses>
     <genClasses ecoreClass="ClassesCS.ecore#//PathElementCS"/>
     <genClasses ecoreClass="ClassesCS.ecore#//RootCS">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ClassesCS.ecore#//RootCS/ownedPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ClassesCS.ecore#//RootCS/ownedPackages"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Classes" disposableProviderFactory="true" ecorePackage="Classes.ecore#/">

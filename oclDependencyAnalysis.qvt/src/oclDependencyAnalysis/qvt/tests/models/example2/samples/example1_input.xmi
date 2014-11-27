@@ -5,11 +5,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:classescs="http://ocldependencyanalysis/classescs/1.0"
     xsi:schemaLocation="http://ocldependencyanalysis/classescs/1.0 ../ClassesCS.ecore">
-  <ownedPackage
+  <ownedPackages
       name="P1">
     <ownedClasses
         name="C1"/>
     <ownedClasses
         name="C2"/>
-  </ownedPackage>
+  </ownedPackages>
 </classescs:RootCS>
