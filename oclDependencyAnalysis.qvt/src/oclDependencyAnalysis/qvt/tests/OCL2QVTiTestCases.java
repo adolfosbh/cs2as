@@ -6,7 +6,6 @@ import oclDependencyAnalysis.qvt.OCL2QVTiBroker;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
-import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -24,8 +23,6 @@ import org.eclipse.ocl.examples.domain.types.IdResolver;
 import org.eclipse.ocl.examples.domain.utilities.DomainUtil;
 import org.eclipse.ocl.examples.library.executor.ExecutorManager;
 import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
-import org.eclipse.ocl.examples.pivot.model.OCLstdlib;
-import org.eclipse.ocl.examples.xtext.completeocl.CompleteOCLStandaloneSetup;
 import org.eclipse.qvtd.build.etl.MtcBroker;
 import org.eclipse.qvtd.build.etl.PivotModel;
 import org.eclipse.qvtd.build.etl.QvtMtcExecutionException;
@@ -34,9 +31,9 @@ import org.eclipse.qvtd.codegen.qvti.java.QVTiCodeGenerator;
 import org.eclipse.qvtd.pivot.qvtbase.Transformation;
 import org.eclipse.qvtd.pivot.qvtbase.TypedModel;
 import org.eclipse.qvtd.pivot.qvtimperative.ImperativeModel;
+import org.eclipse.qvtd.pivot.qvtimperative.QVTimperativePivotStandaloneSetup;
 import org.eclipse.qvtd.pivot.qvtimperative.evaluation.QVTiPivotEvaluator;
 import org.eclipse.qvtd.xtext.qvtbase.tests.LoadTestCase;
-import org.eclipse.qvtd.xtext.qvtimperative.QVTimperativeStandaloneSetup;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -79,22 +76,15 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 			throw new UnsupportedOperationException();
 		}
 	}
-	
-//	private MetaModelManager metaModelManager; 
-//	private ResourceSet rSet;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
-		OCLstdlib.install();
-		//QVTcorePivotStandaloneSetup.doSetup();
-		QVTimperativeStandaloneSetup.doSetup();
-		//QVTimperativePivotStandaloneSetup.doSetup();
-		CompleteOCLStandaloneSetup.doSetup();
+		QVTimperativePivotStandaloneSetup.doSetup();
 				
 		resourceSet = new ResourceSetImpl();
 		metaModelManager = new MetaModelManager(resourceSet);
-		metaModelManager.configureLoadFirstStrategy(); // Since the models will a different URI to refer the same meta-model
+		metaModelManager.configureLoadFirstStrategy(); // Since the models might use a different URI to refer the same meta-model
 	}
 	
 	@After
