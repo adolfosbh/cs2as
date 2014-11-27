@@ -240,7 +240,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 	protected Class<? extends AbstractTransformation> generateCode(@NonNull Transformation transformation, URI genModelURI, @Nullable String savePath) throws Exception {
 
 		registerGenModels(resourceSet, metaModelManager, genModelURI);
-		ensurePivot2EcoreConversion(metaModelManager, transformation);
+		//ensurePivot2EcoreConversion(metaModelManager, transformation);
 				
 		QVTiCodeGenerator cg = new QVTiCodeGenerator(DomainUtil.nonNullState(metaModelManager), transformation);
 		QVTiCodeGenOptions options = cg.getOptions();
