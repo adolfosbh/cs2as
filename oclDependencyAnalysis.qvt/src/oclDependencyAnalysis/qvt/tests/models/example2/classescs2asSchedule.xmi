@@ -20,7 +20,7 @@
     <type href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
     <domain href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.2/@domain.1"/>
   </datums>
-  <datums xsi:type="qvtschedule:ClassDatum" dataParameter="//@actions.2/@distinctArguments.0/@primaryArguments.0 //@actions.8/@distinctArguments.0/@primaryArguments.0 //@actions.9/@distinctArguments.0/@primaryArguments.0">
+  <datums xsi:type="qvtschedule:ClassDatum" dataParameter="//@actions.2/@distinctArguments.0/@primaryArguments.0 //@actions.8/@distinctArguments.0/@primaryArguments.0 //@actions.9/@distinctArguments.1/@primaryArguments.0">
     <type href="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
     <domain href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.2/@domain.0"/>
   </datums>
@@ -32,7 +32,7 @@
     <type href="Classes.ecore.oclas#T.classes.Root"/>
     <domain href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.4/@domain.1"/>
   </datums>
-  <datums xsi:type="qvtschedule:ClassDatum" sources="//@actions.5" dataParameter="//@actions.8/@distinctArguments.1/@primaryArguments.0 //@actions.9/@distinctArguments.1/@primaryArguments.0">
+  <datums xsi:type="qvtschedule:ClassDatum" sources="//@actions.5" dataParameter="//@actions.8/@distinctArguments.1/@primaryArguments.0 //@actions.9/@distinctArguments.0/@primaryArguments.0">
     <type href="Classes.ecore.oclas#T.classes.Package"/>
     <domain href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.qvtp.qvtias#//@nestedPackage.0/@rule.5/@domain.1"/>
   </datums>
@@ -125,13 +125,13 @@
   </actions>
   <actions xsi:type="qvtschedule:MappingAction" order="4" parent="//@actions.10">
     <distinctArguments>
-      <primaryArguments datum="//@datums.5">
-        <variable href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"/>
+      <primaryArguments datum="//@datums.8">
+        <variable href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_ownedClasses.rightAS.guard.package"/>
       </primaryArguments>
     </distinctArguments>
     <distinctArguments>
-      <primaryArguments datum="//@datums.8">
-        <variable href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_ownedClasses.rightAS.guard.package"/>
+      <primaryArguments datum="//@datums.5">
+        <variable href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.qvtp.qvtias#qV.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"/>
       </primaryArguments>
     </distinctArguments>
     <mapping href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.qvtp.qvtias#m.classescs2as.uPackage_ownedClasses"/>

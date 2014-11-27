@@ -105,8 +105,6 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 	
 	@Test
 	public void testExample1_Interpreted() throws Exception {
-		
-		
 		URI baseURI = URI.createURI("platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/"); 		
 		
 		String oclDocUri = baseURI.appendSegment("classescs2as.oclas").toString(); 
@@ -116,7 +114,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	PivotModel qvtiTransf = mtc.getiModel();
     	Transformation transformation = qvtiTransf.getTransformation();
     	URI txURI = DomainUtil.nonNullState(transformation.eResource().getURI());
-    	assertLoadable(txURI);
+    	assertValidModel(txURI);
     			
     	URI samplesBaseUri = baseURI.appendSegment("samples");
     	URI csModelURI = samplesBaseUri.appendSegment("example1_input.xmi");
@@ -150,7 +148,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	Transformation transformation = qvtiTransf.getTransformation();
     	
     	URI txURI = DomainUtil.nonNullState(transformation.eResource().getURI());
-    	assertLoadable(txURI);
+    	assertValidModel(txURI);
     	
     	//
     	// Generate the transformation java code
@@ -184,7 +182,8 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		URI baseURI = URI.createURI("platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2");
 		URI txURI = baseURI.appendSegment("classescs2as.qvtias");		
 		URI middleGenModelURI = txURI.trimFileExtension().appendFileExtension("genmodel");
-			
+		assertValidModel(txURI);
+		
 		//
     	// Generate the transformation java code
     	//
@@ -233,21 +232,18 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		OCL2QVTiBrokerTester mtc = new OCL2QVTiBrokerTester(oclDocURI, this.getClass(), metaModelManager);
 		mtc.runOCL2QVTp(oclDocURI, qvtpFileURI, tracesMMURI);
 		// Test the QVTp transformation can be loaded
-    	assertLoadable(URI.createURI(qvtpFileURI));
+    	assertValidModel(URI.createURI(qvtpFileURI));
 	}
 	
 	
-	// Copied from MTC test cases
-	protected static void assertLoadable(@NonNull URI asURI) {
+	protected static void assertValidModel(@NonNull URI asURI) {
         ResourceSet asResourceSet = new ResourceSetImpl();
-        if (!EMFPlugin.IS_ECLIPSE_RUNNING) {
-			OCLstdlib.install();
-	        MetaModelManager.initializeASResourceSet(asResourceSet);
-        }
+        MetaModelManager.initializeASResourceSet(asResourceSet);
         Resource resource = asResourceSet.getResource(asURI, true);
         EcoreUtil.resolveAll(resource);
-        assertNoUnresolvedProxies("Loading a resource", resource);
-        assertNoResourceErrors("Loading a resource", resource);
+        assertNoUnresolvedProxies("Validating a resource: " + asURI.toString(), resource);
+        assertNoResourceErrors("Loading a resource" + asURI.toString(), resource);
+        assertNoValidationErrors("Loading a resource" + asURI.toString(), resource);
 	}
 	
 	// Copied from QVTiCompilerTest
