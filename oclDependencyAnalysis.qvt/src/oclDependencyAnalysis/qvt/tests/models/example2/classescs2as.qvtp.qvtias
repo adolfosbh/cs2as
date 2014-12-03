@@ -6,8 +6,8 @@
     name="classescs2as" externalURI="classescs2as">
   <nestedPackage xsi:type="qvtb:Transformation" xmi:id="T.classescs2as" name="classescs2as">
     <modelParameter xmi:id="qT.classescs2as.leftCS" name="leftCS" usedPackage="ClassesCS.ecore.oclas#P.classescs"/>
-    <modelParameter xmi:id="qT.classescs2as.rightAS" name="rightAS" usedPackage="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#P.classes"/>
-    <modelParameter xmi:id="qT.classescs2as.middle" name="middle" usedPackage="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#P.classescstraces"/>
+    <modelParameter xmi:id="qT.classescs2as.rightAS" name="rightAS" usedPackage="Classes.ecore.oclas#P.classes"/>
+    <modelParameter xmi:id="qT.classescs2as.middle" name="middle" usedPackage="classescs2as.ecore.oclas#P.classescstraces"/>
     <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.mRootCS2Root_LM" name="mRootCS2Root_LM">
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.classescs2as.leftCS">
         <guardPattern>
@@ -20,15 +20,15 @@
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.classescs2as.mRootCS2Root_LM.middle.bottom.r2r"
-              name="r2r" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"/>
+              name="r2r" type="classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
       <bottomPattern>
-        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS">
+        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS">
           <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
               referredVariable="#qV.classescs2as.mRootCS2Root_LM.leftCS.guard.rootCS"/>
-          <slotExpression xsi:type="pivot:VariableExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
+          <slotExpression xsi:type="pivot:VariableExp" type="classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
               referredVariable="#qV.classescs2as.mRootCS2Root_LM.middle.bottom.r2r"/>
         </assignment>
       </bottomPattern>
@@ -45,15 +45,15 @@
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.classescs2as.mPackageCS2Package_LM.middle.bottom.p2p"
-              name="p2p" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
+              name="p2p" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
       <bottomPattern>
-        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS">
+        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS">
           <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
               referredVariable="#qV.classescs2as.mPackageCS2Package_LM.leftCS.guard.packageCS"/>
-          <slotExpression xsi:type="pivot:VariableExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
+          <slotExpression xsi:type="pivot:VariableExp" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
               referredVariable="#qV.classescs2as.mPackageCS2Package_LM.middle.bottom.p2p"/>
         </assignment>
       </bottomPattern>
@@ -70,15 +70,15 @@
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.classescs2as.mClassCS2Class_LM.middle.bottom.c2c"
-              name="c2c" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
+              name="c2c" type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
       <bottomPattern>
-        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS">
+        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS">
           <value xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
               referredVariable="#qV.classescs2as.mClassCS2Class_LM.leftCS.guard.classCS"/>
-          <slotExpression xsi:type="pivot:VariableExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
+          <slotExpression xsi:type="pivot:VariableExp" type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
               referredVariable="#qV.classescs2as.mClassCS2Class_LM.middle.bottom.c2c"/>
         </assignment>
       </bottomPattern>
@@ -87,7 +87,7 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.classescs2as.middle">
         <guardPattern>
           <variable xmi:id="qV.classescs2as.mRootCS2Root_MR.middle.guard.r2r" name="r2r"
-              type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"/>
+              type="classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -95,15 +95,15 @@
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.classescs2as.mRootCS2Root_MR.rightAS.bottom.root"
-              name="root" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"/>
+              name="root" type="Classes.ecore.oclas#T.classes.Root"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
       <bottomPattern>
-        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.root">
-          <value xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"
+        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.root">
+          <value xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
               referredVariable="#qV.classescs2as.mRootCS2Root_MR.rightAS.bottom.root"/>
-          <slotExpression xsi:type="pivot:VariableExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
+          <slotExpression xsi:type="pivot:VariableExp" type="classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
               referredVariable="#qV.classescs2as.mRootCS2Root_MR.middle.guard.r2r"/>
         </assignment>
       </bottomPattern>
@@ -112,7 +112,7 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.classescs2as.middle">
         <guardPattern>
           <variable xmi:id="qV.classescs2as.mPackageCS2Package_MR.middle.guard.p2p"
-              name="p2p" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
+              name="p2p" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -120,15 +120,15 @@
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.classescs2as.mPackageCS2Package_MR.rightAS.bottom.package"
-              name="package" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"/>
+              name="package" type="Classes.ecore.oclas#T.classes.Package"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
       <bottomPattern>
-        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
-          <value xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
+        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
+          <value xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
               referredVariable="#qV.classescs2as.mPackageCS2Package_MR.rightAS.bottom.package"/>
-          <slotExpression xsi:type="pivot:VariableExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
+          <slotExpression xsi:type="pivot:VariableExp" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
               referredVariable="#qV.classescs2as.mPackageCS2Package_MR.middle.guard.p2p"/>
         </assignment>
       </bottomPattern>
@@ -137,7 +137,7 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.classescs2as.middle">
         <guardPattern>
           <variable xmi:id="qV.classescs2as.mClassCS2Class_MR.middle.guard.c2c" name="c2c"
-              type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
+              type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -145,15 +145,15 @@
         <guardPattern/>
         <bottomPattern>
           <realizedVariable xmi:id="qV.classescs2as.mClassCS2Class_MR.rightAS.bottom.class"
-              name="class" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"/>
+              name="class" type="Classes.ecore.oclas#T.classes.Class"/>
         </bottomPattern>
       </domain>
       <guardPattern/>
       <bottomPattern>
-        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
-          <value xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
+        <assignment xsi:type="qvti:MiddlePropertyAssignment" targetProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
+          <value xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Class"
               referredVariable="#qV.classescs2as.mClassCS2Class_MR.rightAS.bottom.class"/>
-          <slotExpression xsi:type="pivot:VariableExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
+          <slotExpression xsi:type="pivot:VariableExp" type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
               referredVariable="#qV.classescs2as.mClassCS2Class_MR.middle.guard.c2c"/>
         </assignment>
       </bottomPattern>
@@ -162,7 +162,7 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.classescs2as.rightAS">
         <guardPattern>
           <variable xmi:id="qV.classescs2as.uRoot_ownedPackages.rightAS.guard.root"
-              name="root" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"/>
+              name="root" type="Classes.ecore.oclas#T.classes.Root"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -177,21 +177,21 @@
         <predicate>
           <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
               referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-            <source xsi:type="pivot:PropertyCallExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"
-                referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.root">
-              <source xsi:type="qvti:MiddlePropertyCallExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
-                  referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS">
+            <source xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Root"
+                referredProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.root">
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
+                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS">
                 <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
                     referredVariable="#qV.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"/>
               </source>
             </source>
-            <argument xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"
+            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
                 referredVariable="#qV.classescs2as.uRoot_ownedPackages.rightAS.guard.root"/>
           </conditionExpression>
         </predicate>
       </guardPattern>
       <bottomPattern>
-        <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#p.classes.Root.ownedPackages">
+        <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Classes.ecore.oclas#p.classes.Root.ownedPackages">
           <value xsi:type="pivot:IteratorExp" type="#//@nestedPackage.1/@ownedType.0"
               implicit="true" referredIteration="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#i.ocl.OrderedSet.collect..T">
             <source xsi:type="pivot:PropertyCallExp" type="#//@nestedPackage.1/@ownedType.1"
@@ -199,10 +199,10 @@
               <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.RootCS"
                   implicit="true" referredVariable="#qV.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"/>
             </source>
-            <body xsi:type="pivot:PropertyCallExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
-                referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
-              <source xsi:type="qvti:MiddlePropertyCallExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                  referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS">
+            <body xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Package"
+                referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
+                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS">
                 <source xsi:type="pivot:VariableExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
                     implicit="true" referredVariable="#//@nestedPackage.0/@rule.6/@bottomPattern/@assignment.0/@value/@iterator.0"/>
               </source>
@@ -210,7 +210,7 @@
             <iterator name="1_" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
                 implicit="true" representedParameter="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#i0i.ocl.OrderedSet.collect..T"/>
           </value>
-          <slotExpression xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Root"
+          <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Root"
               referredVariable="#qV.classescs2as.uRoot_ownedPackages.rightAS.guard.root"/>
         </assignment>
       </bottomPattern>
@@ -219,7 +219,7 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.classescs2as.rightAS">
         <guardPattern>
           <variable xmi:id="qV.classescs2as.uPackage_name.rightAS.guard.package" name="package"
-              type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"/>
+              type="Classes.ecore.oclas#T.classes.Package"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -234,27 +234,27 @@
         <predicate>
           <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
               referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-            <source xsi:type="pivot:PropertyCallExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
-                referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
-              <source xsi:type="qvti:MiddlePropertyCallExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                  referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS">
+            <source xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Package"
+                referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
+                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS">
                 <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
                     referredVariable="#qV.classescs2as.uPackage_name.leftCS.guard.packageCS"/>
               </source>
             </source>
-            <argument xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
+            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
                 referredVariable="#qV.classescs2as.uPackage_name.rightAS.guard.package"/>
           </conditionExpression>
         </predicate>
       </guardPattern>
       <bottomPattern>
-        <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#p.classes.NamedElement.name">
+        <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Classes.ecore.oclas#p.classes.NamedElement.name">
           <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"
               referredProperty="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name">
             <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
                 implicit="true" referredVariable="#qV.classescs2as.uPackage_name.leftCS.guard.packageCS"/>
           </value>
-          <slotExpression xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
+          <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
               referredVariable="#qV.classescs2as.uPackage_name.rightAS.guard.package"/>
         </assignment>
       </bottomPattern>
@@ -263,7 +263,7 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.classescs2as.rightAS">
         <guardPattern>
           <variable xmi:id="qV.classescs2as.uPackage_ownedClasses.rightAS.guard.package"
-              name="package" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"/>
+              name="package" type="Classes.ecore.oclas#T.classes.Package"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -278,21 +278,21 @@
         <predicate>
           <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
               referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-            <source xsi:type="pivot:PropertyCallExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
-                referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
-              <source xsi:type="qvti:MiddlePropertyCallExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                  referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS">
+            <source xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Package"
+                referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
+                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS">
                 <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
                     referredVariable="#qV.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"/>
               </source>
             </source>
-            <argument xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
+            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
                 referredVariable="#qV.classescs2as.uPackage_ownedClasses.rightAS.guard.package"/>
           </conditionExpression>
         </predicate>
       </guardPattern>
       <bottomPattern>
-        <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#p.classes.Package.ownedClasses">
+        <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Classes.ecore.oclas#p.classes.Package.ownedClasses">
           <value xsi:type="pivot:IteratorExp" type="#//@nestedPackage.1/@ownedType.2"
               implicit="true" referredIteration="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#i.ocl.OrderedSet.collect..T">
             <source xsi:type="pivot:PropertyCallExp" type="#//@nestedPackage.1/@ownedType.3"
@@ -300,10 +300,10 @@
               <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.PackageCS"
                   implicit="true" referredVariable="#qV.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"/>
             </source>
-            <body xsi:type="pivot:PropertyCallExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
-                referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
-              <source xsi:type="qvti:MiddlePropertyCallExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
-                  referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS">
+            <body xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Class"
+                referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
+                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS">
                 <source xsi:type="pivot:VariableExp" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
                     implicit="true" referredVariable="#//@nestedPackage.0/@rule.8/@bottomPattern/@assignment.0/@value/@iterator.0"/>
               </source>
@@ -311,7 +311,7 @@
             <iterator name="1_" isRequired="false" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
                 implicit="true" representedParameter="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#i0i.ocl.OrderedSet.collect..T"/>
           </value>
-          <slotExpression xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
+          <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Package"
               referredVariable="#qV.classescs2as.uPackage_ownedClasses.rightAS.guard.package"/>
         </assignment>
       </bottomPattern>
@@ -320,7 +320,7 @@
       <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT.classescs2as.rightAS">
         <guardPattern>
           <variable xmi:id="qV.classescs2as.uClass_name.rightAS.guard.class" name="class"
-              type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"/>
+              type="Classes.ecore.oclas#T.classes.Class"/>
         </guardPattern>
         <bottomPattern/>
       </domain>
@@ -335,41 +335,37 @@
         <predicate>
           <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#Boolean"
               referredOperation="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-            <source xsi:type="pivot:PropertyCallExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
-                referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
-              <source xsi:type="qvti:MiddlePropertyCallExp" type="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
-                  referredProperty="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS">
+            <source xsi:type="pivot:PropertyCallExp" type="Classes.ecore.oclas#T.classes.Class"
+                referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
+              <source xsi:type="qvti:MiddlePropertyCallExp" type="classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
+                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS">
                 <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
                     referredVariable="#qV.classescs2as.uClass_name.leftCS.guard.classCS"/>
               </source>
             </source>
-            <argument xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
+            <argument xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Class"
                 referredVariable="#qV.classescs2as.uClass_name.rightAS.guard.class"/>
           </conditionExpression>
         </predicate>
       </guardPattern>
       <bottomPattern>
-        <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#p.classes.NamedElement.name">
+        <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Classes.ecore.oclas#p.classes.NamedElement.name">
           <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#String"
               referredProperty="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name">
             <source xsi:type="pivot:VariableExp" type="ClassesCS.ecore.oclas#T.classescs.ClassCS"
                 implicit="true" referredVariable="#qV.classescs2as.uClass_name.leftCS.guard.classCS"/>
           </value>
-          <slotExpression xsi:type="pivot:VariableExp" type="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
+          <slotExpression xsi:type="pivot:VariableExp" type="Classes.ecore.oclas#T.classes.Class"
               referredVariable="#qV.classescs2as.uClass_name.rightAS.guard.class"/>
         </assignment>
       </bottomPattern>
     </rule>
-    <rule xsi:type="qvti:Mapping" xmi:id="m.classescs2as.__root__" name="__root__">
-      <guardPattern/>
-      <bottomPattern/>
-    </rule>
   </nestedPackage>
   <nestedPackage xmi:id="P.$$" name="$$" nsPrefix="orphanage" nsURI="http://www.eclipse.org/ocl/3.1.0/orphanage">
     <ownedType xsi:type="pivot:SequenceType" name="Sequence" superClass="#//@nestedPackage.1/@ownedType.4"
-        elementType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package">
+        elementType="Classes.ecore.oclas#T.classes.Package">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Sequence">
-        <parameterSubstitution actual="pivot:Class file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
+        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Package"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..SequenceT"/>
       </templateBinding>
     </ownedType>
@@ -381,9 +377,9 @@
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:SequenceType" name="Sequence" superClass="#//@nestedPackage.1/@ownedType.7"
-        elementType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class">
+        elementType="Classes.ecore.oclas#T.classes.Class">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Sequence">
-        <parameterSubstitution actual="pivot:Class file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
+        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Class"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..SequenceT"/>
       </templateBinding>
     </ownedType>
@@ -395,9 +391,9 @@
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:CollectionType" name="OrderedCollection" superClass="#//@nestedPackage.1/@ownedType.10"
-        elementType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package">
+        elementType="Classes.ecore.oclas#T.classes.Package">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedCollection">
-        <parameterSubstitution actual="pivot:Class file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
+        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Package"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedCollectionT"/>
       </templateBinding>
     </ownedType>
@@ -416,9 +412,9 @@
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:CollectionType" name="OrderedCollection" superClass="#//@nestedPackage.1/@ownedType.12"
-        elementType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class">
+        elementType="Classes.ecore.oclas#T.classes.Class">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.OrderedCollection">
-        <parameterSubstitution actual="pivot:Class file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
+        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Class"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..OrderedCollectionT"/>
       </templateBinding>
     </ownedType>
@@ -437,9 +433,9 @@
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
-        elementType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package">
+        elementType="Classes.ecore.oclas#T.classes.Package">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
-        <parameterSubstitution actual="pivot:Class file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Package"
+        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Package"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
       </templateBinding>
     </ownedType>
@@ -451,9 +447,9 @@
       </templateBinding>
     </ownedType>
     <ownedType xsi:type="pivot:CollectionType" name="Collection" superClass="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#T.ocl.OclAny"
-        elementType="file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class">
+        elementType="Classes.ecore.oclas#T.classes.Class">
       <templateBinding signature="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#s.Collection">
-        <parameterSubstitution actual="pivot:Class file:/C:/Users/asbh/git/cs2as/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore.oclas#T.classes.Class"
+        <parameterSubstitution actual="pivot:Class Classes.ecore.oclas#T.classes.Class"
             formal="http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas#t.ocl..CollectionT"/>
       </templateBinding>
     </ownedType>
