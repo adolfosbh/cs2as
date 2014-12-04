@@ -22,12 +22,18 @@ import org.eclipse.ocl.examples.domain.types.IdResolver;
 import org.eclipse.ocl.examples.domain.utilities.DomainUtil;
 import org.eclipse.ocl.examples.library.executor.ExecutorManager;
 import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
+import org.eclipse.ocl.examples.pivot.validation.PivotEObjectValidator;
+import org.eclipse.ocl.examples.xtext.completeocl.CompleteOCLStandaloneSetup;
+import org.eclipse.ocl.examples.xtext.completeocl.validation.CompleteOCLEObjectValidator;
 import org.eclipse.qvtd.build.etl.PivotModel;
 import org.eclipse.qvtd.build.etl.QvtMtcExecutionException;
 import org.eclipse.qvtd.codegen.qvti.QVTiCodeGenOptions;
 import org.eclipse.qvtd.codegen.qvti.java.QVTiCodeGenerator;
+import org.eclipse.qvtd.pivot.qvtbase.QVTbasePackage;
 import org.eclipse.qvtd.pivot.qvtbase.Transformation;
+import org.eclipse.qvtd.pivot.qvtcorebase.QVTcoreBasePackage;
 import org.eclipse.qvtd.pivot.qvtimperative.ImperativeModel;
+import org.eclipse.qvtd.pivot.qvtimperative.QVTimperativePackage;
 import org.eclipse.qvtd.pivot.qvtimperative.QVTimperativePivotStandaloneSetup;
 import org.eclipse.qvtd.pivot.qvtimperative.evaluation.QVTiPivotEvaluator;
 import org.eclipse.qvtd.xtext.qvtbase.tests.LoadTestCase;
@@ -78,6 +84,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 	public void setUp() throws Exception {
 		super.setUp();
 		QVTimperativePivotStandaloneSetup.doSetup();
+		CompleteOCLStandaloneSetup.doSetup(); // To be able to add QVTimperative.ocl validation
 				
 		resourceSet = new ResourceSetImpl();
 		metaModelManager = new MetaModelManager(resourceSet);
@@ -92,23 +99,23 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 	
 	@Test
 	public void testExample1_Interpreted() throws Exception {
-		URI baseURI = URI.createURI("platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/"); 		
-		
-//		String oclDocUri = baseURI.appendSegment("classescs2as.oclas").toString(); 
-//
-//    	MtcBroker mtc = new OCL2QVTiBroker(oclDocUri, this.getClass(), metaModelManager);
-//    	mtc.execute();
-//    	PivotModel qvtiTransf = mtc.getiModel();
-//    	URI txURI = DomainUtil.nonNullState(qvtiTransf.getResource().getURI());		
-//    	assertValidModel(txURI);
+		URI baseURI = URI.createURI("platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2"); 		
+		URI oclDocUri = baseURI.appendSegment("classescs2as.oclas");
+
+		OCL2QVTiBroker mtc = new OCL2QVTiBroker(oclDocUri.toString(), this.getClass(), metaModelManager);
+    	mtc.execute();
+    	PivotModel qvtiTransf = mtc.getiModel();
+    	URI txURI = DomainUtil.nonNullState(qvtiTransf.getResource().getURI());		
+    	assertValidQVTiModel(txURI);
+    	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(metaModelManager, qvtiTransf.getTransformation());
     	    	
     	// Execute the transformation with a clean resourceSet and MetaModelManager
-    	ResourceSet localRSet = new ResourceSetImpl();
-    	MetaModelManager newMManager = new MetaModelManager(localRSet);
-    	URI txURI = baseURI.appendSegment("classescs2as.qvtias");
-    	assertValidModel(txURI);
-    	Transformation t = getTransformation(localRSet, txURI);    	
-    	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(newMManager, t);
+//    	ResourceSet localRSet = new ResourceSetImpl();
+//    	MetaModelManager newMManager = new MetaModelManager(localRSet);
+//    	URI txURI = baseURI.appendSegment("classescs2as.qvtias");
+//    	assertValidModel(txURI);
+//    	Transformation t = getTransformation(localRSet, txURI);    	
+//    	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(newMManager, t);
     	
     	
 		URI samplesBaseUri = baseURI.appendSegment("samples");
@@ -127,70 +134,38 @@ public class OCL2QVTiTestCases extends LoadTestCase {
         testEvaluator.saveModels();
         testEvaluator.dispose();
                 
-        Resource expected =  localRSet.getResource(expectedAsModelURI, true);
-        assertSameModel(expected, localRSet.getResource(asModelURI, true));
+        Resource expected =  resourceSet.getResource(expectedAsModelURI, true);
+        assertSameModel(expected, resourceSet.getResource(asModelURI, true));
 	}
 	
 //	FIXME commented until 	
-//	@Test
-//	public void testExample1_CG() throws Exception {
-//		URI baseURI = URI.createURI("platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/");
-//		URI oclDocUri = baseURI.appendSegment("classescs2as.oclas");
-//
-//    	MtcBroker mtc = new OCL2QVTiBroker(oclDocUri.toString(), this.getClass(), metaModelManager);
-//    	mtc.execute();
-//    	PivotModel qvtiTransf = mtc.getiModel();
-//    	Transformation transformation = qvtiTransf.getTransformation();
-//    	
-//    	URI txURI = DomainUtil.nonNullState(transformation.eResource().getURI());
-//    	assertValidModel(txURI);
-//    	
-//    	//
-//    	// Generate the transformation java code
-//    	// 
-//		URI middleGenModelURI= oclDocUri.trimFileExtension().appendFileExtension("genmodel");
-//		Class<? extends AbstractTransformation> txClass = generateCode(transformation, middleGenModelURI, "/oclDependencyAnalysis.qvt/tests-gen/");
-//    	
-//		
-//		Constructor<? extends AbstractTransformation> txConstructor = txClass.getConstructor(DomainEvaluator.class);
-//		DomainEvaluator evaluator = new TxEvaluator(DomainUtil.nonNullState(metaModelManager));
-//		AbstractTransformation tx = txConstructor.newInstance(evaluator);
-//		
-//		//
-//		// Execute the transformation
-//		//
-//    	URI samplesBaseUri = baseURI.appendSegment("samples");
-//    	URI csModelURI = samplesBaseUri.appendSegment("example1_input.xmi");
-//    	URI asModelURI = samplesBaseUri.appendSegment("example1_output.xmi");
-//		Resource inputResource = resourceSet.getResource(csModelURI, true);
-//		tx.addRootObjects("leftCS", DomainUtil.nonNullState(inputResource.getContents()));
-//		tx.run();
-//		Resource outputResource = resourceSet.createResource(asModelURI);
-//		outputResource.getContents().addAll(tx.getRootObjects("rightAS"));
-//		outputResource.save(null);
-//	}
-	
-	public void testExample1_CGv2() throws Exception {
-		
-		URI baseURI = URI.createURI("platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2");
-		URI txURI = baseURI.appendSegment("classescs2as.qvtias");		
-		URI middleGenModelURI = txURI.trimFileExtension().appendFileExtension("genmodel");
-		assertValidModel(txURI);
-		
-		//
-    	// Generate the transformation java code
+	@Test
+	public void testExample1_CG() throws Exception {
+		URI baseURI = URI.createURI("platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/");
+		URI oclDocUri = baseURI.appendSegment("classescs2as.oclas");
+
+		OCL2QVTiBroker mtc = new OCL2QVTiBroker(oclDocUri.toString(), this.getClass(), metaModelManager);
+    	mtc.execute();
+    	PivotModel qvtiTransf = mtc.getiModel();
+    	
+    	URI txURI = DomainUtil.nonNullState(qvtiTransf.getResource().getURI());
+    	assertValidQVTiModel(txURI);
+    	
     	//
-		Transformation t = getTransformation(resourceSet, txURI);
-		Class<? extends AbstractTransformation> txClass=  generateCode(t,  middleGenModelURI, "../oclDependencyAnalysis.qvt/tests-gen/");
+    	// Generate the transformation java code
+    	// 
+		URI middleGenModelURI= oclDocUri.trimFileExtension().appendFileExtension("genmodel");
+		Class<? extends AbstractTransformation> txClass = generateCode(qvtiTransf.getTransformation(), middleGenModelURI, "/oclDependencyAnalysis.qvt/tests-gen/");
+    	
 		
-		//
-		// Execute the transformation
-		//
 		Constructor<? extends AbstractTransformation> txConstructor = txClass.getConstructor(DomainEvaluator.class);
 		DomainEvaluator evaluator = new TxEvaluator(DomainUtil.nonNullState(metaModelManager));
 		AbstractTransformation tx = txConstructor.newInstance(evaluator);
 		
-    	URI samplesBaseUri = baseURI.appendSegment("sample");
+		//
+		// Execute the transformation
+		//
+    	URI samplesBaseUri = baseURI.appendSegment("samples");
     	URI csModelURI = samplesBaseUri.appendSegment("example1_input.xmi");
     	URI asModelURI = samplesBaseUri.appendSegment("example1_output.xmi");
 		Resource inputResource = resourceSet.getResource(csModelURI, true);
@@ -200,6 +175,37 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		outputResource.getContents().addAll(tx.getRootObjects("rightAS"));
 		outputResource.save(null);
 	}
+	
+//	public void testExample1_CGv2() throws Exception {
+//		
+//		URI baseURI = URI.createURI("platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2");
+//		URI txURI = baseURI.appendSegment("classescs2as.qvtias");		
+//		URI middleGenModelURI = txURI.trimFileExtension().appendFileExtension("genmodel");
+//		assertValidModel(txURI);
+//		
+//		//
+//    	// Generate the transformation java code
+//    	//
+//		Transformation t = getTransformation(resourceSet, txURI);
+//		Class<? extends AbstractTransformation> txClass=  generateCode(t,  middleGenModelURI, "../oclDependencyAnalysis.qvt/tests-gen/");
+//		
+//		//
+//		// Execute the transformation
+//		//
+//		Constructor<? extends AbstractTransformation> txConstructor = txClass.getConstructor(DomainEvaluator.class);
+//		DomainEvaluator evaluator = new TxEvaluator(DomainUtil.nonNullState(metaModelManager));
+//		AbstractTransformation tx = txConstructor.newInstance(evaluator);
+//		
+//    	URI samplesBaseUri = baseURI.appendSegment("sample");
+//    	URI csModelURI = samplesBaseUri.appendSegment("example1_input.xmi");
+//    	URI asModelURI = samplesBaseUri.appendSegment("example1_output.xmi");
+//		Resource inputResource = resourceSet.getResource(csModelURI, true);
+//		tx.addRootObjects("leftCS", DomainUtil.nonNullState(inputResource.getContents()));
+//		tx.run();
+//		Resource outputResource = resourceSet.createResource(asModelURI);
+//		outputResource.getContents().addAll(tx.getRootObjects("rightAS"));
+//		outputResource.save(null);
+//	}
 	
 	
 		
@@ -213,18 +219,42 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		OCL2QVTiBrokerTester mtc = new OCL2QVTiBrokerTester(oclDocURI, this.getClass(), metaModelManager);
 		mtc.runOCL2QVTp(oclDocURI, qvtpFileURI, tracesMMURI);
 		// Test the QVTp transformation can be loaded
-    	assertValidModel(URI.createURI(qvtpFileURI));
+		assertValidQVTiModel(URI.createURI(qvtpFileURI));
 	}
 	
 	
 	protected static void assertValidModel(@NonNull URI asURI) {
         ResourceSet asResourceSet = new ResourceSetImpl();
         MetaModelManager.initializeASResourceSet(asResourceSet);
-        Resource resource = asResourceSet.getResource(asURI, true);
+        assertValidModel(asURI, asResourceSet);
+	}
+	
+	protected static void assertValidModel(URI asURI, ResourceSet rSet) {
+		Resource resource = rSet.getResource(asURI, true);
         EcoreUtil.resolveAll(resource);
-        assertNoUnresolvedProxies("Validating a resource: " + asURI.toString(), resource);
-        assertNoResourceErrors("Loading a resource" + asURI.toString(), resource);
-        assertNoValidationErrors("Loading a resource" + asURI.toString(), resource);
+	        
+		String rUriString = resource.getURI().toString();
+		assertNoUnresolvedProxies("Validating a resource: " + rUriString, resource);
+        assertNoResourceErrors("Loading a resource" + rUriString, resource);
+        assertNoValidationErrors("Loading a resource" + rUriString, resource);
+	}
+	
+	protected static void assertValidQVTiModel(@NonNull URI asURI ) {
+	    
+		ResourceSet asResourceSet = new ResourceSetImpl();
+		MetaModelManager mManager = new MetaModelManager(asResourceSet);
+		mManager.configureLoadFirstStrategy();
+		
+		URI oclURI = DomainUtil.nonNullState(URI.createPlatformResourceURI("/org.eclipse.qvtd.pivot.qvtimperative/model/QVTimperative.ocl", true));
+
+		CompleteOCLEObjectValidator validator = new CompleteOCLEObjectValidator(DomainUtil.nonNullState(QVTcoreBasePackage.eINSTANCE), oclURI, mManager);
+		validator.initialize();
+		PivotEObjectValidator.install(DomainUtil.nonNullState(asResourceSet), DomainUtil.nonNullState(mManager));
+		PivotEObjectValidator.install(DomainUtil.nonNullState(QVTbasePackage.eINSTANCE));
+		PivotEObjectValidator.install(DomainUtil.nonNullState(QVTcoreBasePackage.eINSTANCE));
+		PivotEObjectValidator.install(DomainUtil.nonNullState(QVTimperativePackage.eINSTANCE));
+		
+		assertValidModel(asURI, asResourceSet);
 	}
 	
 	// Copied from QVTiCompilerTest

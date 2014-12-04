@@ -52,11 +52,12 @@ public class OCL2QVTiBroker extends MtcBroker {
 	
 	@Override
 	public void execute() throws QvtMtcExecutionException {
-		loadConfigurationModel();
+		
+		pModel = runOCL2QVTp(oclDocUri, partitionUri, tracesMMUri);
+		
 		loadOclStdLibModel();
+		loadConfigurationModel();
 		createContainmentTrees();
-
-		pModel = runOCL2QVTp(oclDocUri, partitionUri, tracesMMUri);	
 		sModel = qvtpToQvts(pModel);
 		qvtpScheduling(pModel, sModel);
 		iModel = qvtpQvtsToQvti(pModel, sModel);
