@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eCoreContainemntTree="http://www.eclipse.org/qvt/examples/0.1/ECoreContainemntTree">
-  <eCoreContainemntTree:Node EClassName="classescs" children="/1 /2 /3 /4 /5"/>
-  <eCoreContainemntTree:Node EClassName="PackageCS" parent="/0 /5" children="/2">
+  <eCoreContainemntTree:Node name="classescs" children="/5"/>
+  <eCoreContainemntTree:Node name="PackageCS" parent="/5" children="/2">
     <superTypes>NamedElementCS</superTypes>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node EClassName="ClassCS" parent="/0 /1" children="/3">
+  <eCoreContainemntTree:Node name="ClassCS" parent="/1" children="/3">
     <superTypes>NamedElementCS</superTypes>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node EClassName="PathNameCS" parent="/0 /2" children="/4">
+  <eCoreContainemntTree:Node name="PathNameCS" parent="/2" children="/4">
     <superTypes>ElementCS</superTypes>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node EClassName="PathElementCS" parent="/0 /3">
+  <eCoreContainemntTree:Node name="PathElementCS" parent="/3">
     <superTypes>NamedElementCS</superTypes>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node EClassName="RootCS" parent="/0" children="/1">
+  <eCoreContainemntTree:Node name="RootCS" parent="/0" children="/1">
     <superTypes>ElementCS</superTypes>
   </eCoreContainemntTree:Node>
 </xmi:XMI>
