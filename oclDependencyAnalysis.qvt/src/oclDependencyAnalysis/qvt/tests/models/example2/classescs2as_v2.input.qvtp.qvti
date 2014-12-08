@@ -24,27 +24,23 @@ map packageCS2packageAS in classesCS2classesAS {
     }
     
     where () {
-    	packageCS.ast := packageAS;    	
+    	packageCS.ast := packageAS;
     }
 }
 
 map rootAS_ownedPackages in classesCS2classesAS {
-	check cCS(rootCS : RootCS, packageCS : PackageCS){}
-	check cAS(rootAS : Root, packageAS : Package){}
-	where (	rootCS.ast = rootAS;
-			packageCS.ast = packageAS;
-			rootCS.ownedPackages->includes(packageCS);
-	) {
-		rootAS.ownedPackages := rootAS.ownedPackages->including(packageAS);
+	check cCS(rootCS : RootCS){}
+	enforce cAS(){}
+	where () {
+		rootCS.ast.oclAsType(Root).ownedPackages := rootCS.ownedPackages.ast.oclAsType(Package);
 	}
 }
 
 map packageAS_name in classesCS2classesAS {
 	check cCS(packageCS : PackageCS) {}
-	check cAS(packageAS : Package) {}
-	
-	where (packageCS.ast = packageAS;)
+	enforce cAS() {}	
+	where ()
 	{
-		packageAS.name := packageCS.name;
+		packageCS.ast.oclAsType(Package).name := packageCS.name;
 	}
 }
