@@ -6,7 +6,7 @@ import oclDependencyAnalysis.qvt.tests.OCL2QVTiTestCases;
 import oclDependencyAnalysis.qvt.tests.PivotModelUtil;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
+import org.eclipse.ocl.pivot.manager.MetaModelManager;
 import org.eclipse.qvtd.build.etl.EtlTask;
 import org.eclipse.qvtd.build.etl.MtcBroker;
 import org.eclipse.qvtd.build.etl.PivotModel;
@@ -20,17 +20,17 @@ import org.eclipse.qvtd.build.etl.QvtMtcExecutionException;
  */
 public class OCL2QVTiBroker extends MtcBroker {
 
-	private static final String OCLSTDLIB_URI = "http://www.eclipse.org/ocl/3.1.0/OCL.oclstdlib.oclas";
+	private static final String OCLSTDLIB_URI = "http://www.eclipse.org/ocl/2015/Library.oclas";
 	
 	private static final String ECORE_URI = "http://www.eclipse.org/emf/2002/Ecore";
 	
-	private static final String PIVOT_URI = "http://www.eclipse.org/ocl/3.1.0/Pivot";
+	private static final String PIVOT_URI = "http://www.eclipse.org/ocl/2015/Pivot";
 	
-	private static final String QVTB_URI ="http://www.eclipse.org/qvt/0.9/QVTbase";
+	private static final String QVTB_URI ="http://www.eclipse.org/qvt/2015/QVTbase";
 	
-	private static final String QVTCB_URI = "http://www.eclipse.org/qvt/0.9/QVTcoreBase";
+	private static final String QVTCB_URI = "http://www.eclipse.org/qvt/2015/QVTcoreBase";
 	
-	private static final String QVTI_URI = "http://www.eclipse.org/qvt/0.9/QVTimperative";
+	private static final String QVTI_URI = "http://www.eclipse.org/qvt/2015/QVTimperative";
 		
 	private static final String QVTI_FULL_NS = QVTI_URI + ',' + QVTCB_URI + ',' +  QVTB_URI + ',' +  PIVOT_URI;
 	
@@ -71,7 +71,7 @@ public class OCL2QVTiBroker extends MtcBroker {
 		
 		String qvtiModelName = "QVTp";
 		String qvtiModelAlises = "QVTi,QVT"; // FIXME further steps should configure the aliases
-		PivotModel pModel = pmUtil.createPivotModel(qvtiFileURI, qvtiModelName, qvtiModelAlises, QVTI_FULL_NS, false, true, false, false, true);
+		PivotModel pModel = pmUtil.createPivotModel(qvtiFileURI, qvtiModelName, qvtiModelAlises, QVTI_FULL_NS, false, true, false, true, true);
 		
 		String tracesMModelName = "MiddleMM";
 		PivotModel tracesMM = pmUtil.createPivotModel(tracesMMURI, tracesMModelName, "", TRACES_FULL_NS , true, false, true, false, true);

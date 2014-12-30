@@ -5,7 +5,7 @@ operation OCL!ConstructorExp getExpressionContextType () : OCL!Class {
 	while (not container.isKindOf(OCL!ExpressionInOCL)) {
 		container = container.eContainer();
 	}
-	return container.contextVariable.type;
+	return container.ownedContext.type;
 }
 
 // FIXME clash naming

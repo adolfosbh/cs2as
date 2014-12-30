@@ -14,7 +14,10 @@ pre {
 	
 	-- transformation begins --
 	var qvtiModel = new QVTi!ImperativeModel;
-	qvtiModel.externalURI = OCL!Root.all.first().name.replace(".ocl",""); -- FIXME	 
+	qvtiModel.externalURI = OCL!Model.all.first().name.replace(".ocl",""); -- FIXME	 
+	
+	var qvtiPackage = new QVTi!Package;
+	qvtiModel.ownedPackages.add(qvtiPackage);
 	
 	var qvtiTransf = new QVTi!Transformation;
 	qvtiTransf.name = qvtiModel.name;
@@ -23,15 +26,15 @@ pre {
 	var typedModel = new QVTi!TypedModel;
 	typedModel.name = LEFT;
 	typedModel.usedPackage.add(
-		OCL!Import.all.importedNamespace.nestedPackage.flatten().selectOne(x 
-				| x.name = OCL!ConstructorExp.all.first().getExpressionContextType().package.name));
+		OCL!Import.all.importedNamespace.ownedPackages.flatten().selectOne(x 
+				| x.name = OCL!ConstructorExp.all.first().getExpressionContextType().owningPackage.name));
 	qvtiTransf.modelParameter.add(typedModel);
 	
 	typedModel = new QVTi!TypedModel;
 	typedModel.name = RIGHT;
 	typedModel.usedPackage.add(
-		OCL!Import.all.importedNamespace.nestedPackage.flatten().selectOne(x 
-				| x.name = OCL!ConstructorExp.all.first().type.package.name));
+		OCL!Import.all.importedNamespace.ownedPackages.flatten().selectOne(x 
+				| x.name = OCL!ConstructorExp.all.first().type.owningPackage.name));
 	qvtiTransf.modelParameter.add(typedModel);
 	
 	typedModel = new QVTi!TypedModel;
@@ -39,7 +42,7 @@ pre {
 	typedModel.usedPackage.add(MIDDLE_PACKAGE);
 	qvtiTransf.modelParameter.add(typedModel);
 	
-	qvtiModel.nestedPackage.add(qvtiTransf);
+	qvtiPackage.ownedClasses.add(qvtiTransf);
 }
 
 --rule Import2 
@@ -77,7 +80,7 @@ rule ConstructorExp2Mapping_LM
 	
 	pAssignment.value = value;
 	pAssignment.slotExpression = slotExpression;
-	pAssignment.targetProperty = slotExpression.type.ownedAttribute.selectOne(x | x.name = value.type.name.firstToLowerCase());	
+	pAssignment.targetProperty = slotExpression.type.ownedProperties.selectOne(x | x.name = value.type.name.firstToLowerCase());	
 	
 	bottomPattern.assignment.add(pAssignment);
 				
@@ -114,7 +117,7 @@ rule ConstructorExp2Mapping_MR
 	
 	pAssignment.value = value;
 	pAssignment.slotExpression = slotExpression;
-	pAssignment.targetProperty = slotExpression.type.ownedAttribute.selectOne(x | x.name = value.type.name.firstToLowerCase());	
+	pAssignment.targetProperty = slotExpression.type.ownedProperties.selectOne(x | x.name = value.type.name.firstToLowerCase());	
 	
 	bottomPattern.assignment.add(pAssignment);
 		
@@ -156,15 +159,15 @@ rule ConstructorPart2UpdateMapping
 	
 	var sourceMiddlePropCall = new QVTi!MiddlePropertyCallExp;
 	var middleType = MiddleMM!Class.all.selectOne(x | x.name = constructorExp.getTraceElementName());
-	sourceMiddlePropCall.referredProperty = middleType.ownedAttribute.selectOne(x | x.name = leftVar.name);
+	sourceMiddlePropCall.referredProperty = middleType.ownedProperties.selectOne(x | x.name = leftVar.name);
 	sourceMiddlePropCall.type = middleType;
-	sourceMiddlePropCall.source = sourceVarExp;
+	sourceMiddlePropCall.ownedSource = sourceVarExp;
 	
 	
 	var sourcePropCall = new QVTi!PropertyCallExp;
-	sourcePropCall.referredProperty = middleType.ownedAttribute.selectOne(x | x.name = rightVar.name);
+	sourcePropCall.referredProperty = middleType.ownedProperties.selectOne(x | x.name = rightVar.name);
 	sourcePropCall.type = rightVar.type;
-	sourcePropCall.source = sourceMiddlePropCall;
+	sourcePropCall.ownedSource = sourceMiddlePropCall;
 	
 	var argVarExp = new QVTi!VariableExp;
 	argVarExp.referredVariable = rightVar;
@@ -176,8 +179,8 @@ rule ConstructorPart2UpdateMapping
 	eqOpCall.referredOperation = oclAnyEqualsOp;
 	eqOpCall.name = oclAnyEqualsOp.name;
 	eqOpCall.type = oclAnyEqualsOp.type;
-	eqOpCall.source = sourcePropCall;
-	eqOpCall.argument.add(argVarExp);
+	eqOpCall.ownedSource = sourcePropCall;
+	eqOpCall.ownedArguments.add(argVarExp);
 	
 	var predicate = new QVTi!Predicate;
 	predicate.conditionExpression = eqOpCall;
@@ -194,7 +197,7 @@ rule ConstructorPart2UpdateMapping
 	
 	var propAssignment = new QVTi!PropertyAssignment;
 	propAssignment.targetProperty = s.referredProperty;
-	propAssignment.value = s.initExpression.createPropertyAssignmentValue(leftVar);
+	propAssignment.value = s.ownedInit.createPropertyAssignmentValue(leftVar);
 	propAssignment.slotExpression = slotExp;
 		
 	var bottomPattern = new QVTi!BottomPattern;
@@ -247,7 +250,7 @@ operation OCL!ConstructorExp createLM_MiddleDomain () : QVTi!CoreDomain {
 	
 	var variable = new QVTi!RealizedVariable;
 	variable.name = self.getTraceElementVariableName();
-	variable.type = MIDDLE_PACKAGE.ownedType.selectOne(x| x.name = self.getTraceElementName());
+	variable.type = MIDDLE_PACKAGE.ownedClasses.selectOne(x| x.name = self.getTraceElementName());
 
 	bottomPattern.realizedVariable.add(variable);
 	
@@ -268,7 +271,7 @@ operation OCL!ConstructorExp createMR_MiddleDomain () : QVTi!CoreDomain {
 	
 	var variable = new QVTi!Variable;
 	variable.name = self.getTraceElementVariableName();
-	variable.type = MIDDLE_PACKAGE.ownedType.selectOne(x| x.name = self.getTraceElementName());
+	variable.type = MIDDLE_PACKAGE.ownedClasses.selectOne(x| x.name = self.getTraceElementName());
 	
 	guardPattern.variable.add(variable);
 	
@@ -350,20 +353,20 @@ operation OCL!OCLExpression createPropertyAssignmentValue(leftVar) : OCL!OCLExpr
 			case exp.isSelfVarExp():
 				exp.referredVariable = leftVar;
 			case exp.isAstOpCallExp():
-				var middleTypeName = getTraceElementName(exp.source.type, exp.referredOperation.type); // FIXME This doesnt work with ast() op returning an abstract name
+				var middleTypeName = getTraceElementName(exp.ownedSource.type, exp.referredOperation.type); // FIXME This doesnt work with ast() op returning an abstract name
 				var middleType = MiddleMM!Class.all.selectOne(x | x.name = middleTypeName);
-				var leftPropertyName = exp.source.type.name.firstToLowerCase();
+				var leftPropertyName = exp.ownedSource.type.name.firstToLowerCase();
 				var middlePropCall = new QVTi!MiddlePropertyCallExp;
-				middlePropCall.referredProperty = middleType.ownedAttribute.selectOne(x | x.name = leftPropertyName);
+				middlePropCall.referredProperty = middleType.ownedProperties.selectOne(x | x.name = leftPropertyName);
 				middlePropCall.type = middleType;
-				middlePropCall.source = exp.source;
+				middlePropCall.ownedSource = exp.ownedSource;
 	
 	
 				var rightPropCall = new QVTi!PropertyCallExp;
 				var rightType = exp.referredOperation.type;
-				rightPropCall.referredProperty = middleType.ownedAttribute.selectOne(x | x.name = rightType.name.firstToLowerCase()); -- FIXME refactor name algorithm
+				rightPropCall.referredProperty = middleType.ownedProperties.selectOne(x | x.name = rightType.name.firstToLowerCase()); -- FIXME refactor name algorithm
 				rightPropCall.type = rightType;
-				rightPropCall.source = middlePropCall;
+				rightPropCall.ownedSource = middlePropCall;
 											
 				if (newInitExp = exp) {
 					newInitExp = rightPropCall;
@@ -387,12 +390,12 @@ operation OCL!Element isAstOpCallExp() : Boolean {
 
 operation OCL!ConstructorPart getAstCalls() : Collection(OCL!OperationCallExpression) {
 	  
-	return self.initExpression.getAllContents().including(self.initExpression)
+	return self.ownedInit.getAllContents().including(self.ownedInit)
 			.select(x | x.isKindOf(OCL!OperationCallExp) and x.referredOperation.name = "ast" );
 }
 
 operation getOclAnyEqualsOp() : OCL!Operation {
- 	return OclStdLib!Class.all.selectOne(x | x.name = 'OclAny').ownedOperation
+ 	return OclStdLib!AnyType.all.selectOne(x | x.name = 'OclAny').ownedOperations
 						   .selectOne(x | x.name = '=');
 }
 
