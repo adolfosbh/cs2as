@@ -1,0 +1,293 @@
+-- Transformation model parameters:
+--     OCL - A CompleteOCL document 
+--     QVTi - The output QVTi model
+
+import 'ocl2qvtiUtils.eol';
+
+pre {
+	var LEFTCS_PACKAGE = OCL!Package.all.first();
+	var RIGHT = "rightAS";
+	var LEFT = "leftCS";
+	var emfTool = new Native("org.eclipse.epsilon.emc.emf.tools.EmfTool");
+	
+	-- transformation begins --
+	var qvtiModel = new QVTi!ImperativeModel;
+	qvtiModel.externalURI = OCL!Model.all.first().name.replace(".ocl",""); -- FIXME	 
+	
+	var qvtiPackage = new QVTi!Package;
+	qvtiPackage.name = "";
+	
+	
+	var qvtiTransf = new QVTi!Transformation;
+	qvtiTransf.name = qvtiModel.name;
+	qvtiTransf.modelParameter.addAll(QVTi!TypedModel.all());
+	
+	var typedModel = new QVTi!TypedModel;
+	typedModel.name = LEFT;
+	typedModel.usedPackage.add(
+		OCL!Import.all.importedNamespace.ownedPackages.flatten().selectOne(x 
+				| x.name = OCL!ConstructorExp.all.first().getExpressionContextType().owningPackage.name));
+	qvtiTransf.modelParameter.add(typedModel);
+	
+	typedModel = new QVTi!TypedModel;
+	typedModel.name = RIGHT;
+	typedModel.usedPackage.add(
+		OCL!Import.all.importedNamespace.ownedPackages.flatten().selectOne(x 
+				| x.name = OCL!ConstructorExp.all.first().type.owningPackage.name));
+	qvtiTransf.modelParameter.add(typedModel);
+		
+	qvtiPackage.ownedClasses.add(qvtiTransf);
+	qvtiModel.ownedPackages.add(qvtiPackage);
+}
+
+--rule Import2 
+--	transform s : sourcemodel!sourcetype
+--	to t : targetmodel!targettype {
+--	
+--}
+
+rule ConstructorExp2CreationMapping
+	transform s : OCL!ConstructorExp
+	to t : QVTi!Mapping {
+	
+	guard {
+		return s.closure(x|x.eContainer()).contains(LEFTCS_PACKAGE); 
+	}
+	
+	t.name = 'mCreation'+s.getTraceElementName();
+	
+	var leftDomain = s.createCreationMapping_LeftDomain();
+	var rightDomain = s.createCreationMapping_RightDomain();
+	
+	t.domain.add(leftDomain);
+	t.domain.add(rightDomain);
+	
+	var guardPattern = new QVTi!GuardPattern;
+	var bottomPattern = new QVTi!BottomPattern;
+	
+	var pAssignment = new QVTi!MiddlePropertyAssignment;
+	var value = new QVTi!VariableExp;
+	value.referredVariable = rightDomain.bottomPattern.realizedVariable.first();
+	value.type = value.referredVariable.type;
+	var slotExpression = new QVTi!VariableExp;	
+	slotExpression.referredVariable = leftDomain.guardPattern.variable.first();
+	slotExpression.type = slotExpression.referredVariable.type;
+	
+	pAssignment.value = value;
+	pAssignment.slotExpression = slotExpression;
+	pAssignment.targetProperty = slotExpression.type.getTraceabilityProperty();	
+	
+	bottomPattern.assignment.add(pAssignment);
+				
+	t.guardPattern = guardPattern;
+	t.bottomPattern = bottomPattern;
+}
+
+rule ConstructorPart2UpdateMapping
+	transform s : OCL!ConstructorPart
+	to t : QVTi!Mapping {
+	
+	guard { 
+		var astCalls = s.getAstCalls();
+		return true;
+		--return astCalls.isEmpty() and s.closure(x|x.eContainer()).contains(LEFTCS_PACKAGE);
+	}
+		
+	var constructorExp = s.eContainer();
+	var refProp = s.referredProperty;
+		
+	t.name = 'u'+constructorExp.type.name+'_'+refProp.name;
+
+	var rightDomain = constructorExp.createUpdateMapping_RightDomain();
+	var leftDomain = constructorExp.createUpdateMapping_LeftDomain();
+	
+	t.domain.add(leftDomain);
+	t.domain.add(rightDomain);	
+		
+	// Bottom pattern expression : AssignmentExp
+	var leftVar = leftDomain.guardPattern.variable.first();
+		
+	var varExpression = new QVTi!VariableExp;	
+	varExpression.referredVariable = leftVar;
+	varExpression.type = varExpression.referredVariable.type;
+	var traceabilityProperty = varExpression.type.getTraceabilityProperty();
+		
+	var astPropCallExp = new QVTi!PropertyCallExp;
+	astPropCallExp.ownedSource = varExpression;
+	astPropCallExp.referredProperty = traceabilityProperty;
+	astPropCallExp.type = astPropCallExp.referredProperty.type;
+	
+	var asTypeOpCallExp = new QVTi!OperationCallExp;
+	asTypeOpCallExp.ownedSource = astPropCallExp;  
+	asTypeOpCallExp.referredOperation = getOclAnyOclAsTypeOp();
+	asTypeOpCallExp.type = constructorExp.type; // The created type by the owning constructorExp
+	
+	var argTypeExp = new QVTi!TypeExp;
+	argTypeExp.referredType =  constructorExp.type;
+	argTypeExp.type = getOclMetaClass();
+	
+	asTypeOpCallExp.ownedArguments.add(argTypeExp);
+
+	
+	var pAssignment = new QVTi!MiddlePropertyAssignment;
+	pAssignment.targetProperty = refProp;
+	pAssignment.value = s.ownedInit.createPropertyAssignmentValue(leftVar, refProp.getReferredElementType()); // The last cast is towards the type of constructor part property
+	pAssignment.slotExpression = asTypeOpCallExp;
+	
+	var guardPattern = new QVTi!GuardPattern;	
+	var bottomPattern = new QVTi!BottomPattern;
+	bottomPattern.assignment.add(pAssignment);
+	
+	t.guardPattern = guardPattern;
+	t.bottomPattern = bottomPattern;
+}
+
+operation OCL!ConstructorExp createCreationMapping_LeftDomain ( ) : QVTi!CoreDomain {
+	var contextType = self.getExpressionContextType();
+	var domain = new QVTi!CoreDomain;	
+	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= LEFT);
+	domain.isCheckable = true;
+	
+	var guardPattern = new QVTi!GuardPattern;	
+	var bottomPattern = new QVTi!BottomPattern;
+	
+	var variable = new QVTi!Variable;
+	variable.name = contextType.name.firstToLowerCase();
+	variable.type = contextType;
+	
+	guardPattern.variable.add(variable);
+	
+	domain.guardPattern = guardPattern;
+	domain.bottomPattern = bottomPattern;
+	return domain;
+}
+
+
+operation OCL!ConstructorExp createCreationMapping_RightDomain () : QVTi!CoreDomain {
+	var constructedType = self.type;
+		
+	var domain = new QVTi!CoreDomain;
+	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= RIGHT);
+	domain.isEnforceable = true;
+	
+	var guardPattern = new QVTi!GuardPattern;	
+	var bottomPattern = new QVTi!BottomPattern;
+	
+	var variable = new QVTi!RealizedVariable;
+	variable.name = constructedType.name.firstToLowerCase();
+	variable.type = constructedType;
+
+	bottomPattern.realizedVariable.add(variable);
+	
+	domain.guardPattern = guardPattern;
+	domain.bottomPattern = bottomPattern;
+	return domain;
+}
+
+operation OCL!ConstructorExp createUpdateMapping_LeftDomain ( ) : QVTi!CoreDomain {
+	// It's exactly the same domain as we have for the creation mappings
+	return self.createCreationMapping_LeftDomain();
+}
+
+
+operation OCL!ConstructorExp createUpdateMapping_RightDomain () : QVTi!CoreDomain {
+	var constructedType = self.type;
+		
+	var domain = new QVTi!CoreDomain;
+	domain.typedModel = QVTi!TypedModel.all.selectOne(x | x.name= RIGHT);
+	domain.isEnforceable = true;
+	
+	var guardPattern = new QVTi!GuardPattern;	
+	var bottomPattern = new QVTi!BottomPattern;
+	
+	domain.guardPattern = guardPattern;
+	domain.bottomPattern = bottomPattern;
+	return domain;
+}
+
+operation OCL!OCLExpression createPropertyAssignmentValue(leftVar, castType) : OCL!OCLExpression {
+	-- FIXME what happens with synthetised types ????
+	var eUtil = emfTool.getEcoreUtil();
+	var newInitExp = eUtil.copy(self);
+	-- We need to replace the OCL refered "self" varible by the QVTi domain "leftVar"
+	for (exp in newInitExp.getAllContents().including(newInitExp)) {		
+		switch (true) {
+			case exp.isSelfVarExp():
+				exp.referredVariable = leftVar;
+			case exp.isAstOpCallExp():
+				var astPropCallExp = new QVTi!PropertyCallExp;
+				astPropCallExp.ownedSource = exp.ownedSource;
+				astPropCallExp.referredProperty = astPropCallExp.ownedSource.type.getTraceabilityProperty();
+				astPropCallExp.type = astPropCallExp.referredProperty.type;
+					
+				var asTypeOpCallExp = new QVTi!OperationCallExp;
+				asTypeOpCallExp.ownedSource = astPropCallExp;  
+				asTypeOpCallExp.referredOperation = getOclAnyOclAsTypeOp();
+				asTypeOpCallExp.type = castType.println("Cast type:");
+				
+				var argTypeExp = new QVTi!TypeExp;
+				argTypeExp.referredType = castType;
+				argTypeExp.type = getOclMetaClass();
+				
+				asTypeOpCallExp.ownedArguments.add(argTypeExp);
+											
+				if (newInitExp = exp) {
+					newInitExp = asTypeOpCallExp;
+				} else {
+					eUtil.replace(exp, asTypeOpCallExp);
+				}
+				eUtil.`delete`(exp);
+		}
+	} 
+	return newInitExp;
+}
+
+operation OCL!Element isSelfVarExp() : Boolean {
+	return self.isKindOf(OCL!VariableExp) and self.referredVariable.name = 'self';
+}
+
+operation OCL!Element isAstOpCallExp() : Boolean {
+	return self.isKindOf(OCL!OperationCallExp) and self.referredOperation.name = 'ast';
+}
+
+
+operation OCL!ConstructorPart getAstCalls() : Collection(OCL!OperationCallExpression) {
+	  
+	return self.ownedInit.getAllContents().including(self.ownedInit)
+			.select(x | x.isKindOf(OCL!OperationCallExp) and x.referredOperation.name = "ast" );
+}
+
+operation OCL!Type getTraceabilityProperty() : OCL!Property {
+	// return self.ownedAttribute.selectOne(x | x.name = 'ast'); // FIXME can we parameterize the traceability property name ?
+	return self.asSequence().closure(x | x.superClasses).ownedProperties.flatten().selectOne(x | x.name = 'ast');
+}
+
+// Returns the type of a property. For multivalued properties returns the property type rather than an OCL Collection   
+operation OCL!Property getReferredElementType() {
+	if (self.type.isKindOf(OCL!CollectionType)) {
+		return self.type.elementType;
+	} else {
+		return self.type;
+	}
+}
+
+
+operation getOclAnyEqualsOp() : OCL!Operation {
+ 	return OclStdLib!Class.all.selectOne(x | x.name = 'OclAny').ownedOperations
+						   .selectOne(x | x.name = '=');
+}
+
+operation getOclMetaClass() : OCL!Class {
+	return OclStdLib!Class.all.selectOne(x | x.name = 'Class');
+}
+
+operation getOclAnyOclAsTypeOp() : OCL!Operation {
+	return OclStdLib!Class.all.selectOne(x | x.name = 'OclAny').ownedOperations
+						   .selectOne(x | x.name = 'oclAsType');
+}
+
+post {
+	-- We add all the declaratively created QVTi mappings to the imperatively created QVTi transformation 
+	qvtiTransf.`rule`.addAll(QVTi!Mapping.all());
+	"OCL 2 QVTp completed".println();
+}

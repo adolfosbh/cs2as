@@ -17,7 +17,7 @@ pre {
 	qvtiModel.externalURI = OCL!Model.all.first().name.replace(".ocl",""); -- FIXME	 
 	
 	var qvtiPackage = new QVTi!Package;
-	qvtiModel.ownedPackages.add(qvtiPackage);
+	qvtiPackage.name = "";
 	
 	var qvtiTransf = new QVTi!Transformation;
 	qvtiTransf.name = qvtiModel.name;
@@ -41,15 +41,19 @@ pre {
 	typedModel.name = MIDDLE;
 	typedModel.usedPackage.add(MIDDLE_PACKAGE);
 	qvtiTransf.modelParameter.add(typedModel);
-	
+		
 	qvtiPackage.ownedClasses.add(qvtiTransf);
+	qvtiModel.ownedPackages.add(qvtiPackage);
 }
 
---rule Import2 
---	transform s : sourcemodel!sourcetype
---	to t : targetmodel!targettype {
---	
---}
+/*
+rule Import2Unit 
+	transform s : OCL!Import
+	to t : QVTi!Unit {
+	
+	t.name = s.name;
+	t.usedPackage = s.importedNamespace;
+}*/
 
 rule ConstructorExp2Mapping_LM
 	transform s : OCL!ConstructorExp
@@ -400,7 +404,8 @@ operation getOclAnyEqualsOp() : OCL!Operation {
 }
 
 post {
-	-- We add all the declaratively created QVTi mappings to the imperatively created QVTi transformation 
+	-- We add all the declaratively created QVTi mappings/units to the imperatively created QVTi transformation/model 
 	qvtiTransf.`rule`.addAll(QVTi!Mapping.all());
+	-- qvtiModel.unit.addAll(QVTi!Unit.all());
 	"OCL 2 QVTp completed".println();
 }

@@ -38,7 +38,7 @@ map rootAS_ownedPackages in classesCS2classesAS {
 
 map packageAS_name in classesCS2classesAS {
 	check cCS(packageCS : PackageCS) {}
-	enforce cAS() {}	
+	enforce cAS() {}
 	where ()
 	{
 		packageCS.ast.oclAsType(Package).name := packageCS.name;

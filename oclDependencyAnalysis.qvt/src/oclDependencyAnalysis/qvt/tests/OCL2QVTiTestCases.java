@@ -105,8 +105,8 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	mtc.execute();
     	PivotModel qvtiTransf = mtc.getiModel();
     	URI txURI = ClassUtil.nonNullState(qvtiTransf.getResource().getURI());		
-//    	assertValidQVTiModel(txURI);
-    	assertValidModel(txURI);
+    	assertValidQVTiModel(txURI);
+//    	assertValidModel(txURI);
     	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(metaModelManager, qvtiTransf.getTransformation());
     	    	
 //    	// Execute the transformation with a clean resourceSet and MetaModelManager
@@ -129,7 +129,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	testEvaluator.saveTransformation(null);
         testEvaluator.loadModel("leftCS", csModelURI);
         testEvaluator.createModel("rightAS", asModelURI, null);
-        testEvaluator.createModel("middle", middleModelURI, null);
+        // testEvaluator.createModel("middle", middleModelURI, null);
         testEvaluator.execute();
         testEvaluator.saveModels();
         testEvaluator.dispose();

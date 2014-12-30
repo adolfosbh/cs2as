@@ -1,6 +1,6 @@
 import ClassesCS: 'ClassesCS.ecore'::classescs;
 import ClassesAS: 'Classes.ecore'::classes;
-import ClassesCS2ClassesAS: 'ClassesCS2ClassesAS.ecore'::cCS2cAS;
+import ClassesCS2ClassesAS: 'classescs2as.ecore'::classescstraces;
 
 transformation classesCS2classesAS {
     cAS imports ClassesAS;

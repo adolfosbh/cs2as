@@ -81,7 +81,7 @@ public class OCL2QVTiBroker extends MtcBroker {
 		
 		EtlTask etl;
 		try {
-			etl = new EtlTask(OCL2QVTiTestCases.class.getResource("/oclDependencyAnalysis/qvt/ocl2qvtp.etl").toURI());
+			etl = new EtlTask(OCL2QVTiTestCases.class.getResource("/oclDependencyAnalysis/qvt/ocl2qvtp_v2.etl").toURI());
 			etl.addModel(oclModel);
 			etl.addModel(pModel);
 			etl.addModel(tracesMM);

@@ -4,312 +4,182 @@
     xmlns:qvtcb="http://www.eclipse.org/qvt/2015/QVTcoreBase" xmlns:qvti="http://www.eclipse.org/qvt/2015/QVTimperative"
     xsi:schemaLocation="http://www.eclipse.org/ocl/2015/Pivot java://org.eclipse.ocl.pivot.PivotPackage http://www.eclipse.org/qvt/2015/QVTbase java://org.eclipse.qvtd.pivot.qvtbase.QVTbasePackage http://www.eclipse.org/qvt/2015/QVTcoreBase java://org.eclipse.qvtd.pivot.qvtcorebase.QVTcoreBasePackage http://www.eclipse.org/qvt/2015/QVTimperative java://org.eclipse.qvtd.pivot.qvtimperative.QVTimperativePackage"
     name="classescs2as" externalURI="classescs2as">
-  <ownedPackages>
-    <ownedClasses xsi:type="qvtb:Transformation" xmi:id="T.null.classescs2as" name="classescs2as">
-      <modelParameter xmi:id="qT.null.classescs2as.leftCS" name="leftCS" usedPackage="ClassesCS.ecore.oclas#P.classescs"/>
-      <modelParameter xmi:id="qT.null.classescs2as.rightAS" name="rightAS" usedPackage="Classes.ecore.oclas#P.classes"/>
-      <modelParameter xmi:id="qT.null.classescs2as.middle" name="middle" usedPackage="classescs2as.ecore.oclas#P.classescstraces"/>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.mClassCS2Class_LM"
-          name="mClassCS2Class_LM">
+  <ownedPackages xmi:id="P." name="">
+    <ownedClasses xsi:type="qvtb:Transformation" xmi:id="T..classescs2as" name="classescs2as">
+      <modelParameter xmi:id="qT..classescs2as.leftCS" name="leftCS" usedPackage="ClassesCS.ecore.oclas#P.classescs"/>
+      <modelParameter xmi:id="qT..classescs2as.rightAS" name="rightAS" usedPackage="Classes.ecore.oclas#P.classes"/>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.mCreationClassCS2Class"
+          name="mCreationClassCS2Class">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.leftCS">
+            typedModel="#qT..classescs2as.leftCS">
           <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.mClassCS2Class_LM.leftCS.guard.classCS"
+            <variable xmi:id="qV..classescs2as.mCreationClassCS2Class.leftCS.guard.classCS"
                 name="classCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
-        <domain xsi:type="qvtcb:CoreDomain" name="middle" isCheckable="false" isEnforceable="true"
-            typedModel="#qT.null.classescs2as.middle">
-          <guardPattern/>
-          <bottomPattern>
-            <realizedVariable xmi:id="qV.null.classescs2as.mClassCS2Class_LM.middle.bottom.c2c"
-                name="c2c" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
-          </bottomPattern>
-        </domain>
-        <guardPattern/>
-        <bottomPattern>
-          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS"
-              cacheIndex="0">
-            <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                referredVariable="#qV.null.classescs2as.mClassCS2Class_LM.leftCS.guard.classCS"/>
-            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
-                referredVariable="#qV.null.classescs2as.mClassCS2Class_LM.middle.bottom.c2c"/>
-          </assignment>
-        </bottomPattern>
-      </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.mPackageCS2Package_LM"
-          name="mPackageCS2Package_LM">
-        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.leftCS">
-          <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.mPackageCS2Package_LM.leftCS.guard.packageCS"
-                name="packageCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
-          </guardPattern>
-          <bottomPattern/>
-        </domain>
-        <domain xsi:type="qvtcb:CoreDomain" name="middle" isCheckable="false" isEnforceable="true"
-            typedModel="#qT.null.classescs2as.middle">
-          <guardPattern/>
-          <bottomPattern>
-            <realizedVariable xmi:id="qV.null.classescs2as.mPackageCS2Package_LM.middle.bottom.p2p"
-                name="p2p" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
-          </bottomPattern>
-        </domain>
-        <guardPattern/>
-        <bottomPattern>
-          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS"
-              cacheIndex="1">
-            <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                referredVariable="#qV.null.classescs2as.mPackageCS2Package_LM.leftCS.guard.packageCS"/>
-            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                referredVariable="#qV.null.classescs2as.mPackageCS2Package_LM.middle.bottom.p2p"/>
-          </assignment>
-        </bottomPattern>
-      </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.mRootCS2Root_LM" name="mRootCS2Root_LM">
-        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.leftCS">
-          <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.mRootCS2Root_LM.leftCS.guard.rootCS"
-                name="rootCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
-          </guardPattern>
-          <bottomPattern/>
-        </domain>
-        <domain xsi:type="qvtcb:CoreDomain" name="middle" isCheckable="false" isEnforceable="true"
-            typedModel="#qT.null.classescs2as.middle">
-          <guardPattern/>
-          <bottomPattern>
-            <realizedVariable xmi:id="qV.null.classescs2as.mRootCS2Root_LM.middle.bottom.r2r"
-                name="r2r" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"/>
-          </bottomPattern>
-        </domain>
-        <guardPattern/>
-        <bottomPattern>
-          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS"
-              cacheIndex="2">
-            <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
-                referredVariable="#qV.null.classescs2as.mRootCS2Root_LM.leftCS.guard.rootCS"/>
-            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
-                referredVariable="#qV.null.classescs2as.mRootCS2Root_LM.middle.bottom.r2r"/>
-          </assignment>
-        </bottomPattern>
-      </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.mClassCS2Class_MR"
-          name="mClassCS2Class_MR">
-        <domain xsi:type="qvtcb:CoreDomain" name="middle" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.middle">
-          <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.mClassCS2Class_MR.middle.guard.c2c"
-                name="c2c" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
-          </guardPattern>
-          <bottomPattern/>
-        </domain>
         <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true"
-            typedModel="#qT.null.classescs2as.rightAS">
+            typedModel="#qT..classescs2as.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV.null.classescs2as.mClassCS2Class_MR.rightAS.bottom.class"
+            <realizedVariable xmi:id="qV..classescs2as.mCreationClassCS2Class.rightAS.bottom.class"
                 name="class" type="pivot:Class Classes.ecore.oclas#T.classes.Class"/>
           </bottomPattern>
         </domain>
         <guardPattern/>
         <bottomPattern>
-          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
-                referredVariable="#qV.null.classescs2as.mClassCS2Class_MR.rightAS.bottom.class"/>
-            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
-                referredVariable="#qV.null.classescs2as.mClassCS2Class_MR.middle.guard.c2c"/>
+                referredVariable="#qV..classescs2as.mCreationClassCS2Class.rightAS.bottom.class"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
+                referredVariable="#qV..classescs2as.mCreationClassCS2Class.leftCS.guard.classCS"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.mPackageCS2Package_MR"
-          name="mPackageCS2Package_MR">
-        <domain xsi:type="qvtcb:CoreDomain" name="middle" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.middle">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.mCreationPackageCS2Package"
+          name="mCreationPackageCS2Package">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
+            typedModel="#qT..classescs2as.leftCS">
           <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.mPackageCS2Package_MR.middle.guard.p2p"
-                name="p2p" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
+            <variable xmi:id="qV..classescs2as.mCreationPackageCS2Package.leftCS.guard.packageCS"
+                name="packageCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
         <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true"
-            typedModel="#qT.null.classescs2as.rightAS">
+            typedModel="#qT..classescs2as.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV.null.classescs2as.mPackageCS2Package_MR.rightAS.bottom.package"
+            <realizedVariable xmi:id="qV..classescs2as.mCreationPackageCS2Package.rightAS.bottom.package"
                 name="package" type="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
           </bottomPattern>
         </domain>
         <guardPattern/>
         <bottomPattern>
-          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                referredVariable="#qV.null.classescs2as.mPackageCS2Package_MR.rightAS.bottom.package"/>
-            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                referredVariable="#qV.null.classescs2as.mPackageCS2Package_MR.middle.guard.p2p"/>
+                referredVariable="#qV..classescs2as.mCreationPackageCS2Package.rightAS.bottom.package"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                referredVariable="#qV..classescs2as.mCreationPackageCS2Package.leftCS.guard.packageCS"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.mRootCS2Root_MR" name="mRootCS2Root_MR">
-        <domain xsi:type="qvtcb:CoreDomain" name="middle" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.middle">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.mCreationRootCS2Root"
+          name="mCreationRootCS2Root">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
+            typedModel="#qT..classescs2as.leftCS">
           <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.mRootCS2Root_MR.middle.guard.r2r"
-                name="r2r" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"/>
+            <variable xmi:id="qV..classescs2as.mCreationRootCS2Root.leftCS.guard.rootCS"
+                name="rootCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
         <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true"
-            typedModel="#qT.null.classescs2as.rightAS">
+            typedModel="#qT..classescs2as.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV.null.classescs2as.mRootCS2Root_MR.rightAS.bottom.root"
+            <realizedVariable xmi:id="qV..classescs2as.mCreationRootCS2Root.rightAS.bottom.root"
                 name="root" type="pivot:Class Classes.ecore.oclas#T.classes.Root"/>
           </bottomPattern>
         </domain>
         <guardPattern/>
         <bottomPattern>
-          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.root">
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Root"
-                referredVariable="#qV.null.classescs2as.mRootCS2Root_MR.rightAS.bottom.root"/>
-            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
-                referredVariable="#qV.null.classescs2as.mRootCS2Root_MR.middle.guard.r2r"/>
+                referredVariable="#qV..classescs2as.mCreationRootCS2Root.rightAS.bottom.root"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
+                referredVariable="#qV..classescs2as.mCreationRootCS2Root.leftCS.guard.rootCS"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.uClass_name" name="uClass_name">
-        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.rightAS">
-          <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.uClass_name.rightAS.guard.class"
-                name="class" type="pivot:Class Classes.ecore.oclas#T.classes.Class"/>
-          </guardPattern>
-          <bottomPattern/>
-        </domain>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.uClass_name" name="uClass_name">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.leftCS">
+            typedModel="#qT..classescs2as.leftCS">
           <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.uClass_name.leftCS.guard.classCS"
-                name="classCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
+            <variable xmi:id="qV..classescs2as.uClass_name.leftCS.guard.classCS" name="classCS"
+                type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
-        <guardPattern>
-          <predicate>
-            <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
-                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
-                <ownedSource xsi:type="qvti:MiddlePropertyCallExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
-                    referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS"
-                    cacheIndex="0">
-                  <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                      referredVariable="#qV.null.classescs2as.uClass_name.leftCS.guard.classCS"/>
-                </ownedSource>
-              </ownedSource>
-              <ownedArguments xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
-                  referredVariable="#qV.null.classescs2as.uClass_name.rightAS.guard.class"/>
-            </conditionExpression>
-          </predicate>
-        </guardPattern>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true"
+            typedModel="#qT..classescs2as.rightAS">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
         <bottomPattern>
-          <assignment xsi:type="qvtcb:PropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.NamedElement.name">
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.NamedElement.name">
             <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                 referredProperty="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name">
               <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                  isImplicit="true" referredVariable="#qV.null.classescs2as.uClass_name.leftCS.guard.classCS"/>
+                  isImplicit="true" referredVariable="#qV..classescs2as.uClass_name.leftCS.guard.classCS"/>
             </value>
-            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
-                referredVariable="#qV.null.classescs2as.uClass_name.rightAS.guard.class"/>
+            <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Element"
+                  referredProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
+                    referredVariable="#qV..classescs2as.uClass_name.leftCS.guard.classCS"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                  referredType="pivot:Class Classes.ecore.oclas#T.classes.Class"/>
+            </slotExpression>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.uPackage_name" name="uPackage_name">
-        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.rightAS">
-          <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.uPackage_name.rightAS.guard.package"
-                name="package" type="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
-          </guardPattern>
-          <bottomPattern/>
-        </domain>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.uPackage_name" name="uPackage_name">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.leftCS">
+            typedModel="#qT..classescs2as.leftCS">
           <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.uPackage_name.leftCS.guard.packageCS"
+            <variable xmi:id="qV..classescs2as.uPackage_name.leftCS.guard.packageCS"
                 name="packageCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
-        <guardPattern>
-          <predicate>
-            <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
-                <ownedSource xsi:type="qvti:MiddlePropertyCallExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                    referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS"
-                    cacheIndex="1">
-                  <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                      referredVariable="#qV.null.classescs2as.uPackage_name.leftCS.guard.packageCS"/>
-                </ownedSource>
-              </ownedSource>
-              <ownedArguments xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                  referredVariable="#qV.null.classescs2as.uPackage_name.rightAS.guard.package"/>
-            </conditionExpression>
-          </predicate>
-        </guardPattern>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true"
+            typedModel="#qT..classescs2as.rightAS">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
         <bottomPattern>
-          <assignment xsi:type="qvtcb:PropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.NamedElement.name">
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.NamedElement.name">
             <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                 referredProperty="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name">
               <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                  isImplicit="true" referredVariable="#qV.null.classescs2as.uPackage_name.leftCS.guard.packageCS"/>
+                  isImplicit="true" referredVariable="#qV..classescs2as.uPackage_name.leftCS.guard.packageCS"/>
             </value>
-            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                referredVariable="#qV.null.classescs2as.uPackage_name.rightAS.guard.package"/>
+            <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Element"
+                  referredProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                    referredVariable="#qV..classescs2as.uPackage_name.leftCS.guard.packageCS"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                  referredType="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
+            </slotExpression>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.uPackage_ownedClasses"
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.uPackage_ownedClasses"
           name="uPackage_ownedClasses">
-        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.rightAS">
-          <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.uPackage_ownedClasses.rightAS.guard.package"
-                name="package" type="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
-          </guardPattern>
-          <bottomPattern/>
-        </domain>
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.leftCS">
+            typedModel="#qT..classescs2as.leftCS">
           <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"
+            <variable xmi:id="qV..classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"
                 name="packageCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
-        <guardPattern>
-          <predicate>
-            <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
-                <ownedSource xsi:type="qvti:MiddlePropertyCallExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                    referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS"
-                    cacheIndex="1">
-                  <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                      referredVariable="#qV.null.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"/>
-                </ownedSource>
-              </ownedSource>
-              <ownedArguments xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                  referredVariable="#qV.null.classescs2as.uPackage_ownedClasses.rightAS.guard.package"/>
-            </conditionExpression>
-          </predicate>
-        </guardPattern>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true"
+            typedModel="#qT..classescs2as.rightAS">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
         <bottomPattern>
-          <assignment xsi:type="qvtcb:PropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.Package.ownedClasses">
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.Package.ownedClasses">
             <value xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.0"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Collection.asOrderedSet">
               <ownedSource xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.1/@ownedClasses.1"
@@ -317,64 +187,52 @@
                 <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.2"
                     referredProperty="ClassesCS.ecore.oclas#p.classescs.PackageCS.ownedClasses">
                   <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                      isImplicit="true" referredVariable="#qV.null.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"/>
+                      isImplicit="true" referredVariable="#qV..classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"/>
                 </ownedSource>
-                <ownedBody xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
-                    referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.class">
-                  <ownedSource xsi:type="qvti:MiddlePropertyCallExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
-                      referredProperty="classescs2as.ecore.oclas#p.classescstraces.ClassCS2Class.classCS"
-                      cacheIndex="0">
+                <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
+                    referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+                  <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Element"
+                      referredProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
                     <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                        isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.8/@bottomPattern/@assignment.0/@value/@ownedSource/@ownedIterators.0"/>
+                        isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.5/@bottomPattern/@assignment.0/@value/@ownedSource/@ownedIterators.0"/>
                   </ownedSource>
+                  <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                      referredType="pivot:Class Classes.ecore.oclas#T.classes.Class"/>
                 </ownedBody>
                 <ownedIterators name="1_" isRequired="false" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
                     isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
               </ownedSource>
             </value>
-            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                referredVariable="#qV.null.classescs2as.uPackage_ownedClasses.rightAS.guard.package"/>
+            <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Element"
+                  referredProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                    referredVariable="#qV..classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                  referredType="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
+            </slotExpression>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.uRoot_ownedPackages"
-          name="uRoot_ownedPackages">
-        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.rightAS">
-          <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.uRoot_ownedPackages.rightAS.guard.root"
-                name="root" type="pivot:Class Classes.ecore.oclas#T.classes.Root"/>
-          </guardPattern>
-          <bottomPattern/>
-        </domain>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.uRoot_ownedPackages" name="uRoot_ownedPackages">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
-            typedModel="#qT.null.classescs2as.leftCS">
+            typedModel="#qT..classescs2as.leftCS">
           <guardPattern>
-            <variable xmi:id="qV.null.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"
+            <variable xmi:id="qV..classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"
                 name="rootCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
-        <guardPattern>
-          <predicate>
-            <conditionExpression xsi:type="pivot:OperationCallExp" name="=" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.%61%..ocl.OclSelf">
-              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Root"
-                  referredProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.root">
-                <ownedSource xsi:type="qvti:MiddlePropertyCallExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
-                    referredProperty="classescs2as.ecore.oclas#p.classescstraces.RootCS2Root.rootCS"
-                    cacheIndex="2">
-                  <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
-                      referredVariable="#qV.null.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"/>
-                </ownedSource>
-              </ownedSource>
-              <ownedArguments xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Root"
-                  referredVariable="#qV.null.classescs2as.uRoot_ownedPackages.rightAS.guard.root"/>
-            </conditionExpression>
-          </predicate>
-        </guardPattern>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true"
+            typedModel="#qT..classescs2as.rightAS">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
         <bottomPattern>
-          <assignment xsi:type="qvtcb:PropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.Root.ownedPackages">
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="Classes.ecore.oclas#p.classes.Root.ownedPackages">
             <value xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.3"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Collection.asOrderedSet">
               <ownedSource xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.1/@ownedClasses.4"
@@ -382,27 +240,36 @@
                 <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.5"
                     referredProperty="ClassesCS.ecore.oclas#p.classescs.RootCS.ownedPackages">
                   <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
-                      isImplicit="true" referredVariable="#qV.null.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"/>
+                      isImplicit="true" referredVariable="#qV..classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"/>
                 </ownedSource>
-                <ownedBody xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                    referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.package">
-                  <ownedSource xsi:type="qvti:MiddlePropertyCallExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                      referredProperty="classescs2as.ecore.oclas#p.classescstraces.PackageCS2Package.packageCS"
-                      cacheIndex="1">
+                <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
+                    referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+                  <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Element"
+                      referredProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
                     <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                        isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.9/@bottomPattern/@assignment.0/@value/@ownedSource/@ownedIterators.0"/>
+                        isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.6/@bottomPattern/@assignment.0/@value/@ownedSource/@ownedIterators.0"/>
                   </ownedSource>
+                  <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                      referredType="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
                 </ownedBody>
                 <ownedIterators name="1_" isRequired="false" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
                     isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
               </ownedSource>
             </value>
-            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Root"
-                referredVariable="#qV.null.classescs2as.uRoot_ownedPackages.rightAS.guard.root"/>
+            <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Root"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class Classes.ecore.oclas#T.classes.Element"
+                  referredProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
+                    referredVariable="#qV..classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                  referredType="pivot:Class Classes.ecore.oclas#T.classes.Root"/>
+            </slotExpression>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m.null.classescs2as.__root__" name="__root__">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.__root__" name="__root__">
         <guardPattern/>
         <bottomPattern/>
         <mappingStatement xsi:type="qvti:MappingSequence">
@@ -413,32 +280,15 @@
                   referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.null.classescs2as.mRootCS2Root_LM">
-                <binding boundVariable="#qV.null.classescs2as.mRootCS2Root_LM.leftCS.guard.rootCS">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.mCreationRootCS2Root">
+                <binding boundVariable="#qV..classescs2as.mCreationRootCS2Root.leftCS.guard.rootCS">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
-                      referredVariable="#i.null.classescs2as.__root__.0.0.rootCS"/>
+                      referredVariable="#i..classescs2as.__root__.0.0.rootCS"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i.null.classescs2as.__root__.0.0.rootCS" name="rootCS"
+            <ownedIterators xmi:id="i..classescs2as.__root__.0.0.rootCS" name="rootCS"
                 type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
-          </mappingStatements>
-          <mappingStatements xsi:type="qvti:MappingLoop">
-            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
-                  referredType="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"/>
-            </ownedSource>
-            <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.null.classescs2as.mRootCS2Root_MR">
-                <binding boundVariable="#qV.null.classescs2as.mRootCS2Root_MR.middle.guard.r2r">
-                  <value xsi:type="pivot:VariableExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"
-                      referredVariable="#i.null.classescs2as.__root__.0.1.r2r"/>
-                </binding>
-              </mappingStatements>
-            </ownedBody>
-            <ownedIterators xmi:id="i.null.classescs2as.__root__.0.1.r2r" name="r2r"
-                type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.RootCS2Root"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
@@ -447,64 +297,32 @@
                   referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.null.classescs2as.mPackageCS2Package_LM">
-                <binding boundVariable="#qV.null.classescs2as.mPackageCS2Package_LM.leftCS.guard.packageCS">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.mCreationPackageCS2Package">
+                <binding boundVariable="#qV..classescs2as.mCreationPackageCS2Package.leftCS.guard.packageCS">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                      referredVariable="#i.null.classescs2as.__root__.0.2.packageCS"/>
+                      referredVariable="#i..classescs2as.__root__.0.1.packageCS"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i.null.classescs2as.__root__.0.2.packageCS" name="packageCS"
+            <ownedIterators xmi:id="i..classescs2as.__root__.0.1.packageCS" name="packageCS"
                 type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                  referredType="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
+              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
+                  referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.null.classescs2as.mPackageCS2Package_MR">
-                <binding boundVariable="#qV.null.classescs2as.mPackageCS2Package_MR.middle.guard.p2p">
-                  <value xsi:type="pivot:VariableExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"
-                      referredVariable="#i.null.classescs2as.__root__.0.3.p2p"/>
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.uRoot_ownedPackages">
+                <binding boundVariable="#qV..classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS">
+                  <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
+                      referredVariable="#i..classescs2as.__root__.0.2.rootCS"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i.null.classescs2as.__root__.0.3.p2p" name="p2p"
-                type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.PackageCS2Package"/>
-          </mappingStatements>
-          <mappingStatements xsi:type="qvti:MappingLoop">
-            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class Classes.ecore.oclas#T.classes.Root"
-                  referredType="pivot:Class Classes.ecore.oclas#T.classes.Root"/>
-            </ownedSource>
-            <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingLoop">
-                <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
-                    referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-                  <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
-                      referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
-                </ownedSource>
-                <ownedBody xsi:type="qvti:MappingSequence">
-                  <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.null.classescs2as.uRoot_ownedPackages">
-                    <binding boundVariable="#qV.null.classescs2as.uRoot_ownedPackages.leftCS.guard.rootCS">
-                      <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
-                          referredVariable="#i.null.classescs2as.__root__.0.4.0.0.rootCS"/>
-                    </binding>
-                    <binding boundVariable="#qV.null.classescs2as.uRoot_ownedPackages.rightAS.guard.root">
-                      <value xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Root"
-                          referredVariable="#i.null.classescs2as.__root__.0.4.root"/>
-                    </binding>
-                  </mappingStatements>
-                </ownedBody>
-                <ownedIterators xmi:id="i.null.classescs2as.__root__.0.4.0.0.rootCS"
-                    name="rootCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
-              </mappingStatements>
-            </ownedBody>
-            <ownedIterators xmi:id="i.null.classescs2as.__root__.0.4.root" name="root"
-                type="pivot:Class Classes.ecore.oclas#T.classes.Root"/>
+            <ownedIterators xmi:id="i..classescs2as.__root__.0.2.rootCS" name="rootCS"
+                type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
@@ -513,63 +331,31 @@
                   referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.null.classescs2as.mClassCS2Class_LM">
-                <binding boundVariable="#qV.null.classescs2as.mClassCS2Class_LM.leftCS.guard.classCS">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.mCreationClassCS2Class">
+                <binding boundVariable="#qV..classescs2as.mCreationClassCS2Class.leftCS.guard.classCS">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                      referredVariable="#i.null.classescs2as.__root__.0.5.classCS"/>
+                      referredVariable="#i..classescs2as.__root__.0.3.classCS"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i.null.classescs2as.__root__.0.5.classCS" name="classCS"
+            <ownedIterators xmi:id="i..classescs2as.__root__.0.3.classCS" name="classCS"
                 type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
-                  referredType="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
+              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                  referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.null.classescs2as.mClassCS2Class_MR">
-                <binding boundVariable="#qV.null.classescs2as.mClassCS2Class_MR.middle.guard.c2c">
-                  <value xsi:type="pivot:VariableExp" type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"
-                      referredVariable="#i.null.classescs2as.__root__.0.6.c2c"/>
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.uPackage_ownedClasses">
+                <binding boundVariable="#qV..classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS">
+                  <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                      referredVariable="#i..classescs2as.__root__.0.4.packageCS"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i.null.classescs2as.__root__.0.6.c2c" name="c2c"
-                type="pivot:Class classescs2as.ecore.oclas#T.classescstraces.ClassCS2Class"/>
-          </mappingStatements>
-          <mappingStatements xsi:type="qvti:MappingLoop">
-            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                  referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
-            </ownedSource>
-            <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingLoop">
-                <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
-                    referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-                  <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                      referredType="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
-                </ownedSource>
-                <ownedBody xsi:type="qvti:MappingSequence">
-                  <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.null.classescs2as.uPackage_ownedClasses">
-                    <binding boundVariable="#qV.null.classescs2as.uPackage_ownedClasses.rightAS.guard.package">
-                      <value xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                          referredVariable="#i.null.classescs2as.__root__.0.7.0.0.package"/>
-                    </binding>
-                    <binding boundVariable="#qV.null.classescs2as.uPackage_ownedClasses.leftCS.guard.packageCS">
-                      <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                          referredVariable="#i.null.classescs2as.__root__.0.7.packageCS"/>
-                    </binding>
-                  </mappingStatements>
-                </ownedBody>
-                <ownedIterators xmi:id="i.null.classescs2as.__root__.0.7.0.0.package"
-                    name="package" type="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
-              </mappingStatements>
-            </ownedBody>
-            <ownedIterators xmi:id="i.null.classescs2as.__root__.0.7.packageCS" name="packageCS"
+            <ownedIterators xmi:id="i..classescs2as.__root__.0.4.packageCS" name="packageCS"
                 type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
@@ -579,62 +365,32 @@
                   referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingLoop">
-                <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
-                    referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-                  <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                      referredType="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
-                </ownedSource>
-                <ownedBody xsi:type="qvti:MappingSequence">
-                  <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.null.classescs2as.uPackage_name">
-                    <binding boundVariable="#qV.null.classescs2as.uPackage_name.rightAS.guard.package">
-                      <value xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                          referredVariable="#i.null.classescs2as.__root__.0.8.0.0.package"/>
-                    </binding>
-                    <binding boundVariable="#qV.null.classescs2as.uPackage_name.leftCS.guard.packageCS">
-                      <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                          referredVariable="#i.null.classescs2as.__root__.0.8.packageCS"/>
-                    </binding>
-                  </mappingStatements>
-                </ownedBody>
-                <ownedIterators xmi:id="i.null.classescs2as.__root__.0.8.0.0.package"
-                    name="package" type="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.uPackage_name">
+                <binding boundVariable="#qV..classescs2as.uPackage_name.leftCS.guard.packageCS">
+                  <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
+                      referredVariable="#i..classescs2as.__root__.0.5.packageCS"/>
+                </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i.null.classescs2as.__root__.0.8.packageCS" name="packageCS"
+            <ownedIterators xmi:id="i..classescs2as.__root__.0.5.packageCS" name="packageCS"
                 type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
-                  referredType="pivot:Class Classes.ecore.oclas#T.classes.Class"/>
+              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
+                  referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingLoop">
-                <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6"
-                    referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-                  <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                      referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
-                </ownedSource>
-                <ownedBody xsi:type="qvti:MappingSequence">
-                  <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m.null.classescs2as.uClass_name">
-                    <binding boundVariable="#qV.null.classescs2as.uClass_name.leftCS.guard.classCS">
-                      <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                          referredVariable="#i.null.classescs2as.__root__.0.9.0.0.classCS"/>
-                    </binding>
-                    <binding boundVariable="#qV.null.classescs2as.uClass_name.rightAS.guard.class">
-                      <value xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
-                          referredVariable="#i.null.classescs2as.__root__.0.9.class"/>
-                    </binding>
-                  </mappingStatements>
-                </ownedBody>
-                <ownedIterators xmi:id="i.null.classescs2as.__root__.0.9.0.0.classCS"
-                    name="classCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.uClass_name">
+                <binding boundVariable="#qV..classescs2as.uClass_name.leftCS.guard.classCS">
+                  <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
+                      referredVariable="#i..classescs2as.__root__.0.6.classCS"/>
+                </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i.null.classescs2as.__root__.0.9.class" name="class"
-                type="pivot:Class Classes.ecore.oclas#T.classes.Class"/>
+            <ownedIterators xmi:id="i..classescs2as.__root__.0.6.classCS" name="classCS"
+                type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
           </mappingStatements>
         </mappingStatement>
       </rule>
