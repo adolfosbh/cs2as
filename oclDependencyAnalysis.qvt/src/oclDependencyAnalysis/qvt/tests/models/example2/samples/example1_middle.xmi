@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:classescstraces="http://tracesmodel/1.0/classescstraces" xsi:schemaLocation="http://tracesmodel/1.0/classescstraces platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//classescs2as.ecore">
-  <classescstraces:PackageCS2Package>
-    <packageCS href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//samples/example1_input.xmi#//@ownedPackages.0"/>
-    <package href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//samples/example1_output.xmi#//@ownedPackages.0"/>
-  </classescstraces:PackageCS2Package>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:classescstraces="http://tracesmodel/1.0/classescstraces" xsi:schemaLocation="http://tracesmodel/1.0/classescstraces ../classescs2as.ecore">
   <classescstraces:ClassCS2Class>
-    <classCS href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//samples/example1_input.xmi#//@ownedPackages.0/@ownedClasses.0"/>
-    <class href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//samples/example1_output.xmi#//@ownedPackages.0/@ownedClasses.0"/>
+    <classCS href="example1_input.xmi#//@ownedPackages.0/@ownedClasses.0"/>
   </classescstraces:ClassCS2Class>
   <classescstraces:ClassCS2Class>
-    <classCS href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//samples/example1_input.xmi#//@ownedPackages.0/@ownedClasses.1"/>
-    <class href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//samples/example1_output.xmi#//@ownedPackages.0/@ownedClasses.1"/>
+    <classCS href="example1_input.xmi#//@ownedPackages.0/@ownedClasses.1"/>
   </classescstraces:ClassCS2Class>
-  <classescstraces:RootCS2Root>
-    <rootCS href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//samples/example1_input.xmi#/"/>
-    <root href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2//samples/example1_output.xmi#/"/>
-  </classescstraces:RootCS2Root>
 </xmi:XMI>

@@ -13,8 +13,10 @@ pre {
 	var emfTool = new Native("org.eclipse.epsilon.emc.emf.tools.EmfTool");
 	
 	-- transformation begins --
+	var oclModel = OCL!Model.all.first();
 	var qvtiModel = new QVTi!ImperativeModel;
-	qvtiModel.externalURI = OCL!Model.all.first().name.replace(".ocl",""); -- FIXME	 
+	qvtiModel.externalURI = oclModel.externalURI.replace(".ocl",".qvtp.qvtias"); -- FIXME Assuming it will be serialised in the same folder
+	qvtiModel.ownedImports ::= oclModel.ownedImports;
 	
 	var qvtiPackage = new QVTi!Package;
 	qvtiPackage.name = "";
@@ -46,14 +48,15 @@ pre {
 	qvtiModel.ownedPackages.add(qvtiPackage);
 }
 
-/*
-rule Import2Unit 
+
+@lazy
+rule Import2Import 
 	transform s : OCL!Import
-	to t : QVTi!Unit {
+	to t : QVTi!Import {
 	
 	t.name = s.name;
-	t.usedPackage = s.importedNamespace;
-}*/
+	t.importedNamespace = s.importedNamespace;
+}
 
 rule ConstructorExp2Mapping_LM
 	transform s : OCL!ConstructorExp
@@ -406,6 +409,5 @@ operation getOclAnyEqualsOp() : OCL!Operation {
 post {
 	-- We add all the declaratively created QVTi mappings/units to the imperatively created QVTi transformation/model 
 	qvtiTransf.`rule`.addAll(QVTi!Mapping.all());
-	-- qvtiModel.unit.addAll(QVTi!Unit.all());
 	"OCL 2 QVTp completed".println();
 }
