@@ -4,6 +4,9 @@
     xmlns:qvtcb="http://www.eclipse.org/qvt/2015/QVTcoreBase" xmlns:qvti="http://www.eclipse.org/qvt/2015/QVTimperative"
     xsi:schemaLocation="http://www.eclipse.org/ocl/2015/Pivot java://org.eclipse.ocl.pivot.PivotPackage http://www.eclipse.org/qvt/2015/QVTbase java://org.eclipse.qvtd.pivot.qvtbase.QVTbasePackage http://www.eclipse.org/qvt/2015/QVTcoreBase java://org.eclipse.qvtd.pivot.qvtcorebase.QVTcoreBasePackage http://www.eclipse.org/qvt/2015/QVTimperative java://org.eclipse.qvtd.pivot.qvtimperative.QVTimperativePackage"
     name="classescs2as.qvtias" externalURI="platform:/resource.qvtiasDependencyAnalysis.qvt/src.qvtiasDependencyAnalysis/qvt/tests/models/example2/classescs2as.qvtias">
+  <ownedImports importedNamespace="pivot:Model ClassesCS.ecore.oclas#/"/>
+  <ownedImports importedNamespace="pivot:Model Classes.ecore.oclas#/"/>
+  <ownedImports importedNamespace="pivot:Model ClassesLookup.ocl.oclas#/"/>
   <ownedPackages xmi:id="P." name="">
     <ownedClasses xsi:type="qvtb:Transformation" xmi:id="T..classescs2as%46%qvtp%46%qvtias"
         name="classescs2as.qvtp.qvtias">

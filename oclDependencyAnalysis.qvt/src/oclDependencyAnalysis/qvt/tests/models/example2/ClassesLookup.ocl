@@ -19,7 +19,7 @@ def : _env_Package(child : OclElement) : env::Environment =
 	parentEnv()
 	
 def : lookupPackage(path : classescs::PathElementCS) : classes::Package =
-	self._env(null).namedElements->selectByKind(classes::Package)->select(name = path.name)
+	self._env(null).namedElements->selectByKind(classes::Package)->select(name = path.name)->first()
 		
 def : lookupPackage(pathSeq : OrderedSet(classescs::PathElementCS)) : classes::Package =
 	if pathSeq->size() = 1 
@@ -28,7 +28,7 @@ def : lookupPackage(pathSeq : OrderedSet(classescs::PathElementCS)) : classes::P
 	endif
 	
 def : lookupClass(path : classescs::PathElementCS) : classes::Class=
-	self._env(null).namedElements->selectByKind(classes::Class)->select(name = path.name)
+	self._env(null).namedElements->selectByKind(classes::Class)->select(name = path.name)->first()
 	
 def : lookupClass(classPathName : classescs::PathNameCS) : classes::Class = 
 	let pathSeq = classPathName.path
