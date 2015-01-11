@@ -3,15 +3,15 @@ package oclDependencyAnalysis.qvt.tests;
 import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
-import org.eclipse.ocl.pivot.manager.MetaModelManager;
+import org.eclipse.ocl.pivot.internal.manager.MetamodelManager;
 import org.eclipse.qvtd.build.etl.PivotModel;
 import org.eclipse.qvtd.build.etl.QvtMtcExecutionException;
 
 public class PivotModelUtil {
 
-	private MetaModelManager mmManager;
+	private MetamodelManager mmManager;
 	
-	public PivotModelUtil(MetaModelManager mmManager) {
+	public PivotModelUtil(MetamodelManager mmManager) {
 		
 		this.mmManager = mmManager;
 	}

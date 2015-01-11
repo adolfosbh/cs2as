@@ -6,7 +6,7 @@ import oclDependencyAnalysis.qvt.tests.OCL2QVTiTestCases;
 import oclDependencyAnalysis.qvt.tests.PivotModelUtil;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.ocl.pivot.manager.MetaModelManager;
+import org.eclipse.ocl.pivot.internal.manager.MetamodelManager;
 import org.eclipse.qvtd.build.etl.EtlTask;
 import org.eclipse.qvtd.build.etl.MtcBroker;
 import org.eclipse.qvtd.build.etl.PivotModel;
@@ -40,7 +40,7 @@ public class OCL2QVTiBroker extends MtcBroker {
 	private String tracesMMUri;
 	private PivotModelUtil pmUtil;
 	
-	public OCL2QVTiBroker(String oclDocUri, Class<?> owner, MetaModelManager metaModelManager)
+	public OCL2QVTiBroker(String oclDocUri, Class<?> owner, MetamodelManager metaModelManager)
 			throws QvtMtcExecutionException {
 		super(oclDocUri, owner, metaModelManager);
 		this.pmUtil = new PivotModelUtil(metaModelManager);
