@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.ocl.examples.pivot.PivotPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -677,7 +676,7 @@ public class CS2ASAnalysisPackageImpl extends EPackageImpl implements CS2ASAnaly
 
 		// Obtain other dependent packages
 		GraphPackage theGraphPackage = (GraphPackage)EPackage.Registry.INSTANCE.getEPackage(GraphPackage.eNS_URI);
-		PivotPackage thePivotPackage = (PivotPackage)EPackage.Registry.INSTANCE.getEPackage(PivotPackage.eNS_URI);
+		org.eclipse.ocl.pivot.PivotPackage thePivotPackage = (org.eclipse.ocl.pivot.PivotPackage)EPackage.Registry.INSTANCE.getEPackage(org.eclipse.ocl.pivot.PivotPackage.eNS_URI);
 
 		// Create type parameters
 

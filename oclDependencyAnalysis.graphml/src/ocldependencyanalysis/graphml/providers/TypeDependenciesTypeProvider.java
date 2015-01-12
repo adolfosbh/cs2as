@@ -12,7 +12,7 @@ import ocldependencyanalysis.graph2.Edge;
 import ocldependencyanalysis.graph2.Node;
 import ocldependencyanalysis.graphml.IElementTypeProvider;
 
-import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.pivot.Type;
 import org.eclipse.qvtd.build.etl.graph.EdgeType;
 import org.eclipse.qvtd.build.etl.graph.ElementType;
 import org.eclipse.qvtd.build.etl.graph.NodeType;

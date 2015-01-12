@@ -1,11 +1,11 @@
 package ocldependencyanalysis.cs2asanalysis;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.ocl.examples.pivot.ConstructorExp;
-import org.eclipse.ocl.examples.pivot.ConstructorPart;
-import org.eclipse.ocl.examples.pivot.Operation;
-
 import ocldependencyanalysis.cs2asanalysis.util.CS2ASAnalysisSwitch;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.Operation;
 
 public class ToStringSwitch extends CS2ASAnalysisSwitch<String> {
 	
@@ -22,7 +22,7 @@ public class ToStringSwitch extends CS2ASAnalysisSwitch<String> {
 		ConstructorExp constructorExp = (ConstructorExp) constructorPart.eContainer();
 		Operation operation = getContainingOperation(constructorPart);
 		return object.getContext().getName() + "_" + operation.getName() +"_" 
-			  + (constructorExp.getPart().indexOf(constructorPart)+1)
+			  + (constructorExp.getOwnedParts().indexOf(constructorPart)+1)
 			  + "_" + constructorExp.getType().getName();
 	}
 	

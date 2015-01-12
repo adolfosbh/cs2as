@@ -1,11 +1,11 @@
 package ocldependencyanalysis.cs2asanalysis;
 
-import org.eclipse.ocl.examples.pivot.Class;
-import org.eclipse.ocl.examples.pivot.ConstructorExp;
-import org.eclipse.ocl.examples.pivot.ConstructorPart;
-import org.eclipse.ocl.examples.pivot.Operation;
-import org.eclipse.ocl.examples.pivot.Property;
-import org.eclipse.ocl.examples.pivot.PropertyCallExp;
+import org.eclipse.ocl.pivot.Class;
+import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.Operation;
+import org.eclipse.ocl.pivot.Property;
+import org.eclipse.ocl.pivot.PropertyCallExp;
 
 public class CS2ASNodesFactory {
 	
@@ -52,8 +52,8 @@ public class CS2ASNodesFactory {
 		pceInfo.setContext(context);
 		pceInfo.setPropertyCallExp(propCallExp);
 		pceInfo.setProperty(propCallExp.getReferredProperty());
-		pceInfo.setPropertyClass(propCallExp.getSource().getType().isClass());
-		pceInfo.setAssociatedPackage(propCallExp.getSource().getType().isClass().getOwningPackage());
+		pceInfo.setPropertyClass(propCallExp.getOwnedSource().getType().isClass());
+		pceInfo.setAssociatedPackage(propCallExp.getOwnedSource().getType().isClass().getOwningPackage());
 		return pceInfo;
 	}
 	

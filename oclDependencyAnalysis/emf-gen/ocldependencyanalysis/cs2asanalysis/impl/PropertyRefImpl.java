@@ -4,27 +4,22 @@ package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.PropertyRef;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.ocl.examples.pivot.Property;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Property Ref</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.PropertyRefImpl#getProperty <em>Property</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -37,7 +32,7 @@ public abstract class PropertyRefImpl extends CS2ASAnalysisNodeImpl implements P
 	 * @generated
 	 * @ordered
 	 */
-	protected Property property;
+	protected org.eclipse.ocl.pivot.Property property;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,10 +58,10 @@ public abstract class PropertyRefImpl extends CS2ASAnalysisNodeImpl implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Property getProperty() {
-		if (property != null && ((EObject)property).eIsProxy()) {
+	public org.eclipse.ocl.pivot.Property getProperty() {
+		if (property != null && property.eIsProxy()) {
 			InternalEObject oldProperty = (InternalEObject)property;
-			property = (Property)eResolveProxy(oldProperty);
+			property = (org.eclipse.ocl.pivot.Property)eResolveProxy(oldProperty);
 			if (property != oldProperty) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.PROPERTY_REF__PROPERTY, oldProperty, property));
@@ -80,7 +75,7 @@ public abstract class PropertyRefImpl extends CS2ASAnalysisNodeImpl implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Property basicGetProperty() {
+	public org.eclipse.ocl.pivot.Property basicGetProperty() {
 		return property;
 	}
 
@@ -89,8 +84,8 @@ public abstract class PropertyRefImpl extends CS2ASAnalysisNodeImpl implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProperty(Property newProperty) {
-		Property oldProperty = property;
+	public void setProperty(org.eclipse.ocl.pivot.Property newProperty) {
+		org.eclipse.ocl.pivot.Property oldProperty = property;
 		property = newProperty;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.PROPERTY_REF__PROPERTY, oldProperty, property));
@@ -120,7 +115,7 @@ public abstract class PropertyRefImpl extends CS2ASAnalysisNodeImpl implements P
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.PROPERTY_REF__PROPERTY:
-				setProperty((Property)newValue);
+				setProperty((org.eclipse.ocl.pivot.Property)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,7 +130,7 @@ public abstract class PropertyRefImpl extends CS2ASAnalysisNodeImpl implements P
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.PROPERTY_REF__PROPERTY:
-				setProperty((Property)null);
+				setProperty((org.eclipse.ocl.pivot.Property)null);
 				return;
 		}
 		super.eUnset(featureID);

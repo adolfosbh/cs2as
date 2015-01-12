@@ -4,10 +4,8 @@ package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.EnvironmentInfo;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -16,11 +14,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * An implementation of the model object '<em><b>Environment Info</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.EnvironmentInfoImpl#getLookupClass <em>Lookup Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -33,7 +32,7 @@ public class EnvironmentInfoImpl extends ExtendedOperationRefImpl implements Env
 	 * @generated
 	 * @ordered
 	 */
-	protected org.eclipse.ocl.examples.pivot.Class lookupClass;
+	protected org.eclipse.ocl.pivot.Class lookupClass;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -59,10 +58,10 @@ public class EnvironmentInfoImpl extends ExtendedOperationRefImpl implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.examples.pivot.Class getLookupClass() {
-		if (lookupClass != null && ((EObject)lookupClass).eIsProxy()) {
+	public org.eclipse.ocl.pivot.Class getLookupClass() {
+		if (lookupClass != null && lookupClass.eIsProxy()) {
 			InternalEObject oldLookupClass = (InternalEObject)lookupClass;
-			lookupClass = (org.eclipse.ocl.examples.pivot.Class)eResolveProxy(oldLookupClass);
+			lookupClass = (org.eclipse.ocl.pivot.Class)eResolveProxy(oldLookupClass);
 			if (lookupClass != oldLookupClass) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.ENVIRONMENT_INFO__LOOKUP_CLASS, oldLookupClass, lookupClass));
@@ -76,7 +75,7 @@ public class EnvironmentInfoImpl extends ExtendedOperationRefImpl implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.examples.pivot.Class basicGetLookupClass() {
+	public org.eclipse.ocl.pivot.Class basicGetLookupClass() {
 		return lookupClass;
 	}
 
@@ -85,8 +84,8 @@ public class EnvironmentInfoImpl extends ExtendedOperationRefImpl implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLookupClass(org.eclipse.ocl.examples.pivot.Class newLookupClass) {
-		org.eclipse.ocl.examples.pivot.Class oldLookupClass = lookupClass;
+	public void setLookupClass(org.eclipse.ocl.pivot.Class newLookupClass) {
+		org.eclipse.ocl.pivot.Class oldLookupClass = lookupClass;
 		lookupClass = newLookupClass;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.ENVIRONMENT_INFO__LOOKUP_CLASS, oldLookupClass, lookupClass));
@@ -116,7 +115,7 @@ public class EnvironmentInfoImpl extends ExtendedOperationRefImpl implements Env
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.ENVIRONMENT_INFO__LOOKUP_CLASS:
-				setLookupClass((org.eclipse.ocl.examples.pivot.Class)newValue);
+				setLookupClass((org.eclipse.ocl.pivot.Class)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -131,7 +130,7 @@ public class EnvironmentInfoImpl extends ExtendedOperationRefImpl implements Env
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.ENVIRONMENT_INFO__LOOKUP_CLASS:
-				setLookupClass((org.eclipse.ocl.examples.pivot.Class)null);
+				setLookupClass((org.eclipse.ocl.pivot.Class)null);
 				return;
 		}
 		super.eUnset(featureID);

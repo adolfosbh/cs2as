@@ -2,7 +2,8 @@
  */
 package ocldependencyanalysis.cs2asanalysis;
 
-import org.eclipse.ocl.examples.pivot.PropertyCallExp;
+import org.eclipse.ocl.pivot.PropertyCallExp;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -11,10 +12,10 @@ import org.eclipse.ocl.examples.pivot.PropertyCallExp;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.PropertyCallExpInfo#getPropertyCallExp <em>Property Call Exp</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getPropertyCallExpInfo()
  * @model

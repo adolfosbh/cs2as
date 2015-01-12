@@ -9,22 +9,22 @@ import ocldependencyanalysis.graph.INode;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.ocl.examples.pivot.Class;
-import org.eclipse.ocl.examples.pivot.ConstructorExp;
-import org.eclipse.ocl.examples.pivot.ConstructorPart;
-import org.eclipse.ocl.examples.pivot.Element;
-import org.eclipse.ocl.examples.pivot.Feature;
-import org.eclipse.ocl.examples.pivot.Operation;
-import org.eclipse.ocl.examples.pivot.OperationCallExp;
-import org.eclipse.ocl.examples.pivot.Property;
-import org.eclipse.ocl.examples.pivot.PropertyCallExp;
-import org.eclipse.ocl.examples.pivot.Root;
-import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.pivot.Class;
+import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.Element;
+import org.eclipse.ocl.pivot.Feature;
+import org.eclipse.ocl.pivot.Model;
+import org.eclipse.ocl.pivot.Operation;
+import org.eclipse.ocl.pivot.OperationCallExp;
+import org.eclipse.ocl.pivot.Property;
+import org.eclipse.ocl.pivot.PropertyCallExp;
+import org.eclipse.ocl.pivot.Type;
 
 /**
  * <p>
  * Computes a properties dependency graph for a pivot resource. A resource is considered to be
- * pivot if contains a {@link Root} root element
+ * pivot if contains a {@link Model} root element
  * </p>
  * 
  * <p>
@@ -43,7 +43,7 @@ import org.eclipse.ocl.examples.pivot.Type;
  * </p>
  *  
  * Assumptions:
- * 	  Only the {@link Root} root element will be processed
+ * 	  Only the {@link Model} root element will be processed
  * 
  * @author asbh500
  */
@@ -121,7 +121,7 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 		createDependencyWithAstCallContext(astCall, fromFeatureObj, dependencyGraph);
 		
 		// The class of the source ast call, i.e. the CS element owning the ast operation // FIXME Class should considered rather than class
-		Class astCallSourceClass = astCall.getSource().getType().isClass();		
+		Class astCallSourceClass = astCall.getOwnedSource().getType().isClass();		
 		Operation astCallSourceClassAstOp = astCall.getReferredOperation();		
 		PropertyCallExp propCall = getContainingPropertyCallExp(astCall);
 

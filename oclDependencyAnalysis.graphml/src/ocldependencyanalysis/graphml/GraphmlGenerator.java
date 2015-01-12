@@ -22,7 +22,7 @@ import org.eclipse.epsilon.emc.emf.InMemoryEmfModel;
 import org.eclipse.epsilon.eol.EolModule;
 import org.eclipse.epsilon.eol.IEolExecutableModule;
 import org.eclipse.epsilon.eol.models.IModel;
-import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.pivot.Type;
 import org.eclipse.qvtd.build.etl.graph.Graph;
 import org.eclipse.qvtd.build.etl.graph.GraphPackage;
 

@@ -6,21 +6,20 @@ import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.PropertyCallExpInfo;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.ocl.examples.pivot.PropertyCallExp;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Property Call Exp Info</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.PropertyCallExpInfoImpl#getPropertyCallExp <em>Property Call Exp</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -33,7 +32,7 @@ public class PropertyCallExpInfoImpl extends ExtendedPropertyInfoImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected PropertyCallExp propertyCallExp;
+	protected org.eclipse.ocl.pivot.PropertyCallExp propertyCallExp;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,10 +57,10 @@ public class PropertyCallExpInfoImpl extends ExtendedPropertyInfoImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyCallExp getPropertyCallExp() {
-		if (propertyCallExp != null && ((EObject)propertyCallExp).eIsProxy()) {
+	public org.eclipse.ocl.pivot.PropertyCallExp getPropertyCallExp() {
+		if (propertyCallExp != null && propertyCallExp.eIsProxy()) {
 			InternalEObject oldPropertyCallExp = (InternalEObject)propertyCallExp;
-			propertyCallExp = (PropertyCallExp)eResolveProxy(oldPropertyCallExp);
+			propertyCallExp = (org.eclipse.ocl.pivot.PropertyCallExp)eResolveProxy(oldPropertyCallExp);
 			if (propertyCallExp != oldPropertyCallExp) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.PROPERTY_CALL_EXP_INFO__PROPERTY_CALL_EXP, oldPropertyCallExp, propertyCallExp));
@@ -75,7 +74,7 @@ public class PropertyCallExpInfoImpl extends ExtendedPropertyInfoImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyCallExp basicGetPropertyCallExp() {
+	public org.eclipse.ocl.pivot.PropertyCallExp basicGetPropertyCallExp() {
 		return propertyCallExp;
 	}
 
@@ -84,8 +83,8 @@ public class PropertyCallExpInfoImpl extends ExtendedPropertyInfoImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPropertyCallExp(PropertyCallExp newPropertyCallExp) {
-		PropertyCallExp oldPropertyCallExp = propertyCallExp;
+	public void setPropertyCallExp(org.eclipse.ocl.pivot.PropertyCallExp newPropertyCallExp) {
+		org.eclipse.ocl.pivot.PropertyCallExp oldPropertyCallExp = propertyCallExp;
 		propertyCallExp = newPropertyCallExp;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.PROPERTY_CALL_EXP_INFO__PROPERTY_CALL_EXP, oldPropertyCallExp, propertyCallExp));
@@ -115,7 +114,7 @@ public class PropertyCallExpInfoImpl extends ExtendedPropertyInfoImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.PROPERTY_CALL_EXP_INFO__PROPERTY_CALL_EXP:
-				setPropertyCallExp((PropertyCallExp)newValue);
+				setPropertyCallExp((org.eclipse.ocl.pivot.PropertyCallExp)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,7 +129,7 @@ public class PropertyCallExpInfoImpl extends ExtendedPropertyInfoImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.PROPERTY_CALL_EXP_INFO__PROPERTY_CALL_EXP:
-				setPropertyCallExp((PropertyCallExp)null);
+				setPropertyCallExp((org.eclipse.ocl.pivot.PropertyCallExp)null);
 				return;
 		}
 		super.eUnset(featureID);

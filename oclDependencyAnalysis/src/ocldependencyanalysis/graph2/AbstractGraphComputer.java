@@ -10,22 +10,21 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.ocl.examples.domain.elements.DomainOperation;
-import org.eclipse.ocl.examples.domain.elements.FeatureFilter;
-import org.eclipse.ocl.examples.pivot.Class;
-import org.eclipse.ocl.examples.pivot.CollectionType;
-import org.eclipse.ocl.examples.pivot.ConstructorExp;
-import org.eclipse.ocl.examples.pivot.ConstructorPart;
-import org.eclipse.ocl.examples.pivot.Element;
-import org.eclipse.ocl.examples.pivot.Operation;
-import org.eclipse.ocl.examples.pivot.OperationCallExp;
-import org.eclipse.ocl.examples.pivot.Package;
-import org.eclipse.ocl.examples.pivot.Property;
-import org.eclipse.ocl.examples.pivot.PropertyCallExp;
-import org.eclipse.ocl.examples.pivot.Root;
-import org.eclipse.ocl.examples.pivot.Type;
-import org.eclipse.ocl.examples.pivot.TypedElement;
-import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
+import org.eclipse.ocl.pivot.Class;
+import org.eclipse.ocl.pivot.CollectionType;
+import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.Element;
+import org.eclipse.ocl.pivot.FeatureFilter;
+import org.eclipse.ocl.pivot.Model;
+import org.eclipse.ocl.pivot.Operation;
+import org.eclipse.ocl.pivot.OperationCallExp;
+import org.eclipse.ocl.pivot.Package;
+import org.eclipse.ocl.pivot.Property;
+import org.eclipse.ocl.pivot.PropertyCallExp;
+import org.eclipse.ocl.pivot.Type;
+import org.eclipse.ocl.pivot.TypedElement;
+import org.eclipse.ocl.pivot.internal.manager.MetamodelManager;
 
 /**
  * @author asbh500
@@ -66,7 +65,7 @@ public abstract class AbstractGraphComputer {
 	
 	private Map<Class, Set<ContainerClass>> class2containerClasses = new HashMap<Class, Set<ContainerClass>>();
 	
-	protected MetaModelManager mManager;
+	protected MetamodelManager mManager;
 	
 	protected AbstractGraphManager gManager;
 		
@@ -183,17 +182,17 @@ public abstract class AbstractGraphComputer {
 	
 	protected List<Package> getPackageInvolvedInOCLDoc(Resource oclResource) {
 	
-		List<Root> oclRoots = new ArrayList<Root>();
+		List<Model> oclRoots = new ArrayList<Model>();
 		for (Resource resource : oclResource.getResourceSet().getResources()) {
 			for (EObject root : resource.getContents()) {
-				if (root instanceof Root) {
-					oclRoots.add((Root)root);
+				if (root instanceof Model) {
+					oclRoots.add((Model)root);
 				}
 			}
 		}
 		
 		List<Package> result = new ArrayList<Package>();
-		for (Root root : oclRoots) {
+		for (Model root : oclRoots) {
 			for (Package pckg : root.getOwnedPackages()) { // FIXME we are not including nested packages, yet
 				result.add(pckg);
 			}
@@ -221,9 +220,9 @@ public abstract class AbstractGraphComputer {
 	
 	protected Operation getAstOperation(Class opAstClass) {	
 		Operation bestOp=null;	// The best op will be the one owned by the type the 
-		for (DomainOperation op : mManager.getAllOperations(opAstClass, FeatureFilter.SELECT_NON_STATIC, "ast")){
+		for (Operation op : mManager.getAllOperations(opAstClass, FeatureFilter.SELECT_NON_STATIC, "ast")){
 			if (op instanceof Operation
-				&& op.getOwnedParameter().isEmpty()) {
+				&& op.getOwnedParameters().isEmpty()) {
 				Operation candidateOp = (Operation) op;
 				if (bestOp == null) {
 					bestOp = candidateOp;
@@ -241,7 +240,7 @@ public abstract class AbstractGraphComputer {
 		Operation bestOp=null;	// The best op will be the one owned by the type the 
 		// closer to opAstClass in the class hierarchy 
 		// TODO move to mManager ?
-		for (DomainOperation op : mManager.getAllOperations(opEnvClass, FeatureFilter.SELECT_NON_STATIC, envOpName)){
+		for (Operation op : mManager.getAllOperations(opEnvClass, FeatureFilter.SELECT_NON_STATIC, envOpName)){
 			if (op instanceof Operation) {
 				Operation candidateOp = (Operation) op;
 				if (bestOp == null) {
@@ -257,8 +256,8 @@ public abstract class AbstractGraphComputer {
 	}
 	
 	public Graph computeDependencyGraph (Resource cs2asResource) {
-		assert(cs2asResource.getContents().get(0) instanceof Root);	
-		mManager = MetaModelManager.getAdapter(cs2asResource.getResourceSet());
+		assert(cs2asResource.getContents().get(0) instanceof Model);	
+		mManager = MetamodelManager.getAdapter(cs2asResource.getResourceSet());
 		Graph dependencyGraph = createDependencyGraph();
 		gManager = createGraphManager(dependencyGraph);
 		
@@ -331,7 +330,7 @@ public abstract class AbstractGraphComputer {
 	}
 	
 	protected boolean isAstOp(Operation op) {
-		return op == null ? false : "ast".equals(op.getName()) && op.getOwnedParameter().isEmpty();
+		return op == null ? false : "ast".equals(op.getName()) && op.getOwnedParameters().isEmpty();
 	}
 	
 	protected boolean isAstOp(EObject element) {
@@ -339,7 +338,7 @@ public abstract class AbstractGraphComputer {
 	}
 	
 	protected boolean isCstOp(Operation op) {
-		return op == null ? false : "cst".equals(op.getName()) && op.getOwnedParameter().isEmpty();
+		return op == null ? false : "cst".equals(op.getName()) && op.getOwnedParameters().isEmpty();
 	}
 	
 	protected boolean isCstOp(EObject element) {
@@ -382,7 +381,7 @@ public abstract class AbstractGraphComputer {
 	private boolean isParenEnvOp(Operation op) {
 		if (op == null) return false;
 		String opName = op.getName();
-		return opName == null ? false : opName.equals("parentEnv") && op.getOwnedParameter().isEmpty();
+		return opName == null ? false : opName.equals("parentEnv") && op.getOwnedParameters().isEmpty();
 	}
 	
 	protected boolean isOclContainerCall(EObject element) {
@@ -395,7 +394,7 @@ public abstract class AbstractGraphComputer {
 	protected boolean isOclContainerOp(Operation op) {
 		if (op == null) return false;
 		String opName = op.getName();
-		return opName == null ? false : opName.equals("oclContainer") && op.getOwnedParameter().isEmpty();
+		return opName == null ? false : opName.equals("oclContainer") && op.getOwnedParameters().isEmpty();
 	}
 
 
@@ -412,7 +411,7 @@ public abstract class AbstractGraphComputer {
 				}
 			}	
 		}
-		return mManager.getOclElementType();
+		return (Class) mManager.getOclType("OclElement");
 	}
 	
 	protected boolean isConstructorExp(EObject element) {

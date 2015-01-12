@@ -4,7 +4,7 @@
     editorDirectory="/oclDependencyAnalysis.editor/emf-gen" modelPluginID="oclDependencyAnalysis"
     modelName="CS2ASAnalysis" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/oclDependencyAnalysis.tests/emf-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="7.0" copyrightFields="false" usedGenPackages="graph.genmodel#//graph2 ../../org.eclipse.ocl.examples.pivot/model/Pivot.merged.genmodel#//pivot"
+    complianceLevel="7.0" copyrightFields="false" usedGenPackages="graph.genmodel#//graph2 ../../org.eclipse.ocl.pivot/model/Pivot.merged.genmodel#//pivot"
     operationReflection="true" importOrganizing="true">
   <foreignModel>CS2ASAnalysis.ecore</foreignModel>
   <genPackages prefix="CS2ASAnalysis" basePackage="ocldependencyanalysis" disposableProviderFactory="true"

@@ -10,10 +10,10 @@ package ocldependencyanalysis.cs2asanalysis;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.ExtendedPropertyRef#getPropertyClass <em>Property Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getExtendedPropertyRef()
  * @model abstract="true"
@@ -29,12 +29,12 @@ public interface ExtendedPropertyRef extends PropertyRef {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Property Class</em>' reference.
-	 * @see #setPropertyClass(org.eclipse.ocl.examples.pivot.Class)
+	 * @see #setPropertyClass(org.eclipse.ocl.pivot.Class)
 	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getExtendedPropertyRef_PropertyClass()
 	 * @model required="true"
 	 * @generated
 	 */
-	org.eclipse.ocl.examples.pivot.Class getPropertyClass();
+	org.eclipse.ocl.pivot.Class getPropertyClass();
 
 	/**
 	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.ExtendedPropertyRef#getPropertyClass <em>Property Class</em>}' reference.
@@ -44,6 +44,6 @@ public interface ExtendedPropertyRef extends PropertyRef {
 	 * @see #getPropertyClass()
 	 * @generated
 	 */
-	void setPropertyClass(org.eclipse.ocl.examples.pivot.Class value);
+	void setPropertyClass(org.eclipse.ocl.pivot.Class value);
 
 } // ExtendedPropertyRef

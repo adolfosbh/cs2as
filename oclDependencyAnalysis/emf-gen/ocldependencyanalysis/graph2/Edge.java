@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.graph2.Edge#getTo <em>To</em>}</li>
  *   <li>{@link ocldependencyanalysis.graph2.Edge#getFrom <em>From</em>}</li>
  *   <li>{@link ocldependencyanalysis.graph2.Edge#getGraph <em>Graph</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.graph2.GraphPackage#getEdge()
  * @model
@@ -118,7 +118,7 @@ public interface Edge extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model objectDataType="org.eclipse.ocl.examples.pivot.Object"
+	 * @model objectDataType="org.eclipse.ocl.pivot.Object"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return toString().equals(object.toString());'"
 	 * @generated
 	 */

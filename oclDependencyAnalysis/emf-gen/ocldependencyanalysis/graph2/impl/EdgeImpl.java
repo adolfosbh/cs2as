@@ -22,13 +22,14 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * An implementation of the model object '<em><b>Edge</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.graph2.impl.EdgeImpl#getTo <em>To</em>}</li>
  *   <li>{@link ocldependencyanalysis.graph2.impl.EdgeImpl#getFrom <em>From</em>}</li>
  *   <li>{@link ocldependencyanalysis.graph2.impl.EdgeImpl#getGraph <em>Graph</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

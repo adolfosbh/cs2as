@@ -18,18 +18,17 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.ocl.examples.domain.elements.DomainOperation;
-import org.eclipse.ocl.examples.pivot.Class;
-import org.eclipse.ocl.examples.pivot.ConstructorExp;
-import org.eclipse.ocl.examples.pivot.ConstructorPart;
-import org.eclipse.ocl.examples.pivot.Element;
-import org.eclipse.ocl.examples.pivot.ExpressionInOCL;
-import org.eclipse.ocl.examples.pivot.OCLExpression;
-import org.eclipse.ocl.examples.pivot.Operation;
-import org.eclipse.ocl.examples.pivot.OperationCallExp;
-import org.eclipse.ocl.examples.pivot.Property;
-import org.eclipse.ocl.examples.pivot.PropertyCallExp;
-import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.pivot.Class;
+import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.Element;
+import org.eclipse.ocl.pivot.ExpressionInOCL;
+import org.eclipse.ocl.pivot.OCLExpression;
+import org.eclipse.ocl.pivot.Operation;
+import org.eclipse.ocl.pivot.OperationCallExp;
+import org.eclipse.ocl.pivot.Property;
+import org.eclipse.ocl.pivot.PropertyCallExp;
+import org.eclipse.ocl.pivot.Type;
 
 public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 
@@ -42,7 +41,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 			Graph dependencyGraph, Resource cs2asResource) {
 		
 		for (Class ownedClass : getUserClassesInvolvedInOCLDocPackages(cs2asResource)) {
-			for (DomainOperation op : mManager.getAllOperations(ownedClass, null)) {
+			for (Operation op : mManager.getAllOperations(ownedClass, null)) {
 				Operation pivotOp = (Operation)op;
 				if (isAstOp(pivotOp)) {
 					updateGraphFromMappingOperation(ownedClass, pivotOp);
@@ -58,7 +57,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 		
 		ExpressionInOCL expInOCL = (ExpressionInOCL) operation.getBodyExpression();
 		if (expInOCL != null) {
-			OCLExpression oclExp = expInOCL.getBodyExpression();
+			OCLExpression oclExp = expInOCL.getOwnedBody();
 			updateGraphFromMappingOpBodyElement(oclExp, action);
 			for (TreeIterator<EObject> tit = EcoreUtil.getAllContents(oclExp, false); tit.hasNext(); ) {
 				EObject next = tit.next();
@@ -148,7 +147,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 		
 		updateGraphFromOpposite(context, propInfo);
 		
-		OCLExpression oclExp = cPart.getInitExpression();
+		OCLExpression oclExp = cPart.getOwnedInit();
 		updateGraphFromMappingOpBodyElement(oclExp, cPartAction);
 		for (TreeIterator<EObject> tit = EcoreUtil.getAllContents(oclExp, false); tit.hasNext(); ) {
 			EObject next = tit.next();
@@ -205,7 +204,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 	
 	private void updateGraphFromOclContainerCallExp(OperationCallExp parentEnvCallExp, ActionNode action) {
 		
-		Class context = parentEnvCallExp.getSource().getType().isClass();
+		Class context = parentEnvCallExp.getOwnedSource().getType().isClass();
 		for (ContainerClass contClass : getContainerClasses(context)) {
 			ExtendedPropertyInfo propInfo = createPropertyInfo(action.getContext(), contClass.getContainerClass(), contClass.getContainmentProperty());
 			addEdge(propInfo, action);
@@ -221,7 +220,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 			if (analysisNode instanceof ConstructorPartAction
 				&& ((ConstructorPartAction) analysisNode).getNeedsLookup()) {
 				ConstructorPartAction cPartAction = (ConstructorPartAction) analysisNode;
-				OCLExpression initExp = cPartAction.getConstructorPart().getInitExpression();
+				OCLExpression initExp = cPartAction.getConstructorPart().getOwnedInit();
 				
 				// FIXME can we have more than one lookup operation call ? Why not ?
 				if (isLookupCall(initExp)) {
@@ -241,14 +240,14 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 			OperationCallExp lookupCallExp =  entry.getValue();
 			Set<EnvironmentAction> visitedActions = new HashSet<EnvironmentAction>();
 			Set<Operation> visitedNonEnvOps = new HashSet<Operation>();
-			updateGraphFromLookupOpLookupCallExp(visitedActions, visitedNonEnvOps, lookupCallExp, getType(lookupCallExp.getSource()).isClass(), entry.getKey());
+			updateGraphFromLookupOpLookupCallExp(visitedActions, visitedNonEnvOps, lookupCallExp, getType(lookupCallExp.getOwnedSource()).isClass(), entry.getKey());
 		}
 	}
 	
 	private void updateGraphFromLookupOpOperation(Set<EnvironmentAction> visitedActions, Set<Operation> visitedNonEnvOps, Class context, Class typeToLookup, Operation op, ActionNode action) {
 		ExpressionInOCL expInOCL = (ExpressionInOCL)op.getBodyExpression();
 		if (expInOCL != null) {
-			OCLExpression oclExp = expInOCL.getBodyExpression();
+			OCLExpression oclExp = expInOCL.getOwnedBody();
 			updagrGraphFromLookupOpOCLExpression(visitedActions, visitedNonEnvOps, oclExp, context, typeToLookup, op, action);			
 			for (TreeIterator<EObject> tit = oclExp.eAllContents(); tit.hasNext(); ) {
 				EObject next = tit.next();
@@ -277,7 +276,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 	}
 	
 	private void updateGraphFromLookupOpPropertyCallExp(PropertyCallExp propCallExp, ActionNode action) {	
-		Type propertySource = propCallExp.getSource().getType();
+		Type propertySource = propCallExp.getOwnedSource().getType();
 		ExtendedPropertyInfo propInfo = createPropertyInfo(propertySource.isClass(), propertySource, propCallExp.getReferredProperty()); // FIXME wait for studying if we finally need the context or not
 		addEdge(propInfo, action);
 	}
@@ -407,7 +406,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 			ClassInfo constructedClass = createClassInfo(ownedClass, ownedClass);
 			updateGraphFromSuperClasses(constructedClass, computedClasses);
 			// For every computed property We firstly build the aggregation links
-			for (DomainOperation op : mManager.getAllOperations(ownedClass, null)) {
+			for (Operation op : mManager.getAllOperations(ownedClass, null)) {
 				Operation pivotOp = (Operation)op;
 				if (isAstOp(pivotOp)) {
 					updateGraphFromInvolvedProperties(pivotOp, computedProperties);

@@ -30,13 +30,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * An implementation of the model object '<em><b>Node</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.graph2.impl.NodeImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link ocldependencyanalysis.graph2.impl.NodeImpl#getOutgoing <em>Outgoing</em>}</li>
  *   <li>{@link ocldependencyanalysis.graph2.impl.NodeImpl#getGraph <em>Graph</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

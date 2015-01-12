@@ -10,10 +10,10 @@ package ocldependencyanalysis.cs2asanalysis;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.ClassRef#getClass_ <em>Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getClassRef()
  * @model abstract="true"
@@ -29,12 +29,12 @@ public interface ClassRef extends CS2ASAnalysisNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class</em>' reference.
-	 * @see #setClass(org.eclipse.ocl.examples.pivot.Class)
+	 * @see #setClass(org.eclipse.ocl.pivot.Class)
 	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getClassRef_Class()
 	 * @model required="true"
 	 * @generated
 	 */
-	org.eclipse.ocl.examples.pivot.Class getClass_();
+	org.eclipse.ocl.pivot.Class getClass_();
 
 	/**
 	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.ClassRef#getClass_ <em>Class</em>}' reference.
@@ -44,6 +44,6 @@ public interface ClassRef extends CS2ASAnalysisNode {
 	 * @see #getClass_()
 	 * @generated
 	 */
-	void setClass(org.eclipse.ocl.examples.pivot.Class value);
+	void setClass(org.eclipse.ocl.pivot.Class value);
 
 } // ClassRef

@@ -1,7 +1,7 @@
 package ocldependencyanalysis;
 
-import org.eclipse.ocl.examples.pivot.Property;
-import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.pivot.Property;
+import org.eclipse.ocl.pivot.Type;
 
 public class OppositePropertyObj extends FeatureObj {
 

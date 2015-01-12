@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.ocl.examples.pivot.PivotPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -89,7 +88,7 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		PivotPackage.eINSTANCE.eClass();
+		org.eclipse.ocl.pivot.PivotPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theGraphPackage.createPackageContents();
@@ -312,7 +311,7 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		PivotPackage thePivotPackage = (PivotPackage)EPackage.Registry.INSTANCE.getEPackage(PivotPackage.eNS_URI);
+		org.eclipse.ocl.pivot.PivotPackage thePivotPackage = (org.eclipse.ocl.pivot.PivotPackage)EPackage.Registry.INSTANCE.getEPackage(org.eclipse.ocl.pivot.PivotPackage.eNS_URI);
 
 		// Create type parameters
 

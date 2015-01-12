@@ -4,16 +4,16 @@ import java.util.Set;
 
 import ocldependencyanalysis.graph.IGraph;
 
-import org.eclipse.ocl.examples.pivot.Class;
-import org.eclipse.ocl.examples.pivot.ConstructorExp;
-import org.eclipse.ocl.examples.pivot.OperationCallExp;
-import org.eclipse.ocl.examples.pivot.Root;
-import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.pivot.Class;
+import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.Model;
+import org.eclipse.ocl.pivot.OperationCallExp;
+import org.eclipse.ocl.pivot.Type;
 
 /**
  * <p>
  * Computes a class dependency graph for pivot resource. A resource is considered to be
- * pivot if contains a {@link Root} root element
+ * pivot if contains a {@link Model} root element
  * </p>
  * 
  * <p>
@@ -38,7 +38,7 @@ import org.eclipse.ocl.examples.pivot.Type;
  * </p>
  * 
  * Assumptions:
- * 	  Only the {@link Root} root element will be processed
+ * 	  Only the {@link Model} root element will be processed
  *    No cycles in the type hierarchy of the involved source classes
  *  
  * @author asbh500
@@ -48,7 +48,7 @@ public class TypeDependencyGraphComputer extends OldDependencyGraphComputer<Type
 	@Override
 	protected void processAstCall(IGraph<Type> dependencyGraph,
 			OperationCallExp astOpCall) {
-		Class to =  astOpCall.getSource().getType().isClass();
+		Class to =  astOpCall.getOwnedSource().getType().isClass();
 		// if (isElementRefCS(to)) {
 		Class from = getElementContext(astOpCall);
 		if (to instanceof Class) {

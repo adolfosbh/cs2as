@@ -20,12 +20,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * An implementation of the model object '<em><b>Graph</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.graph2.impl.GraphImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link ocldependencyanalysis.graph2.impl.GraphImpl#getEdges <em>Edges</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

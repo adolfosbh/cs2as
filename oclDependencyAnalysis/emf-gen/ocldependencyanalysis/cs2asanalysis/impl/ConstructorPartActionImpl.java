@@ -17,11 +17,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * An implementation of the model object '<em><b>Constructor Part Action</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorPartActionImpl#getNeedsLookup <em>Needs Lookup</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

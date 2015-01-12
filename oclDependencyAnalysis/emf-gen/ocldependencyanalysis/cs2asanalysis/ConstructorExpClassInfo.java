@@ -2,7 +2,8 @@
  */
 package ocldependencyanalysis.cs2asanalysis;
 
-import org.eclipse.ocl.examples.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.ConstructorExp;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -11,10 +12,10 @@ import org.eclipse.ocl.examples.pivot.ConstructorExp;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo#getConstructorExp <em>Constructor Exp</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getConstructorExpClassInfo()
  * @model

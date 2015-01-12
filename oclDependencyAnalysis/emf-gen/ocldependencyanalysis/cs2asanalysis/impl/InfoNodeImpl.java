@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
  * An implementation of the model object '<em><b>Info Node</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * </p>
  *
  * @generated
  */

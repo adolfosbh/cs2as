@@ -11,11 +11,11 @@ import ocldependencyanalysis.graph2.Node;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#getContext <em>Context</em>}</li>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#getAssociatedPackage <em>Associated Package</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getCS2ASAnalysisNode()
  * @model abstract="true"
@@ -31,12 +31,12 @@ public interface CS2ASAnalysisNode extends Node {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context</em>' reference.
-	 * @see #setContext(org.eclipse.ocl.examples.pivot.Class)
+	 * @see #setContext(org.eclipse.ocl.pivot.Class)
 	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getCS2ASAnalysisNode_Context()
 	 * @model required="true"
 	 * @generated
 	 */
-	org.eclipse.ocl.examples.pivot.Class getContext();
+	org.eclipse.ocl.pivot.Class getContext();
 
 	/**
 	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#getContext <em>Context</em>}' reference.
@@ -46,7 +46,7 @@ public interface CS2ASAnalysisNode extends Node {
 	 * @see #getContext()
 	 * @generated
 	 */
-	void setContext(org.eclipse.ocl.examples.pivot.Class value);
+	void setContext(org.eclipse.ocl.pivot.Class value);
 
 	/**
 	 * Returns the value of the '<em><b>Associated Package</b></em>' reference.
@@ -57,12 +57,12 @@ public interface CS2ASAnalysisNode extends Node {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Associated Package</em>' reference.
-	 * @see #setAssociatedPackage(org.eclipse.ocl.examples.pivot.Package)
+	 * @see #setAssociatedPackage(org.eclipse.ocl.pivot.Package)
 	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getCS2ASAnalysisNode_AssociatedPackage()
 	 * @model required="true"
 	 * @generated
 	 */
-	org.eclipse.ocl.examples.pivot.Package getAssociatedPackage();
+	org.eclipse.ocl.pivot.Package getAssociatedPackage();
 
 	/**
 	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisNode#getAssociatedPackage <em>Associated Package</em>}' reference.
@@ -72,7 +72,7 @@ public interface CS2ASAnalysisNode extends Node {
 	 * @see #getAssociatedPackage()
 	 * @generated
 	 */
-	void setAssociatedPackage(org.eclipse.ocl.examples.pivot.Package value);
+	void setAssociatedPackage(org.eclipse.ocl.pivot.Package value);
 
 	/**
 	 * <!-- begin-user-doc -->

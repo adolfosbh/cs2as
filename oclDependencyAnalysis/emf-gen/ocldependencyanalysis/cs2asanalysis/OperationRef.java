@@ -2,7 +2,8 @@
  */
 package ocldependencyanalysis.cs2asanalysis;
 
-import org.eclipse.ocl.examples.pivot.Operation;
+import org.eclipse.ocl.pivot.Operation;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -11,10 +12,10 @@ import org.eclipse.ocl.examples.pivot.Operation;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.OperationRef#getOperation <em>Operation</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getOperationRef()
  * @model abstract="true"

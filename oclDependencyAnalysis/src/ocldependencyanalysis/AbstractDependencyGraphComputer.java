@@ -13,19 +13,18 @@ import ocldependencyanalysis.graph.IGraph;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.ocl.examples.domain.elements.DomainOperation;
-import org.eclipse.ocl.examples.domain.elements.FeatureFilter;
-import org.eclipse.ocl.examples.pivot.Class;
-import org.eclipse.ocl.examples.pivot.ConstructorExp;
-import org.eclipse.ocl.examples.pivot.ConstructorPart;
-import org.eclipse.ocl.examples.pivot.Element;
-import org.eclipse.ocl.examples.pivot.Operation;
-import org.eclipse.ocl.examples.pivot.OperationCallExp;
-import org.eclipse.ocl.examples.pivot.Package;
-import org.eclipse.ocl.examples.pivot.PropertyCallExp;
-import org.eclipse.ocl.examples.pivot.Root;
-import org.eclipse.ocl.examples.pivot.Type;
-import org.eclipse.ocl.examples.pivot.manager.MetaModelManager;
+import org.eclipse.ocl.pivot.Class;
+import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.Element;
+import org.eclipse.ocl.pivot.FeatureFilter;
+import org.eclipse.ocl.pivot.Model;
+import org.eclipse.ocl.pivot.Operation;
+import org.eclipse.ocl.pivot.OperationCallExp;
+import org.eclipse.ocl.pivot.Package;
+import org.eclipse.ocl.pivot.PropertyCallExp;
+import org.eclipse.ocl.pivot.Type;
+import org.eclipse.ocl.pivot.internal.manager.MetamodelManager;
 
 /**
  * @author asbh500
@@ -43,10 +42,10 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	
 	private Map<Class , Set<Class>> asClass2csClasses = new HashMap<Class, Set<Class>>();
 	
-	protected MetaModelManager mManager;
+	protected MetamodelManager mManager;
 		
 	private void initializeMaps(Resource resource) {
-		Root root = (Root) resource.getContents().get(0) ;
+		Model root = (Model) resource.getContents().get(0) ;
 		for (Package aPackage : root.getOwnedPackages()) {
 			Package primPckg = (Package)mManager.getPrimaryPackage(aPackage);
 			computeClass2SuperClasses(primPckg);
@@ -117,7 +116,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	protected List<Class> getClassesInvolvedInOCLDocPackages(Resource oclResource) {
 		
 		List<Class> result = new ArrayList<Class>();
-		Root root = (Root) oclResource.getContents().get(0);
+		Model root = (Model) oclResource.getContents().get(0);
 		for (Package pckg : root.getOwnedPackages()) {
 			Package primaryPckg = (Package) mManager.getPrimaryPackage(pckg);
 			for (Class ownedClass : primaryPckg.getOwnedClasses()) {
@@ -175,9 +174,9 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		Operation bestOp=null;	// The best op will be the one owned by the type the 
 								// closer to opAstClass in the class hierarchy 
 		// TODO move to mManager ?
-		for (DomainOperation op : mManager.getAllOperations(opAstClass, FeatureFilter.SELECT_NON_STATIC, "ast")){
+		for (Operation op : mManager.getAllOperations(opAstClass, FeatureFilter.SELECT_NON_STATIC, "ast")){
 			if (op instanceof Operation
-				&& op.getOwnedParameter().isEmpty()) {
+				&& op.getOwnedParameters().isEmpty()) {
 				Operation candidateOp = (Operation) op;
 				if (bestOp == null) {
 					bestOp = candidateOp;
@@ -192,8 +191,8 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	}
 	
 	public IGraph<C> computeDependencyGraph (Resource cs2asResource) {
-		assert(cs2asResource.getContents().get(0) instanceof Root);	
-		mManager = MetaModelManager.getAdapter(cs2asResource.getResourceSet());
+		assert(cs2asResource.getContents().get(0) instanceof Model);	
+		mManager = MetamodelManager.getAdapter(cs2asResource.getResourceSet());
 		IGraph<C> dependencyGraph = createDependencyGraph();
 		
 		initializeMaps(cs2asResource);		
@@ -260,7 +259,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	}
 	
 	protected boolean isAstOp(Operation op) {
-		return op == null ? false : "ast".equals(op.getName()) && op.getOwnedParameter().isEmpty();
+		return op == null ? false : "ast".equals(op.getName()) && op.getOwnedParameters().isEmpty();
 	}
 	
 	protected boolean isAstOp(EObject element) {
@@ -268,7 +267,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	}
 	
 	protected boolean isCstOp(Operation op) {
-		return op == null ? false : "cst".equals(op.getName()) && op.getOwnedParameter().isEmpty();
+		return op == null ? false : "cst".equals(op.getName()) && op.getOwnedParameters().isEmpty();
 	}
 	
 	protected boolean isCstOp(EObject element) {

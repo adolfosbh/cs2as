@@ -4,27 +4,22 @@ package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.OperationRef;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.ocl.examples.pivot.Operation;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Operation Ref</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.OperationRefImpl#getOperation <em>Operation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -37,7 +32,7 @@ public abstract class OperationRefImpl extends CS2ASAnalysisNodeImpl implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected Operation operation;
+	protected org.eclipse.ocl.pivot.Operation operation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,10 +58,10 @@ public abstract class OperationRefImpl extends CS2ASAnalysisNodeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Operation getOperation() {
-		if (operation != null && ((EObject)operation).eIsProxy()) {
+	public org.eclipse.ocl.pivot.Operation getOperation() {
+		if (operation != null && operation.eIsProxy()) {
 			InternalEObject oldOperation = (InternalEObject)operation;
-			operation = (Operation)eResolveProxy(oldOperation);
+			operation = (org.eclipse.ocl.pivot.Operation)eResolveProxy(oldOperation);
 			if (operation != oldOperation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.OPERATION_REF__OPERATION, oldOperation, operation));
@@ -80,7 +75,7 @@ public abstract class OperationRefImpl extends CS2ASAnalysisNodeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Operation basicGetOperation() {
+	public org.eclipse.ocl.pivot.Operation basicGetOperation() {
 		return operation;
 	}
 
@@ -89,8 +84,8 @@ public abstract class OperationRefImpl extends CS2ASAnalysisNodeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOperation(Operation newOperation) {
-		Operation oldOperation = operation;
+	public void setOperation(org.eclipse.ocl.pivot.Operation newOperation) {
+		org.eclipse.ocl.pivot.Operation oldOperation = operation;
 		operation = newOperation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.OPERATION_REF__OPERATION, oldOperation, operation));
@@ -120,7 +115,7 @@ public abstract class OperationRefImpl extends CS2ASAnalysisNodeImpl implements 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.OPERATION_REF__OPERATION:
-				setOperation((Operation)newValue);
+				setOperation((org.eclipse.ocl.pivot.Operation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,7 +130,7 @@ public abstract class OperationRefImpl extends CS2ASAnalysisNodeImpl implements 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.OPERATION_REF__OPERATION:
-				setOperation((Operation)null);
+				setOperation((org.eclipse.ocl.pivot.Operation)null);
 				return;
 		}
 		super.eUnset(featureID);

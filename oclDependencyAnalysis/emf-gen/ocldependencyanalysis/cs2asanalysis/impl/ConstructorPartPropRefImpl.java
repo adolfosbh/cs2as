@@ -4,24 +4,22 @@ package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.ConstructorPartPropRef;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.ocl.examples.pivot.ConstructorPart;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Constructor Part Prop Ref</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorPartPropRefImpl#getConstructorPart <em>Constructor Part</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -34,7 +32,7 @@ public abstract class ConstructorPartPropRefImpl extends PropertyRefImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected ConstructorPart constructorPart;
+	protected org.eclipse.ocl.pivot.ConstructorPart constructorPart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,10 +58,10 @@ public abstract class ConstructorPartPropRefImpl extends PropertyRefImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConstructorPart getConstructorPart() {
-		if (constructorPart != null && ((EObject)constructorPart).eIsProxy()) {
+	public org.eclipse.ocl.pivot.ConstructorPart getConstructorPart() {
+		if (constructorPart != null && constructorPart.eIsProxy()) {
 			InternalEObject oldConstructorPart = (InternalEObject)constructorPart;
-			constructorPart = (ConstructorPart)eResolveProxy(oldConstructorPart);
+			constructorPart = (org.eclipse.ocl.pivot.ConstructorPart)eResolveProxy(oldConstructorPart);
 			if (constructorPart != oldConstructorPart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROP_REF__CONSTRUCTOR_PART, oldConstructorPart, constructorPart));
@@ -77,7 +75,7 @@ public abstract class ConstructorPartPropRefImpl extends PropertyRefImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConstructorPart basicGetConstructorPart() {
+	public org.eclipse.ocl.pivot.ConstructorPart basicGetConstructorPart() {
 		return constructorPart;
 	}
 
@@ -86,8 +84,8 @@ public abstract class ConstructorPartPropRefImpl extends PropertyRefImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setConstructorPart(ConstructorPart newConstructorPart) {
-		ConstructorPart oldConstructorPart = constructorPart;
+	public void setConstructorPart(org.eclipse.ocl.pivot.ConstructorPart newConstructorPart) {
+		org.eclipse.ocl.pivot.ConstructorPart oldConstructorPart = constructorPart;
 		constructorPart = newConstructorPart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROP_REF__CONSTRUCTOR_PART, oldConstructorPart, constructorPart));
@@ -117,7 +115,7 @@ public abstract class ConstructorPartPropRefImpl extends PropertyRefImpl impleme
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROP_REF__CONSTRUCTOR_PART:
-				setConstructorPart((ConstructorPart)newValue);
+				setConstructorPart((org.eclipse.ocl.pivot.ConstructorPart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,7 +130,7 @@ public abstract class ConstructorPartPropRefImpl extends PropertyRefImpl impleme
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROP_REF__CONSTRUCTOR_PART:
-				setConstructorPart((ConstructorPart)null);
+				setConstructorPart((org.eclipse.ocl.pivot.ConstructorPart)null);
 				return;
 		}
 		super.eUnset(featureID);

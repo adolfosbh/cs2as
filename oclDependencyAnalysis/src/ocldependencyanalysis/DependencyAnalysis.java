@@ -6,28 +6,27 @@ import ocldependencyanalysis.graph.IGraph;
 import ocldependencyanalysis.graph2.Graph;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EPackageRegistryImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.ocl.examples.pivot.OCL;
-import org.eclipse.ocl.examples.pivot.Type;
-import org.eclipse.ocl.examples.pivot.utilities.PivotEnvironmentFactory;
-import org.eclipse.ocl.examples.xtext.completeocl.CompleteOCLStandaloneSetup;
+import org.eclipse.ocl.pivot.Type;
+import org.eclipse.ocl.pivot.internal.utilities.PivotEnvironmentFactory;
+import org.eclipse.ocl.pivot.model.OCLstdlib;
+import org.eclipse.ocl.pivot.resource.StandaloneProjectMap;
+import org.eclipse.ocl.pivot.utilities.OCL;
+import org.eclipse.ocl.xtext.completeocl.CompleteOCLStandaloneSetup;
 
 public class DependencyAnalysis {
 	
 	private static OCL getOCL() {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		
-		org.eclipse.ocl.examples.pivot.OCL.initialize(resourceSet);		
-		org.eclipse.ocl.examples.pivot.model.OCLstdlib.install();
+		OCL.initialize(resourceSet);		
+		OCLstdlib.install();
 		CompleteOCLStandaloneSetup.doSetup();
-		org.eclipse.ocl.examples.domain.utilities.StandaloneProjectMap.getAdapter(resourceSet);
+		StandaloneProjectMap pMap = StandaloneProjectMap.getAdapter(resourceSet);
 
-		EPackage.Registry registry = new EPackageRegistryImpl();
-		PivotEnvironmentFactory environmentFactory = new PivotEnvironmentFactory(registry, null);
+		PivotEnvironmentFactory environmentFactory = new PivotEnvironmentFactory(pMap, null);
 		return OCL.newInstance(environmentFactory);
 	}
 

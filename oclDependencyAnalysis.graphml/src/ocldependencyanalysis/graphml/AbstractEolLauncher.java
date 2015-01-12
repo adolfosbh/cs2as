@@ -91,7 +91,7 @@ public abstract class AbstractEolLauncher {
 	    properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
 	    properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, 
 	        storeOnDisposal + "");
-	    emfModel.load(properties, null);
+	    emfModel.load(properties);
 	    return emfModel;
 	  }
 
@@ -106,7 +106,7 @@ public abstract class AbstractEolLauncher {
 	    properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
 	    properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, 
 	        storeOnDisposal + "");
-	    emfModel.load(properties, null);
+	    emfModel.load(properties);
 	    return emfModel;
 	  }
 	  
@@ -121,7 +121,7 @@ public abstract class AbstractEolLauncher {
 		    properties.put(XmlModel.PROPERTY_READONLOAD, readOnLoad + "");
 		    properties.put(XmlModel.PROPERTY_STOREONDISPOSAL, 
 		        storeOnDisposal + "");
-		    xmlModel.load(properties, null);
+		    xmlModel.load(properties);
 		    return xmlModel;
 	}
 	  

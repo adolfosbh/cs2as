@@ -11,9 +11,9 @@ import ocldependencyanalysis.graph2.Edge;
 import ocldependencyanalysis.graph2.Node;
 import ocldependencyanalysis.graphml.IElementTypeProvider;
 
-import org.eclipse.ocl.examples.pivot.Feature;
-import org.eclipse.ocl.examples.pivot.Operation;
-import org.eclipse.ocl.examples.pivot.Property;
+import org.eclipse.ocl.pivot.Feature;
+import org.eclipse.ocl.pivot.Operation;
+import org.eclipse.ocl.pivot.Property;
 import org.eclipse.qvtd.build.etl.graph.EdgeType;
 import org.eclipse.qvtd.build.etl.graph.ElementType;
 import org.eclipse.qvtd.build.etl.graph.NodeType;

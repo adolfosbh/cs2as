@@ -5,8 +5,8 @@ import ocldependencyanalysis.graph.IGraph;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.ocl.examples.pivot.ConstructorExp;
-import org.eclipse.ocl.examples.pivot.OperationCallExp;
+import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.OperationCallExp;
 
 public abstract class OldDependencyGraphComputer<C> extends AbstractDependencyGraphComputer<C> {
 	

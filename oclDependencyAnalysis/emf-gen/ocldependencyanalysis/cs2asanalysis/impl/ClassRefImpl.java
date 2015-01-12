@@ -4,13 +4,9 @@ package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.ClassRef;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -18,11 +14,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * An implementation of the model object '<em><b>Class Ref</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.ClassRefImpl#getClass_ <em>Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -35,7 +32,7 @@ public abstract class ClassRefImpl extends CS2ASAnalysisNodeImpl implements Clas
 	 * @generated
 	 * @ordered
 	 */
-	protected org.eclipse.ocl.examples.pivot.Class class_;
+	protected org.eclipse.ocl.pivot.Class class_;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,10 +58,10 @@ public abstract class ClassRefImpl extends CS2ASAnalysisNodeImpl implements Clas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.examples.pivot.Class getClass_() {
-		if (class_ != null && ((EObject)class_).eIsProxy()) {
+	public org.eclipse.ocl.pivot.Class getClass_() {
+		if (class_ != null && class_.eIsProxy()) {
 			InternalEObject oldClass = (InternalEObject)class_;
-			class_ = (org.eclipse.ocl.examples.pivot.Class)eResolveProxy(oldClass);
+			class_ = (org.eclipse.ocl.pivot.Class)eResolveProxy(oldClass);
 			if (class_ != oldClass) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CLASS_REF__CLASS, oldClass, class_));
@@ -78,7 +75,7 @@ public abstract class ClassRefImpl extends CS2ASAnalysisNodeImpl implements Clas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.examples.pivot.Class basicGetClass() {
+	public org.eclipse.ocl.pivot.Class basicGetClass() {
 		return class_;
 	}
 
@@ -87,8 +84,8 @@ public abstract class ClassRefImpl extends CS2ASAnalysisNodeImpl implements Clas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClass(org.eclipse.ocl.examples.pivot.Class newClass) {
-		org.eclipse.ocl.examples.pivot.Class oldClass = class_;
+	public void setClass(org.eclipse.ocl.pivot.Class newClass) {
+		org.eclipse.ocl.pivot.Class oldClass = class_;
 		class_ = newClass;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CLASS_REF__CLASS, oldClass, class_));
@@ -118,7 +115,7 @@ public abstract class ClassRefImpl extends CS2ASAnalysisNodeImpl implements Clas
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CLASS_REF__CLASS:
-				setClass((org.eclipse.ocl.examples.pivot.Class)newValue);
+				setClass((org.eclipse.ocl.pivot.Class)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +130,7 @@ public abstract class ClassRefImpl extends CS2ASAnalysisNodeImpl implements Clas
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CLASS_REF__CLASS:
-				setClass((org.eclipse.ocl.examples.pivot.Class)null);
+				setClass((org.eclipse.ocl.pivot.Class)null);
 				return;
 		}
 		super.eUnset(featureID);

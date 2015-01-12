@@ -3,9 +3,9 @@ package ocldependencyanalysis;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.ocl.examples.pivot.ConstructorExp;
-import org.eclipse.ocl.examples.pivot.Operation;
-import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.Operation;
+import org.eclipse.ocl.pivot.Type;
 
 public class ConstructorExpFeatureObj extends FeatureObj {
 

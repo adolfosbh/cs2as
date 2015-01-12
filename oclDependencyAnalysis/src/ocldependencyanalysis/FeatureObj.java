@@ -1,10 +1,10 @@
 package ocldependencyanalysis;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.ocl.examples.pivot.CollectionType;
-import org.eclipse.ocl.examples.pivot.Feature;
-import org.eclipse.ocl.examples.pivot.NamedElement;
-import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.pivot.CollectionType;
+import org.eclipse.ocl.pivot.Feature;
+import org.eclipse.ocl.pivot.NamedElement;
+import org.eclipse.ocl.pivot.Type;
 
 public class FeatureObj {
 	protected static final String NAMESPACE_SEP = "::";

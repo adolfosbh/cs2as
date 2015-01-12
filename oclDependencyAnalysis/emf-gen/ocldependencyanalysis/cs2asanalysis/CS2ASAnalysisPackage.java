@@ -3,6 +3,7 @@
 package ocldependencyanalysis.cs2asanalysis;
 
 import ocldependencyanalysis.graph2.GraphPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;

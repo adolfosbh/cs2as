@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.graph2.Graph#getNodes <em>Nodes</em>}</li>
  *   <li>{@link ocldependencyanalysis.graph2.Graph#getEdges <em>Edges</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.graph2.GraphPackage#getGraph()
  * @model

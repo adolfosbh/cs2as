@@ -10,10 +10,10 @@ package ocldependencyanalysis.cs2asanalysis;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.ConstructorPartAction#getNeedsLookup <em>Needs Lookup</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getConstructorPartAction()
  * @model

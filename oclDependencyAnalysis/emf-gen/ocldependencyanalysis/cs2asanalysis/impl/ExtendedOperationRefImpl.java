@@ -4,13 +4,9 @@ package ocldependencyanalysis.cs2asanalysis.impl;
 
 import ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage;
 import ocldependencyanalysis.cs2asanalysis.ExtendedOperationRef;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -18,11 +14,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * An implementation of the model object '<em><b>Extended Operation Ref</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.ExtendedOperationRefImpl#getOperationClass <em>Operation Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -35,7 +32,7 @@ public abstract class ExtendedOperationRefImpl extends OperationRefImpl implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected org.eclipse.ocl.examples.pivot.Class operationClass;
+	protected org.eclipse.ocl.pivot.Class operationClass;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,10 +58,10 @@ public abstract class ExtendedOperationRefImpl extends OperationRefImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.examples.pivot.Class getOperationClass() {
-		if (operationClass != null && ((EObject)operationClass).eIsProxy()) {
+	public org.eclipse.ocl.pivot.Class getOperationClass() {
+		if (operationClass != null && operationClass.eIsProxy()) {
 			InternalEObject oldOperationClass = (InternalEObject)operationClass;
-			operationClass = (org.eclipse.ocl.examples.pivot.Class)eResolveProxy(oldOperationClass);
+			operationClass = (org.eclipse.ocl.pivot.Class)eResolveProxy(oldOperationClass);
 			if (operationClass != oldOperationClass) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.EXTENDED_OPERATION_REF__OPERATION_CLASS, oldOperationClass, operationClass));
@@ -78,7 +75,7 @@ public abstract class ExtendedOperationRefImpl extends OperationRefImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.examples.pivot.Class basicGetOperationClass() {
+	public org.eclipse.ocl.pivot.Class basicGetOperationClass() {
 		return operationClass;
 	}
 
@@ -87,8 +84,8 @@ public abstract class ExtendedOperationRefImpl extends OperationRefImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOperationClass(org.eclipse.ocl.examples.pivot.Class newOperationClass) {
-		org.eclipse.ocl.examples.pivot.Class oldOperationClass = operationClass;
+	public void setOperationClass(org.eclipse.ocl.pivot.Class newOperationClass) {
+		org.eclipse.ocl.pivot.Class oldOperationClass = operationClass;
 		operationClass = newOperationClass;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.EXTENDED_OPERATION_REF__OPERATION_CLASS, oldOperationClass, operationClass));
@@ -118,7 +115,7 @@ public abstract class ExtendedOperationRefImpl extends OperationRefImpl implemen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.EXTENDED_OPERATION_REF__OPERATION_CLASS:
-				setOperationClass((org.eclipse.ocl.examples.pivot.Class)newValue);
+				setOperationClass((org.eclipse.ocl.pivot.Class)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +130,7 @@ public abstract class ExtendedOperationRefImpl extends OperationRefImpl implemen
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.EXTENDED_OPERATION_REF__OPERATION_CLASS:
-				setOperationClass((org.eclipse.ocl.examples.pivot.Class)null);
+				setOperationClass((org.eclipse.ocl.pivot.Class)null);
 				return;
 		}
 		super.eUnset(featureID);

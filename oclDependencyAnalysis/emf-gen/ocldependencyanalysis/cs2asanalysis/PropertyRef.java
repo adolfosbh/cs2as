@@ -2,7 +2,8 @@
  */
 package ocldependencyanalysis.cs2asanalysis;
 
-import org.eclipse.ocl.examples.pivot.Property;
+import org.eclipse.ocl.pivot.Property;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -11,10 +12,10 @@ import org.eclipse.ocl.examples.pivot.Property;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.PropertyRef#getProperty <em>Property</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getPropertyRef()
  * @model abstract="true"

@@ -10,10 +10,10 @@ package ocldependencyanalysis.cs2asanalysis;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.EnvironmentInfo#getLookupClass <em>Lookup Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getEnvironmentInfo()
  * @model
@@ -30,12 +30,12 @@ public interface EnvironmentInfo extends ExtendedOperationRef, InfoNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Lookup Class</em>' reference.
-	 * @see #setLookupClass(org.eclipse.ocl.examples.pivot.Class)
+	 * @see #setLookupClass(org.eclipse.ocl.pivot.Class)
 	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getEnvironmentInfo_LookupClass()
 	 * @model
 	 * @generated
 	 */
-	org.eclipse.ocl.examples.pivot.Class getLookupClass();
+	org.eclipse.ocl.pivot.Class getLookupClass();
 
 	/**
 	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.EnvironmentInfo#getLookupClass <em>Lookup Class</em>}' reference.
@@ -45,5 +45,5 @@ public interface EnvironmentInfo extends ExtendedOperationRef, InfoNode {
 	 * @see #getLookupClass()
 	 * @generated
 	 */
-	void setLookupClass(org.eclipse.ocl.examples.pivot.Class value);
+	void setLookupClass(org.eclipse.ocl.pivot.Class value);
 } // EnvironmentInfo

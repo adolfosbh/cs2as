@@ -1,7 +1,7 @@
 package ocldependencyanalysis;
 
-import org.eclipse.ocl.examples.pivot.Feature;
-import org.eclipse.ocl.examples.pivot.Type;
+import org.eclipse.ocl.pivot.Feature;
+import org.eclipse.ocl.pivot.Type;
 
 public class NameResoPropertyObj extends FeatureObj{
 

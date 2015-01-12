@@ -2,7 +2,8 @@
  */
 package ocldependencyanalysis.cs2asanalysis;
 
-import org.eclipse.ocl.examples.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.ConstructorPart;
+
 
 
 /**
@@ -12,10 +13,10 @@ import org.eclipse.ocl.examples.pivot.ConstructorPart;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.ConstructorPartPropRef#getConstructorPart <em>Constructor Part</em>}</li>
  * </ul>
- * </p>
  *
  * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getConstructorPartPropRef()
  * @model abstract="true"

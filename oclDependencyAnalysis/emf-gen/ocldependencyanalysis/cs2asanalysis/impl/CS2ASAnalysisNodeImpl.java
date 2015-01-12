@@ -10,7 +10,6 @@ import ocldependencyanalysis.graph2.impl.NodeImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -19,12 +18,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * An implementation of the model object '<em><b>Node</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisNodeImpl#getContext <em>Context</em>}</li>
  *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.CS2ASAnalysisNodeImpl#getAssociatedPackage <em>Associated Package</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -37,7 +37,7 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * @generated
 	 * @ordered
 	 */
-	protected org.eclipse.ocl.examples.pivot.Class context;
+	protected org.eclipse.ocl.pivot.Class context;
 
 	/**
 	 * The cached value of the '{@link #getAssociatedPackage() <em>Associated Package</em>}' reference.
@@ -47,7 +47,7 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * @generated
 	 * @ordered
 	 */
-	protected org.eclipse.ocl.examples.pivot.Package associatedPackage;
+	protected org.eclipse.ocl.pivot.Package associatedPackage;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,10 +73,10 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.examples.pivot.Class getContext() {
-		if (context != null && ((EObject)context).eIsProxy()) {
+	public org.eclipse.ocl.pivot.Class getContext() {
+		if (context != null && context.eIsProxy()) {
 			InternalEObject oldContext = (InternalEObject)context;
-			context = (org.eclipse.ocl.examples.pivot.Class)eResolveProxy(oldContext);
+			context = (org.eclipse.ocl.pivot.Class)eResolveProxy(oldContext);
 			if (context != oldContext) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT, oldContext, context));
@@ -90,7 +90,7 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.examples.pivot.Class basicGetContext() {
+	public org.eclipse.ocl.pivot.Class basicGetContext() {
 		return context;
 	}
 
@@ -99,8 +99,8 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContext(org.eclipse.ocl.examples.pivot.Class newContext) {
-		org.eclipse.ocl.examples.pivot.Class oldContext = context;
+	public void setContext(org.eclipse.ocl.pivot.Class newContext) {
+		org.eclipse.ocl.pivot.Class oldContext = context;
 		context = newContext;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT, oldContext, context));
@@ -111,10 +111,10 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.examples.pivot.Package getAssociatedPackage() {
-		if (associatedPackage != null && ((EObject)associatedPackage).eIsProxy()) {
+	public org.eclipse.ocl.pivot.Package getAssociatedPackage() {
+		if (associatedPackage != null && associatedPackage.eIsProxy()) {
 			InternalEObject oldAssociatedPackage = (InternalEObject)associatedPackage;
-			associatedPackage = (org.eclipse.ocl.examples.pivot.Package)eResolveProxy(oldAssociatedPackage);
+			associatedPackage = (org.eclipse.ocl.pivot.Package)eResolveProxy(oldAssociatedPackage);
 			if (associatedPackage != oldAssociatedPackage) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__ASSOCIATED_PACKAGE, oldAssociatedPackage, associatedPackage));
@@ -128,7 +128,7 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.examples.pivot.Package basicGetAssociatedPackage() {
+	public org.eclipse.ocl.pivot.Package basicGetAssociatedPackage() {
 		return associatedPackage;
 	}
 
@@ -137,8 +137,8 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAssociatedPackage(org.eclipse.ocl.examples.pivot.Package newAssociatedPackage) {
-		org.eclipse.ocl.examples.pivot.Package oldAssociatedPackage = associatedPackage;
+	public void setAssociatedPackage(org.eclipse.ocl.pivot.Package newAssociatedPackage) {
+		org.eclipse.ocl.pivot.Package oldAssociatedPackage = associatedPackage;
 		associatedPackage = newAssociatedPackage;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__ASSOCIATED_PACKAGE, oldAssociatedPackage, associatedPackage));
@@ -180,10 +180,10 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT:
-				setContext((org.eclipse.ocl.examples.pivot.Class)newValue);
+				setContext((org.eclipse.ocl.pivot.Class)newValue);
 				return;
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__ASSOCIATED_PACKAGE:
-				setAssociatedPackage((org.eclipse.ocl.examples.pivot.Package)newValue);
+				setAssociatedPackage((org.eclipse.ocl.pivot.Package)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -198,10 +198,10 @@ public abstract class CS2ASAnalysisNodeImpl extends NodeImpl implements CS2ASAna
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__CONTEXT:
-				setContext((org.eclipse.ocl.examples.pivot.Class)null);
+				setContext((org.eclipse.ocl.pivot.Class)null);
 				return;
 			case CS2ASAnalysisPackage.CS2AS_ANALYSIS_NODE__ASSOCIATED_PACKAGE:
-				setAssociatedPackage((org.eclipse.ocl.examples.pivot.Package)null);
+				setAssociatedPackage((org.eclipse.ocl.pivot.Package)null);
 				return;
 		}
 		super.eUnset(featureID);
