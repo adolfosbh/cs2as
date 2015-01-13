@@ -3,11 +3,6 @@ import 'TargetMM1.ecore'
 import 'Environment.ecore'
 import 'TargetLookup.ocl'
 
-package ocl
-context OclElement
-def : ast : OclElement = null
-endpackage
-
 package source
 
 context SRoot

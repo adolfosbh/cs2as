@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eCoreContainemntTree="http://www.eclipse.org/qvt/examples/0.1/ECoreContainemntTree">
+  <eCoreContainemntTree:Node name="target" children="/3 /4"/>
+  <eCoreContainemntTree:Node name="A1" parent="/3" children="/5">
+    <superTypes>A</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="A2" parent="/3" children="/6">
+    <superTypes>A</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="TRoot" parent="/0" children="/1 /2"/>
+  <eCoreContainemntTree:Node name="NamedElement" parent="/0"/>
+  <eCoreContainemntTree:Node name="B" parent="/1" children="/7"/>
+  <eCoreContainemntTree:Node name="C" parent="/2" children="/7"/>
+  <eCoreContainemntTree:Node name="D" parent="/5 /6"/>
+</xmi:XMI>

@@ -6,19 +6,6 @@
   <ownedImports importedNamespace="pivot:Model TargetMM1.ecore.oclas#/"/>
   <ownedImports importedNamespace="pivot:Model Environment.ecore.oclas#/"/>
   <ownedImports importedNamespace="pivot:Model TargetLookup.ocl.oclas#/"/>
-  <ownedPackages xmi:id="P.ocl" name="ocl" URI="http://www.eclipse.org/ocl/2015/Library">
-    <ownedClasses xmi:id="T.ocl.OclElement" name="OclElement">
-      <ownedProperties xmi:id="p.ocl.OclElement.ast" name="ast" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement"
-          isDerived="true" isReadOnly="true" isResolveProxies="false" isTransient="true"
-          isVolatile="true">
-        <ownedExpression xsi:type="pivot:ExpressionInOCL" isRequired="false" type="pivot:VoidType http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclVoid"
-            body="null&#xA;">
-          <ownedBody xsi:type="pivot:NullLiteralExp" isRequired="false" type="pivot:VoidType http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclVoid"/>
-          <ownedContext name="self" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement"/>
-        </ownedExpression>
-      </ownedProperties>
-    </ownedClasses>
-  </ownedPackages>
   <ownedPackages xmi:id="P.source" name="source" URI="http://ocldependencyanalysis/sourceMM/1.0">
     <ownedClasses xmi:id="T.source.AmbX" name="AmbX">
       <ownedOperations xmi:id="o.source.AmbX.ast" name="ast" type="pivot:Class TargetMM1.ecore.oclas#T.target.A">
@@ -28,25 +15,25 @@
             <ownedCondition xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
                 referredProperty="SourceMM1.ecore.oclas#p.source.AmbX.isA1">
               <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
-                  isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                  isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedContext"/>
             </ownedCondition>
             <ownedElse xsi:type="pivot:ConstructorExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.A2">
-              <ownedParts name="ownsC" type="#//@ownedPackages.2/@ownedClasses.0"
+              <ownedParts name="ownsC" type="#//@ownedPackages.1/@ownedClasses.0"
                   referredProperty="TargetMM1.ecore.oclas#p.target.A2.ownsC">
-                <ownedInit xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.2/@ownedClasses.1"
+                <ownedInit xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.1/@ownedClasses.1"
                     isImplicit="true" referredIteration="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.Sequence.collect..T">
-                  <ownedSource xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.2/@ownedClasses.2"
+                  <ownedSource xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.1/@ownedClasses.2"
                       isImplicit="true" referredIteration="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.OrderedSet.collect..T">
-                    <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.2/@ownedClasses.3"
+                    <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.3"
                         referredProperty="SourceMM1.ecore.oclas#p.source.X.ownsY">
                       <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
-                          isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                          isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                     </ownedSource>
                     <ownedBody xsi:type="pivot:OperationCallExp" isRequired="false"
                         type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
                       <ownedSource xsi:type="pivot:VariableExp" isRequired="false"
                           type="pivot:Class SourceMM1.ecore.oclas#T.source.Y" isImplicit="true"
-                          referredVariable="#//@ownedPackages.1/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedBody/@ownedElse/@ownedParts.0/@ownedInit/@ownedSource/@ownedIterators.0"/>
+                          referredVariable="#//@ownedPackages.0/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedBody/@ownedElse/@ownedParts.0/@ownedInit/@ownedSource/@ownedIterators.0"/>
                       <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                           referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
                     </ownedBody>
@@ -56,7 +43,7 @@
                   <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.C"
                       referredOperation="#o.source.Y2.ast">
                     <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
-                        isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedBody/@ownedElse/@ownedParts.0/@ownedInit/@ownedIterators.0"/>
+                        isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedBody/@ownedElse/@ownedParts.0/@ownedInit/@ownedIterators.0"/>
                   </ownedBody>
                   <ownedIterators name="1_" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
                       isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.Sequence.collect..T"/>
@@ -64,22 +51,22 @@
               </ownedParts>
             </ownedElse>
             <ownedThen xsi:type="pivot:ConstructorExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.A1">
-              <ownedParts name="ownsB" type="#//@ownedPackages.2/@ownedClasses.4"
+              <ownedParts name="ownsB" type="#//@ownedPackages.1/@ownedClasses.4"
                   referredProperty="TargetMM1.ecore.oclas#p.target.A1.ownsB">
-                <ownedInit xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.2/@ownedClasses.5"
+                <ownedInit xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.1/@ownedClasses.5"
                     isImplicit="true" referredIteration="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.Sequence.collect..T">
-                  <ownedSource xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.2/@ownedClasses.6"
+                  <ownedSource xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.1/@ownedClasses.6"
                       isImplicit="true" referredIteration="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.OrderedSet.collect..T">
-                    <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.2/@ownedClasses.3"
+                    <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.3"
                         referredProperty="SourceMM1.ecore.oclas#p.source.X.ownsY">
                       <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
-                          isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                          isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                     </ownedSource>
                     <ownedBody xsi:type="pivot:OperationCallExp" isRequired="false"
                         type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
                       <ownedSource xsi:type="pivot:VariableExp" isRequired="false"
                           type="pivot:Class SourceMM1.ecore.oclas#T.source.Y" isImplicit="true"
-                          referredVariable="#//@ownedPackages.1/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedBody/@ownedThen/@ownedParts.0/@ownedInit/@ownedSource/@ownedIterators.0"/>
+                          referredVariable="#//@ownedPackages.0/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedBody/@ownedThen/@ownedParts.0/@ownedInit/@ownedSource/@ownedIterators.0"/>
                       <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                           referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
                     </ownedBody>
@@ -89,7 +76,7 @@
                   <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.B"
                       referredOperation="#o.source.Y1.ast">
                     <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
-                        isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedBody/@ownedThen/@ownedParts.0/@ownedInit/@ownedIterators.0"/>
+                        isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@ownedOperations.0/@bodyExpression/@ownedBody/@ownedThen/@ownedParts.0/@ownedInit/@ownedIterators.0"/>
                   </ownedBody>
                   <ownedIterators name="1_" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
                       isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.Sequence.collect..T"/>
@@ -111,7 +98,7 @@
               <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y"
                   referredProperty="SourceMM1.ecore.oclas#p.source.Z.toY">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                    isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                    isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
               </ownedSource>
               <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
@@ -128,7 +115,7 @@
                       <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false"
                           type="pivot:Class SourceMM1.ecore.oclas#T.source.Y" referredProperty="SourceMM1.ecore.oclas#p.source.Z.toY">
                         <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                            isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                            isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                       </ownedSource>
                       <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                           referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
@@ -141,7 +128,7 @@
                 <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                     referredProperty="SourceMM1.ecore.oclas#p.source.Z.name">
                   <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                      isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                      isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                 </ownedInit>
               </ownedParts>
               <ownedParts name="refsC" isRequired="false" type="pivot:Class TargetMM1.ecore.oclas#T.target.C"
@@ -151,13 +138,13 @@
                   <ownedSource xsi:type="pivot:OperationCallExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"
                       referredOperation="#o.source.AmbZ.ast">
                     <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                        isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                        isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                   </ownedSource>
                   <ownedArguments xsi:type="pivot:PropertyCallExp" isRequired="false"
                       type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                       referredProperty="SourceMM1.ecore.oclas#p.source.Z.name">
                     <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                        isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                        isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                   </ownedArguments>
                 </ownedInit>
               </ownedParts>
@@ -174,7 +161,7 @@
                       <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false"
                           type="pivot:Class SourceMM1.ecore.oclas#T.source.Y" referredProperty="SourceMM1.ecore.oclas#p.source.Z.toY">
                         <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                            isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                            isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                       </ownedSource>
                       <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                           referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
@@ -187,7 +174,7 @@
                 <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                     referredProperty="SourceMM1.ecore.oclas#p.source.Z.name">
                   <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                      isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                      isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                 </ownedInit>
               </ownedParts>
               <ownedParts name="refsB" isRequired="false" type="pivot:Class TargetMM1.ecore.oclas#T.target.B"
@@ -197,13 +184,13 @@
                   <ownedSource xsi:type="pivot:OperationCallExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"
                       referredOperation="#o.source.AmbZ.ast">
                     <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                        isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                        isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                   </ownedSource>
                   <ownedArguments xsi:type="pivot:PropertyCallExp" isRequired="false"
                       type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                       referredProperty="SourceMM1.ecore.oclas#p.source.Z.name">
                     <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                        isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                        isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.1/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                   </ownedArguments>
                 </ownedInit>
               </ownedParts>
@@ -218,18 +205,18 @@
         <bodyExpression xsi:type="pivot:ExpressionInOCL" type="pivot:Class TargetMM1.ecore.oclas#T.target.TRoot"
             body="&#xA;&#x9;target::TRoot {&#xA;&#x9;&#x9;ownedA = ownedX.ast()&#xA;&#x9;}&#xA;&#xA;">
           <ownedBody xsi:type="pivot:ConstructorExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.TRoot">
-            <ownedParts name="ownedA" type="#//@ownedPackages.2/@ownedClasses.7" referredProperty="TargetMM1.ecore.oclas#p.target.TRoot.ownedA">
-              <ownedInit xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.2/@ownedClasses.8"
+            <ownedParts name="ownedA" type="#//@ownedPackages.1/@ownedClasses.7" referredProperty="TargetMM1.ecore.oclas#p.target.TRoot.ownedA">
+              <ownedInit xsi:type="pivot:IteratorExp" name="collect" type="#//@ownedPackages.1/@ownedClasses.8"
                   isImplicit="true" referredIteration="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.OrderedSet.collect..T">
-                <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.2/@ownedClasses.9"
+                <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.9"
                     referredProperty="SourceMM1.ecore.oclas#p.source.SRoot.ownedX">
                   <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"
-                      isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.2/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                      isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.2/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                 </ownedSource>
                 <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.A"
                     referredOperation="#o.source.X.ast">
                   <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.X"
-                      isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.2/@ownedOperations.0/@bodyExpression/@ownedBody/@ownedParts.0/@ownedInit/@ownedIterators.0"/>
+                      isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.2/@ownedOperations.0/@bodyExpression/@ownedBody/@ownedParts.0/@ownedInit/@ownedIterators.0"/>
                 </ownedBody>
                 <ownedIterators name="1_" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.X"
                     isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
@@ -261,7 +248,7 @@
                 <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.Z"
                     referredProperty="SourceMM1.ecore.oclas#p.source.Y.ownsZ">
                   <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
-                      isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.4/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                      isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.4/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                 </ownedSource>
               </ownedInit>
             </ownedParts>
@@ -270,7 +257,7 @@
               <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                   referredProperty="SourceMM1.ecore.oclas#p.source.Y.name">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
-                    isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.4/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                    isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.4/@ownedOperations.0/@bodyExpression/@ownedContext"/>
               </ownedInit>
             </ownedParts>
           </ownedBody>
@@ -290,7 +277,7 @@
                 <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.Z"
                     referredProperty="SourceMM1.ecore.oclas#p.source.Y.ownsZ">
                   <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
-                      isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.5/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                      isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.5/@ownedOperations.0/@bodyExpression/@ownedContext"/>
                 </ownedSource>
               </ownedInit>
             </ownedParts>
@@ -299,7 +286,7 @@
               <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                   referredProperty="SourceMM1.ecore.oclas#p.source.Y.name">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
-                    isImplicit="true" referredVariable="#//@ownedPackages.1/@ownedClasses.5/@ownedOperations.0/@bodyExpression/@ownedContext"/>
+                    isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.5/@ownedOperations.0/@bodyExpression/@ownedContext"/>
               </ownedInit>
             </ownedParts>
           </ownedBody>
@@ -319,154 +306,154 @@
   </ownedPackages>
   <ownedPackages xmi:id="P.$$" name="$$" URI="http://www.eclipse.org/ocl/2015/Orphanage"
       nsPrefix="orphanage">
-    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.10 #//@ownedPackages.2/@ownedClasses.11"
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.10 #//@ownedPackages.1/@ownedClasses.11"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.C">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.C"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.2/@ownedClasses.10"
+    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.1/@ownedClasses.10"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.C">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.C"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SequenceT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.2/@ownedClasses.12"
+    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.1/@ownedClasses.12"
         elementType="pivot:Class SourceMM1.ecore.oclas#T.source.Y2">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SequenceT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.13 #//@ownedPackages.2/@ownedClasses.14"
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.13 #//@ownedPackages.1/@ownedClasses.14"
         elementType="pivot:Class SourceMM1.ecore.oclas#T.source.Y">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class SourceMM1.ecore.oclas#T.source.Y"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.15 #//@ownedPackages.2/@ownedClasses.16"
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.15 #//@ownedPackages.1/@ownedClasses.16"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.B">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.B"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.2/@ownedClasses.15"
+    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.1/@ownedClasses.15"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.B">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.B"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SequenceT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.2/@ownedClasses.17"
+    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.1/@ownedClasses.17"
         elementType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SequenceT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.18 #//@ownedPackages.2/@ownedClasses.19"
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.18 #//@ownedPackages.1/@ownedClasses.19"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.A">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.A"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.2/@ownedClasses.18"
+    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.1/@ownedClasses.18"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.A">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.A"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SequenceT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.20 #//@ownedPackages.2/@ownedClasses.21"
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.20 #//@ownedPackages.1/@ownedClasses.21"
         elementType="pivot:Class SourceMM1.ecore.oclas#T.source.X">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class SourceMM1.ecore.oclas#T.source.X"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.22"
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.22"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.C">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.C"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.22"
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.22"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.C">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.C"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.23"
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.23"
         elementType="pivot:Class SourceMM1.ecore.oclas#T.source.Y2">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.24"
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.24"
         elementType="pivot:Class SourceMM1.ecore.oclas#T.source.Y">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class SourceMM1.ecore.oclas#T.source.Y"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.24"
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.24"
         elementType="pivot:Class SourceMM1.ecore.oclas#T.source.Y">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class SourceMM1.ecore.oclas#T.source.Y"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.25"
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.25"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.B">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.B"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.25"
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.25"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.B">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.B"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.26"
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.26"
         elementType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.27"
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.27"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.A">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.A"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.27"
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.27"
         elementType="pivot:Class TargetMM1.ecore.oclas#T.target.A">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class TargetMM1.ecore.oclas#T.target.A"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.28"
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.28"
         elementType="pivot:Class SourceMM1.ecore.oclas#T.source.X">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class SourceMM1.ecore.oclas#T.source.X"
             formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
       </ownedBindings>
     </ownedClasses>
-    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.28"
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.28"
         elementType="pivot:Class SourceMM1.ecore.oclas#T.source.X">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class SourceMM1.ecore.oclas#T.source.X"

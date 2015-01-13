@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eCoreContainemntTree="http://www.eclipse.org/qvt/examples/0.1/ECoreContainemntTree">
+  <eCoreContainemntTree:Node name="source" children="/1 /5"/>
+  <eCoreContainemntTree:Node name="SRoot" parent="/0" children="/2 /3 /4"/>
+  <eCoreContainemntTree:Node name="AmbX" parent="/1" children="/6 /7">
+    <superTypes>X</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="X1" parent="/1" children="/6 /7">
+    <superTypes>X</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="X2" parent="/1" children="/6 /7">
+    <superTypes>X</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="SElement" parent="/0"/>
+  <eCoreContainemntTree:Node name="Y1" parent="/2 /3 /4" children="/8 /9 /10">
+    <superTypes>Y</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="Y2" parent="/2 /3 /4" children="/8 /9 /10">
+    <superTypes>Y</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="AmbZ" parent="/6 /7">
+    <superTypes>Z</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="Z1" parent="/6 /7">
+    <superTypes>Z</superTypes>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="Z2" parent="/6 /7">
+    <superTypes>Z</superTypes>
+  </eCoreContainemntTree:Node>
+</xmi:XMI>
