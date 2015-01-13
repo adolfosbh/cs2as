@@ -6,6 +6,8 @@ import oclDependencyAnalysis.qvt.tests.OCL2QVTiTestCases;
 import oclDependencyAnalysis.qvt.tests.PivotModelUtil;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.jdt.annotation.NonNull;
+import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.pivot.internal.manager.MetamodelManager;
 import org.eclipse.qvtd.build.etl.EtlTask;
 import org.eclipse.qvtd.build.etl.MtcBroker;
@@ -19,6 +21,10 @@ import org.eclipse.qvtd.build.etl.QvtMtcExecutionException;
  * 
  */
 public class OCL2QVTiBroker extends MtcBroker {
+	
+	private static final String OCL2QVTP_MIDDLE_MODEL = "/oclDependencyAnalysis/qvt/ocl2qvtp.etl";
+	
+	private static final String OCL2QVTP_MIDDLE_FOLDED = "/oclDependencyAnalysis/qvt/ocl2qvtp_v2.etl";
 
 	private static final String OCLSTDLIB_URI = "http://www.eclipse.org/ocl/2015/Library.oclas";
 	
@@ -36,24 +42,35 @@ public class OCL2QVTiBroker extends MtcBroker {
 	
 	private static final String TRACES_FULL_NS = PIVOT_URI + ',' + ECORE_URI;
 	
-	private String oclDocUri;
-	private String tracesMMUri;
-	private PivotModelUtil pmUtil;
+	private @NonNull String oclDocUri;	
+	private @Nullable String tracesMMUri;
+	private @NonNull PivotModelUtil pmUtil;
 	
+
 	public OCL2QVTiBroker(String oclDocUri, Class<?> owner, MetamodelManager metaModelManager)
-			throws QvtMtcExecutionException {
+		throws QvtMtcExecutionException {
+		this(oclDocUri, owner, metaModelManager, true);
+	}
+			
+	public OCL2QVTiBroker(String oclDocUri, Class<?> owner, MetamodelManager metaModelManager, boolean usesMiddleFoldedInInputs)
+		throws QvtMtcExecutionException {
+		
 		super(oclDocUri, owner, metaModelManager);
 		this.pmUtil = new PivotModelUtil(metaModelManager);
 		this.oclDocUri = oclDocUri;
-					
-		URI baseUri = URI.createURI(oclDocUri).trimFileExtension();
-		this.tracesMMUri = baseUri.appendFileExtension("ecore.oclas").toString();
+	
+		if (!usesMiddleFoldedInInputs) {
+			URI baseUri = URI.createURI(oclDocUri).trimFileExtension();
+			this.tracesMMUri = baseUri.appendFileExtension("ecore.oclas").toString();	
+		}
 	}
 	
+
 	@Override
 	public void execute() throws QvtMtcExecutionException {
 		
-		pModel = runOCL2QVTp(oclDocUri, partitionUri, tracesMMUri);
+		pModel = (tracesMMUri == null)	? runOCL2QVTp_MiddleFolded(oclDocUri, partitionUri) 
+										: runOCL2QVTp_MiddleModel(oclDocUri, partitionUri, tracesMMUri);
 		
 		loadOclStdLibModel();
 		loadConfigurationModel();
@@ -64,28 +81,15 @@ public class OCL2QVTiBroker extends MtcBroker {
 	}
 	
 	
-	protected PivotModel runOCL2QVTp (String oclDocURI, String qvtiFileURI, String tracesMMURI) throws QvtMtcExecutionException {
-
-		String oclDocModelName = "OCL";
-		PivotModel oclModel = pmUtil.createPivotModel(oclDocURI, oclDocModelName, "", PIVOT_URI, true, false, true, true, true);
+	protected PivotModel runOCL2QVTp_MiddleModel (String oclDocURI, String qvtiFileURI, String tracesMMURI) throws QvtMtcExecutionException {
 		
-		String qvtiModelName = "QVTp";
-		String qvtiModelAlises = "QVTi,QVT"; // FIXME further steps should configure the aliases
-		PivotModel pModel = pmUtil.createPivotModel(qvtiFileURI, qvtiModelName, qvtiModelAlises, QVTI_FULL_NS, false, true, false, true, true);
-		
-		String tracesMModelName = "MiddleMM";
-		PivotModel tracesMM = pmUtil.createPivotModel(tracesMMURI, tracesMModelName, "", TRACES_FULL_NS , true, false, true, false, true);
-		
-		String oclStdlibName = "OclStdLib";
-		PivotModel oclStdlib = pmUtil.createPivotModel(OCLSTDLIB_URI, oclStdlibName, "", PIVOT_URI, true, false, true, false, true);		
-		
-		EtlTask etl;
 		try {
-			etl = new EtlTask(OCL2QVTiTestCases.class.getResource("/oclDependencyAnalysis/qvt/ocl2qvtp_v2.etl").toURI());
-			etl.addModel(oclModel);
+			EtlTask etl = new EtlTask(OCL2QVTiTestCases.class.getResource(OCL2QVTP_MIDDLE_MODEL).toURI());
+			pModel = createQVTpModel(qvtiFileURI);
+			etl.addModel(createOCLModel(oclDocURI));
 			etl.addModel(pModel);
-			etl.addModel(tracesMM);
-			etl.addModel(oclStdlib);
+			etl.addModel(createTacesModel(tracesMMURI));
+			etl.addModel(createOclStdLibModel());
 			etl.execute();
 
 		} catch (URISyntaxException e) {
@@ -93,5 +97,44 @@ public class OCL2QVTiBroker extends MtcBroker {
 		}
 		
 		return pModel;
+	}
+	
+	protected PivotModel runOCL2QVTp_MiddleFolded (String oclDocURI, String qvtiFileURI) throws QvtMtcExecutionException {
+
+		try {
+			EtlTask etl = new EtlTask(OCL2QVTiTestCases.class.getResource(OCL2QVTP_MIDDLE_FOLDED).toURI());
+			pModel= createQVTpModel(qvtiFileURI);
+			etl.addModel(createOCLModel(oclDocURI));
+			etl.addModel(pModel);
+			etl.addModel(createOclStdLibModel());
+			etl.execute();
+
+		} catch (URISyntaxException e) {
+			throw new QvtMtcExecutionException("Exception launching OCL 2 QVTp transformation", e);
+		}
+		
+		return pModel;
+	}
+	
+	private PivotModel createOCLModel(String oclDocURI) throws QvtMtcExecutionException {
+		String oclDocModelName = "OCL";
+		return pmUtil.createPivotModel(oclDocURI, oclDocModelName, "", PIVOT_URI, true, false, true, true, true);
+		
+	}
+	
+	private PivotModel createQVTpModel(String qvtiFileURI) throws QvtMtcExecutionException { 
+		String qvtiModelName = "QVTp";
+		String qvtiModelAlises = "QVTi,QVT"; // FIXME further steps should configure the aliases
+		return pmUtil.createPivotModel(qvtiFileURI, qvtiModelName, qvtiModelAlises, QVTI_FULL_NS, false, true, false, true, true);
+	}
+	
+	private PivotModel createTacesModel(String tracesMMURI) throws QvtMtcExecutionException { 
+		String tracesMModelName = "MiddleMM";
+		return pmUtil.createPivotModel(tracesMMURI, tracesMModelName, "", TRACES_FULL_NS , true, false, true, false, true);
+	}
+	
+	private PivotModel createOclStdLibModel() throws QvtMtcExecutionException {
+		String oclStdlibName = "OclStdLib";
+		return pmUtil.createPivotModel(OCLSTDLIB_URI, oclStdlibName, "", PIVOT_URI, true, false, true, false, true);
 	}
 }
