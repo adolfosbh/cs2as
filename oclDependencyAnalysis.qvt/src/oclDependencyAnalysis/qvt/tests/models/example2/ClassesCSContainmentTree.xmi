@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eCoreContainemntTree="http://www.eclipse.org/qvt/examples/0.1/ECoreContainemntTree">
-  <eCoreContainemntTree:Node name="classescs" children="/5"/>
-  <eCoreContainemntTree:Node name="PackageCS" parent="/5" children="/2">
-    <superTypes>NamedElementCS</superTypes>
+  <eCoreContainemntTree:Node name="classescs" children="/7">
+    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS.ecore#/"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="ClassCS" parent="/1" children="/3">
-    <superTypes>NamedElementCS</superTypes>
+  <eCoreContainemntTree:Node name="ElementCS" subTypes="/2 /3 /7 /4 /5 /6">
+    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS.ecore#//ElementCS"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="PathNameCS" parent="/2" children="/4">
-    <superTypes>ElementCS</superTypes>
+  <eCoreContainemntTree:Node name="NamedElementCS" subTypes="/3 /4 /6" superTypes="/1">
+    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS.ecore#//NamedElementCS"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="PathElementCS" parent="/3">
-    <superTypes>NamedElementCS</superTypes>
+  <eCoreContainemntTree:Node name="PackageCS" parent="/7" children="/4" superTypes="/1 /2">
+    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS.ecore#//PackageCS"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="RootCS" parent="/0" children="/1">
-    <superTypes>ElementCS</superTypes>
+  <eCoreContainemntTree:Node name="ClassCS" parent="/3" children="/5" superTypes="/1 /2">
+    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS.ecore#//ClassCS"/>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="PathNameCS" parent="/4" children="/6" superTypes="/1">
+    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS.ecore#//PathNameCS"/>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="PathElementCS" parent="/5" superTypes="/1 /2">
+    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS.ecore#//PathElementCS"/>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="RootCS" parent="/0" children="/3" superTypes="/1">
+    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/ClassesCS.ecore#//RootCS"/>
   </eCoreContainemntTree:Node>
 </xmi:XMI>
