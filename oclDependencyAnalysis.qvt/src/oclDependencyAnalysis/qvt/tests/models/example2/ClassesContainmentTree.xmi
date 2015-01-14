@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eCoreContainemntTree="http://www.eclipse.org/qvt/examples/0.1/ECoreContainemntTree">
-  <eCoreContainemntTree:Node name="classes" children="/6">
-    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore#/"/>
-  </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Element" subTypes="/2 /3 /4 /6 /5">
+  <eCoreContainemntTree:Node name="Element" subTypes="/1 /2 /3 /5 /4">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore#//Element"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="NamedElement" subTypes="/4 /5" superTypes="/1">
+  <eCoreContainemntTree:Node name="NamedElement" subTypes="/3 /4" superTypes="/0">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore#//NamedElement"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Namespace" subTypes="/4" superTypes="/1">
+  <eCoreContainemntTree:Node name="Namespace" subTypes="/3" superTypes="/0">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore#//Namespace"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Package" parent="/4 /6" children="/4 /5" superTypes="/2 /3 /1">
+  <eCoreContainemntTree:Node name="Package" parent="/3 /5" children="/3 /4" superTypes="/2 /1 /0">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore#//Package"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Class" parent="/4" superTypes="/2 /1">
+  <eCoreContainemntTree:Node name="Class" parent="/3" superTypes="/1 /0">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore#//Class"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Root" parent="/0" children="/4" superTypes="/1">
+  <eCoreContainemntTree:Node name="Root" children="/3" superTypes="/0">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore#//Root"/>
   </eCoreContainemntTree:Node>
 </xmi:XMI>

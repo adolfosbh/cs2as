@@ -15,12 +15,12 @@
           usedPackage="SourceMM1.ecore.oclas#P.source"/>
       <modelParameter xmi:id="qT..Source2Target.qvtp.qvtias.rightAS" name="rightAS"
           usedPackage="TargetMM1.ecore.oclas#P.target"/>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.mCreationAmbX2A2"
-          name="mCreationAmbX2A2">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.cAmbX_2_A2"
+          name="cAmbX_2_A2">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationAmbX2A2.leftCS.guard.ambX"
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.cAmbX_2_A2.leftCS.guard.ambX"
                 name="ambX" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"/>
           </guardPattern>
           <bottomPattern/>
@@ -29,7 +29,7 @@
             typedModel="#qT..Source2Target.qvtp.qvtias.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationAmbX2A2.rightAS.bottom.a2"
+            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.cAmbX_2_A2.rightAS.bottom.a2"
                 name="a2" type="pivot:Class TargetMM1.ecore.oclas#T.target.A2"/>
           </bottomPattern>
         </domain>
@@ -37,18 +37,18 @@
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.A2"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationAmbX2A2.rightAS.bottom.a2"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cAmbX_2_A2.rightAS.bottom.a2"/>
             <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationAmbX2A2.leftCS.guard.ambX"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cAmbX_2_A2.leftCS.guard.ambX"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.mCreationAmbX2A1"
-          name="mCreationAmbX2A1">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.cAmbX_2_A1"
+          name="cAmbX_2_A1">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationAmbX2A1.leftCS.guard.ambX"
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.cAmbX_2_A1.leftCS.guard.ambX"
                 name="ambX" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"/>
           </guardPattern>
           <bottomPattern/>
@@ -57,7 +57,7 @@
             typedModel="#qT..Source2Target.qvtp.qvtias.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationAmbX2A1.rightAS.bottom.a1"
+            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.cAmbX_2_A1.rightAS.bottom.a1"
                 name="a1" type="pivot:Class TargetMM1.ecore.oclas#T.target.A1"/>
           </bottomPattern>
         </domain>
@@ -65,18 +65,18 @@
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.A1"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationAmbX2A1.rightAS.bottom.a1"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cAmbX_2_A1.rightAS.bottom.a1"/>
             <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationAmbX2A1.leftCS.guard.ambX"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cAmbX_2_A1.leftCS.guard.ambX"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.mCreationAmbZ2D"
-          name="mCreationAmbZ2D">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.cAmbZ_2_D_0"
+          name="cAmbZ_2_D_0">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationAmbZ2D.leftCS.guard.ambZ"
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.cAmbZ_2_D_0.leftCS.guard.ambZ"
                 name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
           </guardPattern>
           <bottomPattern/>
@@ -85,7 +85,7 @@
             typedModel="#qT..Source2Target.qvtp.qvtias.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationAmbZ2D.rightAS.bottom.d"
+            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.cAmbZ_2_D_0.rightAS.bottom.d"
                 name="d" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
           </bottomPattern>
         </domain>
@@ -93,17 +93,19 @@
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationAmbZ2D.rightAS.bottom.d"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cAmbZ_2_D_0.rightAS.bottom.d"/>
             <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationAmbZ2D.leftCS.guard.ambZ"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cAmbZ_2_D_0.leftCS.guard.ambZ"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="_PBfugJs5EeSUFKcKi3OM9g" name="mCreationAmbZ2D">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.cAmbZ_2_D_1"
+          name="cAmbZ_2_D_1">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="_PBfugZs5EeSUFKcKi3OM9g" name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.cAmbZ_2_D_1.leftCS.guard.ambZ"
+                name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -111,25 +113,26 @@
             typedModel="#qT..Source2Target.qvtp.qvtias.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="_PBfugps5EeSUFKcKi3OM9g" name="d" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
+            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.cAmbZ_2_D_1.rightAS.bottom.d"
+                name="d" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
           </bottomPattern>
         </domain>
         <guardPattern/>
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"
-                referredVariable="#_PBfugps5EeSUFKcKi3OM9g"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cAmbZ_2_D_1.rightAS.bottom.d"/>
             <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                referredVariable="#_PBfugZs5EeSUFKcKi3OM9g"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cAmbZ_2_D_1.leftCS.guard.ambZ"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.mCreationSRoot2TRoot"
-          name="mCreationSRoot2TRoot">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.cSRoot_2_TRoot"
+          name="cSRoot_2_TRoot">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationSRoot2TRoot.leftCS.guard.sRoot"
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.cSRoot_2_TRoot.leftCS.guard.sRoot"
                 name="sRoot" type="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"/>
           </guardPattern>
           <bottomPattern/>
@@ -138,7 +141,7 @@
             typedModel="#qT..Source2Target.qvtp.qvtias.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationSRoot2TRoot.rightAS.bottom.tRoot"
+            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.cSRoot_2_TRoot.rightAS.bottom.tRoot"
                 name="tRoot" type="pivot:Class TargetMM1.ecore.oclas#T.target.TRoot"/>
           </bottomPattern>
         </domain>
@@ -146,18 +149,18 @@
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.TRoot"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationSRoot2TRoot.rightAS.bottom.tRoot"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cSRoot_2_TRoot.rightAS.bottom.tRoot"/>
             <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationSRoot2TRoot.leftCS.guard.sRoot"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cSRoot_2_TRoot.leftCS.guard.sRoot"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.mCreationY12B"
-          name="mCreationY12B">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.cY1_2_B"
+          name="cY1_2_B">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationY12B.leftCS.guard.y1"
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.cY1_2_B.leftCS.guard.y1"
                 name="y1" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
           </guardPattern>
           <bottomPattern/>
@@ -166,7 +169,7 @@
             typedModel="#qT..Source2Target.qvtp.qvtias.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationY12B.rightAS.bottom.b"
+            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.cY1_2_B.rightAS.bottom.b"
                 name="b" type="pivot:Class TargetMM1.ecore.oclas#T.target.B"/>
           </bottomPattern>
         </domain>
@@ -174,18 +177,18 @@
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.B"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationY12B.rightAS.bottom.b"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cY1_2_B.rightAS.bottom.b"/>
             <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationY12B.leftCS.guard.y1"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cY1_2_B.leftCS.guard.y1"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.mCreationY22C"
-          name="mCreationY22C">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.cY2_2_C"
+          name="cY2_2_C">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationY22C.leftCS.guard.y2"
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.cY2_2_C.leftCS.guard.y2"
                 name="y2" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
           </guardPattern>
           <bottomPattern/>
@@ -194,7 +197,7 @@
             typedModel="#qT..Source2Target.qvtp.qvtias.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.mCreationY22C.rightAS.bottom.c"
+            <realizedVariable xmi:id="qV..Source2Target.qvtp.qvtias.cY2_2_C.rightAS.bottom.c"
                 name="c" type="pivot:Class TargetMM1.ecore.oclas#T.target.C"/>
           </bottomPattern>
         </domain>
@@ -202,9 +205,9 @@
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.C"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationY22C.rightAS.bottom.c"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cY2_2_C.rightAS.bottom.c"/>
             <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
-                referredVariable="#qV..Source2Target.qvtp.qvtias.mCreationY22C.leftCS.guard.y2"/>
+                referredVariable="#qV..Source2Target.qvtp.qvtias.cY2_2_C.leftCS.guard.y2"/>
           </assignment>
         </bottomPattern>
       </rule>
@@ -334,11 +337,12 @@
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.uD_toA" name="uD_toA">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.uD_0_toA"
+          name="uD_0_toA">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..Source2Target.qvtp.qvtias.uD_toA.leftCS.guard.ambZ"
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.uD_0_toA.leftCS.guard.ambZ"
                 name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
           </guardPattern>
           <bottomPattern/>
@@ -362,7 +366,7 @@
                     <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false"
                         type="pivot:Class SourceMM1.ecore.oclas#T.source.Y" referredProperty="SourceMM1.ecore.oclas#p.source.Z.toY">
                       <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                          isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_toA.leftCS.guard.ambZ"/>
+                          isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_0_toA.leftCS.guard.ambZ"/>
                     </ownedSource>
                     <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                         referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
@@ -377,7 +381,7 @@
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                   referredProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                    referredVariable="#qV..Source2Target.qvtp.qvtias.uD_toA.leftCS.guard.ambZ"/>
+                    referredVariable="#qV..Source2Target.qvtp.qvtias.uD_0_toA.leftCS.guard.ambZ"/>
               </ownedSource>
               <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                   referredType="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
@@ -385,12 +389,12 @@
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.uD_name"
-          name="uD_name">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.uD_0_name"
+          name="uD_0_name">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..Source2Target.qvtp.qvtias.uD_name.leftCS.guard.ambZ"
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.uD_0_name.leftCS.guard.ambZ"
                 name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
           </guardPattern>
           <bottomPattern/>
@@ -406,14 +410,14 @@
             <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                 referredProperty="SourceMM1.ecore.oclas#p.source.Z.name">
               <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                  isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_name.leftCS.guard.ambZ"/>
+                  isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_0_name.leftCS.guard.ambZ"/>
             </value>
             <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                   referredProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                    referredVariable="#qV..Source2Target.qvtp.qvtias.uD_name.leftCS.guard.ambZ"/>
+                    referredVariable="#qV..Source2Target.qvtp.qvtias.uD_0_name.leftCS.guard.ambZ"/>
               </ownedSource>
               <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                   referredType="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
@@ -421,12 +425,12 @@
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.uD_refsC"
-          name="uD_refsC">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.uD_0_refsC"
+          name="uD_0_refsC">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..Source2Target.qvtp.qvtias.uD_refsC.leftCS.guard.ambZ"
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.uD_0_refsC.leftCS.guard.ambZ"
                 name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
           </guardPattern>
           <bottomPattern/>
@@ -446,7 +450,7 @@
                 <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                     referredProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
                   <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                      isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_refsC.leftCS.guard.ambZ"/>
+                      isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_0_refsC.leftCS.guard.ambZ"/>
                 </ownedSource>
                 <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                     referredType="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
@@ -455,7 +459,7 @@
                   type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                   referredProperty="SourceMM1.ecore.oclas#p.source.Z.name">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                    isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_refsC.leftCS.guard.ambZ"/>
+                    isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_0_refsC.leftCS.guard.ambZ"/>
               </ownedArguments>
             </value>
             <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"
@@ -463,7 +467,7 @@
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                   referredProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                    referredVariable="#qV..Source2Target.qvtp.qvtias.uD_refsC.leftCS.guard.ambZ"/>
+                    referredVariable="#qV..Source2Target.qvtp.qvtias.uD_0_refsC.leftCS.guard.ambZ"/>
               </ownedSource>
               <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                   referredType="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
@@ -471,11 +475,13 @@
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="_PBfug5s5EeSUFKcKi3OM9g" name="uD_toA">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.uD_1_toA"
+          name="uD_1_toA">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="_PBfuhJs5EeSUFKcKi3OM9g" name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.uD_1_toA.leftCS.guard.ambZ"
+                name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -498,7 +504,7 @@
                     <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false"
                         type="pivot:Class SourceMM1.ecore.oclas#T.source.Y" referredProperty="SourceMM1.ecore.oclas#p.source.Z.toY">
                       <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                          isImplicit="true" referredVariable="#_PBfuhJs5EeSUFKcKi3OM9g"/>
+                          isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_1_toA.leftCS.guard.ambZ"/>
                     </ownedSource>
                     <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                         referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
@@ -513,7 +519,7 @@
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                   referredProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                    referredVariable="#_PBfuhJs5EeSUFKcKi3OM9g"/>
+                    referredVariable="#qV..Source2Target.qvtp.qvtias.uD_1_toA.leftCS.guard.ambZ"/>
               </ownedSource>
               <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                   referredType="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
@@ -521,11 +527,13 @@
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="_PBfuhZs5EeSUFKcKi3OM9g" name="uD_name">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.uD_1_name"
+          name="uD_1_name">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="_PBfuhps5EeSUFKcKi3OM9g" name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.uD_1_name.leftCS.guard.ambZ"
+                name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -540,14 +548,14 @@
             <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                 referredProperty="SourceMM1.ecore.oclas#p.source.Z.name">
               <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                  isImplicit="true" referredVariable="#_PBfuhps5EeSUFKcKi3OM9g"/>
+                  isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_1_name.leftCS.guard.ambZ"/>
             </value>
             <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                   referredProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                    referredVariable="#_PBfuhps5EeSUFKcKi3OM9g"/>
+                    referredVariable="#qV..Source2Target.qvtp.qvtias.uD_1_name.leftCS.guard.ambZ"/>
               </ownedSource>
               <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                   referredType="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
@@ -555,12 +563,12 @@
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.uD_refsB"
-          name="uD_refsB">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..Source2Target.qvtp.qvtias.uD_1_refsB"
+          name="uD_1_refsB">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..Source2Target.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..Source2Target.qvtp.qvtias.uD_refsB.leftCS.guard.ambZ"
+            <variable xmi:id="qV..Source2Target.qvtp.qvtias.uD_1_refsB.leftCS.guard.ambZ"
                 name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
           </guardPattern>
           <bottomPattern/>
@@ -580,7 +588,7 @@
                 <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                     referredProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
                   <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                      isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_refsB.leftCS.guard.ambZ"/>
+                      isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_1_refsB.leftCS.guard.ambZ"/>
                 </ownedSource>
                 <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                     referredType="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
@@ -589,7 +597,7 @@
                   type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                   referredProperty="SourceMM1.ecore.oclas#p.source.Z.name">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                    isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_refsB.leftCS.guard.ambZ"/>
+                    isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.uD_1_refsB.leftCS.guard.ambZ"/>
               </ownedArguments>
             </value>
             <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"
@@ -597,7 +605,7 @@
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                   referredProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
                 <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                    referredVariable="#qV..Source2Target.qvtp.qvtias.uD_refsB.leftCS.guard.ambZ"/>
+                    referredVariable="#qV..Source2Target.qvtp.qvtias.uD_1_refsB.leftCS.guard.ambZ"/>
               </ownedSource>
               <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                   referredType="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
@@ -828,8 +836,8 @@
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.mCreationSRoot2TRoot">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.mCreationSRoot2TRoot.leftCS.guard.sRoot">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.cSRoot_2_TRoot">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.cSRoot_2_TRoot.leftCS.guard.sRoot">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.0.sRoot"/>
                 </binding>
@@ -841,19 +849,19 @@
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"
-                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"/>
+              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
+                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uTRoot_ownedA">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uTRoot_ownedA.leftCS.guard.sRoot">
-                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.1.sRoot"/>
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.cAmbX_2_A1">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.cAmbX_2_A1.leftCS.guard.ambX">
+                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.1.ambX"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.1.sRoot"
-                name="sRoot" type="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"/>
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.1.ambX"
+                name="ambX" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
@@ -862,8 +870,8 @@
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.mCreationAmbX2A1">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.mCreationAmbX2A1.leftCS.guard.ambX">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.cAmbX_2_A2">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.cAmbX_2_A2.leftCS.guard.ambX">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.2.ambX"/>
                 </binding>
@@ -875,36 +883,87 @@
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
+              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"
+                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uTRoot_ownedA">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uTRoot_ownedA.leftCS.guard.sRoot">
+                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.3.sRoot"/>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.3.sRoot"
+                name="sRoot" type="pivot:Class SourceMM1.ecore.oclas#T.source.SRoot"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
+              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
+                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.cAmbZ_2_D_0">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.cAmbZ_2_D_0.leftCS.guard.ambZ">
+                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.4.ambZ"/>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.4.ambZ"
+                name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
+              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
+                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.cAmbZ_2_D_1">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.cAmbZ_2_D_1.leftCS.guard.ambZ">
+                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.5.ambZ"/>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.5.ambZ"
+                name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
               <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.mCreationY12B">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.mCreationY12B.leftCS.guard.y1">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.cY1_2_B">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.cY1_2_B.leftCS.guard.y1">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.3.y1"/>
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.6.y1"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.3.y1"
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.6.y1"
                 name="y1" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
-                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"/>
+              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
+                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.mCreationAmbX2A2">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.mCreationAmbX2A2.leftCS.guard.ambX">
-                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.4.ambX"/>
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.cY2_2_C">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.cY2_2_C.leftCS.guard.y2">
+                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.7.y2"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.4.ambX"
-                name="ambX" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"/>
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.7.y2"
+                name="y2" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
@@ -916,29 +975,12 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uA1_ownsB">
                 <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uA1_ownsB.leftCS.guard.ambX">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.5.ambX"/>
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.8.ambX"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.5.ambX"
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.8.ambX"
                 name="ambX" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"/>
-          </mappingStatements>
-          <mappingStatements xsi:type="qvti:MappingLoop">
-            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
-                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
-            </ownedSource>
-            <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.mCreationY22C">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.mCreationY22C.leftCS.guard.y2">
-                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.6.y2"/>
-                </binding>
-              </mappingStatements>
-            </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.6.y2"
-                name="y2" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
@@ -950,11 +992,11 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uA2_ownsC">
                 <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uA2_ownsC.leftCS.guard.ambX">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.7.ambX"/>
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.9.ambX"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.7.ambX"
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.9.ambX"
                 name="ambX" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbX"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
@@ -967,11 +1009,11 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uB_name">
                 <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uB_name.leftCS.guard.y1">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.8.y1"/>
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.10.y1"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.8.y1"
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.10.y1"
                 name="y1" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
@@ -984,11 +1026,11 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uB_ownsD">
                 <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uB_ownsD.leftCS.guard.y1">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.9.y1"/>
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.11.y1"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.9.y1"
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.11.y1"
                 name="y1" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
@@ -1001,11 +1043,11 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uC_name">
                 <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uC_name.leftCS.guard.y2">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.10.y2"/>
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.12.y2"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.10.y2"
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.12.y2"
                 name="y2" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
@@ -1018,11 +1060,11 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uC_ownsD">
                 <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uC_ownsD.leftCS.guard.y2">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.11.y2"/>
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.13.y2"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.11.y2"
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.13.y2"
                 name="y2" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
@@ -1032,42 +1074,8 @@
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.mCreationAmbZ2D">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.mCreationAmbZ2D.leftCS.guard.ambZ">
-                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.12.ambZ"/>
-                </binding>
-              </mappingStatements>
-            </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.12.ambZ"
-                name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
-          </mappingStatements>
-          <mappingStatements xsi:type="qvti:MappingLoop">
-            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
-            </ownedSource>
-            <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.mCreationAmbZ2D">
-                <binding boundVariable="#_PBfugZs5EeSUFKcKi3OM9g">
-                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.13.ambZ"/>
-                </binding>
-              </mappingStatements>
-            </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.13.ambZ"
-                name="ambZ" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
-          </mappingStatements>
-          <mappingStatements xsi:type="qvti:MappingLoop">
-            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
-                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
-            </ownedSource>
-            <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_toA">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_toA.leftCS.guard.ambZ">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_0_toA">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_0_toA.leftCS.guard.ambZ">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.14.ambZ"/>
                 </binding>
@@ -1083,8 +1091,8 @@
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_toA">
-                <binding boundVariable="#_PBfuhJs5EeSUFKcKi3OM9g">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_1_toA">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_1_toA.leftCS.guard.ambZ">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.15.ambZ"/>
                 </binding>
@@ -1100,8 +1108,8 @@
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_name">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_name.leftCS.guard.ambZ">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_0_name">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_0_name.leftCS.guard.ambZ">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.16.ambZ"/>
                 </binding>
@@ -1117,8 +1125,8 @@
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_name">
-                <binding boundVariable="#_PBfuhps5EeSUFKcKi3OM9g">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_1_name">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_1_name.leftCS.guard.ambZ">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.17.ambZ"/>
                 </binding>
@@ -1134,8 +1142,8 @@
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_refsC">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_refsC.leftCS.guard.ambZ">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_0_refsC">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_0_refsC.leftCS.guard.ambZ">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.18.ambZ"/>
                 </binding>
@@ -1151,8 +1159,8 @@
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_refsB">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_refsB.leftCS.guard.ambZ">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_1_refsB">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_1_refsB.leftCS.guard.ambZ">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.AmbZ"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.19.ambZ"/>
                 </binding>

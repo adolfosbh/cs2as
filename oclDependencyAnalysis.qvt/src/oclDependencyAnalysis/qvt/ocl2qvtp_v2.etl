@@ -60,7 +60,7 @@ rule ConstructorExp2CreationMapping
 		return s.closure(x|x.eContainer()).contains(LEFTCS_PACKAGE); 
 	}
 	
-	t.name = 'mCreation'+s.getTraceElementName();
+	t.name = s.getCreationMappingName();
 	
 	var leftDomain = s.createCreationMapping_LeftDomain();
 	var rightDomain = s.createCreationMapping_RightDomain();
@@ -102,7 +102,7 @@ rule ConstructorPart2UpdateMapping
 	var constructorExp = s.eContainer();
 	var refProp = s.referredProperty;
 		
-	t.name = 'u'+constructorExp.type.name+'_'+refProp.name;
+	t.name = s.getUpdateMappingName();
 
 	var rightDomain = constructorExp.createUpdateMapping_RightDomain();
 	var leftDomain = constructorExp.createUpdateMapping_LeftDomain();

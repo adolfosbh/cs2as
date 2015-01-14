@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://ocldependencyanalysis/targetMM/1.0"
+    xsi:schemaLocation="http://ocldependencyanalysis/targetMM/1.0 ../TargetMM1.ecore">
+  <target:TRoot>
+    <ownedA xsi:type="target:A2"/>
+    <ownedA xsi:type="target:A2">
+      <ownsC name="Y2-a"/>
+    </ownedA>
+  </target:TRoot>
+  <target:A1/>
+  <target:A1/>
+  <target:B name="Y1-a"/>
+</xmi:XMI>
