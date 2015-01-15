@@ -13,12 +13,12 @@
       <modelParameter xmi:id="qT..classescs2as.qvtp.qvtias.leftCS" name="leftCS" usedPackage="ClassesCS.ecore.oclas#P.classescs"/>
       <modelParameter xmi:id="qT..classescs2as.qvtp.qvtias.rightAS" name="rightAS"
           usedPackage="Classes.ecore.oclas#P.classes"/>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.qvtp.qvtias.mCreationClassCS2Class"
-          name="mCreationClassCS2Class">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.qvtp.qvtias.cClassCS_2_Class"
+          name="cClassCS_2_Class">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..classescs2as.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..classescs2as.qvtp.qvtias.mCreationClassCS2Class.leftCS.guard.classCS"
+            <variable xmi:id="qV..classescs2as.qvtp.qvtias.cClassCS_2_Class.leftCS.guard.classCS"
                 name="classCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
           </guardPattern>
           <bottomPattern/>
@@ -27,7 +27,7 @@
             typedModel="#qT..classescs2as.qvtp.qvtias.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV..classescs2as.qvtp.qvtias.mCreationClassCS2Class.rightAS.bottom.class"
+            <realizedVariable xmi:id="qV..classescs2as.qvtp.qvtias.cClassCS_2_Class.rightAS.bottom.class"
                 name="class" type="pivot:Class Classes.ecore.oclas#T.classes.Class"/>
           </bottomPattern>
         </domain>
@@ -35,18 +35,18 @@
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
-                referredVariable="#qV..classescs2as.qvtp.qvtias.mCreationClassCS2Class.rightAS.bottom.class"/>
+                referredVariable="#qV..classescs2as.qvtp.qvtias.cClassCS_2_Class.rightAS.bottom.class"/>
             <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
-                referredVariable="#qV..classescs2as.qvtp.qvtias.mCreationClassCS2Class.leftCS.guard.classCS"/>
+                referredVariable="#qV..classescs2as.qvtp.qvtias.cClassCS_2_Class.leftCS.guard.classCS"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.qvtp.qvtias.mCreationPackageCS2Package"
-          name="mCreationPackageCS2Package">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.qvtp.qvtias.cPackageCS_2_Package"
+          name="cPackageCS_2_Package">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..classescs2as.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..classescs2as.qvtp.qvtias.mCreationPackageCS2Package.leftCS.guard.packageCS"
+            <variable xmi:id="qV..classescs2as.qvtp.qvtias.cPackageCS_2_Package.leftCS.guard.packageCS"
                 name="packageCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
           </guardPattern>
           <bottomPattern/>
@@ -55,7 +55,7 @@
             typedModel="#qT..classescs2as.qvtp.qvtias.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV..classescs2as.qvtp.qvtias.mCreationPackageCS2Package.rightAS.bottom.package"
+            <realizedVariable xmi:id="qV..classescs2as.qvtp.qvtias.cPackageCS_2_Package.rightAS.bottom.package"
                 name="package" type="pivot:Class Classes.ecore.oclas#T.classes.Package"/>
           </bottomPattern>
         </domain>
@@ -63,18 +63,18 @@
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Package"
-                referredVariable="#qV..classescs2as.qvtp.qvtias.mCreationPackageCS2Package.rightAS.bottom.package"/>
+                referredVariable="#qV..classescs2as.qvtp.qvtias.cPackageCS_2_Package.rightAS.bottom.package"/>
             <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
-                referredVariable="#qV..classescs2as.qvtp.qvtias.mCreationPackageCS2Package.leftCS.guard.packageCS"/>
+                referredVariable="#qV..classescs2as.qvtp.qvtias.cPackageCS_2_Package.leftCS.guard.packageCS"/>
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.qvtp.qvtias.mCreationRootCS2Root"
-          name="mCreationRootCS2Root">
+      <rule xsi:type="qvti:Mapping" xmi:id="m..classescs2as.qvtp.qvtias.cRootCS_2_Root"
+          name="cRootCS_2_Root">
         <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false"
             typedModel="#qT..classescs2as.qvtp.qvtias.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..classescs2as.qvtp.qvtias.mCreationRootCS2Root.leftCS.guard.rootCS"
+            <variable xmi:id="qV..classescs2as.qvtp.qvtias.cRootCS_2_Root.leftCS.guard.rootCS"
                 name="rootCS" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
           </guardPattern>
           <bottomPattern/>
@@ -83,7 +83,7 @@
             typedModel="#qT..classescs2as.qvtp.qvtias.rightAS">
           <guardPattern/>
           <bottomPattern>
-            <realizedVariable xmi:id="qV..classescs2as.qvtp.qvtias.mCreationRootCS2Root.rightAS.bottom.root"
+            <realizedVariable xmi:id="qV..classescs2as.qvtp.qvtias.cRootCS_2_Root.rightAS.bottom.root"
                 name="root" type="pivot:Class Classes.ecore.oclas#T.classes.Root"/>
           </bottomPattern>
         </domain>
@@ -91,9 +91,9 @@
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class Classes.ecore.oclas#T.classes.Root"
-                referredVariable="#qV..classescs2as.qvtp.qvtias.mCreationRootCS2Root.rightAS.bottom.root"/>
+                referredVariable="#qV..classescs2as.qvtp.qvtias.cRootCS_2_Root.rightAS.bottom.root"/>
             <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
-                referredVariable="#qV..classescs2as.qvtp.qvtias.mCreationRootCS2Root.leftCS.guard.rootCS"/>
+                referredVariable="#qV..classescs2as.qvtp.qvtias.cRootCS_2_Root.leftCS.guard.rootCS"/>
           </assignment>
         </bottomPattern>
       </rule>
@@ -289,8 +289,8 @@
                   referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.qvtp.qvtias.mCreationRootCS2Root">
-                <binding boundVariable="#qV..classescs2as.qvtp.qvtias.mCreationRootCS2Root.leftCS.guard.rootCS">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.qvtp.qvtias.cRootCS_2_Root">
+                <binding boundVariable="#qV..classescs2as.qvtp.qvtias.cRootCS_2_Root.leftCS.guard.rootCS">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.RootCS"
                       referredVariable="#i..classescs2as.qvtp.qvtias.__root__.0.0.rootCS"/>
                 </binding>
@@ -306,8 +306,8 @@
                   referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.qvtp.qvtias.mCreationPackageCS2Package">
-                <binding boundVariable="#qV..classescs2as.qvtp.qvtias.mCreationPackageCS2Package.leftCS.guard.packageCS">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.qvtp.qvtias.cPackageCS_2_Package">
+                <binding boundVariable="#qV..classescs2as.qvtp.qvtias.cPackageCS_2_Package.leftCS.guard.packageCS">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.PackageCS"
                       referredVariable="#i..classescs2as.qvtp.qvtias.__root__.0.1.packageCS"/>
                 </binding>
@@ -340,8 +340,8 @@
                   referredType="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.qvtp.qvtias.mCreationClassCS2Class">
-                <binding boundVariable="#qV..classescs2as.qvtp.qvtias.mCreationClassCS2Class.leftCS.guard.classCS">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..classescs2as.qvtp.qvtias.cClassCS_2_Class">
+                <binding boundVariable="#qV..classescs2as.qvtp.qvtias.cClassCS_2_Class.leftCS.guard.classCS">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class ClassesCS.ecore.oclas#T.classescs.ClassCS"
                       referredVariable="#i..classescs2as.qvtp.qvtias.__root__.0.3.classCS"/>
                 </binding>

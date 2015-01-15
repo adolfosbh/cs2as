@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:classescstraces="http://tracesmodel/1.0/classescstraces" xsi:schemaLocation="http://tracesmodel/1.0/classescstraces ../classescs2as.ecore">
-  <classescstraces:ClassCS2Class>
-    <classCS href="example1_input.xmi#//@ownedPackages.0/@ownedClasses.0"/>
-  </classescstraces:ClassCS2Class>
-  <classescstraces:ClassCS2Class>
-    <classCS href="example1_input.xmi#//@ownedPackages.0/@ownedClasses.1"/>
-  </classescstraces:ClassCS2Class>
-</xmi:XMI>

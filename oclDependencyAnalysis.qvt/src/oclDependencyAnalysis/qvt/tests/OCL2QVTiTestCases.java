@@ -13,6 +13,7 @@ import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.examples.codegen.dynamic.OCL2JavaFileObject;
 import org.eclipse.ocl.pivot.internal.manager.MetamodelManager;
+import org.eclipse.ocl.pivot.internal.manager.MetamodelManagerResourceSetAdapter;
 import org.eclipse.ocl.pivot.internal.utilities.PivotEnvironmentFactory;
 import org.eclipse.ocl.pivot.internal.validation.PivotEObjectValidator;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
@@ -66,15 +67,17 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		}
 	}
 
-
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
 		QVTimperativeStandaloneSetup.doSetup();		
 		CompleteOCLStandaloneSetup.doSetup(); // To be able to add QVTimperative.ocl validation
-				
-		metamodelManager = new QVTiEnvironmentFactory(null, null).createMetamodelManager();
+
+		QVTiEnvironmentFactory factory = new QVTiEnvironmentFactory(null, null);
+		factory.setEvaluationTracingEnabled(true);
+		metamodelManager = factory.getMetamodelManager();
 		metamodelManager.configureLoadFirstStrategy(); // Since the models might use a different URI to refer the same meta-model
+		MetamodelManagerResourceSetAdapter.getAdapter(ClassUtil.nonNullState(resourceSet), metamodelManager);
 	}
 	
 	@After
@@ -105,7 +108,9 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	URI txURI = ClassUtil.nonNullState(qvtiTransf.getResource().getURI());
     	assertValidQVTiModel(txURI);
     	
-    	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(metamodelManager, qvtiTransf.getTransformation());
+
+		
+    	QVTiPivotEvaluator testEvaluator =  new QVTiPivotEvaluator(metamodelManager, qvtiTransf.getTransformation());
 		URI samplesBaseUri = baseURI.appendSegment("samples");
     	URI csModelURI = samplesBaseUri.appendSegment("model1_input.xmi");
     	URI asModelURI = samplesBaseUri.appendSegment("model1_output.xmi");
@@ -134,17 +139,13 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	PivotModel qvtiTransf = mtc.getiModel();
     	URI txURI = ClassUtil.nonNullState(qvtiTransf.getResource().getURI());		
     	assertValidQVTiModel(txURI);
-//    	assertValidModel(txURI);
     	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(metamodelManager, qvtiTransf.getTransformation());
-    	    	
-//    	// Execute the transformation with a clean resourceSet and MetaModelManager
-//    	ResourceSet rSet = new ResourceSetImpl();
-//    	MetaModelManager newMManager = new MetaModelManager(rSet);
+
+//		//MetamodelManager newMManager = new QVTiEnvironmentFactory(null, null).createMetamodelManager();
 //    	URI txURI = baseURI.appendSegment("classescs2as.qvtias");
-//    	assertValidModel(txURI);
-//    	Transformation t = getTransformation(rSet, txURI);    	
-//    	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(newMManager, t);
-    	
+//    	Transformation t = getTransformation(metamodelManager.getASResourceSet(), txURI);    	
+//    	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(metamodelManager, t);
+   	
     	
 		URI samplesBaseUri = baseURI.appendSegment("samples");
     	URI csModelURI = samplesBaseUri.appendSegment("example1_input.xmi");

@@ -88,11 +88,11 @@
     <propertyDatums targets="//@actions.4">
       <property href="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name"/>
     </propertyDatums>
-    <propertyDatums targets="//@actions.5">
-      <property href="ClassesCS.ecore.oclas#p.classescs.PackageCS.ownedClasses"/>
-    </propertyDatums>
     <propertyDatums sources="//@actions.1" targets="//@actions.4 //@actions.5 //@actions.6">
       <property href="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast"/>
+    </propertyDatums>
+    <propertyDatums targets="//@actions.5">
+      <property href="ClassesCS.ecore.oclas#p.classescs.PackageCS.ownedClasses"/>
     </propertyDatums>
   </datums>
   <datums xsi:type="qvtschedule:ClassDatum" super="//@datums.2" sources="//@actions.2">
@@ -115,26 +115,26 @@
   <actions xsi:type="qvtschedule:MappingAction" results="//@datums.4 //@datums.7/@propertyDatums.1" order="4" parent="//@actions.7" arguments="//@datums.7">
     <distinctArguments>
       <primaryArguments datum="//@datums.7">
-        <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.mCreationClassCS2Class.leftCS.guard.classCS"/>
+        <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.cClassCS_2_Class.leftCS.guard.classCS"/>
       </primaryArguments>
     </distinctArguments>
-    <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.mCreationClassCS2Class"/>
+    <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.cClassCS_2_Class"/>
   </actions>
-  <actions xsi:type="qvtschedule:MappingAction" results="//@datums.9 //@datums.10/@propertyDatums.2" order="2" parent="//@actions.7" arguments="//@datums.10">
+  <actions xsi:type="qvtschedule:MappingAction" results="//@datums.9 //@datums.10/@propertyDatums.1" order="2" parent="//@actions.7" arguments="//@datums.10">
     <distinctArguments>
       <primaryArguments datum="//@datums.10">
-        <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.mCreationPackageCS2Package.leftCS.guard.packageCS"/>
+        <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.cPackageCS_2_Package.leftCS.guard.packageCS"/>
       </primaryArguments>
     </distinctArguments>
-    <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.mCreationPackageCS2Package"/>
+    <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.cPackageCS_2_Package"/>
   </actions>
   <actions xsi:type="qvtschedule:MappingAction" results="//@datums.11 //@datums.12/@propertyDatums.1" order="1" parent="//@actions.7" arguments="//@datums.12">
     <distinctArguments>
       <primaryArguments datum="//@datums.12">
-        <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.mCreationRootCS2Root.leftCS.guard.rootCS"/>
+        <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.cRootCS_2_Root.leftCS.guard.rootCS"/>
       </primaryArguments>
     </distinctArguments>
-    <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.mCreationRootCS2Root"/>
+    <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.cRootCS_2_Root"/>
   </actions>
   <actions xsi:type="qvtschedule:MappingAction" results="//@datums.4/@propertyDatums.0" order="7" parent="//@actions.7" arguments="//@datums.7 //@datums.7/@propertyDatums.0 //@datums.7/@propertyDatums.1">
     <distinctArguments>
@@ -144,7 +144,7 @@
     </distinctArguments>
     <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.uClass_name"/>
   </actions>
-  <actions xsi:type="qvtschedule:MappingAction" results="//@datums.9/@propertyDatums.2" order="6" parent="//@actions.7" arguments="//@datums.10 //@datums.10/@propertyDatums.0 //@datums.10/@propertyDatums.2">
+  <actions xsi:type="qvtschedule:MappingAction" results="//@datums.9/@propertyDatums.2" order="6" parent="//@actions.7" arguments="//@datums.10 //@datums.10/@propertyDatums.0 //@datums.10/@propertyDatums.1">
     <distinctArguments>
       <primaryArguments datum="//@datums.10">
         <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.uPackage_name.leftCS.guard.packageCS"/>
@@ -152,7 +152,7 @@
     </distinctArguments>
     <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.uPackage_name"/>
   </actions>
-  <actions xsi:type="qvtschedule:MappingAction" results="//@datums.9/@propertyDatums.0" order="5" parent="//@actions.7" arguments="//@datums.10 //@datums.10/@propertyDatums.1 //@datums.7/@propertyDatums.1 //@datums.10/@propertyDatums.2">
+  <actions xsi:type="qvtschedule:MappingAction" results="//@datums.9/@propertyDatums.0" order="5" parent="//@actions.7" arguments="//@datums.10 //@datums.10/@propertyDatums.2 //@datums.7/@propertyDatums.1 //@datums.10/@propertyDatums.1">
     <distinctArguments>
       <primaryArguments datum="//@datums.10">
         <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.uPackage_ownedClasses.leftCS.guard.packageCS"/>
@@ -160,7 +160,7 @@
     </distinctArguments>
     <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.uPackage_ownedClasses"/>
   </actions>
-  <actions xsi:type="qvtschedule:MappingAction" results="//@datums.11/@propertyDatums.0" order="3" parent="//@actions.7" arguments="//@datums.12 //@datums.12/@propertyDatums.0 //@datums.10/@propertyDatums.2 //@datums.12/@propertyDatums.1">
+  <actions xsi:type="qvtschedule:MappingAction" results="//@datums.11/@propertyDatums.0" order="3" parent="//@actions.7" arguments="//@datums.12 //@datums.12/@propertyDatums.0 //@datums.10/@propertyDatums.1 //@datums.12/@propertyDatums.1">
     <distinctArguments>
       <primaryArguments datum="//@datums.12">
         <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.uRoot_ownedPackages.leftCS.guard.rootCS"/>

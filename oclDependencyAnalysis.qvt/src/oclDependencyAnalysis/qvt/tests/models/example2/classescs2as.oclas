@@ -9,7 +9,7 @@
     <ownedClasses xmi:id="T.classescs.ClassCS.0" name="ClassCS">
       <ownedOperations xmi:id="o.classescs.ClassCS.ast" name="ast" type="pivot:Class Classes.ecore.oclas#T.classes.Class">
         <bodyExpression xsi:type="pivot:ExpressionInOCL" type="pivot:Class Classes.ecore.oclas#T.classes.Class"
-            body="&#xA;&#x9;classes::Class {&#xA;&#x9;&#x9;name = name&#xA;&#x9;&#x9;-- superClass = ast().lookupClass(extends)&#xA;&#x9;}&#xA;&#xA;">
+            body="&#xA;&#x9;classes::Class {&#xA;&#x9;&#x9;name = name&#xA;&#x9;&#x9;-- superClass = ast().lookupClass(_extends)&#xA;&#x9;}&#xA;&#xA;">
           <ownedBody xsi:type="pivot:ConstructorExp" type="pivot:Class Classes.ecore.oclas#T.classes.Class">
             <ownedParts name="name" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
                 referredProperty="Classes.ecore.oclas#p.classes.NamedElement.name">

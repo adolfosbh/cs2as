@@ -9,7 +9,7 @@
   <eCoreContainemntTree:Node name="Namespace" subTypes="/3" superTypes="/0">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore#//Namespace"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Package" parent="/3 /5" children="/3 /4" superTypes="/2 /1 /0">
+  <eCoreContainemntTree:Node name="Package" parent="/3 /5" children="/3 /4" superTypes="/1 /0 /2">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example2/Classes.ecore#//Package"/>
   </eCoreContainemntTree:Node>
   <eCoreContainemntTree:Node name="Class" parent="/3" superTypes="/1 /0">

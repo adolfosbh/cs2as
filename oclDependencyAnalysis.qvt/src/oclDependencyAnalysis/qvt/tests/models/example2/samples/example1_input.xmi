@@ -10,6 +10,11 @@
     <ownedClasses
         name="C1"/>
     <ownedClasses
-        name="C2"/>
+        name="C2">
+      <extends>
+        <path
+            name="C1"/>
+      </extends>
+    </ownedClasses>
   </ownedPackages>
 </classescs:RootCS>

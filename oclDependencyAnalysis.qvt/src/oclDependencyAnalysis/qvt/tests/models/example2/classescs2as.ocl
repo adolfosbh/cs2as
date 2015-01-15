@@ -21,7 +21,7 @@ context ClassCS
 def : ast() : classes::Class =
 	classes::Class {
 		name = name
-		-- superClass = ast().lookupClass(extends)
+		-- superClass = ast().lookupClass(_extends)
 	}
 
 endpackage
