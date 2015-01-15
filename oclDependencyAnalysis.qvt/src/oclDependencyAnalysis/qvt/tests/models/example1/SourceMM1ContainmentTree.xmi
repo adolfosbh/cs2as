@@ -1,42 +1,24 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eCoreContainemntTree="http://www.eclipse.org/qvt/examples/0.1/ECoreContainemntTree">
-  <eCoreContainemntTree:Node name="X" parent="/5" children="/1 /2 /3" subTypes="/6 /7 /8" superTypes="/12">
+  <eCoreContainemntTree:Node name="X" parent="/5" children="/1 /2 /3" superTypes="/6">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//X"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Y" parent="/0" children="/4 /9 /10 /11" subTypes="/2 /3" superTypes="/12">
+  <eCoreContainemntTree:Node name="Y" parent="/0" children="/4" subTypes="/2 /3" superTypes="/6">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//Y"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Y1" parent="/0" superTypes="/1 /12">
+  <eCoreContainemntTree:Node name="Y1" parent="/0" superTypes="/1 /6">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//Y1"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Y2" parent="/0" superTypes="/1 /12">
+  <eCoreContainemntTree:Node name="Y2" parent="/0" superTypes="/1 /6">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//Y2"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Z" parent="/1" subTypes="/9 /10 /11" superTypes="/12">
+  <eCoreContainemntTree:Node name="Z" parent="/1" superTypes="/6">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//Z"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="SRoot" children="/0 /6 /7 /8" superTypes="/12">
+  <eCoreContainemntTree:Node name="SRoot" children="/0" superTypes="/6">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//SRoot"/>
   </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="AmbX" parent="/5" superTypes="/0 /12">
-    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//AmbX"/>
-  </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="X1" parent="/5" superTypes="/0 /12">
-    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//X1"/>
-  </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="X2" parent="/5" superTypes="/0 /12">
-    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//X2"/>
-  </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="AmbZ" parent="/1" superTypes="/4 /12">
-    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//AmbZ"/>
-  </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Z1" parent="/1" superTypes="/4 /12">
-    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//Z1"/>
-  </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="Z2" parent="/1" superTypes="/4 /12">
-    <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//Z2"/>
-  </eCoreContainemntTree:Node>
-  <eCoreContainemntTree:Node name="SElement" subTypes="/0 /5 /1 /2 /3 /4 /6 /7 /8 /9 /10 /11">
+  <eCoreContainemntTree:Node name="SElement" subTypes="/0 /5 /1 /2 /3 /4">
     <element href="platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example1/SourceMM1.ecore#//SElement"/>
   </eCoreContainemntTree:Node>
 </xmi:XMI>

@@ -4,10 +4,16 @@
   <target:TRoot>
     <ownedA xsi:type="target:A2"/>
     <ownedA xsi:type="target:A2">
-      <ownsC name="Y2-a"/>
+      <ownsC name="Y2-a">
+        <ownsD name="Y2-a" toA="/0/@ownedA.1"/>
+      </ownsC>
     </ownedA>
   </target:TRoot>
   <target:A1/>
   <target:A1/>
-  <target:B name="Y1-a"/>
+  <target:B name="Y1-a">
+    <ownsD name="Y1-a"/>
+  </target:B>
+  <target:D/>
+  <target:D/>
 </xmi:XMI>

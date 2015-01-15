@@ -15,7 +15,7 @@ context X
 def : ast() : target::A =
 	invalid -- To be overriden
 
-context AmbX
+context X
 def : ast() : target::A =
 	if isA1
 	then target::A1 {
@@ -44,7 +44,7 @@ context Z
 def : ast() : target::D =
 	invalid -- To be overriden
 	
-context AmbZ
+context Z
 def : ast() : target::D =
 	if toY.oclIsKindOf(source::Y1)
 	then target::D {
