@@ -1006,8 +1006,8 @@
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uB_name">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uB_name.leftCS.guard.y1">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uB_ownsD">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uB_ownsD.leftCS.guard.y1">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.10.y1"/>
                 </binding>
@@ -1023,8 +1023,8 @@
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
             </ownedSource>
             <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uB_ownsD">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uB_ownsD.leftCS.guard.y1">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uB_name">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uB_name.leftCS.guard.y1">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.11.y1"/>
                 </binding>
@@ -1036,6 +1036,23 @@
           <mappingStatements xsi:type="qvti:MappingLoop">
             <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
                 referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
+              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
+                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uC_ownsD">
+                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uC_ownsD.leftCS.guard.y2">
+                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.12.y2"/>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.12.y2"
+                name="y2" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
               <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Z"
                   referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Z"/>
             </ownedSource>
@@ -1043,11 +1060,11 @@
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uD_1_refsB">
                 <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uD_1_refsB.leftCS.guard.z">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Z"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.12.z"/>
+                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.13.z"/>
                 </binding>
               </mappingStatements>
             </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.12.z"
+            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.13.z"
                 name="z" type="pivot:Class SourceMM1.ecore.oclas#T.source.Z"/>
           </mappingStatements>
           <mappingStatements xsi:type="qvti:MappingLoop">
@@ -1059,23 +1076,6 @@
             <ownedBody xsi:type="qvti:MappingSequence">
               <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uC_name">
                 <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uC_name.leftCS.guard.y2">
-                  <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
-                      referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.13.y2"/>
-                </binding>
-              </mappingStatements>
-            </ownedBody>
-            <ownedIterators xmi:id="i..Source2Target.qvtp.qvtias.__root__.0.13.y2"
-                name="y2" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
-          </mappingStatements>
-          <mappingStatements xsi:type="qvti:MappingLoop">
-            <ownedSource xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.7"
-                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances">
-              <ownedSource xsi:type="pivot:TypeExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
-                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"/>
-            </ownedSource>
-            <ownedBody xsi:type="qvti:MappingSequence">
-              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="#m..Source2Target.qvtp.qvtias.uC_ownsD">
-                <binding boundVariable="#qV..Source2Target.qvtp.qvtias.uC_ownsD.leftCS.guard.y2">
                   <value xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y2"
                       referredVariable="#i..Source2Target.qvtp.qvtias.__root__.0.14.y2"/>
                 </binding>
