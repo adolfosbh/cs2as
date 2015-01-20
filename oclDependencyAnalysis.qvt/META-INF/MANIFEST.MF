@@ -17,7 +17,6 @@ Export-Package: oclDependencyAnalysis.qvt,
  classescstraces.impl,
  classescstraces.util
 Require-Bundle: org.eclipse.qvtd.build.etl,
- oclDependencyAnalysis.qvt,
  org.eclipse.ocl.xtext.completeocl;bundle-version="[1.0.0,2.0.0)",
  org.junit,
  org.eclipse.qvtd.pivot.qvtimperative;bundle-version="0.12.0",
