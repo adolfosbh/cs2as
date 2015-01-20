@@ -143,7 +143,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 
 //		//MetamodelManager newMManager = new QVTiEnvironmentFactory(null, null).createMetamodelManager();
 //    	URI txURI = baseURI.appendSegment("classescs2as.qvtias");
-//    	Transformation t = getTransformation(metamodelManager.getASResourceSet(), txURI);    	
+//    	Transformation t = getTransformation(metamodelManager.getASResourceSet(), txURI);
 //    	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(metamodelManager, t);
    	
     	
