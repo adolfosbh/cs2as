@@ -5,21 +5,23 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:source="http://ocldependencyanalysis/sourceMM/1.0"
     xsi:schemaLocation="http://ocldependencyanalysis/sourceMM/1.0 ../SourceMM1.ecore">
-  <ownedX xsi:type="source:X"
-      isA1="true">
+  <ownedX isA1="true">
     <ownsY xsi:type="source:Y1"
         name="Y1-a">
       <ownsZ
-          xsi:type="source:Z"
+          name=""/>
+    </ownsY>
+    <ownsY xsi:type="source:Y1"
+        name="Y1-b">
+      <ownsZ
           name="Y1-a"/>
     </ownsY>
   </ownedX>
-  <ownedX xsi:type="source:X">
+  <ownedX>
     <ownsY xsi:type="source:Y2"
         name="Y2-a">
       <ownsZ
-          xsi:type="source:Z"
-          name="Y2-a"/>
+          name=""/>
     </ownsY>
   </ownedX>
 </source:SRoot>

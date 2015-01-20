@@ -61,7 +61,18 @@
                 name="a2" type="pivot:Class TargetMM1.ecore.oclas#T.target.A2"/>
           </bottomPattern>
         </domain>
-        <guardPattern/>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not">
+              <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
+                  referredProperty="SourceMM1.ecore.oclas#p.source.X.isA1">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.X"
+                    isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.cX_2_A2.leftCS.guard.x"/>
+              </ownedSource>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.A2"
@@ -89,7 +100,16 @@
                 name="a1" type="pivot:Class TargetMM1.ecore.oclas#T.target.A1"/>
           </bottomPattern>
         </domain>
-        <guardPattern/>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:PropertyCallExp" isRequired="false"
+                type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
+                referredProperty="SourceMM1.ecore.oclas#p.source.X.isA1">
+              <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.X"
+                  isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.cX_2_A1.leftCS.guard.x"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.A1"
@@ -173,7 +193,23 @@
                 name="d" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
           </bottomPattern>
         </domain>
-        <guardPattern/>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not">
+              <ownedSource xsi:type="pivot:OperationCallExp" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
+                  referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsKindOf..ocl.OclType">
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y"
+                    referredProperty="SourceMM1.ecore.oclas#p.source.Z.toY">
+                  <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Z"
+                      isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.cZ_2_D_0.leftCS.guard.z"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                    referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
+              </ownedSource>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"
@@ -201,7 +237,20 @@
                 name="d" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"/>
           </bottomPattern>
         </domain>
-        <guardPattern/>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsKindOf..ocl.OclType">
+              <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class SourceMM1.ecore.oclas#T.source.Y"
+                  referredProperty="SourceMM1.ecore.oclas#p.source.Z.toY">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class SourceMM1.ecore.oclas#T.source.Z"
+                    isImplicit="true" referredVariable="#qV..Source2Target.qvtp.qvtias.cZ_2_D_1.leftCS.guard.z"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                  referredType="pivot:Class SourceMM1.ecore.oclas#T.source.Y1"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
         <bottomPattern>
           <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false" targetProperty="SourceMM1.ecore.oclas#p.source.SElement.ast">
             <value xsi:type="pivot:VariableExp" type="pivot:Class TargetMM1.ecore.oclas#T.target.D"

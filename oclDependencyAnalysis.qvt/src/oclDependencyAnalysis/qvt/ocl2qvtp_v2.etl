@@ -64,6 +64,7 @@ rule ConstructorExp2CreationMapping
 	
 	var leftDomain = s.createCreationMapping_LeftDomain();
 	var rightDomain = s.createCreationMapping_RightDomain();
+	var leftVar = leftDomain.guardPattern.variable.first();
 	
 	t.domain.add(leftDomain);
 	t.domain.add(rightDomain);
@@ -76,7 +77,7 @@ rule ConstructorExp2CreationMapping
 	value.referredVariable = rightDomain.bottomPattern.realizedVariable.first();
 	value.type = value.referredVariable.type;
 	var slotExpression = new QVTi!VariableExp;	
-	slotExpression.referredVariable = leftDomain.guardPattern.variable.first();
+	slotExpression.referredVariable = leftVar;
 	slotExpression.type = slotExpression.referredVariable.type;
 	
 	pAssignment.value = value;
@@ -84,6 +85,7 @@ rule ConstructorExp2CreationMapping
 	pAssignment.targetProperty = slotExpression.type.getTraceabilityProperty();	
 	
 	bottomPattern.assignment.add(pAssignment);
+	s.updateGuardPattern(guardPattern, leftVar);
 				
 	t.guardPattern = guardPattern;
 	t.bottomPattern = bottomPattern;
@@ -211,43 +213,81 @@ operation OCL!ConstructorExp createUpdateMapping_RightDomain () : QVTi!CoreDomai
 	return domain;
 }
 
-operation OCL!ConstructorPart createPropertyAssignmentValue(leftVar) : OCL!OCLExpression {
+operation OCL!ConstructorPart createPropertyAssignmentValue(leftVar : QVTi!Variable) : OCL!OCLExpression {
 	-- FIXME what happens with synthetised types ????
 	var initExp = self.ownedInit;
 	var eUtil = emfTool.getEcoreUtil();
 	var newInitExp = eUtil.copy(initExp);
-	-- We need to replace the OCL refered "self" varible by the QVTi domain "leftVar"
-	for (exp in newInitExp.getAllContents().including(newInitExp)) {		
+	-- We need to replace the OCL refered "self" varible by the QVTi domain "leftVar" and ast op calls
+	return newInitExp.doReplacements(leftVar);
+
+}
+
+operation OCL!OCLExpression doReplacements(leftVar : QVTi!Variable) : OCL!OCLExpression {
+
+	var eUtil = emfTool.getEcoreUtil();
+	var result = self;
+	for (exp in self.getAllContents().including(self)) {		
 		switch (true) {
-			case exp.isSelfVarExp():
-				exp.referredVariable = leftVar;
-			case exp.isAstOpCallExp():
-				var astPropCallExp = new QVTi!PropertyCallExp;
-				astPropCallExp.ownedSource = exp.ownedSource;
-				astPropCallExp.referredProperty = astPropCallExp.ownedSource.type.getTraceabilityProperty();
-				astPropCallExp.type = astPropCallExp.referredProperty.type;
-						
-				var castType = exp.type;				
-				var asTypeOpCallExp = new QVTi!OperationCallExp;
-				asTypeOpCallExp.ownedSource = astPropCallExp;  
-				asTypeOpCallExp.referredOperation = getOclAnyOclAsTypeOp();
-				asTypeOpCallExp.type = castType;
-				
-				var argTypeExp = new QVTi!TypeExp;
-				argTypeExp.referredType = castType;
-				argTypeExp.type = getOclMetaClass();
-				
-				asTypeOpCallExp.ownedArguments.add(argTypeExp);
-											
-				if (newInitExp = exp) {
-					newInitExp = asTypeOpCallExp;
-				} else {
-					eUtil.replace(exp, asTypeOpCallExp);
-				}
-				eUtil.`delete`(exp);
+		case exp.isSelfVarExp():
+			exp.referredVariable = leftVar;
+		case exp.isAstOpCallExp():
+			var astPropCallExp = new QVTi!PropertyCallExp;
+			astPropCallExp.ownedSource = exp.ownedSource;
+			astPropCallExp.referredProperty = astPropCallExp.ownedSource.type.getTraceabilityProperty();
+			astPropCallExp.type = astPropCallExp.referredProperty.type;
+					
+			var castType = exp.type;				
+			var asTypeOpCallExp = new QVTi!OperationCallExp;
+			asTypeOpCallExp.ownedSource = astPropCallExp;  
+			asTypeOpCallExp.referredOperation = getOclAnyOclAsTypeOp();
+			asTypeOpCallExp.type = castType;
+			
+			var argTypeExp = new QVTi!TypeExp;
+			argTypeExp.referredType = castType;
+			argTypeExp.type = getOclMetaClass();
+			
+			asTypeOpCallExp.ownedArguments.add(argTypeExp);
+										
+			if (result = exp) {
+				result = asTypeOpCallExp;
+			} else {
+				eUtil.replace(exp, asTypeOpCallExp);
+			}
+			eUtil.`delete`(exp);
 		}
-	} 
-	return newInitExp;
+	}
+	return result;
+}
+-- Function which takes into account that the constructor is embedded inside of an IfExp
+-- so that the guard pattern have the proper guards associated to the the IfExp
+operation OCL!ConstructorExp updateGuardPattern(guardPattern : QVTi!GuardPattern, leftVar : QVTi!Variable) {
+
+	var container = self.eContainer();
+	
+	if (container.isKindOf(OCL!IfExp)) {
+		var predicate = new QVTi!Predicate;
+		var eUtil = emfTool.getEcoreUtil();
+		var condition = container.ownedCondition;
+		var newCondition;
+		if (container.ownedThen = self) {
+			newCondition = eUtil.copy(condition);
+		} else { // it's the else
+			// We don't want to create a 'not not conditionExp'
+			if (condition.isBooleanNotOpCallExp()) {
+				newCondition = eUtil.copy(condition.ownedSource);
+			} else {
+				newCondition = new OCL!OperationCallExp;
+				newCondition.name = 'not';
+				newCondition.referredOperation = getBooleanNotOp();
+				newCondition.type = getBooleanPrimitiveType();
+				newCondition.ownedSource = eUtil.copy(condition);
+			}
+		}
+		-- We need to replace the OCL refered "self" varible by the QVTi domain "leftVar" and ast op calls
+		predicate.conditionExpression = newCondition.println("NEW CONDITION-> ").doReplacements(leftVar.println("LEFT VAR-> "));
+		guardPattern.predicate.add(predicate);
+	}
 }
 
 operation OCL!Element isSelfVarExp() : Boolean {
@@ -283,6 +323,20 @@ operation getOclAnyOclAsTypeOp() : OCL!Operation {
 	return OclStdLib!Class.all.selectOne(x | x.name = 'OclAny').ownedOperations
 						   .selectOne(x | x.name = 'oclAsType');
 }
+
+operation getBooleanPrimitiveType() : OCL!PrimitiveType {
+	return OclStdLib!PrimitiveType.all.selectOne(x | x.name = 'Boolean');
+}
+
+operation getBooleanNotOp() : OCL!Operation {
+ 	return OclStdLib!Class.all.selectOne(x | x.name = 'Boolean').ownedOperations
+						   .selectOne(x | x.name = 'not');
+}
+
+operation OCL!OCLExpression isBooleanNotOpCallExp() {
+	return self.isKindOf(OCL!OperationCallExp) and self.referredOperation = getBooleanNotOp();
+}
+
 
 post {
 	-- We add all the declaratively created QVTi mappings to the imperatively created QVTi transformation 
