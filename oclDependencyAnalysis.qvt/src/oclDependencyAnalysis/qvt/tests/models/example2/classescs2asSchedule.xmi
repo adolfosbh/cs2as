@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
 <qvtschedule:Schedule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:qvtschedule="http://www.eclipse.org/qvt/0.1/QVTschedule/">
-  <datums xsi:type="qvtschedule:ClassDatum">
+  <datums xsi:type="qvtschedule:ClassDatum" sub="//@datums.1 //@datums.7 //@datums.11">
     <type href="ClassesCS.ecore.oclas#T.classescs.ElementCS"/>
-    <propertyDatums>
+    <propertyDatums sub="//@datums.1/@propertyDatums.1 //@datums.7/@propertyDatums.1">
       <property href="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast"/>
     </propertyDatums>
   </datums>
-  <datums xsi:type="qvtschedule:ClassDatum" super="//@datums.0">
+  <datums xsi:type="qvtschedule:ClassDatum" super="//@datums.0" sub="//@datums.2 //@datums.5 //@datums.10">
     <type href="ClassesCS.ecore.oclas#T.classescs.NamedElementCS"/>
-    <propertyDatums>
+    <propertyDatums sub="//@datums.2/@propertyDatums.0 //@datums.5/@propertyDatums.0 //@datums.10/@propertyDatums.0">
       <property href="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name"/>
     </propertyDatums>
-    <propertyDatums super="//@datums.0/@propertyDatums.0">
+    <propertyDatums super="//@datums.0/@propertyDatums.0" sub="//@datums.2/@propertyDatums.1 //@datums.5/@propertyDatums.1">
       <property href="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast"/>
     </propertyDatums>
   </datums>
@@ -31,9 +31,9 @@
       <property href="ClassesCS.ecore.oclas#p.classescs.ClassCS.extends"/>
     </propertyDatums>
   </datums>
-  <datums xsi:type="qvtschedule:ClassDatum">
+  <datums xsi:type="qvtschedule:ClassDatum" sub="//@datums.4 //@datums.6">
     <type href="Classes.ecore.oclas#T.classes.NamedElement"/>
-    <propertyDatums>
+    <propertyDatums sub="//@datums.4/@propertyDatums.0 //@datums.6/@propertyDatums.0">
       <property href="Classes.ecore.oclas#p.classes.NamedElement.name"/>
     </propertyDatums>
   </datums>
@@ -60,11 +60,11 @@
   <datums xsi:type="qvtschedule:ClassDatum" super="//@datums.1" requiredBy="//@actions.1 //@actions.5 //@actions.6" dataParameter="//@actions.1/@distinctArguments.0/@primaryArguments.0 //@actions.5/@distinctArguments.0/@primaryArguments.0 //@actions.6/@distinctArguments.0/@primaryArguments.0">
     <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.0"/>
     <type href="ClassesCS.ecore.oclas#T.classescs.PackageCS"/>
-    <propertyDatums requiredBy="//@actions.5">
+    <propertyDatums super="//@datums.1/@propertyDatums.0" requiredBy="//@actions.5">
       <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.0"/>
       <property href="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name"/>
     </propertyDatums>
-    <propertyDatums producedBy="//@actions.1" requiredBy="//@actions.5 //@actions.6 //@actions.7">
+    <propertyDatums super="//@datums.1/@propertyDatums.1" producedBy="//@actions.1" requiredBy="//@actions.5 //@actions.6 //@actions.7">
       <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.0"/>
       <property href="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast"/>
     </propertyDatums>
@@ -76,7 +76,7 @@
   <datums xsi:type="qvtschedule:ClassDatum" super="//@datums.3" producedBy="//@actions.1">
     <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.1"/>
     <type href="Classes.ecore.oclas#T.classes.Package"/>
-    <propertyDatums producedBy="//@actions.5" requiredBy="//@actions.4">
+    <propertyDatums super="//@datums.3/@propertyDatums.0" producedBy="//@actions.5" requiredBy="//@actions.4">
       <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.1"/>
       <property href="Classes.ecore.oclas#p.classes.NamedElement.name"/>
     </propertyDatums>
@@ -100,7 +100,7 @@
       <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.2/@domain.0"/>
       <property href="ClassesCS.ecore.oclas#p.classescs.RootCS.ownedPackages"/>
     </propertyDatums>
-    <propertyDatums producedBy="//@actions.2" requiredBy="//@actions.7">
+    <propertyDatums super="//@datums.0/@propertyDatums.0" producedBy="//@actions.2" requiredBy="//@actions.7">
       <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.2/@domain.0"/>
       <property href="ClassesCS.ecore.oclas#p.classescs.ElementCS.ast"/>
     </propertyDatums>
@@ -121,7 +121,7 @@
   </datums>
   <datums xsi:type="qvtschedule:ClassDatum" super="//@datums.1">
     <type href="ClassesCS.ecore.oclas#T.classescs.PathElementCS"/>
-    <propertyDatums requiredBy="//@actions.4">
+    <propertyDatums super="//@datums.1/@propertyDatums.0" requiredBy="//@actions.4">
       <property href="ClassesCS.ecore.oclas#p.classescs.NamedElementCS.name"/>
     </propertyDatums>
   </datums>

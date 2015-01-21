@@ -167,6 +167,36 @@ public class OCL2QVTiTestCases extends LoadTestCase {
         Resource expected =  rSet.getResource(expectedAsModelURI, true);
         assertSameModel(expected, rSet.getResource(asModelURI, true));
 	}
+	
+	@Test
+	public void testExample3_Interpreted() throws Exception {
+		URI baseURI = URI.createURI("platform:/resource/oclDependencyAnalysis.qvt/src/oclDependencyAnalysis/qvt/tests/models/example3");
+		URI oclDocUri = baseURI.appendSegment("KiamaRewrite.oclas");
+
+		OCL2QVTiBroker mtc = new OCL2QVTiBroker(oclDocUri.toString(), this.getClass(), metamodelManager);
+    	mtc.execute();
+    	PivotModel qvtiTransf = mtc.getiModel();
+    	URI txURI = ClassUtil.nonNullState(qvtiTransf.getResource().getURI());
+    	assertValidQVTiModel(txURI);
+    	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(metamodelManager, qvtiTransf.getTransformation());
+    	
+    	URI samplesBaseUri = baseURI.appendSegment("samples");
+    	URI csModelURI = samplesBaseUri.appendSegment("model1_input.xmi");
+    	URI asModelURI = samplesBaseUri.appendSegment("model1_output.xmi");
+    	URI expectedAsModelURI = samplesBaseUri.appendSegment("model1_output_ref.xmi");
+    	
+    	
+    	testEvaluator.saveTransformation(null);
+        testEvaluator.loadModel("leftCS", csModelURI);
+        testEvaluator.createModel("rightAS", asModelURI, null);
+        testEvaluator.execute();
+        testEvaluator.saveModels();
+        testEvaluator.dispose();
+                
+        ResourceSet rSet = metamodelManager.getExternalResourceSet();
+        Resource expected =  rSet.getResource(expectedAsModelURI, true);
+        assertSameModel(expected, rSet.getResource(asModelURI, true));
+	}
 //	
 ////	FIXME commented until 	
 //	@Test

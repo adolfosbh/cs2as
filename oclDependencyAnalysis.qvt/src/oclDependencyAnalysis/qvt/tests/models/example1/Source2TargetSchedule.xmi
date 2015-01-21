@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <qvtschedule:Schedule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:qvtschedule="http://www.eclipse.org/qvt/0.1/QVTschedule/">
-  <datums xsi:type="qvtschedule:ClassDatum">
+  <datums xsi:type="qvtschedule:ClassDatum" sub="//@datums.1 //@datums.3 //@datums.6 //@datums.12">
     <type href="SourceMM1.ecore.oclas#T.source.SElement"/>
-    <propertyDatums>
+    <propertyDatums sub="//@datums.3/@propertyDatums.1 //@datums.1/@propertyDatums.1 //@datums.6/@propertyDatums.0 //@datums.12/@propertyDatums.1">
       <property href="SourceMM1.ecore.oclas#p.source.SElement.ast"/>
     </propertyDatums>
   </datums>
@@ -13,7 +13,7 @@
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.0"/>
       <property href="SourceMM1.ecore.oclas#p.source.SRoot.ownedX"/>
     </propertyDatums>
-    <propertyDatums producedBy="//@actions.0" requiredBy="//@actions.7">
+    <propertyDatums super="//@datums.0/@propertyDatums.0" producedBy="//@actions.0" requiredBy="//@actions.7">
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.0"/>
       <property href="SourceMM1.ecore.oclas#p.source.SElement.ast"/>
     </propertyDatums>
@@ -58,22 +58,22 @@
       <property href="TargetMM1.ecore.oclas#p.target.A1.ownsB"/>
     </propertyDatums>
   </datums>
-  <datums xsi:type="qvtschedule:ClassDatum" super="//@datums.0">
+  <datums xsi:type="qvtschedule:ClassDatum" super="//@datums.0" sub="//@datums.7 //@datums.10">
     <type href="SourceMM1.ecore.oclas#T.source.Y"/>
-    <propertyDatums>
+    <propertyDatums super="//@datums.0/@propertyDatums.0" sub="//@datums.10/@propertyDatums.0 //@datums.7/@propertyDatums.0">
       <property href="SourceMM1.ecore.oclas#p.source.SElement.ast"/>
     </propertyDatums>
-    <propertyDatums>
+    <propertyDatums sub="//@datums.7/@propertyDatums.1 //@datums.10/@propertyDatums.1">
       <property href="SourceMM1.ecore.oclas#p.source.Y.ownsZ"/>
     </propertyDatums>
-    <propertyDatums>
+    <propertyDatums sub="//@datums.7/@propertyDatums.2 //@datums.10/@propertyDatums.2">
       <property href="SourceMM1.ecore.oclas#p.source.Y.name"/>
     </propertyDatums>
   </datums>
   <datums xsi:type="qvtschedule:ClassDatum" super="//@datums.6" requiredBy="//@actions.3 //@actions.10 //@actions.11" dataParameter="//@actions.3/@distinctArguments.0/@primaryArguments.0 //@actions.10/@distinctArguments.0/@primaryArguments.0 //@actions.11/@distinctArguments.0/@primaryArguments.0">
     <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.3/@domain.0"/>
     <type href="SourceMM1.ecore.oclas#T.source.Y1"/>
-    <propertyDatums producedBy="//@actions.3" requiredBy="//@actions.9 //@actions.10 //@actions.11 //@actions.17">
+    <propertyDatums super="//@datums.6/@propertyDatums.0" producedBy="//@actions.3" requiredBy="//@actions.9 //@actions.10 //@actions.11 //@actions.17">
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.3/@domain.0"/>
       <property href="SourceMM1.ecore.oclas#p.source.SElement.ast"/>
     </propertyDatums>
@@ -86,9 +86,9 @@
       <property href="SourceMM1.ecore.oclas#p.source.Y.name"/>
     </propertyDatums>
   </datums>
-  <datums xsi:type="qvtschedule:ClassDatum">
+  <datums xsi:type="qvtschedule:ClassDatum" sub="//@datums.9 //@datums.11 //@datums.13">
     <type href="TargetMM1.ecore.oclas#T.target.NamedElement"/>
-    <propertyDatums>
+    <propertyDatums sub="//@datums.9/@propertyDatums.2 //@datums.11/@propertyDatums.2 //@datums.13/@propertyDatums.3">
       <property href="TargetMM1.ecore.oclas#p.target.NamedElement.name"/>
     </propertyDatums>
   </datums>
@@ -119,11 +119,11 @@
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.4/@domain.0"/>
       <property href="SourceMM1.ecore.oclas#p.source.SElement.ast"/>
     </propertyDatums>
-    <propertyDatums requiredBy="//@actions.12">
+    <propertyDatums super="//@datums.6/@propertyDatums.1" requiredBy="//@actions.12">
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.4/@domain.0"/>
       <property href="SourceMM1.ecore.oclas#p.source.Y.ownsZ"/>
     </propertyDatums>
-    <propertyDatums requiredBy="//@actions.13">
+    <propertyDatums super="//@datums.6/@propertyDatums.2" requiredBy="//@actions.13">
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.4/@domain.0"/>
       <property href="SourceMM1.ecore.oclas#p.source.Y.name"/>
     </propertyDatums>
@@ -139,7 +139,7 @@
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.4/@domain.1"/>
       <property href="TargetMM1.ecore.oclas#p.target.C.ownsD"/>
     </propertyDatums>
-    <propertyDatums producedBy="//@actions.13" requiredBy="//@actions.16">
+    <propertyDatums super="//@datums.8/@propertyDatums.0" producedBy="//@actions.13" requiredBy="//@actions.16">
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.4/@domain.1"/>
       <property href="TargetMM1.ecore.oclas#p.target.NamedElement.name"/>
     </propertyDatums>
@@ -155,7 +155,7 @@
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.5/@domain.0"/>
       <property href="SourceMM1.ecore.oclas#p.source.Z.toY"/>
     </propertyDatums>
-    <propertyDatums producedBy="//@actions.5 //@actions.6" requiredBy="//@actions.10 //@actions.12 //@actions.14 //@actions.15 //@actions.16 //@actions.17 //@actions.18 //@actions.19">
+    <propertyDatums super="//@datums.0/@propertyDatums.0" producedBy="//@actions.5 //@actions.6" requiredBy="//@actions.10 //@actions.12 //@actions.14 //@actions.15 //@actions.16 //@actions.17 //@actions.18 //@actions.19">
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.5/@domain.0"/>
       <property href="SourceMM1.ecore.oclas#p.source.SElement.ast"/>
     </propertyDatums>
@@ -179,7 +179,7 @@
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.5/@domain.1"/>
       <property href="TargetMM1.ecore.oclas#p.target.D.toA"/>
     </propertyDatums>
-    <propertyDatums producedBy="//@actions.15 //@actions.18">
+    <propertyDatums super="//@datums.8/@propertyDatums.0" producedBy="//@actions.15 //@actions.18">
       <domain href="Source2Target.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.5/@domain.1"/>
       <property href="TargetMM1.ecore.oclas#p.target.NamedElement.name"/>
     </propertyDatums>
