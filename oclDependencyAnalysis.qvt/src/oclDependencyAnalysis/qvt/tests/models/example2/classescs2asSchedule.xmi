@@ -84,13 +84,13 @@
       <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.1"/>
       <property href="Classes.ecore.oclas#p.classes.Package.ownedClasses"/>
     </propertyDatums>
-    <propertyDatums producedBy="//@actions.7">
-      <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.1"/>
-      <property href="Classes.ecore.oclas#p.classes.Package.Root"/>
-    </propertyDatums>
     <propertyDatums requiredBy="//@actions.4">
       <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.1"/>
       <property href="Classes.ecore.oclas#p.classes.Package.ownedPackages"/>
+    </propertyDatums>
+    <propertyDatums producedBy="//@actions.7">
+      <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.1"/>
+      <property href="Classes.ecore.oclas#p.classes.Package.Root"/>
     </propertyDatums>
   </datums>
   <datums xsi:type="qvtschedule:ClassDatum" super="//@datums.0" requiredBy="//@actions.2 //@actions.7" dataParameter="//@actions.2/@distinctArguments.0/@primaryArguments.0 //@actions.7/@distinctArguments.0/@primaryArguments.0">
@@ -108,7 +108,7 @@
   <datums xsi:type="qvtschedule:ClassDatum" producedBy="//@actions.2">
     <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.2/@domain.1"/>
     <type href="Classes.ecore.oclas#T.classes.Root"/>
-    <propertyDatums producedBy="//@actions.7" requiredBy="//@actions.4" opposite="//@datums.6/@propertyDatums.2">
+    <propertyDatums producedBy="//@actions.7" requiredBy="//@actions.4" opposite="//@datums.6/@propertyDatums.3">
       <domain href="classescs2as.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.2/@domain.1"/>
       <property href="Classes.ecore.oclas#p.classes.Root.ownedPackages"/>
     </propertyDatums>
@@ -163,7 +163,7 @@
     </distinctArguments>
     <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.uClass_name"/>
   </actions>
-  <actions xsi:type="qvtschedule:MappingAction" productions="//@datums.4/@propertyDatums.1 //@datums.4/@propertyDatums.2" requisites="//@datums.2 //@datums.2/@propertyDatums.1 //@datums.2/@propertyDatums.2 //@datums.9/@propertyDatums.0 //@datums.6/@propertyDatums.3 //@datums.8/@propertyDatums.0 //@datums.6/@propertyDatums.0 //@datums.10/@propertyDatums.0 //@datums.6/@propertyDatums.1 //@datums.4/@propertyDatums.0 //@datums.11/@propertyDatums.0" order="8" parent="//@actions.8" arguments="//@datums.2">
+  <actions xsi:type="qvtschedule:MappingAction" productions="//@datums.4/@propertyDatums.1 //@datums.4/@propertyDatums.2" requisites="//@datums.2 //@datums.2/@propertyDatums.1 //@datums.2/@propertyDatums.2 //@datums.9/@propertyDatums.0 //@datums.6/@propertyDatums.2 //@datums.8/@propertyDatums.0 //@datums.6/@propertyDatums.0 //@datums.10/@propertyDatums.0 //@datums.6/@propertyDatums.1 //@datums.4/@propertyDatums.0 //@datums.11/@propertyDatums.0" order="8" parent="//@actions.8" arguments="//@datums.2">
     <distinctArguments>
       <primaryArguments datum="//@datums.2">
         <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.uClass_superClass.leftCS.guard.classCS"/>
@@ -187,7 +187,7 @@
     </distinctArguments>
     <mapping href="classescs2as.qvtp.qvtias#m..classescs2as.qvtp.qvtias.uPackage_ownedClasses"/>
   </actions>
-  <actions xsi:type="qvtschedule:MappingAction" productions="//@datums.8/@propertyDatums.0 //@datums.6/@propertyDatums.2" requisites="//@datums.7 //@datums.7/@propertyDatums.0 //@datums.5/@propertyDatums.1 //@datums.7/@propertyDatums.1" order="3" parent="//@actions.8" arguments="//@datums.7">
+  <actions xsi:type="qvtschedule:MappingAction" productions="//@datums.8/@propertyDatums.0 //@datums.6/@propertyDatums.3" requisites="//@datums.7 //@datums.7/@propertyDatums.0 //@datums.5/@propertyDatums.1 //@datums.7/@propertyDatums.1" order="3" parent="//@actions.8" arguments="//@datums.7">
     <distinctArguments>
       <primaryArguments datum="//@datums.7">
         <variable href="classescs2as.qvtp.qvtias#qV..classescs2as.qvtp.qvtias.uRoot_ownedPackages.leftCS.guard.rootCS"/>

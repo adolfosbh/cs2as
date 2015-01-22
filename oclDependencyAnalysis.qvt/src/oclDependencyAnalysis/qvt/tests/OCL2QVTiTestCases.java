@@ -1,5 +1,9 @@
 package oclDependencyAnalysis.qvt.tests;
 
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
+
 import oclDependencyAnalysis.qvt.OCL2QVTiBroker;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
@@ -9,6 +13,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.epsilon.common.util.StringProperties;
+import org.eclipse.epsilon.emc.emf.xml.XmlModel;
+import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
+import org.eclipse.epsilon.eol.execute.context.Variable;
+import org.eclipse.epsilon.eol.types.EolPrimitiveType;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.examples.codegen.dynamic.OCL2JavaFileObject;
@@ -19,6 +28,8 @@ import org.eclipse.ocl.pivot.internal.validation.PivotEObjectValidator;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.xtext.completeocl.CompleteOCLStandaloneSetup;
 import org.eclipse.ocl.xtext.completeocl.validation.CompleteOCLEObjectValidator;
+import org.eclipse.qvtd.build.etl.EtlTask;
+import org.eclipse.qvtd.build.etl.MtcBroker;
 import org.eclipse.qvtd.build.etl.PivotModel;
 import org.eclipse.qvtd.build.etl.QvtMtcExecutionException;
 import org.eclipse.qvtd.codegen.qvti.QVTiCodeGenOptions;
@@ -66,6 +77,26 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 			return super.runOCL2QVTp_MiddleFolded(oclDocURI, qvtiFileURI);
 		}
 	}
+	
+	private static class ModuleAccessibleEtlTask extends EtlTask {
+
+		private List<Variable> parameters = new ArrayList<Variable>();
+		
+		public ModuleAccessibleEtlTask(java.net.URI etlSourceURI) {
+			super(etlSourceURI);
+		}
+		
+		public void addParameter(Variable parameter){
+			parameters.add(parameter);
+		}
+		
+		@Override
+		public void preProcess() {
+			super.preProcess();
+			for (Variable param : parameters)
+				module.getContext().getFrameStack().put(param);
+		}
+	}
 
 	@Before
 	public void setUp() throws Exception {
@@ -108,7 +139,9 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	URI txURI = ClassUtil.nonNullState(qvtiTransf.getResource().getURI());
     	assertValidQVTiModel(txURI);
     	
-
+    	// Not working see Bug 458152
+    	//launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("Source2Target_complete").toString(), false);
+    	//launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("Source2Target_pruned").toString(), true);
 		
     	QVTiPivotEvaluator testEvaluator =  new QVTiPivotEvaluator(metamodelManager, qvtiTransf.getTransformation());
 		URI samplesBaseUri = baseURI.appendSegment("samples");
@@ -391,5 +424,42 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 			e.printStackTrace();
 			throw e;
 		}
+	}
+	
+	
+	private void launchQVTs2GraphMlTx(PivotModel qvtsModel, String graphMlURI, boolean pruneQVTs) throws QvtMtcExecutionException {
+		
+		try {
+			// Since pruning might modify QVTs model, we will ensure it's not stored on disposal
+			qvtsModel.setStoredOnDisposal(false);
+			ModuleAccessibleEtlTask etl = new ModuleAccessibleEtlTask(MtcBroker.class.getResource("extras/QVTsToGraphML.etl").toURI());
+			XmlModel graphMl = createGraphMlModel(graphMlURI);
+			etl.addModel(qvtsModel);
+			etl.addModel(graphMl);
+			etl.addParameter(new Variable("pruneModel", pruneQVTs, EolPrimitiveType.Boolean));
+			etl.execute();
+		} catch (URISyntaxException e) {
+			throw new QvtMtcExecutionException("Exception launching QVTs 2 GraphMl transformation", e);
+		}
+		
+	}
+	
+	private XmlModel createGraphMlModel(String graphMlURI) throws QvtMtcExecutionException {
+		
+		try {
+			XmlModel xmlModel = new XmlModel();
+		    StringProperties properties = new StringProperties();
+		    properties.put(XmlModel.PROPERTY_NAME, "GML");
+		    properties.put(XmlModel.PROPERTY_ALIASES, "GML");
+		    properties.put(XmlModel.PROPERTY_MODEL_FILE, graphMlURI);
+		    properties.put(XmlModel.PROPERTY_XSD_FILE, "schema/ygraphml.xsd");
+		    properties.put(XmlModel.PROPERTY_READONLOAD, "false");
+		    properties.put(XmlModel.PROPERTY_STOREONDISPOSAL, "true");
+		    xmlModel.load(properties);
+		    return xmlModel;
+		} catch (EolModelLoadingException e) {
+			throw new QvtMtcExecutionException("Error loading graphml transformation", e);
+		}
+		
 	}
 }
