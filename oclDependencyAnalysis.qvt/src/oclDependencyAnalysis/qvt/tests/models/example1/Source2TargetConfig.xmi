@@ -17,12 +17,12 @@
         imports="//@transformation/@import.1"/>
     <import
         name="leftCS"
-        metamodelFile="models/example1/SourceMM1.ecore">
+        metamodelFile="SourceMM1.ecore">
       <package>source</package>
     </import>
     <import
         name="rightAS"
-        metamodelFile="models/example1/TargetMM1.ecore">
+        metamodelFile="TargetMM1.ecore">
       <package>target</package>
     </import>
   </transformation>

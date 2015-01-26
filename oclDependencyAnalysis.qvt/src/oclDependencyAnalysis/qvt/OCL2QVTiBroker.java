@@ -8,7 +8,7 @@ import oclDependencyAnalysis.qvt.tests.PivotModelUtil;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
-import org.eclipse.ocl.pivot.internal.manager.MetamodelManager;
+import org.eclipse.ocl.pivot.utilities.OCL;
 import org.eclipse.qvtd.build.etl.EtlTask;
 import org.eclipse.qvtd.build.etl.MtcBroker;
 import org.eclipse.qvtd.build.etl.PivotModel;
@@ -47,21 +47,20 @@ public class OCL2QVTiBroker extends MtcBroker {
 	private @NonNull PivotModelUtil pmUtil;
 	
 
-	public OCL2QVTiBroker(String oclDocUri, Class<?> owner, MetamodelManager metaModelManager)
-		throws QvtMtcExecutionException {
-		this(oclDocUri, owner, metaModelManager, true);
+	public OCL2QVTiBroker(URI baseURI, String oclDocName, OCL ocl)
+		throws Exception {
+		this(baseURI, oclDocName, ocl, true);
 	}
 			
-	public OCL2QVTiBroker(String oclDocUri, Class<?> owner, MetamodelManager metaModelManager, boolean usesMiddleFoldedInInputs)
-		throws QvtMtcExecutionException {
+	public OCL2QVTiBroker(URI baseURI, String oclDocName, OCL ocl, boolean usesMiddleFoldedInInputs)
+		throws Exception {
 		
-		super(oclDocUri, owner, metaModelManager);
-		this.pmUtil = new PivotModelUtil(metaModelManager);
-		this.oclDocUri = oclDocUri;
+		super(baseURI, oclDocName,  ocl);
+		this.pmUtil = new PivotModelUtil(ocl);
+		this.oclDocUri = baseURI.appendSegment(oclDocName).toString();
 	
 		if (!usesMiddleFoldedInInputs) {
-			URI baseUri = URI.createURI(oclDocUri).trimFileExtension();
-			this.tracesMMUri = baseUri.appendFileExtension("ecore.oclas").toString();	
+			this.tracesMMUri = baseURI.appendFileExtension("ecore.oclas").toString();	
 		}
 	}
 	
@@ -76,7 +75,7 @@ public class OCL2QVTiBroker extends MtcBroker {
 		loadConfigurationModel();
 		createContainmentTrees();
 		sModel = qvtpToQvts(pModel);
-		qvtpScheduling(pModel, sModel);
+		qvtpFlatScheduling(pModel, sModel);
 		iModel = qvtpQvtsToQvti(pModel, sModel);
 	}
 	
@@ -84,7 +83,7 @@ public class OCL2QVTiBroker extends MtcBroker {
 	protected PivotModel runOCL2QVTp_MiddleModel (String oclDocURI, String qvtiFileURI, String tracesMMURI) throws QvtMtcExecutionException {
 		
 		try {
-			EtlTask etl = new EtlTask(OCL2QVTiTestCases.class.getResource(OCL2QVTP_MIDDLE_MODEL).toURI());
+			EtlTask etl = new EtlTask(OCL2QVTiBroker.class.getResource(OCL2QVTP_MIDDLE_MODEL).toURI());
 			pModel = createQVTpModel(qvtiFileURI);
 			etl.addModel(createOCLModel(oclDocURI));
 			etl.addModel(pModel);

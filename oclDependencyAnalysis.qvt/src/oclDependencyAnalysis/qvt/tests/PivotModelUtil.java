@@ -3,17 +3,17 @@ package oclDependencyAnalysis.qvt.tests;
 import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
-import org.eclipse.ocl.pivot.internal.manager.MetamodelManager;
+import org.eclipse.ocl.pivot.utilities.OCL;
 import org.eclipse.qvtd.build.etl.PivotModel;
 import org.eclipse.qvtd.build.etl.QvtMtcExecutionException;
 
 public class PivotModelUtil {
 
-	private MetamodelManager mmManager;
+	private OCL ocl;
 	
-	public PivotModelUtil(MetamodelManager mmManager) {
+	public PivotModelUtil(OCL mmManager) {
 		
-		this.mmManager = mmManager;
+		this.ocl = mmManager;
 	}
 	
 	/**
@@ -35,7 +35,7 @@ public class PivotModelUtil {
 	public PivotModel createPivotModel(String modeUri, String modelName, String modelAliases, String metamodelUris,
 			boolean readOnLoad, boolean storeOnDispoal, boolean cached, boolean resolveExternalRefs, boolean isPivotResource) throws QvtMtcExecutionException {
 
-		PivotModel model = new PivotModel(mmManager, isPivotResource);
+		PivotModel model = new PivotModel(ocl, isPivotResource);
 		StringProperties properties = new StringProperties();
 		properties.put(EmfModel.PROPERTY_NAME, modelName);
 		properties.put(EmfModel.PROPERTY_ALIASES, modelAliases);
