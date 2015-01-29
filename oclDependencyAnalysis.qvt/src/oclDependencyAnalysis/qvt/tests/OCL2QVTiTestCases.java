@@ -146,9 +146,8 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	URI txURI = ClassUtil.nonNullState(qvtiTransf.getResource().getURI());
     	assertValidQVTiModel(txURI);
     	
-    	// Not working see Bug 458152
-    	launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("Source2Target_complete.graphml").toString(), false);
-    	launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("Source2Target_pruned.graphml").toString(), true);
+    	launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("Source2TargetSchedule_complete.graphml").toString(), false);
+    	launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("Source2TargetSchedule_pruned.graphml").toString(), true);
 		
     	QVTiPivotEvaluator testEvaluator =  new QVTiPivotEvaluator(myQVT.getEnvironmentFactory(), qvtiTransf.getTransformation());
 		URI samplesBaseUri = baseURI.appendSegment("samples");
@@ -184,7 +183,8 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 //    	URI txURI = baseURI.appendSegment("classescs2as.qvtias");
 //    	Transformation t = getTransformation(metamodelManager.getASResourceSet(), txURI);
 //    	QVTiPivotEvaluator testEvaluator = new QVTiPivotEvaluator(metamodelManager, t);
-   	
+    	launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("classescs2asSchedule_complete.graphml").toString(), false);
+    	launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("classescs2asSchedule_pruned.graphml").toString(), true);
     	
 		URI samplesBaseUri = baseURI.appendSegment("samples");
     	URI csModelURI = samplesBaseUri.appendSegment("example1_input.xmi");
@@ -217,6 +217,9 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	URI txURI = ClassUtil.nonNullState(qvtiTransf.getResource().getURI());
     	assertValidQVTiModel(txURI);
     	QVTiPivotEvaluator testEvaluator = myQVT.createEvaluator(qvtiTransf.getTransformation());
+    	
+    	launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("KiamaRewriteSchedule_complete.graphml").toString(), false);
+    	launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("KiamaRewriteSchedule_pruned.graphml").toString(), true);
     	
     	URI samplesBaseUri = baseURI.appendSegment("samples");
     	URI csModelURI = samplesBaseUri.appendSegment("model1_input.xmi");

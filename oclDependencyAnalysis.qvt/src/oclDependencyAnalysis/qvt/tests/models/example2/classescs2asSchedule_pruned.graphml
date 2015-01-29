@@ -1,1085 +1,297 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
-  <!--Created by yEd 3.12-->
-  <key for="graphml" id="d0" yfiles.type="resources"/>
-  <key for="port" id="d1" yfiles.type="portgraphics"/>
-  <key for="port" id="d2" yfiles.type="portgeometry"/>
-  <key for="port" id="d3" yfiles.type="portuserdata"/>
-  <key attr.name="url" attr.type="string" for="node" id="d4"/>
-  <key attr.name="description" attr.type="string" for="node" id="d5"/>
-  <key for="node" id="d6" yfiles.type="nodegraphics"/>
-  <key attr.name="url" attr.type="string" for="edge" id="d7"/>
-  <key attr.name="description" attr.type="string" for="edge" id="d8"/>
-  <key for="edge" id="d9" yfiles.type="edgegraphics"/>
-  <graph edgedefault="directed" id="G">
-    <node id="n0">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="390.5206349206349" y="0.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="50.67578125" x="-10.337890625" y="5.6494140625">ClassCS</y:NodeLabel>
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml:graphml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://graphml.graphdrawing.org/xmlns"
+    xmlns:graphml="http://graphml.graphdrawing.org/xmlns/graphml" xmlns:y="http://www.yworks.com/xml/graphml"
+    xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.1/graphml.xsd">
+  <graphml:key for="node" id="d6" yfiles.type="nodegraphics"/>
+  <graphml:key for="edge" id="d9" yfiles.type="edgegraphics"/>
+  <graphml:graph edgedefault="directed" id="Graph">
+    <graphml:node id="ClassCS">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>ClassCS</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n1">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="460.3722222222222" y="120.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="34.005859375" x="-2.0029296875" y="5.6494140625">Class</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Class">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Class</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n2">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1022.7565476190475" y="0.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="67.369140625" x="-18.6845703125" y="5.6494140625">PackageCS</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="PackageCS">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>PackageCS</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n3">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1082.7789682539683" y="120.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="50.69921875" x="-10.349609375" y="5.6494140625">Package</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Package">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Package</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n4">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1569.4535714285714" y="0.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="46.017578125" x="-8.0087890625" y="5.6494140625">RootCS</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="RootCS">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>RootCS</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n5">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1153.1289682539682" y="120.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="29.34765625" x="0.326171875" y="5.6494140625">Root</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Root">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Root</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n6">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1658.145238095238" y="0.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="71.365234375" x="-20.6826171875" y="5.6494140625">Environment</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Environment">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Environment</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n7">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="699.3015873015873" y="0.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="89.376953125" x="-29.6884765625" y="5.6494140625">PathElementCS</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="PathElementCS">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>PathElementCS</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n8">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1304.6065476190477" y="0.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="77.365234375" x="-23.6826171875" y="5.6494140625">PathNameCS</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="PathNameCS">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>PathNameCS</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n9">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="331.83968253968254" y="120.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="87.361328125" x="-28.6806640625" y="5.6494140625">ClassCS::name</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="ClassCS::name">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>ClassCS::name</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n10">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="544.0511904761905" y="120.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="73.3515625" x="-21.67578125" y="5.6494140625">ClassCS::ast</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="ClassCS::ast">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>ClassCS::ast</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n11">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="505.5531746031746" y="285.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="99.373046875" x="-34.6865234375" y="5.6494140625">ClassCS::extends</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="ClassCS::extends">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>ClassCS::extends</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n12">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="390.5206349206349" y="285.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="70.69140625" x="-20.345703125" y="5.6494140625">Class::name</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Class::name">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Class::name</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n13">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="602.9144841269841" y="465.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="100.697265625" x="-35.3486328125" y="5.6494140625">Class::superClass</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Class::superClass">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Class::superClass</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n14">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="545.0656746031746" y="525.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="70.6796875" x="-20.33984375" y="5.6494140625">Class::Class</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Class::Class">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Class::Class</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n15">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1138.9853174603174" y="405.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="87.373046875" x="-28.6865234375" y="5.6494140625">Class::Package</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Class::Package">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Class::Package</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n16">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="855.3567460317461" y="120.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="104.0546875" x="-37.02734375" y="5.6494140625">PackageCS::name</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="PackageCS::name">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>PackageCS::name</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n17">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="982.406746031746" y="120.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="90.044921875" x="-30.0224609375" y="5.6494140625">PackageCS::ast</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="PackageCS::ast">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>PackageCS::ast</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n18">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1274.168253968254" y="120.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="152.078125" x="-61.0390625" y="5.6494140625">PackageCS::ownedClasses</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="PackageCS::ownedClasses">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>PackageCS::ownedClasses</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n19">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="922.384126984127" y="285.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="87.384765625" x="-28.6923828125" y="5.6494140625">Package::name</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Package::name">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Package::name</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n20">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1063.7809523809524" y="285.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.408203125" x="-52.7041015625" y="5.6494140625">Package::ownedClasses</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Package::ownedClasses">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Package::ownedClasses</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n21">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="252.4607142857143" y="285.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="145.427734375" x="-57.7138671875" y="5.6494140625">Package::ownedPackages</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Package::ownedPackages">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Package::ownedPackages</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n22">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1581.5503968253968" y="405.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="82.71484375" x="-26.357421875" y="5.6494140625">Package::Root</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Package::Root">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Package::Root</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n23">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1450.5805555555555" y="120.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="140.74609375" x="-55.373046875" y="5.6494140625">RootCS::ownedPackages</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="RootCS::ownedPackages">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>RootCS::ownedPackages</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n24">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1585.3003968253968" y="120.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="68.693359375" x="-19.3466796875" y="5.6494140625">RootCS::ast</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="RootCS::ast">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>RootCS::ast</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n25">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1512.0123015873016" y="285.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="124.076171875" x="-47.0380859375" y="5.6494140625">Root::ownedPackages</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Root::ownedPackages">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Root::ownedPackages</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n26">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="67.3734126984127" y="285.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="164.74609375" x="-67.373046875" y="5.6494140625">Environment::namedElements</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="Environment::namedElements">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>Environment::namedElements</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n27">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="648.2714285714286" y="285.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="126.0625" x="-48.03125" y="5.6494140625">PathElementCS::name</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="PathElementCS::name">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>PathElementCS::name</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n28">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="794.9972222222223" y="285.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="107.388671875" x="-38.6943359375" y="5.6494140625">PathNameCS::path</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="PathNameCS::path">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>PathNameCS::path</y:NodeLabel>
           <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n29">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="467.8722222222222" y="60.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="124.703125" x="-47.3515625" y="5.6494140625">cClassCS_2_Class (5)</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="cClassCS_2_Class (5)">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>cClassCS_2_Class (5)</y:NodeLabel>
           <y:Shape type="ellipse"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n30">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1022.7565476190475" y="60.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="158.08984375" x="-64.044921875" y="5.6494140625">cPackageCS_2_Package (2)</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="cPackageCS_2_Package (2)">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>cPackageCS_2_Package (2)</y:NodeLabel>
           <y:Shape type="ellipse"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n31">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1561.9535714285714" y="60.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="115.38671875" x="-42.693359375" y="5.6494140625">cRootCS_2_Root (1)</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="cRootCS_2_Root (1)">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>cRootCS_2_Root (1)</y:NodeLabel>
           <y:Shape type="ellipse"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n32">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="390.5206349206349" y="225.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="95.37109375" x="-32.685546875" y="5.6494140625">uClass_name (7)</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="uClass_name (7)">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>uClass_name (7)</y:NodeLabel>
           <y:Shape type="ellipse"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n33">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="570.2400793650794" y="405.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="125.376953125" x="-47.6884765625" y="5.6494140625">uClass_superClass (8)</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="uClass_superClass (8)">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>uClass_superClass (8)</y:NodeLabel>
           <y:Shape type="ellipse"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n34">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="922.384126984127" y="225.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="112.064453125" x="-41.0322265625" y="5.6494140625">uPackage_name (4)</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="uPackage_name (4)">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>uPackage_name (4)</y:NodeLabel>
           <y:Shape type="ellipse"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n35">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1119.3789682539682" y="225.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="160.087890625" x="-65.0439453125" y="5.6494140625">uPackage_ownedClasses (6)</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="uPackage_ownedClasses (6)">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>uPackage_ownedClasses (6)</y:NodeLabel>
           <y:Shape type="ellipse"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n36">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="1581.5503968253968" y="225.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="148.755859375" x="-59.3779296875" y="5.6494140625">uRoot_ownedPackages (3)</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="uRoot_ownedPackages (3)">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>uRoot_ownedPackages (3)</y:NodeLabel>
           <y:Shape type="ellipse"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n37">
-      <data key="d5"/>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="300.49603174603175" y="0.0"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="69.373046875" x="-19.6865234375" y="5.6494140625">__root__ (0)</y:NodeLabel>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:node id="__root__ (0)">
+      <graphml:data key="d6"><y:ShapeNode>
+          <y:NodeLabel>__root__ (0)</y:NodeLabel>
           <y:Shape type="ellipse"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <edge id="e0" source="n13" target="n14">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="7.5" ty="-15.0">
-            <y:Point x="617.9144841269841" y="510.0"/>
-            <y:Point x="567.5656746031746" y="510.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+        </y:ShapeNode></graphml:data>
+    </graphml:node>
+    <graphml:edge source="Class::superClass" target="Class::Class">
+      <graphml:data key="d9"><y:PolyLineEdge>
+          <y:LineStyle type="dashed"/>
           <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e1" source="n20" target="n15">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="7.5" sy="15.0" tx="-7.5" ty="-15.0">
-            <y:Point x="1086.2809523809524" y="330.0"/>
-            <y:Point x="1146.4853174603174" y="330.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+        </y:PolyLineEdge></graphml:data>
+    </graphml:edge>
+    <graphml:edge source="Package::ownedClasses" target="Class::Package">
+      <graphml:data key="d9"><y:PolyLineEdge>
+          <y:LineStyle type="dashed"/>
           <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e2" source="n25" target="n22">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="7.5" sy="15.0" tx="-7.5" ty="-15.0">
-            <y:Point x="1534.5123015873016" y="330.0"/>
-            <y:Point x="1589.0503968253968" y="330.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+        </y:PolyLineEdge></graphml:data>
+    </graphml:edge>
+    <graphml:edge source="Root::ownedPackages" target="Package::Root">
+      <graphml:data key="d9"><y:PolyLineEdge>
+          <y:LineStyle type="dashed"/>
           <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e3" source="n0" target="n29">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="10.0" sy="15.0" tx="0.0" ty="-15.0">
-            <y:Point x="415.5206349206349" y="45.0"/>
-            <y:Point x="482.8722222222222" y="45.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e4" source="n29" target="n1">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-7.5" sy="12.96875" tx="0.0" ty="-15.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e5" source="n29" target="n10">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="7.5" sy="12.96875" tx="0.0" ty="-15.0">
-            <y:Point x="490.3722222222222" y="105.0"/>
-            <y:Point x="559.0511904761905" y="105.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e6" source="n2" target="n30">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="0.0" ty="-15.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e7" source="n30" target="n3">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="7.5" sy="12.96875" tx="0.0" ty="-15.0">
-            <y:Point x="1045.2565476190475" y="105.0"/>
-            <y:Point x="1097.7789682539683" y="105.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e8" source="n30" target="n17">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-7.5" sy="12.96875" tx="0.0" ty="-15.0">
-            <y:Point x="1030.2565476190475" y="105.0"/>
-            <y:Point x="997.406746031746" y="105.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e9" source="n4" target="n31">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-7.5" sy="15.0" tx="0.0" ty="-15.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e10" source="n31" target="n5">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-7.5" sy="12.96875" tx="0.0" ty="-15.0">
-            <y:Point x="1569.4535714285714" y="105.0"/>
-            <y:Point x="1168.1289682539682" y="105.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e11" source="n31" target="n24">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="7.5" sy="12.96875" tx="0.0" ty="-15.0">
-            <y:Point x="1584.4535714285714" y="105.0"/>
-            <y:Point x="1600.3003968253968" y="105.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e12" source="n0" target="n32">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="0.0" ty="-15.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e13" source="n9" target="n32">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="-10.0" ty="-11.15625">
-            <y:Point x="346.83968253968254" y="165.0"/>
-            <y:Point x="395.5206349206349" y="165.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e14" source="n10" target="n32">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-10.0" sy="15.0" tx="10.0" ty="-11.15625">
-            <y:Point x="549.0511904761905" y="165.0"/>
-            <y:Point x="415.5206349206349" y="165.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e15" source="n32" target="n12">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="0.0" ty="-15.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e16" source="n0" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-10.0" sy="15.0" tx="-10.909090909090878" ty="-10.28125">
-            <y:Point x="395.5206349206349" y="45.0"/>
-            <y:Point x="179.7468253968254" y="45.0"/>
-            <y:Point x="179.7468253968254" y="375.0"/>
-            <y:Point x="574.3309884559885" y="375.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e17" source="n10" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="0.0" ty="-15.0">
-            <y:Point x="559.0511904761905" y="225.0"/>
-            <y:Point x="585.2400793650794" y="225.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e18" source="n11" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="-2.727272727272748" ty="-14.71875">
-            <y:Point x="520.5531746031746" y="330.0"/>
-            <y:Point x="582.5128066378066" y="330.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e19" source="n26" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="-13.636363636363626" ty="-6.21875">
-            <y:Point x="82.3734126984127" y="390.0"/>
-            <y:Point x="571.6037157287158" y="390.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e20" source="n21" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="-8.18181818181813" ty="-12.59375">
-            <y:Point x="267.4607142857143" y="360.0"/>
-            <y:Point x="577.0582611832613" y="360.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e21" source="n25" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-7.5" sy="15.0" tx="13.636363636363626" ty="-6.21875">
-            <y:Point x="1519.5123015873016" y="390.0"/>
-            <y:Point x="598.876443001443" y="390.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e22" source="n19" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="8.18181818181813" ty="-12.59375">
-            <y:Point x="937.384126984127" y="360.0"/>
-            <y:Point x="593.4218975468975" y="360.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e23" source="n27" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="2.727272727272748" ty="-14.71875">
-            <y:Point x="663.2714285714286" y="330.0"/>
-            <y:Point x="587.9673520923521" y="330.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e24" source="n20" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-7.5" sy="15.0" tx="10.909090909090878" ty="-10.28125">
-            <y:Point x="1071.2809523809524" y="375.0"/>
-            <y:Point x="596.1491702741703" y="375.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e25" source="n12" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="-5.454545454545496" ty="-13.96875">
-            <y:Point x="405.5206349206349" y="345.0"/>
-            <y:Point x="579.7855339105339" y="345.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e26" source="n28" target="n33">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="5.454545454545496" ty="-13.96875">
-            <y:Point x="809.9972222222223" y="345.0"/>
-            <y:Point x="590.6946248196249" y="345.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e27" source="n33" target="n13">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="7.5" sy="12.96875" tx="0.0" ty="-15.0">
-            <y:Point x="592.7400793650794" y="450.0"/>
-            <y:Point x="617.9144841269841" y="450.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e28" source="n33" target="n14">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-7.5" sy="12.96875" tx="-7.5" ty="-15.0">
-            <y:Point x="577.7400793650794" y="450.0"/>
-            <y:Point x="552.5656746031746" y="450.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e29" source="n2" target="n34">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-10.0" sy="15.0" tx="0.0" ty="-15.0">
-            <y:Point x="1027.7565476190475" y="45.0"/>
-            <y:Point x="937.384126984127" y="45.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e30" source="n16" target="n34">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="-10.0" ty="-11.15625">
-            <y:Point x="870.3567460317461" y="165.0"/>
-            <y:Point x="927.384126984127" y="165.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e31" source="n17" target="n34">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-10.0" sy="15.0" tx="10.0" ty="-11.15625">
-            <y:Point x="987.406746031746" y="165.0"/>
-            <y:Point x="947.384126984127" y="165.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e32" source="n34" target="n19">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="0.0" ty="-15.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e33" source="n2" target="n35">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="10.0" sy="15.0" tx="3.75" ty="-14.53125">
-            <y:Point x="1047.7565476190475" y="45.0"/>
-            <y:Point x="1138.1289682539682" y="45.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e34" source="n18" target="n35">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="11.25" ty="-9.90625">
-            <y:Point x="1289.168253968254" y="165.0"/>
-            <y:Point x="1145.6289682539682" y="165.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e35" source="n10" target="n35">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="10.0" sy="15.0" tx="-11.25" ty="-9.90625">
-            <y:Point x="569.0511904761905" y="210.0"/>
-            <y:Point x="1123.1289682539682" y="210.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e36" source="n17" target="n35">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="-3.75" ty="-14.53125">
-            <y:Point x="997.406746031746" y="195.0"/>
-            <y:Point x="1130.6289682539682" y="195.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e37" source="n35" target="n20">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-7.5" sy="12.96875" tx="0.0" ty="-15.0">
-            <y:Point x="1126.8789682539682" y="270.0"/>
-            <y:Point x="1078.7809523809524" y="270.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e38" source="n35" target="n15">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="7.5" sy="12.96875" tx="7.5" ty="-15.0">
-            <y:Point x="1141.8789682539682" y="270.0"/>
-            <y:Point x="1161.4853174603174" y="270.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e39" source="n4" target="n36">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="7.5" sy="15.0" tx="11.25" ty="-9.90625">
-            <y:Point x="1591.9535714285714" y="45.0"/>
-            <y:Point x="1649.6472222222221" y="45.0"/>
-            <y:Point x="1649.6472222222221" y="165.0"/>
-            <y:Point x="1607.8003968253968" y="165.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e40" source="n23" target="n36">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="-3.75" ty="-14.53125">
-            <y:Point x="1465.5805555555555" y="165.0"/>
-            <y:Point x="1592.8003968253968" y="165.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e41" source="n17" target="n36">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="10.0" sy="15.0" tx="-11.25" ty="-9.90625">
-            <y:Point x="1007.406746031746" y="180.0"/>
-            <y:Point x="1585.3003968253968" y="180.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e42" source="n24" target="n36">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="15.0" tx="3.75" ty="-14.53125"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e43" source="n36" target="n25">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="-7.5" sy="12.96875" tx="0.0" ty="-15.0">
-            <y:Point x="1589.0503968253968" y="270.0"/>
-            <y:Point x="1527.0123015873016" y="270.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e44" source="n36" target="n22">
-      <data key="d8"/>
-      <data key="d9">
-        <y:PolyLineEdge>
-          <y:Path sx="7.5" sy="12.96875" tx="7.5" ty="-15.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-  </graph>
-  <data key="d0">
-    <y:Resources/>
-  </data>
-</graphml>
+        </y:PolyLineEdge></graphml:data>
+    </graphml:edge>
+    <graphml:edge source="ClassCS" target="cClassCS_2_Class (5)"/>
+    <graphml:edge source="cClassCS_2_Class (5)" target="Class"/>
+    <graphml:edge source="cClassCS_2_Class (5)" target="ClassCS::ast"/>
+    <graphml:edge source="PackageCS" target="cPackageCS_2_Package (2)"/>
+    <graphml:edge source="cPackageCS_2_Package (2)" target="Package"/>
+    <graphml:edge source="cPackageCS_2_Package (2)" target="PackageCS::ast"/>
+    <graphml:edge source="RootCS" target="cRootCS_2_Root (1)"/>
+    <graphml:edge source="cRootCS_2_Root (1)" target="Root"/>
+    <graphml:edge source="cRootCS_2_Root (1)" target="RootCS::ast"/>
+    <graphml:edge source="ClassCS" target="uClass_name (7)"/>
+    <graphml:edge source="ClassCS::name" target="uClass_name (7)"/>
+    <graphml:edge source="ClassCS::ast" target="uClass_name (7)"/>
+    <graphml:edge source="uClass_name (7)" target="Class::name"/>
+    <graphml:edge source="ClassCS" target="uClass_superClass (8)"/>
+    <graphml:edge source="ClassCS::ast" target="uClass_superClass (8)"/>
+    <graphml:edge source="ClassCS::extends" target="uClass_superClass (8)"/>
+    <graphml:edge source="Environment::namedElements" target="uClass_superClass (8)"/>
+    <graphml:edge source="Package::ownedPackages" target="uClass_superClass (8)"/>
+    <graphml:edge source="Root::ownedPackages" target="uClass_superClass (8)"/>
+    <graphml:edge source="Package::name" target="uClass_superClass (8)"/>
+    <graphml:edge source="PathElementCS::name" target="uClass_superClass (8)"/>
+    <graphml:edge source="Package::ownedClasses" target="uClass_superClass (8)"/>
+    <graphml:edge source="Class::name" target="uClass_superClass (8)"/>
+    <graphml:edge source="PathNameCS::path" target="uClass_superClass (8)"/>
+    <graphml:edge source="uClass_superClass (8)" target="Class::superClass"/>
+    <graphml:edge source="uClass_superClass (8)" target="Class::Class"/>
+    <graphml:edge source="PackageCS" target="uPackage_name (4)"/>
+    <graphml:edge source="PackageCS::name" target="uPackage_name (4)"/>
+    <graphml:edge source="PackageCS::ast" target="uPackage_name (4)"/>
+    <graphml:edge source="uPackage_name (4)" target="Package::name"/>
+    <graphml:edge source="PackageCS" target="uPackage_ownedClasses (6)"/>
+    <graphml:edge source="PackageCS::ownedClasses" target="uPackage_ownedClasses (6)"/>
+    <graphml:edge source="ClassCS::ast" target="uPackage_ownedClasses (6)"/>
+    <graphml:edge source="PackageCS::ast" target="uPackage_ownedClasses (6)"/>
+    <graphml:edge source="uPackage_ownedClasses (6)" target="Package::ownedClasses"/>
+    <graphml:edge source="uPackage_ownedClasses (6)" target="Class::Package"/>
+    <graphml:edge source="RootCS" target="uRoot_ownedPackages (3)"/>
+    <graphml:edge source="RootCS::ownedPackages" target="uRoot_ownedPackages (3)"/>
+    <graphml:edge source="PackageCS::ast" target="uRoot_ownedPackages (3)"/>
+    <graphml:edge source="RootCS::ast" target="uRoot_ownedPackages (3)"/>
+    <graphml:edge source="uRoot_ownedPackages (3)" target="Root::ownedPackages"/>
+    <graphml:edge source="uRoot_ownedPackages (3)" target="Package::Root"/>
+  </graphml:graph>
+</graphml:graphml>
