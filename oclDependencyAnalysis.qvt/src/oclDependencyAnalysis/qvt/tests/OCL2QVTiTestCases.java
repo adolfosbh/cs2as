@@ -1,9 +1,8 @@
 package oclDependencyAnalysis.qvt.tests;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
 
 import oclDependencyAnalysis.qvt.OCL2QVTiBroker;
 
@@ -98,26 +97,6 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		}
 	}
 	
-	private static class ModuleAccessibleEtlTask extends EtlTask {
-
-		private List<Variable> parameters = new ArrayList<Variable>();
-		
-		public ModuleAccessibleEtlTask(java.net.URI etlSourceURI) {
-			super(etlSourceURI);
-		}
-		
-		public void addParameter(Variable parameter){
-			parameters.add(parameter);
-		}
-		
-		@Override
-		public void preProcess() {
-			super.preProcess();
-			for (Variable param : parameters)
-				module.getContext().getFrameStack().put(param);
-		}
-	}
-	
 	private MyQVT myQVT;
 
 	@Before
@@ -168,8 +147,8 @@ public class OCL2QVTiTestCases extends LoadTestCase {
     	assertValidQVTiModel(txURI);
     	
     	// Not working see Bug 458152
-    	//launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("Source2Target_complete").toString(), false);
-    	//launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("Source2Target_pruned").toString(), true);
+    	launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("Source2Target_complete.graphml").toString(), false);
+    	launchQVTs2GraphMlTx(mtc.getsModel(), baseURI.appendSegment("Source2Target_pruned.graphml").toString(), true);
 		
     	QVTiPivotEvaluator testEvaluator =  new QVTiPivotEvaluator(myQVT.getEnvironmentFactory(), qvtiTransf.getTransformation());
 		URI samplesBaseUri = baseURI.appendSegment("samples");
@@ -458,7 +437,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		try {
 			// Since pruning might modify QVTs model, we will ensure it's not stored on disposal
 			qvtsModel.setStoredOnDisposal(false);
-			ModuleAccessibleEtlTask etl = new ModuleAccessibleEtlTask(MtcBroker.class.getResource("extras/QVTsToGraphML.etl").toURI());
+			EtlTask etl = new EtlTask(MtcBroker.class.getResource("extras/QVTsToGraphML.etl").toURI());
 			XmlModel graphMl = createGraphMlModel(graphMlURI);
 			etl.addModel(qvtsModel);
 			etl.addModel(graphMl);
@@ -478,7 +457,7 @@ public class OCL2QVTiTestCases extends LoadTestCase {
 		    properties.put(XmlModel.PROPERTY_NAME, "GML");
 		    properties.put(XmlModel.PROPERTY_ALIASES, "GML");
 		    properties.put(XmlModel.PROPERTY_MODEL_FILE, graphMlURI);
-		    properties.put(XmlModel.PROPERTY_XSD_FILE, "schema/ygraphml.xsd");
+		    properties.put(XmlModel.PROPERTY_XSD_FILE, new File("schema/ygraphml.xsd").getAbsolutePath());
 		    properties.put(XmlModel.PROPERTY_READONLOAD, "false");
 		    properties.put(XmlModel.PROPERTY_STOREONDISPOSAL, "true");
 		    xmlModel.load(properties);
