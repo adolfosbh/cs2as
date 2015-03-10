@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="target" nsURI="http://ocldependencyanalysis/targetMM/1.0" nsPrefix="target">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="target" nsURI="http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0"
+    nsPrefix="target">
   <eClassifiers xsi:type="ecore:EClass" name="A" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="A1" eSuperTypes="#//A">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownsB" upperBound="-1"
@@ -10,6 +11,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownsC" upperBound="-1"
         eType="#//C" containment="true" eOpposite="#//C/toA2"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="A3" eSuperTypes="#//A2"/>
   <eClassifiers xsi:type="ecore:EClass" name="B" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="toA1" eType="#//A1" eOpposite="#//A1/ownsB"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownsD" eType="#//D" containment="true"

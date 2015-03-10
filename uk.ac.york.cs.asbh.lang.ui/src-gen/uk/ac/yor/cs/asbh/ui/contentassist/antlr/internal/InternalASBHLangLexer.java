@@ -2,7 +2,7 @@ package uk.ac.yor.cs.asbh.ui.contentassist.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
+import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 
 
 import org.antlr.runtime.*;
@@ -13,12 +13,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalASBHLangLexer extends Lexer {
     public static final int RULE_ID=5;
-    public static final int T__22=22;
     public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=8;
+    public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__19=19;
     public static final int RULE_STRING=4;
@@ -112,11 +109,10 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:14:7: ( 'ownedX' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:14:9: 'ownedX'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:14:7: ( 'X' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:14:9: 'X'
             {
-            match("ownedX"); 
-
+            match('X'); 
 
             }
 
@@ -133,10 +129,10 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:15:7: ( ',' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:15:9: ','
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:15:7: ( 'Z' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:15:9: 'Z'
             {
-            match(','); 
+            match('Z'); 
 
             }
 
@@ -153,10 +149,11 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:16:7: ( 'X' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:16:9: 'X'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:16:7: ( 'Y1' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:16:9: 'Y1'
             {
-            match('X'); 
+            match("Y1"); 
+
 
             }
 
@@ -173,10 +170,10 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:17:7: ( 'ownsY' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:17:9: 'ownsY'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:17:7: ( 'Y2' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:17:9: 'Y2'
             {
-            match("ownsY"); 
+            match("Y2"); 
 
 
             }
@@ -194,10 +191,11 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:18:7: ( 'Z' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:18:9: 'Z'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:18:7: ( 'isA1' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:18:9: 'isA1'
             {
-            match('Z'); 
+            match("isA1"); 
+
 
             }
 
@@ -214,10 +212,10 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:19:7: ( 'Y1' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:19:9: 'Y1'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:19:7: ( 'isA2' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:19:9: 'isA2'
             {
-            match("Y1"); 
+            match("isA2"); 
 
 
             }
@@ -230,78 +228,15 @@ public class InternalASBHLangLexer extends Lexer {
     }
     // $ANTLR end "T__19"
 
-    // $ANTLR start "T__20"
-    public final void mT__20() throws RecognitionException {
-        try {
-            int _type = T__20;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:20:7: ( 'ownsZ' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:20:9: 'ownsZ'
-            {
-            match("ownsZ"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__20"
-
-    // $ANTLR start "T__21"
-    public final void mT__21() throws RecognitionException {
-        try {
-            int _type = T__21;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:21:7: ( 'Y2' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:21:9: 'Y2'
-            {
-            match("Y2"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__21"
-
-    // $ANTLR start "T__22"
-    public final void mT__22() throws RecognitionException {
-        try {
-            int _type = T__22;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:22:7: ( 'isA1' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:22:9: 'isA1'
-            {
-            match("isA1"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__22"
-
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1600:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1600:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1198:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1198:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1600:11: ( '^' )?
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1198:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -310,7 +245,7 @@ public class InternalASBHLangLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1600:11: '^'
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1198:11: '^'
                     {
                     match('^'); 
 
@@ -328,7 +263,7 @@ public class InternalASBHLangLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1600:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1198:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -377,10 +312,10 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1602:10: ( ( '0' .. '9' )+ )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1602:12: ( '0' .. '9' )+
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1200:10: ( ( '0' .. '9' )+ )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1200:12: ( '0' .. '9' )+
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1602:12: ( '0' .. '9' )+
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1200:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -394,7 +329,7 @@ public class InternalASBHLangLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1602:13: '0' .. '9'
+            	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1200:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -426,10 +361,10 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -447,10 +382,10 @@ public class InternalASBHLangLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -466,23 +401,15 @@ public class InternalASBHLangLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -507,10 +434,10 @@ public class InternalASBHLangLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -526,23 +453,15 @@ public class InternalASBHLangLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1604:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1202:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -585,12 +504,12 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1606:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1606:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1204:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1204:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1606:24: ( options {greedy=false; } : . )*
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1204:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -615,7 +534,7 @@ public class InternalASBHLangLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1606:52: .
+            	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1204:52: .
             	    {
             	    matchAny(); 
 
@@ -645,12 +564,12 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1608:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1608:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1206:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1206:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1608:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1206:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -663,7 +582,7 @@ public class InternalASBHLangLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1608:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1206:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -683,7 +602,7 @@ public class InternalASBHLangLexer extends Lexer {
                 }
             } while (true);
 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1608:40: ( ( '\\r' )? '\\n' )?
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1206:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -692,9 +611,9 @@ public class InternalASBHLangLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1608:41: ( '\\r' )? '\\n'
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1206:41: ( '\\r' )? '\\n'
                     {
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1608:41: ( '\\r' )?
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1206:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -703,7 +622,7 @@ public class InternalASBHLangLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1608:41: '\\r'
+                            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1206:41: '\\r'
                             {
                             match('\r'); 
 
@@ -735,10 +654,10 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1610:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1610:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1208:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1208:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1610:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1208:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -792,8 +711,8 @@ public class InternalASBHLangLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1612:16: ( . )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1612:18: .
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1210:16: ( . )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1210:18: .
             {
             matchAny(); 
 
@@ -808,8 +727,8 @@ public class InternalASBHLangLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=19;
+        // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=16;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -876,70 +795,49 @@ public class InternalASBHLangLexer extends Lexer {
                 }
                 break;
             case 10 :
-                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:64: T__20
-                {
-                mT__20(); 
-
-                }
-                break;
-            case 11 :
-                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:70: T__21
-                {
-                mT__21(); 
-
-                }
-                break;
-            case 12 :
-                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:76: T__22
-                {
-                mT__22(); 
-
-                }
-                break;
-            case 13 :
-                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:82: RULE_ID
+                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:64: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 14 :
-                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:90: RULE_INT
+            case 11 :
+                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:72: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 15 :
-                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:99: RULE_STRING
+            case 12 :
+                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:81: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 16 :
-                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:111: RULE_ML_COMMENT
+            case 13 :
+                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:93: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 17 :
-                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:127: RULE_SL_COMMENT
+            case 14 :
+                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:109: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 18 :
-                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:143: RULE_WS
+            case 15 :
+                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:125: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 19 :
-                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:151: RULE_ANY_OTHER
+            case 16 :
+                // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1:133: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -953,81 +851,64 @@ public class InternalASBHLangLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\23\2\uffff\1\23\1\uffff\1\30\1\31\2\23\1\21\2\uffff"+
-        "\3\21\2\uffff\1\23\3\uffff\1\23\3\uffff\1\44\1\45\1\23\5\uffff\2"+
-        "\23\2\uffff\1\23\1\53\2\23\1\57\1\uffff\1\23\1\61\1\62\1\uffff\1"+
-        "\63\3\uffff";
+        "\1\uffff\1\21\2\uffff\1\24\1\25\2\21\1\17\2\uffff\3\17\2\uffff"+
+        "\1\21\5\uffff\1\37\1\40\1\21\5\uffff\1\21\2\uffff\1\21\1\45\1\46"+
+        "\1\47\3\uffff";
     static final String DFA12_eofS =
-        "\64\uffff";
+        "\50\uffff";
     static final String DFA12_minS =
-        "\1\0\1\157\2\uffff\1\167\1\uffff\2\60\1\61\1\163\1\101\2\uffff"+
-        "\2\0\1\52\2\uffff\1\157\3\uffff\1\156\3\uffff\2\60\1\101\5\uffff"+
-        "\1\164\1\145\2\uffff\1\61\1\60\1\144\1\131\1\60\1\uffff\1\130\2"+
-        "\60\1\uffff\1\60\3\uffff";
+        "\1\0\1\157\2\uffff\2\60\1\61\1\163\1\101\2\uffff\2\0\1\52\2\uffff"+
+        "\1\157\5\uffff\2\60\1\101\5\uffff\1\164\2\uffff\1\61\3\60\3\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\157\2\uffff\1\167\1\uffff\2\172\1\62\1\163\1\172\2\uffff"+
-        "\2\uffff\1\57\2\uffff\1\157\3\uffff\1\156\3\uffff\2\172\1\101\5"+
-        "\uffff\1\164\1\163\2\uffff\1\61\1\172\1\144\1\132\1\172\1\uffff"+
-        "\1\130\2\172\1\uffff\1\172\3\uffff";
+        "\1\uffff\1\157\2\uffff\2\172\1\62\1\163\1\172\2\uffff\2\uffff\1"+
+        "\57\2\uffff\1\157\5\uffff\2\172\1\101\5\uffff\1\164\2\uffff\1\62"+
+        "\3\172\3\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\3\1\uffff\1\5\5\uffff\1\15\1\16\3\uffff\1\22\1\23"+
-        "\1\uffff\1\15\1\2\1\3\1\uffff\1\5\1\6\1\10\3\uffff\1\16\1\17\1\20"+
-        "\1\21\1\22\2\uffff\1\11\1\13\5\uffff\1\1\3\uffff\1\14\1\uffff\1"+
-        "\7\1\12\1\4";
+        "\2\uffff\1\2\1\3\5\uffff\1\12\1\13\3\uffff\1\17\1\20\1\uffff\1"+
+        "\12\1\2\1\3\1\4\1\5\3\uffff\1\13\1\14\1\15\1\16\1\17\1\uffff\1\6"+
+        "\1\7\4\uffff\1\1\1\10\1\11";
     static final String DFA12_specialS =
-        "\1\1\14\uffff\1\0\1\2\45\uffff}>";
+        "\1\2\12\uffff\1\1\1\0\33\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\21\2\20\2\21\1\20\22\21\1\20\1\21\1\15\4\21\1\16\4\21\1"+
-            "\5\2\21\1\17\12\14\7\21\21\13\1\1\5\13\1\6\1\10\1\7\3\21\1\12"+
-            "\1\13\1\21\10\13\1\11\5\13\1\4\13\13\1\2\1\21\1\3\uff82\21",
-            "\1\22",
+            "\11\17\2\16\2\17\1\16\22\17\1\16\1\17\1\13\4\17\1\14\7\17\1"+
+            "\15\12\12\7\17\21\11\1\1\5\11\1\4\1\6\1\5\3\17\1\10\1\11\1\17"+
+            "\10\11\1\7\21\11\1\2\1\17\1\3\uff82\17",
+            "\1\20",
             "",
             "",
-            "\1\26",
-            "",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\1\32\1\33",
-            "\1\34",
-            "\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\26\1\27",
+            "\1\30",
+            "\32\21\4\uffff\1\21\1\uffff\32\21",
             "",
             "",
-            "\0\36",
-            "\0\36",
-            "\1\37\4\uffff\1\40",
+            "\0\32",
+            "\0\32",
+            "\1\33\4\uffff\1\34",
+            "",
+            "",
+            "\1\36",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\41",
+            "",
+            "",
+            "",
             "",
             "",
             "\1\42",
             "",
             "",
-            "",
-            "\1\43",
-            "",
-            "",
-            "",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\1\46",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\47",
-            "\1\50\15\uffff\1\51",
-            "",
-            "",
-            "\1\52",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\1\54",
-            "\1\55\1\56",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "",
-            "\1\60",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\43\1\44",
+            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
             "",
             "",
             ""
@@ -1063,23 +944,33 @@ public class InternalASBHLangLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_13 = input.LA(1);
+                        int LA12_12 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_13>='\u0000' && LA12_13<='\uFFFF')) ) {s = 30;}
+                        if ( ((LA12_12>='\u0000' && LA12_12<='\uFFFF')) ) {s = 26;}
 
-                        else s = 17;
+                        else s = 15;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
+                        int LA12_11 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_11>='\u0000' && LA12_11<='\uFFFF')) ) {s = 26;}
+
+                        else s = 15;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1089,43 +980,29 @@ public class InternalASBHLangLexer extends Lexer {
 
                         else if ( (LA12_0=='}') ) {s = 3;}
 
-                        else if ( (LA12_0=='o') ) {s = 4;}
+                        else if ( (LA12_0=='X') ) {s = 4;}
 
-                        else if ( (LA12_0==',') ) {s = 5;}
+                        else if ( (LA12_0=='Z') ) {s = 5;}
 
-                        else if ( (LA12_0=='X') ) {s = 6;}
+                        else if ( (LA12_0=='Y') ) {s = 6;}
 
-                        else if ( (LA12_0=='Z') ) {s = 7;}
+                        else if ( (LA12_0=='i') ) {s = 7;}
 
-                        else if ( (LA12_0=='Y') ) {s = 8;}
+                        else if ( (LA12_0=='^') ) {s = 8;}
 
-                        else if ( (LA12_0=='i') ) {s = 9;}
+                        else if ( ((LA12_0>='A' && LA12_0<='Q')||(LA12_0>='S' && LA12_0<='W')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='z')) ) {s = 9;}
 
-                        else if ( (LA12_0=='^') ) {s = 10;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 10;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='Q')||(LA12_0>='S' && LA12_0<='W')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='n')||(LA12_0>='p' && LA12_0<='z')) ) {s = 11;}
+                        else if ( (LA12_0=='\"') ) {s = 11;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 12;}
+                        else if ( (LA12_0=='\'') ) {s = 12;}
 
-                        else if ( (LA12_0=='\"') ) {s = 13;}
+                        else if ( (LA12_0=='/') ) {s = 13;}
 
-                        else if ( (LA12_0=='\'') ) {s = 14;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 14;}
 
-                        else if ( (LA12_0=='/') ) {s = 15;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 16;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 17;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA12_14 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_14>='\u0000' && LA12_14<='\uFFFF')) ) {s = 30;}
-
-                        else s = 17;
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 15;}
 
                         if ( s>=0 ) return s;
                         break;

@@ -7,12 +7,16 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: uk.ac.york.cs.asbh.lang.cs2as.source,
+Export-Package: uk.ac.york.cs.asbh.lang.cs2as.env,
+ uk.ac.york.cs.asbh.lang.cs2as.env.impl,
+ uk.ac.york.cs.asbh.lang.cs2as.env.util,
+ uk.ac.york.cs.asbh.lang.cs2as.source,
  uk.ac.york.cs.asbh.lang.cs2as.source.impl,
  uk.ac.york.cs.asbh.lang.cs2as.source.util,
  uk.ac.york.cs.asbh.lang.cs2as.target,
  uk.ac.york.cs.asbh.lang.cs2as.target.impl,
  uk.ac.york.cs.asbh.lang.cs2as.target.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore
+ org.eclipse.emf.ecore;visibility:=reexport,
+ uk.ac.york.cs.asbh.lang.cs2as;visibility:=reexport
 Bundle-ActivationPolicy: lazy

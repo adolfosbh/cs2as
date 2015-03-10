@@ -12,7 +12,7 @@ public class AbstractASBHLangValidator extends org.eclipse.xtext.validation.Abst
 	@Override
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://ocldependencyanalysis/sourceMM/1.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://uk.ac.york.cs.asbh.lang.cs2as/sourceMM/1.0"));
 		return result;
 	}
 }

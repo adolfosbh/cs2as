@@ -1,26 +1,35 @@
 import 'SourceMM1.ecore'
 import 'TargetMM1.ecore'
-import 'Environment.ecore'
+import 'SourceDisambiguation.ocl'
 import 'TargetLookup.ocl'
+
 
 package source
 
 context SRoot
-def : ast() : target::TRoot=
+def : ast() : target::TRoot =
 	target::TRoot {
 		ownedA = ownedX.ast()
 	}
 
 context X
 def : ast() : target::A =
-	if isA1
+	invalid -- To be overriden
+
+context X
+def : ast() : target::A =
+	if disambiguatesToA1()
 	then target::A1 {
 		ownsB = ownsY.oclAsType(Y1).ast()
 	}
-	else target::A2 {
-		ownsC = ownsY.oclAsType(Y2).ast()
-	}
-	endif
+	else if disambiguatesToA2() 
+		then  target::A2 {
+			ownsC = ownsY.oclAsType(Y2).ast()
+		}
+		else target::A3 {
+			ownsC = ownsY.oclAsType(Y2).ast()
+		}
+	endif endif
 
 context Y1	
 def : ast() : target::B =
@@ -36,19 +45,31 @@ def : ast() : target::C =
 		name = name
 	}
 
-context Z 
+context Z
 def : ast() : target::D =
-	-- if toY.ast().oclIsKindOf(target::B)
+	invalid -- To be overriden
+	
+context Z
+def : ast() : target::D =
 	if toY.oclIsKindOf(source::Y1)
 	then target::D {
-			toA = toY.oclAsType(source::Y1).ast().toA1,
-			name = name,
-			refsB = lookupB(name)
-		} 
+		toA = toY.oclAsType(source::Y1).ast().toA1,
+		name = name,
+		refsB = if name.oclIsUndefined() 
+				then null
+				else toY.oclAsType(source::Y1).ast().env().lookupB(name) -- Lookups are performed from the created ast element
+									-- Problem : disambiguating lookups need to start from the container
+				endif 
+	}
 	else target::D {
-			toA = toY.oclAsType(source::Y2).ast().toA2,
-			name = name,
-			refsC = lookupC(name)
-		}
+		toA = toY.oclAsType(source::Y2).ast().toA2,
+		name = name,
+		refsC = if name.oclIsUndefined() 
+				then null
+				else toY.oclAsType(source::Y2).ast().env().lookupC(name) -- Lookups are performed from the created ast element
+									-- Problem : disambiguating lookups need to start from the container 
+				endif
+	}
 	endif
+
 endpackage

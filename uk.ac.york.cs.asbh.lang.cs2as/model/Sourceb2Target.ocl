@@ -1,6 +1,6 @@
 import 'SourceMM1b.ecore'
 import 'TargetMM1.ecore'
-import 'Environment.ecore'
+import 'EnvExample1.ecore'
 import 'Sourceb2Sourceb.ocl'
 import 'TargetLookup.ocl'
 
@@ -51,7 +51,7 @@ def : ast() : target::D =
 	target::D {
 		toA = toY.oclAsType(source::Y1).ast().toA1,
 		name = name,
-		refsB = ast().lookupB(name) -- Lookups are performed from the created ast element
+		refsB = ast().env().lookupB(name) -- Lookups are performed from the created ast element
 									-- Problem : disambiguating lookups need to start from the container 
 	}
 	
@@ -60,7 +60,7 @@ def : ast() : target::D =
 	target::D {
 		toA = toY.oclAsType(source::Y2).ast().toA2,
 		name = name,
-		refsC = ast().lookupC(name) -- Lookups are performed from the created ast element
+		refsC = ast().env().lookupC(name) -- Lookups are performed from the created ast element
 									-- Problem : disambiguating lookups need to start from the container 
 	}
 

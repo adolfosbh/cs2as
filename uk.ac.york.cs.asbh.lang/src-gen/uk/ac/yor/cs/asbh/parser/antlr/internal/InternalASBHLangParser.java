@@ -21,15 +21,12 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalASBHLangParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Root'", "'{'", "'ownedX'", "','", "'}'", "'isA1'", "'X'", "'ownsY'", "'Z'", "'Y1'", "'ownsZ'", "'Y2'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Root'", "'{'", "'}'", "'X'", "'isA1'", "'isA2'", "'Z'", "'Y1'", "'Y2'"
     };
     public static final int RULE_ID=5;
-    public static final int T__22=22;
     public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
+    public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__19=19;
     public static final int RULE_STRING=4;
@@ -119,30 +116,24 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRoot"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:76:1: ruleRoot returns [EObject current=null] : ( () otherlv_1= 'Root' otherlv_2= '{' (otherlv_3= 'ownedX' otherlv_4= '{' ( (lv_ownedX_5_0= ruleX ) ) (otherlv_6= ',' ( (lv_ownedX_7_0= ruleX ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:76:1: ruleRoot returns [EObject current=null] : ( () otherlv_1= 'Root' otherlv_2= '{' ( (lv_ownedX_3_0= ruleX ) )* otherlv_4= '}' ) ;
     public final EObject ruleRoot() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_9=null;
-        EObject lv_ownedX_5_0 = null;
-
-        EObject lv_ownedX_7_0 = null;
+        EObject lv_ownedX_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:79:28: ( ( () otherlv_1= 'Root' otherlv_2= '{' (otherlv_3= 'ownedX' otherlv_4= '{' ( (lv_ownedX_5_0= ruleX ) ) (otherlv_6= ',' ( (lv_ownedX_7_0= ruleX ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:80:1: ( () otherlv_1= 'Root' otherlv_2= '{' (otherlv_3= 'ownedX' otherlv_4= '{' ( (lv_ownedX_5_0= ruleX ) ) (otherlv_6= ',' ( (lv_ownedX_7_0= ruleX ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:79:28: ( ( () otherlv_1= 'Root' otherlv_2= '{' ( (lv_ownedX_3_0= ruleX ) )* otherlv_4= '}' ) )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:80:1: ( () otherlv_1= 'Root' otherlv_2= '{' ( (lv_ownedX_3_0= ruleX ) )* otherlv_4= '}' )
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:80:1: ( () otherlv_1= 'Root' otherlv_2= '{' (otherlv_3= 'ownedX' otherlv_4= '{' ( (lv_ownedX_5_0= ruleX ) ) (otherlv_6= ',' ( (lv_ownedX_7_0= ruleX ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:80:2: () otherlv_1= 'Root' otherlv_2= '{' (otherlv_3= 'ownedX' otherlv_4= '{' ( (lv_ownedX_5_0= ruleX ) ) (otherlv_6= ',' ( (lv_ownedX_7_0= ruleX ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:80:1: ( () otherlv_1= 'Root' otherlv_2= '{' ( (lv_ownedX_3_0= ruleX ) )* otherlv_4= '}' )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:80:2: () otherlv_1= 'Root' otherlv_2= '{' ( (lv_ownedX_3_0= ruleX ) )* otherlv_4= '}'
             {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:80:2: ()
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:81:5: 
@@ -163,128 +154,58 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_2, grammarAccess.getRootAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:94:1: (otherlv_3= 'ownedX' otherlv_4= '{' ( (lv_ownedX_5_0= ruleX ) ) (otherlv_6= ',' ( (lv_ownedX_7_0= ruleX ) ) )* otherlv_8= '}' )?
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:94:1: ( (lv_ownedX_3_0= ruleX ) )*
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
 
-            if ( (LA2_0==13) ) {
-                alt2=1;
-            }
-            switch (alt2) {
-                case 1 :
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:94:3: otherlv_3= 'ownedX' otherlv_4= '{' ( (lv_ownedX_5_0= ruleX ) ) (otherlv_6= ',' ( (lv_ownedX_7_0= ruleX ) ) )* otherlv_8= '}'
-                    {
-                    otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleRoot156); 
-
-                        	newLeafNode(otherlv_3, grammarAccess.getRootAccess().getOwnedXKeyword_3_0());
-                        
-                    otherlv_4=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleRoot168); 
-
-                        	newLeafNode(otherlv_4, grammarAccess.getRootAccess().getLeftCurlyBracketKeyword_3_1());
-                        
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:102:1: ( (lv_ownedX_5_0= ruleX ) )
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:103:1: (lv_ownedX_5_0= ruleX )
-                    {
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:103:1: (lv_ownedX_5_0= ruleX )
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:104:3: lv_ownedX_5_0= ruleX
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_2_0()); 
-                    	    
-                    pushFollow(FollowSets000.FOLLOW_ruleX_in_ruleRoot189);
-                    lv_ownedX_5_0=ruleX();
-
-                    state._fsp--;
+                if ( (LA1_0==14) ) {
+                    alt1=1;
+                }
 
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getRootRule());
-                    	        }
-                           		add(
-                           			current, 
-                           			"ownedX",
-                            		lv_ownedX_5_0, 
-                            		"X");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                switch (alt1) {
+            	case 1 :
+            	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:95:1: (lv_ownedX_3_0= ruleX )
+            	    {
+            	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:95:1: (lv_ownedX_3_0= ruleX )
+            	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:96:3: lv_ownedX_3_0= ruleX
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_0()); 
+            	    	    
+            	    pushFollow(FollowSets000.FOLLOW_ruleX_in_ruleRoot164);
+            	    lv_ownedX_3_0=ruleX();
 
-                    }
-
-
-                    }
-
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:120:2: (otherlv_6= ',' ( (lv_ownedX_7_0= ruleX ) ) )*
-                    loop1:
-                    do {
-                        int alt1=2;
-                        int LA1_0 = input.LA(1);
-
-                        if ( (LA1_0==14) ) {
-                            alt1=1;
-                        }
+            	    state._fsp--;
 
 
-                        switch (alt1) {
-                    	case 1 :
-                    	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:120:4: otherlv_6= ',' ( (lv_ownedX_7_0= ruleX ) )
-                    	    {
-                    	    otherlv_6=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleRoot202); 
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getRootRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"ownedX",
+            	            		lv_ownedX_3_0, 
+            	            		"X");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
 
-                    	        	newLeafNode(otherlv_6, grammarAccess.getRootAccess().getCommaKeyword_3_3_0());
-                    	        
-                    	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:124:1: ( (lv_ownedX_7_0= ruleX ) )
-                    	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:125:1: (lv_ownedX_7_0= ruleX )
-                    	    {
-                    	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:125:1: (lv_ownedX_7_0= ruleX )
-                    	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:126:3: lv_ownedX_7_0= ruleX
-                    	    {
-                    	     
-                    	    	        newCompositeNode(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_3_1_0()); 
-                    	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleX_in_ruleRoot223);
-                    	    lv_ownedX_7_0=ruleX();
-
-                    	    state._fsp--;
+            	    }
 
 
-                    	    	        if (current==null) {
-                    	    	            current = createModelElementForParent(grammarAccess.getRootRule());
-                    	    	        }
-                    	           		add(
-                    	           			current, 
-                    	           			"ownedX",
-                    	            		lv_ownedX_7_0, 
-                    	            		"X");
-                    	    	        afterParserOrEnumRuleCall();
-                    	    	    
+            	    }
+            	    break;
 
-                    	    }
+            	default :
+            	    break loop1;
+                }
+            } while (true);
 
+            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleRoot177); 
 
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop1;
-                        }
-                    } while (true);
-
-                    otherlv_8=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleRoot237); 
-
-                        	newLeafNode(otherlv_8, grammarAccess.getRootAccess().getRightCurlyBracketKeyword_3_4());
-                        
-
-                    }
-                    break;
-
-            }
-
-            otherlv_9=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleRoot251); 
-
-                	newLeafNode(otherlv_9, grammarAccess.getRootAccess().getRightCurlyBracketKeyword_4());
+                	newLeafNode(otherlv_4, grammarAccess.getRootAccess().getRightCurlyBracketKeyword_4());
                 
 
             }
@@ -307,7 +228,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleY"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:158:1: entryRuleY returns [EObject current=null] : iv_ruleY= ruleY EOF ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:124:1: entryRuleY returns [EObject current=null] : iv_ruleY= ruleY EOF ;
     public final EObject entryRuleY() throws RecognitionException {
         EObject current = null;
 
@@ -315,17 +236,17 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:159:2: (iv_ruleY= ruleY EOF )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:160:2: iv_ruleY= ruleY EOF
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:125:2: (iv_ruleY= ruleY EOF )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:126:2: iv_ruleY= ruleY EOF
             {
              newCompositeNode(grammarAccess.getYRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY_in_entryRuleY287);
+            pushFollow(FollowSets000.FOLLOW_ruleY_in_entryRuleY213);
             iv_ruleY=ruleY();
 
             state._fsp--;
 
              current =iv_ruleY; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY297); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY223); 
 
             }
 
@@ -343,7 +264,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleY"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:167:1: ruleY returns [EObject current=null] : (this_Y1_0= ruleY1 | this_Y2_1= ruleY2 ) ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:133:1: ruleY returns [EObject current=null] : (this_Y1_0= ruleY1 | this_Y2_1= ruleY2 ) ;
     public final EObject ruleY() throws RecognitionException {
         EObject current = null;
 
@@ -355,33 +276,33 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:170:28: ( (this_Y1_0= ruleY1 | this_Y2_1= ruleY2 ) )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:171:1: (this_Y1_0= ruleY1 | this_Y2_1= ruleY2 )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:136:28: ( (this_Y1_0= ruleY1 | this_Y2_1= ruleY2 ) )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:137:1: (this_Y1_0= ruleY1 | this_Y2_1= ruleY2 )
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:171:1: (this_Y1_0= ruleY1 | this_Y2_1= ruleY2 )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:137:1: (this_Y1_0= ruleY1 | this_Y2_1= ruleY2 )
+            int alt2=2;
+            int LA2_0 = input.LA(1);
 
-            if ( (LA3_0==20) ) {
-                alt3=1;
+            if ( (LA2_0==18) ) {
+                alt2=1;
             }
-            else if ( (LA3_0==22) ) {
-                alt3=2;
+            else if ( (LA2_0==19) ) {
+                alt2=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
-            switch (alt3) {
+            switch (alt2) {
                 case 1 :
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:172:5: this_Y1_0= ruleY1
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:138:5: this_Y1_0= ruleY1
                     {
                      
                             newCompositeNode(grammarAccess.getYAccess().getY1ParserRuleCall_0()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleY1_in_ruleY344);
+                    pushFollow(FollowSets000.FOLLOW_ruleY1_in_ruleY270);
                     this_Y1_0=ruleY1();
 
                     state._fsp--;
@@ -394,12 +315,12 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:182:5: this_Y2_1= ruleY2
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:148:5: this_Y2_1= ruleY2
                     {
                      
                             newCompositeNode(grammarAccess.getYAccess().getY2ParserRuleCall_1()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleY2_in_ruleY371);
+                    pushFollow(FollowSets000.FOLLOW_ruleY2_in_ruleY297);
                     this_Y2_1=ruleY2();
 
                     state._fsp--;
@@ -432,7 +353,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleX"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:198:1: entryRuleX returns [EObject current=null] : iv_ruleX= ruleX EOF ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:164:1: entryRuleX returns [EObject current=null] : iv_ruleX= ruleX EOF ;
     public final EObject entryRuleX() throws RecognitionException {
         EObject current = null;
 
@@ -440,17 +361,17 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:199:2: (iv_ruleX= ruleX EOF )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:200:2: iv_ruleX= ruleX EOF
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:165:2: (iv_ruleX= ruleX EOF )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:166:2: iv_ruleX= ruleX EOF
             {
              newCompositeNode(grammarAccess.getXRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleX_in_entryRuleX406);
+            pushFollow(FollowSets000.FOLLOW_ruleX_in_entryRuleX332);
             iv_ruleX=ruleX();
 
             state._fsp--;
 
              current =iv_ruleX; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleX416); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleX342); 
 
             }
 
@@ -468,13 +389,13 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleX"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:207:1: ruleX returns [EObject current=null] : ( () ( (lv_isA1_1_0= 'isA1' ) )? otherlv_2= 'X' otherlv_3= '{' (otherlv_4= 'ownsY' ( (lv_ownsY_5_0= ruleY ) ) )? otherlv_6= '}' ) ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:173:1: ruleX returns [EObject current=null] : ( () otherlv_1= 'X' ( ( (lv_isA1_2_0= 'isA1' ) ) | ( (lv_isA2_3_0= 'isA2' ) ) )? otherlv_4= '{' ( (lv_ownsY_5_0= ruleY ) )* otherlv_6= '}' ) ;
     public final EObject ruleX() throws RecognitionException {
         EObject current = null;
 
-        Token lv_isA1_1_0=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
+        Token otherlv_1=null;
+        Token lv_isA1_2_0=null;
+        Token lv_isA2_3_0=null;
         Token otherlv_4=null;
         Token otherlv_6=null;
         EObject lv_ownsY_5_0 = null;
@@ -483,14 +404,14 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:210:28: ( ( () ( (lv_isA1_1_0= 'isA1' ) )? otherlv_2= 'X' otherlv_3= '{' (otherlv_4= 'ownsY' ( (lv_ownsY_5_0= ruleY ) ) )? otherlv_6= '}' ) )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:211:1: ( () ( (lv_isA1_1_0= 'isA1' ) )? otherlv_2= 'X' otherlv_3= '{' (otherlv_4= 'ownsY' ( (lv_ownsY_5_0= ruleY ) ) )? otherlv_6= '}' )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:176:28: ( ( () otherlv_1= 'X' ( ( (lv_isA1_2_0= 'isA1' ) ) | ( (lv_isA2_3_0= 'isA2' ) ) )? otherlv_4= '{' ( (lv_ownsY_5_0= ruleY ) )* otherlv_6= '}' ) )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:177:1: ( () otherlv_1= 'X' ( ( (lv_isA1_2_0= 'isA1' ) ) | ( (lv_isA2_3_0= 'isA2' ) ) )? otherlv_4= '{' ( (lv_ownsY_5_0= ruleY ) )* otherlv_6= '}' )
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:211:1: ( () ( (lv_isA1_1_0= 'isA1' ) )? otherlv_2= 'X' otherlv_3= '{' (otherlv_4= 'ownsY' ( (lv_ownsY_5_0= ruleY ) ) )? otherlv_6= '}' )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:211:2: () ( (lv_isA1_1_0= 'isA1' ) )? otherlv_2= 'X' otherlv_3= '{' (otherlv_4= 'ownsY' ( (lv_ownsY_5_0= ruleY ) ) )? otherlv_6= '}'
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:177:1: ( () otherlv_1= 'X' ( ( (lv_isA1_2_0= 'isA1' ) ) | ( (lv_isA2_3_0= 'isA2' ) ) )? otherlv_4= '{' ( (lv_ownsY_5_0= ruleY ) )* otherlv_6= '}' )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:177:2: () otherlv_1= 'X' ( ( (lv_isA1_2_0= 'isA1' ) ) | ( (lv_isA2_3_0= 'isA2' ) ) )? otherlv_4= '{' ( (lv_ownsY_5_0= ruleY ) )* otherlv_6= '}'
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:211:2: ()
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:212:5: 
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:177:2: ()
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:178:5: 
             {
 
                     current = forceCreateModelElement(
@@ -500,23 +421,33 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:217:2: ( (lv_isA1_1_0= 'isA1' ) )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            otherlv_1=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleX388); 
 
-            if ( (LA4_0==16) ) {
-                alt4=1;
+                	newLeafNode(otherlv_1, grammarAccess.getXAccess().getXKeyword_1());
+                
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:187:1: ( ( (lv_isA1_2_0= 'isA1' ) ) | ( (lv_isA2_3_0= 'isA2' ) ) )?
+            int alt3=3;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==15) ) {
+                alt3=1;
             }
-            switch (alt4) {
+            else if ( (LA3_0==16) ) {
+                alt3=2;
+            }
+            switch (alt3) {
                 case 1 :
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:218:1: (lv_isA1_1_0= 'isA1' )
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:187:2: ( (lv_isA1_2_0= 'isA1' ) )
                     {
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:218:1: (lv_isA1_1_0= 'isA1' )
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:219:3: lv_isA1_1_0= 'isA1'
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:187:2: ( (lv_isA1_2_0= 'isA1' ) )
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:188:1: (lv_isA1_2_0= 'isA1' )
                     {
-                    lv_isA1_1_0=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleX468); 
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:188:1: (lv_isA1_2_0= 'isA1' )
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:189:3: lv_isA1_2_0= 'isA1'
+                    {
+                    lv_isA1_2_0=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleX407); 
 
-                            newLeafNode(lv_isA1_1_0, grammarAccess.getXAccess().getIsA1IsA1Keyword_1_0());
+                            newLeafNode(lv_isA1_2_0, grammarAccess.getXAccess().getIsA1IsA1Keyword_2_0_0());
                         
 
                     	        if (current==null) {
@@ -529,57 +460,28 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
                     }
+
+
+                    }
                     break;
-
-            }
-
-            otherlv_2=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleX494); 
-
-                	newLeafNode(otherlv_2, grammarAccess.getXAccess().getXKeyword_2());
-                
-            otherlv_3=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleX506); 
-
-                	newLeafNode(otherlv_3, grammarAccess.getXAccess().getLeftCurlyBracketKeyword_3());
-                
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:240:1: (otherlv_4= 'ownsY' ( (lv_ownsY_5_0= ruleY ) ) )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( (LA5_0==18) ) {
-                alt5=1;
-            }
-            switch (alt5) {
-                case 1 :
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:240:3: otherlv_4= 'ownsY' ( (lv_ownsY_5_0= ruleY ) )
+                case 2 :
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:203:6: ( (lv_isA2_3_0= 'isA2' ) )
                     {
-                    otherlv_4=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleX519); 
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:203:6: ( (lv_isA2_3_0= 'isA2' ) )
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:204:1: (lv_isA2_3_0= 'isA2' )
+                    {
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:204:1: (lv_isA2_3_0= 'isA2' )
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:205:3: lv_isA2_3_0= 'isA2'
+                    {
+                    lv_isA2_3_0=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleX444); 
 
-                        	newLeafNode(otherlv_4, grammarAccess.getXAccess().getOwnsYKeyword_4_0());
+                            newLeafNode(lv_isA2_3_0, grammarAccess.getXAccess().getIsA2IsA2Keyword_2_1_0());
                         
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:244:1: ( (lv_ownsY_5_0= ruleY ) )
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:245:1: (lv_ownsY_5_0= ruleY )
-                    {
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:245:1: (lv_ownsY_5_0= ruleY )
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:246:3: lv_ownsY_5_0= ruleY
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getXAccess().getOwnsYYParserRuleCall_4_1_0()); 
-                    	    
-                    pushFollow(FollowSets000.FOLLOW_ruleY_in_ruleX540);
-                    lv_ownsY_5_0=ruleY();
-
-                    state._fsp--;
-
 
                     	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getXRule());
+                    	            current = createModelElement(grammarAccess.getXRule());
                     	        }
-                           		add(
-                           			current, 
-                           			"ownsY",
-                            		lv_ownsY_5_0, 
-                            		"Y");
-                    	        afterParserOrEnumRuleCall();
+                           		setWithLastConsumed(current, "isA2", true, "isA2");
                     	    
 
                     }
@@ -593,7 +495,60 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleX554); 
+            otherlv_4=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleX471); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getXAccess().getLeftCurlyBracketKeyword_3());
+                
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:222:1: ( (lv_ownsY_5_0= ruleY ) )*
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
+
+                if ( ((LA4_0>=18 && LA4_0<=19)) ) {
+                    alt4=1;
+                }
+
+
+                switch (alt4) {
+            	case 1 :
+            	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:223:1: (lv_ownsY_5_0= ruleY )
+            	    {
+            	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:223:1: (lv_ownsY_5_0= ruleY )
+            	    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:224:3: lv_ownsY_5_0= ruleY
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getXAccess().getOwnsYYParserRuleCall_4_0()); 
+            	    	    
+            	    pushFollow(FollowSets000.FOLLOW_ruleY_in_ruleX492);
+            	    lv_ownsY_5_0=ruleY();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getXRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"ownsY",
+            	            		lv_ownsY_5_0, 
+            	            		"Y");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop4;
+                }
+            } while (true);
+
+            otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleX505); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getXAccess().getRightCurlyBracketKeyword_5());
                 
@@ -618,7 +573,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleZ"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:274:1: entryRuleZ returns [EObject current=null] : iv_ruleZ= ruleZ EOF ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:252:1: entryRuleZ returns [EObject current=null] : iv_ruleZ= ruleZ EOF ;
     public final EObject entryRuleZ() throws RecognitionException {
         EObject current = null;
 
@@ -626,17 +581,17 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:275:2: (iv_ruleZ= ruleZ EOF )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:276:2: iv_ruleZ= ruleZ EOF
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:253:2: (iv_ruleZ= ruleZ EOF )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:254:2: iv_ruleZ= ruleZ EOF
             {
              newCompositeNode(grammarAccess.getZRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleZ_in_entryRuleZ590);
+            pushFollow(FollowSets000.FOLLOW_ruleZ_in_entryRuleZ541);
             iv_ruleZ=ruleZ();
 
             state._fsp--;
 
              current =iv_ruleZ; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleZ600); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleZ551); 
 
             }
 
@@ -654,23 +609,24 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleZ"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:283:1: ruleZ returns [EObject current=null] : ( () otherlv_1= 'Z' ) ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:261:1: ruleZ returns [EObject current=null] : ( () otherlv_1= 'Z' ( (lv_name_2_0= RULE_STRING ) )? ) ;
     public final EObject ruleZ() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
+        Token lv_name_2_0=null;
 
          enterRule(); 
             
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:286:28: ( ( () otherlv_1= 'Z' ) )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:287:1: ( () otherlv_1= 'Z' )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:264:28: ( ( () otherlv_1= 'Z' ( (lv_name_2_0= RULE_STRING ) )? ) )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:265:1: ( () otherlv_1= 'Z' ( (lv_name_2_0= RULE_STRING ) )? )
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:287:1: ( () otherlv_1= 'Z' )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:287:2: () otherlv_1= 'Z'
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:265:1: ( () otherlv_1= 'Z' ( (lv_name_2_0= RULE_STRING ) )? )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:265:2: () otherlv_1= 'Z' ( (lv_name_2_0= RULE_STRING ) )?
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:287:2: ()
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:288:5: 
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:265:2: ()
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:266:5: 
             {
 
                     current = forceCreateModelElement(
@@ -680,10 +636,47 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleZ646); 
+            otherlv_1=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleZ597); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getZAccess().getZKeyword_1());
                 
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:275:1: ( (lv_name_2_0= RULE_STRING ) )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==RULE_STRING) ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:276:1: (lv_name_2_0= RULE_STRING )
+                    {
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:276:1: (lv_name_2_0= RULE_STRING )
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:277:3: lv_name_2_0= RULE_STRING
+                    {
+                    lv_name_2_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleZ614); 
+
+                    			newLeafNode(lv_name_2_0, grammarAccess.getZAccess().getNameSTRINGTerminalRuleCall_2_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getZRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"name",
+                            		lv_name_2_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -705,7 +698,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleY1"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:305:1: entryRuleY1 returns [EObject current=null] : iv_ruleY1= ruleY1 EOF ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:301:1: entryRuleY1 returns [EObject current=null] : iv_ruleY1= ruleY1 EOF ;
     public final EObject entryRuleY1() throws RecognitionException {
         EObject current = null;
 
@@ -713,17 +706,17 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:306:2: (iv_ruleY1= ruleY1 EOF )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:307:2: iv_ruleY1= ruleY1 EOF
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:302:2: (iv_ruleY1= ruleY1 EOF )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:303:2: iv_ruleY1= ruleY1 EOF
             {
              newCompositeNode(grammarAccess.getY1Rule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY1_in_entryRuleY1682);
+            pushFollow(FollowSets000.FOLLOW_ruleY1_in_entryRuleY1656);
             iv_ruleY1=ruleY1();
 
             state._fsp--;
 
              current =iv_ruleY1; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY1692); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY1666); 
 
             }
 
@@ -741,51 +734,39 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleY1"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:314:1: ruleY1 returns [EObject current=null] : ( () otherlv_1= 'Y1' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )? otherlv_6= '}' ) ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:310:1: ruleY1 returns [EObject current=null] : (otherlv_0= 'Y1' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}' ) ;
     public final EObject ruleY1() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token lv_name_2_0=null;
-        Token otherlv_3=null;
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+        Token otherlv_2=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
-        EObject lv_ownsZ_5_0 = null;
+        EObject lv_ownsZ_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:317:28: ( ( () otherlv_1= 'Y1' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )? otherlv_6= '}' ) )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:318:1: ( () otherlv_1= 'Y1' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )? otherlv_6= '}' )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:313:28: ( (otherlv_0= 'Y1' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}' ) )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:314:1: (otherlv_0= 'Y1' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}' )
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:318:1: ( () otherlv_1= 'Y1' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )? otherlv_6= '}' )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:318:2: () otherlv_1= 'Y1' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )? otherlv_6= '}'
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:314:1: (otherlv_0= 'Y1' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}' )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:314:3: otherlv_0= 'Y1' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}'
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:318:2: ()
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:319:5: 
-            {
+            otherlv_0=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleY1703); 
 
-                    current = forceCreateModelElement(
-                        grammarAccess.getY1Access().getY1Action_0(),
-                        current);
+                	newLeafNode(otherlv_0, grammarAccess.getY1Access().getY1Keyword_0());
                 
-
-            }
-
-            otherlv_1=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleY1738); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getY1Access().getY1Keyword_1());
-                
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:328:1: ( (lv_name_2_0= RULE_STRING ) )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:329:1: (lv_name_2_0= RULE_STRING )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:318:1: ( (lv_name_1_0= RULE_STRING ) )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:319:1: (lv_name_1_0= RULE_STRING )
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:329:1: (lv_name_2_0= RULE_STRING )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:330:3: lv_name_2_0= RULE_STRING
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:319:1: (lv_name_1_0= RULE_STRING )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:320:3: lv_name_1_0= RULE_STRING
             {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleY1755); 
+            lv_name_1_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleY1720); 
 
-            			newLeafNode(lv_name_2_0, grammarAccess.getY1Access().getNameSTRINGTerminalRuleCall_2_0()); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getY1Access().getNameSTRINGTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -794,7 +775,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"name",
-                    		lv_name_2_0, 
+                    		lv_name_1_0, 
                     		"STRING");
             	    
 
@@ -803,36 +784,29 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleY1772); 
+            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleY1737); 
 
-                	newLeafNode(otherlv_3, grammarAccess.getY1Access().getLeftCurlyBracketKeyword_3());
+                	newLeafNode(otherlv_2, grammarAccess.getY1Access().getLeftCurlyBracketKeyword_2());
                 
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:350:1: (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )?
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:340:1: ( (lv_ownsZ_3_0= ruleZ ) )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==21) ) {
+            if ( (LA6_0==17) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:350:3: otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) )
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:341:1: (lv_ownsZ_3_0= ruleZ )
                     {
-                    otherlv_4=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleY1785); 
-
-                        	newLeafNode(otherlv_4, grammarAccess.getY1Access().getOwnsZKeyword_4_0());
-                        
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:354:1: ( (lv_ownsZ_5_0= ruleZ ) )
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:355:1: (lv_ownsZ_5_0= ruleZ )
-                    {
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:355:1: (lv_ownsZ_5_0= ruleZ )
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:356:3: lv_ownsZ_5_0= ruleZ
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:341:1: (lv_ownsZ_3_0= ruleZ )
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:342:3: lv_ownsZ_3_0= ruleZ
                     {
                      
-                    	        newCompositeNode(grammarAccess.getY1Access().getOwnsZZParserRuleCall_4_1_0()); 
+                    	        newCompositeNode(grammarAccess.getY1Access().getOwnsZZParserRuleCall_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleZ_in_ruleY1806);
-                    lv_ownsZ_5_0=ruleZ();
+                    pushFollow(FollowSets000.FOLLOW_ruleZ_in_ruleY1758);
+                    lv_ownsZ_3_0=ruleZ();
 
                     state._fsp--;
 
@@ -843,13 +817,10 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                            		set(
                            			current, 
                            			"ownsZ",
-                            		lv_ownsZ_5_0, 
+                            		lv_ownsZ_3_0, 
                             		"Z");
                     	        afterParserOrEnumRuleCall();
                     	    
-
-                    }
-
 
                     }
 
@@ -859,9 +830,9 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleY1820); 
+            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleY1771); 
 
-                	newLeafNode(otherlv_6, grammarAccess.getY1Access().getRightCurlyBracketKeyword_5());
+                	newLeafNode(otherlv_4, grammarAccess.getY1Access().getRightCurlyBracketKeyword_4());
                 
 
             }
@@ -884,7 +855,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleY2"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:384:1: entryRuleY2 returns [EObject current=null] : iv_ruleY2= ruleY2 EOF ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:370:1: entryRuleY2 returns [EObject current=null] : iv_ruleY2= ruleY2 EOF ;
     public final EObject entryRuleY2() throws RecognitionException {
         EObject current = null;
 
@@ -892,17 +863,17 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:385:2: (iv_ruleY2= ruleY2 EOF )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:386:2: iv_ruleY2= ruleY2 EOF
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:371:2: (iv_ruleY2= ruleY2 EOF )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:372:2: iv_ruleY2= ruleY2 EOF
             {
              newCompositeNode(grammarAccess.getY2Rule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY2_in_entryRuleY2856);
+            pushFollow(FollowSets000.FOLLOW_ruleY2_in_entryRuleY2807);
             iv_ruleY2=ruleY2();
 
             state._fsp--;
 
              current =iv_ruleY2; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY2866); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY2817); 
 
             }
 
@@ -920,51 +891,39 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleY2"
-    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:393:1: ruleY2 returns [EObject current=null] : ( () otherlv_1= 'Y2' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )? otherlv_6= '}' ) ;
+    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:379:1: ruleY2 returns [EObject current=null] : (otherlv_0= 'Y2' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}' ) ;
     public final EObject ruleY2() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token lv_name_2_0=null;
-        Token otherlv_3=null;
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+        Token otherlv_2=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
-        EObject lv_ownsZ_5_0 = null;
+        EObject lv_ownsZ_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:396:28: ( ( () otherlv_1= 'Y2' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )? otherlv_6= '}' ) )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:397:1: ( () otherlv_1= 'Y2' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )? otherlv_6= '}' )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:382:28: ( (otherlv_0= 'Y2' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}' ) )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:383:1: (otherlv_0= 'Y2' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}' )
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:397:1: ( () otherlv_1= 'Y2' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )? otherlv_6= '}' )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:397:2: () otherlv_1= 'Y2' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )? otherlv_6= '}'
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:383:1: (otherlv_0= 'Y2' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}' )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:383:3: otherlv_0= 'Y2' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}'
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:397:2: ()
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:398:5: 
-            {
+            otherlv_0=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleY2854); 
 
-                    current = forceCreateModelElement(
-                        grammarAccess.getY2Access().getY2Action_0(),
-                        current);
+                	newLeafNode(otherlv_0, grammarAccess.getY2Access().getY2Keyword_0());
                 
-
-            }
-
-            otherlv_1=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleY2912); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getY2Access().getY2Keyword_1());
-                
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:407:1: ( (lv_name_2_0= RULE_STRING ) )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:408:1: (lv_name_2_0= RULE_STRING )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:387:1: ( (lv_name_1_0= RULE_STRING ) )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:388:1: (lv_name_1_0= RULE_STRING )
             {
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:408:1: (lv_name_2_0= RULE_STRING )
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:409:3: lv_name_2_0= RULE_STRING
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:388:1: (lv_name_1_0= RULE_STRING )
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:389:3: lv_name_1_0= RULE_STRING
             {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleY2929); 
+            lv_name_1_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleY2871); 
 
-            			newLeafNode(lv_name_2_0, grammarAccess.getY2Access().getNameSTRINGTerminalRuleCall_2_0()); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getY2Access().getNameSTRINGTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -973,7 +932,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"name",
-                    		lv_name_2_0, 
+                    		lv_name_1_0, 
                     		"STRING");
             	    
 
@@ -982,36 +941,29 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleY2946); 
+            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleY2888); 
 
-                	newLeafNode(otherlv_3, grammarAccess.getY2Access().getLeftCurlyBracketKeyword_3());
+                	newLeafNode(otherlv_2, grammarAccess.getY2Access().getLeftCurlyBracketKeyword_2());
                 
-            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:429:1: (otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) ) )?
+            // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:409:1: ( (lv_ownsZ_3_0= ruleZ ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==21) ) {
+            if ( (LA7_0==17) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:429:3: otherlv_4= 'ownsZ' ( (lv_ownsZ_5_0= ruleZ ) )
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:410:1: (lv_ownsZ_3_0= ruleZ )
                     {
-                    otherlv_4=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleY2959); 
-
-                        	newLeafNode(otherlv_4, grammarAccess.getY2Access().getOwnsZKeyword_4_0());
-                        
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:433:1: ( (lv_ownsZ_5_0= ruleZ ) )
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:434:1: (lv_ownsZ_5_0= ruleZ )
-                    {
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:434:1: (lv_ownsZ_5_0= ruleZ )
-                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:435:3: lv_ownsZ_5_0= ruleZ
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:410:1: (lv_ownsZ_3_0= ruleZ )
+                    // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:411:3: lv_ownsZ_3_0= ruleZ
                     {
                      
-                    	        newCompositeNode(grammarAccess.getY2Access().getOwnsZZParserRuleCall_4_1_0()); 
+                    	        newCompositeNode(grammarAccess.getY2Access().getOwnsZZParserRuleCall_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleZ_in_ruleY2980);
-                    lv_ownsZ_5_0=ruleZ();
+                    pushFollow(FollowSets000.FOLLOW_ruleZ_in_ruleY2909);
+                    lv_ownsZ_3_0=ruleZ();
 
                     state._fsp--;
 
@@ -1022,13 +974,10 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                            		set(
                            			current, 
                            			"ownsZ",
-                            		lv_ownsZ_5_0, 
+                            		lv_ownsZ_3_0, 
                             		"Z");
                     	        afterParserOrEnumRuleCall();
                     	    
-
-                    }
-
 
                     }
 
@@ -1038,9 +987,9 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleY2994); 
+            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleY2922); 
 
-                	newLeafNode(otherlv_6, grammarAccess.getY2Access().getRightCurlyBracketKeyword_5());
+                	newLeafNode(otherlv_4, grammarAccess.getY2Access().getRightCurlyBracketKeyword_4());
                 
 
             }
@@ -1071,45 +1020,39 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleRoot_in_entryRuleRoot75 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleRoot85 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_11_in_ruleRoot131 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleRoot143 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_13_in_ruleRoot156 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleRoot168 = new BitSet(new long[]{0x0000000000030000L});
-        public static final BitSet FOLLOW_ruleX_in_ruleRoot189 = new BitSet(new long[]{0x000000000000C000L});
-        public static final BitSet FOLLOW_14_in_ruleRoot202 = new BitSet(new long[]{0x0000000000030000L});
-        public static final BitSet FOLLOW_ruleX_in_ruleRoot223 = new BitSet(new long[]{0x000000000000C000L});
-        public static final BitSet FOLLOW_15_in_ruleRoot237 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleRoot251 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY_in_entryRuleY287 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleY297 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY1_in_ruleY344 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY2_in_ruleY371 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleX_in_entryRuleX406 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleX416 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_ruleX468 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_17_in_ruleX494 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleX506 = new BitSet(new long[]{0x0000000000048000L});
-        public static final BitSet FOLLOW_18_in_ruleX519 = new BitSet(new long[]{0x0000000000500000L});
-        public static final BitSet FOLLOW_ruleY_in_ruleX540 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleX554 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleZ_in_entryRuleZ590 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleZ600 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_ruleZ646 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY1_in_entryRuleY1682 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleY1692 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_ruleY1738 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleY1755 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleY1772 = new BitSet(new long[]{0x0000000000208000L});
-        public static final BitSet FOLLOW_21_in_ruleY1785 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_ruleZ_in_ruleY1806 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleY1820 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY2_in_entryRuleY2856 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleY2866 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_ruleY2912 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleY2929 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleY2946 = new BitSet(new long[]{0x0000000000208000L});
-        public static final BitSet FOLLOW_21_in_ruleY2959 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_ruleZ_in_ruleY2980 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleY2994 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_ruleRoot143 = new BitSet(new long[]{0x0000000000006000L});
+        public static final BitSet FOLLOW_ruleX_in_ruleRoot164 = new BitSet(new long[]{0x0000000000006000L});
+        public static final BitSet FOLLOW_13_in_ruleRoot177 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleY_in_entryRuleY213 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleY223 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleY1_in_ruleY270 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleY2_in_ruleY297 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleX_in_entryRuleX332 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleX342 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_ruleX388 = new BitSet(new long[]{0x0000000000019000L});
+        public static final BitSet FOLLOW_15_in_ruleX407 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_16_in_ruleX444 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleX471 = new BitSet(new long[]{0x00000000000C2000L});
+        public static final BitSet FOLLOW_ruleY_in_ruleX492 = new BitSet(new long[]{0x00000000000C2000L});
+        public static final BitSet FOLLOW_13_in_ruleX505 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleZ_in_entryRuleZ541 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleZ551 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_ruleZ597 = new BitSet(new long[]{0x0000000000000012L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleZ614 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleY1_in_entryRuleY1656 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleY1666 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_ruleY1703 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleY1720 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleY1737 = new BitSet(new long[]{0x0000000000022000L});
+        public static final BitSet FOLLOW_ruleZ_in_ruleY1758 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleY1771 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleY2_in_entryRuleY2807 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleY2817 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_ruleY2854 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleY2871 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleY2888 = new BitSet(new long[]{0x0000000000022000L});
+        public static final BitSet FOLLOW_ruleZ_in_ruleY2909 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleY2922 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

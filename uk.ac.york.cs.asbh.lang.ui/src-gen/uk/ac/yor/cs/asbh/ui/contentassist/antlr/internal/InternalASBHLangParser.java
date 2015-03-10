@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.DFA;
+import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
+import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.DFA;
 import uk.ac.yor.cs.asbh.services.ASBHLangGrammarAccess;
 
 
@@ -22,15 +22,12 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalASBHLangParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Root'", "'{'", "'}'", "'ownedX'", "','", "'X'", "'ownsY'", "'Z'", "'Y1'", "'ownsZ'", "'Y2'", "'isA1'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Root'", "'{'", "'}'", "'X'", "'Z'", "'Y1'", "'Y2'", "'isA1'", "'isA2'"
     };
     public static final int RULE_ID=5;
-    public static final int T__22=22;
     public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
+    public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__19=19;
     public static final int RULE_STRING=4;
@@ -555,10 +552,10 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==19) ) {
+            if ( (LA1_0==16) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==21) ) {
+            else if ( (LA1_0==17) ) {
                 alt1=2;
             }
             else {
@@ -623,22 +620,113 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Y__Alternatives"
 
 
+    // $ANTLR start "rule__X__Alternatives_2"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:250:1: rule__X__Alternatives_2 : ( ( ( rule__X__IsA1Assignment_2_0 ) ) | ( ( rule__X__IsA2Assignment_2_1 ) ) );
+    public final void rule__X__Alternatives_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:254:1: ( ( ( rule__X__IsA1Assignment_2_0 ) ) | ( ( rule__X__IsA2Assignment_2_1 ) ) )
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==18) ) {
+                alt2=1;
+            }
+            else if ( (LA2_0==19) ) {
+                alt2=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+            switch (alt2) {
+                case 1 :
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:255:1: ( ( rule__X__IsA1Assignment_2_0 ) )
+                    {
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:255:1: ( ( rule__X__IsA1Assignment_2_0 ) )
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:256:1: ( rule__X__IsA1Assignment_2_0 )
+                    {
+                     before(grammarAccess.getXAccess().getIsA1Assignment_2_0()); 
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:257:1: ( rule__X__IsA1Assignment_2_0 )
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:257:2: rule__X__IsA1Assignment_2_0
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__X__IsA1Assignment_2_0_in_rule__X__Alternatives_2479);
+                    rule__X__IsA1Assignment_2_0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getXAccess().getIsA1Assignment_2_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:261:6: ( ( rule__X__IsA2Assignment_2_1 ) )
+                    {
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:261:6: ( ( rule__X__IsA2Assignment_2_1 ) )
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:262:1: ( rule__X__IsA2Assignment_2_1 )
+                    {
+                     before(grammarAccess.getXAccess().getIsA2Assignment_2_1()); 
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:263:1: ( rule__X__IsA2Assignment_2_1 )
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:263:2: rule__X__IsA2Assignment_2_1
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__X__IsA2Assignment_2_1_in_rule__X__Alternatives_2497);
+                    rule__X__IsA2Assignment_2_1();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getXAccess().getIsA2Assignment_2_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__X__Alternatives_2"
+
+
     // $ANTLR start "rule__Root__Group__0"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:252:1: rule__Root__Group__0 : rule__Root__Group__0__Impl rule__Root__Group__1 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:274:1: rule__Root__Group__0 : rule__Root__Group__0__Impl rule__Root__Group__1 ;
     public final void rule__Root__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:256:1: ( rule__Root__Group__0__Impl rule__Root__Group__1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:257:2: rule__Root__Group__0__Impl rule__Root__Group__1
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:278:1: ( rule__Root__Group__0__Impl rule__Root__Group__1 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:279:2: rule__Root__Group__0__Impl rule__Root__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__0__Impl_in_rule__Root__Group__0477);
+            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__0__Impl_in_rule__Root__Group__0528);
             rule__Root__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__1_in_rule__Root__Group__0480);
+            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__1_in_rule__Root__Group__0531);
             rule__Root__Group__1();
 
             state._fsp--;
@@ -662,21 +750,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Root__Group__0__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:264:1: rule__Root__Group__0__Impl : ( () ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:286:1: rule__Root__Group__0__Impl : ( () ) ;
     public final void rule__Root__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:268:1: ( ( () ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:269:1: ( () )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:290:1: ( ( () ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:291:1: ( () )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:269:1: ( () )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:270:1: ()
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:291:1: ( () )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:292:1: ()
             {
              before(grammarAccess.getRootAccess().getSRootAction_0()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:271:1: ()
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:273:1: 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:293:1: ()
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:295:1: 
             {
             }
 
@@ -699,21 +787,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Root__Group__1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:283:1: rule__Root__Group__1 : rule__Root__Group__1__Impl rule__Root__Group__2 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:305:1: rule__Root__Group__1 : rule__Root__Group__1__Impl rule__Root__Group__2 ;
     public final void rule__Root__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:287:1: ( rule__Root__Group__1__Impl rule__Root__Group__2 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:288:2: rule__Root__Group__1__Impl rule__Root__Group__2
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:309:1: ( rule__Root__Group__1__Impl rule__Root__Group__2 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:310:2: rule__Root__Group__1__Impl rule__Root__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__1__Impl_in_rule__Root__Group__1538);
+            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__1__Impl_in_rule__Root__Group__1589);
             rule__Root__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__2_in_rule__Root__Group__1541);
+            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__2_in_rule__Root__Group__1592);
             rule__Root__Group__2();
 
             state._fsp--;
@@ -737,20 +825,20 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Root__Group__1__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:295:1: rule__Root__Group__1__Impl : ( 'Root' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:317:1: rule__Root__Group__1__Impl : ( 'Root' ) ;
     public final void rule__Root__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:299:1: ( ( 'Root' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:300:1: ( 'Root' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:321:1: ( ( 'Root' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:322:1: ( 'Root' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:300:1: ( 'Root' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:301:1: 'Root'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:322:1: ( 'Root' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:323:1: 'Root'
             {
              before(grammarAccess.getRootAccess().getRootKeyword_1()); 
-            match(input,11,FollowSets000.FOLLOW_11_in_rule__Root__Group__1__Impl569); 
+            match(input,11,FollowSets000.FOLLOW_11_in_rule__Root__Group__1__Impl620); 
              after(grammarAccess.getRootAccess().getRootKeyword_1()); 
 
             }
@@ -774,21 +862,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Root__Group__2"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:314:1: rule__Root__Group__2 : rule__Root__Group__2__Impl rule__Root__Group__3 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:336:1: rule__Root__Group__2 : rule__Root__Group__2__Impl rule__Root__Group__3 ;
     public final void rule__Root__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:318:1: ( rule__Root__Group__2__Impl rule__Root__Group__3 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:319:2: rule__Root__Group__2__Impl rule__Root__Group__3
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:340:1: ( rule__Root__Group__2__Impl rule__Root__Group__3 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:341:2: rule__Root__Group__2__Impl rule__Root__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__2__Impl_in_rule__Root__Group__2600);
+            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__2__Impl_in_rule__Root__Group__2651);
             rule__Root__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__3_in_rule__Root__Group__2603);
+            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__3_in_rule__Root__Group__2654);
             rule__Root__Group__3();
 
             state._fsp--;
@@ -812,20 +900,20 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Root__Group__2__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:326:1: rule__Root__Group__2__Impl : ( '{' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:348:1: rule__Root__Group__2__Impl : ( '{' ) ;
     public final void rule__Root__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:330:1: ( ( '{' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:331:1: ( '{' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:352:1: ( ( '{' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:353:1: ( '{' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:331:1: ( '{' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:332:1: '{'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:353:1: ( '{' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:354:1: '{'
             {
              before(grammarAccess.getRootAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__Root__Group__2__Impl631); 
+            match(input,12,FollowSets000.FOLLOW_12_in_rule__Root__Group__2__Impl682); 
              after(grammarAccess.getRootAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -849,21 +937,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Root__Group__3"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:345:1: rule__Root__Group__3 : rule__Root__Group__3__Impl rule__Root__Group__4 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:367:1: rule__Root__Group__3 : rule__Root__Group__3__Impl rule__Root__Group__4 ;
     public final void rule__Root__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:349:1: ( rule__Root__Group__3__Impl rule__Root__Group__4 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:350:2: rule__Root__Group__3__Impl rule__Root__Group__4
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:371:1: ( rule__Root__Group__3__Impl rule__Root__Group__4 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:372:2: rule__Root__Group__3__Impl rule__Root__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__3__Impl_in_rule__Root__Group__3662);
+            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__3__Impl_in_rule__Root__Group__3713);
             rule__Root__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__4_in_rule__Root__Group__3665);
+            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__4_in_rule__Root__Group__3716);
             rule__Root__Group__4();
 
             state._fsp--;
@@ -887,42 +975,49 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Root__Group__3__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:357:1: rule__Root__Group__3__Impl : ( ( rule__Root__Group_3__0 )? ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:379:1: rule__Root__Group__3__Impl : ( ( rule__Root__OwnedXAssignment_3 )* ) ;
     public final void rule__Root__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:361:1: ( ( ( rule__Root__Group_3__0 )? ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:362:1: ( ( rule__Root__Group_3__0 )? )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:383:1: ( ( ( rule__Root__OwnedXAssignment_3 )* ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:384:1: ( ( rule__Root__OwnedXAssignment_3 )* )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:362:1: ( ( rule__Root__Group_3__0 )? )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:363:1: ( rule__Root__Group_3__0 )?
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:384:1: ( ( rule__Root__OwnedXAssignment_3 )* )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:385:1: ( rule__Root__OwnedXAssignment_3 )*
             {
-             before(grammarAccess.getRootAccess().getGroup_3()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:364:1: ( rule__Root__Group_3__0 )?
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+             before(grammarAccess.getRootAccess().getOwnedXAssignment_3()); 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:386:1: ( rule__Root__OwnedXAssignment_3 )*
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-            if ( (LA2_0==14) ) {
-                alt2=1;
-            }
-            switch (alt2) {
-                case 1 :
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:364:2: rule__Root__Group_3__0
-                    {
-                    pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3__0_in_rule__Root__Group__3__Impl692);
-                    rule__Root__Group_3__0();
-
-                    state._fsp--;
+                if ( (LA3_0==14) ) {
+                    alt3=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt3) {
+            	case 1 :
+            	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:386:2: rule__Root__OwnedXAssignment_3
+            	    {
+            	    pushFollow(FollowSets000.FOLLOW_rule__Root__OwnedXAssignment_3_in_rule__Root__Group__3__Impl743);
+            	    rule__Root__OwnedXAssignment_3();
 
-            }
+            	    state._fsp--;
 
-             after(grammarAccess.getRootAccess().getGroup_3()); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop3;
+                }
+            } while (true);
+
+             after(grammarAccess.getRootAccess().getOwnedXAssignment_3()); 
 
             }
 
@@ -945,16 +1040,16 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Root__Group__4"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:374:1: rule__Root__Group__4 : rule__Root__Group__4__Impl ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:396:1: rule__Root__Group__4 : rule__Root__Group__4__Impl ;
     public final void rule__Root__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:378:1: ( rule__Root__Group__4__Impl )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:379:2: rule__Root__Group__4__Impl
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:400:1: ( rule__Root__Group__4__Impl )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:401:2: rule__Root__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__4__Impl_in_rule__Root__Group__4723);
+            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__4__Impl_in_rule__Root__Group__4774);
             rule__Root__Group__4__Impl();
 
             state._fsp--;
@@ -978,20 +1073,20 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Root__Group__4__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:385:1: rule__Root__Group__4__Impl : ( '}' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:407:1: rule__Root__Group__4__Impl : ( '}' ) ;
     public final void rule__Root__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:389:1: ( ( '}' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:390:1: ( '}' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:411:1: ( ( '}' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:412:1: ( '}' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:390:1: ( '}' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:391:1: '}'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:412:1: ( '}' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:413:1: '}'
             {
              before(grammarAccess.getRootAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__Root__Group__4__Impl751); 
+            match(input,13,FollowSets000.FOLLOW_13_in_rule__Root__Group__4__Impl802); 
              after(grammarAccess.getRootAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -1014,585 +1109,22 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Root__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Root__Group_3__0"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:414:1: rule__Root__Group_3__0 : rule__Root__Group_3__0__Impl rule__Root__Group_3__1 ;
-    public final void rule__Root__Group_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:418:1: ( rule__Root__Group_3__0__Impl rule__Root__Group_3__1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:419:2: rule__Root__Group_3__0__Impl rule__Root__Group_3__1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3__0__Impl_in_rule__Root__Group_3__0792);
-            rule__Root__Group_3__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3__1_in_rule__Root__Group_3__0795);
-            rule__Root__Group_3__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3__0"
-
-
-    // $ANTLR start "rule__Root__Group_3__0__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:426:1: rule__Root__Group_3__0__Impl : ( 'ownedX' ) ;
-    public final void rule__Root__Group_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:430:1: ( ( 'ownedX' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:431:1: ( 'ownedX' )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:431:1: ( 'ownedX' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:432:1: 'ownedX'
-            {
-             before(grammarAccess.getRootAccess().getOwnedXKeyword_3_0()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__Root__Group_3__0__Impl823); 
-             after(grammarAccess.getRootAccess().getOwnedXKeyword_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3__0__Impl"
-
-
-    // $ANTLR start "rule__Root__Group_3__1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:445:1: rule__Root__Group_3__1 : rule__Root__Group_3__1__Impl rule__Root__Group_3__2 ;
-    public final void rule__Root__Group_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:449:1: ( rule__Root__Group_3__1__Impl rule__Root__Group_3__2 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:450:2: rule__Root__Group_3__1__Impl rule__Root__Group_3__2
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3__1__Impl_in_rule__Root__Group_3__1854);
-            rule__Root__Group_3__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3__2_in_rule__Root__Group_3__1857);
-            rule__Root__Group_3__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3__1"
-
-
-    // $ANTLR start "rule__Root__Group_3__1__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:457:1: rule__Root__Group_3__1__Impl : ( '{' ) ;
-    public final void rule__Root__Group_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:461:1: ( ( '{' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:462:1: ( '{' )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:462:1: ( '{' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:463:1: '{'
-            {
-             before(grammarAccess.getRootAccess().getLeftCurlyBracketKeyword_3_1()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__Root__Group_3__1__Impl885); 
-             after(grammarAccess.getRootAccess().getLeftCurlyBracketKeyword_3_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3__1__Impl"
-
-
-    // $ANTLR start "rule__Root__Group_3__2"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:476:1: rule__Root__Group_3__2 : rule__Root__Group_3__2__Impl rule__Root__Group_3__3 ;
-    public final void rule__Root__Group_3__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:480:1: ( rule__Root__Group_3__2__Impl rule__Root__Group_3__3 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:481:2: rule__Root__Group_3__2__Impl rule__Root__Group_3__3
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3__2__Impl_in_rule__Root__Group_3__2916);
-            rule__Root__Group_3__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3__3_in_rule__Root__Group_3__2919);
-            rule__Root__Group_3__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3__2"
-
-
-    // $ANTLR start "rule__Root__Group_3__2__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:488:1: rule__Root__Group_3__2__Impl : ( ( rule__Root__OwnedXAssignment_3_2 ) ) ;
-    public final void rule__Root__Group_3__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:492:1: ( ( ( rule__Root__OwnedXAssignment_3_2 ) ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:493:1: ( ( rule__Root__OwnedXAssignment_3_2 ) )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:493:1: ( ( rule__Root__OwnedXAssignment_3_2 ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:494:1: ( rule__Root__OwnedXAssignment_3_2 )
-            {
-             before(grammarAccess.getRootAccess().getOwnedXAssignment_3_2()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:495:1: ( rule__Root__OwnedXAssignment_3_2 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:495:2: rule__Root__OwnedXAssignment_3_2
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__OwnedXAssignment_3_2_in_rule__Root__Group_3__2__Impl946);
-            rule__Root__OwnedXAssignment_3_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRootAccess().getOwnedXAssignment_3_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3__2__Impl"
-
-
-    // $ANTLR start "rule__Root__Group_3__3"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:505:1: rule__Root__Group_3__3 : rule__Root__Group_3__3__Impl rule__Root__Group_3__4 ;
-    public final void rule__Root__Group_3__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:509:1: ( rule__Root__Group_3__3__Impl rule__Root__Group_3__4 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:510:2: rule__Root__Group_3__3__Impl rule__Root__Group_3__4
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3__3__Impl_in_rule__Root__Group_3__3976);
-            rule__Root__Group_3__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3__4_in_rule__Root__Group_3__3979);
-            rule__Root__Group_3__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3__3"
-
-
-    // $ANTLR start "rule__Root__Group_3__3__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:517:1: rule__Root__Group_3__3__Impl : ( ( rule__Root__Group_3_3__0 )* ) ;
-    public final void rule__Root__Group_3__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:521:1: ( ( ( rule__Root__Group_3_3__0 )* ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:522:1: ( ( rule__Root__Group_3_3__0 )* )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:522:1: ( ( rule__Root__Group_3_3__0 )* )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:523:1: ( rule__Root__Group_3_3__0 )*
-            {
-             before(grammarAccess.getRootAccess().getGroup_3_3()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:524:1: ( rule__Root__Group_3_3__0 )*
-            loop3:
-            do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
-
-                if ( (LA3_0==15) ) {
-                    alt3=1;
-                }
-
-
-                switch (alt3) {
-            	case 1 :
-            	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:524:2: rule__Root__Group_3_3__0
-            	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3_3__0_in_rule__Root__Group_3__3__Impl1006);
-            	    rule__Root__Group_3_3__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop3;
-                }
-            } while (true);
-
-             after(grammarAccess.getRootAccess().getGroup_3_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3__3__Impl"
-
-
-    // $ANTLR start "rule__Root__Group_3__4"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:534:1: rule__Root__Group_3__4 : rule__Root__Group_3__4__Impl ;
-    public final void rule__Root__Group_3__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:538:1: ( rule__Root__Group_3__4__Impl )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:539:2: rule__Root__Group_3__4__Impl
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3__4__Impl_in_rule__Root__Group_3__41037);
-            rule__Root__Group_3__4__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3__4"
-
-
-    // $ANTLR start "rule__Root__Group_3__4__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:545:1: rule__Root__Group_3__4__Impl : ( '}' ) ;
-    public final void rule__Root__Group_3__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:549:1: ( ( '}' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:550:1: ( '}' )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:550:1: ( '}' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:551:1: '}'
-            {
-             before(grammarAccess.getRootAccess().getRightCurlyBracketKeyword_3_4()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__Root__Group_3__4__Impl1065); 
-             after(grammarAccess.getRootAccess().getRightCurlyBracketKeyword_3_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3__4__Impl"
-
-
-    // $ANTLR start "rule__Root__Group_3_3__0"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:574:1: rule__Root__Group_3_3__0 : rule__Root__Group_3_3__0__Impl rule__Root__Group_3_3__1 ;
-    public final void rule__Root__Group_3_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:578:1: ( rule__Root__Group_3_3__0__Impl rule__Root__Group_3_3__1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:579:2: rule__Root__Group_3_3__0__Impl rule__Root__Group_3_3__1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3_3__0__Impl_in_rule__Root__Group_3_3__01106);
-            rule__Root__Group_3_3__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3_3__1_in_rule__Root__Group_3_3__01109);
-            rule__Root__Group_3_3__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3_3__0"
-
-
-    // $ANTLR start "rule__Root__Group_3_3__0__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:586:1: rule__Root__Group_3_3__0__Impl : ( ',' ) ;
-    public final void rule__Root__Group_3_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:590:1: ( ( ',' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:591:1: ( ',' )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:591:1: ( ',' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:592:1: ','
-            {
-             before(grammarAccess.getRootAccess().getCommaKeyword_3_3_0()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__Root__Group_3_3__0__Impl1137); 
-             after(grammarAccess.getRootAccess().getCommaKeyword_3_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3_3__0__Impl"
-
-
-    // $ANTLR start "rule__Root__Group_3_3__1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:605:1: rule__Root__Group_3_3__1 : rule__Root__Group_3_3__1__Impl ;
-    public final void rule__Root__Group_3_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:609:1: ( rule__Root__Group_3_3__1__Impl )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:610:2: rule__Root__Group_3_3__1__Impl
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group_3_3__1__Impl_in_rule__Root__Group_3_3__11168);
-            rule__Root__Group_3_3__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3_3__1"
-
-
-    // $ANTLR start "rule__Root__Group_3_3__1__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:616:1: rule__Root__Group_3_3__1__Impl : ( ( rule__Root__OwnedXAssignment_3_3_1 ) ) ;
-    public final void rule__Root__Group_3_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:620:1: ( ( ( rule__Root__OwnedXAssignment_3_3_1 ) ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:621:1: ( ( rule__Root__OwnedXAssignment_3_3_1 ) )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:621:1: ( ( rule__Root__OwnedXAssignment_3_3_1 ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:622:1: ( rule__Root__OwnedXAssignment_3_3_1 )
-            {
-             before(grammarAccess.getRootAccess().getOwnedXAssignment_3_3_1()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:623:1: ( rule__Root__OwnedXAssignment_3_3_1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:623:2: rule__Root__OwnedXAssignment_3_3_1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__OwnedXAssignment_3_3_1_in_rule__Root__Group_3_3__1__Impl1195);
-            rule__Root__OwnedXAssignment_3_3_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRootAccess().getOwnedXAssignment_3_3_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Root__Group_3_3__1__Impl"
-
-
     // $ANTLR start "rule__X__Group__0"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:637:1: rule__X__Group__0 : rule__X__Group__0__Impl rule__X__Group__1 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:436:1: rule__X__Group__0 : rule__X__Group__0__Impl rule__X__Group__1 ;
     public final void rule__X__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:641:1: ( rule__X__Group__0__Impl rule__X__Group__1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:642:2: rule__X__Group__0__Impl rule__X__Group__1
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:440:1: ( rule__X__Group__0__Impl rule__X__Group__1 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:441:2: rule__X__Group__0__Impl rule__X__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__0__Impl_in_rule__X__Group__01229);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__0__Impl_in_rule__X__Group__0843);
             rule__X__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__1_in_rule__X__Group__01232);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__1_in_rule__X__Group__0846);
             rule__X__Group__1();
 
             state._fsp--;
@@ -1616,21 +1148,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__0__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:649:1: rule__X__Group__0__Impl : ( () ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:448:1: rule__X__Group__0__Impl : ( () ) ;
     public final void rule__X__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:653:1: ( ( () ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:654:1: ( () )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:452:1: ( ( () ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:453:1: ( () )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:654:1: ( () )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:655:1: ()
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:453:1: ( () )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:454:1: ()
             {
              before(grammarAccess.getXAccess().getXAction_0()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:656:1: ()
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:658:1: 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:455:1: ()
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:457:1: 
             {
             }
 
@@ -1653,21 +1185,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:668:1: rule__X__Group__1 : rule__X__Group__1__Impl rule__X__Group__2 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:467:1: rule__X__Group__1 : rule__X__Group__1__Impl rule__X__Group__2 ;
     public final void rule__X__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:672:1: ( rule__X__Group__1__Impl rule__X__Group__2 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:673:2: rule__X__Group__1__Impl rule__X__Group__2
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:471:1: ( rule__X__Group__1__Impl rule__X__Group__2 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:472:2: rule__X__Group__1__Impl rule__X__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__1__Impl_in_rule__X__Group__11290);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__1__Impl_in_rule__X__Group__1904);
             rule__X__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__2_in_rule__X__Group__11293);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__2_in_rule__X__Group__1907);
             rule__X__Group__2();
 
             state._fsp--;
@@ -1691,42 +1223,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__1__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:680:1: rule__X__Group__1__Impl : ( ( rule__X__IsA1Assignment_1 )? ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:479:1: rule__X__Group__1__Impl : ( 'X' ) ;
     public final void rule__X__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:684:1: ( ( ( rule__X__IsA1Assignment_1 )? ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:685:1: ( ( rule__X__IsA1Assignment_1 )? )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:483:1: ( ( 'X' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:484:1: ( 'X' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:685:1: ( ( rule__X__IsA1Assignment_1 )? )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:686:1: ( rule__X__IsA1Assignment_1 )?
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:484:1: ( 'X' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:485:1: 'X'
             {
-             before(grammarAccess.getXAccess().getIsA1Assignment_1()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:687:1: ( rule__X__IsA1Assignment_1 )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==22) ) {
-                alt4=1;
-            }
-            switch (alt4) {
-                case 1 :
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:687:2: rule__X__IsA1Assignment_1
-                    {
-                    pushFollow(FollowSets000.FOLLOW_rule__X__IsA1Assignment_1_in_rule__X__Group__1__Impl1320);
-                    rule__X__IsA1Assignment_1();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getXAccess().getIsA1Assignment_1()); 
+             before(grammarAccess.getXAccess().getXKeyword_1()); 
+            match(input,14,FollowSets000.FOLLOW_14_in_rule__X__Group__1__Impl935); 
+             after(grammarAccess.getXAccess().getXKeyword_1()); 
 
             }
 
@@ -1749,21 +1260,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__2"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:697:1: rule__X__Group__2 : rule__X__Group__2__Impl rule__X__Group__3 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:498:1: rule__X__Group__2 : rule__X__Group__2__Impl rule__X__Group__3 ;
     public final void rule__X__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:701:1: ( rule__X__Group__2__Impl rule__X__Group__3 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:702:2: rule__X__Group__2__Impl rule__X__Group__3
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:502:1: ( rule__X__Group__2__Impl rule__X__Group__3 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:503:2: rule__X__Group__2__Impl rule__X__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__2__Impl_in_rule__X__Group__21351);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__2__Impl_in_rule__X__Group__2966);
             rule__X__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__3_in_rule__X__Group__21354);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__3_in_rule__X__Group__2969);
             rule__X__Group__3();
 
             state._fsp--;
@@ -1787,21 +1298,42 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__2__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:709:1: rule__X__Group__2__Impl : ( 'X' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:510:1: rule__X__Group__2__Impl : ( ( rule__X__Alternatives_2 )? ) ;
     public final void rule__X__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:713:1: ( ( 'X' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:714:1: ( 'X' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:514:1: ( ( ( rule__X__Alternatives_2 )? ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:515:1: ( ( rule__X__Alternatives_2 )? )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:714:1: ( 'X' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:715:1: 'X'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:515:1: ( ( rule__X__Alternatives_2 )? )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:516:1: ( rule__X__Alternatives_2 )?
             {
-             before(grammarAccess.getXAccess().getXKeyword_2()); 
-            match(input,16,FollowSets000.FOLLOW_16_in_rule__X__Group__2__Impl1382); 
-             after(grammarAccess.getXAccess().getXKeyword_2()); 
+             before(grammarAccess.getXAccess().getAlternatives_2()); 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:517:1: ( rule__X__Alternatives_2 )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
+
+            if ( ((LA4_0>=18 && LA4_0<=19)) ) {
+                alt4=1;
+            }
+            switch (alt4) {
+                case 1 :
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:517:2: rule__X__Alternatives_2
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__X__Alternatives_2_in_rule__X__Group__2__Impl996);
+                    rule__X__Alternatives_2();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getXAccess().getAlternatives_2()); 
 
             }
 
@@ -1824,21 +1356,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__3"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:728:1: rule__X__Group__3 : rule__X__Group__3__Impl rule__X__Group__4 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:527:1: rule__X__Group__3 : rule__X__Group__3__Impl rule__X__Group__4 ;
     public final void rule__X__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:732:1: ( rule__X__Group__3__Impl rule__X__Group__4 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:733:2: rule__X__Group__3__Impl rule__X__Group__4
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:531:1: ( rule__X__Group__3__Impl rule__X__Group__4 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:532:2: rule__X__Group__3__Impl rule__X__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__3__Impl_in_rule__X__Group__31413);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__3__Impl_in_rule__X__Group__31027);
             rule__X__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__4_in_rule__X__Group__31416);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__4_in_rule__X__Group__31030);
             rule__X__Group__4();
 
             state._fsp--;
@@ -1862,20 +1394,20 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__3__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:740:1: rule__X__Group__3__Impl : ( '{' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:539:1: rule__X__Group__3__Impl : ( '{' ) ;
     public final void rule__X__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:744:1: ( ( '{' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:745:1: ( '{' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:543:1: ( ( '{' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:544:1: ( '{' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:745:1: ( '{' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:746:1: '{'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:544:1: ( '{' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:545:1: '{'
             {
              before(grammarAccess.getXAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__X__Group__3__Impl1444); 
+            match(input,12,FollowSets000.FOLLOW_12_in_rule__X__Group__3__Impl1058); 
              after(grammarAccess.getXAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -1899,21 +1431,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__4"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:759:1: rule__X__Group__4 : rule__X__Group__4__Impl rule__X__Group__5 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:558:1: rule__X__Group__4 : rule__X__Group__4__Impl rule__X__Group__5 ;
     public final void rule__X__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:763:1: ( rule__X__Group__4__Impl rule__X__Group__5 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:764:2: rule__X__Group__4__Impl rule__X__Group__5
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:562:1: ( rule__X__Group__4__Impl rule__X__Group__5 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:563:2: rule__X__Group__4__Impl rule__X__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__4__Impl_in_rule__X__Group__41475);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__4__Impl_in_rule__X__Group__41089);
             rule__X__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__5_in_rule__X__Group__41478);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__5_in_rule__X__Group__41092);
             rule__X__Group__5();
 
             state._fsp--;
@@ -1937,42 +1469,49 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__4__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:771:1: rule__X__Group__4__Impl : ( ( rule__X__Group_4__0 )? ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:570:1: rule__X__Group__4__Impl : ( ( rule__X__OwnsYAssignment_4 )* ) ;
     public final void rule__X__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:775:1: ( ( ( rule__X__Group_4__0 )? ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:776:1: ( ( rule__X__Group_4__0 )? )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:574:1: ( ( ( rule__X__OwnsYAssignment_4 )* ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:575:1: ( ( rule__X__OwnsYAssignment_4 )* )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:776:1: ( ( rule__X__Group_4__0 )? )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:777:1: ( rule__X__Group_4__0 )?
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:575:1: ( ( rule__X__OwnsYAssignment_4 )* )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:576:1: ( rule__X__OwnsYAssignment_4 )*
             {
-             before(grammarAccess.getXAccess().getGroup_4()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:778:1: ( rule__X__Group_4__0 )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+             before(grammarAccess.getXAccess().getOwnsYAssignment_4()); 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:577:1: ( rule__X__OwnsYAssignment_4 )*
+            loop5:
+            do {
+                int alt5=2;
+                int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==17) ) {
-                alt5=1;
-            }
-            switch (alt5) {
-                case 1 :
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:778:2: rule__X__Group_4__0
-                    {
-                    pushFollow(FollowSets000.FOLLOW_rule__X__Group_4__0_in_rule__X__Group__4__Impl1505);
-                    rule__X__Group_4__0();
-
-                    state._fsp--;
+                if ( ((LA5_0>=16 && LA5_0<=17)) ) {
+                    alt5=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt5) {
+            	case 1 :
+            	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:577:2: rule__X__OwnsYAssignment_4
+            	    {
+            	    pushFollow(FollowSets000.FOLLOW_rule__X__OwnsYAssignment_4_in_rule__X__Group__4__Impl1119);
+            	    rule__X__OwnsYAssignment_4();
 
-            }
+            	    state._fsp--;
 
-             after(grammarAccess.getXAccess().getGroup_4()); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop5;
+                }
+            } while (true);
+
+             after(grammarAccess.getXAccess().getOwnsYAssignment_4()); 
 
             }
 
@@ -1995,16 +1534,16 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__5"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:788:1: rule__X__Group__5 : rule__X__Group__5__Impl ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:587:1: rule__X__Group__5 : rule__X__Group__5__Impl ;
     public final void rule__X__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:792:1: ( rule__X__Group__5__Impl )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:793:2: rule__X__Group__5__Impl
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:591:1: ( rule__X__Group__5__Impl )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:592:2: rule__X__Group__5__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__5__Impl_in_rule__X__Group__51536);
+            pushFollow(FollowSets000.FOLLOW_rule__X__Group__5__Impl_in_rule__X__Group__51150);
             rule__X__Group__5__Impl();
 
             state._fsp--;
@@ -2028,20 +1567,20 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__X__Group__5__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:799:1: rule__X__Group__5__Impl : ( '}' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:598:1: rule__X__Group__5__Impl : ( '}' ) ;
     public final void rule__X__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:803:1: ( ( '}' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:804:1: ( '}' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:602:1: ( ( '}' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:603:1: ( '}' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:804:1: ( '}' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:805:1: '}'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:603:1: ( '}' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:604:1: '}'
             {
              before(grammarAccess.getXAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__X__Group__5__Impl1564); 
+            match(input,13,FollowSets000.FOLLOW_13_in_rule__X__Group__5__Impl1178); 
              after(grammarAccess.getXAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -2064,177 +1603,22 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__X__Group__5__Impl"
 
 
-    // $ANTLR start "rule__X__Group_4__0"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:830:1: rule__X__Group_4__0 : rule__X__Group_4__0__Impl rule__X__Group_4__1 ;
-    public final void rule__X__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:834:1: ( rule__X__Group_4__0__Impl rule__X__Group_4__1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:835:2: rule__X__Group_4__0__Impl rule__X__Group_4__1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group_4__0__Impl_in_rule__X__Group_4__01607);
-            rule__X__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group_4__1_in_rule__X__Group_4__01610);
-            rule__X__Group_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__X__Group_4__0"
-
-
-    // $ANTLR start "rule__X__Group_4__0__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:842:1: rule__X__Group_4__0__Impl : ( 'ownsY' ) ;
-    public final void rule__X__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:846:1: ( ( 'ownsY' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:847:1: ( 'ownsY' )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:847:1: ( 'ownsY' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:848:1: 'ownsY'
-            {
-             before(grammarAccess.getXAccess().getOwnsYKeyword_4_0()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__X__Group_4__0__Impl1638); 
-             after(grammarAccess.getXAccess().getOwnsYKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__X__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__X__Group_4__1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:861:1: rule__X__Group_4__1 : rule__X__Group_4__1__Impl ;
-    public final void rule__X__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:865:1: ( rule__X__Group_4__1__Impl )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:866:2: rule__X__Group_4__1__Impl
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group_4__1__Impl_in_rule__X__Group_4__11669);
-            rule__X__Group_4__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__X__Group_4__1"
-
-
-    // $ANTLR start "rule__X__Group_4__1__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:872:1: rule__X__Group_4__1__Impl : ( ( rule__X__OwnsYAssignment_4_1 ) ) ;
-    public final void rule__X__Group_4__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:876:1: ( ( ( rule__X__OwnsYAssignment_4_1 ) ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:877:1: ( ( rule__X__OwnsYAssignment_4_1 ) )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:877:1: ( ( rule__X__OwnsYAssignment_4_1 ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:878:1: ( rule__X__OwnsYAssignment_4_1 )
-            {
-             before(grammarAccess.getXAccess().getOwnsYAssignment_4_1()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:879:1: ( rule__X__OwnsYAssignment_4_1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:879:2: rule__X__OwnsYAssignment_4_1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__X__OwnsYAssignment_4_1_in_rule__X__Group_4__1__Impl1696);
-            rule__X__OwnsYAssignment_4_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getXAccess().getOwnsYAssignment_4_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__X__Group_4__1__Impl"
-
-
     // $ANTLR start "rule__Z__Group__0"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:893:1: rule__Z__Group__0 : rule__Z__Group__0__Impl rule__Z__Group__1 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:629:1: rule__Z__Group__0 : rule__Z__Group__0__Impl rule__Z__Group__1 ;
     public final void rule__Z__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:897:1: ( rule__Z__Group__0__Impl rule__Z__Group__1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:898:2: rule__Z__Group__0__Impl rule__Z__Group__1
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:633:1: ( rule__Z__Group__0__Impl rule__Z__Group__1 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:634:2: rule__Z__Group__0__Impl rule__Z__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__0__Impl_in_rule__Z__Group__01730);
+            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__0__Impl_in_rule__Z__Group__01221);
             rule__Z__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__1_in_rule__Z__Group__01733);
+            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__1_in_rule__Z__Group__01224);
             rule__Z__Group__1();
 
             state._fsp--;
@@ -2258,21 +1642,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Z__Group__0__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:905:1: rule__Z__Group__0__Impl : ( () ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:641:1: rule__Z__Group__0__Impl : ( () ) ;
     public final void rule__Z__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:909:1: ( ( () ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:910:1: ( () )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:645:1: ( ( () ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:646:1: ( () )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:910:1: ( () )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:911:1: ()
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:646:1: ( () )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:647:1: ()
             {
              before(grammarAccess.getZAccess().getZAction_0()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:912:1: ()
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:914:1: 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:648:1: ()
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:650:1: 
             {
             }
 
@@ -2295,17 +1679,22 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Z__Group__1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:924:1: rule__Z__Group__1 : rule__Z__Group__1__Impl ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:660:1: rule__Z__Group__1 : rule__Z__Group__1__Impl rule__Z__Group__2 ;
     public final void rule__Z__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:928:1: ( rule__Z__Group__1__Impl )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:929:2: rule__Z__Group__1__Impl
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:664:1: ( rule__Z__Group__1__Impl rule__Z__Group__2 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:665:2: rule__Z__Group__1__Impl rule__Z__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__1__Impl_in_rule__Z__Group__11791);
+            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__1__Impl_in_rule__Z__Group__11282);
             rule__Z__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__2_in_rule__Z__Group__11285);
+            rule__Z__Group__2();
 
             state._fsp--;
 
@@ -2328,20 +1717,20 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Z__Group__1__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:935:1: rule__Z__Group__1__Impl : ( 'Z' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:672:1: rule__Z__Group__1__Impl : ( 'Z' ) ;
     public final void rule__Z__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:939:1: ( ( 'Z' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:940:1: ( 'Z' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:676:1: ( ( 'Z' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:677:1: ( 'Z' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:940:1: ( 'Z' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:941:1: 'Z'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:677:1: ( 'Z' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:678:1: 'Z'
             {
              before(grammarAccess.getZAccess().getZKeyword_1()); 
-            match(input,18,FollowSets000.FOLLOW_18_in_rule__Z__Group__1__Impl1819); 
+            match(input,15,FollowSets000.FOLLOW_15_in_rule__Z__Group__1__Impl1313); 
              after(grammarAccess.getZAccess().getZKeyword_1()); 
 
             }
@@ -2364,22 +1753,113 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Z__Group__1__Impl"
 
 
+    // $ANTLR start "rule__Z__Group__2"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:691:1: rule__Z__Group__2 : rule__Z__Group__2__Impl ;
+    public final void rule__Z__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:695:1: ( rule__Z__Group__2__Impl )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:696:2: rule__Z__Group__2__Impl
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__2__Impl_in_rule__Z__Group__21344);
+            rule__Z__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Z__Group__2"
+
+
+    // $ANTLR start "rule__Z__Group__2__Impl"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:702:1: rule__Z__Group__2__Impl : ( ( rule__Z__NameAssignment_2 )? ) ;
+    public final void rule__Z__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:706:1: ( ( ( rule__Z__NameAssignment_2 )? ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:707:1: ( ( rule__Z__NameAssignment_2 )? )
+            {
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:707:1: ( ( rule__Z__NameAssignment_2 )? )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:708:1: ( rule__Z__NameAssignment_2 )?
+            {
+             before(grammarAccess.getZAccess().getNameAssignment_2()); 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:709:1: ( rule__Z__NameAssignment_2 )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==RULE_STRING) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:709:2: rule__Z__NameAssignment_2
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__Z__NameAssignment_2_in_rule__Z__Group__2__Impl1371);
+                    rule__Z__NameAssignment_2();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getZAccess().getNameAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Z__Group__2__Impl"
+
+
     // $ANTLR start "rule__Y1__Group__0"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:958:1: rule__Y1__Group__0 : rule__Y1__Group__0__Impl rule__Y1__Group__1 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:725:1: rule__Y1__Group__0 : rule__Y1__Group__0__Impl rule__Y1__Group__1 ;
     public final void rule__Y1__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:962:1: ( rule__Y1__Group__0__Impl rule__Y1__Group__1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:963:2: rule__Y1__Group__0__Impl rule__Y1__Group__1
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:729:1: ( rule__Y1__Group__0__Impl rule__Y1__Group__1 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:730:2: rule__Y1__Group__0__Impl rule__Y1__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__0__Impl_in_rule__Y1__Group__01854);
+            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__0__Impl_in_rule__Y1__Group__01408);
             rule__Y1__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__1_in_rule__Y1__Group__01857);
+            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__1_in_rule__Y1__Group__01411);
             rule__Y1__Group__1();
 
             state._fsp--;
@@ -2403,31 +1883,31 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y1__Group__0__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:970:1: rule__Y1__Group__0__Impl : ( () ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:737:1: rule__Y1__Group__0__Impl : ( 'Y1' ) ;
     public final void rule__Y1__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:974:1: ( ( () ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:975:1: ( () )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:741:1: ( ( 'Y1' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:742:1: ( 'Y1' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:975:1: ( () )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:976:1: ()
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:742:1: ( 'Y1' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:743:1: 'Y1'
             {
-             before(grammarAccess.getY1Access().getY1Action_0()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:977:1: ()
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:979:1: 
-            {
-            }
-
-             after(grammarAccess.getY1Access().getY1Action_0()); 
+             before(grammarAccess.getY1Access().getY1Keyword_0()); 
+            match(input,16,FollowSets000.FOLLOW_16_in_rule__Y1__Group__0__Impl1439); 
+             after(grammarAccess.getY1Access().getY1Keyword_0()); 
 
             }
 
 
             }
 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
         }
         finally {
 
@@ -2440,21 +1920,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y1__Group__1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:989:1: rule__Y1__Group__1 : rule__Y1__Group__1__Impl rule__Y1__Group__2 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:756:1: rule__Y1__Group__1 : rule__Y1__Group__1__Impl rule__Y1__Group__2 ;
     public final void rule__Y1__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:993:1: ( rule__Y1__Group__1__Impl rule__Y1__Group__2 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:994:2: rule__Y1__Group__1__Impl rule__Y1__Group__2
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:760:1: ( rule__Y1__Group__1__Impl rule__Y1__Group__2 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:761:2: rule__Y1__Group__1__Impl rule__Y1__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__1__Impl_in_rule__Y1__Group__11915);
+            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__1__Impl_in_rule__Y1__Group__11470);
             rule__Y1__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__2_in_rule__Y1__Group__11918);
+            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__2_in_rule__Y1__Group__11473);
             rule__Y1__Group__2();
 
             state._fsp--;
@@ -2478,21 +1958,31 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y1__Group__1__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1001:1: rule__Y1__Group__1__Impl : ( 'Y1' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:768:1: rule__Y1__Group__1__Impl : ( ( rule__Y1__NameAssignment_1 ) ) ;
     public final void rule__Y1__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1005:1: ( ( 'Y1' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1006:1: ( 'Y1' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:772:1: ( ( ( rule__Y1__NameAssignment_1 ) ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:773:1: ( ( rule__Y1__NameAssignment_1 ) )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1006:1: ( 'Y1' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1007:1: 'Y1'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:773:1: ( ( rule__Y1__NameAssignment_1 ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:774:1: ( rule__Y1__NameAssignment_1 )
             {
-             before(grammarAccess.getY1Access().getY1Keyword_1()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__Y1__Group__1__Impl1946); 
-             after(grammarAccess.getY1Access().getY1Keyword_1()); 
+             before(grammarAccess.getY1Access().getNameAssignment_1()); 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:775:1: ( rule__Y1__NameAssignment_1 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:775:2: rule__Y1__NameAssignment_1
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Y1__NameAssignment_1_in_rule__Y1__Group__1__Impl1500);
+            rule__Y1__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getY1Access().getNameAssignment_1()); 
 
             }
 
@@ -2515,21 +2005,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y1__Group__2"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1020:1: rule__Y1__Group__2 : rule__Y1__Group__2__Impl rule__Y1__Group__3 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:785:1: rule__Y1__Group__2 : rule__Y1__Group__2__Impl rule__Y1__Group__3 ;
     public final void rule__Y1__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1024:1: ( rule__Y1__Group__2__Impl rule__Y1__Group__3 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1025:2: rule__Y1__Group__2__Impl rule__Y1__Group__3
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:789:1: ( rule__Y1__Group__2__Impl rule__Y1__Group__3 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:790:2: rule__Y1__Group__2__Impl rule__Y1__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__2__Impl_in_rule__Y1__Group__21977);
+            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__2__Impl_in_rule__Y1__Group__21530);
             rule__Y1__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__3_in_rule__Y1__Group__21980);
+            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__3_in_rule__Y1__Group__21533);
             rule__Y1__Group__3();
 
             state._fsp--;
@@ -2553,31 +2043,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y1__Group__2__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1032:1: rule__Y1__Group__2__Impl : ( ( rule__Y1__NameAssignment_2 ) ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:797:1: rule__Y1__Group__2__Impl : ( '{' ) ;
     public final void rule__Y1__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1036:1: ( ( ( rule__Y1__NameAssignment_2 ) ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1037:1: ( ( rule__Y1__NameAssignment_2 ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:801:1: ( ( '{' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:802:1: ( '{' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1037:1: ( ( rule__Y1__NameAssignment_2 ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1038:1: ( rule__Y1__NameAssignment_2 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:802:1: ( '{' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:803:1: '{'
             {
-             before(grammarAccess.getY1Access().getNameAssignment_2()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1039:1: ( rule__Y1__NameAssignment_2 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1039:2: rule__Y1__NameAssignment_2
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__NameAssignment_2_in_rule__Y1__Group__2__Impl2007);
-            rule__Y1__NameAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getY1Access().getNameAssignment_2()); 
+             before(grammarAccess.getY1Access().getLeftCurlyBracketKeyword_2()); 
+            match(input,12,FollowSets000.FOLLOW_12_in_rule__Y1__Group__2__Impl1561); 
+             after(grammarAccess.getY1Access().getLeftCurlyBracketKeyword_2()); 
 
             }
 
@@ -2600,21 +2080,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y1__Group__3"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1049:1: rule__Y1__Group__3 : rule__Y1__Group__3__Impl rule__Y1__Group__4 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:816:1: rule__Y1__Group__3 : rule__Y1__Group__3__Impl rule__Y1__Group__4 ;
     public final void rule__Y1__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1053:1: ( rule__Y1__Group__3__Impl rule__Y1__Group__4 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1054:2: rule__Y1__Group__3__Impl rule__Y1__Group__4
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:820:1: ( rule__Y1__Group__3__Impl rule__Y1__Group__4 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:821:2: rule__Y1__Group__3__Impl rule__Y1__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__3__Impl_in_rule__Y1__Group__32037);
+            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__3__Impl_in_rule__Y1__Group__31592);
             rule__Y1__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__4_in_rule__Y1__Group__32040);
+            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__4_in_rule__Y1__Group__31595);
             rule__Y1__Group__4();
 
             state._fsp--;
@@ -2638,21 +2118,42 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y1__Group__3__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1061:1: rule__Y1__Group__3__Impl : ( '{' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:828:1: rule__Y1__Group__3__Impl : ( ( rule__Y1__OwnsZAssignment_3 )? ) ;
     public final void rule__Y1__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1065:1: ( ( '{' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1066:1: ( '{' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:832:1: ( ( ( rule__Y1__OwnsZAssignment_3 )? ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:833:1: ( ( rule__Y1__OwnsZAssignment_3 )? )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1066:1: ( '{' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1067:1: '{'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:833:1: ( ( rule__Y1__OwnsZAssignment_3 )? )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:834:1: ( rule__Y1__OwnsZAssignment_3 )?
             {
-             before(grammarAccess.getY1Access().getLeftCurlyBracketKeyword_3()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__Y1__Group__3__Impl2068); 
-             after(grammarAccess.getY1Access().getLeftCurlyBracketKeyword_3()); 
+             before(grammarAccess.getY1Access().getOwnsZAssignment_3()); 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:835:1: ( rule__Y1__OwnsZAssignment_3 )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==15) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:835:2: rule__Y1__OwnsZAssignment_3
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__Y1__OwnsZAssignment_3_in_rule__Y1__Group__3__Impl1622);
+                    rule__Y1__OwnsZAssignment_3();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getY1Access().getOwnsZAssignment_3()); 
 
             }
 
@@ -2675,22 +2176,17 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y1__Group__4"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1080:1: rule__Y1__Group__4 : rule__Y1__Group__4__Impl rule__Y1__Group__5 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:845:1: rule__Y1__Group__4 : rule__Y1__Group__4__Impl ;
     public final void rule__Y1__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1084:1: ( rule__Y1__Group__4__Impl rule__Y1__Group__5 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1085:2: rule__Y1__Group__4__Impl rule__Y1__Group__5
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:849:1: ( rule__Y1__Group__4__Impl )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:850:2: rule__Y1__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__4__Impl_in_rule__Y1__Group__42099);
+            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__4__Impl_in_rule__Y1__Group__41653);
             rule__Y1__Group__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__5_in_rule__Y1__Group__42102);
-            rule__Y1__Group__5();
 
             state._fsp--;
 
@@ -2713,42 +2209,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y1__Group__4__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1092:1: rule__Y1__Group__4__Impl : ( ( rule__Y1__Group_4__0 )? ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:856:1: rule__Y1__Group__4__Impl : ( '}' ) ;
     public final void rule__Y1__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1096:1: ( ( ( rule__Y1__Group_4__0 )? ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1097:1: ( ( rule__Y1__Group_4__0 )? )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:860:1: ( ( '}' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:861:1: ( '}' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1097:1: ( ( rule__Y1__Group_4__0 )? )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1098:1: ( rule__Y1__Group_4__0 )?
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:861:1: ( '}' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:862:1: '}'
             {
-             before(grammarAccess.getY1Access().getGroup_4()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1099:1: ( rule__Y1__Group_4__0 )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
-
-            if ( (LA6_0==20) ) {
-                alt6=1;
-            }
-            switch (alt6) {
-                case 1 :
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1099:2: rule__Y1__Group_4__0
-                    {
-                    pushFollow(FollowSets000.FOLLOW_rule__Y1__Group_4__0_in_rule__Y1__Group__4__Impl2129);
-                    rule__Y1__Group_4__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getY1Access().getGroup_4()); 
+             before(grammarAccess.getY1Access().getRightCurlyBracketKeyword_4()); 
+            match(input,13,FollowSets000.FOLLOW_13_in_rule__Y1__Group__4__Impl1681); 
+             after(grammarAccess.getY1Access().getRightCurlyBracketKeyword_4()); 
 
             }
 
@@ -2770,247 +2245,22 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Y1__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Y1__Group__5"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1109:1: rule__Y1__Group__5 : rule__Y1__Group__5__Impl ;
-    public final void rule__Y1__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1113:1: ( rule__Y1__Group__5__Impl )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1114:2: rule__Y1__Group__5__Impl
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__5__Impl_in_rule__Y1__Group__52160);
-            rule__Y1__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y1__Group__5"
-
-
-    // $ANTLR start "rule__Y1__Group__5__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1120:1: rule__Y1__Group__5__Impl : ( '}' ) ;
-    public final void rule__Y1__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1124:1: ( ( '}' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1125:1: ( '}' )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1125:1: ( '}' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1126:1: '}'
-            {
-             before(grammarAccess.getY1Access().getRightCurlyBracketKeyword_5()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__Y1__Group__5__Impl2188); 
-             after(grammarAccess.getY1Access().getRightCurlyBracketKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y1__Group__5__Impl"
-
-
-    // $ANTLR start "rule__Y1__Group_4__0"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1151:1: rule__Y1__Group_4__0 : rule__Y1__Group_4__0__Impl rule__Y1__Group_4__1 ;
-    public final void rule__Y1__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1155:1: ( rule__Y1__Group_4__0__Impl rule__Y1__Group_4__1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1156:2: rule__Y1__Group_4__0__Impl rule__Y1__Group_4__1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group_4__0__Impl_in_rule__Y1__Group_4__02231);
-            rule__Y1__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group_4__1_in_rule__Y1__Group_4__02234);
-            rule__Y1__Group_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y1__Group_4__0"
-
-
-    // $ANTLR start "rule__Y1__Group_4__0__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1163:1: rule__Y1__Group_4__0__Impl : ( 'ownsZ' ) ;
-    public final void rule__Y1__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1167:1: ( ( 'ownsZ' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1168:1: ( 'ownsZ' )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1168:1: ( 'ownsZ' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1169:1: 'ownsZ'
-            {
-             before(grammarAccess.getY1Access().getOwnsZKeyword_4_0()); 
-            match(input,20,FollowSets000.FOLLOW_20_in_rule__Y1__Group_4__0__Impl2262); 
-             after(grammarAccess.getY1Access().getOwnsZKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y1__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__Y1__Group_4__1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1182:1: rule__Y1__Group_4__1 : rule__Y1__Group_4__1__Impl ;
-    public final void rule__Y1__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1186:1: ( rule__Y1__Group_4__1__Impl )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1187:2: rule__Y1__Group_4__1__Impl
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group_4__1__Impl_in_rule__Y1__Group_4__12293);
-            rule__Y1__Group_4__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y1__Group_4__1"
-
-
-    // $ANTLR start "rule__Y1__Group_4__1__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1193:1: rule__Y1__Group_4__1__Impl : ( ( rule__Y1__OwnsZAssignment_4_1 ) ) ;
-    public final void rule__Y1__Group_4__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1197:1: ( ( ( rule__Y1__OwnsZAssignment_4_1 ) ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1198:1: ( ( rule__Y1__OwnsZAssignment_4_1 ) )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1198:1: ( ( rule__Y1__OwnsZAssignment_4_1 ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1199:1: ( rule__Y1__OwnsZAssignment_4_1 )
-            {
-             before(grammarAccess.getY1Access().getOwnsZAssignment_4_1()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1200:1: ( rule__Y1__OwnsZAssignment_4_1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1200:2: rule__Y1__OwnsZAssignment_4_1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__OwnsZAssignment_4_1_in_rule__Y1__Group_4__1__Impl2320);
-            rule__Y1__OwnsZAssignment_4_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getY1Access().getOwnsZAssignment_4_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y1__Group_4__1__Impl"
-
-
     // $ANTLR start "rule__Y2__Group__0"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1214:1: rule__Y2__Group__0 : rule__Y2__Group__0__Impl rule__Y2__Group__1 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:885:1: rule__Y2__Group__0 : rule__Y2__Group__0__Impl rule__Y2__Group__1 ;
     public final void rule__Y2__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1218:1: ( rule__Y2__Group__0__Impl rule__Y2__Group__1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1219:2: rule__Y2__Group__0__Impl rule__Y2__Group__1
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:889:1: ( rule__Y2__Group__0__Impl rule__Y2__Group__1 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:890:2: rule__Y2__Group__0__Impl rule__Y2__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__0__Impl_in_rule__Y2__Group__02354);
+            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__0__Impl_in_rule__Y2__Group__01722);
             rule__Y2__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__1_in_rule__Y2__Group__02357);
+            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__1_in_rule__Y2__Group__01725);
             rule__Y2__Group__1();
 
             state._fsp--;
@@ -3034,31 +2284,31 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y2__Group__0__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1226:1: rule__Y2__Group__0__Impl : ( () ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:897:1: rule__Y2__Group__0__Impl : ( 'Y2' ) ;
     public final void rule__Y2__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1230:1: ( ( () ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1231:1: ( () )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:901:1: ( ( 'Y2' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:902:1: ( 'Y2' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1231:1: ( () )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1232:1: ()
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:902:1: ( 'Y2' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:903:1: 'Y2'
             {
-             before(grammarAccess.getY2Access().getY2Action_0()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1233:1: ()
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1235:1: 
-            {
-            }
-
-             after(grammarAccess.getY2Access().getY2Action_0()); 
+             before(grammarAccess.getY2Access().getY2Keyword_0()); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__Y2__Group__0__Impl1753); 
+             after(grammarAccess.getY2Access().getY2Keyword_0()); 
 
             }
 
 
             }
 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
         }
         finally {
 
@@ -3071,21 +2321,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y2__Group__1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1245:1: rule__Y2__Group__1 : rule__Y2__Group__1__Impl rule__Y2__Group__2 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:916:1: rule__Y2__Group__1 : rule__Y2__Group__1__Impl rule__Y2__Group__2 ;
     public final void rule__Y2__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1249:1: ( rule__Y2__Group__1__Impl rule__Y2__Group__2 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1250:2: rule__Y2__Group__1__Impl rule__Y2__Group__2
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:920:1: ( rule__Y2__Group__1__Impl rule__Y2__Group__2 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:921:2: rule__Y2__Group__1__Impl rule__Y2__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__1__Impl_in_rule__Y2__Group__12415);
+            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__1__Impl_in_rule__Y2__Group__11784);
             rule__Y2__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__2_in_rule__Y2__Group__12418);
+            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__2_in_rule__Y2__Group__11787);
             rule__Y2__Group__2();
 
             state._fsp--;
@@ -3109,21 +2359,31 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y2__Group__1__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1257:1: rule__Y2__Group__1__Impl : ( 'Y2' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:928:1: rule__Y2__Group__1__Impl : ( ( rule__Y2__NameAssignment_1 ) ) ;
     public final void rule__Y2__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1261:1: ( ( 'Y2' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1262:1: ( 'Y2' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:932:1: ( ( ( rule__Y2__NameAssignment_1 ) ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:933:1: ( ( rule__Y2__NameAssignment_1 ) )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1262:1: ( 'Y2' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1263:1: 'Y2'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:933:1: ( ( rule__Y2__NameAssignment_1 ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:934:1: ( rule__Y2__NameAssignment_1 )
             {
-             before(grammarAccess.getY2Access().getY2Keyword_1()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Y2__Group__1__Impl2446); 
-             after(grammarAccess.getY2Access().getY2Keyword_1()); 
+             before(grammarAccess.getY2Access().getNameAssignment_1()); 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:935:1: ( rule__Y2__NameAssignment_1 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:935:2: rule__Y2__NameAssignment_1
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Y2__NameAssignment_1_in_rule__Y2__Group__1__Impl1814);
+            rule__Y2__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getY2Access().getNameAssignment_1()); 
 
             }
 
@@ -3146,21 +2406,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y2__Group__2"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1276:1: rule__Y2__Group__2 : rule__Y2__Group__2__Impl rule__Y2__Group__3 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:945:1: rule__Y2__Group__2 : rule__Y2__Group__2__Impl rule__Y2__Group__3 ;
     public final void rule__Y2__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1280:1: ( rule__Y2__Group__2__Impl rule__Y2__Group__3 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1281:2: rule__Y2__Group__2__Impl rule__Y2__Group__3
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:949:1: ( rule__Y2__Group__2__Impl rule__Y2__Group__3 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:950:2: rule__Y2__Group__2__Impl rule__Y2__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__2__Impl_in_rule__Y2__Group__22477);
+            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__2__Impl_in_rule__Y2__Group__21844);
             rule__Y2__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__3_in_rule__Y2__Group__22480);
+            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__3_in_rule__Y2__Group__21847);
             rule__Y2__Group__3();
 
             state._fsp--;
@@ -3184,31 +2444,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y2__Group__2__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1288:1: rule__Y2__Group__2__Impl : ( ( rule__Y2__NameAssignment_2 ) ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:957:1: rule__Y2__Group__2__Impl : ( '{' ) ;
     public final void rule__Y2__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1292:1: ( ( ( rule__Y2__NameAssignment_2 ) ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1293:1: ( ( rule__Y2__NameAssignment_2 ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:961:1: ( ( '{' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:962:1: ( '{' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1293:1: ( ( rule__Y2__NameAssignment_2 ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1294:1: ( rule__Y2__NameAssignment_2 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:962:1: ( '{' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:963:1: '{'
             {
-             before(grammarAccess.getY2Access().getNameAssignment_2()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1295:1: ( rule__Y2__NameAssignment_2 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1295:2: rule__Y2__NameAssignment_2
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__NameAssignment_2_in_rule__Y2__Group__2__Impl2507);
-            rule__Y2__NameAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getY2Access().getNameAssignment_2()); 
+             before(grammarAccess.getY2Access().getLeftCurlyBracketKeyword_2()); 
+            match(input,12,FollowSets000.FOLLOW_12_in_rule__Y2__Group__2__Impl1875); 
+             after(grammarAccess.getY2Access().getLeftCurlyBracketKeyword_2()); 
 
             }
 
@@ -3231,21 +2481,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y2__Group__3"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1305:1: rule__Y2__Group__3 : rule__Y2__Group__3__Impl rule__Y2__Group__4 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:976:1: rule__Y2__Group__3 : rule__Y2__Group__3__Impl rule__Y2__Group__4 ;
     public final void rule__Y2__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1309:1: ( rule__Y2__Group__3__Impl rule__Y2__Group__4 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1310:2: rule__Y2__Group__3__Impl rule__Y2__Group__4
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:980:1: ( rule__Y2__Group__3__Impl rule__Y2__Group__4 )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:981:2: rule__Y2__Group__3__Impl rule__Y2__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__3__Impl_in_rule__Y2__Group__32537);
+            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__3__Impl_in_rule__Y2__Group__31906);
             rule__Y2__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__4_in_rule__Y2__Group__32540);
+            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__4_in_rule__Y2__Group__31909);
             rule__Y2__Group__4();
 
             state._fsp--;
@@ -3269,21 +2519,42 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y2__Group__3__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1317:1: rule__Y2__Group__3__Impl : ( '{' ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:988:1: rule__Y2__Group__3__Impl : ( ( rule__Y2__OwnsZAssignment_3 )? ) ;
     public final void rule__Y2__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1321:1: ( ( '{' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1322:1: ( '{' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:992:1: ( ( ( rule__Y2__OwnsZAssignment_3 )? ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:993:1: ( ( rule__Y2__OwnsZAssignment_3 )? )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1322:1: ( '{' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1323:1: '{'
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:993:1: ( ( rule__Y2__OwnsZAssignment_3 )? )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:994:1: ( rule__Y2__OwnsZAssignment_3 )?
             {
-             before(grammarAccess.getY2Access().getLeftCurlyBracketKeyword_3()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__Y2__Group__3__Impl2568); 
-             after(grammarAccess.getY2Access().getLeftCurlyBracketKeyword_3()); 
+             before(grammarAccess.getY2Access().getOwnsZAssignment_3()); 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:995:1: ( rule__Y2__OwnsZAssignment_3 )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0==15) ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:995:2: rule__Y2__OwnsZAssignment_3
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__Y2__OwnsZAssignment_3_in_rule__Y2__Group__3__Impl1936);
+                    rule__Y2__OwnsZAssignment_3();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getY2Access().getOwnsZAssignment_3()); 
 
             }
 
@@ -3306,22 +2577,17 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y2__Group__4"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1336:1: rule__Y2__Group__4 : rule__Y2__Group__4__Impl rule__Y2__Group__5 ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1005:1: rule__Y2__Group__4 : rule__Y2__Group__4__Impl ;
     public final void rule__Y2__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1340:1: ( rule__Y2__Group__4__Impl rule__Y2__Group__5 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1341:2: rule__Y2__Group__4__Impl rule__Y2__Group__5
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1009:1: ( rule__Y2__Group__4__Impl )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1010:2: rule__Y2__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__4__Impl_in_rule__Y2__Group__42599);
+            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__4__Impl_in_rule__Y2__Group__41967);
             rule__Y2__Group__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__5_in_rule__Y2__Group__42602);
-            rule__Y2__Group__5();
 
             state._fsp--;
 
@@ -3344,42 +2610,21 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Y2__Group__4__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1348:1: rule__Y2__Group__4__Impl : ( ( rule__Y2__Group_4__0 )? ) ;
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1016:1: rule__Y2__Group__4__Impl : ( '}' ) ;
     public final void rule__Y2__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1352:1: ( ( ( rule__Y2__Group_4__0 )? ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1353:1: ( ( rule__Y2__Group_4__0 )? )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1020:1: ( ( '}' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1021:1: ( '}' )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1353:1: ( ( rule__Y2__Group_4__0 )? )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1354:1: ( rule__Y2__Group_4__0 )?
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1021:1: ( '}' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1022:1: '}'
             {
-             before(grammarAccess.getY2Access().getGroup_4()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1355:1: ( rule__Y2__Group_4__0 )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==20) ) {
-                alt7=1;
-            }
-            switch (alt7) {
-                case 1 :
-                    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1355:2: rule__Y2__Group_4__0
-                    {
-                    pushFollow(FollowSets000.FOLLOW_rule__Y2__Group_4__0_in_rule__Y2__Group__4__Impl2629);
-                    rule__Y2__Group_4__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getY2Access().getGroup_4()); 
+             before(grammarAccess.getY2Access().getRightCurlyBracketKeyword_4()); 
+            match(input,13,FollowSets000.FOLLOW_13_in_rule__Y2__Group__4__Impl1995); 
+             after(grammarAccess.getY2Access().getRightCurlyBracketKeyword_4()); 
 
             }
 
@@ -3401,251 +2646,26 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Y2__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Y2__Group__5"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1365:1: rule__Y2__Group__5 : rule__Y2__Group__5__Impl ;
-    public final void rule__Y2__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__Root__OwnedXAssignment_3"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1046:1: rule__Root__OwnedXAssignment_3 : ( ruleX ) ;
+    public final void rule__Root__OwnedXAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1369:1: ( rule__Y2__Group__5__Impl )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1370:2: rule__Y2__Group__5__Impl
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1050:1: ( ( ruleX ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1051:1: ( ruleX )
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__5__Impl_in_rule__Y2__Group__52660);
-            rule__Y2__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y2__Group__5"
-
-
-    // $ANTLR start "rule__Y2__Group__5__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1376:1: rule__Y2__Group__5__Impl : ( '}' ) ;
-    public final void rule__Y2__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1380:1: ( ( '}' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1381:1: ( '}' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1051:1: ( ruleX )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1052:1: ruleX
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1381:1: ( '}' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1382:1: '}'
-            {
-             before(grammarAccess.getY2Access().getRightCurlyBracketKeyword_5()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__Y2__Group__5__Impl2688); 
-             after(grammarAccess.getY2Access().getRightCurlyBracketKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y2__Group__5__Impl"
-
-
-    // $ANTLR start "rule__Y2__Group_4__0"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1407:1: rule__Y2__Group_4__0 : rule__Y2__Group_4__0__Impl rule__Y2__Group_4__1 ;
-    public final void rule__Y2__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1411:1: ( rule__Y2__Group_4__0__Impl rule__Y2__Group_4__1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1412:2: rule__Y2__Group_4__0__Impl rule__Y2__Group_4__1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group_4__0__Impl_in_rule__Y2__Group_4__02731);
-            rule__Y2__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group_4__1_in_rule__Y2__Group_4__02734);
-            rule__Y2__Group_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y2__Group_4__0"
-
-
-    // $ANTLR start "rule__Y2__Group_4__0__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1419:1: rule__Y2__Group_4__0__Impl : ( 'ownsZ' ) ;
-    public final void rule__Y2__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1423:1: ( ( 'ownsZ' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1424:1: ( 'ownsZ' )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1424:1: ( 'ownsZ' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1425:1: 'ownsZ'
-            {
-             before(grammarAccess.getY2Access().getOwnsZKeyword_4_0()); 
-            match(input,20,FollowSets000.FOLLOW_20_in_rule__Y2__Group_4__0__Impl2762); 
-             after(grammarAccess.getY2Access().getOwnsZKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y2__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__Y2__Group_4__1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1438:1: rule__Y2__Group_4__1 : rule__Y2__Group_4__1__Impl ;
-    public final void rule__Y2__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1442:1: ( rule__Y2__Group_4__1__Impl )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1443:2: rule__Y2__Group_4__1__Impl
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group_4__1__Impl_in_rule__Y2__Group_4__12793);
-            rule__Y2__Group_4__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y2__Group_4__1"
-
-
-    // $ANTLR start "rule__Y2__Group_4__1__Impl"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1449:1: rule__Y2__Group_4__1__Impl : ( ( rule__Y2__OwnsZAssignment_4_1 ) ) ;
-    public final void rule__Y2__Group_4__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1453:1: ( ( ( rule__Y2__OwnsZAssignment_4_1 ) ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1454:1: ( ( rule__Y2__OwnsZAssignment_4_1 ) )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1454:1: ( ( rule__Y2__OwnsZAssignment_4_1 ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1455:1: ( rule__Y2__OwnsZAssignment_4_1 )
-            {
-             before(grammarAccess.getY2Access().getOwnsZAssignment_4_1()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1456:1: ( rule__Y2__OwnsZAssignment_4_1 )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1456:2: rule__Y2__OwnsZAssignment_4_1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__OwnsZAssignment_4_1_in_rule__Y2__Group_4__1__Impl2820);
-            rule__Y2__OwnsZAssignment_4_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getY2Access().getOwnsZAssignment_4_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Y2__Group_4__1__Impl"
-
-
-    // $ANTLR start "rule__Root__OwnedXAssignment_3_2"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1471:1: rule__Root__OwnedXAssignment_3_2 : ( ruleX ) ;
-    public final void rule__Root__OwnedXAssignment_3_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1475:1: ( ( ruleX ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1476:1: ( ruleX )
-            {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1476:1: ( ruleX )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1477:1: ruleX
-            {
-             before(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleX_in_rule__Root__OwnedXAssignment_3_22859);
+             before(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleX_in_rule__Root__OwnedXAssignment_32041);
             ruleX();
 
             state._fsp--;
 
-             after(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_2_0()); 
+             after(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_0()); 
 
             }
 
@@ -3664,29 +2684,33 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Root__OwnedXAssignment_3_2"
+    // $ANTLR end "rule__Root__OwnedXAssignment_3"
 
 
-    // $ANTLR start "rule__Root__OwnedXAssignment_3_3_1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1486:1: rule__Root__OwnedXAssignment_3_3_1 : ( ruleX ) ;
-    public final void rule__Root__OwnedXAssignment_3_3_1() throws RecognitionException {
+    // $ANTLR start "rule__X__IsA1Assignment_2_0"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1061:1: rule__X__IsA1Assignment_2_0 : ( ( 'isA1' ) ) ;
+    public final void rule__X__IsA1Assignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1490:1: ( ( ruleX ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1491:1: ( ruleX )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1065:1: ( ( ( 'isA1' ) ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1066:1: ( ( 'isA1' ) )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1491:1: ( ruleX )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1492:1: ruleX
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1066:1: ( ( 'isA1' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1067:1: ( 'isA1' )
             {
-             before(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleX_in_rule__Root__OwnedXAssignment_3_3_12890);
-            ruleX();
+             before(grammarAccess.getXAccess().getIsA1IsA1Keyword_2_0_0()); 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1068:1: ( 'isA1' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1069:1: 'isA1'
+            {
+             before(grammarAccess.getXAccess().getIsA1IsA1Keyword_2_0_0()); 
+            match(input,18,FollowSets000.FOLLOW_18_in_rule__X__IsA1Assignment_2_02077); 
+             after(grammarAccess.getXAccess().getIsA1IsA1Keyword_2_0_0()); 
 
-            state._fsp--;
+            }
 
-             after(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_3_1_0()); 
+             after(grammarAccess.getXAccess().getIsA1IsA1Keyword_2_0_0()); 
 
             }
 
@@ -3705,33 +2729,33 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Root__OwnedXAssignment_3_3_1"
+    // $ANTLR end "rule__X__IsA1Assignment_2_0"
 
 
-    // $ANTLR start "rule__X__IsA1Assignment_1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1501:1: rule__X__IsA1Assignment_1 : ( ( 'isA1' ) ) ;
-    public final void rule__X__IsA1Assignment_1() throws RecognitionException {
+    // $ANTLR start "rule__X__IsA2Assignment_2_1"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1084:1: rule__X__IsA2Assignment_2_1 : ( ( 'isA2' ) ) ;
+    public final void rule__X__IsA2Assignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1505:1: ( ( ( 'isA1' ) ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1506:1: ( ( 'isA1' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1088:1: ( ( ( 'isA2' ) ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1089:1: ( ( 'isA2' ) )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1506:1: ( ( 'isA1' ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1507:1: ( 'isA1' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1089:1: ( ( 'isA2' ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1090:1: ( 'isA2' )
             {
-             before(grammarAccess.getXAccess().getIsA1IsA1Keyword_1_0()); 
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1508:1: ( 'isA1' )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1509:1: 'isA1'
+             before(grammarAccess.getXAccess().getIsA2IsA2Keyword_2_1_0()); 
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1091:1: ( 'isA2' )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1092:1: 'isA2'
             {
-             before(grammarAccess.getXAccess().getIsA1IsA1Keyword_1_0()); 
-            match(input,22,FollowSets000.FOLLOW_22_in_rule__X__IsA1Assignment_12926); 
-             after(grammarAccess.getXAccess().getIsA1IsA1Keyword_1_0()); 
+             before(grammarAccess.getXAccess().getIsA2IsA2Keyword_2_1_0()); 
+            match(input,19,FollowSets000.FOLLOW_19_in_rule__X__IsA2Assignment_2_12121); 
+             after(grammarAccess.getXAccess().getIsA2IsA2Keyword_2_1_0()); 
 
             }
 
-             after(grammarAccess.getXAccess().getIsA1IsA1Keyword_1_0()); 
+             after(grammarAccess.getXAccess().getIsA2IsA2Keyword_2_1_0()); 
 
             }
 
@@ -3750,29 +2774,29 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__X__IsA1Assignment_1"
+    // $ANTLR end "rule__X__IsA2Assignment_2_1"
 
 
-    // $ANTLR start "rule__X__OwnsYAssignment_4_1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1524:1: rule__X__OwnsYAssignment_4_1 : ( ruleY ) ;
-    public final void rule__X__OwnsYAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__X__OwnsYAssignment_4"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1107:1: rule__X__OwnsYAssignment_4 : ( ruleY ) ;
+    public final void rule__X__OwnsYAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1528:1: ( ( ruleY ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1529:1: ( ruleY )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1111:1: ( ( ruleY ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1112:1: ( ruleY )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1529:1: ( ruleY )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1530:1: ruleY
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1112:1: ( ruleY )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1113:1: ruleY
             {
-             before(grammarAccess.getXAccess().getOwnsYYParserRuleCall_4_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY_in_rule__X__OwnsYAssignment_4_12965);
+             before(grammarAccess.getXAccess().getOwnsYYParserRuleCall_4_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleY_in_rule__X__OwnsYAssignment_42160);
             ruleY();
 
             state._fsp--;
 
-             after(grammarAccess.getXAccess().getOwnsYYParserRuleCall_4_1_0()); 
+             after(grammarAccess.getXAccess().getOwnsYYParserRuleCall_4_0()); 
 
             }
 
@@ -3791,25 +2815,25 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__X__OwnsYAssignment_4_1"
+    // $ANTLR end "rule__X__OwnsYAssignment_4"
 
 
-    // $ANTLR start "rule__Y1__NameAssignment_2"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1539:1: rule__Y1__NameAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__Y1__NameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Z__NameAssignment_2"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1122:1: rule__Z__NameAssignment_2 : ( RULE_STRING ) ;
+    public final void rule__Z__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1543:1: ( ( RULE_STRING ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1544:1: ( RULE_STRING )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1126:1: ( ( RULE_STRING ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1127:1: ( RULE_STRING )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1544:1: ( RULE_STRING )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1545:1: RULE_STRING
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1127:1: ( RULE_STRING )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1128:1: RULE_STRING
             {
-             before(grammarAccess.getY1Access().getNameSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__Y1__NameAssignment_22996); 
-             after(grammarAccess.getY1Access().getNameSTRINGTerminalRuleCall_2_0()); 
+             before(grammarAccess.getZAccess().getNameSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__Z__NameAssignment_22191); 
+             after(grammarAccess.getZAccess().getNameSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -3828,29 +2852,66 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Y1__NameAssignment_2"
+    // $ANTLR end "rule__Z__NameAssignment_2"
 
 
-    // $ANTLR start "rule__Y1__OwnsZAssignment_4_1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1554:1: rule__Y1__OwnsZAssignment_4_1 : ( ruleZ ) ;
-    public final void rule__Y1__OwnsZAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Y1__NameAssignment_1"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1137:1: rule__Y1__NameAssignment_1 : ( RULE_STRING ) ;
+    public final void rule__Y1__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1558:1: ( ( ruleZ ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1559:1: ( ruleZ )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1141:1: ( ( RULE_STRING ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1142:1: ( RULE_STRING )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1559:1: ( ruleZ )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1560:1: ruleZ
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1142:1: ( RULE_STRING )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1143:1: RULE_STRING
             {
-             before(grammarAccess.getY1Access().getOwnsZZParserRuleCall_4_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleZ_in_rule__Y1__OwnsZAssignment_4_13027);
+             before(grammarAccess.getY1Access().getNameSTRINGTerminalRuleCall_1_0()); 
+            match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__Y1__NameAssignment_12222); 
+             after(grammarAccess.getY1Access().getNameSTRINGTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Y1__NameAssignment_1"
+
+
+    // $ANTLR start "rule__Y1__OwnsZAssignment_3"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1152:1: rule__Y1__OwnsZAssignment_3 : ( ruleZ ) ;
+    public final void rule__Y1__OwnsZAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1156:1: ( ( ruleZ ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1157:1: ( ruleZ )
+            {
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1157:1: ( ruleZ )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1158:1: ruleZ
+            {
+             before(grammarAccess.getY1Access().getOwnsZZParserRuleCall_3_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleZ_in_rule__Y1__OwnsZAssignment_32253);
             ruleZ();
 
             state._fsp--;
 
-             after(grammarAccess.getY1Access().getOwnsZZParserRuleCall_4_1_0()); 
+             after(grammarAccess.getY1Access().getOwnsZZParserRuleCall_3_0()); 
 
             }
 
@@ -3869,25 +2930,25 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Y1__OwnsZAssignment_4_1"
+    // $ANTLR end "rule__Y1__OwnsZAssignment_3"
 
 
-    // $ANTLR start "rule__Y2__NameAssignment_2"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1569:1: rule__Y2__NameAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__Y2__NameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Y2__NameAssignment_1"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1167:1: rule__Y2__NameAssignment_1 : ( RULE_STRING ) ;
+    public final void rule__Y2__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1573:1: ( ( RULE_STRING ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1574:1: ( RULE_STRING )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1171:1: ( ( RULE_STRING ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1172:1: ( RULE_STRING )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1574:1: ( RULE_STRING )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1575:1: RULE_STRING
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1172:1: ( RULE_STRING )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1173:1: RULE_STRING
             {
-             before(grammarAccess.getY2Access().getNameSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__Y2__NameAssignment_23058); 
-             after(grammarAccess.getY2Access().getNameSTRINGTerminalRuleCall_2_0()); 
+             before(grammarAccess.getY2Access().getNameSTRINGTerminalRuleCall_1_0()); 
+            match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__Y2__NameAssignment_12284); 
+             after(grammarAccess.getY2Access().getNameSTRINGTerminalRuleCall_1_0()); 
 
             }
 
@@ -3906,29 +2967,29 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Y2__NameAssignment_2"
+    // $ANTLR end "rule__Y2__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Y2__OwnsZAssignment_4_1"
-    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1584:1: rule__Y2__OwnsZAssignment_4_1 : ( ruleZ ) ;
-    public final void rule__Y2__OwnsZAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Y2__OwnsZAssignment_3"
+    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1182:1: rule__Y2__OwnsZAssignment_3 : ( ruleZ ) ;
+    public final void rule__Y2__OwnsZAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1588:1: ( ( ruleZ ) )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1589:1: ( ruleZ )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1186:1: ( ( ruleZ ) )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1187:1: ( ruleZ )
             {
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1589:1: ( ruleZ )
-            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1590:1: ruleZ
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1187:1: ( ruleZ )
+            // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1188:1: ruleZ
             {
-             before(grammarAccess.getY2Access().getOwnsZZParserRuleCall_4_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleZ_in_rule__Y2__OwnsZAssignment_4_13089);
+             before(grammarAccess.getY2Access().getOwnsZZParserRuleCall_3_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleZ_in_rule__Y2__OwnsZAssignment_32315);
             ruleZ();
 
             state._fsp--;
 
-             after(grammarAccess.getY2Access().getOwnsZZParserRuleCall_4_1_0()); 
+             after(grammarAccess.getY2Access().getOwnsZZParserRuleCall_3_0()); 
 
             }
 
@@ -3947,7 +3008,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Y2__OwnsZAssignment_4_1"
+    // $ANTLR end "rule__Y2__OwnsZAssignment_3"
 
     // Delegated rules
 
@@ -3976,113 +3037,81 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
         public static final BitSet FOLLOW_rule__Y2__Group__0_in_ruleY2394 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleY1_in_rule__Y__Alternatives430 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleY2_in_rule__Y__Alternatives447 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group__0__Impl_in_rule__Root__Group__0477 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_rule__Root__Group__1_in_rule__Root__Group__0480 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group__1__Impl_in_rule__Root__Group__1538 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__Root__Group__2_in_rule__Root__Group__1541 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_11_in_rule__Root__Group__1__Impl569 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group__2__Impl_in_rule__Root__Group__2600 = new BitSet(new long[]{0x0000000000006000L});
-        public static final BitSet FOLLOW_rule__Root__Group__3_in_rule__Root__Group__2603 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__Root__Group__2__Impl631 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group__3__Impl_in_rule__Root__Group__3662 = new BitSet(new long[]{0x0000000000006000L});
-        public static final BitSet FOLLOW_rule__Root__Group__4_in_rule__Root__Group__3665 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group_3__0_in_rule__Root__Group__3__Impl692 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group__4__Impl_in_rule__Root__Group__4723 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__Root__Group__4__Impl751 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group_3__0__Impl_in_rule__Root__Group_3__0792 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__Root__Group_3__1_in_rule__Root__Group_3__0795 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__Root__Group_3__0__Impl823 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group_3__1__Impl_in_rule__Root__Group_3__1854 = new BitSet(new long[]{0x0000000000410000L});
-        public static final BitSet FOLLOW_rule__Root__Group_3__2_in_rule__Root__Group_3__1857 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__Root__Group_3__1__Impl885 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group_3__2__Impl_in_rule__Root__Group_3__2916 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_rule__Root__Group_3__3_in_rule__Root__Group_3__2919 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__OwnedXAssignment_3_2_in_rule__Root__Group_3__2__Impl946 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group_3__3__Impl_in_rule__Root__Group_3__3976 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_rule__Root__Group_3__4_in_rule__Root__Group_3__3979 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group_3_3__0_in_rule__Root__Group_3__3__Impl1006 = new BitSet(new long[]{0x0000000000008002L});
-        public static final BitSet FOLLOW_rule__Root__Group_3__4__Impl_in_rule__Root__Group_3__41037 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__Root__Group_3__4__Impl1065 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group_3_3__0__Impl_in_rule__Root__Group_3_3__01106 = new BitSet(new long[]{0x0000000000410000L});
-        public static final BitSet FOLLOW_rule__Root__Group_3_3__1_in_rule__Root__Group_3_3__01109 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__Root__Group_3_3__0__Impl1137 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group_3_3__1__Impl_in_rule__Root__Group_3_3__11168 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__OwnedXAssignment_3_3_1_in_rule__Root__Group_3_3__1__Impl1195 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__0__Impl_in_rule__X__Group__01229 = new BitSet(new long[]{0x0000000000410000L});
-        public static final BitSet FOLLOW_rule__X__Group__1_in_rule__X__Group__01232 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__1__Impl_in_rule__X__Group__11290 = new BitSet(new long[]{0x0000000000410000L});
-        public static final BitSet FOLLOW_rule__X__Group__2_in_rule__X__Group__11293 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__IsA1Assignment_1_in_rule__X__Group__1__Impl1320 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__2__Impl_in_rule__X__Group__21351 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__X__Group__3_in_rule__X__Group__21354 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_rule__X__Group__2__Impl1382 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__3__Impl_in_rule__X__Group__31413 = new BitSet(new long[]{0x0000000000022000L});
-        public static final BitSet FOLLOW_rule__X__Group__4_in_rule__X__Group__31416 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__X__Group__3__Impl1444 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__4__Impl_in_rule__X__Group__41475 = new BitSet(new long[]{0x0000000000022000L});
-        public static final BitSet FOLLOW_rule__X__Group__5_in_rule__X__Group__41478 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group_4__0_in_rule__X__Group__4__Impl1505 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__5__Impl_in_rule__X__Group__51536 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__X__Group__5__Impl1564 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group_4__0__Impl_in_rule__X__Group_4__01607 = new BitSet(new long[]{0x0000000000280000L});
-        public static final BitSet FOLLOW_rule__X__Group_4__1_in_rule__X__Group_4__01610 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__X__Group_4__0__Impl1638 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group_4__1__Impl_in_rule__X__Group_4__11669 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__OwnsYAssignment_4_1_in_rule__X__Group_4__1__Impl1696 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Z__Group__0__Impl_in_rule__Z__Group__01730 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_rule__Z__Group__1_in_rule__Z__Group__01733 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Z__Group__1__Impl_in_rule__Z__Group__11791 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_rule__Z__Group__1__Impl1819 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__0__Impl_in_rule__Y1__Group__01854 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_rule__Y1__Group__1_in_rule__Y1__Group__01857 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__1__Impl_in_rule__Y1__Group__11915 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__Y1__Group__2_in_rule__Y1__Group__11918 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__Y1__Group__1__Impl1946 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__2__Impl_in_rule__Y1__Group__21977 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__Y1__Group__3_in_rule__Y1__Group__21980 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__NameAssignment_2_in_rule__Y1__Group__2__Impl2007 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__3__Impl_in_rule__Y1__Group__32037 = new BitSet(new long[]{0x0000000000102000L});
-        public static final BitSet FOLLOW_rule__Y1__Group__4_in_rule__Y1__Group__32040 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__Y1__Group__3__Impl2068 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__4__Impl_in_rule__Y1__Group__42099 = new BitSet(new long[]{0x0000000000102000L});
-        public static final BitSet FOLLOW_rule__Y1__Group__5_in_rule__Y1__Group__42102 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group_4__0_in_rule__Y1__Group__4__Impl2129 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__5__Impl_in_rule__Y1__Group__52160 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__Y1__Group__5__Impl2188 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group_4__0__Impl_in_rule__Y1__Group_4__02231 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_rule__Y1__Group_4__1_in_rule__Y1__Group_4__02234 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_rule__Y1__Group_4__0__Impl2262 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group_4__1__Impl_in_rule__Y1__Group_4__12293 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__OwnsZAssignment_4_1_in_rule__Y1__Group_4__1__Impl2320 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__0__Impl_in_rule__Y2__Group__02354 = new BitSet(new long[]{0x0000000000280000L});
-        public static final BitSet FOLLOW_rule__Y2__Group__1_in_rule__Y2__Group__02357 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__1__Impl_in_rule__Y2__Group__12415 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__Y2__Group__2_in_rule__Y2__Group__12418 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Y2__Group__1__Impl2446 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__2__Impl_in_rule__Y2__Group__22477 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__Y2__Group__3_in_rule__Y2__Group__22480 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__NameAssignment_2_in_rule__Y2__Group__2__Impl2507 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__3__Impl_in_rule__Y2__Group__32537 = new BitSet(new long[]{0x0000000000102000L});
-        public static final BitSet FOLLOW_rule__Y2__Group__4_in_rule__Y2__Group__32540 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__Y2__Group__3__Impl2568 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__4__Impl_in_rule__Y2__Group__42599 = new BitSet(new long[]{0x0000000000102000L});
-        public static final BitSet FOLLOW_rule__Y2__Group__5_in_rule__Y2__Group__42602 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group_4__0_in_rule__Y2__Group__4__Impl2629 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__5__Impl_in_rule__Y2__Group__52660 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__Y2__Group__5__Impl2688 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group_4__0__Impl_in_rule__Y2__Group_4__02731 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_rule__Y2__Group_4__1_in_rule__Y2__Group_4__02734 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_rule__Y2__Group_4__0__Impl2762 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group_4__1__Impl_in_rule__Y2__Group_4__12793 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__OwnsZAssignment_4_1_in_rule__Y2__Group_4__1__Impl2820 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleX_in_rule__Root__OwnedXAssignment_3_22859 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleX_in_rule__Root__OwnedXAssignment_3_3_12890 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_rule__X__IsA1Assignment_12926 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY_in_rule__X__OwnsYAssignment_4_12965 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_rule__Y1__NameAssignment_22996 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleZ_in_rule__Y1__OwnsZAssignment_4_13027 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_rule__Y2__NameAssignment_23058 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleZ_in_rule__Y2__OwnsZAssignment_4_13089 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__X__IsA1Assignment_2_0_in_rule__X__Alternatives_2479 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__X__IsA2Assignment_2_1_in_rule__X__Alternatives_2497 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Root__Group__0__Impl_in_rule__Root__Group__0528 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_rule__Root__Group__1_in_rule__Root__Group__0531 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Root__Group__1__Impl_in_rule__Root__Group__1589 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_rule__Root__Group__2_in_rule__Root__Group__1592 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_11_in_rule__Root__Group__1__Impl620 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Root__Group__2__Impl_in_rule__Root__Group__2651 = new BitSet(new long[]{0x0000000000006000L});
+        public static final BitSet FOLLOW_rule__Root__Group__3_in_rule__Root__Group__2654 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_rule__Root__Group__2__Impl682 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Root__Group__3__Impl_in_rule__Root__Group__3713 = new BitSet(new long[]{0x0000000000006000L});
+        public static final BitSet FOLLOW_rule__Root__Group__4_in_rule__Root__Group__3716 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Root__OwnedXAssignment_3_in_rule__Root__Group__3__Impl743 = new BitSet(new long[]{0x0000000000004002L});
+        public static final BitSet FOLLOW_rule__Root__Group__4__Impl_in_rule__Root__Group__4774 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__Root__Group__4__Impl802 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__X__Group__0__Impl_in_rule__X__Group__0843 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_rule__X__Group__1_in_rule__X__Group__0846 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__X__Group__1__Impl_in_rule__X__Group__1904 = new BitSet(new long[]{0x00000000000C1000L});
+        public static final BitSet FOLLOW_rule__X__Group__2_in_rule__X__Group__1907 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__X__Group__1__Impl935 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__X__Group__2__Impl_in_rule__X__Group__2966 = new BitSet(new long[]{0x00000000000C1000L});
+        public static final BitSet FOLLOW_rule__X__Group__3_in_rule__X__Group__2969 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__X__Alternatives_2_in_rule__X__Group__2__Impl996 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__X__Group__3__Impl_in_rule__X__Group__31027 = new BitSet(new long[]{0x0000000000032000L});
+        public static final BitSet FOLLOW_rule__X__Group__4_in_rule__X__Group__31030 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_rule__X__Group__3__Impl1058 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__X__Group__4__Impl_in_rule__X__Group__41089 = new BitSet(new long[]{0x0000000000032000L});
+        public static final BitSet FOLLOW_rule__X__Group__5_in_rule__X__Group__41092 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__X__OwnsYAssignment_4_in_rule__X__Group__4__Impl1119 = new BitSet(new long[]{0x0000000000030002L});
+        public static final BitSet FOLLOW_rule__X__Group__5__Impl_in_rule__X__Group__51150 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__X__Group__5__Impl1178 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Z__Group__0__Impl_in_rule__Z__Group__01221 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_rule__Z__Group__1_in_rule__Z__Group__01224 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Z__Group__1__Impl_in_rule__Z__Group__11282 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__Z__Group__2_in_rule__Z__Group__11285 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__Z__Group__1__Impl1313 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Z__Group__2__Impl_in_rule__Z__Group__21344 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Z__NameAssignment_2_in_rule__Z__Group__2__Impl1371 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y1__Group__0__Impl_in_rule__Y1__Group__01408 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__Y1__Group__1_in_rule__Y1__Group__01411 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_16_in_rule__Y1__Group__0__Impl1439 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y1__Group__1__Impl_in_rule__Y1__Group__11470 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_rule__Y1__Group__2_in_rule__Y1__Group__11473 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y1__NameAssignment_1_in_rule__Y1__Group__1__Impl1500 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y1__Group__2__Impl_in_rule__Y1__Group__21530 = new BitSet(new long[]{0x000000000000A000L});
+        public static final BitSet FOLLOW_rule__Y1__Group__3_in_rule__Y1__Group__21533 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_rule__Y1__Group__2__Impl1561 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y1__Group__3__Impl_in_rule__Y1__Group__31592 = new BitSet(new long[]{0x000000000000A000L});
+        public static final BitSet FOLLOW_rule__Y1__Group__4_in_rule__Y1__Group__31595 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y1__OwnsZAssignment_3_in_rule__Y1__Group__3__Impl1622 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y1__Group__4__Impl_in_rule__Y1__Group__41653 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__Y1__Group__4__Impl1681 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y2__Group__0__Impl_in_rule__Y2__Group__01722 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__Y2__Group__1_in_rule__Y2__Group__01725 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__Y2__Group__0__Impl1753 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y2__Group__1__Impl_in_rule__Y2__Group__11784 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_rule__Y2__Group__2_in_rule__Y2__Group__11787 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y2__NameAssignment_1_in_rule__Y2__Group__1__Impl1814 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y2__Group__2__Impl_in_rule__Y2__Group__21844 = new BitSet(new long[]{0x000000000000A000L});
+        public static final BitSet FOLLOW_rule__Y2__Group__3_in_rule__Y2__Group__21847 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_rule__Y2__Group__2__Impl1875 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y2__Group__3__Impl_in_rule__Y2__Group__31906 = new BitSet(new long[]{0x000000000000A000L});
+        public static final BitSet FOLLOW_rule__Y2__Group__4_in_rule__Y2__Group__31909 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y2__OwnsZAssignment_3_in_rule__Y2__Group__3__Impl1936 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Y2__Group__4__Impl_in_rule__Y2__Group__41967 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__Y2__Group__4__Impl1995 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleX_in_rule__Root__OwnedXAssignment_32041 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_rule__X__IsA1Assignment_2_02077 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_rule__X__IsA2Assignment_2_12121 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleY_in_rule__X__OwnsYAssignment_42160 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_rule__Z__NameAssignment_22191 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_rule__Y1__NameAssignment_12222 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleZ_in_rule__Y1__OwnsZAssignment_32253 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_rule__Y2__NameAssignment_12284 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleZ_in_rule__Y2__OwnsZAssignment_32315 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

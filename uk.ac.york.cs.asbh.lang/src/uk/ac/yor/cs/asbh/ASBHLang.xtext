@@ -8,7 +8,7 @@ Root returns SRoot:
 	{SRoot}
 	'Root'
 	'{'
-		('ownedX' '{' ownedX+=X ( "," ownedX+=X)* '}' )?
+		(ownedX+=X)*
 	'}';
 
 
@@ -17,11 +17,11 @@ Y returns Y:
 
 
 X returns X:
-	{X}
-	(isA1?='isA1')?
-	'X'
+	{X}	
+	'X' 
+	(isA1?='isA1' | isA2?='isA2')?
 	'{'
-		('ownsY' ownsY+=Y)?
+		(ownsY+=Y)*
 	'}';
 
 //EBoolean returns ecore::EBoolean:
@@ -29,20 +29,18 @@ X returns X:
 
 Z returns Z:
 	{Z}
-	'Z'
+	'Z' name=STRING?
 	;
 
 Y1 returns Y1:
-	{Y1}
 	'Y1' name= STRING
 	'{'
 		
-		('ownsZ' ownsZ=Z)?
+		(ownsZ=Z)?
 	'}';
 
 Y2 returns Y2:
-	{Y2}
 	'Y2' name= STRING
 	'{'
-		('ownsZ' ownsZ=Z)?
+		(ownsZ=Z)?
 	'}';
