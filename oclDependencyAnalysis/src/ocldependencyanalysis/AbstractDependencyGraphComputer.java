@@ -17,14 +17,16 @@ import org.eclipse.ocl.pivot.Class;
 import org.eclipse.ocl.pivot.ConstructorExp;
 import org.eclipse.ocl.pivot.ConstructorPart;
 import org.eclipse.ocl.pivot.Element;
-import org.eclipse.ocl.pivot.FeatureFilter;
 import org.eclipse.ocl.pivot.Model;
 import org.eclipse.ocl.pivot.Operation;
 import org.eclipse.ocl.pivot.OperationCallExp;
 import org.eclipse.ocl.pivot.Package;
 import org.eclipse.ocl.pivot.PropertyCallExp;
 import org.eclipse.ocl.pivot.Type;
-import org.eclipse.ocl.pivot.internal.manager.MetamodelManager;
+import org.eclipse.ocl.pivot.internal.manager.PivotMetamodelManager;
+import org.eclipse.ocl.pivot.utilities.FeatureFilter;
+import org.eclipse.ocl.pivot.utilities.MetamodelManager;
+import org.eclipse.ocl.pivot.utilities.OCL;
 
 /**
  * @author asbh500
@@ -43,7 +45,10 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	private Map<Class , Set<Class>> asClass2csClasses = new HashMap<Class, Set<Class>>();
 	
 	protected MetamodelManager mManager;
-		
+	
+	public AbstractDependencyGraphComputer(OCL ocl) {
+		this.mManager = ocl.getMetamodelManager();
+	}
 	private void initializeMaps(Resource resource) {
 		Model root = (Model) resource.getContents().get(0) ;
 		for (Package aPackage : root.getOwnedPackages()) {
@@ -147,18 +152,18 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	}
 	
 	protected Set<Class> getInstantiableSubClasses(Class type) {
-		Class primaryClass = mManager.getPrimaryType(type);
+		Class primaryClass = mManager.getPrimaryClass(type);
 		return type2instantiableSubClasses.get(primaryClass);
 	}
 
 	protected boolean typeIsSupertypeOf(Class t1, Class t2) {
-		Type primaryT1 = mManager.getPrimaryType(t1);
-		Type primaryT2 = mManager.getPrimaryType(t2);
+		Type primaryT1 = mManager.getPrimaryClass(t1);
+		Type primaryT2 = mManager.getPrimaryClass(t2);
 		return type2superClasses.get(primaryT1).contains(primaryT2);
 	}
 	
 	protected Set<Class> getDirectSubClasses(Class type) {
-		Type primaryType = mManager.getPrimaryType(type);
+		Type primaryType = mManager.getPrimaryClass(type);
 		return type2directSubClasses.get(primaryType);
 	}
 	/**
@@ -166,7 +171,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	 * @return all the CS types which may create the provided AS type
 	 */
 	protected Set<Class> getCSClasses(Class asClass) {
-		Type asPrimaryType = mManager.getPrimaryType(asClass);
+		Type asPrimaryType = mManager.getPrimaryClass(asClass);
 		return asClass2csClasses.get(asPrimaryType);
 	}
 	
@@ -174,7 +179,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		Operation bestOp=null;	// The best op will be the one owned by the type the 
 								// closer to opAstClass in the class hierarchy 
 		// TODO move to mManager ?
-		for (Operation op : mManager.getAllOperations(opAstClass, FeatureFilter.SELECT_NON_STATIC, "ast")){
+		for (Operation op : ((PivotMetamodelManager) mManager).getAllOperations(opAstClass, FeatureFilter.SELECT_NON_STATIC, "ast")){
 			if (op instanceof Operation
 				&& op.getOwnedParameters().isEmpty()) {
 				Operation candidateOp = (Operation) op;
@@ -192,16 +197,14 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	
 	public IGraph<C> computeDependencyGraph (Resource cs2asResource) {
 		assert(cs2asResource.getContents().get(0) instanceof Model);	
-		mManager = MetamodelManager.getAdapter(cs2asResource.getResourceSet());
+
 		IGraph<C> dependencyGraph = createDependencyGraph();
 		
 		initializeMaps(cs2asResource);		
 		preprocess(cs2asResource, dependencyGraph);			
 		updateDependencyGraphFromCS2ASDescription(dependencyGraph, cs2asResource);		
 		postprocess(cs2asResource, dependencyGraph);
-		
-		mManager = null;
-		
+	
 		return dependencyGraph;
 	}
 	

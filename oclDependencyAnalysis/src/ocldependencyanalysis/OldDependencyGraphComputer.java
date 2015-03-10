@@ -7,9 +7,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.pivot.ConstructorExp;
 import org.eclipse.ocl.pivot.OperationCallExp;
+import org.eclipse.ocl.pivot.utilities.OCL;
 
 public abstract class OldDependencyGraphComputer<C> extends AbstractDependencyGraphComputer<C> {
 	
+	public OldDependencyGraphComputer(OCL ocl) {
+		super(ocl);
+	}
+
 	protected final void updateDependencyGraphFromCS2ASDescription(IGraph<C> dependencyGraph, Resource cs2asDescription) {
 		
 		for (TreeIterator<EObject> tit = cs2asDescription.getAllContents(); tit.hasNext(); ) {

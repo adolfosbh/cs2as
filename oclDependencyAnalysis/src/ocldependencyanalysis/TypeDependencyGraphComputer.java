@@ -9,6 +9,7 @@ import org.eclipse.ocl.pivot.ConstructorExp;
 import org.eclipse.ocl.pivot.Model;
 import org.eclipse.ocl.pivot.OperationCallExp;
 import org.eclipse.ocl.pivot.Type;
+import org.eclipse.ocl.pivot.utilities.OCL;
 
 /**
  * <p>
@@ -44,6 +45,10 @@ import org.eclipse.ocl.pivot.Type;
  * @author asbh500
  */
 public class TypeDependencyGraphComputer extends OldDependencyGraphComputer<Type>{
+
+	public TypeDependencyGraphComputer(OCL ocl) {
+		super(ocl);
+	}
 
 	@Override
 	protected void processAstCall(IGraph<Type> dependencyGraph,

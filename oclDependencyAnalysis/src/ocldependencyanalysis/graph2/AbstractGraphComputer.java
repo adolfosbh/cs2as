@@ -15,7 +15,6 @@ import org.eclipse.ocl.pivot.CollectionType;
 import org.eclipse.ocl.pivot.ConstructorExp;
 import org.eclipse.ocl.pivot.ConstructorPart;
 import org.eclipse.ocl.pivot.Element;
-import org.eclipse.ocl.pivot.FeatureFilter;
 import org.eclipse.ocl.pivot.Model;
 import org.eclipse.ocl.pivot.Operation;
 import org.eclipse.ocl.pivot.OperationCallExp;
@@ -24,7 +23,10 @@ import org.eclipse.ocl.pivot.Property;
 import org.eclipse.ocl.pivot.PropertyCallExp;
 import org.eclipse.ocl.pivot.Type;
 import org.eclipse.ocl.pivot.TypedElement;
-import org.eclipse.ocl.pivot.internal.manager.MetamodelManager;
+import org.eclipse.ocl.pivot.internal.manager.PivotMetamodelManager;
+import org.eclipse.ocl.pivot.utilities.FeatureFilter;
+import org.eclipse.ocl.pivot.utilities.MetamodelManager;
+import org.eclipse.ocl.pivot.utilities.OCL;
 
 /**
  * @author asbh500
@@ -68,7 +70,11 @@ public abstract class AbstractGraphComputer {
 	protected MetamodelManager mManager;
 	
 	protected AbstractGraphManager gManager;
-		
+	
+	public AbstractGraphComputer(OCL ocl) {
+		mManager = ocl.getMetamodelManager();
+	}
+	
 	private void initializeMaps(Resource resource) {
 	
 		for (Package aPackage : getPackageInvolvedInOCLDoc(resource)) {
@@ -97,7 +103,7 @@ public abstract class AbstractGraphComputer {
 	
 	private Set<Class> computeClass2SuperClasses(Class aClass) {
 		
-		//aClass = mManager.getPrimaryType(aClass);
+		//aClass = mManager.getPrimaryClass(aClass);
 		Set<Class> result = class2superClasses.get(aClass);
 		if (result != null) {
 			return result;
@@ -107,7 +113,7 @@ public abstract class AbstractGraphComputer {
 		}
 		
 		for (Class superClass : aClass.getSuperClasses()) {
-			//superClass = mManager.getPrimaryType(superClass);
+			//superClass = mManager.getPrimaryClass(superClass);
 			result.add(superClass);
 			result.addAll(computeClass2SuperClasses(superClass));
 		}
@@ -117,7 +123,7 @@ public abstract class AbstractGraphComputer {
 	private void computeClass2DirectSubClasses(Class aClass) {
 			 
 		for (Class superClass : aClass.getSuperClasses()) {
-			//superClass = mManager.getPrimaryType(superClass);
+			//superClass = mManager.getPrimaryClass(superClass);
 			Set<Class> subClass = class2directSubClasses.get(superClass);
 			if (subClass == null) {
 				subClass = new HashSet<Class>();
@@ -139,7 +145,7 @@ public abstract class AbstractGraphComputer {
 	
 	private void addContainerClassForTypeAndSubtypes(Class containerClass, Property containmentProperty, Class type) {
 		
-		//type = mManager.getPrimaryType(type);
+		//type = mManager.getPrimaryClass(type);
 		Set<ContainerClass> containerClasses = class2containerClasses.get(type);
 		if (containerClasses == null) {
 			containerClasses = new HashSet<ContainerClass>();
@@ -201,26 +207,26 @@ public abstract class AbstractGraphComputer {
 	}
 
 	protected boolean typeIsSupertypeOf(Class t1, Class t2) {
-		Type primaryT1 = mManager.getPrimaryType(t1);
-		Type primaryT2 = mManager.getPrimaryType(t2);
+		Type primaryT1 = mManager.getPrimaryClass(t1);
+		Type primaryT2 = mManager.getPrimaryClass(t2);
 		return class2superClasses.get(primaryT1).contains(primaryT2);
 	}
 	
 	protected Set<Class> getDirectSubClasses(Class type) {
-		Type primaryType = mManager.getPrimaryType(type);
+		Type primaryType = mManager.getPrimaryClass(type);
 		Set<Class> directSubClasses = class2directSubClasses.get(primaryType);
 		return directSubClasses == null ? Collections.<Class>emptySet() : directSubClasses;
 	}
 	
 	protected Set<ContainerClass> getContainerClasses(Class aClass) {
-		Type asPrimaryType = mManager.getPrimaryType(aClass);
+		Type asPrimaryType = mManager.getPrimaryClass(aClass);
 		Set<ContainerClass> containerClasses = class2containerClasses.get(asPrimaryType);
 		return containerClasses == null ? Collections.<ContainerClass>emptySet() : containerClasses;
 	}
 	
 	protected Operation getAstOperation(Class opAstClass) {	
 		Operation bestOp=null;	// The best op will be the one owned by the type the 
-		for (Operation op : mManager.getAllOperations(opAstClass, FeatureFilter.SELECT_NON_STATIC, "ast")){
+		for (Operation op : ((PivotMetamodelManager)mManager).getAllOperations(opAstClass, FeatureFilter.SELECT_NON_STATIC, "ast")){
 			if (op instanceof Operation
 				&& op.getOwnedParameters().isEmpty()) {
 				Operation candidateOp = (Operation) op;
@@ -240,7 +246,7 @@ public abstract class AbstractGraphComputer {
 		Operation bestOp=null;	// The best op will be the one owned by the type the 
 		// closer to opAstClass in the class hierarchy 
 		// TODO move to mManager ?
-		for (Operation op : mManager.getAllOperations(opEnvClass, FeatureFilter.SELECT_NON_STATIC, envOpName)){
+		for (Operation op : ((PivotMetamodelManager)mManager).getAllOperations(opEnvClass, FeatureFilter.SELECT_NON_STATIC, envOpName)){
 			if (op instanceof Operation) {
 				Operation candidateOp = (Operation) op;
 				if (bestOp == null) {
@@ -257,7 +263,6 @@ public abstract class AbstractGraphComputer {
 	
 	public Graph computeDependencyGraph (Resource cs2asResource) {
 		assert(cs2asResource.getContents().get(0) instanceof Model);	
-		mManager = MetamodelManager.getAdapter(cs2asResource.getResourceSet());
 		Graph dependencyGraph = createDependencyGraph();
 		gManager = createGraphManager(dependencyGraph);
 		
@@ -266,8 +271,6 @@ public abstract class AbstractGraphComputer {
 		preprocess(cs2asResource, dependencyGraph);			
 		updateDependencyGraphFromCS2ASDescription(dependencyGraph, cs2asResource);		
 		postprocess(cs2asResource, dependencyGraph);
-		
-		mManager = null;
 		
 		return dependencyGraph;
 	}
@@ -411,7 +414,7 @@ public abstract class AbstractGraphComputer {
 				}
 			}	
 		}
-		return (Class) mManager.getOclType("OclElement");
+		return (Class) ((PivotMetamodelManager)mManager).getOclType("OclElement");
 	}
 	
 	protected boolean isConstructorExp(EObject element) {

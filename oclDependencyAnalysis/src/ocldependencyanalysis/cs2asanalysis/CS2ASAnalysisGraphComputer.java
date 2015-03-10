@@ -29,19 +29,25 @@ import org.eclipse.ocl.pivot.OperationCallExp;
 import org.eclipse.ocl.pivot.Property;
 import org.eclipse.ocl.pivot.PropertyCallExp;
 import org.eclipse.ocl.pivot.Type;
+import org.eclipse.ocl.pivot.internal.manager.PivotMetamodelManager;
+import org.eclipse.ocl.pivot.utilities.OCL;
 
 public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
-
+	
 	// FIXME Quick workaround for ed's requirement 
 	// Refactor and increase API to accept options
 	public static boolean CLEAN_GRAPH = true;
-		
+	
+	public CS2ASAnalysisGraphComputer(OCL ocl) {
+		super(ocl);
+	}
+	
 	@Override
 	protected void updateDependencyGraphFromCS2ASDescription(
 			Graph dependencyGraph, Resource cs2asResource) {
 		
 		for (Class ownedClass : getUserClassesInvolvedInOCLDocPackages(cs2asResource)) {
-			for (Operation op : mManager.getAllOperations(ownedClass, null)) {
+			for (Operation op : ((PivotMetamodelManager)mManager).getAllOperations(ownedClass, null)) {
 				Operation pivotOp = (Operation)op;
 				if (isAstOp(pivotOp)) {
 					updateGraphFromMappingOperation(ownedClass, pivotOp);
@@ -406,7 +412,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 			ClassInfo constructedClass = createClassInfo(ownedClass, ownedClass);
 			updateGraphFromSuperClasses(constructedClass, computedClasses);
 			// For every computed property We firstly build the aggregation links
-			for (Operation op : mManager.getAllOperations(ownedClass, null)) {
+			for (Operation op : ((PivotMetamodelManager)mManager).getAllOperations(ownedClass, null)) {
 				Operation pivotOp = (Operation)op;
 				if (isAstOp(pivotOp)) {
 					updateGraphFromInvolvedProperties(pivotOp, computedProperties);

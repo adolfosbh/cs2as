@@ -20,6 +20,7 @@ import org.eclipse.ocl.pivot.OperationCallExp;
 import org.eclipse.ocl.pivot.Property;
 import org.eclipse.ocl.pivot.PropertyCallExp;
 import org.eclipse.ocl.pivot.Type;
+import org.eclipse.ocl.pivot.utilities.OCL;
 
 /**
  * <p>
@@ -48,6 +49,10 @@ import org.eclipse.ocl.pivot.Type;
  * @author asbh500
  */
 public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<FeatureObj> {
+
+	public FeatureDependencyGraphComputer(OCL ocl) {
+		super(ocl);
+	}
 
 	@Override
 	protected void processAstCall(IGraph<FeatureObj> dependencyGraph,

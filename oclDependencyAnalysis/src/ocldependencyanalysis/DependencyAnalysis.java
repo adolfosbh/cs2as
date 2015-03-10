@@ -12,46 +12,46 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.ocl.pivot.Type;
 import org.eclipse.ocl.pivot.internal.utilities.PivotEnvironmentFactory;
 import org.eclipse.ocl.pivot.model.OCLstdlib;
-import org.eclipse.ocl.pivot.resource.StandaloneProjectMap;
 import org.eclipse.ocl.pivot.utilities.OCL;
 import org.eclipse.ocl.xtext.completeocl.CompleteOCLStandaloneSetup;
 
 public class DependencyAnalysis {
 	
 	private static OCL getOCL() {
-		ResourceSet resourceSet = new ResourceSetImpl();
-		
-		OCL.initialize(resourceSet);		
+				
 		OCLstdlib.install();
 		CompleteOCLStandaloneSetup.doSetup();
-		StandaloneProjectMap pMap = StandaloneProjectMap.getAdapter(resourceSet);
-
-		PivotEnvironmentFactory environmentFactory = new PivotEnvironmentFactory(pMap, null);
-		return OCL.newInstance(environmentFactory);
+		return OCL.newInstance();
 	}
 
 	public static IGraph<Type> createTypeDependencyGraph(URI cs2asDocURI) {
 			
 		OCL ocl = getOCL();
 		Resource cs2asResource = ocl.parse(cs2asDocURI);
-		TypeDependencyGraphComputer inputTypeGraphComp = new TypeDependencyGraphComputer();
-		return inputTypeGraphComp.computeDependencyGraph(cs2asResource);
+		TypeDependencyGraphComputer inputTypeGraphComp = new TypeDependencyGraphComputer(ocl);
+		IGraph<Type> graph =  inputTypeGraphComp.computeDependencyGraph(cs2asResource);
+		ocl.dispose();
+		return graph;
 	}
 	
 	public static IGraph<FeatureObj> createFeatureDependencyGraph(URI cs2asDocURI) {
 		
 		OCL ocl = getOCL();		
 		Resource cs2asResource = ocl.parse(cs2asDocURI);		
-		FeatureDependencyGraphComputer featGraphComp = new FeatureDependencyGraphComputer();
-		return featGraphComp.computeDependencyGraph(cs2asResource);
+		FeatureDependencyGraphComputer featGraphComp = new FeatureDependencyGraphComputer(ocl);
+		IGraph<FeatureObj> graph = featGraphComp.computeDependencyGraph(cs2asResource);
+		ocl.dispose();
+		return graph;
 	}
 	
 	public static Graph createCS2ASAnalysisGraph(URI cs2asDocURI) {
 		
 		OCL ocl = getOCL();		
 		Resource cs2asResource = ocl.parse(cs2asDocURI);
-		CS2ASAnalysisGraphComputer cs2asAnalysisGraphComp = new CS2ASAnalysisGraphComputer();
-		return cs2asAnalysisGraphComp.computeDependencyGraph(cs2asResource);
+		CS2ASAnalysisGraphComputer cs2asAnalysisGraphComp = new CS2ASAnalysisGraphComputer(ocl);
+		Graph graph = cs2asAnalysisGraphComp.computeDependencyGraph(cs2asResource);
+		ocl.dispose();
+		return graph;
 	}
 	
 	public static void printGraphAndCycles(IGraph<?> graph) {
