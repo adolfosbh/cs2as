@@ -5,7 +5,6 @@ package uk.ac.york.cs.asbh.lang.cs2as.source.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-
 import uk.ac.york.cs.asbh.lang.cs2as.source.SElement;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SRoot;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;

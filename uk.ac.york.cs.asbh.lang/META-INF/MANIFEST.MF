@@ -17,7 +17,10 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.qvtd.build.cs2as;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.ocl.examples.build;bundle-version="2.0.0",
+ org.eclipse.qvtd.pivot.qvtimperative;bundle-version="1.0.0"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

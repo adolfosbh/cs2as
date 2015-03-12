@@ -32,7 +32,7 @@ public interface SElement extends EObject {
 	 * @return the value of the '<em>Ast</em>' reference.
 	 * @see #setAst(EObject)
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage#getSElement_Ast()
-	 * @model
+	 * @model transient="true"
 	 * @generated
 	 */
 	EObject getAst();

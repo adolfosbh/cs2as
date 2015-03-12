@@ -1,0 +1,1950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qvti:ImperativeModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pivot="http://www.eclipse.org/ocl/2015/Pivot"
+    xmlns:qvtb="http://www.eclipse.org/qvt/2015/QVTbase" xmlns:qvtcb="http://www.eclipse.org/qvt/2015/QVTcoreBase" xmlns:qvti="http://www.eclipse.org/qvt/2015/QVTimperative"
+    name="Source2Target.qvtias" externalURI="platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/Source2Target.qvtias">
+  <ownedImports>
+    <importedNamespace xsi:type="pivot:Model" href="SourceMM1.ecore.oclas#/"/>
+  </ownedImports>
+  <ownedImports>
+    <importedNamespace xsi:type="pivot:Model" href="TargetMM1.ecore.oclas#/"/>
+  </ownedImports>
+  <ownedImports>
+    <importedNamespace xsi:type="pivot:Model" href="SourceDisambiguation.ocl.oclas#/"/>
+  </ownedImports>
+  <ownedImports>
+    <importedNamespace xsi:type="pivot:Model" href="TargetLookup.ocl.oclas#/"/>
+  </ownedImports>
+  <ownedPackages name="">
+    <ownedClasses xsi:type="qvtb:Transformation" name="Source2Target_qvtp_qvtias">
+      <modelParameter name="leftCS">
+        <usedPackage href="SourceMM1.ecore.oclas#//@ownedPackages.0"/>
+      </modelParameter>
+      <modelParameter name="rightAS">
+        <usedPackage href="TargetMM1.ecore.oclas#//@ownedPackages.0"/>
+      </modelParameter>
+      <rule xsi:type="qvti:Mapping" name="cSRoot_2_TRoot">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="sRoot">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern>
+            <realizedVariable name="tRoot">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.7"/>
+            </realizedVariable>
+          </bottomPattern>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.1/@bottomPattern/@realizedVariable.0">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.7"/>
+            </value>
+            <slotExpression xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.0/@guardPattern/@variable.0">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+            </slotExpression>
+            <targetProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="cX_2_A3">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern>
+            <realizedVariable name="a3">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+            </realizedVariable>
+          </bottomPattern>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                </ownedSource>
+                <referredOperation href="SourceDisambiguation.ocl.oclas#o.source.X.disambiguatesToA1"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not"/>
+            </conditionExpression>
+          </predicate>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                </ownedSource>
+                <referredOperation href="SourceDisambiguation.ocl.oclas#o.source.X.disambiguatesToA2"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.1/@bottomPattern/@realizedVariable.0">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+            </value>
+            <slotExpression xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.0/@guardPattern/@variable.0">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </slotExpression>
+            <targetProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="cX_2_A2">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern>
+            <realizedVariable name="a2">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+            </realizedVariable>
+          </bottomPattern>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.2/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                </ownedSource>
+                <referredOperation href="SourceDisambiguation.ocl.oclas#o.source.X.disambiguatesToA1"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not"/>
+            </conditionExpression>
+          </predicate>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.2/@domain.0/@guardPattern/@variable.0">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+              </ownedSource>
+              <referredOperation href="SourceDisambiguation.ocl.oclas#o.source.X.disambiguatesToA2"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.2/@domain.1/@bottomPattern/@realizedVariable.0">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+            </value>
+            <slotExpression xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.2/@domain.0/@guardPattern/@variable.0">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </slotExpression>
+            <targetProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="cX_2_A1">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern>
+            <realizedVariable name="a1">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+            </realizedVariable>
+          </bottomPattern>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.3/@domain.0/@guardPattern/@variable.0">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+              </ownedSource>
+              <referredOperation href="SourceDisambiguation.ocl.oclas#o.source.X.disambiguatesToA1"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.3/@domain.1/@bottomPattern/@realizedVariable.0">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+            </value>
+            <slotExpression xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.3/@domain.0/@guardPattern/@variable.0">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </slotExpression>
+            <targetProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="cY1_2_B">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="y1">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern>
+            <realizedVariable name="b">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </realizedVariable>
+          </bottomPattern>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.4/@domain.1/@bottomPattern/@realizedVariable.0">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </value>
+            <slotExpression xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.4/@domain.0/@guardPattern/@variable.0">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+            </slotExpression>
+            <targetProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="cY2_2_C">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="y2">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern>
+            <realizedVariable name="c">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+            </realizedVariable>
+          </bottomPattern>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.5/@domain.1/@bottomPattern/@realizedVariable.0">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+            </value>
+            <slotExpression xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.5/@domain.0/@guardPattern/@variable.0">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+            </slotExpression>
+            <targetProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="cZ_2_D_0">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern>
+            <realizedVariable name="d">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+            </realizedVariable>
+          </bottomPattern>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.6/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                  <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                </ownedArguments>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsKindOf..ocl.OclType"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.6/@domain.1/@bottomPattern/@realizedVariable.0">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+            </value>
+            <slotExpression xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.6/@domain.0/@guardPattern/@variable.0">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </slotExpression>
+            <targetProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="cZ_2_D_1">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern>
+            <realizedVariable name="d">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+            </realizedVariable>
+          </bottomPattern>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.7/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsKindOf..ocl.OclType"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.7/@domain.1/@bottomPattern/@realizedVariable.0">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+            </value>
+            <slotExpression xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.7/@domain.0/@guardPattern/@variable.0">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </slotExpression>
+            <targetProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uTRoot_ownedA">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="sRoot">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
+              <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.95"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.73"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.8/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedBody xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.8/@bottomPattern/@assignment.0/@value/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                  <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                </ownedArguments>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+              </ownedBody>
+              <ownedIterators name="1_" isRequired="false" isImplicit="true">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                <representedParameter href="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
+              </ownedIterators>
+              <referredIteration href="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.OrderedSet.collect..T"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.7"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.8/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.7"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.7/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uA3_ownsC">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.9/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                </ownedSource>
+                <referredOperation href="SourceDisambiguation.ocl.oclas#o.source.X.disambiguatesToA1"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not"/>
+            </conditionExpression>
+          </predicate>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.9/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                </ownedSource>
+                <referredOperation href="SourceDisambiguation.ocl.oclas#o.source.X.disambiguatesToA2"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
+              <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.103"/>
+              <ownedSource xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
+                <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.102"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp">
+                  <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.69"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.9/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedBody xsi:type="pivot:OperationCallExp" isRequired="false">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.9/@bottomPattern/@assignment.0/@value/@ownedSource/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                  </ownedSource>
+                  <ownedArguments xsi:type="pivot:TypeExp">
+                    <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                    <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                  </ownedArguments>
+                  <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+                </ownedBody>
+                <ownedIterators name="1_" isRequired="false" isImplicit="true">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                  <representedParameter href="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
+                </ownedIterators>
+                <referredIteration href="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.OrderedSet.collect..T"/>
+              </ownedSource>
+              <ownedBody xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.9/@bottomPattern/@assignment.0/@value/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                  <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                </ownedArguments>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+              </ownedBody>
+              <ownedIterators name="1_" isRequired="false" isImplicit="true">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                <representedParameter href="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.Sequence.collect..T"/>
+              </ownedIterators>
+              <referredIteration href="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.Sequence.collect..T"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.9/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uA2_ownsC">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.10/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                </ownedSource>
+                <referredOperation href="SourceDisambiguation.ocl.oclas#o.source.X.disambiguatesToA1"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not"/>
+            </conditionExpression>
+          </predicate>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.10/@domain.0/@guardPattern/@variable.0">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+              </ownedSource>
+              <referredOperation href="SourceDisambiguation.ocl.oclas#o.source.X.disambiguatesToA2"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
+              <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.103"/>
+              <ownedSource xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
+                <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.102"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp">
+                  <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.69"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.10/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedBody xsi:type="pivot:OperationCallExp" isRequired="false">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.10/@bottomPattern/@assignment.0/@value/@ownedSource/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                  </ownedSource>
+                  <ownedArguments xsi:type="pivot:TypeExp">
+                    <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                    <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                  </ownedArguments>
+                  <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+                </ownedBody>
+                <ownedIterators name="1_" isRequired="false" isImplicit="true">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                  <representedParameter href="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
+                </ownedIterators>
+                <referredIteration href="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.OrderedSet.collect..T"/>
+              </ownedSource>
+              <ownedBody xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.10/@bottomPattern/@assignment.0/@value/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                  <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                </ownedArguments>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+              </ownedBody>
+              <ownedIterators name="1_" isRequired="false" isImplicit="true">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                <representedParameter href="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.Sequence.collect..T"/>
+              </ownedIterators>
+              <referredIteration href="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.Sequence.collect..T"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.10/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uA1_ownsB">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.11/@domain.0/@guardPattern/@variable.0">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+              </ownedSource>
+              <referredOperation href="SourceDisambiguation.ocl.oclas#o.source.X.disambiguatesToA1"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
+              <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.99"/>
+              <ownedSource xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
+                <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.98"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp">
+                  <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.69"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.11/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedBody xsi:type="pivot:OperationCallExp" isRequired="false">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.11/@bottomPattern/@assignment.0/@value/@ownedSource/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                  </ownedSource>
+                  <ownedArguments xsi:type="pivot:TypeExp">
+                    <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                    <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                  </ownedArguments>
+                  <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+                </ownedBody>
+                <ownedIterators name="1_" isRequired="false" isImplicit="true">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                  <representedParameter href="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
+                </ownedIterators>
+                <referredIteration href="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.OrderedSet.collect..T"/>
+              </ownedSource>
+              <ownedBody xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.11/@bottomPattern/@assignment.0/@value/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                  <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedArguments>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+              </ownedBody>
+              <ownedIterators name="1_" isRequired="false" isImplicit="true">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                <representedParameter href="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.Sequence.collect..T"/>
+              </ownedIterators>
+              <referredIteration href="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.Sequence.collect..T"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.11/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uB_ownsD">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="y1">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.12/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1/@ownedProperties.0"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.12/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.1"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uB_name">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="y1">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:PropertyCallExp" isRequired="false">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+              <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.13/@domain.0/@guardPattern/@variable.0">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              </ownedSource>
+              <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1/@ownedProperties.1"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.13/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.8/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uC_ownsD">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="y2">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.14/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1/@ownedProperties.0"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.14/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5/@ownedProperties.1"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uC_name">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="y2">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:PropertyCallExp" isRequired="false">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+              <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.15/@domain.0/@guardPattern/@variable.0">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+              </ownedSource>
+              <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1/@ownedProperties.1"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.15/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.8/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uD_0_toA">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.16/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                  <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                </ownedArguments>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsKindOf..ocl.OclType"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:PropertyCallExp" isRequired="false">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                  <ownedSource xsi:type="pivot:OperationCallExp" isRequired="false">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                    <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                      <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                      <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.16/@domain.0/@guardPattern/@variable.0">
+                        <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                      </ownedSource>
+                      <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+                    </ownedSource>
+                    <ownedArguments xsi:type="pivot:TypeExp">
+                      <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                      <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                    </ownedArguments>
+                    <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                  <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                </ownedArguments>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+              </ownedSource>
+              <referredProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5/@ownedProperties.0"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.16/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.2"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uD_0_name">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.17/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                  <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                </ownedArguments>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsKindOf..ocl.OclType"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:PropertyCallExp" isRequired="false">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+              <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.17/@domain.0/@guardPattern/@variable.0">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedSource>
+              <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.1"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.17/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.8/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uD_0_refsC">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp" name="not">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.18/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                  <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                </ownedArguments>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsKindOf..ocl.OclType"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Boolean.not"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:IfExp" isRequired="false">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+              <ownedCondition xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                  <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.18/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.1"/>
+                </ownedSource>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsUndefined"/>
+              </ownedCondition>
+              <ownedElse xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                <ownedSource xsi:type="pivot:OperationCallExp">
+                  <type xsi:type="pivot:Class" href="EnvExample1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  <ownedSource xsi:type="pivot:OperationCallExp">
+                    <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                    <ownedSource xsi:type="pivot:PropertyCallExp">
+                      <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                      <ownedSource xsi:type="pivot:OperationCallExp" isRequired="false">
+                        <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                        <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                          <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                          <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.18/@domain.0/@guardPattern/@variable.0">
+                            <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                          </ownedSource>
+                          <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+                        </ownedSource>
+                        <ownedArguments xsi:type="pivot:TypeExp">
+                          <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                          <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                        </ownedArguments>
+                        <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+                      </ownedSource>
+                      <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+                    </ownedSource>
+                    <ownedArguments xsi:type="pivot:TypeExp">
+                      <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                      <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                    </ownedArguments>
+                    <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+                  </ownedSource>
+                  <referredOperation href="TargetLookup.ocl.oclas#o.target.C.env"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:PropertyCallExp" isRequired="false">
+                  <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.18/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.1"/>
+                </ownedArguments>
+                <referredOperation href="TargetLookup.ocl.oclas#o.env.Environment.lookupC..ocl.String"/>
+              </ownedElse>
+              <ownedThen xsi:type="pivot:NullLiteralExp" isRequired="false">
+                <type xsi:type="pivot:VoidType" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclVoid"/>
+              </ownedThen>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.18/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.4"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uD_1_toA">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.19/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsKindOf..ocl.OclType"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:PropertyCallExp" isRequired="false">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+              <ownedSource xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                  <ownedSource xsi:type="pivot:OperationCallExp" isRequired="false">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                    <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                      <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                      <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.19/@domain.0/@guardPattern/@variable.0">
+                        <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                      </ownedSource>
+                      <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+                    </ownedSource>
+                    <ownedArguments xsi:type="pivot:TypeExp">
+                      <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                      <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                    </ownedArguments>
+                    <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp">
+                  <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                  <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedArguments>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+              </ownedSource>
+              <referredProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.19/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.2"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uD_1_name">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.20/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsKindOf..ocl.OclType"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:PropertyCallExp" isRequired="false">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+              <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.20/@domain.0/@guardPattern/@variable.0">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedSource>
+              <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.1"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.20/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.8/@ownedProperties.0"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="uD_1_refsB">
+        <domain xsi:type="qvtcb:CoreDomain" name="leftCS" isCheckable="true" isEnforceable="false" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.0">
+          <guardPattern>
+            <variable name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </variable>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" name="rightAS" isCheckable="false" isEnforceable="true" typedModel="//@ownedPackages.0/@ownedClasses.0/@modelParameter.1">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern>
+          <predicate>
+            <conditionExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.21/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsKindOf..ocl.OclType"/>
+            </conditionExpression>
+          </predicate>
+        </guardPattern>
+        <bottomPattern>
+          <assignment xsi:type="qvti:MiddlePropertyAssignment" isDefault="false">
+            <value xsi:type="pivot:IfExp" isRequired="false">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              <ownedCondition xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"/>
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                  <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.21/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.1"/>
+                </ownedSource>
+                <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclIsUndefined"/>
+              </ownedCondition>
+              <ownedElse xsi:type="pivot:OperationCallExp">
+                <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <ownedSource xsi:type="pivot:OperationCallExp">
+                  <type xsi:type="pivot:Class" href="EnvExample1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  <ownedSource xsi:type="pivot:OperationCallExp">
+                    <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                    <ownedSource xsi:type="pivot:PropertyCallExp">
+                      <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                      <ownedSource xsi:type="pivot:OperationCallExp" isRequired="false">
+                        <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                        <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false">
+                          <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.1"/>
+                          <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.21/@domain.0/@guardPattern/@variable.0">
+                            <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                          </ownedSource>
+                          <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.0"/>
+                        </ownedSource>
+                        <ownedArguments xsi:type="pivot:TypeExp">
+                          <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                          <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                        </ownedArguments>
+                        <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+                      </ownedSource>
+                      <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+                    </ownedSource>
+                    <ownedArguments xsi:type="pivot:TypeExp">
+                      <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                      <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                    </ownedArguments>
+                    <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+                  </ownedSource>
+                  <referredOperation href="TargetLookup.ocl.oclas#o.target.B.env"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:PropertyCallExp" isRequired="false">
+                  <type xsi:type="pivot:PrimitiveType" href="http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+                  <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.21/@domain.0/@guardPattern/@variable.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </ownedSource>
+                  <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.1"/>
+                </ownedArguments>
+                <referredOperation href="TargetLookup.ocl.oclas#o.env.Environment.lookupB..ocl.String"/>
+              </ownedElse>
+              <ownedThen xsi:type="pivot:NullLiteralExp" isRequired="false">
+                <type xsi:type="pivot:VoidType" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclVoid"/>
+              </ownedThen>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              <ownedSource xsi:type="pivot:PropertyCallExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.10"/>
+                <ownedSource xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.21/@domain.0/@guardPattern/@variable.0">
+                  <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                </ownedSource>
+                <referredProperty href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.0"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"/>
+                <referredType xsi:type="pivot:Class" href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6"/>
+              </ownedArguments>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT"/>
+            </slotExpression>
+            <targetProperty href="TargetMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.6/@ownedProperties.3"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" name="__root__">
+        <guardPattern/>
+        <bottomPattern/>
+        <mappingStatement xsi:type="qvti:MappingSequence">
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.106"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.0">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.0/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="sRoot">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.107"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.3">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.3/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.1/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.107"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.2">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.2/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.2/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.107"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.1">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.1/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.3/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.106"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.8">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.8/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.4/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="sRoot">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.109"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.4">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.4/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.5/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="y1">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.111"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.5">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.5/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.6/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="y2">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.114"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.6">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.6/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.7/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.114"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.7">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.7/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.8/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.107"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.11">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.11/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.9/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.107"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.10">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.10/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.10/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.107"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.9">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.9/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.11/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="x">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.109"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.12">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.12/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.12/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="y1">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.109"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.13">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.13/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.13/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="y1">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.2"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.114"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.21">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.21/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.14/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.111"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.14">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.14/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.15/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="y2">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.111"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.15">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.15/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.16/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="y2">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.3"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.114"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.18">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.18/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.17/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.114"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.16">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.16/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.18/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.114"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.19">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.19/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.19/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.114"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.17">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.17/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.20/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </ownedIterators>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:OperationCallExp">
+              <type xsi:type="pivot:SetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.114"/>
+              <ownedSource xsi:type="pivot:TypeExp">
+                <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                <referredType xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+              </ownedSource>
+              <referredOperation href="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclElement.allInstances"/>
+            </ownedSource>
+            <ownedBody xsi:type="qvti:MappingSequence">
+              <mappingStatements xsi:type="qvti:MappingCall" referredMapping="//@ownedPackages.0/@ownedClasses.0/@rule.20">
+                <binding boundVariable="//@ownedPackages.0/@ownedClasses.0/@rule.20/@domain.0/@guardPattern/@variable.0">
+                  <value xsi:type="pivot:VariableExp" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.22/@mappingStatement/@mappingStatements.21/@ownedIterators.0">
+                    <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+                  </value>
+                </binding>
+              </mappingStatements>
+            </ownedBody>
+            <ownedIterators name="z">
+              <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.4"/>
+            </ownedIterators>
+          </mappingStatements>
+        </mappingStatement>
+      </rule>
+    </ownedClasses>
+  </ownedPackages>
+</qvti:ImperativeModel>

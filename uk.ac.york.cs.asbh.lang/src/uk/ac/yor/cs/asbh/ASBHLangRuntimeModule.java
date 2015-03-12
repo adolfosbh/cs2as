@@ -3,9 +3,15 @@
  */
 package uk.ac.yor.cs.asbh;
 
+import uk.ac.yor.cs.asbh.linker.CS2ASLinker;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class ASBHLangRuntimeModule extends uk.ac.yor.cs.asbh.AbstractASBHLangRuntimeModule {
 
+	
+	public Class<? extends org.eclipse.xtext.linking.ILinker> bindILinker() {
+		return CS2ASLinker.class;
+	}
 }
