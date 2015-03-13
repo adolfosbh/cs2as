@@ -92,13 +92,13 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:69:2: iv_ruleRoot= ruleRoot EOF
             {
              newCompositeNode(grammarAccess.getRootRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRoot_in_entryRuleRoot75);
+            pushFollow(FOLLOW_ruleRoot_in_entryRuleRoot75);
             iv_ruleRoot=ruleRoot();
 
             state._fsp--;
 
              current =iv_ruleRoot; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRoot85); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRoot85); 
 
             }
 
@@ -146,11 +146,11 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleRoot131); 
+            otherlv_1=(Token)match(input,11,FOLLOW_11_in_ruleRoot131); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getRootAccess().getRootKeyword_1());
                 
-            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleRoot143); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleRoot143); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getRootAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -175,7 +175,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleX_in_ruleRoot164);
+            	    pushFollow(FOLLOW_ruleX_in_ruleRoot164);
             	    lv_ownedX_3_0=ruleX();
 
             	    state._fsp--;
@@ -203,7 +203,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleRoot177); 
+            otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleRoot177); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getRootAccess().getRightCurlyBracketKeyword_4());
                 
@@ -240,13 +240,13 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:126:2: iv_ruleY= ruleY EOF
             {
              newCompositeNode(grammarAccess.getYRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY_in_entryRuleY213);
+            pushFollow(FOLLOW_ruleY_in_entryRuleY213);
             iv_ruleY=ruleY();
 
             state._fsp--;
 
              current =iv_ruleY; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY223); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleY223); 
 
             }
 
@@ -302,7 +302,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getYAccess().getY1ParserRuleCall_0()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleY1_in_ruleY270);
+                    pushFollow(FOLLOW_ruleY1_in_ruleY270);
                     this_Y1_0=ruleY1();
 
                     state._fsp--;
@@ -320,7 +320,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getYAccess().getY2ParserRuleCall_1()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleY2_in_ruleY297);
+                    pushFollow(FOLLOW_ruleY2_in_ruleY297);
                     this_Y2_1=ruleY2();
 
                     state._fsp--;
@@ -365,13 +365,13 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:166:2: iv_ruleX= ruleX EOF
             {
              newCompositeNode(grammarAccess.getXRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleX_in_entryRuleX332);
+            pushFollow(FOLLOW_ruleX_in_entryRuleX332);
             iv_ruleX=ruleX();
 
             state._fsp--;
 
              current =iv_ruleX; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleX342); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleX342); 
 
             }
 
@@ -421,7 +421,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleX388); 
+            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleX388); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getXAccess().getXKeyword_1());
                 
@@ -445,7 +445,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                     // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:188:1: (lv_isA1_2_0= 'isA1' )
                     // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:189:3: lv_isA1_2_0= 'isA1'
                     {
-                    lv_isA1_2_0=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleX407); 
+                    lv_isA1_2_0=(Token)match(input,15,FOLLOW_15_in_ruleX407); 
 
                             newLeafNode(lv_isA1_2_0, grammarAccess.getXAccess().getIsA1IsA1Keyword_2_0_0());
                         
@@ -473,7 +473,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                     // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:204:1: (lv_isA2_3_0= 'isA2' )
                     // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:205:3: lv_isA2_3_0= 'isA2'
                     {
-                    lv_isA2_3_0=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleX444); 
+                    lv_isA2_3_0=(Token)match(input,16,FOLLOW_16_in_ruleX444); 
 
                             newLeafNode(lv_isA2_3_0, grammarAccess.getXAccess().getIsA2IsA2Keyword_2_1_0());
                         
@@ -495,7 +495,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleX471); 
+            otherlv_4=(Token)match(input,12,FOLLOW_12_in_ruleX471); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getXAccess().getLeftCurlyBracketKeyword_3());
                 
@@ -520,7 +520,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getXAccess().getOwnsYYParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleY_in_ruleX492);
+            	    pushFollow(FOLLOW_ruleY_in_ruleX492);
             	    lv_ownsY_5_0=ruleY();
 
             	    state._fsp--;
@@ -548,7 +548,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleX505); 
+            otherlv_6=(Token)match(input,13,FOLLOW_13_in_ruleX505); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getXAccess().getRightCurlyBracketKeyword_5());
                 
@@ -585,13 +585,13 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:254:2: iv_ruleZ= ruleZ EOF
             {
              newCompositeNode(grammarAccess.getZRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleZ_in_entryRuleZ541);
+            pushFollow(FOLLOW_ruleZ_in_entryRuleZ541);
             iv_ruleZ=ruleZ();
 
             state._fsp--;
 
              current =iv_ruleZ; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleZ551); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleZ551); 
 
             }
 
@@ -636,7 +636,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleZ597); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleZ597); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getZAccess().getZKeyword_1());
                 
@@ -654,7 +654,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                     // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:276:1: (lv_name_2_0= RULE_STRING )
                     // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:277:3: lv_name_2_0= RULE_STRING
                     {
-                    lv_name_2_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleZ614); 
+                    lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleZ614); 
 
                     			newLeafNode(lv_name_2_0, grammarAccess.getZAccess().getNameSTRINGTerminalRuleCall_2_0()); 
                     		
@@ -710,13 +710,13 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:303:2: iv_ruleY1= ruleY1 EOF
             {
              newCompositeNode(grammarAccess.getY1Rule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY1_in_entryRuleY1656);
+            pushFollow(FOLLOW_ruleY1_in_entryRuleY1656);
             iv_ruleY1=ruleY1();
 
             state._fsp--;
 
              current =iv_ruleY1; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY1666); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleY1666); 
 
             }
 
@@ -754,7 +754,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:314:1: (otherlv_0= 'Y1' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}' )
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:314:3: otherlv_0= 'Y1' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleY1703); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleY1703); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getY1Access().getY1Keyword_0());
                 
@@ -764,7 +764,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:319:1: (lv_name_1_0= RULE_STRING )
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:320:3: lv_name_1_0= RULE_STRING
             {
-            lv_name_1_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleY1720); 
+            lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleY1720); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getY1Access().getNameSTRINGTerminalRuleCall_1_0()); 
             		
@@ -784,7 +784,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleY1737); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleY1737); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getY1Access().getLeftCurlyBracketKeyword_2());
                 
@@ -805,7 +805,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getY1Access().getOwnsZZParserRuleCall_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleZ_in_ruleY1758);
+                    pushFollow(FOLLOW_ruleZ_in_ruleY1758);
                     lv_ownsZ_3_0=ruleZ();
 
                     state._fsp--;
@@ -830,7 +830,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleY1771); 
+            otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleY1771); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getY1Access().getRightCurlyBracketKeyword_4());
                 
@@ -867,13 +867,13 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:372:2: iv_ruleY2= ruleY2 EOF
             {
              newCompositeNode(grammarAccess.getY2Rule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY2_in_entryRuleY2807);
+            pushFollow(FOLLOW_ruleY2_in_entryRuleY2807);
             iv_ruleY2=ruleY2();
 
             state._fsp--;
 
              current =iv_ruleY2; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY2817); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleY2817); 
 
             }
 
@@ -911,7 +911,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:383:1: (otherlv_0= 'Y2' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}' )
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:383:3: otherlv_0= 'Y2' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_ownsZ_3_0= ruleZ ) )? otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleY2854); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleY2854); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getY2Access().getY2Keyword_0());
                 
@@ -921,7 +921,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:388:1: (lv_name_1_0= RULE_STRING )
             // ../uk.ac.york.cs.asbh.lang/src-gen/uk/ac/yor/cs/asbh/parser/antlr/internal/InternalASBHLang.g:389:3: lv_name_1_0= RULE_STRING
             {
-            lv_name_1_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleY2871); 
+            lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleY2871); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getY2Access().getNameSTRINGTerminalRuleCall_1_0()); 
             		
@@ -941,7 +941,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleY2888); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleY2888); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getY2Access().getLeftCurlyBracketKeyword_2());
                 
@@ -962,7 +962,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getY2Access().getOwnsZZParserRuleCall_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleZ_in_ruleY2909);
+                    pushFollow(FOLLOW_ruleZ_in_ruleY2909);
                     lv_ownsZ_3_0=ruleZ();
 
                     state._fsp--;
@@ -987,7 +987,7 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleY2922); 
+            otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleY2922); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getY2Access().getRightCurlyBracketKeyword_4());
                 
@@ -1015,45 +1015,41 @@ public class InternalASBHLangParser extends AbstractInternalAntlrParser {
 
  
 
-    
-    private static class FollowSets000 {
-        public static final BitSet FOLLOW_ruleRoot_in_entryRuleRoot75 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleRoot85 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_11_in_ruleRoot131 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleRoot143 = new BitSet(new long[]{0x0000000000006000L});
-        public static final BitSet FOLLOW_ruleX_in_ruleRoot164 = new BitSet(new long[]{0x0000000000006000L});
-        public static final BitSet FOLLOW_13_in_ruleRoot177 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY_in_entryRuleY213 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleY223 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY1_in_ruleY270 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY2_in_ruleY297 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleX_in_entryRuleX332 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleX342 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_ruleX388 = new BitSet(new long[]{0x0000000000019000L});
-        public static final BitSet FOLLOW_15_in_ruleX407 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_16_in_ruleX444 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleX471 = new BitSet(new long[]{0x00000000000C2000L});
-        public static final BitSet FOLLOW_ruleY_in_ruleX492 = new BitSet(new long[]{0x00000000000C2000L});
-        public static final BitSet FOLLOW_13_in_ruleX505 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleZ_in_entryRuleZ541 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleZ551 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_ruleZ597 = new BitSet(new long[]{0x0000000000000012L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleZ614 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY1_in_entryRuleY1656 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleY1666 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_ruleY1703 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleY1720 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleY1737 = new BitSet(new long[]{0x0000000000022000L});
-        public static final BitSet FOLLOW_ruleZ_in_ruleY1758 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleY1771 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY2_in_entryRuleY2807 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleY2817 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_ruleY2854 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleY2871 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleY2888 = new BitSet(new long[]{0x0000000000022000L});
-        public static final BitSet FOLLOW_ruleZ_in_ruleY2909 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleY2922 = new BitSet(new long[]{0x0000000000000002L});
-    }
-
+    public static final BitSet FOLLOW_ruleRoot_in_entryRuleRoot75 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRoot85 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_ruleRoot131 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleRoot143 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_ruleX_in_ruleRoot164 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_13_in_ruleRoot177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY_in_entryRuleY213 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleY223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY1_in_ruleY270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY2_in_ruleY297 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleX_in_entryRuleX332 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleX342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleX388 = new BitSet(new long[]{0x0000000000019000L});
+    public static final BitSet FOLLOW_15_in_ruleX407 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_16_in_ruleX444 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleX471 = new BitSet(new long[]{0x00000000000C2000L});
+    public static final BitSet FOLLOW_ruleY_in_ruleX492 = new BitSet(new long[]{0x00000000000C2000L});
+    public static final BitSet FOLLOW_13_in_ruleX505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleZ_in_entryRuleZ541 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleZ551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleZ597 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleZ614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY1_in_entryRuleY1656 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleY1666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleY1703 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleY1720 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleY1737 = new BitSet(new long[]{0x0000000000022000L});
+    public static final BitSet FOLLOW_ruleZ_in_ruleY1758 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleY1771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY2_in_entryRuleY2807 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleY2817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleY2854 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleY2871 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleY2888 = new BitSet(new long[]{0x0000000000022000L});
+    public static final BitSet FOLLOW_ruleZ_in_ruleY2909 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleY2922 = new BitSet(new long[]{0x0000000000000002L});
 
 }

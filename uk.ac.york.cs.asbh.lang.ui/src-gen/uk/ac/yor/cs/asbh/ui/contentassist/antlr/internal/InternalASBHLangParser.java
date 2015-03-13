@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
-import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
-import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.DFA;
+import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
+import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.DFA;
 import uk.ac.yor.cs.asbh.services.ASBHLangGrammarAccess;
 
 
@@ -87,13 +87,13 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:62:1: ruleRoot EOF
             {
              before(grammarAccess.getRootRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRoot_in_entryRuleRoot61);
+            pushFollow(FOLLOW_ruleRoot_in_entryRuleRoot61);
             ruleRoot();
 
             state._fsp--;
 
              after(grammarAccess.getRootRule()); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRoot68); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRoot68); 
 
             }
 
@@ -126,7 +126,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:76:1: ( rule__Root__Group__0 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:76:2: rule__Root__Group__0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__0_in_ruleRoot94);
+            pushFollow(FOLLOW_rule__Root__Group__0_in_ruleRoot94);
             rule__Root__Group__0();
 
             state._fsp--;
@@ -164,13 +164,13 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:90:1: ruleY EOF
             {
              before(grammarAccess.getYRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY_in_entryRuleY121);
+            pushFollow(FOLLOW_ruleY_in_entryRuleY121);
             ruleY();
 
             state._fsp--;
 
              after(grammarAccess.getYRule()); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY128); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleY128); 
 
             }
 
@@ -203,7 +203,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:104:1: ( rule__Y__Alternatives )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:104:2: rule__Y__Alternatives
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y__Alternatives_in_ruleY154);
+            pushFollow(FOLLOW_rule__Y__Alternatives_in_ruleY154);
             rule__Y__Alternatives();
 
             state._fsp--;
@@ -241,13 +241,13 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:118:1: ruleX EOF
             {
              before(grammarAccess.getXRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleX_in_entryRuleX181);
+            pushFollow(FOLLOW_ruleX_in_entryRuleX181);
             ruleX();
 
             state._fsp--;
 
              after(grammarAccess.getXRule()); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleX188); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleX188); 
 
             }
 
@@ -280,7 +280,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:132:1: ( rule__X__Group__0 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:132:2: rule__X__Group__0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__0_in_ruleX214);
+            pushFollow(FOLLOW_rule__X__Group__0_in_ruleX214);
             rule__X__Group__0();
 
             state._fsp--;
@@ -318,13 +318,13 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:146:1: ruleZ EOF
             {
              before(grammarAccess.getZRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleZ_in_entryRuleZ241);
+            pushFollow(FOLLOW_ruleZ_in_entryRuleZ241);
             ruleZ();
 
             state._fsp--;
 
              after(grammarAccess.getZRule()); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleZ248); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleZ248); 
 
             }
 
@@ -357,7 +357,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:160:1: ( rule__Z__Group__0 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:160:2: rule__Z__Group__0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__0_in_ruleZ274);
+            pushFollow(FOLLOW_rule__Z__Group__0_in_ruleZ274);
             rule__Z__Group__0();
 
             state._fsp--;
@@ -395,13 +395,13 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:174:1: ruleY1 EOF
             {
              before(grammarAccess.getY1Rule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY1_in_entryRuleY1301);
+            pushFollow(FOLLOW_ruleY1_in_entryRuleY1301);
             ruleY1();
 
             state._fsp--;
 
              after(grammarAccess.getY1Rule()); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY1308); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleY1308); 
 
             }
 
@@ -434,7 +434,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:188:1: ( rule__Y1__Group__0 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:188:2: rule__Y1__Group__0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__0_in_ruleY1334);
+            pushFollow(FOLLOW_rule__Y1__Group__0_in_ruleY1334);
             rule__Y1__Group__0();
 
             state._fsp--;
@@ -472,13 +472,13 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:202:1: ruleY2 EOF
             {
              before(grammarAccess.getY2Rule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY2_in_entryRuleY2361);
+            pushFollow(FOLLOW_ruleY2_in_entryRuleY2361);
             ruleY2();
 
             state._fsp--;
 
              after(grammarAccess.getY2Rule()); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleY2368); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleY2368); 
 
             }
 
@@ -511,7 +511,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:216:1: ( rule__Y2__Group__0 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:216:2: rule__Y2__Group__0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__0_in_ruleY2394);
+            pushFollow(FOLLOW_rule__Y2__Group__0_in_ruleY2394);
             rule__Y2__Group__0();
 
             state._fsp--;
@@ -572,7 +572,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
                     // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:234:1: ruleY1
                     {
                      before(grammarAccess.getYAccess().getY1ParserRuleCall_0()); 
-                    pushFollow(FollowSets000.FOLLOW_ruleY1_in_rule__Y__Alternatives430);
+                    pushFollow(FOLLOW_ruleY1_in_rule__Y__Alternatives430);
                     ruleY1();
 
                     state._fsp--;
@@ -591,7 +591,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
                     // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:240:1: ruleY2
                     {
                      before(grammarAccess.getYAccess().getY2ParserRuleCall_1()); 
-                    pushFollow(FollowSets000.FOLLOW_ruleY2_in_rule__Y__Alternatives447);
+                    pushFollow(FOLLOW_ruleY2_in_rule__Y__Alternatives447);
                     ruleY2();
 
                     state._fsp--;
@@ -654,7 +654,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
                     // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:257:1: ( rule__X__IsA1Assignment_2_0 )
                     // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:257:2: rule__X__IsA1Assignment_2_0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__X__IsA1Assignment_2_0_in_rule__X__Alternatives_2479);
+                    pushFollow(FOLLOW_rule__X__IsA1Assignment_2_0_in_rule__X__Alternatives_2479);
                     rule__X__IsA1Assignment_2_0();
 
                     state._fsp--;
@@ -679,7 +679,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
                     // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:263:1: ( rule__X__IsA2Assignment_2_1 )
                     // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:263:2: rule__X__IsA2Assignment_2_1
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__X__IsA2Assignment_2_1_in_rule__X__Alternatives_2497);
+                    pushFollow(FOLLOW_rule__X__IsA2Assignment_2_1_in_rule__X__Alternatives_2497);
                     rule__X__IsA2Assignment_2_1();
 
                     state._fsp--;
@@ -721,12 +721,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:278:1: ( rule__Root__Group__0__Impl rule__Root__Group__1 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:279:2: rule__Root__Group__0__Impl rule__Root__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__0__Impl_in_rule__Root__Group__0528);
+            pushFollow(FOLLOW_rule__Root__Group__0__Impl_in_rule__Root__Group__0528);
             rule__Root__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__1_in_rule__Root__Group__0531);
+            pushFollow(FOLLOW_rule__Root__Group__1_in_rule__Root__Group__0531);
             rule__Root__Group__1();
 
             state._fsp--;
@@ -796,12 +796,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:309:1: ( rule__Root__Group__1__Impl rule__Root__Group__2 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:310:2: rule__Root__Group__1__Impl rule__Root__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__1__Impl_in_rule__Root__Group__1589);
+            pushFollow(FOLLOW_rule__Root__Group__1__Impl_in_rule__Root__Group__1589);
             rule__Root__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__2_in_rule__Root__Group__1592);
+            pushFollow(FOLLOW_rule__Root__Group__2_in_rule__Root__Group__1592);
             rule__Root__Group__2();
 
             state._fsp--;
@@ -838,7 +838,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:323:1: 'Root'
             {
              before(grammarAccess.getRootAccess().getRootKeyword_1()); 
-            match(input,11,FollowSets000.FOLLOW_11_in_rule__Root__Group__1__Impl620); 
+            match(input,11,FOLLOW_11_in_rule__Root__Group__1__Impl620); 
              after(grammarAccess.getRootAccess().getRootKeyword_1()); 
 
             }
@@ -871,12 +871,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:340:1: ( rule__Root__Group__2__Impl rule__Root__Group__3 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:341:2: rule__Root__Group__2__Impl rule__Root__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__2__Impl_in_rule__Root__Group__2651);
+            pushFollow(FOLLOW_rule__Root__Group__2__Impl_in_rule__Root__Group__2651);
             rule__Root__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__3_in_rule__Root__Group__2654);
+            pushFollow(FOLLOW_rule__Root__Group__3_in_rule__Root__Group__2654);
             rule__Root__Group__3();
 
             state._fsp--;
@@ -913,7 +913,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:354:1: '{'
             {
              before(grammarAccess.getRootAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__Root__Group__2__Impl682); 
+            match(input,12,FOLLOW_12_in_rule__Root__Group__2__Impl682); 
              after(grammarAccess.getRootAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -946,12 +946,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:371:1: ( rule__Root__Group__3__Impl rule__Root__Group__4 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:372:2: rule__Root__Group__3__Impl rule__Root__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__3__Impl_in_rule__Root__Group__3713);
+            pushFollow(FOLLOW_rule__Root__Group__3__Impl_in_rule__Root__Group__3713);
             rule__Root__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__4_in_rule__Root__Group__3716);
+            pushFollow(FOLLOW_rule__Root__Group__4_in_rule__Root__Group__3716);
             rule__Root__Group__4();
 
             state._fsp--;
@@ -1003,7 +1003,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             	case 1 :
             	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:386:2: rule__Root__OwnedXAssignment_3
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__Root__OwnedXAssignment_3_in_rule__Root__Group__3__Impl743);
+            	    pushFollow(FOLLOW_rule__Root__OwnedXAssignment_3_in_rule__Root__Group__3__Impl743);
             	    rule__Root__OwnedXAssignment_3();
 
             	    state._fsp--;
@@ -1049,7 +1049,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:400:1: ( rule__Root__Group__4__Impl )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:401:2: rule__Root__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Root__Group__4__Impl_in_rule__Root__Group__4774);
+            pushFollow(FOLLOW_rule__Root__Group__4__Impl_in_rule__Root__Group__4774);
             rule__Root__Group__4__Impl();
 
             state._fsp--;
@@ -1086,7 +1086,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:413:1: '}'
             {
              before(grammarAccess.getRootAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__Root__Group__4__Impl802); 
+            match(input,13,FOLLOW_13_in_rule__Root__Group__4__Impl802); 
              after(grammarAccess.getRootAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -1119,12 +1119,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:440:1: ( rule__X__Group__0__Impl rule__X__Group__1 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:441:2: rule__X__Group__0__Impl rule__X__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__0__Impl_in_rule__X__Group__0843);
+            pushFollow(FOLLOW_rule__X__Group__0__Impl_in_rule__X__Group__0843);
             rule__X__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__1_in_rule__X__Group__0846);
+            pushFollow(FOLLOW_rule__X__Group__1_in_rule__X__Group__0846);
             rule__X__Group__1();
 
             state._fsp--;
@@ -1194,12 +1194,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:471:1: ( rule__X__Group__1__Impl rule__X__Group__2 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:472:2: rule__X__Group__1__Impl rule__X__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__1__Impl_in_rule__X__Group__1904);
+            pushFollow(FOLLOW_rule__X__Group__1__Impl_in_rule__X__Group__1904);
             rule__X__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__2_in_rule__X__Group__1907);
+            pushFollow(FOLLOW_rule__X__Group__2_in_rule__X__Group__1907);
             rule__X__Group__2();
 
             state._fsp--;
@@ -1236,7 +1236,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:485:1: 'X'
             {
              before(grammarAccess.getXAccess().getXKeyword_1()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__X__Group__1__Impl935); 
+            match(input,14,FOLLOW_14_in_rule__X__Group__1__Impl935); 
              after(grammarAccess.getXAccess().getXKeyword_1()); 
 
             }
@@ -1269,12 +1269,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:502:1: ( rule__X__Group__2__Impl rule__X__Group__3 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:503:2: rule__X__Group__2__Impl rule__X__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__2__Impl_in_rule__X__Group__2966);
+            pushFollow(FOLLOW_rule__X__Group__2__Impl_in_rule__X__Group__2966);
             rule__X__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__3_in_rule__X__Group__2969);
+            pushFollow(FOLLOW_rule__X__Group__3_in_rule__X__Group__2969);
             rule__X__Group__3();
 
             state._fsp--;
@@ -1322,7 +1322,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
                 case 1 :
                     // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:517:2: rule__X__Alternatives_2
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__X__Alternatives_2_in_rule__X__Group__2__Impl996);
+                    pushFollow(FOLLOW_rule__X__Alternatives_2_in_rule__X__Group__2__Impl996);
                     rule__X__Alternatives_2();
 
                     state._fsp--;
@@ -1365,12 +1365,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:531:1: ( rule__X__Group__3__Impl rule__X__Group__4 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:532:2: rule__X__Group__3__Impl rule__X__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__3__Impl_in_rule__X__Group__31027);
+            pushFollow(FOLLOW_rule__X__Group__3__Impl_in_rule__X__Group__31027);
             rule__X__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__4_in_rule__X__Group__31030);
+            pushFollow(FOLLOW_rule__X__Group__4_in_rule__X__Group__31030);
             rule__X__Group__4();
 
             state._fsp--;
@@ -1407,7 +1407,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:545:1: '{'
             {
              before(grammarAccess.getXAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__X__Group__3__Impl1058); 
+            match(input,12,FOLLOW_12_in_rule__X__Group__3__Impl1058); 
              after(grammarAccess.getXAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -1440,12 +1440,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:562:1: ( rule__X__Group__4__Impl rule__X__Group__5 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:563:2: rule__X__Group__4__Impl rule__X__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__4__Impl_in_rule__X__Group__41089);
+            pushFollow(FOLLOW_rule__X__Group__4__Impl_in_rule__X__Group__41089);
             rule__X__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__5_in_rule__X__Group__41092);
+            pushFollow(FOLLOW_rule__X__Group__5_in_rule__X__Group__41092);
             rule__X__Group__5();
 
             state._fsp--;
@@ -1497,7 +1497,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             	case 1 :
             	    // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:577:2: rule__X__OwnsYAssignment_4
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__X__OwnsYAssignment_4_in_rule__X__Group__4__Impl1119);
+            	    pushFollow(FOLLOW_rule__X__OwnsYAssignment_4_in_rule__X__Group__4__Impl1119);
             	    rule__X__OwnsYAssignment_4();
 
             	    state._fsp--;
@@ -1543,7 +1543,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:591:1: ( rule__X__Group__5__Impl )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:592:2: rule__X__Group__5__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__X__Group__5__Impl_in_rule__X__Group__51150);
+            pushFollow(FOLLOW_rule__X__Group__5__Impl_in_rule__X__Group__51150);
             rule__X__Group__5__Impl();
 
             state._fsp--;
@@ -1580,7 +1580,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:604:1: '}'
             {
              before(grammarAccess.getXAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__X__Group__5__Impl1178); 
+            match(input,13,FOLLOW_13_in_rule__X__Group__5__Impl1178); 
              after(grammarAccess.getXAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -1613,12 +1613,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:633:1: ( rule__Z__Group__0__Impl rule__Z__Group__1 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:634:2: rule__Z__Group__0__Impl rule__Z__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__0__Impl_in_rule__Z__Group__01221);
+            pushFollow(FOLLOW_rule__Z__Group__0__Impl_in_rule__Z__Group__01221);
             rule__Z__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__1_in_rule__Z__Group__01224);
+            pushFollow(FOLLOW_rule__Z__Group__1_in_rule__Z__Group__01224);
             rule__Z__Group__1();
 
             state._fsp--;
@@ -1688,12 +1688,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:664:1: ( rule__Z__Group__1__Impl rule__Z__Group__2 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:665:2: rule__Z__Group__1__Impl rule__Z__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__1__Impl_in_rule__Z__Group__11282);
+            pushFollow(FOLLOW_rule__Z__Group__1__Impl_in_rule__Z__Group__11282);
             rule__Z__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__2_in_rule__Z__Group__11285);
+            pushFollow(FOLLOW_rule__Z__Group__2_in_rule__Z__Group__11285);
             rule__Z__Group__2();
 
             state._fsp--;
@@ -1730,7 +1730,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:678:1: 'Z'
             {
              before(grammarAccess.getZAccess().getZKeyword_1()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__Z__Group__1__Impl1313); 
+            match(input,15,FOLLOW_15_in_rule__Z__Group__1__Impl1313); 
              after(grammarAccess.getZAccess().getZKeyword_1()); 
 
             }
@@ -1763,7 +1763,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:695:1: ( rule__Z__Group__2__Impl )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:696:2: rule__Z__Group__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Z__Group__2__Impl_in_rule__Z__Group__21344);
+            pushFollow(FOLLOW_rule__Z__Group__2__Impl_in_rule__Z__Group__21344);
             rule__Z__Group__2__Impl();
 
             state._fsp--;
@@ -1811,7 +1811,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
                 case 1 :
                     // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:709:2: rule__Z__NameAssignment_2
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Z__NameAssignment_2_in_rule__Z__Group__2__Impl1371);
+                    pushFollow(FOLLOW_rule__Z__NameAssignment_2_in_rule__Z__Group__2__Impl1371);
                     rule__Z__NameAssignment_2();
 
                     state._fsp--;
@@ -1854,12 +1854,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:729:1: ( rule__Y1__Group__0__Impl rule__Y1__Group__1 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:730:2: rule__Y1__Group__0__Impl rule__Y1__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__0__Impl_in_rule__Y1__Group__01408);
+            pushFollow(FOLLOW_rule__Y1__Group__0__Impl_in_rule__Y1__Group__01408);
             rule__Y1__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__1_in_rule__Y1__Group__01411);
+            pushFollow(FOLLOW_rule__Y1__Group__1_in_rule__Y1__Group__01411);
             rule__Y1__Group__1();
 
             state._fsp--;
@@ -1896,7 +1896,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:743:1: 'Y1'
             {
              before(grammarAccess.getY1Access().getY1Keyword_0()); 
-            match(input,16,FollowSets000.FOLLOW_16_in_rule__Y1__Group__0__Impl1439); 
+            match(input,16,FOLLOW_16_in_rule__Y1__Group__0__Impl1439); 
              after(grammarAccess.getY1Access().getY1Keyword_0()); 
 
             }
@@ -1929,12 +1929,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:760:1: ( rule__Y1__Group__1__Impl rule__Y1__Group__2 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:761:2: rule__Y1__Group__1__Impl rule__Y1__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__1__Impl_in_rule__Y1__Group__11470);
+            pushFollow(FOLLOW_rule__Y1__Group__1__Impl_in_rule__Y1__Group__11470);
             rule__Y1__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__2_in_rule__Y1__Group__11473);
+            pushFollow(FOLLOW_rule__Y1__Group__2_in_rule__Y1__Group__11473);
             rule__Y1__Group__2();
 
             state._fsp--;
@@ -1974,7 +1974,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:775:1: ( rule__Y1__NameAssignment_1 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:775:2: rule__Y1__NameAssignment_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__NameAssignment_1_in_rule__Y1__Group__1__Impl1500);
+            pushFollow(FOLLOW_rule__Y1__NameAssignment_1_in_rule__Y1__Group__1__Impl1500);
             rule__Y1__NameAssignment_1();
 
             state._fsp--;
@@ -2014,12 +2014,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:789:1: ( rule__Y1__Group__2__Impl rule__Y1__Group__3 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:790:2: rule__Y1__Group__2__Impl rule__Y1__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__2__Impl_in_rule__Y1__Group__21530);
+            pushFollow(FOLLOW_rule__Y1__Group__2__Impl_in_rule__Y1__Group__21530);
             rule__Y1__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__3_in_rule__Y1__Group__21533);
+            pushFollow(FOLLOW_rule__Y1__Group__3_in_rule__Y1__Group__21533);
             rule__Y1__Group__3();
 
             state._fsp--;
@@ -2056,7 +2056,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:803:1: '{'
             {
              before(grammarAccess.getY1Access().getLeftCurlyBracketKeyword_2()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__Y1__Group__2__Impl1561); 
+            match(input,12,FOLLOW_12_in_rule__Y1__Group__2__Impl1561); 
              after(grammarAccess.getY1Access().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -2089,12 +2089,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:820:1: ( rule__Y1__Group__3__Impl rule__Y1__Group__4 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:821:2: rule__Y1__Group__3__Impl rule__Y1__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__3__Impl_in_rule__Y1__Group__31592);
+            pushFollow(FOLLOW_rule__Y1__Group__3__Impl_in_rule__Y1__Group__31592);
             rule__Y1__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__4_in_rule__Y1__Group__31595);
+            pushFollow(FOLLOW_rule__Y1__Group__4_in_rule__Y1__Group__31595);
             rule__Y1__Group__4();
 
             state._fsp--;
@@ -2142,7 +2142,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
                 case 1 :
                     // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:835:2: rule__Y1__OwnsZAssignment_3
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Y1__OwnsZAssignment_3_in_rule__Y1__Group__3__Impl1622);
+                    pushFollow(FOLLOW_rule__Y1__OwnsZAssignment_3_in_rule__Y1__Group__3__Impl1622);
                     rule__Y1__OwnsZAssignment_3();
 
                     state._fsp--;
@@ -2185,7 +2185,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:849:1: ( rule__Y1__Group__4__Impl )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:850:2: rule__Y1__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y1__Group__4__Impl_in_rule__Y1__Group__41653);
+            pushFollow(FOLLOW_rule__Y1__Group__4__Impl_in_rule__Y1__Group__41653);
             rule__Y1__Group__4__Impl();
 
             state._fsp--;
@@ -2222,7 +2222,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:862:1: '}'
             {
              before(grammarAccess.getY1Access().getRightCurlyBracketKeyword_4()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__Y1__Group__4__Impl1681); 
+            match(input,13,FOLLOW_13_in_rule__Y1__Group__4__Impl1681); 
              after(grammarAccess.getY1Access().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -2255,12 +2255,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:889:1: ( rule__Y2__Group__0__Impl rule__Y2__Group__1 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:890:2: rule__Y2__Group__0__Impl rule__Y2__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__0__Impl_in_rule__Y2__Group__01722);
+            pushFollow(FOLLOW_rule__Y2__Group__0__Impl_in_rule__Y2__Group__01722);
             rule__Y2__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__1_in_rule__Y2__Group__01725);
+            pushFollow(FOLLOW_rule__Y2__Group__1_in_rule__Y2__Group__01725);
             rule__Y2__Group__1();
 
             state._fsp--;
@@ -2297,7 +2297,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:903:1: 'Y2'
             {
              before(grammarAccess.getY2Access().getY2Keyword_0()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__Y2__Group__0__Impl1753); 
+            match(input,17,FOLLOW_17_in_rule__Y2__Group__0__Impl1753); 
              after(grammarAccess.getY2Access().getY2Keyword_0()); 
 
             }
@@ -2330,12 +2330,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:920:1: ( rule__Y2__Group__1__Impl rule__Y2__Group__2 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:921:2: rule__Y2__Group__1__Impl rule__Y2__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__1__Impl_in_rule__Y2__Group__11784);
+            pushFollow(FOLLOW_rule__Y2__Group__1__Impl_in_rule__Y2__Group__11784);
             rule__Y2__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__2_in_rule__Y2__Group__11787);
+            pushFollow(FOLLOW_rule__Y2__Group__2_in_rule__Y2__Group__11787);
             rule__Y2__Group__2();
 
             state._fsp--;
@@ -2375,7 +2375,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:935:1: ( rule__Y2__NameAssignment_1 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:935:2: rule__Y2__NameAssignment_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__NameAssignment_1_in_rule__Y2__Group__1__Impl1814);
+            pushFollow(FOLLOW_rule__Y2__NameAssignment_1_in_rule__Y2__Group__1__Impl1814);
             rule__Y2__NameAssignment_1();
 
             state._fsp--;
@@ -2415,12 +2415,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:949:1: ( rule__Y2__Group__2__Impl rule__Y2__Group__3 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:950:2: rule__Y2__Group__2__Impl rule__Y2__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__2__Impl_in_rule__Y2__Group__21844);
+            pushFollow(FOLLOW_rule__Y2__Group__2__Impl_in_rule__Y2__Group__21844);
             rule__Y2__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__3_in_rule__Y2__Group__21847);
+            pushFollow(FOLLOW_rule__Y2__Group__3_in_rule__Y2__Group__21847);
             rule__Y2__Group__3();
 
             state._fsp--;
@@ -2457,7 +2457,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:963:1: '{'
             {
              before(grammarAccess.getY2Access().getLeftCurlyBracketKeyword_2()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__Y2__Group__2__Impl1875); 
+            match(input,12,FOLLOW_12_in_rule__Y2__Group__2__Impl1875); 
              after(grammarAccess.getY2Access().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -2490,12 +2490,12 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:980:1: ( rule__Y2__Group__3__Impl rule__Y2__Group__4 )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:981:2: rule__Y2__Group__3__Impl rule__Y2__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__3__Impl_in_rule__Y2__Group__31906);
+            pushFollow(FOLLOW_rule__Y2__Group__3__Impl_in_rule__Y2__Group__31906);
             rule__Y2__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__4_in_rule__Y2__Group__31909);
+            pushFollow(FOLLOW_rule__Y2__Group__4_in_rule__Y2__Group__31909);
             rule__Y2__Group__4();
 
             state._fsp--;
@@ -2543,7 +2543,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
                 case 1 :
                     // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:995:2: rule__Y2__OwnsZAssignment_3
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Y2__OwnsZAssignment_3_in_rule__Y2__Group__3__Impl1936);
+                    pushFollow(FOLLOW_rule__Y2__OwnsZAssignment_3_in_rule__Y2__Group__3__Impl1936);
                     rule__Y2__OwnsZAssignment_3();
 
                     state._fsp--;
@@ -2586,7 +2586,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1009:1: ( rule__Y2__Group__4__Impl )
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1010:2: rule__Y2__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Y2__Group__4__Impl_in_rule__Y2__Group__41967);
+            pushFollow(FOLLOW_rule__Y2__Group__4__Impl_in_rule__Y2__Group__41967);
             rule__Y2__Group__4__Impl();
 
             state._fsp--;
@@ -2623,7 +2623,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1022:1: '}'
             {
              before(grammarAccess.getY2Access().getRightCurlyBracketKeyword_4()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__Y2__Group__4__Impl1995); 
+            match(input,13,FOLLOW_13_in_rule__Y2__Group__4__Impl1995); 
              after(grammarAccess.getY2Access().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -2660,7 +2660,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1052:1: ruleX
             {
              before(grammarAccess.getRootAccess().getOwnedXXParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleX_in_rule__Root__OwnedXAssignment_32041);
+            pushFollow(FOLLOW_ruleX_in_rule__Root__OwnedXAssignment_32041);
             ruleX();
 
             state._fsp--;
@@ -2705,7 +2705,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1069:1: 'isA1'
             {
              before(grammarAccess.getXAccess().getIsA1IsA1Keyword_2_0_0()); 
-            match(input,18,FollowSets000.FOLLOW_18_in_rule__X__IsA1Assignment_2_02077); 
+            match(input,18,FOLLOW_18_in_rule__X__IsA1Assignment_2_02077); 
              after(grammarAccess.getXAccess().getIsA1IsA1Keyword_2_0_0()); 
 
             }
@@ -2750,7 +2750,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1092:1: 'isA2'
             {
              before(grammarAccess.getXAccess().getIsA2IsA2Keyword_2_1_0()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__X__IsA2Assignment_2_12121); 
+            match(input,19,FOLLOW_19_in_rule__X__IsA2Assignment_2_12121); 
              after(grammarAccess.getXAccess().getIsA2IsA2Keyword_2_1_0()); 
 
             }
@@ -2791,7 +2791,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1113:1: ruleY
             {
              before(grammarAccess.getXAccess().getOwnsYYParserRuleCall_4_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleY_in_rule__X__OwnsYAssignment_42160);
+            pushFollow(FOLLOW_ruleY_in_rule__X__OwnsYAssignment_42160);
             ruleY();
 
             state._fsp--;
@@ -2832,7 +2832,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1128:1: RULE_STRING
             {
              before(grammarAccess.getZAccess().getNameSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__Z__NameAssignment_22191); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Z__NameAssignment_22191); 
              after(grammarAccess.getZAccess().getNameSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -2869,7 +2869,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1143:1: RULE_STRING
             {
              before(grammarAccess.getY1Access().getNameSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__Y1__NameAssignment_12222); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Y1__NameAssignment_12222); 
              after(grammarAccess.getY1Access().getNameSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -2906,7 +2906,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1158:1: ruleZ
             {
              before(grammarAccess.getY1Access().getOwnsZZParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleZ_in_rule__Y1__OwnsZAssignment_32253);
+            pushFollow(FOLLOW_ruleZ_in_rule__Y1__OwnsZAssignment_32253);
             ruleZ();
 
             state._fsp--;
@@ -2947,7 +2947,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1173:1: RULE_STRING
             {
              before(grammarAccess.getY2Access().getNameSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__Y2__NameAssignment_12284); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Y2__NameAssignment_12284); 
              after(grammarAccess.getY2Access().getNameSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -2984,7 +2984,7 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
             // ../uk.ac.york.cs.asbh.lang.ui/src-gen/uk/ac/yor/cs/asbh/ui/contentassist/antlr/internal/InternalASBHLang.g:1188:1: ruleZ
             {
              before(grammarAccess.getY2Access().getOwnsZZParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleZ_in_rule__Y2__OwnsZAssignment_32315);
+            pushFollow(FOLLOW_ruleZ_in_rule__Y2__OwnsZAssignment_32315);
             ruleZ();
 
             state._fsp--;
@@ -3015,104 +3015,100 @@ public class InternalASBHLangParser extends AbstractInternalContentAssistParser 
 
  
 
-    
-    private static class FollowSets000 {
-        public static final BitSet FOLLOW_ruleRoot_in_entryRuleRoot61 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleRoot68 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group__0_in_ruleRoot94 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY_in_entryRuleY121 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleY128 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y__Alternatives_in_ruleY154 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleX_in_entryRuleX181 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleX188 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__0_in_ruleX214 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleZ_in_entryRuleZ241 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleZ248 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Z__Group__0_in_ruleZ274 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY1_in_entryRuleY1301 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleY1308 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__0_in_ruleY1334 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY2_in_entryRuleY2361 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleY2368 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__0_in_ruleY2394 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY1_in_rule__Y__Alternatives430 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY2_in_rule__Y__Alternatives447 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__IsA1Assignment_2_0_in_rule__X__Alternatives_2479 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__IsA2Assignment_2_1_in_rule__X__Alternatives_2497 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group__0__Impl_in_rule__Root__Group__0528 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_rule__Root__Group__1_in_rule__Root__Group__0531 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group__1__Impl_in_rule__Root__Group__1589 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__Root__Group__2_in_rule__Root__Group__1592 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_11_in_rule__Root__Group__1__Impl620 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group__2__Impl_in_rule__Root__Group__2651 = new BitSet(new long[]{0x0000000000006000L});
-        public static final BitSet FOLLOW_rule__Root__Group__3_in_rule__Root__Group__2654 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__Root__Group__2__Impl682 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__Group__3__Impl_in_rule__Root__Group__3713 = new BitSet(new long[]{0x0000000000006000L});
-        public static final BitSet FOLLOW_rule__Root__Group__4_in_rule__Root__Group__3716 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Root__OwnedXAssignment_3_in_rule__Root__Group__3__Impl743 = new BitSet(new long[]{0x0000000000004002L});
-        public static final BitSet FOLLOW_rule__Root__Group__4__Impl_in_rule__Root__Group__4774 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__Root__Group__4__Impl802 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__0__Impl_in_rule__X__Group__0843 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_rule__X__Group__1_in_rule__X__Group__0846 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__1__Impl_in_rule__X__Group__1904 = new BitSet(new long[]{0x00000000000C1000L});
-        public static final BitSet FOLLOW_rule__X__Group__2_in_rule__X__Group__1907 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__X__Group__1__Impl935 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__2__Impl_in_rule__X__Group__2966 = new BitSet(new long[]{0x00000000000C1000L});
-        public static final BitSet FOLLOW_rule__X__Group__3_in_rule__X__Group__2969 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Alternatives_2_in_rule__X__Group__2__Impl996 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__3__Impl_in_rule__X__Group__31027 = new BitSet(new long[]{0x0000000000032000L});
-        public static final BitSet FOLLOW_rule__X__Group__4_in_rule__X__Group__31030 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__X__Group__3__Impl1058 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__Group__4__Impl_in_rule__X__Group__41089 = new BitSet(new long[]{0x0000000000032000L});
-        public static final BitSet FOLLOW_rule__X__Group__5_in_rule__X__Group__41092 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__X__OwnsYAssignment_4_in_rule__X__Group__4__Impl1119 = new BitSet(new long[]{0x0000000000030002L});
-        public static final BitSet FOLLOW_rule__X__Group__5__Impl_in_rule__X__Group__51150 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__X__Group__5__Impl1178 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Z__Group__0__Impl_in_rule__Z__Group__01221 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_rule__Z__Group__1_in_rule__Z__Group__01224 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Z__Group__1__Impl_in_rule__Z__Group__11282 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__Z__Group__2_in_rule__Z__Group__11285 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__Z__Group__1__Impl1313 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Z__Group__2__Impl_in_rule__Z__Group__21344 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Z__NameAssignment_2_in_rule__Z__Group__2__Impl1371 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__0__Impl_in_rule__Y1__Group__01408 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__Y1__Group__1_in_rule__Y1__Group__01411 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_rule__Y1__Group__0__Impl1439 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__1__Impl_in_rule__Y1__Group__11470 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__Y1__Group__2_in_rule__Y1__Group__11473 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__NameAssignment_1_in_rule__Y1__Group__1__Impl1500 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__2__Impl_in_rule__Y1__Group__21530 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_rule__Y1__Group__3_in_rule__Y1__Group__21533 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__Y1__Group__2__Impl1561 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__3__Impl_in_rule__Y1__Group__31592 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_rule__Y1__Group__4_in_rule__Y1__Group__31595 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__OwnsZAssignment_3_in_rule__Y1__Group__3__Impl1622 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y1__Group__4__Impl_in_rule__Y1__Group__41653 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__Y1__Group__4__Impl1681 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__0__Impl_in_rule__Y2__Group__01722 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__Y2__Group__1_in_rule__Y2__Group__01725 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__Y2__Group__0__Impl1753 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__1__Impl_in_rule__Y2__Group__11784 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__Y2__Group__2_in_rule__Y2__Group__11787 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__NameAssignment_1_in_rule__Y2__Group__1__Impl1814 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__2__Impl_in_rule__Y2__Group__21844 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_rule__Y2__Group__3_in_rule__Y2__Group__21847 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__Y2__Group__2__Impl1875 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__3__Impl_in_rule__Y2__Group__31906 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_rule__Y2__Group__4_in_rule__Y2__Group__31909 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__OwnsZAssignment_3_in_rule__Y2__Group__3__Impl1936 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Y2__Group__4__Impl_in_rule__Y2__Group__41967 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__Y2__Group__4__Impl1995 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleX_in_rule__Root__OwnedXAssignment_32041 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_rule__X__IsA1Assignment_2_02077 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__X__IsA2Assignment_2_12121 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleY_in_rule__X__OwnsYAssignment_42160 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_rule__Z__NameAssignment_22191 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_rule__Y1__NameAssignment_12222 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleZ_in_rule__Y1__OwnsZAssignment_32253 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_rule__Y2__NameAssignment_12284 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleZ_in_rule__Y2__OwnsZAssignment_32315 = new BitSet(new long[]{0x0000000000000002L});
-    }
-
+    public static final BitSet FOLLOW_ruleRoot_in_entryRuleRoot61 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRoot68 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Root__Group__0_in_ruleRoot94 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY_in_entryRuleY121 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleY128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y__Alternatives_in_ruleY154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleX_in_entryRuleX181 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleX188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__X__Group__0_in_ruleX214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleZ_in_entryRuleZ241 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleZ248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Z__Group__0_in_ruleZ274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY1_in_entryRuleY1301 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleY1308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y1__Group__0_in_ruleY1334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY2_in_entryRuleY2361 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleY2368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y2__Group__0_in_ruleY2394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY1_in_rule__Y__Alternatives430 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY2_in_rule__Y__Alternatives447 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__X__IsA1Assignment_2_0_in_rule__X__Alternatives_2479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__X__IsA2Assignment_2_1_in_rule__X__Alternatives_2497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Root__Group__0__Impl_in_rule__Root__Group__0528 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__Root__Group__1_in_rule__Root__Group__0531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Root__Group__1__Impl_in_rule__Root__Group__1589 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__Root__Group__2_in_rule__Root__Group__1592 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__Root__Group__1__Impl620 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Root__Group__2__Impl_in_rule__Root__Group__2651 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_rule__Root__Group__3_in_rule__Root__Group__2654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Root__Group__2__Impl682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Root__Group__3__Impl_in_rule__Root__Group__3713 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_rule__Root__Group__4_in_rule__Root__Group__3716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Root__OwnedXAssignment_3_in_rule__Root__Group__3__Impl743 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_rule__Root__Group__4__Impl_in_rule__Root__Group__4774 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Root__Group__4__Impl802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__X__Group__0__Impl_in_rule__X__Group__0843 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__X__Group__1_in_rule__X__Group__0846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__X__Group__1__Impl_in_rule__X__Group__1904 = new BitSet(new long[]{0x00000000000C1000L});
+    public static final BitSet FOLLOW_rule__X__Group__2_in_rule__X__Group__1907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__X__Group__1__Impl935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__X__Group__2__Impl_in_rule__X__Group__2966 = new BitSet(new long[]{0x00000000000C1000L});
+    public static final BitSet FOLLOW_rule__X__Group__3_in_rule__X__Group__2969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__X__Alternatives_2_in_rule__X__Group__2__Impl996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__X__Group__3__Impl_in_rule__X__Group__31027 = new BitSet(new long[]{0x0000000000032000L});
+    public static final BitSet FOLLOW_rule__X__Group__4_in_rule__X__Group__31030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__X__Group__3__Impl1058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__X__Group__4__Impl_in_rule__X__Group__41089 = new BitSet(new long[]{0x0000000000032000L});
+    public static final BitSet FOLLOW_rule__X__Group__5_in_rule__X__Group__41092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__X__OwnsYAssignment_4_in_rule__X__Group__4__Impl1119 = new BitSet(new long[]{0x0000000000030002L});
+    public static final BitSet FOLLOW_rule__X__Group__5__Impl_in_rule__X__Group__51150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__X__Group__5__Impl1178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Z__Group__0__Impl_in_rule__Z__Group__01221 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Z__Group__1_in_rule__Z__Group__01224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Z__Group__1__Impl_in_rule__Z__Group__11282 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Z__Group__2_in_rule__Z__Group__11285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Z__Group__1__Impl1313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Z__Group__2__Impl_in_rule__Z__Group__21344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Z__NameAssignment_2_in_rule__Z__Group__2__Impl1371 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y1__Group__0__Impl_in_rule__Y1__Group__01408 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Y1__Group__1_in_rule__Y1__Group__01411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Y1__Group__0__Impl1439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y1__Group__1__Impl_in_rule__Y1__Group__11470 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__Y1__Group__2_in_rule__Y1__Group__11473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y1__NameAssignment_1_in_rule__Y1__Group__1__Impl1500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y1__Group__2__Impl_in_rule__Y1__Group__21530 = new BitSet(new long[]{0x000000000000A000L});
+    public static final BitSet FOLLOW_rule__Y1__Group__3_in_rule__Y1__Group__21533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Y1__Group__2__Impl1561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y1__Group__3__Impl_in_rule__Y1__Group__31592 = new BitSet(new long[]{0x000000000000A000L});
+    public static final BitSet FOLLOW_rule__Y1__Group__4_in_rule__Y1__Group__31595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y1__OwnsZAssignment_3_in_rule__Y1__Group__3__Impl1622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y1__Group__4__Impl_in_rule__Y1__Group__41653 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Y1__Group__4__Impl1681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y2__Group__0__Impl_in_rule__Y2__Group__01722 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Y2__Group__1_in_rule__Y2__Group__01725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Y2__Group__0__Impl1753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y2__Group__1__Impl_in_rule__Y2__Group__11784 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__Y2__Group__2_in_rule__Y2__Group__11787 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y2__NameAssignment_1_in_rule__Y2__Group__1__Impl1814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y2__Group__2__Impl_in_rule__Y2__Group__21844 = new BitSet(new long[]{0x000000000000A000L});
+    public static final BitSet FOLLOW_rule__Y2__Group__3_in_rule__Y2__Group__21847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Y2__Group__2__Impl1875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y2__Group__3__Impl_in_rule__Y2__Group__31906 = new BitSet(new long[]{0x000000000000A000L});
+    public static final BitSet FOLLOW_rule__Y2__Group__4_in_rule__Y2__Group__31909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y2__OwnsZAssignment_3_in_rule__Y2__Group__3__Impl1936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Y2__Group__4__Impl_in_rule__Y2__Group__41967 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Y2__Group__4__Impl1995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleX_in_rule__Root__OwnedXAssignment_32041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__X__IsA1Assignment_2_02077 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__X__IsA2Assignment_2_12121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleY_in_rule__X__OwnsYAssignment_42160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Z__NameAssignment_22191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Y1__NameAssignment_12222 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleZ_in_rule__Y1__OwnsZAssignment_32253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Y2__NameAssignment_12284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleZ_in_rule__Y2__OwnsZAssignment_32315 = new BitSet(new long[]{0x0000000000000002L});
 
 }

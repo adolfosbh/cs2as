@@ -138,8 +138,6 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
-		////EBoolean returns ecore::EBoolean:
-		////	'true' | 'false';
 		//Z:
 		//	{Z} "Z" name=STRING?;
 		@Override public ParserRule getRule() { return rule; }
@@ -322,8 +320,6 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		return getXAccess().getRule();
 	}
 
-	////EBoolean returns ecore::EBoolean:
-	////	'true' | 'false';
 	//Z:
 	//	{Z} "Z" name=STRING?;
 	public ZElements getZAccess() {

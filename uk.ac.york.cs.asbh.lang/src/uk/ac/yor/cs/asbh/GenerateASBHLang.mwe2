@@ -9,6 +9,7 @@ var fileExtensions = "asbh"
 var projectName = "uk.ac.york.cs.asbh.lang"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
+var encoding = "UTF-8"
 
 Workflow {
 	bean = StandaloneSetup {
@@ -32,6 +33,7 @@ Workflow {
 		pathTestProject = "${runtimeProject}.tests"
 		projectNameRt = projectName
 		projectNameUi = "${projectName}.ui"
+    	encoding = encoding
 		language = auto-inject {
 			uri = grammarURI
 
@@ -57,9 +59,10 @@ Workflow {
 
 			// the Antlr parser
 			fragment = parser.antlr.XtextAntlrGeneratorFragment auto-inject {
-				options = {
-					classSplitting = true
-				}
+			//	options = {
+			//		classSplitting = true
+ 			//      backtrack = true
+			//	}
 			}
 
 			// Xtend-based API for validation 
@@ -99,9 +102,9 @@ Workflow {
 
 			// antlr parser generator tailored for content assist 
 			fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {
-				options = {
-					classSplitting = true
-				}
+				//options = {
+				//	classSplitting = true
+				//}
 			}
 			
 			// generates junit test support classes into Generator#pathTestProject
@@ -121,6 +124,9 @@ Workflow {
 			// generates the required bindings only if the grammar inherits from Xbase
 			fragment = xbase.XbaseGeneratorFragment auto-inject {}
 
+    		// generates the required bindings only if the grammar inherits from Xtype
+    		fragment = xbase.XtypeGeneratorFragment auto-inject {}
+    
 			// provides a preference page for template proposals
 			fragment = templates.CodetemplatesGeneratorFragment auto-inject {}
 
