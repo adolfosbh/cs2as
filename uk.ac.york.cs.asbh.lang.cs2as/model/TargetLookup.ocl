@@ -78,7 +78,7 @@ def: lookupB(name : String) : target::B =
 	-- FIXME if not found, lookupBs(name)->any gives an execution error, for the time being we return an null B
 	let foundBs = _lookupBs(name) in
 	if foundBs->isEmpty()
-	then null
+	then invalid
 	else foundBs->any(true) 
 	endif
 	
@@ -86,7 +86,7 @@ def: lookupB(name : String) : target::B =
 def: lookupC(name : String) : target::C =
 	let foundCs = _lookupCs(name) in
 	if foundCs->isEmpty()
-	then null
+	then invalid
 	else foundCs->any(true) 
 	endif
 

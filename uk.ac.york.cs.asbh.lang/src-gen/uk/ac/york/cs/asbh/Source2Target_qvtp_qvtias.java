@@ -813,7 +813,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(select).booleanValue();
             /*@Nullable*/ /*@Thrown*/ C symbol_4;
             if (isEmpty) {
-                symbol_4 = null;
+                throw ValueUtil.INVALID_VALUE;
             }
             else {
                 /*@Nullable*/ Iterator<?> ITERATOR__1_0 = select.iterator();
@@ -1014,7 +1014,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(select).booleanValue();
             /*@Nullable*/ /*@Thrown*/ B symbol_4;
             if (isEmpty) {
-                symbol_4 = null;
+                throw ValueUtil.INVALID_VALUE;
             }
             else {
                 /*@Nullable*/ Iterator<?> ITERATOR__1_0 = select.iterator();

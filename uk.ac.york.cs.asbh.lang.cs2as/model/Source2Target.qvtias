@@ -381,7 +381,7 @@
             <value xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
               <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.95"/>
               <ownedSource xsi:type="pivot:PropertyCallExp">
-                <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.73"/>
+                <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.69"/>
                 <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.8/@domain.0/@guardPattern/@variable.0">
                   <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.5"/>
                 </ownedSource>
@@ -475,7 +475,7 @@
               <ownedSource xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
                 <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.102"/>
                 <ownedSource xsi:type="pivot:PropertyCallExp">
-                  <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.69"/>
+                  <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.73"/>
                   <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.9/@domain.0/@guardPattern/@variable.0">
                     <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
                   </ownedSource>
@@ -582,7 +582,7 @@
               <ownedSource xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
                 <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.102"/>
                 <ownedSource xsi:type="pivot:PropertyCallExp">
-                  <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.69"/>
+                  <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.73"/>
                   <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.10/@domain.0/@guardPattern/@variable.0">
                     <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
                   </ownedSource>
@@ -676,7 +676,7 @@
               <ownedSource xsi:type="pivot:IteratorExp" name="collect" isImplicit="true">
                 <type xsi:type="pivot:SequenceType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.98"/>
                 <ownedSource xsi:type="pivot:PropertyCallExp">
-                  <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.69"/>
+                  <type xsi:type="pivot:OrderedSetType" href="http://www.eclipse.org/ocl/2015/Orphanage#//@ownedClasses.73"/>
                   <ownedSource xsi:type="pivot:VariableExp" isImplicit="true" referredVariable="//@ownedPackages.0/@ownedClasses.0/@rule.11/@domain.0/@guardPattern/@variable.0">
                     <type xsi:type="pivot:Class" href="SourceMM1.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"/>
                   </ownedSource>
