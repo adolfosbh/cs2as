@@ -11,7 +11,6 @@ Root returns SRoot:
 		(ownedX+=X)*
 	'}';
 
-
 Y returns Y:
 	Y1 | Y2;
 
@@ -23,9 +22,6 @@ X returns X:
 	'{'
 		(ownsY+=Y)*
 	'}';
-
-//EBoolean returns ecore::EBoolean:
-//	'true' | 'false';
 
 Z returns Z:
 	{Z}
