@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
+import org.eclipse.qvtd.build.cs2as.qvti.CS2ASDiagnostic;
+import org.eclipse.qvtd.build.cs2as.qvti.CS2ASException;
 import org.eclipse.qvtd.build.cs2as.qvti.QVTiFacade;
 import org.eclipse.qvtd.pivot.qvtbase.evaluation.TransformationEvaluator;
 import org.eclipse.qvtd.pivot.qvtbase.evaluation.TransformationExecutor;
@@ -58,9 +60,11 @@ public class CS2ASLinker extends LazyLinker
 					}
 					qvt.dispose();
 				}
+				catch (CS2ASException exception) {
+					errors.add(new CS2ASDiagnostic(exception));
+				}
 				catch (Exception exception) {	// Never let an Exception leak out to abort Xtext
 				    Exception cause = exception instanceof Resource.IOWrappedException ? (Exception)exception.getCause() : exception;
-				    
 				    errors.add(new ExceptionDiagnostic(cause));
 				}
 			}

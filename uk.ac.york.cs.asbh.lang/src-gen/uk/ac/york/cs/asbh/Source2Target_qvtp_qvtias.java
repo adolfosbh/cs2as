@@ -43,7 +43,7 @@ import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SequenceValue;
 import org.eclipse.ocl.pivot.values.SetValue;
-import org.eclipse.qvtd.pivot.qvtbase.evaluation.AbstractTransformationExecutor;
+import org.eclipse.qvtd.build.cs2as.qvti.CS2ASTransformationExecutor;
 import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
 import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SRoot;
@@ -77,7 +77,7 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
  * Extract each output model with {@link getRootObjects(String)}
  */
 @SuppressWarnings("nls")
-public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
+public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
 {
     public static final /*@NonNull*/ /*@NonInvalid*/ RootPackageId PACKid_$metamodel$ = IdManager.getRootPackageId("$metamodel$");
     public static final /*@NonNull*/ /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_env_s_1_0 = IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/env/1.0", null, EnvironmentPackage.eINSTANCE);
@@ -157,7 +157,25 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map cSRoot_2_TRoot in Source2Target_qvtp_qvtias) {
+     * leftCS (sRoot : source::SRoot;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * {realize tRoot : target::TRoot;
+     *  |
+     * }
+     * where ( |
+     * )
+     * { |
+     * sRoot = tRoot;
+     * }
+     * 
+     * }
      */
     protected boolean cSRoot_2_TRoot(final /*@NonNull*/ /*@NonInvalid*/ SRoot sRoot) {
         // predicates
@@ -172,7 +190,27 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map cX_2_A3 in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (x : source::X;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * {realize a3 : target::A3;
+     *  |
+     * }
+     * where ( |
+     * not disambiguatesToA1()
+     *   not disambiguatesToA2())
+     * { |
+     * x = a3;
+     * }
+     * 
+     * }
      */
     protected boolean cX_2_A3(final /*@NonNull*/ /*@NonInvalid*/ X x) {
         // predicates
@@ -197,7 +235,27 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map cX_2_A2 in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (x : source::X;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * {realize a2 : target::A2;
+     *  |
+     * }
+     * where ( |
+     * not disambiguatesToA1()
+     *   disambiguatesToA2())
+     * { |
+     * x = a2;
+     * }
+     * 
+     * }
      */
     protected boolean cX_2_A2(final /*@NonNull*/ /*@NonInvalid*/ X x_0) {
         // predicates
@@ -221,7 +279,26 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map cX_2_A1 in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (x : source::X;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * {realize a1 : target::A1;
+     *  |
+     * }
+     * where ( |
+     * disambiguatesToA1())
+     * { |
+     * x = a1;
+     * }
+     * 
+     * }
      */
     protected boolean cX_2_A1(final /*@NonNull*/ /*@NonInvalid*/ X x_1) {
         // predicates
@@ -240,7 +317,25 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map cY1_2_B in Source2Target_qvtp_qvtias) {
+     * leftCS (y1 : source::Y1;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * {realize b : target::B;
+     *  |
+     * }
+     * where ( |
+     * )
+     * { |
+     * y1 = b;
+     * }
+     * 
+     * }
      */
     protected boolean cY1_2_B(final /*@NonNull*/ /*@NonInvalid*/ Y1 y1) {
         // predicates
@@ -255,7 +350,25 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map cY2_2_C in Source2Target_qvtp_qvtias) {
+     * leftCS (y2 : source::Y2;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * {realize c : target::C;
+     *  |
+     * }
+     * where ( |
+     * )
+     * { |
+     * y2 = c;
+     * }
+     * 
+     * }
      */
     protected boolean cY2_2_C(final /*@NonNull*/ /*@NonInvalid*/ Y2 y2) {
         // predicates
@@ -270,7 +383,26 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map cZ_2_D_0 in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (z : source::Z;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * {realize d : target::D;
+     *  |
+     * }
+     * where ( |
+     * not toY.oclIsKindOf(source::Y1))
+     * { |
+     * z = d;
+     * }
+     * 
+     * }
      */
     protected boolean cZ_2_D_0(final /*@NonNull*/ /*@NonInvalid*/ Z z) {
         // predicates
@@ -293,7 +425,26 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map cZ_2_D_1 in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (z : source::Z;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * {realize d : target::D;
+     *  |
+     * }
+     * where ( |
+     * toY.oclIsKindOf(source::Y1))
+     * { |
+     * z = d;
+     * }
+     * 
+     * }
      */
     protected boolean cZ_2_D_1(final /*@NonNull*/ /*@NonInvalid*/ Z z_0) {
         // predicates
@@ -315,7 +466,26 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uTRoot_ownedA in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (sRoot : source::SRoot;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * )
+     * { |
+     * sRoot.ast.oclAsType(target::TRoot)
+     *    = ownedX.ast.oclAsType(target::A);
+     * }
+     * 
+     * }
      */
     protected boolean uTRoot_ownedA(final /*@NonNull*/ /*@NonInvalid*/ SRoot sRoot_0) {
         // predicates
@@ -338,11 +508,11 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             }
             /*@Nullable*/ /*@NonInvalid*/ X _1 = (X)ITERATOR__1.next();
             /**
-             * _'null' : target::A
+             * ast.oclAsType(target::A)
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_A_0 = idResolver.getClass(CLSSid_A, null);
             if (_1 == null) {
-                throw new InvalidValueException("Null source for \'source::SElement::ast\'");
+                throwNull(sRoot_0, "source for \'source::SElement::ast\'");
             }
             final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = _1.getAst();
             final /*@Nullable*/ /*@Thrown*/ A oclAsType_0 = (A)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_A_0);
@@ -357,7 +527,29 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uA3_ownsC in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (x : source::X;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * not disambiguatesToA1()
+     *   not disambiguatesToA2()
+     *   )
+     * { |
+     * x.ast.oclAsType(target::A3)
+     *    = ownsY.oclAsType(source::Y2)
+     *   .ast.oclAsType(target::C);
+     * }
+     * 
+     * }
      */
     protected boolean uA3_ownsC(final /*@NonNull*/ /*@NonInvalid*/ X x_2) {
         // predicates
@@ -390,7 +582,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             }
             /*@Nullable*/ /*@NonInvalid*/ Y _1 = (Y)ITERATOR__1.next();
             /**
-             * _'null' : source::Y2[?]
+             * oclAsType(source::Y2)
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y2_0 = idResolver.getClass(CLSSid_Y2, null);
             final /*@Nullable*/ /*@Thrown*/ Y2 oclAsType_0 = (Y2)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, _1, TYP_source_c_c_Y2_0);
@@ -407,11 +599,11 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             }
             /*@Nullable*/ /*@NonInvalid*/ Y2 _1_0 = (Y2)ITERATOR__1_0.next();
             /**
-             * _'null' : target::C
+             * ast.oclAsType(target::C)
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_C_0 = idResolver.getClass(CLSSid_C, null);
             if (_1_0 == null) {
-                throw new InvalidValueException("Null source for \'source::SElement::ast\'");
+                throwNull(x_2, "source for \'source::SElement::ast\'");
             }
             final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = _1_0.getAst();
             final /*@Nullable*/ /*@Thrown*/ C oclAsType_1 = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_C_0);
@@ -426,7 +618,29 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uA2_ownsC in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (x : source::X;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * not disambiguatesToA1()
+     *   disambiguatesToA2()
+     *   )
+     * { |
+     * x.ast.oclAsType(target::A2)
+     *    = ownsY.oclAsType(source::Y2)
+     *   .ast.oclAsType(target::C);
+     * }
+     * 
+     * }
      */
     protected boolean uA2_ownsC(final /*@NonNull*/ /*@NonInvalid*/ X x_3) {
         // predicates
@@ -458,7 +672,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             }
             /*@Nullable*/ /*@NonInvalid*/ Y _1 = (Y)ITERATOR__1.next();
             /**
-             * _'null' : source::Y2[?]
+             * oclAsType(source::Y2)
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y2_0 = idResolver.getClass(CLSSid_Y2, null);
             final /*@Nullable*/ /*@Thrown*/ Y2 oclAsType_0 = (Y2)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, _1, TYP_source_c_c_Y2_0);
@@ -475,11 +689,11 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             }
             /*@Nullable*/ /*@NonInvalid*/ Y2 _1_0 = (Y2)ITERATOR__1_0.next();
             /**
-             * _'null' : target::C
+             * ast.oclAsType(target::C)
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_C_0 = idResolver.getClass(CLSSid_C, null);
             if (_1_0 == null) {
-                throw new InvalidValueException("Null source for \'source::SElement::ast\'");
+                throwNull(x_3, "source for \'source::SElement::ast\'");
             }
             final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = _1_0.getAst();
             final /*@Nullable*/ /*@Thrown*/ C oclAsType_1 = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_C_0);
@@ -494,7 +708,28 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uA1_ownsB in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (x : source::X;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * disambiguatesToA1()
+     *   )
+     * { |
+     * x.ast.oclAsType(target::A1)
+     *    = ownsY.oclAsType(source::Y1)
+     *   .ast.oclAsType(target::B);
+     * }
+     * 
+     * }
      */
     protected boolean uA1_ownsB(final /*@NonNull*/ /*@NonInvalid*/ X x_4) {
         // predicates
@@ -521,7 +756,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             }
             /*@Nullable*/ /*@NonInvalid*/ Y _1 = (Y)ITERATOR__1.next();
             /**
-             * _'null' : source::Y1[?]
+             * oclAsType(source::Y1)
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y1_0 = idResolver.getClass(CLSSid_Y1, null);
             final /*@Nullable*/ /*@Thrown*/ Y1 oclAsType_0 = (Y1)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, _1, TYP_source_c_c_Y1_0);
@@ -538,11 +773,11 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             }
             /*@Nullable*/ /*@NonInvalid*/ Y1 _1_0 = (Y1)ITERATOR__1_0.next();
             /**
-             * _'null' : target::B
+             * ast.oclAsType(target::B)
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_B_0 = idResolver.getClass(CLSSid_B, null);
             if (_1_0 == null) {
-                throw new InvalidValueException("Null source for \'source::SElement::ast\'");
+                throwNull(x_4, "source for \'source::SElement::ast\'");
             }
             final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = _1_0.getAst();
             final /*@Nullable*/ /*@Thrown*/ B oclAsType_1 = (B)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_B_0);
@@ -557,7 +792,26 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uB_ownsD in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (y1 : source::Y1;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * )
+     * { |
+     * y1.ast.oclAsType(target::B)
+     *    = ownsZ.ast.oclAsType(target::D);
+     * }
+     * 
+     * }
      */
     protected boolean uB_ownsD(final /*@NonNull*/ /*@NonInvalid*/ Y1 y1_0) {
         // predicates
@@ -570,7 +824,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
         final /*@Nullable*/ /*@Thrown*/ B oclAsType = (B)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_B_0);
         final /*@Nullable*/ /*@Thrown*/ Z ownsZ = y1_0.getOwnsZ();
         if (ownsZ == null) {
-            throw new InvalidValueException("Null source for \'source::SElement::ast\'");
+            throwNull(y1_0, "source for \'source::SElement::ast\'");
         }
         final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = ownsZ.getAst();
         final /*@Nullable*/ /*@Thrown*/ D oclAsType_0 = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_D_0);
@@ -580,7 +834,25 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uB_name in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (y1 : source::Y1;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * )
+     * { |
+     * y1.ast.oclAsType(target::B) = name;
+     * }
+     * 
+     * }
      */
     protected boolean uB_name(final /*@NonNull*/ /*@NonInvalid*/ Y1 y1_1) {
         // predicates
@@ -597,7 +869,26 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uC_ownsD in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (y2 : source::Y2;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * )
+     * { |
+     * y2.ast.oclAsType(target::C)
+     *    = ownsZ.ast.oclAsType(target::D);
+     * }
+     * 
+     * }
      */
     protected boolean uC_ownsD(final /*@NonNull*/ /*@NonInvalid*/ Y2 y2_0) {
         // predicates
@@ -610,7 +901,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
         final /*@Nullable*/ /*@Thrown*/ C oclAsType = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_C_0);
         final /*@Nullable*/ /*@Thrown*/ Z ownsZ = y2_0.getOwnsZ();
         if (ownsZ == null) {
-            throw new InvalidValueException("Null source for \'source::SElement::ast\'");
+            throwNull(y2_0, "source for \'source::SElement::ast\'");
         }
         final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = ownsZ.getAst();
         final /*@Nullable*/ /*@Thrown*/ D oclAsType_0 = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_D_0);
@@ -620,7 +911,25 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uC_name in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (y2 : source::Y2;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * )
+     * { |
+     * y2.ast.oclAsType(target::C) = name;
+     * }
+     * 
+     * }
      */
     protected boolean uC_name(final /*@NonNull*/ /*@NonInvalid*/ Y2 y2_1) {
         // predicates
@@ -637,7 +946,28 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uD_0_toA in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (z : source::Z;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * not toY.oclIsKindOf(source::Y1)
+     *   )
+     * { |
+     * z.ast.oclAsType(target::D)
+     *    = toY.oclAsType(source::Y2)
+     *   .ast.oclAsType(target::C).toA2;
+     * }
+     * 
+     * }
      */
     protected boolean uD_0_toA(final /*@NonNull*/ /*@NonInvalid*/ Z z_1) {
         // predicates
@@ -658,12 +988,12 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
         final /*@Nullable*/ /*@Thrown*/ D oclAsType = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_D_0);
         final /*@Nullable*/ /*@Thrown*/ Y2 oclAsType_0 = (Y2)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y2_0);
         if (oclAsType_0 == null) {
-            throw new InvalidValueException("Null source for \'source::SElement::ast\'");
+            throwNull(z_1, "source for \'source::SElement::ast\'");
         }
         final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = oclAsType_0.getAst();
         final /*@Nullable*/ /*@Thrown*/ C oclAsType_1 = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_C_0);
         if (oclAsType_1 == null) {
-            throw new InvalidValueException("Null source for \'target::C::toA2\'");
+            throwNull(z_1, "source for \'target::C::toA2\'");
         }
         final /*@Nullable*/ /*@Thrown*/ A2 toA2 = oclAsType_1.getToA2();
         oclAsType.setToA(toA2);
@@ -672,7 +1002,26 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uD_0_name in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (z : source::Z;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * not toY.oclIsKindOf(source::Y1)
+     *   )
+     * { |
+     * z.ast.oclAsType(target::D) = name;
+     * }
+     * 
+     * }
      */
     protected boolean uD_0_name(final /*@NonNull*/ /*@NonInvalid*/ Z z_2) {
         // predicates
@@ -696,7 +1045,34 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uD_0_refsC in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (z : source::Z;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * not toY.oclIsKindOf(source::Y1)
+     *   )
+     * { |
+     * z.ast.oclAsType(target::D)
+     *    = if name.oclIsUndefined()
+     *   then null
+     *   else
+     *     toY.oclAsType(source::Y2)
+     *     .ast.oclAsType(target::C)
+     *     .env()
+     *     .lookupC(name)
+     *   endif;
+     * }
+     * 
+     * }
      */
     protected boolean uD_0_refsC(final /*@NonNull*/ /*@NonInvalid*/ Z z_3) {
         // predicates
@@ -731,7 +1107,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_C_0 = idResolver.getClass(CLSSid_C, null);
             final /*@Nullable*/ /*@Thrown*/ Y2 oclAsType_0 = (Y2)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y2_0);
             if (oclAsType_0 == null) {
-                throw new InvalidValueException("Null source for \'source::SElement::ast\'");
+                throwNull(z_3, "source for \'source::SElement::ast\'");
             }
             final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = oclAsType_0.getAst();
             final /*@Nullable*/ /*@Thrown*/ C self_0 = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_C_0);
@@ -739,7 +1115,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_A2_0 = idResolver.getClass(CLSSid_A2, null);
             final /*@Nullable*/ /*@Thrown*/ A2 self_1 = (A2)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, parent, TYP_target_c_c_A2_0);
             if (self_1 == null) {
-                throw new InvalidValueException("Null source for \'target::A2::ownsC\'");
+                throwNull(z_3, "source for \'target::A2::ownsC\'");
             }
             final /*@Nullable*/ /*@Thrown*/ List<C> ownedCs = self_1.getOwnsC();
             assert ownedCs != null;
@@ -805,7 +1181,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
                  * _'=' : Boolean
                  */
                 if (_1 == null) {
-                    throw new InvalidValueException("Null source for \'target::NamedElement::name\'");
+                    throwNull(z_3, "source for \'target::NamedElement::name\'");
                 }
                 final /*@Nullable*/ /*@Thrown*/ String name_0 = _1.getName();
                 final /*@Thrown*/ boolean eq = (name_0 != null) ? name_0.equals(cName) : (cName == null);
@@ -831,7 +1207,28 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uD_1_toA in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (z : source::Z;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * toY.oclIsKindOf(source::Y1)
+     *   )
+     * { |
+     * z.ast.oclAsType(target::D)
+     *    = toY.oclAsType(source::Y1)
+     *   .ast.oclAsType(target::B).toA1;
+     * }
+     * 
+     * }
      */
     protected boolean uD_1_toA(final /*@NonNull*/ /*@NonInvalid*/ Z z_4) {
         // predicates
@@ -850,12 +1247,12 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
         final /*@Nullable*/ /*@Thrown*/ D oclAsType = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_D_0);
         final /*@Nullable*/ /*@Thrown*/ Y1 oclAsType_0 = (Y1)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y1_0);
         if (oclAsType_0 == null) {
-            throw new InvalidValueException("Null source for \'source::SElement::ast\'");
+            throwNull(z_4, "source for \'source::SElement::ast\'");
         }
         final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = oclAsType_0.getAst();
         final /*@Nullable*/ /*@Thrown*/ B oclAsType_1 = (B)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_B_0);
         if (oclAsType_1 == null) {
-            throw new InvalidValueException("Null source for \'target::B::toA1\'");
+            throwNull(z_4, "source for \'target::B::toA1\'");
         }
         final /*@Nullable*/ /*@Thrown*/ A1 toA1 = oclAsType_1.getToA1();
         oclAsType.setToA(toA1);
@@ -864,7 +1261,26 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uD_1_name in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (z : source::Z;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * toY.oclIsKindOf(source::Y1)
+     *   )
+     * { |
+     * z.ast.oclAsType(target::D) = name;
+     * }
+     * 
+     * }
      */
     protected boolean uD_1_name(final /*@NonNull*/ /*@NonInvalid*/ Z z_5) {
         // predicates
@@ -887,7 +1303,34 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map uD_1_refsB in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (z : source::Z;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * toY.oclIsKindOf(source::Y1)
+     *   )
+     * { |
+     * z.ast.oclAsType(target::D)
+     *    = if name.oclIsUndefined()
+     *   then null
+     *   else
+     *     toY.oclAsType(source::Y1)
+     *     .ast.oclAsType(target::B)
+     *     .env()
+     *     .lookupB(name)
+     *   endif;
+     * }
+     * 
+     * }
      */
     protected boolean uD_1_refsB(final /*@NonNull*/ /*@NonInvalid*/ Z z_6) {
         // predicates
@@ -920,7 +1363,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_B_0 = idResolver.getClass(CLSSid_B, null);
             final /*@Nullable*/ /*@Thrown*/ Y1 oclAsType_0 = (Y1)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y1_0);
             if (oclAsType_0 == null) {
-                throw new InvalidValueException("Null source for \'source::SElement::ast\'");
+                throwNull(z_6, "source for \'source::SElement::ast\'");
             }
             final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = oclAsType_0.getAst();
             final /*@Nullable*/ /*@Thrown*/ B self_0 = (B)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_B_0);
@@ -928,7 +1371,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_A1_0 = idResolver.getClass(CLSSid_A1, null);
             final /*@Nullable*/ /*@Thrown*/ A1 self_1 = (A1)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, parent, TYP_target_c_c_A1_0);
             if (self_1 == null) {
-                throw new InvalidValueException("Null source for \'target::A1::ownsB\'");
+                throwNull(z_6, "source for \'target::A1::ownsB\'");
             }
             final /*@Nullable*/ /*@Thrown*/ List<B> ownedBs = self_1.getOwnsB();
             assert ownedBs != null;
@@ -994,7 +1437,7 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
                  * _'=' : Boolean
                  */
                 if (_1 == null) {
-                    throw new InvalidValueException("Null source for \'target::NamedElement::name\'");
+                    throwNull(z_6, "source for \'target::NamedElement::name\'");
                 }
                 final /*@Nullable*/ /*@Thrown*/ String name_0 = _1.getName();
                 final /*@Thrown*/ boolean eq = (name_0 != null) ? name_0.equals(bName) : (bName == null);
@@ -1020,7 +1463,124 @@ public class Source2Target_qvtp_qvtias extends AbstractTransformationExecutor
     }
     
     /**
-     * <<ClassCastException>>
+     * 
+     * map __root__ in Source2Target_qvtp_qvtias) {
+     * 
+     *   where ( |
+     * )
+     * { |
+     * }
+     * for sRoot : source::SRoot in source::SRoot.allInstances()
+     *    {
+     * map cSRoot_2_TRoot {
+     * sRoot := sRoot;
+     * }}
+     *   for x : source::X in source::X.allInstances()
+     *    {
+     * map cX_2_A1 {
+     * x := x;
+     * }}
+     *   for x : source::X in source::X.allInstances()
+     *    {
+     * map cX_2_A2 {
+     * x := x;
+     * }}
+     *   for x : source::X in source::X.allInstances()
+     *    {
+     * map cX_2_A3 {
+     * x := x;
+     * }}
+     *   for sRoot : source::SRoot in source::SRoot.allInstances()
+     *    {
+     * map uTRoot_ownedA {
+     * sRoot := sRoot;
+     * }}
+     *   for y1 : source::Y1 in source::Y1.allInstances()
+     *    {
+     * map cY1_2_B {
+     * y1 := y1;
+     * }}
+     *   for y2 : source::Y2 in source::Y2.allInstances()
+     *    {
+     * map cY2_2_C {
+     * y2 := y2;
+     * }}
+     *   for z : source::Z in source::Z.allInstances()
+     *    {
+     * map cZ_2_D_0 {
+     * z := z;
+     * }}
+     *   for z : source::Z in source::Z.allInstances()
+     *    {
+     * map cZ_2_D_1 {
+     * z := z;
+     * }}
+     *   for x : source::X in source::X.allInstances()
+     *    {
+     * map uA1_ownsB {
+     * x := x;
+     * }}
+     *   for x : source::X in source::X.allInstances()
+     *    {
+     * map uA2_ownsC {
+     * x := x;
+     * }}
+     *   for x : source::X in source::X.allInstances()
+     *    {
+     * map uA3_ownsC {
+     * x := x;
+     * }}
+     *   for y1 : source::Y1 in source::Y1.allInstances()
+     *    {
+     * map uB_ownsD {
+     * y1 := y1;
+     * }}
+     *   for y1 : source::Y1 in source::Y1.allInstances()
+     *    {
+     * map uB_name {
+     * y1 := y1;
+     * }}
+     *   for z : source::Z in source::Z.allInstances()
+     *    {
+     * map uD_1_refsB {
+     * z := z;
+     * }}
+     *   for y2 : source::Y2 in source::Y2.allInstances()
+     *    {
+     * map uC_ownsD {
+     * y2 := y2;
+     * }}
+     *   for y2 : source::Y2 in source::Y2.allInstances()
+     *    {
+     * map uC_name {
+     * y2 := y2;
+     * }}
+     *   for z : source::Z in source::Z.allInstances()
+     *    {
+     * map uD_0_refsC {
+     * z := z;
+     * }}
+     *   for z : source::Z in source::Z.allInstances()
+     *    {
+     * map uD_0_toA {
+     * z := z;
+     * }}
+     *   for z : source::Z in source::Z.allInstances()
+     *    {
+     * map uD_1_toA {
+     * z := z;
+     * }}
+     *   for z : source::Z in source::Z.allInstances()
+     *    {
+     * map uD_0_name {
+     * z := z;
+     * }}
+     *   for z : source::Z in source::Z.allInstances()
+     *    {
+     * map uD_1_name {
+     * z := z;
+     * }}
+     * }
      */
     protected boolean __root__() {
         // predicates
