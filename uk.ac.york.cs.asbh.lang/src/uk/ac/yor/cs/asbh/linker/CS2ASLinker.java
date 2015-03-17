@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
-import org.eclipse.qvtd.build.cs2as.qvti.CS2ASDiagnostic;
 import org.eclipse.qvtd.build.cs2as.qvti.CS2ASException;
+import org.eclipse.qvtd.build.cs2as.qvti.CS2ASExceptionDiagnostic;
+import org.eclipse.qvtd.build.cs2as.qvti.CS2ASTransformationExecutor;
 import org.eclipse.qvtd.build.cs2as.qvti.QVTiFacade;
 import org.eclipse.qvtd.pivot.qvtbase.evaluation.TransformationEvaluator;
-import org.eclipse.qvtd.pivot.qvtbase.evaluation.TransformationExecutor;
 import org.eclipse.xtext.diagnostics.ExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.IDiagnosticConsumer;
 import org.eclipse.xtext.linking.lazy.LazyLinker;
@@ -42,12 +42,13 @@ public class CS2ASLinker extends LazyLinker
 		if ((diagnosticsConsumer != null) ) {
 			List<Diagnostic> errors = eResource.getErrors();
 			if (!LinkerUtil.hasSyntaxError(errors)) {
+				CS2ASTransformationExecutor tx = null;
 				try {
 					ResourceSet rSet = eResource.getResourceSet();
 					QVTiFacade qvt = QVTiFacade.createInstance(QVTiFacade.NO_PROJECTS, rSet);
 					
 					TransformationEvaluator evaluator = qvt.createTxEvaluator(Source2Target_qvtp_qvtias.class);
-					TransformationExecutor tx = evaluator.getExecutor();
+					tx = (CS2ASTransformationExecutor) evaluator.getExecutor();
 					
 					tx.addRootObjects("leftCS", ClassUtil.nonNullState(eResource.getContents()));
 					if (tx.run()) {
@@ -61,11 +62,17 @@ public class CS2ASLinker extends LazyLinker
 					qvt.dispose();
 				}
 				catch (CS2ASException exception) {
-					errors.add(new CS2ASDiagnostic(exception));
+					errors.add(new CS2ASExceptionDiagnostic(exception));
 				}
 				catch (Exception exception) {	// Never let an Exception leak out to abort Xtext
 				    Exception cause = exception instanceof Resource.IOWrappedException ? (Exception)exception.getCause() : exception;
 				    errors.add(new ExceptionDiagnostic(cause));
+				} finally {
+					if (tx != null) {
+						List<org.eclipse.xtext.diagnostics.Diagnostic> txErrors = tx.getErrors();
+						errors.addAll(txErrors);
+						txErrors.clear();
+					}
 				}
 			}
 		}

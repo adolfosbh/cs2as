@@ -1193,7 +1193,8 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
             final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(foundCs).booleanValue();
             /*@Nullable*/ /*@Thrown*/ C symbol_4;
             if (isEmpty) {
-                throw ValueUtil.INVALID_VALUE;
+                symbol_4 = null;
+                handleLookupError(z_3, cName);
             }
             else {
                 final /*@Nullable*/ /*@Thrown*/ C first = (C)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundCs);
@@ -1449,7 +1450,8 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
             final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(foundBs).booleanValue();
             /*@Nullable*/ /*@Thrown*/ B symbol_4;
             if (isEmpty) {
-                throw ValueUtil.INVALID_VALUE;
+                symbol_4 = null;
+                handleLookupError(z_6, bName);
             }
             else {
                 final /*@Nullable*/ /*@Thrown*/ B first = (B)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundBs);
