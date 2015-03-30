@@ -10,8 +10,8 @@ import ocldependencyanalysis.graph.INode;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.pivot.Class;
-import org.eclipse.ocl.pivot.ConstructorExp;
-import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.ShadowExp;
+import org.eclipse.ocl.pivot.ShadowPart;
 import org.eclipse.ocl.pivot.Element;
 import org.eclipse.ocl.pivot.Feature;
 import org.eclipse.ocl.pivot.Model;
@@ -93,8 +93,8 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 		EObject container = astCall.eContainer();
 		Feature fromFeature = null; 
 		while (container != null) {
-			if (container instanceof ConstructorPart) { // We are in the RHS of a constructor expression
-				fromFeature = ((ConstructorPart)container).getReferredProperty();
+			if (container instanceof ShadowPart) { // We are in the RHS of a constructor expression
+				fromFeature = ((ShadowPart)container).getReferredProperty();
 				break;
 			}
 			if (container instanceof Operation) {// We found the ast() operation // FIXME make this check more robust
@@ -108,7 +108,7 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 			return isNameResolution ? createNameResolutionPropertyObj(context, fromFeature, astCall.getType())
 					: createFeatureObj(context, fromFeature);
 		}
-		throw new RuntimeException("I should have found either a ConstructorPart or an Operation when processing: " + astCall.toString());
+		throw new RuntimeException("I should have found either a ShadowPart or an Operation when processing: " + astCall.toString());
 	}
 	
 	/**
@@ -163,7 +163,7 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 
 		Class astCallContextClass = getElementContext(astCall);
 		Operation astOperation = getAstOperation(astCallContextClass);
-		ConstructorExp astCallContainingConstructor= getContainingConstructor(astCall);
+		ShadowExp astCallContainingConstructor= getContainingConstructor(astCall);
 		if (astCallContainingConstructor == null) {
 			dependencyGraph.addEdge(fromFeatureObj, createFeatureObj(astCallContextClass, astOperation));
 		} else {
@@ -237,8 +237,8 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 		return new NameResoPropertyObj(context, property, lookupType);
 	}
 	
-	protected FeatureObj createConstructionTypeFeatureObj(Type context, Operation astOperation, ConstructorExp constructorExp) {
-		return new ConstructorExpFeatureObj(context, astOperation, constructorExp);
+	protected FeatureObj createConstructionTypeFeatureObj(Type context, Operation astOperation, ShadowExp constructorExp) {
+		return new ShadowExpFeatureObj(context, astOperation, constructorExp);
 	}
 	
 	@Override
@@ -260,8 +260,8 @@ public class FeatureDependencyGraphComputer extends OldDependencyGraphComputer<F
 	}
 	
 	@Override
-	protected void processConstructorExp(IGraph<FeatureObj> dependencyGraph,
-			ConstructorExp constructorExp) {
+	protected void processShadowExp(IGraph<FeatureObj> dependencyGraph,
+			ShadowExp constructorExp) {
 		
 		Operation op = getContainingOperation(constructorExp);
 		Class csContext = op.getOwningClass();

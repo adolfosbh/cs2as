@@ -3,8 +3,8 @@ package ocldependencyanalysis.cs2asanalysis;
 import ocldependencyanalysis.cs2asanalysis.util.CS2ASAnalysisSwitch;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.ocl.pivot.ConstructorExp;
-import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.ShadowExp;
+import org.eclipse.ocl.pivot.ShadowPart;
 import org.eclipse.ocl.pivot.Operation;
 
 public class ToStringSwitch extends CS2ASAnalysisSwitch<String> {
@@ -18,8 +18,8 @@ public class ToStringSwitch extends CS2ASAnalysisSwitch<String> {
 	
 	@Override
 	public String caseConstructorPartAction(ConstructorPartAction object) {
-		ConstructorPart constructorPart = object.getConstructorPart();
-		ConstructorExp constructorExp = (ConstructorExp) constructorPart.eContainer();
+		ShadowPart constructorPart = object.getShadowPart();
+		ShadowExp constructorExp = (ShadowExp) constructorPart.eContainer();
 		Operation operation = getContainingOperation(constructorPart);
 		return object.getContext().getName() + "_" + operation.getName() +"_" 
 			  + (constructorExp.getOwnedParts().indexOf(constructorPart)+1)

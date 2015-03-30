@@ -91,7 +91,7 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 		
 		if (featureObj instanceof NameResoPropertyObj) {
 			Property prop = (Property) featureObj.getFeature();
-			if (prop.isComposite()) {
+			if (prop.isIsComposite()) {
 				return astContainmentNameResoProperty;
 			} else {
 				return astNonContainmentNameResoProperty;
@@ -108,7 +108,7 @@ public class FeatureDependenciesTypeProvider implements  IElementTypeProvider<Fe
 					return null;
 			} else {
 				Property prop = (Property) feature;
-				if (prop.isComposite()) {
+				if (prop.isIsComposite()) {
 					return astContainmentProperty;
 				} else {
 					return astNonContainmentProperty;

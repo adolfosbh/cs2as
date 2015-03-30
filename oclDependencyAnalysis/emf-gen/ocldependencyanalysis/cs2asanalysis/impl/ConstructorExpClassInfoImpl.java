@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.ConstructorExpClassInfoImpl#getConstructorExp <em>Constructor Exp</em>}</li>
+ *   <li>{@link ocldependencyanalysis.cs2asanalysis.impl.ShadowExpClassInfoImpl#getShadowExp <em>Constructor Exp</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,7 +32,7 @@ public class ConstructorExpClassInfoImpl extends ClassInfoImpl implements Constr
 	 * @generated
 	 * @ordered
 	 */
-	protected org.eclipse.ocl.pivot.ConstructorExp constructorExp;
+	protected org.eclipse.ocl.pivot.ShadowExp constructorExp;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,13 +58,13 @@ public class ConstructorExpClassInfoImpl extends ClassInfoImpl implements Constr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.pivot.ConstructorExp getConstructorExp() {
+	public org.eclipse.ocl.pivot.ShadowExp getShadowExp() {
 		if (constructorExp != null && constructorExp.eIsProxy()) {
-			InternalEObject oldConstructorExp = (InternalEObject)constructorExp;
-			constructorExp = (org.eclipse.ocl.pivot.ConstructorExp)eResolveProxy(oldConstructorExp);
-			if (constructorExp != oldConstructorExp) {
+			InternalEObject oldShadowExp = (InternalEObject)constructorExp;
+			constructorExp = (org.eclipse.ocl.pivot.ShadowExp)eResolveProxy(oldShadowExp);
+			if (constructorExp != oldShadowExp) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP, oldConstructorExp, constructorExp));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP, oldShadowExp, constructorExp));
 			}
 		}
 		return constructorExp;
@@ -75,7 +75,7 @@ public class ConstructorExpClassInfoImpl extends ClassInfoImpl implements Constr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.pivot.ConstructorExp basicGetConstructorExp() {
+	public org.eclipse.ocl.pivot.ShadowExp basicGetShadowExp() {
 		return constructorExp;
 	}
 
@@ -84,11 +84,11 @@ public class ConstructorExpClassInfoImpl extends ClassInfoImpl implements Constr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setConstructorExp(org.eclipse.ocl.pivot.ConstructorExp newConstructorExp) {
-		org.eclipse.ocl.pivot.ConstructorExp oldConstructorExp = constructorExp;
-		constructorExp = newConstructorExp;
+	public void setShadowExp(org.eclipse.ocl.pivot.ShadowExp newShadowExp) {
+		org.eclipse.ocl.pivot.ShadowExp oldShadowExp = constructorExp;
+		constructorExp = newShadowExp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP, oldConstructorExp, constructorExp));
+			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP, oldShadowExp, constructorExp));
 	}
 
 	/**
@@ -100,8 +100,8 @@ public class ConstructorExpClassInfoImpl extends ClassInfoImpl implements Constr
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP:
-				if (resolve) return getConstructorExp();
-				return basicGetConstructorExp();
+				if (resolve) return getShadowExp();
+				return basicGetShadowExp();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,7 +115,7 @@ public class ConstructorExpClassInfoImpl extends ClassInfoImpl implements Constr
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP:
-				setConstructorExp((org.eclipse.ocl.pivot.ConstructorExp)newValue);
+				setShadowExp((org.eclipse.ocl.pivot.ShadowExp)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,7 +130,7 @@ public class ConstructorExpClassInfoImpl extends ClassInfoImpl implements Constr
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CONSTRUCTOR_EXP_CLASS_INFO__CONSTRUCTOR_EXP:
-				setConstructorExp((org.eclipse.ocl.pivot.ConstructorExp)null);
+				setShadowExp((org.eclipse.ocl.pivot.ShadowExp)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -150,4 +150,4 @@ public class ConstructorExpClassInfoImpl extends ClassInfoImpl implements Constr
 		return super.eIsSet(featureID);
 	}
 
-} //ConstructorExpClassInfoImpl
+} //ShadowExpClassInfoImpl

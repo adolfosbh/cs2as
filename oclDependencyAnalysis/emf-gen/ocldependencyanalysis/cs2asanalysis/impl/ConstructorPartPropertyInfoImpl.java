@@ -26,14 +26,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ConstructorPartPropertyInfoImpl extends ExtendedPropertyInfoImpl implements ConstructorPartPropertyInfo {
 	/**
-	 * The cached value of the '{@link #getConstructorPart() <em>Constructor Part</em>}' reference.
+	 * The cached value of the '{@link #getShadowPart() <em>Constructor Part</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConstructorPart()
+	 * @see #getShadowPart()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.eclipse.ocl.pivot.ConstructorPart constructorPart;
+	protected org.eclipse.ocl.pivot.ShadowPart constructorPart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -59,13 +59,13 @@ public class ConstructorPartPropertyInfoImpl extends ExtendedPropertyInfoImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.pivot.ConstructorPart getConstructorPart() {
+	public org.eclipse.ocl.pivot.ShadowPart getShadowPart() {
 		if (constructorPart != null && constructorPart.eIsProxy()) {
-			InternalEObject oldConstructorPart = (InternalEObject)constructorPart;
-			constructorPart = (org.eclipse.ocl.pivot.ConstructorPart)eResolveProxy(oldConstructorPart);
-			if (constructorPart != oldConstructorPart) {
+			InternalEObject oldShadowPart = (InternalEObject)constructorPart;
+			constructorPart = (org.eclipse.ocl.pivot.ShadowPart)eResolveProxy(oldShadowPart);
+			if (constructorPart != oldShadowPart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROPERTY_INFO__CONSTRUCTOR_PART, oldConstructorPart, constructorPart));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROPERTY_INFO__CONSTRUCTOR_PART, oldShadowPart, constructorPart));
 			}
 		}
 		return constructorPart;
@@ -76,7 +76,7 @@ public class ConstructorPartPropertyInfoImpl extends ExtendedPropertyInfoImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.ocl.pivot.ConstructorPart basicGetConstructorPart() {
+	public org.eclipse.ocl.pivot.ShadowPart basicGetShadowPart() {
 		return constructorPart;
 	}
 
@@ -85,11 +85,11 @@ public class ConstructorPartPropertyInfoImpl extends ExtendedPropertyInfoImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setConstructorPart(org.eclipse.ocl.pivot.ConstructorPart newConstructorPart) {
-		org.eclipse.ocl.pivot.ConstructorPart oldConstructorPart = constructorPart;
-		constructorPart = newConstructorPart;
+	public void setShadowPart(org.eclipse.ocl.pivot.ShadowPart newShadowPart) {
+		org.eclipse.ocl.pivot.ShadowPart oldShadowPart = constructorPart;
+		constructorPart = newShadowPart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROPERTY_INFO__CONSTRUCTOR_PART, oldConstructorPart, constructorPart));
+			eNotify(new ENotificationImpl(this, Notification.SET, CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROPERTY_INFO__CONSTRUCTOR_PART, oldShadowPart, constructorPart));
 	}
 
 	/**
@@ -101,8 +101,8 @@ public class ConstructorPartPropertyInfoImpl extends ExtendedPropertyInfoImpl im
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROPERTY_INFO__CONSTRUCTOR_PART:
-				if (resolve) return getConstructorPart();
-				return basicGetConstructorPart();
+				if (resolve) return getShadowPart();
+				return basicGetShadowPart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,7 +116,7 @@ public class ConstructorPartPropertyInfoImpl extends ExtendedPropertyInfoImpl im
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROPERTY_INFO__CONSTRUCTOR_PART:
-				setConstructorPart((org.eclipse.ocl.pivot.ConstructorPart)newValue);
+				setShadowPart((org.eclipse.ocl.pivot.ShadowPart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -131,7 +131,7 @@ public class ConstructorPartPropertyInfoImpl extends ExtendedPropertyInfoImpl im
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CS2ASAnalysisPackage.CONSTRUCTOR_PART_PROPERTY_INFO__CONSTRUCTOR_PART:
-				setConstructorPart((org.eclipse.ocl.pivot.ConstructorPart)null);
+				setShadowPart((org.eclipse.ocl.pivot.ShadowPart)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -37,16 +37,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="ClassRef" abstract="true" eSuperTypes="#//CS2ASAnalysisNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="ecore:EClass ../../org.eclipse.ocl.pivot/model/Pivot.ecore#//Class"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstructorPartPropRef" abstract="true"
-      eSuperTypes="#//PropertyRef">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="constructorPart" eType="ecore:EClass ../../org.eclipse.ocl.pivot/model/Pivot.ecore#//ConstructorPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ShadowPartPropRef" abstract="true" eSuperTypes="#//PropertyRef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constructorPart" eType="ecore:EClass ../../org.eclipse.ocl.pivot/model/Pivot.ecore#//ShadowPart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassInfo" eSuperTypes="#//ClassRef #//InfoNode"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstructorExpClassInfo" eSuperTypes="#//ClassInfo">
+  <eClassifiers xsi:type="ecore:EClass" name="ShadowExpClassInfo" eSuperTypes="#//ClassInfo">
     <eStructuralFeatures xsi:type="ecore:EReference" name="constructorExp" lowerBound="1"
-        eType="ecore:EClass ../../org.eclipse.ocl.pivot/model/Pivot.ecore#//ConstructorExp"/>
+        eType="ecore:EClass ../../org.eclipse.ocl.pivot/model/Pivot.ecore#//ShadowExp"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstructorPartAction" eSuperTypes="#//ConstructorPartPropRef #//ActionNode">
+  <eClassifiers xsi:type="ecore:EClass" name="ShadowPartAction" eSuperTypes="#//ShadowPartPropRef #//ActionNode">
     <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="return super.toString();"/>
@@ -55,7 +54,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="needsLookup" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="false"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstructorPartPropertyInfo" eSuperTypes="#//ExtendedPropertyInfo #//ConstructorPartPropRef"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ShadowPartPropertyInfo" eSuperTypes="#//ExtendedPropertyInfo #//ShadowPartPropRef"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExtendedPropertyInfo" eSuperTypes="#//ExtendedPropertyRef #//InfoNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="OperationAction" abstract="true" eSuperTypes="#//OperationRef #//ActionNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyCallExpInfo" eSuperTypes="#//ExtendedPropertyInfo">

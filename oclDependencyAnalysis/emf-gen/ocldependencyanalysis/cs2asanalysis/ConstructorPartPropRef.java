@@ -2,7 +2,7 @@
  */
 package ocldependencyanalysis.cs2asanalysis;
 
-import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.ShadowPart;
 
 
 
@@ -15,10 +15,10 @@ import org.eclipse.ocl.pivot.ConstructorPart;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ocldependencyanalysis.cs2asanalysis.ConstructorPartPropRef#getConstructorPart <em>Constructor Part</em>}</li>
+ *   <li>{@link ocldependencyanalysis.cs2asanalysis.ShadowPartPropRef#getShadowPart <em>Constructor Part</em>}</li>
  * </ul>
  *
- * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getConstructorPartPropRef()
+ * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getShadowPartPropRef()
  * @model abstract="true"
  * @generated
  */
@@ -33,20 +33,20 @@ public interface ConstructorPartPropRef extends PropertyRef {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Constructor Part</em>' reference.
-	 * @see #setConstructorPart(ConstructorPart)
-	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getConstructorPartPropRef_ConstructorPart()
+	 * @see #setShadowPart(ShadowPart)
+	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getShadowPartPropRef_ShadowPart()
 	 * @model
 	 * @generated
 	 */
-	ConstructorPart getConstructorPart();
+	ShadowPart getShadowPart();
 
 	/**
-	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.ConstructorPartPropRef#getConstructorPart <em>Constructor Part</em>}' reference.
+	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.ShadowPartPropRef#getShadowPart <em>Constructor Part</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Constructor Part</em>' reference.
-	 * @see #getConstructorPart()
+	 * @see #getShadowPart()
 	 * @generated
 	 */
-	void setConstructorPart(ConstructorPart value);
-} // ConstructorPartPropRef
+	void setShadowPart(ShadowPart value);
+} // ShadowPartPropRef

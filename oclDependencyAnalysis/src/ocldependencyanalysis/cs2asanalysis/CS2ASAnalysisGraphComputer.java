@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.ocl.pivot.Class;
-import org.eclipse.ocl.pivot.ConstructorExp;
-import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.ShadowExp;
+import org.eclipse.ocl.pivot.ShadowPart;
 import org.eclipse.ocl.pivot.Element;
 import org.eclipse.ocl.pivot.ExpressionInOCL;
 import org.eclipse.ocl.pivot.OCLExpression;
@@ -82,10 +82,10 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 			((ConstructorPartAction)action).setNeedsLookup(true);
 		} else if (isOclContainerCall(element)) {
 			updateGraphFromOclContainerCallExp((OperationCallExp) element, action);
-		} else if (isConstructorExp(element)) {
-			updateGraphFromConstructorExp((ConstructorExp) element, action);
-		} else if (isConstrucorPart(element)) {
-			updateGraphFromConstructorPart((ConstructorPart) element, action);
+		} else if (isShadowExp(element)) {
+			updateGraphFromShadowExp((ShadowExp) element, action);
+		} else if (isShadowPart(element)) {
+			updateGraphFromShadowPart((ShadowPart) element, action);
 			return true; // prune
 		}
 		return false;
@@ -111,7 +111,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 		boolean constructsAClass = false;
 		for (TreeIterator<EObject> tit = operation.eAllContents(); tit.hasNext(); ) {
 			EObject next = tit.next();
-			if (next instanceof ConstructorExp) {
+			if (next instanceof ShadowExp) {
 				constructsAClass = true;
 			}
 		}
@@ -128,15 +128,15 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 		updateGraphFromMappingOperationBody(operation, opAction);
 	}
 
-	private void updateGraphFromConstructorExp(ConstructorExp constructorExp, ActionNode action) {
+	private void updateGraphFromShadowExp(ShadowExp constructorExp, ActionNode action) {
 		
 		ConstructorExpClassInfo constructedClass = createConstructorClassInfo(action.getContext(),  constructorExp);
 		addEdge(action, constructedClass);
 	}
 	
-	private void updateGraphFromConstructorPart(ConstructorPart cPart, ActionNode action ) {
+	private void updateGraphFromShadowPart(ShadowPart cPart, ActionNode action ) {
 		
-		ConstructorExp cExp = (ConstructorExp) cPart.eContainer(); 
+		ShadowExp cExp = (ShadowExp) cPart.eContainer(); 
 		Class context = action.getContext();
 		
 		ConstructorPartPropertyInfo cPartPropInfo = createConstructorPropertyInfo(context, cPart);
@@ -226,7 +226,7 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 			if (analysisNode instanceof ConstructorPartAction
 				&& ((ConstructorPartAction) analysisNode).getNeedsLookup()) {
 				ConstructorPartAction cPartAction = (ConstructorPartAction) analysisNode;
-				OCLExpression initExp = cPartAction.getConstructorPart().getOwnedInit();
+				OCLExpression initExp = cPartAction.getShadowPart().getOwnedInit();
 				
 				// FIXME can we have more than one lookup operation call ? Why not ?
 				if (isLookupCall(initExp)) {
@@ -365,15 +365,15 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 		return CS2ASAnalysisFactory.eINSTANCE.createCS2ASAnalysisGraph();
 	}
 	
-	protected ConstructorPartAction createAction(Class context, ConstructorPart cPart) {
+	protected ConstructorPartAction createAction(Class context, ShadowPart cPart) {
 		return CS2ASNodesFactory.INSTANCE.createAction(context, cPart);
 	}
 	
-	protected ConstructorPartPropertyInfo createConstructorPropertyInfo(Class context, ConstructorPart cPart) {
+	protected ConstructorPartPropertyInfo createConstructorPropertyInfo(Class context, ShadowPart cPart) {
 		return CS2ASNodesFactory.INSTANCE.createConstructorPropertyInfo(context, cPart);
 	}
 	
-	protected ConstructorExpClassInfo createConstructorClassInfo(Class context, ConstructorExp cExp) {
+	protected ConstructorExpClassInfo createConstructorClassInfo(Class context, ShadowExp cExp) {
 		return CS2ASNodesFactory.INSTANCE.createConstructorClassInfo(context, cExp);
 	}
 	
@@ -427,8 +427,8 @@ public class CS2ASAnalysisGraphComputer extends AbstractGraphComputer {
 		for (TreeIterator<EObject> tit = EcoreUtil.getAllContents(op, true); tit.hasNext(); ) {
 			EObject next = tit.next();
 			Property property = null;
-			if (isConstrucorPart(next)) {
-				property =  ((ConstructorPart) next).getReferredProperty();
+			if (isShadowPart(next)) {
+				property =  ((ShadowPart) next).getReferredProperty();
 			} else if (isPropertyCallExp(next))  {
 				property = ((PropertyCallExp)next).getReferredProperty();
 			}

@@ -1,39 +1,39 @@
 package ocldependencyanalysis.cs2asanalysis;
 
 import org.eclipse.ocl.pivot.Class;
-import org.eclipse.ocl.pivot.ConstructorExp;
-import org.eclipse.ocl.pivot.ConstructorPart;
 import org.eclipse.ocl.pivot.Operation;
 import org.eclipse.ocl.pivot.Property;
 import org.eclipse.ocl.pivot.PropertyCallExp;
+import org.eclipse.ocl.pivot.ShadowExp;
+import org.eclipse.ocl.pivot.ShadowPart;
 
 public class CS2ASNodesFactory {
 	
 	public static CS2ASNodesFactory INSTANCE = new CS2ASNodesFactory();
 		
-	public ConstructorPartAction createAction(Class context, ConstructorPart cPart) {
+	public ConstructorPartAction createAction(Class context, ShadowPart cPart) {
 		ConstructorPartAction action = CS2ASAnalysisFactory.eINSTANCE.createConstructorPartAction();
 		action.setContext(context);
-		action.setConstructorPart(cPart);
+		action.setShadowPart(cPart);
 		action.setProperty(cPart.getReferredProperty());
-		action.setAssociatedPackage(((ConstructorExp)cPart.eContainer()).getType().getOwningPackage());
+		action.setAssociatedPackage(((ShadowExp)cPart.eContainer()).getType().getOwningPackage());
 		return action;
 	}
 	
-	public ConstructorPartPropertyInfo createConstructorPropertyInfo(Class context, ConstructorPart cPart) {
+	public ConstructorPartPropertyInfo createConstructorPropertyInfo(Class context, ShadowPart cPart) {
 		ConstructorPartPropertyInfo propInfo = CS2ASAnalysisFactory.eINSTANCE.createConstructorPartPropertyInfo();
 		propInfo.setContext(context);
-		propInfo.setConstructorPart(cPart);
+		propInfo.setShadowPart(cPart);
 		propInfo.setProperty(cPart.getReferredProperty());
-		propInfo.setPropertyClass(((ConstructorExp)cPart.eContainer()).getType());
-		propInfo.setAssociatedPackage(((ConstructorExp)cPart.eContainer()).getType().getOwningPackage());
+		propInfo.setPropertyClass(((ShadowExp)cPart.eContainer()).getType());
+		propInfo.setAssociatedPackage(((ShadowExp)cPart.eContainer()).getType().getOwningPackage());
 		return propInfo;
 	}
 	
-	public ConstructorExpClassInfo createConstructorClassInfo(Class context, ConstructorExp cExp) {
+	public ConstructorExpClassInfo createConstructorClassInfo(Class context, ShadowExp cExp) {
 		ConstructorExpClassInfo typeInfo = CS2ASAnalysisFactory.eINSTANCE.createConstructorExpClassInfo();
 		typeInfo.setContext(context);
-		typeInfo.setConstructorExp(cExp);
+		typeInfo.setShadowExp(cExp);
 		typeInfo.setClass(cExp.getType());
 		typeInfo.setAssociatedPackage(cExp.getType().getOwningPackage());
 		return typeInfo;

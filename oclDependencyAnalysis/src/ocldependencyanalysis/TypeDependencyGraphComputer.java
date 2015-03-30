@@ -5,7 +5,7 @@ import java.util.Set;
 import ocldependencyanalysis.graph.IGraph;
 
 import org.eclipse.ocl.pivot.Class;
-import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.ShadowExp;
 import org.eclipse.ocl.pivot.Model;
 import org.eclipse.ocl.pivot.OperationCallExp;
 import org.eclipse.ocl.pivot.Type;
@@ -58,7 +58,7 @@ public class TypeDependencyGraphComputer extends OldDependencyGraphComputer<Type
 		Class from = getElementContext(astOpCall);
 		if (to instanceof Class) {
 			Class toClass = (Class) to; 
-			if (! toClass.isAbstract()) { 
+			if (! toClass.isIsAbstract()) { 
 				dependencyGraph.addEdge(from, to);
 			}
 			
@@ -87,8 +87,8 @@ public class TypeDependencyGraphComputer extends OldDependencyGraphComputer<Type
 	}
 	
 	@Override
-	protected void processConstructorExp(IGraph<Type> dependencyGraph,
-			ConstructorExp next) {		
+	protected void processShadowExp(IGraph<Type> dependencyGraph,
+			ShadowExp next) {		
 		// Not of my interest
 	}
 }

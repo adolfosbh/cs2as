@@ -5,7 +5,7 @@ import ocldependencyanalysis.graph.IGraph;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.ShadowExp;
 import org.eclipse.ocl.pivot.OperationCallExp;
 import org.eclipse.ocl.pivot.utilities.OCL;
 
@@ -25,8 +25,8 @@ public abstract class OldDependencyGraphComputer<C> extends AbstractDependencyGr
 			} else if (isLookupCall(next)) {
 				processLookupCall(dependencyGraph, (OperationCallExp) next);
 				tit.prune(); // prune children iteration
-			} else if (isConstructorExp(next)) {
-				processConstructorExp(dependencyGraph,(ConstructorExp) next);
+			} else if (isShadowExp(next)) {
+				processShadowExp(dependencyGraph,(ShadowExp) next);
 			}
 		}
 	}
@@ -37,6 +37,6 @@ public abstract class OldDependencyGraphComputer<C> extends AbstractDependencyGr
 	abstract protected void processLookupCall(IGraph<C> dependencyGraph, 
 			OperationCallExp lookupOpCall);
 	
-	abstract protected void processConstructorExp(IGraph<C> dependencyGraph,
-			ConstructorExp next);		
+	abstract protected void processShadowExp(IGraph<C> dependencyGraph,
+			ShadowExp next);		
 }

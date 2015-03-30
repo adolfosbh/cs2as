@@ -193,7 +193,7 @@ public class CS2ASAnalysisTypeProvider implements  IElementTypeProvider<CS2ASAna
 					} else {
 						return attributePropertyActionNode;
 					}
-				} else if (prop.isComposite()) {
+				} else if (prop.isIsComposite()) {
 					if (action.getNeedsLookup()) {
 						return containmentLookupPropertyActionNode;
 					} else {

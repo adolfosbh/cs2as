@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.pivot.Class;
 import org.eclipse.ocl.pivot.CollectionType;
-import org.eclipse.ocl.pivot.ConstructorExp;
-import org.eclipse.ocl.pivot.ConstructorPart;
+import org.eclipse.ocl.pivot.ShadowExp;
+import org.eclipse.ocl.pivot.ShadowPart;
 import org.eclipse.ocl.pivot.Element;
 import org.eclipse.ocl.pivot.Model;
 import org.eclipse.ocl.pivot.Operation;
@@ -137,7 +137,7 @@ public abstract class AbstractGraphComputer {
 		 
 		for (Property property : aClass.getOwnedProperties()) {
 			Type propType = getType(property);
-			if (property.isComposite() && propType instanceof Class) {
+			if (property.isIsComposite() && propType instanceof Class) {
 				addContainerClassForTypeAndSubtypes(aClass, property, propType.isClass());
 			}
 		}
@@ -417,12 +417,12 @@ public abstract class AbstractGraphComputer {
 		return (Class) ((PivotMetamodelManager)mManager).getOclType("OclElement");
 	}
 	
-	protected boolean isConstructorExp(EObject element) {
-		return element instanceof ConstructorExp;
+	protected boolean isShadowExp(EObject element) {
+		return element instanceof ShadowExp;
 	}
 	
-	protected boolean isConstrucorPart(EObject element) {
-		return element instanceof ConstructorPart;
+	protected boolean isShadowPart(EObject element) {
+		return element instanceof ShadowPart;
 	}
 	
 	protected boolean isOperationCallExp(EObject element) {
@@ -434,29 +434,29 @@ public abstract class AbstractGraphComputer {
 	
 	/**
 	 * If the opCallExp is performed as the right hand side of a constructor part, it will return the corresponding
-	 * ConstructorExp, otherwise <code>null</code>. 
+	 * ShadowExp, otherwise <code>null</code>. 
 	 *
 	 * @param callExp a given {@link OperationCallExp}
 	 * @return the containing constructor expression, or null
 	 */
-	protected ConstructorExp getContainingConstructor(Element callExp) {
+	protected ShadowExp getContainingConstructor(Element callExp) {
 	
 		EObject container = callExp.eContainer();
 		while (container != null) {
-			if (container instanceof ConstructorExp) {
-				return ((ConstructorExp)container);
+			if (container instanceof ShadowExp) {
+				return ((ShadowExp)container);
 			}			
 			container = container.eContainer();
 		}
 		return null;
 	}
 	
-	protected ConstructorPart getContainingConstructorPart(Element callExp) {
+	protected ShadowPart getContainingShadowPart(Element callExp) {
 		
 		EObject container = callExp.eContainer();
 		while (container != null) {
-			if (container instanceof ConstructorPart) {
-				return ((ConstructorPart)container);
+			if (container instanceof ShadowPart) {
+				return ((ShadowPart)container);
 			}			
 			container = container.eContainer();
 		}

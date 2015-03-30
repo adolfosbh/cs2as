@@ -2,7 +2,7 @@
  */
 package ocldependencyanalysis.cs2asanalysis;
 
-import org.eclipse.ocl.pivot.ConstructorExp;
+import org.eclipse.ocl.pivot.ShadowExp;
 
 
 /**
@@ -14,10 +14,10 @@ import org.eclipse.ocl.pivot.ConstructorExp;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo#getConstructorExp <em>Constructor Exp</em>}</li>
+ *   <li>{@link ocldependencyanalysis.cs2asanalysis.ShadowExpClassInfo#getShadowExp <em>Constructor Exp</em>}</li>
  * </ul>
  *
- * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getConstructorExpClassInfo()
+ * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getShadowExpClassInfo()
  * @model
  * @generated
  */
@@ -31,21 +31,21 @@ public interface ConstructorExpClassInfo extends ClassInfo {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Constructor Exp</em>' reference.
-	 * @see #setConstructorExp(ConstructorExp)
-	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getConstructorExpClassInfo_ConstructorExp()
+	 * @see #setShadowExp(ShadowExp)
+	 * @see ocldependencyanalysis.cs2asanalysis.CS2ASAnalysisPackage#getShadowExpClassInfo_ShadowExp()
 	 * @model required="true"
 	 * @generated
 	 */
-	ConstructorExp getConstructorExp();
+	ShadowExp getShadowExp();
 
 	/**
-	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.ConstructorExpClassInfo#getConstructorExp <em>Constructor Exp</em>}' reference.
+	 * Sets the value of the '{@link ocldependencyanalysis.cs2asanalysis.ShadowExpClassInfo#getShadowExp <em>Constructor Exp</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Constructor Exp</em>' reference.
-	 * @see #getConstructorExp()
+	 * @see #getShadowExp()
 	 * @generated
 	 */
-	void setConstructorExp(ConstructorExp value);
+	void setShadowExp(ShadowExp value);
 
-} // ConstructorExpClassInfo
+} // ShadowExpClassInfo

@@ -14,14 +14,14 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.pivot.Class;
-import org.eclipse.ocl.pivot.ConstructorExp;
-import org.eclipse.ocl.pivot.ConstructorPart;
 import org.eclipse.ocl.pivot.Element;
 import org.eclipse.ocl.pivot.Model;
 import org.eclipse.ocl.pivot.Operation;
 import org.eclipse.ocl.pivot.OperationCallExp;
 import org.eclipse.ocl.pivot.Package;
 import org.eclipse.ocl.pivot.PropertyCallExp;
+import org.eclipse.ocl.pivot.ShadowExp;
+import org.eclipse.ocl.pivot.ShadowPart;
 import org.eclipse.ocl.pivot.Type;
 import org.eclipse.ocl.pivot.internal.manager.PivotMetamodelManager;
 import org.eclipse.ocl.pivot.utilities.FeatureFilter;
@@ -93,7 +93,7 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	private void computeClass2InstantiableClasses(Class type) {
 		
 		if (type instanceof Class
-			&& !((Class) type).isAbstract()) {
+			&& !((Class) type).isIsAbstract()) {
 			Class subClass = (Class) type; 
 			for (Class superClass : type2superClasses.get(type)) {
 				Set<Class> subClasses = type2instantiableSubClasses.get(superClass);
@@ -136,8 +136,8 @@ public abstract class AbstractDependencyGraphComputer<C> {
 			if (astOp != null) {
 				for (TreeIterator<EObject> tit = astOp.eAllContents(); tit.hasNext();) {
 					EObject next = tit.next();
-					if (next instanceof ConstructorExp) {					
-						Class asClass = ((ConstructorExp)next).getType();
+					if (next instanceof ShadowExp) {					
+						Class asClass = ((ShadowExp)next).getType();
 						Set<Class> csClasses = asClass2csClasses.get(asClass);
 						if (csClasses == null) {
 							csClasses = new HashSet<Class>();
@@ -290,12 +290,12 @@ public abstract class AbstractDependencyGraphComputer<C> {
 		return opName == null ? false : opName.startsWith("lookup");
 	}
 	
-	protected boolean isConstructorExp(EObject element) {
-		return element instanceof ConstructorExp;
+	protected boolean isShadowExp(EObject element) {
+		return element instanceof ShadowExp;
 	}
 	
 	protected boolean isConstrucorPart(EObject element) {
-		return element instanceof ConstructorPart;
+		return element instanceof ShadowPart;
 	}
 	
 	protected boolean isOperationCallExp(EObject element) {
@@ -307,29 +307,29 @@ public abstract class AbstractDependencyGraphComputer<C> {
 	
 	/**
 	 * If the opCallExp is performed as the right hand side of a constructor part, it will return the corresponding
-	 * ConstructorExp, otherwise <code>null</code>. 
+	 * ShadowExp, otherwise <code>null</code>. 
 	 *
 	 * @param callExp a given {@link OperationCallExp}
 	 * @return the containing constructor expression, or null
 	 */
-	protected ConstructorExp getContainingConstructor(Element callExp) {
+	protected ShadowExp getContainingConstructor(Element callExp) {
 	
 		EObject container = callExp.eContainer();
 		while (container != null) {
-			if (container instanceof ConstructorExp) {
-				return ((ConstructorExp)container);
+			if (container instanceof ShadowExp) {
+				return ((ShadowExp)container);
 			}			
 			container = container.eContainer();
 		}
 		return null;
 	}
 	
-	protected ConstructorPart getContainingConstructorPart(Element callExp) {
+	protected ShadowPart getContainingShadowPart(Element callExp) {
 		
 		EObject container = callExp.eContainer();
 		while (container != null) {
-			if (container instanceof ConstructorPart) {
-				return ((ConstructorPart)container);
+			if (container instanceof ShadowPart) {
+				return ((ShadowPart)container);
 			}			
 			container = container.eContainer();
 		}
