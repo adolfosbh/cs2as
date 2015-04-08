@@ -35,6 +35,7 @@ public interface C extends NamedElement {
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getC_ToA2()
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.A2#getOwnsC
 	 * @model opposite="ownsC" transient="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0!C!toA2'"
 	 * @generated
 	 */
 	A2 getToA2();
@@ -63,6 +64,7 @@ public interface C extends NamedElement {
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getC_OwnsD()
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.D#getToC
 	 * @model opposite="toC" containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0!C!ownsD'"
 	 * @generated
 	 */
 	D getOwnsD();

@@ -27,7 +27,7 @@ import org.eclipse.xtext.diagnostics.ExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.IDiagnosticConsumer;
 import org.eclipse.xtext.linking.lazy.LazyLinker;
 
-import uk.ac.york.cs.asbh.Source2Target_qvtp_qvtias;
+import uk.ac.york.cs.asbh.cs2as.Source2Target_qvtp_qvtias;
 
 /**
  * CS2ASLinker ensures that the CS 2 Pivot mappings are refreshed after

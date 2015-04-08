@@ -38,6 +38,7 @@ public interface D extends NamedElement {
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getD_ToC()
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.C#getOwnsD
 	 * @model opposite="ownsD" transient="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0!D!toC'"
 	 * @generated
 	 */
 	C getToC();
@@ -66,6 +67,7 @@ public interface D extends NamedElement {
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getD_ToB()
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.B#getOwnsD
 	 * @model opposite="ownsD" transient="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0!D!toB'"
 	 * @generated
 	 */
 	B getToB();
@@ -92,6 +94,7 @@ public interface D extends NamedElement {
 	 * @see #setToA(A)
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getD_ToA()
 	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0!D!toA'"
 	 * @generated
 	 */
 	A getToA();
@@ -117,7 +120,7 @@ public interface D extends NamedElement {
 	 * @return the value of the '<em>Refs B</em>' reference.
 	 * @see #setRefsB(B)
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getD_RefsB()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0!D!refsB'"
 	 * @generated
 	 */
 	B getRefsB();
@@ -143,7 +146,7 @@ public interface D extends NamedElement {
 	 * @return the value of the '<em>Refs C</em>' reference.
 	 * @see #setRefsC(C)
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getD_RefsC()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0!D!refsC'"
 	 * @generated
 	 */
 	C getRefsC();

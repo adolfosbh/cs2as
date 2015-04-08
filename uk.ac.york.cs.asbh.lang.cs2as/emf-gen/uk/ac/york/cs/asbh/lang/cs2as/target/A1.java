@@ -35,6 +35,7 @@ public interface A1 extends A {
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getA1_OwnsB()
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.B#getToA1
 	 * @model opposite="toA1" containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0!A1!ownsB'"
 	 * @generated
 	 */
 	EList<B> getOwnsB();

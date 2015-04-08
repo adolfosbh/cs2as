@@ -7,45 +7,33 @@
  * Do not edit it.
  ********************************************************************************/
 
-package uk.ac.york.cs.asbh;
+package uk.ac.york.cs.asbh.cs2as;
 
 import java.util.Iterator;
 import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.ocl.pivot.Class;
-import org.eclipse.ocl.pivot.Property;
 import org.eclipse.ocl.pivot.evaluation.Evaluator;
 import org.eclipse.ocl.pivot.ids.ClassId;
 import org.eclipse.ocl.pivot.ids.CollectionTypeId;
 import org.eclipse.ocl.pivot.ids.IdManager;
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.NsURIPackageId;
-import org.eclipse.ocl.pivot.ids.PropertyId;
 import org.eclipse.ocl.pivot.ids.RootPackageId;
 import org.eclipse.ocl.pivot.ids.TypeId;
 import org.eclipse.ocl.pivot.library.classifier.ClassifierAllInstancesOperation;
-import org.eclipse.ocl.pivot.library.classifier.ClassifierOclContainerOperation;
-import org.eclipse.ocl.pivot.library.collection.CollectionAsSequenceOperation;
-import org.eclipse.ocl.pivot.library.collection.CollectionIncludingAllOperation;
-import org.eclipse.ocl.pivot.library.collection.CollectionIsEmptyOperation;
-import org.eclipse.ocl.pivot.library.collection.CollectionSelectByKindOperation;
-import org.eclipse.ocl.pivot.library.collection.OrderedCollectionFirstOperation;
-import org.eclipse.ocl.pivot.library.collection.OrderedCollectionIndexOfOperation;
 import org.eclipse.ocl.pivot.library.logical.BooleanNotOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
-import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanOperation;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
-import org.eclipse.ocl.pivot.values.CollectionValue;
-import org.eclipse.ocl.pivot.values.IntegerValue;
-import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SequenceValue;
 import org.eclipse.ocl.pivot.values.SetValue;
 import org.eclipse.qvtd.build.cs2as.qvti.CS2ASTransformationExecutor;
-import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
-import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;
+import uk.ac.yor.cs.asbh.cs2as.LookupEnvironment;
+import uk.ac.yor.cs.asbh.cs2as.TargetLookupVisitor;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SRoot;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;
 import uk.ac.york.cs.asbh.lang.cs2as.source.X;
@@ -80,7 +68,6 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
 {
     public static final /*@NonNull*/ /*@NonInvalid*/ RootPackageId PACKid_$metamodel$ = IdManager.getRootPackageId("$metamodel$");
-    public static final /*@NonNull*/ /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_env_s_1_0 = IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/env/1.0", null, EnvironmentPackage.eINSTANCE);
     public static final /*@NonNull*/ /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_sourceMM_s_1_0 = IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/sourceMM/1.0", null, SourcePackage.eINSTANCE);
     public static final /*@NonNull*/ /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0 = IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0", null, TargetPackage.eINSTANCE);
     public static final /*@NonNull*/ /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore = IdManager.getNsURIPackageId("http://www.eclipse.org/emf/2002/Ecore", null, EcorePackage.eINSTANCE);
@@ -93,9 +80,6 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
     public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_Class = PACKid_$metamodel$.getClassId("Class", 0);
     public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_D = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0.getClassId("D", 0);
     public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_EObject = PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getClassId("EObject", 0);
-    public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_Environment = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_env_s_1_0.getClassId("Environment", 0);
-    public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_NamedElement = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0.getClassId("NamedElement", 0);
-    public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_OclElement = PACKid_$metamodel$.getClassId("OclElement", 0);
     public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_SRoot = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_sourceMM_s_1_0.getClassId("SRoot", 0);
     public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_TRoot = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0.getClassId("TRoot", 0);
     public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_X = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_sourceMM_s_1_0.getClassId("X", 0);
@@ -103,18 +87,11 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
     public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_Y1 = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_sourceMM_s_1_0.getClassId("Y1", 0);
     public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_Y2 = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_sourceMM_s_1_0.getClassId("Y2", 0);
     public static final /*@NonNull*/ /*@NonInvalid*/ ClassId CLSSid_Z = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_sourceMM_s_1_0.getClassId("Z", 0);
-    public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId COL_CLSSid_NamedElement = TypeId.COLLECTION.getSpecializedId(CLSSid_NamedElement);
-    public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_B = TypeId.ORDERED_SET.getSpecializedId(CLSSid_B);
-    public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_C = TypeId.ORDERED_SET.getSpecializedId(CLSSid_C);
-    public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_NamedElement = TypeId.ORDERED_SET.getSpecializedId(CLSSid_NamedElement);
     public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_X = TypeId.ORDERED_SET.getSpecializedId(CLSSid_X);
     public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Y = TypeId.ORDERED_SET.getSpecializedId(CLSSid_Y);
-    public static final /*@NonNull*/ /*@NonInvalid*/ PropertyId PROPid_namedElements = CLSSid_Environment.getPropertyId("namedElements");
-    public static final /*@NonNull*/ /*@NonInvalid*/ PropertyId PROPid_parentEnv = CLSSid_Environment.getPropertyId("parentEnv");
     public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_A = TypeId.SEQUENCE.getSpecializedId(CLSSid_A);
     public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_B = TypeId.SEQUENCE.getSpecializedId(CLSSid_B);
     public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_C = TypeId.SEQUENCE.getSpecializedId(CLSSid_C);
-    public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_NamedElement = TypeId.SEQUENCE.getSpecializedId(CLSSid_NamedElement);
     public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_Y1 = TypeId.SEQUENCE.getSpecializedId(CLSSid_Y1);
     public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_Y2 = TypeId.SEQUENCE.getSpecializedId(CLSSid_Y2);
     public static final /*@NonNull*/ /*@NonInvalid*/ CollectionTypeId SET_CLSSid_SRoot = TypeId.SET.getSpecializedId(CLSSid_SRoot);
@@ -512,7 +489,7 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_A_0 = idResolver.getClass(CLSSid_A, null);
             if (_1 == null) {
-                throwNull(sRoot_0, "source for \'source::SElement::ast\'");
+                throwNull(sRoot_0, "Null source for \'source::SElement::ast\'");
             }
             final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = _1.getAst();
             final /*@Nullable*/ /*@Thrown*/ A oclAsType_0 = (A)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_A_0);
@@ -603,7 +580,7 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_C_0 = idResolver.getClass(CLSSid_C, null);
             if (_1_0 == null) {
-                throwNull(x_2, "source for \'source::SElement::ast\'");
+                throwNull(x_2, "Null source for \'source::SElement::ast\'");
             }
             final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = _1_0.getAst();
             final /*@Nullable*/ /*@Thrown*/ C oclAsType_1 = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_C_0);
@@ -693,7 +670,7 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_C_0 = idResolver.getClass(CLSSid_C, null);
             if (_1_0 == null) {
-                throwNull(x_3, "source for \'source::SElement::ast\'");
+                throwNull(x_3, "Null source for \'source::SElement::ast\'");
             }
             final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = _1_0.getAst();
             final /*@Nullable*/ /*@Thrown*/ C oclAsType_1 = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_C_0);
@@ -777,7 +754,7 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
              */
             final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_B_0 = idResolver.getClass(CLSSid_B, null);
             if (_1_0 == null) {
-                throwNull(x_4, "source for \'source::SElement::ast\'");
+                throwNull(x_4, "Null source for \'source::SElement::ast\'");
             }
             final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = _1_0.getAst();
             final /*@Nullable*/ /*@Thrown*/ B oclAsType_1 = (B)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_B_0);
@@ -787,6 +764,41 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
         final List<B> UNBOXED_collect = collect.asEcoreObjects(idResolver, B.class);
         assert UNBOXED_collect != null;
         oclAsType.getOwnsB().addAll(UNBOXED_collect);
+        // mapping statements
+        return true;
+    }
+    
+    /**
+     * 
+     * map uB_name in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (y1 : source::Y1;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * )
+     * { |
+     * y1.ast.oclAsType(target::B) = name;
+     * }
+     * 
+     * }
+     */
+    protected boolean uB_name(final /*@NonNull*/ /*@NonInvalid*/ Y1 y1_0) {
+        // predicates
+        final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
+        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_B_0 = idResolver.getClass(CLSSid_B, null);
+        // creations
+        // assignments
+        final /*@Nullable*/ /*@Thrown*/ EObject ast = y1_0.getAst();
+        final /*@Nullable*/ /*@Thrown*/ B oclAsType = (B)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_B_0);
+        final /*@Nullable*/ /*@Thrown*/ String name = y1_0.getName();
+        oclAsType.setName(name);
         // mapping statements
         return true;
     }
@@ -813,95 +825,18 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
      * 
      * }
      */
-    protected boolean uB_ownsD(final /*@NonNull*/ /*@NonInvalid*/ Y1 y1_0) {
+    protected boolean uB_ownsD(final /*@NonNull*/ /*@NonInvalid*/ Y1 y1_1) {
         // predicates
         final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_B_0 = idResolver.getClass(CLSSid_B, null);
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_D_0 = idResolver.getClass(CLSSid_D, null);
-        // creations
-        // assignments
-        final /*@Nullable*/ /*@Thrown*/ EObject ast = y1_0.getAst();
-        final /*@Nullable*/ /*@Thrown*/ B oclAsType = (B)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_B_0);
-        final /*@Nullable*/ /*@Thrown*/ Z ownsZ = y1_0.getOwnsZ();
-        if (ownsZ == null) {
-            throwNull(y1_0, "source for \'source::SElement::ast\'");
-        }
-        final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = ownsZ.getAst();
-        final /*@Nullable*/ /*@Thrown*/ D oclAsType_0 = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_D_0);
-        oclAsType.setOwnsD(oclAsType_0);
-        // mapping statements
-        return true;
-    }
-    
-    /**
-     * 
-     * map uB_name in Source2Target_qvtp_qvtias) {
-     * 
-     *   leftCS (y1 : source::Y1;
-     *  |
-     * )
-     * { |
-     * }
-     * rightAS ( |
-     * )
-     * { |
-     * }
-     * where ( |
-     * )
-     * { |
-     * y1.ast.oclAsType(target::B) = name;
-     * }
-     * 
-     * }
-     */
-    protected boolean uB_name(final /*@NonNull*/ /*@NonInvalid*/ Y1 y1_1) {
-        // predicates
-        final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
-        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_B_0 = idResolver.getClass(CLSSid_B, null);
         // creations
         // assignments
         final /*@Nullable*/ /*@Thrown*/ EObject ast = y1_1.getAst();
         final /*@Nullable*/ /*@Thrown*/ B oclAsType = (B)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_B_0);
-        final /*@Nullable*/ /*@Thrown*/ String name = y1_1.getName();
-        oclAsType.setName(name);
-        // mapping statements
-        return true;
-    }
-    
-    /**
-     * 
-     * map uC_ownsD in Source2Target_qvtp_qvtias) {
-     * 
-     *   leftCS (y2 : source::Y2;
-     *  |
-     * )
-     * { |
-     * }
-     * rightAS ( |
-     * )
-     * { |
-     * }
-     * where ( |
-     * )
-     * { |
-     * y2.ast.oclAsType(target::C)
-     *    = ownsZ.ast.oclAsType(target::D);
-     * }
-     * 
-     * }
-     */
-    protected boolean uC_ownsD(final /*@NonNull*/ /*@NonInvalid*/ Y2 y2_0) {
-        // predicates
-        final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
-        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_C_0 = idResolver.getClass(CLSSid_C, null);
-        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_D_0 = idResolver.getClass(CLSSid_D, null);
-        // creations
-        // assignments
-        final /*@Nullable*/ /*@Thrown*/ EObject ast = y2_0.getAst();
-        final /*@Nullable*/ /*@Thrown*/ C oclAsType = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_C_0);
-        final /*@Nullable*/ /*@Thrown*/ Z ownsZ = y2_0.getOwnsZ();
+        final /*@Nullable*/ /*@Thrown*/ Z ownsZ = y1_1.getOwnsZ();
         if (ownsZ == null) {
-            throwNull(y2_0, "source for \'source::SElement::ast\'");
+            throwNull(y1_1, "Null source for \'source::SElement::ast\'");
         }
         final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = ownsZ.getAst();
         final /*@Nullable*/ /*@Thrown*/ D oclAsType_0 = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_D_0);
@@ -931,16 +866,58 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
      * 
      * }
      */
-    protected boolean uC_name(final /*@NonNull*/ /*@NonInvalid*/ Y2 y2_1) {
+    protected boolean uC_name(final /*@NonNull*/ /*@NonInvalid*/ Y2 y2_0) {
         // predicates
         final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_C_0 = idResolver.getClass(CLSSid_C, null);
         // creations
         // assignments
+        final /*@Nullable*/ /*@Thrown*/ EObject ast = y2_0.getAst();
+        final /*@Nullable*/ /*@Thrown*/ C oclAsType = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_C_0);
+        final /*@Nullable*/ /*@Thrown*/ String name = y2_0.getName();
+        oclAsType.setName(name);
+        // mapping statements
+        return true;
+    }
+    
+    /**
+     * 
+     * map uC_ownsD in Source2Target_qvtp_qvtias) {
+     * 
+     *   leftCS (y2 : source::Y2;
+     *  |
+     * )
+     * { |
+     * }
+     * rightAS ( |
+     * )
+     * { |
+     * }
+     * where ( |
+     * )
+     * { |
+     * y2.ast.oclAsType(target::C)
+     *    = ownsZ.ast.oclAsType(target::D);
+     * }
+     * 
+     * }
+     */
+    protected boolean uC_ownsD(final /*@NonNull*/ /*@NonInvalid*/ Y2 y2_1) {
+        // predicates
+        final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
+        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_C_0 = idResolver.getClass(CLSSid_C, null);
+        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_D_0 = idResolver.getClass(CLSSid_D, null);
+        // creations
+        // assignments
         final /*@Nullable*/ /*@Thrown*/ EObject ast = y2_1.getAst();
         final /*@Nullable*/ /*@Thrown*/ C oclAsType = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_C_0);
-        final /*@Nullable*/ /*@Thrown*/ String name = y2_1.getName();
-        oclAsType.setName(name);
+        final /*@Nullable*/ /*@Thrown*/ Z ownsZ = y2_1.getOwnsZ();
+        if (ownsZ == null) {
+            throwNull(y2_1, "Null source for \'source::SElement::ast\'");
+        }
+        final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = ownsZ.getAst();
+        final /*@Nullable*/ /*@Thrown*/ D oclAsType_0 = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_D_0);
+        oclAsType.setOwnsD(oclAsType_0);
         // mapping statements
         return true;
     }
@@ -988,58 +965,15 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
         final /*@Nullable*/ /*@Thrown*/ D oclAsType = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_D_0);
         final /*@Nullable*/ /*@Thrown*/ Y2 oclAsType_0 = (Y2)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y2_0);
         if (oclAsType_0 == null) {
-            throwNull(z_1, "source for \'source::SElement::ast\'");
+            throwNull(z_1, "Null source for \'source::SElement::ast\'");
         }
         final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = oclAsType_0.getAst();
         final /*@Nullable*/ /*@Thrown*/ C oclAsType_1 = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_C_0);
         if (oclAsType_1 == null) {
-            throwNull(z_1, "source for \'target::C::toA2\'");
+            throwNull(z_1, "Null source for \'target::C::toA2\'");
         }
         final /*@Nullable*/ /*@Thrown*/ A2 toA2 = oclAsType_1.getToA2();
         oclAsType.setToA(toA2);
-        // mapping statements
-        return true;
-    }
-    
-    /**
-     * 
-     * map uD_0_name in Source2Target_qvtp_qvtias) {
-     * 
-     *   leftCS (z : source::Z;
-     *  |
-     * )
-     * { |
-     * }
-     * rightAS ( |
-     * )
-     * { |
-     * }
-     * where ( |
-     * not toY.oclIsKindOf(source::Y1)
-     *   )
-     * { |
-     * z.ast.oclAsType(target::D) = name;
-     * }
-     * 
-     * }
-     */
-    protected boolean uD_0_name(final /*@NonNull*/ /*@NonInvalid*/ Z z_2) {
-        // predicates
-        final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
-        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y1_0 = idResolver.getClass(CLSSid_Y1, null);
-        final /*@Nullable*/ /*@Thrown*/ Y toY = z_2.getToY();
-        final /*@Thrown*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y1_0).booleanValue();
-        final /*@Nullable*/ /*@Thrown*/ Boolean not = BooleanNotOperation.INSTANCE.evaluate(oclIsKindOf);
-        if (not != ValueUtil.TRUE_VALUE) {
-            return false;
-        }
-        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_D_0 = idResolver.getClass(CLSSid_D, null);
-        // creations
-        // assignments
-        final /*@Nullable*/ /*@Thrown*/ EObject ast = z_2.getAst();
-        final /*@Nullable*/ /*@Thrown*/ D oclAsType = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_D_0);
-        final /*@Nullable*/ /*@Thrown*/ String name = z_2.getName();
-        oclAsType.setName(name);
         // mapping statements
         return true;
     }
@@ -1062,147 +996,47 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
      *   )
      * { |
      * z.ast.oclAsType(target::D)
-     *    = if name.oclIsUndefined()
-     *   then null
-     *   else
-     *     toY.oclAsType(source::Y2)
-     *     .ast.oclAsType(target::C)
-     *     .env()
-     *     .lookupC(name)
-     *   endif;
+     *    = ast.oclAsType(target::D)
+     *   .lookupC(z);
      * }
      * 
      * }
      */
-    protected boolean uD_0_refsC(final /*@NonNull*/ /*@NonInvalid*/ Z z_3) {
+    protected boolean uD_0_refsC(final /*@NonNull*/ /*@NonInvalid*/ Z z_2) {
         // predicates
         final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y1_0 = idResolver.getClass(CLSSid_Y1, null);
-        final /*@Nullable*/ /*@Thrown*/ Y toY = z_3.getToY();
+        final /*@Nullable*/ /*@Thrown*/ Y toY = z_2.getToY();
         final /*@Thrown*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y1_0).booleanValue();
         final /*@Nullable*/ /*@Thrown*/ Boolean not = BooleanNotOperation.INSTANCE.evaluate(oclIsKindOf);
         if (not != ValueUtil.TRUE_VALUE) {
             return false;
         }
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_D_0 = idResolver.getClass(CLSSid_D, null);
+        final /*@Nullable*/ /*@Thrown*/ EObject ast = z_2.getAst();
         // creations
         // assignments
-        final /*@Nullable*/ /*@Thrown*/ EObject ast = z_3.getAst();
         final /*@Nullable*/ /*@Thrown*/ D oclAsType = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_D_0);
-        /*@Nullable*/ /*@Caught*/ Object CAUGHT_name;
-        try {
-            final /*@Nullable*/ /*@Thrown*/ String name = z_3.getName();
-            CAUGHT_name = name;
-        }
-        catch (Exception e) {
-            CAUGHT_name = ValueUtil.createInvalidValue(e);
-        }
-        final /*@NonInvalid*/ boolean symbol_0 = (CAUGHT_name == null) || (CAUGHT_name instanceof InvalidValueException);
-        /*@Nullable*/ /*@Thrown*/ C symbol_5;
-        if (symbol_0) {
-            symbol_5 = null;
+        final /*@Nullable*/ /*@Thrown*/ D self_0 = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_D_0);
+        final /*@Nullable*/ /*@Thrown*/ String name_0 = z_2.getName();
+        final /*@Thrown*/ boolean eq = name_0 == null;
+        /*@Nullable*/ /*@Thrown*/ C symbol_0;
+        if (eq) {
+            symbol_0 = null;
         }
         else {
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y2_0 = idResolver.getClass(CLSSid_Y2, null);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_C_0 = idResolver.getClass(CLSSid_C, null);
-            final /*@Nullable*/ /*@Thrown*/ Y2 oclAsType_0 = (Y2)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y2_0);
-            if (oclAsType_0 == null) {
-                throwNull(z_3, "source for \'source::SElement::ast\'");
-            }
-            final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = oclAsType_0.getAst();
-            final /*@Nullable*/ /*@Thrown*/ C self_0 = (C)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_C_0);
-            final /*@Nullable*/ /*@Thrown*/ Object parent = ClassifierOclContainerOperation.INSTANCE.evaluate(evaluator, self_0);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_A2_0 = idResolver.getClass(CLSSid_A2, null);
-            final /*@Nullable*/ /*@Thrown*/ A2 self_1 = (A2)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, parent, TYP_target_c_c_A2_0);
-            if (self_1 == null) {
-                throwNull(z_3, "source for \'target::A2::ownsC\'");
-            }
-            final /*@Nullable*/ /*@Thrown*/ List<C> ownedCs = self_1.getOwnsC();
-            assert ownedCs != null;
-            final /*@Nullable*/ /*@Thrown*/ Object parent_0 = ClassifierOclContainerOperation.INSTANCE.evaluate(evaluator, self_1);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_TRoot_0 = idResolver.getClass(CLSSid_TRoot, null);
-            final /*@Nullable*/ /*@Thrown*/ TRoot self_2 = (TRoot)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, parent_0, TYP_target_c_c_TRoot_0);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_env_c_c_Environment_0 = idResolver.getClass(CLSSid_Environment, null);
-            final /*@NonNull*/ /*@NonInvalid*/ Environment symbol_1 = (Environment)TYP_env_c_c_Environment_0.createInstance();
-            final /*@NonNull*/ /*@NonInvalid*/ Property CTORid_parentEnv = idResolver.getProperty(PROPid_parentEnv);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_env_c_c_Environment_1 = idResolver.getClass(CLSSid_Environment, null);
-            final /*@NonNull*/ /*@Thrown*/ Environment symbol_2 = (Environment)TYP_env_c_c_Environment_1.createInstance();
-            CTORid_parentEnv.initValue(symbol_2, symbol_1);
-            final /*@NonNull*/ /*@Thrown*/ OrderedSetValue BOXED_ownedCs = idResolver.createOrderedSetOfAll(ORD_CLSSid_C, ownedCs);
-            /*@NonNull*/ /*@Thrown*/ OrderedSetValue.Accumulator accumulator = ValueUtil.createOrderedSetAccumulatorValue(ORD_CLSSid_C);
-            /*@Nullable*/ Iterator<?> ITERATOR_x_5 = BOXED_ownedCs.iterator();
-            /*@NonNull*/ /*@Thrown*/ OrderedSetValue elements;
-            while (true) {
-                if (!ITERATOR_x_5.hasNext()) {
-                    elements = accumulator;
-                    break;
-                }
-                /*@Nullable*/ /*@NonInvalid*/ C x_5 = (C)ITERATOR_x_5.next();
-                /**
-                 * _'<' : Boolean
-                 */
-                final /*@NonNull*/ /*@Thrown*/ IntegerValue indexOf = OrderedCollectionIndexOfOperation.INSTANCE.evaluate(BOXED_ownedCs, x_5);
-                final /*@NonNull*/ /*@Thrown*/ IntegerValue indexOf_0 = OrderedCollectionIndexOfOperation.INSTANCE.evaluate(BOXED_ownedCs, self_0);
-                final /*@Thrown*/ boolean lt = OclComparableLessThanOperation.INSTANCE.evaluate(evaluator, indexOf, indexOf_0).booleanValue();
-                //
-                if (lt == ValueUtil.TRUE_VALUE) {
-                    accumulator.add(x_5);
-                }
-            }
-            final /*@NonNull*/ /*@NonInvalid*/ Property CTORid_parentEnv_0 = idResolver.getProperty(PROPid_parentEnv);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_env_c_c_Environment_2 = idResolver.getClass(CLSSid_Environment, null);
-            final /*@NonNull*/ /*@NonInvalid*/ Property CTORid_namedElements = idResolver.getProperty(PROPid_namedElements);
-            final /*@NonNull*/ /*@Thrown*/ Environment symbol_3 = (Environment)TYP_env_c_c_Environment_2.createInstance();
-            final /*@Nullable*/ /*@Thrown*/ List<NamedElement> namedElements = symbol_2.getNamedElements();
-            assert namedElements != null;
-            final /*@NonNull*/ /*@Thrown*/ OrderedSetValue BOXED_namedElements = idResolver.createOrderedSetOfAll(ORD_CLSSid_NamedElement, namedElements);
-            final /*@NonNull*/ /*@Thrown*/ SequenceValue asSequence = CollectionAsSequenceOperation.INSTANCE.evaluate(BOXED_namedElements);
-            final /*@NonNull*/ /*@Thrown*/ CollectionValue includingAll = CollectionIncludingAllOperation.INSTANCE.evaluate(asSequence, elements);
-            final List<NamedElement> UNBOXED_includingAll = includingAll.asEcoreObjects(idResolver, NamedElement.class);
-            assert UNBOXED_includingAll != null;
-            CTORid_namedElements.initValue(symbol_3, UNBOXED_includingAll);
-            final /*@Nullable*/ /*@Thrown*/ Environment parentEnv_0 = symbol_2.getParentEnv();
-            CTORid_parentEnv_0.initValue(symbol_3, parentEnv_0);
-            final /*@Nullable*/ /*@Thrown*/ String cName = z_3.getName();
-            final /*@Nullable*/ /*@Thrown*/ List<NamedElement> namedElements_1 = symbol_3.getNamedElements();
-            assert namedElements_1 != null;
-            final /*@NonNull*/ /*@Thrown*/ OrderedSetValue BOXED_namedElements_1 = idResolver.createOrderedSetOfAll(ORD_CLSSid_NamedElement, namedElements_1);
-            final /*@NonNull*/ /*@Thrown*/ OrderedSetValue selectByKind = (OrderedSetValue)CollectionSelectByKindOperation.INSTANCE.evaluate(evaluator, BOXED_namedElements_1, TYP_target_c_c_C_0);
-            /*@NonNull*/ /*@Thrown*/ OrderedSetValue.Accumulator accumulator_0 = ValueUtil.createOrderedSetAccumulatorValue(ORD_CLSSid_C);
-            /*@Nullable*/ Iterator<?> ITERATOR__1 = selectByKind.iterator();
-            /*@NonNull*/ /*@Thrown*/ OrderedSetValue foundCs;
-            while (true) {
-                if (!ITERATOR__1.hasNext()) {
-                    foundCs = accumulator_0;
-                    break;
-                }
-                /*@Nullable*/ /*@NonInvalid*/ C _1 = (C)ITERATOR__1.next();
-                /**
-                 * _'=' : Boolean
-                 */
-                if (_1 == null) {
-                    throwNull(z_3, "source for \'target::NamedElement::name\'");
-                }
-                final /*@Nullable*/ /*@Thrown*/ String name_0 = _1.getName();
-                final /*@Thrown*/ boolean eq = (name_0 != null) ? name_0.equals(cName) : (cName == null);
-                //
-                if (eq == ValueUtil.TRUE_VALUE) {
-                    accumulator_0.add(_1);
-                }
-            }
-            final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(foundCs).booleanValue();
-            /*@Nullable*/ /*@Thrown*/ C symbol_4;
-            if (isEmpty) {
-                symbol_4 = null;
-                handleLookupError(z_3, cName);
-            }
-            else {
-                final /*@Nullable*/ /*@Thrown*/ C first = (C)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundCs);
-                symbol_4 = first;
-            }
-            symbol_5 = symbol_4;
+            LookupEnvironment _lookupEnv = new uk.ac.yor.cs.asbh.cs2as.LookupEnvironment(evaluator,name_0);
+            TargetLookupVisitor _lookupVisitor = new uk.ac.yor.cs.asbh.cs2as.TargetLookupVisitor(_lookupEnv);
+            EList<NamedElement> _lookupResult = self_0.accept(_lookupVisitor).getNamedElements();
+            C _lookupC = null;
+            if (_lookupResult.size() == 1) {
+                _lookupC = (C)_lookupResult.get(0);
+            } else {
+                handleLookupError(z_2,name_0);
+            };
+            symbol_0 = _lookupC;
         }
-        oclAsType.setRefsC(symbol_5);
+        oclAsType.setRefsC(symbol_0);
         // mapping statements
         return true;
     }
@@ -1231,11 +1065,11 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
      * 
      * }
      */
-    protected boolean uD_1_toA(final /*@NonNull*/ /*@NonInvalid*/ Z z_4) {
+    protected boolean uD_1_toA(final /*@NonNull*/ /*@NonInvalid*/ Z z_3) {
         // predicates
         final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y1_0 = idResolver.getClass(CLSSid_Y1, null);
-        final /*@Nullable*/ /*@Thrown*/ Y toY = z_4.getToY();
+        final /*@Nullable*/ /*@Thrown*/ Y toY = z_3.getToY();
         final /*@Thrown*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y1_0).booleanValue();
         if (!oclIsKindOf) {
             return false;
@@ -1244,61 +1078,19 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_D_0 = idResolver.getClass(CLSSid_D, null);
         // creations
         // assignments
-        final /*@Nullable*/ /*@Thrown*/ EObject ast = z_4.getAst();
+        final /*@Nullable*/ /*@Thrown*/ EObject ast = z_3.getAst();
         final /*@Nullable*/ /*@Thrown*/ D oclAsType = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_D_0);
         final /*@Nullable*/ /*@Thrown*/ Y1 oclAsType_0 = (Y1)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y1_0);
         if (oclAsType_0 == null) {
-            throwNull(z_4, "source for \'source::SElement::ast\'");
+            throwNull(z_3, "Null source for \'source::SElement::ast\'");
         }
         final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = oclAsType_0.getAst();
         final /*@Nullable*/ /*@Thrown*/ B oclAsType_1 = (B)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_B_0);
         if (oclAsType_1 == null) {
-            throwNull(z_4, "source for \'target::B::toA1\'");
+            throwNull(z_3, "Null source for \'target::B::toA1\'");
         }
         final /*@Nullable*/ /*@Thrown*/ A1 toA1 = oclAsType_1.getToA1();
         oclAsType.setToA(toA1);
-        // mapping statements
-        return true;
-    }
-    
-    /**
-     * 
-     * map uD_1_name in Source2Target_qvtp_qvtias) {
-     * 
-     *   leftCS (z : source::Z;
-     *  |
-     * )
-     * { |
-     * }
-     * rightAS ( |
-     * )
-     * { |
-     * }
-     * where ( |
-     * toY.oclIsKindOf(source::Y1)
-     *   )
-     * { |
-     * z.ast.oclAsType(target::D) = name;
-     * }
-     * 
-     * }
-     */
-    protected boolean uD_1_name(final /*@NonNull*/ /*@NonInvalid*/ Z z_5) {
-        // predicates
-        final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
-        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y1_0 = idResolver.getClass(CLSSid_Y1, null);
-        final /*@Nullable*/ /*@Thrown*/ Y toY = z_5.getToY();
-        final /*@Thrown*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y1_0).booleanValue();
-        if (!oclIsKindOf) {
-            return false;
-        }
-        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_D_0 = idResolver.getClass(CLSSid_D, null);
-        // creations
-        // assignments
-        final /*@Nullable*/ /*@Thrown*/ EObject ast = z_5.getAst();
-        final /*@Nullable*/ /*@Thrown*/ D oclAsType = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_D_0);
-        final /*@Nullable*/ /*@Thrown*/ String name = z_5.getName();
-        oclAsType.setName(name);
         // mapping statements
         return true;
     }
@@ -1321,145 +1113,46 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
      *   )
      * { |
      * z.ast.oclAsType(target::D)
-     *    = if name.oclIsUndefined()
-     *   then null
-     *   else
-     *     toY.oclAsType(source::Y1)
-     *     .ast.oclAsType(target::B)
-     *     .env()
-     *     .lookupB(name)
-     *   endif;
+     *    = ast.oclAsType(target::D)
+     *   .lookupB(z);
      * }
      * 
      * }
      */
-    protected boolean uD_1_refsB(final /*@NonNull*/ /*@NonInvalid*/ Z z_6) {
+    protected boolean uD_1_refsB(final /*@NonNull*/ /*@NonInvalid*/ Z z_4) {
         // predicates
         final /*@NonNull*/ /*@NonInvalid*/ IdResolver idResolver = evaluator.getIdResolver();
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y1_0 = idResolver.getClass(CLSSid_Y1, null);
-        final /*@Nullable*/ /*@Thrown*/ Y toY = z_6.getToY();
+        final /*@Nullable*/ /*@Thrown*/ Y toY = z_4.getToY();
         final /*@Thrown*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y1_0).booleanValue();
         if (!oclIsKindOf) {
             return false;
         }
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_D_0 = idResolver.getClass(CLSSid_D, null);
+        final /*@Nullable*/ /*@Thrown*/ EObject ast = z_4.getAst();
         // creations
         // assignments
-        final /*@Nullable*/ /*@Thrown*/ EObject ast = z_6.getAst();
         final /*@Nullable*/ /*@Thrown*/ D oclAsType = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_D_0);
-        /*@Nullable*/ /*@Caught*/ Object CAUGHT_name;
-        try {
-            final /*@Nullable*/ /*@Thrown*/ String name = z_6.getName();
-            CAUGHT_name = name;
-        }
-        catch (Exception e) {
-            CAUGHT_name = ValueUtil.createInvalidValue(e);
-        }
-        final /*@NonInvalid*/ boolean symbol_0 = (CAUGHT_name == null) || (CAUGHT_name instanceof InvalidValueException);
-        /*@Nullable*/ /*@Thrown*/ B symbol_5;
-        if (symbol_0) {
-            symbol_5 = null;
+        final /*@Nullable*/ /*@Thrown*/ D self_0 = (D)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast, TYP_target_c_c_D_0);
+        final /*@Nullable*/ /*@Thrown*/ String name_0 = z_4.getName();
+        final /*@Thrown*/ boolean eq = name_0 == null;
+        /*@Nullable*/ /*@Thrown*/ B symbol_0;
+        if (eq) {
+            symbol_0 = null;
         }
         else {
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_B_0 = idResolver.getClass(CLSSid_B, null);
-            final /*@Nullable*/ /*@Thrown*/ Y1 oclAsType_0 = (Y1)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, toY, TYP_source_c_c_Y1_0);
-            if (oclAsType_0 == null) {
-                throwNull(z_6, "source for \'source::SElement::ast\'");
-            }
-            final /*@Nullable*/ /*@Thrown*/ EObject ast_0 = oclAsType_0.getAst();
-            final /*@Nullable*/ /*@Thrown*/ B self_0 = (B)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, ast_0, TYP_target_c_c_B_0);
-            final /*@Nullable*/ /*@Thrown*/ Object parent = ClassifierOclContainerOperation.INSTANCE.evaluate(evaluator, self_0);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_A1_0 = idResolver.getClass(CLSSid_A1, null);
-            final /*@Nullable*/ /*@Thrown*/ A1 self_1 = (A1)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, parent, TYP_target_c_c_A1_0);
-            if (self_1 == null) {
-                throwNull(z_6, "source for \'target::A1::ownsB\'");
-            }
-            final /*@Nullable*/ /*@Thrown*/ List<B> ownedBs = self_1.getOwnsB();
-            assert ownedBs != null;
-            final /*@Nullable*/ /*@Thrown*/ Object parent_0 = ClassifierOclContainerOperation.INSTANCE.evaluate(evaluator, self_1);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_target_c_c_TRoot_0 = idResolver.getClass(CLSSid_TRoot, null);
-            final /*@Nullable*/ /*@Thrown*/ TRoot self_2 = (TRoot)OclAnyOclAsTypeOperation.INSTANCE.evaluate(evaluator, parent_0, TYP_target_c_c_TRoot_0);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_env_c_c_Environment_0 = idResolver.getClass(CLSSid_Environment, null);
-            final /*@NonNull*/ /*@NonInvalid*/ Environment symbol_1 = (Environment)TYP_env_c_c_Environment_0.createInstance();
-            final /*@NonNull*/ /*@NonInvalid*/ Property CTORid_parentEnv = idResolver.getProperty(PROPid_parentEnv);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_env_c_c_Environment_1 = idResolver.getClass(CLSSid_Environment, null);
-            final /*@NonNull*/ /*@Thrown*/ Environment symbol_2 = (Environment)TYP_env_c_c_Environment_1.createInstance();
-            CTORid_parentEnv.initValue(symbol_2, symbol_1);
-            final /*@NonNull*/ /*@Thrown*/ OrderedSetValue BOXED_ownedBs = idResolver.createOrderedSetOfAll(ORD_CLSSid_B, ownedBs);
-            /*@NonNull*/ /*@Thrown*/ OrderedSetValue.Accumulator accumulator = ValueUtil.createOrderedSetAccumulatorValue(ORD_CLSSid_B);
-            /*@Nullable*/ Iterator<?> ITERATOR_x_5 = BOXED_ownedBs.iterator();
-            /*@NonNull*/ /*@Thrown*/ OrderedSetValue elements;
-            while (true) {
-                if (!ITERATOR_x_5.hasNext()) {
-                    elements = accumulator;
-                    break;
-                }
-                /*@Nullable*/ /*@NonInvalid*/ B x_5 = (B)ITERATOR_x_5.next();
-                /**
-                 * _'<' : Boolean
-                 */
-                final /*@NonNull*/ /*@Thrown*/ IntegerValue indexOf = OrderedCollectionIndexOfOperation.INSTANCE.evaluate(BOXED_ownedBs, x_5);
-                final /*@NonNull*/ /*@Thrown*/ IntegerValue indexOf_0 = OrderedCollectionIndexOfOperation.INSTANCE.evaluate(BOXED_ownedBs, self_0);
-                final /*@Thrown*/ boolean lt = OclComparableLessThanOperation.INSTANCE.evaluate(evaluator, indexOf, indexOf_0).booleanValue();
-                //
-                if (lt == ValueUtil.TRUE_VALUE) {
-                    accumulator.add(x_5);
-                }
-            }
-            final /*@NonNull*/ /*@NonInvalid*/ Property CTORid_parentEnv_0 = idResolver.getProperty(PROPid_parentEnv);
-            final /*@NonNull*/ /*@NonInvalid*/ Class TYP_env_c_c_Environment_2 = idResolver.getClass(CLSSid_Environment, null);
-            final /*@NonNull*/ /*@NonInvalid*/ Property CTORid_namedElements = idResolver.getProperty(PROPid_namedElements);
-            final /*@NonNull*/ /*@Thrown*/ Environment symbol_3 = (Environment)TYP_env_c_c_Environment_2.createInstance();
-            final /*@Nullable*/ /*@Thrown*/ List<NamedElement> namedElements = symbol_2.getNamedElements();
-            assert namedElements != null;
-            final /*@NonNull*/ /*@Thrown*/ OrderedSetValue BOXED_namedElements = idResolver.createOrderedSetOfAll(ORD_CLSSid_NamedElement, namedElements);
-            final /*@NonNull*/ /*@Thrown*/ SequenceValue asSequence = CollectionAsSequenceOperation.INSTANCE.evaluate(BOXED_namedElements);
-            final /*@NonNull*/ /*@Thrown*/ CollectionValue includingAll = CollectionIncludingAllOperation.INSTANCE.evaluate(asSequence, elements);
-            final List<NamedElement> UNBOXED_includingAll = includingAll.asEcoreObjects(idResolver, NamedElement.class);
-            assert UNBOXED_includingAll != null;
-            CTORid_namedElements.initValue(symbol_3, UNBOXED_includingAll);
-            final /*@Nullable*/ /*@Thrown*/ Environment parentEnv_0 = symbol_2.getParentEnv();
-            CTORid_parentEnv_0.initValue(symbol_3, parentEnv_0);
-            final /*@Nullable*/ /*@Thrown*/ String bName = z_6.getName();
-            final /*@Nullable*/ /*@Thrown*/ List<NamedElement> namedElements_1 = symbol_3.getNamedElements();
-            assert namedElements_1 != null;
-            final /*@NonNull*/ /*@Thrown*/ OrderedSetValue BOXED_namedElements_1 = idResolver.createOrderedSetOfAll(ORD_CLSSid_NamedElement, namedElements_1);
-            final /*@NonNull*/ /*@Thrown*/ OrderedSetValue selectByKind = (OrderedSetValue)CollectionSelectByKindOperation.INSTANCE.evaluate(evaluator, BOXED_namedElements_1, TYP_target_c_c_B_0);
-            /*@NonNull*/ /*@Thrown*/ OrderedSetValue.Accumulator accumulator_0 = ValueUtil.createOrderedSetAccumulatorValue(ORD_CLSSid_B);
-            /*@Nullable*/ Iterator<?> ITERATOR__1 = selectByKind.iterator();
-            /*@NonNull*/ /*@Thrown*/ OrderedSetValue foundBs;
-            while (true) {
-                if (!ITERATOR__1.hasNext()) {
-                    foundBs = accumulator_0;
-                    break;
-                }
-                /*@Nullable*/ /*@NonInvalid*/ B _1 = (B)ITERATOR__1.next();
-                /**
-                 * _'=' : Boolean
-                 */
-                if (_1 == null) {
-                    throwNull(z_6, "source for \'target::NamedElement::name\'");
-                }
-                final /*@Nullable*/ /*@Thrown*/ String name_0 = _1.getName();
-                final /*@Thrown*/ boolean eq = (name_0 != null) ? name_0.equals(bName) : (bName == null);
-                //
-                if (eq == ValueUtil.TRUE_VALUE) {
-                    accumulator_0.add(_1);
-                }
-            }
-            final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(foundBs).booleanValue();
-            /*@Nullable*/ /*@Thrown*/ B symbol_4;
-            if (isEmpty) {
-                symbol_4 = null;
-                handleLookupError(z_6, bName);
-            }
-            else {
-                final /*@Nullable*/ /*@Thrown*/ B first = (B)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundBs);
-                symbol_4 = first;
-            }
-            symbol_5 = symbol_4;
+            LookupEnvironment _lookupEnv = new uk.ac.yor.cs.asbh.cs2as.LookupEnvironment(evaluator,name_0);
+            TargetLookupVisitor _lookupVisitor = new uk.ac.yor.cs.asbh.cs2as.TargetLookupVisitor(_lookupEnv);
+            EList<NamedElement> _lookupResult = self_0.accept(_lookupVisitor).getNamedElements();
+            B _lookupB = null;
+            if (_lookupResult.size() == 1) {
+                _lookupB = (B)_lookupResult.get(0);
+            } else {
+                handleLookupError(z_4,name_0);
+            };
+            symbol_0 = _lookupB;
         }
-        oclAsType.setRefsB(symbol_5);
+        oclAsType.setRefsB(symbol_0);
         // mapping statements
         return true;
     }
@@ -1534,23 +1227,23 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
      * }}
      *   for y1 : source::Y1 in source::Y1.allInstances()
      *    {
-     * map uB_ownsD {
+     * map uB_name {
      * y1 := y1;
      * }}
      *   for y1 : source::Y1 in source::Y1.allInstances()
      *    {
-     * map uB_name {
+     * map uB_ownsD {
      * y1 := y1;
-     * }}
-     *   for z : source::Z in source::Z.allInstances()
-     *    {
-     * map uD_1_refsB {
-     * z := z;
      * }}
      *   for y2 : source::Y2 in source::Y2.allInstances()
      *    {
      * map uC_ownsD {
      * y2 := y2;
+     * }}
+     *   for z : source::Z in source::Z.allInstances()
+     *    {
+     * map uD_1_refsB {
+     * z := z;
      * }}
      *   for y2 : source::Y2 in source::Y2.allInstances()
      *    {
@@ -1572,16 +1265,6 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
      * map uD_1_toA {
      * z := z;
      * }}
-     *   for z : source::Z in source::Z.allInstances()
-     *    {
-     * map uD_0_name {
-     * z := z;
-     * }}
-     *   for z : source::Z in source::Z.allInstances()
-     *    {
-     * map uD_1_name {
-     * z := z;
-     * }}
      * }
      */
     protected boolean __root__() {
@@ -1591,20 +1274,20 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_X_5 = idResolver.getClass(CLSSid_X, null);
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y1_2 = idResolver.getClass(CLSSid_Y1, null);
         final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Y2_2 = idResolver.getClass(CLSSid_Y2, null);
-        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Z_7 = idResolver.getClass(CLSSid_Z, null);
+        final /*@NonNull*/ /*@NonInvalid*/ Class TYP_source_c_c_Z_5 = idResolver.getClass(CLSSid_Z, null);
         final /*@NonNull*/ /*@Thrown*/ SetValue allInstances_3 = ClassifierAllInstancesOperation.INSTANCE.evaluate(evaluator, SET_CLSSid_SRoot, TYP_source_c_c_SRoot_1);
         final /*@NonNull*/ /*@Thrown*/ SetValue allInstances_1 = ClassifierAllInstancesOperation.INSTANCE.evaluate(evaluator, SET_CLSSid_X, TYP_source_c_c_X_5);
         final /*@NonNull*/ /*@Thrown*/ SetValue allInstances_11 = ClassifierAllInstancesOperation.INSTANCE.evaluate(evaluator, SET_CLSSid_Y1, TYP_source_c_c_Y1_2);
-        final /*@NonNull*/ /*@Thrown*/ SetValue allInstances_14 = ClassifierAllInstancesOperation.INSTANCE.evaluate(evaluator, SET_CLSSid_Y2, TYP_source_c_c_Y2_2);
-        final /*@NonNull*/ /*@Thrown*/ SetValue allInstances_7 = ClassifierAllInstancesOperation.INSTANCE.evaluate(evaluator, SET_CLSSid_Z, TYP_source_c_c_Z_7);
+        final /*@NonNull*/ /*@Thrown*/ SetValue allInstances_13 = ClassifierAllInstancesOperation.INSTANCE.evaluate(evaluator, SET_CLSSid_Y2, TYP_source_c_c_Y2_2);
+        final /*@NonNull*/ /*@Thrown*/ SetValue allInstances_7 = ClassifierAllInstancesOperation.INSTANCE.evaluate(evaluator, SET_CLSSid_Z, TYP_source_c_c_Z_5);
         final List<SRoot> UNBOXED_allInstances_3 = allInstances_3.asEcoreObjects(idResolver, SRoot.class);
         assert UNBOXED_allInstances_3 != null;
         final List<X> UNBOXED_allInstances_1 = allInstances_1.asEcoreObjects(idResolver, X.class);
         assert UNBOXED_allInstances_1 != null;
         final List<Y1> UNBOXED_allInstances_11 = allInstances_11.asEcoreObjects(idResolver, Y1.class);
         assert UNBOXED_allInstances_11 != null;
-        final List<Y2> UNBOXED_allInstances_14 = allInstances_14.asEcoreObjects(idResolver, Y2.class);
-        assert UNBOXED_allInstances_14 != null;
+        final List<Y2> UNBOXED_allInstances_13 = allInstances_13.asEcoreObjects(idResolver, Y2.class);
+        assert UNBOXED_allInstances_13 != null;
         final List<Z> UNBOXED_allInstances_7 = allInstances_7.asEcoreObjects(idResolver, Z.class);
         assert UNBOXED_allInstances_7 != null;
         // creations
@@ -1653,23 +1336,23 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
             }
         }
         ;
-        for (Y2 y2_5 : UNBOXED_allInstances_14) {
+        for (Y2 y2_5 : UNBOXED_allInstances_13) {
             if (y2_5 != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ Y2 symbol_25 = (Y2)y2_5;
                 cY2_2_C(symbol_25);
             }
         }
         ;
-        for (Z z_15 : UNBOXED_allInstances_7) {
-            if (z_15 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_29 = (Z)z_15;
+        for (Z z_11 : UNBOXED_allInstances_7) {
+            if (z_11 != null) {
+                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_29 = (Z)z_11;
                 cZ_2_D_0(symbol_29);
             }
         }
         ;
-        for (Z z_16 : UNBOXED_allInstances_7) {
-            if (z_16 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_33 = (Z)z_16;
+        for (Z z_12 : UNBOXED_allInstances_7) {
+            if (z_12 != null) {
+                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_33 = (Z)z_12;
                 cZ_2_D_1(symbol_33);
             }
         }
@@ -1698,70 +1381,56 @@ public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
         for (Y1 y1_6 : UNBOXED_allInstances_11) {
             if (y1_6 != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ Y1 symbol_49 = (Y1)y1_6;
-                uB_ownsD(symbol_49);
+                uB_name(symbol_49);
             }
         }
         ;
         for (Y1 y1_7 : UNBOXED_allInstances_11) {
             if (y1_7 != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ Y1 symbol_53 = (Y1)y1_7;
-                uB_name(symbol_53);
+                uB_ownsD(symbol_53);
             }
         }
         ;
-        for (Z z_17 : UNBOXED_allInstances_7) {
-            if (z_17 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_57 = (Z)z_17;
-                uD_1_refsB(symbol_57);
-            }
-        }
-        ;
-        for (Y2 y2_6 : UNBOXED_allInstances_14) {
+        for (Y2 y2_6 : UNBOXED_allInstances_13) {
             if (y2_6 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Y2 symbol_61 = (Y2)y2_6;
-                uC_ownsD(symbol_61);
+                final /*@NonNull*/ /*@NonInvalid*/ Y2 symbol_57 = (Y2)y2_6;
+                uC_ownsD(symbol_57);
             }
         }
         ;
-        for (Y2 y2_7 : UNBOXED_allInstances_14) {
+        for (Z z_13 : UNBOXED_allInstances_7) {
+            if (z_13 != null) {
+                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_61 = (Z)z_13;
+                uD_1_refsB(symbol_61);
+            }
+        }
+        ;
+        for (Y2 y2_7 : UNBOXED_allInstances_13) {
             if (y2_7 != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ Y2 symbol_65 = (Y2)y2_7;
                 uC_name(symbol_65);
             }
         }
         ;
-        for (Z z_18 : UNBOXED_allInstances_7) {
-            if (z_18 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_69 = (Z)z_18;
+        for (Z z_14 : UNBOXED_allInstances_7) {
+            if (z_14 != null) {
+                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_69 = (Z)z_14;
                 uD_0_refsC(symbol_69);
             }
         }
         ;
-        for (Z z_19 : UNBOXED_allInstances_7) {
-            if (z_19 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_73 = (Z)z_19;
+        for (Z z_15 : UNBOXED_allInstances_7) {
+            if (z_15 != null) {
+                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_73 = (Z)z_15;
                 uD_0_toA(symbol_73);
             }
         }
         ;
-        for (Z z_20 : UNBOXED_allInstances_7) {
-            if (z_20 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_77 = (Z)z_20;
+        for (Z z_16 : UNBOXED_allInstances_7) {
+            if (z_16 != null) {
+                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_77 = (Z)z_16;
                 uD_1_toA(symbol_77);
-            }
-        }
-        ;
-        for (Z z_21 : UNBOXED_allInstances_7) {
-            if (z_21 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_81 = (Z)z_21;
-                uD_0_name(symbol_81);
-            }
-        }
-        ;
-        for (Z z_22 : UNBOXED_allInstances_7) {
-            if (z_22 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_85 = (Z)z_22;
-                uD_1_name(symbol_85);
             }
         }
         return true;

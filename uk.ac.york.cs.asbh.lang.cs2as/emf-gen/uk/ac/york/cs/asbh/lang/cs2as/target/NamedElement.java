@@ -3,6 +3,7 @@
 package uk.ac.york.cs.asbh.lang.cs2as.target;
 
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,10 +18,10 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getNamedElement()
- * @model
+ * @model superTypes="uk.ac.york.cs.asbh.lang.cs2as.target.Visitable"
  * @generated
  */
-public interface NamedElement extends EObject {
+public interface NamedElement extends EObject, Visitable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,7 +33,7 @@ public interface NamedElement extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getNamedElement_Name()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0!NamedElement!name'"
 	 * @generated
 	 */
 	String getName();

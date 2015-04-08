@@ -57,6 +57,34 @@ public interface TargetPackage extends EPackage {
 	TargetPackage eINSTANCE = uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable <em>Visitable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getVisitable()
+	 * @generated
+	 */
+	int VISITABLE = 9;
+
+	/**
+	 * The number of structural features of the '<em>Visitable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISITABLE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Visitable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISITABLE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.AImpl <em>A</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,7 +101,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A_FEATURE_COUNT = 0;
+	int A_FEATURE_COUNT = VISITABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>A</em>' class.
@@ -82,7 +110,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A_OPERATION_COUNT = 0;
+	int A_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A1Impl <em>A1</em>}' class.
@@ -212,7 +240,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT__NAME = 0;
+	int NAMED_ELEMENT__NAME = VISITABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Named Element</em>' class.
@@ -221,7 +249,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT_FEATURE_COUNT = 1;
+	int NAMED_ELEMENT_FEATURE_COUNT = VISITABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Named Element</em>' class.
@@ -230,7 +258,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+	int NAMED_ELEMENT_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.BImpl <em>B</em>}' class.
@@ -441,7 +469,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TROOT__OWNED_A = 0;
+	int TROOT__OWNED_A = VISITABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>TRoot</em>' class.
@@ -450,7 +478,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TROOT_FEATURE_COUNT = 1;
+	int TROOT_FEATURE_COUNT = VISITABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>TRoot</em>' class.
@@ -459,7 +487,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TROOT_OPERATION_COUNT = 0;
+	int TROOT_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -696,6 +724,17 @@ public interface TargetPackage extends EPackage {
 	EAttribute getNamedElement_Name();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable <em>Visitable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Visitable</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable
+	 * @model instanceClass="uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable"
+	 * @generated
+	 */
+	EClass getVisitable();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -911,6 +950,16 @@ public interface TargetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable <em>Visitable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getVisitable()
+		 * @generated
+		 */
+		EClass VISITABLE = eINSTANCE.getVisitable();
 
 	}
 

@@ -51,8 +51,7 @@ def : ast() : target::D =
 	target::D {
 		toA = toY.oclAsType(source::Y1).ast().toA1,
 		name = name,
-		refsB = ast().env().lookupB(name) -- Lookups are performed from the created ast element
-									-- Problem : disambiguating lookups need to start from the container 
+		refsB = ast().lookupB(self)
 	}
 	
 context Z2
@@ -60,8 +59,7 @@ def : ast() : target::D =
 	target::D {
 		toA = toY.oclAsType(source::Y2).ast().toA2,
 		name = name,
-		refsC = ast().env().lookupC(name) -- Lookups are performed from the created ast element
-									-- Problem : disambiguating lookups need to start from the container 
+		refsC = ast().lookupC(self)
 	}
 
 endpackage

@@ -1,5 +1,6 @@
 import 'EnvExample1.ecore'
 --import 'Environment.ocl' FIXME imported OCL doesn't work
+import 'SourceMM1.ecore'
 import 'TargetMM1.ecore'
 
 package ocl
@@ -20,25 +21,7 @@ package env
 
 -- Lookup operations
 context Environment
--- Epsilon can't deal with this. The property is needed in the meta-model
--- def : namedElements : OrderedSet(classes::NamedElement) = OrderedSet{}
--- def : parentEnv : Environment = null
 
--- General Environment configuration operations
-def : addElement(element : target::NamedElement) : Environment =
-	Environment{
-		namedElements = namedElements->asSequence() -- FIXME bug 460682
-			->including(element),
-		parentEnv = parentEnv
-	}
-	
-def : addElements(elements : Collection(target::NamedElement)) : Environment =
-	Environment{
-		namedElements = namedElements->asSequence() -- FIXME bug 460682
-			->includingAll(elements),
-		parentEnv = parentEnv
-	}
-	
 def : nestedEnv() : Environment = 
 	Environment {
 		parentEnv = self
@@ -49,62 +32,97 @@ def : nestedEnv() : Environment =
 def : getNamedElements(name : String) : OrderedSet(target::NamedElement) =
 	namedElements->select(x | x.name = name)
 
--- Specific lookup operations 
-
-def: lookupB(bName : String) : target::B =
-  	
-	let foundBs = namedElements->selectByKind(target::B)->select(name = bName) in
-	if foundBs->isEmpty()
-	then 
-		null
---		if parentEnv.oclIsUndefined()
---	    then invalid -- not found
---	    	 --  TODO this provokes a failure in OCL. Report bugzilla
---	    	 -- invalid -- not found
---	    else parentEnv.lookupB(bName)
---	    endif
-	else foundBs->first() -- TODO Ambiguous name case ?
-	endif
-	
-def: lookupC(cName : String) : target::C =
-	let foundCs = namedElements->selectByKind(target::C)->select(name = cName) in
-	if foundCs->isEmpty()
-	then
-		null
---		if parentEnv.oclIsUndefined()
---	    then null -- not found
---	    	 --  TODO this provokes a failure in OCL. Report bugzilla
---	    	 -- invalid -- not found
---	    else parentEnv.lookupC(cName)
---	    endif
-	else foundCs->first() -- TODO Ambiguous name case ?
-	endif
-
 endpackage
 
 package target
 
+-- Lookup
+context Visitable 
+def: _lookupBs(env : env::Environment, bName : String) : OrderedSet(B) =
+  	
+	let foundBs = env.namedElements->selectByKind(B)->select(name = bName) 
+	in
+		if foundBs->isEmpty()
+		then if env.parentEnv.oclIsUndefined()
+			then OrderedSet{}
+			else _lookupBs(env.parentEnv, bName)
+			endif
+		else foundBs
+		endif
+	
+def : _lookupB(bName : String) : B =
+	let foundBs = _lookupBs(env(), bName)
+	in
+		if foundBs->isEmpty()
+		then null
+		else foundBs->first() -- LookupVisitor will report ambiguous result
+		endif
+	
+def: _lookupCs(env : env::Environment, cName : String) : OrderedSet(C) =
+	let foundCs = env.namedElements->selectByKind(C)->select(name = cName)
+	in
+		if foundCs->isEmpty()
+		then if env.parentEnv.oclIsUndefined()
+			then OrderedSet{}
+			else _lookupBs(env.parentEnv, cName)
+			endif
+		else foundCs
+		endif
+
+def : _lookupC(bName : String) : C =
+	let foundCs = _lookupCs(env(), bName)
+	in
+		if foundCs->isEmpty()
+		then null
+		else foundCs->first() -- LookupVisitor will report ambiguous result
+		endif
+
+context D
+def : lookupB(z : source::Z) : B =
+	if z.name = null
+	then null 
+	else _lookupB(z.name)
+	endif
+
+def : lookupC(z : source::Z) : C =
+	if z.name = null
+	then null 
+	else _lookupC(z.name)
+	endif
+	
+-- Enviroment computation
 context TRoot
 def : _env(child : ocl::OclElement) : env::Environment =
 	parentEnv()
 	
 context A1
 def : _env(child : ocl::OclElement) : env::Environment =
-	_env_B(child)
-	
-def : _env_B(child : ocl::OclElement) : env::Environment =
+-- FIXME LookupVisitor doesn't handle any other operation called from this one. Inline here, for the time being
+--	_env_B(child)
 	let ownedBs = self.ownsB
 	in parentEnv().nestedEnv()
 		.addElements(ownedBs->select(x | ownedBs->indexOf(x) < ownedBs->indexOf(child)))
 
+	
+--def : _env_B(child : ocl::OclElement) : env::Environment =
+--	let ownedBs = self.ownsB
+--	in parentEnv().nestedEnv()
+--		.addElements(ownedBs->select(x | ownedBs->indexOf(x) < ownedBs->indexOf(child)))
+
 context A2
 def : _env(child : ocl::OclElement) : env::Environment =
-	_env_C(child)
-	
-def : _env_C(child : ocl::OclElement) : env::Environment =
+-- FIXME LookupVisitor doesn't handle any other operation called from this one. Inline here, for the time being
+--	_env_C(child)
 	let ownedCs = self.ownsC
 	in parentEnv().nestedEnv()
 		.addElements(ownedCs->select(x| ownedCs->indexOf(x) < ownedCs->indexOf(child)))
+
+	
+--def : _env_C(child : ocl::OclElement) : env::Environment =
+--	let ownedCs = self.ownsC
+--	in parentEnv().nestedEnv()
+--		.addElements(ownedCs->select(x| ownedCs->indexOf(x) < ownedCs->indexOf(child)))
+
 
 context B
 def : _env(child : ocl::OclElement) : env::Environment =
@@ -117,51 +135,5 @@ def : _env(child : ocl:: OclElement) : env::Environment =
 context D
 def : _env(child : ocl::OclElement) : env::Environment =
 	parentEnv()
-
-
--- Specifying parent() env() operations
-
-context TRoot
-def : parentEnv() : env::Environment =
-	env::Environment{}
-	
-context A1
-def : parentEnv() : env::Environment =
-	let parent = oclContainer()
-	in parent.oclAsType(TRoot)._env(self)
-	
-
-context A2
-def : parentEnv() : env::Environment =
-	let parent = oclContainer()
-	in parent.oclAsType(TRoot)._env(self)
-	
-
-
-context B
-def : env() : env::Environment =
-	self._env(null)
-	
-def : parentEnv() : env::Environment =
-	let parent = oclContainer()
-	in parent.oclAsType(A1)._env(self)
-	
-context C
-def : env() : env::Environment =
-	self._env(null)
-	
-def : parentEnv() : env::Environment =
-	let parent = oclContainer()
-	in parent.oclAsType(A2)._env(self)
-
-context D
-	
-def : parentEnv() : env::Environment =
-	let parent = oclContainer()
-	in
-		if parent.oclIsKindOf(B)
-		then parent.oclAsType(B)._env(self)
-		else parent.oclAsType(C)._env(self)
-		endif
 	
 endpackage
