@@ -43,10 +43,9 @@ public class CS2ASLinker extends LazyLinker
 			List<Diagnostic> errors = eResource.getErrors();
 			if (!LinkerUtil.hasSyntaxError(errors)) {
 				CS2ASTransformationExecutor tx = null;
+				ResourceSet rSet = eResource.getResourceSet();
+				QVTiFacade qvt = QVTiFacade.createInstance(QVTiFacade.NO_PROJECTS, rSet);
 				try {
-					ResourceSet rSet = eResource.getResourceSet();
-					QVTiFacade qvt = QVTiFacade.createInstance(QVTiFacade.NO_PROJECTS, rSet);
-					
 					TransformationEvaluator evaluator = qvt.createTxEvaluator(Source2Target_qvtp_qvtias.class);
 					tx = (CS2ASTransformationExecutor) evaluator.getExecutor();
 					
@@ -54,12 +53,13 @@ public class CS2ASLinker extends LazyLinker
 					if (tx.run()) {
 						URI asModelURI = eResource.getURI().appendFileExtension("xmi");
 						Resource outputResource = rSet.getResource(asModelURI, false);
-						if (outputResource == null) rSet.createResource(asModelURI);
+						if (outputResource == null) {
+							outputResource = rSet.createResource(asModelURI);
+						}
 						outputResource.getContents().clear();
 						outputResource.getContents().addAll(tx.getRootObjects("rightAS"));
 						outputResource.save(null); // FIXME
 					}
-					qvt.dispose();
 				}
 				catch (CS2ASException exception) {
 					errors.add(new CS2ASExceptionDiagnostic(exception));
@@ -73,6 +73,7 @@ public class CS2ASLinker extends LazyLinker
 						errors.addAll(txErrors);
 						txErrors.clear();
 					}
+					qvt.dispose();
 				}
 			}
 		}
