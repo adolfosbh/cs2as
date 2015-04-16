@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: uk.ac.york.cs.asbh.lang.cs2as.edit;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: uk.ac.york.cs.asbh.lang.cs2as.target.provider.TargetMM1EditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: uk.ac.york.cs.asbh.lang.cs2as.target.provider
+Require-Bundle: org.eclipse.core.runtime,
+ uk.ac.york.cs.asbh.lang.cs2as;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

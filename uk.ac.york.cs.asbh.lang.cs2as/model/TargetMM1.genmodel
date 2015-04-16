@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.york.cs.asbh.lang.cs2as/emf-gen" modelPluginID="uk.ac.york.cs.asbh.lang.cs2as"
-    modelName="TargetMM1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.york.cs.asbh.lang.cs2as/emf-gen" editDirectory="/uk.ac.york.cs.asbh.lang.cs2as.edit/emf-gen"
+    modelPluginID="uk.ac.york.cs.asbh.lang.cs2as" modelName="TargetMM1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
@@ -44,5 +44,6 @@
     <genClasses ecoreClass="TargetMM1.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TargetMM1.ecore#//NamedElement/name"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="TargetMM1.ecore#//Visitable"/>
   </genPackages>
 </genmodel:GenModel>

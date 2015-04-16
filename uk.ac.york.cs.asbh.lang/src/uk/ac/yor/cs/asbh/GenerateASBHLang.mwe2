@@ -3,6 +3,7 @@ module uk.ac.yor.cs.asbh.ASBHLang
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
+import org.eclipse.qvtd.build.cs2as.xtext.generator.*
 
 var grammarURI = "classpath:/uk/ac/yor/cs/asbh/ASBHLang.xtext"
 var fileExtensions = "asbh"
@@ -91,8 +92,8 @@ Workflow {
 			fragment = labeling.LabelProviderFragment auto-inject {}
 
 			// outline API 
-            fragment = outline.OutlineTreeProviderFragment auto-inject {}
-            fragment = outline.QuickOutlineFragment auto-inject {}
+			fragment = CS2ASOutlineTreeProviderFragment auto-inject {} // To show AS in the outline view
+			fragment = outline.QuickOutlineFragment auto-inject {}
 
 			// quickfix API
 			fragment = quickfix.QuickfixProviderFragment auto-inject {}
@@ -133,5 +134,17 @@ Workflow {
 			// provides a compare view
             fragment = compare.CompareFragment auto-inject {}
 		}
+	}
+	
+	// CS2AS Components
+	bean = org.eclipse.emf.ecore.resource.impl.ResourceSetImpl : resourceSet {}
+	
+	component = @org.eclipse.qvtd.build.cs2as.mwe.GenerateCGedQVTiTransformation { 
+		resourceSet = resourceSet
+		oclFileURI = "platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/Source2Target.ocl" 
+		javaPackage = "uk.ac.york.cs.asbh.cs2as"
+		environmentClassName = "uk.ac.yor.cs.asbh.cs2as.LookupEnvironment"
+		lookupVisitorClassName = "uk.ac.yor.cs.asbh.cs2as.TargetLookupVisitor"
+		namedElementItfName = "uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement"
 	}
 }
