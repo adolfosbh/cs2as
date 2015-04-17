@@ -4,9 +4,40 @@
 package uk.ac.yor.cs.asbh.ui.contentassist
 
 import uk.ac.yor.cs.asbh.ui.contentassist.AbstractASBHLangProposalProvider
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.Assignment
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
+import uk.ac.york.cs.asbh.lang.cs2as.source.SElement
+import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable
+import uk.ac.yor.cs.asbh.cs2as.TargetLookupVisitor
+import uk.ac.york.cs.asbh.lang.cs2as.env.Environment
+import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
  */
 class ASBHLangProposalProvider extends AbstractASBHLangProposalProvider {
+	
+	override completeZ_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		
+		if (model instanceof SElement) {
+			var EObject asElement = model.ast;
+			if (asElement instanceof Visitable) {
+				var ContentAssitLookupEnvironment lookupEnv = new ContentAssitLookupEnvironment(asElement);
+				var TargetLookupVisitor visitor = new TargetLookupVisitor(lookupEnv);
+				createProposals(asElement.accept(visitor), context, acceptor);
+			}
+		}
+		
+		super.completeZ_Name(model, assignment, context, acceptor)
+	}
+	
+	
+	def void createProposals(Environment lookupEnv, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		
+		for (NamedElement namedElement : lookupEnv.namedElements) {
+			acceptor.accept(createCompletionProposal(namedElement.name, context))
+		}
+	}
 }

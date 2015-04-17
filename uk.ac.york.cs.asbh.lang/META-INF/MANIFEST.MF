@@ -25,11 +25,14 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: uk.ac.yor.cs.asbh,
- uk.ac.yor.cs.asbh.services,
- uk.ac.yor.cs.asbh.serializer,
+ uk.ac.yor.cs.asbh.cs2as,
+ uk.ac.yor.cs.asbh.formatting,
+ uk.ac.yor.cs.asbh.generator,
+ uk.ac.yor.cs.asbh.linker,
  uk.ac.yor.cs.asbh.parser.antlr,
  uk.ac.yor.cs.asbh.parser.antlr.internal,
- uk.ac.yor.cs.asbh.validation,
  uk.ac.yor.cs.asbh.scoping,
- uk.ac.yor.cs.asbh.generator,
- uk.ac.yor.cs.asbh.formatting
+ uk.ac.yor.cs.asbh.serializer,
+ uk.ac.yor.cs.asbh.services,
+ uk.ac.yor.cs.asbh.validation,
+ uk.ac.york.cs.asbh.cs2as
