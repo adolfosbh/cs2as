@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
-
 import uk.ac.york.cs.asbh.lang.cs2as.target.A1;
 import uk.ac.york.cs.asbh.lang.cs2as.target.B;
 import uk.ac.york.cs.asbh.lang.cs2as.target.D;

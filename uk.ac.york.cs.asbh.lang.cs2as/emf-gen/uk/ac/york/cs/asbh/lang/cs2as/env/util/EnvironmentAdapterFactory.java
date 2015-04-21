@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.pivot.evaluation.Evaluator;
 
+import uk.ac.york.cs.asbh.lang.cs2as.env.*;
 import uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG;
 import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
 import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;

@@ -95,24 +95,6 @@ public interface TargetPackage extends EPackage {
 	int A = 0;
 
 	/**
-	 * The number of structural features of the '<em>A</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A_FEATURE_COUNT = VISITABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>A</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A1Impl <em>A1</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,33 +103,6 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 */
 	int A1 = 1;
-
-	/**
-	 * The feature id for the '<em><b>Owns B</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A1__OWNS_B = A_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>A1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A1_FEATURE_COUNT = A_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>A1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A1_OPERATION_COUNT = A_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A2Impl <em>A2</em>}' class.
@@ -160,33 +115,6 @@ public interface TargetPackage extends EPackage {
 	int A2 = 2;
 
 	/**
-	 * The feature id for the '<em><b>Owns C</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A2__OWNS_C = A_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>A2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A2_FEATURE_COUNT = A_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>A2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A2_OPERATION_COUNT = A_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A3Impl <em>A3</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -195,33 +123,6 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 */
 	int A3 = 3;
-
-	/**
-	 * The feature id for the '<em><b>Owns C</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A3__OWNS_C = A2__OWNS_C;
-
-	/**
-	 * The number of structural features of the '<em>A3</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A3_FEATURE_COUNT = A2_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>A3</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A3_OPERATION_COUNT = A2_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -259,6 +160,178 @@ public interface TargetPackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMED_ELEMENT_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamespaceImpl <em>Namespace</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamespaceImpl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getNamespace()
+	 * @generated
+	 */
+	int NAMESPACE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Namespace</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Namespace</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A__NAME = NAMESPACE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>A</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A_FEATURE_COUNT = NAMESPACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>A</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A_OPERATION_COUNT = NAMESPACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A1__NAME = A__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owns B</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A1__OWNS_B = A_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>A1</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A1_FEATURE_COUNT = A_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>A1</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A1_OPERATION_COUNT = A_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A2__NAME = A__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owns C</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A2__OWNS_C = A_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>A2</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A2_FEATURE_COUNT = A_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>A2</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A2_OPERATION_COUNT = A_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A3__NAME = A2__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owns C</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A3__OWNS_C = A2__OWNS_C;
+
+	/**
+	 * The number of structural features of the '<em>A3</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A3_FEATURE_COUNT = A2_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>A3</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A3_OPERATION_COUNT = A2_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.BImpl <em>B</em>}' class.
@@ -381,22 +454,13 @@ public interface TargetPackage extends EPackage {
 	int D = 6;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int D__NAME = NAMED_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>To C</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int D__TO_C = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int D__TO_C = VISITABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To B</b></em>' container reference.
@@ -405,7 +469,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D__TO_B = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int D__TO_B = VISITABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>To A</b></em>' reference.
@@ -414,7 +478,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D__TO_A = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int D__TO_A = VISITABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Refs B</b></em>' reference.
@@ -423,7 +487,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D__REFS_B = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int D__REFS_B = VISITABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Refs C</b></em>' reference.
@@ -432,7 +496,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D__REFS_C = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int D__REFS_C = VISITABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>D</em>' class.
@@ -441,7 +505,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int D_FEATURE_COUNT = VISITABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>D</em>' class.
@@ -450,7 +514,7 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int D_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int D_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.TRootImpl <em>TRoot</em>}' class.
@@ -735,6 +799,16 @@ public interface TargetPackage extends EPackage {
 	EClass getVisitable();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.Namespace <em>Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Namespace</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.Namespace
+	 * @generated
+	 */
+	EClass getNamespace();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -960,6 +1034,16 @@ public interface TargetPackage extends EPackage {
 		 * @generated
 		 */
 		EClass VISITABLE = eINSTANCE.getVisitable();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamespaceImpl <em>Namespace</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamespaceImpl
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getNamespace()
+		 * @generated
+		 */
+		EClass NAMESPACE = eINSTANCE.getNamespace();
 
 	}
 

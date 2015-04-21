@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
+import uk.ac.york.cs.asbh.lang.cs2as.target.*;
 import uk.ac.york.cs.asbh.lang.cs2as.target.A;
 import uk.ac.york.cs.asbh.lang.cs2as.target.A1;
 import uk.ac.york.cs.asbh.lang.cs2as.target.A2;
@@ -113,6 +114,10 @@ public class TargetAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseVisitable(Visitable object) {
 				return createVisitableAdapter();
+			}
+			@Override
+			public Adapter caseNamespace(Namespace object) {
+				return createNamespaceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -271,6 +276,20 @@ public class TargetAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVisitableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.Namespace <em>Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.Namespace
+	 * @generated
+	 */
+	public Adapter createNamespaceAdapter() {
 		return null;
 	}
 

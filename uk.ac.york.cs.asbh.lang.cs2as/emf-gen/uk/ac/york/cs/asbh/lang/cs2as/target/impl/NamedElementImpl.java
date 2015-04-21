@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
-
 import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitor;

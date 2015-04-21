@@ -2,6 +2,9 @@
  */
 package uk.ac.york.cs.asbh.lang.cs2as.target;
 
+import org.eclipse.emf.ecore.EObject;
+import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -20,10 +23,10 @@ package uk.ac.york.cs.asbh.lang.cs2as.target;
  * </ul>
  *
  * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage#getD()
- * @model
+ * @model superTypes="uk.ac.york.cs.asbh.lang.cs2as.target.Visitable"
  * @generated
  */
-public interface D extends NamedElement {
+public interface D extends EObject, Visitable {
 	/**
 	 * Returns the value of the '<em><b>To C</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.york.cs.asbh.lang.cs2as.target.C#getOwnsD <em>Owns D</em>}'.

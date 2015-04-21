@@ -43,5 +43,6 @@ public interface Visitor<R>
 	@Nullable R visitC(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.C object);
 	@Nullable R visitD(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.D object);
 	@Nullable R visitNamedElement(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement object);
+	@Nullable R visitNamespace(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.Namespace object);
 	@Nullable R visitTRoot(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.TRoot object);
 }

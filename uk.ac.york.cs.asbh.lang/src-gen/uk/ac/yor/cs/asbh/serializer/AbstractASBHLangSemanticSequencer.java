@@ -14,6 +14,8 @@ import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import uk.ac.yor.cs.asbh.services.ASBHLangGrammarAccess;
+import uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS;
+import uk.ac.york.cs.asbh.lang.cs2as.source.PathNameCS;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SRoot;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;
 import uk.ac.york.cs.asbh.lang.cs2as.source.X;
@@ -30,6 +32,12 @@ public abstract class AbstractASBHLangSemanticSequencer extends AbstractDelegati
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == SourcePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case SourcePackage.PATH_ELEMENT_CS:
+				sequence_PathElementCS(context, (PathElementCS) semanticObject); 
+				return; 
+			case SourcePackage.PATH_NAME_CS:
+				sequence_PathNameCS(context, (PathNameCS) semanticObject); 
+				return; 
 			case SourcePackage.SROOT:
 				sequence_Root(context, (SRoot) semanticObject); 
 				return; 
@@ -51,6 +59,24 @@ public abstract class AbstractASBHLangSemanticSequencer extends AbstractDelegati
 	
 	/**
 	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_PathElementCS(EObject context, PathElementCS semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (path+=PathElementCS path+=PathElementCS*)
+	 */
+	protected void sequence_PathNameCS(EObject context, PathNameCS semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (ownedX+=X*)
 	 */
 	protected void sequence_Root(EObject context, SRoot semanticObject) {
@@ -60,7 +86,7 @@ public abstract class AbstractASBHLangSemanticSequencer extends AbstractDelegati
 	
 	/**
 	 * Constraint:
-	 *     ((isA1?='isA1' | isA2?='isA2')? ownsY+=Y*)
+	 *     (name=ID (isA1?='isA1' | isA2?='isA2')? ownsY+=Y*)
 	 */
 	protected void sequence_X(EObject context, X semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -69,7 +95,7 @@ public abstract class AbstractASBHLangSemanticSequencer extends AbstractDelegati
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING ownsZ=Z?)
+	 *     (name=ID ownsZ=Z?)
 	 */
 	protected void sequence_Y1(EObject context, Y1 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -78,7 +104,7 @@ public abstract class AbstractASBHLangSemanticSequencer extends AbstractDelegati
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING ownsZ=Z?)
+	 *     (name=ID ownsZ=Z?)
 	 */
 	protected void sequence_Y2(EObject context, Y2 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -87,7 +113,7 @@ public abstract class AbstractASBHLangSemanticSequencer extends AbstractDelegati
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING?)
+	 *     (refers=PathNameCS?)
 	 */
 	protected void sequence_Z(EObject context, Z semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

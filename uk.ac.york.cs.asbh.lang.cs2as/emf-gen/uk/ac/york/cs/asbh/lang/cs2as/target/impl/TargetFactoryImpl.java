@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import uk.ac.york.cs.asbh.lang.cs2as.target.*;
 import uk.ac.york.cs.asbh.lang.cs2as.target.A1;
 import uk.ac.york.cs.asbh.lang.cs2as.target.A2;
 import uk.ac.york.cs.asbh.lang.cs2as.target.A3;
@@ -71,6 +72,7 @@ public class TargetFactoryImpl extends EFactoryImpl implements TargetFactory {
 			case TargetPackage.D: return createD();
 			case TargetPackage.TROOT: return createTRoot();
 			case TargetPackage.NAMED_ELEMENT: return createNamedElement();
+			case TargetPackage.NAMESPACE: return createNamespace();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -154,6 +156,16 @@ public class TargetFactoryImpl extends EFactoryImpl implements TargetFactory {
 	public NamedElement createNamedElement() {
 		NamedElementImpl namedElement = new NamedElementImpl();
 		return namedElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Namespace createNamespace() {
+		NamespaceImpl namespace = new NamespaceImpl();
+		return namespace;
 	}
 
 	/**

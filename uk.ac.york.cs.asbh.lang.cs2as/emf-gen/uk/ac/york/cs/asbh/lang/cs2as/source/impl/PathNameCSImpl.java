@@ -1,52 +1,55 @@
 /**
  */
-package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
+package uk.ac.york.cs.asbh.lang.cs2as.source.impl;
 
 import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.jdt.annotation.Nullable;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A2;
-import uk.ac.york.cs.asbh.lang.cs2as.target.C;
-import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
-import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitor;
+import uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS;
+import uk.ac.york.cs.asbh.lang.cs2as.source.PathNameCS;
+import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>A2</b></em>'.
+ * An implementation of the model object '<em><b>Path Name CS</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A2Impl#getOwnsC <em>Owns C</em>}</li>
+ *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.PathNameCSImpl#getPath <em>Path</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class A2Impl extends AImpl implements A2 {
+public class PathNameCSImpl extends MinimalEObjectImpl.Container implements PathNameCS {
 	/**
-	 * The cached value of the '{@link #getOwnsC() <em>Owns C</em>}' containment reference list.
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnsC()
+	 * @see #getPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<C> ownsC;
+	protected EList<PathElementCS> path;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected A2Impl() {
+	protected PathNameCSImpl() {
 		super();
 	}
 
@@ -57,7 +60,7 @@ public class A2Impl extends AImpl implements A2 {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TargetPackage.Literals.A2;
+		return SourcePackage.Literals.PATH_NAME_CS;
 	}
 
 	/**
@@ -65,11 +68,11 @@ public class A2Impl extends AImpl implements A2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<C> getOwnsC() {
-		if (ownsC == null) {
-			ownsC = new EObjectContainmentWithInverseEList<C>(C.class, this, TargetPackage.A2__OWNS_C, TargetPackage.C__TO_A2);
+	public EList<PathElementCS> getPath() {
+		if (path == null) {
+			path = new EObjectContainmentWithInverseEList<PathElementCS>(PathElementCS.class, this, SourcePackage.PATH_NAME_CS__PATH, SourcePackage.PATH_ELEMENT_CS__PATH_NAME);
 		}
-		return ownsC;
+		return path;
 	}
 
 	/**
@@ -81,8 +84,8 @@ public class A2Impl extends AImpl implements A2 {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TargetPackage.A2__OWNS_C:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnsC()).basicAdd(otherEnd, msgs);
+			case SourcePackage.PATH_NAME_CS__PATH:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPath()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -95,8 +98,8 @@ public class A2Impl extends AImpl implements A2 {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TargetPackage.A2__OWNS_C:
-				return ((InternalEList<?>)getOwnsC()).basicRemove(otherEnd, msgs);
+			case SourcePackage.PATH_NAME_CS__PATH:
+				return ((InternalEList<?>)getPath()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -109,8 +112,8 @@ public class A2Impl extends AImpl implements A2 {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TargetPackage.A2__OWNS_C:
-				return getOwnsC();
+			case SourcePackage.PATH_NAME_CS__PATH:
+				return getPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -124,9 +127,9 @@ public class A2Impl extends AImpl implements A2 {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TargetPackage.A2__OWNS_C:
-				getOwnsC().clear();
-				getOwnsC().addAll((Collection<? extends C>)newValue);
+			case SourcePackage.PATH_NAME_CS__PATH:
+				getPath().clear();
+				getPath().addAll((Collection<? extends PathElementCS>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -140,8 +143,8 @@ public class A2Impl extends AImpl implements A2 {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TargetPackage.A2__OWNS_C:
-				getOwnsC().clear();
+			case SourcePackage.PATH_NAME_CS__PATH:
+				getPath().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -155,19 +158,11 @@ public class A2Impl extends AImpl implements A2 {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TargetPackage.A2__OWNS_C:
-				return ownsC != null && !ownsC.isEmpty();
+			case SourcePackage.PATH_NAME_CS__PATH:
+				return path != null && !path.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @generated
-	 */
-	@Override
-	public @Nullable <R> R accept(@NonNull Visitor<R> visitor) {
-		return visitor.visitA2(this);
-	}
 
-} //A2Impl
+} //PathNameCSImpl

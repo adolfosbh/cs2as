@@ -49,16 +49,14 @@ def : ast() : target::D =
 context Z1 
 def : ast() : target::D =
 	target::D {
-		toA = toY.oclAsType(source::Y1).ast().toA1,
-		name = name
+		toA = toY.oclAsType(source::Y1).ast().toA1
 		-- refsB = ast().lookupB(self) FIXME we need a new TargetLooup.ocl
 	}
 	
 context Z2
 def : ast() : target::D =
 	target::D {
-		toA = toY.oclAsType(source::Y2).ast().toA2,
-		name = name
+		toA = toY.oclAsType(source::Y2).ast().toA2
 		-- refsC = ast().lookupC(self) FIXME we need a new TargetLooup.ocl
 	}
 

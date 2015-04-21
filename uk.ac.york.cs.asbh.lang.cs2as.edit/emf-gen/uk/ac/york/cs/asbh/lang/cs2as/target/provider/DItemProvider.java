@@ -9,10 +9,16 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import uk.ac.york.cs.asbh.lang.cs2as.target.D;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 
 /**
@@ -21,7 +27,7 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DItemProvider extends NamedElementItemProvider {
+public class DItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -135,10 +141,7 @@ public class DItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((D)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_D_type") :
-			getString("_UI_D_type") + " " + label;
+		return getString("_UI_D_type");
 	}
 	
 
@@ -165,6 +168,17 @@ public class DItemProvider extends NamedElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return TargetMM1EditPlugin.INSTANCE;
 	}
 
 }

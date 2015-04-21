@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
+import uk.ac.york.cs.asbh.lang.cs2as.target.Namespace;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TRoot;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetFactory;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
@@ -90,6 +91,13 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 	 * @generated
 	 */
 	private EClass visitableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass namespaceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -364,6 +372,15 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getNamespace() {
+		return namespaceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TargetFactory getTargetFactory() {
 		return (TargetFactory)getEFactoryInstance();
 	}
@@ -419,6 +436,8 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		visitableEClass = createEClass(VISITABLE);
+
+		namespaceEClass = createEClass(NAMESPACE);
 	}
 
 	/**
@@ -449,15 +468,16 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		aEClass.getESuperTypes().add(this.getVisitable());
+		aEClass.getESuperTypes().add(this.getNamespace());
 		a1EClass.getESuperTypes().add(this.getA());
 		a2EClass.getESuperTypes().add(this.getA());
 		a3EClass.getESuperTypes().add(this.getA2());
 		bEClass.getESuperTypes().add(this.getNamedElement());
 		cEClass.getESuperTypes().add(this.getNamedElement());
-		dEClass.getESuperTypes().add(this.getNamedElement());
+		dEClass.getESuperTypes().add(this.getVisitable());
 		tRootEClass.getESuperTypes().add(this.getVisitable());
 		namedElementEClass.getESuperTypes().add(this.getVisitable());
+		namespaceEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(aEClass, uk.ac.york.cs.asbh.lang.cs2as.target.A.class, "A", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -492,6 +512,8 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(visitableEClass, Visitable.class, "Visitable", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(namespaceEClass, Namespace.class, "Namespace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

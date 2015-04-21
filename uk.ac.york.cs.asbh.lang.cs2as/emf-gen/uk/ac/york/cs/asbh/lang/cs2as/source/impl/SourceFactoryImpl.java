@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import uk.ac.york.cs.asbh.lang.cs2as.source.*;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SElement;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SRoot;
 import uk.ac.york.cs.asbh.lang.cs2as.source.SourceFactory;
@@ -67,6 +68,8 @@ public class SourceFactoryImpl extends EFactoryImpl implements SourceFactory {
 			case SourcePackage.Z: return createZ();
 			case SourcePackage.SROOT: return createSRoot();
 			case SourcePackage.SELEMENT: return createSElement();
+			case SourcePackage.PATH_NAME_CS: return createPathNameCS();
+			case SourcePackage.PATH_ELEMENT_CS: return createPathElementCS();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -130,6 +133,26 @@ public class SourceFactoryImpl extends EFactoryImpl implements SourceFactory {
 	public SElement createSElement() {
 		SElementImpl sElement = new SElementImpl();
 		return sElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PathNameCS createPathNameCS() {
+		PathNameCSImpl pathNameCS = new PathNameCSImpl();
+		return pathNameCS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PathElementCS createPathElementCS() {
+		PathElementCSImpl pathElementCS = new PathElementCSImpl();
+		return pathElementCS;
 	}
 
 	/**

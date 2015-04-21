@@ -7,7 +7,7 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="A" abstract="true" eSuperTypes="#//Visitable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="A" abstract="true" eSuperTypes="#//Namespace"/>
   <eClassifiers xsi:type="ecore:EClass" name="A1" eSuperTypes="#//A">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownsB" upperBound="-1"
         eType="#//B" containment="true" eOpposite="#//B/toA1"/>
@@ -27,7 +27,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownsD" eType="#//D" containment="true"
         eOpposite="#//D/toC"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="D" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="D" eSuperTypes="#//Visitable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="toC" eType="#//C" eOpposite="#//C/ownsD"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toB" eType="#//B" eOpposite="#//B/ownsD"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toA" lowerBound="1" eType="#//A"/>
@@ -43,4 +43,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Visitable" instanceClassName="uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable"
       abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Namespace" eSuperTypes="#//NamedElement"/>
 </ecore:EPackage>

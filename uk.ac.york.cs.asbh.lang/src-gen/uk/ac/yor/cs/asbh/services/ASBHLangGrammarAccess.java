@@ -79,21 +79,23 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cXAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cXKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Assignment cIsA1Assignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
-		private final Keyword cIsA1IsA1Keyword_2_0_0 = (Keyword)cIsA1Assignment_2_0.eContents().get(0);
-		private final Assignment cIsA2Assignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
-		private final Keyword cIsA2IsA2Keyword_2_1_0 = (Keyword)cIsA2Assignment_2_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cOwnsYAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cOwnsYYParserRuleCall_4_0 = (RuleCall)cOwnsYAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cIsA1Assignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final Keyword cIsA1IsA1Keyword_3_0_0 = (Keyword)cIsA1Assignment_3_0.eContents().get(0);
+		private final Assignment cIsA2Assignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final Keyword cIsA2IsA2Keyword_3_1_0 = (Keyword)cIsA2Assignment_3_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cOwnsYAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cOwnsYYParserRuleCall_5_0 = (RuleCall)cOwnsYAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//X:
-		//	{X} "X" (isA1?="isA1" | isA2?="isA2")? "{" ownsY+=Y* "}";
+		//	{X} "X" name=ID (isA1?="isA1" | isA2?="isA2")? "{" ownsY+=Y* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{X} "X" (isA1?="isA1" | isA2?="isA2")? "{" ownsY+=Y* "}"
+		//{X} "X" name=ID (isA1?="isA1" | isA2?="isA2")? "{" ownsY+=Y* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{X}
@@ -102,32 +104,38 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		//"X"
 		public Keyword getXKeyword_1() { return cXKeyword_1; }
 
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+
 		//(isA1?="isA1" | isA2?="isA2")?
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
 		//isA1?="isA1"
-		public Assignment getIsA1Assignment_2_0() { return cIsA1Assignment_2_0; }
+		public Assignment getIsA1Assignment_3_0() { return cIsA1Assignment_3_0; }
 
 		//"isA1"
-		public Keyword getIsA1IsA1Keyword_2_0_0() { return cIsA1IsA1Keyword_2_0_0; }
+		public Keyword getIsA1IsA1Keyword_3_0_0() { return cIsA1IsA1Keyword_3_0_0; }
 
 		//isA2?="isA2"
-		public Assignment getIsA2Assignment_2_1() { return cIsA2Assignment_2_1; }
+		public Assignment getIsA2Assignment_3_1() { return cIsA2Assignment_3_1; }
 
 		//"isA2"
-		public Keyword getIsA2IsA2Keyword_2_1_0() { return cIsA2IsA2Keyword_2_1_0; }
+		public Keyword getIsA2IsA2Keyword_3_1_0() { return cIsA2IsA2Keyword_3_1_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
 		//ownsY+=Y*
-		public Assignment getOwnsYAssignment_4() { return cOwnsYAssignment_4; }
+		public Assignment getOwnsYAssignment_5() { return cOwnsYAssignment_5; }
 
 		//Y
-		public RuleCall getOwnsYYParserRuleCall_4_0() { return cOwnsYYParserRuleCall_4_0; }
+		public RuleCall getOwnsYYParserRuleCall_5_0() { return cOwnsYYParserRuleCall_5_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class ZElements extends AbstractParserRuleElementFinder {
@@ -135,14 +143,14 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cZAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cZKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cRefersAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRefersPathNameCSParserRuleCall_2_0 = (RuleCall)cRefersAssignment_2.eContents().get(0);
 		
 		//Z:
-		//	{Z} "Z" name=STRING?;
+		//	{Z} "Z" refers=PathNameCS?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{Z} "Z" name=STRING?
+		//{Z} "Z" refers=PathNameCS?
 		public Group getGroup() { return cGroup; }
 
 		//{Z}
@@ -151,11 +159,11 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		//"Z"
 		public Keyword getZKeyword_1() { return cZKeyword_1; }
 
-		//name=STRING?
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//refers=PathNameCS?
+		public Assignment getRefersAssignment_2() { return cRefersAssignment_2; }
 
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		//PathNameCS
+		public RuleCall getRefersPathNameCSParserRuleCall_2_0() { return cRefersPathNameCSParserRuleCall_2_0; }
 	}
 
 	public class Y1Elements extends AbstractParserRuleElementFinder {
@@ -163,27 +171,27 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cY1Keyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cOwnsZAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cOwnsZZParserRuleCall_3_0 = (RuleCall)cOwnsZAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Y1:
-		//	"Y1" name=STRING "{" ownsZ=Z? "}";
+		//	"Y1" name=ID "{" ownsZ=Z? "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"Y1" name=STRING "{" ownsZ=Z? "}"
+		//"Y1" name=ID "{" ownsZ=Z? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Y1"
 		public Keyword getY1Keyword_0() { return cY1Keyword_0; }
 
-		//name=STRING
+		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -203,27 +211,27 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cY2Keyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cOwnsZAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cOwnsZZParserRuleCall_3_0 = (RuleCall)cOwnsZAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Y2:
-		//	"Y2" name=STRING "{" ownsZ=Z? "}";
+		//	"Y2" name=ID "{" ownsZ=Z? "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"Y2" name=STRING "{" ownsZ=Z? "}"
+		//"Y2" name=ID "{" ownsZ=Z? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Y2"
 		public Keyword getY2Keyword_0() { return cY2Keyword_0; }
 
-		//name=STRING
+		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -237,6 +245,58 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
+
+	public class PathNameCSElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PathNameCS");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPathAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPathPathElementCSParserRuleCall_0_0 = (RuleCall)cPathAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cPathAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cPathPathElementCSParserRuleCall_1_1_0 = (RuleCall)cPathAssignment_1_1.eContents().get(0);
+		
+		//PathNameCS:
+		//	path+=PathElementCS ("." path+=PathElementCS)*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//path+=PathElementCS ("." path+=PathElementCS)*
+		public Group getGroup() { return cGroup; }
+
+		//path+=PathElementCS
+		public Assignment getPathAssignment_0() { return cPathAssignment_0; }
+
+		//PathElementCS
+		public RuleCall getPathPathElementCSParserRuleCall_0_0() { return cPathPathElementCSParserRuleCall_0_0; }
+
+		//("." path+=PathElementCS)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+
+		//path+=PathElementCS
+		public Assignment getPathAssignment_1_1() { return cPathAssignment_1_1; }
+
+		//PathElementCS
+		public RuleCall getPathPathElementCSParserRuleCall_1_1_0() { return cPathPathElementCSParserRuleCall_1_1_0; }
+	}
+
+	public class PathElementCSElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PathElementCS");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//PathElementCS:
+		//	name=ID;
+		@Override public ParserRule getRule() { return rule; }
+
+		//name=ID
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+	}
 	
 	
 	private final RootElements pRoot;
@@ -245,6 +305,8 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 	private final ZElements pZ;
 	private final Y1Elements pY1;
 	private final Y2Elements pY2;
+	private final PathNameCSElements pPathNameCS;
+	private final PathElementCSElements pPathElementCS;
 	
 	private final Grammar grammar;
 
@@ -261,6 +323,8 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 		this.pZ = new ZElements();
 		this.pY1 = new Y1Elements();
 		this.pY2 = new Y2Elements();
+		this.pPathNameCS = new PathNameCSElements();
+		this.pPathElementCS = new PathElementCSElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -311,7 +375,7 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//X:
-	//	{X} "X" (isA1?="isA1" | isA2?="isA2")? "{" ownsY+=Y* "}";
+	//	{X} "X" name=ID (isA1?="isA1" | isA2?="isA2")? "{" ownsY+=Y* "}";
 	public XElements getXAccess() {
 		return pX;
 	}
@@ -321,7 +385,7 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Z:
-	//	{Z} "Z" name=STRING?;
+	//	{Z} "Z" refers=PathNameCS?;
 	public ZElements getZAccess() {
 		return pZ;
 	}
@@ -331,7 +395,7 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Y1:
-	//	"Y1" name=STRING "{" ownsZ=Z? "}";
+	//	"Y1" name=ID "{" ownsZ=Z? "}";
 	public Y1Elements getY1Access() {
 		return pY1;
 	}
@@ -341,13 +405,33 @@ public class ASBHLangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Y2:
-	//	"Y2" name=STRING "{" ownsZ=Z? "}";
+	//	"Y2" name=ID "{" ownsZ=Z? "}";
 	public Y2Elements getY2Access() {
 		return pY2;
 	}
 	
 	public ParserRule getY2Rule() {
 		return getY2Access().getRule();
+	}
+
+	//PathNameCS:
+	//	path+=PathElementCS ("." path+=PathElementCS)*;
+	public PathNameCSElements getPathNameCSAccess() {
+		return pPathNameCS;
+	}
+	
+	public ParserRule getPathNameCSRule() {
+		return getPathNameCSAccess().getRule();
+	}
+
+	//PathElementCS:
+	//	name=ID;
+	public PathElementCSElements getPathElementCSAccess() {
+		return pPathElementCS;
+	}
+	
+	public ParserRule getPathElementCSRule() {
+		return getPathElementCSAccess().getRule();
 	}
 
 	//terminal ID:

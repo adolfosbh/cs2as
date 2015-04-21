@@ -256,6 +256,29 @@ public class TargetItemProviderAdapterFactory extends TargetAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.york.cs.asbh.lang.cs2as.target.Namespace} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NamespaceItemProvider namespaceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.york.cs.asbh.lang.cs2as.target.Namespace}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNamespaceAdapter() {
+		if (namespaceItemProvider == null) {
+			namespaceItemProvider = new NamespaceItemProvider(this);
+		}
+
+		return namespaceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -362,6 +385,7 @@ public class TargetItemProviderAdapterFactory extends TargetAdapterFactory imple
 		if (dItemProvider != null) dItemProvider.dispose();
 		if (tRootItemProvider != null) tRootItemProvider.dispose();
 		if (namedElementItemProvider != null) namedElementItemProvider.dispose();
+		if (namespaceItemProvider != null) namespaceItemProvider.dispose();
 	}
 
 }

@@ -18,5 +18,8 @@ Export-Package: uk.ac.york.cs.asbh.lang.cs2as.env,
  uk.ac.york.cs.asbh.lang.cs2as.target.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport,
+ org.eclipse.ocl.examples.codegen;visibility:=reexport,
+ org.eclipse.ocl.jdt.annotation7;visibility:=reexport,
  org.eclipse.qvtd.build.cs2as;bundle-version="[1.0.0,2.0.0)";visibility:=reexport
 Bundle-ActivationPolicy: lazy

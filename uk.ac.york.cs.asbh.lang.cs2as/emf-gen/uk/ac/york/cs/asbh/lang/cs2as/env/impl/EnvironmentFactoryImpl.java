@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import uk.ac.york.cs.asbh.lang.cs2as.env.*;
 import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
 import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentFactory;
 import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;

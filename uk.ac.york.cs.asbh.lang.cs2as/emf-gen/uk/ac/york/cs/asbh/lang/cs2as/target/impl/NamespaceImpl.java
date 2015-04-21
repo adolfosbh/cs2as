@@ -5,24 +5,24 @@ package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A3;
+import uk.ac.york.cs.asbh.lang.cs2as.target.Namespace;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitor;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>A3</b></em>'.
+ * An implementation of the model object '<em><b>Namespace</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class A3Impl extends A2Impl implements A3 {
+public class NamespaceImpl extends NamedElementImpl implements Namespace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected A3Impl() {
+	protected NamespaceImpl() {
 		super();
 	}
 
@@ -33,7 +33,7 @@ public class A3Impl extends A2Impl implements A3 {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TargetPackage.Literals.A3;
+		return TargetPackage.Literals.NAMESPACE;
 	}
 
 	/**
@@ -42,7 +42,7 @@ public class A3Impl extends A2Impl implements A3 {
 	 */
 	@Override
 	public @Nullable <R> R accept(@NonNull Visitor<R> visitor) {
-		return visitor.visitA3(this);
+		return visitor.visitNamespace(this);
 	}
 
-} //A3Impl
+} //NamespaceImpl

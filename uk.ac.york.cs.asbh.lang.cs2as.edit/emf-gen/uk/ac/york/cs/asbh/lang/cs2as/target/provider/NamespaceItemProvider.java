@@ -10,22 +10,23 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A3;
+
+import uk.ac.york.cs.asbh.lang.cs2as.target.Namespace;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.york.cs.asbh.lang.cs2as.target.A3} object.
+ * This is the item provider adapter for a {@link uk.ac.york.cs.asbh.lang.cs2as.target.Namespace} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class A3ItemProvider extends A2ItemProvider {
+public class NamespaceItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public A3ItemProvider(AdapterFactory adapterFactory) {
+	public NamespaceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,14 +46,14 @@ public class A3ItemProvider extends A2ItemProvider {
 	}
 
 	/**
-	 * This returns A3.gif.
+	 * This returns Namespace.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/A3"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Namespace"));
 	}
 
 	/**
@@ -63,10 +64,10 @@ public class A3ItemProvider extends A2ItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((A3)object).getName();
+		String label = ((Namespace)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_A3_type") :
-			getString("_UI_A3_type") + " " + label;
+			getString("_UI_Namespace_type") :
+			getString("_UI_Namespace_type") + " " + label;
 	}
 	
 

@@ -3,8 +3,6 @@
 package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import uk.ac.york.cs.asbh.lang.cs2as.target.A;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 
@@ -15,7 +13,7 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
  *
  * @generated
  */
-public abstract class AImpl extends MinimalEObjectImpl.Container implements A {
+public abstract class AImpl extends NamespaceImpl implements A {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

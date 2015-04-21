@@ -99,7 +99,10 @@ public class A1ItemProvider extends AItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_A1_type");
+		String label = ((A1)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_A1_type") :
+			getString("_UI_A1_type") + " " + label;
 	}
 	
 

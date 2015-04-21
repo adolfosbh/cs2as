@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.source.X#getOwnsY <em>Owns Y</em>}</li>
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.source.X#isIsA1 <em>Is A1</em>}</li>
  *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.source.X#isIsA2 <em>Is A2</em>}</li>
+ *   <li>{@link uk.ac.york.cs.asbh.lang.cs2as.source.X#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage#getX()
@@ -92,5 +93,31 @@ public interface X extends SElement {
 	 * @generated
 	 */
 	void setIsA2(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage#getX_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.X#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // X

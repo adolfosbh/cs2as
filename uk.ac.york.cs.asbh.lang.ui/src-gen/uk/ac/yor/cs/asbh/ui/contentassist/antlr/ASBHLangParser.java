@@ -38,21 +38,27 @@ public class ASBHLangParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getYAccess().getAlternatives(), "rule__Y__Alternatives");
-					put(grammarAccess.getXAccess().getAlternatives_2(), "rule__X__Alternatives_2");
+					put(grammarAccess.getXAccess().getAlternatives_3(), "rule__X__Alternatives_3");
 					put(grammarAccess.getRootAccess().getGroup(), "rule__Root__Group__0");
 					put(grammarAccess.getXAccess().getGroup(), "rule__X__Group__0");
 					put(grammarAccess.getZAccess().getGroup(), "rule__Z__Group__0");
 					put(grammarAccess.getY1Access().getGroup(), "rule__Y1__Group__0");
 					put(grammarAccess.getY2Access().getGroup(), "rule__Y2__Group__0");
+					put(grammarAccess.getPathNameCSAccess().getGroup(), "rule__PathNameCS__Group__0");
+					put(grammarAccess.getPathNameCSAccess().getGroup_1(), "rule__PathNameCS__Group_1__0");
 					put(grammarAccess.getRootAccess().getOwnedXAssignment_3(), "rule__Root__OwnedXAssignment_3");
-					put(grammarAccess.getXAccess().getIsA1Assignment_2_0(), "rule__X__IsA1Assignment_2_0");
-					put(grammarAccess.getXAccess().getIsA2Assignment_2_1(), "rule__X__IsA2Assignment_2_1");
-					put(grammarAccess.getXAccess().getOwnsYAssignment_4(), "rule__X__OwnsYAssignment_4");
-					put(grammarAccess.getZAccess().getNameAssignment_2(), "rule__Z__NameAssignment_2");
+					put(grammarAccess.getXAccess().getNameAssignment_2(), "rule__X__NameAssignment_2");
+					put(grammarAccess.getXAccess().getIsA1Assignment_3_0(), "rule__X__IsA1Assignment_3_0");
+					put(grammarAccess.getXAccess().getIsA2Assignment_3_1(), "rule__X__IsA2Assignment_3_1");
+					put(grammarAccess.getXAccess().getOwnsYAssignment_5(), "rule__X__OwnsYAssignment_5");
+					put(grammarAccess.getZAccess().getRefersAssignment_2(), "rule__Z__RefersAssignment_2");
 					put(grammarAccess.getY1Access().getNameAssignment_1(), "rule__Y1__NameAssignment_1");
 					put(grammarAccess.getY1Access().getOwnsZAssignment_3(), "rule__Y1__OwnsZAssignment_3");
 					put(grammarAccess.getY2Access().getNameAssignment_1(), "rule__Y2__NameAssignment_1");
 					put(grammarAccess.getY2Access().getOwnsZAssignment_3(), "rule__Y2__OwnsZAssignment_3");
+					put(grammarAccess.getPathNameCSAccess().getPathAssignment_0(), "rule__PathNameCS__PathAssignment_0");
+					put(grammarAccess.getPathNameCSAccess().getPathAssignment_1_1(), "rule__PathNameCS__PathAssignment_1_1");
+					put(grammarAccess.getPathElementCSAccess().getNameAssignment(), "rule__PathElementCS__NameAssignment");
 				}
 			};
 		}

@@ -45,5 +45,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TargetMM1.ecore#//NamedElement/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TargetMM1.ecore#//Visitable"/>
+    <genClasses ecoreClass="TargetMM1.ecore#//Namespace"/>
   </genPackages>
 </genmodel:GenModel>

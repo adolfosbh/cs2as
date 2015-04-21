@@ -140,13 +140,22 @@ public interface SourcePackage extends EPackage {
 	int X__IS_A2 = SELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int X__NAME = SELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>X</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int X_FEATURE_COUNT = SELEMENT_FEATURE_COUNT + 3;
+	int X_FEATURE_COUNT = SELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>X</em>' class.
@@ -378,13 +387,13 @@ public interface SourcePackage extends EPackage {
 	int Z__TO_Y = SELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Refers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int Z__NAME = SELEMENT_FEATURE_COUNT + 1;
+	int Z__REFERS = SELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Z</em>' class.
@@ -452,6 +461,90 @@ public interface SourcePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.PathNameCSImpl <em>Path Name CS</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.PathNameCSImpl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.SourcePackageImpl#getPathNameCS()
+	 * @generated
+	 */
+	int PATH_NAME_CS = 7;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_NAME_CS__PATH = 0;
+
+	/**
+	 * The number of structural features of the '<em>Path Name CS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_NAME_CS_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Path Name CS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_NAME_CS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.PathElementCSImpl <em>Path Element CS</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.PathElementCSImpl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.SourcePackageImpl#getPathElementCS()
+	 * @generated
+	 */
+	int PATH_ELEMENT_CS = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_ELEMENT_CS__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Path Name</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_ELEMENT_CS__PATH_NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Path Element CS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_ELEMENT_CS_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Path Element CS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_ELEMENT_CS_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.X <em>X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -493,6 +586,17 @@ public interface SourcePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getX_IsA2();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.york.cs.asbh.lang.cs2as.source.X#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.X#getName()
+	 * @see #getX()
+	 * @generated
+	 */
+	EAttribute getX_Name();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.Y <em>Y</em>}'.
@@ -579,15 +683,15 @@ public interface SourcePackage extends EPackage {
 	EReference getZ_ToY();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.york.cs.asbh.lang.cs2as.source.Z#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.york.cs.asbh.lang.cs2as.source.Z#getRefers <em>Refers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.Z#getName()
+	 * @return the meta object for the containment reference '<em>Refers</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.Z#getRefers()
 	 * @see #getZ()
 	 * @generated
 	 */
-	EAttribute getZ_Name();
+	EReference getZ_Refers();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.SRoot <em>SRoot</em>}'.
@@ -630,6 +734,59 @@ public interface SourcePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSElement_Ast();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.PathNameCS <em>Path Name CS</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Path Name CS</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.PathNameCS
+	 * @generated
+	 */
+	EClass getPathNameCS();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.asbh.lang.cs2as.source.PathNameCS#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Path</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.PathNameCS#getPath()
+	 * @see #getPathNameCS()
+	 * @generated
+	 */
+	EReference getPathNameCS_Path();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS <em>Path Element CS</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Path Element CS</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS
+	 * @generated
+	 */
+	EClass getPathElementCS();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS#getName()
+	 * @see #getPathElementCS()
+	 * @generated
+	 */
+	EAttribute getPathElementCS_Name();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS#getPathName <em>Path Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Path Name</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS#getPathName()
+	 * @see #getPathElementCS()
+	 * @generated
+	 */
+	EReference getPathElementCS_PathName();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -687,6 +844,14 @@ public interface SourcePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute X__IS_A2 = eINSTANCE.getX_IsA2();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute X__NAME = eINSTANCE.getX_Name();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.YImpl <em>Y</em>}' class.
@@ -761,12 +926,12 @@ public interface SourcePackage extends EPackage {
 		EReference Z__TO_Y = eINSTANCE.getZ_ToY();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Refers</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute Z__NAME = eINSTANCE.getZ_Name();
+		EReference Z__REFERS = eINSTANCE.getZ_Refers();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.SRootImpl <em>SRoot</em>}' class.
@@ -803,6 +968,50 @@ public interface SourcePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SELEMENT__AST = eINSTANCE.getSElement_Ast();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.PathNameCSImpl <em>Path Name CS</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.PathNameCSImpl
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.SourcePackageImpl#getPathNameCS()
+		 * @generated
+		 */
+		EClass PATH_NAME_CS = eINSTANCE.getPathNameCS();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATH_NAME_CS__PATH = eINSTANCE.getPathNameCS_Path();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.PathElementCSImpl <em>Path Element CS</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.PathElementCSImpl
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.source.impl.SourcePackageImpl#getPathElementCS()
+		 * @generated
+		 */
+		EClass PATH_ELEMENT_CS = eINSTANCE.getPathElementCS();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PATH_ELEMENT_CS__NAME = eINSTANCE.getPathElementCS_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Path Name</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATH_ELEMENT_CS__PATH_NAME = eINSTANCE.getPathElementCS_PathName();
 
 	}
 

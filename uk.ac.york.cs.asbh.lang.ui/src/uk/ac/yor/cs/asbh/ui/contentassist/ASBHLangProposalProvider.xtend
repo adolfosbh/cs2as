@@ -19,20 +19,30 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement
  */
 class ASBHLangProposalProvider extends AbstractASBHLangProposalProvider {
 	
-	override completeZ_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		
-		if (model instanceof SElement) {
-			var EObject asElement = model.ast;
-			if (asElement instanceof Visitable) {
-				var ContentAssitLookupEnvironment lookupEnv = new ContentAssitLookupEnvironment(asElement);
-				var TargetLookupVisitor visitor = new TargetLookupVisitor(lookupEnv);
-				createProposals(asElement.accept(visitor), context, acceptor);
-			}
+	override completePathElementCS_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		var asElement = getVisitableElement(model);
+		if (asElement != null ) {
+			var ContentAssitLookupEnvironment lookupEnv = new ContentAssitLookupEnvironment(asElement as EObject);
+			var TargetLookupVisitor visitor = new TargetLookupVisitor(lookupEnv);
+			createProposals(asElement.accept(visitor), context, acceptor);
 		}
-		
-		super.completeZ_Name(model, assignment, context, acceptor)
+		super.completePathElementCS_Name(model, assignment, context, acceptor)
 	}
 	
+	def Visitable getVisitableElement(EObject model) {
+		
+		var sElement = model;
+		while (sElement != null) {
+			if (sElement instanceof SElement) {
+				var EObject asElement = sElement.ast;
+				if (asElement instanceof Visitable) {
+					return asElement;		
+				}
+			}
+			sElement = sElement.eContainer;
+		}
+		return null;
+	}
 	
 	def void createProposals(Environment lookupEnv, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		

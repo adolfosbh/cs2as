@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.eclipse.ocl.pivot.evaluation.Evaluator;
 
+import uk.ac.york.cs.asbh.lang.cs2as.env.*;
 import uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG;
 import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
 import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;

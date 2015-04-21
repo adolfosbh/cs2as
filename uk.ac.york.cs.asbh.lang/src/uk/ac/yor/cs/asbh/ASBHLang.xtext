@@ -17,7 +17,7 @@ Y returns Y:
 
 X returns X:
 	{X}	
-	'X' 
+	'X' name=ID
 	(isA1?='isA1' | isA2?='isA2')?
 	'{'
 		(ownsY+=Y)*
@@ -25,18 +25,26 @@ X returns X:
 
 Z returns Z:
 	{Z}
-	'Z' name=STRING?
+	'Z' refers=PathNameCS?
 	;
 
 Y1 returns Y1:
-	'Y1' name= STRING
+	'Y1' name= ID
 	'{'
 		
 		(ownsZ=Z)?
 	'}';
 
 Y2 returns Y2:
-	'Y2' name= STRING
+	'Y2' name= ID
 	'{'
 		(ownsZ=Z)?
 	'}';
+
+PathNameCS:
+	path+=PathElementCS ('.' path+=PathElementCS)*
+	;
+	
+PathElementCS:
+	name = ID
+	;
