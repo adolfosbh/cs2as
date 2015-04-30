@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eCoreContainemntTree="http://www.eclipse.org/qvt/examples/0.1/ECoreContainemntTree">
   <eCoreContainemntTree:Node name="A" parent="/7" subTypes="/1 /2 /3" superTypes="/10 /8 /9">
     <element href="TargetMM1.ecore#//A"/>

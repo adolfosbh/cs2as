@@ -9,7 +9,7 @@
  *     Adolfo Sanchez-Barbudo Herrera (University of York) - initial API and implementation
  * 
  *******************************************************************************/
-module org.eclipse.qvtd.build.cs2as.tests.GenerateASBHModels
+module org.eclipse.qvtd.cs2as.compiler.tests.GenerateASBHModels
 
 import org.eclipse.ocl.examples.build.utilities.*
 import org.eclipse.ocl.examples.build.xtend.*

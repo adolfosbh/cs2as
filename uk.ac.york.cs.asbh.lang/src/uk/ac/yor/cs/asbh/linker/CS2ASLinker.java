@@ -18,14 +18,17 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
-import org.eclipse.qvtd.build.cs2as.qvti.CS2ASException;
-import org.eclipse.qvtd.build.cs2as.qvti.CS2ASExceptionDiagnostic;
-import org.eclipse.qvtd.build.cs2as.qvti.CS2ASTransformationExecutor;
-import org.eclipse.qvtd.build.cs2as.qvti.QVTiFacade;
+import org.eclipse.qvtd.cs2as.runtime.CS2ASException;
+import org.eclipse.qvtd.cs2as.runtime.CS2ASTransformation;
+import org.eclipse.qvtd.cs2as.runtime.EObjectDiagnostic;
+import org.eclipse.qvtd.cs2as.runtime.QVTiFacade;
+import org.eclipse.qvtd.cs2as.xtext.runtime.CS2ASExceptionDiagnostic;
 import org.eclipse.qvtd.pivot.qvtbase.evaluation.TransformationEvaluator;
 import org.eclipse.xtext.diagnostics.ExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.IDiagnosticConsumer;
+import org.eclipse.xtext.linking.impl.XtextLinkingDiagnostic;
 import org.eclipse.xtext.linking.lazy.LazyLinker;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 import uk.ac.york.cs.asbh.cs2as.Source2Target_qvtp_qvtias;
 
@@ -42,12 +45,12 @@ public class CS2ASLinker extends LazyLinker
 		if ((diagnosticsConsumer != null) ) {
 			List<Diagnostic> errors = eResource.getErrors();
 			if (!LinkerUtil.hasSyntaxError(errors)) {
-				CS2ASTransformationExecutor tx = null;
+				CS2ASTransformation tx = null;
 				ResourceSet rSet = eResource.getResourceSet();
 				QVTiFacade qvt = QVTiFacade.createInstance(QVTiFacade.NO_PROJECTS, rSet);
 				try {
 					TransformationEvaluator evaluator = qvt.createTxEvaluator(Source2Target_qvtp_qvtias.class);
-					tx = (CS2ASTransformationExecutor) evaluator.getExecutor();
+					tx = (CS2ASTransformation) evaluator.getExecutor();
 					
 					tx.addRootObjects("leftCS", ClassUtil.nonNullState(eResource.getContents()));
 					if (tx.run()) {
@@ -69,13 +72,20 @@ public class CS2ASLinker extends LazyLinker
 				    errors.add(new ExceptionDiagnostic(cause));
 				} finally {
 					if (tx != null) {
-						List<org.eclipse.xtext.diagnostics.Diagnostic> txErrors = tx.getErrors();
-						errors.addAll(txErrors);
-						txErrors.clear();
+						for (EObjectDiagnostic diagnostic : tx.getErrors()) {							
+							errors.add(createLinkingDiagnostic(diagnostic));	
+						}						
 					}
 					qvt.dispose();
 				}
 			}
 		}
+	}
+	
+	protected org.eclipse.xtext.diagnostics.Diagnostic createLinkingDiagnostic(EObjectDiagnostic diagnostic) {
+		
+		return new XtextLinkingDiagnostic(NodeModelUtils.getNode(diagnostic.getEObject()),
+				diagnostic.getMessage(),
+				diagnostic.getSource());
 	}
 }
