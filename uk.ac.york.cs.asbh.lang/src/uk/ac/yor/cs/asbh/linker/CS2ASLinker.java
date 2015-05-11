@@ -21,9 +21,10 @@ import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.qvtd.cs2as.runtime.CS2ASException;
 import org.eclipse.qvtd.cs2as.runtime.CS2ASTransformation;
 import org.eclipse.qvtd.cs2as.runtime.EObjectDiagnostic;
-import org.eclipse.qvtd.cs2as.runtime.QVTiFacade;
+import org.eclipse.qvtd.cs2as.runtime.QVTiTxHelper;
 import org.eclipse.qvtd.cs2as.xtext.runtime.CS2ASExceptionDiagnostic;
 import org.eclipse.qvtd.pivot.qvtbase.evaluation.TransformationEvaluator;
+import org.eclipse.qvtd.pivot.qvtimperative.utilities.QVTimperative;
 import org.eclipse.xtext.diagnostics.ExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.IDiagnosticConsumer;
 import org.eclipse.xtext.linking.impl.XtextLinkingDiagnostic;
@@ -47,9 +48,10 @@ public class CS2ASLinker extends LazyLinker
 			if (!LinkerUtil.hasSyntaxError(errors)) {
 				CS2ASTransformation tx = null;
 				ResourceSet rSet = eResource.getResourceSet();
-				QVTiFacade qvt = QVTiFacade.createInstance(QVTiFacade.NO_PROJECTS, rSet);
+				QVTimperative qvt = QVTimperative.newInstance(QVTimperative.NO_PROJECTS, rSet);
+				QVTiTxHelper txHelper = new QVTiTxHelper(qvt); 
 				try {
-					TransformationEvaluator evaluator = qvt.createTxEvaluator(Source2Target_qvtp_qvtias.class);
+					TransformationEvaluator evaluator = txHelper.createTxEvaluator(Source2Target_qvtp_qvtias.class);
 					tx = (CS2ASTransformation) evaluator.getExecutor();
 					
 					tx.addRootObjects("leftCS", ClassUtil.nonNullState(eResource.getContents()));
