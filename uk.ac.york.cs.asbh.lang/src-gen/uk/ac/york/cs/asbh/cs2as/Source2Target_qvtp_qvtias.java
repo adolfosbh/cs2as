@@ -37,7 +37,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SequenceValue;
 import org.eclipse.ocl.pivot.values.SetValue;
-import org.eclipse.qvtd.cs2as.runtime.CS2ASTransformationExecutor;
+
 import uk.ac.yor.cs.asbh.cs2as.LookupEnvironment;
 import uk.ac.yor.cs.asbh.cs2as.TargetLookupVisitor;
 import uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS;
@@ -75,7 +75,7 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable;
  * Extract each output model with {@link getRootObjects(String)}
  */
 @SuppressWarnings("nls")
-public class Source2Target_qvtp_qvtias extends CS2ASTransformationExecutor
+public class Source2Target_qvtp_qvtias extends org.eclipse.ocl.xtext.base.cs2as.tx.AbstractCS2ASTransformationExecutor
 {
     public static final /*@NonNull*/ /*@NonInvalid*/ RootPackageId PACKid_$metamodel$ = IdManager.getRootPackageId("$metamodel$");
     public static final /*@NonNull*/ /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_sourceMM_s_1_0 = IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/sourceMM/1.0", null, SourcePackage.eINSTANCE);

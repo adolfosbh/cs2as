@@ -17,14 +17,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.ocl.pivot.evaluation.tx.TransformationEvaluator;
+import org.eclipse.ocl.pivot.evaluation.tx.TxHelper;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
-import org.eclipse.qvtd.cs2as.runtime.CS2ASException;
-import org.eclipse.qvtd.cs2as.runtime.CS2ASTransformation;
-import org.eclipse.qvtd.cs2as.runtime.EObjectDiagnostic;
-import org.eclipse.qvtd.cs2as.runtime.QVTiTxHelper;
-import org.eclipse.qvtd.cs2as.xtext.runtime.CS2ASExceptionDiagnostic;
-import org.eclipse.qvtd.pivot.qvtbase.evaluation.TransformationEvaluator;
+import org.eclipse.ocl.xtext.base.cs2as.tx.AbstractCS2ASTransformationExecutor;
+import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASDiagnostic;
+import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASException;
 import org.eclipse.qvtd.pivot.qvtimperative.utilities.QVTimperative;
+import org.eclipse.qvtd.cs2as.xtext.runtime.CS2ASExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.ExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.IDiagnosticConsumer;
 import org.eclipse.xtext.linking.impl.XtextLinkingDiagnostic;
@@ -46,13 +46,13 @@ public class CS2ASLinker extends LazyLinker
 		if ((diagnosticsConsumer != null) ) {
 			List<Diagnostic> errors = eResource.getErrors();
 			if (!LinkerUtil.hasSyntaxError(errors)) {
-				CS2ASTransformation tx = null;
+				AbstractCS2ASTransformationExecutor tx = null;
 				ResourceSet rSet = eResource.getResourceSet();
 				QVTimperative qvt = QVTimperative.newInstance(QVTimperative.NO_PROJECTS, rSet);
-				QVTiTxHelper txHelper = new QVTiTxHelper(qvt); 
+				TxHelper txHelper = new TxHelper(qvt); 
 				try {
 					TransformationEvaluator evaluator = txHelper.createTxEvaluator(Source2Target_qvtp_qvtias.class);
-					tx = (CS2ASTransformation) evaluator.getExecutor();
+					tx = (AbstractCS2ASTransformationExecutor) evaluator.getExecutor();
 					
 					tx.addRootObjects("leftCS", ClassUtil.nonNullState(eResource.getContents()));
 					if (tx.run()) {
@@ -63,7 +63,7 @@ public class CS2ASLinker extends LazyLinker
 						}
 						outputResource.getContents().clear();
 						outputResource.getContents().addAll(tx.getRootObjects("rightAS"));
-						outputResource.save(null); // FIXME
+						outputResource.save(null);
 					}
 				}
 				catch (CS2ASException exception) {
@@ -74,7 +74,7 @@ public class CS2ASLinker extends LazyLinker
 				    errors.add(new ExceptionDiagnostic(cause));
 				} finally {
 					if (tx != null) {
-						for (EObjectDiagnostic diagnostic : tx.getErrors()) {							
+						for (CS2ASDiagnostic diagnostic : tx.getErrors()) {							
 							errors.add(createLinkingDiagnostic(diagnostic));	
 						}						
 					}
@@ -84,10 +84,11 @@ public class CS2ASLinker extends LazyLinker
 		}
 	}
 	
-	protected org.eclipse.xtext.diagnostics.Diagnostic createLinkingDiagnostic(EObjectDiagnostic diagnostic) {
+	protected org.eclipse.xtext.diagnostics.Diagnostic createLinkingDiagnostic(CS2ASDiagnostic diagnostic) {
 		
-		return new XtextLinkingDiagnostic(NodeModelUtils.getNode(diagnostic.getEObject()),
+		return new XtextLinkingDiagnostic(NodeModelUtils.getNode(diagnostic.getCSObject()),
 				diagnostic.getMessage(),
 				diagnostic.getSource());
 	}
+
 }
