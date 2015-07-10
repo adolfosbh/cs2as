@@ -17,13 +17,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.ocl.pivot.evaluation.tx.TransformationEvaluator;
-import org.eclipse.ocl.pivot.evaluation.tx.TxHelper;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
-import org.eclipse.ocl.xtext.base.cs2as.tx.AbstractCS2ASTransformationExecutor;
+import org.eclipse.ocl.pivot.utilities.OCL;
 import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASDiagnostic;
 import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASException;
-import org.eclipse.qvtd.pivot.qvtimperative.utilities.QVTimperative;
+import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASTransformationExecutor;
+import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASTransformer;
 import org.eclipse.qvtd.cs2as.xtext.runtime.CS2ASExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.ExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.IDiagnosticConsumer;
@@ -46,13 +45,12 @@ public class CS2ASLinker extends LazyLinker
 		if ((diagnosticsConsumer != null) ) {
 			List<Diagnostic> errors = eResource.getErrors();
 			if (!LinkerUtil.hasSyntaxError(errors)) {
-				AbstractCS2ASTransformationExecutor tx = null;
 				ResourceSet rSet = eResource.getResourceSet();
-				QVTimperative qvt = QVTimperative.newInstance(QVTimperative.NO_PROJECTS, rSet);
-				TxHelper txHelper = new TxHelper(qvt); 
+				CS2ASTransformer tx = null;		
+				OCL ocl = OCL.newInstance(rSet);
 				try {
-					TransformationEvaluator evaluator = txHelper.createTxEvaluator(Source2Target_qvtp_qvtias.class);
-					tx = (AbstractCS2ASTransformationExecutor) evaluator.getExecutor();
+					CS2ASTransformationExecutor txExecutor= new CS2ASTransformationExecutor(ocl.getEnvironmentFactory(), Source2Target_qvtp_qvtias.class);
+					tx = txExecutor.getTransformer();
 					
 					tx.addRootObjects("leftCS", ClassUtil.nonNullState(eResource.getContents()));
 					if (tx.run()) {
@@ -78,7 +76,7 @@ public class CS2ASLinker extends LazyLinker
 							errors.add(createLinkingDiagnostic(diagnostic));	
 						}						
 					}
-					qvt.dispose();
+					ocl.dispose();
 				}
 			}
 		}

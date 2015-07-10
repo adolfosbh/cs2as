@@ -16,8 +16,8 @@ Workflow {
 	bean = StandaloneSetup {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
-		registerGeneratedEPackage = "uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage"
-		registerGenModelFile = "platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/SourceMM1.genmodel"
+		//registerGeneratedEPackage = "uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage"
+		//registerGenModelFile = "platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/SourceMM1.genmodel"
 	}
 
 	component = DirectoryCleaner {

@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.ocl.pivot.Class;
-import org.eclipse.ocl.pivot.evaluation.Evaluator;
+import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.ClassId;
 import org.eclipse.ocl.pivot.ids.CollectionTypeId;
 import org.eclipse.ocl.pivot.ids.IdManager;
@@ -75,7 +75,7 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable;
  * Extract each output model with {@link getRootObjects(String)}
  */
 @SuppressWarnings("nls")
-public class Source2Target_qvtp_qvtias extends org.eclipse.ocl.xtext.base.cs2as.tx.AbstractCS2ASTransformationExecutor
+public class Source2Target_qvtp_qvtias extends org.eclipse.ocl.xtext.base.cs2as.tx.AbstractCS2ASTransformer
 {
     public static final /*@NonNull*/ /*@NonInvalid*/ RootPackageId PACKid_$metamodel$ = IdManager.getRootPackageId("$metamodel$");
     public static final /*@NonNull*/ /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_sourceMM_s_1_0 = IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/sourceMM/1.0", null, SourcePackage.eINSTANCE);
@@ -141,7 +141,7 @@ public class Source2Target_qvtp_qvtias extends org.eclipse.ocl.xtext.base.cs2as.
         {4}                     // 4 : Z -> {Z}
     };
     
-    public Source2Target_qvtp_qvtias(final /*@NonNull*/ Evaluator evaluator) {
+    public Source2Target_qvtp_qvtias(final /*@NonNull*/ Executor evaluator) {
         super(evaluator, new String[] {"leftCS", "rightAS"}, null, classIndex2classId, classIndex2allClassIndexes);
     }
     
