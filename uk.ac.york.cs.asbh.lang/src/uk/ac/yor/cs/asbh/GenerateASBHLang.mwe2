@@ -13,12 +13,14 @@ var generateXtendStub = true
 var encoding = "UTF-8"
 
 Workflow {
-	bean = StandaloneSetup {
-		scanClassPath  = true
-		platformUri = "${runtimeProject}/.."
-		//registerGeneratedEPackage = "uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage"
-		//registerGenModelFile = "platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/SourceMM1.genmodel"
-	}
+//  FIXME this fail in my computer due to an awkward local URL (auth required). Using ProjectMapSetup instead
+//	bean = StandaloneSetup {
+//		scanClassPath  = true
+//		platformUri = "${runtimeProject}/.."
+//		registerGeneratedEPackage = "uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage"
+//		registerGenModelFile = "platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/SourceMM1.genmodel"
+//	}
+	bean = org.eclipse.ocl.examples.build.utilities.ProjectMapSetup{ }
 
 	component = DirectoryCleaner {
 		directory = "${runtimeProject}/src-gen"
