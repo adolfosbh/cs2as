@@ -1,0 +1,74 @@
+grammar uk.ac.york.cs.cs2as.CS2ASDSL with org.eclipse.ocl.xtext.essentialocl.EssentialOCL
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "platform:/resource/org.eclipse.ocl.pivot/model/Pivot.ecore" as pivot
+import "platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore" as base
+import "platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore" as essentialocl
+
+generate cs2as_dsl "http://www.ac.uk/york/cs/cs2as/CS2ASDSL"
+
+Model:
+	csDecl=CSDecl
+	asDecl=ASDecl
+	mappings+=ClassMap*
+;
+
+CSDecl:
+	'cs' metamodels+=ImportCS (',' metamodels+=ImportCS)*
+;
+
+ASDecl:
+	'as' metamodels+=ImportCS (',' metamodels+=ImportCS)*
+;
+
+ImportCS returns base::ImportCS:
+	(name=Identifier ':')? ownedPathName=URIPathNameCS (isAll?='::*')?
+;
+
+ClassMap:
+	'map' from=SIMPLE_ID 'to' to=SIMPLE_ID '{'
+		(mappingDef=SimpleMap | disambiguationRules+=DisambiguationMap+)?
+	'}'
+;
+
+DisambiguationMap:
+	'rule' rule=ExpCS 'produces' produces=SIMPLE_ID  '{'
+		mappingDef=SimpleMap ?
+	'}' 
+;
+
+SimpleMap:
+	{SimpleMap}
+	//mappedProperties+=PropertyMap (',' mappedProperties+=PropertyMap)*
+	mappedProperties+=PropertyMap+
+;
+
+PropertyMap:
+	(redefine?='redefine')? lhs=ExpCS '<-' rhs=ExpCS
+;
+
+
+/* A primary expression identifies the basic expressions from which more complex expressions may be constructed. */
+PrimaryExpCS returns essentialocl::ExpCS:
+	NestedExpCS
+|	IfExpCS
+| 	SelfExpCS
+| 	PrimitiveLiteralExpCS
+| 	TupleLiteralExpCS
+| 	MapLiteralExpCS
+| 	CollectionLiteralExpCS
+| 	LambdaLiteralExpCS
+| 	TypeLiteralExpCS
+| 	NameExpCS
+|	MapExpCS		// DSL addition
+|	LookupExpCS;	// DSL addition
+
+MapExpCS:
+	{MapExpCS}
+	'map'
+;
+
+
+LookupExpCS:
+	'lookup' '(' args+=NavigatingArgExpCS (',' args+=NavigatingArgExpCS)* ')'
+;

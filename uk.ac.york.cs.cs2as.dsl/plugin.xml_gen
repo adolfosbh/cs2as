@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.ac.uk/york/cs/cs2as/CS2ASDSL" 
+       class = "uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage"
+       genModel = "model/generated/CS2ASDSL.genmodel" /> 
+	
+  </extension>
+
+
+
+
+</plugin>

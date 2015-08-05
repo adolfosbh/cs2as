@@ -1,0 +1,68 @@
+import '/resource/org.eclipse.ocl.pivot/model/Pivot.ecore'
+import '/resource/org.eclipse.ocl.pivot/model/PivotLookup.ocl'
+import '/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore'
+
+import 'generated/CS2ASDSL.ecore'
+
+package basecs
+
+context ImportCS
+def : ast() : ocl::Import =
+	ocl::Import {
+		name = name,
+		importedNamespace = referredNamespace
+		-- importedNamespace = env().lookupNamespace(pathName)
+	}
+	
+endpackage
+
+
+package cs2as_dsl
+
+context Model
+def : ast() : ocl::Model = 	
+	ocl::Model {
+		ownedPackages = ocl::Package {
+							name = csDecl.metamodels.ast().importedNamespace.name,
+							ownedClasses = mappings.ast()
+						},
+		ownedImports =  csDecl.metamodels.ast()->includingAll(
+					    asDecl.metamodels.ast())
+	}
+
+context ClassMap
+def : ast() : ocl::Class =
+	ocl::Class {
+		name = from,
+		ownedOperations = ocl::Operation {
+							name = 'ast',
+							type = ast().lookupType(to),
+							bodyExpression = ocl::ExpressionInOCL {
+												ownedBody = if self.disambiguationRules->isEmpty()
+															then simpleMap()
+															else disambiguationMap()
+															endif,
+												ownedContext = ocl::Variable {
+													name = 'self',
+													type = ast().lookupType(from)
+												}
+												
+							}
+						}
+	}
+	
+def : createSimpleMap() : ocl::ShadowExp () =
+	ocl::ShadowExp {
+		 	
+	}	
+	
+	
+def : disambiguationMap() : ocl::IfExp () = 
+	ocl::IfExp {
+											
+	}										
+
+context PropertyMap
+def : ast() : ocl::ShadowPart =
+	null
+endpackage
