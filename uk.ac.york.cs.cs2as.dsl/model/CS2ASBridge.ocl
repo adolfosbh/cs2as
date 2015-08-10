@@ -35,12 +35,12 @@ def : ast() : ocl::Class =
 		name = from,
 		ownedOperations = ocl::Operation {
 							name = 'ast',
-							type = ast().lookupType(to),
+							-- type = ast().lookupType(to),
 							bodyExpression = ocl::ExpressionInOCL {
 												ownedBody = createShadowExp(),
 												ownedContext = ocl::Variable {
-													name = 'self',
-													type = ast().lookupType(from)
+													name = 'self'
+												--	type = ast().lookupType(from)
 												}
 							}
 						}
