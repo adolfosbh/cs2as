@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Build
+Bundle-SymbolicName: uk.ac.york.cs.cs2as.dsl.build
+Bundle-Version: 1.0.0.qualifier
+Export-Package: uk.ac.york.cs.cs2as.dsl.build
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.ocl.examples.build;bundle-version="[2.1.0,3.0.0)",
+ org.eclipse.emf.ecore;bundle-version="[2.11.0,3.0.0)",
+ uk.ac.york.cs.cs2as.dsl;bundle-version="[1.0.0,2.0.0)"
