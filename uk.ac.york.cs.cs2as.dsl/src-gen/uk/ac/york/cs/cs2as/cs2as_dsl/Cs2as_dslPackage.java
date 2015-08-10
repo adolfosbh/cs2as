@@ -243,40 +243,40 @@ public interface Cs2as_dslPackage extends EPackage
   int CLASS_MAP = 3;
 
   /**
-   * The feature id for the '<em><b>From</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_MAP__FROM = 0;
-
-  /**
    * The feature id for the '<em><b>To</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_MAP__TO = 1;
+  int CLASS_MAP__TO = 0;
 
   /**
-   * The feature id for the '<em><b>Mapping Def</b></em>' containment reference.
+   * The feature id for the '<em><b>From</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_MAP__MAPPING_DEF = 2;
+  int CLASS_MAP__FROM = 1;
 
   /**
-   * The feature id for the '<em><b>Disambiguation Rules</b></em>' containment reference list.
+   * The feature id for the '<em><b>Rule</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_MAP__DISAMBIGUATION_RULES = 3;
+  int CLASS_MAP__RULE = 2;
+
+  /**
+   * The feature id for the '<em><b>Mapped Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_MAP__MAPPED_PROPERTIES = 3;
 
   /**
    * The number of structural features of the '<em>Class Map</em>' class.
@@ -288,80 +288,6 @@ public interface Cs2as_dslPackage extends EPackage
   int CLASS_MAP_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationMapImpl <em>Disambiguation Map</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationMapImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getDisambiguationMap()
-   * @generated
-   */
-  int DISAMBIGUATION_MAP = 4;
-
-  /**
-   * The feature id for the '<em><b>Rule</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DISAMBIGUATION_MAP__RULE = 0;
-
-  /**
-   * The feature id for the '<em><b>Produces</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DISAMBIGUATION_MAP__PRODUCES = 1;
-
-  /**
-   * The feature id for the '<em><b>Mapping Def</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DISAMBIGUATION_MAP__MAPPING_DEF = 2;
-
-  /**
-   * The number of structural features of the '<em>Disambiguation Map</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DISAMBIGUATION_MAP_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SimpleMapImpl <em>Simple Map</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.SimpleMapImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSimpleMap()
-   * @generated
-   */
-  int SIMPLE_MAP = 5;
-
-  /**
-   * The feature id for the '<em><b>Mapped Properties</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_MAP__MAPPED_PROPERTIES = 0;
-
-  /**
-   * The number of structural features of the '<em>Simple Map</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_MAP_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl <em>Property Map</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -369,7 +295,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getPropertyMap()
    * @generated
    */
-  int PROPERTY_MAP = 6;
+  int PROPERTY_MAP = 4;
 
   /**
    * The feature id for the '<em><b>Redefine</b></em>' attribute.
@@ -415,7 +341,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMapExpCS()
    * @generated
    */
-  int MAP_EXP_CS = 7;
+  int MAP_EXP_CS = 5;
 
   /**
    * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -542,7 +468,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getLookupExpCS()
    * @generated
    */
-  int LOOKUP_EXP_CS = 8;
+  int LOOKUP_EXP_CS = 6;
 
   /**
    * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -767,17 +693,6 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getClassMap();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getFrom <em>From</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>From</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getFrom()
-   * @see #getClassMap()
-   * @generated
-   */
-  EAttribute getClassMap_From();
-
-  /**
    * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getTo <em>To</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -789,90 +704,37 @@ public interface Cs2as_dslPackage extends EPackage
   EAttribute getClassMap_To();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getMappingDef <em>Mapping Def</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getFrom <em>From</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mapping Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getMappingDef()
+   * @return the meta object for the attribute '<em>From</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getFrom()
    * @see #getClassMap()
    * @generated
    */
-  EReference getClassMap_MappingDef();
+  EAttribute getClassMap_From();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getDisambiguationRules <em>Disambiguation Rules</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Disambiguation Rules</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getDisambiguationRules()
-   * @see #getClassMap()
-   * @generated
-   */
-  EReference getClassMap_DisambiguationRules();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap <em>Disambiguation Map</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Disambiguation Map</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap
-   * @generated
-   */
-  EClass getDisambiguationMap();
-
-  /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap#getRule <em>Rule</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getRule <em>Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Rule</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap#getRule()
-   * @see #getDisambiguationMap()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getRule()
+   * @see #getClassMap()
    * @generated
    */
-  EReference getDisambiguationMap_Rule();
+  EReference getClassMap_Rule();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap#getProduces <em>Produces</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Produces</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap#getProduces()
-   * @see #getDisambiguationMap()
-   * @generated
-   */
-  EAttribute getDisambiguationMap_Produces();
-
-  /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap#getMappingDef <em>Mapping Def</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mapping Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap#getMappingDef()
-   * @see #getDisambiguationMap()
-   * @generated
-   */
-  EReference getDisambiguationMap_MappingDef();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SimpleMap <em>Simple Map</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Simple Map</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SimpleMap
-   * @generated
-   */
-  EClass getSimpleMap();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SimpleMap#getMappedProperties <em>Mapped Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getMappedProperties <em>Mapped Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Mapped Properties</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SimpleMap#getMappedProperties()
-   * @see #getSimpleMap()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getMappedProperties()
+   * @see #getClassMap()
    * @generated
    */
-  EReference getSimpleMap_MappedProperties();
+  EReference getClassMap_MappedProperties();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap <em>Property Map</em>}'.
@@ -1052,14 +914,6 @@ public interface Cs2as_dslPackage extends EPackage
     EClass CLASS_MAP = eINSTANCE.getClassMap();
 
     /**
-     * The meta object literal for the '<em><b>From</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CLASS_MAP__FROM = eINSTANCE.getClassMap_From();
-
-    /**
      * The meta object literal for the '<em><b>To</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1068,30 +922,12 @@ public interface Cs2as_dslPackage extends EPackage
     EAttribute CLASS_MAP__TO = eINSTANCE.getClassMap_To();
 
     /**
-     * The meta object literal for the '<em><b>Mapping Def</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>From</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_MAP__MAPPING_DEF = eINSTANCE.getClassMap_MappingDef();
-
-    /**
-     * The meta object literal for the '<em><b>Disambiguation Rules</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLASS_MAP__DISAMBIGUATION_RULES = eINSTANCE.getClassMap_DisambiguationRules();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationMapImpl <em>Disambiguation Map</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationMapImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getDisambiguationMap()
-     * @generated
-     */
-    EClass DISAMBIGUATION_MAP = eINSTANCE.getDisambiguationMap();
+    EAttribute CLASS_MAP__FROM = eINSTANCE.getClassMap_From();
 
     /**
      * The meta object literal for the '<em><b>Rule</b></em>' containment reference feature.
@@ -1099,33 +935,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DISAMBIGUATION_MAP__RULE = eINSTANCE.getDisambiguationMap_Rule();
-
-    /**
-     * The meta object literal for the '<em><b>Produces</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DISAMBIGUATION_MAP__PRODUCES = eINSTANCE.getDisambiguationMap_Produces();
-
-    /**
-     * The meta object literal for the '<em><b>Mapping Def</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DISAMBIGUATION_MAP__MAPPING_DEF = eINSTANCE.getDisambiguationMap_MappingDef();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SimpleMapImpl <em>Simple Map</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.SimpleMapImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSimpleMap()
-     * @generated
-     */
-    EClass SIMPLE_MAP = eINSTANCE.getSimpleMap();
+    EReference CLASS_MAP__RULE = eINSTANCE.getClassMap_Rule();
 
     /**
      * The meta object literal for the '<em><b>Mapped Properties</b></em>' containment reference list feature.
@@ -1133,7 +943,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SIMPLE_MAP__MAPPED_PROPERTIES = eINSTANCE.getSimpleMap_MappedProperties();
+    EReference CLASS_MAP__MAPPED_PROPERTIES = eINSTANCE.getClassMap_MappedProperties();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl <em>Property Map</em>}' class.

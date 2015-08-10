@@ -67,12 +67,10 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.MapExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
-import uk.ac.york.cs.cs2as.cs2as_dsl.SimpleMap;
 import uk.ac.york.cs.cs2as.services.CS2ASDSLGrammarAccess;
 
 @SuppressWarnings("all")
@@ -196,9 +194,6 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case Cs2as_dslPackage.CLASS_MAP:
 				sequence_ClassMap(context, (ClassMap) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.DISAMBIGUATION_MAP:
-				sequence_DisambiguationMap(context, (DisambiguationMap) semanticObject); 
-				return; 
 			case Cs2as_dslPackage.LOOKUP_EXP_CS:
 				sequence_LookupExpCS(context, (LookupExpCS) semanticObject); 
 				return; 
@@ -210,9 +205,6 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 				return; 
 			case Cs2as_dslPackage.PROPERTY_MAP:
 				sequence_PropertyMap(context, (PropertyMap) semanticObject); 
-				return; 
-			case Cs2as_dslPackage.SIMPLE_MAP:
-				sequence_SimpleMap(context, (SimpleMap) semanticObject); 
 				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == EssentialOCLCSPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
@@ -405,18 +397,9 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (from=SIMPLE_ID to=SIMPLE_ID (mappingDef=SimpleMap | disambiguationRules+=DisambiguationMap+)?)
+	 *     (to=SIMPLE_ID from=SIMPLE_ID rule=ExpCS? mappedProperties+=PropertyMap*)
 	 */
 	protected void sequence_ClassMap(EObject context, ClassMap semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (rule=ExpCS produces=SIMPLE_ID mappingDef=SimpleMap?)
-	 */
-	protected void sequence_DisambiguationMap(EObject context, DisambiguationMap semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -462,15 +445,6 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     (redefine?='redefine'? lhs=ExpCS rhs=ExpCS)
 	 */
 	protected void sequence_PropertyMap(EObject context, PropertyMap semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     mappedProperties+=PropertyMap+
-	 */
-	protected void sequence_SimpleMap(EObject context, SimpleMap semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

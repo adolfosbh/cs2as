@@ -123,20 +123,6 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.DISAMBIGUATION_MAP:
-      {
-        DisambiguationMap disambiguationMap = (DisambiguationMap)theEObject;
-        T result = caseDisambiguationMap(disambiguationMap);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case Cs2as_dslPackage.SIMPLE_MAP:
-      {
-        SimpleMap simpleMap = (SimpleMap)theEObject;
-        T result = caseSimpleMap(simpleMap);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case Cs2as_dslPackage.PROPERTY_MAP:
       {
         PropertyMap propertyMap = (PropertyMap)theEObject;
@@ -234,38 +220,6 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseClassMap(ClassMap object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Disambiguation Map</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Disambiguation Map</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDisambiguationMap(DisambiguationMap object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Simple Map</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Simple Map</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSimpleMap(SimpleMap object)
   {
     return null;
   }

@@ -158,9 +158,9 @@ ruleCSDecl returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='cs' 
+(	otherlv_0='in' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getCSDeclAccess().getCsKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getCSDeclAccess().getInKeyword_0());
     }
 (
 (
@@ -223,9 +223,9 @@ ruleASDecl returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='as' 
+(	otherlv_0='out' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getASDeclAccess().getAsKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getASDeclAccess().getOutKeyword_0());
     }
 (
 (
@@ -370,31 +370,9 @@ ruleClassMap returns [EObject current=null]
     }
 (
 (
-		lv_from_1_0=RULE_SIMPLE_ID
+		lv_to_1_0=RULE_SIMPLE_ID
 		{
-			newLeafNode(lv_from_1_0, grammarAccess.getClassMapAccess().getFromSIMPLE_IDTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getClassMapRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"from",
-        		lv_from_1_0, 
-        		"SIMPLE_ID");
-	    }
-
-)
-)	otherlv_2='to' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getClassMapAccess().getToKeyword_2());
-    }
-(
-(
-		lv_to_3_0=RULE_SIMPLE_ID
-		{
-			newLeafNode(lv_to_3_0, grammarAccess.getClassMapAccess().getToSIMPLE_IDTerminalRuleCall_3_0()); 
+			newLeafNode(lv_to_1_0, grammarAccess.getClassMapAccess().getToSIMPLE_IDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -403,7 +381,29 @@ ruleClassMap returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"to",
-        		lv_to_3_0, 
+        		lv_to_1_0, 
+        		"SIMPLE_ID");
+	    }
+
+)
+)	otherlv_2='from' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getClassMapAccess().getFromKeyword_2());
+    }
+(
+(
+		lv_from_3_0=RULE_SIMPLE_ID
+		{
+			newLeafNode(lv_from_3_0, grammarAccess.getClassMapAccess().getFromSIMPLE_IDTerminalRuleCall_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getClassMapRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"from",
+        		lv_from_3_0, 
         		"SIMPLE_ID");
 	    }
 
@@ -412,187 +412,55 @@ ruleClassMap returns [EObject current=null]
     {
     	newLeafNode(otherlv_4, grammarAccess.getClassMapAccess().getLeftCurlyBracketKeyword_4());
     }
-((
+(	otherlv_5='when' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getClassMapAccess().getWhenKeyword_5_0());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getClassMapAccess().getMappingDefSimpleMapParserRuleCall_5_0_0()); 
+	        newCompositeNode(grammarAccess.getClassMapAccess().getRuleExpCSParserRuleCall_5_1_0()); 
 	    }
-		lv_mappingDef_5_0=ruleSimpleMap		{
+		lv_rule_6_0=ruleExpCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getClassMapRule());
-	        }
-       		set(
-       			$current, 
-       			"mappingDef",
-        		lv_mappingDef_5_0, 
-        		"SimpleMap");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getClassMapAccess().getDisambiguationRulesDisambiguationMapParserRuleCall_5_1_0()); 
-	    }
-		lv_disambiguationRules_6_0=ruleDisambiguationMap		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getClassMapRule());
-	        }
-       		add(
-       			$current, 
-       			"disambiguationRules",
-        		lv_disambiguationRules_6_0, 
-        		"DisambiguationMap");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)+)?	otherlv_7='}' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getClassMapAccess().getRightCurlyBracketKeyword_6());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleDisambiguationMap
-entryRuleDisambiguationMap returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getDisambiguationMapRule()); }
-	 iv_ruleDisambiguationMap=ruleDisambiguationMap 
-	 { $current=$iv_ruleDisambiguationMap.current; } 
-	 EOF 
-;
-
-// Rule DisambiguationMap
-ruleDisambiguationMap returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='rule' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getDisambiguationMapAccess().getRuleKeyword_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getDisambiguationMapAccess().getRuleExpCSParserRuleCall_1_0()); 
-	    }
-		lv_rule_1_0=ruleExpCS		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getDisambiguationMapRule());
 	        }
        		set(
        			$current, 
        			"rule",
-        		lv_rule_1_0, 
+        		lv_rule_6_0, 
         		"ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_2='produces' 
+)	otherlv_7=';' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getDisambiguationMapAccess().getProducesKeyword_2());
+    	newLeafNode(otherlv_7, grammarAccess.getClassMapAccess().getSemicolonKeyword_5_2());
     }
-(
-(
-		lv_produces_3_0=RULE_SIMPLE_ID
-		{
-			newLeafNode(lv_produces_3_0, grammarAccess.getDisambiguationMapAccess().getProducesSIMPLE_IDTerminalRuleCall_3_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDisambiguationMapRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"produces",
-        		lv_produces_3_0, 
-        		"SIMPLE_ID");
-	    }
-
-)
-)	otherlv_4='{' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getDisambiguationMapAccess().getLeftCurlyBracketKeyword_4());
-    }
-(
+)?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDisambiguationMapAccess().getMappingDefSimpleMapParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getClassMapAccess().getMappedPropertiesPropertyMapParserRuleCall_6_0()); 
 	    }
-		lv_mappingDef_5_0=ruleSimpleMap		{
+		lv_mappedProperties_8_0=rulePropertyMap		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getDisambiguationMapRule());
-	        }
-       		set(
-       			$current, 
-       			"mappingDef",
-        		lv_mappingDef_5_0, 
-        		"SimpleMap");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)?	otherlv_6='}' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getDisambiguationMapAccess().getRightCurlyBracketKeyword_6());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleSimpleMap
-entryRuleSimpleMap returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getSimpleMapRule()); }
-	 iv_ruleSimpleMap=ruleSimpleMap 
-	 { $current=$iv_ruleSimpleMap.current; } 
-	 EOF 
-;
-
-// Rule SimpleMap
-ruleSimpleMap returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-	{ 
-	  /* */ 
-	}
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getSimpleMapAccess().getSimpleMapAction_0(),
-            $current);
-    }
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getSimpleMapAccess().getMappedPropertiesPropertyMapParserRuleCall_1_0()); 
-	    }
-		lv_mappedProperties_1_0=rulePropertyMap		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getSimpleMapRule());
+	            $current = createModelElementForParent(grammarAccess.getClassMapRule());
 	        }
        		add(
        			$current, 
        			"mappedProperties",
-        		lv_mappedProperties_1_0, 
+        		lv_mappedProperties_8_0, 
         		"PropertyMap");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)+)
+)*	otherlv_9='}' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getClassMapAccess().getRightCurlyBracketKeyword_7());
+    }
+)
 ;
 
 
@@ -646,9 +514,9 @@ rulePropertyMap returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='<-' 
+)	otherlv_2=':=' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getPropertyMapAccess().getLessThanSignHyphenMinusKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getPropertyMapAccess().getColonEqualsSignKeyword_2());
     }
 (
 (

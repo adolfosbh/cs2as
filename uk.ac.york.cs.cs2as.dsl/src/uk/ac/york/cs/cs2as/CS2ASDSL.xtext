@@ -14,11 +14,11 @@ Model:
 ;
 
 CSDecl:
-	'cs' metamodels+=ImportCS (',' metamodels+=ImportCS)*
+	'in' metamodels+=ImportCS (',' metamodels+=ImportCS)*
 ;
 
 ASDecl:
-	'as' metamodels+=ImportCS (',' metamodels+=ImportCS)*
+	'out' metamodels+=ImportCS (',' metamodels+=ImportCS)*
 ;
 
 ImportCS returns base::ImportCS:
@@ -26,27 +26,15 @@ ImportCS returns base::ImportCS:
 ;
 
 ClassMap:
-	'map' from=SIMPLE_ID 'to' to=SIMPLE_ID '{'
-		(mappingDef=SimpleMap | disambiguationRules+=DisambiguationMap+)?
+	'map' to=SIMPLE_ID 'from'  from=SIMPLE_ID '{'
+		('when' rule=ExpCS ';')?
+		mappedProperties+=PropertyMap*
 	'}'
 ;
 
-DisambiguationMap:
-	'rule' rule=ExpCS 'produces' produces=SIMPLE_ID  '{'
-		mappingDef=SimpleMap ?
-	'}' 
-;
-
-SimpleMap:
-	{SimpleMap}
-	//mappedProperties+=PropertyMap (',' mappedProperties+=PropertyMap)*
-	mappedProperties+=PropertyMap+
-;
-
 PropertyMap:
-	(redefine?='redefine')? lhs=ExpCS '<-' rhs=ExpCS
+	(redefine?='redefine')? lhs=ExpCS ':=' rhs=ExpCS
 ;
-
 
 /* A primary expression identifies the basic expressions from which more complex expressions may be constructed. */
 PrimaryExpCS returns essentialocl::ExpCS:

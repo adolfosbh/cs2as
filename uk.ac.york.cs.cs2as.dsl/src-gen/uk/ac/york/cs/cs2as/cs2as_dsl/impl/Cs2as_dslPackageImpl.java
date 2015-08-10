@@ -19,12 +19,10 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslFactory;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.MapExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
-import uk.ac.york.cs.cs2as.cs2as_dsl.SimpleMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,20 +59,6 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * @generated
    */
   private EClass classMapEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass disambiguationMapEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass simpleMapEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -258,7 +242,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getClassMap_From()
+  public EAttribute getClassMap_To()
   {
     return (EAttribute)classMapEClass.getEStructuralFeatures().get(0);
   }
@@ -268,7 +252,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getClassMap_To()
+  public EAttribute getClassMap_From()
   {
     return (EAttribute)classMapEClass.getEStructuralFeatures().get(1);
   }
@@ -278,7 +262,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getClassMap_MappingDef()
+  public EReference getClassMap_Rule()
   {
     return (EReference)classMapEClass.getEStructuralFeatures().get(2);
   }
@@ -288,69 +272,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getClassMap_DisambiguationRules()
+  public EReference getClassMap_MappedProperties()
   {
     return (EReference)classMapEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDisambiguationMap()
-  {
-    return disambiguationMapEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDisambiguationMap_Rule()
-  {
-    return (EReference)disambiguationMapEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getDisambiguationMap_Produces()
-  {
-    return (EAttribute)disambiguationMapEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDisambiguationMap_MappingDef()
-  {
-    return (EReference)disambiguationMapEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSimpleMap()
-  {
-    return simpleMapEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSimpleMap_MappedProperties()
-  {
-    return (EReference)simpleMapEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -465,18 +389,10 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     createEReference(asDeclEClass, AS_DECL__METAMODELS);
 
     classMapEClass = createEClass(CLASS_MAP);
-    createEAttribute(classMapEClass, CLASS_MAP__FROM);
     createEAttribute(classMapEClass, CLASS_MAP__TO);
-    createEReference(classMapEClass, CLASS_MAP__MAPPING_DEF);
-    createEReference(classMapEClass, CLASS_MAP__DISAMBIGUATION_RULES);
-
-    disambiguationMapEClass = createEClass(DISAMBIGUATION_MAP);
-    createEReference(disambiguationMapEClass, DISAMBIGUATION_MAP__RULE);
-    createEAttribute(disambiguationMapEClass, DISAMBIGUATION_MAP__PRODUCES);
-    createEReference(disambiguationMapEClass, DISAMBIGUATION_MAP__MAPPING_DEF);
-
-    simpleMapEClass = createEClass(SIMPLE_MAP);
-    createEReference(simpleMapEClass, SIMPLE_MAP__MAPPED_PROPERTIES);
+    createEAttribute(classMapEClass, CLASS_MAP__FROM);
+    createEReference(classMapEClass, CLASS_MAP__RULE);
+    createEReference(classMapEClass, CLASS_MAP__MAPPED_PROPERTIES);
 
     propertyMapEClass = createEClass(PROPERTY_MAP);
     createEAttribute(propertyMapEClass, PROPERTY_MAP__REDEFINE);
@@ -540,18 +456,10 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     initEReference(getASDecl_Metamodels(), theBaseCSPackage.getImportCS(), null, "metamodels", null, 0, -1, ASDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classMapEClass, ClassMap.class, "ClassMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClassMap_From(), theEcorePackage.getEString(), "from", null, 0, 1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getClassMap_To(), theEcorePackage.getEString(), "to", null, 0, 1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClassMap_MappingDef(), this.getSimpleMap(), null, "mappingDef", null, 0, 1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClassMap_DisambiguationRules(), this.getDisambiguationMap(), null, "disambiguationRules", null, 0, -1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(disambiguationMapEClass, DisambiguationMap.class, "DisambiguationMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDisambiguationMap_Rule(), theEssentialOCLCSPackage.getExpCS(), null, "rule", null, 0, 1, DisambiguationMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDisambiguationMap_Produces(), theEcorePackage.getEString(), "produces", null, 0, 1, DisambiguationMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDisambiguationMap_MappingDef(), this.getSimpleMap(), null, "mappingDef", null, 0, 1, DisambiguationMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(simpleMapEClass, SimpleMap.class, "SimpleMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSimpleMap_MappedProperties(), this.getPropertyMap(), null, "mappedProperties", null, 0, -1, SimpleMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClassMap_From(), theEcorePackage.getEString(), "from", null, 0, 1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClassMap_Rule(), theEssentialOCLCSPackage.getExpCS(), null, "rule", null, 0, 1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClassMap_MappedProperties(), this.getPropertyMap(), null, "mappedProperties", null, 0, -1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(propertyMapEClass, PropertyMap.class, "PropertyMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPropertyMap_Redefine(), theEcorePackage.getEBoolean(), "redefine", null, 0, 1, PropertyMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

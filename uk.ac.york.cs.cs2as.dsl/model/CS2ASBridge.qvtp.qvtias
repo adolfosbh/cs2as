@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qvti:ImperativeModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pivot="http://www.eclipse.org/ocl/2015/Pivot"
+    xmlns:qvtb="http://www.eclipse.org/qvt/2015/QVTbase" xmlns:qvtcb="http://www.eclipse.org/qvt/2015/QVTcoreBase" xmlns:qvti="http://www.eclipse.org/qvt/2015/QVTimperative"
+    xsi:schemaLocation="http://www.eclipse.org/ocl/2015/Pivot java://org.eclipse.ocl.pivot.PivotPackage http://www.eclipse.org/qvt/2015/QVTbase java://org.eclipse.qvtd.pivot.qvtbase.QVTbasePackage http://www.eclipse.org/qvt/2015/QVTcoreBase java://org.eclipse.qvtd.pivot.qvtcorebase.QVTcoreBasePackage http://www.eclipse.org/qvt/2015/QVTimperative java://org.eclipse.qvtd.pivot.qvtimperative.QVTimperativePackage"
+    name="CS2ASBridge.qvtp.qvtias" externalURI="platform:/resource/uk.ac.york.cs.cs2as.dsl/model/CS2ASBridge.qvtp.qvtias">
+  <ownedImports importedNamespace="pivot:Model ../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#/"/>
+  <ownedImports importedNamespace="pivot:Model ../../org.eclipse.ocl.pivot/model/PivotLookup.ocl.oclas#/"/>
+  <ownedImports importedNamespace="pivot:Model ../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#/"/>
+  <ownedImports importedNamespace="pivot:Model generated/CS2ASDSL.ecore.oclas#/"/>
+  <ownedPackages xmi:id="P." name="">
+    <ownedClasses xsi:type="qvtb:Transformation" xmi:id="T..CS2ASBridge_qvtp_qvtias" name="CS2ASBridge_qvtp_qvtias">
+      <modelParameter xmi:id="qT..CS2ASBridge_qvtp_qvtias.leftCS" name="leftCS" usedPackage="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#P.basecs"/>
+      <modelParameter xmi:id="qT..CS2ASBridge_qvtp_qvtias.rightAS" name="rightAS" usedPackage="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#P.pivot"/>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..CS2ASBridge_qvtp_qvtias.cImportCS_2_Import" name="cImportCS_2_Import">
+        <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT..CS2ASBridge_qvtp_qvtias.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..CS2ASBridge_qvtp_qvtias.cImportCS_2_Import.leftCS.guard.importCS" name="importCS" type="pivot:Class ../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ImportCS"/>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" isEnforceable="true" typedModel="#qT..CS2ASBridge_qvtp_qvtias.rightAS">
+          <guardPattern/>
+          <bottomPattern>
+            <realizedVariable xmi:id="qV..CS2ASBridge_qvtp_qvtias.cImportCS_2_Import.rightAS.bottom.import" name="import" type="pivot:Class ../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Import"/>
+          </bottomPattern>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot">
+            <value xsi:type="pivot:VariableExp" type="pivot:Class ../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Import"
+                referredVariable="#qV..CS2ASBridge_qvtp_qvtias.cImportCS_2_Import.rightAS.bottom.import"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class ../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ImportCS"
+                referredVariable="#qV..CS2ASBridge_qvtp_qvtias.cImportCS_2_Import.leftCS.guard.importCS"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..CS2ASBridge_qvtp_qvtias.uImport_name" name="uImport_name">
+        <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT..CS2ASBridge_qvtp_qvtias.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..CS2ASBridge_qvtp_qvtias.uImport_name.leftCS.guard.importCS" name="importCS" type="pivot:Class ../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ImportCS"/>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" isEnforceable="true" typedModel="#qT..CS2ASBridge_qvtp_qvtias.rightAS">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name">
+            <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                referredProperty="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name">
+              <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ImportCS"
+                  isImplicit="true" referredVariable="#qV..CS2ASBridge_qvtp_qvtias.uImport_name.leftCS.guard.importCS"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class ../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Import"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class ../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Element"
+                  referredProperty="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ImportCS"
+                    referredVariable="#qV..CS2ASBridge_qvtp_qvtias.uImport_name.leftCS.guard.importCS"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class ../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Import"/>
+            </slotExpression>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..CS2ASBridge_qvtp_qvtias.uImport_importedNamespace" name="uImport_importedNamespace">
+        <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT..CS2ASBridge_qvtp_qvtias.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..CS2ASBridge_qvtp_qvtias.uImport_importedNamespace.leftCS.guard.importCS" name="importCS" type="pivot:Class ../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ImportCS"/>
+          </guardPattern>
+          <bottomPattern/>
+        </domain>
+        <domain xsi:type="qvtcb:CoreDomain" isEnforceable="true" typedModel="#qT..CS2ASBridge_qvtp_qvtias.rightAS">
+          <guardPattern/>
+          <bottomPattern/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Import.importedNamespace">
+            <value xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class ../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Namespace"
+                referredProperty="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.ImportCS.referredNamespace">
+              <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ImportCS"
+                  isImplicit="true" referredVariable="#qV..CS2ASBridge_qvtp_qvtias.uImport_importedNamespace.leftCS.guard.importCS"/>
+            </value>
+            <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class ../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Import"
+                referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class ../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Element"
+                  referredProperty="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class ../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ImportCS"
+                    referredVariable="#qV..CS2ASBridge_qvtp_qvtias.uImport_importedNamespace.leftCS.guard.importCS"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class ../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Import"/>
+            </slotExpression>
+          </assignment>
+        </bottomPattern>
+      </rule>
+    </ownedClasses>
+  </ownedPackages>
+</qvti:ImperativeModel>

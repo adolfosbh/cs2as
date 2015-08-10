@@ -68,8 +68,6 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.CS_DECL: return createCSDecl();
       case Cs2as_dslPackage.AS_DECL: return createASDecl();
       case Cs2as_dslPackage.CLASS_MAP: return createClassMap();
-      case Cs2as_dslPackage.DISAMBIGUATION_MAP: return createDisambiguationMap();
-      case Cs2as_dslPackage.SIMPLE_MAP: return createSimpleMap();
       case Cs2as_dslPackage.PROPERTY_MAP: return createPropertyMap();
       case Cs2as_dslPackage.MAP_EXP_CS: return createMapExpCS();
       case Cs2as_dslPackage.LOOKUP_EXP_CS: return createLookupExpCS();
@@ -120,28 +118,6 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
   {
     ClassMapImpl classMap = new ClassMapImpl();
     return classMap;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DisambiguationMap createDisambiguationMap()
-  {
-    DisambiguationMapImpl disambiguationMap = new DisambiguationMapImpl();
-    return disambiguationMap;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SimpleMap createSimpleMap()
-  {
-    SimpleMapImpl simpleMap = new SimpleMapImpl();
-    return simpleMap;
   }
 
   /**

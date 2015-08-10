@@ -19,18 +19,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ASDecl/metamodels"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ClassMap">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ClassMap/from"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ClassMap/to"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassMap/mappingDef"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassMap/disambiguationRules"/>
-    </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//DisambiguationMap">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//DisambiguationMap/rule"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//DisambiguationMap/produces"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//DisambiguationMap/mappingDef"/>
-    </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//SimpleMap">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//SimpleMap/mappedProperties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ClassMap/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassMap/rule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassMap/mappedProperties"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//PropertyMap">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//PropertyMap/redefine"/>

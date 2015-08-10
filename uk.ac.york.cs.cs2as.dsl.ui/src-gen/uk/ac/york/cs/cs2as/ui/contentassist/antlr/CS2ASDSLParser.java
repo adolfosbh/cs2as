@@ -37,7 +37,6 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getClassMapAccess().getAlternatives_5(), "rule__ClassMap__Alternatives_5");
 					put(grammarAccess.getPrimaryExpCSAccess().getAlternatives(), "rule__PrimaryExpCS__Alternatives");
 					put(grammarAccess.getEssentialOCLReservedKeywordAccess().getAlternatives(), "rule__EssentialOCLReservedKeyword__Alternatives");
 					put(grammarAccess.getEssentialOCLUnaryOperatorNameAccess().getAlternatives(), "rule__EssentialOCLUnaryOperatorName__Alternatives");
@@ -76,8 +75,7 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImportCSAccess().getGroup(), "rule__ImportCS__Group__0");
 					put(grammarAccess.getImportCSAccess().getGroup_0(), "rule__ImportCS__Group_0__0");
 					put(grammarAccess.getClassMapAccess().getGroup(), "rule__ClassMap__Group__0");
-					put(grammarAccess.getDisambiguationMapAccess().getGroup(), "rule__DisambiguationMap__Group__0");
-					put(grammarAccess.getSimpleMapAccess().getGroup(), "rule__SimpleMap__Group__0");
+					put(grammarAccess.getClassMapAccess().getGroup_5(), "rule__ClassMap__Group_5__0");
 					put(grammarAccess.getPropertyMapAccess().getGroup(), "rule__PropertyMap__Group__0");
 					put(grammarAccess.getMapExpCSAccess().getGroup(), "rule__MapExpCS__Group__0");
 					put(grammarAccess.getLookupExpCSAccess().getGroup(), "rule__LookupExpCS__Group__0");
@@ -186,14 +184,10 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImportCSAccess().getNameAssignment_0_0(), "rule__ImportCS__NameAssignment_0_0");
 					put(grammarAccess.getImportCSAccess().getOwnedPathNameAssignment_1(), "rule__ImportCS__OwnedPathNameAssignment_1");
 					put(grammarAccess.getImportCSAccess().getIsAllAssignment_2(), "rule__ImportCS__IsAllAssignment_2");
-					put(grammarAccess.getClassMapAccess().getFromAssignment_1(), "rule__ClassMap__FromAssignment_1");
-					put(grammarAccess.getClassMapAccess().getToAssignment_3(), "rule__ClassMap__ToAssignment_3");
-					put(grammarAccess.getClassMapAccess().getMappingDefAssignment_5_0(), "rule__ClassMap__MappingDefAssignment_5_0");
-					put(grammarAccess.getClassMapAccess().getDisambiguationRulesAssignment_5_1(), "rule__ClassMap__DisambiguationRulesAssignment_5_1");
-					put(grammarAccess.getDisambiguationMapAccess().getRuleAssignment_1(), "rule__DisambiguationMap__RuleAssignment_1");
-					put(grammarAccess.getDisambiguationMapAccess().getProducesAssignment_3(), "rule__DisambiguationMap__ProducesAssignment_3");
-					put(grammarAccess.getDisambiguationMapAccess().getMappingDefAssignment_5(), "rule__DisambiguationMap__MappingDefAssignment_5");
-					put(grammarAccess.getSimpleMapAccess().getMappedPropertiesAssignment_1(), "rule__SimpleMap__MappedPropertiesAssignment_1");
+					put(grammarAccess.getClassMapAccess().getToAssignment_1(), "rule__ClassMap__ToAssignment_1");
+					put(grammarAccess.getClassMapAccess().getFromAssignment_3(), "rule__ClassMap__FromAssignment_3");
+					put(grammarAccess.getClassMapAccess().getRuleAssignment_5_1(), "rule__ClassMap__RuleAssignment_5_1");
+					put(grammarAccess.getClassMapAccess().getMappedPropertiesAssignment_6(), "rule__ClassMap__MappedPropertiesAssignment_6");
 					put(grammarAccess.getPropertyMapAccess().getRedefineAssignment_0(), "rule__PropertyMap__RedefineAssignment_0");
 					put(grammarAccess.getPropertyMapAccess().getLhsAssignment_1(), "rule__PropertyMap__LhsAssignment_1");
 					put(grammarAccess.getPropertyMapAccess().getRhsAssignment_3(), "rule__PropertyMap__RhsAssignment_3");

@@ -59,24 +59,6 @@ public interface Cs2as_dslFactory extends EFactory
   ClassMap createClassMap();
 
   /**
-   * Returns a new object of class '<em>Disambiguation Map</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Disambiguation Map</em>'.
-   * @generated
-   */
-  DisambiguationMap createDisambiguationMap();
-
-  /**
-   * Returns a new object of class '<em>Simple Map</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Simple Map</em>'.
-   * @generated
-   */
-  SimpleMap createSimpleMap();
-
-  /**
    * Returns a new object of class '<em>Property Map</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

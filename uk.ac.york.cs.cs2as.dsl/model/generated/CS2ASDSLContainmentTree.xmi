@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eCoreContainemntTree="http://www.eclipse.org/qvt/examples/0.1/ECoreContainemntTree">
+  <eCoreContainemntTree:Node name="Model" children="/1 /2 /3">
+    <element href="CS2ASDSL.ecore#//Model"/>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="CSDecl" parent="/0">
+    <element href="CS2ASDSL.ecore#//CSDecl"/>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="ASDecl" parent="/0">
+    <element href="CS2ASDSL.ecore#//ASDecl"/>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="ClassMap" parent="/0" children="/4 /6 /5">
+    <element href="CS2ASDSL.ecore#//ClassMap"/>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="PropertyMap" parent="/3" children="/6 /5">
+    <element href="CS2ASDSL.ecore#//PropertyMap"/>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="MapExpCS" parent="/3 /4 /6">
+    <element href="CS2ASDSL.ecore#//MapExpCS"/>
+  </eCoreContainemntTree:Node>
+  <eCoreContainemntTree:Node name="LookupExpCS" parent="/3 /4 /6" children="/6 /5">
+    <element href="CS2ASDSL.ecore#//LookupExpCS"/>
+  </eCoreContainemntTree:Node>
+</xmi:XMI>

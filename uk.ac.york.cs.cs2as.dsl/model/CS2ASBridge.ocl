@@ -1,7 +1,6 @@
 import '/resource/org.eclipse.ocl.pivot/model/Pivot.ecore'
 import '/resource/org.eclipse.ocl.pivot/model/PivotLookup.ocl'
 import '/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore'
-
 import 'generated/CS2ASDSL.ecore'
 
 package basecs
@@ -38,29 +37,20 @@ def : ast() : ocl::Class =
 							name = 'ast',
 							type = ast().lookupType(to),
 							bodyExpression = ocl::ExpressionInOCL {
-												ownedBody = if self.disambiguationRules->isEmpty()
-															then simpleMap()
-															else disambiguationMap()
-															endif,
+												ownedBody = createShadowExp(),
 												ownedContext = ocl::Variable {
 													name = 'self',
 													type = ast().lookupType(from)
 												}
-												
 							}
 						}
 	}
-	
-def : createSimpleMap() : ocl::ShadowExp () =
+
+def : createShadowExp() : ocl::ShadowExp = 
 	ocl::ShadowExp {
-		 	
-	}	
-	
-	
-def : disambiguationMap() : ocl::IfExp () = 
-	ocl::IfExp {
-											
-	}										
+		-- ownedParts = superClassPropertyMappings()->includingAll(mappedProperties.ast())
+		ownedParts = mappedProperties.ast() 
+	}
 
 context PropertyMap
 def : ast() : ocl::ShadowPart =

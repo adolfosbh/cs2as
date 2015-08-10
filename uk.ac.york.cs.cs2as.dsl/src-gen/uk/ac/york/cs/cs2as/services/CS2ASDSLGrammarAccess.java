@@ -58,7 +58,7 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class CSDeclElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSDecl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cInKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cMetamodelsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cMetamodelsImportCSParserRuleCall_1_0 = (RuleCall)cMetamodelsAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
@@ -67,14 +67,14 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMetamodelsImportCSParserRuleCall_2_1_0 = (RuleCall)cMetamodelsAssignment_2_1.eContents().get(0);
 		
 		//CSDecl:
-		//	"cs" metamodels+=ImportCS ("," metamodels+=ImportCS)*;
+		//	"in" metamodels+=ImportCS ("," metamodels+=ImportCS)*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"cs" metamodels+=ImportCS ("," metamodels+=ImportCS)*
+		//"in" metamodels+=ImportCS ("," metamodels+=ImportCS)*
 		public Group getGroup() { return cGroup; }
 
-		//"cs"
-		public Keyword getCsKeyword_0() { return cCsKeyword_0; }
+		//"in"
+		public Keyword getInKeyword_0() { return cInKeyword_0; }
 
 		//metamodels+=ImportCS
 		public Assignment getMetamodelsAssignment_1() { return cMetamodelsAssignment_1; }
@@ -98,7 +98,7 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class ASDeclElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ASDecl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cOutKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cMetamodelsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cMetamodelsImportCSParserRuleCall_1_0 = (RuleCall)cMetamodelsAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
@@ -107,14 +107,14 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMetamodelsImportCSParserRuleCall_2_1_0 = (RuleCall)cMetamodelsAssignment_2_1.eContents().get(0);
 		
 		//ASDecl:
-		//	"as" metamodels+=ImportCS ("," metamodels+=ImportCS)*;
+		//	"out" metamodels+=ImportCS ("," metamodels+=ImportCS)*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"as" metamodels+=ImportCS ("," metamodels+=ImportCS)*
+		//"out" metamodels+=ImportCS ("," metamodels+=ImportCS)*
 		public Group getGroup() { return cGroup; }
 
-		//"as"
-		public Keyword getAsKeyword_0() { return cAsKeyword_0; }
+		//"out"
+		public Keyword getOutKeyword_0() { return cOutKeyword_0; }
 
 		//metamodels+=ImportCS
 		public Assignment getMetamodelsAssignment_1() { return cMetamodelsAssignment_1; }
@@ -183,143 +183,72 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ClassMap");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cMapKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cFromSIMPLE_IDTerminalRuleCall_1_0 = (RuleCall)cFromAssignment_1.eContents().get(0);
-		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cToAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cToSIMPLE_IDTerminalRuleCall_3_0 = (RuleCall)cToAssignment_3.eContents().get(0);
+		private final Assignment cToAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cToSIMPLE_IDTerminalRuleCall_1_0 = (RuleCall)cToAssignment_1.eContents().get(0);
+		private final Keyword cFromKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cFromAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFromSIMPLE_IDTerminalRuleCall_3_0 = (RuleCall)cFromAssignment_3.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
-		private final Assignment cMappingDefAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
-		private final RuleCall cMappingDefSimpleMapParserRuleCall_5_0_0 = (RuleCall)cMappingDefAssignment_5_0.eContents().get(0);
-		private final Assignment cDisambiguationRulesAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
-		private final RuleCall cDisambiguationRulesDisambiguationMapParserRuleCall_5_1_0 = (RuleCall)cDisambiguationRulesAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cWhenKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cRuleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cRuleExpCSParserRuleCall_5_1_0 = (RuleCall)cRuleAssignment_5_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Assignment cMappedPropertiesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cMappedPropertiesPropertyMapParserRuleCall_6_0 = (RuleCall)cMappedPropertiesAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ClassMap:
-		//	"map" from=SIMPLE_ID "to" to=SIMPLE_ID "{" (mappingDef=SimpleMap | disambiguationRules+=DisambiguationMap+)? "}";
+		//	"map" to=SIMPLE_ID "from" from=SIMPLE_ID "{" ("when" rule=ExpCS ";")? mappedProperties+=PropertyMap* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"map" from=SIMPLE_ID "to" to=SIMPLE_ID "{" (mappingDef=SimpleMap | disambiguationRules+=DisambiguationMap+)? "}"
+		//"map" to=SIMPLE_ID "from" from=SIMPLE_ID "{" ("when" rule=ExpCS ";")? mappedProperties+=PropertyMap* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"map"
 		public Keyword getMapKeyword_0() { return cMapKeyword_0; }
 
-		//from=SIMPLE_ID
-		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
-
-		//SIMPLE_ID
-		public RuleCall getFromSIMPLE_IDTerminalRuleCall_1_0() { return cFromSIMPLE_IDTerminalRuleCall_1_0; }
-
-		//"to"
-		public Keyword getToKeyword_2() { return cToKeyword_2; }
-
 		//to=SIMPLE_ID
-		public Assignment getToAssignment_3() { return cToAssignment_3; }
+		public Assignment getToAssignment_1() { return cToAssignment_1; }
 
 		//SIMPLE_ID
-		public RuleCall getToSIMPLE_IDTerminalRuleCall_3_0() { return cToSIMPLE_IDTerminalRuleCall_3_0; }
+		public RuleCall getToSIMPLE_IDTerminalRuleCall_1_0() { return cToSIMPLE_IDTerminalRuleCall_1_0; }
+
+		//"from"
+		public Keyword getFromKeyword_2() { return cFromKeyword_2; }
+
+		//from=SIMPLE_ID
+		public Assignment getFromAssignment_3() { return cFromAssignment_3; }
+
+		//SIMPLE_ID
+		public RuleCall getFromSIMPLE_IDTerminalRuleCall_3_0() { return cFromSIMPLE_IDTerminalRuleCall_3_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
-		//(mappingDef=SimpleMap | disambiguationRules+=DisambiguationMap+)?
-		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		//("when" rule=ExpCS ";")?
+		public Group getGroup_5() { return cGroup_5; }
 
-		//mappingDef=SimpleMap
-		public Assignment getMappingDefAssignment_5_0() { return cMappingDefAssignment_5_0; }
-
-		//SimpleMap
-		public RuleCall getMappingDefSimpleMapParserRuleCall_5_0_0() { return cMappingDefSimpleMapParserRuleCall_5_0_0; }
-
-		//disambiguationRules+=DisambiguationMap+
-		public Assignment getDisambiguationRulesAssignment_5_1() { return cDisambiguationRulesAssignment_5_1; }
-
-		//DisambiguationMap
-		public RuleCall getDisambiguationRulesDisambiguationMapParserRuleCall_5_1_0() { return cDisambiguationRulesDisambiguationMapParserRuleCall_5_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
-	}
-
-	public class DisambiguationMapElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DisambiguationMap");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cRuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cRuleAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cRuleExpCSParserRuleCall_1_0 = (RuleCall)cRuleAssignment_1.eContents().get(0);
-		private final Keyword cProducesKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cProducesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cProducesSIMPLE_IDTerminalRuleCall_3_0 = (RuleCall)cProducesAssignment_3.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cMappingDefAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cMappingDefSimpleMapParserRuleCall_5_0 = (RuleCall)cMappingDefAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		
-		//DisambiguationMap:
-		//	"rule" rule=ExpCS "produces" produces=SIMPLE_ID "{" mappingDef=SimpleMap? "}";
-		@Override public ParserRule getRule() { return rule; }
-
-		//"rule" rule=ExpCS "produces" produces=SIMPLE_ID "{" mappingDef=SimpleMap? "}"
-		public Group getGroup() { return cGroup; }
-
-		//"rule"
-		public Keyword getRuleKeyword_0() { return cRuleKeyword_0; }
+		//"when"
+		public Keyword getWhenKeyword_5_0() { return cWhenKeyword_5_0; }
 
 		//rule=ExpCS
-		public Assignment getRuleAssignment_1() { return cRuleAssignment_1; }
+		public Assignment getRuleAssignment_5_1() { return cRuleAssignment_5_1; }
 
 		//ExpCS
-		public RuleCall getRuleExpCSParserRuleCall_1_0() { return cRuleExpCSParserRuleCall_1_0; }
+		public RuleCall getRuleExpCSParserRuleCall_5_1_0() { return cRuleExpCSParserRuleCall_5_1_0; }
 
-		//"produces"
-		public Keyword getProducesKeyword_2() { return cProducesKeyword_2; }
+		//";"
+		public Keyword getSemicolonKeyword_5_2() { return cSemicolonKeyword_5_2; }
 
-		//produces=SIMPLE_ID
-		public Assignment getProducesAssignment_3() { return cProducesAssignment_3; }
-
-		//SIMPLE_ID
-		public RuleCall getProducesSIMPLE_IDTerminalRuleCall_3_0() { return cProducesSIMPLE_IDTerminalRuleCall_3_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
-
-		//mappingDef=SimpleMap?
-		public Assignment getMappingDefAssignment_5() { return cMappingDefAssignment_5; }
-
-		//SimpleMap
-		public RuleCall getMappingDefSimpleMapParserRuleCall_5_0() { return cMappingDefSimpleMapParserRuleCall_5_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
-	}
-
-	public class SimpleMapElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleMap");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cSimpleMapAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cMappedPropertiesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cMappedPropertiesPropertyMapParserRuleCall_1_0 = (RuleCall)cMappedPropertiesAssignment_1.eContents().get(0);
-		
-		//SimpleMap:
-		//	{SimpleMap} //mappedProperties+=PropertyMap (',' mappedProperties+=PropertyMap)*
-		//	mappedProperties+=PropertyMap+;
-		@Override public ParserRule getRule() { return rule; }
-
-		//{SimpleMap} //mappedProperties+=PropertyMap (',' mappedProperties+=PropertyMap)*
-		//mappedProperties+=PropertyMap+
-		public Group getGroup() { return cGroup; }
-
-		//{SimpleMap}
-		public Action getSimpleMapAction_0() { return cSimpleMapAction_0; }
-
-		////mappedProperties+=PropertyMap (',' mappedProperties+=PropertyMap)*
-		//mappedProperties+=PropertyMap+
-		public Assignment getMappedPropertiesAssignment_1() { return cMappedPropertiesAssignment_1; }
+		//mappedProperties+=PropertyMap*
+		public Assignment getMappedPropertiesAssignment_6() { return cMappedPropertiesAssignment_6; }
 
 		//PropertyMap
-		public RuleCall getMappedPropertiesPropertyMapParserRuleCall_1_0() { return cMappedPropertiesPropertyMapParserRuleCall_1_0; }
+		public RuleCall getMappedPropertiesPropertyMapParserRuleCall_6_0() { return cMappedPropertiesPropertyMapParserRuleCall_6_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class PropertyMapElements extends AbstractParserRuleElementFinder {
@@ -329,15 +258,15 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRedefineRedefineKeyword_0_0 = (Keyword)cRedefineAssignment_0.eContents().get(0);
 		private final Assignment cLhsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cLhsExpCSParserRuleCall_1_0 = (RuleCall)cLhsAssignment_1.eContents().get(0);
-		private final Keyword cLessThanSignHyphenMinusKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cRhsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cRhsExpCSParserRuleCall_3_0 = (RuleCall)cRhsAssignment_3.eContents().get(0);
 		
 		//PropertyMap:
-		//	redefine?="redefine"? lhs=ExpCS "<-" rhs=ExpCS;
+		//	redefine?="redefine"? lhs=ExpCS ":=" rhs=ExpCS;
 		@Override public ParserRule getRule() { return rule; }
 
-		//redefine?="redefine"? lhs=ExpCS "<-" rhs=ExpCS
+		//redefine?="redefine"? lhs=ExpCS ":=" rhs=ExpCS
 		public Group getGroup() { return cGroup; }
 
 		//redefine?="redefine"?
@@ -352,8 +281,8 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ExpCS
 		public RuleCall getLhsExpCSParserRuleCall_1_0() { return cLhsExpCSParserRuleCall_1_0; }
 
-		//"<-"
-		public Keyword getLessThanSignHyphenMinusKeyword_2() { return cLessThanSignHyphenMinusKeyword_2; }
+		//":="
+		public Keyword getColonEqualsSignKeyword_2() { return cColonEqualsSignKeyword_2; }
 
 		//rhs=ExpCS
 		public Assignment getRhsAssignment_3() { return cRhsAssignment_3; }
@@ -383,12 +312,12 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		// PrimaryExpCS returns essentialocl::ExpCS:
 		//	NestedExpCS | IfExpCS | SelfExpCS | PrimitiveLiteralExpCS | TupleLiteralExpCS | MapLiteralExpCS |
 		//	CollectionLiteralExpCS | LambdaLiteralExpCS | TypeLiteralExpCS | NameExpCS | // DSL addition
-		//	MapExpCS | LookupExpCS;
+		// MapExpCS | LookupExpCS;
 		@Override public ParserRule getRule() { return rule; }
 
 		//NestedExpCS | IfExpCS | SelfExpCS | PrimitiveLiteralExpCS | TupleLiteralExpCS | MapLiteralExpCS | CollectionLiteralExpCS
 		//| LambdaLiteralExpCS | TypeLiteralExpCS | NameExpCS | // DSL addition
-		//MapExpCS | LookupExpCS
+		// MapExpCS | LookupExpCS
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NestedExpCS
@@ -422,7 +351,7 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNameExpCSParserRuleCall_9() { return cNameExpCSParserRuleCall_9; }
 
 		//// DSL addition
-		//MapExpCS
+		// MapExpCS
 		public RuleCall getMapExpCSParserRuleCall_10() { return cMapExpCSParserRuleCall_10; }
 
 		//LookupExpCS
@@ -503,8 +432,6 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final ASDeclElements pASDecl;
 	private final ImportCSElements pImportCS;
 	private final ClassMapElements pClassMap;
-	private final DisambiguationMapElements pDisambiguationMap;
-	private final SimpleMapElements pSimpleMap;
 	private final PropertyMapElements pPropertyMap;
 	private final PrimaryExpCSElements pPrimaryExpCS;
 	private final MapExpCSElements pMapExpCS;
@@ -524,8 +451,6 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pASDecl = new ASDeclElements();
 		this.pImportCS = new ImportCSElements();
 		this.pClassMap = new ClassMapElements();
-		this.pDisambiguationMap = new DisambiguationMapElements();
-		this.pSimpleMap = new SimpleMapElements();
 		this.pPropertyMap = new PropertyMapElements();
 		this.pPrimaryExpCS = new PrimaryExpCSElements();
 		this.pMapExpCS = new MapExpCSElements();
@@ -570,7 +495,7 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//CSDecl:
-	//	"cs" metamodels+=ImportCS ("," metamodels+=ImportCS)*;
+	//	"in" metamodels+=ImportCS ("," metamodels+=ImportCS)*;
 	public CSDeclElements getCSDeclAccess() {
 		return pCSDecl;
 	}
@@ -580,7 +505,7 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ASDecl:
-	//	"as" metamodels+=ImportCS ("," metamodels+=ImportCS)*;
+	//	"out" metamodels+=ImportCS ("," metamodels+=ImportCS)*;
 	public ASDeclElements getASDeclAccess() {
 		return pASDecl;
 	}
@@ -600,7 +525,7 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ClassMap:
-	//	"map" from=SIMPLE_ID "to" to=SIMPLE_ID "{" (mappingDef=SimpleMap | disambiguationRules+=DisambiguationMap+)? "}";
+	//	"map" to=SIMPLE_ID "from" from=SIMPLE_ID "{" ("when" rule=ExpCS ";")? mappedProperties+=PropertyMap* "}";
 	public ClassMapElements getClassMapAccess() {
 		return pClassMap;
 	}
@@ -609,29 +534,8 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getClassMapAccess().getRule();
 	}
 
-	//DisambiguationMap:
-	//	"rule" rule=ExpCS "produces" produces=SIMPLE_ID "{" mappingDef=SimpleMap? "}";
-	public DisambiguationMapElements getDisambiguationMapAccess() {
-		return pDisambiguationMap;
-	}
-	
-	public ParserRule getDisambiguationMapRule() {
-		return getDisambiguationMapAccess().getRule();
-	}
-
-	//SimpleMap:
-	//	{SimpleMap} //mappedProperties+=PropertyMap (',' mappedProperties+=PropertyMap)*
-	//	mappedProperties+=PropertyMap+;
-	public SimpleMapElements getSimpleMapAccess() {
-		return pSimpleMap;
-	}
-	
-	public ParserRule getSimpleMapRule() {
-		return getSimpleMapAccess().getRule();
-	}
-
 	//PropertyMap:
-	//	redefine?="redefine"? lhs=ExpCS "<-" rhs=ExpCS;
+	//	redefine?="redefine"? lhs=ExpCS ":=" rhs=ExpCS;
 	public PropertyMapElements getPropertyMapAccess() {
 		return pPropertyMap;
 	}
@@ -645,7 +549,7 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	// PrimaryExpCS returns essentialocl::ExpCS:
 	//	NestedExpCS | IfExpCS | SelfExpCS | PrimitiveLiteralExpCS | TupleLiteralExpCS | MapLiteralExpCS |
 	//	CollectionLiteralExpCS | LambdaLiteralExpCS | TypeLiteralExpCS | NameExpCS | // DSL addition
-	//	MapExpCS | LookupExpCS;
+	// MapExpCS | LookupExpCS;
 	public PrimaryExpCSElements getPrimaryExpCSAccess() {
 		return pPrimaryExpCS;
 	}

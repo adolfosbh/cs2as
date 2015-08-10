@@ -109,16 +109,6 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createClassMapAdapter();
       }
       @Override
-      public Adapter caseDisambiguationMap(DisambiguationMap object)
-      {
-        return createDisambiguationMapAdapter();
-      }
-      @Override
-      public Adapter caseSimpleMap(SimpleMap object)
-      {
-        return createSimpleMapAdapter();
-      }
-      @Override
       public Adapter casePropertyMap(PropertyMap object)
       {
         return createPropertyMapAdapter();
@@ -261,36 +251,6 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createClassMapAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap <em>Disambiguation Map</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationMap
-   * @generated
-   */
-  public Adapter createDisambiguationMapAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SimpleMap <em>Simple Map</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SimpleMap
-   * @generated
-   */
-  public Adapter createSimpleMapAdapter()
   {
     return null;
   }

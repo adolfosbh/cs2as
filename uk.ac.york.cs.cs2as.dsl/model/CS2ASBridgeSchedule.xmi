@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ASCII"?>
+<qvts:Schedule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:qvts="http://www.eclipse.org/qvt/2015/Schedule">
+  <datums xsi:type="qvts:ClassDatum" sub="//@datums.1">
+    <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.PivotableElementCS"/>
+    <propertyDatums sub="//@datums.1/@propertyDatums.0">
+      <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+    </propertyDatums>
+  </datums>
+  <datums xsi:type="qvts:ClassDatum" super="//@datums.0" sub="//@datums.2">
+    <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ModelElementCS"/>
+    <propertyDatums super="//@datums.0/@propertyDatums.0" sub="//@datums.2/@propertyDatums.1">
+      <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+    </propertyDatums>
+  </datums>
+  <datums xsi:type="qvts:ClassDatum" super="//@datums.1" sub="//@datums.3">
+    <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.NamedElementCS"/>
+    <propertyDatums sub="//@datums.3/@propertyDatums.0">
+      <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+    </propertyDatums>
+    <propertyDatums super="//@datums.1/@propertyDatums.0" sub="//@datums.3/@propertyDatums.1">
+      <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+    </propertyDatums>
+  </datums>
+  <datums xsi:type="qvts:ClassDatum" super="//@datums.2" sub="//@datums.4">
+    <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.NamespaceCS"/>
+    <propertyDatums super="//@datums.2/@propertyDatums.0" sub="//@datums.4/@propertyDatums.0">
+      <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+    </propertyDatums>
+    <propertyDatums super="//@datums.2/@propertyDatums.1" sub="//@datums.4/@propertyDatums.1">
+      <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+    </propertyDatums>
+  </datums>
+  <datums xsi:type="qvts:ClassDatum" super="//@datums.3" requiredBy="//@actions.0 //@actions.1 //@actions.2" dataParameter="//@actions.0/@parameters.0 //@actions.1/@parameters.0 //@actions.2/@parameters.0">
+    <domain href="CS2ASBridge.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.0"/>
+    <type href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#T.basecs.ImportCS"/>
+    <propertyDatums super="//@datums.3/@propertyDatums.0" requiredBy="//@actions.1">
+      <domain href="CS2ASBridge.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.0"/>
+      <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.NamedElementCS.name"/>
+    </propertyDatums>
+    <propertyDatums super="//@datums.3/@propertyDatums.1" producedBy="//@actions.0" requiredBy="//@actions.1 //@actions.2">
+      <domain href="CS2ASBridge.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.0"/>
+      <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.PivotableElementCS.pivot"/>
+    </propertyDatums>
+    <propertyDatums requiredBy="//@actions.2">
+      <domain href="CS2ASBridge.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.0"/>
+      <property href="../../org.eclipse.ocl.xtext.base/model/BaseCS.ecore.oclas#p.basecs.ImportCS.referredNamespace"/>
+    </propertyDatums>
+  </datums>
+  <datums xsi:type="qvts:ClassDatum" sub="//@datums.6 //@datums.7">
+    <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.NamedElement"/>
+    <propertyDatums sub="//@datums.6/@propertyDatums.0">
+      <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+    </propertyDatums>
+  </datums>
+  <datums xsi:type="qvts:ClassDatum" super="//@datums.5" producedBy="//@actions.0" dataParameter="//@actions.0/@results.0">
+    <domain href="CS2ASBridge.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.1"/>
+    <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Import"/>
+    <propertyDatums super="//@datums.5/@propertyDatums.0" producedBy="//@actions.1">
+      <domain href="CS2ASBridge.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.1"/>
+      <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.NamedElement.name"/>
+    </propertyDatums>
+    <propertyDatums producedBy="//@actions.2" opposite="//@datums.7/@propertyDatums.0">
+      <domain href="CS2ASBridge.qvtp.qvtias#//@ownedPackages.0/@ownedClasses.0/@rule.0/@domain.1"/>
+      <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Import.importedNamespace"/>
+    </propertyDatums>
+  </datums>
+  <datums xsi:type="qvts:ClassDatum" super="//@datums.5">
+    <type href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#T.pivot.Namespace"/>
+    <propertyDatums producedBy="//@actions.2">
+      <property href="../../org.eclipse.ocl.pivot/model/Pivot.ecore.oclas#p.pivot.Namespace.Import"/>
+    </propertyDatums>
+  </datums>
+  <actions xsi:type="qvts:MappingAction" productions="//@datums.6 //@datums.4/@propertyDatums.1" requisites="//@datums.4" order="1" parent="//@actions.3">
+    <parameterDerivations>
+      <secondaryParameter isLoop="true" dataParameter="//@actions.0/@parameters.0"/>
+    </parameterDerivations>
+    <parameters secondaryParameter="//@actions.0/@parameterDerivations.0/@secondaryParameter" datum="//@datums.4">
+      <variable href="CS2ASBridge.qvtp.qvtias#qV..CS2ASBridge_qvtp_qvtias.cImportCS_2_Import.leftCS.guard.importCS"/>
+    </parameters>
+    <results datum="//@datums.6">
+      <variable href="CS2ASBridge.qvtp.qvtias#qV..CS2ASBridge_qvtp_qvtias.cImportCS_2_Import.rightAS.bottom.import"/>
+    </results>
+    <mapping href="CS2ASBridge.qvtp.qvtias#m..CS2ASBridge_qvtp_qvtias.cImportCS_2_Import"/>
+  </actions>
+  <actions xsi:type="qvts:MappingAction" productions="//@datums.6/@propertyDatums.0" requisites="//@datums.4 //@datums.4/@propertyDatums.0 //@datums.4/@propertyDatums.1" order="2" parent="//@actions.3">
+    <parameterDerivations>
+      <secondaryParameter isLoop="true" dataParameter="//@actions.1/@parameters.0"/>
+    </parameterDerivations>
+    <parameters secondaryParameter="//@actions.1/@parameterDerivations.0/@secondaryParameter" datum="//@datums.4">
+      <variable href="CS2ASBridge.qvtp.qvtias#qV..CS2ASBridge_qvtp_qvtias.uImport_name.leftCS.guard.importCS"/>
+    </parameters>
+    <mapping href="CS2ASBridge.qvtp.qvtias#m..CS2ASBridge_qvtp_qvtias.uImport_name"/>
+  </actions>
+  <actions xsi:type="qvts:MappingAction" productions="//@datums.6/@propertyDatums.1 //@datums.7/@propertyDatums.0" requisites="//@datums.4 //@datums.4/@propertyDatums.2 //@datums.4/@propertyDatums.1" order="3" parent="//@actions.3">
+    <parameterDerivations>
+      <secondaryParameter isLoop="true" dataParameter="//@actions.2/@parameters.0"/>
+    </parameterDerivations>
+    <parameters secondaryParameter="//@actions.2/@parameterDerivations.0/@secondaryParameter" datum="//@datums.4">
+      <variable href="CS2ASBridge.qvtp.qvtias#qV..CS2ASBridge_qvtp_qvtias.uImport_importedNamespace.leftCS.guard.importCS"/>
+    </parameters>
+    <mapping href="CS2ASBridge.qvtp.qvtias#m..CS2ASBridge_qvtp_qvtias.uImport_importedNamespace"/>
+  </actions>
+  <actions xsi:type="qvts:MappingAction" children="//@actions.0 //@actions.1 //@actions.2"/>
+</qvts:Schedule>
