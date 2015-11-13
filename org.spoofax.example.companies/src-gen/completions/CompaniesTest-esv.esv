@@ -1,0 +1,19 @@
+
+module src-gen/completions/CompaniesTest-esv
+
+imports
+  src-gen/completions/Common-esv
+
+completions
+  completion template Start : "company STRING { }" =
+    "company " <STRING:STRING> " {\n\t" (cursor) "\n}" (blank)  
+  completion template Dept : "department STRING { DeptManager }" =
+    "department " <STRING:STRING> " {\n\t" <DeptManager:DeptManager> "\n\t" (cursor) "\n}" (blank)  
+  completion template DeptManager : "manager Employee" =
+    "manager " <Employee:Employee>                     
+  completion template DeptEmployee : "employee Employee" =
+    "employee " <Employee:Employee>                  
+  completion template Employee : "STRING { address STRING salary FLOAT }" =
+    <STRING:STRING> " {\n\taddress " <STRING:STRING> "\n\tsalary " <FLOAT:FLOAT> "\n\t" (cursor) "\n}" (blank)  
+  completion template Mentor : "mentor STRING" =
+    "mentor " <STRING:STRING>                                  

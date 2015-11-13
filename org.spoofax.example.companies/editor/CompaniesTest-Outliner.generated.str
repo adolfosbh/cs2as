@@ -1,0 +1,11 @@
+module editor/CompaniesTest-Outliner.generated
+
+imports
+  
+  include/CompaniesTest
+  lib/runtime/editor/outline-library
+
+rules
+  
+  to-outline-label = ?Company(<id>, _)
+  to-outline-label = ?Department(<id>, _, _, _)

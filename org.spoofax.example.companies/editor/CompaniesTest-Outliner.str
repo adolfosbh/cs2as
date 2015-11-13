@@ -1,0 +1,13 @@
+module editor/CompaniesTest-Outliner
+
+imports
+  
+  include/CompaniesTest
+  lib/runtime/editor/outline-library
+  lib/runtime/editor/origins
+  editor/CompaniesTest-Outliner.generated
+
+rules
+  
+  to-outline-label = fail
+  

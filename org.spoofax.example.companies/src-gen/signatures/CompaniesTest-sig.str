@@ -1,0 +1,14 @@
+module src-gen/signatures/CompaniesTest-sig
+
+imports
+  src-gen/signatures/Common-sig
+
+
+signature
+  constructors
+    Company      : STRING * List(Dept) -> Start
+    Department   : STRING * DeptManager * List(DeptEmployee) * List(Dept) -> Dept
+    DeptManager  : Employee -> DeptManager
+    DeptEmployee : Employee -> DeptEmployee
+    Employee     : STRING * STRING * FLOAT * Option(Mentor) -> Employee
+    Mentor       : STRING -> Mentor

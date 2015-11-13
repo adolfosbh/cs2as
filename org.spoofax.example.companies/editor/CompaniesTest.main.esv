@@ -1,0 +1,33 @@
+module CompaniesTest.main
+
+imports
+  CompaniesTest-Colorer
+  CompaniesTest-Completions
+  CompaniesTest-Folding
+  CompaniesTest-Menus
+  CompaniesTest-Refactorings
+  CompaniesTest-References
+  CompaniesTest-Syntax
+  CompaniesTest-Views
+
+language General properties
+  
+  name:          CompaniesTest
+  id:            companiesTest
+  extends:       Root
+  
+  description:   "Spoofax-generated editor for the CompaniesTest language"
+  url:           http://strategoxt.org
+  
+  extensions:    101
+  table:         include/CompaniesTest.tbl
+  start symbols: Start
+  
+  provider:      include/companiestest.ctree
+  provider:      include/companiestest-java.jar
+  
+  observer:      editor-analyze (multifile)
+  
+  on save:       editor-save
+  
+  jvm opts:      -server -Xss8m -Xmx1024m

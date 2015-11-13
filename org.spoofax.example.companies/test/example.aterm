@@ -1,0 +1,22 @@
+Company(
+  "\"companyA\""
+, [ Department(
+      "\"departmentA\""
+    , DeptManager(Employee("\"managerA\"", "\"streetManagerA\"", "10000.00", None()))
+    , [ DeptEmployee(Employee("\"employeeA\"", "\"streetEmployeeA\"", "5000.00", None()))
+      , DeptEmployee(Employee("\"employeeB\"", "\"streetEmployeeB\"", "7000.00", None()))
+      , DeptEmployee(Employee("\"employeeC\"", "\"streetEmployeeC\"", "9000.00", Some(Mentor("\"employeeB\""))))
+      ]
+    , []
+    )
+  , Department(
+      "\"departmentB\""
+    , DeptManager(Employee("\"managerB\"", "\"streetManagerB\"", "10000.00", Some(Mentor("\"managerA\""))))
+    , [ DeptEmployee(Employee("\"employeeD\"", "\"streetEmployeeD\"", "2900.00", Some(Mentor("\"employeeE\""))))
+      , DeptEmployee(Employee("\"employeeE\"", "\"streetEmployeeE\"", "6500.00", None()))
+      , DeptEmployee(Employee("\"employeeF\"", "\"streetEmployeeF\"", "8700.00", Some(Mentor("\"employeeB\""))))
+      ]
+    , []
+    )
+  ]
+)

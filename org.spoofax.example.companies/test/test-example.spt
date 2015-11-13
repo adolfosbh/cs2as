@@ -1,0 +1,57 @@
+/**
+* Unit tests for the CompaniesTest language.
+*/
+module test-example
+
+language CompaniesTest
+
+setup Common [[
+  module test
+]]
+
+test non_empty_Company [[
+  company "c1" {
+    
+  }
+]] parse fails
+
+/*
+test Resolve type fails [[
+  entity User {
+    name  : [[Strin]]
+    other : [[Use]]
+  }
+]] 2 errors
+
+test Duplicate entity fails [[
+  [[entity User {}]]
+  [[entity User {}]]
+]] 2 errors
+
+test Duplicate property fails [[
+  entity User {
+  	[[name : String]]
+  	[[name : String]]
+  }
+]] 2 errors
+
+test Resolve type [[
+  entity [[User]] {}
+  
+  entity Owner {
+    owns : [[User]]
+  }
+]] resolve #2 to #1
+
+test Complete primitive type [[
+  entity User {
+    name : [[Str]]
+  }
+]] complete to "String"
+
+test Complete user type [[
+  entity User {
+    owner : [[Us]]
+  }
+]] complete to "User"
+*/

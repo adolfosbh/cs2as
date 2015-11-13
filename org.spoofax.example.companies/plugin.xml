@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         point="org.eclipse.imp.runtime.languageDescription">
+      <language
+            extensions="101"
+            description="CompaniesTest"
+            language="CompaniesTest"
+            derivedFrom="DynamicRoot"
+            validator="companiesTest.CompaniesTestValidator"
+            validatorClass="companiesTest.CompaniesTestValidator"
+      ></language>
+   </extension>
+   <extension
+         id="companiesTest.parser"
+         name="CompaniesTest Parser"
+         point="org.eclipse.imp.runtime.parser">
+      <parser
+            class="companiesTest.CompaniesTestParseController"
+            language="CompaniesTest">
+      </parser>
+   </extension>    
+</plugin>

@@ -1,0 +1,142 @@
+module src-gen/check/CompaniesTest-chk
+
+imports
+  libstratego-gpp
+  runtime/tmpl/pp
+  libstratego-sglr
+  src-gen/signatures/CompaniesTest-sig
+
+
+imports
+  src-gen/signatures/Common-sig
+
+
+imports
+  src-gen/check/Common-chk
+
+
+strategies
+  check-SDF-start-symbols =
+    check-Start
+
+
+strategies
+  check-example =
+    check-Start
+
+  check-example =
+    check-Dept
+
+  check-example =
+    check-DeptManager
+
+  check-example =
+    check-DeptEmployee
+
+  check-example =
+    check-Employee
+
+  check-example =
+    check-Mentor
+
+  check-Start :
+    Company(t1__, t2__) -> <id>
+    with <(check-STRING <+ error-STRING)> t1__
+    with <map(check-Dept <+ error-Dept)> t2__
+
+  is-Start-with-constructor =
+    ?Company(_, _)
+
+  check-Dept :
+    Department(t1__, t2__, t3__, t4__) -> <id>
+    with <(check-STRING <+ error-STRING)> t1__
+    with <(check-DeptManager <+ error-DeptManager)> t2__
+    with <map(check-DeptEmployee <+ error-DeptEmployee)> t3__
+    with <map(check-Dept <+ error-Dept)> t4__
+
+  is-Dept-with-constructor =
+    ?Department(_, _, _, _)
+
+  check-DeptManager :
+    DeptManager(t1__) -> <id>
+    with <(check-Employee <+ error-Employee)> t1__
+
+  is-DeptManager-with-constructor =
+    ?DeptManager(_)
+
+  check-DeptEmployee :
+    DeptEmployee(t1__) -> <id>
+    with <(check-Employee <+ error-Employee)> t1__
+
+  is-DeptEmployee-with-constructor =
+    ?DeptEmployee(_)
+
+  check-Employee :
+    Employee(t1__, t2__, t3__, t4__) -> <id>
+    with <(check-STRING <+ error-STRING)> t1__
+    with <(check-STRING <+ error-STRING)> t2__
+    with <(check-FLOAT <+ error-FLOAT)> t3__
+
+  is-Employee-with-constructor =
+    ?Employee(_, _, _, _)
+
+  check-Mentor :
+    Mentor(t1__) -> <id>
+    with <(check-STRING <+ error-STRING)> t1__
+
+  is-Mentor-with-constructor =
+    ?Mentor(_)
+
+  is-Start-with-constructor =
+    fail
+
+  is-Dept-with-constructor =
+    fail
+
+  is-DeptManager-with-constructor =
+    fail
+
+  is-DeptEmployee-with-constructor =
+    fail
+
+  is-Employee-with-constructor =
+    fail
+
+  is-Mentor-with-constructor =
+    fail
+
+  check-Start :
+    amb([h|hs]) -> <check-Start> h
+
+  check-Dept :
+    amb([h|hs]) -> <check-Dept> h
+
+  check-DeptManager :
+    amb([h|hs]) -> <check-DeptManager> h
+
+  check-DeptEmployee :
+    amb([h|hs]) -> <check-DeptEmployee> h
+
+  check-Employee :
+    amb([h|hs]) -> <check-Employee> h
+
+  check-Mentor :
+    amb([h|hs]) -> <check-Mentor> h
+
+  error-Start =
+    debug(!"Unexpected constructor. Expected constructor from sort Start instead. ")
+
+  error-Dept =
+    debug(!"Unexpected constructor. Expected constructor from sort Dept instead. ")
+
+  error-DeptManager =
+    debug(!"Unexpected constructor. Expected constructor from sort DeptManager instead. ")
+
+  error-DeptEmployee =
+    debug(!"Unexpected constructor. Expected constructor from sort DeptEmployee instead. ")
+
+  error-Employee =
+    debug(!"Unexpected constructor. Expected constructor from sort Employee instead. ")
+
+  error-Mentor =
+    debug(!"Unexpected constructor. Expected constructor from sort Mentor instead. ")

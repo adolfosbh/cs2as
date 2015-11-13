@@ -1,0 +1,22 @@
+module CompaniesTest
+imports Common
+
+exports
+  context-free start-symbols
+    Start
+
+  context-free syntax
+    "company" STRING "{" Dept* "}"                              -> Start        {cons("Company")}
+    "department" STRING "{" DeptManager DeptEmployee* Dept* "}" -> Dept         {cons("Department")}
+    "manager" Employee                                          -> DeptManager  {cons("DeptManager")}
+    "employee" Employee                                         -> DeptEmployee {cons("DeptEmployee")}
+    STRING "{" "address" STRING "salary" FLOAT Mentor? "}"      -> Employee     {cons("Employee")}
+    "mentor" STRING                                             -> Mentor       {cons("Mentor")}
+
+  context-free syntax
+    CONTENTCOMPLETE -> Start        {cons("COMPLETION-Start")}
+    CONTENTCOMPLETE -> Dept         {cons("COMPLETION-Dept")}
+    CONTENTCOMPLETE -> DeptManager  {cons("COMPLETION-DeptManager")}
+    CONTENTCOMPLETE -> DeptEmployee {cons("COMPLETION-DeptEmployee")}
+    CONTENTCOMPLETE -> Employee     {cons("COMPLETION-Employee")}
+    CONTENTCOMPLETE -> Mentor       {cons("COMPLETION-Mentor")}
