@@ -67,9 +67,20 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.MODEL: return createModel();
       case Cs2as_dslPackage.CS_DECL: return createCSDecl();
       case Cs2as_dslPackage.AS_DECL: return createASDecl();
+      case Cs2as_dslPackage.MAPPING_SECT: return createMappingSect();
       case Cs2as_dslPackage.CLASS_MAP: return createClassMap();
+      case Cs2as_dslPackage.CLASS_MAP_STMNT: return createClassMapStmnt();
       case Cs2as_dslPackage.PROPERTY_MAP: return createPropertyMap();
-      case Cs2as_dslPackage.MAP_EXP_CS: return createMapExpCS();
+      case Cs2as_dslPackage.DISAMBIGUATION_SECT: return createDisambiguationSect();
+      case Cs2as_dslPackage.CLASS_DISAMBIGUATION: return createClassDisambiguation();
+      case Cs2as_dslPackage.CLASS_DISAMBIGUATION_STMNT: return createClassDisambiguationStmnt();
+      case Cs2as_dslPackage.DISAMBIGUATION_DEF: return createDisambiguationDef();
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT: return createNameResolutionSect();
+      case Cs2as_dslPackage.CLASS_NAME_RESOLUTION: return createClassNameResolution();
+      case Cs2as_dslPackage.CLASS_NAME_RESOLUTION_STMNT: return createClassNameResolutionStmnt();
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF: return createNamedElementDef();
+      case Cs2as_dslPackage.SCOPE_DEF: return createScopeDef();
+      case Cs2as_dslPackage.RESOLVE_EXP_CS: return createResolveExpCS();
       case Cs2as_dslPackage.LOOKUP_EXP_CS: return createLookupExpCS();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -114,10 +125,32 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
+  public MappingSect createMappingSect()
+  {
+    MappingSectImpl mappingSect = new MappingSectImpl();
+    return mappingSect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ClassMap createClassMap()
   {
     ClassMapImpl classMap = new ClassMapImpl();
     return classMap;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClassMapStmnt createClassMapStmnt()
+  {
+    ClassMapStmntImpl classMapStmnt = new ClassMapStmntImpl();
+    return classMapStmnt;
   }
 
   /**
@@ -136,10 +169,109 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public MapExpCS createMapExpCS()
+  public DisambiguationSect createDisambiguationSect()
   {
-    MapExpCSImpl mapExpCS = new MapExpCSImpl();
-    return mapExpCS;
+    DisambiguationSectImpl disambiguationSect = new DisambiguationSectImpl();
+    return disambiguationSect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClassDisambiguation createClassDisambiguation()
+  {
+    ClassDisambiguationImpl classDisambiguation = new ClassDisambiguationImpl();
+    return classDisambiguation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClassDisambiguationStmnt createClassDisambiguationStmnt()
+  {
+    ClassDisambiguationStmntImpl classDisambiguationStmnt = new ClassDisambiguationStmntImpl();
+    return classDisambiguationStmnt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DisambiguationDef createDisambiguationDef()
+  {
+    DisambiguationDefImpl disambiguationDef = new DisambiguationDefImpl();
+    return disambiguationDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NameResolutionSect createNameResolutionSect()
+  {
+    NameResolutionSectImpl nameResolutionSect = new NameResolutionSectImpl();
+    return nameResolutionSect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClassNameResolution createClassNameResolution()
+  {
+    ClassNameResolutionImpl classNameResolution = new ClassNameResolutionImpl();
+    return classNameResolution;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClassNameResolutionStmnt createClassNameResolutionStmnt()
+  {
+    ClassNameResolutionStmntImpl classNameResolutionStmnt = new ClassNameResolutionStmntImpl();
+    return classNameResolutionStmnt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NamedElementDef createNamedElementDef()
+  {
+    NamedElementDefImpl namedElementDef = new NamedElementDefImpl();
+    return namedElementDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScopeDef createScopeDef()
+  {
+    ScopeDefImpl scopeDef = new ScopeDefImpl();
+    return scopeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ResolveExpCS createResolveExpCS()
+  {
+    ResolveExpCSImpl resolveExpCS = new ResolveExpCSImpl();
+    return resolveExpCS;
   }
 
   /**

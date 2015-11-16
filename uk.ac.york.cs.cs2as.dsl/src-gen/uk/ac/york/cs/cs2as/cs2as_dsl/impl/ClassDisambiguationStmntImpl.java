@@ -4,26 +4,26 @@ package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.ocl.xtext.essentialoclcs.impl.ExpCSImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.MapExpCS;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Map Exp CS</b></em>'.
+ * An implementation of the model object '<em><b>Class Disambiguation Stmnt</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class MapExpCSImpl extends ExpCSImpl implements MapExpCS
+public class ClassDisambiguationStmntImpl extends MinimalEObjectImpl.Container implements ClassDisambiguationStmnt
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MapExpCSImpl()
+  protected ClassDisambiguationStmntImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class MapExpCSImpl extends ExpCSImpl implements MapExpCS
   @Override
   protected EClass eStaticClass()
   {
-    return Cs2as_dslPackage.Literals.MAP_EXP_CS;
+    return Cs2as_dslPackage.Literals.CLASS_DISAMBIGUATION_STMNT;
   }
 
-} //MapExpCSImpl
+} //ClassDisambiguationStmntImpl

@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl#getTo <em>To</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl#getFrom <em>From</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl#getRule <em>Rule</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl#getMappedProperties <em>Mapped Properties</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,14 +93,14 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
   protected ExpCS rule;
 
   /**
-   * The cached value of the '{@link #getMappedProperties() <em>Mapped Properties</em>}' containment reference list.
+   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMappedProperties()
+   * @see #getStatements()
    * @generated
    * @ordered
    */
-  protected EList<PropertyMap> mappedProperties;
+  protected EList<ClassMapStmnt> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -222,13 +222,13 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<PropertyMap> getMappedProperties()
+  public EList<ClassMapStmnt> getStatements()
   {
-    if (mappedProperties == null)
+    if (statements == null)
     {
-      mappedProperties = new EObjectContainmentEList<PropertyMap>(PropertyMap.class, this, Cs2as_dslPackage.CLASS_MAP__MAPPED_PROPERTIES);
+      statements = new EObjectContainmentEList<ClassMapStmnt>(ClassMapStmnt.class, this, Cs2as_dslPackage.CLASS_MAP__STATEMENTS);
     }
-    return mappedProperties;
+    return statements;
   }
 
   /**
@@ -243,8 +243,8 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
     {
       case Cs2as_dslPackage.CLASS_MAP__RULE:
         return basicSetRule(null, msgs);
-      case Cs2as_dslPackage.CLASS_MAP__MAPPED_PROPERTIES:
-        return ((InternalEList<?>)getMappedProperties()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
+        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -265,8 +265,8 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
         return getFrom();
       case Cs2as_dslPackage.CLASS_MAP__RULE:
         return getRule();
-      case Cs2as_dslPackage.CLASS_MAP__MAPPED_PROPERTIES:
-        return getMappedProperties();
+      case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
+        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -291,9 +291,9 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
       case Cs2as_dslPackage.CLASS_MAP__RULE:
         setRule((ExpCS)newValue);
         return;
-      case Cs2as_dslPackage.CLASS_MAP__MAPPED_PROPERTIES:
-        getMappedProperties().clear();
-        getMappedProperties().addAll((Collection<? extends PropertyMap>)newValue);
+      case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
+        getStatements().clear();
+        getStatements().addAll((Collection<? extends ClassMapStmnt>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -318,8 +318,8 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
       case Cs2as_dslPackage.CLASS_MAP__RULE:
         setRule((ExpCS)null);
         return;
-      case Cs2as_dslPackage.CLASS_MAP__MAPPED_PROPERTIES:
-        getMappedProperties().clear();
+      case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
+        getStatements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -341,8 +341,8 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
         return FROM_EDEFAULT == null ? from != null : !FROM_EDEFAULT.equals(from);
       case Cs2as_dslPackage.CLASS_MAP__RULE:
         return rule != null;
-      case Cs2as_dslPackage.CLASS_MAP__MAPPED_PROPERTIES:
-        return mappedProperties != null && !mappedProperties.isEmpty();
+      case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
+        return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

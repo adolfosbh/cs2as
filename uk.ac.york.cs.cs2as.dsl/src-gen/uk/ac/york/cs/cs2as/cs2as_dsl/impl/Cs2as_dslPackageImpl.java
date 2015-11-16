@@ -16,13 +16,24 @@ import org.eclipse.ocl.xtext.essentialoclcs.EssentialOCLCSPackage;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslFactory;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
-import uk.ac.york.cs.cs2as.cs2as_dsl.MapExpCS;
+import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
+import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
+import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,7 +69,21 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass mappingSectEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass classMapEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classMapStmntEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +97,70 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass mapExpCSEClass = null;
+  private EClass disambiguationSectEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classDisambiguationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classDisambiguationStmntEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass disambiguationDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nameResolutionSectEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classNameResolutionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classNameResolutionStmntEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass namedElementDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass scopeDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass resolveExpCSEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -182,9 +270,29 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Mappings()
+  public EReference getModel_MappingSect()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_DisambiguationSect()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_NameresoSect()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -232,6 +340,26 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMappingSect()
+  {
+    return mappingSectEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMappingSect_Mappings()
+  {
+    return (EReference)mappingSectEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getClassMap()
   {
     return classMapEClass;
@@ -272,9 +400,19 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getClassMap_MappedProperties()
+  public EReference getClassMap_Statements()
   {
     return (EReference)classMapEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getClassMapStmnt()
+  {
+    return classMapStmntEClass;
   }
 
   /**
@@ -302,9 +440,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPropertyMap_Lhs()
+  public EAttribute getPropertyMap_PropName()
   {
-    return (EReference)propertyMapEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)propertyMapEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -312,7 +450,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPropertyMap_Rhs()
+  public EReference getPropertyMap_PropInit()
   {
     return (EReference)propertyMapEClass.getEStructuralFeatures().get(2);
   }
@@ -322,9 +460,269 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMapExpCS()
+  public EClass getDisambiguationSect()
   {
-    return mapExpCSEClass;
+    return disambiguationSectEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDisambiguationSect_Disambiguations()
+  {
+    return (EReference)disambiguationSectEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getClassDisambiguation()
+  {
+    return classDisambiguationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClassDisambiguation_Class()
+  {
+    return (EAttribute)classDisambiguationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getClassDisambiguation_Statements()
+  {
+    return (EReference)classDisambiguationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getClassDisambiguationStmnt()
+  {
+    return classDisambiguationStmntEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDisambiguationDef()
+  {
+    return disambiguationDefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDisambiguationDef_Name()
+  {
+    return (EAttribute)disambiguationDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDisambiguationDef_Exp()
+  {
+    return (EReference)disambiguationDefEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNameResolutionSect()
+  {
+    return nameResolutionSectEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNameResolutionSect_NameElement()
+  {
+    return (EAttribute)nameResolutionSectEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNameResolutionSect_NameProperty()
+  {
+    return (EReference)nameResolutionSectEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNameResolutionSect_NameQualifier()
+  {
+    return (EAttribute)nameResolutionSectEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNameResolutionSect_NameResolutions()
+  {
+    return (EReference)nameResolutionSectEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getClassNameResolution()
+  {
+    return classNameResolutionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClassNameResolution_Class()
+  {
+    return (EAttribute)classNameResolutionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getClassNameResolution_Statements()
+  {
+    return (EReference)classNameResolutionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getClassNameResolutionStmnt()
+  {
+    return classNameResolutionStmntEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNamedElementDef()
+  {
+    return namedElementDefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNamedElementDef_NamePoperty()
+  {
+    return (EReference)namedElementDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNamedElementDef_Qualifier()
+  {
+    return (EAttribute)namedElementDefEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getScopeDef()
+  {
+    return scopeDefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getScopeDef_SameScope()
+  {
+    return (EAttribute)scopeDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScopeDef_ContributingProp()
+  {
+    return (EReference)scopeDefEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScopeDef_TypeFilter()
+  {
+    return (EReference)scopeDefEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScopeDef_PropagatingProp()
+  {
+    return (EReference)scopeDefEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getResolveExpCS()
+  {
+    return resolveExpCSEClass;
   }
 
   /**
@@ -380,7 +778,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__CS_DECL);
     createEReference(modelEClass, MODEL__AS_DECL);
-    createEReference(modelEClass, MODEL__MAPPINGS);
+    createEReference(modelEClass, MODEL__MAPPING_SECT);
+    createEReference(modelEClass, MODEL__DISAMBIGUATION_SECT);
+    createEReference(modelEClass, MODEL__NAMERESO_SECT);
 
     csDeclEClass = createEClass(CS_DECL);
     createEReference(csDeclEClass, CS_DECL__METAMODELS);
@@ -388,18 +788,58 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     asDeclEClass = createEClass(AS_DECL);
     createEReference(asDeclEClass, AS_DECL__METAMODELS);
 
+    mappingSectEClass = createEClass(MAPPING_SECT);
+    createEReference(mappingSectEClass, MAPPING_SECT__MAPPINGS);
+
     classMapEClass = createEClass(CLASS_MAP);
     createEAttribute(classMapEClass, CLASS_MAP__TO);
     createEAttribute(classMapEClass, CLASS_MAP__FROM);
     createEReference(classMapEClass, CLASS_MAP__RULE);
-    createEReference(classMapEClass, CLASS_MAP__MAPPED_PROPERTIES);
+    createEReference(classMapEClass, CLASS_MAP__STATEMENTS);
+
+    classMapStmntEClass = createEClass(CLASS_MAP_STMNT);
 
     propertyMapEClass = createEClass(PROPERTY_MAP);
     createEAttribute(propertyMapEClass, PROPERTY_MAP__REDEFINE);
-    createEReference(propertyMapEClass, PROPERTY_MAP__LHS);
-    createEReference(propertyMapEClass, PROPERTY_MAP__RHS);
+    createEAttribute(propertyMapEClass, PROPERTY_MAP__PROP_NAME);
+    createEReference(propertyMapEClass, PROPERTY_MAP__PROP_INIT);
 
-    mapExpCSEClass = createEClass(MAP_EXP_CS);
+    disambiguationSectEClass = createEClass(DISAMBIGUATION_SECT);
+    createEReference(disambiguationSectEClass, DISAMBIGUATION_SECT__DISAMBIGUATIONS);
+
+    classDisambiguationEClass = createEClass(CLASS_DISAMBIGUATION);
+    createEAttribute(classDisambiguationEClass, CLASS_DISAMBIGUATION__CLASS);
+    createEReference(classDisambiguationEClass, CLASS_DISAMBIGUATION__STATEMENTS);
+
+    classDisambiguationStmntEClass = createEClass(CLASS_DISAMBIGUATION_STMNT);
+
+    disambiguationDefEClass = createEClass(DISAMBIGUATION_DEF);
+    createEAttribute(disambiguationDefEClass, DISAMBIGUATION_DEF__NAME);
+    createEReference(disambiguationDefEClass, DISAMBIGUATION_DEF__EXP);
+
+    nameResolutionSectEClass = createEClass(NAME_RESOLUTION_SECT);
+    createEAttribute(nameResolutionSectEClass, NAME_RESOLUTION_SECT__NAME_ELEMENT);
+    createEReference(nameResolutionSectEClass, NAME_RESOLUTION_SECT__NAME_PROPERTY);
+    createEAttribute(nameResolutionSectEClass, NAME_RESOLUTION_SECT__NAME_QUALIFIER);
+    createEReference(nameResolutionSectEClass, NAME_RESOLUTION_SECT__NAME_RESOLUTIONS);
+
+    classNameResolutionEClass = createEClass(CLASS_NAME_RESOLUTION);
+    createEAttribute(classNameResolutionEClass, CLASS_NAME_RESOLUTION__CLASS);
+    createEReference(classNameResolutionEClass, CLASS_NAME_RESOLUTION__STATEMENTS);
+
+    classNameResolutionStmntEClass = createEClass(CLASS_NAME_RESOLUTION_STMNT);
+
+    namedElementDefEClass = createEClass(NAMED_ELEMENT_DEF);
+    createEReference(namedElementDefEClass, NAMED_ELEMENT_DEF__NAME_POPERTY);
+    createEAttribute(namedElementDefEClass, NAMED_ELEMENT_DEF__QUALIFIER);
+
+    scopeDefEClass = createEClass(SCOPE_DEF);
+    createEAttribute(scopeDefEClass, SCOPE_DEF__SAME_SCOPE);
+    createEReference(scopeDefEClass, SCOPE_DEF__CONTRIBUTING_PROP);
+    createEReference(scopeDefEClass, SCOPE_DEF__TYPE_FILTER);
+    createEReference(scopeDefEClass, SCOPE_DEF__PROPAGATING_PROP);
+
+    resolveExpCSEClass = createEClass(RESOLVE_EXP_CS);
 
     lookupExpCSEClass = createEClass(LOOKUP_EXP_CS);
     createEReference(lookupExpCSEClass, LOOKUP_EXP_CS__ARGS);
@@ -440,14 +880,20 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
 
     // Add supertypes to classes
     modelEClass.getESuperTypes().add(theEssentialOCLCSPackage.getContextCS());
-    mapExpCSEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
+    propertyMapEClass.getESuperTypes().add(this.getClassMapStmnt());
+    disambiguationDefEClass.getESuperTypes().add(this.getClassDisambiguationStmnt());
+    namedElementDefEClass.getESuperTypes().add(this.getClassNameResolutionStmnt());
+    scopeDefEClass.getESuperTypes().add(this.getClassNameResolutionStmnt());
+    resolveExpCSEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
     lookupExpCSEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_CsDecl(), this.getCSDecl(), null, "csDecl", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_AsDecl(), this.getASDecl(), null, "asDecl", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Mappings(), this.getClassMap(), null, "mappings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_MappingSect(), this.getMappingSect(), null, "mappingSect", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_DisambiguationSect(), this.getDisambiguationSect(), null, "disambiguationSect", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_NameresoSect(), this.getNameResolutionSect(), null, "nameresoSect", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(csDeclEClass, CSDecl.class, "CSDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCSDecl_Metamodels(), theBaseCSPackage.getImportCS(), null, "metamodels", null, 0, -1, CSDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -455,18 +901,58 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     initEClass(asDeclEClass, ASDecl.class, "ASDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getASDecl_Metamodels(), theBaseCSPackage.getImportCS(), null, "metamodels", null, 0, -1, ASDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(mappingSectEClass, MappingSect.class, "MappingSect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMappingSect_Mappings(), this.getClassMap(), null, "mappings", null, 0, -1, MappingSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(classMapEClass, ClassMap.class, "ClassMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getClassMap_To(), theEcorePackage.getEString(), "to", null, 0, 1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getClassMap_From(), theEcorePackage.getEString(), "from", null, 0, 1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getClassMap_Rule(), theEssentialOCLCSPackage.getExpCS(), null, "rule", null, 0, 1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClassMap_MappedProperties(), this.getPropertyMap(), null, "mappedProperties", null, 0, -1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClassMap_Statements(), this.getClassMapStmnt(), null, "statements", null, 0, -1, ClassMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(classMapStmntEClass, ClassMapStmnt.class, "ClassMapStmnt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(propertyMapEClass, PropertyMap.class, "PropertyMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPropertyMap_Redefine(), theEcorePackage.getEBoolean(), "redefine", null, 0, 1, PropertyMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPropertyMap_Lhs(), theEssentialOCLCSPackage.getExpCS(), null, "lhs", null, 0, 1, PropertyMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPropertyMap_Rhs(), theEssentialOCLCSPackage.getExpCS(), null, "rhs", null, 0, 1, PropertyMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPropertyMap_PropName(), theEcorePackage.getEString(), "propName", null, 0, 1, PropertyMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPropertyMap_PropInit(), theEssentialOCLCSPackage.getExpCS(), null, "propInit", null, 0, 1, PropertyMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(mapExpCSEClass, MapExpCS.class, "MapExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(disambiguationSectEClass, DisambiguationSect.class, "DisambiguationSect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDisambiguationSect_Disambiguations(), this.getClassDisambiguation(), null, "disambiguations", null, 0, -1, DisambiguationSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(classDisambiguationEClass, ClassDisambiguation.class, "ClassDisambiguation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClassDisambiguation_Class(), theEcorePackage.getEString(), "class", null, 0, 1, ClassDisambiguation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClassDisambiguation_Statements(), this.getClassDisambiguationStmnt(), null, "statements", null, 0, -1, ClassDisambiguation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(classDisambiguationStmntEClass, ClassDisambiguationStmnt.class, "ClassDisambiguationStmnt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(disambiguationDefEClass, DisambiguationDef.class, "DisambiguationDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDisambiguationDef_Name(), theEcorePackage.getEString(), "name", null, 0, 1, DisambiguationDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDisambiguationDef_Exp(), theEssentialOCLCSPackage.getExpCS(), null, "exp", null, 0, 1, DisambiguationDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nameResolutionSectEClass, NameResolutionSect.class, "NameResolutionSect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNameResolutionSect_NameElement(), theEcorePackage.getEString(), "nameElement", null, 0, 1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameResolutionSect_NameProperty(), theEssentialOCLCSPackage.getNameExpCS(), null, "nameProperty", null, 0, 1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNameResolutionSect_NameQualifier(), theEcorePackage.getEString(), "nameQualifier", null, 0, 1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameResolutionSect_NameResolutions(), this.getClassNameResolution(), null, "nameResolutions", null, 0, -1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(classNameResolutionEClass, ClassNameResolution.class, "ClassNameResolution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClassNameResolution_Class(), theEcorePackage.getEString(), "class", null, 0, 1, ClassNameResolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClassNameResolution_Statements(), this.getClassNameResolutionStmnt(), null, "statements", null, 0, -1, ClassNameResolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(classNameResolutionStmntEClass, ClassNameResolutionStmnt.class, "ClassNameResolutionStmnt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(namedElementDefEClass, NamedElementDef.class, "NamedElementDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNamedElementDef_NamePoperty(), theEssentialOCLCSPackage.getNameExpCS(), null, "namePoperty", null, 0, 1, NamedElementDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNamedElementDef_Qualifier(), theEcorePackage.getEString(), "qualifier", null, 0, 1, NamedElementDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(scopeDefEClass, ScopeDef.class, "ScopeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getScopeDef_SameScope(), theEcorePackage.getEBoolean(), "sameScope", null, 0, 1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScopeDef_ContributingProp(), theEssentialOCLCSPackage.getExpCS(), null, "contributingProp", null, 0, 1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScopeDef_TypeFilter(), theBaseCSPackage.getTypedRefCS(), null, "typeFilter", null, 0, 1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScopeDef_PropagatingProp(), theEssentialOCLCSPackage.getExpCS(), null, "propagatingProp", null, 0, -1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(resolveExpCSEClass, ResolveExpCS.class, "ResolveExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(lookupExpCSEClass, LookupExpCS.class, "LookupExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLookupExpCS_Args(), theEssentialOCLCSPackage.getExpCS(), null, "args", null, 0, -1, LookupExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

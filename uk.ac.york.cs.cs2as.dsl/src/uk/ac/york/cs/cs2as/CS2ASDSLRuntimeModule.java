@@ -14,7 +14,7 @@ public class CS2ASDSLRuntimeModule extends uk.ac.york.cs.cs2as.AbstractCS2ASDSLR
 
 	
 	@Override
-	public Class<? extends ILinker> bindILinker() {		
+	public Class<? extends ILinker> bindILinker() {
 		return CS2ASLinker.class;
 	}
 }

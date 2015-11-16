@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
@@ -25,13 +24,13 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl#isRedefine <em>Redefine</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl#getLhs <em>Lhs</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl#getRhs <em>Rhs</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl#getPropName <em>Prop Name</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl#getPropInit <em>Prop Init</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PropertyMapImpl extends MinimalEObjectImpl.Container implements PropertyMap
+public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
 {
   /**
    * The default value of the '{@link #isRedefine() <em>Redefine</em>}' attribute.
@@ -54,24 +53,34 @@ public class PropertyMapImpl extends MinimalEObjectImpl.Container implements Pro
   protected boolean redefine = REDEFINE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getLhs() <em>Lhs</em>}' containment reference.
+   * The default value of the '{@link #getPropName() <em>Prop Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLhs()
+   * @see #getPropName()
    * @generated
    * @ordered
    */
-  protected ExpCS lhs;
+  protected static final String PROP_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getRhs() <em>Rhs</em>}' containment reference.
+   * The cached value of the '{@link #getPropName() <em>Prop Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRhs()
+   * @see #getPropName()
    * @generated
    * @ordered
    */
-  protected ExpCS rhs;
+  protected String propName = PROP_NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPropInit() <em>Prop Init</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPropInit()
+   * @generated
+   * @ordered
+   */
+  protected ExpCS propInit;
 
   /**
    * <!-- begin-user-doc -->
@@ -122,9 +131,9 @@ public class PropertyMapImpl extends MinimalEObjectImpl.Container implements Pro
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpCS getLhs()
+  public String getPropName()
   {
-    return lhs;
+    return propName;
   }
 
   /**
@@ -132,13 +141,36 @@ public class PropertyMapImpl extends MinimalEObjectImpl.Container implements Pro
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLhs(ExpCS newLhs, NotificationChain msgs)
+  public void setPropName(String newPropName)
   {
-    ExpCS oldLhs = lhs;
-    lhs = newLhs;
+    String oldPropName = propName;
+    propName = newPropName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME, oldPropName, propName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExpCS getPropInit()
+  {
+    return propInit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPropInit(ExpCS newPropInit, NotificationChain msgs)
+  {
+    ExpCS oldPropInit = propInit;
+    propInit = newPropInit;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROPERTY_MAP__LHS, oldLhs, newLhs);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT, oldPropInit, newPropInit);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -149,68 +181,20 @@ public class PropertyMapImpl extends MinimalEObjectImpl.Container implements Pro
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLhs(ExpCS newLhs)
+  public void setPropInit(ExpCS newPropInit)
   {
-    if (newLhs != lhs)
+    if (newPropInit != propInit)
     {
       NotificationChain msgs = null;
-      if (lhs != null)
-        msgs = ((InternalEObject)lhs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROPERTY_MAP__LHS, null, msgs);
-      if (newLhs != null)
-        msgs = ((InternalEObject)newLhs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROPERTY_MAP__LHS, null, msgs);
-      msgs = basicSetLhs(newLhs, msgs);
+      if (propInit != null)
+        msgs = ((InternalEObject)propInit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT, null, msgs);
+      if (newPropInit != null)
+        msgs = ((InternalEObject)newPropInit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT, null, msgs);
+      msgs = basicSetPropInit(newPropInit, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROPERTY_MAP__LHS, newLhs, newLhs));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ExpCS getRhs()
-  {
-    return rhs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRhs(ExpCS newRhs, NotificationChain msgs)
-  {
-    ExpCS oldRhs = rhs;
-    rhs = newRhs;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROPERTY_MAP__RHS, oldRhs, newRhs);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRhs(ExpCS newRhs)
-  {
-    if (newRhs != rhs)
-    {
-      NotificationChain msgs = null;
-      if (rhs != null)
-        msgs = ((InternalEObject)rhs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROPERTY_MAP__RHS, null, msgs);
-      if (newRhs != null)
-        msgs = ((InternalEObject)newRhs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROPERTY_MAP__RHS, null, msgs);
-      msgs = basicSetRhs(newRhs, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROPERTY_MAP__RHS, newRhs, newRhs));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT, newPropInit, newPropInit));
   }
 
   /**
@@ -223,10 +207,8 @@ public class PropertyMapImpl extends MinimalEObjectImpl.Container implements Pro
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.PROPERTY_MAP__LHS:
-        return basicSetLhs(null, msgs);
-      case Cs2as_dslPackage.PROPERTY_MAP__RHS:
-        return basicSetRhs(null, msgs);
+      case Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT:
+        return basicSetPropInit(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -243,10 +225,10 @@ public class PropertyMapImpl extends MinimalEObjectImpl.Container implements Pro
     {
       case Cs2as_dslPackage.PROPERTY_MAP__REDEFINE:
         return isRedefine();
-      case Cs2as_dslPackage.PROPERTY_MAP__LHS:
-        return getLhs();
-      case Cs2as_dslPackage.PROPERTY_MAP__RHS:
-        return getRhs();
+      case Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME:
+        return getPropName();
+      case Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT:
+        return getPropInit();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -264,11 +246,11 @@ public class PropertyMapImpl extends MinimalEObjectImpl.Container implements Pro
       case Cs2as_dslPackage.PROPERTY_MAP__REDEFINE:
         setRedefine((Boolean)newValue);
         return;
-      case Cs2as_dslPackage.PROPERTY_MAP__LHS:
-        setLhs((ExpCS)newValue);
+      case Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME:
+        setPropName((String)newValue);
         return;
-      case Cs2as_dslPackage.PROPERTY_MAP__RHS:
-        setRhs((ExpCS)newValue);
+      case Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT:
+        setPropInit((ExpCS)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -287,11 +269,11 @@ public class PropertyMapImpl extends MinimalEObjectImpl.Container implements Pro
       case Cs2as_dslPackage.PROPERTY_MAP__REDEFINE:
         setRedefine(REDEFINE_EDEFAULT);
         return;
-      case Cs2as_dslPackage.PROPERTY_MAP__LHS:
-        setLhs((ExpCS)null);
+      case Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME:
+        setPropName(PROP_NAME_EDEFAULT);
         return;
-      case Cs2as_dslPackage.PROPERTY_MAP__RHS:
-        setRhs((ExpCS)null);
+      case Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT:
+        setPropInit((ExpCS)null);
         return;
     }
     super.eUnset(featureID);
@@ -309,10 +291,10 @@ public class PropertyMapImpl extends MinimalEObjectImpl.Container implements Pro
     {
       case Cs2as_dslPackage.PROPERTY_MAP__REDEFINE:
         return redefine != REDEFINE_EDEFAULT;
-      case Cs2as_dslPackage.PROPERTY_MAP__LHS:
-        return lhs != null;
-      case Cs2as_dslPackage.PROPERTY_MAP__RHS:
-        return rhs != null;
+      case Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME:
+        return PROP_NAME_EDEFAULT == null ? propName != null : !PROP_NAME_EDEFAULT.equals(propName);
+      case Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT:
+        return propInit != null;
     }
     return super.eIsSet(featureID);
   }
@@ -330,6 +312,8 @@ public class PropertyMapImpl extends MinimalEObjectImpl.Container implements Pro
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (redefine: ");
     result.append(redefine);
+    result.append(", propName: ");
+    result.append(propName);
     result.append(')');
     return result.toString();
   }

@@ -20,7 +20,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getTo <em>To</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getFrom <em>From</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getRule <em>Rule</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getMappedProperties <em>Mapped Properties</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getClassMap()
@@ -108,19 +108,19 @@ public interface ClassMap extends EObject
   void setRule(ExpCS value);
 
   /**
-   * Returns the value of the '<em><b>Mapped Properties</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap}.
+   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Mapped Properties</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Mapped Properties</em>' containment reference list.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getClassMap_MappedProperties()
+   * @return the value of the '<em>Statements</em>' containment reference list.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getClassMap_Statements()
    * @model containment="true"
    * @generated
    */
-  EList<PropertyMap> getMappedProperties();
+  EList<ClassMapStmnt> getStatements();
 
 } // ClassMap

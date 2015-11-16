@@ -10,31 +10,99 @@ generate cs2as_dsl "http://www.ac.uk/york/cs/cs2as/CS2ASDSL"
 Model:
 	csDecl=CSDecl
 	asDecl=ASDecl
-	mappings+=ClassMap*
+	
+	(mappingSect=MappingSect & disambiguationSect=DisambiguationSect & nameresoSect=NameResolutionSect )
+	
 ;
 
 CSDecl:
-	'in' metamodels+=ImportCS (',' metamodels+=ImportCS)*
+	'source' metamodels+=ImportCS (',' metamodels+=ImportCS)*
 ;
 
 ASDecl:
-	'out' metamodels+=ImportCS (',' metamodels+=ImportCS)*
+	'target' metamodels+=ImportCS (',' metamodels+=ImportCS)*
 ;
 
 ImportCS returns base::ImportCS:
 	(name=Identifier ':')? ownedPathName=URIPathNameCS (isAll?='::*')?
 ;
 
+MappingSect:
+	{MappingSect}
+	'mappings' '{'
+		mappings+=ClassMap*
+	'}'	
+;
 ClassMap:
 	'map' to=SIMPLE_ID 'from'  from=SIMPLE_ID '{'
 		('when' rule=ExpCS ';')?
-		mappedProperties+=PropertyMap*
+		statements += ClassMapStmnt*
 	'}'
 ;
 
-PropertyMap:
-	(redefine?='redefine')? lhs=ExpCS ':=' rhs=ExpCS
+ClassMapStmnt:
+	PropertyMap
+	';'
 ;
+
+PropertyMap:
+	(redefine?='redefine')? propName=SIMPLE_ID ':=' propInit=ExpCS
+;
+
+DisambiguationSect:
+	{DisambiguationSect}
+	'disambiguation' '{'
+		disambiguations+=ClassDisambiguation*
+	'}'
+;
+
+ClassDisambiguation:
+	class=SIMPLE_ID '{'
+		statements+=ClassDisambiguationStmnt*
+		
+	'}'
+;
+
+ClassDisambiguationStmnt:
+	DisambiguationDef
+	';'
+;
+
+DisambiguationDef:
+	name=SIMPLE_ID ':=' exp=ExpCS
+;
+
+NameResolutionSect:
+	{NameResolutionSect}
+	'nameresolution' '{'
+		('named-element' nameElement=SIMPLE_ID 'name-property' nameProperty=NameExpCS ';')?
+		('name-qualifier' nameQualifier=SIMPLE_ID ';')?
+		nameResolutions+=ClassNameResolution*
+	'}'
+;
+
+ClassNameResolution:
+	class=SIMPLE_ID '{'
+		statements+=ClassNameResolutionStmnt*
+	'}'
+;
+
+ClassNameResolutionStmnt:
+	(NamedElementDef | ScopeDef)
+	';'
+;
+
+NamedElementDef:
+	{NamedElementDef}
+	'named-element' ('name-property' namePoperty=NameExpCS)? ('qualified-by' qualifier=SIMPLE_ID)?
+;
+
+ScopeDef:
+	('nested' | sameScope?= 'same')? 
+	'scopes' contributingProp=ExpCS ('['typeFilter=TypeExpCS']')? 
+	('to' ('all' | 'nexts' | (propagatingProp+=ExpCS (',' propagatingProp+=ExpCS)* ) ))?
+;
+
 
 /* A primary expression identifies the basic expressions from which more complex expressions may be constructed. */
 PrimaryExpCS returns essentialocl::ExpCS:
@@ -48,12 +116,12 @@ PrimaryExpCS returns essentialocl::ExpCS:
 | 	LambdaLiteralExpCS
 | 	TypeLiteralExpCS
 | 	NameExpCS
-|	MapExpCS		// DSL addition
+|	ResolveExpCS	// DSL addition
 |	LookupExpCS;	// DSL addition
 
-MapExpCS:
-	{MapExpCS}
-	'map'
+ResolveExpCS:
+	{ResolveExpCS}
+	'resolve'
 ;
 
 

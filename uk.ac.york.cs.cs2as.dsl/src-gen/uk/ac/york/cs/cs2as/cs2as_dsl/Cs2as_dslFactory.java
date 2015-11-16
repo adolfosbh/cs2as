@@ -50,6 +50,15 @@ public interface Cs2as_dslFactory extends EFactory
   ASDecl createASDecl();
 
   /**
+   * Returns a new object of class '<em>Mapping Sect</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mapping Sect</em>'.
+   * @generated
+   */
+  MappingSect createMappingSect();
+
+  /**
    * Returns a new object of class '<em>Class Map</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -57,6 +66,15 @@ public interface Cs2as_dslFactory extends EFactory
    * @generated
    */
   ClassMap createClassMap();
+
+  /**
+   * Returns a new object of class '<em>Class Map Stmnt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Map Stmnt</em>'.
+   * @generated
+   */
+  ClassMapStmnt createClassMapStmnt();
 
   /**
    * Returns a new object of class '<em>Property Map</em>'.
@@ -68,13 +86,94 @@ public interface Cs2as_dslFactory extends EFactory
   PropertyMap createPropertyMap();
 
   /**
-   * Returns a new object of class '<em>Map Exp CS</em>'.
+   * Returns a new object of class '<em>Disambiguation Sect</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Map Exp CS</em>'.
+   * @return a new object of class '<em>Disambiguation Sect</em>'.
    * @generated
    */
-  MapExpCS createMapExpCS();
+  DisambiguationSect createDisambiguationSect();
+
+  /**
+   * Returns a new object of class '<em>Class Disambiguation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Disambiguation</em>'.
+   * @generated
+   */
+  ClassDisambiguation createClassDisambiguation();
+
+  /**
+   * Returns a new object of class '<em>Class Disambiguation Stmnt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Disambiguation Stmnt</em>'.
+   * @generated
+   */
+  ClassDisambiguationStmnt createClassDisambiguationStmnt();
+
+  /**
+   * Returns a new object of class '<em>Disambiguation Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Disambiguation Def</em>'.
+   * @generated
+   */
+  DisambiguationDef createDisambiguationDef();
+
+  /**
+   * Returns a new object of class '<em>Name Resolution Sect</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Name Resolution Sect</em>'.
+   * @generated
+   */
+  NameResolutionSect createNameResolutionSect();
+
+  /**
+   * Returns a new object of class '<em>Class Name Resolution</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Name Resolution</em>'.
+   * @generated
+   */
+  ClassNameResolution createClassNameResolution();
+
+  /**
+   * Returns a new object of class '<em>Class Name Resolution Stmnt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Name Resolution Stmnt</em>'.
+   * @generated
+   */
+  ClassNameResolutionStmnt createClassNameResolutionStmnt();
+
+  /**
+   * Returns a new object of class '<em>Named Element Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Named Element Def</em>'.
+   * @generated
+   */
+  NamedElementDef createNamedElementDef();
+
+  /**
+   * Returns a new object of class '<em>Scope Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Scope Def</em>'.
+   * @generated
+   */
+  ScopeDef createScopeDef();
+
+  /**
+   * Returns a new object of class '<em>Resolve Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Resolve Exp CS</em>'.
+   * @generated
+   */
+  ResolveExpCS createResolveExpCS();
 
   /**
    * Returns a new object of class '<em>Lookup Exp CS</em>'.

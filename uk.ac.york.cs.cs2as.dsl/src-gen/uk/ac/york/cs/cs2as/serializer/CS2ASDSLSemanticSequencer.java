@@ -58,19 +58,30 @@ import org.eclipse.ocl.xtext.essentialoclcs.TypeLiteralExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.TypeNameExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.UnlimitedNaturalLiteralExpCS;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
+import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
-import uk.ac.york.cs.cs2as.cs2as_dsl.MapExpCS;
+import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
+import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
+import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
 import uk.ac.york.cs.cs2as.services.CS2ASDSLGrammarAccess;
 
 @SuppressWarnings("all")
@@ -191,20 +202,44 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case Cs2as_dslPackage.CS_DECL:
 				sequence_CSDecl(context, (CSDecl) semanticObject); 
 				return; 
+			case Cs2as_dslPackage.CLASS_DISAMBIGUATION:
+				sequence_ClassDisambiguation(context, (ClassDisambiguation) semanticObject); 
+				return; 
 			case Cs2as_dslPackage.CLASS_MAP:
 				sequence_ClassMap(context, (ClassMap) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.CLASS_NAME_RESOLUTION:
+				sequence_ClassNameResolution(context, (ClassNameResolution) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.DISAMBIGUATION_DEF:
+				sequence_DisambiguationDef(context, (DisambiguationDef) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.DISAMBIGUATION_SECT:
+				sequence_DisambiguationSect(context, (DisambiguationSect) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.LOOKUP_EXP_CS:
 				sequence_LookupExpCS(context, (LookupExpCS) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.MAP_EXP_CS:
-				sequence_MapExpCS(context, (MapExpCS) semanticObject); 
+			case Cs2as_dslPackage.MAPPING_SECT:
+				sequence_MappingSect(context, (MappingSect) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
+			case Cs2as_dslPackage.NAME_RESOLUTION_SECT:
+				sequence_NameResolutionSect(context, (NameResolutionSect) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.NAMED_ELEMENT_DEF:
+				sequence_NamedElementDef(context, (NamedElementDef) semanticObject); 
+				return; 
 			case Cs2as_dslPackage.PROPERTY_MAP:
 				sequence_PropertyMap(context, (PropertyMap) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.RESOLVE_EXP_CS:
+				sequence_ResolveExpCS(context, (ResolveExpCS) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.SCOPE_DEF:
+				sequence_ScopeDef(context, (ScopeDef) semanticObject); 
 				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == EssentialOCLCSPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
@@ -397,9 +432,55 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (to=SIMPLE_ID from=SIMPLE_ID rule=ExpCS? mappedProperties+=PropertyMap*)
+	 *     (class=SIMPLE_ID statements+=ClassDisambiguationStmnt*)
+	 */
+	protected void sequence_ClassDisambiguation(EObject context, ClassDisambiguation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (to=SIMPLE_ID from=SIMPLE_ID rule=ExpCS? statements+=ClassMapStmnt*)
 	 */
 	protected void sequence_ClassMap(EObject context, ClassMap semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (class=SIMPLE_ID statements+=ClassNameResolutionStmnt*)
+	 */
+	protected void sequence_ClassNameResolution(EObject context, ClassNameResolution semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=SIMPLE_ID exp=ExpCS)
+	 */
+	protected void sequence_DisambiguationDef(EObject context, DisambiguationDef semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_DEF__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_DEF__NAME));
+			if(transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_DEF__EXP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_DEF__EXP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDisambiguationDefAccess().getNameSIMPLE_IDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDisambiguationDefAccess().getExpExpCSParserRuleCall_2_0(), semanticObject.getExp());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (disambiguations+=ClassDisambiguation*)
+	 */
+	protected void sequence_DisambiguationSect(EObject context, DisambiguationSect semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -424,16 +505,16 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     {MapExpCS}
+	 *     (mappings+=ClassMap*)
 	 */
-	protected void sequence_MapExpCS(EObject context, MapExpCS semanticObject) {
+	protected void sequence_MappingSect(EObject context, MappingSect semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (csDecl=CSDecl asDecl=ASDecl mappings+=ClassMap*)
+	 *     (csDecl=CSDecl asDecl=ASDecl mappingSect=MappingSect disambiguationSect=DisambiguationSect nameresoSect=NameResolutionSect)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -442,9 +523,45 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (redefine?='redefine'? lhs=ExpCS rhs=ExpCS)
+	 *     ((nameElement=SIMPLE_ID nameProperty=NameExpCS)? nameQualifier=SIMPLE_ID? nameResolutions+=ClassNameResolution*)
+	 */
+	protected void sequence_NameResolutionSect(EObject context, NameResolutionSect semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (namePoperty=NameExpCS? qualifier=SIMPLE_ID?)
+	 */
+	protected void sequence_NamedElementDef(EObject context, NamedElementDef semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (redefine?='redefine'? propName=SIMPLE_ID propInit=ExpCS)
 	 */
 	protected void sequence_PropertyMap(EObject context, PropertyMap semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {ResolveExpCS}
+	 */
+	protected void sequence_ResolveExpCS(EObject context, ResolveExpCS semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (sameScope?='same'? contributingProp=ExpCS typeFilter=TypeExpCS? (propagatingProp+=ExpCS propagatingProp+=ExpCS*)?)
+	 */
+	protected void sequence_ScopeDef(EObject context, ScopeDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

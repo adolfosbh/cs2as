@@ -1,6 +1,7 @@
 import '/resource/org.eclipse.ocl.pivot/model/Pivot.ecore'
 import '/resource/org.eclipse.ocl.pivot/model/PivotLookup.ocl'
 import '/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore'
+import '/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore'
 import 'generated/CS2ASDSL.ecore'
 
 package basecs
@@ -10,49 +11,118 @@ def : ast() : ocl::Import =
 	ocl::Import {
 		name = name,
 		importedNamespace = referredNamespace
-		-- importedNamespace = env().lookupNamespace(pathName)
+		-- importedNamespace = ast().lookupNamespace(pathName)
 	}
 	
 endpackage
 
+package essentialoclcs
+	
+context ExpCS
+def : ast() : ocl::OCLExpression =
+	invalid -- to be overriden
+	
+endpackage
 
 package cs2as_dsl
 
 context Model
 def : ast() : ocl::Model = 	
 	ocl::Model {
-		ownedPackages = ocl::Package {
-							name = csDecl.metamodels.ast().importedNamespace.name,
-							ownedClasses = mappings.ast()
-						},
+		ownedPackages = 
+			ocl::Package {
+				name = csDecl.metamodels.ast().importedNamespace.name,
+				ownedClasses = mappingSect.mappings->select(unambiguous() or firstAmbiguous())->collect(ast())
+			},
 		ownedImports =  csDecl.metamodels.ast()->includingAll(
 					    asDecl.metamodels.ast())
 	}
 
 context ClassMap
 def : ast() : ocl::Class =
-	ocl::Class {
-		name = from,
-		ownedOperations = ocl::Operation {
-							name = 'ast',
-							-- type = ast().lookupType(to),
-							bodyExpression = ocl::ExpressionInOCL {
-												ownedBody = createShadowExp(),
-												ownedContext = ocl::Variable {
-													name = 'self'
-												--	type = ast().lookupType(from)
-												}
-							}
-						}
-	}
+	if unambiguous()
+	then
+		ocl::Class {
+			name = from,
+			ownedOperations = 
+				ocl::Operation {
+					name = 'ast',
+					-- type = ast().lookupType(to),
+					bodyExpression = ocl::ExpressionInOCL {
+										ownedBody = createShadowExp(self),
+										ownedContext = ocl::Variable {
+											name = 'self'
+										--	type = ast().lookupType(from)
+										}
+					}--,
+					-- type = ast().lookupType(to)
+				}
+		}
+	else if (firstAmbiguous()) 
+	then
+		ocl::Class {
+			name = from,
+			ownedOperations = 
+				ocl::Operation {
+					name = 'ast',
+					-- type = ast().lookupType(to),
+					bodyExpression = ocl::ExpressionInOCL {
+										ownedBody = createNestedIfExp(mappingsSameFrom()),
+										ownedContext = ocl::Variable {
+											name = 'self'
+										--	type = ast().lookupType(from)
+										}
+					}--,
+					-- type = ast().lookupType(to)
+				}
+		}
+	else null 
+	endif endif
+	
+def : unambiguous() : Boolean = 
+	rule = null 
+	
+def : firstAmbiguous() : Boolean =
+	rule <> null and 
+	mappingsSameFrom()->first() = self
+		
+def : mappingsSameFrom() : OrderedSet(ClassMap) = 
+	oclContainer().oclAsType(MappingSect).mappings
+		->select(x | x.from = self.from)
 
-def : createShadowExp() : ocl::ShadowExp = 
+def : createShadowExp(mapping : ClassMap) : ocl::ShadowExp = 
 	ocl::ShadowExp {
-		-- ownedParts = superClassPropertyMappings()->includingAll(mappedProperties.ast())
-		ownedParts = mappedProperties.ast() 
+		ownedParts = createSuperClassesShadowParts()->includingAll(mapping.statements.ast())
 	}
+	
+def : createNestedIfExp(mappings : OrderedSet(ClassMap) ) : ocl::IfExp =
+	let firstMapping : ClassMap = mappings->first(),
+		remainingMappings : OrderedSet(ClassMap) = mappings->excluding(firstMapping) 
+	in ocl::IfExp {
+		ownedCondition = ocl::OperationCallExp {
+			name = firstMapping.rule --,
+			--referredOperation = lookupOperation(firstMapping.rule)
+		},
+		ownedThen = createShadowExp(firstMapping),
+		ownedElse = if remainingMappings->isEmpty() 
+					then ocl::InvalidLiteralExp  {}
+					else createNestedIfExp(remainingMappings)
+					endif
+	}
+	
+def : createSuperClassesShadowParts() : Sequence (ocl::ShadowPart) =
+	Sequence{} -- TODO
 
+context ClassMapStmnt
+def : ast() : ocl::ShadowPart =
+	invalid -- to be overriden
+ 
 context PropertyMap
 def : ast() : ocl::ShadowPart =
-	null
+	ocl::ShadowPart {
+		name = propName,		
+		ownedInit = propInit.ast() --,
+		--referredProperty = ast().lookupProperty(propName)
+	}
 endpackage
+

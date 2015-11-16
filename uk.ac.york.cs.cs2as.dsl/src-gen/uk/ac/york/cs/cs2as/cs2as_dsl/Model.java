@@ -2,8 +2,6 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.ocl.xtext.essentialoclcs.ContextCS;
 
 /**
@@ -17,7 +15,9 @@ import org.eclipse.ocl.xtext.essentialoclcs.ContextCS;
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getCsDecl <em>Cs Decl</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getAsDecl <em>As Decl</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getMappings <em>Mappings</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getMappingSect <em>Mapping Sect</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getDisambiguationSect <em>Disambiguation Sect</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getNameresoSect <em>Namereso Sect</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getModel()
@@ -79,19 +79,81 @@ public interface Model extends ContextCS
   void setAsDecl(ASDecl value);
 
   /**
-   * Returns the value of the '<em><b>Mappings</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap}.
+   * Returns the value of the '<em><b>Mapping Sect</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Mappings</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Mapping Sect</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Mappings</em>' containment reference list.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getModel_Mappings()
+   * @return the value of the '<em>Mapping Sect</em>' containment reference.
+   * @see #setMappingSect(MappingSect)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getModel_MappingSect()
    * @model containment="true"
    * @generated
    */
-  EList<ClassMap> getMappings();
+  MappingSect getMappingSect();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getMappingSect <em>Mapping Sect</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Mapping Sect</em>' containment reference.
+   * @see #getMappingSect()
+   * @generated
+   */
+  void setMappingSect(MappingSect value);
+
+  /**
+   * Returns the value of the '<em><b>Disambiguation Sect</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Disambiguation Sect</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Disambiguation Sect</em>' containment reference.
+   * @see #setDisambiguationSect(DisambiguationSect)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getModel_DisambiguationSect()
+   * @model containment="true"
+   * @generated
+   */
+  DisambiguationSect getDisambiguationSect();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getDisambiguationSect <em>Disambiguation Sect</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Disambiguation Sect</em>' containment reference.
+   * @see #getDisambiguationSect()
+   * @generated
+   */
+  void setDisambiguationSect(DisambiguationSect value);
+
+  /**
+   * Returns the value of the '<em><b>Namereso Sect</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Namereso Sect</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Namereso Sect</em>' containment reference.
+   * @see #setNameresoSect(NameResolutionSect)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getModel_NameresoSect()
+   * @model containment="true"
+   * @generated
+   */
+  NameResolutionSect getNameresoSect();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getNameresoSect <em>Namereso Sect</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Namereso Sect</em>' containment reference.
+   * @see #getNameresoSect()
+   * @generated
+   */
+  void setNameresoSect(NameResolutionSect value);
 
 } // Model

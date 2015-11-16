@@ -93,6 +93,11 @@ public abstract class AbstractCS2ASDSLRuntimeModule extends org.eclipse.xtext.co
 		return org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class;
 	}
 
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public Class<? extends org.eclipse.xtext.parser.antlr.IUnorderedGroupHelper> bindIUnorderedGroupHelper() {
+		return org.eclipse.xtext.parser.antlr.UnorderedGroupHelper.class;
+	}
+
 	// contributed by org.eclipse.xtext.generator.validation.JavaValidatorFragment
 	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends uk.ac.york.cs.cs2as.validation.CS2ASDSLJavaValidator> bindCS2ASDSLJavaValidator() {
 		return uk.ac.york.cs.cs2as.validation.CS2ASDSLJavaValidator.class;

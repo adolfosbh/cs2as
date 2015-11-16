@@ -2,8 +2,6 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 /**
@@ -16,15 +14,15 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#isRedefine <em>Redefine</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getLhs <em>Lhs</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getRhs <em>Rhs</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropName <em>Prop Name</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropInit <em>Prop Init</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getPropertyMap()
  * @model
  * @generated
  */
-public interface PropertyMap extends EObject
+public interface PropertyMap extends ClassMapStmnt
 {
   /**
    * Returns the value of the '<em><b>Redefine</b></em>' attribute.
@@ -53,55 +51,55 @@ public interface PropertyMap extends EObject
   void setRedefine(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Lhs</b></em>' containment reference.
+   * Returns the value of the '<em><b>Prop Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Lhs</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Prop Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Lhs</em>' containment reference.
-   * @see #setLhs(ExpCS)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getPropertyMap_Lhs()
-   * @model containment="true"
+   * @return the value of the '<em>Prop Name</em>' attribute.
+   * @see #setPropName(String)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getPropertyMap_PropName()
+   * @model
    * @generated
    */
-  ExpCS getLhs();
+  String getPropName();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getLhs <em>Lhs</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropName <em>Prop Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Lhs</em>' containment reference.
-   * @see #getLhs()
+   * @param value the new value of the '<em>Prop Name</em>' attribute.
+   * @see #getPropName()
    * @generated
    */
-  void setLhs(ExpCS value);
+  void setPropName(String value);
 
   /**
-   * Returns the value of the '<em><b>Rhs</b></em>' containment reference.
+   * Returns the value of the '<em><b>Prop Init</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Rhs</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Prop Init</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rhs</em>' containment reference.
-   * @see #setRhs(ExpCS)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getPropertyMap_Rhs()
+   * @return the value of the '<em>Prop Init</em>' containment reference.
+   * @see #setPropInit(ExpCS)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getPropertyMap_PropInit()
    * @model containment="true"
    * @generated
    */
-  ExpCS getRhs();
+  ExpCS getPropInit();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getRhs <em>Rhs</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropInit <em>Prop Init</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Rhs</em>' containment reference.
-   * @see #getRhs()
+   * @param value the new value of the '<em>Prop Init</em>' containment reference.
+   * @see #getPropInit()
    * @generated
    */
-  void setRhs(ExpCS value);
+  void setPropInit(ExpCS value);
 
 } // PropertyMap

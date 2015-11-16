@@ -2,28 +2,23 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.ocl.xtext.essentialoclcs.impl.ContextCSImpl;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect;
+import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
+import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +30,9 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl#getCsDecl <em>Cs Decl</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl#getAsDecl <em>As Decl</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl#getMappings <em>Mappings</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl#getMappingSect <em>Mapping Sect</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl#getDisambiguationSect <em>Disambiguation Sect</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl#getNameresoSect <em>Namereso Sect</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,14 +60,34 @@ public class ModelImpl extends ContextCSImpl implements Model
   protected ASDecl asDecl;
 
   /**
-   * The cached value of the '{@link #getMappings() <em>Mappings</em>}' containment reference list.
+   * The cached value of the '{@link #getMappingSect() <em>Mapping Sect</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMappings()
+   * @see #getMappingSect()
    * @generated
    * @ordered
    */
-  protected EList<ClassMap> mappings;
+  protected MappingSect mappingSect;
+
+  /**
+   * The cached value of the '{@link #getDisambiguationSect() <em>Disambiguation Sect</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDisambiguationSect()
+   * @generated
+   * @ordered
+   */
+  protected DisambiguationSect disambiguationSect;
+
+  /**
+   * The cached value of the '{@link #getNameresoSect() <em>Namereso Sect</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNameresoSect()
+   * @generated
+   * @ordered
+   */
+  protected NameResolutionSect nameresoSect;
 
   /**
    * <!-- begin-user-doc -->
@@ -194,13 +211,143 @@ public class ModelImpl extends ContextCSImpl implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ClassMap> getMappings()
+  public MappingSect getMappingSect()
   {
-    if (mappings == null)
+    return mappingSect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetMappingSect(MappingSect newMappingSect, NotificationChain msgs)
+  {
+    MappingSect oldMappingSect = mappingSect;
+    mappingSect = newMappingSect;
+    if (eNotificationRequired())
     {
-      mappings = new EObjectContainmentEList<ClassMap>(ClassMap.class, this, Cs2as_dslPackage.MODEL__MAPPINGS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.MODEL__MAPPING_SECT, oldMappingSect, newMappingSect);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return mappings;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMappingSect(MappingSect newMappingSect)
+  {
+    if (newMappingSect != mappingSect)
+    {
+      NotificationChain msgs = null;
+      if (mappingSect != null)
+        msgs = ((InternalEObject)mappingSect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.MODEL__MAPPING_SECT, null, msgs);
+      if (newMappingSect != null)
+        msgs = ((InternalEObject)newMappingSect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.MODEL__MAPPING_SECT, null, msgs);
+      msgs = basicSetMappingSect(newMappingSect, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.MODEL__MAPPING_SECT, newMappingSect, newMappingSect));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DisambiguationSect getDisambiguationSect()
+  {
+    return disambiguationSect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDisambiguationSect(DisambiguationSect newDisambiguationSect, NotificationChain msgs)
+  {
+    DisambiguationSect oldDisambiguationSect = disambiguationSect;
+    disambiguationSect = newDisambiguationSect;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.MODEL__DISAMBIGUATION_SECT, oldDisambiguationSect, newDisambiguationSect);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDisambiguationSect(DisambiguationSect newDisambiguationSect)
+  {
+    if (newDisambiguationSect != disambiguationSect)
+    {
+      NotificationChain msgs = null;
+      if (disambiguationSect != null)
+        msgs = ((InternalEObject)disambiguationSect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.MODEL__DISAMBIGUATION_SECT, null, msgs);
+      if (newDisambiguationSect != null)
+        msgs = ((InternalEObject)newDisambiguationSect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.MODEL__DISAMBIGUATION_SECT, null, msgs);
+      msgs = basicSetDisambiguationSect(newDisambiguationSect, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.MODEL__DISAMBIGUATION_SECT, newDisambiguationSect, newDisambiguationSect));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NameResolutionSect getNameresoSect()
+  {
+    return nameresoSect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetNameresoSect(NameResolutionSect newNameresoSect, NotificationChain msgs)
+  {
+    NameResolutionSect oldNameresoSect = nameresoSect;
+    nameresoSect = newNameresoSect;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.MODEL__NAMERESO_SECT, oldNameresoSect, newNameresoSect);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNameresoSect(NameResolutionSect newNameresoSect)
+  {
+    if (newNameresoSect != nameresoSect)
+    {
+      NotificationChain msgs = null;
+      if (nameresoSect != null)
+        msgs = ((InternalEObject)nameresoSect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.MODEL__NAMERESO_SECT, null, msgs);
+      if (newNameresoSect != null)
+        msgs = ((InternalEObject)newNameresoSect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.MODEL__NAMERESO_SECT, null, msgs);
+      msgs = basicSetNameresoSect(newNameresoSect, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.MODEL__NAMERESO_SECT, newNameresoSect, newNameresoSect));
   }
 
   /**
@@ -217,8 +364,12 @@ public class ModelImpl extends ContextCSImpl implements Model
         return basicSetCsDecl(null, msgs);
       case Cs2as_dslPackage.MODEL__AS_DECL:
         return basicSetAsDecl(null, msgs);
-      case Cs2as_dslPackage.MODEL__MAPPINGS:
-        return ((InternalEList<?>)getMappings()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.MODEL__MAPPING_SECT:
+        return basicSetMappingSect(null, msgs);
+      case Cs2as_dslPackage.MODEL__DISAMBIGUATION_SECT:
+        return basicSetDisambiguationSect(null, msgs);
+      case Cs2as_dslPackage.MODEL__NAMERESO_SECT:
+        return basicSetNameresoSect(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -237,8 +388,12 @@ public class ModelImpl extends ContextCSImpl implements Model
         return getCsDecl();
       case Cs2as_dslPackage.MODEL__AS_DECL:
         return getAsDecl();
-      case Cs2as_dslPackage.MODEL__MAPPINGS:
-        return getMappings();
+      case Cs2as_dslPackage.MODEL__MAPPING_SECT:
+        return getMappingSect();
+      case Cs2as_dslPackage.MODEL__DISAMBIGUATION_SECT:
+        return getDisambiguationSect();
+      case Cs2as_dslPackage.MODEL__NAMERESO_SECT:
+        return getNameresoSect();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -248,7 +403,6 @@ public class ModelImpl extends ContextCSImpl implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -260,9 +414,14 @@ public class ModelImpl extends ContextCSImpl implements Model
       case Cs2as_dslPackage.MODEL__AS_DECL:
         setAsDecl((ASDecl)newValue);
         return;
-      case Cs2as_dslPackage.MODEL__MAPPINGS:
-        getMappings().clear();
-        getMappings().addAll((Collection<? extends ClassMap>)newValue);
+      case Cs2as_dslPackage.MODEL__MAPPING_SECT:
+        setMappingSect((MappingSect)newValue);
+        return;
+      case Cs2as_dslPackage.MODEL__DISAMBIGUATION_SECT:
+        setDisambiguationSect((DisambiguationSect)newValue);
+        return;
+      case Cs2as_dslPackage.MODEL__NAMERESO_SECT:
+        setNameresoSect((NameResolutionSect)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -284,8 +443,14 @@ public class ModelImpl extends ContextCSImpl implements Model
       case Cs2as_dslPackage.MODEL__AS_DECL:
         setAsDecl((ASDecl)null);
         return;
-      case Cs2as_dslPackage.MODEL__MAPPINGS:
-        getMappings().clear();
+      case Cs2as_dslPackage.MODEL__MAPPING_SECT:
+        setMappingSect((MappingSect)null);
+        return;
+      case Cs2as_dslPackage.MODEL__DISAMBIGUATION_SECT:
+        setDisambiguationSect((DisambiguationSect)null);
+        return;
+      case Cs2as_dslPackage.MODEL__NAMERESO_SECT:
+        setNameresoSect((NameResolutionSect)null);
         return;
     }
     super.eUnset(featureID);
@@ -305,8 +470,12 @@ public class ModelImpl extends ContextCSImpl implements Model
         return csDecl != null;
       case Cs2as_dslPackage.MODEL__AS_DECL:
         return asDecl != null;
-      case Cs2as_dslPackage.MODEL__MAPPINGS:
-        return mappings != null && !mappings.isEmpty();
+      case Cs2as_dslPackage.MODEL__MAPPING_SECT:
+        return mappingSect != null;
+      case Cs2as_dslPackage.MODEL__DISAMBIGUATION_SECT:
+        return disambiguationSect != null;
+      case Cs2as_dslPackage.MODEL__NAMERESO_SECT:
+        return nameresoSect != null;
     }
     return super.eIsSet(featureID);
   }

@@ -6,8 +6,12 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="asDecl" eType="#//ASDecl"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
-        eType="#//ClassMap" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mappingSect" eType="#//MappingSect"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="disambiguationSect" eType="#//DisambiguationSect"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameresoSect" eType="#//NameResolutionSect"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CSDecl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="metamodels" upperBound="-1"
@@ -19,22 +23,70 @@
         eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//ImportCS"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingSect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
+        eType="#//ClassMap" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassMap">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="to" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="from" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rule" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mappedProperties" upperBound="-1"
-        eType="#//PropertyMap" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//ClassMapStmnt" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyMap">
+  <eClassifiers xsi:type="ecore:EClass" name="ClassMapStmnt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyMap" eSuperTypes="#//ClassMapStmnt">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="redefine" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propName" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propInit" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MapExpCS" eSuperTypes="platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DisambiguationSect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="disambiguations" upperBound="-1"
+        eType="#//ClassDisambiguation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassDisambiguation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//ClassDisambiguationStmnt" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassDisambiguationStmnt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DisambiguationDef" eSuperTypes="#//ClassDisambiguationStmnt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NameResolutionSect">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameElement" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameProperty" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//NameExpCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameQualifier" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameResolutions" upperBound="-1"
+        eType="#//ClassNameResolution" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassNameResolution">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//ClassNameResolutionStmnt" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassNameResolutionStmnt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElementDef" eSuperTypes="#//ClassNameResolutionStmnt">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="namePoperty" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//NameExpCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScopeDef" eSuperTypes="#//ClassNameResolutionStmnt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sameScope" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contributingProp" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeFilter" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//TypedRefCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propagatingProp" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResolveExpCS" eSuperTypes="platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"/>
   <eClassifiers xsi:type="ecore:EClass" name="LookupExpCS" eSuperTypes="platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS">
     <eStructuralFeatures xsi:type="ecore:EReference" name="args" upperBound="-1" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
         containment="true"/>

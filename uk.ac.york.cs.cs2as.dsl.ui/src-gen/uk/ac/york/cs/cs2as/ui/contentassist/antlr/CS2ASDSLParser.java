@@ -37,6 +37,9 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getClassNameResolutionStmntAccess().getAlternatives_0(), "rule__ClassNameResolutionStmnt__Alternatives_0");
+					put(grammarAccess.getScopeDefAccess().getAlternatives_0(), "rule__ScopeDef__Alternatives_0");
+					put(grammarAccess.getScopeDefAccess().getAlternatives_4_1(), "rule__ScopeDef__Alternatives_4_1");
 					put(grammarAccess.getPrimaryExpCSAccess().getAlternatives(), "rule__PrimaryExpCS__Alternatives");
 					put(grammarAccess.getEssentialOCLReservedKeywordAccess().getAlternatives(), "rule__EssentialOCLReservedKeyword__Alternatives");
 					put(grammarAccess.getEssentialOCLUnaryOperatorNameAccess().getAlternatives(), "rule__EssentialOCLUnaryOperatorName__Alternatives");
@@ -74,10 +77,29 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getASDeclAccess().getGroup_2(), "rule__ASDecl__Group_2__0");
 					put(grammarAccess.getImportCSAccess().getGroup(), "rule__ImportCS__Group__0");
 					put(grammarAccess.getImportCSAccess().getGroup_0(), "rule__ImportCS__Group_0__0");
+					put(grammarAccess.getMappingSectAccess().getGroup(), "rule__MappingSect__Group__0");
 					put(grammarAccess.getClassMapAccess().getGroup(), "rule__ClassMap__Group__0");
 					put(grammarAccess.getClassMapAccess().getGroup_5(), "rule__ClassMap__Group_5__0");
+					put(grammarAccess.getClassMapStmntAccess().getGroup(), "rule__ClassMapStmnt__Group__0");
 					put(grammarAccess.getPropertyMapAccess().getGroup(), "rule__PropertyMap__Group__0");
-					put(grammarAccess.getMapExpCSAccess().getGroup(), "rule__MapExpCS__Group__0");
+					put(grammarAccess.getDisambiguationSectAccess().getGroup(), "rule__DisambiguationSect__Group__0");
+					put(grammarAccess.getClassDisambiguationAccess().getGroup(), "rule__ClassDisambiguation__Group__0");
+					put(grammarAccess.getClassDisambiguationStmntAccess().getGroup(), "rule__ClassDisambiguationStmnt__Group__0");
+					put(grammarAccess.getDisambiguationDefAccess().getGroup(), "rule__DisambiguationDef__Group__0");
+					put(grammarAccess.getNameResolutionSectAccess().getGroup(), "rule__NameResolutionSect__Group__0");
+					put(grammarAccess.getNameResolutionSectAccess().getGroup_3(), "rule__NameResolutionSect__Group_3__0");
+					put(grammarAccess.getNameResolutionSectAccess().getGroup_4(), "rule__NameResolutionSect__Group_4__0");
+					put(grammarAccess.getClassNameResolutionAccess().getGroup(), "rule__ClassNameResolution__Group__0");
+					put(grammarAccess.getClassNameResolutionStmntAccess().getGroup(), "rule__ClassNameResolutionStmnt__Group__0");
+					put(grammarAccess.getNamedElementDefAccess().getGroup(), "rule__NamedElementDef__Group__0");
+					put(grammarAccess.getNamedElementDefAccess().getGroup_2(), "rule__NamedElementDef__Group_2__0");
+					put(grammarAccess.getNamedElementDefAccess().getGroup_3(), "rule__NamedElementDef__Group_3__0");
+					put(grammarAccess.getScopeDefAccess().getGroup(), "rule__ScopeDef__Group__0");
+					put(grammarAccess.getScopeDefAccess().getGroup_3(), "rule__ScopeDef__Group_3__0");
+					put(grammarAccess.getScopeDefAccess().getGroup_4(), "rule__ScopeDef__Group_4__0");
+					put(grammarAccess.getScopeDefAccess().getGroup_4_1_2(), "rule__ScopeDef__Group_4_1_2__0");
+					put(grammarAccess.getScopeDefAccess().getGroup_4_1_2_1(), "rule__ScopeDef__Group_4_1_2_1__0");
+					put(grammarAccess.getResolveExpCSAccess().getGroup(), "rule__ResolveExpCS__Group__0");
 					put(grammarAccess.getLookupExpCSAccess().getGroup(), "rule__LookupExpCS__Group__0");
 					put(grammarAccess.getLookupExpCSAccess().getGroup_3(), "rule__LookupExpCS__Group_3__0");
 					put(grammarAccess.getURIPathNameCSAccess().getGroup(), "rule__URIPathNameCS__Group__0");
@@ -176,7 +198,9 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getWildcardTypeRefCSAccess().getGroup_2(), "rule__WildcardTypeRefCS__Group_2__0");
 					put(grammarAccess.getModelAccess().getCsDeclAssignment_0(), "rule__Model__CsDeclAssignment_0");
 					put(grammarAccess.getModelAccess().getAsDeclAssignment_1(), "rule__Model__AsDeclAssignment_1");
-					put(grammarAccess.getModelAccess().getMappingsAssignment_2(), "rule__Model__MappingsAssignment_2");
+					put(grammarAccess.getModelAccess().getMappingSectAssignment_2_0(), "rule__Model__MappingSectAssignment_2_0");
+					put(grammarAccess.getModelAccess().getDisambiguationSectAssignment_2_1(), "rule__Model__DisambiguationSectAssignment_2_1");
+					put(grammarAccess.getModelAccess().getNameresoSectAssignment_2_2(), "rule__Model__NameresoSectAssignment_2_2");
 					put(grammarAccess.getCSDeclAccess().getMetamodelsAssignment_1(), "rule__CSDecl__MetamodelsAssignment_1");
 					put(grammarAccess.getCSDeclAccess().getMetamodelsAssignment_2_1(), "rule__CSDecl__MetamodelsAssignment_2_1");
 					put(grammarAccess.getASDeclAccess().getMetamodelsAssignment_1(), "rule__ASDecl__MetamodelsAssignment_1");
@@ -184,13 +208,32 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImportCSAccess().getNameAssignment_0_0(), "rule__ImportCS__NameAssignment_0_0");
 					put(grammarAccess.getImportCSAccess().getOwnedPathNameAssignment_1(), "rule__ImportCS__OwnedPathNameAssignment_1");
 					put(grammarAccess.getImportCSAccess().getIsAllAssignment_2(), "rule__ImportCS__IsAllAssignment_2");
+					put(grammarAccess.getMappingSectAccess().getMappingsAssignment_3(), "rule__MappingSect__MappingsAssignment_3");
 					put(grammarAccess.getClassMapAccess().getToAssignment_1(), "rule__ClassMap__ToAssignment_1");
 					put(grammarAccess.getClassMapAccess().getFromAssignment_3(), "rule__ClassMap__FromAssignment_3");
 					put(grammarAccess.getClassMapAccess().getRuleAssignment_5_1(), "rule__ClassMap__RuleAssignment_5_1");
-					put(grammarAccess.getClassMapAccess().getMappedPropertiesAssignment_6(), "rule__ClassMap__MappedPropertiesAssignment_6");
+					put(grammarAccess.getClassMapAccess().getStatementsAssignment_6(), "rule__ClassMap__StatementsAssignment_6");
 					put(grammarAccess.getPropertyMapAccess().getRedefineAssignment_0(), "rule__PropertyMap__RedefineAssignment_0");
-					put(grammarAccess.getPropertyMapAccess().getLhsAssignment_1(), "rule__PropertyMap__LhsAssignment_1");
-					put(grammarAccess.getPropertyMapAccess().getRhsAssignment_3(), "rule__PropertyMap__RhsAssignment_3");
+					put(grammarAccess.getPropertyMapAccess().getPropNameAssignment_1(), "rule__PropertyMap__PropNameAssignment_1");
+					put(grammarAccess.getPropertyMapAccess().getPropInitAssignment_3(), "rule__PropertyMap__PropInitAssignment_3");
+					put(grammarAccess.getDisambiguationSectAccess().getDisambiguationsAssignment_3(), "rule__DisambiguationSect__DisambiguationsAssignment_3");
+					put(grammarAccess.getClassDisambiguationAccess().getClassAssignment_0(), "rule__ClassDisambiguation__ClassAssignment_0");
+					put(grammarAccess.getClassDisambiguationAccess().getStatementsAssignment_2(), "rule__ClassDisambiguation__StatementsAssignment_2");
+					put(grammarAccess.getDisambiguationDefAccess().getNameAssignment_0(), "rule__DisambiguationDef__NameAssignment_0");
+					put(grammarAccess.getDisambiguationDefAccess().getExpAssignment_2(), "rule__DisambiguationDef__ExpAssignment_2");
+					put(grammarAccess.getNameResolutionSectAccess().getNameElementAssignment_3_1(), "rule__NameResolutionSect__NameElementAssignment_3_1");
+					put(grammarAccess.getNameResolutionSectAccess().getNamePropertyAssignment_3_3(), "rule__NameResolutionSect__NamePropertyAssignment_3_3");
+					put(grammarAccess.getNameResolutionSectAccess().getNameQualifierAssignment_4_1(), "rule__NameResolutionSect__NameQualifierAssignment_4_1");
+					put(grammarAccess.getNameResolutionSectAccess().getNameResolutionsAssignment_5(), "rule__NameResolutionSect__NameResolutionsAssignment_5");
+					put(grammarAccess.getClassNameResolutionAccess().getClassAssignment_0(), "rule__ClassNameResolution__ClassAssignment_0");
+					put(grammarAccess.getClassNameResolutionAccess().getStatementsAssignment_2(), "rule__ClassNameResolution__StatementsAssignment_2");
+					put(grammarAccess.getNamedElementDefAccess().getNamePopertyAssignment_2_1(), "rule__NamedElementDef__NamePopertyAssignment_2_1");
+					put(grammarAccess.getNamedElementDefAccess().getQualifierAssignment_3_1(), "rule__NamedElementDef__QualifierAssignment_3_1");
+					put(grammarAccess.getScopeDefAccess().getSameScopeAssignment_0_1(), "rule__ScopeDef__SameScopeAssignment_0_1");
+					put(grammarAccess.getScopeDefAccess().getContributingPropAssignment_2(), "rule__ScopeDef__ContributingPropAssignment_2");
+					put(grammarAccess.getScopeDefAccess().getTypeFilterAssignment_3_1(), "rule__ScopeDef__TypeFilterAssignment_3_1");
+					put(grammarAccess.getScopeDefAccess().getPropagatingPropAssignment_4_1_2_0(), "rule__ScopeDef__PropagatingPropAssignment_4_1_2_0");
+					put(grammarAccess.getScopeDefAccess().getPropagatingPropAssignment_4_1_2_1_1(), "rule__ScopeDef__PropagatingPropAssignment_4_1_2_1_1");
 					put(grammarAccess.getLookupExpCSAccess().getArgsAssignment_2(), "rule__LookupExpCS__ArgsAssignment_2");
 					put(grammarAccess.getLookupExpCSAccess().getArgsAssignment_3_1(), "rule__LookupExpCS__ArgsAssignment_3_1");
 					put(grammarAccess.getURIPathNameCSAccess().getOwnedPathElementsAssignment_0(), "rule__URIPathNameCS__OwnedPathElementsAssignment_0");
@@ -317,6 +360,7 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypedTypeRefCSAccess().getOwnedPathNameAssignment_0(), "rule__TypedTypeRefCS__OwnedPathNameAssignment_0");
 					put(grammarAccess.getTypedTypeRefCSAccess().getOwnedBindingAssignment_1_1(), "rule__TypedTypeRefCS__OwnedBindingAssignment_1_1");
 					put(grammarAccess.getWildcardTypeRefCSAccess().getOwnedExtendsAssignment_2_1(), "rule__WildcardTypeRefCS__OwnedExtendsAssignment_2_1");
+					put(grammarAccess.getModelAccess().getUnorderedGroup_2(), "rule__Model__UnorderedGroup_2");
 				}
 			};
 		}

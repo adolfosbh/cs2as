@@ -104,9 +104,19 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createASDeclAdapter();
       }
       @Override
+      public Adapter caseMappingSect(MappingSect object)
+      {
+        return createMappingSectAdapter();
+      }
+      @Override
       public Adapter caseClassMap(ClassMap object)
       {
         return createClassMapAdapter();
+      }
+      @Override
+      public Adapter caseClassMapStmnt(ClassMapStmnt object)
+      {
+        return createClassMapStmntAdapter();
       }
       @Override
       public Adapter casePropertyMap(PropertyMap object)
@@ -114,9 +124,54 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createPropertyMapAdapter();
       }
       @Override
-      public Adapter caseMapExpCS(MapExpCS object)
+      public Adapter caseDisambiguationSect(DisambiguationSect object)
       {
-        return createMapExpCSAdapter();
+        return createDisambiguationSectAdapter();
+      }
+      @Override
+      public Adapter caseClassDisambiguation(ClassDisambiguation object)
+      {
+        return createClassDisambiguationAdapter();
+      }
+      @Override
+      public Adapter caseClassDisambiguationStmnt(ClassDisambiguationStmnt object)
+      {
+        return createClassDisambiguationStmntAdapter();
+      }
+      @Override
+      public Adapter caseDisambiguationDef(DisambiguationDef object)
+      {
+        return createDisambiguationDefAdapter();
+      }
+      @Override
+      public Adapter caseNameResolutionSect(NameResolutionSect object)
+      {
+        return createNameResolutionSectAdapter();
+      }
+      @Override
+      public Adapter caseClassNameResolution(ClassNameResolution object)
+      {
+        return createClassNameResolutionAdapter();
+      }
+      @Override
+      public Adapter caseClassNameResolutionStmnt(ClassNameResolutionStmnt object)
+      {
+        return createClassNameResolutionStmntAdapter();
+      }
+      @Override
+      public Adapter caseNamedElementDef(NamedElementDef object)
+      {
+        return createNamedElementDefAdapter();
+      }
+      @Override
+      public Adapter caseScopeDef(ScopeDef object)
+      {
+        return createScopeDefAdapter();
+      }
+      @Override
+      public Adapter caseResolveExpCS(ResolveExpCS object)
+      {
+        return createResolveExpCSAdapter();
       }
       @Override
       public Adapter caseLookupExpCS(LookupExpCS object)
@@ -241,6 +296,21 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect <em>Mapping Sect</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect
+   * @generated
+   */
+  public Adapter createMappingSectAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap <em>Class Map</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -251,6 +321,21 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createClassMapAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt <em>Class Map Stmnt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt
+   * @generated
+   */
+  public Adapter createClassMapStmntAdapter()
   {
     return null;
   }
@@ -271,16 +356,151 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MapExpCS <em>Map Exp CS</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect <em>Disambiguation Sect</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MapExpCS
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect
    * @generated
    */
-  public Adapter createMapExpCSAdapter()
+  public Adapter createDisambiguationSectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation <em>Class Disambiguation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation
+   * @generated
+   */
+  public Adapter createClassDisambiguationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt <em>Class Disambiguation Stmnt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt
+   * @generated
+   */
+  public Adapter createClassDisambiguationStmntAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef <em>Disambiguation Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef
+   * @generated
+   */
+  public Adapter createDisambiguationDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect <em>Name Resolution Sect</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect
+   * @generated
+   */
+  public Adapter createNameResolutionSectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution <em>Class Name Resolution</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution
+   * @generated
+   */
+  public Adapter createClassNameResolutionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt <em>Class Name Resolution Stmnt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt
+   * @generated
+   */
+  public Adapter createClassNameResolutionStmntAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef <em>Named Element Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef
+   * @generated
+   */
+  public Adapter createNamedElementDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef <em>Scope Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef
+   * @generated
+   */
+  public Adapter createScopeDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS <em>Resolve Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS
+   * @generated
+   */
+  public Adapter createResolveExpCSAdapter()
   {
     return null;
   }

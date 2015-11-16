@@ -10,6 +10,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
@@ -22,12 +23,16 @@ public class CS2ASDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CS2ASDSLGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q;
+	protected AbstractElementAlias match_ScopeDef_NestedKeyword_0_0_q;
+	protected AbstractElementAlias match_ScopeDef___ToKeyword_4_0___AllKeyword_4_1_0_or_NextsKeyword_4_1_1____q;
 	protected AbstractElementAlias match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CS2ASDSLGrammarAccess) access;
 		match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getMultiplicityCSAccess().getVerticalLineQuestionMarkKeyword_2_0());
+		match_ScopeDef_NestedKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getScopeDefAccess().getNestedKeyword_0_0());
+		match_ScopeDef___ToKeyword_4_0___AllKeyword_4_1_0_or_NextsKeyword_4_1_1____q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getScopeDefAccess().getToKeyword_4_0()), new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getScopeDefAccess().getAllKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getScopeDefAccess().getNextsKeyword_4_1_1())));
 		match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getLeftParenthesisKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getRightParenthesisKeyword_1_2()));
 	}
 	
@@ -45,6 +50,10 @@ public class CS2ASDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q.equals(syntax))
 				emit_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ScopeDef_NestedKeyword_0_0_q.equals(syntax))
+				emit_ScopeDef_NestedKeyword_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ScopeDef___ToKeyword_4_0___AllKeyword_4_1_0_or_NextsKeyword_4_1_1____q.equals(syntax))
+				emit_ScopeDef___ToKeyword_4_0___AllKeyword_4_1_0_or_NextsKeyword_4_1_1____q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q.equals(syntax))
 				emit_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -63,6 +72,31 @@ public class CS2ASDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     upperBound=UPPER (ambiguity) ']' (rule end)
 	 */
 	protected void emit_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'nested'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'scopes' contributingProp=ExpCS
+	 */
+	protected void emit_ScopeDef_NestedKeyword_0_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('to' ('all' | 'nexts'))?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     contributingProp=ExpCS (ambiguity) ';' (rule end)
+	 *     contributingProp=ExpCS (ambiguity) (rule end)
+	 *     typeFilter=TypeExpCS ']' (ambiguity) ';' (rule end)
+	 *     typeFilter=TypeExpCS ']' (ambiguity) (rule end)
+	 */
+	protected void emit_ScopeDef___ToKeyword_4_0___AllKeyword_4_1_0_or_NextsKeyword_4_1_1____q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
