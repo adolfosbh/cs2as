@@ -18,9 +18,11 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isSameScope <em>Same Scope</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getContributingProp <em>Contributing Prop</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getContributingProperty <em>Contributing Property</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getTypeFilter <em>Type Filter</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getPropagatingProp <em>Propagating Prop</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isPropagatingAll <em>Propagating All</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isPropagatingNexts <em>Propagating Nexts</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getPropagatingProperties <em>Propagating Properties</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef()
@@ -56,30 +58,30 @@ public interface ScopeDef extends ClassNameResolutionStmnt
   void setSameScope(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Contributing Prop</b></em>' containment reference.
+   * Returns the value of the '<em><b>Contributing Property</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Contributing Prop</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Contributing Property</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Contributing Prop</em>' containment reference.
-   * @see #setContributingProp(ExpCS)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_ContributingProp()
+   * @return the value of the '<em>Contributing Property</em>' containment reference.
+   * @see #setContributingProperty(ExpCS)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_ContributingProperty()
    * @model containment="true"
    * @generated
    */
-  ExpCS getContributingProp();
+  ExpCS getContributingProperty();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getContributingProp <em>Contributing Prop</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getContributingProperty <em>Contributing Property</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Contributing Prop</em>' containment reference.
-   * @see #getContributingProp()
+   * @param value the new value of the '<em>Contributing Property</em>' containment reference.
+   * @see #getContributingProperty()
    * @generated
    */
-  void setContributingProp(ExpCS value);
+  void setContributingProperty(ExpCS value);
 
   /**
    * Returns the value of the '<em><b>Type Filter</b></em>' containment reference.
@@ -108,19 +110,71 @@ public interface ScopeDef extends ClassNameResolutionStmnt
   void setTypeFilter(TypedRefCS value);
 
   /**
-   * Returns the value of the '<em><b>Propagating Prop</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.ocl.xtext.essentialoclcs.ExpCS}.
+   * Returns the value of the '<em><b>Propagating All</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Propagating Prop</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Propagating All</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Propagating Prop</em>' containment reference list.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_PropagatingProp()
+   * @return the value of the '<em>Propagating All</em>' attribute.
+   * @see #setPropagatingAll(boolean)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_PropagatingAll()
+   * @model
+   * @generated
+   */
+  boolean isPropagatingAll();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isPropagatingAll <em>Propagating All</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Propagating All</em>' attribute.
+   * @see #isPropagatingAll()
+   * @generated
+   */
+  void setPropagatingAll(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Propagating Nexts</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Propagating Nexts</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Propagating Nexts</em>' attribute.
+   * @see #setPropagatingNexts(boolean)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_PropagatingNexts()
+   * @model
+   * @generated
+   */
+  boolean isPropagatingNexts();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isPropagatingNexts <em>Propagating Nexts</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Propagating Nexts</em>' attribute.
+   * @see #isPropagatingNexts()
+   * @generated
+   */
+  void setPropagatingNexts(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Propagating Properties</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.ocl.xtext.essentialoclcs.ExpCS}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Propagating Properties</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Propagating Properties</em>' containment reference list.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_PropagatingProperties()
    * @model containment="true"
    * @generated
    */
-  EList<ExpCS> getPropagatingProp();
+  EList<ExpCS> getPropagatingProperties();
 
 } // ScopeDef

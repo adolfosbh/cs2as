@@ -76,6 +76,9 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.CLASS_DISAMBIGUATION_STMNT: return createClassDisambiguationStmnt();
       case Cs2as_dslPackage.DISAMBIGUATION_DEF: return createDisambiguationDef();
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT: return createNameResolutionSect();
+      case Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF: return createDefaultNamedElementDef();
+      case Cs2as_dslPackage.DEFAULT_NAME_REFERENCER_DEF: return createDefaultNameReferencerDef();
+      case Cs2as_dslPackage.NAME_QUALIFIER_DEF: return createNameQualifierDef();
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION: return createClassNameResolution();
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION_STMNT: return createClassNameResolutionStmnt();
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF: return createNamedElementDef();
@@ -217,6 +220,39 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
   {
     NameResolutionSectImpl nameResolutionSect = new NameResolutionSectImpl();
     return nameResolutionSect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DefaultNamedElementDef createDefaultNamedElementDef()
+  {
+    DefaultNamedElementDefImpl defaultNamedElementDef = new DefaultNamedElementDefImpl();
+    return defaultNamedElementDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DefaultNameReferencerDef createDefaultNameReferencerDef()
+  {
+    DefaultNameReferencerDefImpl defaultNameReferencerDef = new DefaultNameReferencerDefImpl();
+    return defaultNameReferencerDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NameQualifierDef createNameQualifierDef()
+  {
+    NameQualifierDefImpl nameQualifierDef = new NameQualifierDefImpl();
+    return nameQualifierDef;
   }
 
   /**

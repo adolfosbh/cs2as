@@ -33,9 +33,11 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isSameScope <em>Same Scope</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getContributingProp <em>Contributing Prop</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getContributingProperty <em>Contributing Property</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getTypeFilter <em>Type Filter</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getPropagatingProp <em>Propagating Prop</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isPropagatingAll <em>Propagating All</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isPropagatingNexts <em>Propagating Nexts</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getPropagatingProperties <em>Propagating Properties</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,14 +65,14 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
   protected boolean sameScope = SAME_SCOPE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getContributingProp() <em>Contributing Prop</em>}' containment reference.
+   * The cached value of the '{@link #getContributingProperty() <em>Contributing Property</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContributingProp()
+   * @see #getContributingProperty()
    * @generated
    * @ordered
    */
-  protected ExpCS contributingProp;
+  protected ExpCS contributingProperty;
 
   /**
    * The cached value of the '{@link #getTypeFilter() <em>Type Filter</em>}' containment reference.
@@ -83,14 +85,54 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
   protected TypedRefCS typeFilter;
 
   /**
-   * The cached value of the '{@link #getPropagatingProp() <em>Propagating Prop</em>}' containment reference list.
+   * The default value of the '{@link #isPropagatingAll() <em>Propagating All</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPropagatingProp()
+   * @see #isPropagatingAll()
    * @generated
    * @ordered
    */
-  protected EList<ExpCS> propagatingProp;
+  protected static final boolean PROPAGATING_ALL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isPropagatingAll() <em>Propagating All</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isPropagatingAll()
+   * @generated
+   * @ordered
+   */
+  protected boolean propagatingAll = PROPAGATING_ALL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isPropagatingNexts() <em>Propagating Nexts</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isPropagatingNexts()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean PROPAGATING_NEXTS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isPropagatingNexts() <em>Propagating Nexts</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isPropagatingNexts()
+   * @generated
+   * @ordered
+   */
+  protected boolean propagatingNexts = PROPAGATING_NEXTS_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPropagatingProperties() <em>Propagating Properties</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPropagatingProperties()
+   * @generated
+   * @ordered
+   */
+  protected EList<ExpCS> propagatingProperties;
 
   /**
    * <!-- begin-user-doc -->
@@ -141,9 +183,9 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpCS getContributingProp()
+  public ExpCS getContributingProperty()
   {
-    return contributingProp;
+    return contributingProperty;
   }
 
   /**
@@ -151,13 +193,13 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetContributingProp(ExpCS newContributingProp, NotificationChain msgs)
+  public NotificationChain basicSetContributingProperty(ExpCS newContributingProperty, NotificationChain msgs)
   {
-    ExpCS oldContributingProp = contributingProp;
-    contributingProp = newContributingProp;
+    ExpCS oldContributingProperty = contributingProperty;
+    contributingProperty = newContributingProperty;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROP, oldContributingProp, newContributingProp);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROPERTY, oldContributingProperty, newContributingProperty);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -168,20 +210,20 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContributingProp(ExpCS newContributingProp)
+  public void setContributingProperty(ExpCS newContributingProperty)
   {
-    if (newContributingProp != contributingProp)
+    if (newContributingProperty != contributingProperty)
     {
       NotificationChain msgs = null;
-      if (contributingProp != null)
-        msgs = ((InternalEObject)contributingProp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROP, null, msgs);
-      if (newContributingProp != null)
-        msgs = ((InternalEObject)newContributingProp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROP, null, msgs);
-      msgs = basicSetContributingProp(newContributingProp, msgs);
+      if (contributingProperty != null)
+        msgs = ((InternalEObject)contributingProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROPERTY, null, msgs);
+      if (newContributingProperty != null)
+        msgs = ((InternalEObject)newContributingProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROPERTY, null, msgs);
+      msgs = basicSetContributingProperty(newContributingProperty, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROP, newContributingProp, newContributingProp));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROPERTY, newContributingProperty, newContributingProperty));
   }
 
   /**
@@ -237,13 +279,59 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ExpCS> getPropagatingProp()
+  public boolean isPropagatingAll()
   {
-    if (propagatingProp == null)
+    return propagatingAll;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPropagatingAll(boolean newPropagatingAll)
+  {
+    boolean oldPropagatingAll = propagatingAll;
+    propagatingAll = newPropagatingAll;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_ALL, oldPropagatingAll, propagatingAll));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isPropagatingNexts()
+  {
+    return propagatingNexts;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPropagatingNexts(boolean newPropagatingNexts)
+  {
+    boolean oldPropagatingNexts = propagatingNexts;
+    propagatingNexts = newPropagatingNexts;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_NEXTS, oldPropagatingNexts, propagatingNexts));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ExpCS> getPropagatingProperties()
+  {
+    if (propagatingProperties == null)
     {
-      propagatingProp = new EObjectContainmentEList<ExpCS>(ExpCS.class, this, Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROP);
+      propagatingProperties = new EObjectContainmentEList<ExpCS>(ExpCS.class, this, Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROPERTIES);
     }
-    return propagatingProp;
+    return propagatingProperties;
   }
 
   /**
@@ -256,12 +344,12 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROP:
-        return basicSetContributingProp(null, msgs);
+      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROPERTY:
+        return basicSetContributingProperty(null, msgs);
       case Cs2as_dslPackage.SCOPE_DEF__TYPE_FILTER:
         return basicSetTypeFilter(null, msgs);
-      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROP:
-        return ((InternalEList<?>)getPropagatingProp()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROPERTIES:
+        return ((InternalEList<?>)getPropagatingProperties()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -278,12 +366,16 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
     {
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         return isSameScope();
-      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROP:
-        return getContributingProp();
+      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROPERTY:
+        return getContributingProperty();
       case Cs2as_dslPackage.SCOPE_DEF__TYPE_FILTER:
         return getTypeFilter();
-      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROP:
-        return getPropagatingProp();
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_ALL:
+        return isPropagatingAll();
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_NEXTS:
+        return isPropagatingNexts();
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROPERTIES:
+        return getPropagatingProperties();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -302,15 +394,21 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         setSameScope((Boolean)newValue);
         return;
-      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROP:
-        setContributingProp((ExpCS)newValue);
+      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROPERTY:
+        setContributingProperty((ExpCS)newValue);
         return;
       case Cs2as_dslPackage.SCOPE_DEF__TYPE_FILTER:
         setTypeFilter((TypedRefCS)newValue);
         return;
-      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROP:
-        getPropagatingProp().clear();
-        getPropagatingProp().addAll((Collection<? extends ExpCS>)newValue);
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_ALL:
+        setPropagatingAll((Boolean)newValue);
+        return;
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_NEXTS:
+        setPropagatingNexts((Boolean)newValue);
+        return;
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROPERTIES:
+        getPropagatingProperties().clear();
+        getPropagatingProperties().addAll((Collection<? extends ExpCS>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -329,14 +427,20 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         setSameScope(SAME_SCOPE_EDEFAULT);
         return;
-      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROP:
-        setContributingProp((ExpCS)null);
+      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROPERTY:
+        setContributingProperty((ExpCS)null);
         return;
       case Cs2as_dslPackage.SCOPE_DEF__TYPE_FILTER:
         setTypeFilter((TypedRefCS)null);
         return;
-      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROP:
-        getPropagatingProp().clear();
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_ALL:
+        setPropagatingAll(PROPAGATING_ALL_EDEFAULT);
+        return;
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_NEXTS:
+        setPropagatingNexts(PROPAGATING_NEXTS_EDEFAULT);
+        return;
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROPERTIES:
+        getPropagatingProperties().clear();
         return;
     }
     super.eUnset(featureID);
@@ -354,12 +458,16 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
     {
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         return sameScope != SAME_SCOPE_EDEFAULT;
-      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROP:
-        return contributingProp != null;
+      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTING_PROPERTY:
+        return contributingProperty != null;
       case Cs2as_dslPackage.SCOPE_DEF__TYPE_FILTER:
         return typeFilter != null;
-      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROP:
-        return propagatingProp != null && !propagatingProp.isEmpty();
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_ALL:
+        return propagatingAll != PROPAGATING_ALL_EDEFAULT;
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_NEXTS:
+        return propagatingNexts != PROPAGATING_NEXTS_EDEFAULT;
+      case Cs2as_dslPackage.SCOPE_DEF__PROPAGATING_PROPERTIES:
+        return propagatingProperties != null && !propagatingProperties.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -377,6 +485,10 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (sameScope: ");
     result.append(sameScope);
+    result.append(", propagatingAll: ");
+    result.append(propagatingAll);
+    result.append(", propagatingNexts: ");
+    result.append(propagatingNexts);
     result.append(')');
     return result.toString();
   }

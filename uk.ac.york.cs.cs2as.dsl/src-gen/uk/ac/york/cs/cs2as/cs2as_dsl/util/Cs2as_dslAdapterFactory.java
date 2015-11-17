@@ -149,6 +149,21 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createNameResolutionSectAdapter();
       }
       @Override
+      public Adapter caseDefaultNamedElementDef(DefaultNamedElementDef object)
+      {
+        return createDefaultNamedElementDefAdapter();
+      }
+      @Override
+      public Adapter caseDefaultNameReferencerDef(DefaultNameReferencerDef object)
+      {
+        return createDefaultNameReferencerDefAdapter();
+      }
+      @Override
+      public Adapter caseNameQualifierDef(NameQualifierDef object)
+      {
+        return createNameQualifierDefAdapter();
+      }
+      @Override
       public Adapter caseClassNameResolution(ClassNameResolution object)
       {
         return createClassNameResolutionAdapter();
@@ -426,6 +441,51 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNameResolutionSectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef <em>Default Named Element Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef
+   * @generated
+   */
+  public Adapter createDefaultNamedElementDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef <em>Default Name Referencer Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef
+   * @generated
+   */
+  public Adapter createDefaultNameReferencerDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef <em>Name Qualifier Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef
+   * @generated
+   */
+  public Adapter createNameQualifierDefAdapter()
   {
     return null;
   }

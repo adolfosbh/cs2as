@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.ocl.xtext.basecs.PathNameCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt;
@@ -43,54 +43,44 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassMap
 {
   /**
-   * The default value of the '{@link #getTo() <em>To</em>}' attribute.
+   * The cached value of the '{@link #getTo() <em>To</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTo()
    * @generated
    * @ordered
    */
-  protected static final String TO_EDEFAULT = null;
+  protected PathNameCS to;
 
   /**
-   * The cached value of the '{@link #getTo() <em>To</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTo()
-   * @generated
-   * @ordered
-   */
-  protected String to = TO_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getFrom() <em>From</em>}' attribute.
+   * The cached value of the '{@link #getFrom() <em>From</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFrom()
    * @generated
    * @ordered
    */
-  protected static final String FROM_EDEFAULT = null;
+  protected PathNameCS from;
 
   /**
-   * The cached value of the '{@link #getFrom() <em>From</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFrom()
-   * @generated
-   * @ordered
-   */
-  protected String from = FROM_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getRule() <em>Rule</em>}' containment reference.
+   * The default value of the '{@link #getRule() <em>Rule</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getRule()
    * @generated
    * @ordered
    */
-  protected ExpCS rule;
+  protected static final String RULE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getRule() <em>Rule</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRule()
+   * @generated
+   * @ordered
+   */
+  protected String rule = RULE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -128,7 +118,7 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTo()
+  public PathNameCS getTo()
   {
     return to;
   }
@@ -138,59 +128,13 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTo(String newTo)
+  public NotificationChain basicSetTo(PathNameCS newTo, NotificationChain msgs)
   {
-    String oldTo = to;
+    PathNameCS oldTo = to;
     to = newTo;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__TO, oldTo, to));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getFrom()
-  {
-    return from;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFrom(String newFrom)
-  {
-    String oldFrom = from;
-    from = newFrom;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__FROM, oldFrom, from));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ExpCS getRule()
-  {
-    return rule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRule(ExpCS newRule, NotificationChain msgs)
-  {
-    ExpCS oldRule = rule;
-    rule = newRule;
-    if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__RULE, oldRule, newRule);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__TO, oldTo, newTo);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -201,20 +145,91 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRule(ExpCS newRule)
+  public void setTo(PathNameCS newTo)
   {
-    if (newRule != rule)
+    if (newTo != to)
     {
       NotificationChain msgs = null;
-      if (rule != null)
-        msgs = ((InternalEObject)rule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_MAP__RULE, null, msgs);
-      if (newRule != null)
-        msgs = ((InternalEObject)newRule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_MAP__RULE, null, msgs);
-      msgs = basicSetRule(newRule, msgs);
+      if (to != null)
+        msgs = ((InternalEObject)to).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_MAP__TO, null, msgs);
+      if (newTo != null)
+        msgs = ((InternalEObject)newTo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_MAP__TO, null, msgs);
+      msgs = basicSetTo(newTo, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__RULE, newRule, newRule));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__TO, newTo, newTo));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PathNameCS getFrom()
+  {
+    return from;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFrom(PathNameCS newFrom, NotificationChain msgs)
+  {
+    PathNameCS oldFrom = from;
+    from = newFrom;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__FROM, oldFrom, newFrom);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFrom(PathNameCS newFrom)
+  {
+    if (newFrom != from)
+    {
+      NotificationChain msgs = null;
+      if (from != null)
+        msgs = ((InternalEObject)from).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_MAP__FROM, null, msgs);
+      if (newFrom != null)
+        msgs = ((InternalEObject)newFrom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_MAP__FROM, null, msgs);
+      msgs = basicSetFrom(newFrom, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__FROM, newFrom, newFrom));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getRule()
+  {
+    return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRule(String newRule)
+  {
+    String oldRule = rule;
+    rule = newRule;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__RULE, oldRule, rule));
   }
 
   /**
@@ -241,8 +256,10 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.CLASS_MAP__RULE:
-        return basicSetRule(null, msgs);
+      case Cs2as_dslPackage.CLASS_MAP__TO:
+        return basicSetTo(null, msgs);
+      case Cs2as_dslPackage.CLASS_MAP__FROM:
+        return basicSetFrom(null, msgs);
       case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
         return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
@@ -283,13 +300,13 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_MAP__TO:
-        setTo((String)newValue);
+        setTo((PathNameCS)newValue);
         return;
       case Cs2as_dslPackage.CLASS_MAP__FROM:
-        setFrom((String)newValue);
+        setFrom((PathNameCS)newValue);
         return;
       case Cs2as_dslPackage.CLASS_MAP__RULE:
-        setRule((ExpCS)newValue);
+        setRule((String)newValue);
         return;
       case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
         getStatements().clear();
@@ -310,13 +327,13 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_MAP__TO:
-        setTo(TO_EDEFAULT);
+        setTo((PathNameCS)null);
         return;
       case Cs2as_dslPackage.CLASS_MAP__FROM:
-        setFrom(FROM_EDEFAULT);
+        setFrom((PathNameCS)null);
         return;
       case Cs2as_dslPackage.CLASS_MAP__RULE:
-        setRule((ExpCS)null);
+        setRule(RULE_EDEFAULT);
         return;
       case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
         getStatements().clear();
@@ -336,11 +353,11 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_MAP__TO:
-        return TO_EDEFAULT == null ? to != null : !TO_EDEFAULT.equals(to);
+        return to != null;
       case Cs2as_dslPackage.CLASS_MAP__FROM:
-        return FROM_EDEFAULT == null ? from != null : !FROM_EDEFAULT.equals(from);
+        return from != null;
       case Cs2as_dslPackage.CLASS_MAP__RULE:
-        return rule != null;
+        return RULE_EDEFAULT == null ? rule != null : !RULE_EDEFAULT.equals(rule);
       case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
         return statements != null && !statements.isEmpty();
     }
@@ -358,10 +375,8 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (to: ");
-    result.append(to);
-    result.append(", from: ");
-    result.append(from);
+    result.append(" (rule: ");
+    result.append(rule);
     result.append(')');
     return result.toString();
   }

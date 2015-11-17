@@ -34,8 +34,8 @@ MappingSect:
 	'}'	
 ;
 ClassMap:
-	'map' to=SIMPLE_ID 'from'  from=SIMPLE_ID '{'
-		('when' rule=ExpCS ';')?
+	'map' to=PathNameCS 'from'  from=PathNameCS '{'
+		('when' rule=SIMPLE_ID ';')?
 		statements += ClassMapStmnt*
 	'}'
 ;
@@ -75,10 +75,23 @@ DisambiguationDef:
 NameResolutionSect:
 	{NameResolutionSect}
 	'nameresolution' '{'
-		('named-element' nameElement=SIMPLE_ID 'name-property' nameProperty=NameExpCS ';')?
-		('name-qualifier' nameQualifier=SIMPLE_ID ';')?
+		namedElement=DefaultNamedElementDef?
+		nameReferencer=DefaultNameReferencerDef?
+		nameQualifier=NameQualifierDef?
 		nameResolutions+=ClassNameResolution*
 	'}'
+;
+
+DefaultNamedElementDef:
+	'named-element' nameElement=SIMPLE_ID 'name-property' nameProperty=NameExpCS ';'
+;
+
+DefaultNameReferencerDef:
+	'name-referencer' nameReferencer=SIMPLE_ID 'name-property' nameProperty=NameExpCS ';'
+;
+
+NameQualifierDef:
+	'name-qualifier' nameQualifier=SIMPLE_ID 'name-segments-property' segmentsProp=NameExpCS ';'	
 ;
 
 ClassNameResolution:
@@ -99,8 +112,8 @@ NamedElementDef:
 
 ScopeDef:
 	('nested' | sameScope?= 'same')? 
-	'scopes' contributingProp=ExpCS ('['typeFilter=TypeExpCS']')? 
-	('to' ('all' | 'nexts' | (propagatingProp+=ExpCS (',' propagatingProp+=ExpCS)* ) ))?
+	'scopes' contributingProperty=ExpCS ('['typeFilter=TypeExpCS']')? 
+	('to' (propagatingAll?='all' | propagatingNexts?='nexts' | (propagatingProperties+=ExpCS (',' propagatingProperties+=ExpCS)* ) ))?
 ;
 
 
@@ -126,5 +139,5 @@ ResolveExpCS:
 
 
 LookupExpCS:
-	'lookup' '(' args+=NavigatingArgExpCS (',' args+=NavigatingArgExpCS)* ')'
+	('lookup' | fromExp?='lookupFrom') '(' args+=NavigatingArgExpCS (',' args+=NavigatingArgExpCS)* ')'
 ;

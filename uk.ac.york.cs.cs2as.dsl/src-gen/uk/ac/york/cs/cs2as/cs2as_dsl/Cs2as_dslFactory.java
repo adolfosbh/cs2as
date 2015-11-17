@@ -131,6 +131,33 @@ public interface Cs2as_dslFactory extends EFactory
   NameResolutionSect createNameResolutionSect();
 
   /**
+   * Returns a new object of class '<em>Default Named Element Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Default Named Element Def</em>'.
+   * @generated
+   */
+  DefaultNamedElementDef createDefaultNamedElementDef();
+
+  /**
+   * Returns a new object of class '<em>Default Name Referencer Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Default Name Referencer Def</em>'.
+   * @generated
+   */
+  DefaultNameReferencerDef createDefaultNameReferencerDef();
+
+  /**
+   * Returns a new object of class '<em>Name Qualifier Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Name Qualifier Def</em>'.
+   * @generated
+   */
+  NameQualifierDef createNameQualifierDef();
+
+  /**
    * Returns a new object of class '<em>Class Name Resolution</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

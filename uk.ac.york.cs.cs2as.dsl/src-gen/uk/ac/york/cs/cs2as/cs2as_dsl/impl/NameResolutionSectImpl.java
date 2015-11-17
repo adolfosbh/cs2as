@@ -18,10 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
-
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
 
 /**
@@ -32,8 +33,8 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NameResolutionSectImpl#getNameElement <em>Name Element</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NameResolutionSectImpl#getNameProperty <em>Name Property</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NameResolutionSectImpl#getNamedElement <em>Named Element</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NameResolutionSectImpl#getNameReferencer <em>Name Referencer</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NameResolutionSectImpl#getNameQualifier <em>Name Qualifier</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NameResolutionSectImpl#getNameResolutions <em>Name Resolutions</em>}</li>
  * </ul>
@@ -43,54 +44,34 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
 public class NameResolutionSectImpl extends MinimalEObjectImpl.Container implements NameResolutionSect
 {
   /**
-   * The default value of the '{@link #getNameElement() <em>Name Element</em>}' attribute.
+   * The cached value of the '{@link #getNamedElement() <em>Named Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNameElement()
+   * @see #getNamedElement()
    * @generated
    * @ordered
    */
-  protected static final String NAME_ELEMENT_EDEFAULT = null;
+  protected DefaultNamedElementDef namedElement;
 
   /**
-   * The cached value of the '{@link #getNameElement() <em>Name Element</em>}' attribute.
+   * The cached value of the '{@link #getNameReferencer() <em>Name Referencer</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNameElement()
+   * @see #getNameReferencer()
    * @generated
    * @ordered
    */
-  protected String nameElement = NAME_ELEMENT_EDEFAULT;
+  protected DefaultNameReferencerDef nameReferencer;
 
   /**
-   * The cached value of the '{@link #getNameProperty() <em>Name Property</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNameProperty()
-   * @generated
-   * @ordered
-   */
-  protected NameExpCS nameProperty;
-
-  /**
-   * The default value of the '{@link #getNameQualifier() <em>Name Qualifier</em>}' attribute.
+   * The cached value of the '{@link #getNameQualifier() <em>Name Qualifier</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNameQualifier()
    * @generated
    * @ordered
    */
-  protected static final String NAME_QUALIFIER_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getNameQualifier() <em>Name Qualifier</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNameQualifier()
-   * @generated
-   * @ordered
-   */
-  protected String nameQualifier = NAME_QUALIFIER_EDEFAULT;
+  protected NameQualifierDef nameQualifier;
 
   /**
    * The cached value of the '{@link #getNameResolutions() <em>Name Resolutions</em>}' containment reference list.
@@ -128,9 +109,9 @@ public class NameResolutionSectImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNameElement()
+  public DefaultNamedElementDef getNamedElement()
   {
-    return nameElement;
+    return namedElement;
   }
 
   /**
@@ -138,36 +119,13 @@ public class NameResolutionSectImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNameElement(String newNameElement)
+  public NotificationChain basicSetNamedElement(DefaultNamedElementDef newNamedElement, NotificationChain msgs)
   {
-    String oldNameElement = nameElement;
-    nameElement = newNameElement;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_ELEMENT, oldNameElement, nameElement));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NameExpCS getNameProperty()
-  {
-    return nameProperty;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetNameProperty(NameExpCS newNameProperty, NotificationChain msgs)
-  {
-    NameExpCS oldNameProperty = nameProperty;
-    nameProperty = newNameProperty;
+    DefaultNamedElementDef oldNamedElement = namedElement;
+    namedElement = newNamedElement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_PROPERTY, oldNameProperty, newNameProperty);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAMED_ELEMENT, oldNamedElement, newNamedElement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -178,20 +136,20 @@ public class NameResolutionSectImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNameProperty(NameExpCS newNameProperty)
+  public void setNamedElement(DefaultNamedElementDef newNamedElement)
   {
-    if (newNameProperty != nameProperty)
+    if (newNamedElement != namedElement)
     {
       NotificationChain msgs = null;
-      if (nameProperty != null)
-        msgs = ((InternalEObject)nameProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_PROPERTY, null, msgs);
-      if (newNameProperty != null)
-        msgs = ((InternalEObject)newNameProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_PROPERTY, null, msgs);
-      msgs = basicSetNameProperty(newNameProperty, msgs);
+      if (namedElement != null)
+        msgs = ((InternalEObject)namedElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAMED_ELEMENT, null, msgs);
+      if (newNamedElement != null)
+        msgs = ((InternalEObject)newNamedElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAMED_ELEMENT, null, msgs);
+      msgs = basicSetNamedElement(newNamedElement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_PROPERTY, newNameProperty, newNameProperty));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAMED_ELEMENT, newNamedElement, newNamedElement));
   }
 
   /**
@@ -199,7 +157,55 @@ public class NameResolutionSectImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNameQualifier()
+  public DefaultNameReferencerDef getNameReferencer()
+  {
+    return nameReferencer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetNameReferencer(DefaultNameReferencerDef newNameReferencer, NotificationChain msgs)
+  {
+    DefaultNameReferencerDef oldNameReferencer = nameReferencer;
+    nameReferencer = newNameReferencer;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_REFERENCER, oldNameReferencer, newNameReferencer);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNameReferencer(DefaultNameReferencerDef newNameReferencer)
+  {
+    if (newNameReferencer != nameReferencer)
+    {
+      NotificationChain msgs = null;
+      if (nameReferencer != null)
+        msgs = ((InternalEObject)nameReferencer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_REFERENCER, null, msgs);
+      if (newNameReferencer != null)
+        msgs = ((InternalEObject)newNameReferencer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_REFERENCER, null, msgs);
+      msgs = basicSetNameReferencer(newNameReferencer, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_REFERENCER, newNameReferencer, newNameReferencer));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NameQualifierDef getNameQualifier()
   {
     return nameQualifier;
   }
@@ -209,12 +215,37 @@ public class NameResolutionSectImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNameQualifier(String newNameQualifier)
+  public NotificationChain basicSetNameQualifier(NameQualifierDef newNameQualifier, NotificationChain msgs)
   {
-    String oldNameQualifier = nameQualifier;
+    NameQualifierDef oldNameQualifier = nameQualifier;
     nameQualifier = newNameQualifier;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_QUALIFIER, oldNameQualifier, nameQualifier));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_QUALIFIER, oldNameQualifier, newNameQualifier);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNameQualifier(NameQualifierDef newNameQualifier)
+  {
+    if (newNameQualifier != nameQualifier)
+    {
+      NotificationChain msgs = null;
+      if (nameQualifier != null)
+        msgs = ((InternalEObject)nameQualifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_QUALIFIER, null, msgs);
+      if (newNameQualifier != null)
+        msgs = ((InternalEObject)newNameQualifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_QUALIFIER, null, msgs);
+      msgs = basicSetNameQualifier(newNameQualifier, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_QUALIFIER, newNameQualifier, newNameQualifier));
   }
 
   /**
@@ -241,8 +272,12 @@ public class NameResolutionSectImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_PROPERTY:
-        return basicSetNameProperty(null, msgs);
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAMED_ELEMENT:
+        return basicSetNamedElement(null, msgs);
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_REFERENCER:
+        return basicSetNameReferencer(null, msgs);
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_QUALIFIER:
+        return basicSetNameQualifier(null, msgs);
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_RESOLUTIONS:
         return ((InternalEList<?>)getNameResolutions()).basicRemove(otherEnd, msgs);
     }
@@ -259,10 +294,10 @@ public class NameResolutionSectImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_ELEMENT:
-        return getNameElement();
-      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_PROPERTY:
-        return getNameProperty();
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAMED_ELEMENT:
+        return getNamedElement();
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_REFERENCER:
+        return getNameReferencer();
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_QUALIFIER:
         return getNameQualifier();
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_RESOLUTIONS:
@@ -282,14 +317,14 @@ public class NameResolutionSectImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_ELEMENT:
-        setNameElement((String)newValue);
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAMED_ELEMENT:
+        setNamedElement((DefaultNamedElementDef)newValue);
         return;
-      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_PROPERTY:
-        setNameProperty((NameExpCS)newValue);
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_REFERENCER:
+        setNameReferencer((DefaultNameReferencerDef)newValue);
         return;
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_QUALIFIER:
-        setNameQualifier((String)newValue);
+        setNameQualifier((NameQualifierDef)newValue);
         return;
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_RESOLUTIONS:
         getNameResolutions().clear();
@@ -309,14 +344,14 @@ public class NameResolutionSectImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_ELEMENT:
-        setNameElement(NAME_ELEMENT_EDEFAULT);
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAMED_ELEMENT:
+        setNamedElement((DefaultNamedElementDef)null);
         return;
-      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_PROPERTY:
-        setNameProperty((NameExpCS)null);
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_REFERENCER:
+        setNameReferencer((DefaultNameReferencerDef)null);
         return;
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_QUALIFIER:
-        setNameQualifier(NAME_QUALIFIER_EDEFAULT);
+        setNameQualifier((NameQualifierDef)null);
         return;
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_RESOLUTIONS:
         getNameResolutions().clear();
@@ -335,35 +370,16 @@ public class NameResolutionSectImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_ELEMENT:
-        return NAME_ELEMENT_EDEFAULT == null ? nameElement != null : !NAME_ELEMENT_EDEFAULT.equals(nameElement);
-      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_PROPERTY:
-        return nameProperty != null;
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAMED_ELEMENT:
+        return namedElement != null;
+      case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_REFERENCER:
+        return nameReferencer != null;
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_QUALIFIER:
-        return NAME_QUALIFIER_EDEFAULT == null ? nameQualifier != null : !NAME_QUALIFIER_EDEFAULT.equals(nameQualifier);
+        return nameQualifier != null;
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT__NAME_RESOLUTIONS:
         return nameResolutions != null && !nameResolutions.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (nameElement: ");
-    result.append(nameElement);
-    result.append(", nameQualifier: ");
-    result.append(nameQualifier);
-    result.append(')');
-    return result.toString();
   }
 
 } //NameResolutionSectImpl

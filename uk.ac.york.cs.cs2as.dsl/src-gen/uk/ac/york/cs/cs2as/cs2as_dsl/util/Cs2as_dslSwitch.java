@@ -181,6 +181,27 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF:
+      {
+        DefaultNamedElementDef defaultNamedElementDef = (DefaultNamedElementDef)theEObject;
+        T result = caseDefaultNamedElementDef(defaultNamedElementDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.DEFAULT_NAME_REFERENCER_DEF:
+      {
+        DefaultNameReferencerDef defaultNameReferencerDef = (DefaultNameReferencerDef)theEObject;
+        T result = caseDefaultNameReferencerDef(defaultNameReferencerDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.NAME_QUALIFIER_DEF:
+      {
+        NameQualifierDef nameQualifierDef = (NameQualifierDef)theEObject;
+        T result = caseNameQualifierDef(nameQualifierDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION:
       {
         ClassNameResolution classNameResolution = (ClassNameResolution)theEObject;
@@ -429,6 +450,54 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNameResolutionSect(NameResolutionSect object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Default Named Element Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Default Named Element Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefaultNamedElementDef(DefaultNamedElementDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Default Name Referencer Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Default Name Referencer Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefaultNameReferencerDef(DefaultNameReferencerDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Name Qualifier Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Name Qualifier Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNameQualifierDef(NameQualifierDef object)
   {
     return null;
   }

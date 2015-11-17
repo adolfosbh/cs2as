@@ -3,26 +3,7 @@ import '/resource/org.eclipse.ocl.pivot/model/PivotLookup.ocl'
 import '/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore'
 import '/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore'
 import 'generated/CS2ASDSL.ecore'
-
-package basecs
-
-context ImportCS
-def : ast() : ocl::Import =
-	ocl::Import {
-		name = name,
-		importedNamespace = referredNamespace
-		-- importedNamespace = ast().lookupNamespace(pathName)
-	}
-	
-endpackage
-
-package essentialoclcs
-	
-context ExpCS
-def : ast() : ocl::OCLExpression =
-	invalid -- to be overriden
-	
-endpackage
+import 'CS2ASBridgeLookup.ocl'
 
 package cs2as_dsl
 
@@ -32,7 +13,7 @@ def : ast() : ocl::Model =
 		ownedPackages = 
 			ocl::Package {
 				name = csDecl.metamodels.ast().importedNamespace.name,
-				ownedClasses = mappingSect.mappings->select(unambiguous() or firstAmbiguous())->collect(ast())
+				ownedClasses = mappingSect.mappings->select(unambiguous() or ambiguousFirst())->collect(ast())
 			},
 		ownedImports =  csDecl.metamodels.ast()->includingAll(
 					    asDecl.metamodels.ast())
@@ -40,49 +21,29 @@ def : ast() : ocl::Model =
 
 context ClassMap
 def : ast() : ocl::Class =
-	if unambiguous()
-	then
-		ocl::Class {
+	ocl::Class {
 			name = from,
 			ownedOperations = 
 				ocl::Operation {
 					name = 'ast',
-					-- type = ast().lookupType(to),
+					type = ast().lookupClass(to),
 					bodyExpression = ocl::ExpressionInOCL {
-										ownedBody = createShadowExp(self),
+										ownedBody = if unambiguous() then createShadowExp(self)
+													else if ambiguousFirst() then createNestedIfExp(mappingsSameFrom())
+													else invalid  -- should not happen
+													endif endif,
 										ownedContext = ocl::Variable {
-											name = 'self'
-										--	type = ast().lookupType(from)
+											name = 'self',
+											type = ast().lookupClass(from)
 										}
-					}--,
-					-- type = ast().lookupType(to)
+					}
 				}
 		}
-	else if (firstAmbiguous()) 
-	then
-		ocl::Class {
-			name = from,
-			ownedOperations = 
-				ocl::Operation {
-					name = 'ast',
-					-- type = ast().lookupType(to),
-					bodyExpression = ocl::ExpressionInOCL {
-										ownedBody = createNestedIfExp(mappingsSameFrom()),
-										ownedContext = ocl::Variable {
-											name = 'self'
-										--	type = ast().lookupType(from)
-										}
-					}--,
-					-- type = ast().lookupType(to)
-				}
-		}
-	else null 
-	endif endif
 	
 def : unambiguous() : Boolean = 
 	rule = null 
 	
-def : firstAmbiguous() : Boolean =
+def : ambiguousFirst() : Boolean =
 	rule <> null and 
 	mappingsSameFrom()->first() = self
 		
@@ -100,8 +61,8 @@ def : createNestedIfExp(mappings : OrderedSet(ClassMap) ) : ocl::IfExp =
 		remainingMappings : OrderedSet(ClassMap) = mappings->excluding(firstMapping) 
 	in ocl::IfExp {
 		ownedCondition = ocl::OperationCallExp {
-			name = firstMapping.rule --,
-			--referredOperation = lookupOperation(firstMapping.rule)
+			name = firstMapping.rule,
+			referredOperation = ast().lookupOperation(firstMapping.rule)
 		},
 		ownedThen = createShadowExp(firstMapping),
 		ownedElse = if remainingMappings->isEmpty() 
@@ -121,8 +82,35 @@ context PropertyMap
 def : ast() : ocl::ShadowPart =
 	ocl::ShadowPart {
 		name = propName,		
-		ownedInit = propInit.ast() --,
-		--referredProperty = ast().lookupProperty(propName)
+		ownedInit = propInit.ast(),
+		referredProperty = ast().lookupProperty(propName)
+	}
+	
+context ResolveExpCS
+def : ast() : ocl::OperationCallExp =
+	ocl::OperationCallExp {
+		name = 'ast',
+		referredOperation = ast().lookupOperation('ast')
 	}
 endpackage
 
+/******** OCL DEFINITIONS *********/
+package basecs
+
+context ImportCS
+def : ast() : ocl::Import =
+	ocl::Import {
+		name = name,
+		importedNamespace = referredNamespace
+		-- importedNamespace = ast().lookupNamespace(pathName)
+	}
+	
+endpackage
+
+package essentialoclcs
+	
+context ExpCS
+def : ast() : ocl::OCLExpression =
+	invalid -- to be overriden
+	
+endpackage

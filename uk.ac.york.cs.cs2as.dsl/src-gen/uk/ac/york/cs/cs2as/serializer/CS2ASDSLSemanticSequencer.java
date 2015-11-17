@@ -72,11 +72,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
+import uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
@@ -211,6 +214,12 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case Cs2as_dslPackage.CLASS_NAME_RESOLUTION:
 				sequence_ClassNameResolution(context, (ClassNameResolution) semanticObject); 
 				return; 
+			case Cs2as_dslPackage.DEFAULT_NAME_REFERENCER_DEF:
+				sequence_DefaultNameReferencerDef(context, (DefaultNameReferencerDef) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF:
+				sequence_DefaultNamedElementDef(context, (DefaultNamedElementDef) semanticObject); 
+				return; 
 			case Cs2as_dslPackage.DISAMBIGUATION_DEF:
 				sequence_DisambiguationDef(context, (DisambiguationDef) semanticObject); 
 				return; 
@@ -225,6 +234,9 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 				return; 
 			case Cs2as_dslPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.NAME_QUALIFIER_DEF:
+				sequence_NameQualifierDef(context, (NameQualifierDef) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.NAME_RESOLUTION_SECT:
 				sequence_NameResolutionSect(context, (NameResolutionSect) semanticObject); 
@@ -441,7 +453,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (to=SIMPLE_ID from=SIMPLE_ID rule=ExpCS? statements+=ClassMapStmnt*)
+	 *     (to=PathNameCS from=PathNameCS rule=SIMPLE_ID? statements+=ClassMapStmnt*)
 	 */
 	protected void sequence_ClassMap(EObject context, ClassMap semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -454,6 +466,44 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 */
 	protected void sequence_ClassNameResolution(EObject context, ClassNameResolution semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (nameReferencer=SIMPLE_ID nameProperty=NameExpCS)
+	 */
+	protected void sequence_DefaultNameReferencerDef(EObject context, DefaultNameReferencerDef semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.DEFAULT_NAME_REFERENCER_DEF__NAME_REFERENCER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.DEFAULT_NAME_REFERENCER_DEF__NAME_REFERENCER));
+			if(transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.DEFAULT_NAME_REFERENCER_DEF__NAME_PROPERTY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.DEFAULT_NAME_REFERENCER_DEF__NAME_PROPERTY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDefaultNameReferencerDefAccess().getNameReferencerSIMPLE_IDTerminalRuleCall_1_0(), semanticObject.getNameReferencer());
+		feeder.accept(grammarAccess.getDefaultNameReferencerDefAccess().getNamePropertyNameExpCSParserRuleCall_3_0(), semanticObject.getNameProperty());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (nameElement=SIMPLE_ID nameProperty=NameExpCS)
+	 */
+	protected void sequence_DefaultNamedElementDef(EObject context, DefaultNamedElementDef semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.DEFAULT_NAMED_ELEMENT_DEF__NAME_ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.DEFAULT_NAMED_ELEMENT_DEF__NAME_ELEMENT));
+			if(transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDefaultNamedElementDefAccess().getNameElementSIMPLE_IDTerminalRuleCall_1_0(), semanticObject.getNameElement());
+		feeder.accept(grammarAccess.getDefaultNamedElementDefAccess().getNamePropertyNameExpCSParserRuleCall_3_0(), semanticObject.getNameProperty());
+		feeder.finish();
 	}
 	
 	
@@ -496,7 +546,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (args+=NavigatingArgExpCS args+=NavigatingArgExpCS*)
+	 *     (fromExp?='lookupFrom'? args+=NavigatingArgExpCS args+=NavigatingArgExpCS*)
 	 */
 	protected void sequence_LookupExpCS(EObject context, LookupExpCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -523,7 +573,31 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((nameElement=SIMPLE_ID nameProperty=NameExpCS)? nameQualifier=SIMPLE_ID? nameResolutions+=ClassNameResolution*)
+	 *     (nameQualifier=SIMPLE_ID segmentsProp=NameExpCS)
+	 */
+	protected void sequence_NameQualifierDef(EObject context, NameQualifierDef semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.NAME_QUALIFIER_DEF__NAME_QUALIFIER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.NAME_QUALIFIER_DEF__NAME_QUALIFIER));
+			if(transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.NAME_QUALIFIER_DEF__SEGMENTS_PROP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.NAME_QUALIFIER_DEF__SEGMENTS_PROP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNameQualifierDefAccess().getNameQualifierSIMPLE_IDTerminalRuleCall_1_0(), semanticObject.getNameQualifier());
+		feeder.accept(grammarAccess.getNameQualifierDefAccess().getSegmentsPropNameExpCSParserRuleCall_3_0(), semanticObject.getSegmentsProp());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         namedElement=DefaultNamedElementDef? 
+	 *         nameReferencer=DefaultNameReferencerDef? 
+	 *         nameQualifier=NameQualifierDef? 
+	 *         nameResolutions+=ClassNameResolution*
+	 *     )
 	 */
 	protected void sequence_NameResolutionSect(EObject context, NameResolutionSect semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -559,7 +633,12 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (sameScope?='same'? contributingProp=ExpCS typeFilter=TypeExpCS? (propagatingProp+=ExpCS propagatingProp+=ExpCS*)?)
+	 *     (
+	 *         sameScope?='same'? 
+	 *         contributingProperty=ExpCS 
+	 *         typeFilter=TypeExpCS? 
+	 *         (propagatingAll?='all' | propagatingNexts?='nexts' | (propagatingProperties+=ExpCS propagatingProperties+=ExpCS*))?
+	 *     )
 	 */
 	protected void sequence_ScopeDef(EObject context, ScopeDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
