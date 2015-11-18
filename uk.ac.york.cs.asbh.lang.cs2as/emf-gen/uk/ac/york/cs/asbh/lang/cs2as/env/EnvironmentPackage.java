@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
+ *        annotation="http://www.eclipse.org/OCL/Import target='TargetMM1.ecore#/'"
  * @generated
  */
 public interface EnvironmentPackage extends EPackage {
@@ -86,13 +86,13 @@ public interface EnvironmentPackage extends EPackage {
 	int ENV4_CG___HAS_FINAL_RESULT = 0;
 
 	/**
-	 * The operation id for the '<em>Get Evaluator</em>' operation.
+	 * The operation id for the '<em>Get Executor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENV4_CG___GET_EVALUATOR = 1;
+	int ENV4_CG___GET_EXECUTOR = 1;
 
 	/**
 	 * The number of operations of the '<em>Env4 CG</em>' class.
@@ -150,13 +150,13 @@ public interface EnvironmentPackage extends EPackage {
 	int ENVIRONMENT___HAS_FINAL_RESULT = ENV4_CG___HAS_FINAL_RESULT;
 
 	/**
-	 * The operation id for the '<em>Get Evaluator</em>' operation.
+	 * The operation id for the '<em>Get Executor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT___GET_EVALUATOR = ENV4_CG___GET_EVALUATOR;
+	int ENVIRONMENT___GET_EXECUTOR = ENV4_CG___GET_EXECUTOR;
 
 	/**
 	 * The operation id for the '<em>Add Elements</em>' operation.
@@ -187,33 +187,32 @@ public interface EnvironmentPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.ocl.pivot.evaluation.Evaluator <em>Evaluator</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.ocl.pivot.evaluation.Executor <em>Executor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.ocl.pivot.evaluation.Evaluator
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl#getEvaluator()
+	 * @see org.eclipse.ocl.pivot.evaluation.Executor
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl#getExecutor()
 	 * @generated
 	 */
-	int EVALUATOR = 2;
+	int EXECUTOR = 2;
 
 	/**
-	 * The number of structural features of the '<em>Evaluator</em>' class.
+	 * The number of structural features of the '<em>Executor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVALUATOR_FEATURE_COUNT = 0;
+	int EXECUTOR_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Evaluator</em>' class.
+	 * The number of operations of the '<em>Executor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVALUATOR_OPERATION_COUNT = 0;
-
+	int EXECUTOR_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Environment <em>Environment</em>}'.
@@ -288,25 +287,25 @@ public interface EnvironmentPackage extends EPackage {
 	EOperation getEnv4CG__HasFinalResult();
 
 	/**
-	 * Returns the meta object for the '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG#getEvaluator() <em>Get Evaluator</em>}' operation.
+	 * Returns the meta object for the '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG#getExecutor() <em>Get Executor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Evaluator</em>' operation.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG#getEvaluator()
+	 * @return the meta object for the '<em>Get Executor</em>' operation.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG#getExecutor()
 	 * @generated
 	 */
-	EOperation getEnv4CG__GetEvaluator();
+	EOperation getEnv4CG__GetExecutor();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.ocl.pivot.evaluation.Evaluator <em>Evaluator</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.ocl.pivot.evaluation.Executor <em>Executor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Evaluator</em>'.
-	 * @see org.eclipse.ocl.pivot.evaluation.Evaluator
-	 * @model instanceClass="org.eclipse.ocl.pivot.evaluation.Evaluator"
+	 * @return the meta object for class '<em>Executor</em>'.
+	 * @see org.eclipse.ocl.pivot.evaluation.Executor
+	 * @model instanceClass="org.eclipse.ocl.pivot.evaluation.Executor"
 	 * @generated
 	 */
-	EClass getEvaluator();
+	EClass getExecutor();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -392,22 +391,22 @@ public interface EnvironmentPackage extends EPackage {
 		EOperation ENV4_CG___HAS_FINAL_RESULT = eINSTANCE.getEnv4CG__HasFinalResult();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Evaluator</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get Executor</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ENV4_CG___GET_EVALUATOR = eINSTANCE.getEnv4CG__GetEvaluator();
+		EOperation ENV4_CG___GET_EXECUTOR = eINSTANCE.getEnv4CG__GetExecutor();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.ocl.pivot.evaluation.Evaluator <em>Evaluator</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.ocl.pivot.evaluation.Executor <em>Executor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.ocl.pivot.evaluation.Evaluator
-		 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl#getEvaluator()
+		 * @see org.eclipse.ocl.pivot.evaluation.Executor
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl#getExecutor()
 		 * @generated
 		 */
-		EClass EVALUATOR = eINSTANCE.getEvaluator();
+		EClass EXECUTOR = eINSTANCE.getExecutor();
 
 	}
 

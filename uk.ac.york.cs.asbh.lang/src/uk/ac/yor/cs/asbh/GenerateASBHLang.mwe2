@@ -145,8 +145,7 @@ Workflow {
 		resourceSet = resourceSet
 		oclFileURI = "platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/Source2Target.ocl" 
 		javaPackage = "uk.ac.york.cs.asbh.cs2as"
-		environmentClassName = "uk.ac.yor.cs.asbh.cs2as.LookupEnvironment"
-		lookupVisitorClassName = "uk.ac.yor.cs.asbh.cs2as.TargetLookupVisitor"
-		namedElementItfName = "uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement"
+		lookupResolverClassName = "uk.ac.yor.cs.asbh.cs2as.TargetLookupResolver"
+		lookupResultItfName = "uk.ac.yor.cs.asbh.cs2as.LookupResult"
 	}
 }

@@ -26,6 +26,17 @@ def : nestedEnv() : Environment =
 		parentEnv = self
 	}
 
+def : addElementsOf(element : ocl::OclElement) : Environment =
+	let newEnv = element._env(null)
+	in Environment {
+		namedElements = self.namedElements->including(newEnv.namedElements)
+	}
+
+def : addElementsOf(elements : Collection(ocl::OclElement)) : Environment =
+	elements->iterate(element ; acc : Environment = self 
+		| acc.addElementsOf(element))
+
+
 -- TODO This is not needed. Can be removed
 ---- General Environment access operations
 --def : getNamedElements(name : String) : OrderedSet(target::NamedElement) =
@@ -35,79 +46,106 @@ endpackage
 
 package target
 
--- Lookup
-context Visitable		
-def : _lookupNamespaces(env : env::Environment, path : source::PathElementCS, local : Boolean) : Namespace[*] =
-	let foundNS = env.namedElements->selectByKind(Namespace)->select(name = path.name) 
+context Visitable -- common element in target
+
+-- Namespace lookup
+def : _lookupNamespaces(env : env::Environment, nName : String, local : Boolean) : OrderedSet(Namespace) =
+	let foundNS = env.namedElements->selectByKind(Namespace)->select(name = nName) 
 	in  if foundNS->isEmpty() and not (env.parentEnv = null) and not local 
-		then _lookupNamespaces(env.parentEnv, path, local)
+		then _lookupNamespaces(env.parentEnv, nName, local)
 		else foundNS
 		endif
 
-def : _lookupNamespace(path : source::PathElementCS, local : Boolean) : Namespace[?] =
-	_lookupNamespaces(env(), path, local)->any(true) -- LookupVisitor will report ambiguous result
-		
+-- Note: when calling this element, the source element of the argument passed to this method, will be the contextual 
+-- object on which error reports will be handled
+def : _lookupNamespace(nName : String, local : Boolean) : Namespace[?] =
+	let foundNS = _lookupNamespaces(env(), nName, local)
+	in  if foundNS->isEmpty()
+		then null
+		else foundNS->first() -- LookupVisitor will report ambiguous result
+		endif
+
+def : lookupNamespace(pathElement : source::PathElementCS) : Namespace[?] =
+	_lookupNamespace(pathElement.name, false)
+
+def : lookupLocalNamespace(pathElement : source::PathElementCS) : Namespace[?] =
+	_lookupNamespace(pathElement.name, true)	
+
+
+-- QN Namespace lookup
+def : lookupNamespace(pathName : source::PathNameCS) : Namespace[?] =
+	lookupNamespace(pathName.path)
+
 def : lookupNamespace(pathSeq : OrderedSet(source::PathElementCS)) : Namespace[?] =
 	if pathSeq->size() = 1
-	then _lookupNamespace(pathSeq->first(), false)
-	else lookupNamespace(pathSeq->subOrderedSet(1,pathSeq->size()-1))?._lookupNamespace(pathSeq->last(), true)
+	then lookupNamespace(pathSeq->first())
+	else lookupNamespace(pathSeq->subOrderedSet(1,pathSeq->size()-1))?.lookupLocalNamespace(pathSeq->last())
 	endif
-
-def: _lookupBs(env : env::Environment, path : source::PathElementCS, local : Boolean) : B[*] =
-	let	foundBs = env.namedElements->selectByKind(B)->select(name = path.name)
+-- B Lookups
+def: _lookupBs(env : env::Environment, bName : String, local : Boolean) : OrderedSet(B) =
+	let	foundBs = env.namedElements->selectByKind(B)->select(name = bName)
 	in	if foundBs->isEmpty() and not (env.parentEnv = null) and not local 
-		then _lookupBs(env.parentEnv, path, local)
+		then _lookupBs(env.parentEnv, bName, local)
 		else foundBs
 		endif
 
-def : _lookupB(path : source::PathElementCS, local : Boolean) : B[?] =
-	let foundBs = _lookupBs(env(), path, local)
+def : _lookupB(bName : String, local : Boolean) : B[?] =
+	let	foundBs = _lookupBs(env(), bName, local)
 	in	if foundBs->isEmpty()
 		then null
-		else foundBs->any(true) -- LookupVisitor will report ambiguous result
+		else foundBs->first() -- LookupVisitor will report ambiguous result
 		endif
+
+def : lookupB(path : source::PathElementCS) : B[?] =
+	_lookupB(path.name, false)
+	
+def : lookupLocalB(path : source::PathElementCS) : B[?] =
+	_lookupB(path.name, true)
+	
+-- QN B lookups
+def : lookupB(pathName : source::PathNameCS) : B[?] =
+	lookupB(pathName.path)
 
 def : lookupB(pathSeq : OrderedSet(source::PathElementCS)) : B[?] = 
 	if pathSeq->size() = 1
-	then _lookupB(pathSeq->first(), false)
-	else lookupNamespace(pathSeq->subOrderedSet(1,pathSeq->size()-1))?._lookupB(pathSeq->last(), true)
+	then lookupB(pathSeq->first())
+	else lookupNamespace(pathSeq->subOrderedSet(1,pathSeq->size()-1))?.lookupLocalB(pathSeq->last())
 	endif
-
 	
-def: _lookupCs(env : env::Environment, path : source::PathElementCS, local : Boolean) : C[*] =
-	let	foundCs = env.namedElements->selectByKind(C)->select(name = path.name)
+
+
+-- C Lookups
+def: _lookupCs(env : env::Environment, cName : String, local : Boolean) : OrderedSet(C) =
+	let	foundCs = env.namedElements->selectByKind(C)->select(name = cName)
 	in	if foundCs->isEmpty() and not (env.parentEnv = null) and not local 
-		then _lookupBs(env.parentEnv, path, local)
+		then _lookupCs(env.parentEnv, cName, local)
 		else foundCs
 		endif
 
-def : _lookupC(path : source::PathElementCS, local : Boolean) : C[?] =
-	let foundCs = _lookupCs(env(), path, local)
-	in if foundCs->isEmpty()
+def : _lookupC(cName : String, local : Boolean) : C[?] =
+	let	foundCs = _lookupCs(env(), cName, local)
+	in	if foundCs->isEmpty()
 		then null
-		else foundCs->any(true) -- LookupVisitor will report ambiguous result
+		else foundCs->first() -- LookupResult can hold all results
 		endif
-		
+
+def : lookupC(path : source::PathElementCS) : C[?] =
+	_lookupC(path.name, false)
+	
+def : lookupLocalC(path : source::PathElementCS) : C[?] =
+	_lookupC(path.name, true)
+	
+-- QN C lookups
+	
 def : lookupC(pathSeq : OrderedSet(source::PathElementCS)) : C[?] = 
 	if pathSeq->size() = 1
-	then _lookupC(pathSeq->first(), false)
-	else lookupNamespace(pathSeq->subOrderedSet(1,pathSeq->size()-1))?._lookupC(pathSeq->last(), true)
+	then lookupC(pathSeq->first())
+	else lookupNamespace(pathSeq->subOrderedSet(1,pathSeq->size()-1))?.lookupLocalC(pathSeq->last())
 	endif
 	
-context D
-def : lookupB(z : source::Z) : B =
-	if z.refers = null
-	then null 
-	else lookupB(z.refers.path)
-	endif
+def : lookupC(pathName : source::PathNameCS) : C[?] =
+	lookupC(pathName.path)
 
-def : lookupC(z : source::Z) : C =
-	if z.refers = null
-	then null 
-	else lookupC(z.refers.path)
-	endif
-	
--- Enviroment computation
 context TRoot
 def : _env(child : ocl::OclElement) : env::Environment =
 	parentEnv().nestedEnv()

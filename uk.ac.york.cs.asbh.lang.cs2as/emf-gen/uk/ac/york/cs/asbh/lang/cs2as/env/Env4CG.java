@@ -3,7 +3,7 @@
 package uk.ac.york.cs.asbh.lang.cs2as.env;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.ocl.pivot.evaluation.Evaluator;
+import org.eclipse.ocl.pivot.evaluation.Executor;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,10 +27,10 @@ public interface Env4CG extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="uk.ac.york.cs.asbh.lang.cs2as.env.Evaluator"
+	 * @model kind="operation" type="uk.ac.york.cs.asbh.lang.cs2as.env.Executor"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new <%java.lang.UnsupportedOperationException%>(\"Enviroment::getEvaluator() has been created for CG purposes. Don\'t call this method\");'"
 	 * @generated
 	 */
-	Evaluator getEvaluator();
+	Executor getExecutor();
 
 } // Env4CG

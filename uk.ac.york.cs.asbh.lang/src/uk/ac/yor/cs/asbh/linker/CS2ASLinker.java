@@ -30,7 +30,7 @@ import org.eclipse.xtext.linking.impl.XtextLinkingDiagnostic;
 import org.eclipse.xtext.linking.lazy.LazyLinker;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
-import uk.ac.york.cs.asbh.cs2as.Source2Target_qvtp_qvtias;
+import uk.ac.york.cs.asbh.cs2as._Source2Target_qvtp_qvtias.Source2Target_qvtp_qvtias;
 
 /**
  * CS2ASLinker ensures that the CS 2 Pivot mappings are refreshed after

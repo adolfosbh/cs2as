@@ -11,37 +11,35 @@
 package uk.ac.yor.cs.asbh.cs2as;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
-import org.eclipse.ocl.pivot.evaluation.Evaluator;
+import org.eclipse.ocl.pivot.evaluation.Executor;
 
 import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
 import uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentImpl;
-import uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS;
 import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
+
+
 
 public class LookupEnvironment extends EnvironmentImpl   {
 	
-	private @NonNull Evaluator evaluator;
+	private @NonNull Executor executor;
 	private @NonNull String name;
+	private @Nullable EClass typeFilter;
 	private boolean isLocal;
 	
-	public LookupEnvironment(@NonNull Evaluator evaluator, @NonNull String name, boolean isLocalLookup) {
-		this.evaluator = evaluator;
+	public LookupEnvironment(@NonNull Executor executor, @NonNull String name, @Nullable EClass typeFilter, boolean isLocalLookup) {
+		this.executor = executor;
 		this.name = name;
+		this.typeFilter = typeFilter;
 		this.isLocal = isLocalLookup;
 	}
 	
-	public LookupEnvironment(@NonNull Evaluator evaluator, @NonNull PathElementCS pathElement, boolean isLocalLookup) {
-		this.evaluator = evaluator;
-		this.name = pathElement.getName();
-		this.isLocal = isLocalLookup;
-	}
-	
-	@Override
 	@NonNull
-	public Evaluator getEvaluator() {
-		return evaluator;
+	@Override
+	public Executor getExecutor() {
+		return executor;
 	}
 	
 	@Override
@@ -62,9 +60,11 @@ public class LookupEnvironment extends EnvironmentImpl   {
 	public Environment addElement(@Nullable NamedElement namedElement) {
 		if (namedElement != null) {
 			if (name.equals(namedElement.getName())) {
-				EList<NamedElement> elements = getNamedElements();
-				if (!elements.contains(namedElement)) { 	// FIXME use a set ?
-					elements.add(namedElement);
+				if (typeFilter.isInstance(namedElement)) {
+					EList<NamedElement> elements = getNamedElements();
+					if (!elements.contains(namedElement)) { 	// FIXME use a set ?
+						elements.add(namedElement);
+					}
 				}
 			}
 		}

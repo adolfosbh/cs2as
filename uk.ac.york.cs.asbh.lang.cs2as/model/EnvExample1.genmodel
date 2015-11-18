@@ -24,8 +24,8 @@
     </genClasses>
     <genClasses image="false" ecoreClass="EnvExample1.ecore#//Env4CG">
       <genOperations ecoreOperation="EnvExample1.ecore#//Env4CG/hasFinalResult"/>
-      <genOperations ecoreOperation="EnvExample1.ecore#//Env4CG/getEvaluator"/>
+      <genOperations ecoreOperation="EnvExample1.ecore#//Env4CG/getExecutor"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="EnvExample1.ecore#//Evaluator"/>
+    <genClasses image="false" ecoreClass="EnvExample1.ecore#//Executor"/>
   </genPackages>
 </genmodel:GenModel>

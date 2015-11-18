@@ -48,11 +48,17 @@ def : ast() : target::D =
 	if toY.oclIsKindOf(source::Y1)
 	then target::D {
 		toA = toY.oclAsType(source::Y1).ast().toA1,
-		refsB = ast().lookupB(self)
+		refsB = if refers = null
+				then null
+				else ast().lookupB(refers)
+				endif
 	}
 	else target::D {
 		toA = toY.oclAsType(source::Y2).ast().toA2,
-		refsC = ast().lookupC(self)
+		refsC = if refers = null
+				then null
+				else ast().lookupC(refers)
+				endif
 	}
 	endif
 

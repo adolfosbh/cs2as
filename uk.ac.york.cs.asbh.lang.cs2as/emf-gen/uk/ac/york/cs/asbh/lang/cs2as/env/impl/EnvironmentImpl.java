@@ -7,11 +7,8 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -19,7 +16,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.pivot.Property;
-import org.eclipse.ocl.pivot.evaluation.Evaluator;
+import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
 import org.eclipse.ocl.pivot.library.collection.CollectionIncludingAllOperation;
@@ -137,51 +134,64 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #addElements(org.eclipse.emf.common.util.EList) <em>Add Elements</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #addElements(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final EOperation.Internal.InvocationDelegate ADD_ELEMENTS_ELIST__EINVOCATION_DELEGATE = ((EOperation.Internal)EnvironmentPackage.Literals.ENVIRONMENT___ADD_ELEMENTS__ELIST).getInvocationDelegate();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <NE extends NamedElement> Environment addElements(EList<NE> elements) {
-		try {
-			return (Environment)ADD_ELEMENTS_ELIST__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{elements}));
-		}
-		catch (InvocationTargetException ite) {
-			throw new WrappedException(ite);
-		}
+	public <NE extends NamedElement> Environment addElements(final EList<NE> elements) {
+		/**
+		 * 
+		 * Environment{
+		 *   namedElements = namedElements->includingAll(elements), parentEnv = parentEnv
+		 * }
+		 */
+		final @NonNull /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final @NonNull /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final @NonNull /*@NonInvalid*/ Property CTORid_namedElements = idResolver.getProperty(EnvironmentTables.PROPid_namedElements);
+		final @NonNull /*@NonInvalid*/ Property CTORid_parentEnv = idResolver.getProperty(EnvironmentTables.PROPid_parentEnv);
+		final @NonNull /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_env_c_c_Environment_0 = idResolver.getClass(EnvironmentTables.CLSSid_Environment, null);
+		final @NonNull /*@Thrown*/ Environment symbol_0 = (Environment)TYP_env_c_c_Environment_0.createInstance();
+		@SuppressWarnings("null")
+		final @NonNull /*@Thrown*/ List<NamedElement> namedElements = this.getNamedElements();
+		final @NonNull /*@Thrown*/ OrderedSetValue BOXED_namedElements = idResolver.createOrderedSetOfAll(EnvironmentTables.ORD_CLSSid_NamedElement, namedElements);
+		final @NonNull /*@NonInvalid*/ OrderedSetValue BOXED_elements = idResolver.createOrderedSetOfAll(EnvironmentTables.ORD_TMPLid_, elements);
+		final @NonNull /*@Thrown*/ CollectionValue includingAll = CollectionIncludingAllOperation.INSTANCE.evaluate(BOXED_namedElements, BOXED_elements);
+		final List<? extends Object> UNBOXED_includingAll = includingAll.asEcoreObjects(idResolver, Object.class);
+		assert UNBOXED_includingAll != null;
+		CTORid_namedElements.initValue(symbol_0, UNBOXED_includingAll);
+		final @Nullable /*@Thrown*/ Environment parentEnv = this.getParentEnv();
+		CTORid_parentEnv.initValue(symbol_0, parentEnv);
+		return symbol_0;
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #addElement(uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement) <em>Add Element</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #addElement(uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final EOperation.Internal.InvocationDelegate ADD_ELEMENT_NAMED_ELEMENT__EINVOCATION_DELEGATE = ((EOperation.Internal)EnvironmentPackage.Literals.ENVIRONMENT___ADD_ELEMENT__NAMEDELEMENT).getInvocationDelegate();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Environment addElement(NamedElement element) {
-		try {
-			return (Environment)ADD_ELEMENT_NAMED_ELEMENT__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{element}));
-		}
-		catch (InvocationTargetException ite) {
-			throw new WrappedException(ite);
-		}
+	public Environment addElement(final NamedElement element) {
+		/**
+		 * 
+		 * Environment{
+		 *   namedElements = namedElements->including(element), parentEnv = parentEnv
+		 * }
+		 */
+		final @NonNull /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final @NonNull /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final @NonNull /*@NonInvalid*/ Property CTORid_namedElements = idResolver.getProperty(EnvironmentTables.PROPid_namedElements);
+		final @NonNull /*@NonInvalid*/ Property CTORid_parentEnv = idResolver.getProperty(EnvironmentTables.PROPid_parentEnv);
+		final @NonNull /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_env_c_c_Environment_0 = idResolver.getClass(EnvironmentTables.CLSSid_Environment, null);
+		final @NonNull /*@Thrown*/ Environment symbol_0 = (Environment)TYP_env_c_c_Environment_0.createInstance();
+		@SuppressWarnings("null")
+		final @NonNull /*@Thrown*/ List<NamedElement> namedElements = this.getNamedElements();
+		final @NonNull /*@Thrown*/ OrderedSetValue BOXED_namedElements = idResolver.createOrderedSetOfAll(EnvironmentTables.ORD_CLSSid_NamedElement, namedElements);
+		final @NonNull /*@Thrown*/ OrderedSetValue including = (OrderedSetValue)CollectionIncludingOperation.INSTANCE.evaluate(BOXED_namedElements, element);
+		final List<NamedElement> UNBOXED_including = including.asEcoreObjects(idResolver, NamedElement.class);
+		assert UNBOXED_including != null;
+		CTORid_namedElements.initValue(symbol_0, UNBOXED_including);
+		final @Nullable /*@Thrown*/ Environment parentEnv = this.getParentEnv();
+		CTORid_parentEnv.initValue(symbol_0, parentEnv);
+		return symbol_0;
 	}
 
 	/**
@@ -198,7 +208,7 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Evaluator getEvaluator() {
+	public Executor getExecutor() {
 		throw new UnsupportedOperationException("Enviroment::getEvaluator() has been created for CG purposes. Don't call this method");
 	}
 
@@ -288,8 +298,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return addElement((NamedElement)arguments.get(0));
 			case EnvironmentPackage.ENVIRONMENT___HAS_FINAL_RESULT:
 				return hasFinalResult();
-			case EnvironmentPackage.ENVIRONMENT___GET_EVALUATOR:
-				return getEvaluator();
+			case EnvironmentPackage.ENVIRONMENT___GET_EXECUTOR:
+				return getExecutor();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

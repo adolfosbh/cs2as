@@ -14,6 +14,11 @@ package uk.ac.york.cs.asbh.lang.cs2as.env;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.ParameterTypes;
 import org.eclipse.ocl.pivot.TemplateParameters;
+import org.eclipse.ocl.pivot.ids.ClassId;
+import org.eclipse.ocl.pivot.ids.CollectionTypeId;
+import org.eclipse.ocl.pivot.ids.IdManager;
+import org.eclipse.ocl.pivot.ids.NsURIPackageId;
+import org.eclipse.ocl.pivot.ids.PropertyId;
 import org.eclipse.ocl.pivot.ids.TypeId;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorPackage;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorProperty;
@@ -28,7 +33,9 @@ import org.eclipse.ocl.pivot.internal.library.executor.ExecutorStandardLibrary;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorTypeParameter;
 import org.eclipse.ocl.pivot.oclstdlib.OCLstdlibTables;
 import org.eclipse.ocl.pivot.utilities.TypeUtil;
+import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;
 import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentTables;
+import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetTables;
 
 /**
@@ -53,6 +60,21 @@ public class EnvironmentTables
 	 *	The library of all packages and types.
 	 */
 	public static final @NonNull ExecutorStandardLibrary LIBRARY = OCLstdlibTables.LIBRARY;
+
+	/**
+	 *	Constants used by auto-generated code.
+	 */
+    public static final @NonNull /*@NonInvalid*/ CollectionTypeId COL_PRIMid_OclAny = TypeId.COLLECTION.getSpecializedId(TypeId.OCL_ANY);
+    public static final @NonNull /*@NonInvalid*/ CollectionTypeId ORD_TMPLid_ = TypeId.ORDERED_SET.getSpecializedId(IdManager.getTemplateParameterId(0));
+    public static final @NonNull /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_env_s_1_0 = IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/env/1.0", null, EnvironmentPackage.eINSTANCE);
+    public static final @NonNull /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0 = IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0", null, TargetPackage.eINSTANCE);
+    public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_Environment = EnvironmentTables.PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_env_s_1_0.getClassId("Environment", 0);
+    public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_Executor = EnvironmentTables.PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_env_s_1_0.getClassId("Executor", 0);
+    public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_NamedElement = EnvironmentTables.PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0.getClassId("NamedElement", 0);
+    public static final @NonNull /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Environment = TypeId.BAG.getSpecializedId(EnvironmentTables.CLSSid_Environment);
+    public static final @NonNull /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_NamedElement = TypeId.ORDERED_SET.getSpecializedId(EnvironmentTables.CLSSid_NamedElement);
+    public static final @NonNull /*@NonInvalid*/ PropertyId PROPid_namedElements = EnvironmentTables.CLSSid_Environment.getPropertyId("namedElements");
+    public static final @NonNull /*@NonInvalid*/ PropertyId PROPid_parentEnv = EnvironmentTables.CLSSid_Environment.getPropertyId("parentEnv");
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -85,12 +107,12 @@ public class EnvironmentTables
 
 		public static final @NonNull EcoreExecutorType _Env4CG = new EcoreExecutorType(EnvironmentPackage.Literals.ENV4_CG, PACKAGE, 0);
 		public static final @NonNull EcoreExecutorType _Environment = new EcoreExecutorType(EnvironmentPackage.Literals.ENVIRONMENT, PACKAGE, 0);
-		public static final @NonNull EcoreExecutorType _Evaluator = new EcoreExecutorType(EnvironmentPackage.Literals.EVALUATOR, PACKAGE, 0);
+		public static final @NonNull EcoreExecutorType _Executor = new EcoreExecutorType(EnvironmentPackage.Literals.EXECUTOR, PACKAGE, 0);
 
 		private static final @NonNull EcoreExecutorType[] types = {
 			_Env4CG,
 			_Environment,
-			_Evaluator
+			_Executor
 		};
 
 		/*
@@ -125,9 +147,9 @@ public class EnvironmentTables
 		private static final @NonNull ExecutorFragment _Environment__OclAny = new ExecutorFragment(Types._Environment, OCLstdlibTables.Types._OclAny);
 		private static final @NonNull ExecutorFragment _Environment__OclElement = new ExecutorFragment(Types._Environment, OCLstdlibTables.Types._OclElement);
 
-		private static final @NonNull ExecutorFragment _Evaluator__Evaluator = new ExecutorFragment(Types._Evaluator, EnvironmentTables.Types._Evaluator);
-		private static final @NonNull ExecutorFragment _Evaluator__OclAny = new ExecutorFragment(Types._Evaluator, OCLstdlibTables.Types._OclAny);
-		private static final @NonNull ExecutorFragment _Evaluator__OclElement = new ExecutorFragment(Types._Evaluator, OCLstdlibTables.Types._OclElement);
+		private static final @NonNull ExecutorFragment _Executor__Executor = new ExecutorFragment(Types._Executor, EnvironmentTables.Types._Executor);
+		private static final @NonNull ExecutorFragment _Executor__OclAny = new ExecutorFragment(Types._Executor, OCLstdlibTables.Types._OclAny);
+		private static final @NonNull ExecutorFragment _Executor__OclElement = new ExecutorFragment(Types._Executor, OCLstdlibTables.Types._OclElement);
 
 		static {
 			Init.initEnd();
@@ -148,7 +170,6 @@ public class EnvironmentTables
 			Fragments.init();
 		}
 
-		public static final @NonNull ParameterTypes _ = TypeUtil.createParameterTypes();
 		public static final @NonNull ParameterTypes _NamedElement = TypeUtil.createParameterTypes(TargetTables.Types._NamedElement);
 		public static final @NonNull ParameterTypes _OrderedSet__Environment_addElements_NE__ = TypeUtil.createParameterTypes(new ExecutorSpecializedType("OrderedSet", EnvironmentTables.TypeParameters.__Environment__addElements_NE));
 
@@ -171,9 +192,9 @@ public class EnvironmentTables
 			Parameters.init();
 		}
 
-		public static final @NonNull ExecutorOperation _Env4CG__getEvaluator = new ExecutorOperation("getEvaluator", Parameters._, Types._Env4CG,
+		public static final @NonNull ExecutorOperation _Env4CG__getExecutor = new ExecutorOperation("getExecutor", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Env4CG,
 			0, TemplateParameters.EMPTY_LIST, null);
-		public static final @NonNull ExecutorOperation _Env4CG__hasFinalResult = new ExecutorOperation("hasFinalResult", Parameters._, Types._Env4CG,
+		public static final @NonNull ExecutorOperation _Env4CG__hasFinalResult = new ExecutorOperation("hasFinalResult", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Env4CG,
 			1, TemplateParameters.EMPTY_LIST, null);
 
 		public static final @NonNull ExecutorOperation _Environment__addElement = new ExecutorOperation("addElement", Parameters._NamedElement, Types._Environment,
@@ -240,13 +261,13 @@ public class EnvironmentTables
 		};
 		private static final @NonNull int[] __Environment = { 1,1,1,1 };
 
-		private static final @NonNull ExecutorFragment[] _Evaluator =
+		private static final @NonNull ExecutorFragment[] _Executor =
 		{
-			Fragments._Evaluator__OclAny /* 0 */,
-			Fragments._Evaluator__OclElement /* 1 */,
-			Fragments._Evaluator__Evaluator /* 2 */
+			Fragments._Executor__OclAny /* 0 */,
+			Fragments._Executor__OclElement /* 1 */,
+			Fragments._Executor__Executor /* 2 */
 		};
-		private static final @NonNull int[] __Evaluator = { 1,1,1 };
+		private static final @NonNull int[] __Executor = { 1,1,1 };
 
 		/**
 		 *	Install the fragment descriptors in the class descriptors.
@@ -254,7 +275,7 @@ public class EnvironmentTables
 		static {
 			Types._Env4CG.initFragments(_Env4CG, __Env4CG);
 			Types._Environment.initFragments(_Environment, __Environment);
-			Types._Evaluator.initFragments(_Evaluator, __Evaluator);
+			Types._Executor.initFragments(_Executor, __Executor);
 
 			Init.initEnd();
 		}
@@ -275,7 +296,7 @@ public class EnvironmentTables
 		}
 
 		private static final @NonNull ExecutorOperation[] _Env4CG__Env4CG = {
-			EnvironmentTables.Operations._Env4CG__getEvaluator /* getEvaluator() */,
+			EnvironmentTables.Operations._Env4CG__getExecutor /* getExecutor() */,
 			EnvironmentTables.Operations._Env4CG__hasFinalResult /* hasFinalResult() */
 		};
 		private static final @NonNull ExecutorOperation[] _Env4CG__OclAny = {
@@ -305,7 +326,7 @@ public class EnvironmentTables
 			EnvironmentTables.Operations._Environment__addElements /* addElements(NE)(OrderedSet(NE)) */
 		};
 		private static final @NonNull ExecutorOperation[] _Environment__Env4CG = {
-			EnvironmentTables.Operations._Env4CG__getEvaluator /* getEvaluator() */,
+			EnvironmentTables.Operations._Env4CG__getExecutor /* getExecutor() */,
 			EnvironmentTables.Operations._Env4CG__hasFinalResult /* hasFinalResult() */
 		};
 		private static final @NonNull ExecutorOperation[] _Environment__OclAny = {
@@ -330,8 +351,8 @@ public class EnvironmentTables
 			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */
 		};
 
-		private static final @NonNull ExecutorOperation[] _Evaluator__Evaluator = {};
-		private static final @NonNull ExecutorOperation[] _Evaluator__OclAny = {
+		private static final @NonNull ExecutorOperation[] _Executor__Executor = {};
+		private static final @NonNull ExecutorOperation[] _Executor__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -347,7 +368,7 @@ public class EnvironmentTables
 			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final @NonNull ExecutorOperation[] _Evaluator__OclElement = {
+		private static final @NonNull ExecutorOperation[] _Executor__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
 			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */
@@ -366,9 +387,9 @@ public class EnvironmentTables
 			Fragments._Environment__OclAny.initOperations(_Environment__OclAny);
 			Fragments._Environment__OclElement.initOperations(_Environment__OclElement);
 
-			Fragments._Evaluator__Evaluator.initOperations(_Evaluator__Evaluator);
-			Fragments._Evaluator__OclAny.initOperations(_Evaluator__OclAny);
-			Fragments._Evaluator__OclElement.initOperations(_Evaluator__OclElement);
+			Fragments._Executor__Executor.initOperations(_Executor__Executor);
+			Fragments._Executor__OclAny.initOperations(_Executor__OclAny);
+			Fragments._Executor__OclElement.initOperations(_Executor__OclElement);
 
 			Init.initEnd();
 		}
@@ -396,7 +417,7 @@ public class EnvironmentTables
 			EnvironmentTables.Properties._Environment__Environment__parentEnv
 		};
 
-		private static final @NonNull ExecutorProperty[] _Evaluator = {};
+		private static final @NonNull ExecutorProperty[] _Executor = {};
 
 		/**
 		 *	Install the property descriptors in the fragment descriptors.
@@ -404,7 +425,7 @@ public class EnvironmentTables
 		static {
 			Fragments._Env4CG__Env4CG.initProperties(_Env4CG);
 			Fragments._Environment__Environment.initProperties(_Environment);
-			Fragments._Evaluator__Evaluator.initProperties(_Evaluator);
+			Fragments._Executor__Executor.initProperties(_Executor);
 
 			Init.initEnd();
 		}

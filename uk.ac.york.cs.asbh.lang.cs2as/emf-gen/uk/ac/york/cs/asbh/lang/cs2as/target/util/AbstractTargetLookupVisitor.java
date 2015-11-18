@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
-import org.eclipse.ocl.pivot.evaluation.Evaluator;
+import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.ClassId;
 import org.eclipse.ocl.pivot.ids.CollectionTypeId;
 import org.eclipse.ocl.pivot.ids.IdManager;
@@ -58,7 +58,7 @@ public class AbstractTargetLookupVisitor
     public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_C = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0.getClassId("C", 0);
     public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_D = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0.getClassId("D", 0);
     public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_Environment = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_env_s_1_0.getClassId("Environment", 0);
-    public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_Evaluator = PACKid_org_eclipse_ocl_pivot_evaluation.getClassId("Evaluator", 0);
+    public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_Executor = PACKid_org_eclipse_ocl_pivot_evaluation.getClassId("Executor", 0);
     public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_IdResolver = PACKid_org_eclipse_ocl_pivot_ids.getClassId("IdResolver", 0);
     public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_OclElement = PACKid_$metamodel$.getClassId("OclElement", 0);
     public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_TRoot = PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0.getClassId("TRoot", 0);
@@ -67,21 +67,21 @@ public class AbstractTargetLookupVisitor
     public static final @NonNull /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_C = TypeId.ORDERED_SET.getSpecializedId(CLSSid_C);
     
     protected @Nullable /*@Thrown*/ Object child;
-    protected final @NonNull /*@Thrown*/ Evaluator evaluator;
+    protected final @NonNull /*@Thrown*/ Executor executor;
     protected final @NonNull /*@Thrown*/ IdResolver idResolver;
     
     public AbstractTargetLookupVisitor(@NonNull Environment context) {
         super(context);
-        this.evaluator = context.getEvaluator();
-        this.idResolver = evaluator.getIdResolver();
+        this.executor = context.getExecutor();
+        this.idResolver = executor.getIdResolver();
     }
     
     /**
      * Return the results of a lookup from the child of element.
      */
-    public @Nullable Environment envForChild(@NonNull Visitable element, @Nullable Visitable child) {
+    public @Nullable Environment envForChild(@NonNull Object element, @Nullable Object child) {
         this.child = element;
-        return element.accept(this);
+        return ((Visitable)element).accept(this);
     }
     
     /**
@@ -132,12 +132,13 @@ public class AbstractTargetLookupVisitor
      */
     @Override
     public @Nullable /*@NonInvalid*/ Environment visitA1(final @NonNull /*@NonInvalid*/ A1 element) {
-        final @Nullable /*@Thrown*/ List<B> ownedBs = element.getOwnsB();
-        assert ownedBs != null;
+        @SuppressWarnings("null")
+        final @NonNull /*@Thrown*/ List<B> ownedBs = element.getOwnsB();
         final /*@Thrown*/ boolean eq = child == null;
         @Nullable /*@Thrown*/ Environment symbol_2;
         if (eq) {
-            final @NonNull /*@Thrown*/ Environment inner = context.addElements((EList)ownedBs);
+            @SuppressWarnings("null")
+            final @NonNull /*@Thrown*/ Environment inner = context.addElements((EList<B>)ownedBs);
             final /*@Thrown*/ boolean hasFinalResult = inner.hasFinalResult();
             @Nullable /*@Thrown*/ Environment symbol_0;
             if (hasFinalResult) {
@@ -165,15 +166,15 @@ public class AbstractTargetLookupVisitor
                  */
                 final @NonNull /*@Thrown*/ IntegerValue indexOf = OrderedCollectionIndexOfOperation.INSTANCE.evaluate(BOXED_ownedBs, x);
                 final @NonNull /*@Thrown*/ IntegerValue indexOf_0 = OrderedCollectionIndexOfOperation.INSTANCE.evaluate(BOXED_ownedBs, child);
-                final /*@Thrown*/ boolean lt = OclComparableLessThanOperation.INSTANCE.evaluate(evaluator, indexOf, indexOf_0).booleanValue();
+                final /*@Thrown*/ boolean lt = OclComparableLessThanOperation.INSTANCE.evaluate(executor, indexOf, indexOf_0).booleanValue();
                 //
                 if (lt == ValueUtil.TRUE_VALUE) {
                     accumulator.add(x);
                 }
             }
-            final List<B> UNBOXED_select = select.asEcoreObjects(idResolver, B.class);
-            assert UNBOXED_select != null;
-            final @NonNull /*@Thrown*/ Environment inner_0 = context.addElements((EList)UNBOXED_select);
+            final @NonNull /*@Thrown*/ List<B> ECORE_select = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(B.class, select);
+            @SuppressWarnings("null")
+            final @NonNull /*@Thrown*/ Environment inner_0 = context.addElements((EList<B>)ECORE_select);
             final /*@Thrown*/ boolean hasFinalResult_0 = inner_0.hasFinalResult();
             @Nullable /*@Thrown*/ Environment symbol_1;
             if (hasFinalResult_0) {
@@ -217,12 +218,13 @@ public class AbstractTargetLookupVisitor
      */
     @Override
     public @Nullable /*@NonInvalid*/ Environment visitA2(final @NonNull /*@NonInvalid*/ A2 element_0) {
-        final @Nullable /*@Thrown*/ List<C> ownedCs = element_0.getOwnsC();
-        assert ownedCs != null;
+        @SuppressWarnings("null")
+        final @NonNull /*@Thrown*/ List<C> ownedCs = element_0.getOwnsC();
         final /*@Thrown*/ boolean eq = child == null;
         @Nullable /*@Thrown*/ Environment symbol_2;
         if (eq) {
-            final @NonNull /*@Thrown*/ Environment inner = context.addElements((EList)ownedCs);
+            @SuppressWarnings("null")
+            final @NonNull /*@Thrown*/ Environment inner = context.addElements((EList<C>)ownedCs);
             final /*@Thrown*/ boolean hasFinalResult = inner.hasFinalResult();
             @Nullable /*@Thrown*/ Environment symbol_0;
             if (hasFinalResult) {
@@ -250,15 +252,15 @@ public class AbstractTargetLookupVisitor
                  */
                 final @NonNull /*@Thrown*/ IntegerValue indexOf = OrderedCollectionIndexOfOperation.INSTANCE.evaluate(BOXED_ownedCs, x);
                 final @NonNull /*@Thrown*/ IntegerValue indexOf_0 = OrderedCollectionIndexOfOperation.INSTANCE.evaluate(BOXED_ownedCs, child);
-                final /*@Thrown*/ boolean lt = OclComparableLessThanOperation.INSTANCE.evaluate(evaluator, indexOf, indexOf_0).booleanValue();
+                final /*@Thrown*/ boolean lt = OclComparableLessThanOperation.INSTANCE.evaluate(executor, indexOf, indexOf_0).booleanValue();
                 //
                 if (lt == ValueUtil.TRUE_VALUE) {
                     accumulator.add(x);
                 }
             }
-            final List<C> UNBOXED_select = select.asEcoreObjects(idResolver, C.class);
-            assert UNBOXED_select != null;
-            final @NonNull /*@Thrown*/ Environment inner_0 = context.addElements((EList)UNBOXED_select);
+            final @NonNull /*@Thrown*/ List<C> ECORE_select = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(C.class, select);
+            @SuppressWarnings("null")
+            final @NonNull /*@Thrown*/ Environment inner_0 = context.addElements((EList<C>)ECORE_select);
             final /*@Thrown*/ boolean hasFinalResult_0 = inner_0.hasFinalResult();
             @Nullable /*@Thrown*/ Environment symbol_1;
             if (hasFinalResult_0) {
@@ -319,9 +321,10 @@ public class AbstractTargetLookupVisitor
      */
     @Override
     public @Nullable /*@NonInvalid*/ Environment visitTRoot(final @NonNull /*@NonInvalid*/ TRoot element_4) {
-        final @Nullable /*@Thrown*/ List<A> ownedA = element_4.getOwnedA();
-        assert ownedA != null;
-        final @NonNull /*@Thrown*/ Environment inner = context.addElements((EList)ownedA);
+        @SuppressWarnings("null")
+        final @NonNull /*@Thrown*/ List<A> ownedA = element_4.getOwnedA();
+        @SuppressWarnings("null")
+        final @NonNull /*@Thrown*/ Environment inner = context.addElements((EList<A>)ownedA);
         final /*@Thrown*/ boolean hasFinalResult = inner.hasFinalResult();
         @Nullable /*@Thrown*/ Environment symbol_0;
         if (hasFinalResult) {

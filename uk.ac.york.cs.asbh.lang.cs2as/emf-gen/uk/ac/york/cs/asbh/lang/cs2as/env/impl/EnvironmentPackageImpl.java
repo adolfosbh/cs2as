@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.ocl.pivot.evaluation.Evaluator;
+import org.eclipse.ocl.pivot.evaluation.Executor;
 
 import uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG;
 import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
@@ -42,7 +42,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass evaluatorEClass = null;
+	private EClass executorEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -176,7 +176,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getEnv4CG__GetEvaluator() {
+	public EOperation getEnv4CG__GetExecutor() {
 		return env4CGEClass.getEOperations().get(1);
 	}
 
@@ -185,8 +185,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEvaluator() {
-		return evaluatorEClass;
+	public EClass getExecutor() {
+		return executorEClass;
 	}
 
 	/**
@@ -225,9 +225,9 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 
 		env4CGEClass = createEClass(ENV4_CG);
 		createEOperation(env4CGEClass, ENV4_CG___HAS_FINAL_RESULT);
-		createEOperation(env4CGEClass, ENV4_CG___GET_EVALUATOR);
+		createEOperation(env4CGEClass, ENV4_CG___GET_EXECUTOR);
 
-		evaluatorEClass = createEClass(EVALUATOR);
+		executorEClass = createEClass(EXECUTOR);
 	}
 
 	/**
@@ -282,18 +282,34 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 
 		initEOperation(getEnv4CG__HasFinalResult(), ecorePackage.getEBoolean(), "hasFinalResult", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getEnv4CG__GetEvaluator(), this.getEvaluator(), "getEvaluator", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnv4CG__GetExecutor(), this.getExecutor(), "getExecutor", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(evaluatorEClass, Evaluator.class, "Evaluator", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEClass(executorEClass, Executor.class, "Executor", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
-		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "target", "TargetMM1.ecore#/"
+		   });
 	}
 
 	/**
@@ -308,31 +324,6 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		  (this, 
 		   source, 
 		   new String[] {
-			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createPivotAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
-		addAnnotation
-		  (getEnvironment__AddElements__EList(), 
-		   source, 
-		   new String[] {
-			 "body", "Environment{\n\t\t\t\t\t\tnamedElements = namedElements->includingAll(elements),\n\t\t\t\t\t\tparentEnv = parentEnv\t\n\t\t\t\t}"
-		   });	
-		addAnnotation
-		  (getEnvironment__AddElement__NamedElement(), 
-		   source, 
-		   new String[] {
-			 "body", "Environment{\n\t\t\t\t\t\tnamedElements = namedElements->including(element),\n\t\t\t\t\t\tparentEnv = parentEnv\n\t\t\t\t\t}"
 		   });
 	}
 

@@ -5,9 +5,8 @@ package uk.ac.york.cs.asbh.lang.cs2as.env.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.ocl.pivot.evaluation.Evaluator;
+import org.eclipse.ocl.pivot.evaluation.Executor;
 
-import uk.ac.york.cs.asbh.lang.cs2as.env.*;
 import uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG;
 import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
 import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;
@@ -82,9 +81,9 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EnvironmentPackage.EVALUATOR: {
-				Evaluator evaluator = (Evaluator)theEObject;
-				T result = caseEvaluator(evaluator);
+			case EnvironmentPackage.EXECUTOR: {
+				Executor executor = (Executor)theEObject;
+				T result = caseExecutor(executor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -123,17 +122,17 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Evaluator</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Executor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Evaluator</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Executor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEvaluator(Evaluator object) {
+	public T caseExecutor(Executor object) {
 		return null;
 	}
 
