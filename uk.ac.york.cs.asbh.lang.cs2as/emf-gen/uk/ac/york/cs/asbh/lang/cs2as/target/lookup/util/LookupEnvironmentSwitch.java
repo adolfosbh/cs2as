@@ -1,15 +1,15 @@
 /**
  */
-package uk.ac.york.cs.asbh.lang.cs2as.env.util;
+package uk.ac.york.cs.asbh.lang.cs2as.target.lookup.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
+
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
-import uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG;
-import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
-import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,17 +21,17 @@ import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage
+ * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentPackage
  * @generated
  */
-public class EnvironmentSwitch<T> extends Switch<T> {
+public class LookupEnvironmentSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static EnvironmentPackage modelPackage;
+	protected static LookupEnvironmentPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -39,9 +39,9 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnvironmentSwitch() {
+	public LookupEnvironmentSwitch() {
 		if (modelPackage == null) {
-			modelPackage = EnvironmentPackage.eINSTANCE;
+			modelPackage = LookupEnvironmentPackage.eINSTANCE;
 		}
 	}
 
@@ -68,20 +68,20 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case EnvironmentPackage.ENVIRONMENT: {
-				Environment environment = (Environment)theEObject;
-				T result = caseEnvironment(environment);
-				if (result == null) result = caseEnv4CG(environment);
+			case LookupEnvironmentPackage.LOOKUP_ENVIRONMENT: {
+				LookupEnvironment lookupEnvironment = (LookupEnvironment)theEObject;
+				T result = caseLookupEnvironment(lookupEnvironment);
+				if (result == null) result = caseEnv4CG(lookupEnvironment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EnvironmentPackage.ENV4_CG: {
+			case LookupEnvironmentPackage.ENV4_CG: {
 				Env4CG env4CG = (Env4CG)theEObject;
 				T result = caseEnv4CG(env4CG);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EnvironmentPackage.EXECUTOR: {
+			case LookupEnvironmentPackage.EXECUTOR: {
 				Executor executor = (Executor)theEObject;
 				T result = caseExecutor(executor);
 				if (result == null) result = defaultCase(theEObject);
@@ -92,17 +92,17 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Environment</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Lookup Environment</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Environment</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Lookup Environment</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEnvironment(Environment object) {
+	public T caseLookupEnvironment(LookupEnvironment object) {
 		return null;
 	}
 
@@ -152,4 +152,4 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //EnvironmentSwitch
+} //LookupEnvironmentSwitch

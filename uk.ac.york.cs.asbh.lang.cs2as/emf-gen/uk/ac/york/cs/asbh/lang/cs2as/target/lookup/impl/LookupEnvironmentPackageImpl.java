@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.york.cs.asbh.lang.cs2as.env.impl;
+package uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -8,14 +8,17 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
-import uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG;
-import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
-import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentFactory;
-import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
+
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG;
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment;
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentFactory;
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,13 +26,13 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentPackage {
+public class LookupEnvironmentPackageImpl extends EPackageImpl implements LookupEnvironmentPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass environmentEClass = null;
+	private EClass lookupEnvironmentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -37,6 +40,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * @generated
 	 */
 	private EClass env4CGEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -55,12 +59,12 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage#eNS_URI
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private EnvironmentPackageImpl() {
-		super(eNS_URI, EnvironmentFactory.eINSTANCE);
+	private LookupEnvironmentPackageImpl() {
+		super(eNS_URI, LookupEnvironmentFactory.eINSTANCE);
 	}
 
 	/**
@@ -73,7 +77,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link EnvironmentPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link LookupEnvironmentPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,11 +86,11 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static EnvironmentPackage init() {
-		if (isInited) return (EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
+	public static LookupEnvironmentPackage init() {
+		if (isInited) return (LookupEnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(LookupEnvironmentPackage.eNS_URI);
 
 		// Obtain or create and register package
-		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new EnvironmentPackageImpl());
+		LookupEnvironmentPackageImpl theLookupEnvironmentPackage = (LookupEnvironmentPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof LookupEnvironmentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new LookupEnvironmentPackageImpl());
 
 		isInited = true;
 
@@ -94,18 +98,18 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		TargetPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
-		theEnvironmentPackage.createPackageContents();
+		theLookupEnvironmentPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theEnvironmentPackage.initializePackageContents();
+		theLookupEnvironmentPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theEnvironmentPackage.freeze();
+		theLookupEnvironmentPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(EnvironmentPackage.eNS_URI, theEnvironmentPackage);
-		return theEnvironmentPackage;
+		EPackage.Registry.INSTANCE.put(LookupEnvironmentPackage.eNS_URI, theLookupEnvironmentPackage);
+		return theLookupEnvironmentPackage;
 	}
 
 	/**
@@ -113,8 +117,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEnvironment() {
-		return environmentEClass;
+	public EClass getLookupEnvironment() {
+		return lookupEnvironmentEClass;
 	}
 
 	/**
@@ -122,8 +126,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_NamedElements() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(0);
+	public EReference getLookupEnvironment_NamedElements() {
+		return (EReference)lookupEnvironmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -131,8 +135,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_ParentEnv() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(1);
+	public EReference getLookupEnvironment_ParentEnv() {
+		return (EReference)lookupEnvironmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -140,8 +144,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getEnvironment__AddElements__EList() {
-		return environmentEClass.getEOperations().get(0);
+	public EOperation getLookupEnvironment__AddElements__EList() {
+		return lookupEnvironmentEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -149,8 +153,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getEnvironment__AddElement__NamedElement() {
-		return environmentEClass.getEOperations().get(1);
+	public EOperation getLookupEnvironment__AddElement__NamedElement() {
+		return lookupEnvironmentEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -194,8 +198,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnvironmentFactory getEnvironmentFactory() {
-		return (EnvironmentFactory)getEFactoryInstance();
+	public LookupEnvironmentFactory getLookupEnvironmentFactory() {
+		return (LookupEnvironmentFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -217,11 +221,11 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		isCreated = true;
 
 		// Create classes and their features
-		environmentEClass = createEClass(ENVIRONMENT);
-		createEReference(environmentEClass, ENVIRONMENT__NAMED_ELEMENTS);
-		createEReference(environmentEClass, ENVIRONMENT__PARENT_ENV);
-		createEOperation(environmentEClass, ENVIRONMENT___ADD_ELEMENTS__ELIST);
-		createEOperation(environmentEClass, ENVIRONMENT___ADD_ELEMENT__NAMEDELEMENT);
+		lookupEnvironmentEClass = createEClass(LOOKUP_ENVIRONMENT);
+		createEReference(lookupEnvironmentEClass, LOOKUP_ENVIRONMENT__NAMED_ELEMENTS);
+		createEReference(lookupEnvironmentEClass, LOOKUP_ENVIRONMENT__PARENT_ENV);
+		createEOperation(lookupEnvironmentEClass, LOOKUP_ENVIRONMENT___ADD_ELEMENTS__ELIST);
+		createEOperation(lookupEnvironmentEClass, LOOKUP_ENVIRONMENT___ADD_ELEMENT__NAMEDELEMENT);
 
 		env4CGEClass = createEClass(ENV4_CG);
 		createEOperation(env4CGEClass, ENV4_CG___HAS_FINAL_RESULT);
@@ -261,21 +265,21 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		environmentEClass.getESuperTypes().add(this.getEnv4CG());
+		lookupEnvironmentEClass.getESuperTypes().add(this.getEnv4CG());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(environmentEClass, Environment.class, "Environment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnvironment_NamedElements(), theTargetPackage.getNamedElement(), null, "namedElements", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_ParentEnv(), this.getEnvironment(), null, "parentEnv", null, 0, 1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(lookupEnvironmentEClass, LookupEnvironment.class, "LookupEnvironment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLookupEnvironment_NamedElements(), theTargetPackage.getNamedElement(), null, "namedElements", null, 0, -1, LookupEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLookupEnvironment_ParentEnv(), this.getLookupEnvironment(), null, "parentEnv", null, 0, 1, LookupEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getEnvironment__AddElements__EList(), this.getEnvironment(), "addElements", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getLookupEnvironment__AddElements__EList(), this.getLookupEnvironment(), "addElements", 0, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "NE");
 		EGenericType g1 = createEGenericType(theTargetPackage.getNamedElement());
 		t1.getEBounds().add(g1);
 		g1 = createEGenericType(t1);
 		addEParameter(op, g1, "elements", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getEnvironment__AddElement__NamedElement(), this.getEnvironment(), "addElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLookupEnvironment__AddElement__NamedElement(), this.getLookupEnvironment(), "addElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theTargetPackage.getNamedElement(), "element", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(env4CGEClass, Env4CG.class, "Env4CG", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -327,4 +331,4 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		   });
 	}
 
-} //EnvironmentPackageImpl
+} //LookupEnvironmentPackageImpl

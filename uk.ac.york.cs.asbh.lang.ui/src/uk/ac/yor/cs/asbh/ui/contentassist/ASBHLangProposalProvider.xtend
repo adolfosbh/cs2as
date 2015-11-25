@@ -10,9 +10,9 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
 import uk.ac.york.cs.asbh.lang.cs2as.source.SElement
 import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable
-import uk.ac.yor.cs.asbh.cs2as.TargetLookupVisitor
-import uk.ac.york.cs.asbh.lang.cs2as.env.Environment
 import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.util.TargetDefaultLookupVisitor
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
@@ -23,7 +23,7 @@ class ASBHLangProposalProvider extends AbstractASBHLangProposalProvider {
 		var asElement = getVisitableElement(model);
 		if (asElement != null ) {
 			var ContentAssitLookupEnvironment lookupEnv = new ContentAssitLookupEnvironment(asElement as EObject);
-			var TargetLookupVisitor visitor = new TargetLookupVisitor(lookupEnv);
+			var TargetDefaultLookupVisitor visitor = new TargetDefaultLookupVisitor(lookupEnv);
 			createProposals(asElement.accept(visitor), context, acceptor);
 		}
 		super.completePathElementCS_Name(model, assignment, context, acceptor)
@@ -44,7 +44,7 @@ class ASBHLangProposalProvider extends AbstractASBHLangProposalProvider {
 		return null;
 	}
 	
-	def void createProposals(Environment lookupEnv, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	def void createProposals(LookupEnvironment lookupEnv, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		
 		for (NamedElement namedElement : lookupEnv.namedElements) {
 			acceptor.accept(createCompletionProposal(namedElement.name, context))

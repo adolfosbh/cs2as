@@ -3,25 +3,25 @@ package uk.ac.yor.cs.asbh.ui.contentassist;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.ocl.pivot.evaluation.Evaluator;
+import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorManager;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorStandardLibrary;
 
-import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
-import uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentImpl;
 import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment;
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentImpl;
 
-public class ContentAssitLookupEnvironment extends EnvironmentImpl {
+public class ContentAssitLookupEnvironment extends LookupEnvironmentImpl {
 	
-	private EcoreExecutorManager evaluator;
+	private EcoreExecutorManager executor;
 	
 	public ContentAssitLookupEnvironment(EObject object) {
-		evaluator = new EcoreExecutorManager(object, new ExecutorStandardLibrary()); // FIXME 
+		executor = new EcoreExecutorManager(object, new ExecutorStandardLibrary()); // FIXME 
 	}
 	
 	
 	@Override
-	public Environment addElement( NamedElement namedElement) {
+	public LookupEnvironment addElement( NamedElement namedElement) {
 		if (namedElement != null) {
 			EList<NamedElement> elements = getNamedElements();
 			if (!elements.contains(namedElement)) { 	// FIXME use a set ?
@@ -32,7 +32,7 @@ public class ContentAssitLookupEnvironment extends EnvironmentImpl {
 	}
 	
 	@Override
-	public <NE extends NamedElement > Environment addElements(EList<NE> namedElements) {
+	public <NE extends NamedElement > LookupEnvironment addElements(EList<NE> namedElements) {
 		if (namedElements != null) {
 			for (NamedElement namedElement : namedElements) {
 				addElement(namedElement);
@@ -47,7 +47,7 @@ public class ContentAssitLookupEnvironment extends EnvironmentImpl {
 	}
 	
 	@Override
-	public Evaluator getEvaluator() {
-		return evaluator;
+	public Executor getExecutor() {
+		return executor;
 	}
 }

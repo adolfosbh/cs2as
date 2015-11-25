@@ -1,33 +1,34 @@
 /**
  */
-package uk.ac.york.cs.asbh.lang.cs2as.env.util;
+package uk.ac.york.cs.asbh.lang.cs2as.target.lookup.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
-import uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG;
-import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
-import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage
+ * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentPackage
  * @generated
  */
-public class EnvironmentAdapterFactory extends AdapterFactoryImpl {
+public class LookupEnvironmentAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static EnvironmentPackage modelPackage;
+	protected static LookupEnvironmentPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -35,9 +36,9 @@ public class EnvironmentAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnvironmentAdapterFactory() {
+	public LookupEnvironmentAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = EnvironmentPackage.eINSTANCE;
+			modelPackage = LookupEnvironmentPackage.eINSTANCE;
 		}
 	}
 
@@ -66,11 +67,11 @@ public class EnvironmentAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EnvironmentSwitch<Adapter> modelSwitch =
-		new EnvironmentSwitch<Adapter>() {
+	protected LookupEnvironmentSwitch<Adapter> modelSwitch =
+		new LookupEnvironmentSwitch<Adapter>() {
 			@Override
-			public Adapter caseEnvironment(Environment object) {
-				return createEnvironmentAdapter();
+			public Adapter caseLookupEnvironment(LookupEnvironment object) {
+				return createLookupEnvironmentAdapter();
 			}
 			@Override
 			public Adapter caseEnv4CG(Env4CG object) {
@@ -101,27 +102,27 @@ public class EnvironmentAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Environment <em>Environment</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment <em>Lookup Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Environment
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment
 	 * @generated
 	 */
-	public Adapter createEnvironmentAdapter() {
+	public Adapter createLookupEnvironmentAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG <em>Env4 CG</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG <em>Env4 CG</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG
 	 * @generated
 	 */
 	public Adapter createEnv4CGAdapter() {
@@ -154,4 +155,4 @@ public class EnvironmentAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //EnvironmentAdapterFactory
+} //LookupEnvironmentAdapterFactory

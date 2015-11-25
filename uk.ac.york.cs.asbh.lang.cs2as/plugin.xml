@@ -15,19 +15,19 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated EnvExample1 -->
-      <package
-            uri="http://uk.ac.york.cs.asbh.lang.cs2as/env/1.0"
-            class="uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage"
-            genModel="model/EnvExample1.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated TargetMM1 -->
       <package
             uri="http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0"
             class="uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage"
             genModel="model/TargetMM1.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Lookup -->
+      <package
+            uri="http://uk.ac.york.cs.asbh.lang.cs2as/lookup/1.0"
+            class="uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentPackage"
+            genModel="model/Lookup.genmodel"/>
    </extension>
 
 </plugin>

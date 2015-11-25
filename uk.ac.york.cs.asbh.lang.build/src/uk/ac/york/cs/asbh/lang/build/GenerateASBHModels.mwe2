@@ -42,7 +42,7 @@ Workflow {
     }
     
     component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
-    	genModel = "/${projectName}/${modelsFolder}/EnvExample1.genmodel"
+    	genModel = "/${projectName}/${modelsFolder}/Lookup.genmodel"
     }
 
     component = GenerateASVisitors { resourceSet = resourceSet
@@ -63,7 +63,7 @@ Workflow {
     	superProjectName = ""
     	superModelName = ""
     	genModelFile = "${modelsFolder}/TargetMM1.genmodel"
-    	lookupFilePath = "${modelsFolder}/TargetLookup.ocl"
+    	lookupFilePath = "${modelsFolder}/Source2TargetLookup.ocl"
 		visitorPackageName = asVisitorsPackageName
 		visitorClassName = asVisitorName
     	visitableClassName = asVisitableName

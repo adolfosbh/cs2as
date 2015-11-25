@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.york.cs.asbh.lang.cs2as.env;
+package uk.ac.york.cs.asbh.lang.cs2as.target.lookup;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -19,19 +19,19 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentFactory
+ * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/OCL/Import target='TargetMM1.ecore#/'"
  * @generated
  */
-public interface EnvironmentPackage extends EPackage {
+public interface LookupEnvironmentPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "env";
+	String eNAME = "lookup";
 
 	/**
 	 * The package namespace URI.
@@ -39,7 +39,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://uk.ac.york.cs.asbh.lang.cs2as/env/1.0";
+	String eNS_URI = "http://uk.ac.york.cs.asbh.lang.cs2as/lookup/1.0";
 
 	/**
 	 * The package namespace name.
@@ -47,7 +47,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "env";
+	String eNS_PREFIX = "lookup";
 
 	/**
 	 * The singleton instance of the package.
@@ -55,14 +55,14 @@ public interface EnvironmentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	EnvironmentPackage eINSTANCE = uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl.init();
+	LookupEnvironmentPackage eINSTANCE = uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG <em>Env4 CG</em>}' class.
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG <em>Env4 CG</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl#getEnv4CG()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentPackageImpl#getEnv4CG()
 	 * @generated
 	 */
 	int ENV4_CG = 1;
@@ -104,14 +104,14 @@ public interface EnvironmentPackage extends EPackage {
 	int ENV4_CG_OPERATION_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentImpl <em>Environment</em>}' class.
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentImpl <em>Lookup Environment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentImpl
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl#getEnvironment()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentImpl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentPackageImpl#getLookupEnvironment()
 	 * @generated
 	 */
-	int ENVIRONMENT = 0;
+	int LOOKUP_ENVIRONMENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Named Elements</b></em>' reference list.
@@ -120,7 +120,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__NAMED_ELEMENTS = ENV4_CG_FEATURE_COUNT + 0;
+	int LOOKUP_ENVIRONMENT__NAMED_ELEMENTS = ENV4_CG_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parent Env</b></em>' reference.
@@ -129,16 +129,16 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__PARENT_ENV = ENV4_CG_FEATURE_COUNT + 1;
+	int LOOKUP_ENVIRONMENT__PARENT_ENV = ENV4_CG_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Environment</em>' class.
+	 * The number of structural features of the '<em>Lookup Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT_FEATURE_COUNT = ENV4_CG_FEATURE_COUNT + 2;
+	int LOOKUP_ENVIRONMENT_FEATURE_COUNT = ENV4_CG_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Has Final Result</em>' operation.
@@ -147,7 +147,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT___HAS_FINAL_RESULT = ENV4_CG___HAS_FINAL_RESULT;
+	int LOOKUP_ENVIRONMENT___HAS_FINAL_RESULT = ENV4_CG___HAS_FINAL_RESULT;
 
 	/**
 	 * The operation id for the '<em>Get Executor</em>' operation.
@@ -156,7 +156,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT___GET_EXECUTOR = ENV4_CG___GET_EXECUTOR;
+	int LOOKUP_ENVIRONMENT___GET_EXECUTOR = ENV4_CG___GET_EXECUTOR;
 
 	/**
 	 * The operation id for the '<em>Add Elements</em>' operation.
@@ -165,7 +165,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT___ADD_ELEMENTS__ELIST = ENV4_CG_OPERATION_COUNT + 0;
+	int LOOKUP_ENVIRONMENT___ADD_ELEMENTS__ELIST = ENV4_CG_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Add Element</em>' operation.
@@ -174,24 +174,23 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT___ADD_ELEMENT__NAMEDELEMENT = ENV4_CG_OPERATION_COUNT + 1;
+	int LOOKUP_ENVIRONMENT___ADD_ELEMENT__NAMEDELEMENT = ENV4_CG_OPERATION_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Environment</em>' class.
+	 * The number of operations of the '<em>Lookup Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT_OPERATION_COUNT = ENV4_CG_OPERATION_COUNT + 2;
-
+	int LOOKUP_ENVIRONMENT_OPERATION_COUNT = ENV4_CG_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.ocl.pivot.evaluation.Executor <em>Executor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.ocl.pivot.evaluation.Executor
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl#getExecutor()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentPackageImpl#getExecutor()
 	 * @generated
 	 */
 	int EXECUTOR = 2;
@@ -214,84 +213,85 @@ public interface EnvironmentPackage extends EPackage {
 	 */
 	int EXECUTOR_OPERATION_COUNT = 0;
 
-	/**
-	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Environment <em>Environment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Environment</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Environment
-	 * @generated
-	 */
-	EClass getEnvironment();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Environment#getNamedElements <em>Named Elements</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment <em>Lookup Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Lookup Environment</em>'.
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment
+	 * @generated
+	 */
+	EClass getLookupEnvironment();
+
+	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment#getNamedElements <em>Named Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Named Elements</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Environment#getNamedElements()
-	 * @see #getEnvironment()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment#getNamedElements()
+	 * @see #getLookupEnvironment()
 	 * @generated
 	 */
-	EReference getEnvironment_NamedElements();
+	EReference getLookupEnvironment_NamedElements();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Environment#getParentEnv <em>Parent Env</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment#getParentEnv <em>Parent Env</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Parent Env</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Environment#getParentEnv()
-	 * @see #getEnvironment()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment#getParentEnv()
+	 * @see #getLookupEnvironment()
 	 * @generated
 	 */
-	EReference getEnvironment_ParentEnv();
+	EReference getLookupEnvironment_ParentEnv();
 
 	/**
-	 * Returns the meta object for the '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Environment#addElements(org.eclipse.emf.common.util.EList) <em>Add Elements</em>}' operation.
+	 * Returns the meta object for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment#addElements(org.eclipse.emf.common.util.EList) <em>Add Elements</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Elements</em>' operation.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Environment#addElements(org.eclipse.emf.common.util.EList)
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment#addElements(org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
-	EOperation getEnvironment__AddElements__EList();
+	EOperation getLookupEnvironment__AddElements__EList();
 
 	/**
-	 * Returns the meta object for the '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Environment#addElement(uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement) <em>Add Element</em>}' operation.
+	 * Returns the meta object for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment#addElement(uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement) <em>Add Element</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Element</em>' operation.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Environment#addElement(uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement)
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment#addElement(uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement)
 	 * @generated
 	 */
-	EOperation getEnvironment__AddElement__NamedElement();
+	EOperation getLookupEnvironment__AddElement__NamedElement();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG <em>Env4 CG</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG <em>Env4 CG</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Env4 CG</em>'.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG
 	 * @generated
 	 */
 	EClass getEnv4CG();
 
 	/**
-	 * Returns the meta object for the '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG#hasFinalResult() <em>Has Final Result</em>}' operation.
+	 * Returns the meta object for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG#hasFinalResult() <em>Has Final Result</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Has Final Result</em>' operation.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG#hasFinalResult()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG#hasFinalResult()
 	 * @generated
 	 */
 	EOperation getEnv4CG__HasFinalResult();
 
 	/**
-	 * Returns the meta object for the '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG#getExecutor() <em>Get Executor</em>}' operation.
+	 * Returns the meta object for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG#getExecutor() <em>Get Executor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get Executor</em>' operation.
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG#getExecutor()
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG#getExecutor()
 	 * @generated
 	 */
 	EOperation getEnv4CG__GetExecutor();
@@ -314,7 +314,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	EnvironmentFactory getEnvironmentFactory();
+	LookupEnvironmentFactory getLookupEnvironmentFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -331,14 +331,14 @@ public interface EnvironmentPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentImpl <em>Environment</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentImpl <em>Lookup Environment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentImpl
-		 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl#getEnvironment()
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentImpl
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentPackageImpl#getLookupEnvironment()
 		 * @generated
 		 */
-		EClass ENVIRONMENT = eINSTANCE.getEnvironment();
+		EClass LOOKUP_ENVIRONMENT = eINSTANCE.getLookupEnvironment();
 
 		/**
 		 * The meta object literal for the '<em><b>Named Elements</b></em>' reference list feature.
@@ -346,7 +346,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENVIRONMENT__NAMED_ELEMENTS = eINSTANCE.getEnvironment_NamedElements();
+		EReference LOOKUP_ENVIRONMENT__NAMED_ELEMENTS = eINSTANCE.getLookupEnvironment_NamedElements();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent Env</b></em>' reference feature.
@@ -354,7 +354,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENVIRONMENT__PARENT_ENV = eINSTANCE.getEnvironment_ParentEnv();
+		EReference LOOKUP_ENVIRONMENT__PARENT_ENV = eINSTANCE.getLookupEnvironment_ParentEnv();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Elements</b></em>' operation.
@@ -362,7 +362,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ENVIRONMENT___ADD_ELEMENTS__ELIST = eINSTANCE.getEnvironment__AddElements__EList();
+		EOperation LOOKUP_ENVIRONMENT___ADD_ELEMENTS__ELIST = eINSTANCE.getLookupEnvironment__AddElements__EList();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Element</b></em>' operation.
@@ -370,14 +370,14 @@ public interface EnvironmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ENVIRONMENT___ADD_ELEMENT__NAMEDELEMENT = eINSTANCE.getEnvironment__AddElement__NamedElement();
+		EOperation LOOKUP_ENVIRONMENT___ADD_ELEMENT__NAMEDELEMENT = eINSTANCE.getLookupEnvironment__AddElement__NamedElement();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG <em>Env4 CG</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG <em>Env4 CG</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.york.cs.asbh.lang.cs2as.env.Env4CG
-		 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl#getEnv4CG()
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentPackageImpl#getEnv4CG()
 		 * @generated
 		 */
 		EClass ENV4_CG = eINSTANCE.getEnv4CG();
@@ -403,11 +403,11 @@ public interface EnvironmentPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.eclipse.ocl.pivot.evaluation.Executor
-		 * @see uk.ac.york.cs.asbh.lang.cs2as.env.impl.EnvironmentPackageImpl#getExecutor()
+		 * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentPackageImpl#getExecutor()
 		 * @generated
 		 */
 		EClass EXECUTOR = eINSTANCE.getExecutor();
 
 	}
 
-} //EnvironmentPackage
+} //LookupEnvironmentPackage

@@ -26,7 +26,6 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: uk.ac.yor.cs.asbh,
- uk.ac.yor.cs.asbh.cs2as,
  uk.ac.yor.cs.asbh.formatting,
  uk.ac.yor.cs.asbh.generator,
  uk.ac.yor.cs.asbh.linker,

@@ -1,17 +1,16 @@
 /**
  */
-package uk.ac.york.cs.asbh.lang.cs2as.env.impl;
+package uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import uk.ac.york.cs.asbh.lang.cs2as.env.*;
-import uk.ac.york.cs.asbh.lang.cs2as.env.Environment;
-import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentFactory;
-import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,24 +18,24 @@ import uk.ac.york.cs.asbh.lang.cs2as.env.EnvironmentPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentFactory {
+public class LookupEnvironmentFactoryImpl extends EFactoryImpl implements LookupEnvironmentFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static EnvironmentFactory init() {
+	public static LookupEnvironmentFactory init() {
 		try {
-			EnvironmentFactory theEnvironmentFactory = (EnvironmentFactory)EPackage.Registry.INSTANCE.getEFactory(EnvironmentPackage.eNS_URI);
-			if (theEnvironmentFactory != null) {
-				return theEnvironmentFactory;
+			LookupEnvironmentFactory theLookupEnvironmentFactory = (LookupEnvironmentFactory)EPackage.Registry.INSTANCE.getEFactory(LookupEnvironmentPackage.eNS_URI);
+			if (theLookupEnvironmentFactory != null) {
+				return theLookupEnvironmentFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new EnvironmentFactoryImpl();
+		return new LookupEnvironmentFactoryImpl();
 	}
 
 	/**
@@ -45,7 +44,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnvironmentFactoryImpl() {
+	public LookupEnvironmentFactoryImpl() {
 		super();
 	}
 
@@ -57,7 +56,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case EnvironmentPackage.ENVIRONMENT: return createEnvironment();
+			case LookupEnvironmentPackage.LOOKUP_ENVIRONMENT: return createLookupEnvironment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -68,9 +67,9 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Environment createEnvironment() {
-		EnvironmentImpl environment = new EnvironmentImpl();
-		return environment;
+	public LookupEnvironment createLookupEnvironment() {
+		LookupEnvironmentImpl lookupEnvironment = new LookupEnvironmentImpl();
+		return lookupEnvironment;
 	}
 
 	/**
@@ -78,8 +77,8 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnvironmentPackage getEnvironmentPackage() {
-		return (EnvironmentPackage)getEPackage();
+	public LookupEnvironmentPackage getLookupEnvironmentPackage() {
+		return (LookupEnvironmentPackage)getEPackage();
 	}
 
 	/**
@@ -89,8 +88,8 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	 * @generated
 	 */
 	@Deprecated
-	public static EnvironmentPackage getPackage() {
-		return EnvironmentPackage.eINSTANCE;
+	public static LookupEnvironmentPackage getPackage() {
+		return LookupEnvironmentPackage.eINSTANCE;
 	}
 
-} //EnvironmentFactoryImpl
+} //LookupEnvironmentFactoryImpl
