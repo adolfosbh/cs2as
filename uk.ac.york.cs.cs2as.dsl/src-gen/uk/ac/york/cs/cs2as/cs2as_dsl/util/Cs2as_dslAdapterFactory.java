@@ -179,9 +179,34 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createNamedElementDefAdapter();
       }
       @Override
+      public Adapter caseQualificationDef(QualificationDef object)
+      {
+        return createQualificationDefAdapter();
+      }
+      @Override
+      public Adapter caseElementsContribExp(ElementsContribExp object)
+      {
+        return createElementsContribExpAdapter();
+      }
+      @Override
       public Adapter caseScopeDef(ScopeDef object)
       {
         return createScopeDefAdapter();
+      }
+      @Override
+      public Adapter caseOccludingDef(OccludingDef object)
+      {
+        return createOccludingDefAdapter();
+      }
+      @Override
+      public Adapter casePropagationDef(PropagationDef object)
+      {
+        return createPropagationDefAdapter();
+      }
+      @Override
+      public Adapter caseExportDef(ExportDef object)
+      {
+        return createExportDefAdapter();
       }
       @Override
       public Adapter caseResolveExpCS(ResolveExpCS object)
@@ -192,6 +217,16 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseLookupExpCS(LookupExpCS object)
       {
         return createLookupExpCSAdapter();
+      }
+      @Override
+      public Adapter casePropagationAll(PropagationAll object)
+      {
+        return createPropagationAllAdapter();
+      }
+      @Override
+      public Adapter casePropagationSelective(PropagationSelective object)
+      {
+        return createPropagationSelectiveAdapter();
       }
       @Override
       public Adapter caseVisitableCS(VisitableCS object)
@@ -536,6 +571,36 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef <em>Qualification Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef
+   * @generated
+   */
+  public Adapter createQualificationDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp <em>Elements Contrib Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp
+   * @generated
+   */
+  public Adapter createElementsContribExpAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef <em>Scope Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -546,6 +611,51 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createScopeDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef <em>Occluding Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef
+   * @generated
+   */
+  public Adapter createOccludingDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropagationDef <em>Propagation Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropagationDef
+   * @generated
+   */
+  public Adapter createPropagationDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef <em>Export Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef
+   * @generated
+   */
+  public Adapter createExportDefAdapter()
   {
     return null;
   }
@@ -576,6 +686,36 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLookupExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropagationAll <em>Propagation All</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropagationAll
+   * @generated
+   */
+  public Adapter createPropagationAllAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropagationSelective <em>Propagation Selective</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropagationSelective
+   * @generated
+   */
+  public Adapter createPropagationSelectiveAdapter()
   {
     return null;
   }

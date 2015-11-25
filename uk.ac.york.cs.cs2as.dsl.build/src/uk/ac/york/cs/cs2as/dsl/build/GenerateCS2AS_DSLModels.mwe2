@@ -25,9 +25,8 @@ Workflow {
 		oclDocURI = "platform:/resource/uk.ac.york.cs.cs2as.dsl/model/CS2ASBridge.ocl"
 		javaFolder = "../uk.ac.york.cs.cs2as.dsl/src-gen" // FIXME doesn't work if they are not in the same FS root
 		javaPackage = "uk.ac.york.cs.cs2as.cs2as_dsl.cs2as"
-		environmentClassName = "org.eclipse.ocl.pivot.lookup.SingleResultLookupEnvironment"
-		lookupVisitorClassName = "org.eclipse.ocl.pivot.lookup.PivotLookupVisitor"
-		namedElementItfName = "org.eclipse.ocl.pivot.NamedElement"
+		lookupSolverClassName = "" // TODO
+		lookupResultItfName = "" // TODO
 		tracePropertyName = "pivot"
 	}
 }

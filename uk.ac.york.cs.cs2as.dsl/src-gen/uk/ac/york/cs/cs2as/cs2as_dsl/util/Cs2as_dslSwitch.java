@@ -224,11 +224,47 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Cs2as_dslPackage.QUALIFICATION_DEF:
+      {
+        QualificationDef qualificationDef = (QualificationDef)theEObject;
+        T result = caseQualificationDef(qualificationDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP:
+      {
+        ElementsContribExp elementsContribExp = (ElementsContribExp)theEObject;
+        T result = caseElementsContribExp(elementsContribExp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Cs2as_dslPackage.SCOPE_DEF:
       {
         ScopeDef scopeDef = (ScopeDef)theEObject;
         T result = caseScopeDef(scopeDef);
         if (result == null) result = caseClassNameResolutionStmnt(scopeDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.OCCLUDING_DEF:
+      {
+        OccludingDef occludingDef = (OccludingDef)theEObject;
+        T result = caseOccludingDef(occludingDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.PROPAGATION_DEF:
+      {
+        PropagationDef propagationDef = (PropagationDef)theEObject;
+        T result = casePropagationDef(propagationDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.EXPORT_DEF:
+      {
+        ExportDef exportDef = (ExportDef)theEObject;
+        T result = caseExportDef(exportDef);
+        if (result == null) result = caseClassNameResolutionStmnt(exportDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -255,6 +291,22 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = caseElementCS(lookupExpCS);
         if (result == null) result = casePivotable(lookupExpCS);
         if (result == null) result = caseVisitableCS(lookupExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.PROPAGATION_ALL:
+      {
+        PropagationAll propagationAll = (PropagationAll)theEObject;
+        T result = casePropagationAll(propagationAll);
+        if (result == null) result = casePropagationDef(propagationAll);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.PROPAGATION_SELECTIVE:
+      {
+        PropagationSelective propagationSelective = (PropagationSelective)theEObject;
+        T result = casePropagationSelective(propagationSelective);
+        if (result == null) result = casePropagationDef(propagationSelective);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -551,6 +603,38 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Qualification Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Qualification Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQualificationDef(QualificationDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Elements Contrib Exp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Elements Contrib Exp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementsContribExp(ElementsContribExp object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Scope Def</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -562,6 +646,54 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseScopeDef(ScopeDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Occluding Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Occluding Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOccludingDef(OccludingDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Propagation Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Propagation Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePropagationDef(PropagationDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Export Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Export Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExportDef(ExportDef object)
   {
     return null;
   }
@@ -594,6 +726,38 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLookupExpCS(LookupExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Propagation All</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Propagation All</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePropagationAll(PropagationAll object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Propagation Selective</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Propagation Selective</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePropagationSelective(PropagationSelective object)
   {
     return null;
   }

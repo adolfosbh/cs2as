@@ -82,9 +82,16 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION: return createClassNameResolution();
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION_STMNT: return createClassNameResolutionStmnt();
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF: return createNamedElementDef();
+      case Cs2as_dslPackage.QUALIFICATION_DEF: return createQualificationDef();
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP: return createElementsContribExp();
       case Cs2as_dslPackage.SCOPE_DEF: return createScopeDef();
+      case Cs2as_dslPackage.OCCLUDING_DEF: return createOccludingDef();
+      case Cs2as_dslPackage.PROPAGATION_DEF: return createPropagationDef();
+      case Cs2as_dslPackage.EXPORT_DEF: return createExportDef();
       case Cs2as_dslPackage.RESOLVE_EXP_CS: return createResolveExpCS();
       case Cs2as_dslPackage.LOOKUP_EXP_CS: return createLookupExpCS();
+      case Cs2as_dslPackage.PROPAGATION_ALL: return createPropagationAll();
+      case Cs2as_dslPackage.PROPAGATION_SELECTIVE: return createPropagationSelective();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -293,10 +300,65 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
+  public QualificationDef createQualificationDef()
+  {
+    QualificationDefImpl qualificationDef = new QualificationDefImpl();
+    return qualificationDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementsContribExp createElementsContribExp()
+  {
+    ElementsContribExpImpl elementsContribExp = new ElementsContribExpImpl();
+    return elementsContribExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ScopeDef createScopeDef()
   {
     ScopeDefImpl scopeDef = new ScopeDefImpl();
     return scopeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OccludingDef createOccludingDef()
+  {
+    OccludingDefImpl occludingDef = new OccludingDefImpl();
+    return occludingDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PropagationDef createPropagationDef()
+  {
+    PropagationDefImpl propagationDef = new PropagationDefImpl();
+    return propagationDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExportDef createExportDef()
+  {
+    ExportDefImpl exportDef = new ExportDefImpl();
+    return exportDef;
   }
 
   /**
@@ -319,6 +381,28 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
   {
     LookupExpCSImpl lookupExpCS = new LookupExpCSImpl();
     return lookupExpCS;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PropagationAll createPropagationAll()
+  {
+    PropagationAllImpl propagationAll = new PropagationAllImpl();
+    return propagationAll;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PropagationSelective createPropagationSelective()
+  {
+    PropagationSelectiveImpl propagationSelective = new PropagationSelectiveImpl();
+    return propagationSelective;
   }
 
   /**

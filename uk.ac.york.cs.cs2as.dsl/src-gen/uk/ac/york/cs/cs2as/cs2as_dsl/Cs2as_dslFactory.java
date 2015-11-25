@@ -185,6 +185,24 @@ public interface Cs2as_dslFactory extends EFactory
   NamedElementDef createNamedElementDef();
 
   /**
+   * Returns a new object of class '<em>Qualification Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qualification Def</em>'.
+   * @generated
+   */
+  QualificationDef createQualificationDef();
+
+  /**
+   * Returns a new object of class '<em>Elements Contrib Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Elements Contrib Exp</em>'.
+   * @generated
+   */
+  ElementsContribExp createElementsContribExp();
+
+  /**
    * Returns a new object of class '<em>Scope Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -192,6 +210,33 @@ public interface Cs2as_dslFactory extends EFactory
    * @generated
    */
   ScopeDef createScopeDef();
+
+  /**
+   * Returns a new object of class '<em>Occluding Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Occluding Def</em>'.
+   * @generated
+   */
+  OccludingDef createOccludingDef();
+
+  /**
+   * Returns a new object of class '<em>Propagation Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Propagation Def</em>'.
+   * @generated
+   */
+  PropagationDef createPropagationDef();
+
+  /**
+   * Returns a new object of class '<em>Export Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Export Def</em>'.
+   * @generated
+   */
+  ExportDef createExportDef();
 
   /**
    * Returns a new object of class '<em>Resolve Exp CS</em>'.
@@ -210,6 +255,24 @@ public interface Cs2as_dslFactory extends EFactory
    * @generated
    */
   LookupExpCS createLookupExpCS();
+
+  /**
+   * Returns a new object of class '<em>Propagation All</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Propagation All</em>'.
+   * @generated
+   */
+  PropagationAll createPropagationAll();
+
+  /**
+   * Returns a new object of class '<em>Propagation Selective</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Propagation Selective</em>'.
+   * @generated
+   */
+  PropagationSelective createPropagationSelective();
 
   /**
    * Returns the package supported by this factory.

@@ -2,6 +2,8 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
 
 /**
@@ -14,7 +16,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getNamePoperty <em>Name Poperty</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getQualifier <em>Qualifier</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getQualification <em>Qualification</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getNamedElementDef()
@@ -50,29 +52,19 @@ public interface NamedElementDef extends ClassNameResolutionStmnt
   void setNamePoperty(NameExpCS value);
 
   /**
-   * Returns the value of the '<em><b>Qualifier</b></em>' attribute.
+   * Returns the value of the '<em><b>Qualification</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Qualifier</em>' attribute isn't clear,
+   * If the meaning of the '<em>Qualification</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Qualifier</em>' attribute.
-   * @see #setQualifier(String)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getNamedElementDef_Qualifier()
-   * @model
+   * @return the value of the '<em>Qualification</em>' containment reference list.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getNamedElementDef_Qualification()
+   * @model containment="true"
    * @generated
    */
-  String getQualifier();
-
-  /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getQualifier <em>Qualifier</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Qualifier</em>' attribute.
-   * @see #getQualifier()
-   * @generated
-   */
-  void setQualifier(String value);
+  EList<QualificationDef> getQualification();
 
 } // NamedElementDef

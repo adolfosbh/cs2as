@@ -57,7 +57,7 @@ DisambiguationSect:
 ;
 
 ClassDisambiguation:
-	class=SIMPLE_ID '{'
+	class=PathNameCS '{'
 		statements+=ClassDisambiguationStmnt*
 		
 	'}'
@@ -95,27 +95,54 @@ NameQualifierDef:
 ;
 
 ClassNameResolution:
-	class=SIMPLE_ID '{'
+	class=PathNameCS '{'
 		statements+=ClassNameResolutionStmnt*
 	'}'
 ;
 
 ClassNameResolutionStmnt:
-	(NamedElementDef | ScopeDef)
+	(NamedElementDef | ScopeDef | ExportDef)
 	';'
 ;
 
 NamedElementDef:
 	{NamedElementDef}
-	'named-element' ('name-property' namePoperty=NameExpCS)? ('qualified-by' qualifier=SIMPLE_ID)?
+	'named-element' ('name-property' namePoperty=NameExpCS)? 
+	('qualifying' qualification+=QualificationDef (',' qualification+=QualificationDef)*)?
+;
+
+QualificationDef:
+	qualifiedClass=TypeExpCS 'using' contribution+=ElementsContribExp 
+;
+	
+ElementsContribExp:
+	(following?='following')? expression=ExpCS ('['typeFilter=TypeExpCS']')? 
 ;
 
 ScopeDef:
-	('nested' | sameScope?= 'same')? 
-	'scopes' contributingProperty=ExpCS ('['typeFilter=TypeExpCS']')? 
-	('to' (propagatingAll?='all' | propagatingNexts?='nexts' | (propagatingProperties+=ExpCS (',' propagatingProperties+=ExpCS)* ) ))?
+	('new-scope' | sameScope?='same-scope')?
+	(alsoExports?='also-exports')?
+	contibution+=ElementsContribExp (',' contibution+=ElementsContribExp)*
+	occludingDefs+=OccludingDef*
+	propagationDef=PropagationDef? 
 ;
 
+OccludingDef:
+	'occluding' contibution+=ElementsContribExp (',' contibution+=ElementsContribExp)* 
+;
+
+PropagationDef:
+	'for' 
+	( {PropagationAll} 'all-children' ('excepting' exceptionProperties+=ExpCS)?
+	| {PropagationSelective} (propagatingProperties+=ExpCS (',' propagatingProperties+=ExpCS)* )
+	)
+;
+
+ExportDef:
+	'exports' contibution+=ElementsContribExp (',' contibution+=ElementsContribExp)*
+	 occludingDefs+=OccludingDef*
+	('to' (acceptingAll?='all' | acceptingElement=ExpCS))?
+;
 
 /* A primary expression identifies the basic expressions from which more complex expressions may be constructed. */
 PrimaryExpCS returns essentialocl::ExpCS:

@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.ocl.xtext.basecs.PathNameCS;
+
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
@@ -39,24 +41,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 public class ClassNameResolutionImpl extends MinimalEObjectImpl.Container implements ClassNameResolution
 {
   /**
-   * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
+   * The cached value of the '{@link #getClass_() <em>Class</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getClass_()
    * @generated
    * @ordered
    */
-  protected static final String CLASS_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getClass_()
-   * @generated
-   * @ordered
-   */
-  protected String class_ = CLASS_EDEFAULT;
+  protected PathNameCS class_;
 
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -94,7 +86,7 @@ public class ClassNameResolutionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getClass_()
+  public PathNameCS getClass_()
   {
     return class_;
   }
@@ -104,12 +96,37 @@ public class ClassNameResolutionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClass(String newClass)
+  public NotificationChain basicSetClass(PathNameCS newClass, NotificationChain msgs)
   {
-    String oldClass = class_;
+    PathNameCS oldClass = class_;
     class_ = newClass;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_NAME_RESOLUTION__CLASS, oldClass, class_));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_NAME_RESOLUTION__CLASS, oldClass, newClass);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setClass(PathNameCS newClass)
+  {
+    if (newClass != class_)
+    {
+      NotificationChain msgs = null;
+      if (class_ != null)
+        msgs = ((InternalEObject)class_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_NAME_RESOLUTION__CLASS, null, msgs);
+      if (newClass != null)
+        msgs = ((InternalEObject)newClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_NAME_RESOLUTION__CLASS, null, msgs);
+      msgs = basicSetClass(newClass, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_NAME_RESOLUTION__CLASS, newClass, newClass));
   }
 
   /**
@@ -136,6 +153,8 @@ public class ClassNameResolutionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case Cs2as_dslPackage.CLASS_NAME_RESOLUTION__CLASS:
+        return basicSetClass(null, msgs);
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION__STATEMENTS:
         return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
@@ -172,7 +191,7 @@ public class ClassNameResolutionImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION__CLASS:
-        setClass((String)newValue);
+        setClass((PathNameCS)newValue);
         return;
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION__STATEMENTS:
         getStatements().clear();
@@ -193,7 +212,7 @@ public class ClassNameResolutionImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION__CLASS:
-        setClass(CLASS_EDEFAULT);
+        setClass((PathNameCS)null);
         return;
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION__STATEMENTS:
         getStatements().clear();
@@ -213,28 +232,11 @@ public class ClassNameResolutionImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION__CLASS:
-        return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
+        return class_ != null;
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION__STATEMENTS:
         return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (class: ");
-    result.append(class_);
-    result.append(')');
-    return result.toString();
   }
 
 } //ClassNameResolutionImpl

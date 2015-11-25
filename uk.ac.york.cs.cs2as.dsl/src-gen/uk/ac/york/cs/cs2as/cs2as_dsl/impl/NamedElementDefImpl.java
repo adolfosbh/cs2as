@@ -2,18 +2,26 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +32,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NamedElementDefImpl#getNamePoperty <em>Name Poperty</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NamedElementDefImpl#getQualifier <em>Qualifier</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NamedElementDefImpl#getQualification <em>Qualification</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,24 +50,14 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
   protected NameExpCS namePoperty;
 
   /**
-   * The default value of the '{@link #getQualifier() <em>Qualifier</em>}' attribute.
+   * The cached value of the '{@link #getQualification() <em>Qualification</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQualifier()
+   * @see #getQualification()
    * @generated
    * @ordered
    */
-  protected static final String QUALIFIER_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getQualifier() <em>Qualifier</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQualifier()
-   * @generated
-   * @ordered
-   */
-  protected String qualifier = QUALIFIER_EDEFAULT;
+  protected EList<QualificationDef> qualification;
 
   /**
    * <!-- begin-user-doc -->
@@ -135,22 +133,13 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getQualifier()
+  public EList<QualificationDef> getQualification()
   {
-    return qualifier;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setQualifier(String newQualifier)
-  {
-    String oldQualifier = qualifier;
-    qualifier = newQualifier;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFIER, oldQualifier, qualifier));
+    if (qualification == null)
+    {
+      qualification = new EObjectContainmentEList<QualificationDef>(QualificationDef.class, this, Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION);
+    }
+    return qualification;
   }
 
   /**
@@ -165,6 +154,8 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
     {
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
         return basicSetNamePoperty(null, msgs);
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION:
+        return ((InternalEList<?>)getQualification()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -181,8 +172,8 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
     {
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
         return getNamePoperty();
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFIER:
-        return getQualifier();
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION:
+        return getQualification();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -192,6 +183,7 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -200,8 +192,9 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
         setNamePoperty((NameExpCS)newValue);
         return;
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFIER:
-        setQualifier((String)newValue);
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION:
+        getQualification().clear();
+        getQualification().addAll((Collection<? extends QualificationDef>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -220,8 +213,8 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
         setNamePoperty((NameExpCS)null);
         return;
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFIER:
-        setQualifier(QUALIFIER_EDEFAULT);
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION:
+        getQualification().clear();
         return;
     }
     super.eUnset(featureID);
@@ -239,27 +232,10 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
     {
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
         return namePoperty != null;
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFIER:
-        return QUALIFIER_EDEFAULT == null ? qualifier != null : !QUALIFIER_EDEFAULT.equals(qualifier);
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION:
+        return qualification != null && !qualification.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (qualifier: ");
-    result.append(qualifier);
-    result.append(')');
-    return result.toString();
   }
 
 } //NamedElementDefImpl

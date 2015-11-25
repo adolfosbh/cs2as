@@ -1,3 +1,13 @@
 /.CS2ASDSLGenerator.java._trace
 /.CS2ASDSLGenerator.xtendbin
 /CS2ASDSLGenerator.java
+/.CS2ASDSL_To_CompleteOCLVisitor.java._trace
+/.EssentialOCLCSSwitch.java._trace
+/.EssentialOCLCSVisitor.java._trace
+/.EssentialOCLCSToStringVisitor.java._trace
+/.BaseCSCisitor.java._trace
+/.BaseCSToStringVisitor.java._trace
+/.CS2ASDSL_To_OCLMappingsVisitor.java._trace
+/.CS2ASDSL_To_OCLLookupVisitor.java._trace
+/.CS2ASDSL_To_OCLBaseVisitor.java._trace
+/.CS2ASDSL_To_OCLDisambiguationVisitor.java._trace

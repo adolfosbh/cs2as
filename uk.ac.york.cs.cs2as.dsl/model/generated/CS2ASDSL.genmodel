@@ -39,7 +39,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//DisambiguationSect/disambiguations"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ClassDisambiguation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ClassDisambiguation/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassDisambiguation/class"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassDisambiguation/statements"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ClassDisambiguationStmnt"/>
@@ -66,26 +66,50 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//NameQualifierDef/segmentsProp"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ClassNameResolution">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ClassNameResolution/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassNameResolution/class"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassNameResolution/statements"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ClassNameResolutionStmnt"/>
     <genClasses ecoreClass="CS2ASDSL.ecore#//NamedElementDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//NamedElementDef/namePoperty"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//NamedElementDef/qualifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//NamedElementDef/qualification"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//QualificationDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//QualificationDef/qualifiedClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//QualificationDef/contribution"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//ElementsContribExp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ElementsContribExp/following"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ElementsContribExp/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ElementsContribExp/typeFilter"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ScopeDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/sameScope"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopeDef/contributingProperty"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopeDef/typeFilter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/propagatingAll"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/propagatingNexts"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopeDef/propagatingProperties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/alsoExports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopeDef/contibution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopeDef/occludingDefs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopeDef/propagationDef"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//OccludingDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//OccludingDef/contibution"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//PropagationDef"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//ExportDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportDef/contibution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportDef/occludingDefs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ExportDef/acceptingAll"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportDef/acceptingElement"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ResolveExpCS"/>
     <genClasses ecoreClass="CS2ASDSL.ecore#//LookupExpCS">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//LookupExpCS/fromExp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//LookupExpCS/args"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//PropagationAll">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//PropagationAll/exceptionProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//PropagationSelective">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//PropagationSelective/propagatingProperties"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
