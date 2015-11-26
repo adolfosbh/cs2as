@@ -1217,7 +1217,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
                     throwNull(z_2, "Null source for \'\'http://uk.ac.york.cs.asbh.lang.cs2as/sourceMM/1.0\'::PathElementCS::name\'");
                 }
                 final /*@NonNull*/ /*@Thrown*/ String name = aPathElementCS.getName();
-                TargetLookupResult<C> _lookupResult = lookupSolver.lookupC(self_0, name);
+                TargetLookupResult<C> _lookupResult = lookupSolver._lookupC(self_0, name);
                 C _lookupC = null;
                 if (_lookupResult.size() == 1) {
                     _lookupC = _lookupResult.getSingleResult();
@@ -1234,7 +1234,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
                     throwNull(z_2, "Null source for \'\'http://uk.ac.york.cs.asbh.lang.cs2as/sourceMM/1.0\'::PathElementCS::name\'");
                 }
                 final /*@NonNull*/ /*@Thrown*/ String name_0 = aPathElementCS_0.getName();
-                TargetLookupResult<A2> _lookupResult_0 = lookupSolver.lookupA2(self_0, name_0);
+                TargetLookupResult<A2> _lookupResult_0 = lookupSolver._lookupA2(self_0, name_0);
                 A2 _lookupA2 = null;
                 if (_lookupResult_0.size() == 1) {
                     _lookupA2 = _lookupResult_0.getSingleResult();
@@ -1259,7 +1259,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
                         throwNull(z_2, "Null source for \'\'http://uk.ac.york.cs.asbh.lang.cs2as/sourceMM/1.0\'::PathElementCS::name\'");
                     }
                     final /*@NonNull*/ /*@Thrown*/ String name_1 = aPathElementCS_1.getName();
-                    TargetLookupResult<C> _lookupResult_1 = lookupSolver.lookupC(_lookupA2, name_1);
+                    TargetLookupResult<C> _lookupResult_1 = lookupSolver._lookupQualifiedC(_lookupA2, name_1);
                     C _lookupQualifiedC = null;
                     if (_lookupResult_1.size() == 1) {
                         _lookupQualifiedC = _lookupResult_1.getSingleResult();
@@ -1388,7 +1388,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
                     throwNull(z_4, "Null source for \'\'http://uk.ac.york.cs.asbh.lang.cs2as/sourceMM/1.0\'::PathElementCS::name\'");
                 }
                 final /*@NonNull*/ /*@Thrown*/ String name = aPathElementCS.getName();
-                TargetLookupResult<B> _lookupResult = lookupSolver.lookupB(self_0, name);
+                TargetLookupResult<B> _lookupResult = lookupSolver._lookupB(self_0, name);
                 B _lookupB = null;
                 if (_lookupResult.size() == 1) {
                     _lookupB = _lookupResult.getSingleResult();
@@ -1405,7 +1405,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
                     throwNull(z_4, "Null source for \'\'http://uk.ac.york.cs.asbh.lang.cs2as/sourceMM/1.0\'::PathElementCS::name\'");
                 }
                 final /*@NonNull*/ /*@Thrown*/ String name_0 = aPathElementCS_0.getName();
-                TargetLookupResult<A1> _lookupResult_0 = lookupSolver.lookupA1(self_0, name_0);
+                TargetLookupResult<A1> _lookupResult_0 = lookupSolver._lookupA1(self_0, name_0);
                 A1 _lookupA1 = null;
                 if (_lookupResult_0.size() == 1) {
                     _lookupA1 = _lookupResult_0.getSingleResult();
@@ -1430,7 +1430,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
                         throwNull(z_4, "Null source for \'\'http://uk.ac.york.cs.asbh.lang.cs2as/sourceMM/1.0\'::PathElementCS::name\'");
                     }
                     final /*@NonNull*/ /*@Thrown*/ String name_1 = aPathElementCS_1.getName();
-                    TargetLookupResult<B> _lookupResult_1 = lookupSolver.lookupB(_lookupA1, name_1);
+                    TargetLookupResult<B> _lookupResult_1 = lookupSolver._lookupQualifiedB(_lookupA1, name_1);
                     B _lookupQualifiedB = null;
                     if (_lookupResult_1.size() == 1) {
                         _lookupQualifiedB = _lookupResult_1.getSingleResult();
@@ -1462,17 +1462,17 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
      * }}
      *   for _x_X : source::X in source::X.allInstances()
      *    {
+     * map cX_2_A1 {
+     * x := _x_X;
+     * }}
+     *   for _x_X : source::X in source::X.allInstances()
+     *    {
      * map cX_2_A2 {
      * x := _x_X;
      * }}
      *   for _x_X : source::X in source::X.allInstances()
      *    {
      * map cX_2_A3 {
-     * x := _x_X;
-     * }}
-     *   for _x_X : source::X in source::X.allInstances()
-     *    {
-     * map cX_2_A1 {
      * x := _x_X;
      * }}
      *   for _y1_Y1 : source::Y1 in source::Y1.allInstances()
@@ -1487,12 +1487,12 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
      * }}
      *   for _z_Z : source::Z in source::Z.allInstances()
      *    {
-     * map cZ_2_D_1 {
+     * map cZ_2_D_0 {
      * z := _z_Z;
      * }}
      *   for _z_Z : source::Z in source::Z.allInstances()
      *    {
-     * map cZ_2_D_0 {
+     * map cZ_2_D_1 {
      * z := _z_Z;
      * }}
      *   for _sRoot_SRoot : source::SRoot in source::SRoot.allInstances()
@@ -1502,7 +1502,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
      * }}
      *   for _x_X : source::X in source::X.allInstances()
      *    {
-     * map uA2_ownsC {
+     * map uA1_ownsB {
      * x := _x_X;
      * }}
      *   for _x_X : source::X in source::X.allInstances()
@@ -1512,7 +1512,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
      * }}
      *   for _x_X : source::X in source::X.allInstances()
      *    {
-     * map uA1_ownsB {
+     * map uA2_ownsC {
      * x := _x_X;
      * }}
      *   for _y1_Y1 : source::Y1 in source::Y1.allInstances()
@@ -1525,15 +1525,15 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
      * map uD_1_toA {
      * z := _z_Z;
      * }}
-     *   for _y2_Y2 : source::Y2 in source::Y2.allInstances()
-     *    {
-     * map uC_ownsD {
-     * y2 := _y2_Y2;
-     * }}
      *   for _z_Z : source::Z in source::Z.allInstances()
      *    {
      * map uD_0_toA {
      * z := _z_Z;
+     * }}
+     *   for _y2_Y2 : source::Y2 in source::Y2.allInstances()
+     *    {
+     * map uC_ownsD {
+     * y2 := _y2_Y2;
      * }}
      *   for _z_Z : source::Z in source::Z.allInstances()
      *    {
@@ -1557,7 +1557,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
         final /*@NonNull*/ /*@NonInvalid*/ SetValue allInstances_7 = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, SET_CLSSid_SRoot, TYP_source_c_c_SRoot_1);
         final /*@NonNull*/ /*@NonInvalid*/ SetValue allInstances_1 = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, SET_CLSSid_X, TYP_source_c_c_X_5);
         final /*@NonNull*/ /*@NonInvalid*/ SetValue allInstances_11 = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, SET_CLSSid_Y1, TYP_source_c_c_Y1_1);
-        final /*@NonNull*/ /*@NonInvalid*/ SetValue allInstances_13 = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, SET_CLSSid_Y2, TYP_source_c_c_Y2_1);
+        final /*@NonNull*/ /*@NonInvalid*/ SetValue allInstances_14 = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, SET_CLSSid_Y2, TYP_source_c_c_Y2_1);
         final /*@NonNull*/ /*@NonInvalid*/ SetValue allInstances_6 = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, SET_CLSSid_Z, TYP_source_c_c_Z_5);
         // mapping statements
         for (SRoot _sRoot_SRoot : ValueUtil.typedIterable(SRoot.class, allInstances_7)) {
@@ -1569,19 +1569,19 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
         for (X _x_X : ValueUtil.typedIterable(X.class, allInstances_1)) {
             if (_x_X != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ X symbol_2 = (X)_x_X;
-                MAP_cX_2_A2(symbol_2);
+                MAP_cX_2_A1(symbol_2);
             }
         }
         for (X _x_X_0 : ValueUtil.typedIterable(X.class, allInstances_1)) {
             if (_x_X_0 != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ X symbol_4 = (X)_x_X_0;
-                MAP_cX_2_A3(symbol_4);
+                MAP_cX_2_A2(symbol_4);
             }
         }
         for (X _x_X_1 : ValueUtil.typedIterable(X.class, allInstances_1)) {
             if (_x_X_1 != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ X symbol_6 = (X)_x_X_1;
-                MAP_cX_2_A1(symbol_6);
+                MAP_cX_2_A3(symbol_6);
             }
         }
         for (Y1 _y1_Y1 : ValueUtil.typedIterable(Y1.class, allInstances_11)) {
@@ -1590,7 +1590,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
                 MAP_cY1_2_B(symbol_8);
             }
         }
-        for (Y2 _y2_Y2 : ValueUtil.typedIterable(Y2.class, allInstances_13)) {
+        for (Y2 _y2_Y2 : ValueUtil.typedIterable(Y2.class, allInstances_14)) {
             if (_y2_Y2 != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ Y2 symbol_10 = (Y2)_y2_Y2;
                 MAP_cY2_2_C(symbol_10);
@@ -1599,13 +1599,13 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
         for (Z _z_Z : ValueUtil.typedIterable(Z.class, allInstances_6)) {
             if (_z_Z != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ Z symbol_12 = (Z)_z_Z;
-                MAP_cZ_2_D_1(symbol_12);
+                MAP_cZ_2_D_0(symbol_12);
             }
         }
         for (Z _z_Z_0 : ValueUtil.typedIterable(Z.class, allInstances_6)) {
             if (_z_Z_0 != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ Z symbol_14 = (Z)_z_Z_0;
-                MAP_cZ_2_D_0(symbol_14);
+                MAP_cZ_2_D_1(symbol_14);
             }
         }
         for (SRoot _sRoot_SRoot_0 : ValueUtil.typedIterable(SRoot.class, allInstances_7)) {
@@ -1617,7 +1617,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
         for (X _x_X_2 : ValueUtil.typedIterable(X.class, allInstances_1)) {
             if (_x_X_2 != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ X symbol_18 = (X)_x_X_2;
-                MAP_uA2_ownsC(symbol_18);
+                MAP_uA1_ownsB(symbol_18);
             }
         }
         for (X _x_X_3 : ValueUtil.typedIterable(X.class, allInstances_1)) {
@@ -1629,7 +1629,7 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
         for (X _x_X_4 : ValueUtil.typedIterable(X.class, allInstances_1)) {
             if (_x_X_4 != null) {
                 final /*@NonNull*/ /*@NonInvalid*/ X symbol_22 = (X)_x_X_4;
-                MAP_uA1_ownsB(symbol_22);
+                MAP_uA2_ownsC(symbol_22);
             }
         }
         for (Y1 _y1_Y1_0 : ValueUtil.typedIterable(Y1.class, allInstances_11)) {
@@ -1644,16 +1644,16 @@ public class Source2Target_qvtp_qvtias extends AbstractCS2ASTransformer
                 MAP_uD_1_toA(symbol_26);
             }
         }
-        for (Y2 _y2_Y2_0 : ValueUtil.typedIterable(Y2.class, allInstances_13)) {
-            if (_y2_Y2_0 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Y2 symbol_28 = (Y2)_y2_Y2_0;
-                MAP_uC_ownsD(symbol_28);
-            }
-        }
         for (Z _z_Z_2 : ValueUtil.typedIterable(Z.class, allInstances_6)) {
             if (_z_Z_2 != null) {
-                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_30 = (Z)_z_Z_2;
-                MAP_uD_0_toA(symbol_30);
+                final /*@NonNull*/ /*@NonInvalid*/ Z symbol_28 = (Z)_z_Z_2;
+                MAP_uD_0_toA(symbol_28);
+            }
+        }
+        for (Y2 _y2_Y2_0 : ValueUtil.typedIterable(Y2.class, allInstances_14)) {
+            if (_y2_Y2_0 != null) {
+                final /*@NonNull*/ /*@NonInvalid*/ Y2 symbol_30 = (Y2)_y2_Y2_0;
+                MAP_uC_ownsD(symbol_30);
             }
         }
         for (Z _z_Z_3 : ValueUtil.typedIterable(Z.class, allInstances_6)) {

@@ -9,15 +9,8 @@
  * Only the copyright statement is editable.
  *******************************************************************************/
 package	uk.ac.york.cs.asbh.lang.cs2as.target.lookup.util;
-		
-import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.ocl.pivot.evaluation.Executor;
-import uk.ac.york.cs.asbh.lang.cs2as.target.*;
-import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment;
-import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.util.*;
-import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable;	
 
 public class TargetLookupSolver {
 	
@@ -28,7 +21,23 @@ public class TargetLookupSolver {
 	}
 	
 	
-	public TargetLookupResult<uk.ac.york.cs.asbh.lang.cs2as.target.A1> lookupA1(Visitable fromElement, String aName) {
+	public TargetLookupResult<uk.ac.york.cs.asbh.lang.cs2as.target.B> _lookupQualifiedB(uk.ac.york.cs.asbh.lang.cs2as.target.A1 fromElement, String bName) {
+		TargetSingleResultLookupEnvironment _lookupEnv = new TargetSingleResultLookupEnvironment(executor, uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage.Literals.B, bName);
+		TargetQualificationLookupVisitor _lookupVisitor = new TargetQualificationLookupVisitor(_lookupEnv);
+		fromElement.accept(_lookupVisitor);
+		return new TargetLookupResultImpl<uk.ac.york.cs.asbh.lang.cs2as.target.B>
+				(_lookupEnv.getNamedElementsByKind(uk.ac.york.cs.asbh.lang.cs2as.target.B.class));
+	}
+	
+	public TargetLookupResult<uk.ac.york.cs.asbh.lang.cs2as.target.C> _lookupQualifiedC(uk.ac.york.cs.asbh.lang.cs2as.target.A2 fromElement, String cName) {
+		TargetSingleResultLookupEnvironment _lookupEnv = new TargetSingleResultLookupEnvironment(executor, uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage.Literals.C, cName);
+		TargetQualificationLookupVisitor _lookupVisitor = new TargetQualificationLookupVisitor(_lookupEnv);
+		fromElement.accept(_lookupVisitor);
+		return new TargetLookupResultImpl<uk.ac.york.cs.asbh.lang.cs2as.target.C>
+				(_lookupEnv.getNamedElementsByKind(uk.ac.york.cs.asbh.lang.cs2as.target.C.class));
+	}
+	
+	public TargetLookupResult<uk.ac.york.cs.asbh.lang.cs2as.target.A1> _lookupA1(uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable fromElement, String aName) {
 		TargetSingleResultLookupEnvironment _lookupEnv = new TargetSingleResultLookupEnvironment(executor, uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage.Literals.A1, aName);
 		TargetDefaultLookupVisitor _lookupVisitor = new TargetDefaultLookupVisitor(_lookupEnv);
 		fromElement.accept(_lookupVisitor);
@@ -36,7 +45,7 @@ public class TargetLookupSolver {
 				(_lookupEnv.getNamedElementsByKind(uk.ac.york.cs.asbh.lang.cs2as.target.A1.class));
 	}
 	
-	public TargetLookupResult<uk.ac.york.cs.asbh.lang.cs2as.target.A2> lookupA2(Visitable fromElement, String aName) {
+	public TargetLookupResult<uk.ac.york.cs.asbh.lang.cs2as.target.A2> _lookupA2(uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable fromElement, String aName) {
 		TargetSingleResultLookupEnvironment _lookupEnv = new TargetSingleResultLookupEnvironment(executor, uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage.Literals.A2, aName);
 		TargetDefaultLookupVisitor _lookupVisitor = new TargetDefaultLookupVisitor(_lookupEnv);
 		fromElement.accept(_lookupVisitor);
@@ -44,7 +53,7 @@ public class TargetLookupSolver {
 				(_lookupEnv.getNamedElementsByKind(uk.ac.york.cs.asbh.lang.cs2as.target.A2.class));
 	}
 	
-	public TargetLookupResult<uk.ac.york.cs.asbh.lang.cs2as.target.B> lookupB(Visitable fromElement, String bName) {
+	public TargetLookupResult<uk.ac.york.cs.asbh.lang.cs2as.target.B> _lookupB(uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable fromElement, String bName) {
 		TargetSingleResultLookupEnvironment _lookupEnv = new TargetSingleResultLookupEnvironment(executor, uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage.Literals.B, bName);
 		TargetDefaultLookupVisitor _lookupVisitor = new TargetDefaultLookupVisitor(_lookupEnv);
 		fromElement.accept(_lookupVisitor);
@@ -52,7 +61,7 @@ public class TargetLookupSolver {
 				(_lookupEnv.getNamedElementsByKind(uk.ac.york.cs.asbh.lang.cs2as.target.B.class));
 	}
 	
-	public TargetLookupResult<uk.ac.york.cs.asbh.lang.cs2as.target.C> lookupC(Visitable fromElement, String cName) {
+	public TargetLookupResult<uk.ac.york.cs.asbh.lang.cs2as.target.C> _lookupC(uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable fromElement, String cName) {
 		TargetSingleResultLookupEnvironment _lookupEnv = new TargetSingleResultLookupEnvironment(executor, uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage.Literals.C, cName);
 		TargetDefaultLookupVisitor _lookupVisitor = new TargetDefaultLookupVisitor(_lookupEnv);
 		fromElement.accept(_lookupVisitor);
