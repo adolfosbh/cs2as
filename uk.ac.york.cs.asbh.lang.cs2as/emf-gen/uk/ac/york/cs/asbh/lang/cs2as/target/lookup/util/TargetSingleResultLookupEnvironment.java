@@ -10,15 +10,18 @@
  *******************************************************************************/
 package	uk.ac.york.cs.asbh.lang.cs2as.target.lookup.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
+import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
 import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment;
 import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentImpl;
-import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
 
 public class TargetSingleResultLookupEnvironment extends LookupEnvironmentImpl   {
 	
@@ -39,7 +42,7 @@ public class TargetSingleResultLookupEnvironment extends LookupEnvironmentImpl  
 	}
 	
 	@Override
-	public boolean hasFinalResult() {		
+	public boolean hasFinalResult() {
 		for (NamedElement element : getNamedElements()) {
 			if (name.equals(element.getName())) {
 				return true;
@@ -75,5 +78,16 @@ public class TargetSingleResultLookupEnvironment extends LookupEnvironmentImpl  
 			}	
 		}
 		return this;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public <NE extends NamedElement> List<NE> getNamedElementsByKind(Class<NE> class_) {
+		List<NE> result = new ArrayList<NE>(); 
+		for (NamedElement namedElement : getNamedElements()) {
+			if (class_.isAssignableFrom(namedElement.getClass())) {
+				result.add((NE)namedElement);
+			}
+		}
+		return result;
 	}
 }
