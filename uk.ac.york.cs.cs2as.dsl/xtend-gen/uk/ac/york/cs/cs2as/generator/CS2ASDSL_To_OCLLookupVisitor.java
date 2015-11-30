@@ -410,6 +410,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         String _xblockexpression_1 = null;
         {
           final StringBuilder sb = new StringBuilder();
+          final List<ElementsContribExp> qualificationConstribs = CollectionLiterals.<ElementsContribExp>newArrayList();
           for (final QualificationDef qualification : qualifications) {
             {
               TypedRefCS _qualifiedClass = qualification.getQualifiedClass();
@@ -419,32 +420,6 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               char _charAt = _lowerCase.charAt(0);
               final String nameParam = (Character.valueOf(_charAt) + "Name");
               StringConcatenation _builder = new StringConcatenation();
-              _builder.append("def : _qualification_env() : ");
-              _builder.append(this.lookupPck, "");
-              _builder.append("::");
-              _builder.append(this.lookupEnv, "");
-              _builder.append(" =");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("let env = ");
-              _builder.append(this.lookupPck, "\t");
-              _builder.append("::");
-              _builder.append(this.lookupEnv, "\t");
-              _builder.append("{}");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("in env");
-              _builder.newLine();
-              _builder.append("\t\t");
-              {
-                EList<ElementsContribExp> _contribution = qualification.getContribution();
-                for(final ElementsContribExp contrib : _contribution) {
-                  String _doSwitch = this.doSwitch(contrib);
-                  _builder.append(_doSwitch, "\t\t");
-                }
-              }
-              _builder.newLineIfNotEmpty();
-              _builder.newLine();
               _builder.append("def : _lookupQualified");
               _builder.append(nClassName, "");
               _builder.append("(");
@@ -478,7 +453,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder.append("\t\t");
               _builder.append("endif");
               _builder.newLine();
-              _builder.append("\t\t");
+              _builder.append("\t");
               _builder.newLine();
               {
                 boolean _notEquals = (!Objects.equal(this.defaultNR, null));
@@ -489,8 +464,38 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               }
               _builder.newLineIfNotEmpty();
               sb.append(_builder);
+              EList<ElementsContribExp> _contribution = qualification.getContribution();
+              qualificationConstribs.addAll(_contribution);
             }
           }
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("def : _qualification_env() : ");
+          _builder.append(this.lookupPck, "");
+          _builder.append("::");
+          _builder.append(this.lookupEnv, "");
+          _builder.append(" =");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t\t");
+          _builder.append("let env = ");
+          _builder.append(this.lookupPck, "\t\t");
+          _builder.append("::");
+          _builder.append(this.lookupEnv, "\t\t");
+          _builder.append("{}");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t\t");
+          _builder.append("in env");
+          _builder.newLine();
+          _builder.append("\t\t\t");
+          {
+            for(final ElementsContribExp contrib : qualificationConstribs) {
+              String _doSwitch = this.doSwitch(contrib);
+              _builder.append(_doSwitch, "\t\t\t");
+              _builder.newLineIfNotEmpty();
+            }
+          }
+          _builder.append("\t");
+          _builder.newLine();
+          sb.append(_builder);
           _xblockexpression_1 = sb.toString();
         }
         _xifexpression = _xblockexpression_1;
@@ -842,7 +847,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("lookup");
       _builder.append(qualifier, "");
-      _builder.append("(segments");
+      _builder.append("(qualifierSegments");
       {
         if ((!isQualifierQualified)) {
           _builder.append("->first()");

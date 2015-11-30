@@ -184,26 +184,32 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			return '';
 		} else {
 			val StringBuilder sb = new StringBuilder();
+			val List<ElementsContribExp> qualificationConstribs = newArrayList(); 
 			for (qualification : qualifications) {
 				val className = qualification.qualifiedClass.doSwitch;
 				val nClassName = className.normalizeString;
 				val nameParam = className.toLowerCase.charAt(0) + "Name";
 				sb.append('''				
-				def : _qualification_env() : «lookupPck»::«lookupEnv» =
-					let env = «lookupPck»::«lookupEnv»{}
-					in env
-						«FOR contrib : qualification.contribution»«contrib.doSwitch»«ENDFOR»
-				
 				def : _lookupQualified«nClassName»(«nameParam» : String) : «className»[?] =
 					let found«nClassName» = _lookup«nClassName»(_qualification_env(), «nameParam»)
 					in  if found«nClassName»->isEmpty()
 						then null
 						else found«nClassName»->first()
 						endif
-						
+					
 				«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, 'Qualified'+nClassName)»«ENDIF»
 				''');
+				qualificationConstribs.addAll(qualification.contribution);
 			}
+			
+			sb.append('''
+			def : _qualification_env() : «lookupPck»::«lookupEnv» =
+					let env = «lookupPck»::«lookupEnv»{}
+					in env
+						«FOR contrib : qualificationConstribs»«contrib.doSwitch»
+						«ENDFOR»
+				
+			''')
 			sb.toString;
 		}
 	}
@@ -302,7 +308,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 				
 		val qualifier = qualifiers.get(0);
 		val isQualifierQualified = element2qualifiers.get(qualifier) != null
-		val qualifierLookup = '''lookup«qualifier»(segments«IF ! isQualifierQualified»->first()«ENDIF»)'''
+		val qualifierLookup = '''lookup«qualifier»(qualifierSegments«IF ! isQualifierQualified»->first()«ENDIF»)'''
 		if (qualifiers.size == 1) {
 			qualifierLookup
 		} else {
