@@ -1048,7 +1048,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExportDef_Contibution()
+  public EReference getExportDef_SelectionDef()
   {
     return (EReference)exportDefEClass.getEStructuralFeatures().get(0);
   }
@@ -1058,7 +1058,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExportDef_OccludingDefs()
+  public EReference getExportDef_ExportedClass()
   {
     return (EReference)exportDefEClass.getEStructuralFeatures().get(1);
   }
@@ -1068,9 +1068,19 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExportDef_SelectionDef()
+  public EReference getExportDef_Contribution()
   {
     return (EReference)exportDefEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExportDef_OccludingDefs()
+  {
+    return (EReference)exportDefEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1279,9 +1289,10 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     selectionDefEClass = createEClass(SELECTION_DEF);
 
     exportDefEClass = createEClass(EXPORT_DEF);
-    createEReference(exportDefEClass, EXPORT_DEF__CONTIBUTION);
-    createEReference(exportDefEClass, EXPORT_DEF__OCCLUDING_DEFS);
     createEReference(exportDefEClass, EXPORT_DEF__SELECTION_DEF);
+    createEReference(exportDefEClass, EXPORT_DEF__EXPORTED_CLASS);
+    createEReference(exportDefEClass, EXPORT_DEF__CONTRIBUTION);
+    createEReference(exportDefEClass, EXPORT_DEF__OCCLUDING_DEFS);
 
     resolveExpCSEClass = createEClass(RESOLVE_EXP_CS);
 
@@ -1438,9 +1449,10 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     initEClass(selectionDefEClass, SelectionDef.class, "SelectionDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(exportDefEClass, ExportDef.class, "ExportDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExportDef_Contibution(), this.getContributionDef(), null, "contibution", null, 0, 1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExportDef_OccludingDefs(), this.getOccludingDef(), null, "occludingDefs", null, 0, -1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExportDef_SelectionDef(), this.getSelectionDef(), null, "selectionDef", null, 0, 1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExportDef_ExportedClass(), theBaseCSPackage.getTypedRefCS(), null, "exportedClass", null, 0, 1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExportDef_Contribution(), this.getContributionDef(), null, "contribution", null, 0, 1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExportDef_OccludingDefs(), this.getOccludingDef(), null, "occludingDefs", null, 0, -1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(resolveExpCSEClass, ResolveExpCS.class, "ResolveExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -267,9 +267,10 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSelectionDefAccess().getExceptionPropertiesAssignment_1_0_2_2_1(), "rule__SelectionDef__ExceptionPropertiesAssignment_1_0_2_2_1");
 					put(grammarAccess.getSelectionDefAccess().getSelectedPropertiesAssignment_1_1_1_0(), "rule__SelectionDef__SelectedPropertiesAssignment_1_1_1_0");
 					put(grammarAccess.getSelectionDefAccess().getSelectedPropertiesAssignment_1_1_1_1_1(), "rule__SelectionDef__SelectedPropertiesAssignment_1_1_1_1_1");
-					put(grammarAccess.getExportDefAccess().getContibutionAssignment_1(), "rule__ExportDef__ContibutionAssignment_1");
-					put(grammarAccess.getExportDefAccess().getOccludingDefsAssignment_2(), "rule__ExportDef__OccludingDefsAssignment_2");
-					put(grammarAccess.getExportDefAccess().getSelectionDefAssignment_3(), "rule__ExportDef__SelectionDefAssignment_3");
+					put(grammarAccess.getExportDefAccess().getSelectionDefAssignment_0(), "rule__ExportDef__SelectionDefAssignment_0");
+					put(grammarAccess.getExportDefAccess().getExportedClassAssignment_2(), "rule__ExportDef__ExportedClassAssignment_2");
+					put(grammarAccess.getExportDefAccess().getContributionAssignment_4(), "rule__ExportDef__ContributionAssignment_4");
+					put(grammarAccess.getExportDefAccess().getOccludingDefsAssignment_5(), "rule__ExportDef__OccludingDefsAssignment_5");
 					put(grammarAccess.getLookupExpCSAccess().getFromExpAssignment_0_1(), "rule__LookupExpCS__FromExpAssignment_0_1");
 					put(grammarAccess.getLookupExpCSAccess().getArgsAssignment_2(), "rule__LookupExpCS__ArgsAssignment_2");
 					put(grammarAccess.getLookupExpCSAccess().getArgsAssignment_3_1(), "rule__LookupExpCS__ArgsAssignment_3_1");

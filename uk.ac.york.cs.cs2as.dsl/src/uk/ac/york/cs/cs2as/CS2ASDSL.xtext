@@ -136,17 +136,17 @@ ContributionDef:
 ;
 
 SelectionDef:
-	'for' 
+	'for'
 	( {SelectionAll} 'all' ('excepting' exceptionProperties+=ExpCS (',' exceptionProperties+=ExpCS)*)?
 	| {SelectionSpecific} (selectedProperties+=ExpCS (',' selectedProperties+=ExpCS)* )
 	)
 ;
 
 ExportDef:
-	'exports' 
-	contibution=ContributionDef
-	occludingDefs+=OccludingDef*
 	selectionDef=SelectionDef?
+	'exports' exportedClass=TypeExpCS
+	'using' contribution=ContributionDef
+	occludingDefs+=OccludingDef*
 ;
 
 /* A primary expression identifies the basic expressions from which more complex expressions may be constructed. */

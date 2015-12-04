@@ -130,12 +130,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectionDef"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExportDef" eSuperTypes="#//ClassNameResolutionStmnt">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contibution" eType="#//ContributionDef"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectionDef" eType="#//SelectionDef"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exportedClass" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//TypedRefCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contribution" eType="#//ContributionDef"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="occludingDefs" upperBound="-1"
         eType="#//OccludingDef" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selectionDef" eType="#//SelectionDef"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResolveExpCS" eSuperTypes="platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"/>
   <eClassifiers xsi:type="ecore:EClass" name="LookupExpCS" eSuperTypes="platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS">

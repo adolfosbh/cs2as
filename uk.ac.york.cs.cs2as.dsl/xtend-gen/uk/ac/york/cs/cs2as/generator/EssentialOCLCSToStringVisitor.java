@@ -292,6 +292,14 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   public String caseLookupExp(final LookupExpCS object) {
     String _xblockexpression = null;
     {
+      String _xifexpression = null;
+      boolean _isFromExp = object.isFromExp();
+      if (_isFromExp) {
+        _xifexpression = "From";
+      } else {
+        _xifexpression = "";
+      }
+      final String lookupOpSuffix = _xifexpression;
       final EList<ExpCS> args = object.getArgs();
       final ExpCS firstArg = args.get(0);
       final ArrayList<ExpCS> remainingArgs = CollectionLiterals.<ExpCS>newArrayList();
@@ -303,6 +311,7 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
       _builder.append("lookup");
       String _doSwitch = this.doSwitch(firstArg);
       _builder.append(_doSwitch, "");
+      _builder.append(lookupOpSuffix, "");
       _builder.append("(");
       {
         for(final ExpCS arg : remainingArgs) {

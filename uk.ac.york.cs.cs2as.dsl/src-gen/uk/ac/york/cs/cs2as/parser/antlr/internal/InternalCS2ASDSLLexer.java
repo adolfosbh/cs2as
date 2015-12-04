@@ -2222,8 +2222,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
     // $ANTLR start "RULE_ESCAPED_CHARACTER"
     public final void mRULE_ESCAPED_CHARACTER() throws RecognitionException {
         try {
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7481:33: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7481:35: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7503:33: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7503:35: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
             {
             match('\\'); 
             if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2247,8 +2247,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
     // $ANTLR start "RULE_LETTER_CHARACTER"
     public final void mRULE_LETTER_CHARACTER() throws RecognitionException {
         try {
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7483:32: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7483:34: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7505:32: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7505:34: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -2273,11 +2273,11 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE_QUOTED_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7485:27: ( '\"' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7485:29: '\"' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7507:27: ( '\"' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7507:29: '\"' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
             {
             match('\"'); 
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7485:33: ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )*
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7507:33: ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )*
             loop1:
             do {
                 int alt1=3;
@@ -2293,14 +2293,14 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7485:34: RULE_ESCAPED_CHARACTER
+            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7507:34: RULE_ESCAPED_CHARACTER
             	    {
             	    mRULE_ESCAPED_CHARACTER(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7485:57: ~ ( ( '\\\\' | '\"' ) )
+            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7507:57: ~ ( ( '\\\\' | '\"' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2337,11 +2337,11 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_SINGLE_QUOTED_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7487:27: ( '\\'' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7487:29: '\\'' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7509:27: ( '\\'' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7509:29: '\\'' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
             {
             match('\''); 
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7487:34: ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )*
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7509:34: ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )*
             loop2:
             do {
                 int alt2=3;
@@ -2357,14 +2357,14 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7487:35: RULE_ESCAPED_CHARACTER
+            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7509:35: RULE_ESCAPED_CHARACTER
             	    {
             	    mRULE_ESCAPED_CHARACTER(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7487:58: ~ ( ( '\\\\' | '\\'' ) )
+            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7509:58: ~ ( ( '\\\\' | '\\'' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2401,12 +2401,12 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_SINGLE_QUOTED_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7489:30: ( '/\\'' ( options {greedy=false; } : . )* '\\'/' )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7489:32: '/\\'' ( options {greedy=false; } : . )* '\\'/'
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7511:30: ( '/\\'' ( options {greedy=false; } : . )* '\\'/' )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7511:32: '/\\'' ( options {greedy=false; } : . )* '\\'/'
             {
             match("/'"); 
 
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7489:38: ( options {greedy=false; } : . )*
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7511:38: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
@@ -2431,7 +2431,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7489:66: .
+            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7511:66: .
             	    {
             	    matchAny(); 
 
@@ -2461,11 +2461,11 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_SIMPLE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7491:16: ( RULE_LETTER_CHARACTER ( RULE_LETTER_CHARACTER | '0' .. '9' )* )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7491:18: RULE_LETTER_CHARACTER ( RULE_LETTER_CHARACTER | '0' .. '9' )*
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7513:16: ( RULE_LETTER_CHARACTER ( RULE_LETTER_CHARACTER | '0' .. '9' )* )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7513:18: RULE_LETTER_CHARACTER ( RULE_LETTER_CHARACTER | '0' .. '9' )*
             {
             mRULE_LETTER_CHARACTER(); 
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7491:40: ( RULE_LETTER_CHARACTER | '0' .. '9' )*
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7513:40: ( RULE_LETTER_CHARACTER | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -2514,8 +2514,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_ESCAPED_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7493:17: ( '_' RULE_SINGLE_QUOTED_STRING )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7493:19: '_' RULE_SINGLE_QUOTED_STRING
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7515:17: ( '_' RULE_SINGLE_QUOTED_STRING )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7515:19: '_' RULE_SINGLE_QUOTED_STRING
             {
             match('_'); 
             mRULE_SINGLE_QUOTED_STRING(); 
@@ -2535,10 +2535,10 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7495:10: ( ( '0' .. '9' )+ )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7495:12: ( '0' .. '9' )+
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7517:10: ( ( '0' .. '9' )+ )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7517:12: ( '0' .. '9' )+
             {
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7495:12: ( '0' .. '9' )+
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7517:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -2552,7 +2552,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7495:13: '0' .. '9'
+            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7517:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2584,12 +2584,12 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7497:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7497:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7519:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7519:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7497:24: ( options {greedy=false; } : . )*
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7519:24: ( options {greedy=false; } : . )*
             loop6:
             do {
                 int alt6=2;
@@ -2614,7 +2614,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7497:52: .
+            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7519:52: .
             	    {
             	    matchAny(); 
 
@@ -2644,12 +2644,12 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7499:17: ( '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7499:19: '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7521:17: ( '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7521:19: '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("--"); 
 
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7499:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7521:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop7:
             do {
                 int alt7=2;
@@ -2662,7 +2662,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7499:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7521:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2682,7 +2682,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7499:40: ( ( '\\r' )? '\\n' )?
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7521:40: ( ( '\\r' )? '\\n' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2691,9 +2691,9 @@ public class InternalCS2ASDSLLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7499:41: ( '\\r' )? '\\n'
+                    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7521:41: ( '\\r' )? '\\n'
                     {
-                    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7499:41: ( '\\r' )?
+                    // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7521:41: ( '\\r' )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -2702,7 +2702,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7499:41: '\\r'
+                            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7521:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2734,10 +2734,10 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7501:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7501:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7523:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7523:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7501:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7523:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt10=0;
             loop10:
             do {
@@ -2791,8 +2791,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7503:16: ( . )
-            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7503:18: .
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7525:16: ( . )
+            // ../uk.ac.york.cs.cs2as.dsl/src-gen/uk/ac/york/cs/cs2as/parser/antlr/internal/InternalCS2ASDSL.g:7525:18: .
             {
             matchAny(); 
 

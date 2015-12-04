@@ -1020,13 +1020,31 @@ public interface Cs2as_dslPackage extends EPackage
   int EXPORT_DEF = 24;
 
   /**
-   * The feature id for the '<em><b>Contibution</b></em>' containment reference.
+   * The feature id for the '<em><b>Selection Def</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPORT_DEF__CONTIBUTION = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 0;
+  int EXPORT_DEF__SELECTION_DEF = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Exported Class</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPORT_DEF__EXPORTED_CLASS = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Contribution</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPORT_DEF__CONTRIBUTION = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Occluding Defs</b></em>' containment reference list.
@@ -1035,16 +1053,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPORT_DEF__OCCLUDING_DEFS = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Selection Def</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPORT_DEF__SELECTION_DEF = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 2;
+  int EXPORT_DEF__OCCLUDING_DEFS = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Export Def</em>' class.
@@ -1053,7 +1062,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPORT_DEF_FEATURE_COUNT = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 3;
+  int EXPORT_DEF_FEATURE_COUNT = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ResolveExpCSImpl <em>Resolve Exp CS</em>}' class.
@@ -2152,15 +2161,37 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getExportDef();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getContibution <em>Contibution</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getSelectionDef <em>Selection Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Contibution</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getContibution()
+   * @return the meta object for the containment reference '<em>Selection Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getSelectionDef()
    * @see #getExportDef()
    * @generated
    */
-  EReference getExportDef_Contibution();
+  EReference getExportDef_SelectionDef();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getExportedClass <em>Exported Class</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exported Class</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getExportedClass()
+   * @see #getExportDef()
+   * @generated
+   */
+  EReference getExportDef_ExportedClass();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getContribution <em>Contribution</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Contribution</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getContribution()
+   * @see #getExportDef()
+   * @generated
+   */
+  EReference getExportDef_Contribution();
 
   /**
    * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getOccludingDefs <em>Occluding Defs</em>}'.
@@ -2172,17 +2203,6 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    */
   EReference getExportDef_OccludingDefs();
-
-  /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getSelectionDef <em>Selection Def</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Selection Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef#getSelectionDef()
-   * @see #getExportDef()
-   * @generated
-   */
-  EReference getExportDef_SelectionDef();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS <em>Resolve Exp CS</em>}'.
@@ -2918,12 +2938,28 @@ public interface Cs2as_dslPackage extends EPackage
     EClass EXPORT_DEF = eINSTANCE.getExportDef();
 
     /**
-     * The meta object literal for the '<em><b>Contibution</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Selection Def</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPORT_DEF__CONTIBUTION = eINSTANCE.getExportDef_Contibution();
+    EReference EXPORT_DEF__SELECTION_DEF = eINSTANCE.getExportDef_SelectionDef();
+
+    /**
+     * The meta object literal for the '<em><b>Exported Class</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPORT_DEF__EXPORTED_CLASS = eINSTANCE.getExportDef_ExportedClass();
+
+    /**
+     * The meta object literal for the '<em><b>Contribution</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPORT_DEF__CONTRIBUTION = eINSTANCE.getExportDef_Contribution();
 
     /**
      * The meta object literal for the '<em><b>Occluding Defs</b></em>' containment reference list feature.
@@ -2932,14 +2968,6 @@ public interface Cs2as_dslPackage extends EPackage
      * @generated
      */
     EReference EXPORT_DEF__OCCLUDING_DEFS = eINSTANCE.getExportDef_OccludingDefs();
-
-    /**
-     * The meta object literal for the '<em><b>Selection Def</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPORT_DEF__SELECTION_DEF = eINSTANCE.getExportDef_SelectionDef();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ResolveExpCSImpl <em>Resolve Exp CS</em>}' class.

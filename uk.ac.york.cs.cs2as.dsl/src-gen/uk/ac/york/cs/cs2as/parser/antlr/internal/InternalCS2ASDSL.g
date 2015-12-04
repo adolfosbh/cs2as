@@ -2023,23 +2023,63 @@ ruleExportDef returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='exports' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getExportDefAccess().getExportsKeyword_0());
-    }
-(
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExportDefAccess().getContibutionContributionDefParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getExportDefAccess().getSelectionDefSelectionDefParserRuleCall_0_0()); 
 	    }
-		lv_contibution_1_0=ruleContributionDef		{
+		lv_selectionDef_0_0=ruleSelectionDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getExportDefRule());
 	        }
        		set(
        			$current, 
-       			"contibution",
-        		lv_contibution_1_0, 
+       			"selectionDef",
+        		lv_selectionDef_0_0, 
+        		"SelectionDef");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?	otherlv_1='exports' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getExportDefAccess().getExportsKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getExportDefAccess().getExportedClassTypeExpCSParserRuleCall_2_0()); 
+	    }
+		lv_exportedClass_2_0=ruleTypeExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getExportDefRule());
+	        }
+       		set(
+       			$current, 
+       			"exportedClass",
+        		lv_exportedClass_2_0, 
+        		"TypeExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3='using' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getExportDefAccess().getUsingKeyword_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getExportDefAccess().getContributionContributionDefParserRuleCall_4_0()); 
+	    }
+		lv_contribution_4_0=ruleContributionDef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getExportDefRule());
+	        }
+       		set(
+       			$current, 
+       			"contribution",
+        		lv_contribution_4_0, 
         		"ContributionDef");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2048,40 +2088,22 @@ ruleExportDef returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExportDefAccess().getOccludingDefsOccludingDefParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getExportDefAccess().getOccludingDefsOccludingDefParserRuleCall_5_0()); 
 	    }
-		lv_occludingDefs_2_0=ruleOccludingDef		{
+		lv_occludingDefs_5_0=ruleOccludingDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getExportDefRule());
 	        }
        		add(
        			$current, 
        			"occludingDefs",
-        		lv_occludingDefs_2_0, 
+        		lv_occludingDefs_5_0, 
         		"OccludingDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getExportDefAccess().getSelectionDefSelectionDefParserRuleCall_3_0()); 
-	    }
-		lv_selectionDef_3_0=ruleSelectionDef		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getExportDefRule());
-	        }
-       		set(
-       			$current, 
-       			"selectionDef",
-        		lv_selectionDef_3_0, 
-        		"SelectionDef");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)?)
+)*)
 ;
 
 

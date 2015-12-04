@@ -99,9 +99,10 @@
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//SelectionDef"/>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ExportDef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportDef/contibution"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportDef/occludingDefs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportDef/selectionDef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportDef/exportedClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportDef/contribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportDef/occludingDefs"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ResolveExpCS"/>
     <genClasses ecoreClass="CS2ASDSL.ecore#//LookupExpCS">

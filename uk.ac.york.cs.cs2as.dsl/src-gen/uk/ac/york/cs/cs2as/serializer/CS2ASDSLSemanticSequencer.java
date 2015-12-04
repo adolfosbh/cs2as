@@ -583,7 +583,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (contibution=ContributionDef occludingDefs+=OccludingDef* selectionDef=SelectionDef?)
+	 *     (selectionDef=SelectionDef? exportedClass=TypeExpCS contribution=ContributionDef occludingDefs+=OccludingDef*)
 	 */
 	protected void sequence_ExportDef(EObject context, ExportDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
