@@ -17,12 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
-
+import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,8 +33,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl#getContibution <em>Contibution</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl#getOccludingDefs <em>Occluding Defs</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl#isAcceptingAll <em>Accepting All</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl#getAcceptingElement <em>Accepting Element</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl#getSelectionDef <em>Selection Def</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,14 +41,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 public class ExportDefImpl extends ClassNameResolutionStmntImpl implements ExportDef
 {
   /**
-   * The cached value of the '{@link #getContibution() <em>Contibution</em>}' containment reference list.
+   * The cached value of the '{@link #getContibution() <em>Contibution</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getContibution()
    * @generated
    * @ordered
    */
-  protected EList<ElementsContribExp> contibution;
+  protected ContributionDef contibution;
 
   /**
    * The cached value of the '{@link #getOccludingDefs() <em>Occluding Defs</em>}' containment reference list.
@@ -63,34 +61,14 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
   protected EList<OccludingDef> occludingDefs;
 
   /**
-   * The default value of the '{@link #isAcceptingAll() <em>Accepting All</em>}' attribute.
+   * The cached value of the '{@link #getSelectionDef() <em>Selection Def</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isAcceptingAll()
+   * @see #getSelectionDef()
    * @generated
    * @ordered
    */
-  protected static final boolean ACCEPTING_ALL_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isAcceptingAll() <em>Accepting All</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isAcceptingAll()
-   * @generated
-   * @ordered
-   */
-  protected boolean acceptingAll = ACCEPTING_ALL_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getAcceptingElement() <em>Accepting Element</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAcceptingElement()
-   * @generated
-   * @ordered
-   */
-  protected ExpCS acceptingElement;
+  protected SelectionDef selectionDef;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,13 +96,47 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ElementsContribExp> getContibution()
+  public ContributionDef getContibution()
   {
-    if (contibution == null)
-    {
-      contibution = new EObjectContainmentEList<ElementsContribExp>(ElementsContribExp.class, this, Cs2as_dslPackage.EXPORT_DEF__CONTIBUTION);
-    }
     return contibution;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetContibution(ContributionDef newContibution, NotificationChain msgs)
+  {
+    ContributionDef oldContibution = contibution;
+    contibution = newContibution;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__CONTIBUTION, oldContibution, newContibution);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContibution(ContributionDef newContibution)
+  {
+    if (newContibution != contibution)
+    {
+      NotificationChain msgs = null;
+      if (contibution != null)
+        msgs = ((InternalEObject)contibution).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.EXPORT_DEF__CONTIBUTION, null, msgs);
+      if (newContibution != null)
+        msgs = ((InternalEObject)newContibution).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.EXPORT_DEF__CONTIBUTION, null, msgs);
+      msgs = basicSetContibution(newContibution, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__CONTIBUTION, newContibution, newContibution));
   }
 
   /**
@@ -146,9 +158,9 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isAcceptingAll()
+  public SelectionDef getSelectionDef()
   {
-    return acceptingAll;
+    return selectionDef;
   }
 
   /**
@@ -156,36 +168,13 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAcceptingAll(boolean newAcceptingAll)
+  public NotificationChain basicSetSelectionDef(SelectionDef newSelectionDef, NotificationChain msgs)
   {
-    boolean oldAcceptingAll = acceptingAll;
-    acceptingAll = newAcceptingAll;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ALL, oldAcceptingAll, acceptingAll));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ExpCS getAcceptingElement()
-  {
-    return acceptingElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAcceptingElement(ExpCS newAcceptingElement, NotificationChain msgs)
-  {
-    ExpCS oldAcceptingElement = acceptingElement;
-    acceptingElement = newAcceptingElement;
+    SelectionDef oldSelectionDef = selectionDef;
+    selectionDef = newSelectionDef;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ELEMENT, oldAcceptingElement, newAcceptingElement);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF, oldSelectionDef, newSelectionDef);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -196,20 +185,20 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAcceptingElement(ExpCS newAcceptingElement)
+  public void setSelectionDef(SelectionDef newSelectionDef)
   {
-    if (newAcceptingElement != acceptingElement)
+    if (newSelectionDef != selectionDef)
     {
       NotificationChain msgs = null;
-      if (acceptingElement != null)
-        msgs = ((InternalEObject)acceptingElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ELEMENT, null, msgs);
-      if (newAcceptingElement != null)
-        msgs = ((InternalEObject)newAcceptingElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ELEMENT, null, msgs);
-      msgs = basicSetAcceptingElement(newAcceptingElement, msgs);
+      if (selectionDef != null)
+        msgs = ((InternalEObject)selectionDef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF, null, msgs);
+      if (newSelectionDef != null)
+        msgs = ((InternalEObject)newSelectionDef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF, null, msgs);
+      msgs = basicSetSelectionDef(newSelectionDef, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ELEMENT, newAcceptingElement, newAcceptingElement));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF, newSelectionDef, newSelectionDef));
   }
 
   /**
@@ -223,11 +212,11 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
     switch (featureID)
     {
       case Cs2as_dslPackage.EXPORT_DEF__CONTIBUTION:
-        return ((InternalEList<?>)getContibution()).basicRemove(otherEnd, msgs);
+        return basicSetContibution(null, msgs);
       case Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS:
         return ((InternalEList<?>)getOccludingDefs()).basicRemove(otherEnd, msgs);
-      case Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ELEMENT:
-        return basicSetAcceptingElement(null, msgs);
+      case Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF:
+        return basicSetSelectionDef(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -246,10 +235,8 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
         return getContibution();
       case Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS:
         return getOccludingDefs();
-      case Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ALL:
-        return isAcceptingAll();
-      case Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ELEMENT:
-        return getAcceptingElement();
+      case Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF:
+        return getSelectionDef();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -266,18 +253,14 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
     switch (featureID)
     {
       case Cs2as_dslPackage.EXPORT_DEF__CONTIBUTION:
-        getContibution().clear();
-        getContibution().addAll((Collection<? extends ElementsContribExp>)newValue);
+        setContibution((ContributionDef)newValue);
         return;
       case Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS:
         getOccludingDefs().clear();
         getOccludingDefs().addAll((Collection<? extends OccludingDef>)newValue);
         return;
-      case Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ALL:
-        setAcceptingAll((Boolean)newValue);
-        return;
-      case Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ELEMENT:
-        setAcceptingElement((ExpCS)newValue);
+      case Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF:
+        setSelectionDef((SelectionDef)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -294,16 +277,13 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
     switch (featureID)
     {
       case Cs2as_dslPackage.EXPORT_DEF__CONTIBUTION:
-        getContibution().clear();
+        setContibution((ContributionDef)null);
         return;
       case Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS:
         getOccludingDefs().clear();
         return;
-      case Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ALL:
-        setAcceptingAll(ACCEPTING_ALL_EDEFAULT);
-        return;
-      case Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ELEMENT:
-        setAcceptingElement((ExpCS)null);
+      case Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF:
+        setSelectionDef((SelectionDef)null);
         return;
     }
     super.eUnset(featureID);
@@ -320,32 +300,13 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
     switch (featureID)
     {
       case Cs2as_dslPackage.EXPORT_DEF__CONTIBUTION:
-        return contibution != null && !contibution.isEmpty();
+        return contibution != null;
       case Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS:
         return occludingDefs != null && !occludingDefs.isEmpty();
-      case Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ALL:
-        return acceptingAll != ACCEPTING_ALL_EDEFAULT;
-      case Cs2as_dslPackage.EXPORT_DEF__ACCEPTING_ELEMENT:
-        return acceptingElement != null;
+      case Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF:
+        return selectionDef != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (acceptingAll: ");
-    result.append(acceptingAll);
-    result.append(')');
-    return result.toString();
   }
 
 } //ExportDefImpl

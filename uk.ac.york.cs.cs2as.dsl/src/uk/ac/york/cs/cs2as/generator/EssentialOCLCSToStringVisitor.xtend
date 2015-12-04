@@ -16,6 +16,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.NavigatingArgCS
 import org.eclipse.ocl.xtext.essentialoclcs.NestedExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.TypeNameExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.StringLiteralExpCS
+import org.eclipse.ocl.xtext.essentialoclcs.InvalidLiteralExpCS
 
 class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 
@@ -82,6 +83,10 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	
 	override caseNullLiteralExpCS(NullLiteralExpCS object) {
 		'null';
+	}
+	
+	override caseInvalidLiteralExpCS(InvalidLiteralExpCS object) {
+		'invalid';
 	}
 	
 	override caseStringLiteralExpCS(StringLiteralExpCS object) {

@@ -86,12 +86,13 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP: return createElementsContribExp();
       case Cs2as_dslPackage.SCOPE_DEF: return createScopeDef();
       case Cs2as_dslPackage.OCCLUDING_DEF: return createOccludingDef();
-      case Cs2as_dslPackage.PROPAGATION_DEF: return createPropagationDef();
+      case Cs2as_dslPackage.CONTRIBUTION_DEF: return createContributionDef();
+      case Cs2as_dslPackage.SELECTION_DEF: return createSelectionDef();
       case Cs2as_dslPackage.EXPORT_DEF: return createExportDef();
       case Cs2as_dslPackage.RESOLVE_EXP_CS: return createResolveExpCS();
       case Cs2as_dslPackage.LOOKUP_EXP_CS: return createLookupExpCS();
-      case Cs2as_dslPackage.PROPAGATION_ALL: return createPropagationAll();
-      case Cs2as_dslPackage.PROPAGATION_SELECTIVE: return createPropagationSelective();
+      case Cs2as_dslPackage.SELECTION_ALL: return createSelectionAll();
+      case Cs2as_dslPackage.SELECTION_SPECIFIC: return createSelectionSpecific();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -344,10 +345,21 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public PropagationDef createPropagationDef()
+  public ContributionDef createContributionDef()
   {
-    PropagationDefImpl propagationDef = new PropagationDefImpl();
-    return propagationDef;
+    ContributionDefImpl contributionDef = new ContributionDefImpl();
+    return contributionDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SelectionDef createSelectionDef()
+  {
+    SelectionDefImpl selectionDef = new SelectionDefImpl();
+    return selectionDef;
   }
 
   /**
@@ -388,10 +400,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public PropagationAll createPropagationAll()
+  public SelectionAll createSelectionAll()
   {
-    PropagationAllImpl propagationAll = new PropagationAllImpl();
-    return propagationAll;
+    SelectionAllImpl selectionAll = new SelectionAllImpl();
+    return selectionAll;
   }
 
   /**
@@ -399,10 +411,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public PropagationSelective createPropagationSelective()
+  public SelectionSpecific createSelectionSpecific()
   {
-    PropagationSelectiveImpl propagationSelective = new PropagationSelectiveImpl();
-    return propagationSelective;
+    SelectionSpecificImpl selectionSpecific = new SelectionSpecificImpl();
+    return selectionSpecific;
   }
 
   /**

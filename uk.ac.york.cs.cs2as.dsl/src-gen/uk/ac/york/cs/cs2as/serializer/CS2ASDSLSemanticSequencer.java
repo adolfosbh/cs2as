@@ -71,6 +71,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef;
@@ -85,12 +86,12 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.PropagationAll;
-import uk.ac.york.cs.cs2as.cs2as_dsl.PropagationSelective;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
 import uk.ac.york.cs.cs2as.services.CS2ASDSLGrammarAccess;
 
 @SuppressWarnings("all")
@@ -220,6 +221,9 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case Cs2as_dslPackage.CLASS_NAME_RESOLUTION:
 				sequence_ClassNameResolution(context, (ClassNameResolution) semanticObject); 
 				return; 
+			case Cs2as_dslPackage.CONTRIBUTION_DEF:
+				sequence_ContributionDef(context, (ContributionDef) semanticObject); 
+				return; 
 			case Cs2as_dslPackage.DEFAULT_NAME_REFERENCER_DEF:
 				sequence_DefaultNameReferencerDef(context, (DefaultNameReferencerDef) semanticObject); 
 				return; 
@@ -259,12 +263,6 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case Cs2as_dslPackage.OCCLUDING_DEF:
 				sequence_OccludingDef(context, (OccludingDef) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.PROPAGATION_ALL:
-				sequence_PropagationDef(context, (PropagationAll) semanticObject); 
-				return; 
-			case Cs2as_dslPackage.PROPAGATION_SELECTIVE:
-				sequence_PropagationDef(context, (PropagationSelective) semanticObject); 
-				return; 
 			case Cs2as_dslPackage.PROPERTY_MAP:
 				sequence_PropertyMap(context, (PropertyMap) semanticObject); 
 				return; 
@@ -276,6 +274,12 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 				return; 
 			case Cs2as_dslPackage.SCOPE_DEF:
 				sequence_ScopeDef(context, (ScopeDef) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.SELECTION_ALL:
+				sequence_SelectionDef(context, (SelectionAll) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.SELECTION_SPECIFIC:
+				sequence_SelectionDef(context, (SelectionSpecific) semanticObject); 
 				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == EssentialOCLCSPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
@@ -495,6 +499,15 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (contributions+=ElementsContribExp contributions+=ElementsContribExp*)
+	 */
+	protected void sequence_ContributionDef(EObject context, ContributionDef semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (nameReferencer=SIMPLE_ID nameProperty=NameExpCS)
 	 */
 	protected void sequence_DefaultNameReferencerDef(EObject context, DefaultNameReferencerDef semanticObject) {
@@ -561,7 +574,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (following?='following'? expression=ExpCS typeFilter=TypeExpCS?)
+	 *     ((isFollowing?='following' | isImported?='imported'?)? expression=ExpCS)
 	 */
 	protected void sequence_ElementsContribExp(EObject context, ElementsContribExp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -570,7 +583,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (contibution+=ElementsContribExp contibution+=ElementsContribExp* occludingDefs+=OccludingDef* (acceptingAll?='all' | acceptingElement=ExpCS)?)
+	 *     (contibution=ContributionDef occludingDefs+=OccludingDef* selectionDef=SelectionDef?)
 	 */
 	protected void sequence_ExportDef(EObject context, ExportDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -657,28 +670,17 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (contibution+=ElementsContribExp contibution+=ElementsContribExp*)
+	 *     contribution=ContributionDef
 	 */
 	protected void sequence_OccludingDef(EObject context, OccludingDef semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (exceptionProperties+=ExpCS?)
-	 */
-	protected void sequence_PropagationDef(EObject context, PropagationAll semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (propagatingProperties+=ExpCS propagatingProperties+=ExpCS*)
-	 */
-	protected void sequence_PropagationDef(EObject context, PropagationSelective semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.OCCLUDING_DEF__CONTRIBUTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.OCCLUDING_DEF__CONTRIBUTION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getOccludingDefAccess().getContributionContributionDefParserRuleCall_1_0(), semanticObject.getContribution());
+		feeder.finish();
 	}
 	
 	
@@ -712,15 +714,32 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (
-	 *         sameScope?='same-scope'? 
+	 *         selectionDef=SelectionDef? 
+	 *         (sameScope?='same-scope' | emptyScope?='empty-scope')? 
 	 *         alsoExports?='also-exports'? 
-	 *         contibution+=ElementsContribExp 
-	 *         contibution+=ElementsContribExp* 
-	 *         occludingDefs+=OccludingDef* 
-	 *         propagationDef=PropagationDef?
+	 *         contribution=ContributionDef 
+	 *         occludingDefs+=OccludingDef*
 	 *     )
 	 */
 	protected void sequence_ScopeDef(EObject context, ScopeDef semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((exceptionProperties+=ExpCS exceptionProperties+=ExpCS*)?)
+	 */
+	protected void sequence_SelectionDef(EObject context, SelectionAll semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (selectedProperties+=ExpCS selectedProperties+=ExpCS*)
+	 */
+	protected void sequence_SelectionDef(EObject context, SelectionSpecific semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

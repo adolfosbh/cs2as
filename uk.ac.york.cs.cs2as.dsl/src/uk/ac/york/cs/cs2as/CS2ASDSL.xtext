@@ -116,32 +116,37 @@ QualificationDef:
 ;
 	
 ElementsContribExp:
-	(following?='following')? expression=ExpCS ('['typeFilter=TypeExpCS']')? 
+	(isFollowing?='following' | isImported?='imported'?)? expression=ExpCS 
 ;
 
 ScopeDef:
-	('new-scope' | sameScope?='same-scope')?
+	selectionDef=SelectionDef?
+	('nested-scope' | sameScope?='same-scope' | emptyScope?='empty-scope')?
 	(alsoExports?='also-exports')?
-	contibution+=ElementsContribExp (',' contibution+=ElementsContribExp)*
+	contribution=ContributionDef
 	occludingDefs+=OccludingDef*
-	propagationDef=PropagationDef? 
 ;
 
 OccludingDef:
-	'occluding' contibution+=ElementsContribExp (',' contibution+=ElementsContribExp)* 
+	'occluding' contribution=ContributionDef 
 ;
 
-PropagationDef:
+ContributionDef:
+	contributions+=ElementsContribExp (',' contributions+=ElementsContribExp)* 
+;
+
+SelectionDef:
 	'for' 
-	( {PropagationAll} 'all-children' ('excepting' exceptionProperties+=ExpCS)?
-	| {PropagationSelective} (propagatingProperties+=ExpCS (',' propagatingProperties+=ExpCS)* )
+	( {SelectionAll} 'all' ('excepting' exceptionProperties+=ExpCS (',' exceptionProperties+=ExpCS)*)?
+	| {SelectionSpecific} (selectedProperties+=ExpCS (',' selectedProperties+=ExpCS)* )
 	)
 ;
 
 ExportDef:
-	'exports' contibution+=ElementsContribExp (',' contibution+=ElementsContribExp)*
-	 occludingDefs+=OccludingDef*
-	('to' (acceptingAll?='all' | acceptingElement=ExpCS))?
+	'exports' 
+	contibution=ContributionDef
+	occludingDefs+=OccludingDef*
+	selectionDef=SelectionDef?
 ;
 
 /* A primary expression identifies the basic expressions from which more complex expressions may be constructed. */

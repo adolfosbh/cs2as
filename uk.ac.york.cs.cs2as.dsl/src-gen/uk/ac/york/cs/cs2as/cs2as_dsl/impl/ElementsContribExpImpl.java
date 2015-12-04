@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
-
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
@@ -26,9 +24,9 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl#isFollowing <em>Following</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl#isIsFollowing <em>Is Following</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl#isIsImported <em>Is Imported</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl#getTypeFilter <em>Type Filter</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,24 +34,44 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
 public class ElementsContribExpImpl extends MinimalEObjectImpl.Container implements ElementsContribExp
 {
   /**
-   * The default value of the '{@link #isFollowing() <em>Following</em>}' attribute.
+   * The default value of the '{@link #isIsFollowing() <em>Is Following</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isFollowing()
+   * @see #isIsFollowing()
    * @generated
    * @ordered
    */
-  protected static final boolean FOLLOWING_EDEFAULT = false;
+  protected static final boolean IS_FOLLOWING_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isFollowing() <em>Following</em>}' attribute.
+   * The cached value of the '{@link #isIsFollowing() <em>Is Following</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isFollowing()
+   * @see #isIsFollowing()
    * @generated
    * @ordered
    */
-  protected boolean following = FOLLOWING_EDEFAULT;
+  protected boolean isFollowing = IS_FOLLOWING_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsImported() <em>Is Imported</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsImported()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_IMPORTED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsImported() <em>Is Imported</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsImported()
+   * @generated
+   * @ordered
+   */
+  protected boolean isImported = IS_IMPORTED_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
@@ -64,16 +82,6 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
    * @ordered
    */
   protected ExpCS expression;
-
-  /**
-   * The cached value of the '{@link #getTypeFilter() <em>Type Filter</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypeFilter()
-   * @generated
-   * @ordered
-   */
-  protected TypedRefCS typeFilter;
 
   /**
    * <!-- begin-user-doc -->
@@ -101,9 +109,9 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isFollowing()
+  public boolean isIsFollowing()
   {
-    return following;
+    return isFollowing;
   }
 
   /**
@@ -111,12 +119,35 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFollowing(boolean newFollowing)
+  public void setIsFollowing(boolean newIsFollowing)
   {
-    boolean oldFollowing = following;
-    following = newFollowing;
+    boolean oldIsFollowing = isFollowing;
+    isFollowing = newIsFollowing;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__FOLLOWING, oldFollowing, following));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_FOLLOWING, oldIsFollowing, isFollowing));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isIsImported()
+  {
+    return isImported;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIsImported(boolean newIsImported)
+  {
+    boolean oldIsImported = isImported;
+    isImported = newIsImported;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_IMPORTED, oldIsImported, isImported));
   }
 
   /**
@@ -172,54 +203,6 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypedRefCS getTypeFilter()
-  {
-    return typeFilter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTypeFilter(TypedRefCS newTypeFilter, NotificationChain msgs)
-  {
-    TypedRefCS oldTypeFilter = typeFilter;
-    typeFilter = newTypeFilter;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__TYPE_FILTER, oldTypeFilter, newTypeFilter);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTypeFilter(TypedRefCS newTypeFilter)
-  {
-    if (newTypeFilter != typeFilter)
-    {
-      NotificationChain msgs = null;
-      if (typeFilter != null)
-        msgs = ((InternalEObject)typeFilter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__TYPE_FILTER, null, msgs);
-      if (newTypeFilter != null)
-        msgs = ((InternalEObject)newTypeFilter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__TYPE_FILTER, null, msgs);
-      msgs = basicSetTypeFilter(newTypeFilter, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__TYPE_FILTER, newTypeFilter, newTypeFilter));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -227,8 +210,6 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
     {
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__EXPRESSION:
         return basicSetExpression(null, msgs);
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__TYPE_FILTER:
-        return basicSetTypeFilter(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -243,12 +224,12 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__FOLLOWING:
-        return isFollowing();
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_FOLLOWING:
+        return isIsFollowing();
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_IMPORTED:
+        return isIsImported();
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__EXPRESSION:
         return getExpression();
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__TYPE_FILTER:
-        return getTypeFilter();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -263,14 +244,14 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__FOLLOWING:
-        setFollowing((Boolean)newValue);
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_FOLLOWING:
+        setIsFollowing((Boolean)newValue);
+        return;
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_IMPORTED:
+        setIsImported((Boolean)newValue);
         return;
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__EXPRESSION:
         setExpression((ExpCS)newValue);
-        return;
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__TYPE_FILTER:
-        setTypeFilter((TypedRefCS)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -286,14 +267,14 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__FOLLOWING:
-        setFollowing(FOLLOWING_EDEFAULT);
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_FOLLOWING:
+        setIsFollowing(IS_FOLLOWING_EDEFAULT);
+        return;
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_IMPORTED:
+        setIsImported(IS_IMPORTED_EDEFAULT);
         return;
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__EXPRESSION:
         setExpression((ExpCS)null);
-        return;
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__TYPE_FILTER:
-        setTypeFilter((TypedRefCS)null);
         return;
     }
     super.eUnset(featureID);
@@ -309,12 +290,12 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__FOLLOWING:
-        return following != FOLLOWING_EDEFAULT;
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_FOLLOWING:
+        return isFollowing != IS_FOLLOWING_EDEFAULT;
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_IMPORTED:
+        return isImported != IS_IMPORTED_EDEFAULT;
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__EXPRESSION:
         return expression != null;
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__TYPE_FILTER:
-        return typeFilter != null;
     }
     return super.eIsSet(featureID);
   }
@@ -330,8 +311,10 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (following: ");
-    result.append(following);
+    result.append(" (isFollowing: ");
+    result.append(isFollowing);
+    result.append(", isImported: ");
+    result.append(isImported);
     result.append(')');
     return result.toString();
   }

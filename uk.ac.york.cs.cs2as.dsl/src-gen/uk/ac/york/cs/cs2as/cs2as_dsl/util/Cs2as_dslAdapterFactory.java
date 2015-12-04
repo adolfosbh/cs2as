@@ -199,9 +199,14 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createOccludingDefAdapter();
       }
       @Override
-      public Adapter casePropagationDef(PropagationDef object)
+      public Adapter caseContributionDef(ContributionDef object)
       {
-        return createPropagationDefAdapter();
+        return createContributionDefAdapter();
+      }
+      @Override
+      public Adapter caseSelectionDef(SelectionDef object)
+      {
+        return createSelectionDefAdapter();
       }
       @Override
       public Adapter caseExportDef(ExportDef object)
@@ -219,14 +224,14 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createLookupExpCSAdapter();
       }
       @Override
-      public Adapter casePropagationAll(PropagationAll object)
+      public Adapter caseSelectionAll(SelectionAll object)
       {
-        return createPropagationAllAdapter();
+        return createSelectionAllAdapter();
       }
       @Override
-      public Adapter casePropagationSelective(PropagationSelective object)
+      public Adapter caseSelectionSpecific(SelectionSpecific object)
       {
-        return createPropagationSelectiveAdapter();
+        return createSelectionSpecificAdapter();
       }
       @Override
       public Adapter caseVisitableCS(VisitableCS object)
@@ -631,16 +636,31 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropagationDef <em>Propagation Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef <em>Contribution Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropagationDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef
    * @generated
    */
-  public Adapter createPropagationDefAdapter()
+  public Adapter createContributionDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef <em>Selection Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
+   * @generated
+   */
+  public Adapter createSelectionDefAdapter()
   {
     return null;
   }
@@ -691,31 +711,31 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropagationAll <em>Propagation All</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll <em>Selection All</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropagationAll
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll
    * @generated
    */
-  public Adapter createPropagationAllAdapter()
+  public Adapter createSelectionAllAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropagationSelective <em>Propagation Selective</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific <em>Selection Specific</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropagationSelective
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific
    * @generated
    */
-  public Adapter createPropagationSelectiveAdapter()
+  public Adapter createSelectionSpecificAdapter()
   {
     return null;
   }

@@ -2,8 +2,6 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef#getContibution <em>Contibution</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef#getContribution <em>Contribution</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getOccludingDef()
@@ -25,19 +23,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface OccludingDef extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Contibution</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp}.
+   * Returns the value of the '<em><b>Contribution</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Contibution</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Contribution</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Contibution</em>' containment reference list.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getOccludingDef_Contibution()
+   * @return the value of the '<em>Contribution</em>' containment reference.
+   * @see #setContribution(ContributionDef)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getOccludingDef_Contribution()
    * @model containment="true"
    * @generated
    */
-  EList<ElementsContribExp> getContibution();
+  ContributionDef getContribution();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef#getContribution <em>Contribution</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Contribution</em>' containment reference.
+   * @see #getContribution()
+   * @generated
+   */
+  void setContribution(ContributionDef value);
 
 } // OccludingDef

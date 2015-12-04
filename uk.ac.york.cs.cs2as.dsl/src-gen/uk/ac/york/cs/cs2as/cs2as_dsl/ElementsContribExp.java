@@ -4,8 +4,6 @@ package uk.ac.york.cs.cs2as.cs2as_dsl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
-
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 /**
@@ -17,9 +15,9 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isFollowing <em>Following</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsFollowing <em>Is Following</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsImported <em>Is Imported</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#getExpression <em>Expression</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#getTypeFilter <em>Type Filter</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getElementsContribExp()
@@ -29,30 +27,56 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 public interface ElementsContribExp extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Following</b></em>' attribute.
+   * Returns the value of the '<em><b>Is Following</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Following</em>' attribute isn't clear,
+   * If the meaning of the '<em>Is Following</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Following</em>' attribute.
-   * @see #setFollowing(boolean)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getElementsContribExp_Following()
+   * @return the value of the '<em>Is Following</em>' attribute.
+   * @see #setIsFollowing(boolean)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getElementsContribExp_IsFollowing()
    * @model
    * @generated
    */
-  boolean isFollowing();
+  boolean isIsFollowing();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isFollowing <em>Following</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsFollowing <em>Is Following</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Following</em>' attribute.
-   * @see #isFollowing()
+   * @param value the new value of the '<em>Is Following</em>' attribute.
+   * @see #isIsFollowing()
    * @generated
    */
-  void setFollowing(boolean value);
+  void setIsFollowing(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Imported</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Is Imported</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Imported</em>' attribute.
+   * @see #setIsImported(boolean)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getElementsContribExp_IsImported()
+   * @model
+   * @generated
+   */
+  boolean isIsImported();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsImported <em>Is Imported</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Imported</em>' attribute.
+   * @see #isIsImported()
+   * @generated
+   */
+  void setIsImported(boolean value);
 
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.
@@ -79,31 +103,5 @@ public interface ElementsContribExp extends EObject
    * @generated
    */
   void setExpression(ExpCS value);
-
-  /**
-   * Returns the value of the '<em><b>Type Filter</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Type Filter</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Filter</em>' containment reference.
-   * @see #setTypeFilter(TypedRefCS)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getElementsContribExp_TypeFilter()
-   * @model containment="true"
-   * @generated
-   */
-  TypedRefCS getTypeFilter();
-
-  /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#getTypeFilter <em>Type Filter</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Filter</em>' containment reference.
-   * @see #getTypeFilter()
-   * @generated
-   */
-  void setTypeFilter(TypedRefCS value);
 
 } // ElementsContribExp

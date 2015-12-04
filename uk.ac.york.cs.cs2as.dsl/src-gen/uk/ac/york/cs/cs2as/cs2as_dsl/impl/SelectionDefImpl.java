@@ -7,23 +7,23 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.PropagationDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Propagation Def</b></em>'.
+ * An implementation of the model object '<em><b>Selection Def</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class PropagationDefImpl extends MinimalEObjectImpl.Container implements PropagationDef
+public class SelectionDefImpl extends MinimalEObjectImpl.Container implements SelectionDef
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PropagationDefImpl()
+  protected SelectionDefImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class PropagationDefImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return Cs2as_dslPackage.Literals.PROPAGATION_DEF;
+    return Cs2as_dslPackage.Literals.SELECTION_DEF;
   }
 
-} //PropagationDefImpl
+} //SelectionDefImpl

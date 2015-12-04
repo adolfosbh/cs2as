@@ -253,10 +253,17 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.PROPAGATION_DEF:
+      case Cs2as_dslPackage.CONTRIBUTION_DEF:
       {
-        PropagationDef propagationDef = (PropagationDef)theEObject;
-        T result = casePropagationDef(propagationDef);
+        ContributionDef contributionDef = (ContributionDef)theEObject;
+        T result = caseContributionDef(contributionDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.SELECTION_DEF:
+      {
+        SelectionDef selectionDef = (SelectionDef)theEObject;
+        T result = caseSelectionDef(selectionDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -294,19 +301,19 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.PROPAGATION_ALL:
+      case Cs2as_dslPackage.SELECTION_ALL:
       {
-        PropagationAll propagationAll = (PropagationAll)theEObject;
-        T result = casePropagationAll(propagationAll);
-        if (result == null) result = casePropagationDef(propagationAll);
+        SelectionAll selectionAll = (SelectionAll)theEObject;
+        T result = caseSelectionAll(selectionAll);
+        if (result == null) result = caseSelectionDef(selectionAll);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.PROPAGATION_SELECTIVE:
+      case Cs2as_dslPackage.SELECTION_SPECIFIC:
       {
-        PropagationSelective propagationSelective = (PropagationSelective)theEObject;
-        T result = casePropagationSelective(propagationSelective);
-        if (result == null) result = casePropagationDef(propagationSelective);
+        SelectionSpecific selectionSpecific = (SelectionSpecific)theEObject;
+        T result = caseSelectionSpecific(selectionSpecific);
+        if (result == null) result = caseSelectionDef(selectionSpecific);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -667,17 +674,33 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Propagation Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Contribution Def</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Propagation Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Contribution Def</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePropagationDef(PropagationDef object)
+  public T caseContributionDef(ContributionDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Selection Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Selection Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSelectionDef(SelectionDef object)
   {
     return null;
   }
@@ -731,33 +754,33 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Propagation All</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Selection All</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Propagation All</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Selection All</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePropagationAll(PropagationAll object)
+  public T caseSelectionAll(SelectionAll object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Propagation Selective</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Selection Specific</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Propagation Selective</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Selection Specific</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePropagationSelective(PropagationSelective object)
+  public T caseSelectionSpecific(SelectionSpecific object)
   {
     return null;
   }

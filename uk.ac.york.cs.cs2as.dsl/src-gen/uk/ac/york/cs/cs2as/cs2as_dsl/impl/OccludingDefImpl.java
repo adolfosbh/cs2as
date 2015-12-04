@@ -2,22 +2,17 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
+import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 
 /**
@@ -28,7 +23,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.OccludingDefImpl#getContibution <em>Contibution</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.OccludingDefImpl#getContribution <em>Contribution</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,14 +31,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 public class OccludingDefImpl extends MinimalEObjectImpl.Container implements OccludingDef
 {
   /**
-   * The cached value of the '{@link #getContibution() <em>Contibution</em>}' containment reference list.
+   * The cached value of the '{@link #getContribution() <em>Contribution</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContibution()
+   * @see #getContribution()
    * @generated
    * @ordered
    */
-  protected EList<ElementsContribExp> contibution;
+  protected ContributionDef contribution;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +66,47 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ElementsContribExp> getContibution()
+  public ContributionDef getContribution()
   {
-    if (contibution == null)
+    return contribution;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetContribution(ContributionDef newContribution, NotificationChain msgs)
+  {
+    ContributionDef oldContribution = contribution;
+    contribution = newContribution;
+    if (eNotificationRequired())
     {
-      contibution = new EObjectContainmentEList<ElementsContribExp>(ElementsContribExp.class, this, Cs2as_dslPackage.OCCLUDING_DEF__CONTIBUTION);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION, oldContribution, newContribution);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return contibution;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContribution(ContributionDef newContribution)
+  {
+    if (newContribution != contribution)
+    {
+      NotificationChain msgs = null;
+      if (contribution != null)
+        msgs = ((InternalEObject)contribution).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION, null, msgs);
+      if (newContribution != null)
+        msgs = ((InternalEObject)newContribution).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION, null, msgs);
+      msgs = basicSetContribution(newContribution, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION, newContribution, newContribution));
   }
 
   /**
@@ -90,8 +119,8 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.OCCLUDING_DEF__CONTIBUTION:
-        return ((InternalEList<?>)getContibution()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION:
+        return basicSetContribution(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +135,8 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.OCCLUDING_DEF__CONTIBUTION:
-        return getContibution();
+      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION:
+        return getContribution();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,15 +146,13 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.OCCLUDING_DEF__CONTIBUTION:
-        getContibution().clear();
-        getContibution().addAll((Collection<? extends ElementsContribExp>)newValue);
+      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION:
+        setContribution((ContributionDef)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +168,8 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.OCCLUDING_DEF__CONTIBUTION:
-        getContibution().clear();
+      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION:
+        setContribution((ContributionDef)null);
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +185,8 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.OCCLUDING_DEF__CONTIBUTION:
-        return contibution != null && !contibution.isEmpty();
+      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION:
+        return contribution != null;
     }
     return super.eIsSet(featureID);
   }

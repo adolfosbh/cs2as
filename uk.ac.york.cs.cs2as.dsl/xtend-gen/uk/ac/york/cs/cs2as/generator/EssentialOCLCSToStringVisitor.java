@@ -10,6 +10,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.CurlyBracketedClauseCS;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.IfExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.InfixExpCS;
+import org.eclipse.ocl.xtext.essentialoclcs.InvalidLiteralExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.NavigatingArgCS;
 import org.eclipse.ocl.xtext.essentialoclcs.NestedExpCS;
@@ -253,6 +254,11 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   @Override
   public String caseNullLiteralExpCS(final NullLiteralExpCS object) {
     return "null";
+  }
+  
+  @Override
+  public String caseInvalidLiteralExpCS(final InvalidLiteralExpCS object) {
+    return "invalid";
   }
   
   @Override

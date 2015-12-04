@@ -13,11 +13,12 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getSelectionDef <em>Selection Def</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isSameScope <em>Same Scope</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isEmptyScope <em>Empty Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isAlsoExports <em>Also Exports</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getContibution <em>Contibution</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getContribution <em>Contribution</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getOccludingDefs <em>Occluding Defs</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getPropagationDef <em>Propagation Def</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef()
@@ -26,6 +27,32 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ScopeDef extends ClassNameResolutionStmnt
 {
+  /**
+   * Returns the value of the '<em><b>Selection Def</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Selection Def</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Selection Def</em>' containment reference.
+   * @see #setSelectionDef(SelectionDef)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_SelectionDef()
+   * @model containment="true"
+   * @generated
+   */
+  SelectionDef getSelectionDef();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getSelectionDef <em>Selection Def</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Selection Def</em>' containment reference.
+   * @see #getSelectionDef()
+   * @generated
+   */
+  void setSelectionDef(SelectionDef value);
+
   /**
    * Returns the value of the '<em><b>Same Scope</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -51,6 +78,32 @@ public interface ScopeDef extends ClassNameResolutionStmnt
    * @generated
    */
   void setSameScope(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Empty Scope</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Empty Scope</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Empty Scope</em>' attribute.
+   * @see #setEmptyScope(boolean)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_EmptyScope()
+   * @model
+   * @generated
+   */
+  boolean isEmptyScope();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isEmptyScope <em>Empty Scope</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Empty Scope</em>' attribute.
+   * @see #isEmptyScope()
+   * @generated
+   */
+  void setEmptyScope(boolean value);
 
   /**
    * Returns the value of the '<em><b>Also Exports</b></em>' attribute.
@@ -79,20 +132,30 @@ public interface ScopeDef extends ClassNameResolutionStmnt
   void setAlsoExports(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Contibution</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp}.
+   * Returns the value of the '<em><b>Contribution</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Contibution</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Contribution</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Contibution</em>' containment reference list.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_Contibution()
+   * @return the value of the '<em>Contribution</em>' containment reference.
+   * @see #setContribution(ContributionDef)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_Contribution()
    * @model containment="true"
    * @generated
    */
-  EList<ElementsContribExp> getContibution();
+  ContributionDef getContribution();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getContribution <em>Contribution</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Contribution</em>' containment reference.
+   * @see #getContribution()
+   * @generated
+   */
+  void setContribution(ContributionDef value);
 
   /**
    * Returns the value of the '<em><b>Occluding Defs</b></em>' containment reference list.
@@ -109,31 +172,5 @@ public interface ScopeDef extends ClassNameResolutionStmnt
    * @generated
    */
   EList<OccludingDef> getOccludingDefs();
-
-  /**
-   * Returns the value of the '<em><b>Propagation Def</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Propagation Def</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Propagation Def</em>' containment reference.
-   * @see #setPropagationDef(PropagationDef)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_PropagationDef()
-   * @model containment="true"
-   * @generated
-   */
-  PropagationDef getPropagationDef();
-
-  /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getPropagationDef <em>Propagation Def</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Propagation Def</em>' containment reference.
-   * @see #getPropagationDef()
-   * @generated
-   */
-  void setPropagationDef(PropagationDef value);
 
 } // ScopeDef

@@ -17,39 +17,39 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.PropagationAll;
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Propagation All</b></em>'.
+ * An implementation of the model object '<em><b>Selection Specific</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropagationAllImpl#getExceptionProperties <em>Exception Properties</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SelectionSpecificImpl#getSelectedProperties <em>Selected Properties</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PropagationAllImpl extends PropagationDefImpl implements PropagationAll
+public class SelectionSpecificImpl extends SelectionDefImpl implements SelectionSpecific
 {
   /**
-   * The cached value of the '{@link #getExceptionProperties() <em>Exception Properties</em>}' containment reference list.
+   * The cached value of the '{@link #getSelectedProperties() <em>Selected Properties</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExceptionProperties()
+   * @see #getSelectedProperties()
    * @generated
    * @ordered
    */
-  protected EList<ExpCS> exceptionProperties;
+  protected EList<ExpCS> selectedProperties;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PropagationAllImpl()
+  protected SelectionSpecificImpl()
   {
     super();
   }
@@ -62,7 +62,7 @@ public class PropagationAllImpl extends PropagationDefImpl implements Propagatio
   @Override
   protected EClass eStaticClass()
   {
-    return Cs2as_dslPackage.Literals.PROPAGATION_ALL;
+    return Cs2as_dslPackage.Literals.SELECTION_SPECIFIC;
   }
 
   /**
@@ -70,13 +70,13 @@ public class PropagationAllImpl extends PropagationDefImpl implements Propagatio
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ExpCS> getExceptionProperties()
+  public EList<ExpCS> getSelectedProperties()
   {
-    if (exceptionProperties == null)
+    if (selectedProperties == null)
     {
-      exceptionProperties = new EObjectContainmentEList<ExpCS>(ExpCS.class, this, Cs2as_dslPackage.PROPAGATION_ALL__EXCEPTION_PROPERTIES);
+      selectedProperties = new EObjectContainmentEList<ExpCS>(ExpCS.class, this, Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES);
     }
-    return exceptionProperties;
+    return selectedProperties;
   }
 
   /**
@@ -89,8 +89,8 @@ public class PropagationAllImpl extends PropagationDefImpl implements Propagatio
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.PROPAGATION_ALL__EXCEPTION_PROPERTIES:
-        return ((InternalEList<?>)getExceptionProperties()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
+        return ((InternalEList<?>)getSelectedProperties()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -105,8 +105,8 @@ public class PropagationAllImpl extends PropagationDefImpl implements Propagatio
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.PROPAGATION_ALL__EXCEPTION_PROPERTIES:
-        return getExceptionProperties();
+      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
+        return getSelectedProperties();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -122,9 +122,9 @@ public class PropagationAllImpl extends PropagationDefImpl implements Propagatio
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.PROPAGATION_ALL__EXCEPTION_PROPERTIES:
-        getExceptionProperties().clear();
-        getExceptionProperties().addAll((Collection<? extends ExpCS>)newValue);
+      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
+        getSelectedProperties().clear();
+        getSelectedProperties().addAll((Collection<? extends ExpCS>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,8 +140,8 @@ public class PropagationAllImpl extends PropagationDefImpl implements Propagatio
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.PROPAGATION_ALL__EXCEPTION_PROPERTIES:
-        getExceptionProperties().clear();
+      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
+        getSelectedProperties().clear();
         return;
     }
     super.eUnset(featureID);
@@ -157,10 +157,10 @@ public class PropagationAllImpl extends PropagationDefImpl implements Propagatio
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.PROPAGATION_ALL__EXCEPTION_PROPERTIES:
-        return exceptionProperties != null && !exceptionProperties.isEmpty();
+      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
+        return selectedProperties != null && !selectedProperties.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //PropagationAllImpl
+} //SelectionSpecificImpl

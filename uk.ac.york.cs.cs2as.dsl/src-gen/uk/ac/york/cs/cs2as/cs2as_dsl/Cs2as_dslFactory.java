@@ -221,13 +221,22 @@ public interface Cs2as_dslFactory extends EFactory
   OccludingDef createOccludingDef();
 
   /**
-   * Returns a new object of class '<em>Propagation Def</em>'.
+   * Returns a new object of class '<em>Contribution Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Propagation Def</em>'.
+   * @return a new object of class '<em>Contribution Def</em>'.
    * @generated
    */
-  PropagationDef createPropagationDef();
+  ContributionDef createContributionDef();
+
+  /**
+   * Returns a new object of class '<em>Selection Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Selection Def</em>'.
+   * @generated
+   */
+  SelectionDef createSelectionDef();
 
   /**
    * Returns a new object of class '<em>Export Def</em>'.
@@ -257,22 +266,22 @@ public interface Cs2as_dslFactory extends EFactory
   LookupExpCS createLookupExpCS();
 
   /**
-   * Returns a new object of class '<em>Propagation All</em>'.
+   * Returns a new object of class '<em>Selection All</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Propagation All</em>'.
+   * @return a new object of class '<em>Selection All</em>'.
    * @generated
    */
-  PropagationAll createPropagationAll();
+  SelectionAll createSelectionAll();
 
   /**
-   * Returns a new object of class '<em>Propagation Selective</em>'.
+   * Returns a new object of class '<em>Selection Specific</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Propagation Selective</em>'.
+   * @return a new object of class '<em>Selection Specific</em>'.
    * @generated
    */
-  PropagationSelective createPropagationSelective();
+  SelectionSpecific createSelectionSpecific();
 
   /**
    * Returns the package supported by this factory.

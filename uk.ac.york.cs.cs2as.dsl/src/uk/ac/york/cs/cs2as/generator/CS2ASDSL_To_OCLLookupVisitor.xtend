@@ -10,8 +10,11 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp
 import uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef
-import uk.ac.york.cs.cs2as.cs2as_dsl.PropagationAll
-import uk.ac.york.cs.cs2as.cs2as_dsl.PropagationSelective
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll
+import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
 
 class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 
@@ -23,7 +26,8 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	String defaultNE;	// named element
 	String defaultNEP;	// named element property
 	Map<String, List<String>> element2qualifiers;
-	Map<String, ScopeDef> feaName2contributions;
+	Map<String, ScopeDef> feaName2scopes = newHashMap();
+	Map<String, ExportDef> feaName2exports = newHashMap();
 	
 	/**
 	 * default name referencer
@@ -58,7 +62,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		sourcePckName = object.csDecl.metamodels.get(0).name; // FIXME this a temporal workaround
 		targetPckName = object.asDecl.metamodels.get(0).name;
 		element2qualifiers = computeQualifiers(object.nameresoSect)
-		feaName2contributions = computeFeatName2Contribs(object.nameresoSect);
+		computeFeatName2Contribs(object.nameresoSect,feaName2scopes, feaName2exports);
 		defaultNE = object.nameresoSect.namedElement.nameElement;
 		defaultNEP = object.nameresoSect.namedElement.nameProperty.doSwitch;
 		defaultNR = object.nameresoSect.nameReferencer.nameReferencer;
@@ -93,6 +97,9 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		
 		def : _env(child : OclElement) : «lookupPck»::«lookupEnv» =
 			parentEnv()
+			
+		def : _exported_env(from : OclElement) : «lookupPck»::«lookupEnv» =
+			«lookupPck»::«lookupEnv» { }
 			
 		def : parentEnv() : «lookupPck»::«lookupEnv» =
 			let parent = oclContainer() in if parent = null then «lookupPck»::«lookupEnv» { } else parent._env(self) endif
@@ -141,24 +148,31 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		return result;
 	}
 	
-	def private computeFeatName2Contribs(NameResolutionSect nrSect) {
+	def private computeFeatName2Contribs(NameResolutionSect nrSect, Map<String,ScopeDef> scopes, Map<String,ExportDef> exports ) {
 		
-		val Map<String,ScopeDef> result = newHashMap();
 		for (nameReso : nrSect.nameResolutions) {
 			val className = nameReso.class_.doSwitch;
-			for (statmnt : nameReso.statements.filter(typeof(ScopeDef))) {
-				val propagation =  statmnt.propagationDef;
-				if (propagation instanceof PropagationSelective) {
-					for (property : propagation.propagatingProperties) {
-						result.put('''«className»::«property.doSwitch»''', statmnt);
-					}
-				} else {
-					result.put('''«className»::«ALL_CHILDREN»''', statmnt);	
+			for (statmnt : nameReso.statements) {
+				if (statmnt instanceof ScopeDef) {
+					addStatement2Map(statmnt, scopes, statmnt.selectionDef, className)	
+				} else if (statmnt instanceof ExportDef) {
+					addStatement2Map(statmnt, exports, statmnt.selectionDef, className)
 				}
 			}
 		}
-		return result;
 	}
+	
+	def private <Def extends ClassNameResolutionStmnt> addStatement2Map (Def statmnt, Map<String, Def> result, SelectionDef selection, String className) {
+		
+		if (selection instanceof SelectionSpecific) {
+			for (property : selection.selectedProperties) {
+				result.put('''«className»::«property.doSwitch»''', statmnt);
+			}
+		} else {
+			result.put('''«className»::«ALL_CHILDREN»''', statmnt);	
+		}
+	}	
+
 	
 	override caseNameResolutionSect(NameResolutionSect object) {
 		
@@ -168,13 +182,13 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	}
 	
 	override caseClassNameResolution(ClassNameResolution object) {
-		val noScopeDef = object.statements.filter(typeof(ScopeDef)).empty
+		val containsExports = ! object.statements.filter(ExportDef).empty;
 		'''
+			
 		context «object.class_.doSwitch»
 		«FOR statement : object.statements.filter(NamedElementDef)»«statement.doSwitch»«ENDFOR»
-		
-		def : _env(child : ocl::OclElement) : «lookupPck»::«lookupEnv» =
-			«IF noScopeDef»parentEnv()«ELSE»«provideEnvMethod(object)»«ENDIF»
+		«provideEnvMethod(object)»
+		«IF containsExports»«provideExportedEnvMethod(object)»«ENDIF»
 		'''
 	}
 		
@@ -189,55 +203,75 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 				val className = qualification.qualifiedClass.doSwitch;
 				val nClassName = className.normalizeString;
 				val nameParam = className.toLowerCase.charAt(0) + "Name";
-				sb.append('''				
+				sb.append('''
+					
 				def : _lookupQualified«nClassName»(«nameParam» : String) : «className»[?] =
-					let found«nClassName» = _lookup«nClassName»(_qualification_env(), «nameParam»)
+					let found«nClassName» = _lookup«nClassName»(_qualified_env(), «nameParam»)
 					in  if found«nClassName»->isEmpty()
 						then null
 						else found«nClassName»->first()
 						endif
-					
 				«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, 'Qualified'+nClassName)»«ENDIF»
 				''');
 				qualificationConstribs.addAll(qualification.contribution);
 			}
-			
-			sb.append('''
-			def : _qualification_env() : «lookupPck»::«lookupEnv» =
+
+			if (! qualificationConstribs.empty) {
+				sb.append('''
+					
+				def : _qualified_env() : «lookupPck»::«lookupEnv» =
 					let env = «lookupPck»::«lookupEnv»{}
 					in env
 						«FOR contrib : qualificationConstribs»«contrib.doSwitch»
 						«ENDFOR»
-				
-			''')
+				''')	
+			}	
+			
 			sb.toString;
 		}
 	}
 	
 	override caseElementsContribExp(ElementsContribExp object) {
-		val typeFilter = if (object.typeFilter == null) '' else '''->selectByKind(«object.typeFilter.doSwitch»)''' ; 
+		//val typeFilter = if (object.typeFilter == null) '' else '''->selectByKind(«object.typeFilter.doSwitch»)''' ; 
 		if (object.isFollowing) {
-			val scopeDef = object.eContainer as ScopeDef;
-			val property = (scopeDef.propagationDef as PropagationSelective).propagatingProperties.get(0); // FIXME I'm assuming too much
+			val scopeDef = object.eContainer.eContainer as ScopeDef;
+			val property = (scopeDef.selectionDef as SelectionSpecific).selectedProperties.get(0); // FIXME I'm assuming too much
 			val propertyName = property.doSwitch;
-			'''.addElements(«propertyName»->select(x | self.«propertyName»->indexOf(x) < self.«propertyName»->indexOf(child)))'''
+			'''.addElements(«object.expression.doSwitch»->select(x | self.«propertyName»->indexOf(x) < self.«propertyName»->indexOf(child)))'''
 		} else {
-			'''.addElements(«object.expression.doSwitch»)«typeFilter»''';	
-		}
-		
+			val exportEnvCall = if (object.isIsImported)  '._exported_env(self).namedElements' else '';
+			'''.addElements(«object.expression.doSwitch»«exportEnvCall»)''';
+		} 
 	}
 	
 	override caseScopeDef(ScopeDef object) {
-		val openScope = if (object.sameScope) '' else '.nestedEnv()'
+		val scope = if (object.emptyScope)
+						'''
+						let env = «lookupPck»::«lookupEnv»
+						in env'''
+					else {
+						val openScope = if (object.sameScope) '' else '.nestedEnv()';
+						 '''parentEnv()«openScope»'''
+					}  
+		 
 		'''
-			parentEnv()«openScope»
-				«FOR contrib : object.contibution»«contrib.doSwitch»«ENDFOR»
+			«scope»
+				«object.contribution.doSwitch»
 		''';
 	}
 	
 	override caseExportDef(ExportDef object) {
 		'''
-		-- Exports TODO
+		let env = «lookupPck»::«lookupEnv» {}
+		in env
+			«object.contibution.doSwitch»
+		'''
+	}
+	
+	override caseContributionDef(ContributionDef object) {
+		'''
+		«FOR contrib : object.contributions»«contrib.doSwitch»
+		«ENDFOR»
 		''';
 	}
 	
@@ -316,40 +350,60 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			'''
 			let «letVar» = «qualifierLookup»
 			in if «letVar» = null
-			then «provideQualfiersLookupQuery(qualifiers.subList(1,qualifiers.size-1))» 
-			else «letVar» 
+			   then «provideQualfiersLookupQuery(qualifiers.subList(1,qualifiers.size))» 
+			   else «letVar» 
+			   endif
 			'''
 		}
 	}
-	
-
-
-
 	
 	def private String provideEnvMethod(ClassNameResolution nameReso) {
 		
 		var String allChildrenName = null;
 		val List<String> featureNames = newArrayList();
-		
 		val className = nameReso.class_.doSwitch;
-		val i = 0;
 		for (statmnt : nameReso.statements.filter(typeof(ScopeDef))) {
-			val propagation = statmnt.propagationDef;
-			if (propagation instanceof PropagationSelective) {
-				for (property : propagation.propagatingProperties) {
+			val propagation = statmnt.selectionDef;
+			if (propagation instanceof SelectionSpecific) {
+				for (property : propagation.selectedProperties) {
 					featureNames.add('''«className»::«property.doSwitch»''');	
 				}
 			}
-			if (propagation == null || propagation instanceof PropagationAll) {
+			if (propagation == null || propagation instanceof SelectionAll) {
 				allChildrenName = '''«className»::«ALL_CHILDREN»''';
 			}
 		}
-	
-		provideContributionsQuery(featureNames, allChildrenName, nameReso);
-		
+		'''
+		def : _env(child : ocl::OclElement) : «lookupPck»::«lookupEnv» =
+			«provideScopeContributionsQuery(featureNames, allChildrenName, nameReso)»
+		''';
 	}
 	
-	def private String provideContributionsQuery(List<String> featureNames, String allChildrenName, ClassNameResolution nameReso) {
+	// FIXME refactpr
+	def private String provideExportedEnvMethod(ClassNameResolution nameReso) {
+		
+		var String allChildrenName = null;
+		val List<String> featureNames = newArrayList();
+		val className = nameReso.class_.doSwitch;
+		for (statmnt : nameReso.statements.filter(typeof(ExportDef))) {
+			val propagation = statmnt.selectionDef;
+			if (propagation instanceof SelectionSpecific) {
+				for (property : propagation.selectedProperties) {
+					featureNames.add('''«className»::«property.doSwitch»''');	
+				}
+			}
+			if (propagation == null || propagation instanceof SelectionAll) {
+				allChildrenName = '''«className»::«ALL_CHILDREN»''';
+			}
+		}
+		
+		'''
+		def : _exported_env(from : ocl::OclElement) : «lookupPck»::«lookupEnv» =
+			«provideExportsContributionsQuery(featureNames, allChildrenName,nameReso)»
+		'''
+	}
+	
+	def private String provideScopeContributionsQuery(List<String> featureNames, String allChildrenName, ClassNameResolution nameReso) {
 				
 		val featuresSize = featureNames.size;
 		
@@ -358,20 +412,46 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			if (allChildrenName == null) {
 				'''parentEnv()''';
 			} else {
-				feaName2contributions.get(allChildrenName).doSwitch	
+				val scopeDef = feaName2scopes.get(allChildrenName);
+				val selectionDef =  scopeDef.selectionDef as SelectionAll;
+				val exceptProps = if (selectionDef != null) selectionDef.exceptionProperties else null;
+				if (selectionDef == null || exceptProps.isEmpty) {
+					scopeDef.doSwitch;
+				} else {
+					'''
+					if not («FOR exceptProp : exceptProps»«IF exceptProps.indexOf(exceptProp)>0»and «ENDIF»«exceptProp.doSwitch»->includes(child)
+					   «ENDFOR»)
+					then «scopeDef.doSwitch»
+					else parentEnv()
+					endif
+					''';	
+				}
 			}
 		} else {
 			val featureName = featureNames.get(0);
-			val scopeDef = feaName2contributions.get(featureName);
+			val scopeDef = feaName2scopes.get(featureName);
 			val residualFeaNames = if (featureNames.size ==1) newArrayList() else featureNames.subList(1,featuresSize-1);
-			// TODO single/multiple containment feature
 			'''
-			if «featureName.split("::").get(1)»->includes(child)	 
+			if «featureName.split("::").get(1)»->includes(child)
 			then «scopeDef.doSwitch»
-			else «provideContributionsQuery(residualFeaNames, allChildrenName, nameReso)»
+			else «provideScopeContributionsQuery(residualFeaNames, allChildrenName, nameReso)»
 			endif
 			''';
 		}
+	}
+	
+	def private String provideExportsContributionsQuery(List<String> featureNames, String allChildrenName, ClassNameResolution nameReso) {
+				
+		// TODO include SelectionSpecific bits
+		
+		val allChildrenExpression = if (allChildrenName == null) {
+				'''''';
+			} else {
+				feaName2exports.get(allChildrenName).doSwitch	
+			}
+		'''
+		«allChildrenExpression»
+		'''
 	}
 	
 	def private String getElementReferenerType() {
