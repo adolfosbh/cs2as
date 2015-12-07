@@ -82,6 +82,7 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION: return createClassNameResolution();
       case Cs2as_dslPackage.CLASS_NAME_RESOLUTION_STMNT: return createClassNameResolutionStmnt();
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF: return createNamedElementDef();
+      case Cs2as_dslPackage.FILTER_DEF: return createFilterDef();
       case Cs2as_dslPackage.QUALIFICATION_DEF: return createQualificationDef();
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP: return createElementsContribExp();
       case Cs2as_dslPackage.SCOPE_DEF: return createScopeDef();
@@ -89,6 +90,9 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.CONTRIBUTION_DEF: return createContributionDef();
       case Cs2as_dslPackage.SELECTION_DEF: return createSelectionDef();
       case Cs2as_dslPackage.EXPORT_DEF: return createExportDef();
+      case Cs2as_dslPackage.HELPERS_SECT: return createHelpersSect();
+      case Cs2as_dslPackage.CLASS_HELPER: return createClassHelper();
+      case Cs2as_dslPackage.HELPER_DEF: return createHelperDef();
       case Cs2as_dslPackage.RESOLVE_EXP_CS: return createResolveExpCS();
       case Cs2as_dslPackage.LOOKUP_EXP_CS: return createLookupExpCS();
       case Cs2as_dslPackage.SELECTION_ALL: return createSelectionAll();
@@ -301,6 +305,17 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
+  public FilterDef createFilterDef()
+  {
+    FilterDefImpl filterDef = new FilterDefImpl();
+    return filterDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public QualificationDef createQualificationDef()
   {
     QualificationDefImpl qualificationDef = new QualificationDefImpl();
@@ -371,6 +386,39 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
   {
     ExportDefImpl exportDef = new ExportDefImpl();
     return exportDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HelpersSect createHelpersSect()
+  {
+    HelpersSectImpl helpersSect = new HelpersSectImpl();
+    return helpersSect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClassHelper createClassHelper()
+  {
+    ClassHelperImpl classHelper = new ClassHelperImpl();
+    return classHelper;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HelperDef createHelperDef()
+  {
+    HelperDefImpl helperDef = new HelperDefImpl();
+    return helperDef;
   }
 
   /**

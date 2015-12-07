@@ -5,9 +5,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.xtext.basecs.ImportCS;
+import org.eclipse.ocl.xtext.basecs.MultiplicityCS;
 import org.eclipse.ocl.xtext.basecs.PathElementCS;
 import org.eclipse.ocl.xtext.basecs.PathElementWithURICS;
 import org.eclipse.ocl.xtext.basecs.PathNameCS;
+import org.eclipse.ocl.xtext.basecs.PrimitiveTypeRefCS;
 import org.eclipse.ocl.xtext.basecs.util.BaseCSSwitch;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
@@ -88,5 +90,25 @@ public class BaseCSToStringVisitor extends BaseCSSwitch<String> {
   @Override
   public String casePathElementWithURICS(final PathElementWithURICS object) {
     return object.getUri();
+  }
+  
+  @Override
+  public String casePrimitiveTypeRefCS(final PrimitiveTypeRefCS object) {
+    String _xblockexpression = null;
+    {
+      final MultiplicityCS mult = object.getOwnedMultiplicity();
+      StringConcatenation _builder = new StringConcatenation();
+      String _name = object.getName();
+      _builder.append(_name, "");
+      {
+        boolean _notEquals = (!Objects.equal(mult, null));
+        if (_notEquals) {
+          String _doSwitch = this.doSwitch(mult);
+          _builder.append(_doSwitch, "");
+        }
+      }
+      _xblockexpression = _builder.toString();
+    }
+    return _xblockexpression;
   }
 }

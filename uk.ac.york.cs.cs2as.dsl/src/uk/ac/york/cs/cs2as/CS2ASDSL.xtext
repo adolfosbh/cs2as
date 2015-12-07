@@ -11,7 +11,11 @@ Model:
 	csDecl=CSDecl
 	asDecl=ASDecl
 	
-	(mappingSect=MappingSect & disambiguationSect=DisambiguationSect & nameresoSect=NameResolutionSect )
+	(mappingSect=MappingSect 
+	& disambiguationSect=DisambiguationSect? 
+	& nameresoSect=NameResolutionSect?
+	& helpersSect=HelpersSect?
+	)
 	
 ;
 
@@ -108,7 +112,12 @@ ClassNameResolutionStmnt:
 NamedElementDef:
 	{NamedElementDef}
 	'named-element' ('name-property' namePoperty=NameExpCS)? 
-	('qualifying' qualification+=QualificationDef (',' qualification+=QualificationDef)*)?
+	filter=FilterDef?
+	('qualifying' qualifications+=QualificationDef (',' qualifications+=QualificationDef)*)?
+;
+
+FilterDef:
+	'filtered' ('by' params+=ParameterDef (',' params+=ParameterDef)* )? 'when' expression=ExpCS
 ;
 
 QualificationDef:
@@ -149,6 +158,34 @@ ExportDef:
 	occludingDefs+=OccludingDef*
 ;
 
+HelpersSect:
+	{HelpersSect}
+	'helpers' '{'
+		classHelpers+=ClassHelper*
+	'}'
+;
+
+ClassHelper:
+	context=PathNameCS '{'
+		helpers+=HelperDef*
+	'}'
+	
+;
+
+// Similar to Complete OCL definitions
+HelperDef:
+	(ownedSignature=TemplateSignatureCS)?
+	name=UnrestrictedName 
+	'(' (params+=ParameterDef (',' params+=ParameterDef)*)? ')' (':' ownedType=TypeExpCS)?
+	':=' helperBody=ExpCS
+	';'
+;
+
+ParameterDef returns base::ParameterCS:
+	name=UnrestrictedName ':' ownedType=TypeExpCS;
+
+
+	
 /* A primary expression identifies the basic expressions from which more complex expressions may be constructed. */
 PrimaryExpCS returns essentialocl::ExpCS:
 	NestedExpCS

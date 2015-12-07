@@ -185,6 +185,15 @@ public interface Cs2as_dslFactory extends EFactory
   NamedElementDef createNamedElementDef();
 
   /**
+   * Returns a new object of class '<em>Filter Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Filter Def</em>'.
+   * @generated
+   */
+  FilterDef createFilterDef();
+
+  /**
    * Returns a new object of class '<em>Qualification Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -246,6 +255,33 @@ public interface Cs2as_dslFactory extends EFactory
    * @generated
    */
   ExportDef createExportDef();
+
+  /**
+   * Returns a new object of class '<em>Helpers Sect</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Helpers Sect</em>'.
+   * @generated
+   */
+  HelpersSect createHelpersSect();
+
+  /**
+   * Returns a new object of class '<em>Class Helper</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Helper</em>'.
+   * @generated
+   */
+  ClassHelper createClassHelper();
+
+  /**
+   * Returns a new object of class '<em>Helper Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Helper Def</em>'.
+   * @generated
+   */
+  HelperDef createHelperDef();
 
   /**
    * Returns a new object of class '<em>Resolve Exp CS</em>'.

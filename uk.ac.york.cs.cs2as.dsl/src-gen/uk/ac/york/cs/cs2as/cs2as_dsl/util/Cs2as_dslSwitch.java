@@ -224,6 +224,13 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Cs2as_dslPackage.FILTER_DEF:
+      {
+        FilterDef filterDef = (FilterDef)theEObject;
+        T result = caseFilterDef(filterDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Cs2as_dslPackage.QUALIFICATION_DEF:
       {
         QualificationDef qualificationDef = (QualificationDef)theEObject;
@@ -272,6 +279,27 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         ExportDef exportDef = (ExportDef)theEObject;
         T result = caseExportDef(exportDef);
         if (result == null) result = caseClassNameResolutionStmnt(exportDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.HELPERS_SECT:
+      {
+        HelpersSect helpersSect = (HelpersSect)theEObject;
+        T result = caseHelpersSect(helpersSect);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.CLASS_HELPER:
+      {
+        ClassHelper classHelper = (ClassHelper)theEObject;
+        T result = caseClassHelper(classHelper);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.HELPER_DEF:
+      {
+        HelperDef helperDef = (HelperDef)theEObject;
+        T result = caseHelperDef(helperDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -610,6 +638,22 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Filter Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Filter Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFilterDef(FilterDef object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Qualification Def</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -717,6 +761,54 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExportDef(ExportDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Helpers Sect</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Helpers Sect</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHelpersSect(HelpersSect object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Class Helper</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Class Helper</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClassHelper(ClassHelper object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Helper Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Helper Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHelperDef(HelperDef object)
   {
     return null;
   }

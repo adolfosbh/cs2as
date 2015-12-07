@@ -10,6 +10,7 @@ import org.eclipse.ocl.xtext.basecs.BaseCSPackage;
 import org.eclipse.ocl.xtext.basecs.ImportCS;
 import org.eclipse.ocl.xtext.basecs.MultiplicityBoundsCS;
 import org.eclipse.ocl.xtext.basecs.MultiplicityStringCS;
+import org.eclipse.ocl.xtext.basecs.ParameterCS;
 import org.eclipse.ocl.xtext.basecs.PathElementCS;
 import org.eclipse.ocl.xtext.basecs.PathElementWithURICS;
 import org.eclipse.ocl.xtext.basecs.PathNameCS;
@@ -69,6 +70,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
@@ -79,6 +81,9 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
@@ -126,6 +131,9 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 					return; 
 				}
 				else break;
+			case BaseCSPackage.PARAMETER_CS:
+				sequence_ParameterDef(context, (ParameterCS) semanticObject); 
+				return; 
 			case BaseCSPackage.PATH_ELEMENT_CS:
 				if(context == grammarAccess.getFirstPathElementCSRule()) {
 					sequence_FirstPathElementCS(context, (PathElementCS) semanticObject); 
@@ -215,6 +223,9 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case Cs2as_dslPackage.CLASS_DISAMBIGUATION:
 				sequence_ClassDisambiguation(context, (ClassDisambiguation) semanticObject); 
 				return; 
+			case Cs2as_dslPackage.CLASS_HELPER:
+				sequence_ClassHelper(context, (ClassHelper) semanticObject); 
+				return; 
 			case Cs2as_dslPackage.CLASS_MAP:
 				sequence_ClassMap(context, (ClassMap) semanticObject); 
 				return; 
@@ -241,6 +252,15 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 				return; 
 			case Cs2as_dslPackage.EXPORT_DEF:
 				sequence_ExportDef(context, (ExportDef) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.FILTER_DEF:
+				sequence_FilterDef(context, (FilterDef) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.HELPER_DEF:
+				sequence_HelperDef(context, (HelperDef) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.HELPERS_SECT:
+				sequence_HelpersSect(context, (HelpersSect) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.LOOKUP_EXP_CS:
 				sequence_LookupExpCS(context, (LookupExpCS) semanticObject); 
@@ -481,6 +501,15 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (context=PathNameCS helpers+=HelperDef*)
+	 */
+	protected void sequence_ClassHelper(EObject context, ClassHelper semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (to=PathNameCS from=PathNameCS rule=SIMPLE_ID? statements+=ClassMapStmnt*)
 	 */
 	protected void sequence_ClassMap(EObject context, ClassMap semanticObject) {
@@ -592,6 +621,33 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     ((params+=ParameterDef params+=ParameterDef*)? expression=ExpCS)
+	 */
+	protected void sequence_FilterDef(EObject context, FilterDef semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (ownedSignature=TemplateSignatureCS? name=UnrestrictedName (params+=ParameterDef params+=ParameterDef*)? ownedType=TypeExpCS? helperBody=ExpCS)
+	 */
+	protected void sequence_HelperDef(EObject context, HelperDef semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (classHelpers+=ClassHelper*)
+	 */
+	protected void sequence_HelpersSect(EObject context, HelpersSect semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=Identifier? ownedPathName=URIPathNameCS isAll?='::*'?)
 	 */
 	protected void sequence_ImportCS(EObject context, ImportCS semanticObject) {
@@ -619,7 +675,14 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (csDecl=CSDecl asDecl=ASDecl mappingSect=MappingSect disambiguationSect=DisambiguationSect nameresoSect=NameResolutionSect)
+	 *     (
+	 *         csDecl=CSDecl 
+	 *         asDecl=ASDecl 
+	 *         mappingSect=MappingSect 
+	 *         disambiguationSect=DisambiguationSect? 
+	 *         nameresoSect=NameResolutionSect? 
+	 *         helpersSect=HelpersSect?
+	 *     )
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -661,7 +724,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (namePoperty=NameExpCS? (qualification+=QualificationDef qualification+=QualificationDef*)?)
+	 *     (namePoperty=NameExpCS? filter=FilterDef? (qualifications+=QualificationDef qualifications+=QualificationDef*)?)
 	 */
 	protected void sequence_NamedElementDef(EObject context, NamedElementDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -681,6 +744,15 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getOccludingDefAccess().getContributionContributionDefParserRuleCall_1_0(), semanticObject.getContribution());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=UnrestrictedName ownedType=TypeExpCS)
+	 */
+	protected void sequence_ParameterDef(EObject context, ParameterCS semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

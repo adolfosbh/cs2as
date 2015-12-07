@@ -186,13 +186,22 @@ public interface Cs2as_dslPackage extends EPackage
   int MODEL__NAMERESO_SECT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 4;
 
   /**
+   * The feature id for the '<em><b>Helpers Sect</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__HELPERS_SECT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 5;
+
+  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 5;
+  int MODEL_FEATURE_COUNT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CSDeclImpl <em>CS Decl</em>}' class.
@@ -761,13 +770,22 @@ public interface Cs2as_dslPackage extends EPackage
   int NAMED_ELEMENT_DEF__NAME_POPERTY = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Qualification</b></em>' containment reference list.
+   * The feature id for the '<em><b>Filter</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_ELEMENT_DEF__QUALIFICATION = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 1;
+  int NAMED_ELEMENT_DEF__FILTER = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Qualifications</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ELEMENT_DEF__QUALIFICATIONS = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Named Element Def</em>' class.
@@ -776,7 +794,44 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMED_ELEMENT_DEF_FEATURE_COUNT = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 2;
+  int NAMED_ELEMENT_DEF_FEATURE_COUNT = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.FilterDefImpl <em>Filter Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.FilterDefImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getFilterDef()
+   * @generated
+   */
+  int FILTER_DEF = 18;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILTER_DEF__PARAMS = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILTER_DEF__EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>Filter Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILTER_DEF_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.QualificationDefImpl <em>Qualification Def</em>}' class.
@@ -786,7 +841,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getQualificationDef()
    * @generated
    */
-  int QUALIFICATION_DEF = 18;
+  int QUALIFICATION_DEF = 19;
 
   /**
    * The feature id for the '<em><b>Qualified Class</b></em>' containment reference.
@@ -823,7 +878,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getElementsContribExp()
    * @generated
    */
-  int ELEMENTS_CONTRIB_EXP = 19;
+  int ELEMENTS_CONTRIB_EXP = 20;
 
   /**
    * The feature id for the '<em><b>Is Following</b></em>' attribute.
@@ -869,7 +924,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getScopeDef()
    * @generated
    */
-  int SCOPE_DEF = 20;
+  int SCOPE_DEF = 21;
 
   /**
    * The feature id for the '<em><b>Selection Def</b></em>' containment reference.
@@ -942,7 +997,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getOccludingDef()
    * @generated
    */
-  int OCCLUDING_DEF = 21;
+  int OCCLUDING_DEF = 22;
 
   /**
    * The feature id for the '<em><b>Contribution</b></em>' containment reference.
@@ -970,7 +1025,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getContributionDef()
    * @generated
    */
-  int CONTRIBUTION_DEF = 22;
+  int CONTRIBUTION_DEF = 23;
 
   /**
    * The feature id for the '<em><b>Contributions</b></em>' containment reference list.
@@ -998,7 +1053,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSelectionDef()
    * @generated
    */
-  int SELECTION_DEF = 23;
+  int SELECTION_DEF = 24;
 
   /**
    * The number of structural features of the '<em>Selection Def</em>' class.
@@ -1017,7 +1072,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getExportDef()
    * @generated
    */
-  int EXPORT_DEF = 24;
+  int EXPORT_DEF = 25;
 
   /**
    * The feature id for the '<em><b>Selection Def</b></em>' containment reference.
@@ -1065,6 +1120,135 @@ public interface Cs2as_dslPackage extends EPackage
   int EXPORT_DEF_FEATURE_COUNT = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 4;
 
   /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelpersSectImpl <em>Helpers Sect</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelpersSectImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelpersSect()
+   * @generated
+   */
+  int HELPERS_SECT = 26;
+
+  /**
+   * The feature id for the '<em><b>Class Helpers</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELPERS_SECT__CLASS_HELPERS = 0;
+
+  /**
+   * The number of structural features of the '<em>Helpers Sect</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELPERS_SECT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassHelperImpl <em>Class Helper</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassHelperImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassHelper()
+   * @generated
+   */
+  int CLASS_HELPER = 27;
+
+  /**
+   * The feature id for the '<em><b>Context</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_HELPER__CONTEXT = 0;
+
+  /**
+   * The feature id for the '<em><b>Helpers</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_HELPER__HELPERS = 1;
+
+  /**
+   * The number of structural features of the '<em>Class Helper</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_HELPER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl <em>Helper Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelperDef()
+   * @generated
+   */
+  int HELPER_DEF = 28;
+
+  /**
+   * The feature id for the '<em><b>Owned Signature</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELPER_DEF__OWNED_SIGNATURE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELPER_DEF__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELPER_DEF__PARAMS = 2;
+
+  /**
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELPER_DEF__OWNED_TYPE = 3;
+
+  /**
+   * The feature id for the '<em><b>Helper Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELPER_DEF__HELPER_BODY = 4;
+
+  /**
+   * The number of structural features of the '<em>Helper Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELPER_DEF_FEATURE_COUNT = 5;
+
+  /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ResolveExpCSImpl <em>Resolve Exp CS</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1072,7 +1256,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getResolveExpCS()
    * @generated
    */
-  int RESOLVE_EXP_CS = 25;
+  int RESOLVE_EXP_CS = 29;
 
   /**
    * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -1199,7 +1383,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getLookupExpCS()
    * @generated
    */
-  int LOOKUP_EXP_CS = 26;
+  int LOOKUP_EXP_CS = 30;
 
   /**
    * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -1344,7 +1528,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSelectionAll()
    * @generated
    */
-  int SELECTION_ALL = 27;
+  int SELECTION_ALL = 31;
 
   /**
    * The feature id for the '<em><b>Exception Properties</b></em>' containment reference list.
@@ -1372,7 +1556,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSelectionSpecific()
    * @generated
    */
-  int SELECTION_SPECIFIC = 28;
+  int SELECTION_SPECIFIC = 32;
 
   /**
    * The feature id for the '<em><b>Selected Properties</b></em>' containment reference list.
@@ -1457,6 +1641,17 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    */
   EReference getModel_NameresoSect();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getHelpersSect <em>Helpers Sect</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Helpers Sect</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Model#getHelpersSect()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_HelpersSect();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl <em>CS Decl</em>}'.
@@ -1937,15 +2132,58 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getNamedElementDef_NamePoperty();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getQualification <em>Qualification</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getFilter <em>Filter</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Qualification</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getQualification()
+   * @return the meta object for the containment reference '<em>Filter</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getFilter()
    * @see #getNamedElementDef()
    * @generated
    */
-  EReference getNamedElementDef_Qualification();
+  EReference getNamedElementDef_Filter();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getQualifications <em>Qualifications</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Qualifications</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getQualifications()
+   * @see #getNamedElementDef()
+   * @generated
+   */
+  EReference getNamedElementDef_Qualifications();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef <em>Filter Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Filter Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef
+   * @generated
+   */
+  EClass getFilterDef();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Params</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef#getParams()
+   * @see #getFilterDef()
+   * @generated
+   */
+  EReference getFilterDef_Params();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef#getExpression()
+   * @see #getFilterDef()
+   * @generated
+   */
+  EReference getFilterDef_Expression();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef <em>Qualification Def</em>}'.
@@ -2205,6 +2443,124 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getExportDef_OccludingDefs();
 
   /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect <em>Helpers Sect</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Helpers Sect</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect
+   * @generated
+   */
+  EClass getHelpersSect();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect#getClassHelpers <em>Class Helpers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Class Helpers</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect#getClassHelpers()
+   * @see #getHelpersSect()
+   * @generated
+   */
+  EReference getHelpersSect_ClassHelpers();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper <em>Class Helper</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Class Helper</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper
+   * @generated
+   */
+  EClass getClassHelper();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getContext <em>Context</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Context</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getContext()
+   * @see #getClassHelper()
+   * @generated
+   */
+  EReference getClassHelper_Context();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getHelpers <em>Helpers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Helpers</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getHelpers()
+   * @see #getClassHelper()
+   * @generated
+   */
+  EReference getClassHelper_Helpers();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef <em>Helper Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Helper Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef
+   * @generated
+   */
+  EClass getHelperDef();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedSignature <em>Owned Signature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Signature</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedSignature()
+   * @see #getHelperDef()
+   * @generated
+   */
+  EReference getHelperDef_OwnedSignature();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getName()
+   * @see #getHelperDef()
+   * @generated
+   */
+  EAttribute getHelperDef_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Params</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getParams()
+   * @see #getHelperDef()
+   * @generated
+   */
+  EReference getHelperDef_Params();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedType <em>Owned Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedType()
+   * @see #getHelperDef()
+   * @generated
+   */
+  EReference getHelperDef_OwnedType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getHelperBody <em>Helper Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Helper Body</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getHelperBody()
+   * @see #getHelperDef()
+   * @generated
+   */
+  EReference getHelperDef_HelperBody();
+
+  /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS <em>Resolve Exp CS</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2360,6 +2716,14 @@ public interface Cs2as_dslPackage extends EPackage
      * @generated
      */
     EReference MODEL__NAMERESO_SECT = eINSTANCE.getModel_NameresoSect();
+
+    /**
+     * The meta object literal for the '<em><b>Helpers Sect</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__HELPERS_SECT = eINSTANCE.getModel_HelpersSect();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CSDeclImpl <em>CS Decl</em>}' class.
@@ -2756,12 +3120,46 @@ public interface Cs2as_dslPackage extends EPackage
     EReference NAMED_ELEMENT_DEF__NAME_POPERTY = eINSTANCE.getNamedElementDef_NamePoperty();
 
     /**
-     * The meta object literal for the '<em><b>Qualification</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Filter</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NAMED_ELEMENT_DEF__QUALIFICATION = eINSTANCE.getNamedElementDef_Qualification();
+    EReference NAMED_ELEMENT_DEF__FILTER = eINSTANCE.getNamedElementDef_Filter();
+
+    /**
+     * The meta object literal for the '<em><b>Qualifications</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAMED_ELEMENT_DEF__QUALIFICATIONS = eINSTANCE.getNamedElementDef_Qualifications();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.FilterDefImpl <em>Filter Def</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.FilterDefImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getFilterDef()
+     * @generated
+     */
+    EClass FILTER_DEF = eINSTANCE.getFilterDef();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FILTER_DEF__PARAMS = eINSTANCE.getFilterDef_Params();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FILTER_DEF__EXPRESSION = eINSTANCE.getFilterDef_Expression();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.QualificationDefImpl <em>Qualification Def</em>}' class.
@@ -2968,6 +3366,100 @@ public interface Cs2as_dslPackage extends EPackage
      * @generated
      */
     EReference EXPORT_DEF__OCCLUDING_DEFS = eINSTANCE.getExportDef_OccludingDefs();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelpersSectImpl <em>Helpers Sect</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelpersSectImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelpersSect()
+     * @generated
+     */
+    EClass HELPERS_SECT = eINSTANCE.getHelpersSect();
+
+    /**
+     * The meta object literal for the '<em><b>Class Helpers</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HELPERS_SECT__CLASS_HELPERS = eINSTANCE.getHelpersSect_ClassHelpers();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassHelperImpl <em>Class Helper</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassHelperImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassHelper()
+     * @generated
+     */
+    EClass CLASS_HELPER = eINSTANCE.getClassHelper();
+
+    /**
+     * The meta object literal for the '<em><b>Context</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLASS_HELPER__CONTEXT = eINSTANCE.getClassHelper_Context();
+
+    /**
+     * The meta object literal for the '<em><b>Helpers</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLASS_HELPER__HELPERS = eINSTANCE.getClassHelper_Helpers();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl <em>Helper Def</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelperDef()
+     * @generated
+     */
+    EClass HELPER_DEF = eINSTANCE.getHelperDef();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Signature</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HELPER_DEF__OWNED_SIGNATURE = eINSTANCE.getHelperDef_OwnedSignature();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HELPER_DEF__NAME = eINSTANCE.getHelperDef_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HELPER_DEF__PARAMS = eINSTANCE.getHelperDef_Params();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HELPER_DEF__OWNED_TYPE = eINSTANCE.getHelperDef_OwnedType();
+
+    /**
+     * The meta object literal for the '<em><b>Helper Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HELPER_DEF__HELPER_BODY = eINSTANCE.getHelperDef_HelperBody();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ResolveExpCSImpl <em>Resolve Exp CS</em>}' class.

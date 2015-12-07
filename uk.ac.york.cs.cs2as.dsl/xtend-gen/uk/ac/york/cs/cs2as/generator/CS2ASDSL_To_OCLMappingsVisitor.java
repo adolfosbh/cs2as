@@ -54,6 +54,10 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _builder.newLineIfNotEmpty();
       _builder.append("import \'");
       _builder.append(this.baseFileName, "");
+      _builder.append("Helpers.ocl\'");
+      _builder.newLineIfNotEmpty();
+      _builder.append("import \'");
+      _builder.append(this.baseFileName, "");
       _builder.append("Lookup.ocl\'");
       _builder.newLineIfNotEmpty();
       _builder.append("import \'");

@@ -18,6 +18,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.ContextCS;
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getMappingSect <em>Mapping Sect</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getDisambiguationSect <em>Disambiguation Sect</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getNameresoSect <em>Namereso Sect</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getHelpersSect <em>Helpers Sect</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getModel()
@@ -155,5 +156,31 @@ public interface Model extends ContextCS
    * @generated
    */
   void setNameresoSect(NameResolutionSect value);
+
+  /**
+   * Returns the value of the '<em><b>Helpers Sect</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Helpers Sect</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Helpers Sect</em>' containment reference.
+   * @see #setHelpersSect(HelpersSect)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getModel_HelpersSect()
+   * @model containment="true"
+   * @generated
+   */
+  HelpersSect getHelpersSect();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getHelpersSect <em>Helpers Sect</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Helpers Sect</em>' containment reference.
+   * @see #getHelpersSect()
+   * @generated
+   */
+  void setHelpersSect(HelpersSect value);
 
 } // Model

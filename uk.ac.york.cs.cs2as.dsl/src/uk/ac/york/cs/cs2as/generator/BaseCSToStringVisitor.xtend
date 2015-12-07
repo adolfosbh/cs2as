@@ -6,6 +6,7 @@ import org.eclipse.ocl.xtext.basecs.PathNameCS
 import org.eclipse.ocl.xtext.basecs.PathElementCS
 import org.eclipse.ocl.xtext.basecs.ImportCS
 import org.eclipse.ocl.xtext.basecs.PathElementWithURICS
+import org.eclipse.ocl.xtext.basecs.PrimitiveTypeRefCS
 
 class BaseCSToStringVisitor extends BaseCSSwitch<String>{
 	
@@ -32,5 +33,11 @@ class BaseCSToStringVisitor extends BaseCSSwitch<String>{
 	override casePathElementWithURICS(PathElementWithURICS object) {
 		object.uri;
 	}
+	
+	override casePrimitiveTypeRefCS(PrimitiveTypeRefCS object) {
+		val mult = object.ownedMultiplicity;
+		'''«object.name»«IF mult!=null»«mult.doSwitch»«ENDIF»'''
+	}
+	
 	
 }

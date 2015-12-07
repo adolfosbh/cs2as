@@ -10,13 +10,15 @@ import org.eclipse.ocl.xtext.essentialoclcs.NullLiteralExpCS
 import uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.PrefixExpCS
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.RoundBracketedClauseCS
 import org.eclipse.ocl.xtext.essentialoclcs.NavigatingArgCS
 import org.eclipse.ocl.xtext.essentialoclcs.NestedExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.TypeNameExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.StringLiteralExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.InvalidLiteralExpCS
+import org.eclipse.ocl.xtext.essentialoclcs.CollectionTypeCS
+import org.eclipse.ocl.xtext.basecs.ParameterCS
+import org.eclipse.ocl.xtext.essentialoclcs.SelfExpCS
 
 class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 
@@ -27,6 +29,8 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 			caseResolveExp(object)
 		} else if (object instanceof LookupExpCS) {
 			caseLookupExp(object)
+		} else if (object instanceof ParameterCS) { 
+			caseParameterCS(object);
 		} else {
 			baseVisitor.doSwitch(object);	
 		}
@@ -95,6 +99,18 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	
 	override caseTypeNameExpCS(TypeNameExpCS object) {
 		object.ownedPathName.doSwitch; // FIXME
+	}
+	
+	override caseCollectionTypeCS(CollectionTypeCS object) {
+		'''«object.name»(«object.ownedType.doSwitch»)'''
+	}
+	
+	override caseSelfExpCS(SelfExpCS object) {
+		'self'
+	}
+	
+	def String caseParameterCS(ParameterCS object) {
+		'''«object.name» : «object.ownedType.doSwitch»'''
 	}
 	
 	def String caseResolveExp(ResolveExpCS object) {

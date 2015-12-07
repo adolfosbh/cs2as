@@ -38,6 +38,10 @@ public class CS2ASDSL_To_OCLDisambiguationVisitor extends CS2ASDSL_To_OCLBaseVis
       _builder.newLineIfNotEmpty();
       _builder.append("import \'");
       _builder.append(this.baseFileName, "");
+      _builder.append("Helpers.ocl\'");
+      _builder.newLineIfNotEmpty();
+      _builder.append("import \'");
+      _builder.append(this.baseFileName, "");
       _builder.append("Lookup.ocl\'");
       _builder.newLineIfNotEmpty();
       sb.append(_builder);

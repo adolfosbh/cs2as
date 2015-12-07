@@ -27,6 +27,7 @@ class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		sb.append('''
 		«object.csDecl.doSwitch»
 		«object.asDecl.doSwitch»
+		import '«baseFileName»Helpers.ocl'
 		import '«baseFileName»Lookup.ocl'
 		import '«baseFileName»Disambiguation.ocl'
 		''');

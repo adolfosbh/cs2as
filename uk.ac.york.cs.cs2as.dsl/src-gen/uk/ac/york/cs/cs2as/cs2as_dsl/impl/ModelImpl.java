@@ -16,6 +16,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect;
+import uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
@@ -33,6 +34,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl#getMappingSect <em>Mapping Sect</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl#getDisambiguationSect <em>Disambiguation Sect</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl#getNameresoSect <em>Namereso Sect</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl#getHelpersSect <em>Helpers Sect</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,6 +90,16 @@ public class ModelImpl extends ContextCSImpl implements Model
    * @ordered
    */
   protected NameResolutionSect nameresoSect;
+
+  /**
+   * The cached value of the '{@link #getHelpersSect() <em>Helpers Sect</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHelpersSect()
+   * @generated
+   * @ordered
+   */
+  protected HelpersSect helpersSect;
 
   /**
    * <!-- begin-user-doc -->
@@ -355,6 +367,54 @@ public class ModelImpl extends ContextCSImpl implements Model
    * <!-- end-user-doc -->
    * @generated
    */
+  public HelpersSect getHelpersSect()
+  {
+    return helpersSect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetHelpersSect(HelpersSect newHelpersSect, NotificationChain msgs)
+  {
+    HelpersSect oldHelpersSect = helpersSect;
+    helpersSect = newHelpersSect;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.MODEL__HELPERS_SECT, oldHelpersSect, newHelpersSect);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHelpersSect(HelpersSect newHelpersSect)
+  {
+    if (newHelpersSect != helpersSect)
+    {
+      NotificationChain msgs = null;
+      if (helpersSect != null)
+        msgs = ((InternalEObject)helpersSect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.MODEL__HELPERS_SECT, null, msgs);
+      if (newHelpersSect != null)
+        msgs = ((InternalEObject)newHelpersSect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.MODEL__HELPERS_SECT, null, msgs);
+      msgs = basicSetHelpersSect(newHelpersSect, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.MODEL__HELPERS_SECT, newHelpersSect, newHelpersSect));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -370,6 +430,8 @@ public class ModelImpl extends ContextCSImpl implements Model
         return basicSetDisambiguationSect(null, msgs);
       case Cs2as_dslPackage.MODEL__NAMERESO_SECT:
         return basicSetNameresoSect(null, msgs);
+      case Cs2as_dslPackage.MODEL__HELPERS_SECT:
+        return basicSetHelpersSect(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -394,6 +456,8 @@ public class ModelImpl extends ContextCSImpl implements Model
         return getDisambiguationSect();
       case Cs2as_dslPackage.MODEL__NAMERESO_SECT:
         return getNameresoSect();
+      case Cs2as_dslPackage.MODEL__HELPERS_SECT:
+        return getHelpersSect();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -422,6 +486,9 @@ public class ModelImpl extends ContextCSImpl implements Model
         return;
       case Cs2as_dslPackage.MODEL__NAMERESO_SECT:
         setNameresoSect((NameResolutionSect)newValue);
+        return;
+      case Cs2as_dslPackage.MODEL__HELPERS_SECT:
+        setHelpersSect((HelpersSect)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -452,6 +519,9 @@ public class ModelImpl extends ContextCSImpl implements Model
       case Cs2as_dslPackage.MODEL__NAMERESO_SECT:
         setNameresoSect((NameResolutionSect)null);
         return;
+      case Cs2as_dslPackage.MODEL__HELPERS_SECT:
+        setHelpersSect((HelpersSect)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -476,6 +546,8 @@ public class ModelImpl extends ContextCSImpl implements Model
         return disambiguationSect != null;
       case Cs2as_dslPackage.MODEL__NAMERESO_SECT:
         return nameresoSect != null;
+      case Cs2as_dslPackage.MODEL__HELPERS_SECT:
+        return helpersSect != null;
     }
     return super.eIsSet(featureID);
   }

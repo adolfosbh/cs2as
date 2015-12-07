@@ -179,6 +179,11 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createNamedElementDefAdapter();
       }
       @Override
+      public Adapter caseFilterDef(FilterDef object)
+      {
+        return createFilterDefAdapter();
+      }
+      @Override
       public Adapter caseQualificationDef(QualificationDef object)
       {
         return createQualificationDefAdapter();
@@ -212,6 +217,21 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExportDef(ExportDef object)
       {
         return createExportDefAdapter();
+      }
+      @Override
+      public Adapter caseHelpersSect(HelpersSect object)
+      {
+        return createHelpersSectAdapter();
+      }
+      @Override
+      public Adapter caseClassHelper(ClassHelper object)
+      {
+        return createClassHelperAdapter();
+      }
+      @Override
+      public Adapter caseHelperDef(HelperDef object)
+      {
+        return createHelperDefAdapter();
       }
       @Override
       public Adapter caseResolveExpCS(ResolveExpCS object)
@@ -576,6 +596,21 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef <em>Filter Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef
+   * @generated
+   */
+  public Adapter createFilterDefAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef <em>Qualification Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -676,6 +711,51 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExportDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect <em>Helpers Sect</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect
+   * @generated
+   */
+  public Adapter createHelpersSectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper <em>Class Helper</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper
+   * @generated
+   */
+  public Adapter createClassHelperAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef <em>Helper Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef
+   * @generated
+   */
+  public Adapter createHelperDefAdapter()
   {
     return null;
   }

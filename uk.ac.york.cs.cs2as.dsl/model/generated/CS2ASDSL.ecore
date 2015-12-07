@@ -12,6 +12,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nameresoSect" eType="#//NameResolutionSect"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="helpersSect" eType="#//HelpersSect"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CSDecl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="metamodels" upperBound="-1"
@@ -94,8 +96,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="NamedElementDef" eSuperTypes="#//ClassNameResolutionStmnt">
     <eStructuralFeatures xsi:type="ecore:EReference" name="namePoperty" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//NameExpCS"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qualification" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="#//FilterDef"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifications" upperBound="-1"
         eType="#//QualificationDef" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FilterDef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//ParameterCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QualificationDef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiedClass" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//TypedRefCS"
@@ -138,6 +149,28 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="occludingDefs" upperBound="-1"
         eType="#//OccludingDef" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HelpersSect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classHelpers" upperBound="-1"
+        eType="#//ClassHelper" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassHelper">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//PathNameCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="helpers" upperBound="-1"
+        eType="#//HelperDef" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HelperDef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSignature" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//TemplateSignatureCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//ParameterCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedType" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//TypedRefCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="helperBody" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResolveExpCS" eSuperTypes="platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"/>
   <eClassifiers xsi:type="ecore:EClass" name="LookupExpCS" eSuperTypes="platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS">

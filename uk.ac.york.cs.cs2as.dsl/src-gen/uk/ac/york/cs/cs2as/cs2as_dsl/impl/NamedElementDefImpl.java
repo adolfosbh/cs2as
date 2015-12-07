@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 
@@ -32,7 +33,8 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NamedElementDefImpl#getNamePoperty <em>Name Poperty</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NamedElementDefImpl#getQualification <em>Qualification</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NamedElementDefImpl#getFilter <em>Filter</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NamedElementDefImpl#getQualifications <em>Qualifications</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,14 +52,24 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
   protected NameExpCS namePoperty;
 
   /**
-   * The cached value of the '{@link #getQualification() <em>Qualification</em>}' containment reference list.
+   * The cached value of the '{@link #getFilter() <em>Filter</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQualification()
+   * @see #getFilter()
    * @generated
    * @ordered
    */
-  protected EList<QualificationDef> qualification;
+  protected FilterDef filter;
+
+  /**
+   * The cached value of the '{@link #getQualifications() <em>Qualifications</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQualifications()
+   * @generated
+   * @ordered
+   */
+  protected EList<QualificationDef> qualifications;
 
   /**
    * <!-- begin-user-doc -->
@@ -133,13 +145,61 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<QualificationDef> getQualification()
+  public FilterDef getFilter()
   {
-    if (qualification == null)
+    return filter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFilter(FilterDef newFilter, NotificationChain msgs)
+  {
+    FilterDef oldFilter = filter;
+    filter = newFilter;
+    if (eNotificationRequired())
     {
-      qualification = new EObjectContainmentEList<QualificationDef>(QualificationDef.class, this, Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER, oldFilter, newFilter);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return qualification;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFilter(FilterDef newFilter)
+  {
+    if (newFilter != filter)
+    {
+      NotificationChain msgs = null;
+      if (filter != null)
+        msgs = ((InternalEObject)filter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER, null, msgs);
+      if (newFilter != null)
+        msgs = ((InternalEObject)newFilter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER, null, msgs);
+      msgs = basicSetFilter(newFilter, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER, newFilter, newFilter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<QualificationDef> getQualifications()
+  {
+    if (qualifications == null)
+    {
+      qualifications = new EObjectContainmentEList<QualificationDef>(QualificationDef.class, this, Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATIONS);
+    }
+    return qualifications;
   }
 
   /**
@@ -154,8 +214,10 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
     {
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
         return basicSetNamePoperty(null, msgs);
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION:
-        return ((InternalEList<?>)getQualification()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER:
+        return basicSetFilter(null, msgs);
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATIONS:
+        return ((InternalEList<?>)getQualifications()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -172,8 +234,10 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
     {
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
         return getNamePoperty();
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION:
-        return getQualification();
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER:
+        return getFilter();
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATIONS:
+        return getQualifications();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -192,9 +256,12 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
         setNamePoperty((NameExpCS)newValue);
         return;
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION:
-        getQualification().clear();
-        getQualification().addAll((Collection<? extends QualificationDef>)newValue);
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER:
+        setFilter((FilterDef)newValue);
+        return;
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATIONS:
+        getQualifications().clear();
+        getQualifications().addAll((Collection<? extends QualificationDef>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -213,8 +280,11 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
         setNamePoperty((NameExpCS)null);
         return;
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION:
-        getQualification().clear();
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER:
+        setFilter((FilterDef)null);
+        return;
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATIONS:
+        getQualifications().clear();
         return;
     }
     super.eUnset(featureID);
@@ -232,8 +302,10 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
     {
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
         return namePoperty != null;
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATION:
-        return qualification != null && !qualification.isEmpty();
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER:
+        return filter != null;
+      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATIONS:
+        return qualifications != null && !qualifications.isEmpty();
     }
     return super.eIsSet(featureID);
   }

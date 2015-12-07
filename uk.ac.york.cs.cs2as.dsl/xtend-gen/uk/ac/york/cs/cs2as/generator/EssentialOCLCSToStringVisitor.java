@@ -4,8 +4,10 @@ import com.google.common.base.Objects;
 import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.ocl.xtext.basecs.ParameterCS;
 import org.eclipse.ocl.xtext.basecs.PathNameCS;
 import org.eclipse.ocl.xtext.basecs.TypedRefCS;
+import org.eclipse.ocl.xtext.essentialoclcs.CollectionTypeCS;
 import org.eclipse.ocl.xtext.essentialoclcs.CurlyBracketedClauseCS;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.IfExpCS;
@@ -17,6 +19,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.NestedExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.NullLiteralExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.PrefixExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.RoundBracketedClauseCS;
+import org.eclipse.ocl.xtext.essentialoclcs.SelfExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.SquareBracketedClauseCS;
 import org.eclipse.ocl.xtext.essentialoclcs.StringLiteralExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.TypeNameExpCS;
@@ -41,7 +44,13 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
       if ((object instanceof LookupExpCS)) {
         _xifexpression_1 = this.caseLookupExp(((LookupExpCS)object));
       } else {
-        _xifexpression_1 = this.baseVisitor.doSwitch(object);
+        String _xifexpression_2 = null;
+        if ((object instanceof ParameterCS)) {
+          _xifexpression_2 = this.caseParameterCS(((ParameterCS)object));
+        } else {
+          _xifexpression_2 = this.baseVisitor.doSwitch(object);
+        }
+        _xifexpression_1 = _xifexpression_2;
       }
       _xifexpression = _xifexpression_1;
     }
@@ -281,6 +290,35 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   public String caseTypeNameExpCS(final TypeNameExpCS object) {
     PathNameCS _ownedPathName = object.getOwnedPathName();
     return this.doSwitch(_ownedPathName);
+  }
+  
+  @Override
+  public String caseCollectionTypeCS(final CollectionTypeCS object) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _name = object.getName();
+    _builder.append(_name, "");
+    _builder.append("(");
+    TypedRefCS _ownedType = object.getOwnedType();
+    String _doSwitch = this.doSwitch(_ownedType);
+    _builder.append(_doSwitch, "");
+    _builder.append(")");
+    return _builder.toString();
+  }
+  
+  @Override
+  public String caseSelfExpCS(final SelfExpCS object) {
+    return "self";
+  }
+  
+  public String caseParameterCS(final ParameterCS object) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _name = object.getName();
+    _builder.append(_name, "");
+    _builder.append(" : ");
+    TypedRefCS _ownedType = object.getOwnedType();
+    String _doSwitch = this.doSwitch(_ownedType);
+    _builder.append(_doSwitch, "");
+    return _builder.toString();
   }
   
   public String caseResolveExp(final ResolveExpCS object) {
