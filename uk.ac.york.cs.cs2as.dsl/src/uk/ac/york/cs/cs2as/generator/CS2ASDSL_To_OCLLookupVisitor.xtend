@@ -115,23 +115,11 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		endpackage 
 		
 		package «lookupPck»
-				
 		context «lookupEnv»
 		def : nestedEnv() : «lookupEnv» = 
 			«lookupEnv» {
 				parentEnv = self
-			}
-		
-		def : addElementsOf(element : ocl::OclElement) : «lookupEnv» =
-			let newEnv = element._env(null)
-			in «lookupEnv» {
-				namedElements = self.namedElements->including(newEnv.namedElements)
-			}
-		
-		def : addElementsOf(elements : Collection(ocl::OclElement)) : «lookupEnv» =
-			elements->iterate(element ; acc : «lookupEnv» = self 
-				| acc.addElementsOf(element))
-		
+			}		
 		endpackage
 		''';
 	}
