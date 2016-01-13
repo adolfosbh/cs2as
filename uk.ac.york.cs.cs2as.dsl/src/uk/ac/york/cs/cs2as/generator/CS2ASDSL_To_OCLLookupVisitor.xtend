@@ -71,13 +71,26 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		
 		sourcePckName = object.csDecl.metamodels.get(0).name; // FIXME this a temporal workaround
 		targetPckName = object.asDecl.metamodels.get(0).name;
-		computeInitialMaps(object.nameresoSect);		
-		defaultNE = object.nameresoSect.namedElement.nameElement;
-		defaultNEP = object.nameresoSect.namedElement.nameProperty.doSwitch;
-		defaultNR = object.nameresoSect.nameReferencer.nameReferencer;
-		defaultNRP = object.nameresoSect.nameReferencer.nameProperty.doSwitch;
-		defaultNQ = object.nameresoSect.nameQualifier.nameQualifier;
-		defaultNQP = object.nameresoSect.nameQualifier.segmentsProp.doSwitch;
+		val nameresoSect = object.nameresoSect;
+		if (nameresoSect == null) {
+			return sb.toString;
+		}
+		computeInitialMaps(object.nameresoSect);	
+		val namedElement = nameresoSect.namedElement;
+		if (namedElement != null) {
+			defaultNE = object.nameresoSect.namedElement.nameElement;
+			defaultNEP = object.nameresoSect.namedElement.nameProperty.doSwitch;	
+		}
+		val nameRef = nameresoSect.nameReferencer;
+		if (nameRef != null) {
+			defaultNR = object.nameresoSect.nameReferencer.nameReferencer;
+			defaultNRP = object.nameresoSect.nameReferencer.nameProperty.doSwitch;	
+		}
+		val nameQuali = nameresoSect.nameQualifier;
+		if (nameQuali != null) {
+			defaultNQ = object.nameresoSect.nameQualifier.nameQualifier;
+			defaultNQP = object.nameresoSect.nameQualifier.segmentsProp.doSwitch;	
+		}
 		
 		sb.append('''
 		«commonLookupInfrastructure»
@@ -107,7 +120,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		def : _env(child : OclElement) : «lookupPck»::«lookupEnv» =
 			parentEnv()
 			
-		def : _exported_env(from : OclElement) : «lookupPck»::«lookupEnv» =
+		def : _exported_env(importer : OclElement) : «lookupPck»::«lookupEnv» =
 			«lookupPck»::«lookupEnv» { }
 			
 		def : parentEnv() : «lookupPck»::«lookupEnv» =
@@ -138,7 +151,6 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	}
 	
 	def private computeInitialMaps(NameResolutionSect nrSect) {
-		
 		for (nameReso : nrSect.nameResolutions) {
 			val className = nameReso.class_.doSwitch;
 			for (statemnt : nameReso.statements) {
@@ -410,7 +422,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		var String allChildrenName = null;
 		val List<String> featureNames = newArrayList();
 		val className = nameReso.class_.doSwitch;
-		for (statmnt : nameReso.statements.filter(typeof(ScopeDef))) {
+		for (statmnt : nameReso.statements.filter(ScopeDef)) {
 			val propagation = statmnt.selectionDef;
 			if (propagation instanceof SelectionSpecific) {
 				for (property : propagation.selectedProperties) {
@@ -446,7 +458,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		}
 		
 		'''
-		def : _exported_env(from : ocl::OclElement) : «lookupPck»::«lookupEnv» =
+		def : _exported_env(importer : ocl::OclElement) : «lookupPck»::«lookupEnv» =
 			«provideExportsContributionsQuery(featureNames, allChildrenName,nameReso)»
 		'''
 	}
@@ -519,19 +531,19 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 				val filterArgs = filter.argsText;
 				sb.append('''
 					
-				def : _lookupExported«nClassName»(from : ocl::OclElement, «nameParam» : String«filterParams») : «className»[?] =
-					let found«nClassName» = _lookup«nClassName»(_exported_env(from), «nameParam»«filterArgs»)
+				def : _lookupExported«nClassName»(importer : ocl::OclElement, «nameParam» : String«filterParams») : «className»[?] =
+					let found«nClassName» = _lookup«nClassName»(_exported_env(importer), «nameParam»«filterArgs»)
 					in  if found«nClassName»->isEmpty()
 						then null
 						else found«nClassName»->first()
 						endif
 						
 				«IF defaultNR==null»
-				def : lookupExported«nClassName»(from : ocl::OclElement, «nameParam» : String«filterParams») : «nClassName»[?] =
-					_lookupExported«nClassName»(from, nameParam»«filterArgs»)
+				def : lookupExported«nClassName»(importer : ocl::OclElement, «nameParam» : String«filterParams») : «nClassName»[?] =
+					_lookupExported«nClassName»(importer, nameParam»«filterArgs»)
 				«ELSE»
-				def : lookupExported«nClassName»(from : ocl::OclElement, a«defaultNR» : «sourcePckName»::«defaultNR»«filterParams») : «nClassName»[?] =
-					_lookupExported«nClassName»(from, a«defaultNR».«defaultNRP»«filterArgs»)
+				def : lookupExported«nClassName»(importer : ocl::OclElement, a«defaultNR» : «sourcePckName»::«defaultNR»«filterParams») : «nClassName»[?] =
+					_lookupExported«nClassName»(importer, a«defaultNR».«defaultNRP»«filterArgs»)
 				«ENDIF»		
 				''');
 			}

@@ -19,6 +19,8 @@ import org.eclipse.ocl.xtext.essentialoclcs.InvalidLiteralExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.CollectionTypeCS
 import org.eclipse.ocl.xtext.basecs.ParameterCS
 import org.eclipse.ocl.xtext.essentialoclcs.SelfExpCS
+import org.eclipse.ocl.xtext.essentialoclcs.LetExpCS
+import org.eclipse.ocl.xtext.essentialoclcs.VariableCS
 
 class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 
@@ -74,8 +76,10 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	}
 	
 	override caseRoundBracketedClauseCS(RoundBracketedClauseCS object) {
+		val nameExp =  object.owningNameExp as NameExpCS;
+		val sep = if (#['exists','collect'].contains(nameExp.ownedPathName.toString)) {' | '} else {', '}
 		var args = object.ownedArguments;
-		'''(«FOR arg : args»«IF args.indexOf(arg) !=0»,«ENDIF»«arg.doSwitch»«ENDFOR»)'''
+		'''(«FOR arg : args»«IF args.indexOf(arg) !=0»«sep»«ENDIF»«arg.doSwitch»«ENDFOR»)'''
 	}
 	
 	override caseNavigatingArgCS(NavigatingArgCS object) {
@@ -94,7 +98,8 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	}
 	
 	override caseStringLiteralExpCS(StringLiteralExpCS object) {
-		''' '«FOR segment : object.segments» «segment»«ENDFOR»' '''
+		val allSegments = '''«FOR segment : object.segments» «segment»«ENDFOR»'''.toString;
+		if (allSegments.trim.startsWith("'")) allSegments else ''''«allSegments»' '''
 	}
 	
 	override caseTypeNameExpCS(TypeNameExpCS object) {
@@ -111,6 +116,21 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	
 	def String caseParameterCS(ParameterCS object) {
 		'''«object.name» : «object.ownedType.doSwitch»'''
+	}
+	
+	override caseLetExpCS(LetExpCS object) {
+		val letVars = object.ownedVariables;
+		'''
+		let «FOR letVar : letVars»«IF letVars.indexOf(letVar)>0», «ENDIF»«letVar.doSwitch»
+			«ENDFOR»
+		in «object.ownedInExpression.doSwitch»
+		'''
+	}
+	
+	override caseVariableCS(VariableCS object) {
+		val type = object.ownedType;
+		val init = object.ownedInitExpression;
+		'''«object.name» «IF type != null» : «type.doSwitch»«ENDIF»«IF init != null» = «init.doSwitch»«ENDIF»'''
 	}
 	
 	def String caseResolveExp(ResolveExpCS object) {

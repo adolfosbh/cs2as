@@ -14,12 +14,16 @@ abstract class CS2ASDSL_To_OCLBaseVisitor extends Cs2as_dslSwitch<String> {
 	}
 	
 	override caseASDecl(ASDecl object) {
-		'''«FOR mm : object.metamodels»«mm.doSwitch»«ENDFOR»
+		'''
+		«FOR mm : object.metamodels»«mm.doSwitch»
+		«ENDFOR»
 		''';
 	}
 	
 	override caseCSDecl(CSDecl object) {
-		'''«FOR mm : object.metamodels»«mm.doSwitch»«ENDFOR»
+		'''
+		«FOR mm : object.metamodels»«mm.doSwitch»
+		«ENDFOR»
 		''';
 	}
 	
