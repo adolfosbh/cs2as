@@ -26,9 +26,9 @@ public abstract class CS2ASDSL_To_OCLBaseVisitor extends Cs2as_dslSwitch<String>
       for(final ImportCS mm : _metamodels) {
         String _doSwitch = this.doSwitch(mm);
         _builder.append(_doSwitch, "");
+        _builder.newLineIfNotEmpty();
       }
     }
-    _builder.newLineIfNotEmpty();
     return _builder.toString();
   }
   
@@ -40,9 +40,9 @@ public abstract class CS2ASDSL_To_OCLBaseVisitor extends Cs2as_dslSwitch<String>
       for(final ImportCS mm : _metamodels) {
         String _doSwitch = this.doSwitch(mm);
         _builder.append(_doSwitch, "");
+        _builder.newLineIfNotEmpty();
       }
     }
-    _builder.newLineIfNotEmpty();
     return _builder.toString();
   }
 }

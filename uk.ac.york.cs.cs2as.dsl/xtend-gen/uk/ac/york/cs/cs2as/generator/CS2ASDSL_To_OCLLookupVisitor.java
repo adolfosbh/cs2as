@@ -120,35 +120,52 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       ImportCS _get_1 = _metamodels_1.get(0);
       String _name_1 = _get_1.getName();
       this.targetPckName = _name_1;
+      final NameResolutionSect nameresoSect = object.getNameresoSect();
+      boolean _equals = Objects.equal(nameresoSect, null);
+      if (_equals) {
+        return sb.toString();
+      }
       NameResolutionSect _nameresoSect = object.getNameresoSect();
       this.computeInitialMaps(_nameresoSect);
-      NameResolutionSect _nameresoSect_1 = object.getNameresoSect();
-      DefaultNamedElementDef _namedElement = _nameresoSect_1.getNamedElement();
-      String _nameElement = _namedElement.getNameElement();
-      this.defaultNE = _nameElement;
-      NameResolutionSect _nameresoSect_2 = object.getNameresoSect();
-      DefaultNamedElementDef _namedElement_1 = _nameresoSect_2.getNamedElement();
-      NameExpCS _nameProperty = _namedElement_1.getNameProperty();
-      String _doSwitch_2 = this.doSwitch(_nameProperty);
-      this.defaultNEP = _doSwitch_2;
-      NameResolutionSect _nameresoSect_3 = object.getNameresoSect();
-      DefaultNameReferencerDef _nameReferencer = _nameresoSect_3.getNameReferencer();
-      String _nameReferencer_1 = _nameReferencer.getNameReferencer();
-      this.defaultNR = _nameReferencer_1;
-      NameResolutionSect _nameresoSect_4 = object.getNameresoSect();
-      DefaultNameReferencerDef _nameReferencer_2 = _nameresoSect_4.getNameReferencer();
-      NameExpCS _nameProperty_1 = _nameReferencer_2.getNameProperty();
-      String _doSwitch_3 = this.doSwitch(_nameProperty_1);
-      this.defaultNRP = _doSwitch_3;
-      NameResolutionSect _nameresoSect_5 = object.getNameresoSect();
-      NameQualifierDef _nameQualifier = _nameresoSect_5.getNameQualifier();
-      String _nameQualifier_1 = _nameQualifier.getNameQualifier();
-      this.defaultNQ = _nameQualifier_1;
-      NameResolutionSect _nameresoSect_6 = object.getNameresoSect();
-      NameQualifierDef _nameQualifier_2 = _nameresoSect_6.getNameQualifier();
-      NameExpCS _segmentsProp = _nameQualifier_2.getSegmentsProp();
-      String _doSwitch_4 = this.doSwitch(_segmentsProp);
-      this.defaultNQP = _doSwitch_4;
+      final DefaultNamedElementDef namedElement = nameresoSect.getNamedElement();
+      boolean _notEquals = (!Objects.equal(namedElement, null));
+      if (_notEquals) {
+        NameResolutionSect _nameresoSect_1 = object.getNameresoSect();
+        DefaultNamedElementDef _namedElement = _nameresoSect_1.getNamedElement();
+        String _nameElement = _namedElement.getNameElement();
+        this.defaultNE = _nameElement;
+        NameResolutionSect _nameresoSect_2 = object.getNameresoSect();
+        DefaultNamedElementDef _namedElement_1 = _nameresoSect_2.getNamedElement();
+        NameExpCS _nameProperty = _namedElement_1.getNameProperty();
+        String _doSwitch_2 = this.doSwitch(_nameProperty);
+        this.defaultNEP = _doSwitch_2;
+      }
+      final DefaultNameReferencerDef nameRef = nameresoSect.getNameReferencer();
+      boolean _notEquals_1 = (!Objects.equal(nameRef, null));
+      if (_notEquals_1) {
+        NameResolutionSect _nameresoSect_3 = object.getNameresoSect();
+        DefaultNameReferencerDef _nameReferencer = _nameresoSect_3.getNameReferencer();
+        String _nameReferencer_1 = _nameReferencer.getNameReferencer();
+        this.defaultNR = _nameReferencer_1;
+        NameResolutionSect _nameresoSect_4 = object.getNameresoSect();
+        DefaultNameReferencerDef _nameReferencer_2 = _nameresoSect_4.getNameReferencer();
+        NameExpCS _nameProperty_1 = _nameReferencer_2.getNameProperty();
+        String _doSwitch_3 = this.doSwitch(_nameProperty_1);
+        this.defaultNRP = _doSwitch_3;
+      }
+      final NameQualifierDef nameQuali = nameresoSect.getNameQualifier();
+      boolean _notEquals_2 = (!Objects.equal(nameQuali, null));
+      if (_notEquals_2) {
+        NameResolutionSect _nameresoSect_5 = object.getNameresoSect();
+        NameQualifierDef _nameQualifier = _nameresoSect_5.getNameQualifier();
+        String _nameQualifier_1 = _nameQualifier.getNameQualifier();
+        this.defaultNQ = _nameQualifier_1;
+        NameResolutionSect _nameresoSect_6 = object.getNameresoSect();
+        NameQualifierDef _nameQualifier_2 = _nameresoSect_6.getNameQualifier();
+        NameExpCS _segmentsProp = _nameQualifier_2.getSegmentsProp();
+        String _doSwitch_4 = this.doSwitch(_segmentsProp);
+        this.defaultNQP = _doSwitch_4;
+      }
       StringConcatenation _builder_1 = new StringConcatenation();
       CharSequence _commonLookupInfrastructure = this.commonLookupInfrastructure();
       _builder_1.append(_commonLookupInfrastructure, "");
@@ -193,7 +210,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.append(this.lookupPck, "");
     _builder.append("::");
     _builder.append(this.lookupEnv, "");
-    _builder.append(" =");
+    _builder.append("[1] =");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("_env(null)");
@@ -203,18 +220,18 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.append(this.lookupPck, "");
     _builder.append("::");
     _builder.append(this.lookupEnv, "");
-    _builder.append(" =");
+    _builder.append("[1] =");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("parentEnv()");
     _builder.newLine();
     _builder.append("\t");
     _builder.newLine();
-    _builder.append("def : _exported_env(from : OclElement) : ");
+    _builder.append("def : _exported_env(importer : OclElement) : ");
     _builder.append(this.lookupPck, "");
     _builder.append("::");
     _builder.append(this.lookupEnv, "");
-    _builder.append(" =");
+    _builder.append("[1] =");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append(this.lookupPck, "\t");
@@ -228,7 +245,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.append(this.lookupPck, "");
     _builder.append("::");
     _builder.append(this.lookupEnv, "");
-    _builder.append(" =");
+    _builder.append("[1] =");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("let parent = oclContainer() in if parent = null then ");
@@ -243,14 +260,12 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.append("package ");
     _builder.append(this.lookupPck, "");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.newLine();
     _builder.append("context ");
     _builder.append(this.lookupEnv, "");
     _builder.newLineIfNotEmpty();
     _builder.append("def : nestedEnv() : ");
     _builder.append(this.lookupEnv, "");
-    _builder.append(" = ");
+    _builder.append("[1] = ");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append(this.lookupEnv, "\t");
@@ -261,39 +276,6 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("def : addElementsOf(element : ocl::OclElement) : ");
-    _builder.append(this.lookupEnv, "");
-    _builder.append(" =");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("let newEnv = element._env(null)");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("in ");
-    _builder.append(this.lookupEnv, "\t");
-    _builder.append(" {");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("namedElements = self.namedElements->including(newEnv.namedElements)");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("def : addElementsOf(elements : Collection(ocl::OclElement)) : ");
-    _builder.append(this.lookupEnv, "");
-    _builder.append(" =");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("elements->iterate(element ; acc : ");
-    _builder.append(this.lookupEnv, "\t");
-    _builder.append(" = self ");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("| acc.addElementsOf(element))");
-    _builder.newLine();
     _builder.newLine();
     _builder.append("endpackage");
     _builder.newLine();
@@ -458,8 +440,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               char _charAt = _lowerCase.charAt(0);
               final String nameParam = (Character.valueOf(_charAt) + "Name");
               final FilterDef filter = this.element2filter.get(className);
-              final String filterParams = this.getParamsText(filter);
-              final String filterArgs = this.getArgsText(filter);
+              final String filterParams = this.getOptionalAddedParamsText(filter);
+              final String filterArgs = this.getOptionalAddedArgsText(filter);
               StringConcatenation _builder = new StringConcatenation();
               _builder.append("\t");
               _builder.newLine();
@@ -543,6 +525,31 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               }
             }
             sb.append(_builder);
+          }
+          final FilterDef filter = object.getFilter();
+          boolean _notEquals = (!Objects.equal(filter, null));
+          if (_notEquals) {
+            EObject _eContainer = object.eContainer();
+            PathNameCS _class_ = ((ClassNameResolution) _eContainer).getClass_();
+            final String className = this.doSwitch(_class_);
+            final String nClassName = this.normalizeString(className);
+            final String filterParams = this.getParamsText(filter);
+            StringConcatenation _builder_1 = new StringConcatenation();
+            _builder_1.append("\t");
+            _builder_1.newLine();
+            _builder_1.append("def : ");
+            String _filterOpName = this.getFilterOpName(nClassName);
+            _builder_1.append(_filterOpName, "");
+            _builder_1.append("(");
+            _builder_1.append(filterParams, "");
+            _builder_1.append(") : Boolean =");
+            _builder_1.newLineIfNotEmpty();
+            _builder_1.append("\t");
+            ExpCS _expression = filter.getExpression();
+            String _doSwitch_1 = this.doSwitch(_expression);
+            _builder_1.append(_doSwitch_1, "\t");
+            _builder_1.newLineIfNotEmpty();
+            sb.append(_builder_1);
           }
           _xblockexpression_1 = sb.toString();
         }
@@ -712,8 +719,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               }
               final String nameProp = _xifexpression;
               final FilterDef filter = ((NamedElementDef)statmt).getFilter();
-              final String filterParams = this.getParamsText(filter);
-              final String filterArgs = this.getArgsText(filter);
+              final String filterParams = this.getOptionalAddedParamsText(filter);
+              final String filterArgs = this.getOptionalAddedArgsText(filter);
               StringConcatenation _builder = new StringConcatenation();
               _builder.append("-- ");
               _builder.append(nClassName, "");
@@ -748,10 +755,12 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                 boolean _notEquals_1 = (!Objects.equal(filter, null));
                 if (_notEquals_1) {
                   _builder.append("->select(");
-                  ExpCS _expression = filter.getExpression();
-                  String _doSwitch = this.doSwitch(_expression);
-                  _builder.append(_doSwitch, "                                         ");
-                  _builder.append(")");
+                  String _filterOpName = this.getFilterOpName(nClassName);
+                  _builder.append(_filterOpName, "                                         ");
+                  _builder.append("(");
+                  String _argsText = this.getArgsText(filter);
+                  _builder.append(_argsText, "                                         ");
+                  _builder.append("))");
                 }
               }
               _builder.newLineIfNotEmpty();
@@ -832,6 +841,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                 }
               }
               _builder.newLineIfNotEmpty();
+              _builder.newLine();
               sb.append(_builder);
             } else {
               if ((statmt instanceof ExportDef)) {
@@ -839,8 +849,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                 final String exportedClassName = this.doSwitch(_exportedClass);
                 final String nExportedClassName = this.normalizeString(exportedClassName);
                 final FilterDef filter_1 = this.element2filter.get(exportedClassName);
-                final String filterParams_1 = this.getParamsText(filter_1);
-                final String filterArgs_1 = this.getArgsText(filter_1);
+                final String filterParams_1 = this.getOptionalAddedParamsText(filter_1);
+                final String filterArgs_1 = this.getOptionalAddedArgsText(filter_1);
                 StringConcatenation _builder_1 = new StringConcatenation();
                 _builder_1.append("-- ");
                 _builder_1.append(nClassName, "");
@@ -1272,7 +1282,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         }
       }
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("def : _exported_env(from : ocl::OclElement) : ");
+      _builder.append("def : _exported_env(importer : ocl::OclElement) : ");
       _builder.append(this.lookupPck, "");
       _builder.append("::");
       _builder.append(this.lookupEnv, "");
@@ -1445,14 +1455,14 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               char _charAt = _lowerCase.charAt(0);
               final String nameParam = (Character.valueOf(_charAt) + "Name");
               final FilterDef filter = this.element2filter.get(className);
-              final String filterParams = this.getParamsText(filter);
-              final String filterArgs = this.getArgsText(filter);
+              final String filterParams = this.getOptionalAddedParamsText(filter);
+              final String filterArgs = this.getOptionalAddedArgsText(filter);
               StringConcatenation _builder = new StringConcatenation();
               _builder.append("\t");
               _builder.newLine();
               _builder.append("def : _lookupExported");
               _builder.append(nClassName, "");
-              _builder.append("(from : ocl::OclElement, ");
+              _builder.append("(importer : ocl::OclElement, ");
               _builder.append(nameParam, "");
               _builder.append(" : String");
               _builder.append(filterParams, "");
@@ -1465,7 +1475,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder.append(nClassName, "\t");
               _builder.append(" = _lookup");
               _builder.append(nClassName, "\t");
-              _builder.append("(_exported_env(from), ");
+              _builder.append("(_exported_env(importer), ");
               _builder.append(nameParam, "\t");
               _builder.append(filterArgs, "\t");
               _builder.append(")");
@@ -1493,7 +1503,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                 if (_equals) {
                   _builder.append("def : lookupExported");
                   _builder.append(nClassName, "");
-                  _builder.append("(from : ocl::OclElement, ");
+                  _builder.append("(importer : ocl::OclElement, ");
                   _builder.append(nameParam, "");
                   _builder.append(" : String");
                   _builder.append(filterParams, "");
@@ -1504,14 +1514,14 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                   _builder.append("\t");
                   _builder.append("_lookupExported");
                   _builder.append(nClassName, "\t");
-                  _builder.append("(from, nameParam»");
+                  _builder.append("(importer, nameParam»");
                   _builder.append(filterArgs, "\t");
                   _builder.append(")");
                   _builder.newLineIfNotEmpty();
                 } else {
                   _builder.append("def : lookupExported");
                   _builder.append(nClassName, "");
-                  _builder.append("(from : ocl::OclElement, a");
+                  _builder.append("(importer : ocl::OclElement, a");
                   _builder.append(this.defaultNR, "");
                   _builder.append(" : ");
                   _builder.append(this.sourcePckName, "");
@@ -1525,7 +1535,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                   _builder.append("\t");
                   _builder.append("_lookupExported");
                   _builder.append(nClassName, "\t");
-                  _builder.append("(from, a");
+                  _builder.append("(importer, a");
                   _builder.append(this.defaultNR, "\t");
                   _builder.append(".");
                   _builder.append(this.defaultNRP, "\t");
@@ -1561,44 +1571,87 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     return _builder.toString();
   }
   
-  private String getParamsText(final FilterDef filter) {
+  private String getFilterOpName(final String filteredClassName) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("_appliesFilter_");
+    _builder.append(filteredClassName, "");
+    return _builder.toString();
+  }
+  
+  private String getOptionalAddedParamsText(final FilterDef filter) {
     String _xifexpression = null;
     boolean _equals = Objects.equal(filter, null);
     if (_equals) {
       _xifexpression = "";
     } else {
       StringConcatenation _builder = new StringConcatenation();
+      _builder.append(", ");
+      String _paramsText = this.getParamsText(filter);
+      _builder.append(_paramsText, "");
+      _xifexpression = _builder.toString();
+    }
+    return _xifexpression;
+  }
+  
+  private String getParamsText(final FilterDef filter) {
+    String _xblockexpression = null;
+    {
+      final EList<ParameterCS> params = filter.getParams();
+      StringConcatenation _builder = new StringConcatenation();
       {
-        EList<ParameterCS> _params = filter.getParams();
-        for(final ParameterCS param : _params) {
-          _builder.append(", ");
+        for(final ParameterCS param : params) {
+          {
+            int _indexOf = params.indexOf(param);
+            boolean _greaterThan = (_indexOf > 0);
+            if (_greaterThan) {
+              _builder.append(", ");
+            }
+          }
           String _doSwitch = this.doSwitch(param);
           _builder.append(_doSwitch, "");
         }
       }
+      _xblockexpression = _builder.toString();
+    }
+    return _xblockexpression;
+  }
+  
+  private String getOptionalAddedArgsText(final FilterDef filter) {
+    String _xifexpression = null;
+    boolean _equals = Objects.equal(filter, null);
+    if (_equals) {
+      _xifexpression = "";
+    } else {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(", ");
+      String _argsText = this.getArgsText(filter);
+      _builder.append(_argsText, "");
       _xifexpression = _builder.toString();
     }
     return _xifexpression;
   }
   
   private String getArgsText(final FilterDef filter) {
-    String _xifexpression = null;
-    boolean _equals = Objects.equal(filter, null);
-    if (_equals) {
-      _xifexpression = "";
-    } else {
+    String _xblockexpression = null;
+    {
+      final EList<ParameterCS> params = filter.getParams();
       StringConcatenation _builder = new StringConcatenation();
       {
-        EList<ParameterCS> _params = filter.getParams();
-        for(final ParameterCS param : _params) {
-          _builder.append(", ");
+        for(final ParameterCS param : params) {
+          {
+            int _indexOf = params.indexOf(param);
+            boolean _greaterThan = (_indexOf > 0);
+            if (_greaterThan) {
+              _builder.append(", ");
+            }
+          }
           String _name = param.getName();
           _builder.append(_name, "");
         }
       }
-      _xifexpression = _builder.toString();
+      _xblockexpression = _builder.toString();
     }
-    return _xifexpression;
+    return _xblockexpression;
   }
   
   private String normalizeString(final String string) {

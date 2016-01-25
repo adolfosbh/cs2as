@@ -4,8 +4,8 @@
 package uk.ac.york.cs.cs2as;
 
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.xtext.ISetup;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.ISetup;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;

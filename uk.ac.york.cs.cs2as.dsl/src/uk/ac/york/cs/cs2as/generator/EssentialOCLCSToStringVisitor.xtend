@@ -77,7 +77,7 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	
 	override caseRoundBracketedClauseCS(RoundBracketedClauseCS object) {
 		val nameExp =  object.owningNameExp as NameExpCS;
-		val sep = if (#['exists','collect'].contains(nameExp.ownedPathName.toString)) {' | '} else {', '}
+		val sep = if (#['exists','forAll','collect'].contains(nameExp.ownedPathName.toString)) {' | '} else {', '}
 		var args = object.ownedArguments;
 		'''(«FOR arg : args»«IF args.indexOf(arg) !=0»«sep»«ENDIF»«arg.doSwitch»«ENDFOR»)'''
 	}

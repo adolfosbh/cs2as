@@ -108,7 +108,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"csDecl",
         		lv_csDecl_0_0, 
-        		"CSDecl");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.CSDecl");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -126,7 +126,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"asDecl",
         		lv_asDecl_1_0, 
-        		"ASDecl");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ASDecl");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -158,7 +158,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"mappingSect",
         		lv_mappingSect_3_0, 
-        		"MappingSect");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.MappingSect");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -188,7 +188,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"disambiguationSect",
         		lv_disambiguationSect_4_0, 
-        		"DisambiguationSect");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.DisambiguationSect");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -218,7 +218,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"nameresoSect",
         		lv_nameresoSect_5_0, 
-        		"NameResolutionSect");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.NameResolutionSect");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -248,7 +248,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"helpersSect",
         		lv_helpersSect_6_0, 
-        		"HelpersSect");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.HelpersSect");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -309,7 +309,7 @@ ruleCSDecl returns [EObject current=null]
        			$current, 
        			"metamodels",
         		lv_metamodels_1_0, 
-        		"ImportCS");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ImportCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -331,7 +331,7 @@ ruleCSDecl returns [EObject current=null]
        			$current, 
        			"metamodels",
         		lv_metamodels_3_0, 
-        		"ImportCS");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ImportCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -374,7 +374,7 @@ ruleASDecl returns [EObject current=null]
        			$current, 
        			"metamodels",
         		lv_metamodels_1_0, 
-        		"ImportCS");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ImportCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -396,7 +396,7 @@ ruleASDecl returns [EObject current=null]
        			$current, 
        			"metamodels",
         		lv_metamodels_3_0, 
-        		"ImportCS");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ImportCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -435,7 +435,7 @@ ruleImportCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"Identifier");
+        		"org.eclipse.ocl.xtext.base.Base.Identifier");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -457,7 +457,7 @@ ruleImportCS returns [EObject current=null]
        			$current, 
        			"ownedPathName",
         		lv_ownedPathName_2_0, 
-        		"URIPathNameCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.URIPathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -528,7 +528,7 @@ ruleMappingSect returns [EObject current=null]
        			$current, 
        			"mappings",
         		lv_mappings_3_0, 
-        		"ClassMap");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassMap");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -575,7 +575,7 @@ ruleClassMap returns [EObject current=null]
        			$current, 
        			"to",
         		lv_to_1_0, 
-        		"PathNameCS");
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -597,7 +597,7 @@ ruleClassMap returns [EObject current=null]
        			$current, 
        			"from",
         		lv_from_3_0, 
-        		"PathNameCS");
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -624,7 +624,7 @@ ruleClassMap returns [EObject current=null]
        			$current, 
        			"rule",
         		lv_rule_6_0, 
-        		"SIMPLE_ID");
+        		"org.eclipse.ocl.xtext.base.Base.SIMPLE_ID");
 	    }
 
 )
@@ -645,7 +645,7 @@ ruleClassMap returns [EObject current=null]
        			$current, 
        			"statements",
         		lv_statements_8_0, 
-        		"ClassMapStmnt");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassMapStmnt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -741,7 +741,7 @@ rulePropertyMap returns [EObject current=null]
        			$current, 
        			"propName",
         		lv_propName_1_0, 
-        		"SIMPLE_ID");
+        		"org.eclipse.ocl.xtext.base.Base.SIMPLE_ID");
 	    }
 
 )
@@ -762,7 +762,7 @@ rulePropertyMap returns [EObject current=null]
        			$current, 
        			"propInit",
         		lv_propInit_3_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -818,7 +818,7 @@ ruleDisambiguationSect returns [EObject current=null]
        			$current, 
        			"disambiguations",
         		lv_disambiguations_3_0, 
-        		"ClassDisambiguation");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassDisambiguation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -861,7 +861,7 @@ ruleClassDisambiguation returns [EObject current=null]
        			$current, 
        			"class",
         		lv_class_0_0, 
-        		"PathNameCS");
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -883,7 +883,7 @@ ruleClassDisambiguation returns [EObject current=null]
        			$current, 
        			"statements",
         		lv_statements_2_0, 
-        		"ClassDisambiguationStmnt");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassDisambiguationStmnt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -964,7 +964,7 @@ ruleDisambiguationDef returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"SIMPLE_ID");
+        		"org.eclipse.ocl.xtext.base.Base.SIMPLE_ID");
 	    }
 
 )
@@ -985,7 +985,7 @@ ruleDisambiguationDef returns [EObject current=null]
        			$current, 
        			"exp",
         		lv_exp_2_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1041,7 +1041,7 @@ ruleNameResolutionSect returns [EObject current=null]
        			$current, 
        			"namedElement",
         		lv_namedElement_3_0, 
-        		"DefaultNamedElementDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.DefaultNamedElementDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1059,7 +1059,7 @@ ruleNameResolutionSect returns [EObject current=null]
        			$current, 
        			"nameReferencer",
         		lv_nameReferencer_4_0, 
-        		"DefaultNameReferencerDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.DefaultNameReferencerDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1077,7 +1077,7 @@ ruleNameResolutionSect returns [EObject current=null]
        			$current, 
        			"nameQualifier",
         		lv_nameQualifier_5_0, 
-        		"NameQualifierDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.NameQualifierDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1095,7 +1095,7 @@ ruleNameResolutionSect returns [EObject current=null]
        			$current, 
        			"nameResolutions",
         		lv_nameResolutions_6_0, 
-        		"ClassNameResolution");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassNameResolution");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1143,7 +1143,7 @@ ruleDefaultNamedElementDef returns [EObject current=null]
        			$current, 
        			"nameElement",
         		lv_nameElement_1_0, 
-        		"SIMPLE_ID");
+        		"org.eclipse.ocl.xtext.base.Base.SIMPLE_ID");
 	    }
 
 )
@@ -1164,7 +1164,7 @@ ruleDefaultNamedElementDef returns [EObject current=null]
        			$current, 
        			"nameProperty",
         		lv_nameProperty_3_0, 
-        		"NameExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NameExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1212,7 +1212,7 @@ ruleDefaultNameReferencerDef returns [EObject current=null]
        			$current, 
        			"nameReferencer",
         		lv_nameReferencer_1_0, 
-        		"SIMPLE_ID");
+        		"org.eclipse.ocl.xtext.base.Base.SIMPLE_ID");
 	    }
 
 )
@@ -1233,7 +1233,7 @@ ruleDefaultNameReferencerDef returns [EObject current=null]
        			$current, 
        			"nameProperty",
         		lv_nameProperty_3_0, 
-        		"NameExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NameExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1281,7 +1281,7 @@ ruleNameQualifierDef returns [EObject current=null]
        			$current, 
        			"nameQualifier",
         		lv_nameQualifier_1_0, 
-        		"SIMPLE_ID");
+        		"org.eclipse.ocl.xtext.base.Base.SIMPLE_ID");
 	    }
 
 )
@@ -1302,7 +1302,7 @@ ruleNameQualifierDef returns [EObject current=null]
        			$current, 
        			"segmentsProp",
         		lv_segmentsProp_3_0, 
-        		"NameExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NameExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1345,7 +1345,7 @@ ruleClassNameResolution returns [EObject current=null]
        			$current, 
        			"class",
         		lv_class_0_0, 
-        		"PathNameCS");
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1367,7 +1367,7 @@ ruleClassNameResolution returns [EObject current=null]
        			$current, 
        			"statements",
         		lv_statements_2_0, 
-        		"ClassNameResolutionStmnt");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassNameResolutionStmnt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1490,7 +1490,7 @@ ruleNamedElementDef returns [EObject current=null]
        			$current, 
        			"namePoperty",
         		lv_namePoperty_3_0, 
-        		"NameExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NameExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1508,7 +1508,7 @@ ruleNamedElementDef returns [EObject current=null]
        			$current, 
        			"filter",
         		lv_filter_4_0, 
-        		"FilterDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.FilterDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1530,7 +1530,7 @@ ruleNamedElementDef returns [EObject current=null]
        			$current, 
        			"qualifications",
         		lv_qualifications_6_0, 
-        		"QualificationDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.QualificationDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1552,7 +1552,7 @@ ruleNamedElementDef returns [EObject current=null]
        			$current, 
        			"qualifications",
         		lv_qualifications_8_0, 
-        		"QualificationDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.QualificationDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1599,7 +1599,7 @@ ruleFilterDef returns [EObject current=null]
        			$current, 
        			"params",
         		lv_params_2_0, 
-        		"ParameterDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ParameterDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1621,7 +1621,7 @@ ruleFilterDef returns [EObject current=null]
        			$current, 
        			"params",
         		lv_params_4_0, 
-        		"ParameterDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ParameterDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1643,7 +1643,7 @@ ruleFilterDef returns [EObject current=null]
        			$current, 
        			"expression",
         		lv_expression_6_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1682,7 +1682,7 @@ ruleQualificationDef returns [EObject current=null]
        			$current, 
        			"qualifiedClass",
         		lv_qualifiedClass_0_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1704,7 +1704,7 @@ ruleQualificationDef returns [EObject current=null]
        			$current, 
        			"contribution",
         		lv_contribution_2_0, 
-        		"ElementsContribExp");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ElementsContribExp");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1774,7 +1774,7 @@ ruleElementsContribExp returns [EObject current=null]
        			$current, 
        			"expression",
         		lv_expression_2_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1813,7 +1813,7 @@ ruleScopeDef returns [EObject current=null]
        			$current, 
        			"selectionDef",
         		lv_selectionDef_0_0, 
-        		"SelectionDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.SelectionDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1882,7 +1882,7 @@ ruleScopeDef returns [EObject current=null]
        			$current, 
        			"contribution",
         		lv_contribution_5_0, 
-        		"ContributionDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ContributionDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1900,7 +1900,7 @@ ruleScopeDef returns [EObject current=null]
        			$current, 
        			"occludingDefs",
         		lv_occludingDefs_6_0, 
-        		"OccludingDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.OccludingDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1943,7 +1943,7 @@ ruleOccludingDef returns [EObject current=null]
        			$current, 
        			"contribution",
         		lv_contribution_1_0, 
-        		"ContributionDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ContributionDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1982,7 +1982,7 @@ ruleContributionDef returns [EObject current=null]
        			$current, 
        			"contributions",
         		lv_contributions_0_0, 
-        		"ElementsContribExp");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ElementsContribExp");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2004,7 +2004,7 @@ ruleContributionDef returns [EObject current=null]
        			$current, 
        			"contributions",
         		lv_contributions_2_0, 
-        		"ElementsContribExp");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ElementsContribExp");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2064,7 +2064,7 @@ ruleSelectionDef returns [EObject current=null]
        			$current, 
        			"exceptionProperties",
         		lv_exceptionProperties_4_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2086,7 +2086,7 @@ ruleSelectionDef returns [EObject current=null]
        			$current, 
        			"exceptionProperties",
         		lv_exceptionProperties_6_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2114,7 +2114,7 @@ ruleSelectionDef returns [EObject current=null]
        			$current, 
        			"selectedProperties",
         		lv_selectedProperties_8_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2136,7 +2136,7 @@ ruleSelectionDef returns [EObject current=null]
        			$current, 
        			"selectedProperties",
         		lv_selectedProperties_10_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2175,7 +2175,7 @@ ruleExportDef returns [EObject current=null]
        			$current, 
        			"selectionDef",
         		lv_selectionDef_0_0, 
-        		"SelectionDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.SelectionDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2197,7 +2197,7 @@ ruleExportDef returns [EObject current=null]
        			$current, 
        			"exportedClass",
         		lv_exportedClass_2_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2219,7 +2219,7 @@ ruleExportDef returns [EObject current=null]
        			$current, 
        			"contribution",
         		lv_contribution_4_0, 
-        		"ContributionDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ContributionDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2237,7 +2237,7 @@ ruleExportDef returns [EObject current=null]
        			$current, 
        			"occludingDefs",
         		lv_occludingDefs_5_0, 
-        		"OccludingDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.OccludingDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2293,7 +2293,7 @@ ruleHelpersSect returns [EObject current=null]
        			$current, 
        			"classHelpers",
         		lv_classHelpers_3_0, 
-        		"ClassHelper");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassHelper");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2336,7 +2336,7 @@ ruleClassHelper returns [EObject current=null]
        			$current, 
        			"context",
         		lv_context_0_0, 
-        		"PathNameCS");
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2358,7 +2358,7 @@ ruleClassHelper returns [EObject current=null]
        			$current, 
        			"helpers",
         		lv_helpers_2_0, 
-        		"HelperDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.HelperDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2401,7 +2401,7 @@ ruleHelperDef returns [EObject current=null]
        			$current, 
        			"ownedSignature",
         		lv_ownedSignature_0_0, 
-        		"TemplateSignatureCS");
+        		"org.eclipse.ocl.xtext.base.Base.TemplateSignatureCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2419,7 +2419,7 @@ ruleHelperDef returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"UnrestrictedName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnrestrictedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2441,7 +2441,7 @@ ruleHelperDef returns [EObject current=null]
        			$current, 
        			"params",
         		lv_params_3_0, 
-        		"ParameterDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ParameterDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2463,7 +2463,7 @@ ruleHelperDef returns [EObject current=null]
        			$current, 
        			"params",
         		lv_params_5_0, 
-        		"ParameterDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ParameterDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2489,7 +2489,7 @@ ruleHelperDef returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_8_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2511,7 +2511,7 @@ ruleHelperDef returns [EObject current=null]
        			$current, 
        			"helperBody",
         		lv_helperBody_10_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2554,7 +2554,7 @@ ruleParameterDef returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"UnrestrictedName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnrestrictedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2576,7 +2576,7 @@ ruleParameterDef returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_2_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2849,7 +2849,7 @@ ruleLookupExpCS returns [EObject current=null]
        			$current, 
        			"args",
         		lv_args_3_0, 
-        		"NavigatingArgExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingArgExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2871,7 +2871,7 @@ ruleLookupExpCS returns [EObject current=null]
        			$current, 
        			"args",
         		lv_args_5_0, 
-        		"NavigatingArgExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingArgExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3422,7 +3422,7 @@ ruleURIPathNameCS returns [EObject current=null]
        			$current, 
        			"ownedPathElements",
         		lv_ownedPathElements_0_0, 
-        		"URIFirstPathElementCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.URIFirstPathElementCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3444,7 +3444,7 @@ ruleURIPathNameCS returns [EObject current=null]
        			$current, 
        			"ownedPathElements",
         		lv_ownedPathElements_2_0, 
-        		"NextPathElementCS");
+        		"org.eclipse.ocl.xtext.base.Base.NextPathElementCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3483,7 +3483,7 @@ ruleURIFirstPathElementCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"UnrestrictedName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnrestrictedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3511,7 +3511,7 @@ ruleURIFirstPathElementCS returns [EObject current=null]
        			$current, 
        			"uri",
         		lv_uri_2_0, 
-        		"URI");
+        		"org.eclipse.ocl.xtext.base.Base.URI");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3626,7 +3626,7 @@ rulePrimitiveTypeCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"PrimitiveTypeIdentifier");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.PrimitiveTypeIdentifier");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3720,7 +3720,7 @@ ruleCollectionTypeCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"CollectionTypeIdentifier");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CollectionTypeIdentifier");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3742,7 +3742,7 @@ ruleCollectionTypeCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_2_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3804,7 +3804,7 @@ ruleMapTypeCS returns [EObject current=null]
        			$current, 
        			"ownedKeyType",
         		lv_ownedKeyType_2_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3826,7 +3826,7 @@ ruleMapTypeCS returns [EObject current=null]
        			$current, 
        			"ownedValueType",
         		lv_ownedValueType_4_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3888,7 +3888,7 @@ ruleTupleTypeCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_2_0, 
-        		"TuplePartCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TuplePartCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3910,7 +3910,7 @@ ruleTupleTypeCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_4_0, 
-        		"TuplePartCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TuplePartCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3953,7 +3953,7 @@ ruleTuplePartCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"UnrestrictedName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnrestrictedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3975,7 +3975,7 @@ ruleTuplePartCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_2_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4014,7 +4014,7 @@ ruleCollectionLiteralExpCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_0_0, 
-        		"CollectionTypeCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CollectionTypeCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4036,7 +4036,7 @@ ruleCollectionLiteralExpCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_2_0, 
-        		"CollectionLiteralPartCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CollectionLiteralPartCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4058,7 +4058,7 @@ ruleCollectionLiteralExpCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_4_0, 
-        		"CollectionLiteralPartCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CollectionLiteralPartCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4101,7 +4101,7 @@ ruleCollectionLiteralPartCS returns [EObject current=null]
        			$current, 
        			"ownedExpression",
         		lv_ownedExpression_0_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4123,7 +4123,7 @@ ruleCollectionLiteralPartCS returns [EObject current=null]
        			$current, 
        			"ownedLastExpression",
         		lv_ownedLastExpression_2_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4142,7 +4142,7 @@ ruleCollectionLiteralPartCS returns [EObject current=null]
        			$current, 
        			"ownedExpression",
         		lv_ownedExpression_3_0, 
-        		"PatternExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.PatternExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4181,7 +4181,7 @@ ruleCollectionPatternCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_0_0, 
-        		"CollectionTypeCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CollectionTypeCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4203,7 +4203,7 @@ ruleCollectionPatternCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_2_0, 
-        		"PatternExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.PatternExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4225,7 +4225,7 @@ ruleCollectionPatternCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_4_0, 
-        		"PatternExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.PatternExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4247,7 +4247,7 @@ ruleCollectionPatternCS returns [EObject current=null]
        			$current, 
        			"restVariableName",
         		lv_restVariableName_6_0, 
-        		"Identifier");
+        		"org.eclipse.ocl.xtext.base.Base.Identifier");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4313,7 +4313,7 @@ ruleShadowPartCS returns [EObject current=null]
        			$current, 
        			"ownedInitExpression",
         		lv_ownedInitExpression_2_1, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4328,7 +4328,7 @@ ruleShadowPartCS returns [EObject current=null]
        			$current, 
        			"ownedInitExpression",
         		lv_ownedInitExpression_2_2, 
-        		"PatternExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.PatternExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4369,7 +4369,7 @@ rulePatternExpCS returns [EObject current=null]
        			$current, 
        			"patternVariableName",
         		lv_patternVariableName_0_0, 
-        		"UnrestrictedName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnrestrictedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4391,7 +4391,7 @@ rulePatternExpCS returns [EObject current=null]
        			$current, 
        			"ownedPatternType",
         		lv_ownedPatternType_2_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4438,7 +4438,7 @@ ruleLambdaLiteralExpCS returns [EObject current=null]
        			$current, 
        			"ownedExpressionCS",
         		lv_ownedExpressionCS_2_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4481,7 +4481,7 @@ ruleMapLiteralExpCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_0_0, 
-        		"MapTypeCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.MapTypeCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4503,7 +4503,7 @@ ruleMapLiteralExpCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_2_0, 
-        		"MapLiteralPartCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.MapLiteralPartCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4525,7 +4525,7 @@ ruleMapLiteralExpCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_4_0, 
-        		"MapLiteralPartCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.MapLiteralPartCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4568,7 +4568,7 @@ ruleMapLiteralPartCS returns [EObject current=null]
        			$current, 
        			"ownedKey",
         		lv_ownedKey_0_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4590,7 +4590,7 @@ ruleMapLiteralPartCS returns [EObject current=null]
        			$current, 
        			"ownedValue",
         		lv_ownedValue_2_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4735,7 +4735,7 @@ ruleTupleLiteralExpCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_2_0, 
-        		"TupleLiteralPartCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TupleLiteralPartCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4757,7 +4757,7 @@ ruleTupleLiteralExpCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_4_0, 
-        		"TupleLiteralPartCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TupleLiteralPartCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4800,7 +4800,7 @@ ruleTupleLiteralPartCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"UnrestrictedName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnrestrictedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4822,7 +4822,7 @@ ruleTupleLiteralPartCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_2_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4844,7 +4844,7 @@ ruleTupleLiteralPartCS returns [EObject current=null]
        			$current, 
        			"ownedInitExpression",
         		lv_ownedInitExpression_4_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4883,7 +4883,7 @@ ruleNumberLiteralExpCS returns [EObject current=null]
        			$current, 
        			"symbol",
         		lv_symbol_0_0, 
-        		"NUMBER_LITERAL");
+        		"org.eclipse.ocl.xtext.base.Base.NUMBER_LITERAL");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4922,7 +4922,7 @@ ruleStringLiteralExpCS returns [EObject current=null]
        			$current, 
        			"segments",
         		lv_segments_0_0, 
-        		"StringLiteral");
+        		"org.eclipse.ocl.xtext.base.Base.StringLiteral");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5199,7 +5199,7 @@ ruleTypeLiteralWithMultiplicityCS returns [EObject current=null]
        			$current, 
        			"ownedMultiplicity",
         		lv_ownedMultiplicity_1_0, 
-        		"MultiplicityCS");
+        		"org.eclipse.ocl.xtext.base.Base.MultiplicityCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5238,7 +5238,7 @@ ruleTypeLiteralExpCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_0_0, 
-        		"TypeLiteralWithMultiplicityCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeLiteralWithMultiplicityCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5277,7 +5277,7 @@ ruleTypeNameExpCS returns [EObject current=null]
        			$current, 
        			"ownedPathName",
         		lv_ownedPathName_0_0, 
-        		"PathNameCS");
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5295,7 +5295,7 @@ ruleTypeNameExpCS returns [EObject current=null]
        			$current, 
        			"ownedCurlyBracketedClause",
         		lv_ownedCurlyBracketedClause_1_0, 
-        		"CurlyBracketedClauseCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CurlyBracketedClauseCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5317,7 +5317,7 @@ ruleTypeNameExpCS returns [EObject current=null]
        			$current, 
        			"ownedPatternGuard",
         		lv_ownedPatternGuard_3_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5398,7 +5398,7 @@ ruleTypeExpCS returns [EObject current=null]
        			$current, 
        			"ownedMultiplicity",
         		lv_ownedMultiplicity_3_0, 
-        		"MultiplicityCS");
+        		"org.eclipse.ocl.xtext.base.Base.MultiplicityCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5458,7 +5458,7 @@ ruleExpCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"BinaryOperatorName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.BinaryOperatorName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5476,7 +5476,7 @@ ruleExpCS returns [EObject current=null]
        			$current, 
        			"ownedRight",
         		lv_ownedRight_3_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5537,7 +5537,7 @@ rulePrefixedLetExpCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"UnaryOperatorName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnaryOperatorName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5555,7 +5555,7 @@ rulePrefixedLetExpCS returns [EObject current=null]
        			$current, 
        			"ownedRight",
         		lv_ownedRight_2_0, 
-        		"PrefixedLetExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.PrefixedLetExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5616,7 +5616,7 @@ rulePrefixedPrimaryExpCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"UnaryOperatorName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnaryOperatorName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5634,7 +5634,7 @@ rulePrefixedPrimaryExpCS returns [EObject current=null]
        			$current, 
        			"ownedRight",
         		lv_ownedRight_2_0, 
-        		"PrefixedPrimaryExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.PrefixedPrimaryExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5686,7 +5686,7 @@ ruleNameExpCS returns [EObject current=null]
        			$current, 
        			"ownedPathName",
         		lv_ownedPathName_0_0, 
-        		"PathNameCS");
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5704,7 +5704,7 @@ ruleNameExpCS returns [EObject current=null]
        			$current, 
        			"ownedSquareBracketedClauses",
         		lv_ownedSquareBracketedClauses_1_0, 
-        		"SquareBracketedClauseCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.SquareBracketedClauseCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5722,7 +5722,7 @@ ruleNameExpCS returns [EObject current=null]
        			$current, 
        			"ownedRoundBracketedClause",
         		lv_ownedRoundBracketedClause_2_0, 
-        		"RoundBracketedClauseCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.RoundBracketedClauseCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5740,7 +5740,7 @@ ruleNameExpCS returns [EObject current=null]
        			$current, 
        			"ownedCurlyBracketedClause",
         		lv_ownedCurlyBracketedClause_3_0, 
-        		"CurlyBracketedClauseCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CurlyBracketedClauseCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5811,7 +5811,7 @@ ruleCurlyBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_2_0, 
-        		"ShadowPartCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ShadowPartCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5833,7 +5833,7 @@ ruleCurlyBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"ownedParts",
         		lv_ownedParts_4_0, 
-        		"ShadowPartCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ShadowPartCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5852,7 +5852,7 @@ ruleCurlyBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_5_0, 
-        		"StringLiteral");
+        		"org.eclipse.ocl.xtext.base.Base.StringLiteral");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5908,7 +5908,7 @@ ruleRoundBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"ownedArguments",
         		lv_ownedArguments_2_0, 
-        		"NavigatingArgCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingArgCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5926,7 +5926,7 @@ ruleRoundBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"ownedArguments",
         		lv_ownedArguments_3_0, 
-        		"NavigatingCommaArgCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingCommaArgCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5944,7 +5944,7 @@ ruleRoundBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"ownedArguments",
         		lv_ownedArguments_4_0, 
-        		"NavigatingSemiArgCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingSemiArgCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5962,7 +5962,7 @@ ruleRoundBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"ownedArguments",
         		lv_ownedArguments_5_0, 
-        		"NavigatingCommaArgCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingCommaArgCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5980,7 +5980,7 @@ ruleRoundBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"ownedArguments",
         		lv_ownedArguments_6_0, 
-        		"NavigatingBarArgCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingBarArgCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5998,7 +5998,7 @@ ruleRoundBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"ownedArguments",
         		lv_ownedArguments_7_0, 
-        		"NavigatingCommaArgCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingCommaArgCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6045,7 +6045,7 @@ ruleSquareBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"ownedTerms",
         		lv_ownedTerms_1_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6067,7 +6067,7 @@ ruleSquareBracketedClauseCS returns [EObject current=null]
        			$current, 
        			"ownedTerms",
         		lv_ownedTerms_3_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6110,7 +6110,7 @@ ruleNavigatingArgCS returns [EObject current=null]
        			$current, 
        			"ownedNameExpression",
         		lv_ownedNameExpression_0_0, 
-        		"NavigatingArgExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingArgExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6132,7 +6132,7 @@ ruleNavigatingArgCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_2_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6154,7 +6154,7 @@ ruleNavigatingArgCS returns [EObject current=null]
        			$current, 
        			"ownedInitExpression",
         		lv_ownedInitExpression_4_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6177,7 +6177,7 @@ ruleNavigatingArgCS returns [EObject current=null]
        			$current, 
        			"ownedInitExpression",
         		lv_ownedInitExpression_6_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6200,7 +6200,7 @@ ruleNavigatingArgCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_8_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6254,7 +6254,7 @@ ruleNavigatingBarArgCS returns [EObject current=null]
        			$current, 
        			"ownedNameExpression",
         		lv_ownedNameExpression_1_0, 
-        		"NavigatingArgExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingArgExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6276,7 +6276,7 @@ ruleNavigatingBarArgCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_3_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6298,7 +6298,7 @@ ruleNavigatingBarArgCS returns [EObject current=null]
        			$current, 
        			"ownedInitExpression",
         		lv_ownedInitExpression_5_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6352,7 +6352,7 @@ ruleNavigatingCommaArgCS returns [EObject current=null]
        			$current, 
        			"ownedNameExpression",
         		lv_ownedNameExpression_1_0, 
-        		"NavigatingArgExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingArgExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6374,7 +6374,7 @@ ruleNavigatingCommaArgCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_3_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6396,7 +6396,7 @@ ruleNavigatingCommaArgCS returns [EObject current=null]
        			$current, 
        			"ownedInitExpression",
         		lv_ownedInitExpression_5_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6419,7 +6419,7 @@ ruleNavigatingCommaArgCS returns [EObject current=null]
        			$current, 
        			"ownedInitExpression",
         		lv_ownedInitExpression_7_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6473,7 +6473,7 @@ ruleNavigatingSemiArgCS returns [EObject current=null]
        			$current, 
        			"ownedNameExpression",
         		lv_ownedNameExpression_1_0, 
-        		"NavigatingArgExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.NavigatingArgExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6495,7 +6495,7 @@ ruleNavigatingSemiArgCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_3_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6517,7 +6517,7 @@ ruleNavigatingSemiArgCS returns [EObject current=null]
        			$current, 
        			"ownedInitExpression",
         		lv_ownedInitExpression_5_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6594,7 +6594,7 @@ ruleIfExpCS returns [EObject current=null]
        			$current, 
        			"ownedCondition",
         		lv_ownedCondition_1_1, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6609,7 +6609,7 @@ ruleIfExpCS returns [EObject current=null]
        			$current, 
        			"ownedCondition",
         		lv_ownedCondition_1_2, 
-        		"PatternExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.PatternExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6633,7 +6633,7 @@ ruleIfExpCS returns [EObject current=null]
        			$current, 
        			"ownedThenExpression",
         		lv_ownedThenExpression_3_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6651,7 +6651,7 @@ ruleIfExpCS returns [EObject current=null]
        			$current, 
        			"ownedIfThenExpressions",
         		lv_ownedIfThenExpressions_4_0, 
-        		"ElseIfThenExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ElseIfThenExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6673,7 +6673,7 @@ ruleIfExpCS returns [EObject current=null]
        			$current, 
        			"ownedElseExpression",
         		lv_ownedElseExpression_6_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6720,7 +6720,7 @@ ruleElseIfThenExpCS returns [EObject current=null]
        			$current, 
        			"ownedCondition",
         		lv_ownedCondition_1_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6742,7 +6742,7 @@ ruleElseIfThenExpCS returns [EObject current=null]
        			$current, 
        			"ownedThenExpression",
         		lv_ownedThenExpression_3_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6785,7 +6785,7 @@ ruleLetExpCS returns [EObject current=null]
        			$current, 
        			"ownedVariables",
         		lv_ownedVariables_1_0, 
-        		"LetVariableCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.LetVariableCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6807,7 +6807,7 @@ ruleLetExpCS returns [EObject current=null]
        			$current, 
        			"ownedVariables",
         		lv_ownedVariables_3_0, 
-        		"LetVariableCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.LetVariableCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6829,7 +6829,7 @@ ruleLetExpCS returns [EObject current=null]
        			$current, 
        			"ownedInExpression",
         		lv_ownedInExpression_5_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6868,7 +6868,7 @@ ruleLetVariableCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"UnrestrictedName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnrestrictedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6886,7 +6886,7 @@ ruleLetVariableCS returns [EObject current=null]
        			$current, 
        			"ownedRoundBracketedClause",
         		lv_ownedRoundBracketedClause_1_0, 
-        		"RoundBracketedClauseCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.RoundBracketedClauseCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6908,7 +6908,7 @@ ruleLetVariableCS returns [EObject current=null]
        			$current, 
        			"ownedType",
         		lv_ownedType_3_0, 
-        		"TypeExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6930,7 +6930,7 @@ ruleLetVariableCS returns [EObject current=null]
        			$current, 
        			"ownedInitExpression",
         		lv_ownedInitExpression_5_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6973,7 +6973,7 @@ ruleNestedExpCS returns [EObject current=null]
        			$current, 
        			"ownedExpression",
         		lv_ownedExpression_1_0, 
-        		"ExpCS");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7050,7 +7050,7 @@ ruleMultiplicityBoundsCS returns [EObject current=null]
        			$current, 
        			"lowerBound",
         		lv_lowerBound_0_0, 
-        		"LOWER");
+        		"org.eclipse.ocl.xtext.base.Base.LOWER");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7072,7 +7072,7 @@ ruleMultiplicityBoundsCS returns [EObject current=null]
        			$current, 
        			"upperBound",
         		lv_upperBound_2_0, 
-        		"UPPER");
+        		"org.eclipse.ocl.xtext.base.Base.UPPER");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7248,7 +7248,7 @@ rulePathNameCS returns [EObject current=null]
        			$current, 
        			"ownedPathElements",
         		lv_ownedPathElements_0_0, 
-        		"FirstPathElementCS");
+        		"org.eclipse.ocl.xtext.base.Base.FirstPathElementCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7270,7 +7270,7 @@ rulePathNameCS returns [EObject current=null]
        			$current, 
        			"ownedPathElements",
         		lv_ownedPathElements_2_0, 
-        		"NextPathElementCS");
+        		"org.eclipse.ocl.xtext.base.Base.NextPathElementCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7309,7 +7309,7 @@ ruleFirstPathElementCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"UnrestrictedName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnrestrictedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7348,7 +7348,7 @@ ruleNextPathElementCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"UnreservedName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnreservedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7387,7 +7387,7 @@ ruleTemplateBindingCS returns [EObject current=null]
        			$current, 
        			"ownedSubstitutions",
         		lv_ownedSubstitutions_0_0, 
-        		"TemplateParameterSubstitutionCS");
+        		"org.eclipse.ocl.xtext.base.Base.TemplateParameterSubstitutionCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7409,7 +7409,7 @@ ruleTemplateBindingCS returns [EObject current=null]
        			$current, 
        			"ownedSubstitutions",
         		lv_ownedSubstitutions_2_0, 
-        		"TemplateParameterSubstitutionCS");
+        		"org.eclipse.ocl.xtext.base.Base.TemplateParameterSubstitutionCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7427,7 +7427,7 @@ ruleTemplateBindingCS returns [EObject current=null]
        			$current, 
        			"ownedMultiplicity",
         		lv_ownedMultiplicity_3_0, 
-        		"MultiplicityCS");
+        		"org.eclipse.ocl.xtext.base.Base.MultiplicityCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7466,7 +7466,7 @@ ruleTemplateParameterSubstitutionCS returns [EObject current=null]
        			$current, 
        			"ownedActualParameter",
         		lv_ownedActualParameter_0_0, 
-        		"TypeRefCS");
+        		"org.eclipse.ocl.xtext.base.Base.TypeRefCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7509,7 +7509,7 @@ ruleTemplateSignatureCS returns [EObject current=null]
        			$current, 
        			"ownedParameters",
         		lv_ownedParameters_1_0, 
-        		"TypeParameterCS");
+        		"org.eclipse.ocl.xtext.base.Base.TypeParameterCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7531,7 +7531,7 @@ ruleTemplateSignatureCS returns [EObject current=null]
        			$current, 
        			"ownedParameters",
         		lv_ownedParameters_3_0, 
-        		"TypeParameterCS");
+        		"org.eclipse.ocl.xtext.base.Base.TypeParameterCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7574,7 +7574,7 @@ ruleTypeParameterCS returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"UnrestrictedName");
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnrestrictedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7596,7 +7596,7 @@ ruleTypeParameterCS returns [EObject current=null]
        			$current, 
        			"ownedExtends",
         		lv_ownedExtends_2_0, 
-        		"TypedRefCS");
+        		"org.eclipse.ocl.xtext.base.Base.TypedRefCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7618,7 +7618,7 @@ ruleTypeParameterCS returns [EObject current=null]
        			$current, 
        			"ownedExtends",
         		lv_ownedExtends_4_0, 
-        		"TypedRefCS");
+        		"org.eclipse.ocl.xtext.base.Base.TypedRefCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7736,7 +7736,7 @@ ruleTypedTypeRefCS returns [EObject current=null]
        			$current, 
        			"ownedPathName",
         		lv_ownedPathName_0_0, 
-        		"PathNameCS");
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7758,7 +7758,7 @@ ruleTypedTypeRefCS returns [EObject current=null]
        			$current, 
        			"ownedBinding",
         		lv_ownedBinding_2_0, 
-        		"TemplateBindingCS");
+        		"org.eclipse.ocl.xtext.base.Base.TemplateBindingCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7818,7 +7818,7 @@ ruleWildcardTypeRefCS returns [EObject current=null]
        			$current, 
        			"ownedExtends",
         		lv_ownedExtends_3_0, 
-        		"TypedRefCS");
+        		"org.eclipse.ocl.xtext.base.Base.TypedRefCS");
 	        afterParserOrEnumRuleCall();
 	    }
 

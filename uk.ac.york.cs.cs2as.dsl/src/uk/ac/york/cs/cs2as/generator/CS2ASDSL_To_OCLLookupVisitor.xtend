@@ -1,21 +1,21 @@
 package uk.ac.york.cs.cs2as.generator
 
-import uk.ac.york.cs.cs2as.cs2as_dsl.Model
-import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution
-import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef
-import java.util.Map
 import java.util.List
-import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef
-import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef
+import java.util.Map
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt
+import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp
 import uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef
-import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific
-import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll
-import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt
-import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.Model
+import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect
+import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific
 
 class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 
@@ -114,25 +114,25 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		---- Default Environment related functionality
 		context OclElement
 		--	
-		def : env() : «lookupPck»::«lookupEnv» =
+		def : env() : «lookupPck»::«lookupEnv»[1] =
 			_env(null)
 		
-		def : _env(child : OclElement) : «lookupPck»::«lookupEnv» =
+		def : _env(child : OclElement) : «lookupPck»::«lookupEnv»[1] =
 			parentEnv()
 			
-		def : _exported_env(importer : OclElement) : «lookupPck»::«lookupEnv» =
+		def : _exported_env(importer : OclElement) : «lookupPck»::«lookupEnv»[1] =
 			«lookupPck»::«lookupEnv» { }
 			
-		def : parentEnv() : «lookupPck»::«lookupEnv» =
+		def : parentEnv() : «lookupPck»::«lookupEnv»[1] =
 			let parent = oclContainer() in if parent = null then «lookupPck»::«lookupEnv» { } else parent._env(self) endif
 		endpackage 
 		
 		package «lookupPck»
 		context «lookupEnv»
-		def : nestedEnv() : «lookupEnv» = 
+		def : nestedEnv() : «lookupEnv»[1] = 
 			«lookupEnv» {
 				parentEnv = self
-			}		
+			}
 		endpackage
 		''';
 	}
@@ -214,14 +214,14 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			return '';
 		} else {
 			val StringBuilder sb = new StringBuilder();
-			val List<ElementsContribExp> qualificationConstribs = newArrayList();			
+			val List<ElementsContribExp> qualificationConstribs = newArrayList();
 			for (qualification : qualifications) {
 				val className = qualification.qualifiedClass.doSwitch;
 				val nClassName = className.normalizeString;
 				val nameParam = className.toLowerCase.charAt(0) + "Name";
 				val filter = element2filter.get(className);
-				val filterParams = filter.paramsText;
-				val filterArgs = filter.argsText;
+				val filterParams = filter.optionalAddedParamsText;
+				val filterArgs = filter.optionalAddedArgsText;
 				sb.append('''
 					
 				def : _lookupQualified«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
@@ -246,6 +246,17 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 				''')	
 			}	
 			
+			val filter = object.filter;
+			if (filter != null) {
+				val className = (object.eContainer as ClassNameResolution).class_.doSwitch;
+				val nClassName = className.normalizeString;
+				val filterParams = filter.paramsText;
+				sb.append('''
+					
+				def : «nClassName.filterOpName»(«filterParams») : Boolean =
+					«filter.expression.doSwitch»
+				''')
+			}
 			sb.toString;
 		}
 	}
@@ -305,13 +316,13 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 				if (statmt instanceof NamedElementDef) {	
 					val nameProp = if (statmt.namePoperty != null) statmt.namePoperty.doSwitch else defaultNEP
 					val filter = statmt.filter;
-					val filterParams = filter.getParamsText
-					val filterArgs = filter.getArgsText;
+					val filterParams = filter.optionalAddedParamsText
+					val filterArgs = filter.optionalAddedArgsText;
 					sb.append('''
 					-- «nClassName» lookup
 					def : _lookup«nClassName»(env : «lookupPck»::«lookupEnv», «nameParam» : String«filterParams») : OrderedSet(«className») =
 					let found«nClassName» = env.namedElements->selectByKind(«className»)->select(«nameProp» = «nameParam»)
-					                                         «IF filter!=null»->select(«filter.expression.doSwitch»)«ENDIF»
+					                                         «IF filter!=null»->select(«nClassName.getFilterOpName»(«filter.argsText»))«ENDIF»
 					in  if found«nClassName»->isEmpty() and not (env.parentEnv = null)
 						then _lookup«nClassName»(env.parentEnv, «nameParam»«filterArgs»)
 						else found«nClassName»
@@ -328,13 +339,14 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 					«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, nClassName, filterParams, filterArgs)»«ENDIF»
 					
 					«IF element2qualifiers.get(className) != null»«provideQualifiedLookupMethods(className, nClassName, filterParams, filterArgs)»«ENDIF»
+					
 					''');
 				} else if (statmt instanceof ExportDef) {
 					val exportedClassName = statmt.exportedClass.doSwitch;
 					val nExportedClassName = exportedClassName.normalizeString;
 					val filter = element2filter.get(exportedClassName);
-					val filterParams = filter.paramsText;
-					val filterArgs = filter.argsText;
+					val filterParams = filter.optionalAddedParamsText;
+					val filterArgs = filter.optionalAddedArgsText;
 					sb.append('''
 					-- «nClassName» exports «nExportedClassName»
 						
@@ -527,8 +539,8 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 				val nClassName = className.normalizeString;
 				val nameParam = className.toLowerCase.charAt(0) + "Name";
 				val filter = element2filter.get(className);
-				val filterParams = filter.paramsText;
-				val filterArgs = filter.argsText;
+				val filterParams = filter.optionalAddedParamsText;
+				val filterArgs = filter.optionalAddedArgsText;
 				sb.append('''
 					
 				def : _lookupExported«nClassName»(importer : ocl::OclElement, «nameParam» : String«filterParams») : «className»[?] =
@@ -554,12 +566,27 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		'''«IF defaultNR==null»String«ELSE»«sourcePckName»::«defaultNR»«ENDIF»'''
 	}
 	
-	def private String getParamsText(FilterDef filter) {
-		if (filter == null) '' else '''«FOR param: filter.params», «param.doSwitch»«ENDFOR»'''
+	def private String getFilterOpName(String filteredClassName) {
+		'''_appliesFilter_«filteredClassName»'''
+	}
+	def private String getOptionalAddedParamsText(FilterDef filter) {
+		if (filter == null) '' else	''', «filter.paramsText»'''
 	}
 	
-	def private String getArgsText(FilterDef filter) {
-		if (filter == null) '' else '''«FOR param: filter.params», «param.name»«ENDFOR»'''
+	
+	def private String getParamsText(/*@NonNull*/ FilterDef filter) {
+		val params = filter.params;
+		'''«FOR param: params»«IF params.indexOf(param)>0», «ENDIF»«param.doSwitch»«ENDFOR»'''
+	}
+	
+	
+	def private String getOptionalAddedArgsText(FilterDef filter) {
+		if (filter == null) '' else ''', «filter.argsText»'''
+	}
+	
+	def private String getArgsText(/*@NonNull*/ FilterDef filter) {
+		val params = filter.params;
+		'''«FOR param: params»«IF params.indexOf(param)>0», «ENDIF»«param.name»«ENDFOR»'''
 	}
 	
 	def private normalizeString(String string) {

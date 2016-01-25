@@ -2,17 +2,21 @@ package uk.ac.york.cs.cs2as.generator;
 
 import com.google.common.base.Objects;
 import java.util.ArrayList;
+import java.util.Collections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.xtext.basecs.ParameterCS;
 import org.eclipse.ocl.xtext.basecs.PathNameCS;
 import org.eclipse.ocl.xtext.basecs.TypedRefCS;
+import org.eclipse.ocl.xtext.essentialoclcs.AbstractNameExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.CollectionTypeCS;
 import org.eclipse.ocl.xtext.essentialoclcs.CurlyBracketedClauseCS;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.IfExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.InfixExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.InvalidLiteralExpCS;
+import org.eclipse.ocl.xtext.essentialoclcs.LetExpCS;
+import org.eclipse.ocl.xtext.essentialoclcs.LetVariableCS;
 import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.NavigatingArgCS;
 import org.eclipse.ocl.xtext.essentialoclcs.NestedExpCS;
@@ -23,6 +27,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.SelfExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.SquareBracketedClauseCS;
 import org.eclipse.ocl.xtext.essentialoclcs.StringLiteralExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.TypeNameExpCS;
+import org.eclipse.ocl.xtext.essentialoclcs.VariableCS;
 import org.eclipse.ocl.xtext.essentialoclcs.util.EssentialOCLCSSwitch;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
@@ -195,6 +200,18 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   public String caseRoundBracketedClauseCS(final RoundBracketedClauseCS object) {
     String _xblockexpression = null;
     {
+      AbstractNameExpCS _owningNameExp = object.getOwningNameExp();
+      final NameExpCS nameExp = ((NameExpCS) _owningNameExp);
+      String _xifexpression = null;
+      PathNameCS _ownedPathName = nameExp.getOwnedPathName();
+      String _string = _ownedPathName.toString();
+      boolean _contains = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("exists", "forAll", "collect")).contains(_string);
+      if (_contains) {
+        _xifexpression = " | ";
+      } else {
+        _xifexpression = ", ";
+      }
+      final String sep = _xifexpression;
       EList<NavigatingArgCS> args = object.getOwnedArguments();
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(");
@@ -204,7 +221,7 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
             int _indexOf = args.indexOf(arg);
             boolean _notEquals = (_indexOf != 0);
             if (_notEquals) {
-              _builder.append(",");
+              _builder.append(sep, "");
             }
           }
           String _doSwitch = this.doSwitch(arg);
@@ -272,18 +289,32 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   
   @Override
   public String caseStringLiteralExpCS(final StringLiteralExpCS object) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append(" ");
-    _builder.append("\'");
+    String _xblockexpression = null;
     {
-      EList<String> _segments = object.getSegments();
-      for(final String segment : _segments) {
-        _builder.append(" ");
-        _builder.append(segment, " ");
+      StringConcatenation _builder = new StringConcatenation();
+      {
+        EList<String> _segments = object.getSegments();
+        for(final String segment : _segments) {
+          _builder.append(" ");
+          _builder.append(segment, "");
+        }
       }
+      final String allSegments = _builder.toString();
+      String _xifexpression = null;
+      String _trim = allSegments.trim();
+      boolean _startsWith = _trim.startsWith("\'");
+      if (_startsWith) {
+        _xifexpression = allSegments;
+      } else {
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("\'");
+        _builder_1.append(allSegments, "");
+        _builder_1.append("\' ");
+        _xifexpression = _builder_1.toString();
+      }
+      _xblockexpression = _xifexpression;
     }
-    _builder.append("\' ");
-    return _builder.toString();
+    return _xblockexpression;
   }
   
   @Override
@@ -319,6 +350,68 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
     String _doSwitch = this.doSwitch(_ownedType);
     _builder.append(_doSwitch, "");
     return _builder.toString();
+  }
+  
+  @Override
+  public String caseLetExpCS(final LetExpCS object) {
+    String _xblockexpression = null;
+    {
+      final EList<LetVariableCS> letVars = object.getOwnedVariables();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("let ");
+      {
+        for(final LetVariableCS letVar : letVars) {
+          {
+            int _indexOf = letVars.indexOf(letVar);
+            boolean _greaterThan = (_indexOf > 0);
+            if (_greaterThan) {
+              _builder.append(", ");
+            }
+          }
+          String _doSwitch = this.doSwitch(letVar);
+          _builder.append(_doSwitch, "");
+          _builder.newLineIfNotEmpty();
+        }
+      }
+      _builder.append("in ");
+      ExpCS _ownedInExpression = object.getOwnedInExpression();
+      String _doSwitch_1 = this.doSwitch(_ownedInExpression);
+      _builder.append(_doSwitch_1, "");
+      _builder.newLineIfNotEmpty();
+      _xblockexpression = _builder.toString();
+    }
+    return _xblockexpression;
+  }
+  
+  @Override
+  public String caseVariableCS(final VariableCS object) {
+    String _xblockexpression = null;
+    {
+      final TypedRefCS type = object.getOwnedType();
+      final ExpCS init = object.getOwnedInitExpression();
+      StringConcatenation _builder = new StringConcatenation();
+      String _name = object.getName();
+      _builder.append(_name, "");
+      _builder.append(" ");
+      {
+        boolean _notEquals = (!Objects.equal(type, null));
+        if (_notEquals) {
+          _builder.append(" : ");
+          String _doSwitch = this.doSwitch(type);
+          _builder.append(_doSwitch, "");
+        }
+      }
+      {
+        boolean _notEquals_1 = (!Objects.equal(init, null));
+        if (_notEquals_1) {
+          _builder.append(" = ");
+          String _doSwitch_1 = this.doSwitch(init);
+          _builder.append(_doSwitch_1, "");
+        }
+      }
+      _xblockexpression = _builder.toString();
+    }
+    return _xblockexpression;
   }
   
   public String caseResolveExp(final ResolveExpCS object) {

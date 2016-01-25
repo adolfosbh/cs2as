@@ -22,5 +22,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: uk.ac.york.cs.cs2as.ui.quickfix,
  uk.ac.york.cs.cs2as.ui.contentassist,
  uk.ac.york.cs.cs2as.ui.internal,
- uk.ac.york.cs.cs2as.ui.contentassist.antlr
+ uk.ac.york.cs.cs2as.ui.contentassist.antlr,
+ uk.ac.york.cs.cs2as.ui.contentassist.antlr.internal
 Bundle-Activator: uk.ac.york.cs.cs2as.ui.internal.CS2ASDSLActivator

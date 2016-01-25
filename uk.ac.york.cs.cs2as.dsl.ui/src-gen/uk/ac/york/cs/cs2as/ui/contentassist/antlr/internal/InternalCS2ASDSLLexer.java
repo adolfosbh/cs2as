@@ -140,15 +140,15 @@ public class InternalCS2ASDSLLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g"; }
+    public String getGrammarFileName() { return "InternalCS2ASDSL.g"; }
 
     // $ANTLR start "T__16"
     public final void mT__16() throws RecognitionException {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:11:7: ( 'nested-scope' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:11:9: 'nested-scope'
+            // InternalCS2ASDSL.g:11:7: ( 'nested-scope' )
+            // InternalCS2ASDSL.g:11:9: 'nested-scope'
             {
             match("nested-scope"); 
 
@@ -168,8 +168,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:12:7: ( 'lookup' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:12:9: 'lookup'
+            // InternalCS2ASDSL.g:12:7: ( 'lookup' )
+            // InternalCS2ASDSL.g:12:9: 'lookup'
             {
             match("lookup"); 
 
@@ -189,8 +189,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:13:7: ( '-' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:13:9: '-'
+            // InternalCS2ASDSL.g:13:7: ( '-' )
+            // InternalCS2ASDSL.g:13:9: '-'
             {
             match('-'); 
 
@@ -209,8 +209,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:14:7: ( 'not' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:14:9: 'not'
+            // InternalCS2ASDSL.g:14:7: ( 'not' )
+            // InternalCS2ASDSL.g:14:9: 'not'
             {
             match("not"); 
 
@@ -230,8 +230,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:15:7: ( '*' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:15:9: '*'
+            // InternalCS2ASDSL.g:15:7: ( '*' )
+            // InternalCS2ASDSL.g:15:9: '*'
             {
             match('*'); 
 
@@ -250,8 +250,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:16:7: ( '/' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:16:9: '/'
+            // InternalCS2ASDSL.g:16:7: ( '/' )
+            // InternalCS2ASDSL.g:16:9: '/'
             {
             match('/'); 
 
@@ -270,8 +270,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:17:7: ( '+' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:17:9: '+'
+            // InternalCS2ASDSL.g:17:7: ( '+' )
+            // InternalCS2ASDSL.g:17:9: '+'
             {
             match('+'); 
 
@@ -290,8 +290,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:18:7: ( '>' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:18:9: '>'
+            // InternalCS2ASDSL.g:18:7: ( '>' )
+            // InternalCS2ASDSL.g:18:9: '>'
             {
             match('>'); 
 
@@ -310,8 +310,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:19:7: ( '<' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:19:9: '<'
+            // InternalCS2ASDSL.g:19:7: ( '<' )
+            // InternalCS2ASDSL.g:19:9: '<'
             {
             match('<'); 
 
@@ -330,8 +330,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:20:7: ( '>=' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:20:9: '>='
+            // InternalCS2ASDSL.g:20:7: ( '>=' )
+            // InternalCS2ASDSL.g:20:9: '>='
             {
             match(">="); 
 
@@ -351,8 +351,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21:7: ( '<=' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21:9: '<='
+            // InternalCS2ASDSL.g:21:7: ( '<=' )
+            // InternalCS2ASDSL.g:21:9: '<='
             {
             match("<="); 
 
@@ -372,8 +372,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:22:7: ( '=' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:22:9: '='
+            // InternalCS2ASDSL.g:22:7: ( '=' )
+            // InternalCS2ASDSL.g:22:9: '='
             {
             match('='); 
 
@@ -392,8 +392,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:23:7: ( '<>' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:23:9: '<>'
+            // InternalCS2ASDSL.g:23:7: ( '<>' )
+            // InternalCS2ASDSL.g:23:9: '<>'
             {
             match("<>"); 
 
@@ -413,8 +413,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:24:7: ( 'and' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:24:9: 'and'
+            // InternalCS2ASDSL.g:24:7: ( 'and' )
+            // InternalCS2ASDSL.g:24:9: 'and'
             {
             match("and"); 
 
@@ -434,8 +434,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:25:7: ( 'or' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:25:9: 'or'
+            // InternalCS2ASDSL.g:25:7: ( 'or' )
+            // InternalCS2ASDSL.g:25:9: 'or'
             {
             match("or"); 
 
@@ -455,8 +455,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:26:7: ( 'xor' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:26:9: 'xor'
+            // InternalCS2ASDSL.g:26:7: ( 'xor' )
+            // InternalCS2ASDSL.g:26:9: 'xor'
             {
             match("xor"); 
 
@@ -476,8 +476,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:27:7: ( 'implies' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:27:9: 'implies'
+            // InternalCS2ASDSL.g:27:7: ( 'implies' )
+            // InternalCS2ASDSL.g:27:9: 'implies'
             {
             match("implies"); 
 
@@ -497,8 +497,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:28:7: ( '.' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:28:9: '.'
+            // InternalCS2ASDSL.g:28:7: ( '.' )
+            // InternalCS2ASDSL.g:28:9: '.'
             {
             match('.'); 
 
@@ -517,8 +517,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:29:7: ( '->' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:29:9: '->'
+            // InternalCS2ASDSL.g:29:7: ( '->' )
+            // InternalCS2ASDSL.g:29:9: '->'
             {
             match("->"); 
 
@@ -538,8 +538,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:30:7: ( '?.' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:30:9: '?.'
+            // InternalCS2ASDSL.g:30:7: ( '?.' )
+            // InternalCS2ASDSL.g:30:9: '?.'
             {
             match("?."); 
 
@@ -559,8 +559,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:31:7: ( '?->' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:31:9: '?->'
+            // InternalCS2ASDSL.g:31:7: ( '?->' )
+            // InternalCS2ASDSL.g:31:9: '?->'
             {
             match("?->"); 
 
@@ -580,8 +580,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:32:7: ( 'Map' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:32:9: 'Map'
+            // InternalCS2ASDSL.g:32:7: ( 'Map' )
+            // InternalCS2ASDSL.g:32:9: 'Map'
             {
             match("Map"); 
 
@@ -601,8 +601,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:33:7: ( 'Tuple' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:33:9: 'Tuple'
+            // InternalCS2ASDSL.g:33:7: ( 'Tuple' )
+            // InternalCS2ASDSL.g:33:9: 'Tuple'
             {
             match("Tuple"); 
 
@@ -622,8 +622,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:34:7: ( 'Boolean' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:34:9: 'Boolean'
+            // InternalCS2ASDSL.g:34:7: ( 'Boolean' )
+            // InternalCS2ASDSL.g:34:9: 'Boolean'
             {
             match("Boolean"); 
 
@@ -643,8 +643,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:35:7: ( 'Integer' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:35:9: 'Integer'
+            // InternalCS2ASDSL.g:35:7: ( 'Integer' )
+            // InternalCS2ASDSL.g:35:9: 'Integer'
             {
             match("Integer"); 
 
@@ -664,8 +664,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:36:7: ( 'Real' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:36:9: 'Real'
+            // InternalCS2ASDSL.g:36:7: ( 'Real' )
+            // InternalCS2ASDSL.g:36:9: 'Real'
             {
             match("Real"); 
 
@@ -685,8 +685,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:37:7: ( 'String' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:37:9: 'String'
+            // InternalCS2ASDSL.g:37:7: ( 'String' )
+            // InternalCS2ASDSL.g:37:9: 'String'
             {
             match("String"); 
 
@@ -706,8 +706,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:38:7: ( 'UnlimitedNatural' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:38:9: 'UnlimitedNatural'
+            // InternalCS2ASDSL.g:38:7: ( 'UnlimitedNatural' )
+            // InternalCS2ASDSL.g:38:9: 'UnlimitedNatural'
             {
             match("UnlimitedNatural"); 
 
@@ -727,8 +727,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:39:7: ( 'OclAny' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:39:9: 'OclAny'
+            // InternalCS2ASDSL.g:39:7: ( 'OclAny' )
+            // InternalCS2ASDSL.g:39:9: 'OclAny'
             {
             match("OclAny"); 
 
@@ -748,8 +748,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:40:7: ( 'OclInvalid' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:40:9: 'OclInvalid'
+            // InternalCS2ASDSL.g:40:7: ( 'OclInvalid' )
+            // InternalCS2ASDSL.g:40:9: 'OclInvalid'
             {
             match("OclInvalid"); 
 
@@ -769,8 +769,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:41:7: ( 'OclVoid' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:41:9: 'OclVoid'
+            // InternalCS2ASDSL.g:41:7: ( 'OclVoid' )
+            // InternalCS2ASDSL.g:41:9: 'OclVoid'
             {
             match("OclVoid"); 
 
@@ -790,8 +790,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:42:7: ( 'Set' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:42:9: 'Set'
+            // InternalCS2ASDSL.g:42:7: ( 'Set' )
+            // InternalCS2ASDSL.g:42:9: 'Set'
             {
             match("Set"); 
 
@@ -811,8 +811,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:43:7: ( 'Bag' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:43:9: 'Bag'
+            // InternalCS2ASDSL.g:43:7: ( 'Bag' )
+            // InternalCS2ASDSL.g:43:9: 'Bag'
             {
             match("Bag"); 
 
@@ -832,8 +832,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:44:7: ( 'Sequence' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:44:9: 'Sequence'
+            // InternalCS2ASDSL.g:44:7: ( 'Sequence' )
+            // InternalCS2ASDSL.g:44:9: 'Sequence'
             {
             match("Sequence"); 
 
@@ -853,8 +853,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:45:7: ( 'Collection' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:45:9: 'Collection'
+            // InternalCS2ASDSL.g:45:7: ( 'Collection' )
+            // InternalCS2ASDSL.g:45:9: 'Collection'
             {
             match("Collection"); 
 
@@ -874,8 +874,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:46:7: ( 'OrderedSet' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:46:9: 'OrderedSet'
+            // InternalCS2ASDSL.g:46:7: ( 'OrderedSet' )
+            // InternalCS2ASDSL.g:46:9: 'OrderedSet'
             {
             match("OrderedSet"); 
 
@@ -895,8 +895,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:47:7: ( '|?' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:47:9: '|?'
+            // InternalCS2ASDSL.g:47:7: ( '|?' )
+            // InternalCS2ASDSL.g:47:9: '|?'
             {
             match("|?"); 
 
@@ -916,8 +916,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:48:7: ( '?' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:48:9: '?'
+            // InternalCS2ASDSL.g:48:7: ( '?' )
+            // InternalCS2ASDSL.g:48:9: '?'
             {
             match('?'); 
 
@@ -936,8 +936,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:49:7: ( 'source' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:49:9: 'source'
+            // InternalCS2ASDSL.g:49:7: ( 'source' )
+            // InternalCS2ASDSL.g:49:9: 'source'
             {
             match("source"); 
 
@@ -957,8 +957,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:50:7: ( ',' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:50:9: ','
+            // InternalCS2ASDSL.g:50:7: ( ',' )
+            // InternalCS2ASDSL.g:50:9: ','
             {
             match(','); 
 
@@ -977,8 +977,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:51:7: ( 'target' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:51:9: 'target'
+            // InternalCS2ASDSL.g:51:7: ( 'target' )
+            // InternalCS2ASDSL.g:51:9: 'target'
             {
             match("target"); 
 
@@ -998,8 +998,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:52:7: ( ':' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:52:9: ':'
+            // InternalCS2ASDSL.g:52:7: ( ':' )
+            // InternalCS2ASDSL.g:52:9: ':'
             {
             match(':'); 
 
@@ -1018,8 +1018,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:53:7: ( 'mappings' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:53:9: 'mappings'
+            // InternalCS2ASDSL.g:53:7: ( 'mappings' )
+            // InternalCS2ASDSL.g:53:9: 'mappings'
             {
             match("mappings"); 
 
@@ -1039,8 +1039,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:54:7: ( '{' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:54:9: '{'
+            // InternalCS2ASDSL.g:54:7: ( '{' )
+            // InternalCS2ASDSL.g:54:9: '{'
             {
             match('{'); 
 
@@ -1059,8 +1059,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:55:7: ( '}' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:55:9: '}'
+            // InternalCS2ASDSL.g:55:7: ( '}' )
+            // InternalCS2ASDSL.g:55:9: '}'
             {
             match('}'); 
 
@@ -1079,8 +1079,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:56:7: ( 'map' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:56:9: 'map'
+            // InternalCS2ASDSL.g:56:7: ( 'map' )
+            // InternalCS2ASDSL.g:56:9: 'map'
             {
             match("map"); 
 
@@ -1100,8 +1100,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:57:7: ( 'from' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:57:9: 'from'
+            // InternalCS2ASDSL.g:57:7: ( 'from' )
+            // InternalCS2ASDSL.g:57:9: 'from'
             {
             match("from"); 
 
@@ -1121,8 +1121,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:58:7: ( 'when' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:58:9: 'when'
+            // InternalCS2ASDSL.g:58:7: ( 'when' )
+            // InternalCS2ASDSL.g:58:9: 'when'
             {
             match("when"); 
 
@@ -1142,8 +1142,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:59:7: ( ';' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:59:9: ';'
+            // InternalCS2ASDSL.g:59:7: ( ';' )
+            // InternalCS2ASDSL.g:59:9: ';'
             {
             match(';'); 
 
@@ -1162,8 +1162,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:60:7: ( ':=' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:60:9: ':='
+            // InternalCS2ASDSL.g:60:7: ( ':=' )
+            // InternalCS2ASDSL.g:60:9: ':='
             {
             match(":="); 
 
@@ -1183,8 +1183,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:61:7: ( 'disambiguation' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:61:9: 'disambiguation'
+            // InternalCS2ASDSL.g:61:7: ( 'disambiguation' )
+            // InternalCS2ASDSL.g:61:9: 'disambiguation'
             {
             match("disambiguation"); 
 
@@ -1204,8 +1204,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:62:7: ( 'nameresolution' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:62:9: 'nameresolution'
+            // InternalCS2ASDSL.g:62:7: ( 'nameresolution' )
+            // InternalCS2ASDSL.g:62:9: 'nameresolution'
             {
             match("nameresolution"); 
 
@@ -1225,8 +1225,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:63:7: ( 'named-element' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:63:9: 'named-element'
+            // InternalCS2ASDSL.g:63:7: ( 'named-element' )
+            // InternalCS2ASDSL.g:63:9: 'named-element'
             {
             match("named-element"); 
 
@@ -1246,8 +1246,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:64:7: ( 'name-property' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:64:9: 'name-property'
+            // InternalCS2ASDSL.g:64:7: ( 'name-property' )
+            // InternalCS2ASDSL.g:64:9: 'name-property'
             {
             match("name-property"); 
 
@@ -1267,8 +1267,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:65:7: ( 'name-referencer' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:65:9: 'name-referencer'
+            // InternalCS2ASDSL.g:65:7: ( 'name-referencer' )
+            // InternalCS2ASDSL.g:65:9: 'name-referencer'
             {
             match("name-referencer"); 
 
@@ -1288,8 +1288,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:66:7: ( 'name-qualifier' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:66:9: 'name-qualifier'
+            // InternalCS2ASDSL.g:66:7: ( 'name-qualifier' )
+            // InternalCS2ASDSL.g:66:9: 'name-qualifier'
             {
             match("name-qualifier"); 
 
@@ -1309,8 +1309,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:67:7: ( 'name-segments-property' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:67:9: 'name-segments-property'
+            // InternalCS2ASDSL.g:67:7: ( 'name-segments-property' )
+            // InternalCS2ASDSL.g:67:9: 'name-segments-property'
             {
             match("name-segments-property"); 
 
@@ -1330,8 +1330,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:68:7: ( 'qualifying' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:68:9: 'qualifying'
+            // InternalCS2ASDSL.g:68:7: ( 'qualifying' )
+            // InternalCS2ASDSL.g:68:9: 'qualifying'
             {
             match("qualifying"); 
 
@@ -1351,8 +1351,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:69:7: ( 'filtered' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:69:9: 'filtered'
+            // InternalCS2ASDSL.g:69:7: ( 'filtered' )
+            // InternalCS2ASDSL.g:69:9: 'filtered'
             {
             match("filtered"); 
 
@@ -1372,8 +1372,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:70:7: ( 'by' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:70:9: 'by'
+            // InternalCS2ASDSL.g:70:7: ( 'by' )
+            // InternalCS2ASDSL.g:70:9: 'by'
             {
             match("by"); 
 
@@ -1393,8 +1393,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:71:7: ( 'using' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:71:9: 'using'
+            // InternalCS2ASDSL.g:71:7: ( 'using' )
+            // InternalCS2ASDSL.g:71:9: 'using'
             {
             match("using"); 
 
@@ -1414,8 +1414,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:72:7: ( 'occluding' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:72:9: 'occluding'
+            // InternalCS2ASDSL.g:72:7: ( 'occluding' )
+            // InternalCS2ASDSL.g:72:9: 'occluding'
             {
             match("occluding"); 
 
@@ -1435,8 +1435,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:73:7: ( 'for' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:73:9: 'for'
+            // InternalCS2ASDSL.g:73:7: ( 'for' )
+            // InternalCS2ASDSL.g:73:9: 'for'
             {
             match("for"); 
 
@@ -1456,8 +1456,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:74:7: ( 'all' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:74:9: 'all'
+            // InternalCS2ASDSL.g:74:7: ( 'all' )
+            // InternalCS2ASDSL.g:74:9: 'all'
             {
             match("all"); 
 
@@ -1477,8 +1477,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:75:7: ( 'excepting' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:75:9: 'excepting'
+            // InternalCS2ASDSL.g:75:7: ( 'excepting' )
+            // InternalCS2ASDSL.g:75:9: 'excepting'
             {
             match("excepting"); 
 
@@ -1498,8 +1498,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:76:7: ( 'exports' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:76:9: 'exports'
+            // InternalCS2ASDSL.g:76:7: ( 'exports' )
+            // InternalCS2ASDSL.g:76:9: 'exports'
             {
             match("exports"); 
 
@@ -1519,8 +1519,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:77:7: ( 'helpers' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:77:9: 'helpers'
+            // InternalCS2ASDSL.g:77:7: ( 'helpers' )
+            // InternalCS2ASDSL.g:77:9: 'helpers'
             {
             match("helpers"); 
 
@@ -1540,8 +1540,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:78:7: ( '(' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:78:9: '('
+            // InternalCS2ASDSL.g:78:7: ( '(' )
+            // InternalCS2ASDSL.g:78:9: '('
             {
             match('('); 
 
@@ -1560,8 +1560,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:79:7: ( ')' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:79:9: ')'
+            // InternalCS2ASDSL.g:79:7: ( ')' )
+            // InternalCS2ASDSL.g:79:9: ')'
             {
             match(')'); 
 
@@ -1580,8 +1580,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:80:7: ( 'resolve' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:80:9: 'resolve'
+            // InternalCS2ASDSL.g:80:7: ( 'resolve' )
+            // InternalCS2ASDSL.g:80:9: 'resolve'
             {
             match("resolve"); 
 
@@ -1601,8 +1601,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:81:7: ( '::' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:81:9: '::'
+            // InternalCS2ASDSL.g:81:7: ( '::' )
+            // InternalCS2ASDSL.g:81:9: '::'
             {
             match("::"); 
 
@@ -1622,8 +1622,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:82:7: ( '..' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:82:9: '..'
+            // InternalCS2ASDSL.g:82:7: ( '..' )
+            // InternalCS2ASDSL.g:82:9: '..'
             {
             match(".."); 
 
@@ -1643,8 +1643,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:83:7: ( '++' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:83:9: '++'
+            // InternalCS2ASDSL.g:83:7: ( '++' )
+            // InternalCS2ASDSL.g:83:9: '++'
             {
             match("++"); 
 
@@ -1664,8 +1664,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:84:7: ( 'Lambda' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:84:9: 'Lambda'
+            // InternalCS2ASDSL.g:84:7: ( 'Lambda' )
+            // InternalCS2ASDSL.g:84:9: 'Lambda'
             {
             match("Lambda"); 
 
@@ -1685,8 +1685,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:85:7: ( '<-' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:85:9: '<-'
+            // InternalCS2ASDSL.g:85:7: ( '<-' )
+            // InternalCS2ASDSL.g:85:9: '<-'
             {
             match("<-"); 
 
@@ -1706,8 +1706,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:86:7: ( 'invalid' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:86:9: 'invalid'
+            // InternalCS2ASDSL.g:86:7: ( 'invalid' )
+            // InternalCS2ASDSL.g:86:9: 'invalid'
             {
             match("invalid"); 
 
@@ -1727,8 +1727,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:87:7: ( 'null' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:87:9: 'null'
+            // InternalCS2ASDSL.g:87:7: ( 'null' )
+            // InternalCS2ASDSL.g:87:9: 'null'
             {
             match("null"); 
 
@@ -1748,8 +1748,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:88:7: ( 'pre' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:88:9: 'pre'
+            // InternalCS2ASDSL.g:88:7: ( 'pre' )
+            // InternalCS2ASDSL.g:88:9: 'pre'
             {
             match("pre"); 
 
@@ -1769,8 +1769,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:89:7: ( '[' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:89:9: '['
+            // InternalCS2ASDSL.g:89:7: ( '[' )
+            // InternalCS2ASDSL.g:89:9: '['
             {
             match('['); 
 
@@ -1789,8 +1789,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:90:7: ( ']' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:90:9: ']'
+            // InternalCS2ASDSL.g:90:7: ( ']' )
+            // InternalCS2ASDSL.g:90:9: ']'
             {
             match(']'); 
 
@@ -1809,8 +1809,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:91:7: ( 'in' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:91:9: 'in'
+            // InternalCS2ASDSL.g:91:7: ( 'in' )
+            // InternalCS2ASDSL.g:91:9: 'in'
             {
             match("in"); 
 
@@ -1830,8 +1830,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:92:7: ( 'if' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:92:9: 'if'
+            // InternalCS2ASDSL.g:92:7: ( 'if' )
+            // InternalCS2ASDSL.g:92:9: 'if'
             {
             match("if"); 
 
@@ -1851,8 +1851,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:93:7: ( 'then' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:93:9: 'then'
+            // InternalCS2ASDSL.g:93:7: ( 'then' )
+            // InternalCS2ASDSL.g:93:9: 'then'
             {
             match("then"); 
 
@@ -1872,8 +1872,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:94:7: ( 'else' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:94:9: 'else'
+            // InternalCS2ASDSL.g:94:7: ( 'else' )
+            // InternalCS2ASDSL.g:94:9: 'else'
             {
             match("else"); 
 
@@ -1893,8 +1893,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:95:8: ( 'endif' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:95:10: 'endif'
+            // InternalCS2ASDSL.g:95:8: ( 'endif' )
+            // InternalCS2ASDSL.g:95:10: 'endif'
             {
             match("endif"); 
 
@@ -1914,8 +1914,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:96:8: ( 'elseif' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:96:10: 'elseif'
+            // InternalCS2ASDSL.g:96:8: ( 'elseif' )
+            // InternalCS2ASDSL.g:96:10: 'elseif'
             {
             match("elseif"); 
 
@@ -1935,8 +1935,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:97:8: ( 'let' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:97:10: 'let'
+            // InternalCS2ASDSL.g:97:8: ( 'let' )
+            // InternalCS2ASDSL.g:97:10: 'let'
             {
             match("let"); 
 
@@ -1956,8 +1956,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:98:8: ( 'self' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:98:10: 'self'
+            // InternalCS2ASDSL.g:98:8: ( 'self' )
+            // InternalCS2ASDSL.g:98:10: 'self'
             {
             match("self"); 
 
@@ -1977,8 +1977,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:99:8: ( 'extends' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:99:10: 'extends'
+            // InternalCS2ASDSL.g:99:8: ( 'extends' )
+            // InternalCS2ASDSL.g:99:10: 'extends'
             {
             match("extends"); 
 
@@ -1998,8 +1998,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:100:8: ( '&&' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:100:10: '&&'
+            // InternalCS2ASDSL.g:100:8: ( '&&' )
+            // InternalCS2ASDSL.g:100:10: '&&'
             {
             match("&&"); 
 
@@ -2019,8 +2019,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:101:8: ( '::*' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:101:10: '::*'
+            // InternalCS2ASDSL.g:101:8: ( '::*' )
+            // InternalCS2ASDSL.g:101:10: '::*'
             {
             match("::*"); 
 
@@ -2040,8 +2040,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:102:8: ( 'redefine' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:102:10: 'redefine'
+            // InternalCS2ASDSL.g:102:8: ( 'redefine' )
+            // InternalCS2ASDSL.g:102:10: 'redefine'
             {
             match("redefine"); 
 
@@ -2061,8 +2061,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:103:8: ( 'following' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:103:10: 'following'
+            // InternalCS2ASDSL.g:103:8: ( 'following' )
+            // InternalCS2ASDSL.g:103:10: 'following'
             {
             match("following"); 
 
@@ -2082,8 +2082,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:104:8: ( 'imported' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:104:10: 'imported'
+            // InternalCS2ASDSL.g:104:8: ( 'imported' )
+            // InternalCS2ASDSL.g:104:10: 'imported'
             {
             match("imported"); 
 
@@ -2103,8 +2103,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:105:8: ( 'same-scope' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:105:10: 'same-scope'
+            // InternalCS2ASDSL.g:105:8: ( 'same-scope' )
+            // InternalCS2ASDSL.g:105:10: 'same-scope'
             {
             match("same-scope"); 
 
@@ -2124,8 +2124,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:106:8: ( 'empty-scope' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:106:10: 'empty-scope'
+            // InternalCS2ASDSL.g:106:8: ( 'empty-scope' )
+            // InternalCS2ASDSL.g:106:10: 'empty-scope'
             {
             match("empty-scope"); 
 
@@ -2145,8 +2145,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:107:8: ( 'also-exports' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:107:10: 'also-exports'
+            // InternalCS2ASDSL.g:107:8: ( 'also-exports' )
+            // InternalCS2ASDSL.g:107:10: 'also-exports'
             {
             match("also-exports"); 
 
@@ -2166,8 +2166,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__113;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:108:8: ( 'lookupFrom' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:108:10: 'lookupFrom'
+            // InternalCS2ASDSL.g:108:8: ( 'lookupFrom' )
+            // InternalCS2ASDSL.g:108:10: 'lookupFrom'
             {
             match("lookupFrom"); 
 
@@ -2187,8 +2187,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__114;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:109:8: ( 'true' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:109:10: 'true'
+            // InternalCS2ASDSL.g:109:8: ( 'true' )
+            // InternalCS2ASDSL.g:109:10: 'true'
             {
             match("true"); 
 
@@ -2208,8 +2208,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__115;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:110:8: ( 'false' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:110:10: 'false'
+            // InternalCS2ASDSL.g:110:8: ( 'false' )
+            // InternalCS2ASDSL.g:110:10: 'false'
             {
             match("false"); 
 
@@ -2229,8 +2229,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__116;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:111:8: ( '@' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:111:10: '@'
+            // InternalCS2ASDSL.g:111:8: ( '@' )
+            // InternalCS2ASDSL.g:111:10: '@'
             {
             match('@'); 
 
@@ -2249,8 +2249,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__117;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:112:8: ( '|' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:112:10: '|'
+            // InternalCS2ASDSL.g:112:8: ( '|' )
+            // InternalCS2ASDSL.g:112:10: '|'
             {
             match('|'); 
 
@@ -2269,8 +2269,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = T__118;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:113:8: ( '|1' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:113:10: '|1'
+            // InternalCS2ASDSL.g:113:8: ( '|1' )
+            // InternalCS2ASDSL.g:113:10: '|1'
             {
             match("|1"); 
 
@@ -2288,8 +2288,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
     // $ANTLR start "RULE_ESCAPED_CHARACTER"
     public final void mRULE_ESCAPED_CHARACTER() throws RecognitionException {
         try {
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21443:33: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21443:35: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+            // InternalCS2ASDSL.g:21443:33: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) )
+            // InternalCS2ASDSL.g:21443:35: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
             {
             match('\\'); 
             if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2313,8 +2313,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
     // $ANTLR start "RULE_LETTER_CHARACTER"
     public final void mRULE_LETTER_CHARACTER() throws RecognitionException {
         try {
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21445:32: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21445:34: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )
+            // InternalCS2ASDSL.g:21445:32: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) )
+            // InternalCS2ASDSL.g:21445:34: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -2339,11 +2339,11 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE_QUOTED_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21447:27: ( '\"' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21447:29: '\"' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+            // InternalCS2ASDSL.g:21447:27: ( '\"' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
+            // InternalCS2ASDSL.g:21447:29: '\"' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
             {
             match('\"'); 
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21447:33: ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )*
+            // InternalCS2ASDSL.g:21447:33: ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\"' ) ) )*
             loop1:
             do {
                 int alt1=3;
@@ -2359,14 +2359,14 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21447:34: RULE_ESCAPED_CHARACTER
+            	    // InternalCS2ASDSL.g:21447:34: RULE_ESCAPED_CHARACTER
             	    {
             	    mRULE_ESCAPED_CHARACTER(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21447:57: ~ ( ( '\\\\' | '\"' ) )
+            	    // InternalCS2ASDSL.g:21447:57: ~ ( ( '\\\\' | '\"' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2403,11 +2403,11 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_SINGLE_QUOTED_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21449:27: ( '\\'' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21449:29: '\\'' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+            // InternalCS2ASDSL.g:21449:27: ( '\\'' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCS2ASDSL.g:21449:29: '\\'' ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
             {
             match('\''); 
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21449:34: ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )*
+            // InternalCS2ASDSL.g:21449:34: ( RULE_ESCAPED_CHARACTER | ~ ( ( '\\\\' | '\\'' ) ) )*
             loop2:
             do {
                 int alt2=3;
@@ -2423,14 +2423,14 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21449:35: RULE_ESCAPED_CHARACTER
+            	    // InternalCS2ASDSL.g:21449:35: RULE_ESCAPED_CHARACTER
             	    {
             	    mRULE_ESCAPED_CHARACTER(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21449:58: ~ ( ( '\\\\' | '\\'' ) )
+            	    // InternalCS2ASDSL.g:21449:58: ~ ( ( '\\\\' | '\\'' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2467,12 +2467,12 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_SINGLE_QUOTED_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21451:30: ( '/\\'' ( options {greedy=false; } : . )* '\\'/' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21451:32: '/\\'' ( options {greedy=false; } : . )* '\\'/'
+            // InternalCS2ASDSL.g:21451:30: ( '/\\'' ( options {greedy=false; } : . )* '\\'/' )
+            // InternalCS2ASDSL.g:21451:32: '/\\'' ( options {greedy=false; } : . )* '\\'/'
             {
             match("/'"); 
 
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21451:38: ( options {greedy=false; } : . )*
+            // InternalCS2ASDSL.g:21451:38: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
@@ -2497,7 +2497,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21451:66: .
+            	    // InternalCS2ASDSL.g:21451:66: .
             	    {
             	    matchAny(); 
 
@@ -2527,11 +2527,11 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_SIMPLE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21453:16: ( RULE_LETTER_CHARACTER ( RULE_LETTER_CHARACTER | '0' .. '9' )* )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21453:18: RULE_LETTER_CHARACTER ( RULE_LETTER_CHARACTER | '0' .. '9' )*
+            // InternalCS2ASDSL.g:21453:16: ( RULE_LETTER_CHARACTER ( RULE_LETTER_CHARACTER | '0' .. '9' )* )
+            // InternalCS2ASDSL.g:21453:18: RULE_LETTER_CHARACTER ( RULE_LETTER_CHARACTER | '0' .. '9' )*
             {
             mRULE_LETTER_CHARACTER(); 
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21453:40: ( RULE_LETTER_CHARACTER | '0' .. '9' )*
+            // InternalCS2ASDSL.g:21453:40: ( RULE_LETTER_CHARACTER | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -2544,7 +2544,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:
+            	    // InternalCS2ASDSL.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -2580,8 +2580,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_ESCAPED_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21455:17: ( '_' RULE_SINGLE_QUOTED_STRING )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21455:19: '_' RULE_SINGLE_QUOTED_STRING
+            // InternalCS2ASDSL.g:21455:17: ( '_' RULE_SINGLE_QUOTED_STRING )
+            // InternalCS2ASDSL.g:21455:19: '_' RULE_SINGLE_QUOTED_STRING
             {
             match('_'); 
             mRULE_SINGLE_QUOTED_STRING(); 
@@ -2601,10 +2601,10 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21457:10: ( ( '0' .. '9' )+ )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21457:12: ( '0' .. '9' )+
+            // InternalCS2ASDSL.g:21457:10: ( ( '0' .. '9' )+ )
+            // InternalCS2ASDSL.g:21457:12: ( '0' .. '9' )+
             {
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21457:12: ( '0' .. '9' )+
+            // InternalCS2ASDSL.g:21457:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -2618,7 +2618,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21457:13: '0' .. '9'
+            	    // InternalCS2ASDSL.g:21457:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2650,12 +2650,12 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21459:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21459:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalCS2ASDSL.g:21459:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalCS2ASDSL.g:21459:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21459:24: ( options {greedy=false; } : . )*
+            // InternalCS2ASDSL.g:21459:24: ( options {greedy=false; } : . )*
             loop6:
             do {
                 int alt6=2;
@@ -2680,7 +2680,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21459:52: .
+            	    // InternalCS2ASDSL.g:21459:52: .
             	    {
             	    matchAny(); 
 
@@ -2710,12 +2710,12 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21461:17: ( '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21461:19: '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalCS2ASDSL.g:21461:17: ( '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalCS2ASDSL.g:21461:19: '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("--"); 
 
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21461:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalCS2ASDSL.g:21461:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop7:
             do {
                 int alt7=2;
@@ -2728,7 +2728,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21461:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalCS2ASDSL.g:21461:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2748,7 +2748,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21461:40: ( ( '\\r' )? '\\n' )?
+            // InternalCS2ASDSL.g:21461:40: ( ( '\\r' )? '\\n' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2757,9 +2757,9 @@ public class InternalCS2ASDSLLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21461:41: ( '\\r' )? '\\n'
+                    // InternalCS2ASDSL.g:21461:41: ( '\\r' )? '\\n'
                     {
-                    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21461:41: ( '\\r' )?
+                    // InternalCS2ASDSL.g:21461:41: ( '\\r' )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -2768,7 +2768,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21461:41: '\\r'
+                            // InternalCS2ASDSL.g:21461:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2800,10 +2800,10 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21463:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21463:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCS2ASDSL.g:21463:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalCS2ASDSL.g:21463:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21463:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCS2ASDSL.g:21463:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt10=0;
             loop10:
             do {
@@ -2817,7 +2817,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:
+            	    // InternalCS2ASDSL.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -2857,8 +2857,8 @@ public class InternalCS2ASDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21465:16: ( . )
-            // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:21465:18: .
+            // InternalCS2ASDSL.g:21465:16: ( . )
+            // InternalCS2ASDSL.g:21465:18: .
             {
             matchAny(); 
 
@@ -2873,796 +2873,796 @@ public class InternalCS2ASDSLLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | RULE_DOUBLE_QUOTED_STRING | RULE_SINGLE_QUOTED_STRING | RULE_ML_SINGLE_QUOTED_STRING | RULE_SIMPLE_ID | RULE_ESCAPED_ID | RULE_INT | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalCS2ASDSL.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | RULE_DOUBLE_QUOTED_STRING | RULE_SINGLE_QUOTED_STRING | RULE_ML_SINGLE_QUOTED_STRING | RULE_SIMPLE_ID | RULE_ESCAPED_ID | RULE_INT | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt11=113;
         alt11 = dfa11.predict(input);
         switch (alt11) {
             case 1 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:10: T__16
+                // InternalCS2ASDSL.g:1:10: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 2 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:16: T__17
+                // InternalCS2ASDSL.g:1:16: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 3 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:22: T__18
+                // InternalCS2ASDSL.g:1:22: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 4 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:28: T__19
+                // InternalCS2ASDSL.g:1:28: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 5 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:34: T__20
+                // InternalCS2ASDSL.g:1:34: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 6 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:40: T__21
+                // InternalCS2ASDSL.g:1:40: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 7 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:46: T__22
+                // InternalCS2ASDSL.g:1:46: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 8 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:52: T__23
+                // InternalCS2ASDSL.g:1:52: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 9 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:58: T__24
+                // InternalCS2ASDSL.g:1:58: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 10 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:64: T__25
+                // InternalCS2ASDSL.g:1:64: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 11 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:70: T__26
+                // InternalCS2ASDSL.g:1:70: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 12 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:76: T__27
+                // InternalCS2ASDSL.g:1:76: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 13 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:82: T__28
+                // InternalCS2ASDSL.g:1:82: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 14 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:88: T__29
+                // InternalCS2ASDSL.g:1:88: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 15 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:94: T__30
+                // InternalCS2ASDSL.g:1:94: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 16 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:100: T__31
+                // InternalCS2ASDSL.g:1:100: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 17 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:106: T__32
+                // InternalCS2ASDSL.g:1:106: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
             case 18 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:112: T__33
+                // InternalCS2ASDSL.g:1:112: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
             case 19 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:118: T__34
+                // InternalCS2ASDSL.g:1:118: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
             case 20 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:124: T__35
+                // InternalCS2ASDSL.g:1:124: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
             case 21 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:130: T__36
+                // InternalCS2ASDSL.g:1:130: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
             case 22 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:136: T__37
+                // InternalCS2ASDSL.g:1:136: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
             case 23 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:142: T__38
+                // InternalCS2ASDSL.g:1:142: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
             case 24 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:148: T__39
+                // InternalCS2ASDSL.g:1:148: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
             case 25 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:154: T__40
+                // InternalCS2ASDSL.g:1:154: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
             case 26 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:160: T__41
+                // InternalCS2ASDSL.g:1:160: T__41
                 {
                 mT__41(); 
 
                 }
                 break;
             case 27 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:166: T__42
+                // InternalCS2ASDSL.g:1:166: T__42
                 {
                 mT__42(); 
 
                 }
                 break;
             case 28 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:172: T__43
+                // InternalCS2ASDSL.g:1:172: T__43
                 {
                 mT__43(); 
 
                 }
                 break;
             case 29 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:178: T__44
+                // InternalCS2ASDSL.g:1:178: T__44
                 {
                 mT__44(); 
 
                 }
                 break;
             case 30 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:184: T__45
+                // InternalCS2ASDSL.g:1:184: T__45
                 {
                 mT__45(); 
 
                 }
                 break;
             case 31 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:190: T__46
+                // InternalCS2ASDSL.g:1:190: T__46
                 {
                 mT__46(); 
 
                 }
                 break;
             case 32 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:196: T__47
+                // InternalCS2ASDSL.g:1:196: T__47
                 {
                 mT__47(); 
 
                 }
                 break;
             case 33 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:202: T__48
+                // InternalCS2ASDSL.g:1:202: T__48
                 {
                 mT__48(); 
 
                 }
                 break;
             case 34 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:208: T__49
+                // InternalCS2ASDSL.g:1:208: T__49
                 {
                 mT__49(); 
 
                 }
                 break;
             case 35 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:214: T__50
+                // InternalCS2ASDSL.g:1:214: T__50
                 {
                 mT__50(); 
 
                 }
                 break;
             case 36 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:220: T__51
+                // InternalCS2ASDSL.g:1:220: T__51
                 {
                 mT__51(); 
 
                 }
                 break;
             case 37 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:226: T__52
+                // InternalCS2ASDSL.g:1:226: T__52
                 {
                 mT__52(); 
 
                 }
                 break;
             case 38 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:232: T__53
+                // InternalCS2ASDSL.g:1:232: T__53
                 {
                 mT__53(); 
 
                 }
                 break;
             case 39 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:238: T__54
+                // InternalCS2ASDSL.g:1:238: T__54
                 {
                 mT__54(); 
 
                 }
                 break;
             case 40 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:244: T__55
+                // InternalCS2ASDSL.g:1:244: T__55
                 {
                 mT__55(); 
 
                 }
                 break;
             case 41 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:250: T__56
+                // InternalCS2ASDSL.g:1:250: T__56
                 {
                 mT__56(); 
 
                 }
                 break;
             case 42 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:256: T__57
+                // InternalCS2ASDSL.g:1:256: T__57
                 {
                 mT__57(); 
 
                 }
                 break;
             case 43 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:262: T__58
+                // InternalCS2ASDSL.g:1:262: T__58
                 {
                 mT__58(); 
 
                 }
                 break;
             case 44 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:268: T__59
+                // InternalCS2ASDSL.g:1:268: T__59
                 {
                 mT__59(); 
 
                 }
                 break;
             case 45 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:274: T__60
+                // InternalCS2ASDSL.g:1:274: T__60
                 {
                 mT__60(); 
 
                 }
                 break;
             case 46 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:280: T__61
+                // InternalCS2ASDSL.g:1:280: T__61
                 {
                 mT__61(); 
 
                 }
                 break;
             case 47 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:286: T__62
+                // InternalCS2ASDSL.g:1:286: T__62
                 {
                 mT__62(); 
 
                 }
                 break;
             case 48 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:292: T__63
+                // InternalCS2ASDSL.g:1:292: T__63
                 {
                 mT__63(); 
 
                 }
                 break;
             case 49 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:298: T__64
+                // InternalCS2ASDSL.g:1:298: T__64
                 {
                 mT__64(); 
 
                 }
                 break;
             case 50 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:304: T__65
+                // InternalCS2ASDSL.g:1:304: T__65
                 {
                 mT__65(); 
 
                 }
                 break;
             case 51 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:310: T__66
+                // InternalCS2ASDSL.g:1:310: T__66
                 {
                 mT__66(); 
 
                 }
                 break;
             case 52 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:316: T__67
+                // InternalCS2ASDSL.g:1:316: T__67
                 {
                 mT__67(); 
 
                 }
                 break;
             case 53 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:322: T__68
+                // InternalCS2ASDSL.g:1:322: T__68
                 {
                 mT__68(); 
 
                 }
                 break;
             case 54 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:328: T__69
+                // InternalCS2ASDSL.g:1:328: T__69
                 {
                 mT__69(); 
 
                 }
                 break;
             case 55 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:334: T__70
+                // InternalCS2ASDSL.g:1:334: T__70
                 {
                 mT__70(); 
 
                 }
                 break;
             case 56 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:340: T__71
+                // InternalCS2ASDSL.g:1:340: T__71
                 {
                 mT__71(); 
 
                 }
                 break;
             case 57 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:346: T__72
+                // InternalCS2ASDSL.g:1:346: T__72
                 {
                 mT__72(); 
 
                 }
                 break;
             case 58 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:352: T__73
+                // InternalCS2ASDSL.g:1:352: T__73
                 {
                 mT__73(); 
 
                 }
                 break;
             case 59 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:358: T__74
+                // InternalCS2ASDSL.g:1:358: T__74
                 {
                 mT__74(); 
 
                 }
                 break;
             case 60 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:364: T__75
+                // InternalCS2ASDSL.g:1:364: T__75
                 {
                 mT__75(); 
 
                 }
                 break;
             case 61 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:370: T__76
+                // InternalCS2ASDSL.g:1:370: T__76
                 {
                 mT__76(); 
 
                 }
                 break;
             case 62 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:376: T__77
+                // InternalCS2ASDSL.g:1:376: T__77
                 {
                 mT__77(); 
 
                 }
                 break;
             case 63 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:382: T__78
+                // InternalCS2ASDSL.g:1:382: T__78
                 {
                 mT__78(); 
 
                 }
                 break;
             case 64 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:388: T__79
+                // InternalCS2ASDSL.g:1:388: T__79
                 {
                 mT__79(); 
 
                 }
                 break;
             case 65 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:394: T__80
+                // InternalCS2ASDSL.g:1:394: T__80
                 {
                 mT__80(); 
 
                 }
                 break;
             case 66 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:400: T__81
+                // InternalCS2ASDSL.g:1:400: T__81
                 {
                 mT__81(); 
 
                 }
                 break;
             case 67 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:406: T__82
+                // InternalCS2ASDSL.g:1:406: T__82
                 {
                 mT__82(); 
 
                 }
                 break;
             case 68 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:412: T__83
+                // InternalCS2ASDSL.g:1:412: T__83
                 {
                 mT__83(); 
 
                 }
                 break;
             case 69 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:418: T__84
+                // InternalCS2ASDSL.g:1:418: T__84
                 {
                 mT__84(); 
 
                 }
                 break;
             case 70 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:424: T__85
+                // InternalCS2ASDSL.g:1:424: T__85
                 {
                 mT__85(); 
 
                 }
                 break;
             case 71 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:430: T__86
+                // InternalCS2ASDSL.g:1:430: T__86
                 {
                 mT__86(); 
 
                 }
                 break;
             case 72 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:436: T__87
+                // InternalCS2ASDSL.g:1:436: T__87
                 {
                 mT__87(); 
 
                 }
                 break;
             case 73 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:442: T__88
+                // InternalCS2ASDSL.g:1:442: T__88
                 {
                 mT__88(); 
 
                 }
                 break;
             case 74 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:448: T__89
+                // InternalCS2ASDSL.g:1:448: T__89
                 {
                 mT__89(); 
 
                 }
                 break;
             case 75 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:454: T__90
+                // InternalCS2ASDSL.g:1:454: T__90
                 {
                 mT__90(); 
 
                 }
                 break;
             case 76 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:460: T__91
+                // InternalCS2ASDSL.g:1:460: T__91
                 {
                 mT__91(); 
 
                 }
                 break;
             case 77 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:466: T__92
+                // InternalCS2ASDSL.g:1:466: T__92
                 {
                 mT__92(); 
 
                 }
                 break;
             case 78 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:472: T__93
+                // InternalCS2ASDSL.g:1:472: T__93
                 {
                 mT__93(); 
 
                 }
                 break;
             case 79 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:478: T__94
+                // InternalCS2ASDSL.g:1:478: T__94
                 {
                 mT__94(); 
 
                 }
                 break;
             case 80 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:484: T__95
+                // InternalCS2ASDSL.g:1:484: T__95
                 {
                 mT__95(); 
 
                 }
                 break;
             case 81 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:490: T__96
+                // InternalCS2ASDSL.g:1:490: T__96
                 {
                 mT__96(); 
 
                 }
                 break;
             case 82 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:496: T__97
+                // InternalCS2ASDSL.g:1:496: T__97
                 {
                 mT__97(); 
 
                 }
                 break;
             case 83 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:502: T__98
+                // InternalCS2ASDSL.g:1:502: T__98
                 {
                 mT__98(); 
 
                 }
                 break;
             case 84 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:508: T__99
+                // InternalCS2ASDSL.g:1:508: T__99
                 {
                 mT__99(); 
 
                 }
                 break;
             case 85 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:514: T__100
+                // InternalCS2ASDSL.g:1:514: T__100
                 {
                 mT__100(); 
 
                 }
                 break;
             case 86 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:521: T__101
+                // InternalCS2ASDSL.g:1:521: T__101
                 {
                 mT__101(); 
 
                 }
                 break;
             case 87 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:528: T__102
+                // InternalCS2ASDSL.g:1:528: T__102
                 {
                 mT__102(); 
 
                 }
                 break;
             case 88 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:535: T__103
+                // InternalCS2ASDSL.g:1:535: T__103
                 {
                 mT__103(); 
 
                 }
                 break;
             case 89 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:542: T__104
+                // InternalCS2ASDSL.g:1:542: T__104
                 {
                 mT__104(); 
 
                 }
                 break;
             case 90 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:549: T__105
+                // InternalCS2ASDSL.g:1:549: T__105
                 {
                 mT__105(); 
 
                 }
                 break;
             case 91 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:556: T__106
+                // InternalCS2ASDSL.g:1:556: T__106
                 {
                 mT__106(); 
 
                 }
                 break;
             case 92 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:563: T__107
+                // InternalCS2ASDSL.g:1:563: T__107
                 {
                 mT__107(); 
 
                 }
                 break;
             case 93 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:570: T__108
+                // InternalCS2ASDSL.g:1:570: T__108
                 {
                 mT__108(); 
 
                 }
                 break;
             case 94 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:577: T__109
+                // InternalCS2ASDSL.g:1:577: T__109
                 {
                 mT__109(); 
 
                 }
                 break;
             case 95 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:584: T__110
+                // InternalCS2ASDSL.g:1:584: T__110
                 {
                 mT__110(); 
 
                 }
                 break;
             case 96 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:591: T__111
+                // InternalCS2ASDSL.g:1:591: T__111
                 {
                 mT__111(); 
 
                 }
                 break;
             case 97 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:598: T__112
+                // InternalCS2ASDSL.g:1:598: T__112
                 {
                 mT__112(); 
 
                 }
                 break;
             case 98 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:605: T__113
+                // InternalCS2ASDSL.g:1:605: T__113
                 {
                 mT__113(); 
 
                 }
                 break;
             case 99 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:612: T__114
+                // InternalCS2ASDSL.g:1:612: T__114
                 {
                 mT__114(); 
 
                 }
                 break;
             case 100 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:619: T__115
+                // InternalCS2ASDSL.g:1:619: T__115
                 {
                 mT__115(); 
 
                 }
                 break;
             case 101 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:626: T__116
+                // InternalCS2ASDSL.g:1:626: T__116
                 {
                 mT__116(); 
 
                 }
                 break;
             case 102 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:633: T__117
+                // InternalCS2ASDSL.g:1:633: T__117
                 {
                 mT__117(); 
 
                 }
                 break;
             case 103 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:640: T__118
+                // InternalCS2ASDSL.g:1:640: T__118
                 {
                 mT__118(); 
 
                 }
                 break;
             case 104 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:647: RULE_DOUBLE_QUOTED_STRING
+                // InternalCS2ASDSL.g:1:647: RULE_DOUBLE_QUOTED_STRING
                 {
                 mRULE_DOUBLE_QUOTED_STRING(); 
 
                 }
                 break;
             case 105 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:673: RULE_SINGLE_QUOTED_STRING
+                // InternalCS2ASDSL.g:1:673: RULE_SINGLE_QUOTED_STRING
                 {
                 mRULE_SINGLE_QUOTED_STRING(); 
 
                 }
                 break;
             case 106 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:699: RULE_ML_SINGLE_QUOTED_STRING
+                // InternalCS2ASDSL.g:1:699: RULE_ML_SINGLE_QUOTED_STRING
                 {
                 mRULE_ML_SINGLE_QUOTED_STRING(); 
 
                 }
                 break;
             case 107 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:728: RULE_SIMPLE_ID
+                // InternalCS2ASDSL.g:1:728: RULE_SIMPLE_ID
                 {
                 mRULE_SIMPLE_ID(); 
 
                 }
                 break;
             case 108 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:743: RULE_ESCAPED_ID
+                // InternalCS2ASDSL.g:1:743: RULE_ESCAPED_ID
                 {
                 mRULE_ESCAPED_ID(); 
 
                 }
                 break;
             case 109 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:759: RULE_INT
+                // InternalCS2ASDSL.g:1:759: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 110 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:768: RULE_ML_COMMENT
+                // InternalCS2ASDSL.g:1:768: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 111 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:784: RULE_SL_COMMENT
+                // InternalCS2ASDSL.g:1:784: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 112 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:800: RULE_WS
+                // InternalCS2ASDSL.g:1:800: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 113 :
-                // ../uk.ac.york.cs.cs2as.dsl.ui/src-gen/uk/ac/york/cs/cs2as/ui/contentassist/antlr/internal/InternalCS2ASDSL.g:1:808: RULE_ANY_OTHER
+                // InternalCS2ASDSL.g:1:808: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3676,141 +3676,19 @@ public class InternalCS2ASDSLLexer extends Lexer {
 
     protected DFA11 dfa11 = new DFA11(this);
     static final String DFA11_eotS =
-        "\1\uffff\2\76\1\103\1\uffff\1\107\1\111\1\113\1\117\1\uffff\4\76"+
-        "\1\132\1\135\11\76\1\154\1\76\1\uffff\1\76\1\166\1\76\2\uffff\2"+
-        "\76\1\uffff\6\76\2\uffff\3\76\2\uffff\1\71\1\uffff\2\71\1\76\4\uffff"+
-        "\4\76\1\uffff\2\76\20\uffff\2\76\1\u00a0\3\76\1\u00a5\1\u00a6\5"+
-        "\uffff\14\76\3\uffff\3\76\1\uffff\3\76\1\uffff\1\u00bb\1\uffff\1"+
-        "\76\2\uffff\5\76\1\uffff\2\76\1\u00c5\6\76\2\uffff\3\76\11\uffff"+
-        "\1\76\1\u00d3\3\76\1\u00d7\1\u00d8\1\u00d9\1\76\1\uffff\1\76\1\u00dc"+
-        "\2\76\2\uffff\1\u00e0\2\76\1\u00e3\3\76\1\u00e7\13\76\2\uffff\1"+
-        "\u00f6\2\76\1\u00f9\5\76\1\uffff\13\76\1\u010a\1\76\1\uffff\1\76"+
-        "\1\u010f\1\76\3\uffff\2\76\1\uffff\3\76\1\uffff\2\76\1\uffff\1\76"+
-        "\1\u0119\1\76\1\uffff\10\76\1\u0123\2\76\1\u0126\1\u0127\1\76\1"+
-        "\uffff\1\u0129\1\76\1\uffff\2\76\1\u012d\6\76\1\u0135\6\76\1\uffff"+
-        "\3\76\2\uffff\1\76\1\uffff\4\76\1\u0148\2\76\1\uffff\11\76\2\uffff"+
-        "\1\76\2\uffff\1\76\1\uffff\2\76\1\u0158\1\uffff\2\76\1\u015b\4\76"+
-        "\1\uffff\1\u0160\7\76\5\uffff\1\u0169\4\76\1\uffff\2\76\1\u0170"+
-        "\2\76\1\u0173\4\76\1\u0178\1\u0179\3\76\1\uffff\2\76\1\uffff\3\76"+
-        "\1\u0182\2\uffff\3\76\1\u0186\1\uffff\2\76\1\uffff\1\76\1\u018a"+
-        "\1\76\1\u018c\1\u018d\1\u018e\1\uffff\2\76\1\uffff\1\76\1\u0192"+
-        "\2\76\2\uffff\6\76\1\u019b\1\u019c\1\uffff\1\u019d\1\u019e\1\76"+
-        "\1\uffff\3\76\1\uffff\1\u01a3\3\uffff\1\u01a4\2\76\1\uffff\2\76"+
-        "\1\u01a9\1\u01aa\4\76\4\uffff\1\u01af\2\76\1\u01b2\2\uffff\4\76"+
-        "\2\uffff\1\u01b7\2\76\1\u01ba\1\uffff\1\76\1\u01bc\1\uffff\1\76"+
-        "\1\u01be\1\u01bf\1\u01c0\1\uffff\1\76\1\u01c2\1\uffff\1\76\1\uffff"+
-        "\1\76\3\uffff\1\76\1\uffff\6\76\1\u01cc\1\76\1\u01ce\1\uffff\1\76"+
-        "\1\uffff\1\u01d0\1\uffff";
+        "\1\uffff\2\76\1\103\1\uffff\1\107\1\111\1\113\1\117\1\uffff\4\76\1\132\1\135\11\76\1\154\1\76\1\uffff\1\76\1\166\1\76\2\uffff\2\76\1\uffff\6\76\2\uffff\3\76\2\uffff\1\71\1\uffff\2\71\1\76\4\uffff\4\76\1\uffff\2\76\20\uffff\2\76\1\u00a0\3\76\1\u00a5\1\u00a6\5\uffff\14\76\3\uffff\3\76\1\uffff\3\76\1\uffff\1\u00bb\1\uffff\1\76\2\uffff\5\76\1\uffff\2\76\1\u00c5\6\76\2\uffff\3\76\11\uffff\1\76\1\u00d3\3\76\1\u00d7\1\u00d8\1\u00d9\1\76\1\uffff\1\76\1\u00dc\2\76\2\uffff\1\u00e0\2\76\1\u00e3\3\76\1\u00e7\13\76\2\uffff\1\u00f6\2\76\1\u00f9\5\76\1\uffff\13\76\1\u010a\1\76\1\uffff\1\76\1\u010f\1\76\3\uffff\2\76\1\uffff\3\76\1\uffff\2\76\1\uffff\1\76\1\u0119\1\76\1\uffff\10\76\1\u0123\2\76\1\u0126\1\u0127\1\76\1\uffff\1\u0129\1\76\1\uffff\2\76\1\u012d\6\76\1\u0135\6\76\1\uffff\3\76\2\uffff\1\76\1\uffff\4\76\1\u0148\2\76\1\uffff\11\76\2\uffff\1\76\2\uffff\1\76\1\uffff\2\76\1\u0158\1\uffff\2\76\1\u015b\4\76\1\uffff\1\u0160\7\76\5\uffff\1\u0169\4\76\1\uffff\2\76\1\u0170\2\76\1\u0173\4\76\1\u0178\1\u0179\3\76\1\uffff\2\76\1\uffff\3\76\1\u0182\2\uffff\3\76\1\u0186\1\uffff\2\76\1\uffff\1\76\1\u018a\1\76\1\u018c\1\u018d\1\u018e\1\uffff\2\76\1\uffff\1\76\1\u0192\2\76\2\uffff\6\76\1\u019b\1\u019c\1\uffff\1\u019d\1\u019e\1\76\1\uffff\3\76\1\uffff\1\u01a3\3\uffff\1\u01a4\2\76\1\uffff\2\76\1\u01a9\1\u01aa\4\76\4\uffff\1\u01af\2\76\1\u01b2\2\uffff\4\76\2\uffff\1\u01b7\2\76\1\u01ba\1\uffff\1\76\1\u01bc\1\uffff\1\76\1\u01be\1\u01bf\1\u01c0\1\uffff\1\76\1\u01c2\1\uffff\1\76\1\uffff\1\76\3\uffff\1\76\1\uffff\6\76\1\u01cc\1\76\1\u01ce\1\uffff\1\76\1\uffff\1\u01d0\1\uffff";
     static final String DFA11_eofS =
         "\u01d1\uffff";
     static final String DFA11_minS =
-        "\1\0\1\141\1\145\1\55\1\uffff\1\47\1\53\1\75\1\55\1\uffff\1\154"+
-        "\1\143\1\157\1\146\1\56\1\55\1\141\1\165\1\141\1\156\2\145\1\156"+
-        "\1\143\1\157\1\61\1\141\1\uffff\1\141\1\72\1\141\2\uffff\1\141\1"+
-        "\150\1\uffff\1\151\1\165\1\171\1\163\1\154\1\145\2\uffff\1\145\1"+
-        "\141\1\162\2\uffff\1\46\1\uffff\2\0\1\47\4\uffff\1\163\1\164\1\155"+
-        "\1\154\1\uffff\1\157\1\164\20\uffff\1\144\1\154\1\60\1\143\1\162"+
-        "\1\160\2\60\5\uffff\2\160\1\157\1\147\1\164\1\141\1\162\1\161\2"+
-        "\154\1\144\1\154\3\uffff\1\165\1\154\1\155\1\uffff\1\162\1\145\1"+
-        "\165\1\uffff\1\52\1\uffff\1\160\2\uffff\1\157\3\154\1\145\1\uffff"+
-        "\1\163\1\141\1\60\1\151\1\143\1\163\1\144\1\160\1\154\2\uffff\1"+
-        "\144\1\155\1\145\11\uffff\1\164\1\60\1\145\1\154\1\153\3\60\1\157"+
-        "\1\uffff\1\154\1\60\1\154\1\141\2\uffff\1\60\2\154\1\60\1\145\1"+
-        "\154\1\151\1\60\1\165\1\151\1\101\1\145\1\154\1\162\1\146\1\145"+
-        "\1\147\1\156\1\145\2\uffff\1\60\1\155\1\164\1\60\1\154\1\163\1\156"+
-        "\1\141\1\154\1\uffff\1\156\1\145\1\157\2\145\1\151\1\164\1\160\1"+
-        "\157\1\145\1\142\1\60\1\145\1\uffff\1\55\1\60\1\165\3\uffff\1\55"+
-        "\1\165\1\uffff\1\151\1\162\1\154\1\uffff\2\145\1\uffff\1\147\1\60"+
-        "\1\156\1\uffff\1\145\1\155\2\156\1\157\1\162\1\145\1\143\1\60\1"+
-        "\55\1\145\2\60\1\151\1\uffff\1\60\1\145\1\uffff\1\157\1\145\1\60"+
-        "\1\155\1\151\1\147\1\160\1\162\1\156\1\60\1\146\1\171\1\145\1\154"+
-        "\1\146\1\144\1\uffff\1\144\1\145\1\55\1\160\1\uffff\1\160\1\uffff"+
-        "\1\144\1\145\1\164\1\151\1\60\1\141\1\145\1\uffff\1\147\1\156\1"+
-        "\151\1\171\1\166\1\151\1\145\1\143\1\145\2\uffff\1\164\2\uffff\1"+
-        "\156\1\uffff\1\162\1\167\1\60\1\uffff\1\142\1\146\1\60\2\164\1\144"+
-        "\1\146\1\uffff\1\60\1\55\1\162\1\166\1\151\1\141\1\55\1\163\5\uffff"+
-        "\1\60\1\151\1\163\1\145\1\144\1\uffff\1\156\1\162\1\60\1\143\1\164"+
-        "\1\60\1\141\2\144\1\164\2\60\1\147\1\145\1\151\1\uffff\1\151\1\171"+
-        "\1\uffff\1\151\2\163\1\60\2\uffff\1\163\1\145\1\156\1\60\1\uffff"+
-        "\1\157\1\162\1\uffff\1\156\1\60\1\144\3\60\1\uffff\2\145\1\uffff"+
-        "\1\154\1\60\1\123\1\151\2\uffff\1\163\1\144\1\156\1\147\1\151\1"+
-        "\156\2\60\1\uffff\2\60\1\145\1\uffff\1\154\1\157\1\147\1\uffff\1"+
-        "\60\3\uffff\1\60\1\144\1\151\1\uffff\1\145\1\157\2\60\1\147\1\165"+
-        "\1\156\1\147\4\uffff\1\60\1\165\1\155\1\60\2\uffff\1\116\1\144\1"+
-        "\164\1\156\2\uffff\1\60\1\141\1\147\1\60\1\uffff\1\164\1\60\1\uffff"+
-        "\1\141\3\60\1\uffff\1\164\1\60\1\uffff\1\151\1\uffff\1\164\3\uffff"+
-        "\1\151\1\uffff\1\157\1\165\1\157\1\156\1\162\1\156\1\60\1\141\1"+
-        "\60\1\uffff\1\154\1\uffff\1\60\1\uffff";
+        "\1\0\1\141\1\145\1\55\1\uffff\1\47\1\53\1\75\1\55\1\uffff\1\154\1\143\1\157\1\146\1\56\1\55\1\141\1\165\1\141\1\156\2\145\1\156\1\143\1\157\1\61\1\141\1\uffff\1\141\1\72\1\141\2\uffff\1\141\1\150\1\uffff\1\151\1\165\1\171\1\163\1\154\1\145\2\uffff\1\145\1\141\1\162\2\uffff\1\46\1\uffff\2\0\1\47\4\uffff\1\163\1\164\1\155\1\154\1\uffff\1\157\1\164\20\uffff\1\144\1\154\1\60\1\143\1\162\1\160\2\60\5\uffff\2\160\1\157\1\147\1\164\1\141\1\162\1\161\2\154\1\144\1\154\3\uffff\1\165\1\154\1\155\1\uffff\1\162\1\145\1\165\1\uffff\1\52\1\uffff\1\160\2\uffff\1\157\3\154\1\145\1\uffff\1\163\1\141\1\60\1\151\1\143\1\163\1\144\1\160\1\154\2\uffff\1\144\1\155\1\145\11\uffff\1\164\1\60\1\145\1\154\1\153\3\60\1\157\1\uffff\1\154\1\60\1\154\1\141\2\uffff\1\60\2\154\1\60\1\145\1\154\1\151\1\60\1\165\1\151\1\101\1\145\1\154\1\162\1\146\1\145\1\147\1\156\1\145\2\uffff\1\60\1\155\1\164\1\60\1\154\1\163\1\156\1\141\1\154\1\uffff\1\156\1\145\1\157\2\145\1\151\1\164\1\160\1\157\1\145\1\142\1\60\1\145\1\uffff\1\55\1\60\1\165\3\uffff\1\55\1\165\1\uffff\1\151\1\162\1\154\1\uffff\2\145\1\uffff\1\147\1\60\1\156\1\uffff\1\145\1\155\2\156\1\157\1\162\1\145\1\143\1\60\1\55\1\145\2\60\1\151\1\uffff\1\60\1\145\1\uffff\1\157\1\145\1\60\1\155\1\151\1\147\1\160\1\162\1\156\1\60\1\146\1\171\1\145\1\154\1\146\1\144\1\uffff\1\144\1\145\1\55\1\160\1\uffff\1\160\1\uffff\1\144\1\145\1\164\1\151\1\60\1\141\1\145\1\uffff\1\147\1\156\1\151\1\171\1\166\1\151\1\145\1\143\1\145\2\uffff\1\164\2\uffff\1\156\1\uffff\1\162\1\167\1\60\1\uffff\1\142\1\146\1\60\2\164\1\144\1\146\1\uffff\1\60\1\55\1\162\1\166\1\151\1\141\1\55\1\163\5\uffff\1\60\1\151\1\163\1\145\1\144\1\uffff\1\156\1\162\1\60\1\143\1\164\1\60\1\141\2\144\1\164\2\60\1\147\1\145\1\151\1\uffff\1\151\1\171\1\uffff\1\151\2\163\1\60\2\uffff\1\163\1\145\1\156\1\60\1\uffff\1\157\1\162\1\uffff\1\156\1\60\1\144\3\60\1\uffff\2\145\1\uffff\1\154\1\60\1\123\1\151\2\uffff\1\163\1\144\1\156\1\147\1\151\1\156\2\60\1\uffff\2\60\1\145\1\uffff\1\154\1\157\1\147\1\uffff\1\60\3\uffff\1\60\1\144\1\151\1\uffff\1\145\1\157\2\60\1\147\1\165\1\156\1\147\4\uffff\1\60\1\165\1\155\1\60\2\uffff\1\116\1\144\1\164\1\156\2\uffff\1\60\1\141\1\147\1\60\1\uffff\1\164\1\60\1\uffff\1\141\3\60\1\uffff\1\164\1\60\1\uffff\1\151\1\uffff\1\164\3\uffff\1\151\1\uffff\1\157\1\165\1\157\1\156\1\162\1\156\1\60\1\141\1\60\1\uffff\1\154\1\uffff\1\60\1\uffff";
     static final String DFA11_maxS =
-        "\1\uffff\1\165\1\157\1\76\1\uffff\1\52\1\53\1\75\1\76\1\uffff\1"+
-        "\156\1\162\1\157\1\156\2\56\1\141\1\165\1\157\1\156\1\145\1\164"+
-        "\1\156\1\162\1\157\1\77\1\157\1\uffff\1\162\1\75\1\141\2\uffff\1"+
-        "\162\1\150\1\uffff\1\151\1\165\1\171\1\163\1\170\1\145\2\uffff\1"+
-        "\145\1\141\1\162\2\uffff\1\46\1\uffff\2\uffff\1\47\4\uffff\1\163"+
-        "\1\164\1\155\1\154\1\uffff\1\157\1\164\20\uffff\1\144\1\163\1\172"+
-        "\1\143\1\162\1\160\2\172\5\uffff\2\160\1\157\1\147\1\164\1\141\1"+
-        "\162\1\164\2\154\1\144\1\154\3\uffff\1\165\1\154\1\155\1\uffff\1"+
-        "\162\1\145\1\165\1\uffff\1\52\1\uffff\1\160\2\uffff\1\157\1\154"+
-        "\1\162\1\154\1\145\1\uffff\1\163\1\141\1\172\1\151\1\164\1\163\1"+
-        "\144\1\160\1\154\2\uffff\1\163\1\155\1\145\11\uffff\1\164\1\172"+
-        "\1\145\1\154\1\153\3\172\1\157\1\uffff\1\154\1\172\1\157\1\141\2"+
-        "\uffff\1\172\2\154\1\172\1\145\1\154\1\151\1\172\1\165\1\151\1\126"+
-        "\1\145\1\154\1\162\1\146\1\145\1\147\1\156\1\145\2\uffff\1\172\1"+
-        "\155\1\164\1\172\1\154\1\163\1\156\1\141\1\154\1\uffff\1\156\1\145"+
-        "\1\157\2\145\1\151\1\164\1\160\1\157\1\145\1\142\1\172\1\145\1\uffff"+
-        "\1\162\1\172\1\165\3\uffff\1\55\1\165\1\uffff\1\151\1\162\1\154"+
-        "\1\uffff\2\145\1\uffff\1\147\1\172\1\156\1\uffff\1\145\1\155\2\156"+
-        "\1\157\1\162\1\145\1\143\1\172\1\55\1\145\2\172\1\151\1\uffff\1"+
-        "\172\1\145\1\uffff\1\157\1\145\1\172\1\155\1\151\1\147\1\160\1\162"+
-        "\1\156\1\172\1\146\1\171\1\145\1\154\1\146\1\144\1\uffff\1\144\1"+
-        "\145\1\55\1\163\1\uffff\1\160\1\uffff\1\144\1\145\1\164\1\151\1"+
-        "\172\1\141\1\145\1\uffff\1\147\1\156\1\151\1\171\1\166\1\151\1\145"+
-        "\1\143\1\145\2\uffff\1\164\2\uffff\1\156\1\uffff\1\162\1\167\1\172"+
-        "\1\uffff\1\142\1\146\1\172\2\164\1\144\1\146\1\uffff\1\172\1\55"+
-        "\1\162\1\166\1\151\1\141\1\55\1\163\5\uffff\1\172\1\151\1\163\1"+
-        "\145\1\144\1\uffff\1\156\1\162\1\172\1\143\1\164\1\172\1\141\2\144"+
-        "\1\164\2\172\1\147\1\145\1\151\1\uffff\1\151\1\171\1\uffff\1\151"+
-        "\2\163\1\172\2\uffff\1\163\1\145\1\156\1\172\1\uffff\1\157\1\162"+
-        "\1\uffff\1\156\1\172\1\144\3\172\1\uffff\2\145\1\uffff\1\154\1\172"+
-        "\1\123\1\151\2\uffff\1\163\1\144\1\156\1\147\1\151\1\156\2\172\1"+
-        "\uffff\2\172\1\145\1\uffff\1\154\1\157\1\147\1\uffff\1\172\3\uffff"+
-        "\1\172\1\144\1\151\1\uffff\1\145\1\157\2\172\1\147\1\165\1\156\1"+
-        "\147\4\uffff\1\172\1\165\1\155\1\172\2\uffff\1\116\1\144\1\164\1"+
-        "\156\2\uffff\1\172\1\141\1\147\1\172\1\uffff\1\164\1\172\1\uffff"+
-        "\1\141\3\172\1\uffff\1\164\1\172\1\uffff\1\151\1\uffff\1\164\3\uffff"+
-        "\1\151\1\uffff\1\157\1\165\1\157\1\156\1\162\1\156\1\172\1\141\1"+
-        "\172\1\uffff\1\154\1\uffff\1\172\1\uffff";
+        "\1\uffff\1\165\1\157\1\76\1\uffff\1\52\1\53\1\75\1\76\1\uffff\1\156\1\162\1\157\1\156\2\56\1\141\1\165\1\157\1\156\1\145\1\164\1\156\1\162\1\157\1\77\1\157\1\uffff\1\162\1\75\1\141\2\uffff\1\162\1\150\1\uffff\1\151\1\165\1\171\1\163\1\170\1\145\2\uffff\1\145\1\141\1\162\2\uffff\1\46\1\uffff\2\uffff\1\47\4\uffff\1\163\1\164\1\155\1\154\1\uffff\1\157\1\164\20\uffff\1\144\1\163\1\172\1\143\1\162\1\160\2\172\5\uffff\2\160\1\157\1\147\1\164\1\141\1\162\1\164\2\154\1\144\1\154\3\uffff\1\165\1\154\1\155\1\uffff\1\162\1\145\1\165\1\uffff\1\52\1\uffff\1\160\2\uffff\1\157\1\154\1\162\1\154\1\145\1\uffff\1\163\1\141\1\172\1\151\1\164\1\163\1\144\1\160\1\154\2\uffff\1\163\1\155\1\145\11\uffff\1\164\1\172\1\145\1\154\1\153\3\172\1\157\1\uffff\1\154\1\172\1\157\1\141\2\uffff\1\172\2\154\1\172\1\145\1\154\1\151\1\172\1\165\1\151\1\126\1\145\1\154\1\162\1\146\1\145\1\147\1\156\1\145\2\uffff\1\172\1\155\1\164\1\172\1\154\1\163\1\156\1\141\1\154\1\uffff\1\156\1\145\1\157\2\145\1\151\1\164\1\160\1\157\1\145\1\142\1\172\1\145\1\uffff\1\162\1\172\1\165\3\uffff\1\55\1\165\1\uffff\1\151\1\162\1\154\1\uffff\2\145\1\uffff\1\147\1\172\1\156\1\uffff\1\145\1\155\2\156\1\157\1\162\1\145\1\143\1\172\1\55\1\145\2\172\1\151\1\uffff\1\172\1\145\1\uffff\1\157\1\145\1\172\1\155\1\151\1\147\1\160\1\162\1\156\1\172\1\146\1\171\1\145\1\154\1\146\1\144\1\uffff\1\144\1\145\1\55\1\163\1\uffff\1\160\1\uffff\1\144\1\145\1\164\1\151\1\172\1\141\1\145\1\uffff\1\147\1\156\1\151\1\171\1\166\1\151\1\145\1\143\1\145\2\uffff\1\164\2\uffff\1\156\1\uffff\1\162\1\167\1\172\1\uffff\1\142\1\146\1\172\2\164\1\144\1\146\1\uffff\1\172\1\55\1\162\1\166\1\151\1\141\1\55\1\163\5\uffff\1\172\1\151\1\163\1\145\1\144\1\uffff\1\156\1\162\1\172\1\143\1\164\1\172\1\141\2\144\1\164\2\172\1\147\1\145\1\151\1\uffff\1\151\1\171\1\uffff\1\151\2\163\1\172\2\uffff\1\163\1\145\1\156\1\172\1\uffff\1\157\1\162\1\uffff\1\156\1\172\1\144\3\172\1\uffff\2\145\1\uffff\1\154\1\172\1\123\1\151\2\uffff\1\163\1\144\1\156\1\147\1\151\1\156\2\172\1\uffff\2\172\1\145\1\uffff\1\154\1\157\1\147\1\uffff\1\172\3\uffff\1\172\1\144\1\151\1\uffff\1\145\1\157\2\172\1\147\1\165\1\156\1\147\4\uffff\1\172\1\165\1\155\1\172\2\uffff\1\116\1\144\1\164\1\156\2\uffff\1\172\1\141\1\147\1\172\1\uffff\1\164\1\172\1\uffff\1\141\3\172\1\uffff\1\164\1\172\1\uffff\1\151\1\uffff\1\164\3\uffff\1\151\1\uffff\1\157\1\165\1\157\1\156\1\162\1\156\1\172\1\141\1\172\1\uffff\1\154\1\uffff\1\172\1\uffff";
     static final String DFA11_acceptS =
-        "\4\uffff\1\5\4\uffff\1\14\21\uffff\1\50\3\uffff\1\54\1\55\2\uffff"+
-        "\1\61\6\uffff\1\104\1\105\3\uffff\1\117\1\120\1\uffff\1\145\3\uffff"+
-        "\1\153\1\155\1\160\1\161\4\uffff\1\153\2\uffff\1\23\1\157\1\3\1"+
-        "\5\1\152\1\156\1\6\1\111\1\7\1\12\1\10\1\13\1\15\1\113\1\11\1\14"+
-        "\10\uffff\1\110\1\22\1\24\1\25\1\46\14\uffff\1\45\1\147\1\146\3"+
-        "\uffff\1\50\3\uffff\1\62\1\uffff\1\52\1\uffff\1\54\1\55\5\uffff"+
-        "\1\61\11\uffff\1\104\1\105\3\uffff\1\117\1\120\1\132\1\145\1\150"+
-        "\1\151\1\154\1\155\1\160\11\uffff\1\17\4\uffff\1\121\1\122\23\uffff"+
-        "\1\133\1\107\11\uffff\1\74\15\uffff\1\4\3\uffff\1\127\1\16\1\100"+
-        "\2\uffff\1\20\3\uffff\1\26\2\uffff\1\41\3\uffff\1\40\16\uffff\1"+
-        "\56\2\uffff\1\77\20\uffff\1\116\4\uffff\1\115\1\uffff\1\141\7\uffff"+
-        "\1\32\11\uffff\1\130\1\137\1\uffff\1\123\1\143\1\uffff\1\57\3\uffff"+
-        "\1\60\7\uffff\1\124\10\uffff\1\65\1\66\1\67\1\70\1\71\5\uffff\1"+
-        "\27\17\uffff\1\144\2\uffff\1\75\4\uffff\1\125\1\140\4\uffff\1\1"+
-        "\2\uffff\1\2\6\uffff\1\33\2\uffff\1\35\4\uffff\1\47\1\51\10\uffff"+
-        "\1\126\3\uffff\1\112\3\uffff\1\21\1\uffff\1\114\1\30\1\31\3\uffff"+
-        "\1\37\10\uffff\1\102\1\131\1\103\1\106\4\uffff\1\136\1\42\4\uffff"+
-        "\1\53\1\73\4\uffff\1\134\2\uffff\1\76\4\uffff\1\135\2\uffff\1\101"+
-        "\1\uffff\1\142\1\uffff\1\36\1\44\1\43\1\uffff\1\72\11\uffff\1\64"+
-        "\1\uffff\1\63\1\uffff\1\34";
+        "\4\uffff\1\5\4\uffff\1\14\21\uffff\1\50\3\uffff\1\54\1\55\2\uffff\1\61\6\uffff\1\104\1\105\3\uffff\1\117\1\120\1\uffff\1\145\3\uffff\1\153\1\155\1\160\1\161\4\uffff\1\153\2\uffff\1\23\1\157\1\3\1\5\1\152\1\156\1\6\1\111\1\7\1\12\1\10\1\13\1\15\1\113\1\11\1\14\10\uffff\1\110\1\22\1\24\1\25\1\46\14\uffff\1\45\1\147\1\146\3\uffff\1\50\3\uffff\1\62\1\uffff\1\52\1\uffff\1\54\1\55\5\uffff\1\61\11\uffff\1\104\1\105\3\uffff\1\117\1\120\1\132\1\145\1\150\1\151\1\154\1\155\1\160\11\uffff\1\17\4\uffff\1\121\1\122\23\uffff\1\133\1\107\11\uffff\1\74\15\uffff\1\4\3\uffff\1\127\1\16\1\100\2\uffff\1\20\3\uffff\1\26\2\uffff\1\41\3\uffff\1\40\16\uffff\1\56\2\uffff\1\77\20\uffff\1\116\4\uffff\1\115\1\uffff\1\141\7\uffff\1\32\11\uffff\1\130\1\137\1\uffff\1\123\1\143\1\uffff\1\57\3\uffff\1\60\7\uffff\1\124\10\uffff\1\65\1\66\1\67\1\70\1\71\5\uffff\1\27\17\uffff\1\144\2\uffff\1\75\4\uffff\1\125\1\140\4\uffff\1\1\2\uffff\1\2\6\uffff\1\33\2\uffff\1\35\4\uffff\1\47\1\51\10\uffff\1\126\3\uffff\1\112\3\uffff\1\21\1\uffff\1\114\1\30\1\31\3\uffff\1\37\10\uffff\1\102\1\131\1\103\1\106\4\uffff\1\136\1\42\4\uffff\1\53\1\73\4\uffff\1\134\2\uffff\1\76\4\uffff\1\135\2\uffff\1\101\1\uffff\1\142\1\uffff\1\36\1\44\1\43\1\uffff\1\72\11\uffff\1\64\1\uffff\1\63\1\uffff\1\34";
     static final String DFA11_specialS =
         "\1\0\62\uffff\1\1\1\2\u019c\uffff}>";
     static final String[] DFA11_transitionS = {
-            "\11\71\2\70\2\71\1\70\22\71\1\70\1\71\1\63\3\71\1\61\1\64\1"+
-            "\52\1\53\1\4\1\6\1\33\1\3\1\16\1\5\12\67\1\35\1\43\1\10\1\11"+
-            "\1\7\1\17\1\62\1\66\1\22\1\30\5\66\1\23\2\66\1\55\1\20\1\66"+
-            "\1\27\2\66\1\24\1\25\1\21\1\26\5\66\1\57\1\71\1\60\1\71\1\65"+
-            "\1\71\1\12\1\46\1\66\1\44\1\50\1\41\1\66\1\51\1\15\2\66\1\2"+
-            "\1\36\1\1\1\13\1\56\1\45\1\54\1\32\1\34\1\47\1\66\1\42\1\14"+
-            "\2\66\1\37\1\31\1\40\uff82\71",
+            "\11\71\2\70\2\71\1\70\22\71\1\70\1\71\1\63\3\71\1\61\1\64\1\52\1\53\1\4\1\6\1\33\1\3\1\16\1\5\12\67\1\35\1\43\1\10\1\11\1\7\1\17\1\62\1\66\1\22\1\30\5\66\1\23\2\66\1\55\1\20\1\66\1\27\2\66\1\24\1\25\1\21\1\26\5\66\1\57\1\71\1\60\1\71\1\65\1\71\1\12\1\46\1\66\1\44\1\50\1\41\1\66\1\51\1\15\2\66\1\2\1\36\1\1\1\13\1\56\1\45\1\54\1\32\1\34\1\47\1\66\1\42\1\14\2\66\1\37\1\31\1\40\uff82\71",
             "\1\74\3\uffff\1\72\11\uffff\1\73\5\uffff\1\75",
             "\1\100\11\uffff\1\77",
             "\1\102\20\uffff\1\101",
@@ -3897,8 +3775,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
             "\1\u00a1",
             "\1\u00a2",
             "\1\u00a3",
-            "\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\25\76\1\u00a4\4"+
-            "\76",
+            "\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\25\76\1\u00a4\4\76",
             "\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32\76",
             "",
             "",
@@ -3999,8 +3876,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
             "\1\u00f4",
             "",
             "",
-            "\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\17\76\1\u00f5\12"+
-            "\76",
+            "\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\17\76\1\u00f5\12\76",
             "\1\u00f7",
             "\1\u00f8",
             "\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32\76",
@@ -4071,8 +3947,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
             "\1\u0131",
             "\1\u0132",
             "\1\u0133",
-            "\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\10\76\1\u0134\21"+
-            "\76",
+            "\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\10\76\1\u0134\21\76",
             "\1\u0136",
             "\1\u0137",
             "\1\u0138",
@@ -4136,8 +4011,7 @@ public class InternalCS2ASDSLLexer extends Lexer {
             "",
             "",
             "",
-            "\12\76\7\uffff\5\76\1\u0168\24\76\4\uffff\1\76\1\uffff\32"+
-            "\76",
+            "\12\76\7\uffff\5\76\1\u0168\24\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u016a",
             "\1\u016b",
             "\1\u016c",

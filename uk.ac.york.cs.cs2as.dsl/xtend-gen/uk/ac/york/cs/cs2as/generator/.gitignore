@@ -12,3 +12,17 @@
 /.CS2ASDSL_To_OCLBaseVisitor.java._trace
 /.CS2ASDSL_To_OCLDisambiguationVisitor.java._trace
 /.CS2ASDSL_To_OCLHelpersVisitor.java._trace
+/CS2ASDSL_To_OCLLookupVisitor.java
+/.CS2ASDSL_To_OCLBaseVisitor.xtendbin
+/.BaseCSToStringVisitor.xtendbin
+/.CS2ASDSL_To_OCLDisambiguationVisitor.xtendbin
+/.CS2ASDSL_To_OCLHelpersVisitor.xtendbin
+/.CS2ASDSL_To_OCLLookupVisitor.xtendbin
+/.CS2ASDSL_To_OCLMappingsVisitor.xtendbin
+/.EssentialOCLCSToStringVisitor.xtendbin
+/BaseCSToStringVisitor.java
+/CS2ASDSL_To_OCLBaseVisitor.java
+/CS2ASDSL_To_OCLDisambiguationVisitor.java
+/CS2ASDSL_To_OCLHelpersVisitor.java
+/CS2ASDSL_To_OCLMappingsVisitor.java
+/EssentialOCLCSToStringVisitor.java
