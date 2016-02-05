@@ -1,0 +1,10 @@
+import  cs : 'generated/Companies.ecore#/'
+import  as : 'Company.ecore#/'
+
+package ocl
+
+context ocl::String
+def : unquote() : String =
+	self.substring(2,self.size()-1)
+
+endpackage
