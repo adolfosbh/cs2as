@@ -80,20 +80,30 @@ public interface department extends EObject
   void setDepartment_manager(department_manager value);
 
   /**
-   * Returns the value of the '<em><b>Department employees</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.companies.department_employees}.
+   * Returns the value of the '<em><b>Department employees</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Department employees</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Department employees</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Department employees</em>' containment reference list.
+   * @return the value of the '<em>Department employees</em>' containment reference.
+   * @see #setDepartment_employees(department_employees)
    * @see org.xtext.example.mydsl.companies.CompaniesPackage#getdepartment_Department_employees()
    * @model containment="true"
    * @generated
    */
-  EList<department_employees> getDepartment_employees();
+  department_employees getDepartment_employees();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.companies.department#getDepartment_employees <em>Department employees</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Department employees</em>' containment reference.
+   * @see #getDepartment_employees()
+   * @generated
+   */
+  void setDepartment_employees(department_employees value);
 
   /**
    * Returns the value of the '<em><b>Deparment</b></em>' containment reference list.

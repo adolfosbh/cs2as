@@ -10,7 +10,7 @@ company :
 department :
   'department' name=STRING '{' 
     department_manager = department_manager
-    department_employees += department_employees
+    department_employees = department_employees
     deparment += department*
   '}';
 

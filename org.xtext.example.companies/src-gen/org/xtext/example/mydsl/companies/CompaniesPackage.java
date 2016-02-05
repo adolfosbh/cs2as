@@ -122,7 +122,7 @@ public interface CompaniesPackage extends EPackage
   int DEPARTMENT__DEPARTMENT_MANAGER = 1;
 
   /**
-   * The feature id for the '<em><b>Department employees</b></em>' containment reference list.
+   * The feature id for the '<em><b>Department employees</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -325,10 +325,10 @@ public interface CompaniesPackage extends EPackage
   EReference getdepartment_Department_manager();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.companies.department#getDepartment_employees <em>Department employees</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.companies.department#getDepartment_employees <em>Department employees</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Department employees</em>'.
+   * @return the meta object for the containment reference '<em>Department employees</em>'.
    * @see org.xtext.example.mydsl.companies.department#getDepartment_employees()
    * @see #getdepartment()
    * @generated
@@ -518,7 +518,7 @@ public interface CompaniesPackage extends EPackage
     EReference DEPARTMENT__DEPARTMENT_MANAGER = eINSTANCE.getdepartment_Department_manager();
 
     /**
-     * The meta object literal for the '<em><b>Department employees</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Department employees</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

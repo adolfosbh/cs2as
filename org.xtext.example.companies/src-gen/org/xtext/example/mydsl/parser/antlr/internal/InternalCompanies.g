@@ -199,7 +199,7 @@ ruledepartment returns [EObject current=null]
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDepartmentRule());
 	        }
-       		add(
+       		set(
        			$current, 
        			"department_employees",
         		lv_department_employees_4_0, 

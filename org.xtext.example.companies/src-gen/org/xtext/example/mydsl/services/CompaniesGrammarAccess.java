@@ -73,11 +73,11 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//department:
-		//	"department" name=STRING "{" department_manager=department_manager department_employees+=department_employees
+		//	"department" name=STRING "{" department_manager=department_manager department_employees=department_employees
 		//	deparment+=department* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"department" name=STRING "{" department_manager=department_manager department_employees+=department_employees
+		//"department" name=STRING "{" department_manager=department_manager department_employees=department_employees
 		//deparment+=department* "}"
 		public Group getGroup() { return cGroup; }
 
@@ -99,7 +99,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		//department_manager
 		public RuleCall getDepartment_managerDepartment_managerParserRuleCall_3_0() { return cDepartment_managerDepartment_managerParserRuleCall_3_0; }
 
-		//department_employees+=department_employees
+		//department_employees=department_employees
 		public Assignment getDepartment_employeesAssignment_4() { return cDepartment_employeesAssignment_4; }
 
 		//department_employees
@@ -298,7 +298,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//department:
-	//	"department" name=STRING "{" department_manager=department_manager department_employees+=department_employees
+	//	"department" name=STRING "{" department_manager=department_manager department_employees=department_employees
 	//	deparment+=department* "}";
 	public DepartmentElements getDepartmentAccess() {
 		return pDepartment;

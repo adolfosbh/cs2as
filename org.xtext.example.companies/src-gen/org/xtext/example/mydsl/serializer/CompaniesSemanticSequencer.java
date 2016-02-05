@@ -63,7 +63,7 @@ public class CompaniesSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING department_manager=department_manager department_employees+=department_employees deparment+=department*)
+	 *     (name=STRING department_manager=department_manager department_employees=department_employees deparment+=department*)
 	 */
 	protected void sequence_department(EObject context, department semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

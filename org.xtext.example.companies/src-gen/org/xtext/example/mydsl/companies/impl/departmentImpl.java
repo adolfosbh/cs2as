@@ -72,14 +72,14 @@ public class departmentImpl extends MinimalEObjectImpl.Container implements depa
   protected department_manager department_manager;
 
   /**
-   * The cached value of the '{@link #getDepartment_employees() <em>Department employees</em>}' containment reference list.
+   * The cached value of the '{@link #getDepartment_employees() <em>Department employees</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDepartment_employees()
    * @generated
    * @ordered
    */
-  protected EList<department_employees> department_employees;
+  protected department_employees department_employees;
 
   /**
    * The cached value of the '{@link #getDeparment() <em>Deparment</em>}' containment reference list.
@@ -188,13 +188,47 @@ public class departmentImpl extends MinimalEObjectImpl.Container implements depa
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<department_employees> getDepartment_employees()
+  public department_employees getDepartment_employees()
   {
-    if (department_employees == null)
-    {
-      department_employees = new EObjectContainmentEList<department_employees>(department_employees.class, this, CompaniesPackage.DEPARTMENT__DEPARTMENT_EMPLOYEES);
-    }
     return department_employees;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDepartment_employees(department_employees newDepartment_employees, NotificationChain msgs)
+  {
+    department_employees oldDepartment_employees = department_employees;
+    department_employees = newDepartment_employees;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CompaniesPackage.DEPARTMENT__DEPARTMENT_EMPLOYEES, oldDepartment_employees, newDepartment_employees);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDepartment_employees(department_employees newDepartment_employees)
+  {
+    if (newDepartment_employees != department_employees)
+    {
+      NotificationChain msgs = null;
+      if (department_employees != null)
+        msgs = ((InternalEObject)department_employees).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CompaniesPackage.DEPARTMENT__DEPARTMENT_EMPLOYEES, null, msgs);
+      if (newDepartment_employees != null)
+        msgs = ((InternalEObject)newDepartment_employees).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CompaniesPackage.DEPARTMENT__DEPARTMENT_EMPLOYEES, null, msgs);
+      msgs = basicSetDepartment_employees(newDepartment_employees, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.DEPARTMENT__DEPARTMENT_EMPLOYEES, newDepartment_employees, newDepartment_employees));
   }
 
   /**
@@ -224,7 +258,7 @@ public class departmentImpl extends MinimalEObjectImpl.Container implements depa
       case CompaniesPackage.DEPARTMENT__DEPARTMENT_MANAGER:
         return basicSetDepartment_manager(null, msgs);
       case CompaniesPackage.DEPARTMENT__DEPARTMENT_EMPLOYEES:
-        return ((InternalEList<?>)getDepartment_employees()).basicRemove(otherEnd, msgs);
+        return basicSetDepartment_employees(null, msgs);
       case CompaniesPackage.DEPARTMENT__DEPARMENT:
         return ((InternalEList<?>)getDeparment()).basicRemove(otherEnd, msgs);
     }
@@ -271,8 +305,7 @@ public class departmentImpl extends MinimalEObjectImpl.Container implements depa
         setDepartment_manager((department_manager)newValue);
         return;
       case CompaniesPackage.DEPARTMENT__DEPARTMENT_EMPLOYEES:
-        getDepartment_employees().clear();
-        getDepartment_employees().addAll((Collection<? extends department_employees>)newValue);
+        setDepartment_employees((department_employees)newValue);
         return;
       case CompaniesPackage.DEPARTMENT__DEPARMENT:
         getDeparment().clear();
@@ -299,7 +332,7 @@ public class departmentImpl extends MinimalEObjectImpl.Container implements depa
         setDepartment_manager((department_manager)null);
         return;
       case CompaniesPackage.DEPARTMENT__DEPARTMENT_EMPLOYEES:
-        getDepartment_employees().clear();
+        setDepartment_employees((department_employees)null);
         return;
       case CompaniesPackage.DEPARTMENT__DEPARMENT:
         getDeparment().clear();
@@ -323,7 +356,7 @@ public class departmentImpl extends MinimalEObjectImpl.Container implements depa
       case CompaniesPackage.DEPARTMENT__DEPARTMENT_MANAGER:
         return department_manager != null;
       case CompaniesPackage.DEPARTMENT__DEPARTMENT_EMPLOYEES:
-        return department_employees != null && !department_employees.isEmpty();
+        return department_employees != null;
       case CompaniesPackage.DEPARTMENT__DEPARMENT:
         return deparment != null && !deparment.isEmpty();
     }
