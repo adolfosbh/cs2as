@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="lookup" nsURI="http://www.eclipse.org/ocl/2015/Lookup" nsPrefix="lookup">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="lookup" nsURI="http://xtext.eclipse.org/example/companies" nsPrefix="lookup">
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
-    <details value="platform:/resource/org.xtext.example.companies/model/Company.ecoreted/Companies.ecore"/>
+    <details key="target" value="platform:/resource/org.xtext.example.companies/model/Company.ecore"/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
@@ -18,7 +18,7 @@
         <eBounds eClassifier="ecore:EClass Company.ecore#//Employee"/>
       </eTypeParameters>
       <eParameters name="elements" lowerBound="1">
-        <eGenericType eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl.pivot/model-gen/oclstdlib.ecore#//Collection">
+        <eGenericType eClassifier="ecore:EClass ../../org.eclipse.ocl.pivot/model-gen/oclstdlib.ecore#//Collection">
           <eTypeArguments eTypeParameter="#//LookupEnvironment/addElements/NE"/>
         </eGenericType>
       </eParameters>
