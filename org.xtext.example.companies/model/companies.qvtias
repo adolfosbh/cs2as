@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qvti:ImperativeModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pivot="http://www.eclipse.org/ocl/2015/Pivot"
+    xmlns:qvtb="http://www.eclipse.org/qvt/2015/QVTbase" xmlns:qvtcb="http://www.eclipse.org/qvt/2015/QVTcoreBase" xmlns:qvti="http://www.eclipse.org/qvt/2015/QVTimperative"
+    xsi:schemaLocation="http://www.eclipse.org/ocl/2015/Pivot java://org.eclipse.ocl.pivot.PivotPackage http://www.eclipse.org/qvt/2015/QVTbase java://org.eclipse.qvtd.pivot.qvtbase.QVTbasePackage http://www.eclipse.org/qvt/2015/QVTcoreBase java://org.eclipse.qvtd.pivot.qvtcorebase.QVTcoreBasePackage http://www.eclipse.org/qvt/2015/QVTimperative java://org.eclipse.qvtd.pivot.qvtimperative.QVTimperativePackage"
+    name="companies.qvtias" externalURI="platform:/resource/org.xtext.example.companies/model/companies.qvtias">
+  <ownedImports importedNamespace="pivot:Package generated/Companies.ecore.oclas#P.companies"/>
+  <ownedImports importedNamespace="pivot:Package Company.ecore.oclas#P.company"/>
+  <ownedPackages xmi:id="P." name="" URI="zz" nsPrefix="yy">
+    <ownedClasses xsi:type="qvtb:Transformation" xmi:id="T..companies_qvtp_qvtcas" name="companies_qvtp_qvtcas">
+      <modelParameter xmi:id="qT..companies_qvtp_qvtcas.leftCS" name="leftCS" usedPackage="generated/Companies.ecore.oclas#P.companies">
+        <ownedContext name="leftCS" type="pivot:Class http://www.eclipse.org/qvt/2015/QVTimperativeLibrary.oclas#T.qvtbaselibrary.Model"/>
+      </modelParameter>
+      <modelParameter xmi:id="qT..companies_qvtp_qvtcas.rightAS" name="rightAS" usedPackage="Company.ecore.oclas#P.company"/>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.__root__" name="__root__">
+        <guardPattern/>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.roots" name="roots" type="#//@ownedPackages.1/@ownedClasses.0">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.0" referredOperation="http://www.eclipse.org/qvt/2015/QVTimperativeLibrary.oclas#o.qvtbaselibrary.Model.rootObjects">
+              <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class http://www.eclipse.org/qvt/2015/QVTimperativeLibrary.oclas#T.qvtbaselibrary.Model"
+                  referredVariable="#//@ownedPackages.0/@ownedClasses.0/@modelParameter.0/@ownedContext"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%company%187%" name="«child-company»" type="#//@ownedPackages.1/@ownedClasses.1">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.1" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Set.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.0" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.roots"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%company%45%0%92%u00BB" name="\u00ABjoin-company-0\u00BB"
+              type="#//@ownedPackages.1/@ownedClasses.1">
+            <ownedInit xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.1" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%company%187%"/>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%department%187%" name="«child-department»" type="#//@ownedPackages.1/@ownedClasses.2">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.2" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Set.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.0" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.roots"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%0%92%u00BB" name="\u00ABjoin-department-0\u00BB"
+              type="#//@ownedPackages.1/@ownedClasses.3">
+            <ownedInit xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.2" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%department%187%"/>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%1%92%u00BB" name="\u00ABjoin-department-1\u00BB"
+              type="#//@ownedPackages.1/@ownedClasses.3">
+            <ownedInit xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.2" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%department%187%"/>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%department_employees%187%" name="«child-department_employees»"
+              type="#//@ownedPackages.1/@ownedClasses.4">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.4" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Set.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.0" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.roots"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department_employees%45%0%92%u00BB" name="\u00ABjoin-department_employees-0\u00BB"
+              type="#//@ownedPackages.1/@ownedClasses.4">
+            <ownedInit xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.4" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%department_employees%187%"/>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%department_manager%187%" name="«child-department_manager»"
+              type="#//@ownedPackages.1/@ownedClasses.5">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.5" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Set.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.0" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.roots"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department_manager%45%0%92%u00BB" name="\u00ABjoin-department_manager-0\u00BB"
+              type="#//@ownedPackages.1/@ownedClasses.5">
+            <ownedInit xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.5" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%department_manager%187%"/>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%employee%187%" name="«child-employee»" type="#//@ownedPackages.1/@ownedClasses.6">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Set.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.0" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.roots"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%employee%45%0%92%u00BB" name="\u00ABjoin-employee-0\u00BB"
+              type="#//@ownedPackages.1/@ownedClasses.7">
+            <ownedInit xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.6" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%171%child%45%employee%187%"/>
+          </variable>
+        </bottomPattern>
+        <mappingStatement xsi:type="qvti:MappingSequence">
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.1" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%company%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.companies%58%%58%company%58%%58%deparment">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::company::deparment.guard.%92%u00ABjoin%45%department%45%0%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.3" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%0%92%u00BB"/>
+              </binding>
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::company::deparment.guard.%92%u00ABjoin%45%department%45%1%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.3" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%1%92%u00BB"/>
+              </binding>
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::company::deparment.leftCS.guard.%92%u00ABparent%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.0.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.0.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.3" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%1%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.companies%58%%58%department%58%%58%deparment">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department::deparment.guard.%92%u00ABjoin%45%department%45%0%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.3" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%0%92%u00BB"/>
+              </binding>
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department::deparment.leftCS.guard.%92%u00ABparent%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.1.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.1.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.3" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.companies%58%%58%department%58%%58%department_employees">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department::department_employees.guard.%92%u00ABjoin%45%department_employees%45%0%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.4" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department_employees%45%0%92%u00BB"/>
+              </binding>
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department::department_employees.leftCS.guard.%92%u00ABparent%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.2.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.2.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.3" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.companies%58%%58%department%58%%58%department_manager">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department::department_manager.guard.%92%u00ABjoin%45%department_manager%45%0%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.5" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department_manager%45%0%92%u00BB"/>
+              </binding>
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department::department_manager.leftCS.guard.%92%u00ABparent%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.3.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.3.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.4" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department_employees%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.companies%58%%58%department_employees%58%%58%employee">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department_employees::employee.guard.%92%u00ABjoin%45%employee%45%0%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.7" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%employee%45%0%92%u00BB"/>
+              </binding>
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department_employees::employee.leftCS.guard.%92%u00ABparent%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees"
+                    referredVariable="#i..companies_qvtp_qvtcas.__root__.0.4.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.4.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.5" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department_manager%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.companies%58%%58%department_manager%58%%58%employee">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department_manager::employee.guard.%92%u00ABjoin%45%employee%45%0%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.7" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%employee%45%0%92%u00BB"/>
+              </binding>
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department_manager::employee.leftCS.guard.%92%u00ABparent%92%u00BB">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager"
+                    referredVariable="#i..companies_qvtp_qvtcas.__root__.0.5.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.5.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.1" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%company%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.ccompany_2_Company">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.ccompany_2_Company.leftCS.guard.lCompany">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.6.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.6.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.3" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.cdepartment_2_Department">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.cdepartment_2_Department.leftCS.guard.lDepartment">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.7.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.7.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.7" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%employee%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.cemployee_2_Employee">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.cemployee_2_Employee.leftCS.guard.lEmployee">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.8.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.8.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.1" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%company%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.ucompany_2_Company_depts%92%nucompany_2_Company_name">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.leftCS.guard.lCompany">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.9.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.9.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.3" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.udepartment_2_Department_employees%92%nudepartment_2_Department_name%92%nudepartment_2_Department_subdepts">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.leftCS.guard.lDepartment">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.10.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.10.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.3" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%department%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.udepartment_2_Department_manager">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.leftCS.guard.lDepartment">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.11.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.11.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.7" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%employee%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.uemployee_2_Employee_address%92%nuemployee_2_Employee_name%92%nuemployee_2_Employee_salary">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.leftCS.guard.lEmployee">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.12.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.12.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+          </mappingStatements>
+          <mappingStatements xsi:type="qvti:MappingLoop">
+            <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.7" referredVariable="#qV..companies_qvtp_qvtcas.__root__.bottom.%92%u00ABjoin%45%employee%45%0%92%u00BB"/>
+            <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.uemployee_2_Employee_mentor">
+              <binding boundVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee">
+                <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" referredVariable="#i..companies_qvtp_qvtcas.__root__.0.13.loop0"/>
+              </binding>
+            </ownedBody>
+            <ownedIterators xmi:id="i..companies_qvtp_qvtcas.__root__.0.13.loop0" name="loop0" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+          </mappingStatements>
+        </mappingStatement>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.ccompany_2_Company" name="ccompany_2_Company">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.ccompany_2_Company.leftCS.guard.lCompany" name="lCompany" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <domain xsi:type="qvti:ImperativeDomain" name="rightAS" isEnforceable="true" typedModel="#qT..companies_qvtp_qvtcas.rightAS">
+          <guardPattern/>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern">
+            <realizedVariable xmi:id="qV..companies_qvtp_qvtcas.ccompany_2_Company.rightAS.bottom.rCompany" name="rCompany" type="pivot:Class Company.ecore.oclas#T.company.Company"/>
+          </bottomPattern>
+        </domain>
+        <guardPattern/>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.1/@bottomPattern/@assignment.0">
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+            <value xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Company" referredVariable="#qV..companies_qvtp_qvtcas.ccompany_2_Company.rightAS.bottom.rCompany"/>
+            <slotExpression xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"
+                referredVariable="#qV..companies_qvtp_qvtcas.ccompany_2_Company.leftCS.guard.lCompany"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.cdepartment_2_Department" name="cdepartment_2_Department">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.cdepartment_2_Department.leftCS.guard.lDepartment" name="lDepartment" isRequired="false"
+                type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <domain xsi:type="qvti:ImperativeDomain" name="rightAS" isEnforceable="true" typedModel="#qT..companies_qvtp_qvtcas.rightAS">
+          <guardPattern/>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern">
+            <realizedVariable xmi:id="qV..companies_qvtp_qvtcas.cdepartment_2_Department.rightAS.bottom.rDepartment" name="rDepartment"
+                type="pivot:Class Company.ecore.oclas#T.company.Department"/>
+          </bottomPattern>
+        </domain>
+        <guardPattern/>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.2/@bottomPattern/@assignment.0">
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+            <value xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredVariable="#qV..companies_qvtp_qvtcas.cdepartment_2_Department.rightAS.bottom.rDepartment"/>
+            <slotExpression xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                referredVariable="#qV..companies_qvtp_qvtcas.cdepartment_2_Department.leftCS.guard.lDepartment"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.cemployee_2_Employee" name="cemployee_2_Employee">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.cemployee_2_Employee.leftCS.guard.lEmployee" name="lEmployee" isRequired="false"
+                type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <domain xsi:type="qvti:ImperativeDomain" name="rightAS" isEnforceable="true" typedModel="#qT..companies_qvtp_qvtcas.rightAS">
+          <guardPattern/>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern">
+            <realizedVariable xmi:id="qV..companies_qvtp_qvtcas.cemployee_2_Employee.rightAS.bottom.rEmployee" name="rEmployee" type="pivot:Class Company.ecore.oclas#T.company.Employee"/>
+          </bottomPattern>
+        </domain>
+        <guardPattern/>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.3/@bottomPattern/@assignment.0">
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+            <value xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredVariable="#qV..companies_qvtp_qvtcas.cemployee_2_Employee.rightAS.bottom.rEmployee"/>
+            <slotExpression xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                referredVariable="#qV..companies_qvtp_qvtcas.cemployee_2_Employee.leftCS.guard.lEmployee"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.companies%58%%58%company%58%%58%deparment" name="companies::company::deparment">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.companies::company::deparment.leftCS.guard.%92%u00ABparent%92%u00BB" name="\u00ABparent\u00BB"
+                type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::company::deparment.guard.%92%u00ABjoin%45%department%45%1%92%u00BB" name="\u00ABjoin-department-1\u00BB"
+              type="#//@ownedPackages.1/@ownedClasses.3"/>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::company::deparment.guard.%92%u00ABjoin%45%department%45%0%92%u00BB" name="\u00ABjoin-department-0\u00BB"
+              type="#//@ownedPackages.1/@ownedClasses.3"/>
+        </guardPattern>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.4/@bottomPattern/@assignment.0 #//@ownedPackages.0/@ownedClasses.0/@rule.4/@bottomPattern/@assignment.1">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::company::deparment.bottom.allChildren" name="allChildren" type="#//@ownedPackages.1/@ownedClasses.8">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.9" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OrderedSet.selectByKind..TT">
+              <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.8" referredProperty="generated/Companies.ecore.oclas#p.companies.company.deparment">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company" referredVariable="#qV..companies_qvtp_qvtcas.companies::company::deparment.leftCS.guard.%92%u00ABparent%92%u00BB"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::company::deparment.bottom.%171%child%45%department%187%" name="«child-department»"
+              type="#//@ownedPackages.1/@ownedClasses.9">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.9" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OrderedSet.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.8" referredVariable="#qV..companies_qvtp_qvtcas.companies::company::deparment.bottom.allChildren"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvti:ConnectionAssignment" targetVariable="#qV..companies_qvtp_qvtcas.companies::company::deparment.guard.%92%u00ABjoin%45%department%45%1%92%u00BB">
+            <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.9" referredVariable="#qV..companies_qvtp_qvtcas.companies::company::deparment.bottom.%171%child%45%department%187%"/>
+          </assignment>
+          <assignment xsi:type="qvti:ConnectionAssignment" targetVariable="#qV..companies_qvtp_qvtcas.companies::company::deparment.guard.%92%u00ABjoin%45%department%45%0%92%u00BB">
+            <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.9" referredVariable="#qV..companies_qvtp_qvtcas.companies::company::deparment.bottom.%171%child%45%department%187%"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.companies%58%%58%department%58%%58%deparment" name="companies::department::deparment">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::deparment.leftCS.guard.%92%u00ABparent%92%u00BB" name="\u00ABparent\u00BB"
+                type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::deparment.guard.%92%u00ABjoin%45%department%45%0%92%u00BB"
+              name="\u00ABjoin-department-0\u00BB" type="#//@ownedPackages.1/@ownedClasses.3"/>
+        </guardPattern>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.5/@bottomPattern/@assignment.0">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::deparment.bottom.allChildren" name="allChildren" type="#//@ownedPackages.1/@ownedClasses.8">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.9" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OrderedSet.selectByKind..TT">
+              <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.8" referredProperty="generated/Companies.ecore.oclas#p.companies.department.deparment">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::deparment.leftCS.guard.%92%u00ABparent%92%u00BB"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::deparment.bottom.%171%child%45%department%187%" name="«child-department»"
+              type="#//@ownedPackages.1/@ownedClasses.9">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.9" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OrderedSet.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.8" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::deparment.bottom.allChildren"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvti:ConnectionAssignment" targetVariable="#qV..companies_qvtp_qvtcas.companies::department::deparment.guard.%92%u00ABjoin%45%department%45%0%92%u00BB">
+            <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.9" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::deparment.bottom.%171%child%45%department%187%"/>
+          </assignment>
+        </bottomPattern>
+        <mappingStatement xsi:type="qvti:MappingLoop">
+          <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.8" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::deparment.bottom.allChildren"/>
+          <ownedBody xsi:type="qvti:MappingCall" referredMapping="#m..companies_qvtp_qvtcas.companies%58%%58%department%58%%58%deparment">
+            <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department::deparment.leftCS.guard.%92%u00ABparent%92%u00BB">
+              <value xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" referredVariable="#i..companies_qvtp_qvtcas.companies::department::deparment.0.aChild"/>
+            </binding>
+            <binding boundVariable="#qV..companies_qvtp_qvtcas.companies::department::deparment.guard.%92%u00ABjoin%45%department%45%0%92%u00BB">
+              <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.3" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::deparment.guard.%92%u00ABjoin%45%department%45%0%92%u00BB"/>
+            </binding>
+          </ownedBody>
+          <ownedIterators xmi:id="i..companies_qvtp_qvtcas.companies::department::deparment.0.aChild" name="aChild" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+        </mappingStatement>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.companies%58%%58%department%58%%58%department_employees" name="companies::department::department_employees">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::department_employees.leftCS.guard.%92%u00ABparent%92%u00BB"
+                name="\u00ABparent\u00BB" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::department_employees.guard.%92%u00ABjoin%45%department_employees%45%0%92%u00BB"
+              name="\u00ABjoin-department_employees-0\u00BB" type="#//@ownedPackages.1/@ownedClasses.4"/>
+        </guardPattern>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.6/@bottomPattern/@assignment.0">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::department_employees.bottom.allChildren" name="allChildren"
+              type="#//@ownedPackages.1/@ownedClasses.4">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.4" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsSet">
+              <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees"
+                  referredProperty="generated/Companies.ecore.oclas#p.companies.department.department_employees">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::department_employees.leftCS.guard.%92%u00ABparent%92%u00BB"/>
+              </ownedSource>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::department_employees.bottom.%171%child%45%department_employees%187%"
+              name="«child-department_employees»" type="#//@ownedPackages.1/@ownedClasses.4">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.4" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Set.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.4" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::department_employees.bottom.allChildren"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvti:ConnectionAssignment" targetVariable="#qV..companies_qvtp_qvtcas.companies::department::department_employees.guard.%92%u00ABjoin%45%department_employees%45%0%92%u00BB">
+            <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.4" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::department_employees.bottom.%171%child%45%department_employees%187%"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.companies%58%%58%department%58%%58%department_manager" name="companies::department::department_manager">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::department_manager.leftCS.guard.%92%u00ABparent%92%u00BB"
+                name="\u00ABparent\u00BB" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::department_manager.guard.%92%u00ABjoin%45%department_manager%45%0%92%u00BB"
+              name="\u00ABjoin-department_manager-0\u00BB" type="#//@ownedPackages.1/@ownedClasses.5"/>
+        </guardPattern>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.7/@bottomPattern/@assignment.0">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::department_manager.bottom.allChildren" name="allChildren"
+              type="#//@ownedPackages.1/@ownedClasses.5">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.5" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsSet">
+              <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager"
+                  referredProperty="generated/Companies.ecore.oclas#p.companies.department.department_manager">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::department_manager.leftCS.guard.%92%u00ABparent%92%u00BB"/>
+              </ownedSource>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department::department_manager.bottom.%171%child%45%department_manager%187%"
+              name="«child-department_manager»" type="#//@ownedPackages.1/@ownedClasses.5">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.5" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Set.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.5" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::department_manager.bottom.allChildren"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvti:ConnectionAssignment" targetVariable="#qV..companies_qvtp_qvtcas.companies::department::department_manager.guard.%92%u00ABjoin%45%department_manager%45%0%92%u00BB">
+            <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.5" referredVariable="#qV..companies_qvtp_qvtcas.companies::department::department_manager.bottom.%171%child%45%department_manager%187%"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.companies%58%%58%department_employees%58%%58%employee" name="companies::department_employees::employee">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department_employees::employee.leftCS.guard.%92%u00ABparent%92%u00BB"
+                name="\u00ABparent\u00BB" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department_employees::employee.guard.%92%u00ABjoin%45%employee%45%0%92%u00BB"
+              name="\u00ABjoin-employee-0\u00BB" type="#//@ownedPackages.1/@ownedClasses.7"/>
+        </guardPattern>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.8/@bottomPattern/@assignment.0">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department_employees::employee.bottom.allChildren" name="allChildren"
+              type="#//@ownedPackages.1/@ownedClasses.10">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.11" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OrderedSet.selectByKind..TT">
+              <ownedSource xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.10" referredProperty="generated/Companies.ecore.oclas#p.companies.department_employees.employee">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees"
+                    referredVariable="#qV..companies_qvtp_qvtcas.companies::department_employees::employee.leftCS.guard.%92%u00ABparent%92%u00BB"/>
+              </ownedSource>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department_employees::employee.bottom.%171%child%45%employee%187%" name="«child-employee»"
+              type="#//@ownedPackages.1/@ownedClasses.11">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.11" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OrderedSet.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.10" referredVariable="#qV..companies_qvtp_qvtcas.companies::department_employees::employee.bottom.allChildren"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvti:ConnectionAssignment" targetVariable="#qV..companies_qvtp_qvtcas.companies::department_employees::employee.guard.%92%u00ABjoin%45%employee%45%0%92%u00BB">
+            <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.11" referredVariable="#qV..companies_qvtp_qvtcas.companies::department_employees::employee.bottom.%171%child%45%employee%187%"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.companies%58%%58%department_manager%58%%58%employee" name="companies::department_manager::employee">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department_manager::employee.leftCS.guard.%92%u00ABparent%92%u00BB"
+                name="\u00ABparent\u00BB" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department_manager::employee.guard.%92%u00ABjoin%45%employee%45%0%92%u00BB"
+              name="\u00ABjoin-employee-0\u00BB" type="#//@ownedPackages.1/@ownedClasses.7"/>
+        </guardPattern>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.9/@bottomPattern/@assignment.0">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department_manager::employee.bottom.allChildren" name="allChildren" type="#//@ownedPackages.1/@ownedClasses.6">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsSet">
+              <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                  referredProperty="generated/Companies.ecore.oclas#p.companies.department_manager.employee">
+                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager"
+                    referredVariable="#qV..companies_qvtp_qvtcas.companies::department_manager::employee.leftCS.guard.%92%u00ABparent%92%u00BB"/>
+              </ownedSource>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.companies::department_manager::employee.bottom.%171%child%45%employee%187%" name="«child-employee»"
+              type="#//@ownedPackages.1/@ownedClasses.6">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="#//@ownedPackages.1/@ownedClasses.6" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.Set.selectByKind..TT">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.6" referredVariable="#qV..companies_qvtp_qvtcas.companies::department_manager::employee.bottom.allChildren"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvti:ConnectionAssignment" targetVariable="#qV..companies_qvtp_qvtcas.companies::department_manager::employee.guard.%92%u00ABjoin%45%employee%45%0%92%u00BB">
+            <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.6" referredVariable="#qV..companies_qvtp_qvtcas.companies::department_manager::employee.bottom.%171%child%45%employee%187%"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.ucompany_2_Company_depts%92%nucompany_2_Company_name" name="ucompany_2_Company_depts\nucompany_2_Company_name">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.leftCS.guard.lCompany" name="lCompany"
+                isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <domain xsi:type="qvti:ImperativeDomain" name="rightAS" isEnforceable="true" typedModel="#qT..companies_qvtp_qvtcas.rightAS">
+          <guardPattern/>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.10/@bottomPattern/@assignment.0 #//@ownedPackages.0/@ownedClasses.0/@rule.10/@bottomPattern/@assignment.1">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.ast" name="ast" isRequired="false"
+              type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"
+                  referredVariable="#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.leftCS.guard.lCompany"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.name" name="name" isRequired="false"
+              type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.company.name">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"
+                  referredVariable="#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.leftCS.guard.lCompany"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.deparment" name="deparment"
+              type="#//@ownedPackages.1/@ownedClasses.12">
+            <ownedInit xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.8" referredProperty="generated/Companies.ecore.oclas#p.companies.company.deparment">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"
+                  referredVariable="#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.leftCS.guard.lCompany"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.aCompany" name="aCompany"
+              type="pivot:Class Company.ecore.oclas#T.company.Company">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Company" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                  referredVariable="#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.ast"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class Company.ecore.oclas#T.company.Company"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.%92%u00ABcollect%92%u00BB"
+              name="\u00ABcollect\u00BB" type="#//@ownedPackages.1/@ownedClasses.13">
+            <ownedInit xsi:type="pivot:IteratorExp" type="#//@ownedPackages.1/@ownedClasses.14" referredIteration="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.OrderedSet.collect..T">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.12" referredVariable="#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.deparment"/>
+              <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                    referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                      referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.10/@bottomPattern/@variable.4/@ownedInit/@ownedIterators.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                    referredType="pivot:Class Company.ecore.oclas#T.company.Department"/>
+              </ownedBody>
+              <ownedIterators name="1_" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Company.depts">
+            <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.13" referredVariable="#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.%92%u00ABcollect%92%u00BB"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Company" referredVariable="#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.aCompany"/>
+          </assignment>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Company.name">
+            <value xsi:type="pivot:VariableExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                referredVariable="#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.name"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Company" referredVariable="#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts\nucompany_2_Company_name.bottom.aCompany"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.udepartment_2_Department_employees%92%nudepartment_2_Department_name%92%nudepartment_2_Department_subdepts"
+          name="udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.leftCS.guard.lDepartment"
+                name="lDepartment" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <domain xsi:type="qvti:ImperativeDomain" name="rightAS" isEnforceable="true" typedModel="#qT..companies_qvtp_qvtcas.rightAS">
+          <guardPattern/>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.11/@bottomPattern/@assignment.0 #//@ownedPackages.0/@ownedClasses.0/@rule.11/@bottomPattern/@assignment.1 #//@ownedPackages.0/@ownedClasses.0/@rule.11/@bottomPattern/@assignment.2">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.ast"
+              name="ast" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.leftCS.guard.lDepartment"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.name"
+              name="name" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.department.name">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.leftCS.guard.lDepartment"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.deparment"
+              name="deparment" type="#//@ownedPackages.1/@ownedClasses.12">
+            <ownedInit xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.8" referredProperty="generated/Companies.ecore.oclas#p.companies.department.deparment">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.leftCS.guard.lDepartment"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.department_employees"
+              name="department_employees" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.department.department_employees">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.leftCS.guard.lDepartment"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.aDepartment"
+              name="aDepartment" type="pivot:Class Company.ecore.oclas#T.company.Department">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.ast"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class Company.ecore.oclas#T.company.Department"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.employee"
+              name="employee" type="#//@ownedPackages.1/@ownedClasses.15">
+            <ownedInit xsi:type="pivot:PropertyCallExp" type="#//@ownedPackages.1/@ownedClasses.10" referredProperty="generated/Companies.ecore.oclas#p.companies.department_employees.employee">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.department_employees"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.%92%u00ABcollect%92%u00BB"
+              name="\u00ABcollect\u00BB" type="#//@ownedPackages.1/@ownedClasses.13">
+            <ownedInit xsi:type="pivot:IteratorExp" type="#//@ownedPackages.1/@ownedClasses.14" referredIteration="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.OrderedSet.collect..T">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.12" referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.deparment"/>
+              <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                    referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                      referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.11/@bottomPattern/@variable.6/@ownedInit/@ownedIterators.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                    referredType="pivot:Class Company.ecore.oclas#T.company.Department"/>
+              </ownedBody>
+              <ownedIterators name="1_" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.%92%u00ABcollect%92%u00BB1"
+              name="\u00ABcollect\u00BB1" type="#//@ownedPackages.1/@ownedClasses.16">
+            <ownedInit xsi:type="pivot:IteratorExp" type="#//@ownedPackages.1/@ownedClasses.17" referredIteration="http://www.eclipse.org/ocl/2015/Library.oclas#i.ocl.OrderedSet.collect..T">
+              <ownedSource xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.15" referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.employee"/>
+              <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                    referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                      referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.11/@bottomPattern/@variable.7/@ownedInit/@ownedIterators.0"/>
+                </ownedSource>
+                <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
+                    referredType="pivot:Class Company.ecore.oclas#T.company.Employee"/>
+              </ownedBody>
+              <ownedIterators name="1_" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Department.employees">
+            <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.16" referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.%92%u00ABcollect%92%u00BB1"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.aDepartment"/>
+          </assignment>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Department.name">
+            <value xsi:type="pivot:VariableExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.name"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.aDepartment"/>
+          </assignment>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Department.subdepts">
+            <value xsi:type="pivot:VariableExp" type="#//@ownedPackages.1/@ownedClasses.13" referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.%92%u00ABcollect%92%u00BB"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees\nudepartment_2_Department_name\nudepartment_2_Department_subdepts.bottom.aDepartment"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.udepartment_2_Department_manager" name="udepartment_2_Department_manager">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.leftCS.guard.lDepartment" name="lDepartment"
+                isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <domain xsi:type="qvti:ImperativeDomain" name="rightAS" isEnforceable="true" typedModel="#qT..companies_qvtp_qvtcas.rightAS">
+          <guardPattern/>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.12/@bottomPattern/@assignment.0">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.ast" name="ast" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.leftCS.guard.lDepartment"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.department_manager" name="department_manager"
+              isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.department.department_manager">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.leftCS.guard.lDepartment"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.aDepartment" name="aDepartment" type="pivot:Class Company.ecore.oclas#T.company.Department">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.ast"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class Company.ecore.oclas#T.company.Department"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.employee" name="employee" isRequired="false"
+              type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.department_manager.employee">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.department_manager"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.ast1" name="ast1" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.employee"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.aEmployee" name="aEmployee" type="pivot:Class Company.ecore.oclas#T.company.Employee">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                  referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.ast1"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class Company.ecore.oclas#T.company.Employee"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Department.manager">
+            <value xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.aEmployee"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredVariable="#qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.bottom.aDepartment"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.uemployee_2_Employee_address%92%nuemployee_2_Employee_name%92%nuemployee_2_Employee_salary"
+          name="uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.leftCS.guard.lEmployee"
+                name="lEmployee" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <domain xsi:type="qvti:ImperativeDomain" name="rightAS" isEnforceable="true" typedModel="#qT..companies_qvtp_qvtcas.rightAS">
+          <guardPattern/>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.13/@bottomPattern/@assignment.0 #//@ownedPackages.0/@ownedClasses.0/@rule.13/@bottomPattern/@assignment.1 #//@ownedPackages.0/@ownedClasses.0/@rule.13/@bottomPattern/@assignment.2">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.ast"
+              name="ast" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                  referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.leftCS.guard.lEmployee"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.name"
+              name="name" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.employee.name">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                  referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.leftCS.guard.lEmployee"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.address"
+              name="address" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.employee.address">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                  referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.leftCS.guard.lEmployee"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.salary"
+              name="salary" isRequired="false" type="pivot:DataType http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EDouble">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:DataType http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EDouble"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.employee.salary">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                  referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.leftCS.guard.lEmployee"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.aEmployee"
+              name="aEmployee" type="pivot:Class Company.ecore.oclas#T.company.Employee">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                  referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.ast"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class Company.ecore.oclas#T.company.Employee"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Employee.address">
+            <value xsi:type="pivot:VariableExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.address"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.aEmployee"/>
+          </assignment>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Employee.name">
+            <value xsi:type="pivot:VariableExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.name"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.aEmployee"/>
+          </assignment>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Employee.salary">
+            <value xsi:type="pivot:VariableExp" isRequired="false" type="pivot:DataType http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EDouble"
+                referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.salary"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address\nuemployee_2_Employee_name\nuemployee_2_Employee_salary.bottom.aEmployee"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+      <rule xsi:type="qvti:Mapping" xmi:id="m..companies_qvtp_qvtcas.uemployee_2_Employee_mentor" name="uemployee_2_Employee_mentor">
+        <domain xsi:type="qvti:ImperativeDomain" name="leftCS" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
+          <guardPattern>
+            <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee" name="lEmployee" isRequired="false"
+                type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+          </guardPattern>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <domain xsi:type="qvti:ImperativeDomain" name="rightAS" isEnforceable="true" typedModel="#qT..companies_qvtp_qvtcas.rightAS">
+          <guardPattern/>
+          <bottomPattern xsi:type="qvti:ImperativeBottomPattern"/>
+        </domain>
+        <guardPattern/>
+        <bottomPattern xsi:type="qvti:ImperativeBottomPattern" orderedAssignment="#//@ownedPackages.0/@ownedClasses.0/@rule.14/@bottomPattern/@assignment.0">
+          <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.bottom.ast" name="ast" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                  referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.bottom.mentor" name="mentor" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String">
+            <ownedInit xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                referredProperty="generated/Companies.ecore.oclas#p.companies.employee.mentor">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                  referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.bottom.aEmployee" name="aEmployee" type="pivot:Class Company.ecore.oclas#T.company.Employee">
+            <ownedInit xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
+              <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
+                  referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.bottom.ast"/>
+              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class Company.ecore.oclas#T.company.Employee"/>
+            </ownedInit>
+          </variable>
+          <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.bottom.mentor1" name="mentor1" isRequired="false" type="pivot:Class Company.ecore.oclas#T.company.Employee">
+            <ownedInit xsi:type="pivot:OperationCallExp" isRequired="false" type="pivot:Class Company.ecore.oclas#T.company.Employee"
+                referredOperation="companiesLookup.ocl.oclas#o.company.Visitable.lookupEmployee..ocl.String">
+              <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.bottom.aEmployee"/>
+              <ownedArguments xsi:type="pivot:VariableExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+                  referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.bottom.mentor"/>
+            </ownedInit>
+          </variable>
+          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Employee.mentor">
+            <value xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.bottom.mentor1"/>
+            <slotExpression xsi:type="pivot:VariableExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.bottom.aEmployee"/>
+          </assignment>
+        </bottomPattern>
+      </rule>
+    </ownedClasses>
+  </ownedPackages>
+  <ownedPackages xmi:id="P.$$" name="$$" URI="http://www.eclipse.org/ocl/2015/Orphanage" nsPrefix="orphanage">
+    <ownedClasses xsi:type="pivot:SetType" name="Set" superClasses="#//@ownedPackages.1/@ownedClasses.18" elementType="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:SetType" name="Set" superClasses="#//@ownedPackages.1/@ownedClasses.19" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.company"
+        isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.company" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:SetType" name="Set" superClasses="#//@ownedPackages.1/@ownedClasses.20" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+        isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.21" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+        isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:SetType" name="Set" superClasses="#//@ownedPackages.1/@ownedClasses.22" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees"
+        isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:SetType" name="Set" superClasses="#//@ownedPackages.1/@ownedClasses.23" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager"
+        isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:SetType" name="Set" superClasses="#//@ownedPackages.1/@ownedClasses.24" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+        isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.25" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+        isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.26 #//@ownedPackages.1/@ownedClasses.20"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.26 #//@ownedPackages.1/@ownedClasses.20"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.27 #//@ownedPackages.1/@ownedClasses.24"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.27 #//@ownedPackages.1/@ownedClasses.24"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.28 #//@ownedPackages.1/@ownedClasses.29"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.1/@ownedClasses.30" elementType="pivot:Class Company.ecore.oclas#T.company.Department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SequenceT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.1/@ownedClasses.31" elementType="pivot:Class Company.ecore.oclas#T.company.Department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SequenceT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.32 #//@ownedPackages.1/@ownedClasses.33"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.1/@ownedClasses.34" elementType="pivot:Class Company.ecore.oclas#T.company.Employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SequenceT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.1/@ownedClasses.35" elementType="pivot:Class Company.ecore.oclas#T.company.Employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SequenceT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.36" elementType="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.37" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.company">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.company" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.21" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.38" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.39" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.25" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.21" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.25" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.40" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.40" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.41" elementType="pivot:Class Company.ecore.oclas#T.company.Department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.42" elementType="pivot:Class Company.ecore.oclas#T.company.Department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.43" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.43" elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.44" elementType="pivot:Class Company.ecore.oclas#T.company.Employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.45" elementType="pivot:Class Company.ecore.oclas#T.company.Employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.company">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.company" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department_employees" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department_manager" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class Company.ecore.oclas#T.company.Department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class Company.ecore.oclas#T.company.Department">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class Company.ecore.oclas#T.company.Employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class Company.ecore.oclas#T.company.Employee">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class Company.ecore.oclas#T.company.Employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+  </ownedPackages>
+</qvti:ImperativeModel>
