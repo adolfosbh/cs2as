@@ -14,6 +14,8 @@ package	org.xtext.example.company.lookup.util;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.xtext.example.company.util.CompanyUnqualifiedLookupVisitor;
+import org.xtext.example.company.util.CompanyQualifiedLookupVisitor;
+import org.xtext.example.company.util.CompanyExportedLookupVisitor;
 
 public class CompanyLookupSolver {
 	

@@ -100,16 +100,11 @@ public class CompanyPackageImpl extends EPackageImpl implements CompanyPackage {
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		//LookupPackageImpl theLookupPackage = (LookupPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LookupPackage.eNS_URI) instanceof LookupPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LookupPackage.eNS_URI) : LookupPackage.eINSTANCE);
-
 		// Create package meta-data objects
 		theCompanyPackage.createPackageContents();
-		//theLookupPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCompanyPackage.initializePackageContents();
-		//theLookupPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCompanyPackage.freeze();
