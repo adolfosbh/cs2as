@@ -25,187 +25,206 @@ import org.xtext.example.mydsl.companies.*;
 public class CompaniesSwitch<T> extends Switch<T>
 {
   /**
-   * The cached model package
-   * <!-- begin-user-doc -->
+	 * The cached model package
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected static CompaniesPackage modelPackage;
 
   /**
-   * Creates an instance of the switch.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the switch.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public CompaniesSwitch()
   {
-    if (modelPackage == null)
-    {
-      modelPackage = CompaniesPackage.eINSTANCE;
-    }
-  }
+		if (modelPackage == null) {
+			modelPackage = CompaniesPackage.eINSTANCE;
+		}
+	}
 
   /**
-   * Checks whether this is a switch for the given package.
-   * <!-- begin-user-doc -->
+	 * Checks whether this is a switch for the given package.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param ePackage the package in question.
-   * @return whether this is a switch for the given package.
-   * @generated
-   */
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
+	 * @generated
+	 */
   @Override
   protected boolean isSwitchFor(EPackage ePackage)
   {
-    return ePackage == modelPackage;
-  }
+		return ePackage == modelPackage;
+	}
 
   /**
-   * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-   * <!-- begin-user-doc -->
+	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the first non-null result returned by a <code>caseXXX</code> call.
-   * @generated
-   */
+	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @generated
+	 */
   @Override
   protected T doSwitch(int classifierID, EObject theEObject)
   {
-    switch (classifierID)
-    {
-      case CompaniesPackage.COMPANY:
-      {
-        company company = (company)theEObject;
-        T result = casecompany(company);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CompaniesPackage.DEPARTMENT:
-      {
-        department department = (department)theEObject;
-        T result = casedepartment(department);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CompaniesPackage.DEPARTMENT_MANAGER:
-      {
-        department_manager department_manager = (department_manager)theEObject;
-        T result = casedepartment_manager(department_manager);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CompaniesPackage.DEPARTMENT_EMPLOYEES:
-      {
-        department_employees department_employees = (department_employees)theEObject;
-        T result = casedepartment_employees(department_employees);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CompaniesPackage.EMPLOYEE:
-      {
-        employee employee = (employee)theEObject;
-        T result = caseemployee(employee);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      default: return defaultCase(theEObject);
-    }
-  }
+		switch (classifierID) {
+			case CompaniesPackage.COMPANY: {
+				company company = (company)theEObject;
+				T result = casecompany(company);
+				if (result == null) result = casetraceable(company);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CompaniesPackage.DEPARTMENT: {
+				department department = (department)theEObject;
+				T result = casedepartment(department);
+				if (result == null) result = casetraceable(department);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CompaniesPackage.DEPARTMENT_MANAGER: {
+				department_manager department_manager = (department_manager)theEObject;
+				T result = casedepartment_manager(department_manager);
+				if (result == null) result = casetraceable(department_manager);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CompaniesPackage.DEPARTMENT_EMPLOYEES: {
+				department_employees department_employees = (department_employees)theEObject;
+				T result = casedepartment_employees(department_employees);
+				if (result == null) result = casetraceable(department_employees);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CompaniesPackage.EMPLOYEE: {
+				employee employee = (employee)theEObject;
+				T result = caseemployee(employee);
+				if (result == null) result = casetraceable(employee);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CompaniesPackage.TRACEABLE: {
+				traceable traceable = (traceable)theEObject;
+				T result = casetraceable(traceable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			default: return defaultCase(theEObject);
+		}
+	}
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>company</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>company</em>'.
+	 * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>company</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>company</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
   public T casecompany(company object)
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>department</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>department</em>'.
+	 * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>department</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>department</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
   public T casedepartment(department object)
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>department manager</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>department manager</em>'.
+	 * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>department manager</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>department manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
   public T casedepartment_manager(department_manager object)
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>department employees</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>department employees</em>'.
+	 * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>department employees</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>department employees</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
   public T casedepartment_employees(department_employees object)
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>employee</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>employee</em>'.
+	 * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>employee</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>employee</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
   public T caseemployee(employee object)
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>traceable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>traceable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casetraceable(traceable object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
+	 * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch, but this is the last case anyway.
    * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject)
-   * @generated
-   */
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
   @Override
   public T defaultCase(EObject object)
   {
-    return null;
-  }
+		return null;
+	}
 
 } //CompaniesSwitch

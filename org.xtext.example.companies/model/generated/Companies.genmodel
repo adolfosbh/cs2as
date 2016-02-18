@@ -3,8 +3,10 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.example.companies/src-gen" editDirectory="/org.xtext.example.companies.edit/src"
     editorDirectory="/org.xtext.example.companies.editor/src" modelPluginID="org.xtext.example.companies"
     forceOverwrite="true" modelName="Companies" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.example.companies.edit"
-    editorPluginID="org.xtext.example.companies.editor" runtimeVersion="2.11">
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    editPluginID="org.xtext.example.companies.edit" editorPluginID="org.xtext.example.companies.editor"
+    runtimeVersion="2.11">
+  <foreignModel>Companies.ecore</foreignModel>
   <genPackages prefix="Companies" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
       fileExtensions="101" ecorePackage="Companies.ecore#/">
     <genClasses ecoreClass="Companies.ecore#//company">
@@ -28,6 +30,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Companies.ecore#//employee/address"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Companies.ecore#//employee/salary"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Companies.ecore#//employee/mentor"/>
+    </genClasses>
+    <genClasses ecoreClass="Companies.ecore#//traceable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Companies.ecore#//traceable/ast"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

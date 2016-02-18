@@ -33,135 +33,129 @@ import org.xtext.example.mydsl.companies.employee;
  *
  * @generated
  */
-public class department_employeesImpl extends MinimalEObjectImpl.Container implements department_employees
+public class department_employeesImpl extends traceableImpl implements department_employees
 {
   /**
-   * The cached value of the '{@link #getEmployee() <em>Employee</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEmployee() <em>Employee</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEmployee()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEmployee()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<employee> employee;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected department_employeesImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CompaniesPackage.Literals.DEPARTMENT_EMPLOYEES;
-  }
+		return CompaniesPackage.Literals.DEPARTMENT_EMPLOYEES;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<employee> getEmployee()
   {
-    if (employee == null)
-    {
-      employee = new EObjectContainmentEList<employee>(employee.class, this, CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE);
-    }
-    return employee;
-  }
+		if (employee == null) {
+			employee = new EObjectContainmentEList<employee>(employee.class, this, CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE);
+		}
+		return employee;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE:
-        return ((InternalEList<?>)getEmployee()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE:
+				return ((InternalEList<?>)getEmployee()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE:
-        return getEmployee();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE:
+				return getEmployee();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE:
-        getEmployee().clear();
-        getEmployee().addAll((Collection<? extends employee>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE:
+				getEmployee().clear();
+				getEmployee().addAll((Collection<? extends employee>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE:
-        getEmployee().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE:
+				getEmployee().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE:
-        return employee != null && !employee.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case CompaniesPackage.DEPARTMENT_EMPLOYEES__EMPLOYEE:
+				return employee != null && !employee.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //department_employeesImpl

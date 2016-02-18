@@ -28,167 +28,160 @@ import org.xtext.example.mydsl.companies.employee;
  *
  * @generated
  */
-public class department_managerImpl extends MinimalEObjectImpl.Container implements department_manager
+public class department_managerImpl extends traceableImpl implements department_manager
 {
   /**
-   * The cached value of the '{@link #getEmployee() <em>Employee</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEmployee() <em>Employee</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEmployee()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEmployee()
+	 * @generated
+	 * @ordered
+	 */
   protected employee employee;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected department_managerImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CompaniesPackage.Literals.DEPARTMENT_MANAGER;
-  }
+		return CompaniesPackage.Literals.DEPARTMENT_MANAGER;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public employee getEmployee()
   {
-    return employee;
-  }
+		return employee;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetEmployee(employee newEmployee, NotificationChain msgs)
   {
-    employee oldEmployee = employee;
-    employee = newEmployee;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE, oldEmployee, newEmployee);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		employee oldEmployee = employee;
+		employee = newEmployee;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE, oldEmployee, newEmployee);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setEmployee(employee newEmployee)
   {
-    if (newEmployee != employee)
-    {
-      NotificationChain msgs = null;
-      if (employee != null)
-        msgs = ((InternalEObject)employee).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE, null, msgs);
-      if (newEmployee != null)
-        msgs = ((InternalEObject)newEmployee).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE, null, msgs);
-      msgs = basicSetEmployee(newEmployee, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE, newEmployee, newEmployee));
-  }
+		if (newEmployee != employee) {
+			NotificationChain msgs = null;
+			if (employee != null)
+				msgs = ((InternalEObject)employee).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE, null, msgs);
+			if (newEmployee != null)
+				msgs = ((InternalEObject)newEmployee).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE, null, msgs);
+			msgs = basicSetEmployee(newEmployee, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE, newEmployee, newEmployee));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE:
-        return basicSetEmployee(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE:
+				return basicSetEmployee(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE:
-        return getEmployee();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE:
+				return getEmployee();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE:
-        setEmployee((employee)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE:
+				setEmployee((employee)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE:
-        setEmployee((employee)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE:
+				setEmployee((employee)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE:
-        return employee != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case CompaniesPackage.DEPARTMENT_MANAGER__EMPLOYEE:
+				return employee != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //department_managerImpl

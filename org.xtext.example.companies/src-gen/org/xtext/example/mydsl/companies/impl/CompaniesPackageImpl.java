@@ -16,6 +16,7 @@ import org.xtext.example.mydsl.companies.department;
 import org.xtext.example.mydsl.companies.department_employees;
 import org.xtext.example.mydsl.companies.department_manager;
 import org.xtext.example.mydsl.companies.employee;
+import org.xtext.example.mydsl.companies.traceable;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,381 +27,417 @@ import org.xtext.example.mydsl.companies.employee;
 public class CompaniesPackageImpl extends EPackageImpl implements CompaniesPackage
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass companyEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass departmentEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass department_managerEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass department_employeesEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass employeeEClass = null;
 
   /**
-   * Creates an instance of the model <b>Package</b>, registered with
-   * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-   * package URI value.
-   * <p>Note: the correct way to create the package is via the static
-   * factory method {@link #init init()}, which also performs
-   * initialization of the package, or returns the registered package,
-   * if one already exists.
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass traceableEClass = null;
+
+		/**
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.eclipse.emf.ecore.EPackage.Registry
-   * @see org.xtext.example.mydsl.companies.CompaniesPackage#eNS_URI
-   * @see #init()
-   * @generated
-   */
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see org.xtext.example.mydsl.companies.CompaniesPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
   private CompaniesPackageImpl()
   {
-    super(eNS_URI, CompaniesFactory.eINSTANCE);
-  }
+		super(eNS_URI, CompaniesFactory.eINSTANCE);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private static boolean isInited = false;
 
   /**
-   * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-   * 
-   * <p>This method is used to initialize {@link CompaniesPackage#eINSTANCE} when that field is accessed.
-   * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-   * <!-- begin-user-doc -->
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * 
+	 * <p>This method is used to initialize {@link CompaniesPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #eNS_URI
-   * @see #createPackageContents()
-   * @see #initializePackageContents()
-   * @generated
-   */
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
   public static CompaniesPackage init()
   {
-    if (isInited) return (CompaniesPackage)EPackage.Registry.INSTANCE.getEPackage(CompaniesPackage.eNS_URI);
+		if (isInited) return (CompaniesPackage)EPackage.Registry.INSTANCE.getEPackage(CompaniesPackage.eNS_URI);
 
-    // Obtain or create and register package
-    CompaniesPackageImpl theCompaniesPackage = (CompaniesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CompaniesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CompaniesPackageImpl());
+		// Obtain or create and register package
+		CompaniesPackageImpl theCompaniesPackage = (CompaniesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CompaniesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CompaniesPackageImpl());
 
-    isInited = true;
+		isInited = true;
 
-    // Create package meta-data objects
-    theCompaniesPackage.createPackageContents();
+		// Create package meta-data objects
+		theCompaniesPackage.createPackageContents();
 
-    // Initialize created meta-data
-    theCompaniesPackage.initializePackageContents();
+		// Initialize created meta-data
+		theCompaniesPackage.initializePackageContents();
 
-    // Mark meta-data to indicate it can't be changed
-    theCompaniesPackage.freeze();
+		// Mark meta-data to indicate it can't be changed
+		theCompaniesPackage.freeze();
 
   
-    // Update the registry and return the package
-    EPackage.Registry.INSTANCE.put(CompaniesPackage.eNS_URI, theCompaniesPackage);
-    return theCompaniesPackage;
-  }
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(CompaniesPackage.eNS_URI, theCompaniesPackage);
+		return theCompaniesPackage;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getcompany()
   {
-    return companyEClass;
-  }
+		return companyEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getcompany_Name()
   {
-    return (EAttribute)companyEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)companyEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getcompany_Deparment()
   {
-    return (EReference)companyEClass.getEStructuralFeatures().get(1);
-  }
+		return (EReference)companyEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getdepartment()
   {
-    return departmentEClass;
-  }
+		return departmentEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getdepartment_Name()
   {
-    return (EAttribute)departmentEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)departmentEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getdepartment_Department_manager()
   {
-    return (EReference)departmentEClass.getEStructuralFeatures().get(1);
-  }
+		return (EReference)departmentEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getdepartment_Department_employees()
   {
-    return (EReference)departmentEClass.getEStructuralFeatures().get(2);
-  }
+		return (EReference)departmentEClass.getEStructuralFeatures().get(2);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getdepartment_Deparment()
   {
-    return (EReference)departmentEClass.getEStructuralFeatures().get(3);
-  }
+		return (EReference)departmentEClass.getEStructuralFeatures().get(3);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getdepartment_manager()
   {
-    return department_managerEClass;
-  }
+		return department_managerEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getdepartment_manager_Employee()
   {
-    return (EReference)department_managerEClass.getEStructuralFeatures().get(0);
-  }
+		return (EReference)department_managerEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getdepartment_employees()
   {
-    return department_employeesEClass;
-  }
+		return department_employeesEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getdepartment_employees_Employee()
   {
-    return (EReference)department_employeesEClass.getEStructuralFeatures().get(0);
-  }
+		return (EReference)department_employeesEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getemployee()
   {
-    return employeeEClass;
-  }
+		return employeeEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getemployee_Name()
   {
-    return (EAttribute)employeeEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)employeeEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getemployee_Address()
   {
-    return (EAttribute)employeeEClass.getEStructuralFeatures().get(1);
-  }
+		return (EAttribute)employeeEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getemployee_Salary()
   {
-    return (EAttribute)employeeEClass.getEStructuralFeatures().get(2);
-  }
+		return (EAttribute)employeeEClass.getEStructuralFeatures().get(2);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getemployee_Mentor()
   {
-    return (EAttribute)employeeEClass.getEStructuralFeatures().get(3);
-  }
+		return (EAttribute)employeeEClass.getEStructuralFeatures().get(3);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass gettraceable() {
+		return traceableEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference gettraceable_Ast() {
+		return (EReference)traceableEClass.getEStructuralFeatures().get(0);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public CompaniesFactory getCompaniesFactory()
   {
-    return (CompaniesFactory)getEFactoryInstance();
-  }
+		return (CompaniesFactory)getEFactoryInstance();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private boolean isCreated = false;
 
   /**
-   * Creates the meta-model objects for the package.  This method is
-   * guarded to have no affect on any invocation but its first.
-   * <!-- begin-user-doc -->
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void createPackageContents()
   {
-    if (isCreated) return;
-    isCreated = true;
+		if (isCreated) return;
+		isCreated = true;
 
-    // Create classes and their features
-    companyEClass = createEClass(COMPANY);
-    createEAttribute(companyEClass, COMPANY__NAME);
-    createEReference(companyEClass, COMPANY__DEPARMENT);
+		// Create classes and their features
+		companyEClass = createEClass(COMPANY);
+		createEAttribute(companyEClass, COMPANY__NAME);
+		createEReference(companyEClass, COMPANY__DEPARMENT);
 
-    departmentEClass = createEClass(DEPARTMENT);
-    createEAttribute(departmentEClass, DEPARTMENT__NAME);
-    createEReference(departmentEClass, DEPARTMENT__DEPARTMENT_MANAGER);
-    createEReference(departmentEClass, DEPARTMENT__DEPARTMENT_EMPLOYEES);
-    createEReference(departmentEClass, DEPARTMENT__DEPARMENT);
+		departmentEClass = createEClass(DEPARTMENT);
+		createEAttribute(departmentEClass, DEPARTMENT__NAME);
+		createEReference(departmentEClass, DEPARTMENT__DEPARTMENT_MANAGER);
+		createEReference(departmentEClass, DEPARTMENT__DEPARTMENT_EMPLOYEES);
+		createEReference(departmentEClass, DEPARTMENT__DEPARMENT);
 
-    department_managerEClass = createEClass(DEPARTMENT_MANAGER);
-    createEReference(department_managerEClass, DEPARTMENT_MANAGER__EMPLOYEE);
+		department_managerEClass = createEClass(DEPARTMENT_MANAGER);
+		createEReference(department_managerEClass, DEPARTMENT_MANAGER__EMPLOYEE);
 
-    department_employeesEClass = createEClass(DEPARTMENT_EMPLOYEES);
-    createEReference(department_employeesEClass, DEPARTMENT_EMPLOYEES__EMPLOYEE);
+		department_employeesEClass = createEClass(DEPARTMENT_EMPLOYEES);
+		createEReference(department_employeesEClass, DEPARTMENT_EMPLOYEES__EMPLOYEE);
 
-    employeeEClass = createEClass(EMPLOYEE);
-    createEAttribute(employeeEClass, EMPLOYEE__NAME);
-    createEAttribute(employeeEClass, EMPLOYEE__ADDRESS);
-    createEAttribute(employeeEClass, EMPLOYEE__SALARY);
-    createEAttribute(employeeEClass, EMPLOYEE__MENTOR);
-  }
+		employeeEClass = createEClass(EMPLOYEE);
+		createEAttribute(employeeEClass, EMPLOYEE__NAME);
+		createEAttribute(employeeEClass, EMPLOYEE__ADDRESS);
+		createEAttribute(employeeEClass, EMPLOYEE__SALARY);
+		createEAttribute(employeeEClass, EMPLOYEE__MENTOR);
+
+		traceableEClass = createEClass(TRACEABLE);
+		createEReference(traceableEClass, TRACEABLE__AST);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private boolean isInitialized = false;
 
   /**
-   * Complete the initialization of the package and its meta-model.  This
-   * method is guarded to have no affect on any invocation but its first.
-   * <!-- begin-user-doc -->
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void initializePackageContents()
   {
-    if (isInitialized) return;
-    isInitialized = true;
+		if (isInitialized) return;
+		isInitialized = true;
 
-    // Initialize package
-    setName(eNAME);
-    setNsPrefix(eNS_PREFIX);
-    setNsURI(eNS_URI);
+		// Initialize package
+		setName(eNAME);
+		setNsPrefix(eNS_PREFIX);
+		setNsURI(eNS_URI);
 
-    // Create type parameters
+		// Create type parameters
 
-    // Set bounds for type parameters
+		// Set bounds for type parameters
 
-    // Add supertypes to classes
+		// Add supertypes to classes
+		companyEClass.getESuperTypes().add(this.gettraceable());
+		departmentEClass.getESuperTypes().add(this.gettraceable());
+		department_managerEClass.getESuperTypes().add(this.gettraceable());
+		department_employeesEClass.getESuperTypes().add(this.gettraceable());
+		employeeEClass.getESuperTypes().add(this.gettraceable());
 
-    // Initialize classes and features; add operations and parameters
-    initEClass(companyEClass, company.class, "company", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getcompany_Name(), ecorePackage.getEString(), "name", null, 0, 1, company.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getcompany_Deparment(), this.getdepartment(), null, "deparment", null, 0, -1, company.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		// Initialize classes and features; add operations and parameters
+		initEClass(companyEClass, company.class, "company", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getcompany_Name(), ecorePackage.getEString(), "name", null, 0, 1, company.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getcompany_Deparment(), this.getdepartment(), null, "deparment", null, 0, -1, company.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(departmentEClass, department.class, "department", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getdepartment_Name(), ecorePackage.getEString(), "name", null, 0, 1, department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getdepartment_Department_manager(), this.getdepartment_manager(), null, "department_manager", null, 0, 1, department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getdepartment_Department_employees(), this.getdepartment_employees(), null, "department_employees", null, 0, 1, department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getdepartment_Deparment(), this.getdepartment(), null, "deparment", null, 0, -1, department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(departmentEClass, department.class, "department", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getdepartment_Name(), ecorePackage.getEString(), "name", null, 0, 1, department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getdepartment_Department_manager(), this.getdepartment_manager(), null, "department_manager", null, 0, 1, department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getdepartment_Department_employees(), this.getdepartment_employees(), null, "department_employees", null, 0, 1, department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getdepartment_Deparment(), this.getdepartment(), null, "deparment", null, 0, -1, department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(department_managerEClass, department_manager.class, "department_manager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getdepartment_manager_Employee(), this.getemployee(), null, "employee", null, 0, 1, department_manager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(department_managerEClass, department_manager.class, "department_manager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getdepartment_manager_Employee(), this.getemployee(), null, "employee", null, 0, 1, department_manager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(department_employeesEClass, department_employees.class, "department_employees", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getdepartment_employees_Employee(), this.getemployee(), null, "employee", null, 0, -1, department_employees.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(department_employeesEClass, department_employees.class, "department_employees", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getdepartment_employees_Employee(), this.getemployee(), null, "employee", null, 0, -1, department_employees.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(employeeEClass, employee.class, "employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getemployee_Name(), ecorePackage.getEString(), "name", null, 0, 1, employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getemployee_Address(), ecorePackage.getEString(), "address", null, 0, 1, employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getemployee_Salary(), ecorePackage.getEDouble(), "salary", null, 0, 1, employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getemployee_Mentor(), ecorePackage.getEString(), "mentor", null, 0, 1, employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(employeeEClass, employee.class, "employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getemployee_Name(), ecorePackage.getEString(), "name", null, 0, 1, employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getemployee_Address(), ecorePackage.getEString(), "address", null, 0, 1, employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getemployee_Salary(), ecorePackage.getEDouble(), "salary", null, 0, 1, employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getemployee_Mentor(), ecorePackage.getEString(), "mentor", null, 0, 1, employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    // Create resource
-    createResource(eNS_URI);
-  }
+		initEClass(traceableEClass, traceable.class, "traceable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(gettraceable_Ast(), ecorePackage.getEObject(), null, "ast", null, 0, 1, traceable.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Create resource
+		createResource(eNS_URI);
+	}
 
 } //CompaniesPackageImpl

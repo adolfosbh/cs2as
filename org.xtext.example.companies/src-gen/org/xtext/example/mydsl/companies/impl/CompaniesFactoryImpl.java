@@ -21,134 +21,141 @@ import org.xtext.example.mydsl.companies.*;
 public class CompaniesFactoryImpl extends EFactoryImpl implements CompaniesFactory
 {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static CompaniesFactory init()
   {
-    try
-    {
-      CompaniesFactory theCompaniesFactory = (CompaniesFactory)EPackage.Registry.INSTANCE.getEFactory(CompaniesPackage.eNS_URI);
-      if (theCompaniesFactory != null)
-      {
-        return theCompaniesFactory;
-      }
-    }
-    catch (Exception exception)
-    {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new CompaniesFactoryImpl();
-  }
+		try {
+			CompaniesFactory theCompaniesFactory = (CompaniesFactory)EPackage.Registry.INSTANCE.getEFactory(CompaniesPackage.eNS_URI);
+			if (theCompaniesFactory != null) {
+				return theCompaniesFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new CompaniesFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public CompaniesFactoryImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass)
   {
-    switch (eClass.getClassifierID())
-    {
-      case CompaniesPackage.COMPANY: return createcompany();
-      case CompaniesPackage.DEPARTMENT: return createdepartment();
-      case CompaniesPackage.DEPARTMENT_MANAGER: return createdepartment_manager();
-      case CompaniesPackage.DEPARTMENT_EMPLOYEES: return createdepartment_employees();
-      case CompaniesPackage.EMPLOYEE: return createemployee();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case CompaniesPackage.COMPANY: return createcompany();
+			case CompaniesPackage.DEPARTMENT: return createdepartment();
+			case CompaniesPackage.DEPARTMENT_MANAGER: return createdepartment_manager();
+			case CompaniesPackage.DEPARTMENT_EMPLOYEES: return createdepartment_employees();
+			case CompaniesPackage.EMPLOYEE: return createemployee();
+			case CompaniesPackage.TRACEABLE: return createtraceable();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public company createcompany()
   {
-    companyImpl company = new companyImpl();
-    return company;
-  }
+		companyImpl company = new companyImpl();
+		return company;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public department createdepartment()
   {
-    departmentImpl department = new departmentImpl();
-    return department;
-  }
+		departmentImpl department = new departmentImpl();
+		return department;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public department_manager createdepartment_manager()
   {
-    department_managerImpl department_manager = new department_managerImpl();
-    return department_manager;
-  }
+		department_managerImpl department_manager = new department_managerImpl();
+		return department_manager;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public department_employees createdepartment_employees()
   {
-    department_employeesImpl department_employees = new department_employeesImpl();
-    return department_employees;
-  }
+		department_employeesImpl department_employees = new department_employeesImpl();
+		return department_employees;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public employee createemployee()
   {
-    employeeImpl employee = new employeeImpl();
-    return employee;
-  }
+		employeeImpl employee = new employeeImpl();
+		return employee;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public traceable createtraceable() {
+		traceableImpl traceable = new traceableImpl();
+		return traceable;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public CompaniesPackage getCompaniesPackage()
   {
-    return (CompaniesPackage)getEPackage();
-  }
+		return (CompaniesPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static CompaniesPackage getPackage()
   {
-    return CompaniesPackage.eINSTANCE;
-  }
+		return CompaniesPackage.eINSTANCE;
+	}
 
 } //CompaniesFactoryImpl

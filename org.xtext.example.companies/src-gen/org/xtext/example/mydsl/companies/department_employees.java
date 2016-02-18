@@ -22,22 +22,22 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface department_employees extends EObject
+public interface department_employees extends traceable
 {
   /**
-   * Returns the value of the '<em><b>Employee</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.companies.employee}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Employee</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.mydsl.companies.employee}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Employee</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Employee</em>' containment reference list.
-   * @see org.xtext.example.mydsl.companies.CompaniesPackage#getdepartment_employees_Employee()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Employee</em>' containment reference list.
+	 * @see org.xtext.example.mydsl.companies.CompaniesPackage#getdepartment_employees_Employee()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<employee> getEmployee();
 
 } // department_employees

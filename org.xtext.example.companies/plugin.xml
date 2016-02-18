@@ -3,14 +3,21 @@
 
 <plugin>
 
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package 
-       uri = "http://www.xtext.org/example/mydsl/Companies" 
-       class = "org.xtext.example.mydsl.companies.CompaniesPackage"
-       genModel = "model/generated/Companies.genmodel" /> 
-	
-  </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Companies -->
+      <package
+            uri="http://www.xtext.org/example/mydsl/Companies"
+            class="org.xtext.example.mydsl.companies.CompaniesPackage"
+            genModel="model/generated/Companies.genmodel"/>
+   </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Company -->
+      <package
+            uri="http://www.company.com"
+            class="org.xtext.example.company.CompanyPackage"
+            genModel="model/Company.genmodel"/>
+   </extension>
 
 </plugin>

@@ -28,318 +28,314 @@ import org.xtext.example.mydsl.companies.employee;
  *
  * @generated
  */
-public class employeeImpl extends MinimalEObjectImpl.Container implements employee
+public class employeeImpl extends traceableImpl implements employee
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAddress()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ADDRESS_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAddress()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
   protected String address = ADDRESS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSalary() <em>Salary</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSalary() <em>Salary</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSalary()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSalary()
+	 * @generated
+	 * @ordered
+	 */
   protected static final double SALARY_EDEFAULT = 0.0;
 
   /**
-   * The cached value of the '{@link #getSalary() <em>Salary</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSalary() <em>Salary</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSalary()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSalary()
+	 * @generated
+	 * @ordered
+	 */
   protected double salary = SALARY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMentor() <em>Mentor</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getMentor() <em>Mentor</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMentor()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMentor()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String MENTOR_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMentor() <em>Mentor</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMentor() <em>Mentor</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMentor()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMentor()
+	 * @generated
+	 * @ordered
+	 */
   protected String mentor = MENTOR_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected employeeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CompaniesPackage.Literals.EMPLOYEE;
-  }
+		return CompaniesPackage.Literals.EMPLOYEE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.EMPLOYEE__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.EMPLOYEE__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getAddress()
   {
-    return address;
-  }
+		return address;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setAddress(String newAddress)
   {
-    String oldAddress = address;
-    address = newAddress;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.EMPLOYEE__ADDRESS, oldAddress, address));
-  }
+		String oldAddress = address;
+		address = newAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.EMPLOYEE__ADDRESS, oldAddress, address));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public double getSalary()
   {
-    return salary;
-  }
+		return salary;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSalary(double newSalary)
   {
-    double oldSalary = salary;
-    salary = newSalary;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.EMPLOYEE__SALARY, oldSalary, salary));
-  }
+		double oldSalary = salary;
+		salary = newSalary;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.EMPLOYEE__SALARY, oldSalary, salary));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getMentor()
   {
-    return mentor;
-  }
+		return mentor;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setMentor(String newMentor)
   {
-    String oldMentor = mentor;
-    mentor = newMentor;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.EMPLOYEE__MENTOR, oldMentor, mentor));
-  }
+		String oldMentor = mentor;
+		mentor = newMentor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CompaniesPackage.EMPLOYEE__MENTOR, oldMentor, mentor));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.EMPLOYEE__NAME:
-        return getName();
-      case CompaniesPackage.EMPLOYEE__ADDRESS:
-        return getAddress();
-      case CompaniesPackage.EMPLOYEE__SALARY:
-        return getSalary();
-      case CompaniesPackage.EMPLOYEE__MENTOR:
-        return getMentor();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case CompaniesPackage.EMPLOYEE__NAME:
+				return getName();
+			case CompaniesPackage.EMPLOYEE__ADDRESS:
+				return getAddress();
+			case CompaniesPackage.EMPLOYEE__SALARY:
+				return getSalary();
+			case CompaniesPackage.EMPLOYEE__MENTOR:
+				return getMentor();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.EMPLOYEE__NAME:
-        setName((String)newValue);
-        return;
-      case CompaniesPackage.EMPLOYEE__ADDRESS:
-        setAddress((String)newValue);
-        return;
-      case CompaniesPackage.EMPLOYEE__SALARY:
-        setSalary((Double)newValue);
-        return;
-      case CompaniesPackage.EMPLOYEE__MENTOR:
-        setMentor((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case CompaniesPackage.EMPLOYEE__NAME:
+				setName((String)newValue);
+				return;
+			case CompaniesPackage.EMPLOYEE__ADDRESS:
+				setAddress((String)newValue);
+				return;
+			case CompaniesPackage.EMPLOYEE__SALARY:
+				setSalary((Double)newValue);
+				return;
+			case CompaniesPackage.EMPLOYEE__MENTOR:
+				setMentor((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.EMPLOYEE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case CompaniesPackage.EMPLOYEE__ADDRESS:
-        setAddress(ADDRESS_EDEFAULT);
-        return;
-      case CompaniesPackage.EMPLOYEE__SALARY:
-        setSalary(SALARY_EDEFAULT);
-        return;
-      case CompaniesPackage.EMPLOYEE__MENTOR:
-        setMentor(MENTOR_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case CompaniesPackage.EMPLOYEE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case CompaniesPackage.EMPLOYEE__ADDRESS:
+				setAddress(ADDRESS_EDEFAULT);
+				return;
+			case CompaniesPackage.EMPLOYEE__SALARY:
+				setSalary(SALARY_EDEFAULT);
+				return;
+			case CompaniesPackage.EMPLOYEE__MENTOR:
+				setMentor(MENTOR_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case CompaniesPackage.EMPLOYEE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CompaniesPackage.EMPLOYEE__ADDRESS:
-        return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
-      case CompaniesPackage.EMPLOYEE__SALARY:
-        return salary != SALARY_EDEFAULT;
-      case CompaniesPackage.EMPLOYEE__MENTOR:
-        return MENTOR_EDEFAULT == null ? mentor != null : !MENTOR_EDEFAULT.equals(mentor);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case CompaniesPackage.EMPLOYEE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case CompaniesPackage.EMPLOYEE__ADDRESS:
+				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
+			case CompaniesPackage.EMPLOYEE__SALARY:
+				return salary != SALARY_EDEFAULT;
+			case CompaniesPackage.EMPLOYEE__MENTOR:
+				return MENTOR_EDEFAULT == null ? mentor != null : !MENTOR_EDEFAULT.equals(mentor);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", address: ");
-    result.append(address);
-    result.append(", salary: ");
-    result.append(salary);
-    result.append(", mentor: ");
-    result.append(mentor);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", address: ");
+		result.append(address);
+		result.append(", salary: ");
+		result.append(salary);
+		result.append(", mentor: ");
+		result.append(mentor);
+		result.append(')');
+		return result.toString();
+	}
 
 } //employeeImpl
