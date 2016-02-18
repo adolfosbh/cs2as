@@ -57,6 +57,34 @@ public interface CompanyPackage extends EPackage {
 	CompanyPackage eINSTANCE = org.xtext.example.company.impl.CompanyPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link org.xtext.example.company.util.Visitable <em>Visitable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.xtext.example.company.util.Visitable
+	 * @see org.xtext.example.company.impl.CompanyPackageImpl#getVisitable()
+	 * @generated
+	 */
+	int VISITABLE = 3;
+
+	/**
+	 * The number of structural features of the '<em>Visitable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISITABLE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Visitable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISITABLE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.xtext.example.company.impl.CompanyImpl <em>Company</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,7 +101,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPANY__NAME = 0;
+	int COMPANY__NAME = VISITABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Depts</b></em>' containment reference list.
@@ -82,7 +110,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPANY__DEPTS = 1;
+	int COMPANY__DEPTS = VISITABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Company</em>' class.
@@ -91,7 +119,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPANY_FEATURE_COUNT = 2;
+	int COMPANY_FEATURE_COUNT = VISITABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Company</em>' class.
@@ -100,7 +128,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPANY_OPERATION_COUNT = 0;
+	int COMPANY_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.xtext.example.company.impl.DepartmentImpl <em>Department</em>}' class.
@@ -119,7 +147,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT__NAME = 0;
+	int DEPARTMENT__NAME = VISITABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Manager</b></em>' containment reference.
@@ -128,7 +156,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT__MANAGER = 1;
+	int DEPARTMENT__MANAGER = VISITABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Subdepts</b></em>' containment reference list.
@@ -137,7 +165,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT__SUBDEPTS = 2;
+	int DEPARTMENT__SUBDEPTS = VISITABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Employees</b></em>' containment reference list.
@@ -146,7 +174,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT__EMPLOYEES = 3;
+	int DEPARTMENT__EMPLOYEES = VISITABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Department</em>' class.
@@ -155,7 +183,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT_FEATURE_COUNT = 4;
+	int DEPARTMENT_FEATURE_COUNT = VISITABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Department</em>' class.
@@ -164,7 +192,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT_OPERATION_COUNT = 0;
+	int DEPARTMENT_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.xtext.example.company.impl.EmployeeImpl <em>Employee</em>}' class.
@@ -183,7 +211,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYEE__NAME = 0;
+	int EMPLOYEE__NAME = VISITABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' attribute.
@@ -192,7 +220,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYEE__ADDRESS = 1;
+	int EMPLOYEE__ADDRESS = VISITABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Salary</b></em>' attribute.
@@ -201,7 +229,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYEE__SALARY = 2;
+	int EMPLOYEE__SALARY = VISITABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Mentor</b></em>' reference.
@@ -210,7 +238,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYEE__MENTOR = 3;
+	int EMPLOYEE__MENTOR = VISITABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Employee</em>' class.
@@ -219,7 +247,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYEE_FEATURE_COUNT = 4;
+	int EMPLOYEE_FEATURE_COUNT = VISITABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Employee</em>' class.
@@ -228,7 +256,7 @@ public interface CompanyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYEE_OPERATION_COUNT = 0;
+	int EMPLOYEE_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -372,6 +400,17 @@ public interface CompanyPackage extends EPackage {
 	EReference getEmployee_Mentor();
 
 	/**
+	 * Returns the meta object for class '{@link org.xtext.example.company.util.Visitable <em>Visitable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Visitable</em>'.
+	 * @see org.xtext.example.company.util.Visitable
+	 * @model instanceClass="org.xtext.example.company.util.Visitable"
+	 * @generated
+	 */
+	EClass getVisitable();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -503,6 +542,16 @@ public interface CompanyPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EMPLOYEE__MENTOR = eINSTANCE.getEmployee_Mentor();
+
+		/**
+		 * The meta object literal for the '{@link org.xtext.example.company.util.Visitable <em>Visitable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.xtext.example.company.util.Visitable
+		 * @see org.xtext.example.company.impl.CompanyPackageImpl#getVisitable()
+		 * @generated
+		 */
+		EClass VISITABLE = eINSTANCE.getVisitable();
 
 	}
 

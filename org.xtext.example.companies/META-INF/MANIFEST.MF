@@ -1,19 +1,29 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.xtext.example.companies
-Bundle-Vendor: My Company
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: org.xtext.example.companies; singleton:=true
+Bundle-ClassPath: .
+Bundle-SymbolicName: org.xtext.example.companies;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.equinox.common;bundle-version="3.5.0",
  org.eclipse.xtext.util,
- org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.xtext.example.companies;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport,
  org.eclipse.emf.common,
  org.eclipse.xtext.xbase.lib,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
- org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.eclipse.ocl.xtext.base;bundle-version="1.1.0",
+ org.eclipse.qvtd.pivot.qvtimperative;bundle-version="0.13.0",
+ org.eclipse.ocl.xtext.oclstdlib;bundle-version="1.1.0",
+ org.eclipse.ocl.xtext.completeocl;bundle-version="1.1.0",
+ org.eclipse.qvtd.pivot.qvtcore;bundle-version="0.13.0"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.example.mydsl,
@@ -27,4 +37,10 @@ Export-Package: org.xtext.example.mydsl,
  org.xtext.example.mydsl.validation,
  org.xtext.example.mydsl.scoping,
  org.xtext.example.mydsl.generator,
- org.xtext.example.mydsl.formatting
+ org.xtext.example.mydsl.formatting,
+ org.xtext.example.company,
+ org.xtext.example.company.impl,
+ org.xtext.example.company.util,
+ org.xtext.example.company.lookup,
+ org.xtext.example.company.lookup.impl,
+ org.xtext.example.company.lookup.util

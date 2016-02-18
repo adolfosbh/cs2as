@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.company.CompanyPackage;
 import org.xtext.example.company.Employee;
+import org.xtext.example.company.util.Visitor;
 
 /**
  * <!-- begin-user-doc -->
@@ -327,6 +328,15 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 		result.append(salary);
 		result.append(')');
 		return result.toString();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @generated
+	 */
+	@Override
+	public <R> R accept(Visitor<R> visitor) {
+		return visitor.visitEmployee(this);
 	}
 
 } //EmployeeImpl

@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.eclipse.jdt.annotation.Nullable;
 import org.xtext.example.company.*;
 
 /**
@@ -22,7 +23,7 @@ import org.xtext.example.company.*;
  * @see org.xtext.example.company.CompanyPackage
  * @generated
  */
-public class CompanySwitch<T> extends Switch<T> {
+public class CompanySwitch<@Nullable T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -69,18 +70,27 @@ public class CompanySwitch<T> extends Switch<T> {
 			case CompanyPackage.COMPANY: {
 				Company company = (Company)theEObject;
 				T result = caseCompany(company);
+				if (result == null) result = caseVisitable(company);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CompanyPackage.DEPARTMENT: {
 				Department department = (Department)theEObject;
 				T result = caseDepartment(department);
+				if (result == null) result = caseVisitable(department);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CompanyPackage.EMPLOYEE: {
 				Employee employee = (Employee)theEObject;
 				T result = caseEmployee(employee);
+				if (result == null) result = caseVisitable(employee);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CompanyPackage.VISITABLE: {
+				Visitable visitable = (Visitable)theEObject;
+				T result = caseVisitable(visitable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -130,6 +140,21 @@ public class CompanySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEmployee(Employee object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Visitable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Visitable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVisitable(Visitable object) {
 		return null;
 	}
 

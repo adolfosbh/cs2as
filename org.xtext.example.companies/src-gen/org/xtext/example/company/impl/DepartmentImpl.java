@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.xtext.example.company.CompanyPackage;
 import org.xtext.example.company.Department;
 import org.xtext.example.company.Employee;
+import org.xtext.example.company.util.Visitor;
 
 /**
  * <!-- begin-user-doc -->
@@ -319,6 +320,15 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 		result.append(name);
 		result.append(')');
 		return result.toString();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @generated
+	 */
+	@Override
+	public <R> R accept(Visitor<R> visitor) {
+		return visitor.visitDepartment(this);
 	}
 
 } //DepartmentImpl

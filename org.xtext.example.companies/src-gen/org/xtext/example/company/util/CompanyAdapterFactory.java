@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.jdt.annotation.Nullable;
 import org.xtext.example.company.*;
 
 /**
@@ -65,8 +66,8 @@ public class CompanyAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CompanySwitch<Adapter> modelSwitch =
-		new CompanySwitch<Adapter>() {
+	protected CompanySwitch<@Nullable Adapter> modelSwitch =
+		new CompanySwitch<@Nullable Adapter>() {
 			@Override
 			public Adapter caseCompany(Company object) {
 				return createCompanyAdapter();
@@ -78,6 +79,10 @@ public class CompanyAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEmployee(Employee object) {
 				return createEmployeeAdapter();
+			}
+			@Override
+			public Adapter caseVisitable(Visitable object) {
+				return createVisitableAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -138,6 +143,20 @@ public class CompanyAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEmployeeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.company.util.Visitable <em>Visitable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.company.util.Visitable
+	 * @generated
+	 */
+	public Adapter createVisitableAdapter() {
 		return null;
 	}
 

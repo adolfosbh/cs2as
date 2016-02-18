@@ -14,6 +14,9 @@ import org.xtext.example.company.CompanyFactory;
 import org.xtext.example.company.CompanyPackage;
 import org.xtext.example.company.Department;
 import org.xtext.example.company.Employee;
+import org.xtext.example.company.lookup.LookupPackage;
+import org.xtext.example.company.lookup.impl.LookupPackageImpl;
+import org.xtext.example.company.util.Visitable;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,6 +45,13 @@ public class CompanyPackageImpl extends EPackageImpl implements CompanyPackage {
 	 * @generated
 	 */
 	private EClass employeeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass visitableEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -85,15 +95,21 @@ public class CompanyPackageImpl extends EPackageImpl implements CompanyPackage {
 		if (isInited) return (CompanyPackage)EPackage.Registry.INSTANCE.getEPackage(CompanyPackage.eNS_URI);
 
 		// Obtain or create and register package
-		CompanyPackageImpl theCompanyPackage = (CompanyPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CompanyPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CompanyPackageImpl());
+		Object ePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		CompanyPackageImpl theCompanyPackage = (CompanyPackageImpl)(ePackage instanceof CompanyPackageImpl ? ePackage : new CompanyPackageImpl());
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		//LookupPackageImpl theLookupPackage = (LookupPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LookupPackage.eNS_URI) instanceof LookupPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LookupPackage.eNS_URI) : LookupPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theCompanyPackage.createPackageContents();
+		//theLookupPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCompanyPackage.initializePackageContents();
+		//theLookupPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCompanyPackage.freeze();
@@ -226,6 +242,15 @@ public class CompanyPackageImpl extends EPackageImpl implements CompanyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getVisitable() {
+		return visitableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CompanyFactory getCompanyFactory() {
 		return (CompanyFactory)getEFactoryInstance();
 	}
@@ -264,6 +289,8 @@ public class CompanyPackageImpl extends EPackageImpl implements CompanyPackage {
 		createEAttribute(employeeEClass, EMPLOYEE__ADDRESS);
 		createEAttribute(employeeEClass, EMPLOYEE__SALARY);
 		createEReference(employeeEClass, EMPLOYEE__MENTOR);
+
+		visitableEClass = createEClass(VISITABLE);
 	}
 
 	/**
@@ -294,6 +321,9 @@ public class CompanyPackageImpl extends EPackageImpl implements CompanyPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		companyEClass.getESuperTypes().add(this.getVisitable());
+		departmentEClass.getESuperTypes().add(this.getVisitable());
+		employeeEClass.getESuperTypes().add(this.getVisitable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(companyEClass, Company.class, "Company", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -311,6 +341,8 @@ public class CompanyPackageImpl extends EPackageImpl implements CompanyPackage {
 		initEAttribute(getEmployee_Address(), ecorePackage.getEString(), "address", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEmployee_Salary(), ecorePackage.getEDouble(), "salary", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEmployee_Mentor(), this.getEmployee(), null, "mentor", null, 0, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(visitableEClass, Visitable.class, "Visitable", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

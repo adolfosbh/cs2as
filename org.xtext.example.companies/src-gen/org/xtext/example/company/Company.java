@@ -5,6 +5,7 @@ package org.xtext.example.company;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.xtext.example.company.util.Visitable;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,10 +21,10 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.xtext.example.company.CompanyPackage#getCompany()
- * @model
+ * @model superTypes="org.xtext.example.company.Visitable"
  * @generated
  */
-public interface Company extends EObject {
+public interface Company extends EObject, Visitable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
