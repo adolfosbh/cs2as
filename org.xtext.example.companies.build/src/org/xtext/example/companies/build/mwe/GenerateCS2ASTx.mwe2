@@ -1,0 +1,42 @@
+/*******************************************************************************
+ * Copyright (c) 2016 Willink Transformations, University of York and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Adolfo Sanchez-Barbudo Herrera (University of York) - 
+ *
+ *******************************************************************************/
+module org.xtext.example.companies.GenerateCS2ASTx
+
+import org.eclipse.ocl.examples.build.*
+import org.eclipse.ocl.examples.build.utilities.*
+import org.eclipse.ocl.examples.build.xtend.*
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.emf.ecore.resource.impl.*
+
+/**
+ *	Generate the Concrete Syntax 2 Abstract Syntax infrastructure
+ */
+Workflow {
+	bean = ResourceSetImpl : resourceSet {}
+    bean = StandaloneSetup { resourceSet = resourceSet
+    	platformUri = ".."
+    	scanClassPath = true
+    }
+    bean = EcoreGenModelSetup { resourceSet = resourceSet }
+    
+    //  Generate the CS2AS CGed transformation
+    component = @GenerateCGedQVTiTransformation { 
+		resourceSet = resourceSet
+		oclFileURI = "platform:/resource/org.xtext.example.companies/model/companies.ocl"
+		// FIXME the following only works if the output project are in the same FS folder. Better use a projectName and improve generator 
+		javaFolder = "../org.xtext.example.companies/src-gen"
+		javaPackage = "org.xtext.example.mydsl"
+		lookupSolverClassName = "org.xtext.example.company.lookup.util.CompanyLookupSolver"
+		lookupResultItfName = "org.xtext.example.company.lookup.util.CompanyLookupResult"
+	}
+}
