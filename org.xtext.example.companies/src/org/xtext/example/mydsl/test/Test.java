@@ -33,6 +33,8 @@ public class Test {
 		
 		long startAll = System.currentTimeMillis();
 		
+		String modelName = args[0];
+		
 		ResourceSet rSet = new ResourceSetImpl();
 		PivotStandaloneSetup.doSetup();
 		QVTimperativePivotStandaloneSetup.doSetup();
@@ -51,9 +53,8 @@ public class Test {
 		URI baseURI = URI.createPlatformResourceURI("/org.xtext.example.companies/src/org/xtext/example/mydsl/test/", true);
 		QVTiEnvironmentFactory envFact = new QVTiEnvironmentFactory(ProjectManager.CLASS_PATH, rSet);
 		
-		
 		doWarmup(baseURI, envFact, "model2.101");
-		String fileName = "model5.101";
+		String fileName = modelName + ".101";
 		System.out.println("* Running CG execution:");
 		for (int i=0; i < 10 ; i++) {
 			execute_CG(baseURI, envFact, fileName);
