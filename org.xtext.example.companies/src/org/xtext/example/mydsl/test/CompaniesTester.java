@@ -27,7 +27,7 @@ import org.xtext.example.mydsl.CompaniesStandaloneSetup;
 import org.xtext.example.mydsl._companies_qvtp_qvtcas.companies_qvtp_qvtcas;
 import org.xtext.example.mydsl.companies.CompaniesPackage;
 
-public class Test {
+public class CompaniesTester {
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -90,9 +90,9 @@ public class Test {
 		System.out.println("Warmup time (ms):" + (end - start));
 	}
 	
-	public static void execute_Interpreter(URI baseURI, QVTiEnvironmentFactory envFact, String fileName) {
+	/*public static void execute_Interpreter(URI baseURI, QVTiEnvironmentFactory envFact, String fileName) {
 		URI csModelURI = baseURI.appendSegment(fileName);
-		URI asModelURI = csModelURI.trimFileExtension().appendFileExtension("companyas");
+		URI asModelURI = csModelURI.trimFileExtension().appendFileExtension("output.xmi");
 
 		//saveEmptyModel(asModelURI);
 
@@ -110,7 +110,7 @@ public class Test {
 	    testEvaluator.saveModels((Map<?, ?>)null);
 	    testEvaluator.dispose();
 	    assert(success == true);
-	}
+	}*/
 		
 	public static void execute_CG(URI baseURI, QVTiEnvironmentFactory envFact, String fileName) throws Exception {
 		
@@ -118,7 +118,7 @@ public class Test {
 		Transformer tx = evaluator.getTransformer();
 		
 		URI csModelURI = baseURI.appendSegment(fileName);
-		URI asModelURI = csModelURI.trimFileExtension().appendFileExtension("companyas");
+		URI asModelURI = csModelURI.trimFileExtension().appendFileExtension("output.xmi");
 
     	ResourceSet rSet = envFact.getResourceSet();
 		Resource inputResource = rSet.getResource(csModelURI, true);
