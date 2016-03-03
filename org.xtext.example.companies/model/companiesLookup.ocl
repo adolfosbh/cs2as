@@ -41,7 +41,7 @@ def : _env(child : ocl::OclElement) : lookup::LookupEnvironment =
 context Company
 def : _env(child : ocl::OclElement) : lookup::LookupEnvironment =
 	parentEnv().nestedEnv()
-		.addElements(Employee.allInstances())
+		.addElements(depts->closure(subdepts)->collect(employees->including(manager)))
 
 context Visitable
 -- Employee lookup

@@ -3,22 +3,22 @@ target  as : 'Company.ecore#/'
 
 mappings {
 	map as::Company from company {
-		name := name.unquote();
+		name := name
 		depts := department.resolve;
 	}
 	
 	map as::Department from department {
-		name := name.unquote();
+		name := name
 		subdepts := deparment.resolve;
 		manager := department_manager.employee.resolve;
 		employees := department_employees.employee.resolve;
 	}
 	
 	map as::Employee from  employee {
-		name := name.unquote();
+		name := name
 		address := address;
 		salary := salary;
-		mentor := resolve.lookup(Employee, mentor.unquote());
+		mentor := resolve.lookup(Employee, mentor);
 	}
 }
 
@@ -36,9 +36,4 @@ nameresolution {
 	}
 }
 
-helpers {
-	ocl::String {
-		unquote() : String := 
-			self.subsequence(self.size());	-- FIXME
-	}
-}
+helpers{}
