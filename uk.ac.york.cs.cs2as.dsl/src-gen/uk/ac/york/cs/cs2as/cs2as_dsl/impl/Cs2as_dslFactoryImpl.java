@@ -86,6 +86,7 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.QUALIFICATION_DEF: return createQualificationDef();
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP: return createElementsContribExp();
       case Cs2as_dslPackage.SCOPE_DEF: return createScopeDef();
+      case Cs2as_dslPackage.SCOPING_DEF: return createScopingDef();
       case Cs2as_dslPackage.OCCLUDING_DEF: return createOccludingDef();
       case Cs2as_dslPackage.CONTRIBUTION_DEF: return createContributionDef();
       case Cs2as_dslPackage.SELECTION_DEF: return createSelectionDef();
@@ -93,7 +94,7 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.HELPERS_SECT: return createHelpersSect();
       case Cs2as_dslPackage.CLASS_HELPER: return createClassHelper();
       case Cs2as_dslPackage.HELPER_DEF: return createHelperDef();
-      case Cs2as_dslPackage.RESOLVE_EXP_CS: return createResolveExpCS();
+      case Cs2as_dslPackage.TRACE_EXP_CS: return createTraceExpCS();
       case Cs2as_dslPackage.LOOKUP_EXP_CS: return createLookupExpCS();
       case Cs2as_dslPackage.SELECTION_ALL: return createSelectionAll();
       case Cs2as_dslPackage.SELECTION_SPECIFIC: return createSelectionSpecific();
@@ -349,6 +350,17 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
+  public ScopingDef createScopingDef()
+  {
+    ScopingDefImpl scopingDef = new ScopingDefImpl();
+    return scopingDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public OccludingDef createOccludingDef()
   {
     OccludingDefImpl occludingDef = new OccludingDefImpl();
@@ -426,10 +438,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ResolveExpCS createResolveExpCS()
+  public TraceExpCS createTraceExpCS()
   {
-    ResolveExpCSImpl resolveExpCS = new ResolveExpCSImpl();
-    return resolveExpCS;
+    TraceExpCSImpl traceExpCS = new TraceExpCSImpl();
+    return traceExpCS;
   }
 
   /**

@@ -963,22 +963,13 @@ public interface Cs2as_dslPackage extends EPackage
   int SCOPE_DEF__ALSO_EXPORTS = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Contribution</b></em>' containment reference.
+   * The feature id for the '<em><b>Scoping Defs</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCOPE_DEF__CONTRIBUTION = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Occluding Defs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCOPE_DEF__OCCLUDING_DEFS = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 5;
+  int SCOPE_DEF__SCOPING_DEFS = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Scope Def</em>' class.
@@ -987,7 +978,53 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCOPE_DEF_FEATURE_COUNT = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 6;
+  int SCOPE_DEF_FEATURE_COUNT = CLASS_NAME_RESOLUTION_STMNT_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopingDefImpl <em>Scoping Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopingDefImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getScopingDef()
+   * @generated
+   */
+  int SCOPING_DEF = 22;
+
+  /**
+   * The feature id for the '<em><b>Contributed Classes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCOPING_DEF__CONTRIBUTED_CLASSES = 0;
+
+  /**
+   * The feature id for the '<em><b>Contribution</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCOPING_DEF__CONTRIBUTION = 1;
+
+  /**
+   * The feature id for the '<em><b>Occluding Defs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCOPING_DEF__OCCLUDING_DEFS = 2;
+
+  /**
+   * The number of structural features of the '<em>Scoping Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCOPING_DEF_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.OccludingDefImpl <em>Occluding Def</em>}' class.
@@ -997,7 +1034,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getOccludingDef()
    * @generated
    */
-  int OCCLUDING_DEF = 22;
+  int OCCLUDING_DEF = 23;
 
   /**
    * The feature id for the '<em><b>Contribution</b></em>' containment reference.
@@ -1025,7 +1062,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getContributionDef()
    * @generated
    */
-  int CONTRIBUTION_DEF = 23;
+  int CONTRIBUTION_DEF = 24;
 
   /**
    * The feature id for the '<em><b>Contributions</b></em>' containment reference list.
@@ -1053,7 +1090,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSelectionDef()
    * @generated
    */
-  int SELECTION_DEF = 24;
+  int SELECTION_DEF = 25;
 
   /**
    * The number of structural features of the '<em>Selection Def</em>' class.
@@ -1072,7 +1109,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getExportDef()
    * @generated
    */
-  int EXPORT_DEF = 25;
+  int EXPORT_DEF = 26;
 
   /**
    * The feature id for the '<em><b>Selection Def</b></em>' containment reference.
@@ -1127,7 +1164,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelpersSect()
    * @generated
    */
-  int HELPERS_SECT = 26;
+  int HELPERS_SECT = 27;
 
   /**
    * The feature id for the '<em><b>Class Helpers</b></em>' containment reference list.
@@ -1155,7 +1192,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassHelper()
    * @generated
    */
-  int CLASS_HELPER = 27;
+  int CLASS_HELPER = 28;
 
   /**
    * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -1192,7 +1229,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelperDef()
    * @generated
    */
-  int HELPER_DEF = 28;
+  int HELPER_DEF = 29;
 
   /**
    * The feature id for the '<em><b>Owned Signature</b></em>' containment reference.
@@ -1249,14 +1286,14 @@ public interface Cs2as_dslPackage extends EPackage
   int HELPER_DEF_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ResolveExpCSImpl <em>Resolve Exp CS</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TraceExpCSImpl <em>Trace Exp CS</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ResolveExpCSImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getResolveExpCS()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.TraceExpCSImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getTraceExpCS()
    * @generated
    */
-  int RESOLVE_EXP_CS = 29;
+  int TRACE_EXP_CS = 30;
 
   /**
    * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -1265,7 +1302,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__CSI = EssentialOCLCSPackage.EXP_CS__CSI;
+  int TRACE_EXP_CS__CSI = EssentialOCLCSPackage.EXP_CS__CSI;
 
   /**
    * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -1274,7 +1311,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__PARENT = EssentialOCLCSPackage.EXP_CS__PARENT;
+  int TRACE_EXP_CS__PARENT = EssentialOCLCSPackage.EXP_CS__PARENT;
 
   /**
    * The feature id for the '<em><b>Pivot</b></em>' reference.
@@ -1283,7 +1320,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__PIVOT = EssentialOCLCSPackage.EXP_CS__PIVOT;
+  int TRACE_EXP_CS__PIVOT = EssentialOCLCSPackage.EXP_CS__PIVOT;
 
   /**
    * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
@@ -1292,7 +1329,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__ORIGINAL_XMI_ID = EssentialOCLCSPackage.EXP_CS__ORIGINAL_XMI_ID;
+  int TRACE_EXP_CS__ORIGINAL_XMI_ID = EssentialOCLCSPackage.EXP_CS__ORIGINAL_XMI_ID;
 
   /**
    * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
@@ -1301,7 +1338,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__OWNED_ANNOTATIONS = EssentialOCLCSPackage.EXP_CS__OWNED_ANNOTATIONS;
+  int TRACE_EXP_CS__OWNED_ANNOTATIONS = EssentialOCLCSPackage.EXP_CS__OWNED_ANNOTATIONS;
 
   /**
    * The feature id for the '<em><b>Has Error</b></em>' attribute.
@@ -1310,7 +1347,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__HAS_ERROR = EssentialOCLCSPackage.EXP_CS__HAS_ERROR;
+  int TRACE_EXP_CS__HAS_ERROR = EssentialOCLCSPackage.EXP_CS__HAS_ERROR;
 
   /**
    * The feature id for the '<em><b>Local Left</b></em>' reference.
@@ -1319,7 +1356,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__LOCAL_LEFT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFT;
+  int TRACE_EXP_CS__LOCAL_LEFT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFT;
 
   /**
    * The feature id for the '<em><b>Local Leftmost Descendant</b></em>' reference.
@@ -1328,7 +1365,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__LOCAL_LEFTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFTMOST_DESCENDANT;
+  int TRACE_EXP_CS__LOCAL_LEFTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFTMOST_DESCENDANT;
 
   /**
    * The feature id for the '<em><b>Local Parent</b></em>' reference.
@@ -1337,7 +1374,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__LOCAL_PARENT = EssentialOCLCSPackage.EXP_CS__LOCAL_PARENT;
+  int TRACE_EXP_CS__LOCAL_PARENT = EssentialOCLCSPackage.EXP_CS__LOCAL_PARENT;
 
   /**
    * The feature id for the '<em><b>Local Right</b></em>' reference.
@@ -1346,7 +1383,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__LOCAL_RIGHT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHT;
+  int TRACE_EXP_CS__LOCAL_RIGHT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHT;
 
   /**
    * The feature id for the '<em><b>Local Rightmost Descendant</b></em>' reference.
@@ -1355,7 +1392,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__LOCAL_RIGHTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHTMOST_DESCENDANT;
+  int TRACE_EXP_CS__LOCAL_RIGHTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHTMOST_DESCENDANT;
 
   /**
    * The feature id for the '<em><b>Precedence</b></em>' reference.
@@ -1364,16 +1401,16 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS__PRECEDENCE = EssentialOCLCSPackage.EXP_CS__PRECEDENCE;
+  int TRACE_EXP_CS__PRECEDENCE = EssentialOCLCSPackage.EXP_CS__PRECEDENCE;
 
   /**
-   * The number of structural features of the '<em>Resolve Exp CS</em>' class.
+   * The number of structural features of the '<em>Trace Exp CS</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESOLVE_EXP_CS_FEATURE_COUNT = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
+  int TRACE_EXP_CS_FEATURE_COUNT = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.LookupExpCSImpl <em>Lookup Exp CS</em>}' class.
@@ -1383,7 +1420,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getLookupExpCS()
    * @generated
    */
-  int LOOKUP_EXP_CS = 30;
+  int LOOKUP_EXP_CS = 31;
 
   /**
    * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -1528,7 +1565,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSelectionAll()
    * @generated
    */
-  int SELECTION_ALL = 31;
+  int SELECTION_ALL = 32;
 
   /**
    * The feature id for the '<em><b>Exception Properties</b></em>' containment reference list.
@@ -1556,7 +1593,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSelectionSpecific()
    * @generated
    */
-  int SELECTION_SPECIFIC = 32;
+  int SELECTION_SPECIFIC = 33;
 
   /**
    * The feature id for the '<em><b>Selected Properties</b></em>' containment reference list.
@@ -2315,26 +2352,58 @@ public interface Cs2as_dslPackage extends EPackage
   EAttribute getScopeDef_AlsoExports();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getContribution <em>Contribution</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getScopingDefs <em>Scoping Defs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Scoping Defs</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getScopingDefs()
+   * @see #getScopeDef()
+   * @generated
+   */
+  EReference getScopeDef_ScopingDefs();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef <em>Scoping Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Scoping Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef
+   * @generated
+   */
+  EClass getScopingDef();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef#getContributedClasses <em>Contributed Classes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Contributed Classes</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef#getContributedClasses()
+   * @see #getScopingDef()
+   * @generated
+   */
+  EReference getScopingDef_ContributedClasses();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef#getContribution <em>Contribution</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Contribution</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getContribution()
-   * @see #getScopeDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef#getContribution()
+   * @see #getScopingDef()
    * @generated
    */
-  EReference getScopeDef_Contribution();
+  EReference getScopingDef_Contribution();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getOccludingDefs <em>Occluding Defs</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef#getOccludingDefs <em>Occluding Defs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Occluding Defs</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getOccludingDefs()
-   * @see #getScopeDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef#getOccludingDefs()
+   * @see #getScopingDef()
    * @generated
    */
-  EReference getScopeDef_OccludingDefs();
+  EReference getScopingDef_OccludingDefs();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef <em>Occluding Def</em>}'.
@@ -2561,14 +2630,14 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getHelperDef_HelperBody();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS <em>Resolve Exp CS</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS <em>Trace Exp CS</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Resolve Exp CS</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS
+   * @return the meta object for class '<em>Trace Exp CS</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS
    * @generated
    */
-  EClass getResolveExpCS();
+  EClass getTraceExpCS();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS <em>Lookup Exp CS</em>}'.
@@ -3264,12 +3333,38 @@ public interface Cs2as_dslPackage extends EPackage
     EAttribute SCOPE_DEF__ALSO_EXPORTS = eINSTANCE.getScopeDef_AlsoExports();
 
     /**
+     * The meta object literal for the '<em><b>Scoping Defs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCOPE_DEF__SCOPING_DEFS = eINSTANCE.getScopeDef_ScopingDefs();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopingDefImpl <em>Scoping Def</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopingDefImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getScopingDef()
+     * @generated
+     */
+    EClass SCOPING_DEF = eINSTANCE.getScopingDef();
+
+    /**
+     * The meta object literal for the '<em><b>Contributed Classes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCOPING_DEF__CONTRIBUTED_CLASSES = eINSTANCE.getScopingDef_ContributedClasses();
+
+    /**
      * The meta object literal for the '<em><b>Contribution</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SCOPE_DEF__CONTRIBUTION = eINSTANCE.getScopeDef_Contribution();
+    EReference SCOPING_DEF__CONTRIBUTION = eINSTANCE.getScopingDef_Contribution();
 
     /**
      * The meta object literal for the '<em><b>Occluding Defs</b></em>' containment reference list feature.
@@ -3277,7 +3372,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SCOPE_DEF__OCCLUDING_DEFS = eINSTANCE.getScopeDef_OccludingDefs();
+    EReference SCOPING_DEF__OCCLUDING_DEFS = eINSTANCE.getScopingDef_OccludingDefs();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.OccludingDefImpl <em>Occluding Def</em>}' class.
@@ -3462,14 +3557,14 @@ public interface Cs2as_dslPackage extends EPackage
     EReference HELPER_DEF__HELPER_BODY = eINSTANCE.getHelperDef_HelperBody();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ResolveExpCSImpl <em>Resolve Exp CS</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TraceExpCSImpl <em>Trace Exp CS</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ResolveExpCSImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getResolveExpCS()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.TraceExpCSImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getTraceExpCS()
      * @generated
      */
-    EClass RESOLVE_EXP_CS = eINSTANCE.getResolveExpCS();
+    EClass TRACE_EXP_CS = eINSTANCE.getTraceExpCS();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.LookupExpCSImpl <em>Lookup Exp CS</em>}' class.

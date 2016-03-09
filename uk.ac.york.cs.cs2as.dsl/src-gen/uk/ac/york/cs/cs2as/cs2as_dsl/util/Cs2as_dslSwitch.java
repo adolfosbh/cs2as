@@ -253,6 +253,13 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Cs2as_dslPackage.SCOPING_DEF:
+      {
+        ScopingDef scopingDef = (ScopingDef)theEObject;
+        T result = caseScopingDef(scopingDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Cs2as_dslPackage.OCCLUDING_DEF:
       {
         OccludingDef occludingDef = (OccludingDef)theEObject;
@@ -303,16 +310,16 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.RESOLVE_EXP_CS:
+      case Cs2as_dslPackage.TRACE_EXP_CS:
       {
-        ResolveExpCS resolveExpCS = (ResolveExpCS)theEObject;
-        T result = caseResolveExpCS(resolveExpCS);
-        if (result == null) result = caseExpCS(resolveExpCS);
-        if (result == null) result = caseModelElementCS(resolveExpCS);
-        if (result == null) result = casePivotableElementCS(resolveExpCS);
-        if (result == null) result = caseElementCS(resolveExpCS);
-        if (result == null) result = casePivotable(resolveExpCS);
-        if (result == null) result = caseVisitableCS(resolveExpCS);
+        TraceExpCS traceExpCS = (TraceExpCS)theEObject;
+        T result = caseTraceExpCS(traceExpCS);
+        if (result == null) result = caseExpCS(traceExpCS);
+        if (result == null) result = caseModelElementCS(traceExpCS);
+        if (result == null) result = casePivotableElementCS(traceExpCS);
+        if (result == null) result = caseElementCS(traceExpCS);
+        if (result == null) result = casePivotable(traceExpCS);
+        if (result == null) result = caseVisitableCS(traceExpCS);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -702,6 +709,22 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Scoping Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Scoping Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseScopingDef(ScopingDef object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Occluding Def</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -814,17 +837,17 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Resolve Exp CS</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Trace Exp CS</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Resolve Exp CS</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Trace Exp CS</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseResolveExpCS(ResolveExpCS object)
+  public T caseTraceExpCS(TraceExpCS object)
   {
     return null;
   }

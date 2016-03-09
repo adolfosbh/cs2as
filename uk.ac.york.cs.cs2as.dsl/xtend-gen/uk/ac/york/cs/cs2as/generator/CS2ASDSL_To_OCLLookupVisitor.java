@@ -3,6 +3,7 @@ package uk.ac.york.cs.cs2as.generator;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -17,7 +18,9 @@ import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
@@ -34,6 +37,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
@@ -209,27 +213,6 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.newLine();
     _builder.append("--\t");
     _builder.newLine();
-    _builder.append("def : env() : ");
-    _builder.append(this.lookupPck, "");
-    _builder.append("::");
-    _builder.append(this.lookupEnv, "");
-    _builder.append("[1] =");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("_env(null)");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("def : _env(child : OclElement) : ");
-    _builder.append(this.lookupPck, "");
-    _builder.append("::");
-    _builder.append(this.lookupEnv, "");
-    _builder.append("[1] =");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("parentEnv()");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
     _builder.append("def : _exported_env(importer : OclElement) : ");
     _builder.append(this.lookupPck, "");
     _builder.append("::");
@@ -244,19 +227,6 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
-    _builder.append("def : parentEnv() : ");
-    _builder.append(this.lookupPck, "");
-    _builder.append("::");
-    _builder.append(this.lookupEnv, "");
-    _builder.append("[1] =");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("let parent = oclContainer() in if parent = null then ");
-    _builder.append(this.lookupPck, "\t");
-    _builder.append("::");
-    _builder.append(this.lookupEnv, "\t");
-    _builder.append(" { } else parent._env(self) endif");
-    _builder.newLineIfNotEmpty();
     _builder.append("-- Domain specific default functionality");
     _builder.newLine();
     CharSequence _commonEnvironmentOps = this.commonEnvironmentOps();
@@ -440,37 +410,53 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       Iterable<ExportDef> _filter = Iterables.<ExportDef>filter(_statements, ExportDef.class);
       boolean _isEmpty = IterableExtensions.isEmpty(_filter);
       final boolean containsExports = (!_isEmpty);
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("\t");
-      _builder.newLine();
-      _builder.append("context ");
-      PathNameCS _class_ = object.getClass_();
-      String _doSwitch = this.doSwitch(_class_);
-      _builder.append(_doSwitch, "");
-      _builder.newLineIfNotEmpty();
-      {
-        EList<ClassNameResolutionStmnt> _statements_1 = object.getStatements();
-        Iterable<NamedElementDef> _filter_1 = Iterables.<NamedElementDef>filter(_statements_1, NamedElementDef.class);
-        for(final NamedElementDef statement : _filter_1) {
-          String _doSwitch_1 = this.doSwitch(statement);
-          _builder.append(_doSwitch_1, "");
-        }
+      EList<ClassNameResolutionStmnt> _statements_1 = object.getStatements();
+      Iterable<ScopeDef> _filter_1 = Iterables.<ScopeDef>filter(_statements_1, ScopeDef.class);
+      boolean _isEmpty_1 = IterableExtensions.isEmpty(_filter_1);
+      final boolean containsScopes = (!_isEmpty_1);
+      String _xifexpression = null;
+      boolean _or = false;
+      if (containsExports) {
+        _or = true;
+      } else {
+        _or = containsScopes;
       }
-      _builder.newLineIfNotEmpty();
-      String _provideEnvMethod = this.provideEnvMethod(object);
-      _builder.append(_provideEnvMethod, "");
-      _builder.newLineIfNotEmpty();
-      {
-        if (containsExports) {
-          String _provideExportedEnvMethod = this.provideExportedEnvMethod(object);
-          _builder.append(_provideExportedEnvMethod, "");
-          _builder.newLineIfNotEmpty();
-          String _provideExporterLookupMethod = this.provideExporterLookupMethod(object);
-          _builder.append(_provideExporterLookupMethod, "");
-          _builder.newLineIfNotEmpty();
+      if (_or) {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("\t");
+        _builder.newLine();
+        _builder.append("context ");
+        PathNameCS _class_ = object.getClass_();
+        String _doSwitch = this.doSwitch(_class_);
+        _builder.append(_doSwitch, "");
+        _builder.newLineIfNotEmpty();
+        {
+          EList<ClassNameResolutionStmnt> _statements_2 = object.getStatements();
+          Iterable<NamedElementDef> _filter_2 = Iterables.<NamedElementDef>filter(_statements_2, NamedElementDef.class);
+          for(final NamedElementDef statement : _filter_2) {
+            String _doSwitch_1 = this.doSwitch(statement);
+            _builder.append(_doSwitch_1, "");
+          }
         }
+        _builder.newLineIfNotEmpty();
+        String _provideUnqualifiedEnvMethods = this.provideUnqualifiedEnvMethods(object);
+        _builder.append(_provideUnqualifiedEnvMethods, "");
+        _builder.newLineIfNotEmpty();
+        {
+          if (containsExports) {
+            String _provideExportedEnvMethod = this.provideExportedEnvMethod(object);
+            _builder.append(_provideExportedEnvMethod, "");
+            _builder.newLineIfNotEmpty();
+            String _provideExporterLookupMethod = this.provideExporterLookupMethod(object);
+            _builder.append(_provideExporterLookupMethod, "");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _xifexpression = _builder.toString();
+      } else {
+        _xifexpression = "";
       }
-      _xblockexpression = _builder.toString();
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
@@ -627,7 +613,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       {
         EObject _eContainer = object.eContainer();
         EObject _eContainer_1 = _eContainer.eContainer();
-        final ScopeDef scopeDef = ((ScopeDef) _eContainer_1);
+        EObject _eContainer_2 = _eContainer_1.eContainer();
+        final ScopeDef scopeDef = ((ScopeDef) _eContainer_2);
         SelectionDef _selectionDef = scopeDef.getSelectionDef();
         EList<ExpCS> _selectedProperties = ((SelectionSpecific) _selectionDef).getSelectedProperties();
         final ExpCS property = _selectedProperties.get(0);
@@ -671,53 +658,6 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   }
   
   @Override
-  public String caseScopeDef(final ScopeDef object) {
-    String _xblockexpression = null;
-    {
-      String _xifexpression = null;
-      boolean _isEmptyScope = object.isEmptyScope();
-      if (_isEmptyScope) {
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("let env = ");
-        _builder.append(this.lookupPck, "");
-        _builder.append("::");
-        _builder.append(this.lookupEnv, "");
-        _builder.newLineIfNotEmpty();
-        _builder.append("in env");
-        _xifexpression = _builder.toString();
-      } else {
-        String _xblockexpression_1 = null;
-        {
-          String _xifexpression_1 = null;
-          boolean _isSameScope = object.isSameScope();
-          if (_isSameScope) {
-            _xifexpression_1 = "";
-          } else {
-            _xifexpression_1 = ".nestedEnv()";
-          }
-          final String openScope = _xifexpression_1;
-          StringConcatenation _builder_1 = new StringConcatenation();
-          _builder_1.append("parentEnv()");
-          _builder_1.append(openScope, "");
-          _xblockexpression_1 = _builder_1.toString();
-        }
-        _xifexpression = _xblockexpression_1;
-      }
-      final String scope = _xifexpression;
-      StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append(scope, "");
-      _builder_1.newLineIfNotEmpty();
-      _builder_1.append("\t");
-      ContributionDef _contribution = object.getContribution();
-      String _doSwitch = this.doSwitch(_contribution);
-      _builder_1.append(_doSwitch, "\t");
-      _builder_1.newLineIfNotEmpty();
-      _xblockexpression = _builder_1.toString();
-    }
-    return _xblockexpression;
-  }
-  
-  @Override
   public String caseExportDef(final ExportDef object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("let env = ");
@@ -733,6 +673,15 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     String _doSwitch = this.doSwitch(_contribution);
     _builder.append(_doSwitch, "\t");
     _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
+  @Override
+  public String caseScopingDef(final ScopingDef object) {
+    StringConcatenation _builder = new StringConcatenation();
+    ContributionDef _contribution = object.getContribution();
+    String _doSwitch = this.doSwitch(_contribution);
+    _builder.append(_doSwitch, "");
     return _builder.toString();
   }
   
@@ -1247,23 +1196,60 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     return _xblockexpression;
   }
   
-  private String provideEnvMethod(final ClassNameResolution nameReso) {
+  private String provideUnqualifiedEnvMethods(final ClassNameResolution nameReso) {
+    String _xblockexpression = null;
+    {
+      final Map<String, Set<ScopingDef>> scopedClasses = CollectionLiterals.<String, Set<ScopingDef>>newLinkedHashMap();
+      PathNameCS _class_ = nameReso.getClass_();
+      final String scopingClassName = this.doSwitch(_class_);
+      EList<ClassNameResolutionStmnt> _statements = nameReso.getStatements();
+      Iterable<ScopeDef> _filter = Iterables.<ScopeDef>filter(_statements, ScopeDef.class);
+      for (final ScopeDef statmnt : _filter) {
+        EList<ScopingDef> _scopingDefs = statmnt.getScopingDefs();
+        for (final ScopingDef scopingDef : _scopingDefs) {
+          EList<TypedRefCS> _contributedClasses = scopingDef.getContributedClasses();
+          for (final TypedRefCS scopedClass : _contributedClasses) {
+            {
+              final String scopedClassName = this.doSwitch(scopedClass);
+              Set<ScopingDef> scopingDefs = scopedClasses.get(scopedClassName);
+              boolean _equals = Objects.equal(scopingDefs, null);
+              if (_equals) {
+                LinkedHashSet<ScopingDef> _newLinkedHashSet = CollectionLiterals.<ScopingDef>newLinkedHashSet();
+                scopingDefs = _newLinkedHashSet;
+                scopedClasses.put(scopedClassName, scopingDefs);
+              }
+              scopingDefs.add(scopingDef);
+            }
+          }
+        }
+      }
+      final StringBuilder sb = new StringBuilder();
+      Set<String> _keySet = scopedClasses.keySet();
+      for (final String scopedClassName : _keySet) {
+        Set<ScopingDef> _get = scopedClasses.get(scopedClassName);
+        String _provideUnqualifiedEnvMethod = this.provideUnqualifiedEnvMethod(scopingClassName, scopedClassName, _get);
+        sb.append(_provideUnqualifiedEnvMethod);
+      }
+      _xblockexpression = sb.toString();
+    }
+    return _xblockexpression;
+  }
+  
+  private String provideUnqualifiedEnvMethod(final String scopingClassName, final String scopedClassName, final Set<ScopingDef> scopingDefs) {
     String _xblockexpression = null;
     {
       String allChildrenName = null;
       final List<String> featureNames = CollectionLiterals.<String>newArrayList();
-      PathNameCS _class_ = nameReso.getClass_();
-      final String className = this.doSwitch(_class_);
-      EList<ClassNameResolutionStmnt> _statements = nameReso.getStatements();
-      Iterable<ScopeDef> _filter = Iterables.<ScopeDef>filter(_statements, ScopeDef.class);
-      for (final ScopeDef statmnt : _filter) {
+      for (final ScopingDef scopingDef : scopingDefs) {
         {
-          final SelectionDef propagation = statmnt.getSelectionDef();
+          EObject _eContainer = scopingDef.eContainer();
+          final ScopeDef scopeDef = ((ScopeDef) _eContainer);
+          final SelectionDef propagation = scopeDef.getSelectionDef();
           if ((propagation instanceof SelectionSpecific)) {
             EList<ExpCS> _selectedProperties = ((SelectionSpecific)propagation).getSelectedProperties();
             for (final ExpCS property : _selectedProperties) {
               StringConcatenation _builder = new StringConcatenation();
-              _builder.append(className, "");
+              _builder.append(scopingClassName, "");
               _builder.append("::");
               String _doSwitch = this.doSwitch(property);
               _builder.append(_doSwitch, "");
@@ -1279,7 +1265,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           }
           if (_or) {
             StringConcatenation _builder_1 = new StringConcatenation();
-            _builder_1.append(className, "");
+            _builder_1.append(scopingClassName, "");
             _builder_1.append("::");
             _builder_1.append(this.ALL_CHILDREN, "");
             allChildrenName = _builder_1.toString();
@@ -1287,14 +1273,17 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         }
       }
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("def : _env(child : ocl::OclElement) : ");
+      _builder.append("def : _env_");
+      String _normalizeString = this.normalizeString(scopedClassName);
+      _builder.append(_normalizeString, "");
+      _builder.append("(child : ocl::OclElement) : ");
       _builder.append(this.lookupPck, "");
       _builder.append("::");
       _builder.append(this.lookupEnv, "");
       _builder.append(" =");
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
-      String _provideScopeContributionsQuery = this.provideScopeContributionsQuery(featureNames, allChildrenName);
+      String _provideScopeContributionsQuery = this.provideScopeContributionsQuery(scopedClassName, featureNames, allChildrenName);
       _builder.append(_provideScopeContributionsQuery, "\t");
       _builder.newLineIfNotEmpty();
       _xblockexpression = _builder.toString();
@@ -1357,7 +1346,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     return _xblockexpression;
   }
   
-  private String provideScopeContributionsQuery(final List<String> featureNames, final String allChildrenName) {
+  private String provideScopeContributionsQuery(final String scopedClassName, final List<String> featureNames, final String allChildrenName) {
     String _xblockexpression = null;
     {
       final int featuresSize = featureNames.size();
@@ -1369,7 +1358,9 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         boolean _equals_1 = Objects.equal(allChildrenName, null);
         if (_equals_1) {
           StringConcatenation _builder = new StringConcatenation();
-          _builder.append("parentEnv()");
+          _builder.append("parentEnv_");
+          _builder.append(scopedClassName, "");
+          _builder.append("()");
           _xifexpression_1 = _builder.toString();
         } else {
           String _xblockexpression_1 = null;
@@ -1395,7 +1386,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _or = _isEmpty;
             }
             if (_or) {
-              _xifexpression_3 = this.doSwitch(scopeDef);
+              _xifexpression_3 = this.provideScopeContributionsQuery(scopeDef, scopedClassName);
             } else {
               StringConcatenation _builder_1 = new StringConcatenation();
               _builder_1.append("if not (");
@@ -1418,11 +1409,13 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder_1.append(")");
               _builder_1.newLineIfNotEmpty();
               _builder_1.append("then ");
-              String _doSwitch_1 = this.doSwitch(scopeDef);
-              _builder_1.append(_doSwitch_1, "");
+              String _provideScopeContributionsQuery = this.provideScopeContributionsQuery(scopeDef, scopedClassName);
+              _builder_1.append(_provideScopeContributionsQuery, "");
               _builder_1.newLineIfNotEmpty();
-              _builder_1.append("else parentEnv()");
-              _builder_1.newLine();
+              _builder_1.append("else parentEnv_");
+              _builder_1.append(scopedClassName, "");
+              _builder_1.append("()");
+              _builder_1.newLineIfNotEmpty();
               _builder_1.append("endif");
               _builder_1.newLine();
               _xifexpression_3 = _builder_1.toString();
@@ -1454,12 +1447,12 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           _builder_1.append("->includes(child)");
           _builder_1.newLineIfNotEmpty();
           _builder_1.append("then ");
-          String _doSwitch = this.doSwitch(scopeDef);
-          _builder_1.append(_doSwitch, "");
+          String _provideScopeContributionsQuery = this.provideScopeContributionsQuery(scopeDef, scopedClassName);
+          _builder_1.append(_provideScopeContributionsQuery, "");
           _builder_1.newLineIfNotEmpty();
           _builder_1.append("else ");
-          String _provideScopeContributionsQuery = this.provideScopeContributionsQuery(residualFeaNames, allChildrenName);
-          _builder_1.append(_provideScopeContributionsQuery, "");
+          String _provideScopeContributionsQuery_1 = this.provideScopeContributionsQuery(scopedClassName, residualFeaNames, allChildrenName);
+          _builder_1.append(_provideScopeContributionsQuery_1, "");
           _builder_1.newLineIfNotEmpty();
           _builder_1.append("endif");
           _builder_1.newLine();
@@ -1468,6 +1461,71 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         _xifexpression = _xblockexpression_2;
       }
       _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+  
+  private String provideScopeContributionsQuery(final ScopeDef object, final String scopedClassName) {
+    String _xblockexpression = null;
+    {
+      String _xifexpression = null;
+      boolean _isEmptyScope = object.isEmptyScope();
+      if (_isEmptyScope) {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("let env = ");
+        _builder.append(this.lookupPck, "");
+        _builder.append("::");
+        _builder.append(this.lookupEnv, "");
+        _builder.append(" {}");
+        _builder.newLineIfNotEmpty();
+        _builder.append("in env");
+        _xifexpression = _builder.toString();
+      } else {
+        String _xblockexpression_1 = null;
+        {
+          String _xifexpression_1 = null;
+          boolean _isSameScope = object.isSameScope();
+          if (_isSameScope) {
+            _xifexpression_1 = "";
+          } else {
+            _xifexpression_1 = ".nestedEnv()";
+          }
+          final String openScope = _xifexpression_1;
+          StringConcatenation _builder_1 = new StringConcatenation();
+          _builder_1.append("parentEnv_");
+          _builder_1.append(scopedClassName, "");
+          _builder_1.append("()");
+          _builder_1.append(openScope, "");
+          _xblockexpression_1 = _builder_1.toString();
+        }
+        _xifexpression = _xblockexpression_1;
+      }
+      final String scope = _xifexpression;
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append(scope, "");
+      _builder_1.newLineIfNotEmpty();
+      _builder_1.append("\t");
+      {
+        EList<ScopingDef> _scopingDefs = object.getScopingDefs();
+        for(final ScopingDef scopingDef : _scopingDefs) {
+          {
+            EList<TypedRefCS> _contributedClasses = scopingDef.getContributedClasses();
+            final Function1<TypedRefCS, String> _function = (TypedRefCS x) -> {
+              return this.doSwitch(x);
+            };
+            List<String> _map = ListExtensions.<TypedRefCS, String>map(_contributedClasses, _function);
+            boolean _contains = _map.contains(scopedClassName);
+            if (_contains) {
+              String _doSwitch = this.doSwitch(scopingDef);
+              _builder_1.append(_doSwitch, "\t");
+            }
+          }
+        }
+      }
+      _builder_1.newLineIfNotEmpty();
+      _builder_1.append("\t");
+      _builder_1.newLine();
+      _xblockexpression = _builder_1.toString();
     }
     return _xblockexpression;
   }

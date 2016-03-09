@@ -94,8 +94,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/sameScope"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/emptyScope"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/alsoExports"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopeDef/contribution"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopeDef/occludingDefs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopeDef/scopingDefs"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//ScopingDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopingDef/contributedClasses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopingDef/contribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ScopingDef/occludingDefs"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//OccludingDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//OccludingDef/contribution"/>
@@ -124,7 +128,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperDef/ownedType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperDef/helperBody"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ResolveExpCS"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//TraceExpCS"/>
     <genClasses ecoreClass="CS2ASDSL.ecore#//LookupExpCS">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//LookupExpCS/fromExp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//LookupExpCS/args"/>

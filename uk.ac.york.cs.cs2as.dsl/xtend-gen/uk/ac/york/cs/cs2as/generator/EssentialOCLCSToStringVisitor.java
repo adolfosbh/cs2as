@@ -32,7 +32,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.util.EssentialOCLCSSwitch;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS;
+import uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS;
 import uk.ac.york.cs.cs2as.generator.BaseCSToStringVisitor;
 
 @SuppressWarnings("all")
@@ -42,8 +42,8 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   @Override
   public String defaultCase(final EObject object) {
     String _xifexpression = null;
-    if ((object instanceof ResolveExpCS)) {
-      _xifexpression = this.caseResolveExp(((ResolveExpCS)object));
+    if ((object instanceof TraceExpCS)) {
+      _xifexpression = this.caseTraceExp(((TraceExpCS)object));
     } else {
       String _xifexpression_1 = null;
       if ((object instanceof LookupExpCS)) {
@@ -414,7 +414,7 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
     return _xblockexpression;
   }
   
-  public String caseResolveExp(final ResolveExpCS object) {
+  public String caseTraceExp(final TraceExpCS object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("ast()");
     return _builder.toString();

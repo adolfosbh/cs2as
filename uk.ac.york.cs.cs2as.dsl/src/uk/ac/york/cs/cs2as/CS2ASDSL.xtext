@@ -38,8 +38,7 @@ MappingSect:
 	'}'	
 ;
 ClassMap:
-	'map' to=PathNameCS 'from'  from=PathNameCS '{'
-		('when' rule=SIMPLE_ID ';')?
+	'map' to=PathNameCS 'from'  from=PathNameCS  ('when' rule=SIMPLE_ID )? '{'
 		statements += ClassMapStmnt*
 	'}'
 ;
@@ -113,7 +112,7 @@ NamedElementDef:
 	{NamedElementDef}
 	'named-element' ('name-property' namePoperty=NameExpCS)? 
 	filter=FilterDef?
-	('qualifying' qualifications+=QualificationDef (',' qualifications+=QualificationDef)*)?
+	('qualifies' qualifications+=QualificationDef (',' qualifications+=QualificationDef)*)?
 ;
 
 FilterDef:
@@ -130,9 +129,14 @@ ElementsContribExp:
 
 ScopeDef:
 	selectionDef=SelectionDef?
-	('nested-scope' | sameScope?='same-scope' | emptyScope?='empty-scope')?
+	('scopes-occluding' | sameScope?='scopes' | sameScope?='scopes-adding' | emptyScope?='scopes-resetting')
 	(alsoExports?='also-exports')?
-	contribution=ContributionDef
+	scopingDefs+=ScopingDef+
+;
+
+ScopingDef:
+	contributedClasses+=TypeExpCS (',' contributedClasses+=TypeExpCS)* 
+	'using' contribution=ContributionDef
 	occludingDefs+=OccludingDef*
 ;
 
@@ -141,7 +145,7 @@ OccludingDef:
 ;
 
 ContributionDef:
-	contributions+=ElementsContribExp (',' contributions+=ElementsContribExp)* 
+	 contributions+=ElementsContribExp (',' contributions+=ElementsContribExp)* 
 ;
 
 SelectionDef:
@@ -198,12 +202,12 @@ PrimaryExpCS returns essentialocl::ExpCS:
 | 	LambdaLiteralExpCS
 | 	TypeLiteralExpCS
 | 	NameExpCS
-|	ResolveExpCS	// DSL addition
+|	TraceExpCS	// DSL addition
 |	LookupExpCS;	// DSL addition
 
-ResolveExpCS:
-	{ResolveExpCS}
-	'resolve'
+TraceExpCS:
+	{TraceExpCS}
+	'trace'
 ;
 
 

@@ -91,10 +91,11 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
+import uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS;
 import uk.ac.york.cs.cs2as.services.CS2ASDSLGrammarAccess;
 
 @SuppressWarnings("all")
@@ -293,17 +294,20 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case Cs2as_dslPackage.QUALIFICATION_DEF:
 				sequence_QualificationDef(context, (QualificationDef) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.RESOLVE_EXP_CS:
-				sequence_ResolveExpCS(context, (ResolveExpCS) semanticObject); 
-				return; 
 			case Cs2as_dslPackage.SCOPE_DEF:
 				sequence_ScopeDef(context, (ScopeDef) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.SCOPING_DEF:
+				sequence_ScopingDef(context, (ScopingDef) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.SELECTION_ALL:
 				sequence_SelectionDef(context, (SelectionAll) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.SELECTION_SPECIFIC:
 				sequence_SelectionDef(context, (SelectionSpecific) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.TRACE_EXP_CS:
+				sequence_TraceExpCS(context, (TraceExpCS) semanticObject); 
 				return; 
 			}
 		else if (epackage == EssentialOCLCSPackage.eINSTANCE)
@@ -873,36 +877,30 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     PrimaryExpCS returns ResolveExpCS
-	 *     ResolveExpCS returns ResolveExpCS
-	 *     ExpCS returns ResolveExpCS
-	 *     ExpCS.InfixExpCS_0_1_0 returns ResolveExpCS
-	 *     PrefixedPrimaryExpCS returns ResolveExpCS
-	 *     NavigatingArgExpCS returns ResolveExpCS
-	 *
-	 * Constraint:
-	 *     {ResolveExpCS}
-	 */
-	protected void sequence_ResolveExpCS(ISerializationContext context, ResolveExpCS semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     ClassNameResolutionStmnt returns ScopeDef
 	 *     ScopeDef returns ScopeDef
 	 *
 	 * Constraint:
 	 *     (
 	 *         selectionDef=SelectionDef? 
-	 *         (sameScope?='same-scope' | emptyScope?='empty-scope')? 
+	 *         (sameScope?='scopes' | sameScope?='scopes-adding' | emptyScope?='scopes-resetting')? 
 	 *         alsoExports?='also-exports'? 
-	 *         contribution=ContributionDef 
-	 *         occludingDefs+=OccludingDef*
+	 *         scopingDefs+=ScopingDef+
 	 *     )
 	 */
 	protected void sequence_ScopeDef(ISerializationContext context, ScopeDef semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ScopingDef returns ScopingDef
+	 *
+	 * Constraint:
+	 *     (contributedClasses+=TypeExpCS contributedClasses+=TypeExpCS* contribution=ContributionDef occludingDefs+=OccludingDef*)
+	 */
+	protected void sequence_ScopingDef(ISerializationContext context, ScopingDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -927,6 +925,23 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     (selectedProperties+=ExpCS selectedProperties+=ExpCS*)
 	 */
 	protected void sequence_SelectionDef(ISerializationContext context, SelectionSpecific semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PrimaryExpCS returns TraceExpCS
+	 *     TraceExpCS returns TraceExpCS
+	 *     ExpCS returns TraceExpCS
+	 *     ExpCS.InfixExpCS_0_1_0 returns TraceExpCS
+	 *     PrefixedPrimaryExpCS returns TraceExpCS
+	 *     NavigatingArgExpCS returns TraceExpCS
+	 *
+	 * Constraint:
+	 *     {TraceExpCS}
+	 */
+	protected void sequence_TraceExpCS(ISerializationContext context, TraceExpCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -221,6 +221,15 @@ public interface Cs2as_dslFactory extends EFactory
   ScopeDef createScopeDef();
 
   /**
+   * Returns a new object of class '<em>Scoping Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Scoping Def</em>'.
+   * @generated
+   */
+  ScopingDef createScopingDef();
+
+  /**
    * Returns a new object of class '<em>Occluding Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -284,13 +293,13 @@ public interface Cs2as_dslFactory extends EFactory
   HelperDef createHelperDef();
 
   /**
-   * Returns a new object of class '<em>Resolve Exp CS</em>'.
+   * Returns a new object of class '<em>Trace Exp CS</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Resolve Exp CS</em>'.
+   * @return a new object of class '<em>Trace Exp CS</em>'.
    * @generated
    */
-  ResolveExpCS createResolveExpCS();
+  TraceExpCS createTraceExpCS();
 
   /**
    * Returns a new object of class '<em>Lookup Exp CS</em>'.

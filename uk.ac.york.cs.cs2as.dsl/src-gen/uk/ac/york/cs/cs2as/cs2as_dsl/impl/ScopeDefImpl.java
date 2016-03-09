@@ -17,10 +17,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
 
 /**
@@ -35,8 +34,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isSameScope <em>Same Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isEmptyScope <em>Empty Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isAlsoExports <em>Also Exports</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getContribution <em>Contribution</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getOccludingDefs <em>Occluding Defs</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getScopingDefs <em>Scoping Defs</em>}</li>
  * </ul>
  *
  * @generated
@@ -114,24 +112,14 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
   protected boolean alsoExports = ALSO_EXPORTS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getContribution() <em>Contribution</em>}' containment reference.
+   * The cached value of the '{@link #getScopingDefs() <em>Scoping Defs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContribution()
+   * @see #getScopingDefs()
    * @generated
    * @ordered
    */
-  protected ContributionDef contribution;
-
-  /**
-   * The cached value of the '{@link #getOccludingDefs() <em>Occluding Defs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOccludingDefs()
-   * @generated
-   * @ordered
-   */
-  protected EList<OccludingDef> occludingDefs;
+  protected EList<ScopingDef> scopingDefs;
 
   /**
    * <!-- begin-user-doc -->
@@ -276,61 +264,13 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
    * <!-- end-user-doc -->
    * @generated
    */
-  public ContributionDef getContribution()
+  public EList<ScopingDef> getScopingDefs()
   {
-    return contribution;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetContribution(ContributionDef newContribution, NotificationChain msgs)
-  {
-    ContributionDef oldContribution = contribution;
-    contribution = newContribution;
-    if (eNotificationRequired())
+    if (scopingDefs == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTION, oldContribution, newContribution);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      scopingDefs = new EObjectContainmentEList<ScopingDef>(ScopingDef.class, this, Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setContribution(ContributionDef newContribution)
-  {
-    if (newContribution != contribution)
-    {
-      NotificationChain msgs = null;
-      if (contribution != null)
-        msgs = ((InternalEObject)contribution).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTION, null, msgs);
-      if (newContribution != null)
-        msgs = ((InternalEObject)newContribution).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTION, null, msgs);
-      msgs = basicSetContribution(newContribution, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTION, newContribution, newContribution));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<OccludingDef> getOccludingDefs()
-  {
-    if (occludingDefs == null)
-    {
-      occludingDefs = new EObjectContainmentEList<OccludingDef>(OccludingDef.class, this, Cs2as_dslPackage.SCOPE_DEF__OCCLUDING_DEFS);
-    }
-    return occludingDefs;
+    return scopingDefs;
   }
 
   /**
@@ -345,10 +285,8 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
     {
       case Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF:
         return basicSetSelectionDef(null, msgs);
-      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTION:
-        return basicSetContribution(null, msgs);
-      case Cs2as_dslPackage.SCOPE_DEF__OCCLUDING_DEFS:
-        return ((InternalEList<?>)getOccludingDefs()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS:
+        return ((InternalEList<?>)getScopingDefs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -371,10 +309,8 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
         return isEmptyScope();
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         return isAlsoExports();
-      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTION:
-        return getContribution();
-      case Cs2as_dslPackage.SCOPE_DEF__OCCLUDING_DEFS:
-        return getOccludingDefs();
+      case Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS:
+        return getScopingDefs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -402,12 +338,9 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         setAlsoExports((Boolean)newValue);
         return;
-      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTION:
-        setContribution((ContributionDef)newValue);
-        return;
-      case Cs2as_dslPackage.SCOPE_DEF__OCCLUDING_DEFS:
-        getOccludingDefs().clear();
-        getOccludingDefs().addAll((Collection<? extends OccludingDef>)newValue);
+      case Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS:
+        getScopingDefs().clear();
+        getScopingDefs().addAll((Collection<? extends ScopingDef>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -435,11 +368,8 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         setAlsoExports(ALSO_EXPORTS_EDEFAULT);
         return;
-      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTION:
-        setContribution((ContributionDef)null);
-        return;
-      case Cs2as_dslPackage.SCOPE_DEF__OCCLUDING_DEFS:
-        getOccludingDefs().clear();
+      case Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS:
+        getScopingDefs().clear();
         return;
     }
     super.eUnset(featureID);
@@ -463,10 +393,8 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
         return emptyScope != EMPTY_SCOPE_EDEFAULT;
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         return alsoExports != ALSO_EXPORTS_EDEFAULT;
-      case Cs2as_dslPackage.SCOPE_DEF__CONTRIBUTION:
-        return contribution != null;
-      case Cs2as_dslPackage.SCOPE_DEF__OCCLUDING_DEFS:
-        return occludingDefs != null && !occludingDefs.isEmpty();
+      case Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS:
+        return scopingDefs != null && !scopingDefs.isEmpty();
     }
     return super.eIsSet(featureID);
   }

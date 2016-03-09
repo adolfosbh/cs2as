@@ -199,6 +199,11 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createScopeDefAdapter();
       }
       @Override
+      public Adapter caseScopingDef(ScopingDef object)
+      {
+        return createScopingDefAdapter();
+      }
+      @Override
       public Adapter caseOccludingDef(OccludingDef object)
       {
         return createOccludingDefAdapter();
@@ -234,9 +239,9 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createHelperDefAdapter();
       }
       @Override
-      public Adapter caseResolveExpCS(ResolveExpCS object)
+      public Adapter caseTraceExpCS(TraceExpCS object)
       {
-        return createResolveExpCSAdapter();
+        return createTraceExpCSAdapter();
       }
       @Override
       public Adapter caseLookupExpCS(LookupExpCS object)
@@ -656,6 +661,21 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef <em>Scoping Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef
+   * @generated
+   */
+  public Adapter createScopingDefAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef <em>Occluding Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -761,16 +781,16 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS <em>Resolve Exp CS</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS <em>Trace Exp CS</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS
    * @generated
    */
-  public Adapter createResolveExpCSAdapter()
+  public Adapter createTraceExpCSAdapter()
   {
     return null;
   }

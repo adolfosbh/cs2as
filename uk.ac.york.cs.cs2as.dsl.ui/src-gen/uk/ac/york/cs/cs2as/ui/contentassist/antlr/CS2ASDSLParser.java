@@ -81,7 +81,7 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImportCSAccess().getGroup_0(), "rule__ImportCS__Group_0__0");
 					put(grammarAccess.getMappingSectAccess().getGroup(), "rule__MappingSect__Group__0");
 					put(grammarAccess.getClassMapAccess().getGroup(), "rule__ClassMap__Group__0");
-					put(grammarAccess.getClassMapAccess().getGroup_5(), "rule__ClassMap__Group_5__0");
+					put(grammarAccess.getClassMapAccess().getGroup_4(), "rule__ClassMap__Group_4__0");
 					put(grammarAccess.getClassMapStmntAccess().getGroup(), "rule__ClassMapStmnt__Group__0");
 					put(grammarAccess.getPropertyMapAccess().getGroup(), "rule__PropertyMap__Group__0");
 					put(grammarAccess.getDisambiguationSectAccess().getGroup(), "rule__DisambiguationSect__Group__0");
@@ -104,6 +104,8 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualificationDefAccess().getGroup(), "rule__QualificationDef__Group__0");
 					put(grammarAccess.getElementsContribExpAccess().getGroup(), "rule__ElementsContribExp__Group__0");
 					put(grammarAccess.getScopeDefAccess().getGroup(), "rule__ScopeDef__Group__0");
+					put(grammarAccess.getScopingDefAccess().getGroup(), "rule__ScopingDef__Group__0");
+					put(grammarAccess.getScopingDefAccess().getGroup_1(), "rule__ScopingDef__Group_1__0");
 					put(grammarAccess.getOccludingDefAccess().getGroup(), "rule__OccludingDef__Group__0");
 					put(grammarAccess.getContributionDefAccess().getGroup(), "rule__ContributionDef__Group__0");
 					put(grammarAccess.getContributionDefAccess().getGroup_1(), "rule__ContributionDef__Group_1__0");
@@ -122,7 +124,7 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getHelperDefAccess().getGroup_3_1(), "rule__HelperDef__Group_3_1__0");
 					put(grammarAccess.getHelperDefAccess().getGroup_5(), "rule__HelperDef__Group_5__0");
 					put(grammarAccess.getParameterDefAccess().getGroup(), "rule__ParameterDef__Group__0");
-					put(grammarAccess.getResolveExpCSAccess().getGroup(), "rule__ResolveExpCS__Group__0");
+					put(grammarAccess.getTraceExpCSAccess().getGroup(), "rule__TraceExpCS__Group__0");
 					put(grammarAccess.getLookupExpCSAccess().getGroup(), "rule__LookupExpCS__Group__0");
 					put(grammarAccess.getLookupExpCSAccess().getGroup_3(), "rule__LookupExpCS__Group_3__0");
 					put(grammarAccess.getURIPathNameCSAccess().getGroup(), "rule__URIPathNameCS__Group__0");
@@ -235,7 +237,7 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMappingSectAccess().getMappingsAssignment_3(), "rule__MappingSect__MappingsAssignment_3");
 					put(grammarAccess.getClassMapAccess().getToAssignment_1(), "rule__ClassMap__ToAssignment_1");
 					put(grammarAccess.getClassMapAccess().getFromAssignment_3(), "rule__ClassMap__FromAssignment_3");
-					put(grammarAccess.getClassMapAccess().getRuleAssignment_5_1(), "rule__ClassMap__RuleAssignment_5_1");
+					put(grammarAccess.getClassMapAccess().getRuleAssignment_4_1(), "rule__ClassMap__RuleAssignment_4_1");
 					put(grammarAccess.getClassMapAccess().getStatementsAssignment_6(), "rule__ClassMap__StatementsAssignment_6");
 					put(grammarAccess.getPropertyMapAccess().getRedefineAssignment_0(), "rule__PropertyMap__RedefineAssignment_0");
 					put(grammarAccess.getPropertyMapAccess().getPropNameAssignment_1(), "rule__PropertyMap__PropNameAssignment_1");
@@ -271,10 +273,14 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElementsContribExpAccess().getExpressionAssignment_1(), "rule__ElementsContribExp__ExpressionAssignment_1");
 					put(grammarAccess.getScopeDefAccess().getSelectionDefAssignment_0(), "rule__ScopeDef__SelectionDefAssignment_0");
 					put(grammarAccess.getScopeDefAccess().getSameScopeAssignment_1_1(), "rule__ScopeDef__SameScopeAssignment_1_1");
-					put(grammarAccess.getScopeDefAccess().getEmptyScopeAssignment_1_2(), "rule__ScopeDef__EmptyScopeAssignment_1_2");
+					put(grammarAccess.getScopeDefAccess().getSameScopeAssignment_1_2(), "rule__ScopeDef__SameScopeAssignment_1_2");
+					put(grammarAccess.getScopeDefAccess().getEmptyScopeAssignment_1_3(), "rule__ScopeDef__EmptyScopeAssignment_1_3");
 					put(grammarAccess.getScopeDefAccess().getAlsoExportsAssignment_2(), "rule__ScopeDef__AlsoExportsAssignment_2");
-					put(grammarAccess.getScopeDefAccess().getContributionAssignment_3(), "rule__ScopeDef__ContributionAssignment_3");
-					put(grammarAccess.getScopeDefAccess().getOccludingDefsAssignment_4(), "rule__ScopeDef__OccludingDefsAssignment_4");
+					put(grammarAccess.getScopeDefAccess().getScopingDefsAssignment_3(), "rule__ScopeDef__ScopingDefsAssignment_3");
+					put(grammarAccess.getScopingDefAccess().getContributedClassesAssignment_0(), "rule__ScopingDef__ContributedClassesAssignment_0");
+					put(grammarAccess.getScopingDefAccess().getContributedClassesAssignment_1_1(), "rule__ScopingDef__ContributedClassesAssignment_1_1");
+					put(grammarAccess.getScopingDefAccess().getContributionAssignment_3(), "rule__ScopingDef__ContributionAssignment_3");
+					put(grammarAccess.getScopingDefAccess().getOccludingDefsAssignment_4(), "rule__ScopingDef__OccludingDefsAssignment_4");
 					put(grammarAccess.getOccludingDefAccess().getContributionAssignment_1(), "rule__OccludingDef__ContributionAssignment_1");
 					put(grammarAccess.getContributionDefAccess().getContributionsAssignment_0(), "rule__ContributionDef__ContributionsAssignment_0");
 					put(grammarAccess.getContributionDefAccess().getContributionsAssignment_1_1(), "rule__ContributionDef__ContributionsAssignment_1_1");

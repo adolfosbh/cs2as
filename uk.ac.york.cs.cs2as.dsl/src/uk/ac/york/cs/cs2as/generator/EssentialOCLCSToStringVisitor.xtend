@@ -7,7 +7,6 @@ import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.CurlyBracketedClauseCS
 import org.eclipse.ocl.xtext.essentialoclcs.IfExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.NullLiteralExpCS
-import uk.ac.york.cs.cs2as.cs2as_dsl.ResolveExpCS
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.PrefixExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.RoundBracketedClauseCS
@@ -21,14 +20,15 @@ import org.eclipse.ocl.xtext.basecs.ParameterCS
 import org.eclipse.ocl.xtext.essentialoclcs.SelfExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.LetExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.VariableCS
+import uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS
 
 class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 
 	BaseCSToStringVisitor baseVisitor = new BaseCSToStringVisitor();
 	
 	override String defaultCase(EObject object) {
-		if (object instanceof ResolveExpCS) {
-			caseResolveExp(object)
+		if (object instanceof TraceExpCS) {
+			caseTraceExp(object)
 		} else if (object instanceof LookupExpCS) {
 			caseLookupExp(object)
 		} else if (object instanceof ParameterCS) { 
@@ -133,7 +133,7 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 		'''«object.name» «IF type != null» : «type.doSwitch»«ENDIF»«IF init != null» = «init.doSwitch»«ENDIF»'''
 	}
 	
-	def String caseResolveExp(ResolveExpCS object) {
+	def String caseTraceExp(TraceExpCS object) {
 		'''ast()''';
 	}
 	
