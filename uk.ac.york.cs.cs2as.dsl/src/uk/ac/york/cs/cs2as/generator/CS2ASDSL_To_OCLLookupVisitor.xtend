@@ -16,6 +16,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific
+import java.util.Set
 
 class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 
@@ -30,6 +31,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	Map<String, FilterDef> element2filter = newHashMap();
 	Map<String, ScopeDef> feaName2scopes = newHashMap();
 	Map<String, ExportDef> feaName2exports = newHashMap();
+	Set<String> normalizedNamedElements = newHashSet();
 	
 	
 	/**
@@ -125,6 +127,9 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			
 		def : parentEnv() : «lookupPck»::«lookupEnv»[1] =
 			let parent = oclContainer() in if parent = null then «lookupPck»::«lookupEnv» { } else parent._env(self) endif
+		-- Domain specific default functionality
+		«commonEnvironmentOps»
+		-- End of domain specific default functionality
 		endpackage 
 		
 		package «lookupPck»
@@ -135,6 +140,25 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			}
 		endpackage
 		''';
+	}
+	
+	private def commonEnvironmentOps( ) {
+		'''
+		«FOR namedElement : normalizedNamedElements»
+		def : env_«namedElement»() : lookup::LookupEnvironment[1] =
+			_env_«namedElement»(null)
+		«ENDFOR»
+		
+		«FOR namedElement : normalizedNamedElements»
+		def : _env_«namedElement»(child : OclElement) : lookup::LookupEnvironment[1] =
+			parentEnv_«namedElement»()
+		«ENDFOR»
+		
+		«FOR namedElement : normalizedNamedElements»
+		def : parentEnv_«namedElement»() : lookup::LookupEnvironment[1] =
+			let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent._env_«namedElement»(self) endif
+		«ENDFOR»
+		'''
 	}
 	
 	private def computeQualifiers(NameResolutionSect nrSect) {
@@ -153,8 +177,10 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	def private computeInitialMaps(NameResolutionSect nrSect) {
 		for (nameReso : nrSect.nameResolutions) {
 			val className = nameReso.class_.doSwitch;
+			val nClassName = className.normalizeString;
 			for (statemnt : nameReso.statements) {
 				if (statemnt instanceof NamedElementDef) {
+					normalizedNamedElements.add(nClassName);
 					for (QualificationDef qDef :  statemnt.qualifications) {
 						val qualifiedElement = qDef.qualifiedClass.doSwitch;
 						var qualifiers = element2qualifiers.get(qualifiedElement);
@@ -184,8 +210,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		} else {
 			result.put('''«className»::«ALL_CHILDREN»''', statmnt);	
 		}
-	}	
-
+	}
 	
 	override caseNameResolutionSect(NameResolutionSect object) {
 		
@@ -331,7 +356,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 					-- Note: when calling this method, the source element of the argument passed to this method, will be the contextual 
 					-- object on which error reports will be handled
 					def : _lookup«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
-					let found«nClassName» = _lookup«nClassName»(env(), «nameParam»«filterArgs»)
+					let found«nClassName» = _lookup«nClassName»(env_«nClassName»(), «nameParam»«filterArgs»)
 					in  if found«nClassName»->isEmpty()
 						then null
 						else found«nClassName»->first() -- LookupVisitor will report ambiguous result
@@ -447,8 +472,10 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		}
 		'''
 		def : _env(child : ocl::OclElement) : «lookupPck»::«lookupEnv» =
-			«provideScopeContributionsQuery(featureNames, allChildrenName, nameReso)»
+			«provideScopeContributionsQuery(featureNames, allChildrenName)»
 		''';
+		// TODO we should also print the specific _env_<NamedElement> operations
+		// They are currently encoded by hand. 
 	}
 	
 	// FIXME refactor
@@ -471,11 +498,11 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		
 		'''
 		def : _exported_env(importer : ocl::OclElement) : «lookupPck»::«lookupEnv» =
-			«provideExportsContributionsQuery(featureNames, allChildrenName,nameReso)»
+			«provideExportsContributionsQuery(featureNames, allChildrenName)»
 		'''
 	}
 	
-	def private String provideScopeContributionsQuery(List<String> featureNames, String allChildrenName, ClassNameResolution nameReso) {
+	def private String provideScopeContributionsQuery(List<String> featureNames, String allChildrenName) {
 				
 		val featuresSize = featureNames.size;
 		
@@ -506,13 +533,13 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			'''
 			if «featureName.split("::").get(1)»->includes(child)
 			then «scopeDef.doSwitch»
-			else «provideScopeContributionsQuery(residualFeaNames, allChildrenName, nameReso)»
+			else «provideScopeContributionsQuery(residualFeaNames, allChildrenName)»
 			endif
 			''';
 		}
 	}
 	
-	def private String provideExportsContributionsQuery(List<String> featureNames, String allChildrenName, ClassNameResolution nameReso) {
+	def private String provideExportsContributionsQuery(List<String> featureNames, String allChildrenName) {
 				
 		// TODO include SelectionSpecific bits
 		

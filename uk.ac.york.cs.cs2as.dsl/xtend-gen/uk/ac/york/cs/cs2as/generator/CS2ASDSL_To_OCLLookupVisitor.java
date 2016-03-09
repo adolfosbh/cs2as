@@ -5,6 +5,7 @@ import com.google.common.collect.Iterables;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.xtext.basecs.ImportCS;
@@ -61,6 +62,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   private Map<String, ScopeDef> feaName2scopes = CollectionLiterals.<String, ScopeDef>newHashMap();
   
   private Map<String, ExportDef> feaName2exports = CollectionLiterals.<String, ExportDef>newHashMap();
+  
+  private Set<String> normalizedNamedElements = CollectionLiterals.<String>newHashSet();
   
   /**
    * default name referencer
@@ -254,6 +257,13 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.append(this.lookupEnv, "\t");
     _builder.append(" { } else parent._env(self) endif");
     _builder.newLineIfNotEmpty();
+    _builder.append("-- Domain specific default functionality");
+    _builder.newLine();
+    CharSequence _commonEnvironmentOps = this.commonEnvironmentOps();
+    _builder.append(_commonEnvironmentOps, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("-- End of domain specific default functionality");
+    _builder.newLine();
     _builder.append("endpackage ");
     _builder.newLine();
     _builder.newLine();
@@ -282,6 +292,52 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     return _builder;
   }
   
+  private CharSequence commonEnvironmentOps() {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      for(final String namedElement : this.normalizedNamedElements) {
+        _builder.append("def : env_");
+        _builder.append(namedElement, "");
+        _builder.append("() : lookup::LookupEnvironment[1] =");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("_env_");
+        _builder.append(namedElement, "\t");
+        _builder.append("(null)");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    {
+      for(final String namedElement_1 : this.normalizedNamedElements) {
+        _builder.append("def : _env_");
+        _builder.append(namedElement_1, "");
+        _builder.append("(child : OclElement) : lookup::LookupEnvironment[1] =");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("parentEnv_");
+        _builder.append(namedElement_1, "\t");
+        _builder.append("()");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    {
+      for(final String namedElement_2 : this.normalizedNamedElements) {
+        _builder.append("def : parentEnv_");
+        _builder.append(namedElement_2, "");
+        _builder.append("() : lookup::LookupEnvironment[1] =");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent._env_");
+        _builder.append(namedElement_2, "\t");
+        _builder.append("(self) endif");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
   private Map<String, List<String>> computeQualifiers(final NameResolutionSect nrSect) {
     final Map<String, List<String>> result = CollectionLiterals.<String, List<String>>newLinkedHashMap();
     EList<ClassNameResolution> _nameResolutions = nrSect.getNameResolutions();
@@ -301,10 +357,12 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       {
         PathNameCS _class_ = nameReso.getClass_();
         final String className = this.doSwitch(_class_);
+        final String nClassName = this.normalizeString(className);
         EList<ClassNameResolutionStmnt> _statements = nameReso.getStatements();
         for (final ClassNameResolutionStmnt statemnt : _statements) {
           {
             if ((statemnt instanceof NamedElementDef)) {
+              this.normalizedNamedElements.add(nClassName);
               EList<QualificationDef> _qualifications = ((NamedElementDef)statemnt).getQualifications();
               for (final QualificationDef qDef : _qualifications) {
                 {
@@ -803,7 +861,9 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder.append(nClassName, "");
               _builder.append(" = _lookup");
               _builder.append(nClassName, "");
-              _builder.append("(env(), ");
+              _builder.append("(env_");
+              _builder.append(nClassName, "");
+              _builder.append("(), ");
               _builder.append(nameParam, "");
               _builder.append(filterArgs, "");
               _builder.append(")");
@@ -1234,7 +1294,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _builder.append(" =");
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
-      String _provideScopeContributionsQuery = this.provideScopeContributionsQuery(featureNames, allChildrenName, nameReso);
+      String _provideScopeContributionsQuery = this.provideScopeContributionsQuery(featureNames, allChildrenName);
       _builder.append(_provideScopeContributionsQuery, "\t");
       _builder.newLineIfNotEmpty();
       _xblockexpression = _builder.toString();
@@ -1289,7 +1349,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _builder.append(" =");
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
-      String _provideExportsContributionsQuery = this.provideExportsContributionsQuery(featureNames, allChildrenName, nameReso);
+      String _provideExportsContributionsQuery = this.provideExportsContributionsQuery(featureNames, allChildrenName);
       _builder.append(_provideExportsContributionsQuery, "\t");
       _builder.newLineIfNotEmpty();
       _xblockexpression = _builder.toString();
@@ -1297,7 +1357,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     return _xblockexpression;
   }
   
-  private String provideScopeContributionsQuery(final List<String> featureNames, final String allChildrenName, final ClassNameResolution nameReso) {
+  private String provideScopeContributionsQuery(final List<String> featureNames, final String allChildrenName) {
     String _xblockexpression = null;
     {
       final int featuresSize = featureNames.size();
@@ -1398,7 +1458,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           _builder_1.append(_doSwitch, "");
           _builder_1.newLineIfNotEmpty();
           _builder_1.append("else ");
-          String _provideScopeContributionsQuery = this.provideScopeContributionsQuery(residualFeaNames, allChildrenName, nameReso);
+          String _provideScopeContributionsQuery = this.provideScopeContributionsQuery(residualFeaNames, allChildrenName);
           _builder_1.append(_provideScopeContributionsQuery, "");
           _builder_1.newLineIfNotEmpty();
           _builder_1.append("endif");
@@ -1412,7 +1472,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     return _xblockexpression;
   }
   
-  private String provideExportsContributionsQuery(final List<String> featureNames, final String allChildrenName, final ClassNameResolution nameReso) {
+  private String provideExportsContributionsQuery(final List<String> featureNames, final String allChildrenName) {
     String _xblockexpression = null;
     {
       String _xifexpression = null;
