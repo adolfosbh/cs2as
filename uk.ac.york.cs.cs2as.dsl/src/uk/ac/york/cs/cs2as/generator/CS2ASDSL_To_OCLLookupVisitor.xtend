@@ -18,6 +18,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific
 import java.util.Set
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef
 
 class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 
@@ -215,14 +216,18 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	override caseClassNameResolution(ClassNameResolution object) {
 		val containsExports = ! object.statements.filter(ExportDef).empty;
 		val containsScopes = ! object.statements.filter(ScopeDef).empty;
-		if (containsExports || containsScopes)
+		val containsQualifies = object.statements.filter(NamedElementDef).exists[x| ! x.qualifications.empty]
+		val containsFilters = object.statements.filter(NamedElementDef).exists[x| x.filter != null]
+		if (containsExports || containsScopes || containsQualifies || containsFilters)
 			'''
 				
 			context «object.class_.doSwitch»
 			«FOR statement : object.statements.filter(NamedElementDef)»«statement.doSwitch»«ENDFOR»
+			«IF containsScopes»
 			«provideUnqualifiedEnvMethods(object)»
+			«ENDIF»
 			«IF containsExports»
-			«provideExportedEnvMethod(object)»
+			«provideExportedEnvMethods(object)»
 			«provideExporterLookupMethod(object)»
 			«ENDIF»
 			'''
@@ -232,10 +237,8 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		
 	override caseNamedElementDef(NamedElementDef object) {
 		val qualifications = object.qualifications;
-		if (qualifications == null) {
-			return '';
-		} else {
-			val StringBuilder sb = new StringBuilder();
+		val StringBuilder sb = new StringBuilder();
+		if (qualifications != null) {			
 			val List<ElementsContribExp> qualificationConstribs = newArrayList();
 			for (qualification : qualifications) {
 				val className = qualification.qualifiedClass.doSwitch;
@@ -267,20 +270,20 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 						«ENDFOR»
 				''')	
 			}	
-			
-			val filter = object.filter;
-			if (filter != null) {
-				val className = (object.eContainer as ClassNameResolution).class_.doSwitch;
-				val nClassName = className.normalizeString;
-				val filterParams = filter.paramsText;
-				sb.append('''
-					
-				def : «nClassName.filterOpName»(«filterParams») : Boolean =
-					«filter.expression.doSwitch»
-				''')
-			}
-			sb.toString;
 		}
+		val filter = object.filter;
+		if (filter != null) {
+			val className = (object.eContainer as ClassNameResolution).class_.doSwitch;
+			val nClassName = className.normalizeString;
+			val filterParams = filter.paramsText;
+			sb.append('''
+				
+			def : «nClassName.filterOpName»(«filterParams») : Boolean =
+				«filter.expression.doSwitch»
+			''')
+		}
+		
+		sb.toString;
 	}
 	
 	override caseElementsContribExp(ElementsContribExp object) {
@@ -305,8 +308,22 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	}
 	
 	override caseScopingDef(ScopingDef object) {
-		'''«object.contribution.doSwitch»'''
+		val sb = new StringBuilder();
+		val occludingDefs = object.occludingDefs;
+		for (var i = occludingDefs.size -1 ; i>=0; i--) {
+			sb.append(occludingDefs.get(i).doSwitch);	
+		}
+		sb.append(object.contribution.doSwitch);
+		sb.toString
 	}
+	
+	override caseOccludingDef(OccludingDef object) {
+		'''		
+		«object.contribution.doSwitch»
+		.nestedEnv()
+		'''
+	}
+	
 	override caseContributionDef(ContributionDef object) {
 		'''
 		«FOR contrib : object.contributions»«contrib.doSwitch»
@@ -488,7 +505,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	}
 	
 	// FIXME refactor
-	def private String provideExportedEnvMethod(ClassNameResolution nameReso) {
+	def private String provideExportedEnvMethods(ClassNameResolution nameReso) {
 		
 		var String allChildrenName = null;
 		val List<String> featureNames = newArrayList();
