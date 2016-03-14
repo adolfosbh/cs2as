@@ -139,18 +139,18 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	private def commonEnvironmentOps( ) {
 		'''
 		«FOR namedElement : normalizedNamedElements»
-		def : env_«namedElement»() : lookup::LookupEnvironment[1] =
-			_env_«namedElement»(null)
+		def : unqualified_env_«namedElement»() : lookup::LookupEnvironment[1] =
+			_unqualified_env_«namedElement»(null)
 		«ENDFOR»
 		
 		«FOR namedElement : normalizedNamedElements»
-		def : _env_«namedElement»(child : OclElement) : lookup::LookupEnvironment[1] =
+		def : _unqualified_env_«namedElement»(child : OclElement) : lookup::LookupEnvironment[1] =
 			parentEnv_«namedElement»()
 		«ENDFOR»
 		
 		«FOR namedElement : normalizedNamedElements»
 		def : parentEnv_«namedElement»() : lookup::LookupEnvironment[1] =
-			let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent._env_«namedElement»(self) endif
+			let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_«namedElement»(self) endif
 		«ENDFOR»
 		'''
 	}
@@ -255,7 +255,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 						then null
 						else found«nClassName»->first()
 						endif
-				«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, 'Qualified'+nClassName, filterParams, filterArgs)»«ENDIF»
+				«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, '', 'Qualified'+nClassName, filterParams, filterArgs)»«ENDIF»
 				''');
 				qualificationConstribs.addAll(qualification.contribution);
 			}
@@ -356,13 +356,13 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 						
 					-- Note: when calling this method, the source element of the argument passed to this method, will be the contextual 
 					-- object on which error reports will be handled
-					def : _lookup«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
-					let found«nClassName» = _lookup«nClassName»(env_«nClassName»(), «nameParam»«filterArgs»)
+					def : _lookupUnqualified«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
+					let found«nClassName» = _lookup«nClassName»(unqualified_env_«nClassName»(), «nameParam»«filterArgs»)
 					in  if found«nClassName»->isEmpty()
 						then null
 						else found«nClassName»->first() -- LookupVisitor will report ambiguous result
 						endif
-					«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, nClassName, filterParams, filterArgs)»«ENDIF»
+					«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, 'Unqualified', nClassName, filterParams, filterArgs)»«ENDIF»
 					
 					«IF element2qualifiers.get(className) != null»«provideQualifiedLookupMethods(className, nClassName, filterParams, filterArgs)»«ENDIF»
 					
@@ -392,10 +392,10 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		sb.toString;
 	}
 	
-	def private provideLookupByNameReferencerMethod(String className, String nClassName, String filterParams, String filterArgs) {
+	def private provideLookupByNameReferencerMethod(String className, String protocol, String nClassName, String filterParams, String filterArgs) {
 		'''
 		def : lookup«nClassName»(a«defaultNR» : «sourcePckName»::«defaultNR»«filterParams») : «className»[?] =
-		   _lookup«nClassName»(a«defaultNR».«defaultNRP»«filterArgs»)
+		   _lookup«protocol»«nClassName»(a«defaultNR».«defaultNRP»«filterArgs»)
 		   
 		'''
 	}
@@ -499,7 +499,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		}
 		
 		'''
-		def : _env_«scopedClassName.normalizeString»(child : ocl::OclElement) : «lookupPck»::«lookupEnv» =
+		def : _unqualified_env_«scopedClassName.normalizeString»(child : ocl::OclElement) : «lookupPck»::«lookupEnv» =
 			«provideScopeContributionsQuery(scopedClassName, featureNames, allChildrenName)»
 		''';
 	}

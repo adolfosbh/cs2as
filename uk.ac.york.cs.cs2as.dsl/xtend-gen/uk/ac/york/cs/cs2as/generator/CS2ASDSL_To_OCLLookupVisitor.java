@@ -267,12 +267,12 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     StringConcatenation _builder = new StringConcatenation();
     {
       for(final String namedElement : this.normalizedNamedElements) {
-        _builder.append("def : env_");
+        _builder.append("def : unqualified_env_");
         _builder.append(namedElement, "");
         _builder.append("() : lookup::LookupEnvironment[1] =");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        _builder.append("_env_");
+        _builder.append("_unqualified_env_");
         _builder.append(namedElement, "\t");
         _builder.append("(null)");
         _builder.newLineIfNotEmpty();
@@ -281,7 +281,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.newLine();
     {
       for(final String namedElement_1 : this.normalizedNamedElements) {
-        _builder.append("def : _env_");
+        _builder.append("def : _unqualified_env_");
         _builder.append(namedElement_1, "");
         _builder.append("(child : OclElement) : lookup::LookupEnvironment[1] =");
         _builder.newLineIfNotEmpty();
@@ -300,7 +300,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         _builder.append("() : lookup::LookupEnvironment[1] =");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        _builder.append("let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent._env_");
+        _builder.append("let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_");
         _builder.append(namedElement_2, "\t");
         _builder.append("(self) endif");
         _builder.newLineIfNotEmpty();
@@ -543,7 +543,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
             {
               boolean _notEquals_1 = (!Objects.equal(this.defaultNR, null));
               if (_notEquals_1) {
-                CharSequence _provideLookupByNameReferencerMethod = this.provideLookupByNameReferencerMethod(className, ("Qualified" + nClassName), filterParams, filterArgs);
+                CharSequence _provideLookupByNameReferencerMethod = this.provideLookupByNameReferencerMethod(className, "", ("Qualified" + nClassName), filterParams, filterArgs);
                 _builder.append(_provideLookupByNameReferencerMethod, "");
               }
             }
@@ -830,7 +830,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder.newLine();
               _builder.append("-- object on which error reports will be handled");
               _builder.newLine();
-              _builder.append("def : _lookup");
+              _builder.append("def : _lookupUnqualified");
               _builder.append(nClassName, "");
               _builder.append("(");
               _builder.append(nameParam, "");
@@ -844,7 +844,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder.append(nClassName, "");
               _builder.append(" = _lookup");
               _builder.append(nClassName, "");
-              _builder.append("(env_");
+              _builder.append("(unqualified_env_");
               _builder.append(nClassName, "");
               _builder.append("(), ");
               _builder.append(nameParam, "");
@@ -869,7 +869,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               {
                 boolean _notEquals_2 = (!Objects.equal(this.defaultNR, null));
                 if (_notEquals_2) {
-                  CharSequence _provideLookupByNameReferencerMethod = this.provideLookupByNameReferencerMethod(className, nClassName, filterParams, filterArgs);
+                  CharSequence _provideLookupByNameReferencerMethod = this.provideLookupByNameReferencerMethod(className, "Unqualified", nClassName, filterParams, filterArgs);
                   _builder.append(_provideLookupByNameReferencerMethod, "");
                 }
               }
@@ -973,7 +973,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     return _xblockexpression;
   }
   
-  private CharSequence provideLookupByNameReferencerMethod(final String className, final String nClassName, final String filterParams, final String filterArgs) {
+  private CharSequence provideLookupByNameReferencerMethod(final String className, final String protocol, final String nClassName, final String filterParams, final String filterArgs) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("def : lookup");
     _builder.append(nClassName, "");
@@ -990,6 +990,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.newLineIfNotEmpty();
     _builder.append("   ");
     _builder.append("_lookup");
+    _builder.append(protocol, "   ");
     _builder.append(nClassName, "   ");
     _builder.append("(a");
     _builder.append(this.defaultNR, "   ");
@@ -1307,7 +1308,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         }
       }
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("def : _env_");
+      _builder.append("def : _unqualified_env_");
       String _normalizeString = this.normalizeString(scopedClassName);
       _builder.append(_normalizeString, "");
       _builder.append("(child : ocl::OclElement) : ");
