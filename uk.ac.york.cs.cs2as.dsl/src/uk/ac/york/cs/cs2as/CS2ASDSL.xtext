@@ -120,24 +120,29 @@ FilterDef:
 ;
 
 QualificationDef:
-	qualifiedClass=TypeExpCS 'using' contribution+=ElementsContribExp 
+	targetsDef=TargetsDef
+	'using' contribution+=ElementsContribExp
 ;
 	
 ElementsContribExp:
-	(isFollowing?='following' | isImported?='imported'?)? expression=ExpCS 
+	(isPreceding?='preceding' | isImported?='imported'?)? expression=ExpCS 
 ;
 
 ScopeDef:
 	selectionDef=SelectionDef?
-	('scopes-occluding' | sameScope?='scopes' | sameScope?='scopes-adding' | emptyScope?='scopes-resetting')
+	('scopes' | 'scopes-occluding' | sameScope?='scopes-adding' | emptyScope?='scopes-resetting')
 	(alsoExports?='also-exports')?
-	scopingDefs+=ScopingDef+
+	provisionDefs+=ProvisionDef+
 ;
 
-ScopingDef:
-	contributedClasses+=TypeExpCS (',' contributedClasses+=TypeExpCS)* 
+ProvisionDef:
+	targetsDef=TargetsDef 
 	'using' contribution=ContributionDef
 	occludingDefs+=OccludingDef*
+;
+
+TargetsDef:
+	targetClasses+=TypeExpCS (',' targetClasses+=TypeExpCS)*	
 ;
 
 OccludingDef:
@@ -157,9 +162,8 @@ SelectionDef:
 
 ExportDef:
 	selectionDef=SelectionDef?
-	'exports' exportedClass=TypeExpCS
-	'using' contribution=ContributionDef
-	occludingDefs+=OccludingDef*
+	'exports'
+	provisionDefs+=ProvisionDef+
 ;
 
 HelpersSect:
