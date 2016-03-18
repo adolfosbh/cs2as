@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isSameScope <em>Same Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isEmptyScope <em>Empty Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isAlsoExports <em>Also Exports</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getScopingDefs <em>Scoping Defs</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#getProvisionDefs <em>Provision Defs</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef()
@@ -131,19 +131,19 @@ public interface ScopeDef extends ClassNameResolutionStmnt
   void setAlsoExports(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Scoping Defs</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef}.
+   * Returns the value of the '<em><b>Provision Defs</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Scoping Defs</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Provision Defs</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Scoping Defs</em>' containment reference list.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_ScopingDefs()
+   * @return the value of the '<em>Provision Defs</em>' containment reference list.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_ProvisionDefs()
    * @model containment="true"
    * @generated
    */
-  EList<ScopingDef> getScopingDefs();
+  EList<ProvisionDef> getProvisionDefs();
 
 } // ScopeDef

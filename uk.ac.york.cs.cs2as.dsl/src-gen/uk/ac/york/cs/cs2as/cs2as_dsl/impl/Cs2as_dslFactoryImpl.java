@@ -86,7 +86,8 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.QUALIFICATION_DEF: return createQualificationDef();
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP: return createElementsContribExp();
       case Cs2as_dslPackage.SCOPE_DEF: return createScopeDef();
-      case Cs2as_dslPackage.SCOPING_DEF: return createScopingDef();
+      case Cs2as_dslPackage.PROVISION_DEF: return createProvisionDef();
+      case Cs2as_dslPackage.TARGETS_DEF: return createTargetsDef();
       case Cs2as_dslPackage.OCCLUDING_DEF: return createOccludingDef();
       case Cs2as_dslPackage.CONTRIBUTION_DEF: return createContributionDef();
       case Cs2as_dslPackage.SELECTION_DEF: return createSelectionDef();
@@ -350,10 +351,21 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ScopingDef createScopingDef()
+  public ProvisionDef createProvisionDef()
   {
-    ScopingDefImpl scopingDef = new ScopingDefImpl();
-    return scopingDef;
+    ProvisionDefImpl provisionDef = new ProvisionDefImpl();
+    return provisionDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TargetsDef createTargetsDef()
+  {
+    TargetsDefImpl targetsDef = new TargetsDefImpl();
+    return targetsDef;
   }
 
   /**

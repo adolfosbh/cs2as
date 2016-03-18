@@ -17,12 +17,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
-
-import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
 
 /**
@@ -34,9 +31,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl#getSelectionDef <em>Selection Def</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl#getExportedClass <em>Exported Class</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl#getContribution <em>Contribution</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl#getOccludingDefs <em>Occluding Defs</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl#getProvisionDefs <em>Provision Defs</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,34 +49,14 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
   protected SelectionDef selectionDef;
 
   /**
-   * The cached value of the '{@link #getExportedClass() <em>Exported Class</em>}' containment reference.
+   * The cached value of the '{@link #getProvisionDefs() <em>Provision Defs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExportedClass()
+   * @see #getProvisionDefs()
    * @generated
    * @ordered
    */
-  protected TypedRefCS exportedClass;
-
-  /**
-   * The cached value of the '{@link #getContribution() <em>Contribution</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContribution()
-   * @generated
-   * @ordered
-   */
-  protected ContributionDef contribution;
-
-  /**
-   * The cached value of the '{@link #getOccludingDefs() <em>Occluding Defs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOccludingDefs()
-   * @generated
-   * @ordered
-   */
-  protected EList<OccludingDef> occludingDefs;
+  protected EList<ProvisionDef> provisionDefs;
 
   /**
    * <!-- begin-user-doc -->
@@ -157,109 +132,13 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypedRefCS getExportedClass()
+  public EList<ProvisionDef> getProvisionDefs()
   {
-    return exportedClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExportedClass(TypedRefCS newExportedClass, NotificationChain msgs)
-  {
-    TypedRefCS oldExportedClass = exportedClass;
-    exportedClass = newExportedClass;
-    if (eNotificationRequired())
+    if (provisionDefs == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__EXPORTED_CLASS, oldExportedClass, newExportedClass);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      provisionDefs = new EObjectContainmentEList<ProvisionDef>(ProvisionDef.class, this, Cs2as_dslPackage.EXPORT_DEF__PROVISION_DEFS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExportedClass(TypedRefCS newExportedClass)
-  {
-    if (newExportedClass != exportedClass)
-    {
-      NotificationChain msgs = null;
-      if (exportedClass != null)
-        msgs = ((InternalEObject)exportedClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.EXPORT_DEF__EXPORTED_CLASS, null, msgs);
-      if (newExportedClass != null)
-        msgs = ((InternalEObject)newExportedClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.EXPORT_DEF__EXPORTED_CLASS, null, msgs);
-      msgs = basicSetExportedClass(newExportedClass, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__EXPORTED_CLASS, newExportedClass, newExportedClass));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ContributionDef getContribution()
-  {
-    return contribution;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetContribution(ContributionDef newContribution, NotificationChain msgs)
-  {
-    ContributionDef oldContribution = contribution;
-    contribution = newContribution;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__CONTRIBUTION, oldContribution, newContribution);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setContribution(ContributionDef newContribution)
-  {
-    if (newContribution != contribution)
-    {
-      NotificationChain msgs = null;
-      if (contribution != null)
-        msgs = ((InternalEObject)contribution).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.EXPORT_DEF__CONTRIBUTION, null, msgs);
-      if (newContribution != null)
-        msgs = ((InternalEObject)newContribution).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.EXPORT_DEF__CONTRIBUTION, null, msgs);
-      msgs = basicSetContribution(newContribution, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.EXPORT_DEF__CONTRIBUTION, newContribution, newContribution));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<OccludingDef> getOccludingDefs()
-  {
-    if (occludingDefs == null)
-    {
-      occludingDefs = new EObjectContainmentEList<OccludingDef>(OccludingDef.class, this, Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS);
-    }
-    return occludingDefs;
+    return provisionDefs;
   }
 
   /**
@@ -274,12 +153,8 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
     {
       case Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF:
         return basicSetSelectionDef(null, msgs);
-      case Cs2as_dslPackage.EXPORT_DEF__EXPORTED_CLASS:
-        return basicSetExportedClass(null, msgs);
-      case Cs2as_dslPackage.EXPORT_DEF__CONTRIBUTION:
-        return basicSetContribution(null, msgs);
-      case Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS:
-        return ((InternalEList<?>)getOccludingDefs()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.EXPORT_DEF__PROVISION_DEFS:
+        return ((InternalEList<?>)getProvisionDefs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -296,12 +171,8 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
     {
       case Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF:
         return getSelectionDef();
-      case Cs2as_dslPackage.EXPORT_DEF__EXPORTED_CLASS:
-        return getExportedClass();
-      case Cs2as_dslPackage.EXPORT_DEF__CONTRIBUTION:
-        return getContribution();
-      case Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS:
-        return getOccludingDefs();
+      case Cs2as_dslPackage.EXPORT_DEF__PROVISION_DEFS:
+        return getProvisionDefs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -320,15 +191,9 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
       case Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF:
         setSelectionDef((SelectionDef)newValue);
         return;
-      case Cs2as_dslPackage.EXPORT_DEF__EXPORTED_CLASS:
-        setExportedClass((TypedRefCS)newValue);
-        return;
-      case Cs2as_dslPackage.EXPORT_DEF__CONTRIBUTION:
-        setContribution((ContributionDef)newValue);
-        return;
-      case Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS:
-        getOccludingDefs().clear();
-        getOccludingDefs().addAll((Collection<? extends OccludingDef>)newValue);
+      case Cs2as_dslPackage.EXPORT_DEF__PROVISION_DEFS:
+        getProvisionDefs().clear();
+        getProvisionDefs().addAll((Collection<? extends ProvisionDef>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -347,14 +212,8 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
       case Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF:
         setSelectionDef((SelectionDef)null);
         return;
-      case Cs2as_dslPackage.EXPORT_DEF__EXPORTED_CLASS:
-        setExportedClass((TypedRefCS)null);
-        return;
-      case Cs2as_dslPackage.EXPORT_DEF__CONTRIBUTION:
-        setContribution((ContributionDef)null);
-        return;
-      case Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS:
-        getOccludingDefs().clear();
+      case Cs2as_dslPackage.EXPORT_DEF__PROVISION_DEFS:
+        getProvisionDefs().clear();
         return;
     }
     super.eUnset(featureID);
@@ -372,12 +231,8 @@ public class ExportDefImpl extends ClassNameResolutionStmntImpl implements Expor
     {
       case Cs2as_dslPackage.EXPORT_DEF__SELECTION_DEF:
         return selectionDef != null;
-      case Cs2as_dslPackage.EXPORT_DEF__EXPORTED_CLASS:
-        return exportedClass != null;
-      case Cs2as_dslPackage.EXPORT_DEF__CONTRIBUTION:
-        return contribution != null;
-      case Cs2as_dslPackage.EXPORT_DEF__OCCLUDING_DEFS:
-        return occludingDefs != null && !occludingDefs.isEmpty();
+      case Cs2as_dslPackage.EXPORT_DEF__PROVISION_DEFS:
+        return provisionDefs != null && !provisionDefs.isEmpty();
     }
     return super.eIsSet(featureID);
   }

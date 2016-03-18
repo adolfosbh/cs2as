@@ -43,12 +43,13 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
+import uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS;
 
 /**
@@ -218,7 +219,14 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass scopingDefEClass = null;
+  private EClass provisionDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass targetsDefEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -948,7 +956,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getQualificationDef_QualifiedClass()
+  public EReference getQualificationDef_TargetsDef()
   {
     return (EReference)qualificationDefEClass.getEStructuralFeatures().get(0);
   }
@@ -978,7 +986,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementsContribExp_IsFollowing()
+  public EAttribute getElementsContribExp_IsPreceding()
   {
     return (EAttribute)elementsContribExpEClass.getEStructuralFeatures().get(0);
   }
@@ -1058,7 +1066,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getScopeDef_ScopingDefs()
+  public EReference getScopeDef_ProvisionDefs()
   {
     return (EReference)scopeDefEClass.getEStructuralFeatures().get(4);
   }
@@ -1068,9 +1076,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getScopingDef()
+  public EClass getProvisionDef()
   {
-    return scopingDefEClass;
+    return provisionDefEClass;
   }
 
   /**
@@ -1078,9 +1086,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getScopingDef_ContributedClasses()
+  public EReference getProvisionDef_TargetsDef()
   {
-    return (EReference)scopingDefEClass.getEStructuralFeatures().get(0);
+    return (EReference)provisionDefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1088,9 +1096,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getScopingDef_Contribution()
+  public EReference getProvisionDef_Contribution()
   {
-    return (EReference)scopingDefEClass.getEStructuralFeatures().get(1);
+    return (EReference)provisionDefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1098,9 +1106,29 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getScopingDef_OccludingDefs()
+  public EReference getProvisionDef_OccludingDefs()
   {
-    return (EReference)scopingDefEClass.getEStructuralFeatures().get(2);
+    return (EReference)provisionDefEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTargetsDef()
+  {
+    return targetsDefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTargetsDef_TargetClasses()
+  {
+    return (EReference)targetsDefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1178,29 +1206,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExportDef_ExportedClass()
+  public EReference getExportDef_ProvisionDefs()
   {
     return (EReference)exportDefEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExportDef_Contribution()
-  {
-    return (EReference)exportDefEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExportDef_OccludingDefs()
-  {
-    return (EReference)exportDefEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1500,11 +1508,11 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     createEReference(filterDefEClass, FILTER_DEF__EXPRESSION);
 
     qualificationDefEClass = createEClass(QUALIFICATION_DEF);
-    createEReference(qualificationDefEClass, QUALIFICATION_DEF__QUALIFIED_CLASS);
+    createEReference(qualificationDefEClass, QUALIFICATION_DEF__TARGETS_DEF);
     createEReference(qualificationDefEClass, QUALIFICATION_DEF__CONTRIBUTION);
 
     elementsContribExpEClass = createEClass(ELEMENTS_CONTRIB_EXP);
-    createEAttribute(elementsContribExpEClass, ELEMENTS_CONTRIB_EXP__IS_FOLLOWING);
+    createEAttribute(elementsContribExpEClass, ELEMENTS_CONTRIB_EXP__IS_PRECEDING);
     createEAttribute(elementsContribExpEClass, ELEMENTS_CONTRIB_EXP__IS_IMPORTED);
     createEReference(elementsContribExpEClass, ELEMENTS_CONTRIB_EXP__EXPRESSION);
 
@@ -1513,12 +1521,15 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     createEAttribute(scopeDefEClass, SCOPE_DEF__SAME_SCOPE);
     createEAttribute(scopeDefEClass, SCOPE_DEF__EMPTY_SCOPE);
     createEAttribute(scopeDefEClass, SCOPE_DEF__ALSO_EXPORTS);
-    createEReference(scopeDefEClass, SCOPE_DEF__SCOPING_DEFS);
+    createEReference(scopeDefEClass, SCOPE_DEF__PROVISION_DEFS);
 
-    scopingDefEClass = createEClass(SCOPING_DEF);
-    createEReference(scopingDefEClass, SCOPING_DEF__CONTRIBUTED_CLASSES);
-    createEReference(scopingDefEClass, SCOPING_DEF__CONTRIBUTION);
-    createEReference(scopingDefEClass, SCOPING_DEF__OCCLUDING_DEFS);
+    provisionDefEClass = createEClass(PROVISION_DEF);
+    createEReference(provisionDefEClass, PROVISION_DEF__TARGETS_DEF);
+    createEReference(provisionDefEClass, PROVISION_DEF__CONTRIBUTION);
+    createEReference(provisionDefEClass, PROVISION_DEF__OCCLUDING_DEFS);
+
+    targetsDefEClass = createEClass(TARGETS_DEF);
+    createEReference(targetsDefEClass, TARGETS_DEF__TARGET_CLASSES);
 
     occludingDefEClass = createEClass(OCCLUDING_DEF);
     createEReference(occludingDefEClass, OCCLUDING_DEF__CONTRIBUTION);
@@ -1530,9 +1541,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
 
     exportDefEClass = createEClass(EXPORT_DEF);
     createEReference(exportDefEClass, EXPORT_DEF__SELECTION_DEF);
-    createEReference(exportDefEClass, EXPORT_DEF__EXPORTED_CLASS);
-    createEReference(exportDefEClass, EXPORT_DEF__CONTRIBUTION);
-    createEReference(exportDefEClass, EXPORT_DEF__OCCLUDING_DEFS);
+    createEReference(exportDefEClass, EXPORT_DEF__PROVISION_DEFS);
 
     helpersSectEClass = createEClass(HELPERS_SECT);
     createEReference(helpersSectEClass, HELPERS_SECT__CLASS_HELPERS);
@@ -1684,11 +1693,11 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     initEReference(getFilterDef_Expression(), theEssentialOCLCSPackage.getExpCS(), null, "expression", null, 0, 1, FilterDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(qualificationDefEClass, QualificationDef.class, "QualificationDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getQualificationDef_QualifiedClass(), theBaseCSPackage.getTypedRefCS(), null, "qualifiedClass", null, 0, 1, QualificationDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQualificationDef_TargetsDef(), this.getTargetsDef(), null, "targetsDef", null, 0, 1, QualificationDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getQualificationDef_Contribution(), this.getElementsContribExp(), null, "contribution", null, 0, -1, QualificationDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementsContribExpEClass, ElementsContribExp.class, "ElementsContribExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getElementsContribExp_IsFollowing(), theEcorePackage.getEBoolean(), "isFollowing", null, 0, 1, ElementsContribExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getElementsContribExp_IsPreceding(), theEcorePackage.getEBoolean(), "isPreceding", null, 0, 1, ElementsContribExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getElementsContribExp_IsImported(), theEcorePackage.getEBoolean(), "isImported", null, 0, 1, ElementsContribExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElementsContribExp_Expression(), theEssentialOCLCSPackage.getExpCS(), null, "expression", null, 0, 1, ElementsContribExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1697,12 +1706,15 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     initEAttribute(getScopeDef_SameScope(), theEcorePackage.getEBoolean(), "sameScope", null, 0, 1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScopeDef_EmptyScope(), theEcorePackage.getEBoolean(), "emptyScope", null, 0, 1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScopeDef_AlsoExports(), theEcorePackage.getEBoolean(), "alsoExports", null, 0, 1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScopeDef_ScopingDefs(), this.getScopingDef(), null, "scopingDefs", null, 0, -1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScopeDef_ProvisionDefs(), this.getProvisionDef(), null, "provisionDefs", null, 0, -1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(scopingDefEClass, ScopingDef.class, "ScopingDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getScopingDef_ContributedClasses(), theBaseCSPackage.getTypedRefCS(), null, "contributedClasses", null, 0, -1, ScopingDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScopingDef_Contribution(), this.getContributionDef(), null, "contribution", null, 0, 1, ScopingDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScopingDef_OccludingDefs(), this.getOccludingDef(), null, "occludingDefs", null, 0, -1, ScopingDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(provisionDefEClass, ProvisionDef.class, "ProvisionDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProvisionDef_TargetsDef(), this.getTargetsDef(), null, "targetsDef", null, 0, 1, ProvisionDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProvisionDef_Contribution(), this.getContributionDef(), null, "contribution", null, 0, 1, ProvisionDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProvisionDef_OccludingDefs(), this.getOccludingDef(), null, "occludingDefs", null, 0, -1, ProvisionDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(targetsDefEClass, TargetsDef.class, "TargetsDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTargetsDef_TargetClasses(), theBaseCSPackage.getTypedRefCS(), null, "targetClasses", null, 0, -1, TargetsDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(occludingDefEClass, OccludingDef.class, "OccludingDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOccludingDef_Contribution(), this.getContributionDef(), null, "contribution", null, 0, 1, OccludingDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1714,9 +1726,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
 
     initEClass(exportDefEClass, ExportDef.class, "ExportDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExportDef_SelectionDef(), this.getSelectionDef(), null, "selectionDef", null, 0, 1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExportDef_ExportedClass(), theBaseCSPackage.getTypedRefCS(), null, "exportedClass", null, 0, 1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExportDef_Contribution(), this.getContributionDef(), null, "contribution", null, 0, 1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExportDef_OccludingDefs(), this.getOccludingDef(), null, "occludingDefs", null, 0, -1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExportDef_ProvisionDefs(), this.getProvisionDef(), null, "provisionDefs", null, 0, -1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(helpersSectEClass, HelpersSect.class, "HelpersSect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getHelpersSect_ClassHelpers(), this.getClassHelper(), null, "classHelpers", null, 0, -1, HelpersSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

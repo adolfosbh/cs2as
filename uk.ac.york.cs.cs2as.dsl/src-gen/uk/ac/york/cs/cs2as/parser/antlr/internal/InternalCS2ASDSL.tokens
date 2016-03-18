@@ -57,7 +57,6 @@
 'extends'=118
 'false'=99
 'filtered'=38
-'following'=41
 'for'=49
 'from'=25
 'helpers'=53
@@ -82,11 +81,12 @@
 'occluding'=48
 'or'=71
 'pre'=103
+'preceding'=41
 'qualifies'=37
 'redefine'=28
-'scopes'=44
+'scopes'=43
 'scopes-adding'=45
-'scopes-occluding'=43
+'scopes-occluding'=44
 'scopes-resetting'=46
 'self'=114
 'source'=16

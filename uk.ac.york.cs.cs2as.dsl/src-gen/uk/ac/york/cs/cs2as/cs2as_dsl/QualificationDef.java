@@ -6,8 +6,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Qualification Def</b></em>'.
@@ -17,7 +15,7 @@ import org.eclipse.ocl.xtext.basecs.TypedRefCS;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getQualifiedClass <em>Qualified Class</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getTargetsDef <em>Targets Def</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getContribution <em>Contribution</em>}</li>
  * </ul>
  *
@@ -28,30 +26,30 @@ import org.eclipse.ocl.xtext.basecs.TypedRefCS;
 public interface QualificationDef extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Qualified Class</b></em>' containment reference.
+   * Returns the value of the '<em><b>Targets Def</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Qualified Class</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Targets Def</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Qualified Class</em>' containment reference.
-   * @see #setQualifiedClass(TypedRefCS)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getQualificationDef_QualifiedClass()
+   * @return the value of the '<em>Targets Def</em>' containment reference.
+   * @see #setTargetsDef(TargetsDef)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getQualificationDef_TargetsDef()
    * @model containment="true"
    * @generated
    */
-  TypedRefCS getQualifiedClass();
+  TargetsDef getTargetsDef();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getQualifiedClass <em>Qualified Class</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getTargetsDef <em>Targets Def</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Qualified Class</em>' containment reference.
-   * @see #getQualifiedClass()
+   * @param value the new value of the '<em>Targets Def</em>' containment reference.
+   * @see #getTargetsDef()
    * @generated
    */
-  void setQualifiedClass(TypedRefCS value);
+  void setTargetsDef(TargetsDef value);
 
   /**
    * Returns the value of the '<em><b>Contribution</b></em>' containment reference list.

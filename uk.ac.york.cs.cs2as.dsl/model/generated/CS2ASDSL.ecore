@@ -109,13 +109,13 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QualificationDef">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiedClass" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//TypedRefCS"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetsDef" eType="#//TargetsDef"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contribution" upperBound="-1"
         eType="#//ElementsContribExp" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementsContribExp">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFollowing" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPreceding" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isImported" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//ExpCS"
         containment="true"/>
@@ -126,17 +126,21 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sameScope" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="emptyScope" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alsoExports" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scopingDefs" upperBound="-1"
-        eType="#//ScopingDef" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provisionDefs" upperBound="-1"
+        eType="#//ProvisionDef" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ScopingDef">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contributedClasses" upperBound="-1"
-        eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//TypedRefCS"
+  <eClassifiers xsi:type="ecore:EClass" name="ProvisionDef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetsDef" eType="#//TargetsDef"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contribution" eType="#//ContributionDef"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="occludingDefs" upperBound="-1"
         eType="#//OccludingDef" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TargetsDef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetClasses" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//TypedRefCS"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OccludingDef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contribution" eType="#//ContributionDef"
@@ -150,12 +154,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExportDef" eSuperTypes="#//ClassNameResolutionStmnt">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectionDef" eType="#//SelectionDef"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="exportedClass" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//TypedRefCS"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contribution" eType="#//ContributionDef"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="occludingDefs" upperBound="-1"
-        eType="#//OccludingDef" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provisionDefs" upperBound="-1"
+        eType="#//ProvisionDef" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HelpersSect">
     <eStructuralFeatures xsi:type="ecore:EReference" name="classHelpers" upperBound="-1"

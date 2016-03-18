@@ -253,10 +253,17 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.SCOPING_DEF:
+      case Cs2as_dslPackage.PROVISION_DEF:
       {
-        ScopingDef scopingDef = (ScopingDef)theEObject;
-        T result = caseScopingDef(scopingDef);
+        ProvisionDef provisionDef = (ProvisionDef)theEObject;
+        T result = caseProvisionDef(provisionDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.TARGETS_DEF:
+      {
+        TargetsDef targetsDef = (TargetsDef)theEObject;
+        T result = caseTargetsDef(targetsDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -709,17 +716,33 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Scoping Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Provision Def</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Scoping Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Provision Def</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseScopingDef(ScopingDef object)
+  public T caseProvisionDef(ProvisionDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Targets Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Targets Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTargetsDef(TargetsDef object)
   {
     return null;
   }

@@ -24,7 +24,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl#isIsFollowing <em>Is Following</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl#isIsPreceding <em>Is Preceding</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl#isIsImported <em>Is Imported</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl#getExpression <em>Expression</em>}</li>
  * </ul>
@@ -34,24 +34,24 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
 public class ElementsContribExpImpl extends MinimalEObjectImpl.Container implements ElementsContribExp
 {
   /**
-   * The default value of the '{@link #isIsFollowing() <em>Is Following</em>}' attribute.
+   * The default value of the '{@link #isIsPreceding() <em>Is Preceding</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isIsFollowing()
+   * @see #isIsPreceding()
    * @generated
    * @ordered
    */
-  protected static final boolean IS_FOLLOWING_EDEFAULT = false;
+  protected static final boolean IS_PRECEDING_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isIsFollowing() <em>Is Following</em>}' attribute.
+   * The cached value of the '{@link #isIsPreceding() <em>Is Preceding</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isIsFollowing()
+   * @see #isIsPreceding()
    * @generated
    * @ordered
    */
-  protected boolean isFollowing = IS_FOLLOWING_EDEFAULT;
+  protected boolean isPreceding = IS_PRECEDING_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsImported() <em>Is Imported</em>}' attribute.
@@ -109,9 +109,9 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isIsFollowing()
+  public boolean isIsPreceding()
   {
-    return isFollowing;
+    return isPreceding;
   }
 
   /**
@@ -119,12 +119,12 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIsFollowing(boolean newIsFollowing)
+  public void setIsPreceding(boolean newIsPreceding)
   {
-    boolean oldIsFollowing = isFollowing;
-    isFollowing = newIsFollowing;
+    boolean oldIsPreceding = isPreceding;
+    isPreceding = newIsPreceding;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_FOLLOWING, oldIsFollowing, isFollowing));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_PRECEDING, oldIsPreceding, isPreceding));
   }
 
   /**
@@ -224,8 +224,8 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_FOLLOWING:
-        return isIsFollowing();
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_PRECEDING:
+        return isIsPreceding();
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_IMPORTED:
         return isIsImported();
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__EXPRESSION:
@@ -244,8 +244,8 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_FOLLOWING:
-        setIsFollowing((Boolean)newValue);
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_PRECEDING:
+        setIsPreceding((Boolean)newValue);
         return;
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_IMPORTED:
         setIsImported((Boolean)newValue);
@@ -267,8 +267,8 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_FOLLOWING:
-        setIsFollowing(IS_FOLLOWING_EDEFAULT);
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_PRECEDING:
+        setIsPreceding(IS_PRECEDING_EDEFAULT);
         return;
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_IMPORTED:
         setIsImported(IS_IMPORTED_EDEFAULT);
@@ -290,8 +290,8 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_FOLLOWING:
-        return isFollowing != IS_FOLLOWING_EDEFAULT;
+      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_PRECEDING:
+        return isPreceding != IS_PRECEDING_EDEFAULT;
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__IS_IMPORTED:
         return isImported != IS_IMPORTED_EDEFAULT;
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__EXPRESSION:
@@ -311,8 +311,8 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (isFollowing: ");
-    result.append(isFollowing);
+    result.append(" (isPreceding: ");
+    result.append(isPreceding);
     result.append(", isImported: ");
     result.append(isImported);
     result.append(')');

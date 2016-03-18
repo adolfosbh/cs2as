@@ -10,6 +10,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
@@ -22,12 +23,14 @@ public class CS2ASDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CS2ASDSLGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q;
+	protected AbstractElementAlias match_ScopeDef_ScopesKeyword_1_0_or_ScopesOccludingKeyword_1_1;
 	protected AbstractElementAlias match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CS2ASDSLGrammarAccess) access;
 		match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getMultiplicityCSAccess().getVerticalLineQuestionMarkKeyword_2_0());
+		match_ScopeDef_ScopesKeyword_1_0_or_ScopesOccludingKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getScopeDefAccess().getScopesKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getScopeDefAccess().getScopesOccludingKeyword_1_1()));
 		match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getLeftParenthesisKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getRightParenthesisKeyword_1_2()));
 	}
 	
@@ -45,6 +48,8 @@ public class CS2ASDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q.equals(syntax))
 				emit_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ScopeDef_ScopesKeyword_1_0_or_ScopesOccludingKeyword_1_1.equals(syntax))
+				emit_ScopeDef_ScopesKeyword_1_0_or_ScopesOccludingKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q.equals(syntax))
 				emit_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -63,6 +68,20 @@ public class CS2ASDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     upperBound=UPPER (ambiguity) ']' (rule end)
 	 */
 	protected void emit_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'scopes' | 'scopes-occluding'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) alsoExports?='also-exports'
+	 *     (rule start) (ambiguity) provisionDefs+=ProvisionDef
+	 *     selectionDef=SelectionDef (ambiguity) alsoExports?='also-exports'
+	 *     selectionDef=SelectionDef (ambiguity) provisionDefs+=ProvisionDef
+	 */
+	protected void emit_ScopeDef_ScopesKeyword_1_0_or_ScopesOccludingKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -15,7 +15,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsFollowing <em>Is Following</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsPreceding <em>Is Preceding</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsImported <em>Is Imported</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#getExpression <em>Expression</em>}</li>
  * </ul>
@@ -27,30 +27,30 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 public interface ElementsContribExp extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Is Following</b></em>' attribute.
+   * Returns the value of the '<em><b>Is Preceding</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Is Following</em>' attribute isn't clear,
+   * If the meaning of the '<em>Is Preceding</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Is Following</em>' attribute.
-   * @see #setIsFollowing(boolean)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getElementsContribExp_IsFollowing()
+   * @return the value of the '<em>Is Preceding</em>' attribute.
+   * @see #setIsPreceding(boolean)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getElementsContribExp_IsPreceding()
    * @model
    * @generated
    */
-  boolean isIsFollowing();
+  boolean isIsPreceding();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsFollowing <em>Is Following</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsPreceding <em>Is Preceding</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Is Following</em>' attribute.
-   * @see #isIsFollowing()
+   * @param value the new value of the '<em>Is Preceding</em>' attribute.
+   * @see #isIsPreceding()
    * @generated
    */
-  void setIsFollowing(boolean value);
+  void setIsPreceding(boolean value);
 
   /**
    * Returns the value of the '<em><b>Is Imported</b></em>' attribute.

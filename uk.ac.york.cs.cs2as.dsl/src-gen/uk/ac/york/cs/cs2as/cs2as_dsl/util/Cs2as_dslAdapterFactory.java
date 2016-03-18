@@ -199,9 +199,14 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createScopeDefAdapter();
       }
       @Override
-      public Adapter caseScopingDef(ScopingDef object)
+      public Adapter caseProvisionDef(ProvisionDef object)
       {
-        return createScopingDefAdapter();
+        return createProvisionDefAdapter();
+      }
+      @Override
+      public Adapter caseTargetsDef(TargetsDef object)
+      {
+        return createTargetsDefAdapter();
       }
       @Override
       public Adapter caseOccludingDef(OccludingDef object)
@@ -661,16 +666,31 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef <em>Scoping Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef <em>Provision Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef
    * @generated
    */
-  public Adapter createScopingDefAdapter()
+  public Adapter createProvisionDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef <em>Targets Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef
+   * @generated
+   */
+  public Adapter createTargetsDefAdapter()
   {
     return null;
   }

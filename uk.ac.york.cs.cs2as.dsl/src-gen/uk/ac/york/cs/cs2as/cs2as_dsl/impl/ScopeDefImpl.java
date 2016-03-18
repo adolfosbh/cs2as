@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
 
 /**
@@ -34,7 +34,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isSameScope <em>Same Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isEmptyScope <em>Empty Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isAlsoExports <em>Also Exports</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getScopingDefs <em>Scoping Defs</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getProvisionDefs <em>Provision Defs</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,14 +112,14 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
   protected boolean alsoExports = ALSO_EXPORTS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getScopingDefs() <em>Scoping Defs</em>}' containment reference list.
+   * The cached value of the '{@link #getProvisionDefs() <em>Provision Defs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getScopingDefs()
+   * @see #getProvisionDefs()
    * @generated
    * @ordered
    */
-  protected EList<ScopingDef> scopingDefs;
+  protected EList<ProvisionDef> provisionDefs;
 
   /**
    * <!-- begin-user-doc -->
@@ -264,13 +264,13 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ScopingDef> getScopingDefs()
+  public EList<ProvisionDef> getProvisionDefs()
   {
-    if (scopingDefs == null)
+    if (provisionDefs == null)
     {
-      scopingDefs = new EObjectContainmentEList<ScopingDef>(ScopingDef.class, this, Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS);
+      provisionDefs = new EObjectContainmentEList<ProvisionDef>(ProvisionDef.class, this, Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS);
     }
-    return scopingDefs;
+    return provisionDefs;
   }
 
   /**
@@ -285,8 +285,8 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
     {
       case Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF:
         return basicSetSelectionDef(null, msgs);
-      case Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS:
-        return ((InternalEList<?>)getScopingDefs()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS:
+        return ((InternalEList<?>)getProvisionDefs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -309,8 +309,8 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
         return isEmptyScope();
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         return isAlsoExports();
-      case Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS:
-        return getScopingDefs();
+      case Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS:
+        return getProvisionDefs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -338,9 +338,9 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         setAlsoExports((Boolean)newValue);
         return;
-      case Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS:
-        getScopingDefs().clear();
-        getScopingDefs().addAll((Collection<? extends ScopingDef>)newValue);
+      case Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS:
+        getProvisionDefs().clear();
+        getProvisionDefs().addAll((Collection<? extends ProvisionDef>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -368,8 +368,8 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         setAlsoExports(ALSO_EXPORTS_EDEFAULT);
         return;
-      case Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS:
-        getScopingDefs().clear();
+      case Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS:
+        getProvisionDefs().clear();
         return;
     }
     super.eUnset(featureID);
@@ -393,8 +393,8 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
         return emptyScope != EMPTY_SCOPE_EDEFAULT;
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         return alsoExports != ALSO_EXPORTS_EDEFAULT;
-      case Cs2as_dslPackage.SCOPE_DEF__SCOPING_DEFS:
-        return scopingDefs != null && !scopingDefs.isEmpty();
+      case Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS:
+        return provisionDefs != null && !provisionDefs.isEmpty();
     }
     return super.eIsSet(featureID);
   }

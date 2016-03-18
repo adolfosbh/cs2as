@@ -18,39 +18,38 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
-
 import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ScopingDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Scoping Def</b></em>'.
+ * An implementation of the model object '<em><b>Provision Def</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopingDefImpl#getContributedClasses <em>Contributed Classes</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopingDefImpl#getContribution <em>Contribution</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopingDefImpl#getOccludingDefs <em>Occluding Defs</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionDefImpl#getTargetsDef <em>Targets Def</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionDefImpl#getContribution <em>Contribution</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionDefImpl#getOccludingDefs <em>Occluding Defs</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ScopingDefImpl extends MinimalEObjectImpl.Container implements ScopingDef
+public class ProvisionDefImpl extends MinimalEObjectImpl.Container implements ProvisionDef
 {
   /**
-   * The cached value of the '{@link #getContributedClasses() <em>Contributed Classes</em>}' containment reference list.
+   * The cached value of the '{@link #getTargetsDef() <em>Targets Def</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContributedClasses()
+   * @see #getTargetsDef()
    * @generated
    * @ordered
    */
-  protected EList<TypedRefCS> contributedClasses;
+  protected TargetsDef targetsDef;
 
   /**
    * The cached value of the '{@link #getContribution() <em>Contribution</em>}' containment reference.
@@ -77,7 +76,7 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ScopingDefImpl()
+  protected ProvisionDefImpl()
   {
     super();
   }
@@ -90,7 +89,7 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
   @Override
   protected EClass eStaticClass()
   {
-    return Cs2as_dslPackage.Literals.SCOPING_DEF;
+    return Cs2as_dslPackage.Literals.PROVISION_DEF;
   }
 
   /**
@@ -98,13 +97,47 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TypedRefCS> getContributedClasses()
+  public TargetsDef getTargetsDef()
   {
-    if (contributedClasses == null)
+    return targetsDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetTargetsDef(TargetsDef newTargetsDef, NotificationChain msgs)
+  {
+    TargetsDef oldTargetsDef = targetsDef;
+    targetsDef = newTargetsDef;
+    if (eNotificationRequired())
     {
-      contributedClasses = new EObjectContainmentEList<TypedRefCS>(TypedRefCS.class, this, Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTED_CLASSES);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF, oldTargetsDef, newTargetsDef);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return contributedClasses;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTargetsDef(TargetsDef newTargetsDef)
+  {
+    if (newTargetsDef != targetsDef)
+    {
+      NotificationChain msgs = null;
+      if (targetsDef != null)
+        msgs = ((InternalEObject)targetsDef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF, null, msgs);
+      if (newTargetsDef != null)
+        msgs = ((InternalEObject)newTargetsDef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF, null, msgs);
+      msgs = basicSetTargetsDef(newTargetsDef, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF, newTargetsDef, newTargetsDef));
   }
 
   /**
@@ -128,7 +161,7 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
     contribution = newContribution;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTION, oldContribution, newContribution);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION, oldContribution, newContribution);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -145,14 +178,14 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
     {
       NotificationChain msgs = null;
       if (contribution != null)
-        msgs = ((InternalEObject)contribution).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTION, null, msgs);
+        msgs = ((InternalEObject)contribution).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION, null, msgs);
       if (newContribution != null)
-        msgs = ((InternalEObject)newContribution).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTION, null, msgs);
+        msgs = ((InternalEObject)newContribution).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION, null, msgs);
       msgs = basicSetContribution(newContribution, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTION, newContribution, newContribution));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION, newContribution, newContribution));
   }
 
   /**
@@ -164,7 +197,7 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
   {
     if (occludingDefs == null)
     {
-      occludingDefs = new EObjectContainmentEList<OccludingDef>(OccludingDef.class, this, Cs2as_dslPackage.SCOPING_DEF__OCCLUDING_DEFS);
+      occludingDefs = new EObjectContainmentEList<OccludingDef>(OccludingDef.class, this, Cs2as_dslPackage.PROVISION_DEF__OCCLUDING_DEFS);
     }
     return occludingDefs;
   }
@@ -179,11 +212,11 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTED_CLASSES:
-        return ((InternalEList<?>)getContributedClasses()).basicRemove(otherEnd, msgs);
-      case Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTION:
+      case Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF:
+        return basicSetTargetsDef(null, msgs);
+      case Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION:
         return basicSetContribution(null, msgs);
-      case Cs2as_dslPackage.SCOPING_DEF__OCCLUDING_DEFS:
+      case Cs2as_dslPackage.PROVISION_DEF__OCCLUDING_DEFS:
         return ((InternalEList<?>)getOccludingDefs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -199,11 +232,11 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTED_CLASSES:
-        return getContributedClasses();
-      case Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTION:
+      case Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF:
+        return getTargetsDef();
+      case Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION:
         return getContribution();
-      case Cs2as_dslPackage.SCOPING_DEF__OCCLUDING_DEFS:
+      case Cs2as_dslPackage.PROVISION_DEF__OCCLUDING_DEFS:
         return getOccludingDefs();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -220,14 +253,13 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTED_CLASSES:
-        getContributedClasses().clear();
-        getContributedClasses().addAll((Collection<? extends TypedRefCS>)newValue);
+      case Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF:
+        setTargetsDef((TargetsDef)newValue);
         return;
-      case Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTION:
+      case Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION:
         setContribution((ContributionDef)newValue);
         return;
-      case Cs2as_dslPackage.SCOPING_DEF__OCCLUDING_DEFS:
+      case Cs2as_dslPackage.PROVISION_DEF__OCCLUDING_DEFS:
         getOccludingDefs().clear();
         getOccludingDefs().addAll((Collection<? extends OccludingDef>)newValue);
         return;
@@ -245,13 +277,13 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTED_CLASSES:
-        getContributedClasses().clear();
+      case Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF:
+        setTargetsDef((TargetsDef)null);
         return;
-      case Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTION:
+      case Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION:
         setContribution((ContributionDef)null);
         return;
-      case Cs2as_dslPackage.SCOPING_DEF__OCCLUDING_DEFS:
+      case Cs2as_dslPackage.PROVISION_DEF__OCCLUDING_DEFS:
         getOccludingDefs().clear();
         return;
     }
@@ -268,14 +300,14 @@ public class ScopingDefImpl extends MinimalEObjectImpl.Container implements Scop
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTED_CLASSES:
-        return contributedClasses != null && !contributedClasses.isEmpty();
-      case Cs2as_dslPackage.SCOPING_DEF__CONTRIBUTION:
+      case Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF:
+        return targetsDef != null;
+      case Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION:
         return contribution != null;
-      case Cs2as_dslPackage.SCOPING_DEF__OCCLUDING_DEFS:
+      case Cs2as_dslPackage.PROVISION_DEF__OCCLUDING_DEFS:
         return occludingDefs != null && !occludingDefs.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ScopingDefImpl
+} //ProvisionDefImpl

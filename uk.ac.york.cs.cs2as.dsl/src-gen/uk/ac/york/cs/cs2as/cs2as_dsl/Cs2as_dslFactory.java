@@ -221,13 +221,22 @@ public interface Cs2as_dslFactory extends EFactory
   ScopeDef createScopeDef();
 
   /**
-   * Returns a new object of class '<em>Scoping Def</em>'.
+   * Returns a new object of class '<em>Provision Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Scoping Def</em>'.
+   * @return a new object of class '<em>Provision Def</em>'.
    * @generated
    */
-  ScopingDef createScopingDef();
+  ProvisionDef createProvisionDef();
+
+  /**
+   * Returns a new object of class '<em>Targets Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Targets Def</em>'.
+   * @generated
+   */
+  TargetsDef createTargetsDef();
 
   /**
    * Returns a new object of class '<em>Occluding Def</em>'.
