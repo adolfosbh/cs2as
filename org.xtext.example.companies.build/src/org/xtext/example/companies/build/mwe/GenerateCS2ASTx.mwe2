@@ -30,13 +30,13 @@ Workflow {
     bean = EcoreGenModelSetup { resourceSet = resourceSet }
     
     //  Generate the CS2AS CGed transformation
-    component = @GenerateCGedQVTiTransformation { 
+    component = @org.eclipse.qvtd.cs2as.build.mwe.GenerateCGedQVTiTransformation { 
 		resourceSet = resourceSet
 		oclFileURI = "platform:/resource/org.xtext.example.companies/model/companies.ocl"
 		// FIXME the following only works if the output project are in the same FS folder. Better use a projectName and improve generator 
 		javaFolder = "../org.xtext.example.companies/src-gen"
 		javaPackage = "org.xtext.example.mydsl"
-		lookupSolverClassName = "org.xtext.example.company.lookup.util.CompanyLookupSolver"
+		lookupResolverClassName = "org.xtext.example.company.lookup.util.CompanyLookupSolver"
 		lookupResultItfName = "org.xtext.example.company.lookup.util.CompanyLookupResult"
 	}
 }
