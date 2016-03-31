@@ -29,13 +29,51 @@ public class CompaniesTester {
 		
 		long startAll = System.currentTimeMillis();
 		
-		ResourceSet rSet = new ResourceSetImpl();
 		PivotStandaloneSetup.doSetup();
 		QVTimperativePivotStandaloneSetup.doSetup();
 		QVTcorePivotStandaloneSetup.doSetup();
 		CompleteOCLStandaloneSetup.doSetup();
 		CompaniesStandaloneSetup.doSetup();
-				
+		
+	
+		
+		URI baseURI = URI.createPlatformResourceURI("/org.xtext.example.companies/src/org/xtext/example/mydsl/test/", true);
+	
+		
+		// warmup with model 2
+		System.out.println("* Running Warmup *");
+		for (int i=0; i < 3000 ; i++) {
+			execute_CG(baseURI, "model2.101");
+		}
+		
+		// printMemory();
+        
+		// take measurements
+		baseURI = baseURI.appendSegment("scalability");
+		System.out.println("* Running Final Measurement *");
+		if (RUN_SCALABILITY_TEST) {
+			for (int i=1; i <= NUM_OF_MODELS; i++){
+				System.gc();
+				Thread.sleep(1000);
+				// printMemory();
+				execute_CG(baseURI,  "model"+i+".101");
+			}
+		} else {
+			String modelName = args[0];
+			String fileName = modelName + ".101";
+			for (int i=0; i < 10 ; i++) {
+				execute_CG(baseURI, fileName);
+			}
+		}
+		
+		// printMemory();
+		
+		long endAll = System.currentTimeMillis();
+		System.out.println("Whole process (ms): " + (endAll - startAll));
+	}
+	
+	private static QVTiEnvironmentFactory createEnvFact() {
+		ResourceSet rSet = new ResourceSetImpl();
 		// To use the proper EPackage impl
 		rSet.getPackageRegistry().put(
 				URI.createPlatformResourceURI("org.xtext.example.companies/model/generated/Companies.ecore", true).toString(), 
@@ -44,38 +82,12 @@ public class CompaniesTester {
 				URI.createPlatformResourceURI("org.xtext.example.companies/model/Company.ecore", true).toString(), 
 				CompanyPackage.eINSTANCE);
 		
-		URI baseURI = URI.createPlatformResourceURI("/org.xtext.example.companies/src/org/xtext/example/mydsl/test/", true);
-		QVTiEnvironmentFactory envFact = new QVTiEnvironmentFactory(ProjectManager.CLASS_PATH, rSet);
-		
-		// warmup with model 2
-		System.out.println("* Running Warmup *");
-		for (int i=0; i < 3000 ; i++) {
-			execute_CG(baseURI, envFact, "model2.101");
-		}
-		
-		// take measurements
-		baseURI = baseURI.appendSegment("scalability");
-		System.out.println("* Running Final Measurement *");
-		if (RUN_SCALABILITY_TEST) {
-			for (int i=1; i <= NUM_OF_MODELS; i++){
-				System.gc();
-				Thread.sleep(1000);
-				execute_CG(baseURI, envFact, "model"+i+".101");
-			}
-		} else {
-			String modelName = args[0];
-			String fileName = modelName + ".101";
-			for (int i=0; i < 10 ; i++) {
-				execute_CG(baseURI, envFact, fileName);
-			}
-		}
-		
-		long endAll = System.currentTimeMillis();
-		System.out.println("Whole process (ms): " + (endAll - startAll));
+		return new QVTiEnvironmentFactory(ProjectManager.CLASS_PATH, rSet);
 	}
 			
-	private static void execute_CG(URI baseURI, QVTiEnvironmentFactory envFact, String fileName) throws Exception {
+	private static void execute_CG(URI baseURI, String fileName) throws Exception {
 		
+		QVTiEnvironmentFactory envFact = createEnvFact();
 		TransformationExecutor evaluator = new QVTiTransformationExecutor(envFact, companies_qvtp_qvtcas.class);
 		Transformer tx = evaluator.getTransformer();
 		
@@ -93,24 +105,27 @@ public class CompaniesTester {
 		outputResource.getContents().addAll(tx.getRootEObjects("rightAS"));
 		outputResource.save(null);
 		assert(success == true);
+		envFact.dispose();
 	}
 	
-//	private static Transformation getTransformation(EnvironmentFactory envFact) {
-//		ResourceSet rSet = envFact.getMetamodelManager().getASResourceSet();
-//		URI txURI = URI.createPlatformResourceURI("/org.xtext.example.companies/model/companies.qvtias", true);
-//		
-//		Resource resource = rSet.getResource(txURI, true);
-//		for (EObject eObject : resource.getContents()) {
-//			if (eObject instanceof ImperativeModel) {
-//				for (org.eclipse.ocl.pivot.Package pPackage : ((ImperativeModel)eObject).getOwnedPackages()) {
-//					for (org.eclipse.ocl.pivot.Class pClass : pPackage.getOwnedClasses()) {
-//						if (pClass instanceof Transformation) {
-//							return  (Transformation) pClass;
-//						}
-//					}
-//				}
-//			}
-//		}
-//		throw new IllegalStateException("No transformation");
-//	}
+	
+	private static void printMemory() {
+		
+		Runtime runtime = Runtime.getRuntime();
+		int mb = 1024*1024;
+		
+        System.out.println("Max Memory (Mb):" + runtime.maxMemory() / mb);
+        
+        System.out.println("Total Memory (Mb):" + runtime.totalMemory() / mb);
+        
+        System.out.println("Used Memory (Mb):"
+            + (runtime.totalMemory() - runtime.freeMemory()) / mb);
+ 
+        System.out.println("Free Memory (Mb):"
+            + runtime.freeMemory() / mb);
+         
+        
+ 
+
+	}
 }

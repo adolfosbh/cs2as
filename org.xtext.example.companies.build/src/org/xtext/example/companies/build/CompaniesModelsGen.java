@@ -53,7 +53,7 @@ public class CompaniesModelsGen {
 	
 	private static boolean GEN_SERIES_OF_MODELS = true;
 	private static int MIN_NUM_ELEMENTS = 35;
-	private static int MAX_NUM_ELEMENTS = 100000;
+	private static int MAX_NUM_ELEMENTS = 1000000;
 	private static int NUM_MODELS = 25;
 				
 	private static boolean MENTORS_IN_ALL_MODEL = true; 
