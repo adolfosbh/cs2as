@@ -7,7 +7,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.xtext.example.mydsl.test.CompaniesTester"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="model1"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="model8"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.xtext.example.companies"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx4096M"/>
 </launchConfiguration>
