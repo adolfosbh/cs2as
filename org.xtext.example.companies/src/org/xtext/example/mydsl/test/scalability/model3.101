@@ -1,0 +1,86 @@
+company "aCompany" { department "D1_" { manager "D1_manager" { address
+"D1_manager_addr" salary 10551.18001517284 mentor "D1_1_1_manager" } employee
+"D1_employee1" { address "D1_employee1_addr" salary 10846.88296598966 mentor
+"D1_2_2_employee2" } employee "D1_employee2" { address "D1_employee2_addr"
+salary 10651.1795486226 } employee "D1_employee3" { address
+"D1_employee3_addr" salary 11937.271988302058 mentor "D1_2_2_employee6" }
+employee "D1_employee4" { address "D1_employee4_addr" salary
+10706.666346364947 } employee "D1_employee5" { address "D1_employee5_addr"
+salary 11756.91747923644 mentor "D2_1_2_employee6" } employee "D1_employee6" {
+address "D1_employee6_addr" salary 10086.24553919668 mentor "D2_2_employee6" }
+employee "D1_employee7" { address "D1_employee7_addr" salary
+11594.769692349937 } employee "D1_employee8" { address "D1_employee8_addr"
+salary 10686.916522773003 mentor "D2_2_2_employee2" } employee "D1_employee9"
+{ address "D1_employee9_addr" salary 10521.384774601018 } department "D1_1_" {
+manager "D1_1_manager" { address "D1_1_manager_addr" salary 10330.913432353274
+mentor "D1_2_2_manager" } employee "D1_1_employee1" { address
+"D1_1_employee1_addr" salary 10936.552543678008 mentor "D1_1_2_employee9" }
+employee "D1_1_employee2" { address "D1_1_employee2_addr" salary
+10882.588109611614 } employee "D1_1_employee3" { address "D1_1_employee3_addr"
+salary 11951.034673923099 } employee "D1_1_employee4" { address
+"D1_1_employee4_addr" salary 10401.048312076151 mentor "D2_2_employee6" }
+employee "D1_1_employee5" { address "D1_1_employee5_addr" salary
+11683.184048412395 mentor "D2_2_employee1" } employee "D1_1_employee6" {
+address "D1_1_employee6_addr" salary 11411.165393991496 } employee
+"D1_1_employee7" { address "D1_1_employee7_addr" salary 11300.731252427817
+mentor "D2_1_employee2" } employee "D1_1_employee8" { address
+"D1_1_employee8_addr" salary 10032.659973047565 } employee "D1_1_employee9" {
+address "D1_1_employee9_addr" salary 10230.110942886962 mentor
+"D2_1_1_employee2" } } department "D1_2_" { manager "D1_2_manager" { address
+"D1_2_manager_addr" salary 11713.816508938602 mentor "D1_2_manager" } employee
+"D1_2_employee1" { address "D1_2_employee1_addr" salary 10859.380355319012
+mentor "D1_1_2_employee9" } employee "D1_2_employee2" { address
+"D1_2_employee2_addr" salary 10144.279157138 mentor "D1_2_2_employee2" }
+employee "D1_2_employee3" { address "D1_2_employee3_addr" salary
+10429.46133603165 mentor "D2_1_employee9" } employee "D1_2_employee4" {
+address "D1_2_employee4_addr" salary 11129.858042769227 mentor
+"D2_1_1_employee5" } employee "D1_2_employee5" { address "D1_2_employee5_addr"
+salary 11116.493554636552 mentor "D1_1_employee1" } employee "D1_2_employee6"
+{ address "D1_2_employee6_addr" salary 10545.829194996699 mentor
+"D1_1_employee1" } employee "D1_2_employee7" { address "D1_2_employee7_addr"
+salary 10115.657406294507 mentor "D1_2_1_employee7" } employee
+"D1_2_employee8" { address "D1_2_employee8_addr" salary 10677.824384337178
+mentor "D2_2_1_employee4" } employee "D1_2_employee9" { address
+"D1_2_employee9_addr" salary 10544.643645819493 mentor "D1_1_employee1" } } }
+department "D2_" { manager "D2_manager" { address "D2_manager_addr" salary
+11748.205402761003 } employee "D2_employee1" { address "D2_employee1_addr"
+salary 11162.825040177862 mentor "D2_2_employee4" } employee "D2_employee2" {
+address "D2_employee2_addr" salary 11969.538224675502 mentor
+"D1_2_2_employee4" } employee "D2_employee3" { address "D2_employee3_addr"
+salary 11131.03963679344 } employee "D2_employee4" { address
+"D2_employee4_addr" salary 11484.933050176582 } employee "D2_employee5" {
+address "D2_employee5_addr" salary 10539.566668863285 } employee
+"D2_employee6" { address "D2_employee6_addr" salary 10481.481570560118 mentor
+"D1_2_1_employee9" } employee "D2_employee7" { address "D2_employee7_addr"
+salary 11873.081780118428 mentor "D2_2_employee1" } employee "D2_employee8" {
+address "D2_employee8_addr" salary 11319.46919914777 } employee "D2_employee9"
+{ address "D2_employee9_addr" salary 10736.733727661445 mentor
+"D1_1_1_employee7" } department "D2_1_" { manager "D2_1_manager" { address
+"D2_1_manager_addr" salary 11058.52131392789 mentor "D1_2_manager" } employee
+"D2_1_employee1" { address "D2_1_employee1_addr" salary 10290.263719871638 }
+employee "D2_1_employee2" { address "D2_1_employee2_addr" salary
+11308.390339820944 } employee "D2_1_employee3" { address "D2_1_employee3_addr"
+salary 11763.77479153278 mentor "D2_1_employee7" } employee "D2_1_employee4" {
+address "D2_1_employee4_addr" salary 11467.434522276308 } employee
+"D2_1_employee5" { address "D2_1_employee5_addr" salary 10060.397578161947
+mentor "D1_1_employee9" } employee "D2_1_employee6" { address
+"D2_1_employee6_addr" salary 10228.980757963136 mentor "D2_1_2_employee2" }
+employee "D2_1_employee7" { address "D2_1_employee7_addr" salary
+10465.406450469372 } employee "D2_1_employee8" { address "D2_1_employee8_addr"
+salary 11249.41723779595 mentor "D2_2_1_employee4" } employee "D2_1_employee9"
+{ address "D2_1_employee9_addr" salary 10550.324166566968 mentor
+"D1_1_1_employee1" } } department "D2_2_" { manager "D2_2_manager" { address
+"D2_2_manager_addr" salary 11570.039595313729 mentor "D1_2_manager" } employee
+"D2_2_employee1" { address "D2_2_employee1_addr" salary 10270.036675171468
+mentor "D2_1_1_employee1" } employee "D2_2_employee2" { address
+"D2_2_employee2_addr" salary 10060.169005587526 } employee "D2_2_employee3" {
+address "D2_2_employee3_addr" salary 11134.018692462636 } employee
+"D2_2_employee4" { address "D2_2_employee4_addr" salary 10626.437941063883
+mentor "D2_1_1_employee1" } employee "D2_2_employee5" { address
+"D2_2_employee5_addr" salary 10895.812496595427 } employee "D2_2_employee6" {
+address "D2_2_employee6_addr" salary 10905.413535095768 } employee
+"D2_2_employee7" { address "D2_2_employee7_addr" salary 10076.399941171772
+mentor "D2_1_employee9" } employee "D2_2_employee8" { address
+"D2_2_employee8_addr" salary 11253.613263276531 } employee "D2_2_employee9" {
+address "D2_2_employee9_addr" salary 10231.94479481335 mentor "D2_2_employee5"
+} } } }
