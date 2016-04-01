@@ -232,7 +232,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		val qualifications = object.qualifications;
 		val StringBuilder sb = new StringBuilder();
 		if (qualifications != null) {			
-			val List<ElementsContribExp> qualificationConstribs = newArrayList();
+			//val List<ElementsContribExp> qualificationConstribs = newArrayList();
 			for (qualification : qualifications) {
 				for (targetClass : qualification.targetsDef.targetClasses){
 					val className = targetClass.doSwitch;
@@ -244,27 +244,23 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 					sb.append('''
 						
 					def : _lookupQualified«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
-						let found«nClassName» = _lookup«nClassName»(_qualified_env(), «nameParam»«filterArgs»)
+						let found«nClassName» = _lookup«nClassName»(_qualified_env_«nClassName»(), «nameParam»«filterArgs»)
 						in  if found«nClassName»->isEmpty()
 							then null
 							else found«nClassName»->first()
 							endif
+					def : _qualified_env_«nClassName»() : «lookupPck»::«lookupEnv» =
+						let env = «lookupPck»::«lookupEnv»{}
+						in env
+						«FOR contrib : qualification.contribution»«contrib.doSwitch»
+						«ENDFOR»
 					«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, '', 'Qualified'+nClassName, filterParams, filterArgs)»«ENDIF»
 					''');
-					qualificationConstribs.addAll(qualification.contribution);	
+					//qualificationConstribs.addAll(qualification.contribution);	
 				} 
 			}
 
-			if (! qualificationConstribs.empty) {
-				sb.append('''
-					
-				def : _qualified_env() : «lookupPck»::«lookupEnv» =
-					let env = «lookupPck»::«lookupEnv»{}
-					in env
-						«FOR contrib : qualificationConstribs»«contrib.doSwitch»
-						«ENDFOR»
-				''')	
-			}	
+				
 		}
 		val filter = object.filter;
 		if (filter != null) {

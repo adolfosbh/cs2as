@@ -486,7 +486,6 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       final StringBuilder sb = new StringBuilder();
       boolean _notEquals = (!Objects.equal(qualifications, null));
       if (_notEquals) {
-        final List<ElementsContribExp> qualificationConstribs = CollectionLiterals.<ElementsContribExp>newArrayList();
         for (final QualificationDef qualification : qualifications) {
           TargetsDef _targetsDef = qualification.getTargetsDef();
           EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
@@ -518,7 +517,9 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder.append(nClassName, "\t");
               _builder.append(" = _lookup");
               _builder.append(nClassName, "\t");
-              _builder.append("(_qualified_env(), ");
+              _builder.append("(_qualified_env_");
+              _builder.append(nClassName, "\t");
+              _builder.append("(), ");
               _builder.append(nameParam, "\t");
               _builder.append(filterArgs, "\t");
               _builder.append(")");
@@ -539,6 +540,33 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder.append("\t\t");
               _builder.append("endif");
               _builder.newLine();
+              _builder.append("def : _qualified_env_");
+              _builder.append(nClassName, "");
+              _builder.append("() : ");
+              _builder.append(this.lookupPck, "");
+              _builder.append("::");
+              _builder.append(this.lookupEnv, "");
+              _builder.append(" =");
+              _builder.newLineIfNotEmpty();
+              _builder.append("\t");
+              _builder.append("let env = ");
+              _builder.append(this.lookupPck, "\t");
+              _builder.append("::");
+              _builder.append(this.lookupEnv, "\t");
+              _builder.append("{}");
+              _builder.newLineIfNotEmpty();
+              _builder.append("\t");
+              _builder.append("in env");
+              _builder.newLine();
+              _builder.append("\t");
+              {
+                EList<ElementsContribExp> _contribution = qualification.getContribution();
+                for(final ElementsContribExp contrib : _contribution) {
+                  String _doSwitch = this.doSwitch(contrib);
+                  _builder.append(_doSwitch, "\t");
+                  _builder.newLineIfNotEmpty();
+                }
+              }
               {
                 boolean _notEquals_1 = (!Objects.equal(this.defaultNR, null));
                 if (_notEquals_1) {
@@ -548,42 +576,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               }
               _builder.newLineIfNotEmpty();
               sb.append(_builder);
-              EList<ElementsContribExp> _contribution = qualification.getContribution();
-              qualificationConstribs.addAll(_contribution);
             }
           }
-        }
-        boolean _isEmpty = qualificationConstribs.isEmpty();
-        boolean _not = (!_isEmpty);
-        if (_not) {
-          StringConcatenation _builder = new StringConcatenation();
-          _builder.append("\t");
-          _builder.newLine();
-          _builder.append("def : _qualified_env() : ");
-          _builder.append(this.lookupPck, "");
-          _builder.append("::");
-          _builder.append(this.lookupEnv, "");
-          _builder.append(" =");
-          _builder.newLineIfNotEmpty();
-          _builder.append("\t");
-          _builder.append("let env = ");
-          _builder.append(this.lookupPck, "\t");
-          _builder.append("::");
-          _builder.append(this.lookupEnv, "\t");
-          _builder.append("{}");
-          _builder.newLineIfNotEmpty();
-          _builder.append("\t");
-          _builder.append("in env");
-          _builder.newLine();
-          _builder.append("\t\t");
-          {
-            for(final ElementsContribExp contrib : qualificationConstribs) {
-              String _doSwitch = this.doSwitch(contrib);
-              _builder.append(_doSwitch, "\t\t");
-              _builder.newLineIfNotEmpty();
-            }
-          }
-          sb.append(_builder);
         }
       }
       final FilterDef filter = object.getFilter();
@@ -594,22 +588,22 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         final String className = this.doSwitch(_class_);
         final String nClassName = this.normalizeString(className);
         final String filterParams = this.getParamsText(filter);
-        StringConcatenation _builder_1 = new StringConcatenation();
-        _builder_1.append("\t");
-        _builder_1.newLine();
-        _builder_1.append("def : ");
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("\t");
+        _builder.newLine();
+        _builder.append("def : ");
         String _filterOpName = this.getFilterOpName(nClassName);
-        _builder_1.append(_filterOpName, "");
-        _builder_1.append("(");
-        _builder_1.append(filterParams, "");
-        _builder_1.append(") : Boolean =");
-        _builder_1.newLineIfNotEmpty();
-        _builder_1.append("\t");
+        _builder.append(_filterOpName, "");
+        _builder.append("(");
+        _builder.append(filterParams, "");
+        _builder.append(") : Boolean =");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
         ExpCS _expression = filter.getExpression();
-        String _doSwitch_1 = this.doSwitch(_expression);
-        _builder_1.append(_doSwitch_1, "\t");
-        _builder_1.newLineIfNotEmpty();
-        sb.append(_builder_1);
+        String _doSwitch = this.doSwitch(_expression);
+        _builder.append(_doSwitch, "\t");
+        _builder.newLineIfNotEmpty();
+        sb.append(_builder);
       }
       _xblockexpression = sb.toString();
     }
