@@ -89,7 +89,7 @@ public class CompaniesModelsGen {
 				String modelName = "model" + (i++) +".101";
 				NUM_EMPLOYEE_PER_DEPARMENT = computeRequiredNumOfEmployeePerDepartment(numOfModelElements, NUM_DEPARTMENTS, NUM_OF_SUB_DEPARTMENTS, MAX_DEPTH_OF_SUB_DEPARTMENTS).intValue();
 				mGen.genNewModel(rSet, baseURI.appendSegment(modelName));
-				System.out.println(modelName + " - " + "Number of elements: " + mGen.numOfElements());
+				System.out.println(modelName + " - " + "Number of elements (employee/dept): " + mGen.numOfElements() + " (" + NUM_EMPLOYEE_PER_DEPARMENT +")");
 			}
 		} else {
 			String modelName = "test.101";
