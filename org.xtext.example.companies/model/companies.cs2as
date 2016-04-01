@@ -30,8 +30,8 @@ nameresolution {
 	}
 	
 	Company {
-		nested-scope
-			depts->closure(subdepts)
+		scopes 
+			Employee using depts->closure(subdepts)
 				->collect(employees->including(manager));
 	}
 }
