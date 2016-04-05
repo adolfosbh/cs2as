@@ -26,7 +26,6 @@ def : ast() : as::Employee =
 	as::Employee {
 		name = name,
 		address = address,
-		salary = salary,
-		mentor = ast().lookupEmployee(mentor) 
+		salary = salary 
 	}
 endpackage

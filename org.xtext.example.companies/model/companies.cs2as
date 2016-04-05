@@ -18,7 +18,7 @@ mappings {
 		name := name
 		address := address;
 		salary := salary;
-		mentor := resolve.lookup(Employee, mentor);
+		--mentor := resolve.lookup(Employee, mentor);
 	}
 }
 

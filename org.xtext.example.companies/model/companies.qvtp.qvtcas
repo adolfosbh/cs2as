@@ -386,46 +386,6 @@
           </assignment>
         </bottomPattern>
       </rule>
-      <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.uemployee_2_Employee_mentor" name="uemployee_2_Employee_mentor">
-        <domain xsi:type="qvtcb:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
-          <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee" name="lEmployee" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
-          </guardPattern>
-          <bottomPattern/>
-        </domain>
-        <domain xsi:type="qvtcb:CoreDomain" isEnforceable="true" typedModel="#qT..companies_qvtp_qvtcas.rightAS">
-          <guardPattern/>
-          <bottomPattern/>
-        </domain>
-        <guardPattern/>
-        <bottomPattern>
-          <assignment xsi:type="qvtcb:PropertyAssignment" targetProperty="Company.ecore.oclas#p.company.Employee.mentor">
-            <value xsi:type="pivot:OperationCallExp" isRequired="false" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredOperation="companiesLookup.ocl.oclas#o.company.Visitable.lookupEmployee..ocl.String">
-              <ownedSource xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
-                <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
-                    referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
-                  <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" isImplicit="true"
-                      referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee"/>
-                </ownedSource>
-                <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
-                    referredType="pivot:Class Company.ecore.oclas#T.company.Employee"/>
-              </ownedSource>
-              <ownedArguments xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
-                  referredProperty="generated/Companies.ecore.oclas#p.companies.employee.mentor">
-                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" isImplicit="true"
-                    referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee"/>
-              </ownedArguments>
-            </value>
-            <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
-              <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
-                  referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
-                <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" referredVariable="#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee"/>
-              </ownedSource>
-              <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class" referredType="pivot:Class Company.ecore.oclas#T.company.Employee"/>
-            </slotExpression>
-          </assignment>
-        </bottomPattern>
-      </rule>
     </ownedClasses>
   </ownedPackages>
   <ownedPackages xmi:id="P.$$" name="$$" URI="http://www.eclipse.org/ocl/2015/Orphanage" nsPrefix="orphanage">
