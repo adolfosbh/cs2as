@@ -22,10 +22,30 @@ import org.xtext.example.mydsl.companies.CompaniesPackage;
 
 public class CompaniesTester {
 	
-	private static boolean RUN_SCALABILITY_TEST = true;
-	private static int NUM_OF_MODELS = 25;
+	static enum Usage {
+		TOPOLOGY_EXPERIMENT,
+		SCALABILITY_EXPERIMENT,
+		INCORRECT
+	}
+	
+	private static int NUM_OF_MODELS;
 	
 	public static void main(String[] args) throws Exception {
+		
+		URI baseURI = URI.createPlatformResourceURI("/org.xtext.example.companies/src/org/xtext/example/mydsl/test/", true);
+		Usage usage = checkArgs(args);
+		
+		if (usage == Usage.INCORRECT)  {
+			return;
+		} else {
+			if (Usage.SCALABILITY_EXPERIMENT == usage) {
+				NUM_OF_MODELS = 25;
+				baseURI = baseURI.appendSegment("scalability");
+			} else {
+				NUM_OF_MODELS = 7;
+				
+			}
+		}
 		
 		long startAll = System.currentTimeMillis();
 		
@@ -35,38 +55,23 @@ public class CompaniesTester {
 		CompleteOCLStandaloneSetup.doSetup();
 		CompaniesStandaloneSetup.doSetup();
 		
-	
-		
-		URI baseURI = URI.createPlatformResourceURI("/org.xtext.example.companies/src/org/xtext/example/mydsl/test/", true);
-	
-		
 		// warmup with model 2
 		System.out.println("* Running Warmup *");
 		for (int i=0; i < 3000 ; i++) {
 			execute_CG(baseURI, "model2.101");
 		}
 		
-		// printMemory();
+		printMemory();
         
 		// take measurements
-		baseURI = baseURI.appendSegment("scalability");
-		System.out.println("* Running Final Measurement *");
-		if (RUN_SCALABILITY_TEST) {
-			for (int i=1; i <= NUM_OF_MODELS; i++){
-				System.gc();
-				Thread.sleep(1000);
-				// printMemory();
-				execute_CG(baseURI,  "model"+i+".101");
-			}
-		} else {
-			String modelName = args[0];
-			String fileName = modelName + ".101";
-			for (int i=0; i < 10 ; i++) {
-				execute_CG(baseURI, fileName);
-			}
-		}
 		
-		// printMemory();
+		System.out.println("* Running Final Measurement *");
+		for (int i=1; i <= NUM_OF_MODELS; i++){
+			System.gc();
+			Thread.sleep(1000);
+			// printMemory();
+			execute_CG(baseURI,  "model"+i+".101");
+		}
 		
 		long endAll = System.currentTimeMillis();
 		System.out.println("Whole process (ms): " + (endAll - startAll));
@@ -123,9 +128,17 @@ public class CompaniesTester {
  
         System.out.println("Free Memory (Mb):"
             + runtime.freeMemory() / mb);
-         
-        
- 
-
+	}
+	
+	private static Usage checkArgs(String[] args) {
+		
+		if (args == null || args.length != 1) {
+			System.out.println("Incorrect arguments. Please specify -topology for topology analysis related experiment, otherwise -scalability for the scalability analysis related experiment");
+			return Usage.INCORRECT;
+		}
+		
+		return "-topology".equals(args[0]) ? Usage.TOPOLOGY_EXPERIMENT
+				: "-scalability".equals(args[0]) ? Usage.SCALABILITY_EXPERIMENT
+				: Usage.INCORRECT;
 	}
 }
