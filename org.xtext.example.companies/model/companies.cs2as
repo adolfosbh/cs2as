@@ -29,10 +29,9 @@ nameresolution {
 		named-element name-property name;
 	}
 	
-	Company {
+	Department {
 		scopes 
-			Employee using depts->closure(subdepts)
-				->collect(employees->including(manager));
+			Employee using employees->including(manager);
 	}
 }
 

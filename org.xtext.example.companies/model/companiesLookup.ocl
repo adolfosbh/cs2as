@@ -30,10 +30,10 @@ endpackage
 
 package as
 	
-context Company
+context Department
 def : _unqualified_env_Employee(child : ocl::OclElement) : lookup::LookupEnvironment =
-	parentEnv_Employee().nestedEnv()
-		.addElements(depts->closure(subdepts)->collect(employees->including(manager)))
+	parentEnv_Employee()
+		.addElements(employees->including(manager))
 
 context Visitable
 -- Employee lookup
