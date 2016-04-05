@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com:Company xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com="http://www.company.com" name="aCompany">
+  <depts name="D1_">
+    <manager name="D1_manager" address="D1_manager_addr" salary="10084.11209356916"/>
+    <subdepts name="D1_1_">
+      <manager name="D1_1_manager" address="D1_1_manager_addr" salary="11860.35001688203"/>
+      <employees name="D1_1_employee1" address="D1_1_employee1_addr" salary="10908.284088423405"/>
+    </subdepts>
+    <subdepts name="D1_2_">
+      <manager name="D1_2_manager" address="D1_2_manager_addr" salary="10614.776602730573"/>
+      <employees name="D1_2_employee1" address="D1_2_employee1_addr" salary="10023.84638227426"/>
+    </subdepts>
+    <employees name="D1_employee1" address="D1_employee1_addr" salary="11186.60469884712"/>
+  </depts>
+  <depts name="D2_">
+    <manager name="D2_manager" address="D2_manager_addr" salary="11602.047670717442"/>
+    <subdepts name="D2_1_">
+      <manager name="D2_1_manager" address="D2_1_manager_addr" salary="10581.156004426291"/>
+      <employees name="D2_1_employee1" address="D2_1_employee1_addr" salary="11347.881662710362"/>
+    </subdepts>
+    <subdepts name="D2_2_">
+      <manager name="D2_2_manager" address="D2_2_manager_addr" salary="11782.04257466494" mentor="//@depts.1/@subdepts.1/@manager"/>
+      <employees name="D2_2_employee1" address="D2_2_employee1_addr" salary="10416.065683705263"/>
+    </subdepts>
+    <employees name="D2_employee1" address="D2_employee1_addr" salary="11560.283319532437"/>
+  </depts>
+</com:Company>

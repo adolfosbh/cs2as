@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com:Company xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com="http://www.company.com" name="aCompany">
+  <depts name="D1_">
+    <manager name="D1_manager" address="D1_manager_addr" salary="10815.750979620954"/>
+    <subdepts name="D1_1_">
+      <manager name="D1_1_manager" address="D1_1_manager_addr" salary="10450.197515573138"/>
+      <employees name="D1_1_employee1" address="D1_1_employee1_addr" salary="11846.297604772895"/>
+      <employees name="D1_1_employee2" address="D1_1_employee2_addr" salary="10928.463369942385" mentor="//@depts.0/@subdepts.0/@employees.2"/>
+      <employees name="D1_1_employee3" address="D1_1_employee3_addr" salary="10937.507679007707"/>
+      <employees name="D1_1_employee4" address="D1_1_employee4_addr" salary="11990.999209667563"/>
+      <employees name="D1_1_employee5" address="D1_1_employee5_addr" salary="10057.67700014861"/>
+      <employees name="D1_1_employee6" address="D1_1_employee6_addr" salary="10167.44202429376"/>
+      <employees name="D1_1_employee7" address="D1_1_employee7_addr" salary="11256.733821525397"/>
+      <employees name="D1_1_employee8" address="D1_1_employee8_addr" salary="11583.600067029694"/>
+      <employees name="D1_1_employee9" address="D1_1_employee9_addr" salary="10333.637087730483"/>
+      <employees name="D1_1_employee10" address="D1_1_employee10_addr" salary="11835.33463225368"/>
+      <employees name="D1_1_employee11" address="D1_1_employee11_addr" salary="10707.680273313372"/>
+      <employees name="D1_1_employee12" address="D1_1_employee12_addr" salary="10915.317180505182"/>
+      <employees name="D1_1_employee13" address="D1_1_employee13_addr" salary="10681.915355001696"/>
+      <employees name="D1_1_employee14" address="D1_1_employee14_addr" salary="11574.56468956985"/>
+      <employees name="D1_1_employee15" address="D1_1_employee15_addr" salary="11533.099661669123"/>
+    </subdepts>
+    <subdepts name="D1_2_">
+      <manager name="D1_2_manager" address="D1_2_manager_addr" salary="11557.477885082688" mentor="//@depts.0/@subdepts.1/@manager"/>
+      <employees name="D1_2_employee1" address="D1_2_employee1_addr" salary="11262.736877185836"/>
+      <employees name="D1_2_employee2" address="D1_2_employee2_addr" salary="10871.522426430613"/>
+      <employees name="D1_2_employee3" address="D1_2_employee3_addr" salary="10366.765526069876"/>
+      <employees name="D1_2_employee4" address="D1_2_employee4_addr" salary="10710.284587129008" mentor="//@depts.0/@subdepts.1/@employees.5"/>
+      <employees name="D1_2_employee5" address="D1_2_employee5_addr" salary="10907.510878321877"/>
+      <employees name="D1_2_employee6" address="D1_2_employee6_addr" salary="11941.932100437074"/>
+      <employees name="D1_2_employee7" address="D1_2_employee7_addr" salary="10061.178983354557"/>
+      <employees name="D1_2_employee8" address="D1_2_employee8_addr" salary="11721.658240789548"/>
+      <employees name="D1_2_employee9" address="D1_2_employee9_addr" salary="10621.511554970195"/>
+      <employees name="D1_2_employee10" address="D1_2_employee10_addr" salary="11371.583913590022"/>
+      <employees name="D1_2_employee11" address="D1_2_employee11_addr" salary="10586.412073258283"/>
+      <employees name="D1_2_employee12" address="D1_2_employee12_addr" salary="11508.132479510763"/>
+      <employees name="D1_2_employee13" address="D1_2_employee13_addr" salary="10530.943079641194"/>
+      <employees name="D1_2_employee14" address="D1_2_employee14_addr" salary="10507.964494075719"/>
+      <employees name="D1_2_employee15" address="D1_2_employee15_addr" salary="10221.779404654977"/>
+    </subdepts>
+    <employees name="D1_employee1" address="D1_employee1_addr" salary="11114.717023790456"/>
+    <employees name="D1_employee2" address="D1_employee2_addr" salary="10931.10911227666"/>
+    <employees name="D1_employee3" address="D1_employee3_addr" salary="11589.32530373616"/>
+    <employees name="D1_employee4" address="D1_employee4_addr" salary="10840.702915744167"/>
+    <employees name="D1_employee5" address="D1_employee5_addr" salary="11389.235748702558"/>
+    <employees name="D1_employee6" address="D1_employee6_addr" salary="10094.7027726123"/>
+    <employees name="D1_employee7" address="D1_employee7_addr" salary="11042.04589476703"/>
+    <employees name="D1_employee8" address="D1_employee8_addr" salary="10820.809269397683"/>
+    <employees name="D1_employee9" address="D1_employee9_addr" salary="11119.815750484342"/>
+    <employees name="D1_employee10" address="D1_employee10_addr" salary="10782.850244882437"/>
+    <employees name="D1_employee11" address="D1_employee11_addr" salary="10174.61355308044"/>
+    <employees name="D1_employee12" address="D1_employee12_addr" salary="10814.08677881501"/>
+    <employees name="D1_employee13" address="D1_employee13_addr" salary="10462.59903374072"/>
+    <employees name="D1_employee14" address="D1_employee14_addr" salary="11624.397769841295"/>
+    <employees name="D1_employee15" address="D1_employee15_addr" salary="11904.435227513532"/>
+  </depts>
+  <depts name="D2_">
+    <manager name="D2_manager" address="D2_manager_addr" salary="11272.754523721582"/>
+    <subdepts name="D2_1_">
+      <manager name="D2_1_manager" address="D2_1_manager_addr" salary="11352.662446369288"/>
+      <employees name="D2_1_employee1" address="D2_1_employee1_addr" salary="10385.315655706756"/>
+      <employees name="D2_1_employee2" address="D2_1_employee2_addr" salary="10915.752607069731"/>
+      <employees name="D2_1_employee3" address="D2_1_employee3_addr" salary="10550.48983436913"/>
+      <employees name="D2_1_employee4" address="D2_1_employee4_addr" salary="11187.495058338764"/>
+      <employees name="D2_1_employee5" address="D2_1_employee5_addr" salary="11807.708491977117"/>
+      <employees name="D2_1_employee6" address="D2_1_employee6_addr" salary="11185.611773699951"/>
+      <employees name="D2_1_employee7" address="D2_1_employee7_addr" salary="10071.756191966246"/>
+      <employees name="D2_1_employee8" address="D2_1_employee8_addr" salary="11240.603309084978"/>
+      <employees name="D2_1_employee9" address="D2_1_employee9_addr" salary="11595.659041263318"/>
+      <employees name="D2_1_employee10" address="D2_1_employee10_addr" salary="10406.351835566207"/>
+      <employees name="D2_1_employee11" address="D2_1_employee11_addr" salary="10594.832677561244"/>
+      <employees name="D2_1_employee12" address="D2_1_employee12_addr" salary="11571.898645696963"/>
+      <employees name="D2_1_employee13" address="D2_1_employee13_addr" salary="11195.12248400878"/>
+      <employees name="D2_1_employee14" address="D2_1_employee14_addr" salary="10287.212226846581"/>
+      <employees name="D2_1_employee15" address="D2_1_employee15_addr" salary="11467.396353672095"/>
+    </subdepts>
+    <subdepts name="D2_2_">
+      <manager name="D2_2_manager" address="D2_2_manager_addr" salary="10667.259437841705"/>
+      <employees name="D2_2_employee1" address="D2_2_employee1_addr" salary="10664.103835802818"/>
+      <employees name="D2_2_employee2" address="D2_2_employee2_addr" salary="10528.51106850443"/>
+      <employees name="D2_2_employee3" address="D2_2_employee3_addr" salary="11228.036544729875"/>
+      <employees name="D2_2_employee4" address="D2_2_employee4_addr" salary="10325.433598687547"/>
+      <employees name="D2_2_employee5" address="D2_2_employee5_addr" salary="10461.997824861404"/>
+      <employees name="D2_2_employee6" address="D2_2_employee6_addr" salary="11335.207924693079"/>
+      <employees name="D2_2_employee7" address="D2_2_employee7_addr" salary="11685.335331348128"/>
+      <employees name="D2_2_employee8" address="D2_2_employee8_addr" salary="11401.832422963227"/>
+      <employees name="D2_2_employee9" address="D2_2_employee9_addr" salary="10799.980699759353"/>
+      <employees name="D2_2_employee10" address="D2_2_employee10_addr" salary="10502.862411730792"/>
+      <employees name="D2_2_employee11" address="D2_2_employee11_addr" salary="11090.630971831915" mentor="//@depts.1/@subdepts.1/@employees.2"/>
+      <employees name="D2_2_employee12" address="D2_2_employee12_addr" salary="11922.522821531844"/>
+      <employees name="D2_2_employee13" address="D2_2_employee13_addr" salary="11670.910254163533"/>
+      <employees name="D2_2_employee14" address="D2_2_employee14_addr" salary="11930.343126452535"/>
+      <employees name="D2_2_employee15" address="D2_2_employee15_addr" salary="10640.22677227487"/>
+    </subdepts>
+    <employees name="D2_employee1" address="D2_employee1_addr" salary="10084.353103525724"/>
+    <employees name="D2_employee2" address="D2_employee2_addr" salary="11478.883980577806"/>
+    <employees name="D2_employee3" address="D2_employee3_addr" salary="11820.627112898235"/>
+    <employees name="D2_employee4" address="D2_employee4_addr" salary="10824.256642328653"/>
+    <employees name="D2_employee5" address="D2_employee5_addr" salary="11004.107235926902"/>
+    <employees name="D2_employee6" address="D2_employee6_addr" salary="10855.144940850738"/>
+    <employees name="D2_employee7" address="D2_employee7_addr" salary="11836.166379122558"/>
+    <employees name="D2_employee8" address="D2_employee8_addr" salary="10163.3936657978"/>
+    <employees name="D2_employee9" address="D2_employee9_addr" salary="10219.660333834207"/>
+    <employees name="D2_employee10" address="D2_employee10_addr" salary="11807.29397491363"/>
+    <employees name="D2_employee11" address="D2_employee11_addr" salary="11257.211213114479"/>
+    <employees name="D2_employee12" address="D2_employee12_addr" salary="10667.93369947487"/>
+    <employees name="D2_employee13" address="D2_employee13_addr" salary="10623.73882129844"/>
+    <employees name="D2_employee14" address="D2_employee14_addr" salary="10664.952372310181"/>
+    <employees name="D2_employee15" address="D2_employee15_addr" salary="10914.570484077094"/>
+  </depts>
+</com:Company>
