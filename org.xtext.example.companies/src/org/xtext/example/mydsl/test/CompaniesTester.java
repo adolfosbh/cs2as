@@ -132,13 +132,15 @@ public class CompaniesTester {
 	
 	private static Usage checkArgs(String[] args) {
 		
-		if (args == null || args.length != 1) {
+		Usage usage = Usage.INCORRECT;
+		if (args != null && args.length == 1) {
+			usage = "-topology".equals(args[0]) ? Usage.TOPOLOGY_EXPERIMENT
+					: "-scalability".equals(args[0]) ? Usage.SCALABILITY_EXPERIMENT
+					: Usage.INCORRECT;
+		} 
+		if (usage == Usage.INCORRECT) {
 			System.out.println("Incorrect arguments. Please specify -topology for topology analysis related experiment, otherwise -scalability for the scalability analysis related experiment");
-			return Usage.INCORRECT;
 		}
-		
-		return "-topology".equals(args[0]) ? Usage.TOPOLOGY_EXPERIMENT
-				: "-scalability".equals(args[0]) ? Usage.SCALABILITY_EXPERIMENT
-				: Usage.INCORRECT;
+		return usage;
 	}
 }
