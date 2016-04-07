@@ -18,10 +18,7 @@ import org.eclipse.emf.ecore.resource.impl.*
 
 var projectName = "uk.ac.york.cs.asbh.lang.cs2as"
 var modelsFolder = "model"
-var asPackageName = "uk.ac.york.cs.asbh.lang.cs2as.target"
-var asVisitorsPackageName = "${asPackageName}.util"
-var asVisitorName = "Visitor"
-var asVisitableName = "Visitable"
+
 
 /**
  *	Generate the Pivot Model, by performing the merge to create the flattened package
@@ -46,27 +43,15 @@ Workflow {
     }
 
     component = GenerateASVisitors { resourceSet = resourceSet
-    	projectName = projectName
-    	projectPrefix = "Target"
-    	superProjectName = ""
+    	projectName = projectName    	
     	genModelFile = "${modelsFolder}/TargetMM1.genmodel"
-    	modelPackageName = asPackageName
-    	visitorPackageName = asVisitorsPackageName
-    	visitorClassName = asVisitorName
-    	visitableClassName = asVisitableName
     }
 
     component = @SubGenerateAutoASModel { resourceSet = resourceSet
     	projectName = projectName
-    	modelName = "target"
-    	projectPrefix = "Target"
     	superProjectName = ""
-    	superModelName = ""
     	genModelFile = "${modelsFolder}/TargetMM1.genmodel"
     	lookupFilePath = "${modelsFolder}/Source2TargetLookup.ocl"
-		visitorPackageName = asVisitorsPackageName
-		visitorClassName = asVisitorName
-    	visitableClassName = asVisitableName
     }
 }
 

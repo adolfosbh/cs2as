@@ -6,7 +6,7 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: uk.ac.york.cs.asbh.lang.cs2as.source,
  uk.ac.york.cs.asbh.lang.cs2as.source.impl,
  uk.ac.york.cs.asbh.lang.cs2as.source.util,
@@ -20,6 +20,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.ocl.pivot;visibility:=reexport,
  org.eclipse.ocl.examples.codegen;visibility:=reexport,
- org.eclipse.ocl.jdt.annotation7;visibility:=reexport,
+ org.eclipse.jdt.annotation.source;bundle-version="[2.1.0,3.0.0)";resolution:=optional,
  org.eclipse.qvtd.cs2as.compiler;bundle-version="[0.12.0,1.0.0)";visibility:=reexport
 Bundle-ActivationPolicy: lazy
