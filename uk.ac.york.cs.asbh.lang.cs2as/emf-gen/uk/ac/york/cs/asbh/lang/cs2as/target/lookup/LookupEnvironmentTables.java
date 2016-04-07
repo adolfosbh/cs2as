@@ -14,11 +14,6 @@ package uk.ac.york.cs.asbh.lang.cs2as.target.lookup;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.ParameterTypes;
 import org.eclipse.ocl.pivot.TemplateParameters;
-import org.eclipse.ocl.pivot.ids.ClassId;
-import org.eclipse.ocl.pivot.ids.CollectionTypeId;
-import org.eclipse.ocl.pivot.ids.IdManager;
-import org.eclipse.ocl.pivot.ids.NsURIPackageId;
-import org.eclipse.ocl.pivot.ids.PropertyId;
 import org.eclipse.ocl.pivot.ids.TypeId;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorPackage;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorProperty;
@@ -30,12 +25,11 @@ import org.eclipse.ocl.pivot.internal.library.executor.ExecutorProperty;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorPropertyWithImplementation;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorSpecializedType;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorStandardLibrary;
+import org.eclipse.ocl.pivot.internal.library.executor.ExecutorType;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorTypeParameter;
 import org.eclipse.ocl.pivot.oclstdlib.OCLstdlibTables;
 import org.eclipse.ocl.pivot.utilities.TypeUtil;
-import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetTables;
-import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentPackage;
 import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentTables;
 
 /**
@@ -64,17 +58,17 @@ public class LookupEnvironmentTables
 	/**
 	 *	Constants used by auto-generated code.
 	 */
-    public static final @NonNull /*@NonInvalid*/ CollectionTypeId COL_PRIMid_OclAny = TypeId.COLLECTION.getSpecializedId(TypeId.OCL_ANY);
-    public static final @NonNull /*@NonInvalid*/ CollectionTypeId ORD_TMPLid_ = TypeId.ORDERED_SET.getSpecializedId(IdManager.getTemplateParameterId(0));
-    public static final @NonNull /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_lookup_s_1_0 = IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/lookup/1.0", null, LookupEnvironmentPackage.eINSTANCE);
-    public static final @NonNull /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0 = IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0", null, TargetPackage.eINSTANCE);
-    public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_Executor = LookupEnvironmentTables.PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_lookup_s_1_0.getClassId("Executor", 0);
-    public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_LookupEnvironment = LookupEnvironmentTables.PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_lookup_s_1_0.getClassId("LookupEnvironment", 0);
-    public static final @NonNull /*@NonInvalid*/ ClassId CLSSid_NamedElement = LookupEnvironmentTables.PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0.getClassId("NamedElement", 0);
-    public static final @NonNull /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_LookupEnvironment = TypeId.BAG.getSpecializedId(LookupEnvironmentTables.CLSSid_LookupEnvironment);
-    public static final @NonNull /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_NamedElement = TypeId.ORDERED_SET.getSpecializedId(LookupEnvironmentTables.CLSSid_NamedElement);
-    public static final @NonNull /*@NonInvalid*/ PropertyId PROPid_namedElements = LookupEnvironmentTables.CLSSid_LookupEnvironment.getPropertyId("namedElements");
-    public static final @NonNull /*@NonInvalid*/ PropertyId PROPid_parentEnv = LookupEnvironmentTables.CLSSid_LookupEnvironment.getPropertyId("parentEnv");
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId COL_PRIMid_OclAny = org.eclipse.ocl.pivot.ids.TypeId.COLLECTION.getSpecializedId(org.eclipse.ocl.pivot.ids.TypeId.OCL_ANY);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId ORD_TMPLid_ = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.ocl.pivot.ids.IdManager.getTemplateParameterId(0));
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_lookup_s_1_0 = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/lookup/1.0", null, uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentPackage.eINSTANCE);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull NsURIPackageId PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0 = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://uk.ac.york.cs.asbh.lang.cs2as/targetMM/1.0", null, uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage.eINSTANCE);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull ClassId CLSSid_Executor = uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentTables.PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_lookup_s_1_0.getClassId("Executor", 0);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull ClassId CLSSid_LookupEnvironment = uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentTables.PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_lookup_s_1_0.getClassId("LookupEnvironment", 0);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull ClassId CLSSid_NamedElement = uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentTables.PACKid_http_c_s_s_uk_ac_york_cs_asbh_lang_cs2as_s_targetMM_s_1_0.getClassId("NamedElement", 0);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId BAG_CLSSid_LookupEnvironment = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentTables.CLSSid_LookupEnvironment);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId ORD_CLSSid_NamedElement = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentTables.CLSSid_NamedElement);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull PropertyId PROPid_namedElements = uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentTables.CLSSid_LookupEnvironment.getPropertyId("namedElements");
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull PropertyId PROPid_parentEnv = uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentTables.CLSSid_LookupEnvironment.getPropertyId("parentEnv");
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -105,11 +99,11 @@ public class LookupEnvironmentTables
 			TypeParameters.init();
 		}
 
-		public static final @NonNull EcoreExecutorType _Env4CG = new EcoreExecutorType(LookupEnvironmentPackage.Literals.ENV4_CG, PACKAGE, 0);
-		public static final @NonNull EcoreExecutorType _Executor = new EcoreExecutorType(LookupEnvironmentPackage.Literals.EXECUTOR, PACKAGE, 0);
+		public static final @NonNull EcoreExecutorType _Env4CG = new EcoreExecutorType(LookupEnvironmentPackage.Literals.ENV4_CG, PACKAGE, 0 | ExecutorType.ABSTRACT);
+		public static final @NonNull EcoreExecutorType _Executor = new EcoreExecutorType(LookupEnvironmentPackage.Literals.EXECUTOR, PACKAGE, 0 | ExecutorType.ABSTRACT);
 		public static final @NonNull EcoreExecutorType _LookupEnvironment = new EcoreExecutorType(LookupEnvironmentPackage.Literals.LOOKUP_ENVIRONMENT, PACKAGE, 0);
 
-		private static final @NonNull EcoreExecutorType[] types = {
+		private static final @NonNull EcoreExecutorType @NonNull [] types = {
 			_Env4CG,
 			_Executor,
 			_LookupEnvironment
@@ -244,30 +238,30 @@ public class LookupEnvironmentTables
 			Properties.init();
 		}
 
-		private static final @NonNull ExecutorFragment[] _Env4CG =
+		private static final @NonNull ExecutorFragment @NonNull [] _Env4CG =
 		{
 			Fragments._Env4CG__OclAny /* 0 */,
 			Fragments._Env4CG__OclElement /* 1 */,
 			Fragments._Env4CG__Env4CG /* 2 */
 		};
-		private static final @NonNull int[] __Env4CG = { 1,1,1 };
+		private static final int @NonNull [] __Env4CG = { 1,1,1 };
 
-		private static final @NonNull ExecutorFragment[] _Executor =
+		private static final @NonNull ExecutorFragment @NonNull [] _Executor =
 		{
 			Fragments._Executor__OclAny /* 0 */,
 			Fragments._Executor__OclElement /* 1 */,
 			Fragments._Executor__Executor /* 2 */
 		};
-		private static final @NonNull int[] __Executor = { 1,1,1 };
+		private static final int @NonNull [] __Executor = { 1,1,1 };
 
-		private static final @NonNull ExecutorFragment[] _LookupEnvironment =
+		private static final @NonNull ExecutorFragment @NonNull [] _LookupEnvironment =
 		{
 			Fragments._LookupEnvironment__OclAny /* 0 */,
 			Fragments._LookupEnvironment__OclElement /* 1 */,
 			Fragments._LookupEnvironment__Env4CG /* 2 */,
 			Fragments._LookupEnvironment__LookupEnvironment /* 3 */
 		};
-		private static final @NonNull int[] __LookupEnvironment = { 1,1,1,1 };
+		private static final int @NonNull [] __LookupEnvironment = { 1,1,1,1 };
 
 		/**
 		 *	Install the fragment descriptors in the class descriptors.
@@ -295,11 +289,11 @@ public class LookupEnvironmentTables
 			TypeFragments.init();
 		}
 
-		private static final @NonNull ExecutorOperation[] _Env4CG__Env4CG = {
+		private static final @NonNull ExecutorOperation @NonNull [] _Env4CG__Env4CG = {
 			LookupEnvironmentTables.Operations._Env4CG__getExecutor /* getExecutor() */,
 			LookupEnvironmentTables.Operations._Env4CG__hasFinalResult /* hasFinalResult() */
 		};
-		private static final @NonNull ExecutorOperation[] _Env4CG__OclAny = {
+		private static final @NonNull ExecutorOperation @NonNull [] _Env4CG__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -313,16 +307,21 @@ public class LookupEnvironmentTables
 			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
 			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final @NonNull ExecutorOperation[] _Env4CG__OclElement = {
+		private static final @NonNull ExecutorOperation @NonNull [] _Env4CG__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final @NonNull ExecutorOperation[] _Executor__Executor = {};
-		private static final @NonNull ExecutorOperation[] _Executor__OclAny = {
+		private static final @NonNull ExecutorOperation @NonNull [] _Executor__Executor = {};
+		private static final @NonNull ExecutorOperation @NonNull [] _Executor__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -336,23 +335,28 @@ public class LookupEnvironmentTables
 			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
 			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final @NonNull ExecutorOperation[] _Executor__OclElement = {
+		private static final @NonNull ExecutorOperation @NonNull [] _Executor__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final @NonNull ExecutorOperation[] _LookupEnvironment__LookupEnvironment = {
+		private static final @NonNull ExecutorOperation @NonNull [] _LookupEnvironment__LookupEnvironment = {
 			LookupEnvironmentTables.Operations._LookupEnvironment__addElement /* addElement(NamedElement[?]) */,
 			LookupEnvironmentTables.Operations._LookupEnvironment__addElements /* addElements(NE)(OrderedSet(NE)) */
 		};
-		private static final @NonNull ExecutorOperation[] _LookupEnvironment__Env4CG = {
+		private static final @NonNull ExecutorOperation @NonNull [] _LookupEnvironment__Env4CG = {
 			LookupEnvironmentTables.Operations._Env4CG__getExecutor /* getExecutor() */,
 			LookupEnvironmentTables.Operations._Env4CG__hasFinalResult /* hasFinalResult() */
 		};
-		private static final @NonNull ExecutorOperation[] _LookupEnvironment__OclAny = {
+		private static final @NonNull ExecutorOperation @NonNull [] _LookupEnvironment__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -366,12 +370,17 @@ public class LookupEnvironmentTables
 			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
 			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final @NonNull ExecutorOperation[] _LookupEnvironment__OclElement = {
+		private static final @NonNull ExecutorOperation @NonNull [] _LookupEnvironment__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
 		/*
@@ -409,11 +418,11 @@ public class LookupEnvironmentTables
 			FragmentOperations.init();
 		}
 
-		private static final @NonNull ExecutorProperty[] _Env4CG = {};
+		private static final @NonNull ExecutorProperty @NonNull [] _Env4CG = {};
 
-		private static final @NonNull ExecutorProperty[] _Executor = {};
+		private static final @NonNull ExecutorProperty @NonNull [] _Executor = {};
 
-		private static final @NonNull ExecutorProperty[] _LookupEnvironment = {
+		private static final @NonNull ExecutorProperty @NonNull [] _LookupEnvironment = {
 			LookupEnvironmentTables.Properties._LookupEnvironment__namedElements,
 			LookupEnvironmentTables.Properties._LookupEnvironment__parentEnv,
 			LookupEnvironmentTables.Properties._LookupEnvironment__LookupEnvironment__parentEnv

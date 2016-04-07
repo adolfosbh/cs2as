@@ -85,46 +85,6 @@ public interface TargetPackage extends EPackage {
 	int VISITABLE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.AImpl <em>A</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.AImpl
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getA()
-	 * @generated
-	 */
-	int A = 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A1Impl <em>A1</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.A1Impl
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getA1()
-	 * @generated
-	 */
-	int A1 = 1;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A2Impl <em>A2</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.A2Impl
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getA2()
-	 * @generated
-	 */
-	int A2 = 2;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A3Impl <em>A3</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.A3Impl
-	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getA3()
-	 * @generated
-	 */
-	int A3 = 3;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.NamedElementImpl <em>Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,6 +159,16 @@ public interface TargetPackage extends EPackage {
 	int NAMESPACE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.AImpl <em>A</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.AImpl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getA()
+	 * @generated
+	 */
+	int A = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -224,6 +194,16 @@ public interface TargetPackage extends EPackage {
 	 * @ordered
 	 */
 	int A_OPERATION_COUNT = NAMESPACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A1Impl <em>A1</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.A1Impl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getA1()
+	 * @generated
+	 */
+	int A1 = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -262,6 +242,16 @@ public interface TargetPackage extends EPackage {
 	int A1_OPERATION_COUNT = A_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A2Impl <em>A2</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.A2Impl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getA2()
+	 * @generated
+	 */
+	int A2 = 2;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,6 +286,16 @@ public interface TargetPackage extends EPackage {
 	 * @ordered
 	 */
 	int A2_OPERATION_COUNT = A_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.target.impl.A3Impl <em>A3</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.A3Impl
+	 * @see uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl#getA3()
+	 * @generated
+	 */
+	int A3 = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

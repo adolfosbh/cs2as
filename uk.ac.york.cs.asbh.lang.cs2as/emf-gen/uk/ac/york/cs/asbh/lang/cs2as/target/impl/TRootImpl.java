@@ -5,17 +5,23 @@ package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.jdt.annotation.Nullable;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.A;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TRoot;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitor;
 
 /**
@@ -152,7 +158,7 @@ public class TRootImpl extends MinimalEObjectImpl.Container implements TRoot {
 	 * @generated
 	 */
 	@Override
-	public @Nullable <R> R accept(@NonNull Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitTRoot(this);
 	}
 

@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.eclipse.jdt.annotation.Nullable;
+
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
 import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.*;
@@ -24,7 +26,7 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.*;
  * @see uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentPackage
  * @generated
  */
-public class LookupEnvironmentSwitch<T> extends Switch<T> {
+public class LookupEnvironmentSwitch<@Nullable T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

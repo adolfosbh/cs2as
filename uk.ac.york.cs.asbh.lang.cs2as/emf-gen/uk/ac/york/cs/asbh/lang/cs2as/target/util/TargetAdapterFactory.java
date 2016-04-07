@@ -4,20 +4,14 @@ package uk.ac.york.cs.asbh.lang.cs2as.target.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.jdt.annotation.Nullable;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.*;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A1;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A2;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A3;
-import uk.ac.york.cs.asbh.lang.cs2as.target.B;
-import uk.ac.york.cs.asbh.lang.cs2as.target.C;
-import uk.ac.york.cs.asbh.lang.cs2as.target.D;
-import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
-import uk.ac.york.cs.asbh.lang.cs2as.target.TRoot;
-import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,8 +67,8 @@ public class TargetAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TargetSwitch<Adapter> modelSwitch =
-		new TargetSwitch<Adapter>() {
+	protected TargetSwitch<@Nullable Adapter> modelSwitch =
+		new TargetSwitch<@Nullable Adapter>() {
 			@Override
 			public Adapter caseA(A object) {
 				return createAAdapter();

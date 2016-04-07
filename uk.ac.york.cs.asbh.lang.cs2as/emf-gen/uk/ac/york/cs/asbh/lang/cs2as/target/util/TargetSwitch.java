@@ -4,19 +4,12 @@ package uk.ac.york.cs.asbh.lang.cs2as.target.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.eclipse.jdt.annotation.Nullable;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.*;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A1;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A2;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A3;
-import uk.ac.york.cs.asbh.lang.cs2as.target.B;
-import uk.ac.york.cs.asbh.lang.cs2as.target.C;
-import uk.ac.york.cs.asbh.lang.cs2as.target.D;
-import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
-import uk.ac.york.cs.asbh.lang.cs2as.target.TRoot;
-import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +24,7 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
  * @see uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage
  * @generated
  */
-public class TargetSwitch<T> extends Switch<T> {
+public class TargetSwitch<@Nullable T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

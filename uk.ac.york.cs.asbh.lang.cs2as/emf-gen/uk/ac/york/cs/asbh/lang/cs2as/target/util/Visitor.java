@@ -33,16 +33,16 @@ public interface Visitor<R>
 	 * Return the result of visiting a visitable for which no more specific pivot type method
 	 * is available.
 	 */
-	@Nullable R visiting(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable visitable);
+	R visiting(uk.ac.york.cs.asbh.lang.cs2as.target.util.@NonNull Visitable visitable);
 
-	@Nullable R visitA(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.A object);
-	@Nullable R visitA1(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.A1 object);
-	@Nullable R visitA2(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.A2 object);
-	@Nullable R visitA3(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.A3 object);
-	@Nullable R visitB(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.B object);
-	@Nullable R visitC(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.C object);
-	@Nullable R visitD(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.D object);
-	@Nullable R visitNamedElement(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement object);
-	@Nullable R visitNamespace(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.Namespace object);
-	@Nullable R visitTRoot(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.TRoot object);
+	R visitA(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull A object);
+	R visitA1(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull A1 object);
+	R visitA2(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull A2 object);
+	R visitA3(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull A3 object);
+	R visitB(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull B object);
+	R visitC(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull C object);
+	R visitD(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull D object);
+	R visitNamedElement(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull NamedElement object);
+	R visitNamespace(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull Namespace object);
+	R visitTRoot(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull TRoot object);
 }

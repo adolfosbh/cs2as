@@ -4,17 +4,12 @@ package uk.ac.york.cs.asbh.lang.cs2as.source.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.eclipse.jdt.annotation.Nullable;
+
 import uk.ac.york.cs.asbh.lang.cs2as.source.*;
-import uk.ac.york.cs.asbh.lang.cs2as.source.SElement;
-import uk.ac.york.cs.asbh.lang.cs2as.source.SRoot;
-import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;
-import uk.ac.york.cs.asbh.lang.cs2as.source.X;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Y;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Y1;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Y2;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Z;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +24,7 @@ import uk.ac.york.cs.asbh.lang.cs2as.source.Z;
  * @see uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage
  * @generated
  */
-public class SourceSwitch<T> extends Switch<T> {
+public class SourceSwitch<@Nullable T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

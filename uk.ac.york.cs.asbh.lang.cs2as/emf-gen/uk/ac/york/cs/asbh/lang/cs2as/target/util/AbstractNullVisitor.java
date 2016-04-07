@@ -16,8 +16,11 @@ import org.eclipse.jdt.annotation.Nullable;
 /**
  * An AbstractNullVisitor provides a default implementation for each
  * visitXxx method that returns null.
+ *
+ * @deprecated Explicit 'Null' functionality is obsolete with Java 8 @Nullable annotations.  
  */
-public abstract class AbstractNullVisitor<R, C>
+ @Deprecated
+public abstract class AbstractNullVisitor<@Nullable R, C>
 	extends AbstractVisitor<R, C>
 {
 	/**
@@ -25,57 +28,57 @@ public abstract class AbstractNullVisitor<R, C>
 	 * 
 	 * @param context my initial result value
 	 */
-	protected AbstractNullVisitor(@NonNull C context) {
+	protected AbstractNullVisitor(C context) {
 		super(context);
 	}	
 
 	@Override
-	public @Nullable R visitA(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.A object) {
+	public R visitA(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull A object) {
 		return null;
 	}
 
 	@Override
-	public @Nullable R visitA1(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.A1 object) {
+	public R visitA1(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull A1 object) {
 		return null;
 	}
 
 	@Override
-	public @Nullable R visitA2(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.A2 object) {
+	public R visitA2(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull A2 object) {
 		return null;
 	}
 
 	@Override
-	public @Nullable R visitA3(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.A3 object) {
+	public R visitA3(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull A3 object) {
 		return null;
 	}
 
 	@Override
-	public @Nullable R visitB(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.B object) {
+	public R visitB(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull B object) {
 		return null;
 	}
 
 	@Override
-	public @Nullable R visitC(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.C object) {
+	public R visitC(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull C object) {
 		return null;
 	}
 
 	@Override
-	public @Nullable R visitD(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.D object) {
+	public R visitD(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull D object) {
 		return null;
 	}
 
 	@Override
-	public @Nullable R visitNamedElement(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement object) {
+	public R visitNamedElement(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull NamedElement object) {
 		return null;
 	}
 
 	@Override
-	public @Nullable R visitNamespace(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.Namespace object) {
+	public R visitNamespace(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull Namespace object) {
 		return null;
 	}
 
 	@Override
-	public @Nullable R visitTRoot(@NonNull uk.ac.york.cs.asbh.lang.cs2as.target.TRoot object) {
+	public R visitTRoot(uk.ac.york.cs.asbh.lang.cs2as.target.@NonNull TRoot object) {
 		return null;
 	}
 }

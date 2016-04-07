@@ -4,18 +4,14 @@ package uk.ac.york.cs.asbh.lang.cs2as.source.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.jdt.annotation.Nullable;
+
 import uk.ac.york.cs.asbh.lang.cs2as.source.*;
-import uk.ac.york.cs.asbh.lang.cs2as.source.SElement;
-import uk.ac.york.cs.asbh.lang.cs2as.source.SRoot;
-import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;
-import uk.ac.york.cs.asbh.lang.cs2as.source.X;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Y;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Y1;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Y2;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Z;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,8 +67,8 @@ public class SourceAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SourceSwitch<Adapter> modelSwitch =
-		new SourceSwitch<Adapter>() {
+	protected SourceSwitch<@Nullable Adapter> modelSwitch =
+		new SourceSwitch<@Nullable Adapter>() {
 			@Override
 			public Adapter caseX(X object) {
 				return createXAdapter();

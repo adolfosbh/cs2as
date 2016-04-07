@@ -459,7 +459,6 @@ public interface SourcePackage extends EPackage {
 	 */
 	int SROOT_OPERATION_COUNT = SELEMENT_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link uk.ac.york.cs.asbh.lang.cs2as.source.impl.PathNameCSImpl <em>Path Name CS</em>}' class.
 	 * <!-- begin-user-doc -->

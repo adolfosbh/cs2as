@@ -3,6 +3,7 @@
 package uk.ac.york.cs.asbh.lang.cs2as.source;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -28,7 +29,7 @@ public interface PathNameCS extends EObject {
 	 * It is bidirectional and its opposite is '{@link uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS#getPathName <em>Path Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Path</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Path</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

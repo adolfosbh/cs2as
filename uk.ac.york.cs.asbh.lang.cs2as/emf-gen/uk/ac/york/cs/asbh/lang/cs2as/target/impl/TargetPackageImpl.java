@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
@@ -13,6 +14,11 @@ import uk.ac.york.cs.asbh.lang.cs2as.target.Namespace;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TRoot;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetFactory;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
+
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentPackage;
+
+import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.impl.LookupEnvironmentPackageImpl;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitable;
 
 /**
@@ -141,7 +147,8 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 		if (isInited) return (TargetPackage)EPackage.Registry.INSTANCE.getEPackage(TargetPackage.eNS_URI);
 
 		// Obtain or create and register package
-		TargetPackageImpl theTargetPackage = (TargetPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TargetPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TargetPackageImpl());
+		Object ePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		TargetPackageImpl theTargetPackage = (TargetPackageImpl)(ePackage instanceof TargetPackageImpl ? ePackage : new TargetPackageImpl());
 
 		isInited = true;
 

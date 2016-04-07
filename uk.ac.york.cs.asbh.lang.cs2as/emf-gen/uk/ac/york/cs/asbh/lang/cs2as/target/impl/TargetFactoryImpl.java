@@ -5,20 +5,12 @@ package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import uk.ac.york.cs.asbh.lang.cs2as.target.*;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A1;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A2;
-import uk.ac.york.cs.asbh.lang.cs2as.target.A3;
-import uk.ac.york.cs.asbh.lang.cs2as.target.B;
-import uk.ac.york.cs.asbh.lang.cs2as.target.C;
-import uk.ac.york.cs.asbh.lang.cs2as.target.D;
-import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
-import uk.ac.york.cs.asbh.lang.cs2as.target.TRoot;
-import uk.ac.york.cs.asbh.lang.cs2as.target.TargetFactory;
-import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 
 /**
  * <!-- begin-user-doc -->

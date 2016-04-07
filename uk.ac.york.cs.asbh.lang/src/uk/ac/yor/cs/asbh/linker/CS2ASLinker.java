@@ -60,7 +60,7 @@ public class CS2ASLinker extends LazyLinker
 							outputResource = rSet.createResource(asModelURI);
 						}
 						outputResource.getContents().clear();
-						outputResource.getContents().addAll(tx.getRootObjects("rightAS"));
+						outputResource.getContents().addAll(tx.getRootEObjects("rightAS"));
 						outputResource.save(null);
 					}
 				}

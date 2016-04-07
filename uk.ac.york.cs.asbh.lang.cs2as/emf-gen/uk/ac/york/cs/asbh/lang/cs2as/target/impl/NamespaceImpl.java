@@ -3,10 +3,12 @@
 package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.jdt.annotation.Nullable;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.Namespace;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitor;
 
 /**
@@ -41,7 +43,7 @@ public class NamespaceImpl extends NamedElementImpl implements Namespace {
 	 * @generated
 	 */
 	@Override
-	public @Nullable <R> R accept(@NonNull Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitNamespace(this);
 	}
 

@@ -5,6 +5,7 @@
  *
  * This code is auto-generated
  * from: uk.ac.york.cs.asbh.lang.cs2as/model/TargetMM1.genmodel
+ * template: org.eclipse.ocl.examples.build.xtend.GenerateAutoLookupInfrastructureXtend
  *
  * Only the copyright statement is editable.
  *******************************************************************************/
@@ -28,11 +29,17 @@ public class TargetSingleResultLookupEnvironment extends LookupEnvironmentImpl  
 	private @NonNull Executor executor;
 	private @NonNull String name;
 	private @NonNull EClass typeFilter;
+	private @Nullable TargetLookupFilter expFilter;
 	
-	public TargetSingleResultLookupEnvironment(@NonNull Executor executor, @NonNull EClass typeFilter, @NonNull String name) {
+	public TargetSingleResultLookupEnvironment(@NonNull Executor executor, @NonNull EClass typeFilter, @NonNull String name,  @Nullable TargetLookupFilter expFilter) {
 		this.executor = executor;
 		this.name = name;
 		this.typeFilter = typeFilter;
+		this.expFilter = expFilter;
+	}
+
+	public TargetSingleResultLookupEnvironment(@NonNull Executor executor, @NonNull EClass typeFilter, @NonNull String name) {
+		this(executor,typeFilter, name, null);
 	}
 	
 	@Override
@@ -57,9 +64,12 @@ public class TargetSingleResultLookupEnvironment extends LookupEnvironmentImpl  
 		if (namedElement != null) {
 			if (name.equals(namedElement.getName())) {
 				if (typeFilter.isInstance(namedElement)) {
-					EList<NamedElement> elements = getNamedElements();
-					if (!elements.contains(namedElement)) { 	// FIXME use a set ?
-						elements.add(namedElement);
+				    TargetLookupFilter expFilter2 = expFilter;
+					if (expFilter2 == null || expFilter2.matches(namedElement)) {
+						List<NamedElement> elements = getNamedElements();
+						if (!elements.contains(namedElement)) { 	// FIXME use a set ?
+							elements.add(namedElement);
+						}
 					}
 				}
 			}

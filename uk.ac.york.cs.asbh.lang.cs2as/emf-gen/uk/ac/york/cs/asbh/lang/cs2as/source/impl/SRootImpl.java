@@ -5,9 +5,12 @@ package uk.ac.york.cs.asbh.lang.cs2as.source.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -143,5 +146,6 @@ public class SRootImpl extends SElementImpl implements SRoot {
 		}
 		return super.eIsSet(featureID);
 	}
+
 
 } //SRootImpl

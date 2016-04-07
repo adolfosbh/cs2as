@@ -5,18 +5,12 @@ package uk.ac.york.cs.asbh.lang.cs2as.source.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import uk.ac.york.cs.asbh.lang.cs2as.source.*;
-import uk.ac.york.cs.asbh.lang.cs2as.source.SElement;
-import uk.ac.york.cs.asbh.lang.cs2as.source.SRoot;
-import uk.ac.york.cs.asbh.lang.cs2as.source.SourceFactory;
-import uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage;
-import uk.ac.york.cs.asbh.lang.cs2as.source.X;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Y1;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Y2;
-import uk.ac.york.cs.asbh.lang.cs2as.source.Z;
 
 /**
  * <!-- begin-user-doc -->

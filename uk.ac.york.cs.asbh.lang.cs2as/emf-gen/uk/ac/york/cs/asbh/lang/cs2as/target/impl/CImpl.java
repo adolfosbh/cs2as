@@ -4,16 +4,21 @@ package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.jdt.annotation.Nullable;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.A2;
 import uk.ac.york.cs.asbh.lang.cs2as.target.C;
 import uk.ac.york.cs.asbh.lang.cs2as.target.D;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.util.Visitor;
 
 /**
@@ -267,7 +272,7 @@ public class CImpl extends NamedElementImpl implements C {
 	 * @generated
 	 */
 	@Override
-	public @Nullable <R> R accept(@NonNull Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitC(this);
 	}
 

@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.york.cs.asbh.lang.cs2as.source.PathElementCS;
@@ -127,7 +128,8 @@ public class SourcePackageImpl extends EPackageImpl implements SourcePackage {
 		if (isInited) return (SourcePackage)EPackage.Registry.INSTANCE.getEPackage(SourcePackage.eNS_URI);
 
 		// Obtain or create and register package
-		SourcePackageImpl theSourcePackage = (SourcePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SourcePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new SourcePackageImpl());
+		Object ePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		SourcePackageImpl theSourcePackage = (SourcePackageImpl)(ePackage instanceof SourcePackageImpl ? ePackage : new SourcePackageImpl());
 
 		isInited = true;
 

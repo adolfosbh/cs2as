@@ -2,6 +2,7 @@
  */
 package uk.ac.york.cs.asbh.lang.cs2as.target;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>A</b></em>'.

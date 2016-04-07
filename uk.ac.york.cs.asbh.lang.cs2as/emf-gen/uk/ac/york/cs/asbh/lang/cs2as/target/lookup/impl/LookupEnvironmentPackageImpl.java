@@ -15,6 +15,8 @@ import org.eclipse.ocl.pivot.evaluation.Executor;
 
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 
+import uk.ac.york.cs.asbh.lang.cs2as.target.impl.TargetPackageImpl;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.Env4CG;
 import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironment;
 import uk.ac.york.cs.asbh.lang.cs2as.target.lookup.LookupEnvironmentFactory;
@@ -90,7 +92,8 @@ public class LookupEnvironmentPackageImpl extends EPackageImpl implements Lookup
 		if (isInited) return (LookupEnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(LookupEnvironmentPackage.eNS_URI);
 
 		// Obtain or create and register package
-		LookupEnvironmentPackageImpl theLookupEnvironmentPackage = (LookupEnvironmentPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof LookupEnvironmentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new LookupEnvironmentPackageImpl());
+		Object ePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		LookupEnvironmentPackageImpl theLookupEnvironmentPackage = (LookupEnvironmentPackageImpl)(ePackage instanceof LookupEnvironmentPackageImpl ? ePackage : new LookupEnvironmentPackageImpl());
 
 		isInited = true;
 

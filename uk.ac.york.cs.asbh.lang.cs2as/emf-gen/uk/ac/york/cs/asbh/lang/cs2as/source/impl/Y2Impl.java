@@ -34,4 +34,5 @@ public class Y2Impl extends YImpl implements Y2 {
 		return SourcePackage.Literals.Y2;
 	}
 
+
 } //Y2Impl

@@ -3,6 +3,7 @@
 package uk.ac.york.cs.asbh.lang.cs2as.target.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import uk.ac.york.cs.asbh.lang.cs2as.target.A;
 import uk.ac.york.cs.asbh.lang.cs2as.target.TargetPackage;
 
@@ -32,5 +33,6 @@ public abstract class AImpl extends NamespaceImpl implements A {
 	protected EClass eStaticClass() {
 		return TargetPackage.Literals.A;
 	}
+
 
 } //AImpl

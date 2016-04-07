@@ -11,21 +11,25 @@
  *******************************************************************************/
 package	uk.ac.york.cs.asbh.lang.cs2as.target.lookup.util;
 
-import java.util.List;
-
 import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.jdt.annotation.Nullable;
+import uk.ac.york.cs.asbh.lang.cs2as.target.NamedElement;
 
 /**
- * The lookup result returned by the name lookup solver
+ * 
  */
-public interface TargetLookupResult<NE> {
-
-	@Nullable
-	NE getSingleResult();
+public abstract class AbstractTargetLookupFilter<C extends NamedElement> implements TargetLookupFilter {
 	
-	@NonNull
-	List<NE> getAllResults();
+	@NonNull private Class<C> _class;
 	
-	int size();
+	public AbstractTargetLookupFilter(@NonNull Class<C> _class) {
+		this._class = _class;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean matches(@NonNull NamedElement namedElement) {
+		return _class.isInstance(namedElement) && _matches((C)namedElement);
+	}
+	
+	abstract protected Boolean _matches(@NonNull C element);
 }
