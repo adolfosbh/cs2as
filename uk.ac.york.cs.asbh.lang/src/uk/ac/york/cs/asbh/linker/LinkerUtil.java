@@ -1,4 +1,4 @@
-package uk.ac.yor.cs.asbh.linker;
+package uk.ac.york.cs.asbh.linker;
 
 import java.util.List;
 

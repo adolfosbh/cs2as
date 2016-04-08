@@ -1,4 +1,4 @@
-package uk.ac.yor.cs.asbh.ui.outline;
+package uk.ac.york.cs.asbh.ui.outline;
 
 import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: uk.ac.yor.cs.asbh.lang.ui
+Bundle-Name: uk.ac.york.cs.asbh.lang.ui
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: uk.ac.york.cs.asbh.lang.ui;singleton:=true
@@ -16,12 +16,13 @@ Require-Bundle: uk.ac.york.cs.asbh.lang;visibility:=reexport,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib;resolution:=optional,
+ uk.ac.york.cs.asbh.lang.ide;bundle-version="0.0.1"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: uk.ac.yor.cs.asbh.ui.quickfix,
- uk.ac.yor.cs.asbh.ui.contentassist,
- uk.ac.yor.cs.asbh.ui.contentassist.antlr,
- uk.ac.yor.cs.asbh.ui.internal
-Bundle-Activator: uk.ac.yor.cs.asbh.ui.internal.ASBHLangActivator
+Export-Package: uk.ac.york.cs.asbh.lang.ui.internal,
+ uk.ac.york.cs.asbh.ui.contentassist,
+ uk.ac.york.cs.asbh.ui.quickfix
+Bundle-Activator: uk.ac.york.cs.asbh.lang.ui.internal.LangActivator

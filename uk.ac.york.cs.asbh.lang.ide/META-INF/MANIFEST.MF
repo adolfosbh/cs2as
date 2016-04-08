@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: uk.ac.york.cs.asbh.lang.ide
+Bundle-SymbolicName: uk.ac.york.cs.asbh.lang.ide;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Require-Bundle: uk.ac.york.cs.asbh.lang;bundle-version="1.0.0",
+ org.eclipse.xtext.ide
+Export-Package: uk.ac.york.cs.asbh.ide.contentassist.antlr,
+ uk.ac.york.cs.asbh.ide.contentassist.antlr.internal
+

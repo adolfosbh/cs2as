@@ -11,28 +11,24 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.apache.commons.logging;resolution:=optional,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
- org.eclipse.emf.mwe2.launch;resolution:=optional,
  uk.ac.york.cs.asbh.lang.cs2as;bundle-version="[0.1.0,1.0.0)";visibility:=reexport,
  org.eclipse.xtext.util,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
  org.eclipse.xtext.xbase.lib,
- org.eclipse.ocl.examples.build;bundle-version="2.0.0",
- org.eclipse.qvtd.pivot.qvtimperative;bundle-version="[0.12.0,1.0.0)",
- org.eclipse.qvtd.cs2as.build;bundle-version="[0.12.0,1.0.0)",
- org.eclipse.qvtd.cs2as.xtext.runtime;bundle-version="[0.12.0,1.0.0)"
+ org.eclipse.xtend.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: uk.ac.yor.cs.asbh,
- uk.ac.yor.cs.asbh.formatting,
- uk.ac.yor.cs.asbh.generator,
- uk.ac.yor.cs.asbh.linker,
- uk.ac.yor.cs.asbh.parser.antlr,
- uk.ac.yor.cs.asbh.parser.antlr.internal,
- uk.ac.yor.cs.asbh.scoping,
- uk.ac.yor.cs.asbh.serializer,
- uk.ac.yor.cs.asbh.services,
- uk.ac.yor.cs.asbh.validation,
- uk.ac.york.cs.asbh.cs2as._Source2Target_qvtp_qvtias
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: uk.ac.york.cs.asbh,
+ uk.ac.york.cs.asbh.cs2as._Source2Target_qvtp_qvtcas,
+ uk.ac.york.cs.asbh.generator,
+ uk.ac.york.cs.asbh.linker,
+ uk.ac.york.cs.asbh.parser.antlr,
+ uk.ac.york.cs.asbh.parser.antlr.internal,
+ uk.ac.york.cs.asbh.scoping,
+ uk.ac.york.cs.asbh.serializer,
+ uk.ac.york.cs.asbh.services,
+ uk.ac.york.cs.asbh.validation
+

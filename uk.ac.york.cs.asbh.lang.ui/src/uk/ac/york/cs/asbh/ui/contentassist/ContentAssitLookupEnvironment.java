@@ -1,4 +1,4 @@
-package uk.ac.yor.cs.asbh.ui.contentassist;
+package uk.ac.york.cs.asbh.ui.contentassist;
 
 
 import org.eclipse.emf.common.util.EList;
