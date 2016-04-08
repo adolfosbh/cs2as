@@ -8,7 +8,7 @@
  * Contributors:
  *     E.D.Willink - initial API and implementation
  *******************************************************************************/
-package uk.ac.yor.cs.asbh.linker;
+package uk.ac.york.cs.asbh.linker;
 
 import java.util.List;
 
@@ -19,18 +19,19 @@ import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.pivot.utilities.OCL;
-import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASDiagnostic;
-import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASException;
-import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASTransformationExecutor;
-import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASTransformer;
-import org.eclipse.qvtd.cs2as.xtext.runtime.CS2ASExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.ExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.IDiagnosticConsumer;
 import org.eclipse.xtext.linking.impl.XtextLinkingDiagnostic;
 import org.eclipse.xtext.linking.lazy.LazyLinker;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
-import uk.ac.york.cs.asbh.cs2as._Source2Target_qvtp_qvtias.Source2Target_qvtp_qvtias;
+import uk.ac.york.cs.asbh.cs2as._Source2Target_qvtp_qvtcas.Source2Target_qvtp_qvtcas;
+import uk.ac.york.cs.asbh.cs2as.tx.CS2ASDiagnostic;
+import uk.ac.york.cs.asbh.cs2as.tx.CS2ASException;
+import uk.ac.york.cs.asbh.cs2as.tx.CS2ASExceptionDiagnostic;
+import uk.ac.york.cs.asbh.cs2as.tx.CS2ASTransformationExecutor;
+import uk.ac.york.cs.asbh.cs2as.tx.CS2ASTransformer;
+
 
 /**
  * CS2ASLinker ensures that the CS 2 Pivot mappings are refreshed after
@@ -49,7 +50,7 @@ public class CS2ASLinker extends LazyLinker
 				CS2ASTransformer tx = null;		
 				OCL ocl = OCL.newInstance(rSet);
 				try {
-					CS2ASTransformationExecutor txExecutor= new CS2ASTransformationExecutor(ocl.getEnvironmentFactory(), Source2Target_qvtp_qvtias.class);
+					CS2ASTransformationExecutor txExecutor= new CS2ASTransformationExecutor(ocl.getEnvironmentFactory(), Source2Target_qvtp_qvtcas.class);
 					tx = txExecutor.getTransformer();
 					
 					tx.addRootObjects("leftCS", ClassUtil.nonNullState(eResource.getContents()));

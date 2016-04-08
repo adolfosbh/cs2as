@@ -1,151 +1,142 @@
-module uk.ac.yor.cs.asbh.ASBHLang
+module uk.ac.york.cs.asbh.ASBHLang
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 import org.eclipse.qvtd.cs2as.xtext.generator.*
 
-var grammarURI = "classpath:/uk/ac/yor/cs/asbh/ASBHLang.xtext"
-var fileExtensions = "asbh"
-var projectName = "uk.ac.york.cs.asbh.lang"
-var runtimeProject = "../${projectName}"
-var generateXtendStub = true
-var encoding = "UTF-8"
+
+var rootPath = ".."
+var moduleName = "uk.ac.york.cs.asbh.ASBHLang"
 
 Workflow {
-//  FIXME this fail in my computer due to an awkward local URL (auth required). Using ProjectMapSetup instead
-//	bean = StandaloneSetup {
-//		scanClassPath  = true
-//		platformUri = "${runtimeProject}/.."
-//		registerGeneratedEPackage = "uk.ac.york.cs.asbh.lang.cs2as.source.SourcePackage"
-//		registerGenModelFile = "platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/SourceMM1.genmodel"
-//	}
-	bean = org.eclipse.ocl.examples.build.utilities.ProjectMapSetup{ }
 
-	component = DirectoryCleaner {
-		directory = "${runtimeProject}/src-gen"
-	}
-
-	component = DirectoryCleaner {
-		directory = "${runtimeProject}.ui/src-gen"
-	}
-
-	component = Generator {
-		pathRtProject = runtimeProject
-		pathUiProject = "${runtimeProject}.ui"
-		pathTestProject = "${runtimeProject}.tests"
-		projectNameRt = projectName
-		projectNameUi = "${projectName}.ui"
-    	encoding = encoding
-		language = auto-inject {
-			uri = grammarURI
-
-			// Java API to access grammar elements (required by several other fragments)
-			fragment = grammarAccess.GrammarAccessFragment auto-inject {}
-
-			// generates Java API for the generated EPackages
-			// fragment = ecore.EcoreGeneratorFragment auto-inject {}
-
-			// the Ecore2Xtext specific terminal converter
-			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment auto-inject {}
-
-			// serializer 2.0
-			fragment = serializer.SerializerFragment auto-inject {
-				//generateStub = false
-			}
-
-			// the old serialization component
-			// fragment = parseTreeConstructor.ParseTreeConstructorFragment auto-inject {}
-
-			// a custom ResourceFactory for use with EMF 
-			fragment = resourceFactory.ResourceFactoryFragment auto-inject {}
-
-			// the Antlr parser
-			fragment = parser.antlr.XtextAntlrGeneratorFragment auto-inject {
-			//	options = {
-			//		classSplitting = true
- 			//      backtrack = true
-			//	}
-			}
-
-			// Xtend-based API for validation 
-			fragment = validation.ValidatorFragment auto-inject {
-			// composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
-			// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
-			}
-
-			// old scoping and exporting API 
-			// fragment = scoping.ImportNamespacesScopingFragment auto-inject {}
-			// fragment = exporting.QualifiedNamesFragment auto-inject {}
-
-			// scoping and exporting API
-			fragment = scoping.ImportURIScopingFragment auto-inject {}
-			fragment = exporting.SimpleNamesFragment auto-inject {}
-			fragment = builder.BuilderIntegrationFragment auto-inject {}		
-
-			// generator API
-			fragment = generator.GeneratorFragment auto-inject {}
-
-			// formatter API 
-			// fragment = formatting.FormatterFragment auto-inject {}
-			fragment = ecore2xtext.FormatterFragment auto-inject {}
-
-			// labeling API 
-			fragment = labeling.LabelProviderFragment auto-inject {}
-
-			// outline API 
-			fragment = CS2ASOutlineTreeProviderFragment auto-inject {} // To show AS in the outline view
-			fragment = outline.QuickOutlineFragment auto-inject {}
-
-			// quickfix API
-			fragment = quickfix.QuickfixProviderFragment auto-inject {}
-
-			//content assist API 
-			fragment = contentAssist.ContentAssistFragment auto-inject {}
-
-			// antlr parser generator tailored for content assist 
-			fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {
-				//options = {
-				//	classSplitting = true
-				//}
-			}
-			
-			// generates junit test support classes into Generator#pathTestProject
-			fragment = junit.Junit4Fragment auto-inject {}
-
-			// project wizard (optional) 
-			// fragment = projectWizard.SimpleProjectWizardFragment auto-inject {
-			//		generatorProjectName = "${projectName}.generator" 
-			// }
-
-			// rename refactoring
-			fragment = refactoring.RefactorElementNameFragment auto-inject {}
-
-			// provides the necessary bindings for java types integration
-			fragment = types.TypesGeneratorFragment auto-inject {}
-			
-			// generates the required bindings only if the grammar inherits from Xbase
-			fragment = xbase.XbaseGeneratorFragment auto-inject {}
-
-    		// generates the required bindings only if the grammar inherits from Xtype
-    		fragment = xbase.XtypeGeneratorFragment auto-inject {}
-    
-			// provides a preference page for template proposals
-			fragment = templates.CodetemplatesGeneratorFragment auto-inject {}
-
-			// provides a compare view
-            fragment = compare.CompareFragment auto-inject {}
-		}
-	}
-	
-	// CS2AS Components
 	bean = org.eclipse.emf.ecore.resource.impl.ResourceSetImpl : resourceSet {}
+	bean = org.eclipse.ocl.examples.build.utilities.ProjectMapSetup{
+		resourceSet = resourceSet	
+	}
+
 	
-	component = @org.eclipse.qvtd.cs2as.build.mwe.GenerateCGedQVTiTransformation { 
+	component = org.eclipse.xtext.xtext.generator.XtextGenerator {
+	
+		configuration = {
+		  	project = org.eclipse.xtext.xtext.generator.model.project.StandardProjectConfig {
+		     
+		    baseName = "uk.ac.york.cs.asbh.lang" 
+		    rootPath = rootPath
+		    
+		    runtimeTest = {
+		      enabled = false
+		    }
+		    genericIde = {
+		      enabled = false
+		    }
+		    eclipsePlugin = {
+		      enabled = true
+		    }
+		    // only needed if you have plug-in tests
+		    eclipsePluginTest = {
+		      enabled = false
+		    }
+		    createEclipseMetaData = true
+		  }
+		  code = {
+		    encoding = "UTF-8"
+		    fileHeader = "/*\n * generated by Xtext \${version}\n */"
+		    preferXtendStubs = true
+		  }
+		}
+		language = org.eclipse.xtext.xtext.generator.StandardLanguage {
+		  name = moduleName
+		  // needed when you import an Ecore model in the grammar      
+		  referencedResource = "platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/SourceMM1.genmodel"
+		  
+		  // replace file extensions here
+		  fileExtensions = "asbh"
+		 
+		      serializer = {
+		        generateStub = false
+		      }
+		    }
+  	}
+	// CS2AS Components
+	
+    component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
+    	script = moduleName
+    	fromProject = "${rootPath}/../org.eclipse.qvtd-master/plugins/org.eclipse.qvtd.runtime/src"
+    	toProject = "${rootPath}/uk.ac.york.cs.asbh.lang/src-gen"
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
+    		to = "uk.ac.york.cs.asbh.cs2as.tx"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.evaluation"
+    		to = "uk.ac.york.cs.asbh.cs2as.tx"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.internal.evaluation"
+    		to = "uk.ac.york.cs.asbh.cs2as.internal.tx"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.labels"
+    		to = "uk.ac.york.cs.asbh.cs2as.labels"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.library.model"
+    		to = "uk.ac.york.cs.asbh.cs2as.library.model"
+    	}
+    	
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
+    		to = "uk.ac.york.cs.asbh.cs2as.tx"
+    	}
+    	
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.evaluation"
+    		to = "uk.ac.york.cs.asbh.cs2as.tx"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.internal.evaluation"
+    		to = "uk.ac.york.cs.asbh.cs2as.internal.tx"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.labels"
+    		to = "uk.ac.york.cs.asbh.cs2as.labels"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.library.model"
+    		to = "uk.ac.york.cs.asbh.cs2as.library.model"
+    	}
+    }
+    
+     component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
+    	script = moduleName
+    	fromProject = "${rootPath}/../org.eclipse.qvtd-master/plugins/org.eclipse.qvtd.cs2as.xtext.runtime/src"
+    	toProject = "${rootPath}/uk.ac.york.cs.asbh.lang/src-gen"
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.cs2as.xtext.runtime"
+    		to = "uk.ac.york.cs.asbh.cs2as.tx"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
+    		to = "uk.ac.york.cs.asbh.cs2as.tx"
+    	}
+    }
+	
+	component = org.eclipse.ocl.examples.build.utilities.GenerateCGedQVTiTransformation { 
 		resourceSet = resourceSet
-		oclFileURI = "platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/Source2Target.ocl" 
+		oclDocURI = "platform:/resource/uk.ac.york.cs.asbh.lang.cs2as/model/Source2Target.ocl"		
 		javaPackage = "uk.ac.york.cs.asbh.cs2as"
-		lookupResolverClassName = "uk.ac.york.cs.asbh.lang.cs2as.target.lookup.util.TargetLookupSolver"
+		lookupSolverClassName = "uk.ac.york.cs.asbh.lang.cs2as.target.lookup.util.TargetLookupSolver"
 		lookupResultItfName = "uk.ac.york.cs.asbh.lang.cs2as.target.lookup.util.TargetLookupResult"
+		
+		packageRename = {
+    		from = "org.eclipse.qvtd.runtime.library.model"
+    		to = "uk.ac.york.cs.asbh.cs2as.library.model"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
+    		to = "uk.ac.york.cs.asbh.cs2as.tx"
+    	}
 	}
 }
