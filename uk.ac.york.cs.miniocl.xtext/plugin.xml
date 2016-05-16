@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.ac.uk/york/cs/miniocl/MiniOCLCS"
+			class = "uk.ac.york.cs.miniocl.miniOCL.MiniOCLPackage"
+			genModel = "model/generated/MiniOCL.genmodel" />
+	</extension>
+</plugin>
