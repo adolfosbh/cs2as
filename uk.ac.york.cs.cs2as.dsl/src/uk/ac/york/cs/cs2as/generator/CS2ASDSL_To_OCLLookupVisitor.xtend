@@ -11,7 +11,6 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect
 import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef
-import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
@@ -34,6 +33,8 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	Map<String, ScopeDef> feaName2scopes = newHashMap();
 	Map<String, ExportDef> feaName2exports = newHashMap();
 	Set<String> normalizedTargetElements = newHashSet();
+	Set<String> normalizedExportedElements = newHashSet();
+	Set<String> normalizedQualifiedElements = newHashSet();
 	
 	
 	/**
@@ -151,8 +152,13 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_«namedElement»(self) endif
 		«ENDFOR»
 		
-		«FOR namedElement : normalizedTargetElements»
+		«FOR namedElement : normalizedExportedElements»
 		def : _exported_env_«namedElement»(importer : OclElement) : «lookupPck»::«lookupEnv»[1] =
+			«lookupPck»::«lookupEnv» { }
+		«ENDFOR»
+		
+		«FOR namedElement : normalizedQualifiedElements»
+		def : _qualified_env_«namedElement»(qualifier : OclElement) : «lookupPck»::«lookupEnv»[1] =
 			«lookupPck»::«lookupEnv» { }
 		«ENDFOR»
 		'''
@@ -165,7 +171,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			for (statemnt : nameReso.statements) {
 				if (statemnt instanceof NamedElementDef) {
 					normalizedTargetElements.add(nClassName);
-					for (QualificationDef qDef :  statemnt.qualifications) {
+					for ( qDef :  statemnt.qualifications) {
 						for (targetClass : qDef.targetsDef.targetClasses) {
 							val qualifiedElement = targetClass.doSwitch;
 							var qualifiers = element2qualifiers.get(qualifiedElement);
@@ -173,7 +179,8 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 								qualifiers = newArrayList();
 								element2qualifiers.put(qualifiedElement, qualifiers);
 							}
-							qualifiers.add(className);	
+							qualifiers.add(className);
+							normalizedQualifiedElements.add(qualifiedElement.normalizeString);
 						}
 						
 					}
@@ -182,11 +189,18 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 				if (statemnt instanceof ScopeDef) {
 					addStatement2Map(statemnt, feaName2scopes, statemnt.selectionDef, className)
 				} else if (statemnt instanceof ExportDef) {
+					for (pDefg : statemnt.provisionDefs) {
+						for (targetClass : pDefg.targetsDef.targetClasses) {
+							val exportedElement = targetClass.doSwitch;
+							normalizedExportedElements.add(exportedElement.normalizeString);
+						}
+					}
 					addStatement2Map(statemnt, feaName2exports, statemnt.selectionDef, className)
 				}
 			}
 		}
 	}
+	
 	
 	def private <Def extends ClassNameResolutionStmnt> addStatement2Map (Def statmnt, Map<String, Def> result, SelectionDef selection, String className) {
 		

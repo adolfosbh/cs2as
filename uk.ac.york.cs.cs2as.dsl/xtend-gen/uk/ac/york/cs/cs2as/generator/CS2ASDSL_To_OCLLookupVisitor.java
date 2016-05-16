@@ -71,6 +71,10 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   
   private Set<String> normalizedTargetElements = CollectionLiterals.<String>newHashSet();
   
+  private Set<String> normalizedExportedElements = CollectionLiterals.<String>newHashSet();
+  
+  private Set<String> normalizedQualifiedElements = CollectionLiterals.<String>newHashSet();
+  
   /**
    * default name referencer
    */
@@ -296,10 +300,29 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     }
     _builder.newLine();
     {
-      for(final String namedElement_3 : this.normalizedTargetElements) {
+      for(final String namedElement_3 : this.normalizedExportedElements) {
         _builder.append("def : _exported_env_");
         _builder.append(namedElement_3, "");
         _builder.append("(importer : OclElement) : ");
+        _builder.append(this.lookupPck, "");
+        _builder.append("::");
+        _builder.append(this.lookupEnv, "");
+        _builder.append("[1] =");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append(this.lookupPck, "\t");
+        _builder.append("::");
+        _builder.append(this.lookupEnv, "\t");
+        _builder.append(" { }");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    {
+      for(final String namedElement_4 : this.normalizedQualifiedElements) {
+        _builder.append("def : _qualified_env_");
+        _builder.append(namedElement_4, "");
+        _builder.append("(qualifier : OclElement) : ");
         _builder.append(this.lookupPck, "");
         _builder.append("::");
         _builder.append(this.lookupEnv, "");
@@ -343,6 +366,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                       this.element2qualifiers.put(qualifiedElement, qualifiers);
                     }
                     qualifiers.add(className);
+                    String _normalizeString = this.normalizeString(qualifiedElement);
+                    this.normalizedQualifiedElements.add(_normalizeString);
                   }
                 }
               }
@@ -354,6 +379,18 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               this.<ScopeDef>addStatement2Map(((ScopeDef)statemnt), this.feaName2scopes, _selectionDef, className);
             } else {
               if ((statemnt instanceof ExportDef)) {
+                EList<ProvisionDef> _provisionDefs = ((ExportDef)statemnt).getProvisionDefs();
+                for (final ProvisionDef pDefg : _provisionDefs) {
+                  TargetsDef _targetsDef_1 = pDefg.getTargetsDef();
+                  EList<TypedRefCS> _targetClasses_1 = _targetsDef_1.getTargetClasses();
+                  for (final TypedRefCS targetClass_1 : _targetClasses_1) {
+                    {
+                      final String exportedElement = this.doSwitch(targetClass_1);
+                      String _normalizeString = this.normalizeString(exportedElement);
+                      this.normalizedExportedElements.add(_normalizeString);
+                    }
+                  }
+                }
                 SelectionDef _selectionDef_1 = ((ExportDef)statemnt).getSelectionDef();
                 this.<ExportDef>addStatement2Map(((ExportDef)statemnt), this.feaName2exports, _selectionDef_1, className);
               }
