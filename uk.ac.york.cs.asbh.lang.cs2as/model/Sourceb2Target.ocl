@@ -1,8 +1,8 @@
 import 'SourceMM1b.ecore'
 import 'TargetMM1.ecore'
-import 'EnvExample1.ecore'
+import 'Lookup.ecore'
 import 'Sourceb2Sourceb.ocl'
-import 'TargetLookup.ocl'
+import 'Source2TargetLookup.ocl'
 
 package source
 
