@@ -18,11 +18,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.basecs.ParameterCS;
-import org.eclipse.ocl.xtext.basecs.TemplateSignatureCS;
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
+import org.eclipse.emf.ecore.xcore.XClass;
+import org.eclipse.emf.ecore.xcore.XParameter;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef;
@@ -32,10 +31,10 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef;
  * An implementation of the model object '<em><b>Helper Def</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl#getOwnedSignature <em>Owned Signature</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl#getParams <em>Params</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl#getOwnedType <em>Owned Type</em>}</li>
@@ -46,16 +45,6 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef;
  */
 public class HelperDefImpl extends MinimalEObjectImpl.Container implements HelperDef
 {
-  /**
-   * The cached value of the '{@link #getOwnedSignature() <em>Owned Signature</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOwnedSignature()
-   * @generated
-   * @ordered
-   */
-  protected TemplateSignatureCS ownedSignature;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -84,17 +73,17 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
    * @generated
    * @ordered
    */
-  protected EList<ParameterCS> params;
+  protected EList<XParameter> params;
 
   /**
-   * The cached value of the '{@link #getOwnedType() <em>Owned Type</em>}' containment reference.
+   * The cached value of the '{@link #getOwnedType() <em>Owned Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getOwnedType()
    * @generated
    * @ordered
    */
-  protected TypedRefCS ownedType;
+  protected XClass ownedType;
 
   /**
    * The cached value of the '{@link #getHelperBody() <em>Helper Body</em>}' containment reference.
@@ -104,7 +93,7 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
    * @generated
    * @ordered
    */
-  protected ExpCS helperBody;
+  protected XExpression helperBody;
 
   /**
    * <!-- begin-user-doc -->
@@ -125,54 +114,6 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
   protected EClass eStaticClass()
   {
     return Cs2as_dslPackage.Literals.HELPER_DEF;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TemplateSignatureCS getOwnedSignature()
-  {
-    return ownedSignature;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetOwnedSignature(TemplateSignatureCS newOwnedSignature, NotificationChain msgs)
-  {
-    TemplateSignatureCS oldOwnedSignature = ownedSignature;
-    ownedSignature = newOwnedSignature;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.HELPER_DEF__OWNED_SIGNATURE, oldOwnedSignature, newOwnedSignature);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOwnedSignature(TemplateSignatureCS newOwnedSignature)
-  {
-    if (newOwnedSignature != ownedSignature)
-    {
-      NotificationChain msgs = null;
-      if (ownedSignature != null)
-        msgs = ((InternalEObject)ownedSignature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.HELPER_DEF__OWNED_SIGNATURE, null, msgs);
-      if (newOwnedSignature != null)
-        msgs = ((InternalEObject)newOwnedSignature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.HELPER_DEF__OWNED_SIGNATURE, null, msgs);
-      msgs = basicSetOwnedSignature(newOwnedSignature, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.HELPER_DEF__OWNED_SIGNATURE, newOwnedSignature, newOwnedSignature));
   }
 
   /**
@@ -203,11 +144,11 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ParameterCS> getParams()
+  public EList<XParameter> getParams()
   {
     if (params == null)
     {
-      params = new EObjectContainmentEList<ParameterCS>(ParameterCS.class, this, Cs2as_dslPackage.HELPER_DEF__PARAMS);
+      params = new EObjectContainmentEList<XParameter>(XParameter.class, this, Cs2as_dslPackage.HELPER_DEF__PARAMS);
     }
     return params;
   }
@@ -217,7 +158,27 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypedRefCS getOwnedType()
+  public XClass getOwnedType()
+  {
+    if (ownedType != null && ownedType.eIsProxy())
+    {
+      InternalEObject oldOwnedType = (InternalEObject)ownedType;
+      ownedType = (XClass)eResolveProxy(oldOwnedType);
+      if (ownedType != oldOwnedType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cs2as_dslPackage.HELPER_DEF__OWNED_TYPE, oldOwnedType, ownedType));
+      }
+    }
+    return ownedType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XClass basicGetOwnedType()
   {
     return ownedType;
   }
@@ -227,16 +188,12 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetOwnedType(TypedRefCS newOwnedType, NotificationChain msgs)
+  public void setOwnedType(XClass newOwnedType)
   {
-    TypedRefCS oldOwnedType = ownedType;
+    XClass oldOwnedType = ownedType;
     ownedType = newOwnedType;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.HELPER_DEF__OWNED_TYPE, oldOwnedType, newOwnedType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.HELPER_DEF__OWNED_TYPE, oldOwnedType, ownedType));
   }
 
   /**
@@ -244,28 +201,7 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOwnedType(TypedRefCS newOwnedType)
-  {
-    if (newOwnedType != ownedType)
-    {
-      NotificationChain msgs = null;
-      if (ownedType != null)
-        msgs = ((InternalEObject)ownedType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.HELPER_DEF__OWNED_TYPE, null, msgs);
-      if (newOwnedType != null)
-        msgs = ((InternalEObject)newOwnedType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.HELPER_DEF__OWNED_TYPE, null, msgs);
-      msgs = basicSetOwnedType(newOwnedType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.HELPER_DEF__OWNED_TYPE, newOwnedType, newOwnedType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ExpCS getHelperBody()
+  public XExpression getHelperBody()
   {
     return helperBody;
   }
@@ -275,9 +211,9 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetHelperBody(ExpCS newHelperBody, NotificationChain msgs)
+  public NotificationChain basicSetHelperBody(XExpression newHelperBody, NotificationChain msgs)
   {
-    ExpCS oldHelperBody = helperBody;
+    XExpression oldHelperBody = helperBody;
     helperBody = newHelperBody;
     if (eNotificationRequired())
     {
@@ -292,7 +228,7 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setHelperBody(ExpCS newHelperBody)
+  public void setHelperBody(XExpression newHelperBody)
   {
     if (newHelperBody != helperBody)
     {
@@ -318,12 +254,8 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.HELPER_DEF__OWNED_SIGNATURE:
-        return basicSetOwnedSignature(null, msgs);
       case Cs2as_dslPackage.HELPER_DEF__PARAMS:
         return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
-      case Cs2as_dslPackage.HELPER_DEF__OWNED_TYPE:
-        return basicSetOwnedType(null, msgs);
       case Cs2as_dslPackage.HELPER_DEF__HELPER_BODY:
         return basicSetHelperBody(null, msgs);
     }
@@ -340,14 +272,13 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.HELPER_DEF__OWNED_SIGNATURE:
-        return getOwnedSignature();
       case Cs2as_dslPackage.HELPER_DEF__NAME:
         return getName();
       case Cs2as_dslPackage.HELPER_DEF__PARAMS:
         return getParams();
       case Cs2as_dslPackage.HELPER_DEF__OWNED_TYPE:
-        return getOwnedType();
+        if (resolve) return getOwnedType();
+        return basicGetOwnedType();
       case Cs2as_dslPackage.HELPER_DEF__HELPER_BODY:
         return getHelperBody();
     }
@@ -365,21 +296,18 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.HELPER_DEF__OWNED_SIGNATURE:
-        setOwnedSignature((TemplateSignatureCS)newValue);
-        return;
       case Cs2as_dslPackage.HELPER_DEF__NAME:
         setName((String)newValue);
         return;
       case Cs2as_dslPackage.HELPER_DEF__PARAMS:
         getParams().clear();
-        getParams().addAll((Collection<? extends ParameterCS>)newValue);
+        getParams().addAll((Collection<? extends XParameter>)newValue);
         return;
       case Cs2as_dslPackage.HELPER_DEF__OWNED_TYPE:
-        setOwnedType((TypedRefCS)newValue);
+        setOwnedType((XClass)newValue);
         return;
       case Cs2as_dslPackage.HELPER_DEF__HELPER_BODY:
-        setHelperBody((ExpCS)newValue);
+        setHelperBody((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -395,9 +323,6 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.HELPER_DEF__OWNED_SIGNATURE:
-        setOwnedSignature((TemplateSignatureCS)null);
-        return;
       case Cs2as_dslPackage.HELPER_DEF__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -405,10 +330,10 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
         getParams().clear();
         return;
       case Cs2as_dslPackage.HELPER_DEF__OWNED_TYPE:
-        setOwnedType((TypedRefCS)null);
+        setOwnedType((XClass)null);
         return;
       case Cs2as_dslPackage.HELPER_DEF__HELPER_BODY:
-        setHelperBody((ExpCS)null);
+        setHelperBody((XExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -424,8 +349,6 @@ public class HelperDefImpl extends MinimalEObjectImpl.Container implements Helpe
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.HELPER_DEF__OWNED_SIGNATURE:
-        return ownedSignature != null;
       case Cs2as_dslPackage.HELPER_DEF__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case Cs2as_dslPackage.HELPER_DEF__PARAMS:

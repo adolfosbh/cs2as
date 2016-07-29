@@ -6,7 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.xtext.basecs.PathNameCS;
+import org.eclipse.emf.ecore.xcore.XClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,30 +28,30 @@ import org.eclipse.ocl.xtext.basecs.PathNameCS;
 public interface ClassDisambiguation extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Class</b></em>' containment reference.
+   * Returns the value of the '<em><b>Class</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Class</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Class</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Class</em>' containment reference.
-   * @see #setClass(PathNameCS)
+   * @return the value of the '<em>Class</em>' reference.
+   * @see #setClass(XClass)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getClassDisambiguation_Class()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  PathNameCS getClass_();
+  XClass getClass_();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation#getClass_ <em>Class</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation#getClass_ <em>Class</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Class</em>' containment reference.
+   * @param value the new value of the '<em>Class</em>' reference.
    * @see #getClass_()
    * @generated
    */
-  void setClass(PathNameCS value);
+  void setClass(XClass value);
 
   /**
    * Returns the value of the '<em><b>Statements</b></em>' containment reference list.

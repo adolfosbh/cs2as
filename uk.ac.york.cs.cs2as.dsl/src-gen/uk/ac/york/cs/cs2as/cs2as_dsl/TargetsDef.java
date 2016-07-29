@@ -6,7 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
+import org.eclipse.emf.ecore.xcore.XClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,19 +27,19 @@ import org.eclipse.ocl.xtext.basecs.TypedRefCS;
 public interface TargetsDef extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Target Classes</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.ocl.xtext.basecs.TypedRefCS}.
+   * Returns the value of the '<em><b>Target Classes</b></em>' reference list.
+   * The list contents are of type {@link org.eclipse.emf.ecore.xcore.XClass}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Target Classes</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Target Classes</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Target Classes</em>' containment reference list.
+   * @return the value of the '<em>Target Classes</em>' reference list.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getTargetsDef_TargetClasses()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  EList<TypedRefCS> getTargetClasses();
+  EList<XClass> getTargetClasses();
 
 } // TargetsDef

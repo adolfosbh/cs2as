@@ -9,30 +9,23 @@ import java.util.Map;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.ocl.xtext.basecs.ImportCS;
-import org.eclipse.ocl.xtext.basecs.ParameterCS;
-import org.eclipse.ocl.xtext.basecs.PathNameCS;
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
-import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
+import org.eclipse.emf.ecore.xcore.XAttribute;
+import org.eclipse.emf.ecore.xcore.XClass;
+import org.eclipse.emf.ecore.xcore.XParameter;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
-import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
-import uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
@@ -103,110 +96,13 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   
   @Override
   public String caseModel(final Model object) {
-    String _xblockexpression = null;
-    {
-      final StringBuilder sb = new StringBuilder();
-      StringConcatenation _builder = new StringConcatenation();
-      CSDecl _csDecl = object.getCsDecl();
-      String _doSwitch = this.doSwitch(_csDecl);
-      _builder.append(_doSwitch, "");
-      _builder.newLineIfNotEmpty();
-      ASDecl _asDecl = object.getAsDecl();
-      String _doSwitch_1 = this.doSwitch(_asDecl);
-      _builder.append(_doSwitch_1, "");
-      _builder.newLineIfNotEmpty();
-      _builder.append("import \'Lookup.ecore\'");
-      _builder.newLine();
-      _builder.append("import \'");
-      _builder.append(this.baseFileName, "");
-      _builder.append("Helpers.ocl\'");
-      _builder.newLineIfNotEmpty();
-      _builder.newLine();
-      sb.append(_builder);
-      CSDecl _csDecl_1 = object.getCsDecl();
-      EList<ImportCS> _metamodels = _csDecl_1.getMetamodels();
-      ImportCS _get = _metamodels.get(0);
-      String _name = _get.getName();
-      this.sourcePckName = _name;
-      ASDecl _asDecl_1 = object.getAsDecl();
-      EList<ImportCS> _metamodels_1 = _asDecl_1.getMetamodels();
-      ImportCS _get_1 = _metamodels_1.get(0);
-      String _name_1 = _get_1.getName();
-      this.targetPckName = _name_1;
-      final NameResolutionSect nameresoSect = object.getNameresoSect();
-      boolean _equals = Objects.equal(nameresoSect, null);
-      if (_equals) {
-        return sb.toString();
-      }
-      NameResolutionSect _nameresoSect = object.getNameresoSect();
-      this.computeInitialMaps(_nameresoSect);
-      final DefaultNamedElementDef namedElement = nameresoSect.getNamedElement();
-      boolean _notEquals = (!Objects.equal(namedElement, null));
-      if (_notEquals) {
-        NameResolutionSect _nameresoSect_1 = object.getNameresoSect();
-        DefaultNamedElementDef _namedElement = _nameresoSect_1.getNamedElement();
-        String _nameElement = _namedElement.getNameElement();
-        this.defaultNE = _nameElement;
-        NameResolutionSect _nameresoSect_2 = object.getNameresoSect();
-        DefaultNamedElementDef _namedElement_1 = _nameresoSect_2.getNamedElement();
-        NameExpCS _nameProperty = _namedElement_1.getNameProperty();
-        String _doSwitch_2 = this.doSwitch(_nameProperty);
-        this.defaultNEP = _doSwitch_2;
-      }
-      final DefaultNameReferencerDef nameRef = nameresoSect.getNameReferencer();
-      boolean _notEquals_1 = (!Objects.equal(nameRef, null));
-      if (_notEquals_1) {
-        NameResolutionSect _nameresoSect_3 = object.getNameresoSect();
-        DefaultNameReferencerDef _nameReferencer = _nameresoSect_3.getNameReferencer();
-        String _nameReferencer_1 = _nameReferencer.getNameReferencer();
-        this.defaultNR = _nameReferencer_1;
-        NameResolutionSect _nameresoSect_4 = object.getNameresoSect();
-        DefaultNameReferencerDef _nameReferencer_2 = _nameresoSect_4.getNameReferencer();
-        NameExpCS _nameProperty_1 = _nameReferencer_2.getNameProperty();
-        String _doSwitch_3 = this.doSwitch(_nameProperty_1);
-        this.defaultNRP = _doSwitch_3;
-      }
-      final NameQualifierDef nameQuali = nameresoSect.getNameQualifier();
-      boolean _notEquals_2 = (!Objects.equal(nameQuali, null));
-      if (_notEquals_2) {
-        NameResolutionSect _nameresoSect_5 = object.getNameresoSect();
-        NameQualifierDef _nameQualifier = _nameresoSect_5.getNameQualifier();
-        String _nameQualifier_1 = _nameQualifier.getNameQualifier();
-        this.defaultNQ = _nameQualifier_1;
-        NameResolutionSect _nameresoSect_6 = object.getNameresoSect();
-        NameQualifierDef _nameQualifier_2 = _nameresoSect_6.getNameQualifier();
-        NameExpCS _segmentsProp = _nameQualifier_2.getSegmentsProp();
-        String _doSwitch_4 = this.doSwitch(_segmentsProp);
-        this.defaultNQP = _doSwitch_4;
-      }
-      StringConcatenation _builder_1 = new StringConcatenation();
-      CharSequence _commonLookupInfrastructure = this.commonLookupInfrastructure();
-      _builder_1.append(_commonLookupInfrastructure, "");
-      _builder_1.newLineIfNotEmpty();
-      _builder_1.newLine();
-      _builder_1.append("package ");
-      _builder_1.append(this.targetPckName, "");
-      _builder_1.newLineIfNotEmpty();
-      _builder_1.newLine();
-      NameResolutionSect _nameresoSect_7 = object.getNameresoSect();
-      String _doSwitch_5 = this.doSwitch(_nameresoSect_7);
-      _builder_1.append(_doSwitch_5, "");
-      _builder_1.newLineIfNotEmpty();
-      _builder_1.newLine();
-      _builder_1.append("context Visitable");
-      _builder_1.newLine();
-      NameResolutionSect _nameresoSect_8 = object.getNameresoSect();
-      String _provideLookupMethods = this.provideLookupMethods(_nameresoSect_8);
-      _builder_1.append(_provideLookupMethods, "");
-      _builder_1.newLineIfNotEmpty();
-      _builder_1.newLine();
-      _builder_1.newLine();
-      _builder_1.append("endpackage");
-      _builder_1.newLine();
-      StringBuilder _append = sb.append(_builder_1);
-      _xblockexpression = _append.toString();
-    }
-    return _xblockexpression;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method metamodels is undefined for the type CS2ASDSL_To_OCLLookupVisitor"
+      + "\nThe method metamodels is undefined for the type CS2ASDSL_To_OCLLookupVisitor"
+      + "\nget cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\nget cannot be resolved"
+      + "\nname cannot be resolved");
   }
   
   private CharSequence commonLookupInfrastructure() {
@@ -343,7 +239,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     EList<ClassNameResolution> _nameResolutions = nrSect.getNameResolutions();
     for (final ClassNameResolution nameReso : _nameResolutions) {
       {
-        PathNameCS _class_ = nameReso.getClass_();
+        XClass _class_ = nameReso.getClass_();
         final String className = this.doSwitch(_class_);
         final String nClassName = this.normalizeString(className);
         EList<ClassNameResolutionStmnt> _statements = nameReso.getStatements();
@@ -354,8 +250,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               EList<QualificationDef> _qualifications = ((NamedElementDef)statemnt).getQualifications();
               for (final QualificationDef qDef : _qualifications) {
                 TargetsDef _targetsDef = qDef.getTargetsDef();
-                EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-                for (final TypedRefCS targetClass : _targetClasses) {
+                EList<XClass> _targetClasses = _targetsDef.getTargetClasses();
+                for (final XClass targetClass : _targetClasses) {
                   {
                     final String qualifiedElement = this.doSwitch(targetClass);
                     List<String> qualifiers = this.element2qualifiers.get(qualifiedElement);
@@ -382,8 +278,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                 EList<ProvisionDef> _provisionDefs = ((ExportDef)statemnt).getProvisionDefs();
                 for (final ProvisionDef pDefg : _provisionDefs) {
                   TargetsDef _targetsDef_1 = pDefg.getTargetsDef();
-                  EList<TypedRefCS> _targetClasses_1 = _targetsDef_1.getTargetClasses();
-                  for (final TypedRefCS targetClass_1 : _targetClasses_1) {
+                  EList<XClass> _targetClasses_1 = _targetsDef_1.getTargetClasses();
+                  for (final XClass targetClass_1 : _targetClasses_1) {
                     {
                       final String exportedElement = this.doSwitch(targetClass_1);
                       String _normalizeString = this.normalizeString(exportedElement);
@@ -404,8 +300,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   private <Def extends ClassNameResolutionStmnt> Def addStatement2Map(final Def statmnt, final Map<String, Def> result, final SelectionDef selection, final String className) {
     Def _xifexpression = null;
     if ((selection instanceof SelectionSpecific)) {
-      EList<ExpCS> _selectedProperties = ((SelectionSpecific)selection).getSelectedProperties();
-      for (final ExpCS property : _selectedProperties) {
+      EList<XExpression> _selectedProperties = ((SelectionSpecific)selection).getSelectedProperties();
+      for (final XExpression property : _selectedProperties) {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append(className, "");
         _builder.append("::");
@@ -476,7 +372,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         _builder.append("\t");
         _builder.newLine();
         _builder.append("context ");
-        PathNameCS _class_ = object.getClass_();
+        XClass _class_ = object.getClass_();
         String _doSwitch = this.doSwitch(_class_);
         _builder.append(_doSwitch, "");
         _builder.newLineIfNotEmpty();
@@ -525,8 +421,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       if (_notEquals) {
         for (final QualificationDef qualification : qualifications) {
           TargetsDef _targetsDef = qualification.getTargetsDef();
-          EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-          for (final TypedRefCS targetClass : _targetClasses) {
+          EList<XClass> _targetClasses = _targetsDef.getTargetClasses();
+          for (final XClass targetClass : _targetClasses) {
             {
               final String className = this.doSwitch(targetClass);
               final String nClassName = this.normalizeString(className);
@@ -621,7 +517,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       boolean _notEquals_1 = (!Objects.equal(filter, null));
       if (_notEquals_1) {
         EObject _eContainer = object.eContainer();
-        PathNameCS _class_ = ((ClassNameResolution) _eContainer).getClass_();
+        XClass _class_ = ((ClassNameResolution) _eContainer).getClass_();
         final String className = this.doSwitch(_class_);
         final String nClassName = this.normalizeString(className);
         final String filterParams = this.getParamsText(filter);
@@ -636,7 +532,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         _builder.append(") : Boolean =");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        ExpCS _expression = filter.getExpression();
+        XExpression _expression = filter.getExpression();
         String _doSwitch = this.doSwitch(_expression);
         _builder.append(_doSwitch, "\t");
         _builder.newLineIfNotEmpty();
@@ -659,12 +555,12 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         EObject _eContainer_2 = _eContainer_1.eContainer();
         final ScopeDef scopeDef = ((ScopeDef) _eContainer_2);
         SelectionDef _selectionDef = scopeDef.getSelectionDef();
-        EList<ExpCS> _selectedProperties = ((SelectionSpecific) _selectionDef).getSelectedProperties();
-        final ExpCS property = _selectedProperties.get(0);
+        EList<XExpression> _selectedProperties = ((SelectionSpecific) _selectionDef).getSelectedProperties();
+        final XExpression property = _selectedProperties.get(0);
         final String propertyName = this.doSwitch(property);
         StringConcatenation _builder = new StringConcatenation();
         _builder.append(".addElements(");
-        ExpCS _expression = object.getExpression();
+        XExpression _expression = object.getExpression();
         String _doSwitch = this.doSwitch(_expression);
         _builder.append(_doSwitch, "");
         _builder.append("->select(x | self.");
@@ -688,7 +584,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         final String exportEnvCall = _xifexpression_1;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append(".addElements(");
-        ExpCS _expression = object.getExpression();
+        XExpression _expression = object.getExpression();
         String _doSwitch = this.doSwitch(_expression);
         _builder.append(_doSwitch, "");
         _builder.append(exportEnvCall, "");
@@ -754,7 +650,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         EList<ClassNameResolutionStmnt> _statements = resolution.getStatements();
         for (final ClassNameResolutionStmnt statmt : _statements) {
           {
-            PathNameCS _class_ = resolution.getClass_();
+            XClass _class_ = resolution.getClass_();
             final String className = this.doSwitch(_class_);
             final String nClassName = this.normalizeString(className);
             String _lowerCase = className.toLowerCase();
@@ -762,10 +658,10 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
             final String nameParam = (Character.valueOf(_charAt) + "Name");
             if ((statmt instanceof NamedElementDef)) {
               String _xifexpression = null;
-              NameExpCS _namePoperty = ((NamedElementDef)statmt).getNamePoperty();
+              XAttribute _namePoperty = ((NamedElementDef)statmt).getNamePoperty();
               boolean _notEquals = (!Objects.equal(_namePoperty, null));
               if (_notEquals) {
-                NameExpCS _namePoperty_1 = ((NamedElementDef)statmt).getNamePoperty();
+                XAttribute _namePoperty_1 = ((NamedElementDef)statmt).getNamePoperty();
                 _xifexpression = this.doSwitch(_namePoperty_1);
               } else {
                 _xifexpression = this.defaultNEP;
@@ -904,8 +800,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                 for (final ProvisionDef providerDef : _provisionDefs) {
                   {
                     TargetsDef _targetsDef = providerDef.getTargetsDef();
-                    EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-                    TypedRefCS _get_1 = _targetClasses.get(0);
+                    EList<XClass> _targetClasses = _targetsDef.getTargetClasses();
+                    XClass _get_1 = _targetClasses.get(0);
                     final String exportedClassName = this.doSwitch(_get_1);
                     final String nExportedClassName = this.normalizeString(exportedClassName);
                     final FilterDef filter_1 = this.element2filter.get(exportedClassName);
@@ -1261,7 +1157,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         provisionDefs.addAll(_provisionDefs);
       }
       final StringBuilder sb = new StringBuilder();
-      PathNameCS _class_ = nameReso.getClass_();
+      XClass _class_ = nameReso.getClass_();
       final String scopingClassName = this.doSwitch(_class_);
       final Map<String, Set<ProvisionDef>> scopedClasses = this.computeTargetClasses(provisionDefs);
       Set<String> _keySet = scopedClasses.keySet();
@@ -1286,8 +1182,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           final ScopeDef scopeDef = ((ScopeDef) _eContainer);
           final SelectionDef propagation = scopeDef.getSelectionDef();
           if ((propagation instanceof SelectionSpecific)) {
-            EList<ExpCS> _selectedProperties = ((SelectionSpecific)propagation).getSelectedProperties();
-            for (final ExpCS property : _selectedProperties) {
+            EList<XExpression> _selectedProperties = ((SelectionSpecific)propagation).getSelectedProperties();
+            for (final XExpression property : _selectedProperties) {
               StringConcatenation _builder = new StringConcatenation();
               _builder.append(scopingClassName, "");
               _builder.append("::");
@@ -1342,7 +1238,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         provisionDefs.addAll(_provisionDefs);
       }
       final StringBuilder sb = new StringBuilder();
-      PathNameCS _class_ = nameReso.getClass_();
+      XClass _class_ = nameReso.getClass_();
       final String exportingClassName = this.doSwitch(_class_);
       final Map<String, Set<ProvisionDef>> exportedClasses = this.computeTargetClasses(provisionDefs);
       Set<String> _keySet = exportedClasses.keySet();
@@ -1367,8 +1263,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           final ExportDef exportsDef = ((ExportDef) _eContainer);
           final SelectionDef propagation = exportsDef.getSelectionDef();
           if ((propagation instanceof SelectionSpecific)) {
-            EList<ExpCS> _selectedProperties = ((SelectionSpecific)propagation).getSelectedProperties();
-            for (final ExpCS property : _selectedProperties) {
+            EList<XExpression> _selectedProperties = ((SelectionSpecific)propagation).getSelectedProperties();
+            for (final XExpression property : _selectedProperties) {
               StringConcatenation _builder = new StringConcatenation();
               _builder.append(exportingClassName, "");
               _builder.append("::");
@@ -1434,14 +1330,14 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
             final ScopeDef scopeDef = this.feaName2scopes.get(allChildrenName);
             SelectionDef _selectionDef = scopeDef.getSelectionDef();
             final SelectionAll selectionDef = ((SelectionAll) _selectionDef);
-            EList<ExpCS> _xifexpression_2 = null;
+            EList<XExpression> _xifexpression_2 = null;
             boolean _notEquals = (!Objects.equal(selectionDef, null));
             if (_notEquals) {
               _xifexpression_2 = selectionDef.getExceptionProperties();
             } else {
               _xifexpression_2 = null;
             }
-            final EList<ExpCS> exceptProps = _xifexpression_2;
+            final EList<XExpression> exceptProps = _xifexpression_2;
             String _xifexpression_3 = null;
             boolean _or = false;
             boolean _equals_2 = Objects.equal(selectionDef, null);
@@ -1457,7 +1353,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               StringConcatenation _builder_1 = new StringConcatenation();
               _builder_1.append("if not (");
               {
-                for(final ExpCS exceptProp : exceptProps) {
+                for(final XExpression exceptProp : exceptProps) {
                   {
                     int _indexOf = exceptProps.indexOf(exceptProp);
                     boolean _greaterThan = (_indexOf > 0);
@@ -1588,11 +1484,11 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       for(final ProvisionDef provisionDef : provisionDefs) {
         {
           TargetsDef _targetsDef = provisionDef.getTargetsDef();
-          EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-          final Function1<TypedRefCS, String> _function = (TypedRefCS x) -> {
+          EList<XClass> _targetClasses = _targetsDef.getTargetClasses();
+          final Function1<XClass, String> _function = (XClass x) -> {
             return this.doSwitch(x);
           };
-          List<String> _map = ListExtensions.<TypedRefCS, String>map(_targetClasses, _function);
+          List<String> _map = ListExtensions.<XClass, String>map(_targetClasses, _function);
           boolean _contains = _map.contains(targetClassName);
           if (_contains) {
             String _doSwitch = this.doSwitch(provisionDef);
@@ -1666,8 +1562,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           for (final ProvisionDef provisionDef : _flatten) {
             {
               TargetsDef _targetsDef = provisionDef.getTargetsDef();
-              EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-              TypedRefCS _get = _targetClasses.get(0);
+              EList<XClass> _targetClasses = _targetsDef.getTargetClasses();
+              XClass _get = _targetClasses.get(0);
               final String className = this.doSwitch(_get);
               final String nClassName = this.normalizeString(className);
               String _lowerCase = className.toLowerCase();
@@ -1817,10 +1713,10 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   private String getParamsText(final FilterDef filter) {
     String _xblockexpression = null;
     {
-      final EList<ParameterCS> params = filter.getParams();
+      final EList<XParameter> params = filter.getParams();
       StringConcatenation _builder = new StringConcatenation();
       {
-        for(final ParameterCS param : params) {
+        for(final XParameter param : params) {
           {
             int _indexOf = params.indexOf(param);
             boolean _greaterThan = (_indexOf > 0);
@@ -1855,10 +1751,10 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   private String getArgsText(final FilterDef filter) {
     String _xblockexpression = null;
     {
-      final EList<ParameterCS> params = filter.getParams();
+      final EList<XParameter> params = filter.getParams();
       StringConcatenation _builder = new StringConcatenation();
       {
-        for(final ParameterCS param : params) {
+        for(final XParameter param : params) {
           {
             int _indexOf = params.indexOf(param);
             boolean _greaterThan = (_indexOf > 0);
@@ -1879,8 +1775,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     final Map<String, Set<ProvisionDef>> targetClasses = CollectionLiterals.<String, Set<ProvisionDef>>newLinkedHashMap();
     for (final ProvisionDef provisionDef : provisionDefs) {
       TargetsDef _targetsDef = provisionDef.getTargetsDef();
-      EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-      for (final TypedRefCS targetClass : _targetClasses) {
+      EList<XClass> _targetClasses = _targetsDef.getTargetClasses();
+      for (final XClass targetClass : _targetClasses) {
         {
           final String targetClassName = this.doSwitch(targetClass);
           Set<ProvisionDef> scopingDefs = targetClasses.get(targetClassName);

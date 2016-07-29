@@ -7,19 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.eclipse.ocl.pivot.utilities.Nameable;
-import org.eclipse.ocl.pivot.utilities.Pivotable;
-
-import org.eclipse.ocl.xtext.basecs.ElementCS;
-import org.eclipse.ocl.xtext.basecs.ModelElementCS;
-import org.eclipse.ocl.xtext.basecs.NamedElementCS;
-import org.eclipse.ocl.xtext.basecs.PivotableElementCS;
-import org.eclipse.ocl.xtext.basecs.RootCS;
-
-import org.eclipse.ocl.xtext.basecs.util.VisitableCS;
-
-import org.eclipse.ocl.xtext.essentialoclcs.ContextCS;
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.*;
 
@@ -90,15 +78,6 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
       {
         Model model = (Model)theEObject;
         T result = caseModel(model);
-        if (result == null) result = caseContextCS(model);
-        if (result == null) result = caseNamedElementCS(model);
-        if (result == null) result = caseRootCS(model);
-        if (result == null) result = caseModelElementCS(model);
-        if (result == null) result = caseNameable(model);
-        if (result == null) result = casePivotableElementCS(model);
-        if (result == null) result = caseElementCS(model);
-        if (result == null) result = casePivotable(model);
-        if (result == null) result = caseVisitableCS(model);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -321,12 +300,7 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
       {
         TraceExpCS traceExpCS = (TraceExpCS)theEObject;
         T result = caseTraceExpCS(traceExpCS);
-        if (result == null) result = caseExpCS(traceExpCS);
-        if (result == null) result = caseModelElementCS(traceExpCS);
-        if (result == null) result = casePivotableElementCS(traceExpCS);
-        if (result == null) result = caseElementCS(traceExpCS);
-        if (result == null) result = casePivotable(traceExpCS);
-        if (result == null) result = caseVisitableCS(traceExpCS);
+        if (result == null) result = caseXExpression(traceExpCS);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -334,12 +308,7 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
       {
         LookupExpCS lookupExpCS = (LookupExpCS)theEObject;
         T result = caseLookupExpCS(lookupExpCS);
-        if (result == null) result = caseExpCS(lookupExpCS);
-        if (result == null) result = caseModelElementCS(lookupExpCS);
-        if (result == null) result = casePivotableElementCS(lookupExpCS);
-        if (result == null) result = caseElementCS(lookupExpCS);
-        if (result == null) result = casePivotable(lookupExpCS);
-        if (result == null) result = caseVisitableCS(lookupExpCS);
+        if (result == null) result = caseXExpression(lookupExpCS);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -924,161 +893,17 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Visitable CS</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XExpression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Visitable CS</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XExpression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVisitableCS(VisitableCS object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Element CS</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Element CS</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseElementCS(ElementCS object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Pivotable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Pivotable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePivotable(Pivotable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Pivotable Element CS</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Pivotable Element CS</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePivotableElementCS(PivotableElementCS object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Model Element CS</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Model Element CS</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseModelElementCS(ModelElementCS object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Nameable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Nameable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNameable(Nameable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Named Element CS</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Named Element CS</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNamedElementCS(NamedElementCS object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Root CS</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Root CS</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRootCS(RootCS object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Context CS</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Context CS</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseContextCS(ContextCS object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Exp CS</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Exp CS</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExpCS(ExpCS object)
+  public T caseXExpression(XExpression object)
   {
     return null;
   }

@@ -5,7 +5,6 @@ package uk.ac.york.cs.cs2as;
 
 import org.eclipse.xtext.linking.ILinker;
 
-import uk.ac.york.cs.cs2as.linker.CS2ASLinker;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -13,8 +12,8 @@ import uk.ac.york.cs.cs2as.linker.CS2ASLinker;
 public class CS2ASDSLRuntimeModule extends uk.ac.york.cs.cs2as.AbstractCS2ASDSLRuntimeModule {
 
 	
-	@Override
-	public Class<? extends ILinker> bindILinker() {
-		return CS2ASLinker.class;
-	}
+	//@Override
+	//public Class<? extends ILinker> bindILinker() {
+	//	return CS2ASLinker.class;
+	//}
 }

@@ -4,7 +4,7 @@ package uk.ac.york.cs.cs2as.cs2as_dsl;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +23,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * @model
  * @generated
  */
-public interface LookupExpCS extends ExpCS
+public interface LookupExpCS extends XExpression
 {
   /**
    * Returns the value of the '<em><b>From Exp</b></em>' attribute.
@@ -53,7 +53,7 @@ public interface LookupExpCS extends ExpCS
 
   /**
    * Returns the value of the '<em><b>Args</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.ocl.xtext.essentialoclcs.ExpCS}.
+   * The list contents are of type {@link org.eclipse.xtext.xbase.XExpression}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Args</em>' containment reference list isn't clear,
@@ -65,6 +65,6 @@ public interface LookupExpCS extends ExpCS
    * @model containment="true"
    * @generated
    */
-  EList<ExpCS> getArgs();
+  EList<XExpression> getArgs();
 
 } // LookupExpCS

@@ -9,8 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.ocl.xtext.essentialoclcs.impl.ContextCSImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
@@ -26,6 +25,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
  * An implementation of the model object '<em><b>Model</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
  * </p>
  * <ul>
@@ -39,7 +39,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
  *
  * @generated
  */
-public class ModelImpl extends ContextCSImpl implements Model
+public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
    * The cached value of the '{@link #getCsDecl() <em>Cs Decl</em>}' containment reference.

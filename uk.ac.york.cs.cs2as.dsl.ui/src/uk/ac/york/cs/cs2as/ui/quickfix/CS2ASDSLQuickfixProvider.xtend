@@ -12,7 +12,8 @@ package uk.ac.york.cs.cs2as.ui.quickfix
  *
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#quick-fixes
  */
-class CS2ASDSLQuickfixProvider extends org.eclipse.ocl.xtext.essentialocl.ui.quickfix.EssentialOCLQuickfixProvider {
+class CS2ASDSLQuickfixProvider extends org.eclipse.emf.ecore.xcore.ui.quickfix.XcoreQuickfixProvider {
+
 //	@Fix(MyDslValidator::INVALID_NAME)
 //	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
 //		acceptor.accept(issue, 'Capitalize name', 'Capitalize the name.', 'upcase.png') [

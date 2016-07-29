@@ -4,8 +4,8 @@
 package uk.ac.york.cs.cs2as;
 
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.ISetup;
+import org.eclipse.emf.ecore.resource.Resource;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -18,7 +18,7 @@ public class CS2ASDSLStandaloneSetupGenerated implements ISetup {
 
 	@Override
 	public Injector createInjectorAndDoEMFRegistration() {
-		org.eclipse.ocl.xtext.essentialocl.EssentialOCLStandaloneSetup.doSetup();
+		org.eclipse.emf.ecore.xcore.XcoreStandaloneSetup.doSetup();
 
 		Injector injector = createInjector();
 		register(injector);

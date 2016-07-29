@@ -4,7 +4,7 @@ package uk.ac.york.cs.cs2as.cs2as_dsl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,12 +87,12 @@ public interface ElementsContribExp extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(ExpCS)
+   * @see #setExpression(XExpression)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getElementsContribExp_Expression()
    * @model containment="true"
    * @generated
    */
-  ExpCS getExpression();
+  XExpression getExpression();
 
   /**
    * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#getExpression <em>Expression</em>}' containment reference.
@@ -102,6 +102,6 @@ public interface ElementsContribExp extends EObject
    * @see #getExpression()
    * @generated
    */
-  void setExpression(ExpCS value);
+  void setExpression(XExpression value);
 
 } // ElementsContribExp

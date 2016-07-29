@@ -25,6 +25,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
  * An implementation of the model object '<em><b>Mapping Sect</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
  * </p>
  * <ul>

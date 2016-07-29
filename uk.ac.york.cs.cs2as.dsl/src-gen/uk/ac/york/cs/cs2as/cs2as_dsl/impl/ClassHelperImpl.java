@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.basecs.PathNameCS;
+import org.eclipse.emf.ecore.xcore.XClass;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
@@ -28,6 +28,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Class Helper</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -41,14 +42,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef;
 public class ClassHelperImpl extends MinimalEObjectImpl.Container implements ClassHelper
 {
   /**
-   * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
+   * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getContext()
    * @generated
    * @ordered
    */
-  protected PathNameCS context;
+  protected XClass context;
 
   /**
    * The cached value of the '{@link #getHelpers() <em>Helpers</em>}' containment reference list.
@@ -86,7 +87,27 @@ public class ClassHelperImpl extends MinimalEObjectImpl.Container implements Cla
    * <!-- end-user-doc -->
    * @generated
    */
-  public PathNameCS getContext()
+  public XClass getContext()
+  {
+    if (context != null && context.eIsProxy())
+    {
+      InternalEObject oldContext = (InternalEObject)context;
+      context = (XClass)eResolveProxy(oldContext);
+      if (context != oldContext)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cs2as_dslPackage.CLASS_HELPER__CONTEXT, oldContext, context));
+      }
+    }
+    return context;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XClass basicGetContext()
   {
     return context;
   }
@@ -96,37 +117,12 @@ public class ClassHelperImpl extends MinimalEObjectImpl.Container implements Cla
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetContext(PathNameCS newContext, NotificationChain msgs)
+  public void setContext(XClass newContext)
   {
-    PathNameCS oldContext = context;
+    XClass oldContext = context;
     context = newContext;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_HELPER__CONTEXT, oldContext, newContext);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setContext(PathNameCS newContext)
-  {
-    if (newContext != context)
-    {
-      NotificationChain msgs = null;
-      if (context != null)
-        msgs = ((InternalEObject)context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_HELPER__CONTEXT, null, msgs);
-      if (newContext != null)
-        msgs = ((InternalEObject)newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_HELPER__CONTEXT, null, msgs);
-      msgs = basicSetContext(newContext, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_HELPER__CONTEXT, newContext, newContext));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_HELPER__CONTEXT, oldContext, context));
   }
 
   /**
@@ -153,8 +149,6 @@ public class ClassHelperImpl extends MinimalEObjectImpl.Container implements Cla
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.CLASS_HELPER__CONTEXT:
-        return basicSetContext(null, msgs);
       case Cs2as_dslPackage.CLASS_HELPER__HELPERS:
         return ((InternalEList<?>)getHelpers()).basicRemove(otherEnd, msgs);
     }
@@ -172,7 +166,8 @@ public class ClassHelperImpl extends MinimalEObjectImpl.Container implements Cla
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_HELPER__CONTEXT:
-        return getContext();
+        if (resolve) return getContext();
+        return basicGetContext();
       case Cs2as_dslPackage.CLASS_HELPER__HELPERS:
         return getHelpers();
     }
@@ -191,7 +186,7 @@ public class ClassHelperImpl extends MinimalEObjectImpl.Container implements Cla
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_HELPER__CONTEXT:
-        setContext((PathNameCS)newValue);
+        setContext((XClass)newValue);
         return;
       case Cs2as_dslPackage.CLASS_HELPER__HELPERS:
         getHelpers().clear();
@@ -212,7 +207,7 @@ public class ClassHelperImpl extends MinimalEObjectImpl.Container implements Cla
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_HELPER__CONTEXT:
-        setContext((PathNameCS)null);
+        setContext((XClass)null);
         return;
       case Cs2as_dslPackage.CLASS_HELPER__HELPERS:
         getHelpers().clear();

@@ -3,6 +3,8 @@
  */
 package uk.ac.york.cs.cs2as.scoping
 
+import org.eclipse.emf.ecore.xcore.scoping.XcoreScopeProvider
+
 /**
  * This class contains custom scoping description.
  * 
@@ -10,6 +12,6 @@ package uk.ac.york.cs.cs2as.scoping
  * on how and when to use it.
  *
  */
-class CS2ASDSLScopeProvider extends org.eclipse.ocl.xtext.essentialocl.scoping.EssentialOCLScopeProvider {
+class CS2ASDSLScopeProvider extends XcoreScopeProvider {
 
 }

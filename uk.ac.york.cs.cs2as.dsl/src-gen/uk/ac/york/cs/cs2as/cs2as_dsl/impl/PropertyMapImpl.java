@@ -10,7 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.emf.ecore.xcore.XStructuralFeature;
+
+import org.eclipse.xtext.xbase.XExpression;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
@@ -19,6 +21,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Property Map</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -53,24 +56,14 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
   protected boolean redefine = REDEFINE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getPropName() <em>Prop Name</em>}' attribute.
+   * The cached value of the '{@link #getPropName() <em>Prop Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPropName()
    * @generated
    * @ordered
    */
-  protected static final String PROP_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPropName() <em>Prop Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPropName()
-   * @generated
-   * @ordered
-   */
-  protected String propName = PROP_NAME_EDEFAULT;
+  protected XStructuralFeature propName;
 
   /**
    * The cached value of the '{@link #getPropInit() <em>Prop Init</em>}' containment reference.
@@ -80,7 +73,7 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
    * @generated
    * @ordered
    */
-  protected ExpCS propInit;
+  protected XExpression propInit;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,7 +124,27 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPropName()
+  public XStructuralFeature getPropName()
+  {
+    if (propName != null && propName.eIsProxy())
+    {
+      InternalEObject oldPropName = (InternalEObject)propName;
+      propName = (XStructuralFeature)eResolveProxy(oldPropName);
+      if (propName != oldPropName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME, oldPropName, propName));
+      }
+    }
+    return propName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XStructuralFeature basicGetPropName()
   {
     return propName;
   }
@@ -141,9 +154,9 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPropName(String newPropName)
+  public void setPropName(XStructuralFeature newPropName)
   {
-    String oldPropName = propName;
+    XStructuralFeature oldPropName = propName;
     propName = newPropName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME, oldPropName, propName));
@@ -154,7 +167,7 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpCS getPropInit()
+  public XExpression getPropInit()
   {
     return propInit;
   }
@@ -164,9 +177,9 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPropInit(ExpCS newPropInit, NotificationChain msgs)
+  public NotificationChain basicSetPropInit(XExpression newPropInit, NotificationChain msgs)
   {
-    ExpCS oldPropInit = propInit;
+    XExpression oldPropInit = propInit;
     propInit = newPropInit;
     if (eNotificationRequired())
     {
@@ -181,7 +194,7 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPropInit(ExpCS newPropInit)
+  public void setPropInit(XExpression newPropInit)
   {
     if (newPropInit != propInit)
     {
@@ -226,7 +239,8 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
       case Cs2as_dslPackage.PROPERTY_MAP__REDEFINE:
         return isRedefine();
       case Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME:
-        return getPropName();
+        if (resolve) return getPropName();
+        return basicGetPropName();
       case Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT:
         return getPropInit();
     }
@@ -247,10 +261,10 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
         setRedefine((Boolean)newValue);
         return;
       case Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME:
-        setPropName((String)newValue);
+        setPropName((XStructuralFeature)newValue);
         return;
       case Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT:
-        setPropInit((ExpCS)newValue);
+        setPropInit((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -270,10 +284,10 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
         setRedefine(REDEFINE_EDEFAULT);
         return;
       case Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME:
-        setPropName(PROP_NAME_EDEFAULT);
+        setPropName((XStructuralFeature)null);
         return;
       case Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT:
-        setPropInit((ExpCS)null);
+        setPropInit((XExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -292,7 +306,7 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
       case Cs2as_dslPackage.PROPERTY_MAP__REDEFINE:
         return redefine != REDEFINE_EDEFAULT;
       case Cs2as_dslPackage.PROPERTY_MAP__PROP_NAME:
-        return PROP_NAME_EDEFAULT == null ? propName != null : !PROP_NAME_EDEFAULT.equals(propName);
+        return propName != null;
       case Cs2as_dslPackage.PROPERTY_MAP__PROP_INIT:
         return propInit != null;
     }
@@ -312,8 +326,6 @@ public class PropertyMapImpl extends ClassMapStmntImpl implements PropertyMap
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (redefine: ");
     result.append(redefine);
-    result.append(", propName: ");
-    result.append(propName);
     result.append(')');
     return result.toString();
   }

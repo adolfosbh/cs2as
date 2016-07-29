@@ -4,7 +4,7 @@ package uk.ac.york.cs.cs2as.cs2as_dsl;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
+import org.eclipse.emf.ecore.xcore.XAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,30 +27,30 @@ import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
 public interface NamedElementDef extends ClassNameResolutionStmnt
 {
   /**
-   * Returns the value of the '<em><b>Name Poperty</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name Poperty</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name Poperty</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name Poperty</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name Poperty</em>' containment reference.
-   * @see #setNamePoperty(NameExpCS)
+   * @return the value of the '<em>Name Poperty</em>' reference.
+   * @see #setNamePoperty(XAttribute)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getNamedElementDef_NamePoperty()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  NameExpCS getNamePoperty();
+  XAttribute getNamePoperty();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getNamePoperty <em>Name Poperty</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getNamePoperty <em>Name Poperty</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name Poperty</em>' containment reference.
+   * @param value the new value of the '<em>Name Poperty</em>' reference.
    * @see #getNamePoperty()
    * @generated
    */
-  void setNamePoperty(NameExpCS value);
+  void setNamePoperty(XAttribute value);
 
   /**
    * Returns the value of the '<em><b>Filter</b></em>' containment reference.

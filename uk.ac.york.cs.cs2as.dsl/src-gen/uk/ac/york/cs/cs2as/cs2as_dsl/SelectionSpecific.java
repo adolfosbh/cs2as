@@ -4,7 +4,7 @@ package uk.ac.york.cs.cs2as.cs2as_dsl;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +26,7 @@ public interface SelectionSpecific extends SelectionDef
 {
   /**
    * Returns the value of the '<em><b>Selected Properties</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.ocl.xtext.essentialoclcs.ExpCS}.
+   * The list contents are of type {@link org.eclipse.xtext.xbase.XExpression}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Selected Properties</em>' containment reference list isn't clear,
@@ -38,6 +38,6 @@ public interface SelectionSpecific extends SelectionDef
    * @model containment="true"
    * @generated
    */
-  EList<ExpCS> getSelectedProperties();
+  EList<XExpression> getSelectedProperties();
 
 } // SelectionSpecific

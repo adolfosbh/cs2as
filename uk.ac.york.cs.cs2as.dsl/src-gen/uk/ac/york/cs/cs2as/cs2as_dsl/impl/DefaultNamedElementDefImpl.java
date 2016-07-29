@@ -3,7 +3,6 @@
 package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,7 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
+import org.eclipse.emf.ecore.xcore.XAttribute;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef;
@@ -20,6 +19,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Default Named Element Def</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -53,14 +53,14 @@ public class DefaultNamedElementDefImpl extends MinimalEObjectImpl.Container imp
   protected String nameElement = NAME_ELEMENT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getNameProperty() <em>Name Property</em>}' containment reference.
+   * The cached value of the '{@link #getNameProperty() <em>Name Property</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNameProperty()
    * @generated
    * @ordered
    */
-  protected NameExpCS nameProperty;
+  protected XAttribute nameProperty;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,7 +111,27 @@ public class DefaultNamedElementDefImpl extends MinimalEObjectImpl.Container imp
    * <!-- end-user-doc -->
    * @generated
    */
-  public NameExpCS getNameProperty()
+  public XAttribute getNameProperty()
+  {
+    if (nameProperty != null && nameProperty.eIsProxy())
+    {
+      InternalEObject oldNameProperty = (InternalEObject)nameProperty;
+      nameProperty = (XAttribute)eResolveProxy(oldNameProperty);
+      if (nameProperty != oldNameProperty)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY, oldNameProperty, nameProperty));
+      }
+    }
+    return nameProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XAttribute basicGetNameProperty()
   {
     return nameProperty;
   }
@@ -121,53 +141,12 @@ public class DefaultNamedElementDefImpl extends MinimalEObjectImpl.Container imp
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetNameProperty(NameExpCS newNameProperty, NotificationChain msgs)
+  public void setNameProperty(XAttribute newNameProperty)
   {
-    NameExpCS oldNameProperty = nameProperty;
+    XAttribute oldNameProperty = nameProperty;
     nameProperty = newNameProperty;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY, oldNameProperty, newNameProperty);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNameProperty(NameExpCS newNameProperty)
-  {
-    if (newNameProperty != nameProperty)
-    {
-      NotificationChain msgs = null;
-      if (nameProperty != null)
-        msgs = ((InternalEObject)nameProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY, null, msgs);
-      if (newNameProperty != null)
-        msgs = ((InternalEObject)newNameProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY, null, msgs);
-      msgs = basicSetNameProperty(newNameProperty, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY, newNameProperty, newNameProperty));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY:
-        return basicSetNameProperty(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY, oldNameProperty, nameProperty));
   }
 
   /**
@@ -183,7 +162,8 @@ public class DefaultNamedElementDefImpl extends MinimalEObjectImpl.Container imp
       case Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_ELEMENT:
         return getNameElement();
       case Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY:
-        return getNameProperty();
+        if (resolve) return getNameProperty();
+        return basicGetNameProperty();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -202,7 +182,7 @@ public class DefaultNamedElementDefImpl extends MinimalEObjectImpl.Container imp
         setNameElement((String)newValue);
         return;
       case Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY:
-        setNameProperty((NameExpCS)newValue);
+        setNameProperty((XAttribute)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -222,7 +202,7 @@ public class DefaultNamedElementDefImpl extends MinimalEObjectImpl.Container imp
         setNameElement(NAME_ELEMENT_EDEFAULT);
         return;
       case Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY:
-        setNameProperty((NameExpCS)null);
+        setNameProperty((XAttribute)null);
         return;
     }
     super.eUnset(featureID);

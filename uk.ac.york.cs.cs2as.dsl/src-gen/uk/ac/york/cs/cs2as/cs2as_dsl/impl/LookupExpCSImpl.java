@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
-import org.eclipse.ocl.xtext.essentialoclcs.impl.ExpCSImpl;
+import org.eclipse.xtext.xbase.impl.XExpressionImpl;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
@@ -28,6 +28,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Lookup Exp CS</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -38,7 +39,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
  *
  * @generated
  */
-public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
+public class LookupExpCSImpl extends XExpressionImpl implements LookupExpCS
 {
   /**
    * The default value of the '{@link #isFromExp() <em>From Exp</em>}' attribute.
@@ -68,7 +69,7 @@ public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
    * @generated
    * @ordered
    */
-  protected EList<ExpCS> args;
+  protected EList<XExpression> args;
 
   /**
    * <!-- begin-user-doc -->
@@ -119,11 +120,11 @@ public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ExpCS> getArgs()
+  public EList<XExpression> getArgs()
   {
     if (args == null)
     {
-      args = new EObjectContainmentEList<ExpCS>(ExpCS.class, this, Cs2as_dslPackage.LOOKUP_EXP_CS__ARGS);
+      args = new EObjectContainmentEList<XExpression>(XExpression.class, this, Cs2as_dslPackage.LOOKUP_EXP_CS__ARGS);
     }
     return args;
   }
@@ -178,7 +179,7 @@ public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
         return;
       case Cs2as_dslPackage.LOOKUP_EXP_CS__ARGS:
         getArgs().clear();
-        getArgs().addAll((Collection<? extends ExpCS>)newValue);
+        getArgs().addAll((Collection<? extends XExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

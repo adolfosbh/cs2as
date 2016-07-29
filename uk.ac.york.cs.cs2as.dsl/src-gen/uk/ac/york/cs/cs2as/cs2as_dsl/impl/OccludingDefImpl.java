@@ -20,6 +20,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
  * An implementation of the model object '<em><b>Occluding Def</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
  * </p>
  * <ul>

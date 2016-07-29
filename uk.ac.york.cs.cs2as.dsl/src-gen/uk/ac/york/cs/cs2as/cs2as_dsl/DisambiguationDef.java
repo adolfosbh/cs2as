@@ -2,7 +2,7 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,12 +58,12 @@ public interface DisambiguationDef extends ClassDisambiguationStmnt
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Exp</em>' containment reference.
-   * @see #setExp(ExpCS)
+   * @see #setExp(XExpression)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getDisambiguationDef_Exp()
    * @model containment="true"
    * @generated
    */
-  ExpCS getExp();
+  XExpression getExp();
 
   /**
    * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getExp <em>Exp</em>}' containment reference.
@@ -73,6 +73,6 @@ public interface DisambiguationDef extends ClassDisambiguationStmnt
    * @see #getExp()
    * @generated
    */
-  void setExp(ExpCS value);
+  void setExp(XExpression value);
 
 } // DisambiguationDef

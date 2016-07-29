@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.basecs.PathNameCS;
+import org.eclipse.emf.ecore.xcore.XClass;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt;
@@ -28,6 +28,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Class Disambiguation</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -41,14 +42,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 public class ClassDisambiguationImpl extends MinimalEObjectImpl.Container implements ClassDisambiguation
 {
   /**
-   * The cached value of the '{@link #getClass_() <em>Class</em>}' containment reference.
+   * The cached value of the '{@link #getClass_() <em>Class</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getClass_()
    * @generated
    * @ordered
    */
-  protected PathNameCS class_;
+  protected XClass class_;
 
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -86,7 +87,27 @@ public class ClassDisambiguationImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public PathNameCS getClass_()
+  public XClass getClass_()
+  {
+    if (class_ != null && class_.eIsProxy())
+    {
+      InternalEObject oldClass = (InternalEObject)class_;
+      class_ = (XClass)eResolveProxy(oldClass);
+      if (class_ != oldClass)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cs2as_dslPackage.CLASS_DISAMBIGUATION__CLASS, oldClass, class_));
+      }
+    }
+    return class_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XClass basicGetClass()
   {
     return class_;
   }
@@ -96,37 +117,12 @@ public class ClassDisambiguationImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetClass(PathNameCS newClass, NotificationChain msgs)
+  public void setClass(XClass newClass)
   {
-    PathNameCS oldClass = class_;
+    XClass oldClass = class_;
     class_ = newClass;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_DISAMBIGUATION__CLASS, oldClass, newClass);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setClass(PathNameCS newClass)
-  {
-    if (newClass != class_)
-    {
-      NotificationChain msgs = null;
-      if (class_ != null)
-        msgs = ((InternalEObject)class_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_DISAMBIGUATION__CLASS, null, msgs);
-      if (newClass != null)
-        msgs = ((InternalEObject)newClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_DISAMBIGUATION__CLASS, null, msgs);
-      msgs = basicSetClass(newClass, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_DISAMBIGUATION__CLASS, newClass, newClass));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_DISAMBIGUATION__CLASS, oldClass, class_));
   }
 
   /**
@@ -153,8 +149,6 @@ public class ClassDisambiguationImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.CLASS_DISAMBIGUATION__CLASS:
-        return basicSetClass(null, msgs);
       case Cs2as_dslPackage.CLASS_DISAMBIGUATION__STATEMENTS:
         return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
@@ -172,7 +166,8 @@ public class ClassDisambiguationImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_DISAMBIGUATION__CLASS:
-        return getClass_();
+        if (resolve) return getClass_();
+        return basicGetClass();
       case Cs2as_dslPackage.CLASS_DISAMBIGUATION__STATEMENTS:
         return getStatements();
     }
@@ -191,7 +186,7 @@ public class ClassDisambiguationImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_DISAMBIGUATION__CLASS:
-        setClass((PathNameCS)newValue);
+        setClass((XClass)newValue);
         return;
       case Cs2as_dslPackage.CLASS_DISAMBIGUATION__STATEMENTS:
         getStatements().clear();
@@ -212,7 +207,7 @@ public class ClassDisambiguationImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_DISAMBIGUATION__CLASS:
-        setClass((PathNameCS)null);
+        setClass((XClass)null);
         return;
       case Cs2as_dslPackage.CLASS_DISAMBIGUATION__STATEMENTS:
         getStatements().clear();

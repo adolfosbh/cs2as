@@ -6,17 +6,14 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.ocl.xtext.basecs.ImportCS;
-import org.eclipse.ocl.xtext.basecs.PathNameCS;
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.emf.ecore.xcore.XClass;
+import org.eclipse.emf.ecore.xcore.XStructuralFeature;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.lib.Conversions;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
-import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
@@ -36,54 +33,10 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   
   @Override
   public String caseModel(final Model object) {
-    String _xblockexpression = null;
-    {
-      MappingSect _mappingSect = object.getMappingSect();
-      DisambiguationSect _disambiguationSect = object.getDisambiguationSect();
-      Map<String, ClassMap[]> _csElementToAmbiguousRules = this.csElementToAmbiguousRules(_mappingSect, _disambiguationSect);
-      this.csElement2AmbiguousRules = _csElementToAmbiguousRules;
-      final StringBuilder sb = new StringBuilder();
-      StringConcatenation _builder = new StringConcatenation();
-      CSDecl _csDecl = object.getCsDecl();
-      String _doSwitch = this.doSwitch(_csDecl);
-      _builder.append(_doSwitch, "");
-      _builder.newLineIfNotEmpty();
-      ASDecl _asDecl = object.getAsDecl();
-      String _doSwitch_1 = this.doSwitch(_asDecl);
-      _builder.append(_doSwitch_1, "");
-      _builder.newLineIfNotEmpty();
-      _builder.append("import \'");
-      _builder.append(this.baseFileName, "");
-      _builder.append("Helpers.ocl\'");
-      _builder.newLineIfNotEmpty();
-      _builder.append("import \'");
-      _builder.append(this.baseFileName, "");
-      _builder.append("Lookup.ocl\'");
-      _builder.newLineIfNotEmpty();
-      _builder.append("import \'");
-      _builder.append(this.baseFileName, "");
-      _builder.append("Disambiguation.ocl\'");
-      _builder.newLineIfNotEmpty();
-      sb.append(_builder);
-      StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("package ");
-      CSDecl _csDecl_1 = object.getCsDecl();
-      EList<ImportCS> _metamodels = _csDecl_1.getMetamodels();
-      ImportCS _get = _metamodels.get(0);
-      String _name = _get.getName();
-      _builder_1.append(_name, "");
-      _builder_1.newLineIfNotEmpty();
-      _builder_1.newLine();
-      MappingSect _mappingSect_1 = object.getMappingSect();
-      String _doSwitch_2 = this.doSwitch(_mappingSect_1);
-      _builder_1.append(_doSwitch_2, "");
-      _builder_1.newLineIfNotEmpty();
-      _builder_1.append("endpackage");
-      _builder_1.newLine();
-      StringBuilder _append = sb.append(_builder_1);
-      _xblockexpression = _append.toString();
-    }
-    return _xblockexpression;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method metamodels is undefined for the type CS2ASDSL_To_OCLMappingsVisitor"
+      + "\nget cannot be resolved"
+      + "\nname cannot be resolved");
   }
   
   @Override
@@ -94,7 +47,7 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       EList<ClassMap> _mappings = object.getMappings();
       for (final ClassMap classMap : _mappings) {
         {
-          PathNameCS _from = classMap.getFrom();
+          XClass _from = classMap.getFrom();
           final String csName = this.doSwitch(_from);
           boolean shouldProcess = true;
           boolean _containsKey = this.csElement2AmbiguousRules.containsKey(csName);
@@ -121,9 +74,9 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   public String caseClassMap(final ClassMap object) {
     String _xblockexpression = null;
     {
-      PathNameCS _from = object.getFrom();
+      XClass _from = object.getFrom();
       final String from = this.doSwitch(_from);
-      PathNameCS _to = object.getTo();
+      XClass _to = object.getTo();
       final String to = this.doSwitch(_to);
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("context ");
@@ -145,7 +98,7 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   private CharSequence createClassMapContent(final ClassMap object) {
     CharSequence _xblockexpression = null;
     {
-      PathNameCS _from = object.getFrom();
+      XClass _from = object.getFrom();
       final String csName = this.doSwitch(_from);
       CharSequence _xifexpression = null;
       boolean _containsKey = this.csElement2AmbiguousRules.containsKey(csName);
@@ -176,40 +129,15 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   }
   
   private CharSequence createNormalCase(final ClassMap object) {
-    CharSequence _xblockexpression = null;
-    {
-      PathNameCS _to = object.getTo();
-      final String to = this.doSwitch(_to);
-      EList<ClassMapStmnt> _statements = object.getStatements();
-      EList<ClassMapStmnt> _statements_1 = object.getStatements();
-      int _size = _statements_1.size();
-      int _minus = (_size - 1);
-      final ClassMapStmnt lastStmnt = _statements.get(_minus);
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append(to, "");
-      _builder.append(" {");
-      _builder.newLineIfNotEmpty();
-      _builder.append("\t");
-      {
-        EList<ClassMapStmnt> _statements_2 = object.getStatements();
-        for(final ClassMapStmnt stmnt : _statements_2) {
-          String _doSwitch = this.doSwitch(stmnt);
-          _builder.append(_doSwitch, "\t");
-          {
-            boolean _notEquals = (!Objects.equal(stmnt, lastStmnt));
-            if (_notEquals) {
-              _builder.append(",");
-            }
-          }
-          _builder.append(" ");
-          _builder.newLineIfNotEmpty();
-        }
-      }
-      _builder.append("}");
-      _builder.newLine();
-      _xblockexpression = _builder;
-    }
-    return _xblockexpression;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method statements is undefined for the type CS2ASDSL_To_OCLMappingsVisitor"
+      + "\nThe method statements is undefined for the type CS2ASDSL_To_OCLMappingsVisitor"
+      + "\nThe method statements is undefined for the type CS2ASDSL_To_OCLMappingsVisitor"
+      + "\nget cannot be resolved"
+      + "\nsize cannot be resolved"
+      + "\n- cannot be resolved"
+      + "\ndoSwitch cannot be resolved"
+      + "\n!= cannot be resolved");
   }
   
   private CharSequence createAmbiguousCase(final ClassMap object, final ClassMap nextAmbiguous) {
@@ -248,10 +176,10 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   @Override
   public String casePropertyMap(final PropertyMap object) {
     StringConcatenation _builder = new StringConcatenation();
-    String _propName = object.getPropName();
+    XStructuralFeature _propName = object.getPropName();
     _builder.append(_propName, "");
     _builder.append(" = ");
-    ExpCS _propInit = object.getPropInit();
+    XExpression _propInit = object.getPropInit();
     String _doSwitch = this.doSwitch(_propInit);
     _builder.append(_doSwitch, "");
     return _builder.toString();
@@ -262,7 +190,7 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     EList<ClassDisambiguation> _disambiguations = disambSect.getDisambiguations();
     for (final ClassDisambiguation disambiguation : _disambiguations) {
       {
-        PathNameCS _class_ = disambiguation.getClass_();
+        XClass _class_ = disambiguation.getClass_();
         final String csName = this.doSwitch(_class_);
         final HashMap<String, Integer> ruleName2PosMap = new HashMap<String, Integer>();
         csName2Map.put(csName, ruleName2PosMap);
@@ -292,7 +220,7 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     EList<ClassMap> _mappings = mappingSect.getMappings();
     for (final ClassMap classMap : _mappings) {
       {
-        PathNameCS _from = classMap.getFrom();
+        XClass _from = classMap.getFrom();
         final String csName = this.doSwitch(_from);
         final Map<String, Integer> ruleName2PosMap = csName2Map.get(csName);
         boolean _notEquals = (!Objects.equal(ruleName2PosMap, null));

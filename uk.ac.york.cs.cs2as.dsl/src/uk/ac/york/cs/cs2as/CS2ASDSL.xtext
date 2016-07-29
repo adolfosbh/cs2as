@@ -1,9 +1,8 @@
-grammar uk.ac.york.cs.cs2as.CS2ASDSL with org.eclipse.ocl.xtext.essentialocl.EssentialOCL
+grammar uk.ac.york.cs.cs2as.CS2ASDSL with org.eclipse.emf.ecore.xcore.Xcore
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-import "platform:/resource/org.eclipse.ocl.pivot/model/Pivot.ecore" as pivot
-import "platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore" as base
-import "platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore" as essentialocl
+import "http://www.eclipse.org/emf/2011/Xcore" as xcore
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
 generate cs2as_dsl "http://www.ac.uk/york/cs/cs2as/CS2ASDSL"
 
@@ -20,16 +19,16 @@ Model:
 ;
 
 CSDecl:
-	'source' metamodels+=ImportCS (',' metamodels+=ImportCS)*
+	'source' (importedNamespace=QualifiedNameWithWildcard | importedObject=[ecore::EObject|QualifiedName]) 
 ;
 
 ASDecl:
-	'target' metamodels+=ImportCS (',' metamodels+=ImportCS)*
+	'target' (importedNamespace=QualifiedNameWithWildcard | importedObject=[ecore::EObject|QualifiedName])
 ;
 
-ImportCS returns base::ImportCS:
-	(name=Identifier ':')? ownedPathName=URIPathNameCS (isAll?='::*')?
-;
+//ImportCS returns base::ImportCS:
+//	(name=Identifier ':')? ownedPathName=URIPathNameCS (isAll?='::*')?
+//;
 
 MappingSect:
 	{MappingSect}
@@ -38,8 +37,8 @@ MappingSect:
 	'}'	
 ;
 ClassMap:
-	'map' to=PathNameCS 'from'  from=PathNameCS  ('when' rule=SIMPLE_ID )? '{'
-		statements += ClassMapStmnt*
+	'map' to=[xcore::XClass | XQualifiedName] 'from'  from=[xcore::XClass | XQualifiedName]  ('when' rule=ID )? '{'
+		sXQualifiedNametatements += ClassMapStmnt*
 	'}'
 ;
 
@@ -49,7 +48,7 @@ ClassMapStmnt:
 ;
 
 PropertyMap:
-	(redefine?='redefine')? propName=SIMPLE_ID ':=' propInit=ExpCS
+	(redefine?='redefine')? propName=[xcore::XStructuralFeature | XQualifiedName] ':=' propInit=XExpression
 ;
 
 DisambiguationSect:
@@ -60,7 +59,7 @@ DisambiguationSect:
 ;
 
 ClassDisambiguation:
-	class=PathNameCS '{'
+	class=[xcore::XClass | XQualifiedName] '{'
 		statements+=ClassDisambiguationStmnt*
 		
 	'}'
@@ -72,7 +71,7 @@ ClassDisambiguationStmnt:
 ;
 
 DisambiguationDef:
-	name=SIMPLE_ID ':=' exp=ExpCS
+	name=ID ':=' exp=XExpression
 ;
 
 NameResolutionSect:
@@ -86,19 +85,19 @@ NameResolutionSect:
 ;
 
 DefaultNamedElementDef:
-	'named-element' nameElement=SIMPLE_ID 'name-property' nameProperty=NameExpCS ';'
+	'named-element' nameElement=ID 'name-property' nameProperty=[xcore::XAttribute | XQualifiedName] ';'
 ;
 
 DefaultNameReferencerDef:
-	'name-referencer' nameReferencer=SIMPLE_ID 'name-property' nameProperty=NameExpCS ';'
+	'name-referencer' nameReferencer=ID 'name-property' nameProperty=[xcore::XAttribute | XQualifiedName] ';'
 ;
 
 NameQualifierDef:
-	'name-qualifier' nameQualifier=SIMPLE_ID 'name-segments-property' segmentsProp=NameExpCS ';'	
+	'name-qualifier' nameQualifier=ID 'name-segments-property' segmentsProp=[xcore::XReference | XQualifiedName] ';'	
 ;
 
 ClassNameResolution:
-	class=PathNameCS '{'
+	class=[xcore::XClass | XQualifiedName] '{'
 		statements+=ClassNameResolutionStmnt*
 	'}'
 ;
@@ -110,13 +109,13 @@ ClassNameResolutionStmnt:
 
 NamedElementDef:
 	{NamedElementDef}
-	'named-element' ('name-property' namePoperty=NameExpCS)? 
+	'named-element' ('name-property' namePoperty=[xcore::XAttribute | XQualifiedName])? 
 	filter=FilterDef?
 	('qualifies' qualifications+=QualificationDef (',' qualifications+=QualificationDef)*)?
 ;
 
 FilterDef:
-	'filtered' ('by' params+=ParameterDef (',' params+=ParameterDef)* )? 'when' expression=ExpCS
+	'filtered' ('by' params+=ParameterDef (',' params+=ParameterDef)* )? 'when' expression=XExpression
 ;
 
 QualificationDef:
@@ -125,7 +124,7 @@ QualificationDef:
 ;
 	
 ElementsContribExp:
-	(isPreceding?='preceding' | isImported?='imported'?)? expression=ExpCS 
+	(isPreceding?='preceding' | isImported?='imported'?)? expression=XExpression 
 ;
 
 ScopeDef:
@@ -142,7 +141,7 @@ ProvisionDef:
 ;
 
 TargetsDef:
-	targetClasses+=TypeExpCS (',' targetClasses+=TypeExpCS)*	
+	targetClasses+=[xcore::XClass | XQualifiedName] (',' targetClasses+=[xcore::XClass | XQualifiedName])*	
 ;
 
 OccludingDef:
@@ -155,8 +154,8 @@ ContributionDef:
 
 SelectionDef:
 	'for'
-	( {SelectionAll} 'all' ('excepting' exceptionProperties+=ExpCS (',' exceptionProperties+=ExpCS)*)?
-	| {SelectionSpecific} (selectedProperties+=ExpCS (',' selectedProperties+=ExpCS)* )
+	( {SelectionAll} 'all' ('excepting' exceptionProperties+=XExpression (',' exceptionProperties+=XExpression)*)?
+	| {SelectionSpecific} (selectedProperties+=XExpression (',' selectedProperties+=XExpression)* )
 	)
 ;
 
@@ -174,7 +173,7 @@ HelpersSect:
 ;
 
 ClassHelper:
-	context=PathNameCS '{'
+	context=[xcore::XClass | XQualifiedName] '{'
 		helpers+=HelperDef*
 	'}'
 	
@@ -182,30 +181,35 @@ ClassHelper:
 
 // Similar to Complete OCL definitions
 HelperDef:
-	(ownedSignature=TemplateSignatureCS)?
-	name=UnrestrictedName 
-	'(' (params+=ParameterDef (',' params+=ParameterDef)*)? ')' (':' ownedType=TypeExpCS)?
-	':=' helperBody=ExpCS
+	//(ownedSignature=TemplateSignatureCS)?
+	name=ID 
+	'(' (params+=ParameterDef (',' params+=ParameterDef)*)? ')' (':' ownedType=[xcore::XClass | XQualifiedName])?
+	':=' helperBody=XExpression
 	';'
 ;
 
-ParameterDef returns base::ParameterCS:
-	name=UnrestrictedName ':' ownedType=TypeExpCS;
+ParameterDef returns xcore::XParameter :
+	name=ID ':'  XQualifiedName;
 
 
 	
 /* A primary expression identifies the basic expressions from which more complex expressions may be constructed. */
-PrimaryExpCS returns essentialocl::ExpCS:
-	NestedExpCS
-|	IfExpCS
-| 	SelfExpCS
-| 	PrimitiveLiteralExpCS
-| 	TupleLiteralExpCS
-| 	MapLiteralExpCS
-| 	CollectionLiteralExpCS
-| 	LambdaLiteralExpCS
-| 	TypeLiteralExpCS
-| 	NameExpCS
+XPrimaryExpression returns xbase::XExpression:
+	XConstructorCall |
+	XBlockExpression |
+	XSwitchExpression |
+	XSynchronizedExpression |
+	XFeatureCall |
+	XLiteral |
+	XIfExpression |
+	XForLoopExpression |
+	XBasicForLoopExpression |
+	XWhileExpression |
+	XDoWhileExpression |
+	XThrowExpression |
+	XReturnExpression |
+	XTryCatchFinallyExpression |
+	XParenthesizedExpression
 |	TraceExpCS	// DSL addition
 |	LookupExpCS;	// DSL addition
 
@@ -216,5 +220,5 @@ TraceExpCS:
 
 
 LookupExpCS:
-	('lookup' | fromExp?='lookupFrom') '(' args+=NavigatingArgExpCS (',' args+=NavigatingArgExpCS)* ')'
+	('lookup' | fromExp?='lookupFrom') '(' args+=XExpression (',' args+=XExpression)* ')'
 ;

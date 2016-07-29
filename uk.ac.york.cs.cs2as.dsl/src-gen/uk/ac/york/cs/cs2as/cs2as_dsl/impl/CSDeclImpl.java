@@ -2,21 +2,14 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.eclipse.ocl.xtext.basecs.ImportCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
@@ -26,10 +19,12 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
  * An implementation of the model object '<em><b>CS Decl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CSDeclImpl#getMetamodels <em>Metamodels</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CSDeclImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CSDeclImpl#getImportedObject <em>Imported Object</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +32,34 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 public class CSDeclImpl extends MinimalEObjectImpl.Container implements CSDecl
 {
   /**
-   * The cached value of the '{@link #getMetamodels() <em>Metamodels</em>}' containment reference list.
+   * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMetamodels()
+   * @see #getImportedNamespace()
    * @generated
    * @ordered
    */
-  protected EList<ImportCS> metamodels;
+  protected static final String IMPORTED_NAMESPACE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImportedNamespace()
+   * @generated
+   * @ordered
+   */
+  protected String importedNamespace = IMPORTED_NAMESPACE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getImportedObject() <em>Imported Object</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImportedObject()
+   * @generated
+   * @ordered
+   */
+  protected EObject importedObject;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +87,9 @@ public class CSDeclImpl extends MinimalEObjectImpl.Container implements CSDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ImportCS> getMetamodels()
+  public String getImportedNamespace()
   {
-    if (metamodels == null)
-    {
-      metamodels = new EObjectContainmentEList<ImportCS>(ImportCS.class, this, Cs2as_dslPackage.CS_DECL__METAMODELS);
-    }
-    return metamodels;
+    return importedNamespace;
   }
 
   /**
@@ -86,15 +97,55 @@ public class CSDeclImpl extends MinimalEObjectImpl.Container implements CSDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setImportedNamespace(String newImportedNamespace)
   {
-    switch (featureID)
+    String oldImportedNamespace = importedNamespace;
+    importedNamespace = newImportedNamespace;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CS_DECL__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EObject getImportedObject()
+  {
+    if (importedObject != null && importedObject.eIsProxy())
     {
-      case Cs2as_dslPackage.CS_DECL__METAMODELS:
-        return ((InternalEList<?>)getMetamodels()).basicRemove(otherEnd, msgs);
+      InternalEObject oldImportedObject = (InternalEObject)importedObject;
+      importedObject = eResolveProxy(oldImportedObject);
+      if (importedObject != oldImportedObject)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cs2as_dslPackage.CS_DECL__IMPORTED_OBJECT, oldImportedObject, importedObject));
+      }
     }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return importedObject;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EObject basicGetImportedObject()
+  {
+    return importedObject;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImportedObject(EObject newImportedObject)
+  {
+    EObject oldImportedObject = importedObject;
+    importedObject = newImportedObject;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CS_DECL__IMPORTED_OBJECT, oldImportedObject, importedObject));
   }
 
   /**
@@ -107,8 +158,11 @@ public class CSDeclImpl extends MinimalEObjectImpl.Container implements CSDecl
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.CS_DECL__METAMODELS:
-        return getMetamodels();
+      case Cs2as_dslPackage.CS_DECL__IMPORTED_NAMESPACE:
+        return getImportedNamespace();
+      case Cs2as_dslPackage.CS_DECL__IMPORTED_OBJECT:
+        if (resolve) return getImportedObject();
+        return basicGetImportedObject();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,15 +172,16 @@ public class CSDeclImpl extends MinimalEObjectImpl.Container implements CSDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.CS_DECL__METAMODELS:
-        getMetamodels().clear();
-        getMetamodels().addAll((Collection<? extends ImportCS>)newValue);
+      case Cs2as_dslPackage.CS_DECL__IMPORTED_NAMESPACE:
+        setImportedNamespace((String)newValue);
+        return;
+      case Cs2as_dslPackage.CS_DECL__IMPORTED_OBJECT:
+        setImportedObject((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +197,11 @@ public class CSDeclImpl extends MinimalEObjectImpl.Container implements CSDecl
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.CS_DECL__METAMODELS:
-        getMetamodels().clear();
+      case Cs2as_dslPackage.CS_DECL__IMPORTED_NAMESPACE:
+        setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
+        return;
+      case Cs2as_dslPackage.CS_DECL__IMPORTED_OBJECT:
+        setImportedObject((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +217,29 @@ public class CSDeclImpl extends MinimalEObjectImpl.Container implements CSDecl
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.CS_DECL__METAMODELS:
-        return metamodels != null && !metamodels.isEmpty();
+      case Cs2as_dslPackage.CS_DECL__IMPORTED_NAMESPACE:
+        return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
+      case Cs2as_dslPackage.CS_DECL__IMPORTED_OBJECT:
+        return importedObject != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (importedNamespace: ");
+    result.append(importedNamespace);
+    result.append(')');
+    return result.toString();
   }
 
 } //CSDeclImpl

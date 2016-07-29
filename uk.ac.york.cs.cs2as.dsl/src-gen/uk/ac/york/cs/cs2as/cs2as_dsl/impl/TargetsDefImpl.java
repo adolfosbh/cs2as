@@ -4,19 +4,15 @@ package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
+import org.eclipse.emf.ecore.xcore.XClass;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef;
@@ -25,6 +21,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Targets Def</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -37,14 +34,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef;
 public class TargetsDefImpl extends MinimalEObjectImpl.Container implements TargetsDef
 {
   /**
-   * The cached value of the '{@link #getTargetClasses() <em>Target Classes</em>}' containment reference list.
+   * The cached value of the '{@link #getTargetClasses() <em>Target Classes</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTargetClasses()
    * @generated
    * @ordered
    */
-  protected EList<TypedRefCS> targetClasses;
+  protected EList<XClass> targetClasses;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,29 +69,13 @@ public class TargetsDefImpl extends MinimalEObjectImpl.Container implements Targ
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TypedRefCS> getTargetClasses()
+  public EList<XClass> getTargetClasses()
   {
     if (targetClasses == null)
     {
-      targetClasses = new EObjectContainmentEList<TypedRefCS>(TypedRefCS.class, this, Cs2as_dslPackage.TARGETS_DEF__TARGET_CLASSES);
+      targetClasses = new EObjectResolvingEList<XClass>(XClass.class, this, Cs2as_dslPackage.TARGETS_DEF__TARGET_CLASSES);
     }
     return targetClasses;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case Cs2as_dslPackage.TARGETS_DEF__TARGET_CLASSES:
-        return ((InternalEList<?>)getTargetClasses()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -126,7 +107,7 @@ public class TargetsDefImpl extends MinimalEObjectImpl.Container implements Targ
     {
       case Cs2as_dslPackage.TARGETS_DEF__TARGET_CLASSES:
         getTargetClasses().clear();
-        getTargetClasses().addAll((Collection<? extends TypedRefCS>)newValue);
+        getTargetClasses().addAll((Collection<? extends XClass>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

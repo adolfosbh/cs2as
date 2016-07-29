@@ -4,7 +4,7 @@ package uk.ac.york.cs.cs2as.cs2as_dsl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
+import org.eclipse.emf.ecore.xcore.XAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,29 +52,29 @@ public interface DefaultNamedElementDef extends EObject
   void setNameElement(String value);
 
   /**
-   * Returns the value of the '<em><b>Name Property</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name Property</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name Property</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name Property</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name Property</em>' containment reference.
-   * @see #setNameProperty(NameExpCS)
+   * @return the value of the '<em>Name Property</em>' reference.
+   * @see #setNameProperty(XAttribute)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getDefaultNamedElementDef_NameProperty()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  NameExpCS getNameProperty();
+  XAttribute getNameProperty();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef#getNameProperty <em>Name Property</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef#getNameProperty <em>Name Property</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name Property</em>' containment reference.
+   * @param value the new value of the '<em>Name Property</em>' reference.
    * @see #getNameProperty()
    * @generated
    */
-  void setNameProperty(NameExpCS value);
+  void setNameProperty(XAttribute value);
 
 } // DefaultNamedElementDef

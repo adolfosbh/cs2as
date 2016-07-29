@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
@@ -23,6 +23,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Selection All</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -42,7 +43,7 @@ public class SelectionAllImpl extends SelectionDefImpl implements SelectionAll
    * @generated
    * @ordered
    */
-  protected EList<ExpCS> exceptionProperties;
+  protected EList<XExpression> exceptionProperties;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,11 +71,11 @@ public class SelectionAllImpl extends SelectionDefImpl implements SelectionAll
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ExpCS> getExceptionProperties()
+  public EList<XExpression> getExceptionProperties()
   {
     if (exceptionProperties == null)
     {
-      exceptionProperties = new EObjectContainmentEList<ExpCS>(ExpCS.class, this, Cs2as_dslPackage.SELECTION_ALL__EXCEPTION_PROPERTIES);
+      exceptionProperties = new EObjectContainmentEList<XExpression>(XExpression.class, this, Cs2as_dslPackage.SELECTION_ALL__EXCEPTION_PROPERTIES);
     }
     return exceptionProperties;
   }
@@ -124,7 +125,7 @@ public class SelectionAllImpl extends SelectionDefImpl implements SelectionAll
     {
       case Cs2as_dslPackage.SELECTION_ALL__EXCEPTION_PROPERTIES:
         getExceptionProperties().clear();
-        getExceptionProperties().addAll((Collection<? extends ExpCS>)newValue);
+        getExceptionProperties().addAll((Collection<? extends XExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

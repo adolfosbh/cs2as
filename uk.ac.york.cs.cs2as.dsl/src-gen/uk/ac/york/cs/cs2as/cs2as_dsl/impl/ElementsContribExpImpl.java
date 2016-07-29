@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
@@ -20,6 +20,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Elements Contrib Exp</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -81,7 +82,7 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    * @ordered
    */
-  protected ExpCS expression;
+  protected XExpression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -155,7 +156,7 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpCS getExpression()
+  public XExpression getExpression()
   {
     return expression;
   }
@@ -165,9 +166,9 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(ExpCS newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpression(XExpression newExpression, NotificationChain msgs)
   {
-    ExpCS oldExpression = expression;
+    XExpression oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
     {
@@ -182,7 +183,7 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(ExpCS newExpression)
+  public void setExpression(XExpression newExpression)
   {
     if (newExpression != expression)
     {
@@ -251,7 +252,7 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
         setIsImported((Boolean)newValue);
         return;
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__EXPRESSION:
-        setExpression((ExpCS)newValue);
+        setExpression((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -274,7 +275,7 @@ public class ElementsContribExpImpl extends MinimalEObjectImpl.Container impleme
         setIsImported(IS_IMPORTED_EDEFAULT);
         return;
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP__EXPRESSION:
-        setExpression((ExpCS)null);
+        setExpression((XExpression)null);
         return;
     }
     super.eUnset(featureID);

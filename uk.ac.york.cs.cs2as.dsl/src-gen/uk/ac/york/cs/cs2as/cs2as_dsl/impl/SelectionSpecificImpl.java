@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
@@ -23,6 +23,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Selection Specific</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -42,7 +43,7 @@ public class SelectionSpecificImpl extends SelectionDefImpl implements Selection
    * @generated
    * @ordered
    */
-  protected EList<ExpCS> selectedProperties;
+  protected EList<XExpression> selectedProperties;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,11 +71,11 @@ public class SelectionSpecificImpl extends SelectionDefImpl implements Selection
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ExpCS> getSelectedProperties()
+  public EList<XExpression> getSelectedProperties()
   {
     if (selectedProperties == null)
     {
-      selectedProperties = new EObjectContainmentEList<ExpCS>(ExpCS.class, this, Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES);
+      selectedProperties = new EObjectContainmentEList<XExpression>(XExpression.class, this, Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES);
     }
     return selectedProperties;
   }
@@ -124,7 +125,7 @@ public class SelectionSpecificImpl extends SelectionDefImpl implements Selection
     {
       case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
         getSelectedProperties().clear();
-        getSelectedProperties().addAll((Collection<? extends ExpCS>)newValue);
+        getSelectedProperties().addAll((Collection<? extends XExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

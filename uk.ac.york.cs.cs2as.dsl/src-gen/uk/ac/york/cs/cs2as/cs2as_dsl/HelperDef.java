@@ -6,11 +6,10 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.xtext.basecs.ParameterCS;
-import org.eclipse.ocl.xtext.basecs.TemplateSignatureCS;
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
+import org.eclipse.emf.ecore.xcore.XClass;
+import org.eclipse.emf.ecore.xcore.XParameter;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,6 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedSignature <em>Owned Signature</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getParams <em>Params</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedType <em>Owned Type</em>}</li>
@@ -34,32 +32,6 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  */
 public interface HelperDef extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Owned Signature</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Owned Signature</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Owned Signature</em>' containment reference.
-   * @see #setOwnedSignature(TemplateSignatureCS)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getHelperDef_OwnedSignature()
-   * @model containment="true"
-   * @generated
-   */
-  TemplateSignatureCS getOwnedSignature();
-
-  /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedSignature <em>Owned Signature</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Owned Signature</em>' containment reference.
-   * @see #getOwnedSignature()
-   * @generated
-   */
-  void setOwnedSignature(TemplateSignatureCS value);
-
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -88,7 +60,7 @@ public interface HelperDef extends EObject
 
   /**
    * Returns the value of the '<em><b>Params</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.ocl.xtext.basecs.ParameterCS}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.xcore.XParameter}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Params</em>' containment reference list isn't clear,
@@ -100,33 +72,33 @@ public interface HelperDef extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<ParameterCS> getParams();
+  EList<XParameter> getParams();
 
   /**
-   * Returns the value of the '<em><b>Owned Type</b></em>' containment reference.
+   * Returns the value of the '<em><b>Owned Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Owned Type</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Owned Type</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Owned Type</em>' containment reference.
-   * @see #setOwnedType(TypedRefCS)
+   * @return the value of the '<em>Owned Type</em>' reference.
+   * @see #setOwnedType(XClass)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getHelperDef_OwnedType()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  TypedRefCS getOwnedType();
+  XClass getOwnedType();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedType <em>Owned Type</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedType <em>Owned Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Owned Type</em>' containment reference.
+   * @param value the new value of the '<em>Owned Type</em>' reference.
    * @see #getOwnedType()
    * @generated
    */
-  void setOwnedType(TypedRefCS value);
+  void setOwnedType(XClass value);
 
   /**
    * Returns the value of the '<em><b>Helper Body</b></em>' containment reference.
@@ -137,12 +109,12 @@ public interface HelperDef extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Helper Body</em>' containment reference.
-   * @see #setHelperBody(ExpCS)
+   * @see #setHelperBody(XExpression)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getHelperDef_HelperBody()
    * @model containment="true"
    * @generated
    */
-  ExpCS getHelperBody();
+  XExpression getHelperBody();
 
   /**
    * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getHelperBody <em>Helper Body</em>}' containment reference.
@@ -152,6 +124,6 @@ public interface HelperDef extends EObject
    * @see #getHelperBody()
    * @generated
    */
-  void setHelperBody(ExpCS value);
+  void setHelperBody(XExpression value);
 
 } // HelperDef

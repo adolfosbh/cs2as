@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import org.eclipse.ocl.xtext.essentialoclcs.EssentialOCLCSPackage;
+import org.eclipse.xtext.xbase.XbasePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,85 +69,13 @@ public interface Cs2as_dslPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Csi</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__CSI = EssentialOCLCSPackage.CONTEXT_CS__CSI;
-
-  /**
-   * The feature id for the '<em><b>Parent</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__PARENT = EssentialOCLCSPackage.CONTEXT_CS__PARENT;
-
-  /**
-   * The feature id for the '<em><b>Pivot</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__PIVOT = EssentialOCLCSPackage.CONTEXT_CS__PIVOT;
-
-  /**
-   * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__ORIGINAL_XMI_ID = EssentialOCLCSPackage.CONTEXT_CS__ORIGINAL_XMI_ID;
-
-  /**
-   * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__OWNED_ANNOTATIONS = EssentialOCLCSPackage.CONTEXT_CS__OWNED_ANNOTATIONS;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__NAME = EssentialOCLCSPackage.CONTEXT_CS__NAME;
-
-  /**
-   * The feature id for the '<em><b>Owned Imports</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__OWNED_IMPORTS = EssentialOCLCSPackage.CONTEXT_CS__OWNED_IMPORTS;
-
-  /**
-   * The feature id for the '<em><b>Owned Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__OWNED_EXPRESSION = EssentialOCLCSPackage.CONTEXT_CS__OWNED_EXPRESSION;
-
-  /**
    * The feature id for the '<em><b>Cs Decl</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__CS_DECL = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 0;
+  int MODEL__CS_DECL = 0;
 
   /**
    * The feature id for the '<em><b>As Decl</b></em>' containment reference.
@@ -156,7 +84,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__AS_DECL = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 1;
+  int MODEL__AS_DECL = 1;
 
   /**
    * The feature id for the '<em><b>Mapping Sect</b></em>' containment reference.
@@ -165,7 +93,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__MAPPING_SECT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 2;
+  int MODEL__MAPPING_SECT = 2;
 
   /**
    * The feature id for the '<em><b>Disambiguation Sect</b></em>' containment reference.
@@ -174,7 +102,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__DISAMBIGUATION_SECT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 3;
+  int MODEL__DISAMBIGUATION_SECT = 3;
 
   /**
    * The feature id for the '<em><b>Namereso Sect</b></em>' containment reference.
@@ -183,7 +111,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__NAMERESO_SECT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 4;
+  int MODEL__NAMERESO_SECT = 4;
 
   /**
    * The feature id for the '<em><b>Helpers Sect</b></em>' containment reference.
@@ -192,7 +120,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__HELPERS_SECT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 5;
+  int MODEL__HELPERS_SECT = 5;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -201,7 +129,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 6;
+  int MODEL_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CSDeclImpl <em>CS Decl</em>}' class.
@@ -214,13 +142,22 @@ public interface Cs2as_dslPackage extends EPackage
   int CS_DECL = 1;
 
   /**
-   * The feature id for the '<em><b>Metamodels</b></em>' containment reference list.
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CS_DECL__METAMODELS = 0;
+  int CS_DECL__IMPORTED_NAMESPACE = 0;
+
+  /**
+   * The feature id for the '<em><b>Imported Object</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CS_DECL__IMPORTED_OBJECT = 1;
 
   /**
    * The number of structural features of the '<em>CS Decl</em>' class.
@@ -229,7 +166,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CS_DECL_FEATURE_COUNT = 1;
+  int CS_DECL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ASDeclImpl <em>AS Decl</em>}' class.
@@ -242,13 +179,22 @@ public interface Cs2as_dslPackage extends EPackage
   int AS_DECL = 2;
 
   /**
-   * The feature id for the '<em><b>Metamodels</b></em>' containment reference list.
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AS_DECL__METAMODELS = 0;
+  int AS_DECL__IMPORTED_NAMESPACE = 0;
+
+  /**
+   * The feature id for the '<em><b>Imported Object</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AS_DECL__IMPORTED_OBJECT = 1;
 
   /**
    * The number of structural features of the '<em>AS Decl</em>' class.
@@ -257,7 +203,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AS_DECL_FEATURE_COUNT = 1;
+  int AS_DECL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingSectImpl <em>Mapping Sect</em>}' class.
@@ -298,7 +244,7 @@ public interface Cs2as_dslPackage extends EPackage
   int CLASS_MAP = 4;
 
   /**
-   * The feature id for the '<em><b>To</b></em>' containment reference.
+   * The feature id for the '<em><b>To</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -307,7 +253,7 @@ public interface Cs2as_dslPackage extends EPackage
   int CLASS_MAP__TO = 0;
 
   /**
-   * The feature id for the '<em><b>From</b></em>' containment reference.
+   * The feature id for the '<em><b>From</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -325,13 +271,13 @@ public interface Cs2as_dslPackage extends EPackage
   int CLASS_MAP__RULE = 2;
 
   /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * The feature id for the '<em><b>SX Qualified Nametatements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_MAP__STATEMENTS = 3;
+  int CLASS_MAP__SX_QUALIFIED_NAMETATEMENTS = 3;
 
   /**
    * The number of structural features of the '<em>Class Map</em>' class.
@@ -381,7 +327,7 @@ public interface Cs2as_dslPackage extends EPackage
   int PROPERTY_MAP__REDEFINE = CLASS_MAP_STMNT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Prop Name</b></em>' attribute.
+   * The feature id for the '<em><b>Prop Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -446,7 +392,7 @@ public interface Cs2as_dslPackage extends EPackage
   int CLASS_DISAMBIGUATION = 8;
 
   /**
-   * The feature id for the '<em><b>Class</b></em>' containment reference.
+   * The feature id for the '<em><b>Class</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -603,7 +549,7 @@ public interface Cs2as_dslPackage extends EPackage
   int DEFAULT_NAMED_ELEMENT_DEF__NAME_ELEMENT = 0;
 
   /**
-   * The feature id for the '<em><b>Name Property</b></em>' containment reference.
+   * The feature id for the '<em><b>Name Property</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -640,7 +586,7 @@ public interface Cs2as_dslPackage extends EPackage
   int DEFAULT_NAME_REFERENCER_DEF__NAME_REFERENCER = 0;
 
   /**
-   * The feature id for the '<em><b>Name Property</b></em>' containment reference.
+   * The feature id for the '<em><b>Name Property</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -677,7 +623,7 @@ public interface Cs2as_dslPackage extends EPackage
   int NAME_QUALIFIER_DEF__NAME_QUALIFIER = 0;
 
   /**
-   * The feature id for the '<em><b>Segments Prop</b></em>' containment reference.
+   * The feature id for the '<em><b>Segments Prop</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -705,7 +651,7 @@ public interface Cs2as_dslPackage extends EPackage
   int CLASS_NAME_RESOLUTION = 15;
 
   /**
-   * The feature id for the '<em><b>Class</b></em>' containment reference.
+   * The feature id for the '<em><b>Class</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -761,7 +707,7 @@ public interface Cs2as_dslPackage extends EPackage
   int NAMED_ELEMENT_DEF = 17;
 
   /**
-   * The feature id for the '<em><b>Name Poperty</b></em>' containment reference.
+   * The feature id for the '<em><b>Name Poperty</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1037,7 +983,7 @@ public interface Cs2as_dslPackage extends EPackage
   int TARGETS_DEF = 23;
 
   /**
-   * The feature id for the '<em><b>Target Classes</b></em>' containment reference list.
+   * The feature id for the '<em><b>Target Classes</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1205,7 +1151,7 @@ public interface Cs2as_dslPackage extends EPackage
   int CLASS_HELPER = 29;
 
   /**
-   * The feature id for the '<em><b>Context</b></em>' containment reference.
+   * The feature id for the '<em><b>Context</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1242,22 +1188,13 @@ public interface Cs2as_dslPackage extends EPackage
   int HELPER_DEF = 30;
 
   /**
-   * The feature id for the '<em><b>Owned Signature</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HELPER_DEF__OWNED_SIGNATURE = 0;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HELPER_DEF__NAME = 1;
+  int HELPER_DEF__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -1266,16 +1203,16 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HELPER_DEF__PARAMS = 2;
+  int HELPER_DEF__PARAMS = 1;
 
   /**
-   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Owned Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HELPER_DEF__OWNED_TYPE = 3;
+  int HELPER_DEF__OWNED_TYPE = 2;
 
   /**
    * The feature id for the '<em><b>Helper Body</b></em>' containment reference.
@@ -1284,7 +1221,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HELPER_DEF__HELPER_BODY = 4;
+  int HELPER_DEF__HELPER_BODY = 3;
 
   /**
    * The number of structural features of the '<em>Helper Def</em>' class.
@@ -1293,7 +1230,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HELPER_DEF_FEATURE_COUNT = 5;
+  int HELPER_DEF_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TraceExpCSImpl <em>Trace Exp CS</em>}' class.
@@ -1306,121 +1243,13 @@ public interface Cs2as_dslPackage extends EPackage
   int TRACE_EXP_CS = 31;
 
   /**
-   * The feature id for the '<em><b>Csi</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__CSI = EssentialOCLCSPackage.EXP_CS__CSI;
-
-  /**
-   * The feature id for the '<em><b>Parent</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__PARENT = EssentialOCLCSPackage.EXP_CS__PARENT;
-
-  /**
-   * The feature id for the '<em><b>Pivot</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__PIVOT = EssentialOCLCSPackage.EXP_CS__PIVOT;
-
-  /**
-   * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__ORIGINAL_XMI_ID = EssentialOCLCSPackage.EXP_CS__ORIGINAL_XMI_ID;
-
-  /**
-   * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__OWNED_ANNOTATIONS = EssentialOCLCSPackage.EXP_CS__OWNED_ANNOTATIONS;
-
-  /**
-   * The feature id for the '<em><b>Has Error</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__HAS_ERROR = EssentialOCLCSPackage.EXP_CS__HAS_ERROR;
-
-  /**
-   * The feature id for the '<em><b>Local Left</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__LOCAL_LEFT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFT;
-
-  /**
-   * The feature id for the '<em><b>Local Leftmost Descendant</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__LOCAL_LEFTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFTMOST_DESCENDANT;
-
-  /**
-   * The feature id for the '<em><b>Local Parent</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__LOCAL_PARENT = EssentialOCLCSPackage.EXP_CS__LOCAL_PARENT;
-
-  /**
-   * The feature id for the '<em><b>Local Right</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__LOCAL_RIGHT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Local Rightmost Descendant</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__LOCAL_RIGHTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHTMOST_DESCENDANT;
-
-  /**
-   * The feature id for the '<em><b>Precedence</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACE_EXP_CS__PRECEDENCE = EssentialOCLCSPackage.EXP_CS__PRECEDENCE;
-
-  /**
    * The number of structural features of the '<em>Trace Exp CS</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRACE_EXP_CS_FEATURE_COUNT = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
+  int TRACE_EXP_CS_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.LookupExpCSImpl <em>Lookup Exp CS</em>}' class.
@@ -1433,121 +1262,13 @@ public interface Cs2as_dslPackage extends EPackage
   int LOOKUP_EXP_CS = 32;
 
   /**
-   * The feature id for the '<em><b>Csi</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__CSI = EssentialOCLCSPackage.EXP_CS__CSI;
-
-  /**
-   * The feature id for the '<em><b>Parent</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__PARENT = EssentialOCLCSPackage.EXP_CS__PARENT;
-
-  /**
-   * The feature id for the '<em><b>Pivot</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__PIVOT = EssentialOCLCSPackage.EXP_CS__PIVOT;
-
-  /**
-   * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__ORIGINAL_XMI_ID = EssentialOCLCSPackage.EXP_CS__ORIGINAL_XMI_ID;
-
-  /**
-   * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__OWNED_ANNOTATIONS = EssentialOCLCSPackage.EXP_CS__OWNED_ANNOTATIONS;
-
-  /**
-   * The feature id for the '<em><b>Has Error</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__HAS_ERROR = EssentialOCLCSPackage.EXP_CS__HAS_ERROR;
-
-  /**
-   * The feature id for the '<em><b>Local Left</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__LOCAL_LEFT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFT;
-
-  /**
-   * The feature id for the '<em><b>Local Leftmost Descendant</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__LOCAL_LEFTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFTMOST_DESCENDANT;
-
-  /**
-   * The feature id for the '<em><b>Local Parent</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__LOCAL_PARENT = EssentialOCLCSPackage.EXP_CS__LOCAL_PARENT;
-
-  /**
-   * The feature id for the '<em><b>Local Right</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__LOCAL_RIGHT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Local Rightmost Descendant</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__LOCAL_RIGHTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHTMOST_DESCENDANT;
-
-  /**
-   * The feature id for the '<em><b>Precedence</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOOKUP_EXP_CS__PRECEDENCE = EssentialOCLCSPackage.EXP_CS__PRECEDENCE;
-
-  /**
    * The feature id for the '<em><b>From Exp</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOOKUP_EXP_CS__FROM_EXP = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
+  int LOOKUP_EXP_CS__FROM_EXP = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference list.
@@ -1556,7 +1277,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LOOKUP_EXP_CS__ARGS = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 1;
+  int LOOKUP_EXP_CS__ARGS = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Lookup Exp CS</em>' class.
@@ -1565,7 +1286,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LOOKUP_EXP_CS_FEATURE_COUNT = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 2;
+  int LOOKUP_EXP_CS_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SelectionAllImpl <em>Selection All</em>}' class.
@@ -1711,15 +1432,26 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getCSDecl();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl#getMetamodels <em>Metamodels</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl#getImportedNamespace <em>Imported Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Metamodels</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl#getMetamodels()
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl#getImportedNamespace()
    * @see #getCSDecl()
    * @generated
    */
-  EReference getCSDecl_Metamodels();
+  EAttribute getCSDecl_ImportedNamespace();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl#getImportedObject <em>Imported Object</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Imported Object</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl#getImportedObject()
+   * @see #getCSDecl()
+   * @generated
+   */
+  EReference getCSDecl_ImportedObject();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl <em>AS Decl</em>}'.
@@ -1732,15 +1464,26 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getASDecl();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl#getMetamodels <em>Metamodels</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl#getImportedNamespace <em>Imported Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Metamodels</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl#getMetamodels()
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl#getImportedNamespace()
    * @see #getASDecl()
    * @generated
    */
-  EReference getASDecl_Metamodels();
+  EAttribute getASDecl_ImportedNamespace();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl#getImportedObject <em>Imported Object</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Imported Object</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl#getImportedObject()
+   * @see #getASDecl()
+   * @generated
+   */
+  EReference getASDecl_ImportedObject();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect <em>Mapping Sect</em>}'.
@@ -1774,10 +1517,10 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getClassMap();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getTo <em>To</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getTo <em>To</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>To</em>'.
+   * @return the meta object for the reference '<em>To</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getTo()
    * @see #getClassMap()
    * @generated
@@ -1785,10 +1528,10 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getClassMap_To();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getFrom <em>From</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getFrom <em>From</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>From</em>'.
+   * @return the meta object for the reference '<em>From</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getFrom()
    * @see #getClassMap()
    * @generated
@@ -1807,15 +1550,15 @@ public interface Cs2as_dslPackage extends EPackage
   EAttribute getClassMap_Rule();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getStatements <em>Statements</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getSXQualifiedNametatements <em>SX Qualified Nametatements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getStatements()
+   * @return the meta object for the containment reference list '<em>SX Qualified Nametatements</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getSXQualifiedNametatements()
    * @see #getClassMap()
    * @generated
    */
-  EReference getClassMap_Statements();
+  EReference getClassMap_SXQualifiedNametatements();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt <em>Class Map Stmnt</em>}'.
@@ -1849,15 +1592,15 @@ public interface Cs2as_dslPackage extends EPackage
   EAttribute getPropertyMap_Redefine();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropName <em>Prop Name</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropName <em>Prop Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Prop Name</em>'.
+   * @return the meta object for the reference '<em>Prop Name</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropName()
    * @see #getPropertyMap()
    * @generated
    */
-  EAttribute getPropertyMap_PropName();
+  EReference getPropertyMap_PropName();
 
   /**
    * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropInit <em>Prop Init</em>}'.
@@ -1902,10 +1645,10 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getClassDisambiguation();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation#getClass_ <em>Class</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation#getClass_ <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Class</em>'.
+   * @return the meta object for the reference '<em>Class</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation#getClass_()
    * @see #getClassDisambiguation()
    * @generated
@@ -2041,10 +1784,10 @@ public interface Cs2as_dslPackage extends EPackage
   EAttribute getDefaultNamedElementDef_NameElement();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef#getNameProperty <em>Name Property</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef#getNameProperty <em>Name Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name Property</em>'.
+   * @return the meta object for the reference '<em>Name Property</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef#getNameProperty()
    * @see #getDefaultNamedElementDef()
    * @generated
@@ -2073,10 +1816,10 @@ public interface Cs2as_dslPackage extends EPackage
   EAttribute getDefaultNameReferencerDef_NameReferencer();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef#getNameProperty <em>Name Property</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef#getNameProperty <em>Name Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name Property</em>'.
+   * @return the meta object for the reference '<em>Name Property</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef#getNameProperty()
    * @see #getDefaultNameReferencerDef()
    * @generated
@@ -2105,10 +1848,10 @@ public interface Cs2as_dslPackage extends EPackage
   EAttribute getNameQualifierDef_NameQualifier();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef#getSegmentsProp <em>Segments Prop</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef#getSegmentsProp <em>Segments Prop</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Segments Prop</em>'.
+   * @return the meta object for the reference '<em>Segments Prop</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef#getSegmentsProp()
    * @see #getNameQualifierDef()
    * @generated
@@ -2126,10 +1869,10 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getClassNameResolution();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution#getClass_ <em>Class</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution#getClass_ <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Class</em>'.
+   * @return the meta object for the reference '<em>Class</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution#getClass_()
    * @see #getClassNameResolution()
    * @generated
@@ -2168,10 +1911,10 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getNamedElementDef();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getNamePoperty <em>Name Poperty</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getNamePoperty <em>Name Poperty</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name Poperty</em>'.
+   * @return the meta object for the reference '<em>Name Poperty</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef#getNamePoperty()
    * @see #getNamedElementDef()
    * @generated
@@ -2426,10 +2169,10 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getTargetsDef();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef#getTargetClasses <em>Target Classes</em>}'.
+   * Returns the meta object for the reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef#getTargetClasses <em>Target Classes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Target Classes</em>'.
+   * @return the meta object for the reference list '<em>Target Classes</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef#getTargetClasses()
    * @see #getTargetsDef()
    * @generated
@@ -2552,10 +2295,10 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getClassHelper();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getContext <em>Context</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getContext <em>Context</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Context</em>'.
+   * @return the meta object for the reference '<em>Context</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getContext()
    * @see #getClassHelper()
    * @generated
@@ -2584,17 +2327,6 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getHelperDef();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedSignature <em>Owned Signature</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Owned Signature</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedSignature()
-   * @see #getHelperDef()
-   * @generated
-   */
-  EReference getHelperDef_OwnedSignature();
-
-  /**
    * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2617,10 +2349,10 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getHelperDef_Params();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedType <em>Owned Type</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedType <em>Owned Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @return the meta object for the reference '<em>Owned Type</em>'.
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedType()
    * @see #getHelperDef()
    * @generated
@@ -2814,12 +2546,20 @@ public interface Cs2as_dslPackage extends EPackage
     EClass CS_DECL = eINSTANCE.getCSDecl();
 
     /**
-     * The meta object literal for the '<em><b>Metamodels</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CS_DECL__METAMODELS = eINSTANCE.getCSDecl_Metamodels();
+    EAttribute CS_DECL__IMPORTED_NAMESPACE = eINSTANCE.getCSDecl_ImportedNamespace();
+
+    /**
+     * The meta object literal for the '<em><b>Imported Object</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CS_DECL__IMPORTED_OBJECT = eINSTANCE.getCSDecl_ImportedObject();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ASDeclImpl <em>AS Decl</em>}' class.
@@ -2832,12 +2572,20 @@ public interface Cs2as_dslPackage extends EPackage
     EClass AS_DECL = eINSTANCE.getASDecl();
 
     /**
-     * The meta object literal for the '<em><b>Metamodels</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AS_DECL__METAMODELS = eINSTANCE.getASDecl_Metamodels();
+    EAttribute AS_DECL__IMPORTED_NAMESPACE = eINSTANCE.getASDecl_ImportedNamespace();
+
+    /**
+     * The meta object literal for the '<em><b>Imported Object</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AS_DECL__IMPORTED_OBJECT = eINSTANCE.getASDecl_ImportedObject();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingSectImpl <em>Mapping Sect</em>}' class.
@@ -2868,7 +2616,7 @@ public interface Cs2as_dslPackage extends EPackage
     EClass CLASS_MAP = eINSTANCE.getClassMap();
 
     /**
-     * The meta object literal for the '<em><b>To</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>To</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2876,7 +2624,7 @@ public interface Cs2as_dslPackage extends EPackage
     EReference CLASS_MAP__TO = eINSTANCE.getClassMap_To();
 
     /**
-     * The meta object literal for the '<em><b>From</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>From</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2892,12 +2640,12 @@ public interface Cs2as_dslPackage extends EPackage
     EAttribute CLASS_MAP__RULE = eINSTANCE.getClassMap_Rule();
 
     /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>SX Qualified Nametatements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_MAP__STATEMENTS = eINSTANCE.getClassMap_Statements();
+    EReference CLASS_MAP__SX_QUALIFIED_NAMETATEMENTS = eINSTANCE.getClassMap_SXQualifiedNametatements();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapStmntImpl <em>Class Map Stmnt</em>}' class.
@@ -2928,12 +2676,12 @@ public interface Cs2as_dslPackage extends EPackage
     EAttribute PROPERTY_MAP__REDEFINE = eINSTANCE.getPropertyMap_Redefine();
 
     /**
-     * The meta object literal for the '<em><b>Prop Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Prop Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROPERTY_MAP__PROP_NAME = eINSTANCE.getPropertyMap_PropName();
+    EReference PROPERTY_MAP__PROP_NAME = eINSTANCE.getPropertyMap_PropName();
 
     /**
      * The meta object literal for the '<em><b>Prop Init</b></em>' containment reference feature.
@@ -2972,7 +2720,7 @@ public interface Cs2as_dslPackage extends EPackage
     EClass CLASS_DISAMBIGUATION = eINSTANCE.getClassDisambiguation();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Class</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3084,7 +2832,7 @@ public interface Cs2as_dslPackage extends EPackage
     EAttribute DEFAULT_NAMED_ELEMENT_DEF__NAME_ELEMENT = eINSTANCE.getDefaultNamedElementDef_NameElement();
 
     /**
-     * The meta object literal for the '<em><b>Name Property</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name Property</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3110,7 +2858,7 @@ public interface Cs2as_dslPackage extends EPackage
     EAttribute DEFAULT_NAME_REFERENCER_DEF__NAME_REFERENCER = eINSTANCE.getDefaultNameReferencerDef_NameReferencer();
 
     /**
-     * The meta object literal for the '<em><b>Name Property</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name Property</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3136,7 +2884,7 @@ public interface Cs2as_dslPackage extends EPackage
     EAttribute NAME_QUALIFIER_DEF__NAME_QUALIFIER = eINSTANCE.getNameQualifierDef_NameQualifier();
 
     /**
-     * The meta object literal for the '<em><b>Segments Prop</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Segments Prop</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3154,7 +2902,7 @@ public interface Cs2as_dslPackage extends EPackage
     EClass CLASS_NAME_RESOLUTION = eINSTANCE.getClassNameResolution();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Class</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3190,7 +2938,7 @@ public interface Cs2as_dslPackage extends EPackage
     EClass NAMED_ELEMENT_DEF = eINSTANCE.getNamedElementDef();
 
     /**
-     * The meta object literal for the '<em><b>Name Poperty</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name Poperty</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3394,7 +3142,7 @@ public interface Cs2as_dslPackage extends EPackage
     EClass TARGETS_DEF = eINSTANCE.getTargetsDef();
 
     /**
-     * The meta object literal for the '<em><b>Target Classes</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Target Classes</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3502,7 +3250,7 @@ public interface Cs2as_dslPackage extends EPackage
     EClass CLASS_HELPER = eINSTANCE.getClassHelper();
 
     /**
-     * The meta object literal for the '<em><b>Context</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Context</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3528,14 +3276,6 @@ public interface Cs2as_dslPackage extends EPackage
     EClass HELPER_DEF = eINSTANCE.getHelperDef();
 
     /**
-     * The meta object literal for the '<em><b>Owned Signature</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference HELPER_DEF__OWNED_SIGNATURE = eINSTANCE.getHelperDef_OwnedSignature();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3552,7 +3292,7 @@ public interface Cs2as_dslPackage extends EPackage
     EReference HELPER_DEF__PARAMS = eINSTANCE.getHelperDef_Params();
 
     /**
-     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Owned Type</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

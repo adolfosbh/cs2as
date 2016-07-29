@@ -2,7 +2,7 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ContextCS;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.ContextCS;
  * @model
  * @generated
  */
-public interface Model extends ContextCS
+public interface Model extends EObject
 {
   /**
    * Returns the value of the '<em><b>Cs Decl</b></em>' containment reference.

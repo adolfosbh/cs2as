@@ -6,9 +6,9 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.xtext.basecs.ParameterCS;
+import org.eclipse.emf.ecore.xcore.XParameter;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public interface FilterDef extends EObject
 {
   /**
    * Returns the value of the '<em><b>Params</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.ocl.xtext.basecs.ParameterCS}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.xcore.XParameter}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Params</em>' containment reference list isn't clear,
@@ -43,7 +43,7 @@ public interface FilterDef extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<ParameterCS> getParams();
+  EList<XParameter> getParams();
 
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.
@@ -54,12 +54,12 @@ public interface FilterDef extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(ExpCS)
+   * @see #setExpression(XExpression)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getFilterDef_Expression()
    * @model containment="true"
    * @generated
    */
-  ExpCS getExpression();
+  XExpression getExpression();
 
   /**
    * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef#getExpression <em>Expression</em>}' containment reference.
@@ -69,6 +69,6 @@ public interface FilterDef extends EObject
    * @see #getExpression()
    * @generated
    */
-  void setExpression(ExpCS value);
+  void setExpression(XExpression value);
 
 } // FilterDef

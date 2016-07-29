@@ -9,19 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.pivot.utilities.Nameable;
-import org.eclipse.ocl.pivot.utilities.Pivotable;
-
-import org.eclipse.ocl.xtext.basecs.ElementCS;
-import org.eclipse.ocl.xtext.basecs.ModelElementCS;
-import org.eclipse.ocl.xtext.basecs.NamedElementCS;
-import org.eclipse.ocl.xtext.basecs.PivotableElementCS;
-import org.eclipse.ocl.xtext.basecs.RootCS;
-
-import org.eclipse.ocl.xtext.basecs.util.VisitableCS;
-
-import org.eclipse.ocl.xtext.essentialoclcs.ContextCS;
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.*;
 
@@ -264,54 +252,9 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createSelectionSpecificAdapter();
       }
       @Override
-      public Adapter caseVisitableCS(VisitableCS object)
+      public Adapter caseXExpression(XExpression object)
       {
-        return createVisitableCSAdapter();
-      }
-      @Override
-      public Adapter caseElementCS(ElementCS object)
-      {
-        return createElementCSAdapter();
-      }
-      @Override
-      public Adapter casePivotable(Pivotable object)
-      {
-        return createPivotableAdapter();
-      }
-      @Override
-      public Adapter casePivotableElementCS(PivotableElementCS object)
-      {
-        return createPivotableElementCSAdapter();
-      }
-      @Override
-      public Adapter caseModelElementCS(ModelElementCS object)
-      {
-        return createModelElementCSAdapter();
-      }
-      @Override
-      public Adapter caseNameable(Nameable object)
-      {
-        return createNameableAdapter();
-      }
-      @Override
-      public Adapter caseNamedElementCS(NamedElementCS object)
-      {
-        return createNamedElementCSAdapter();
-      }
-      @Override
-      public Adapter caseRootCS(RootCS object)
-      {
-        return createRootCSAdapter();
-      }
-      @Override
-      public Adapter caseContextCS(ContextCS object)
-      {
-        return createContextCSAdapter();
-      }
-      @Override
-      public Adapter caseExpCS(ExpCS object)
-      {
-        return createExpCSAdapter();
+        return createXExpressionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -861,151 +804,16 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.basecs.util.VisitableCS <em>Visitable CS</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.xtext.xbase.XExpression <em>XExpression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.basecs.util.VisitableCS
+   * @see org.eclipse.xtext.xbase.XExpression
    * @generated
    */
-  public Adapter createVisitableCSAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.basecs.ElementCS <em>Element CS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.basecs.ElementCS
-   * @generated
-   */
-  public Adapter createElementCSAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.pivot.utilities.Pivotable <em>Pivotable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.pivot.utilities.Pivotable
-   * @generated
-   */
-  public Adapter createPivotableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.basecs.PivotableElementCS <em>Pivotable Element CS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.basecs.PivotableElementCS
-   * @generated
-   */
-  public Adapter createPivotableElementCSAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.basecs.ModelElementCS <em>Model Element CS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.basecs.ModelElementCS
-   * @generated
-   */
-  public Adapter createModelElementCSAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.pivot.utilities.Nameable <em>Nameable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.pivot.utilities.Nameable
-   * @generated
-   */
-  public Adapter createNameableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.basecs.NamedElementCS <em>Named Element CS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.basecs.NamedElementCS
-   * @generated
-   */
-  public Adapter createNamedElementCSAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.basecs.RootCS <em>Root CS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.basecs.RootCS
-   * @generated
-   */
-  public Adapter createRootCSAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.essentialoclcs.ContextCS <em>Context CS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.essentialoclcs.ContextCS
-   * @generated
-   */
-  public Adapter createContextCSAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.essentialoclcs.ExpCS <em>Exp CS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.essentialoclcs.ExpCS
-   * @generated
-   */
-  public Adapter createExpCSAdapter()
+  public Adapter createXExpressionAdapter()
   {
     return null;
   }

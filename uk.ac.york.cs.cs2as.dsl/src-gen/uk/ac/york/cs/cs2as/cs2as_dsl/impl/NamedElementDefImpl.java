@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
+import org.eclipse.emf.ecore.xcore.XAttribute;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef;
@@ -28,6 +28,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Named Element Def</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -42,14 +43,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements NamedElementDef
 {
   /**
-   * The cached value of the '{@link #getNamePoperty() <em>Name Poperty</em>}' containment reference.
+   * The cached value of the '{@link #getNamePoperty() <em>Name Poperty</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNamePoperty()
    * @generated
    * @ordered
    */
-  protected NameExpCS namePoperty;
+  protected XAttribute namePoperty;
 
   /**
    * The cached value of the '{@link #getFilter() <em>Filter</em>}' containment reference.
@@ -97,7 +98,27 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NameExpCS getNamePoperty()
+  public XAttribute getNamePoperty()
+  {
+    if (namePoperty != null && namePoperty.eIsProxy())
+    {
+      InternalEObject oldNamePoperty = (InternalEObject)namePoperty;
+      namePoperty = (XAttribute)eResolveProxy(oldNamePoperty);
+      if (namePoperty != oldNamePoperty)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY, oldNamePoperty, namePoperty));
+      }
+    }
+    return namePoperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XAttribute basicGetNamePoperty()
   {
     return namePoperty;
   }
@@ -107,37 +128,12 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetNamePoperty(NameExpCS newNamePoperty, NotificationChain msgs)
+  public void setNamePoperty(XAttribute newNamePoperty)
   {
-    NameExpCS oldNamePoperty = namePoperty;
+    XAttribute oldNamePoperty = namePoperty;
     namePoperty = newNamePoperty;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY, oldNamePoperty, newNamePoperty);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNamePoperty(NameExpCS newNamePoperty)
-  {
-    if (newNamePoperty != namePoperty)
-    {
-      NotificationChain msgs = null;
-      if (namePoperty != null)
-        msgs = ((InternalEObject)namePoperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY, null, msgs);
-      if (newNamePoperty != null)
-        msgs = ((InternalEObject)newNamePoperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY, null, msgs);
-      msgs = basicSetNamePoperty(newNamePoperty, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY, newNamePoperty, newNamePoperty));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY, oldNamePoperty, namePoperty));
   }
 
   /**
@@ -212,8 +208,6 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
-        return basicSetNamePoperty(null, msgs);
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER:
         return basicSetFilter(null, msgs);
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATIONS:
@@ -233,7 +227,8 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
     switch (featureID)
     {
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
-        return getNamePoperty();
+        if (resolve) return getNamePoperty();
+        return basicGetNamePoperty();
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER:
         return getFilter();
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__QUALIFICATIONS:
@@ -254,7 +249,7 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
     switch (featureID)
     {
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
-        setNamePoperty((NameExpCS)newValue);
+        setNamePoperty((XAttribute)newValue);
         return;
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER:
         setFilter((FilterDef)newValue);
@@ -278,7 +273,7 @@ public class NamedElementDefImpl extends ClassNameResolutionStmntImpl implements
     switch (featureID)
     {
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__NAME_POPERTY:
-        setNamePoperty((NameExpCS)null);
+        setNamePoperty((XAttribute)null);
         return;
       case Cs2as_dslPackage.NAMED_ELEMENT_DEF__FILTER:
         setFilter((FilterDef)null);

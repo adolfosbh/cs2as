@@ -3,7 +3,6 @@
 package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,7 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
+import org.eclipse.emf.ecore.xcore.XReference;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef;
@@ -20,6 +19,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Name Qualifier Def</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -53,14 +53,14 @@ public class NameQualifierDefImpl extends MinimalEObjectImpl.Container implement
   protected String nameQualifier = NAME_QUALIFIER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSegmentsProp() <em>Segments Prop</em>}' containment reference.
+   * The cached value of the '{@link #getSegmentsProp() <em>Segments Prop</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSegmentsProp()
    * @generated
    * @ordered
    */
-  protected NameExpCS segmentsProp;
+  protected XReference segmentsProp;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,7 +111,27 @@ public class NameQualifierDefImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NameExpCS getSegmentsProp()
+  public XReference getSegmentsProp()
+  {
+    if (segmentsProp != null && segmentsProp.eIsProxy())
+    {
+      InternalEObject oldSegmentsProp = (InternalEObject)segmentsProp;
+      segmentsProp = (XReference)eResolveProxy(oldSegmentsProp);
+      if (segmentsProp != oldSegmentsProp)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cs2as_dslPackage.NAME_QUALIFIER_DEF__SEGMENTS_PROP, oldSegmentsProp, segmentsProp));
+      }
+    }
+    return segmentsProp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XReference basicGetSegmentsProp()
   {
     return segmentsProp;
   }
@@ -121,53 +141,12 @@ public class NameQualifierDefImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSegmentsProp(NameExpCS newSegmentsProp, NotificationChain msgs)
+  public void setSegmentsProp(XReference newSegmentsProp)
   {
-    NameExpCS oldSegmentsProp = segmentsProp;
+    XReference oldSegmentsProp = segmentsProp;
     segmentsProp = newSegmentsProp;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_QUALIFIER_DEF__SEGMENTS_PROP, oldSegmentsProp, newSegmentsProp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSegmentsProp(NameExpCS newSegmentsProp)
-  {
-    if (newSegmentsProp != segmentsProp)
-    {
-      NotificationChain msgs = null;
-      if (segmentsProp != null)
-        msgs = ((InternalEObject)segmentsProp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAME_QUALIFIER_DEF__SEGMENTS_PROP, null, msgs);
-      if (newSegmentsProp != null)
-        msgs = ((InternalEObject)newSegmentsProp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.NAME_QUALIFIER_DEF__SEGMENTS_PROP, null, msgs);
-      msgs = basicSetSegmentsProp(newSegmentsProp, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_QUALIFIER_DEF__SEGMENTS_PROP, newSegmentsProp, newSegmentsProp));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case Cs2as_dslPackage.NAME_QUALIFIER_DEF__SEGMENTS_PROP:
-        return basicSetSegmentsProp(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.NAME_QUALIFIER_DEF__SEGMENTS_PROP, oldSegmentsProp, segmentsProp));
   }
 
   /**
@@ -183,7 +162,8 @@ public class NameQualifierDefImpl extends MinimalEObjectImpl.Container implement
       case Cs2as_dslPackage.NAME_QUALIFIER_DEF__NAME_QUALIFIER:
         return getNameQualifier();
       case Cs2as_dslPackage.NAME_QUALIFIER_DEF__SEGMENTS_PROP:
-        return getSegmentsProp();
+        if (resolve) return getSegmentsProp();
+        return basicGetSegmentsProp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -202,7 +182,7 @@ public class NameQualifierDefImpl extends MinimalEObjectImpl.Container implement
         setNameQualifier((String)newValue);
         return;
       case Cs2as_dslPackage.NAME_QUALIFIER_DEF__SEGMENTS_PROP:
-        setSegmentsProp((NameExpCS)newValue);
+        setSegmentsProp((XReference)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -222,7 +202,7 @@ public class NameQualifierDefImpl extends MinimalEObjectImpl.Container implement
         setNameQualifier(NAME_QUALIFIER_EDEFAULT);
         return;
       case Cs2as_dslPackage.NAME_QUALIFIER_DEF__SEGMENTS_PROP:
-        setSegmentsProp((NameExpCS)null);
+        setSegmentsProp((XReference)null);
         return;
     }
     super.eUnset(featureID);

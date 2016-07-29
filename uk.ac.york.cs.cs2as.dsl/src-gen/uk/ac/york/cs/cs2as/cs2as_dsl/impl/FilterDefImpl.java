@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.basecs.ParameterCS;
+import org.eclipse.emf.ecore.xcore.XParameter;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef;
@@ -29,6 +29,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Filter Def</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -49,7 +50,7 @@ public class FilterDefImpl extends MinimalEObjectImpl.Container implements Filte
    * @generated
    * @ordered
    */
-  protected EList<ParameterCS> params;
+  protected EList<XParameter> params;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
@@ -59,7 +60,7 @@ public class FilterDefImpl extends MinimalEObjectImpl.Container implements Filte
    * @generated
    * @ordered
    */
-  protected ExpCS expression;
+  protected XExpression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -87,11 +88,11 @@ public class FilterDefImpl extends MinimalEObjectImpl.Container implements Filte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ParameterCS> getParams()
+  public EList<XParameter> getParams()
   {
     if (params == null)
     {
-      params = new EObjectContainmentEList<ParameterCS>(ParameterCS.class, this, Cs2as_dslPackage.FILTER_DEF__PARAMS);
+      params = new EObjectContainmentEList<XParameter>(XParameter.class, this, Cs2as_dslPackage.FILTER_DEF__PARAMS);
     }
     return params;
   }
@@ -101,7 +102,7 @@ public class FilterDefImpl extends MinimalEObjectImpl.Container implements Filte
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpCS getExpression()
+  public XExpression getExpression()
   {
     return expression;
   }
@@ -111,9 +112,9 @@ public class FilterDefImpl extends MinimalEObjectImpl.Container implements Filte
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(ExpCS newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpression(XExpression newExpression, NotificationChain msgs)
   {
-    ExpCS oldExpression = expression;
+    XExpression oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
     {
@@ -128,7 +129,7 @@ public class FilterDefImpl extends MinimalEObjectImpl.Container implements Filte
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(ExpCS newExpression)
+  public void setExpression(XExpression newExpression)
   {
     if (newExpression != expression)
     {
@@ -193,10 +194,10 @@ public class FilterDefImpl extends MinimalEObjectImpl.Container implements Filte
     {
       case Cs2as_dslPackage.FILTER_DEF__PARAMS:
         getParams().clear();
-        getParams().addAll((Collection<? extends ParameterCS>)newValue);
+        getParams().addAll((Collection<? extends XParameter>)newValue);
         return;
       case Cs2as_dslPackage.FILTER_DEF__EXPRESSION:
-        setExpression((ExpCS)newValue);
+        setExpression((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -216,7 +217,7 @@ public class FilterDefImpl extends MinimalEObjectImpl.Container implements Filte
         getParams().clear();
         return;
       case Cs2as_dslPackage.FILTER_DEF__EXPRESSION:
-        setExpression((ExpCS)null);
+        setExpression((XExpression)null);
         return;
     }
     super.eUnset(featureID);

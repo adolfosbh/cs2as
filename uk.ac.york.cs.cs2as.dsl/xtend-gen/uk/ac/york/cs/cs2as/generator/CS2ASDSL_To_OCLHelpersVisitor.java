@@ -1,19 +1,11 @@
 package uk.ac.york.cs.cs2as.generator;
 
-import com.google.common.base.Objects;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.ocl.xtext.basecs.ParameterCS;
-import org.eclipse.ocl.xtext.basecs.PathElementCS;
-import org.eclipse.ocl.xtext.basecs.PathNameCS;
-import org.eclipse.ocl.xtext.basecs.TemplateSignatureCS;
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.emf.ecore.xcore.XClass;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper;
@@ -27,29 +19,10 @@ public class CS2ASDSL_To_OCLHelpersVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   private Map<String, List<ClassHelper>> package2classHelpers;
   
   private Map<String, List<ClassHelper>> computePackage2classHelpers(final HelpersSect sect) {
-    boolean _equals = Objects.equal(sect, null);
-    if (_equals) {
-      return CollectionLiterals.<String, List<ClassHelper>>emptyMap();
-    }
-    final Map<String, List<ClassHelper>> result = CollectionLiterals.<String, List<ClassHelper>>newHashMap();
-    EList<ClassHelper> _classHelpers = sect.getClassHelpers();
-    for (final ClassHelper classHelper : _classHelpers) {
-      {
-        PathNameCS _context = classHelper.getContext();
-        EList<PathElementCS> _ownedPathElements = _context.getOwnedPathElements();
-        PathElementCS _get = _ownedPathElements.get(0);
-        final String packageName = _get.getName();
-        List<ClassHelper> classHelpers = result.get(packageName);
-        boolean _equals_1 = Objects.equal(classHelpers, null);
-        if (_equals_1) {
-          ArrayList<ClassHelper> _newArrayList = CollectionLiterals.<ClassHelper>newArrayList();
-          classHelpers = _newArrayList;
-          result.put(packageName, classHelpers);
-        }
-        classHelpers.add(classHelper);
-      }
-    }
-    return result;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method ownedPathElements is undefined for the type CS2ASDSL_To_OCLHelpersVisitor"
+      + "\nget cannot be resolved"
+      + "\nname cannot be resolved");
   }
   
   @Override
@@ -100,7 +73,7 @@ public class CS2ASDSL_To_OCLHelpersVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   public String caseClassHelper(final ClassHelper object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("context ");
-    PathNameCS _context = object.getContext();
+    XClass _context = object.getContext();
     String _doSwitch = this.doSwitch(_context);
     _builder.append(_doSwitch, "");
     _builder.newLineIfNotEmpty();
@@ -117,67 +90,10 @@ public class CS2ASDSL_To_OCLHelpersVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   
   @Override
   public String caseHelperDef(final HelperDef object) {
-    String _xblockexpression = null;
-    {
-      final EList<ParameterCS> params = object.getParams();
-      String _xifexpression = null;
-      TypedRefCS _ownedType = object.getOwnedType();
-      boolean _equals = Objects.equal(_ownedType, null);
-      if (_equals) {
-        _xifexpression = ":";
-      } else {
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append(":");
-        TypedRefCS _ownedType_1 = object.getOwnedType();
-        String _doSwitch = this.doSwitch(_ownedType_1);
-        _builder.append(_doSwitch, "");
-        _xifexpression = _builder.toString();
-      }
-      final String type = _xifexpression;
-      String _xifexpression_1 = null;
-      TemplateSignatureCS _ownedSignature = object.getOwnedSignature();
-      boolean _equals_1 = Objects.equal(_ownedSignature, null);
-      if (_equals_1) {
-        _xifexpression_1 = "";
-      } else {
-        StringConcatenation _builder_1 = new StringConcatenation();
-        TemplateSignatureCS _ownedSignature_1 = object.getOwnedSignature();
-        String _doSwitch_1 = this.doSwitch(_ownedSignature_1);
-        _builder_1.append(_doSwitch_1, "");
-        _builder_1.append(" ");
-        _xifexpression_1 = _builder_1.toString();
-      }
-      final String template = _xifexpression_1;
-      StringConcatenation _builder_2 = new StringConcatenation();
-      _builder_2.append("def : ");
-      _builder_2.append(template, "");
-      String _name = object.getName();
-      _builder_2.append(_name, "");
-      _builder_2.append("(");
-      {
-        for(final ParameterCS param : params) {
-          {
-            int _indexOf = params.indexOf(param);
-            boolean _greaterThan = (_indexOf > 0);
-            if (_greaterThan) {
-              _builder_2.append(", ");
-            }
-          }
-          String _doSwitch_2 = this.doSwitch(param);
-          _builder_2.append(_doSwitch_2, "");
-        }
-      }
-      _builder_2.append(") ");
-      _builder_2.append(type, "");
-      _builder_2.append(" =");
-      _builder_2.newLineIfNotEmpty();
-      _builder_2.append("\t");
-      ExpCS _helperBody = object.getHelperBody();
-      String _doSwitch_3 = this.doSwitch(_helperBody);
-      _builder_2.append(_doSwitch_3, "\t");
-      _builder_2.newLineIfNotEmpty();
-      _xblockexpression = _builder_2.toString();
-    }
-    return _xblockexpression;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method ownedSignature is undefined for the type CS2ASDSL_To_OCLHelpersVisitor"
+      + "\nThe method ownedSignature is undefined for the type CS2ASDSL_To_OCLHelpersVisitor"
+      + "\n== cannot be resolved"
+      + "\ndoSwitch cannot be resolved");
   }
 }

@@ -13,6 +13,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Selection Def</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  *
  * @generated
  */

@@ -2,7 +2,9 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.emf.ecore.xcore.XStructuralFeature;
+
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,30 +53,30 @@ public interface PropertyMap extends ClassMapStmnt
   void setRedefine(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Prop Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Prop Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Prop Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Prop Name</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Prop Name</em>' attribute.
-   * @see #setPropName(String)
+   * @return the value of the '<em>Prop Name</em>' reference.
+   * @see #setPropName(XStructuralFeature)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getPropertyMap_PropName()
    * @model
    * @generated
    */
-  String getPropName();
+  XStructuralFeature getPropName();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropName <em>Prop Name</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropName <em>Prop Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Prop Name</em>' attribute.
+   * @param value the new value of the '<em>Prop Name</em>' reference.
    * @see #getPropName()
    * @generated
    */
-  void setPropName(String value);
+  void setPropName(XStructuralFeature value);
 
   /**
    * Returns the value of the '<em><b>Prop Init</b></em>' containment reference.
@@ -85,12 +87,12 @@ public interface PropertyMap extends ClassMapStmnt
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Prop Init</em>' containment reference.
-   * @see #setPropInit(ExpCS)
+   * @see #setPropInit(XExpression)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getPropertyMap_PropInit()
    * @model containment="true"
    * @generated
    */
-  ExpCS getPropInit();
+  XExpression getPropInit();
 
   /**
    * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropInit <em>Prop Init</em>}' containment reference.
@@ -100,6 +102,6 @@ public interface PropertyMap extends ClassMapStmnt
    * @see #getPropInit()
    * @generated
    */
-  void setPropInit(ExpCS value);
+  void setPropInit(XExpression value);
 
 } // PropertyMap

@@ -6,7 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.xtext.basecs.PathNameCS;
+import org.eclipse.emf.ecore.xcore.XClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,30 +28,30 @@ import org.eclipse.ocl.xtext.basecs.PathNameCS;
 public interface ClassHelper extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Context</b></em>' containment reference.
+   * Returns the value of the '<em><b>Context</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Context</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Context</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Context</em>' containment reference.
-   * @see #setContext(PathNameCS)
+   * @return the value of the '<em>Context</em>' reference.
+   * @see #setContext(XClass)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getClassHelper_Context()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  PathNameCS getContext();
+  XClass getContext();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getContext <em>Context</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getContext <em>Context</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Context</em>' containment reference.
+   * @param value the new value of the '<em>Context</em>' reference.
    * @see #getContext()
    * @generated
    */
-  void setContext(PathNameCS value);
+  void setContext(XClass value);
 
   /**
    * Returns the value of the '<em><b>Helpers</b></em>' containment reference list.

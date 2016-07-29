@@ -14,8 +14,14 @@ var encoding = "UTF-8"
 Workflow {
     bean = StandaloneSetup {
     	scanClassPath = true
-    	platformUri = "${runtimeProject}/.."
-		registerGenModelFile = "platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.genmodel"
+    	platformUri = "${runtimeProject}/.."		
+    	
+    	
+    	registerEcoreFile = "platform:/resource/org.eclipse.emf.ecore.xcore/model/Xcore.ecore"
+		registerEcoreFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.ecore"
+		registerEcoreFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xtype.ecore"
+
+		registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore.xcore/model/Xcore.genmodel"
     	
     }
     
@@ -55,9 +61,9 @@ Workflow {
     		// fragment = parseTreeConstructor.ParseTreeConstructorFragment auto-inject {}    
     
     		// serializer 2.0
-    		fragment = serializer.SerializerFragment auto-inject {
-    			generateStub = false
-    		}
+    		//fragment = serializer.SerializerFragment auto-inject {
+    		//	generateStub = false
+    		//}
     
     		// a custom ResourceFactory for use with EMF
     		fragment = resourceFactory.ResourceFactoryFragment auto-inject {}

@@ -11,6 +11,7 @@
             default="true"
             extensions="cs2as"
             id="uk.ac.york.cs.cs2as.CS2ASDSL"
+            matchingStrategy="uk.ac.york.cs.cs2as.ui.CS2ASDSLExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
             name="CS2ASDSL Editor">
         </editor>
     </extension>

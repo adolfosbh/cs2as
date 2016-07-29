@@ -13,6 +13,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Class Map Stmnt</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  *
  * @generated
  */

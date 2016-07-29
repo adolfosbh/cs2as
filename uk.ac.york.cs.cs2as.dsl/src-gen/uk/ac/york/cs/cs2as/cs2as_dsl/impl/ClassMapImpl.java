@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.basecs.PathNameCS;
+import org.eclipse.emf.ecore.xcore.XClass;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt;
@@ -29,13 +29,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
  * An implementation of the model object '<em><b>Class Map</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl#getTo <em>To</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl#getFrom <em>From</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl#getRule <em>Rule</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl#getSXQualifiedNametatements <em>SX Qualified Nametatements</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,24 +44,24 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassMap
 {
   /**
-   * The cached value of the '{@link #getTo() <em>To</em>}' containment reference.
+   * The cached value of the '{@link #getTo() <em>To</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTo()
    * @generated
    * @ordered
    */
-  protected PathNameCS to;
+  protected XClass to;
 
   /**
-   * The cached value of the '{@link #getFrom() <em>From</em>}' containment reference.
+   * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFrom()
    * @generated
    * @ordered
    */
-  protected PathNameCS from;
+  protected XClass from;
 
   /**
    * The default value of the '{@link #getRule() <em>Rule</em>}' attribute.
@@ -83,14 +84,14 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
   protected String rule = RULE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * The cached value of the '{@link #getSXQualifiedNametatements() <em>SX Qualified Nametatements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatements()
+   * @see #getSXQualifiedNametatements()
    * @generated
    * @ordered
    */
-  protected EList<ClassMapStmnt> statements;
+  protected EList<ClassMapStmnt> sXQualifiedNametatements;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,7 +119,27 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
    * <!-- end-user-doc -->
    * @generated
    */
-  public PathNameCS getTo()
+  public XClass getTo()
+  {
+    if (to != null && to.eIsProxy())
+    {
+      InternalEObject oldTo = (InternalEObject)to;
+      to = (XClass)eResolveProxy(oldTo);
+      if (to != oldTo)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cs2as_dslPackage.CLASS_MAP__TO, oldTo, to));
+      }
+    }
+    return to;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XClass basicGetTo()
   {
     return to;
   }
@@ -128,16 +149,12 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTo(PathNameCS newTo, NotificationChain msgs)
+  public void setTo(XClass newTo)
   {
-    PathNameCS oldTo = to;
+    XClass oldTo = to;
     to = newTo;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__TO, oldTo, newTo);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__TO, oldTo, to));
   }
 
   /**
@@ -145,20 +162,19 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTo(PathNameCS newTo)
+  public XClass getFrom()
   {
-    if (newTo != to)
+    if (from != null && from.eIsProxy())
     {
-      NotificationChain msgs = null;
-      if (to != null)
-        msgs = ((InternalEObject)to).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_MAP__TO, null, msgs);
-      if (newTo != null)
-        msgs = ((InternalEObject)newTo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_MAP__TO, null, msgs);
-      msgs = basicSetTo(newTo, msgs);
-      if (msgs != null) msgs.dispatch();
+      InternalEObject oldFrom = (InternalEObject)from;
+      from = (XClass)eResolveProxy(oldFrom);
+      if (from != oldFrom)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cs2as_dslPackage.CLASS_MAP__FROM, oldFrom, from));
+      }
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__TO, newTo, newTo));
+    return from;
   }
 
   /**
@@ -166,7 +182,7 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
    * <!-- end-user-doc -->
    * @generated
    */
-  public PathNameCS getFrom()
+  public XClass basicGetFrom()
   {
     return from;
   }
@@ -176,37 +192,12 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFrom(PathNameCS newFrom, NotificationChain msgs)
+  public void setFrom(XClass newFrom)
   {
-    PathNameCS oldFrom = from;
+    XClass oldFrom = from;
     from = newFrom;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__FROM, oldFrom, newFrom);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFrom(PathNameCS newFrom)
-  {
-    if (newFrom != from)
-    {
-      NotificationChain msgs = null;
-      if (from != null)
-        msgs = ((InternalEObject)from).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_MAP__FROM, null, msgs);
-      if (newFrom != null)
-        msgs = ((InternalEObject)newFrom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.CLASS_MAP__FROM, null, msgs);
-      msgs = basicSetFrom(newFrom, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__FROM, newFrom, newFrom));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.CLASS_MAP__FROM, oldFrom, from));
   }
 
   /**
@@ -237,13 +228,13 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ClassMapStmnt> getStatements()
+  public EList<ClassMapStmnt> getSXQualifiedNametatements()
   {
-    if (statements == null)
+    if (sXQualifiedNametatements == null)
     {
-      statements = new EObjectContainmentEList<ClassMapStmnt>(ClassMapStmnt.class, this, Cs2as_dslPackage.CLASS_MAP__STATEMENTS);
+      sXQualifiedNametatements = new EObjectContainmentEList<ClassMapStmnt>(ClassMapStmnt.class, this, Cs2as_dslPackage.CLASS_MAP__SX_QUALIFIED_NAMETATEMENTS);
     }
-    return statements;
+    return sXQualifiedNametatements;
   }
 
   /**
@@ -256,12 +247,8 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.CLASS_MAP__TO:
-        return basicSetTo(null, msgs);
-      case Cs2as_dslPackage.CLASS_MAP__FROM:
-        return basicSetFrom(null, msgs);
-      case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
-        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.CLASS_MAP__SX_QUALIFIED_NAMETATEMENTS:
+        return ((InternalEList<?>)getSXQualifiedNametatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -277,13 +264,15 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_MAP__TO:
-        return getTo();
+        if (resolve) return getTo();
+        return basicGetTo();
       case Cs2as_dslPackage.CLASS_MAP__FROM:
-        return getFrom();
+        if (resolve) return getFrom();
+        return basicGetFrom();
       case Cs2as_dslPackage.CLASS_MAP__RULE:
         return getRule();
-      case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
-        return getStatements();
+      case Cs2as_dslPackage.CLASS_MAP__SX_QUALIFIED_NAMETATEMENTS:
+        return getSXQualifiedNametatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -300,17 +289,17 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_MAP__TO:
-        setTo((PathNameCS)newValue);
+        setTo((XClass)newValue);
         return;
       case Cs2as_dslPackage.CLASS_MAP__FROM:
-        setFrom((PathNameCS)newValue);
+        setFrom((XClass)newValue);
         return;
       case Cs2as_dslPackage.CLASS_MAP__RULE:
         setRule((String)newValue);
         return;
-      case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
-        getStatements().clear();
-        getStatements().addAll((Collection<? extends ClassMapStmnt>)newValue);
+      case Cs2as_dslPackage.CLASS_MAP__SX_QUALIFIED_NAMETATEMENTS:
+        getSXQualifiedNametatements().clear();
+        getSXQualifiedNametatements().addAll((Collection<? extends ClassMapStmnt>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -327,16 +316,16 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
     switch (featureID)
     {
       case Cs2as_dslPackage.CLASS_MAP__TO:
-        setTo((PathNameCS)null);
+        setTo((XClass)null);
         return;
       case Cs2as_dslPackage.CLASS_MAP__FROM:
-        setFrom((PathNameCS)null);
+        setFrom((XClass)null);
         return;
       case Cs2as_dslPackage.CLASS_MAP__RULE:
         setRule(RULE_EDEFAULT);
         return;
-      case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
-        getStatements().clear();
+      case Cs2as_dslPackage.CLASS_MAP__SX_QUALIFIED_NAMETATEMENTS:
+        getSXQualifiedNametatements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -358,8 +347,8 @@ public class ClassMapImpl extends MinimalEObjectImpl.Container implements ClassM
         return from != null;
       case Cs2as_dslPackage.CLASS_MAP__RULE:
         return RULE_EDEFAULT == null ? rule != null : !RULE_EDEFAULT.equals(rule);
-      case Cs2as_dslPackage.CLASS_MAP__STATEMENTS:
-        return statements != null && !statements.isEmpty();
+      case Cs2as_dslPackage.CLASS_MAP__SX_QUALIFIED_NAMETATEMENTS:
+        return sXQualifiedNametatements != null && !sXQualifiedNametatements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

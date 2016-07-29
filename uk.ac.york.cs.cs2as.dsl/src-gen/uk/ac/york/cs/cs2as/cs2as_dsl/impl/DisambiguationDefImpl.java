@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.xbase.XExpression;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef;
@@ -19,6 +19,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Disambiguation Def</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
  * <p>
  * The following features are implemented:
  * </p>
@@ -59,7 +60,7 @@ public class DisambiguationDefImpl extends ClassDisambiguationStmntImpl implemen
    * @generated
    * @ordered
    */
-  protected ExpCS exp;
+  protected XExpression exp;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,7 +111,7 @@ public class DisambiguationDefImpl extends ClassDisambiguationStmntImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpCS getExp()
+  public XExpression getExp()
   {
     return exp;
   }
@@ -120,9 +121,9 @@ public class DisambiguationDefImpl extends ClassDisambiguationStmntImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExp(ExpCS newExp, NotificationChain msgs)
+  public NotificationChain basicSetExp(XExpression newExp, NotificationChain msgs)
   {
-    ExpCS oldExp = exp;
+    XExpression oldExp = exp;
     exp = newExp;
     if (eNotificationRequired())
     {
@@ -137,7 +138,7 @@ public class DisambiguationDefImpl extends ClassDisambiguationStmntImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExp(ExpCS newExp)
+  public void setExp(XExpression newExp)
   {
     if (newExp != exp)
     {
@@ -201,7 +202,7 @@ public class DisambiguationDefImpl extends ClassDisambiguationStmntImpl implemen
         setName((String)newValue);
         return;
       case Cs2as_dslPackage.DISAMBIGUATION_DEF__EXP:
-        setExp((ExpCS)newValue);
+        setExp((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,7 +222,7 @@ public class DisambiguationDefImpl extends ClassDisambiguationStmntImpl implemen
         setName(NAME_EDEFAULT);
         return;
       case Cs2as_dslPackage.DISAMBIGUATION_DEF__EXP:
-        setExp((ExpCS)null);
+        setExp((XExpression)null);
         return;
     }
     super.eUnset(featureID);
