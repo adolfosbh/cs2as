@@ -86,7 +86,7 @@ def : ast() : ocl::ShadowPart =
 		referredProperty = ast().lookupProperty(propName)
 	}
 	
-context ResolveExpCS
+context TraceExpCS
 def : ast() : ocl::OperationCallExp =
 	ocl::OperationCallExp {
 		name = 'ast',

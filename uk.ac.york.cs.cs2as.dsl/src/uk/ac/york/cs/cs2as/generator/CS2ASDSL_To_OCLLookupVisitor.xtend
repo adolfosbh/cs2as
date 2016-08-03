@@ -2,22 +2,25 @@ package uk.ac.york.cs.cs2as.generator
 
 import java.util.List
 import java.util.Map
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt
+import java.util.Set
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef
 import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp
 import uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect
-import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.Provider
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt
+import uk.ac.york.cs.cs2as.cs2as_dsl.Providers
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific
-import java.util.Set
-import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef
-import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.Target
+import uk.ac.york.cs.cs2as.cs2as_dsl.Targets
 
 class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 
@@ -80,33 +83,16 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		if (nameresoSect == null) {
 			return sb.toString;
 		}
-		computeInitialMaps(object.nameresoSect);	
-		val namedElement = nameresoSect.namedElement;
-		if (namedElement != null) {
-			defaultNE = object.nameresoSect.namedElement.nameElement;
-			defaultNEP = object.nameresoSect.namedElement.nameProperty.doSwitch;	
-		}
-		val nameRef = nameresoSect.nameReferencer;
-		if (nameRef != null) {
-			defaultNR = object.nameresoSect.nameReferencer.nameReferencer;
-			defaultNRP = object.nameresoSect.nameReferencer.nameProperty.doSwitch;	
-		}
-		val nameQuali = nameresoSect.nameQualifier;
-		if (nameQuali != null) {
-			defaultNQ = object.nameresoSect.nameQualifier.nameQualifier;
-			defaultNQP = object.nameresoSect.nameQualifier.segmentsProp.doSwitch;	
-		}
+		computeInitialMaps(object.nameresoSect);
+		computeDefaults(object.nameresoSect);
+		
 		
 		sb.append('''
 		«commonLookupInfrastructure»
 		
 		package «targetPckName»
 		
-		«object.nameresoSect.doSwitch»
-		
-		context Visitable
-		«object.nameresoSect.provideLookupMethods»
-		
+		«object.nameresoSect.doSwitch»		
 		
 		endpackage
 		''').toString
@@ -117,8 +103,8 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		'''
 		package ocl
 		
-		context OclElement
 		-- Domain specific default functionality
+		context OclElement
 		«commonEnvironmentOps»
 		-- End of domain specific default functionality
 		endpackage 
@@ -165,32 +151,38 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	}
 	
 	def private computeInitialMaps(NameResolutionSect nrSect) {
-		for (nameReso : nrSect.nameResolutions) {
-			val className = nameReso.class_.doSwitch;
-			val nClassName = className.normalizeString;
-			for (statemnt : nameReso.statements) {
-				if (statemnt instanceof NamedElementDef) {
-					normalizedTargetElements.add(nClassName);
-					for ( qDef :  statemnt.qualifications) {
-						for (targetClass : qDef.targetsDef.targetClasses) {
-							val qualifiedElement = targetClass.doSwitch;
-							var qualifiers = element2qualifiers.get(qualifiedElement);
-							if (qualifiers == null) {
-								qualifiers = newArrayList();
-								element2qualifiers.put(qualifiedElement, qualifiers);
-							}
-							qualifiers.add(className);
-							normalizedQualifiedElements.add(qualifiedElement.normalizeString);
+		val targetsDef = nrSect.targetsDef;
+		if (targetsDef != null) {
+			for (target : targetsDef.targets) {
+				val className = target.classRef.className.doSwitch;
+				val nClassName = className.normalizeString;
+				normalizedTargetElements.add(nClassName);
+				for ( qDef :  target.qualifications) {
+					for (targetClass : qDef.targetsDef.classNames) {
+						val qualifiedElement = targetClass.doSwitch;
+						var qualifiers = element2qualifiers.get(qualifiedElement);
+						if (qualifiers == null) {
+							qualifiers = newArrayList();
+							element2qualifiers.put(qualifiedElement, qualifiers);
 						}
-						
+						qualifiers.add(className);
+						normalizedQualifiedElements.add(qualifiedElement.normalizeString);
 					}
-					element2filter.put(className, statemnt.filter);
+					
 				}
+				element2filter.put(className, target.filter);
+			}	
+		}
+		
+		val providersDef = nrSect.providersDef;
+		for (provider : providersDef.providers) {
+			val className = provider.classRef.doSwitch;
+			for (statemnt : provider.statements) {
 				if (statemnt instanceof ScopeDef) {
 					addStatement2Map(statemnt, feaName2scopes, statemnt.selectionDef, className)
 				} else if (statemnt instanceof ExportDef) {
 					for (pDefg : statemnt.provisionDefs) {
-						for (targetClass : pDefg.targetsDef.targetClasses) {
+						for (targetClass : pDefg.targetsDef.classNames) {
 							val exportedElement = targetClass.doSwitch;
 							normalizedExportedElements.add(exportedElement.normalizeString);
 						}
@@ -201,8 +193,37 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		}
 	}
 	
+	def private computeDefaults(NameResolutionSect nameresoSect) {
+		val namedElement = nameresoSect.targetsDef;
+		if (namedElement != null) {
+			for (target : namedElement.targets) {
+				if (target.propRef != null) {
+					defaultNE = target.classRef.doSwitch;
+					defaultNEP = target.propRef.doSwitch;
+				}	
+			}
+		}
+		val nameRef = nameresoSect.inputsDef;
+		if (nameRef != null) {
+			var foundNR = false;
+			var foundNQ = false;
+			for (input : nameRef.inputs) { // FIXME so far just the first/one NR and NQ
+				if (!foundNR && !input.qualifier) {
+					defaultNR = input.classRef.doSwitch;
+					defaultNRP = input.propRef.doSwitch;
+					foundNR = true;		
+				}
+				if (!foundNQ && input.qualifier) {
+					defaultNQ = input.classRef.doSwitch;
+					defaultNQP = input.propRef.doSwitch;
+					foundNQ = true;
+				}
+			}
+		}
+	}
 	
-	def private <Def extends ClassNameResolutionStmnt> addStatement2Map (Def statmnt, Map<String, Def> result, SelectionDef selection, String className) {
+	
+	def private <Def extends ProviderStmnt> addStatement2Map (Def statmnt, Map<String, Def> result, SelectionDef selection, String className) {
 		
 		if (selection instanceof SelectionSpecific) {
 			for (property : selection.selectedProperties) {
@@ -215,40 +236,39 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	
 	override caseNameResolutionSect(NameResolutionSect object) {
 		
-		'''
-		«FOR nameResolution : object.nameResolutions»«nameResolution.doSwitch»«ENDFOR»
-		''' 
+		val sb = new StringBuilder();
+		val targetsDef = object.targetsDef;
+		if (targetsDef != null) {
+			sb.append(targetsDef.doSwitch);
+		}
+		val providersDef = object.providersDef;
+		if (providersDef != null) {
+			sb.append(providersDef.doSwitch);
+		}
+		return sb.toString;
 	}
 	
-	override caseClassNameResolution(ClassNameResolution object) {
-		val containsExports = ! object.statements.filter(ExportDef).empty;
-		val containsScopes = ! object.statements.filter(ScopeDef).empty;
-		val containsQualifies = object.statements.filter(NamedElementDef).exists[x| ! x.qualifications.empty]
-		val containsFilters = object.statements.filter(NamedElementDef).exists[x| x.filter != null]
-		if (containsExports || containsScopes || containsQualifies || containsFilters)
-			'''
-				
-			context «object.class_.doSwitch»
-			«FOR statement : object.statements.filter(NamedElementDef)»«statement.doSwitch»«ENDFOR»
-			«IF containsScopes»
-			«provideUnqualifiedEnvMethods(object)»
-			«ENDIF»
-			«IF containsExports»
-			«provideExportedEnvMethods(object)»
-			«provideExporterLookupMethod(object)»
-			«ENDIF»
-			'''
-		else 
-			'';
+	override caseTargets(Targets object) {
+		'''
+		«FOR target : object.targets»«target.doSwitch»«ENDFOR»
+		'''
 	}
-		
-	override caseNamedElementDef(NamedElementDef object) {
-		val qualifications = object.qualifications;
-		val StringBuilder sb = new StringBuilder();
-		if (qualifications != null) {			
-			//val List<ElementsContribExp> qualificationConstribs = newArrayList();
-			for (qualification : qualifications) {
-				for (targetClass : qualification.targetsDef.targetClasses){
+	
+	override caseTarget(Target object) {
+		val sb = new StringBuilder();
+		val qualificationDefs = object.qualifications;
+		val filterDef = object.filter;
+		// We generate the target-specific API
+		if (! qualificationDefs.empty || filterDef != null) {
+			sb.append(
+				'''
+					
+				context «object.classRef.doSwitch»
+				'''
+			);
+			
+			for (qualification : qualificationDefs) {
+				for (targetClass : qualification.targetsDef.classNames){
 					val className = targetClass.doSwitch;
 					val nClassName = className.normalizeString;
 					val nameParam = className.toLowerCase.charAt(0) + "Name";
@@ -258,37 +278,104 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 					sb.append('''
 						
 					def : _lookupQualified«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
-						let found«nClassName» = _lookup«nClassName»(_qualified_env_«nClassName»(), «nameParam»«filterArgs»)
-						in  if found«nClassName»->isEmpty()
-							then null
-							else found«nClassName»->first()
-							endif
+					   let found«nClassName» = _lookup«nClassName»(_qualified_env_«nClassName»(), «nameParam»«filterArgs»)
+					   in  if found«nClassName»->isEmpty()
+					      then null
+					      else found«nClassName»->first()
+					      endif
 					def : _qualified_env_«nClassName»() : «lookupPck»::«lookupEnv» =
-						let env = «lookupPck»::«lookupEnv»{}
-						in env
-						«FOR contrib : qualification.contribution»«contrib.doSwitch»
+					   let env = «lookupPck»::«lookupEnv»{}
+					   in env
+					   «FOR contrib : qualification.contribution»«contrib.doSwitch»
 						«ENDFOR»
 					«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, '', 'Qualified'+nClassName, filterParams, filterArgs)»«ENDIF»
 					''');
 					//qualificationConstribs.addAll(qualification.contribution);	
 				} 
 			}
-
-				
+			if (filterDef != null) {
+				val className = object.classRef.doSwitch;
+				val nClassName = className.normalizeString;
+				val filterParams = filterDef.paramsText;
+				sb.append('''
+				   
+				def : «nClassName.filterOpName»(«filterParams») : Boolean =
+				   «filterDef.expression.doSwitch»
+				''')
+			}
+			sb.toString;
 		}
+		// We generate the general API to lookup the target
+		val className = object.classRef.doSwitch;
+		val nClassName = className.normalizeString;
+		val nameParam = className.toLowerCase.charAt(0) + "Name";
+		val nameProp = if (object.propRef != null) object.propRef.doSwitch else defaultNEP
 		val filter = object.filter;
-		if (filter != null) {
-			val className = (object.eContainer as ClassNameResolution).class_.doSwitch;
-			val nClassName = className.normalizeString;
-			val filterParams = filter.paramsText;
-			sb.append('''
-				
-			def : «nClassName.filterOpName»(«filterParams») : Boolean =
-				«filter.expression.doSwitch»
-			''')
+		val filterParams = filter.optionalAddedParamsText
+		val filterArgs = filter.optionalAddedArgsText;
+		sb.append('''
+		context Visitable
+		-- «nClassName» unqualified lookup
+		def : _lookup«nClassName»(env : «lookupPck»::«lookupEnv», «nameParam» : String«filterParams») : OrderedSet(«className») =
+		let found«nClassName» = env.namedElements->selectByKind(«className»)->select(«nameProp» = «nameParam»)
+		                                         «IF filter!=null»->select(«nClassName.getFilterOpName»(«filter.argsText»))«ENDIF»
+		in  if found«nClassName»->isEmpty() and not (env.parentEnv = null)
+		   then _lookup«nClassName»(env.parentEnv, «nameParam»«filterArgs»)
+		   else found«nClassName»
+		   endif
+		   
+		-- Note: when calling this method, the source element of the argument passed to this method, will be the contextual 
+		-- object on which error reports will be handled
+		def : _lookupUnqualified«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
+		let found«nClassName» = _lookup«nClassName»(unqualified_env_«nClassName»(), «nameParam»«filterArgs»)
+		in  if found«nClassName»->isEmpty()
+		   then null
+		   else found«nClassName»->first() -- LookupVisitor will report ambiguous result
+		   endif
+		   
+		def : lookup«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
+		   _lookupUnqualified«nClassName»(«nameParam»«filterArgs»)
+		«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, 'Unqualified', nClassName, filterParams, filterArgs)»«ENDIF»		
+		-- End of «nClassName» unqualified lookup 
+		   
+		«IF element2qualifiers.get(className) != null»«provideQualifiedLookupMethods(className, nClassName, filterParams, filterArgs)»«ENDIF»
+		''');
+		sb.toString();
+	}
+	
+	override caseProviders(Providers object) {
+		'''
+		«FOR provider : object.providers»«provider.doSwitch»«ENDFOR»
+		'''
+	}
+	override caseProvider(Provider object) {
+		val sb = new StringBuilder();
+		val containsExports = ! object.statements.filter(ExportDef).empty;
+		val containsScopes = ! object.statements.filter(ScopeDef).empty;
+		// We generate the target-specific API
+		if (containsExports || containsScopes) {
+			sb.append(
+			'''
+			context «object.classRef.doSwitch»
+			«IF containsScopes»
+			«object.provideUnqualifiedEnvMethods»
+			«ENDIF»
+			«IF containsExports»
+			«object.provideExportedEnvMethods»
+			«object.provideExporterLookupMethod»
+			«ENDIF»
+			''');
 		}
-		
-		sb.toString;
+		// We generate the general API to lookupFrom a target
+		if (containsExports) {
+			sb.append(
+				'''
+				context Visitable
+				«object.provideLookupFromMethods»
+				'''
+			);
+		}
+		return sb.toString;
 	}
 	
 	override caseElementsContribExp(ElementsContribExp object) {
@@ -328,65 +415,40 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		''';
 	}
 	
-	def private provideLookupMethods(NameResolutionSect nameResoSect) {
+	override caseClassRef(ClassRef object) {
+		return '''«object.className.doSwitch»'''
+	}
+	
+	def private provideLookupFromMethods(Provider provider) {
 		
 		val StringBuilder sb = new StringBuilder;
-		for (resolution : nameResoSect.nameResolutions) {
-			for(statmt : resolution.statements) {
-				val className = resolution.class_.doSwitch;
-				val nClassName = className.normalizeString;
-				val nameParam = className.toLowerCase.charAt(0) + "Name";
-				if (statmt instanceof NamedElementDef) {	
-					val nameProp = if (statmt.namePoperty != null) statmt.namePoperty.doSwitch else defaultNEP
-					val filter = statmt.filter;
-					val filterParams = filter.optionalAddedParamsText
+		
+		for(statmt : provider.statements) {
+			val className = provider.classRef.doSwitch;
+			val nClassName = className.normalizeString;
+			val nameParam = className.toLowerCase.charAt(0) + "Name";
+			if (statmt instanceof ExportDef) {
+			for (providerDef : statmt.provisionDefs) {
+					val exportedClassName = providerDef.targetsDef.classNames.get(0).doSwitch; // FIXME MANY target classes 
+					val nExportedClassName = exportedClassName.normalizeString;
+					val filter = element2filter.get(exportedClassName);
+					val filterParams = filter.optionalAddedParamsText;
 					val filterArgs = filter.optionalAddedArgsText;
 					sb.append('''
-					-- «nClassName» lookup
-					def : _lookup«nClassName»(env : «lookupPck»::«lookupEnv», «nameParam» : String«filterParams») : OrderedSet(«className») =
-					let found«nClassName» = env.namedElements->selectByKind(«className»)->select(«nameProp» = «nameParam»)
-					                                         «IF filter!=null»->select(«nClassName.getFilterOpName»(«filter.argsText»))«ENDIF»
-					in  if found«nClassName»->isEmpty() and not (env.parentEnv = null)
-						then _lookup«nClassName»(env.parentEnv, «nameParam»«filterArgs»)
-						else found«nClassName»
-						endif
-						
-					-- Note: when calling this method, the source element of the argument passed to this method, will be the contextual 
-					-- object on which error reports will be handled
-					def : _lookupUnqualified«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
-					let found«nClassName» = _lookup«nClassName»(unqualified_env_«nClassName»(), «nameParam»«filterArgs»)
-					in  if found«nClassName»->isEmpty()
-						then null
-						else found«nClassName»->first() -- LookupVisitor will report ambiguous result
-						endif
-					«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, 'Unqualified', nClassName, filterParams, filterArgs)»«ENDIF»
+					-- «nClassName» exports «nExportedClassName»
+					   
+					«IF defaultNR==null»
+					def : lookup«nExportedClassName»From(exporter : «className» , «nameParam» : String«filterParams») : «exportedClassName»[?] =
+					   exporter.lookupExported«nExportedClassName»(self, «nameParam»«filterArgs»)
+					«ELSE»
+					def : lookup«nExportedClassName»From(exporter : «className», a«defaultNR» : «sourcePckName»::«defaultNR»«filterParams») : «exportedClassName»[?] =
+					   exporter.lookupExported«nExportedClassName»(self, a«defaultNR»«filterArgs»)
+					«ENDIF»
 					
-					«IF element2qualifiers.get(className) != null»«provideQualifiedLookupMethods(className, nClassName, filterParams, filterArgs)»«ENDIF»
-					
-					''');
-				} else if (statmt instanceof ExportDef) {
-					for (providerDef : statmt.provisionDefs) {
-						val exportedClassName = providerDef.targetsDef.targetClasses.get(0).doSwitch; // FIXME MANY target classes 
-						val nExportedClassName = exportedClassName.normalizeString;
-						val filter = element2filter.get(exportedClassName);
-						val filterParams = filter.optionalAddedParamsText;
-						val filterArgs = filter.optionalAddedArgsText;
-						sb.append('''
-						-- «nClassName» exports «nExportedClassName»
-							
-						«IF defaultNR==null»
-						def : lookup«nExportedClassName»From(exporter : «className» , «nameParam» : String«filterParams») : «exportedClassName»[?] =
-							exporter.lookupExported«nExportedClassName»(self, «nameParam»«filterArgs»)
-						«ELSE»
-						def : lookup«nExportedClassName»From(exporter : «className», a«defaultNR» : «sourcePckName»::«defaultNR»«filterParams») : «exportedClassName»[?] =
-							exporter.lookupExported«nExportedClassName»(self, a«defaultNR»«filterArgs»)
-						«ENDIF»
-						
-						«IF element2qualifiers.get(exportedClassName) != null»«provideQualifiedLookupFromMethods(exportedClassName, nExportedClassName, className, filterParams, filterArgs)»«ENDIF»	
-					''')	
-					}
-					
+					«IF element2qualifiers.get(exportedClassName) != null»«provideQualifiedLookupFromMethods(exportedClassName, nExportedClassName, className, filterParams, filterArgs)»«ENDIF»	
+				''')	
 				}
+				
 			}
 		}
 		sb.toString;
@@ -396,7 +458,6 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		'''
 		def : lookup«nClassName»(a«defaultNR» : «sourcePckName»::«defaultNR»«filterParams») : «className»[?] =
 		   _lookup«protocol»«nClassName»(a«defaultNR».«defaultNRP»«filterArgs»)
-		   
 		'''
 	}
 	
@@ -404,10 +465,10 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		val qualifierSegments = '''OrderedSet(«getElementReferenerType»)''';
 		
 		'''
-		-- QN «className» lookup
+		-- «className» qualified-name lookup
 		def : lookup«nClassName»(a«defaultNQ» : «sourcePckName»::«defaultNQ»«filterParams») : «className»[?] =
 		   lookup«nClassName»(a«defaultNQ» .«defaultNQP»«filterArgs»)
-
+		   
 		def : lookup«nClassName»(segments : «qualifierSegments»«filterParams») : «className»[?] =
 		   if segments->size() = 1
 		   then lookup«nClassName»(segments->first()«filterArgs»)
@@ -457,15 +518,15 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		}
 		
 			
-	def private String provideUnqualifiedEnvMethods(ClassNameResolution nameReso) {
+	def private String provideUnqualifiedEnvMethods(Provider provider) {
 
 		val List<ProvisionDef> provisionDefs = newArrayList();
-		for (statmnt : nameReso.statements.filter(ScopeDef)) {
+		for (statmnt : provider.statements.filter(ScopeDef)) {
 			provisionDefs.addAll(statmnt.provisionDefs);
 		}
 		
 		val sb = new StringBuilder
-		val scopingClassName = nameReso.class_.doSwitch
+		val scopingClassName = provider.classRef.doSwitch
 		val scopedClasses = computeTargetClasses(provisionDefs);
 		for (scopedClassName : scopedClasses.keySet) {
 			sb.append(provideUnqualifiedEnvMethod(scopingClassName, scopedClassName, scopedClasses.get(scopedClassName)))
@@ -494,20 +555,20 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		
 		'''
 		def : _unqualified_env_«scopedClassName.normalizeString»(child : ocl::OclElement) : «lookupPck»::«lookupEnv» =
-			«provideScopeContributionsQuery(scopedClassName, featureNames, allChildrenName)»
+		   «provideScopeContributionsQuery(scopedClassName, featureNames, allChildrenName)»
 		''';
 	}
 	
 	// FIXME refactor
-	def private String provideExportedEnvMethods(ClassNameResolution nameReso) {
+	def private String provideExportedEnvMethods(Provider provider) {
 		
 		val List<ProvisionDef> provisionDefs = newArrayList();
-		for (statmnt : nameReso.statements.filter(ExportDef)) {
+		for (statmnt : provider.statements.filter(ExportDef)) {
 			provisionDefs.addAll(statmnt.provisionDefs);
 		}
 		
 		val sb = new StringBuilder
-		val exportingClassName = nameReso.class_.doSwitch
+		val exportingClassName = provider.classRef.doSwitch
 		val exportedClasses = computeTargetClasses(provisionDefs);
 		for (exportedClassName : exportedClasses.keySet) {
 			sb.append(provideExportedEnvMethod(exportingClassName, exportedClassName, exportedClasses.get(exportedClassName)))
@@ -535,7 +596,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		
 		'''
 		def : _exported_env_«exportedClassName.normalizeString»(importer : ocl::OclElement) : «lookupPck»::«lookupEnv» =
-			«provideExportsContributionsQuery(exportedClassName, featureNames, allChildrenName)»
+		   «provideExportsContributionsQuery(exportedClassName, featureNames, allChildrenName)»
 		'''
 	}
 	
@@ -590,14 +651,14 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		 
 		'''
 			«scope»
-				«object.provisionDefs.provideProvisionDefsContribution(scopedClassName)»
-				
+			   «object.provisionDefs.provideProvisionDefsContribution(scopedClassName)»
+			   
 		''';
 	}
 	
 	def private String provideProvisionDefsContribution(List<ProvisionDef> provisionDefs , String targetClassName) {
 		'''
-		«FOR provisionDef : provisionDefs»«IF provisionDef.targetsDef.targetClasses.map(x|x.doSwitch).contains(targetClassName)»«provisionDef.doSwitch»«ENDIF»«ENDFOR»
+		«FOR provisionDef : provisionDefs»«IF provisionDef.targetsDef.classNames.map(x|x.doSwitch).contains(targetClassName)»«provisionDef.doSwitch»«ENDIF»«ENDFOR»
 		'''	
 	}
 	
@@ -620,47 +681,49 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		'''
 		let env = «lookupPck»::«lookupEnv» {}
 		in env
-			«object.provisionDefs.provideProvisionDefsContribution(exportedClassName)»
+		   «object.provisionDefs.provideProvisionDefsContribution(exportedClassName)»
 		
 		''';
 	}
 	
 	// FIXME refactor
-	def private String provideExporterLookupMethod(ClassNameResolution nameReso) {
+	def private String provideExporterLookupMethod(Provider provider) {
 		
-		val exports = nameReso.statements.filter(ExportDef);
+		val exports = provider.statements.filter(ExportDef);
 		if (exports.isEmpty) {
 			return '';
 		} else {
-			val StringBuilder sb = new StringBuilder();
+			val sb = new StringBuilder();
 			for (provisionDef : exports.map(x|x.provisionDefs).flatten) {
-				val className = provisionDef.targetsDef.targetClasses.get(0).doSwitch; // FIXME MANY targetClasses 
+				val className = provisionDef.targetsDef.classNames.get(0).doSwitch; // FIXME MANY targetClasses 
 				val nClassName = className.normalizeString;
 				val nameParam = className.toLowerCase.charAt(0) + "Name";
 				val filter = element2filter.get(className);
 				val filterParams = filter.optionalAddedParamsText;
 				val filterArgs = filter.optionalAddedArgsText;
 				sb.append('''
-					
+				   
 				def : _lookupExported«nClassName»(importer : ocl::OclElement, «nameParam» : String«filterParams») : «className»[?] =
-					let found«nClassName» = _lookup«nClassName»(_exported_env_«nClassName»(importer), «nameParam»«filterArgs»)
-					in  if found«nClassName»->isEmpty()
-						then null
-						else found«nClassName»->first()
-						endif
-						
+				   let found«nClassName» = _lookup«nClassName»(_exported_env_«nClassName»(importer), «nameParam»«filterArgs»)
+				   in  if found«nClassName»->isEmpty()
+				      then null
+				      else found«nClassName»->first()
+				      endif
+				      
 				«IF defaultNR==null»
 				def : lookupExported«nClassName»(importer : ocl::OclElement, «nameParam» : String«filterParams») : «nClassName»[?] =
-					_lookupExported«nClassName»(importer, nameParam»«filterArgs»)
+				   _lookupExported«nClassName»(importer, nameParam»«filterArgs»)
 				«ELSE»
 				def : lookupExported«nClassName»(importer : ocl::OclElement, a«defaultNR» : «sourcePckName»::«defaultNR»«filterParams») : «nClassName»[?] =
-					_lookupExported«nClassName»(importer, a«defaultNR».«defaultNRP»«filterArgs»)
+				   _lookupExported«nClassName»(importer, a«defaultNR».«defaultNRP»«filterArgs»)
 				«ENDIF»		
 				''');
 			}
 			sb.toString;	
 		}
 	}
+	
+
 	def private String getElementReferenerType() {
 		'''«IF defaultNR==null»String«ELSE»«sourcePckName»::«defaultNR»«ENDIF»'''
 	}
@@ -692,7 +755,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	def private Map<String, Set<ProvisionDef>> computeTargetClasses(List<ProvisionDef> provisionDefs) {
 		val Map<String, Set<ProvisionDef>> targetClasses = newLinkedHashMap();
 		for (provisionDef : provisionDefs) {
-				for (targetClass : provisionDef.targetsDef.targetClasses){
+				for (targetClass : provisionDef.targetsDef.classNames){
 					val targetClassName = targetClass.doSwitch
 					var scopingDefs = targetClasses.get(targetClassName)
 					if (scopingDefs == null) {

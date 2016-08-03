@@ -149,34 +149,39 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createNameResolutionSectAdapter();
       }
       @Override
-      public Adapter caseDefaultNamedElementDef(DefaultNamedElementDef object)
+      public Adapter caseTargets(Targets object)
       {
-        return createDefaultNamedElementDefAdapter();
+        return createTargetsAdapter();
       }
       @Override
-      public Adapter caseDefaultNameReferencerDef(DefaultNameReferencerDef object)
+      public Adapter caseTarget(Target object)
       {
-        return createDefaultNameReferencerDefAdapter();
+        return createTargetAdapter();
       }
       @Override
-      public Adapter caseNameQualifierDef(NameQualifierDef object)
+      public Adapter caseInputs(Inputs object)
       {
-        return createNameQualifierDefAdapter();
+        return createInputsAdapter();
       }
       @Override
-      public Adapter caseClassNameResolution(ClassNameResolution object)
+      public Adapter caseInput(Input object)
       {
-        return createClassNameResolutionAdapter();
+        return createInputAdapter();
       }
       @Override
-      public Adapter caseClassNameResolutionStmnt(ClassNameResolutionStmnt object)
+      public Adapter caseProviders(Providers object)
       {
-        return createClassNameResolutionStmntAdapter();
+        return createProvidersAdapter();
       }
       @Override
-      public Adapter caseNamedElementDef(NamedElementDef object)
+      public Adapter caseProvider(Provider object)
       {
-        return createNamedElementDefAdapter();
+        return createProviderAdapter();
+      }
+      @Override
+      public Adapter caseProviderStmnt(ProviderStmnt object)
+      {
+        return createProviderStmntAdapter();
       }
       @Override
       public Adapter caseFilterDef(FilterDef object)
@@ -204,9 +209,14 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createProvisionDefAdapter();
       }
       @Override
-      public Adapter caseTargetsDef(TargetsDef object)
+      public Adapter caseClassRef(ClassRef object)
       {
-        return createTargetsDefAdapter();
+        return createClassRefAdapter();
+      }
+      @Override
+      public Adapter caseMultipleClassRef(MultipleClassRef object)
+      {
+        return createMultipleClassRefAdapter();
       }
       @Override
       public Adapter caseOccludingDef(OccludingDef object)
@@ -516,91 +526,106 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef <em>Default Named Element Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Targets <em>Targets</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Targets
    * @generated
    */
-  public Adapter createDefaultNamedElementDefAdapter()
+  public Adapter createTargetsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef <em>Default Name Referencer Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Target <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Target
    * @generated
    */
-  public Adapter createDefaultNameReferencerDefAdapter()
+  public Adapter createTargetAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef <em>Name Qualifier Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Inputs <em>Inputs</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Inputs
    * @generated
    */
-  public Adapter createNameQualifierDefAdapter()
+  public Adapter createInputsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution <em>Class Name Resolution</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Input <em>Input</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Input
    * @generated
    */
-  public Adapter createClassNameResolutionAdapter()
+  public Adapter createInputAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt <em>Class Name Resolution Stmnt</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Providers <em>Providers</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Providers
    * @generated
    */
-  public Adapter createClassNameResolutionStmntAdapter()
+  public Adapter createProvidersAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef <em>Named Element Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider <em>Provider</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Provider
    * @generated
    */
-  public Adapter createNamedElementDefAdapter()
+  public Adapter createProviderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt <em>Provider Stmnt</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt
+   * @generated
+   */
+  public Adapter createProviderStmntAdapter()
   {
     return null;
   }
@@ -681,16 +706,31 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef <em>Targets Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef <em>Class Ref</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef
    * @generated
    */
-  public Adapter createTargetsDefAdapter()
+  public Adapter createClassRefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef <em>Multiple Class Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef
+   * @generated
+   */
+  public Adapter createMultipleClassRefAdapter()
   {
     return null;
   }

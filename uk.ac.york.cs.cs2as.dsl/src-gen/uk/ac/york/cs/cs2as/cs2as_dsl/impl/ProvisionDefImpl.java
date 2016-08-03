@@ -20,9 +20,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public class ProvisionDefImpl extends MinimalEObjectImpl.Container implements Pr
    * @generated
    * @ordered
    */
-  protected TargetsDef targetsDef;
+  protected MultipleClassRef targetsDef;
 
   /**
    * The cached value of the '{@link #getContribution() <em>Contribution</em>}' containment reference.
@@ -97,7 +97,7 @@ public class ProvisionDefImpl extends MinimalEObjectImpl.Container implements Pr
    * <!-- end-user-doc -->
    * @generated
    */
-  public TargetsDef getTargetsDef()
+  public MultipleClassRef getTargetsDef()
   {
     return targetsDef;
   }
@@ -107,9 +107,9 @@ public class ProvisionDefImpl extends MinimalEObjectImpl.Container implements Pr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTargetsDef(TargetsDef newTargetsDef, NotificationChain msgs)
+  public NotificationChain basicSetTargetsDef(MultipleClassRef newTargetsDef, NotificationChain msgs)
   {
-    TargetsDef oldTargetsDef = targetsDef;
+    MultipleClassRef oldTargetsDef = targetsDef;
     targetsDef = newTargetsDef;
     if (eNotificationRequired())
     {
@@ -124,7 +124,7 @@ public class ProvisionDefImpl extends MinimalEObjectImpl.Container implements Pr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTargetsDef(TargetsDef newTargetsDef)
+  public void setTargetsDef(MultipleClassRef newTargetsDef)
   {
     if (newTargetsDef != targetsDef)
     {
@@ -254,7 +254,7 @@ public class ProvisionDefImpl extends MinimalEObjectImpl.Container implements Pr
     switch (featureID)
     {
       case Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF:
-        setTargetsDef((TargetsDef)newValue);
+        setTargetsDef((MultipleClassRef)newValue);
         return;
       case Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION:
         setContribution((ContributionDef)newValue);
@@ -278,7 +278,7 @@ public class ProvisionDefImpl extends MinimalEObjectImpl.Container implements Pr
     switch (featureID)
     {
       case Cs2as_dslPackage.PROVISION_DEF__TARGETS_DEF:
-        setTargetsDef((TargetsDef)null);
+        setTargetsDef((MultipleClassRef)null);
         return;
       case Cs2as_dslPackage.PROVISION_DEF__CONTRIBUTION:
         setContribution((ContributionDef)null);

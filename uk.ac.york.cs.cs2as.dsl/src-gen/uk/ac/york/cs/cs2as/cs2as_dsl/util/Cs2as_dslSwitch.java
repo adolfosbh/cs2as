@@ -181,46 +181,52 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF:
+      case Cs2as_dslPackage.TARGETS:
       {
-        DefaultNamedElementDef defaultNamedElementDef = (DefaultNamedElementDef)theEObject;
-        T result = caseDefaultNamedElementDef(defaultNamedElementDef);
+        Targets targets = (Targets)theEObject;
+        T result = caseTargets(targets);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.DEFAULT_NAME_REFERENCER_DEF:
+      case Cs2as_dslPackage.TARGET:
       {
-        DefaultNameReferencerDef defaultNameReferencerDef = (DefaultNameReferencerDef)theEObject;
-        T result = caseDefaultNameReferencerDef(defaultNameReferencerDef);
+        Target target = (Target)theEObject;
+        T result = caseTarget(target);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.NAME_QUALIFIER_DEF:
+      case Cs2as_dslPackage.INPUTS:
       {
-        NameQualifierDef nameQualifierDef = (NameQualifierDef)theEObject;
-        T result = caseNameQualifierDef(nameQualifierDef);
+        Inputs inputs = (Inputs)theEObject;
+        T result = caseInputs(inputs);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.CLASS_NAME_RESOLUTION:
+      case Cs2as_dslPackage.INPUT:
       {
-        ClassNameResolution classNameResolution = (ClassNameResolution)theEObject;
-        T result = caseClassNameResolution(classNameResolution);
+        Input input = (Input)theEObject;
+        T result = caseInput(input);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.CLASS_NAME_RESOLUTION_STMNT:
+      case Cs2as_dslPackage.PROVIDERS:
       {
-        ClassNameResolutionStmnt classNameResolutionStmnt = (ClassNameResolutionStmnt)theEObject;
-        T result = caseClassNameResolutionStmnt(classNameResolutionStmnt);
+        Providers providers = (Providers)theEObject;
+        T result = caseProviders(providers);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF:
+      case Cs2as_dslPackage.PROVIDER:
       {
-        NamedElementDef namedElementDef = (NamedElementDef)theEObject;
-        T result = caseNamedElementDef(namedElementDef);
-        if (result == null) result = caseClassNameResolutionStmnt(namedElementDef);
+        Provider provider = (Provider)theEObject;
+        T result = caseProvider(provider);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.PROVIDER_STMNT:
+      {
+        ProviderStmnt providerStmnt = (ProviderStmnt)theEObject;
+        T result = caseProviderStmnt(providerStmnt);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -249,7 +255,7 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
       {
         ScopeDef scopeDef = (ScopeDef)theEObject;
         T result = caseScopeDef(scopeDef);
-        if (result == null) result = caseClassNameResolutionStmnt(scopeDef);
+        if (result == null) result = caseProviderStmnt(scopeDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -260,10 +266,17 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Cs2as_dslPackage.TARGETS_DEF:
+      case Cs2as_dslPackage.CLASS_REF:
       {
-        TargetsDef targetsDef = (TargetsDef)theEObject;
-        T result = caseTargetsDef(targetsDef);
+        ClassRef classRef = (ClassRef)theEObject;
+        T result = caseClassRef(classRef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Cs2as_dslPackage.MULTIPLE_CLASS_REF:
+      {
+        MultipleClassRef multipleClassRef = (MultipleClassRef)theEObject;
+        T result = caseMultipleClassRef(multipleClassRef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -292,7 +305,7 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
       {
         ExportDef exportDef = (ExportDef)theEObject;
         T result = caseExportDef(exportDef);
-        if (result == null) result = caseClassNameResolutionStmnt(exportDef);
+        if (result == null) result = caseProviderStmnt(exportDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -556,97 +569,113 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Default Named Element Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Targets</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Default Named Element Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Targets</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDefaultNamedElementDef(DefaultNamedElementDef object)
+  public T caseTargets(Targets object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Default Name Referencer Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Target</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Default Name Referencer Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Target</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDefaultNameReferencerDef(DefaultNameReferencerDef object)
+  public T caseTarget(Target object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Name Qualifier Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Inputs</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Name Qualifier Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Inputs</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNameQualifierDef(NameQualifierDef object)
+  public T caseInputs(Inputs object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Class Name Resolution</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Input</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Class Name Resolution</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Input</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseClassNameResolution(ClassNameResolution object)
+  public T caseInput(Input object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Class Name Resolution Stmnt</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Providers</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Class Name Resolution Stmnt</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Providers</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseClassNameResolutionStmnt(ClassNameResolutionStmnt object)
+  public T caseProviders(Providers object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Named Element Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Provider</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Named Element Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Provider</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNamedElementDef(NamedElementDef object)
+  public T caseProvider(Provider object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Provider Stmnt</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Provider Stmnt</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProviderStmnt(ProviderStmnt object)
   {
     return null;
   }
@@ -732,17 +761,33 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Targets Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Class Ref</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Targets Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Class Ref</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTargetsDef(TargetsDef object)
+  public T caseClassRef(ClassRef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multiple Class Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multiple Class Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultipleClassRef(MultipleClassRef object)
   {
     return null;
   }

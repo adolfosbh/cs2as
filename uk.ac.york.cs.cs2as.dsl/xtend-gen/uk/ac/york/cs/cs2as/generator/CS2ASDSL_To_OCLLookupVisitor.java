@@ -12,9 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.xtext.basecs.ImportCS;
 import org.eclipse.ocl.xtext.basecs.ParameterCS;
 import org.eclipse.ocl.xtext.basecs.PathNameCS;
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
-import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
@@ -23,26 +21,28 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Input;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Inputs;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
-import uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
-import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Provider;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Providers;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
-import uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Target;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Targets;
 import uk.ac.york.cs.cs2as.generator.CS2ASDSL_To_OCLBaseVisitor;
 
 @SuppressWarnings("all")
@@ -140,45 +140,8 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       }
       NameResolutionSect _nameresoSect = object.getNameresoSect();
       this.computeInitialMaps(_nameresoSect);
-      final DefaultNamedElementDef namedElement = nameresoSect.getNamedElement();
-      boolean _notEquals = (!Objects.equal(namedElement, null));
-      if (_notEquals) {
-        NameResolutionSect _nameresoSect_1 = object.getNameresoSect();
-        DefaultNamedElementDef _namedElement = _nameresoSect_1.getNamedElement();
-        String _nameElement = _namedElement.getNameElement();
-        this.defaultNE = _nameElement;
-        NameResolutionSect _nameresoSect_2 = object.getNameresoSect();
-        DefaultNamedElementDef _namedElement_1 = _nameresoSect_2.getNamedElement();
-        NameExpCS _nameProperty = _namedElement_1.getNameProperty();
-        String _doSwitch_2 = this.doSwitch(_nameProperty);
-        this.defaultNEP = _doSwitch_2;
-      }
-      final DefaultNameReferencerDef nameRef = nameresoSect.getNameReferencer();
-      boolean _notEquals_1 = (!Objects.equal(nameRef, null));
-      if (_notEquals_1) {
-        NameResolutionSect _nameresoSect_3 = object.getNameresoSect();
-        DefaultNameReferencerDef _nameReferencer = _nameresoSect_3.getNameReferencer();
-        String _nameReferencer_1 = _nameReferencer.getNameReferencer();
-        this.defaultNR = _nameReferencer_1;
-        NameResolutionSect _nameresoSect_4 = object.getNameresoSect();
-        DefaultNameReferencerDef _nameReferencer_2 = _nameresoSect_4.getNameReferencer();
-        NameExpCS _nameProperty_1 = _nameReferencer_2.getNameProperty();
-        String _doSwitch_3 = this.doSwitch(_nameProperty_1);
-        this.defaultNRP = _doSwitch_3;
-      }
-      final NameQualifierDef nameQuali = nameresoSect.getNameQualifier();
-      boolean _notEquals_2 = (!Objects.equal(nameQuali, null));
-      if (_notEquals_2) {
-        NameResolutionSect _nameresoSect_5 = object.getNameresoSect();
-        NameQualifierDef _nameQualifier = _nameresoSect_5.getNameQualifier();
-        String _nameQualifier_1 = _nameQualifier.getNameQualifier();
-        this.defaultNQ = _nameQualifier_1;
-        NameResolutionSect _nameresoSect_6 = object.getNameresoSect();
-        NameQualifierDef _nameQualifier_2 = _nameresoSect_6.getNameQualifier();
-        NameExpCS _segmentsProp = _nameQualifier_2.getSegmentsProp();
-        String _doSwitch_4 = this.doSwitch(_segmentsProp);
-        this.defaultNQP = _doSwitch_4;
-      }
+      NameResolutionSect _nameresoSect_1 = object.getNameresoSect();
+      this.computeDefaults(_nameresoSect_1);
       StringConcatenation _builder_1 = new StringConcatenation();
       CharSequence _commonLookupInfrastructure = this.commonLookupInfrastructure();
       _builder_1.append(_commonLookupInfrastructure, "");
@@ -188,18 +151,11 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _builder_1.append(this.targetPckName, "");
       _builder_1.newLineIfNotEmpty();
       _builder_1.newLine();
-      NameResolutionSect _nameresoSect_7 = object.getNameresoSect();
-      String _doSwitch_5 = this.doSwitch(_nameresoSect_7);
-      _builder_1.append(_doSwitch_5, "");
+      NameResolutionSect _nameresoSect_2 = object.getNameresoSect();
+      String _doSwitch_2 = this.doSwitch(_nameresoSect_2);
+      _builder_1.append(_doSwitch_2, "");
+      _builder_1.append("\t\t");
       _builder_1.newLineIfNotEmpty();
-      _builder_1.newLine();
-      _builder_1.append("context Visitable");
-      _builder_1.newLine();
-      NameResolutionSect _nameresoSect_8 = object.getNameresoSect();
-      String _provideLookupMethods = this.provideLookupMethods(_nameresoSect_8);
-      _builder_1.append(_provideLookupMethods, "");
-      _builder_1.newLineIfNotEmpty();
-      _builder_1.newLine();
       _builder_1.newLine();
       _builder_1.append("endpackage");
       _builder_1.newLine();
@@ -214,9 +170,9 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.append("package ocl");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("context OclElement");
-    _builder.newLine();
     _builder.append("-- Domain specific default functionality");
+    _builder.newLine();
+    _builder.append("context OclElement");
     _builder.newLine();
     CharSequence _commonEnvironmentOps = this.commonEnvironmentOps();
     _builder.append(_commonEnvironmentOps, "");
@@ -340,60 +296,69 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   }
   
   private void computeInitialMaps(final NameResolutionSect nrSect) {
-    EList<ClassNameResolution> _nameResolutions = nrSect.getNameResolutions();
-    for (final ClassNameResolution nameReso : _nameResolutions) {
-      {
-        PathNameCS _class_ = nameReso.getClass_();
-        final String className = this.doSwitch(_class_);
-        final String nClassName = this.normalizeString(className);
-        EList<ClassNameResolutionStmnt> _statements = nameReso.getStatements();
-        for (final ClassNameResolutionStmnt statemnt : _statements) {
-          {
-            if ((statemnt instanceof NamedElementDef)) {
-              this.normalizedTargetElements.add(nClassName);
-              EList<QualificationDef> _qualifications = ((NamedElementDef)statemnt).getQualifications();
-              for (final QualificationDef qDef : _qualifications) {
-                TargetsDef _targetsDef = qDef.getTargetsDef();
-                EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-                for (final TypedRefCS targetClass : _targetClasses) {
-                  {
-                    final String qualifiedElement = this.doSwitch(targetClass);
-                    List<String> qualifiers = this.element2qualifiers.get(qualifiedElement);
-                    boolean _equals = Objects.equal(qualifiers, null);
-                    if (_equals) {
-                      ArrayList<String> _newArrayList = CollectionLiterals.<String>newArrayList();
-                      qualifiers = _newArrayList;
-                      this.element2qualifiers.put(qualifiedElement, qualifiers);
-                    }
-                    qualifiers.add(className);
-                    String _normalizeString = this.normalizeString(qualifiedElement);
-                    this.normalizedQualifiedElements.add(_normalizeString);
-                  }
+    final Targets targetsDef = nrSect.getTargetsDef();
+    boolean _notEquals = (!Objects.equal(targetsDef, null));
+    if (_notEquals) {
+      EList<Target> _targets = targetsDef.getTargets();
+      for (final Target target : _targets) {
+        {
+          ClassRef _classRef = target.getClassRef();
+          PathNameCS _className = _classRef.getClassName();
+          final String className = this.doSwitch(_className);
+          final String nClassName = this.normalizeString(className);
+          this.normalizedTargetElements.add(nClassName);
+          EList<QualificationDef> _qualifications = target.getQualifications();
+          for (final QualificationDef qDef : _qualifications) {
+            MultipleClassRef _targetsDef = qDef.getTargetsDef();
+            EList<PathNameCS> _classNames = _targetsDef.getClassNames();
+            for (final PathNameCS targetClass : _classNames) {
+              {
+                final String qualifiedElement = this.doSwitch(targetClass);
+                List<String> qualifiers = this.element2qualifiers.get(qualifiedElement);
+                boolean _equals = Objects.equal(qualifiers, null);
+                if (_equals) {
+                  ArrayList<String> _newArrayList = CollectionLiterals.<String>newArrayList();
+                  qualifiers = _newArrayList;
+                  this.element2qualifiers.put(qualifiedElement, qualifiers);
                 }
+                qualifiers.add(className);
+                String _normalizeString = this.normalizeString(qualifiedElement);
+                this.normalizedQualifiedElements.add(_normalizeString);
               }
-              FilterDef _filter = ((NamedElementDef)statemnt).getFilter();
-              this.element2filter.put(className, _filter);
             }
-            if ((statemnt instanceof ScopeDef)) {
-              SelectionDef _selectionDef = ((ScopeDef)statemnt).getSelectionDef();
-              this.<ScopeDef>addStatement2Map(((ScopeDef)statemnt), this.feaName2scopes, _selectionDef, className);
-            } else {
-              if ((statemnt instanceof ExportDef)) {
-                EList<ProvisionDef> _provisionDefs = ((ExportDef)statemnt).getProvisionDefs();
-                for (final ProvisionDef pDefg : _provisionDefs) {
-                  TargetsDef _targetsDef_1 = pDefg.getTargetsDef();
-                  EList<TypedRefCS> _targetClasses_1 = _targetsDef_1.getTargetClasses();
-                  for (final TypedRefCS targetClass_1 : _targetClasses_1) {
-                    {
-                      final String exportedElement = this.doSwitch(targetClass_1);
-                      String _normalizeString = this.normalizeString(exportedElement);
-                      this.normalizedExportedElements.add(_normalizeString);
-                    }
+          }
+          FilterDef _filter = target.getFilter();
+          this.element2filter.put(className, _filter);
+        }
+      }
+    }
+    final Providers providersDef = nrSect.getProvidersDef();
+    EList<Provider> _providers = providersDef.getProviders();
+    for (final Provider provider : _providers) {
+      {
+        PathNameCS _classRef = provider.getClassRef();
+        final String className = this.doSwitch(_classRef);
+        EList<ProviderStmnt> _statements = provider.getStatements();
+        for (final ProviderStmnt statemnt : _statements) {
+          if ((statemnt instanceof ScopeDef)) {
+            SelectionDef _selectionDef = ((ScopeDef)statemnt).getSelectionDef();
+            this.<ScopeDef>addStatement2Map(((ScopeDef)statemnt), this.feaName2scopes, _selectionDef, className);
+          } else {
+            if ((statemnt instanceof ExportDef)) {
+              EList<ProvisionDef> _provisionDefs = ((ExportDef)statemnt).getProvisionDefs();
+              for (final ProvisionDef pDefg : _provisionDefs) {
+                MultipleClassRef _targetsDef = pDefg.getTargetsDef();
+                EList<PathNameCS> _classNames = _targetsDef.getClassNames();
+                for (final PathNameCS targetClass : _classNames) {
+                  {
+                    final String exportedElement = this.doSwitch(targetClass);
+                    String _normalizeString = this.normalizeString(exportedElement);
+                    this.normalizedExportedElements.add(_normalizeString);
                   }
                 }
-                SelectionDef _selectionDef_1 = ((ExportDef)statemnt).getSelectionDef();
-                this.<ExportDef>addStatement2Map(((ExportDef)statemnt), this.feaName2exports, _selectionDef_1, className);
               }
+              SelectionDef _selectionDef_1 = ((ExportDef)statemnt).getSelectionDef();
+              this.<ExportDef>addStatement2Map(((ExportDef)statemnt), this.feaName2exports, _selectionDef_1, className);
             }
           }
         }
@@ -401,7 +366,71 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     }
   }
   
-  private <Def extends ClassNameResolutionStmnt> Def addStatement2Map(final Def statmnt, final Map<String, Def> result, final SelectionDef selection, final String className) {
+  private void computeDefaults(final NameResolutionSect nameresoSect) {
+    final Targets namedElement = nameresoSect.getTargetsDef();
+    boolean _notEquals = (!Objects.equal(namedElement, null));
+    if (_notEquals) {
+      EList<Target> _targets = namedElement.getTargets();
+      for (final Target target : _targets) {
+        PathNameCS _propRef = target.getPropRef();
+        boolean _notEquals_1 = (!Objects.equal(_propRef, null));
+        if (_notEquals_1) {
+          ClassRef _classRef = target.getClassRef();
+          String _doSwitch = this.doSwitch(_classRef);
+          this.defaultNE = _doSwitch;
+          PathNameCS _propRef_1 = target.getPropRef();
+          String _doSwitch_1 = this.doSwitch(_propRef_1);
+          this.defaultNEP = _doSwitch_1;
+        }
+      }
+    }
+    final Inputs nameRef = nameresoSect.getInputsDef();
+    boolean _notEquals_2 = (!Objects.equal(nameRef, null));
+    if (_notEquals_2) {
+      boolean foundNR = false;
+      boolean foundNQ = false;
+      EList<Input> _inputs = nameRef.getInputs();
+      for (final Input input : _inputs) {
+        {
+          boolean _and = false;
+          if (!(!foundNR)) {
+            _and = false;
+          } else {
+            boolean _isQualifier = input.isQualifier();
+            boolean _not = (!_isQualifier);
+            _and = _not;
+          }
+          if (_and) {
+            ClassRef _classRef_1 = input.getClassRef();
+            String _doSwitch_2 = this.doSwitch(_classRef_1);
+            this.defaultNR = _doSwitch_2;
+            PathNameCS _propRef_2 = input.getPropRef();
+            String _doSwitch_3 = this.doSwitch(_propRef_2);
+            this.defaultNRP = _doSwitch_3;
+            foundNR = true;
+          }
+          boolean _and_1 = false;
+          if (!(!foundNQ)) {
+            _and_1 = false;
+          } else {
+            boolean _isQualifier_1 = input.isQualifier();
+            _and_1 = _isQualifier_1;
+          }
+          if (_and_1) {
+            ClassRef _classRef_2 = input.getClassRef();
+            String _doSwitch_4 = this.doSwitch(_classRef_2);
+            this.defaultNQ = _doSwitch_4;
+            PathNameCS _propRef_3 = input.getPropRef();
+            String _doSwitch_5 = this.doSwitch(_propRef_3);
+            this.defaultNQP = _doSwitch_5;
+            foundNQ = true;
+          }
+        }
+      }
+    }
+  }
+  
+  private <Def extends ProviderStmnt> Def addStatement2Map(final Def statmnt, final Map<String, Def> result, final SelectionDef selection, final String className) {
     Def _xifexpression = null;
     if ((selection instanceof SelectionSpecific)) {
       EList<ExpCS> _selectedProperties = ((SelectionSpecific)selection).getSelectedProperties();
@@ -425,11 +454,29 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   
   @Override
   public String caseNameResolutionSect(final NameResolutionSect object) {
+    final StringBuilder sb = new StringBuilder();
+    final Targets targetsDef = object.getTargetsDef();
+    boolean _notEquals = (!Objects.equal(targetsDef, null));
+    if (_notEquals) {
+      String _doSwitch = this.doSwitch(targetsDef);
+      sb.append(_doSwitch);
+    }
+    final Providers providersDef = object.getProvidersDef();
+    boolean _notEquals_1 = (!Objects.equal(providersDef, null));
+    if (_notEquals_1) {
+      String _doSwitch_1 = this.doSwitch(providersDef);
+      sb.append(_doSwitch_1);
+    }
+    return sb.toString();
+  }
+  
+  @Override
+  public String caseTargets(final Targets object) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<ClassNameResolution> _nameResolutions = object.getNameResolutions();
-      for(final ClassNameResolution nameResolution : _nameResolutions) {
-        String _doSwitch = this.doSwitch(nameResolution);
+      EList<Target> _targets = object.getTargets();
+      for(final Target target : _targets) {
+        String _doSwitch = this.doSwitch(target);
         _builder.append(_doSwitch, "");
       }
     }
@@ -438,95 +485,35 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   }
   
   @Override
-  public String caseClassNameResolution(final ClassNameResolution object) {
+  public String caseTarget(final Target object) {
     String _xblockexpression = null;
     {
-      EList<ClassNameResolutionStmnt> _statements = object.getStatements();
-      Iterable<ExportDef> _filter = Iterables.<ExportDef>filter(_statements, ExportDef.class);
-      boolean _isEmpty = IterableExtensions.isEmpty(_filter);
-      final boolean containsExports = (!_isEmpty);
-      EList<ClassNameResolutionStmnt> _statements_1 = object.getStatements();
-      Iterable<ScopeDef> _filter_1 = Iterables.<ScopeDef>filter(_statements_1, ScopeDef.class);
-      boolean _isEmpty_1 = IterableExtensions.isEmpty(_filter_1);
-      final boolean containsScopes = (!_isEmpty_1);
-      EList<ClassNameResolutionStmnt> _statements_2 = object.getStatements();
-      Iterable<NamedElementDef> _filter_2 = Iterables.<NamedElementDef>filter(_statements_2, NamedElementDef.class);
-      final Function1<NamedElementDef, Boolean> _function = (NamedElementDef x) -> {
-        EList<QualificationDef> _qualifications = x.getQualifications();
-        boolean _isEmpty_2 = _qualifications.isEmpty();
-        return Boolean.valueOf((!_isEmpty_2));
-      };
-      final boolean containsQualifies = IterableExtensions.<NamedElementDef>exists(_filter_2, _function);
-      EList<ClassNameResolutionStmnt> _statements_3 = object.getStatements();
-      Iterable<NamedElementDef> _filter_3 = Iterables.<NamedElementDef>filter(_statements_3, NamedElementDef.class);
-      final Function1<NamedElementDef, Boolean> _function_1 = (NamedElementDef x) -> {
-        FilterDef _filter_4 = x.getFilter();
-        return Boolean.valueOf((!Objects.equal(_filter_4, null)));
-      };
-      final boolean containsFilters = IterableExtensions.<NamedElementDef>exists(_filter_3, _function_1);
-      String _xifexpression = null;
+      final StringBuilder sb = new StringBuilder();
+      final EList<QualificationDef> qualificationDefs = object.getQualifications();
+      final FilterDef filterDef = object.getFilter();
       boolean _or = false;
-      if (((containsExports || containsScopes) || containsQualifies)) {
+      boolean _isEmpty = qualificationDefs.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
         _or = true;
       } else {
-        _or = containsFilters;
+        boolean _notEquals = (!Objects.equal(filterDef, null));
+        _or = _notEquals;
       }
       if (_or) {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("\t");
         _builder.newLine();
         _builder.append("context ");
-        PathNameCS _class_ = object.getClass_();
-        String _doSwitch = this.doSwitch(_class_);
+        ClassRef _classRef = object.getClassRef();
+        String _doSwitch = this.doSwitch(_classRef);
         _builder.append(_doSwitch, "");
         _builder.newLineIfNotEmpty();
-        {
-          EList<ClassNameResolutionStmnt> _statements_4 = object.getStatements();
-          Iterable<NamedElementDef> _filter_4 = Iterables.<NamedElementDef>filter(_statements_4, NamedElementDef.class);
-          for(final NamedElementDef statement : _filter_4) {
-            String _doSwitch_1 = this.doSwitch(statement);
-            _builder.append(_doSwitch_1, "");
-          }
-        }
-        _builder.newLineIfNotEmpty();
-        {
-          if (containsScopes) {
-            String _provideUnqualifiedEnvMethods = this.provideUnqualifiedEnvMethods(object);
-            _builder.append(_provideUnqualifiedEnvMethods, "");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        {
-          if (containsExports) {
-            String _provideExportedEnvMethods = this.provideExportedEnvMethods(object);
-            _builder.append(_provideExportedEnvMethods, "");
-            _builder.newLineIfNotEmpty();
-            String _provideExporterLookupMethod = this.provideExporterLookupMethod(object);
-            _builder.append(_provideExporterLookupMethod, "");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        _xifexpression = _builder.toString();
-      } else {
-        _xifexpression = "";
-      }
-      _xblockexpression = _xifexpression;
-    }
-    return _xblockexpression;
-  }
-  
-  @Override
-  public String caseNamedElementDef(final NamedElementDef object) {
-    String _xblockexpression = null;
-    {
-      final EList<QualificationDef> qualifications = object.getQualifications();
-      final StringBuilder sb = new StringBuilder();
-      boolean _notEquals = (!Objects.equal(qualifications, null));
-      if (_notEquals) {
-        for (final QualificationDef qualification : qualifications) {
-          TargetsDef _targetsDef = qualification.getTargetsDef();
-          EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-          for (final TypedRefCS targetClass : _targetClasses) {
+        sb.append(_builder);
+        for (final QualificationDef qualification : qualificationDefs) {
+          MultipleClassRef _targetsDef = qualification.getTargetsDef();
+          EList<PathNameCS> _classNames = _targetsDef.getClassNames();
+          for (final PathNameCS targetClass : _classNames) {
             {
               final String className = this.doSwitch(targetClass);
               final String nClassName = this.normalizeString(className);
@@ -536,115 +523,353 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               final FilterDef filter = this.element2filter.get(className);
               final String filterParams = this.getOptionalAddedParamsText(filter);
               final String filterArgs = this.getOptionalAddedArgsText(filter);
-              StringConcatenation _builder = new StringConcatenation();
-              _builder.append("\t");
-              _builder.newLine();
-              _builder.append("def : _lookupQualified");
-              _builder.append(nClassName, "");
-              _builder.append("(");
-              _builder.append(nameParam, "");
-              _builder.append(" : String");
-              _builder.append(filterParams, "");
-              _builder.append(") : ");
-              _builder.append(className, "");
-              _builder.append("[?] =");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("let found");
-              _builder.append(nClassName, "\t");
-              _builder.append(" = _lookup");
-              _builder.append(nClassName, "\t");
-              _builder.append("(_qualified_env_");
-              _builder.append(nClassName, "\t");
-              _builder.append("(), ");
-              _builder.append(nameParam, "\t");
-              _builder.append(filterArgs, "\t");
-              _builder.append(")");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("in  if found");
-              _builder.append(nClassName, "\t");
-              _builder.append("->isEmpty()");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t\t");
-              _builder.append("then null");
-              _builder.newLine();
-              _builder.append("\t\t");
-              _builder.append("else found");
-              _builder.append(nClassName, "\t\t");
-              _builder.append("->first()");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t\t");
-              _builder.append("endif");
-              _builder.newLine();
-              _builder.append("def : _qualified_env_");
-              _builder.append(nClassName, "");
-              _builder.append("() : ");
-              _builder.append(this.lookupPck, "");
-              _builder.append("::");
-              _builder.append(this.lookupEnv, "");
-              _builder.append(" =");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("let env = ");
-              _builder.append(this.lookupPck, "\t");
-              _builder.append("::");
-              _builder.append(this.lookupEnv, "\t");
-              _builder.append("{}");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("in env");
-              _builder.newLine();
-              _builder.append("\t");
+              StringConcatenation _builder_1 = new StringConcatenation();
+              _builder_1.append("\t");
+              _builder_1.newLine();
+              _builder_1.append("def : _lookupQualified");
+              _builder_1.append(nClassName, "");
+              _builder_1.append("(");
+              _builder_1.append(nameParam, "");
+              _builder_1.append(" : String");
+              _builder_1.append(filterParams, "");
+              _builder_1.append(") : ");
+              _builder_1.append(className, "");
+              _builder_1.append("[?] =");
+              _builder_1.newLineIfNotEmpty();
+              _builder_1.append("   ");
+              _builder_1.append("let found");
+              _builder_1.append(nClassName, "   ");
+              _builder_1.append(" = _lookup");
+              _builder_1.append(nClassName, "   ");
+              _builder_1.append("(_qualified_env_");
+              _builder_1.append(nClassName, "   ");
+              _builder_1.append("(), ");
+              _builder_1.append(nameParam, "   ");
+              _builder_1.append(filterArgs, "   ");
+              _builder_1.append(")");
+              _builder_1.newLineIfNotEmpty();
+              _builder_1.append("   ");
+              _builder_1.append("in  if found");
+              _builder_1.append(nClassName, "   ");
+              _builder_1.append("->isEmpty()");
+              _builder_1.newLineIfNotEmpty();
+              _builder_1.append("      ");
+              _builder_1.append("then null");
+              _builder_1.newLine();
+              _builder_1.append("      ");
+              _builder_1.append("else found");
+              _builder_1.append(nClassName, "      ");
+              _builder_1.append("->first()");
+              _builder_1.newLineIfNotEmpty();
+              _builder_1.append("      ");
+              _builder_1.append("endif");
+              _builder_1.newLine();
+              _builder_1.append("def : _qualified_env_");
+              _builder_1.append(nClassName, "");
+              _builder_1.append("() : ");
+              _builder_1.append(this.lookupPck, "");
+              _builder_1.append("::");
+              _builder_1.append(this.lookupEnv, "");
+              _builder_1.append(" =");
+              _builder_1.newLineIfNotEmpty();
+              _builder_1.append("   ");
+              _builder_1.append("let env = ");
+              _builder_1.append(this.lookupPck, "   ");
+              _builder_1.append("::");
+              _builder_1.append(this.lookupEnv, "   ");
+              _builder_1.append("{}");
+              _builder_1.newLineIfNotEmpty();
+              _builder_1.append("   ");
+              _builder_1.append("in env");
+              _builder_1.newLine();
+              _builder_1.append("   ");
               {
                 EList<ElementsContribExp> _contribution = qualification.getContribution();
                 for(final ElementsContribExp contrib : _contribution) {
-                  String _doSwitch = this.doSwitch(contrib);
-                  _builder.append(_doSwitch, "\t");
-                  _builder.newLineIfNotEmpty();
+                  String _doSwitch_1 = this.doSwitch(contrib);
+                  _builder_1.append(_doSwitch_1, "   ");
+                  _builder_1.newLineIfNotEmpty();
                 }
               }
               {
                 boolean _notEquals_1 = (!Objects.equal(this.defaultNR, null));
                 if (_notEquals_1) {
                   CharSequence _provideLookupByNameReferencerMethod = this.provideLookupByNameReferencerMethod(className, "", ("Qualified" + nClassName), filterParams, filterArgs);
-                  _builder.append(_provideLookupByNameReferencerMethod, "");
+                  _builder_1.append(_provideLookupByNameReferencerMethod, "");
                 }
               }
-              _builder.newLineIfNotEmpty();
-              sb.append(_builder);
+              _builder_1.newLineIfNotEmpty();
+              sb.append(_builder_1);
             }
           }
         }
+        boolean _notEquals_1 = (!Objects.equal(filterDef, null));
+        if (_notEquals_1) {
+          ClassRef _classRef_1 = object.getClassRef();
+          final String className = this.doSwitch(_classRef_1);
+          final String nClassName = this.normalizeString(className);
+          final String filterParams = this.getParamsText(filterDef);
+          StringConcatenation _builder_1 = new StringConcatenation();
+          _builder_1.append("   ");
+          _builder_1.newLine();
+          _builder_1.append("def : ");
+          String _filterOpName = this.getFilterOpName(nClassName);
+          _builder_1.append(_filterOpName, "");
+          _builder_1.append("(");
+          _builder_1.append(filterParams, "");
+          _builder_1.append(") : Boolean =");
+          _builder_1.newLineIfNotEmpty();
+          _builder_1.append("   ");
+          ExpCS _expression = filterDef.getExpression();
+          String _doSwitch_1 = this.doSwitch(_expression);
+          _builder_1.append(_doSwitch_1, "   ");
+          _builder_1.newLineIfNotEmpty();
+          sb.append(_builder_1);
+        }
+        sb.toString();
       }
+      ClassRef _classRef_2 = object.getClassRef();
+      final String className_1 = this.doSwitch(_classRef_2);
+      final String nClassName_1 = this.normalizeString(className_1);
+      String _lowerCase = className_1.toLowerCase();
+      char _charAt = _lowerCase.charAt(0);
+      final String nameParam = (Character.valueOf(_charAt) + "Name");
+      String _xifexpression = null;
+      PathNameCS _propRef = object.getPropRef();
+      boolean _notEquals_2 = (!Objects.equal(_propRef, null));
+      if (_notEquals_2) {
+        PathNameCS _propRef_1 = object.getPropRef();
+        _xifexpression = this.doSwitch(_propRef_1);
+      } else {
+        _xifexpression = this.defaultNEP;
+      }
+      final String nameProp = _xifexpression;
       final FilterDef filter = object.getFilter();
-      boolean _notEquals_1 = (!Objects.equal(filter, null));
-      if (_notEquals_1) {
-        EObject _eContainer = object.eContainer();
-        PathNameCS _class_ = ((ClassNameResolution) _eContainer).getClass_();
-        final String className = this.doSwitch(_class_);
-        final String nClassName = this.normalizeString(className);
-        final String filterParams = this.getParamsText(filter);
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("\t");
-        _builder.newLine();
-        _builder.append("def : ");
-        String _filterOpName = this.getFilterOpName(nClassName);
-        _builder.append(_filterOpName, "");
-        _builder.append("(");
-        _builder.append(filterParams, "");
-        _builder.append(") : Boolean =");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t");
-        ExpCS _expression = filter.getExpression();
-        String _doSwitch = this.doSwitch(_expression);
-        _builder.append(_doSwitch, "\t");
-        _builder.newLineIfNotEmpty();
-        sb.append(_builder);
+      final String filterParams_1 = this.getOptionalAddedParamsText(filter);
+      final String filterArgs = this.getOptionalAddedArgsText(filter);
+      StringConcatenation _builder_2 = new StringConcatenation();
+      _builder_2.append("context Visitable");
+      _builder_2.newLine();
+      _builder_2.append("-- ");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append(" unqualified lookup");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("def : _lookup");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append("(env : ");
+      _builder_2.append(this.lookupPck, "");
+      _builder_2.append("::");
+      _builder_2.append(this.lookupEnv, "");
+      _builder_2.append(", ");
+      _builder_2.append(nameParam, "");
+      _builder_2.append(" : String");
+      _builder_2.append(filterParams_1, "");
+      _builder_2.append(") : OrderedSet(");
+      _builder_2.append(className_1, "");
+      _builder_2.append(") =");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("let found");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append(" = env.namedElements->selectByKind(");
+      _builder_2.append(className_1, "");
+      _builder_2.append(")->select(");
+      _builder_2.append(nameProp, "");
+      _builder_2.append(" = ");
+      _builder_2.append(nameParam, "");
+      _builder_2.append(")");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("                                         ");
+      {
+        boolean _notEquals_3 = (!Objects.equal(filter, null));
+        if (_notEquals_3) {
+          _builder_2.append("->select(");
+          String _filterOpName_1 = this.getFilterOpName(nClassName_1);
+          _builder_2.append(_filterOpName_1, "                                         ");
+          _builder_2.append("(");
+          String _argsText = this.getArgsText(filter);
+          _builder_2.append(_argsText, "                                         ");
+          _builder_2.append("))");
+        }
       }
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("in  if found");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append("->isEmpty() and not (env.parentEnv = null)");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("   ");
+      _builder_2.append("then _lookup");
+      _builder_2.append(nClassName_1, "   ");
+      _builder_2.append("(env.parentEnv, ");
+      _builder_2.append(nameParam, "   ");
+      _builder_2.append(filterArgs, "   ");
+      _builder_2.append(")");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("   ");
+      _builder_2.append("else found");
+      _builder_2.append(nClassName_1, "   ");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("   ");
+      _builder_2.append("endif");
+      _builder_2.newLine();
+      _builder_2.append("   ");
+      _builder_2.newLine();
+      _builder_2.append("-- Note: when calling this method, the source element of the argument passed to this method, will be the contextual ");
+      _builder_2.newLine();
+      _builder_2.append("-- object on which error reports will be handled");
+      _builder_2.newLine();
+      _builder_2.append("def : _lookupUnqualified");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append("(");
+      _builder_2.append(nameParam, "");
+      _builder_2.append(" : String");
+      _builder_2.append(filterParams_1, "");
+      _builder_2.append(") : ");
+      _builder_2.append(className_1, "");
+      _builder_2.append("[?] =");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("let found");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append(" = _lookup");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append("(unqualified_env_");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append("(), ");
+      _builder_2.append(nameParam, "");
+      _builder_2.append(filterArgs, "");
+      _builder_2.append(")");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("in  if found");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append("->isEmpty()");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("   ");
+      _builder_2.append("then null");
+      _builder_2.newLine();
+      _builder_2.append("   ");
+      _builder_2.append("else found");
+      _builder_2.append(nClassName_1, "   ");
+      _builder_2.append("->first() -- LookupVisitor will report ambiguous result");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("   ");
+      _builder_2.append("endif");
+      _builder_2.newLine();
+      _builder_2.append("   ");
+      _builder_2.newLine();
+      _builder_2.append("def : lookup");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append("(");
+      _builder_2.append(nameParam, "");
+      _builder_2.append(" : String");
+      _builder_2.append(filterParams_1, "");
+      _builder_2.append(") : ");
+      _builder_2.append(className_1, "");
+      _builder_2.append("[?] =");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("   ");
+      _builder_2.append("_lookupUnqualified");
+      _builder_2.append(nClassName_1, "   ");
+      _builder_2.append("(");
+      _builder_2.append(nameParam, "   ");
+      _builder_2.append(filterArgs, "   ");
+      _builder_2.append(")");
+      _builder_2.newLineIfNotEmpty();
+      {
+        boolean _notEquals_4 = (!Objects.equal(this.defaultNR, null));
+        if (_notEquals_4) {
+          CharSequence _provideLookupByNameReferencerMethod = this.provideLookupByNameReferencerMethod(className_1, "Unqualified", nClassName_1, filterParams_1, filterArgs);
+          _builder_2.append(_provideLookupByNameReferencerMethod, "");
+        }
+      }
+      _builder_2.append("\t\t");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("-- End of ");
+      _builder_2.append(nClassName_1, "");
+      _builder_2.append(" unqualified lookup ");
+      _builder_2.newLineIfNotEmpty();
+      _builder_2.append("   ");
+      _builder_2.newLine();
+      {
+        List<String> _get = this.element2qualifiers.get(className_1);
+        boolean _notEquals_5 = (!Objects.equal(_get, null));
+        if (_notEquals_5) {
+          CharSequence _provideQualifiedLookupMethods = this.provideQualifiedLookupMethods(className_1, nClassName_1, filterParams_1, filterArgs);
+          _builder_2.append(_provideQualifiedLookupMethods, "");
+        }
+      }
+      _builder_2.newLineIfNotEmpty();
+      sb.append(_builder_2);
       _xblockexpression = sb.toString();
     }
     return _xblockexpression;
+  }
+  
+  @Override
+  public String caseProviders(final Providers object) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<Provider> _providers = object.getProviders();
+      for(final Provider provider : _providers) {
+        String _doSwitch = this.doSwitch(provider);
+        _builder.append(_doSwitch, "");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
+  @Override
+  public String caseProvider(final Provider object) {
+    final StringBuilder sb = new StringBuilder();
+    EList<ProviderStmnt> _statements = object.getStatements();
+    Iterable<ExportDef> _filter = Iterables.<ExportDef>filter(_statements, ExportDef.class);
+    boolean _isEmpty = IterableExtensions.isEmpty(_filter);
+    final boolean containsExports = (!_isEmpty);
+    EList<ProviderStmnt> _statements_1 = object.getStatements();
+    Iterable<ScopeDef> _filter_1 = Iterables.<ScopeDef>filter(_statements_1, ScopeDef.class);
+    boolean _isEmpty_1 = IterableExtensions.isEmpty(_filter_1);
+    final boolean containsScopes = (!_isEmpty_1);
+    boolean _or = false;
+    if (containsExports) {
+      _or = true;
+    } else {
+      _or = containsScopes;
+    }
+    if (_or) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("context ");
+      PathNameCS _classRef = object.getClassRef();
+      String _doSwitch = this.doSwitch(_classRef);
+      _builder.append(_doSwitch, "");
+      _builder.newLineIfNotEmpty();
+      {
+        if (containsScopes) {
+          String _provideUnqualifiedEnvMethods = this.provideUnqualifiedEnvMethods(object);
+          _builder.append(_provideUnqualifiedEnvMethods, "");
+          _builder.newLineIfNotEmpty();
+        }
+      }
+      {
+        if (containsExports) {
+          String _provideExportedEnvMethods = this.provideExportedEnvMethods(object);
+          _builder.append(_provideExportedEnvMethods, "");
+          _builder.newLineIfNotEmpty();
+          String _provideExporterLookupMethod = this.provideExporterLookupMethod(object);
+          _builder.append(_provideExporterLookupMethod, "");
+          _builder.newLineIfNotEmpty();
+        }
+      }
+      sb.append(_builder);
+    }
+    if (containsExports) {
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("context Visitable");
+      _builder_1.newLine();
+      String _provideLookupFromMethods = this.provideLookupFromMethods(object);
+      _builder_1.append(_provideLookupFromMethods, "");
+      _builder_1.newLineIfNotEmpty();
+      sb.append(_builder_1);
+    }
+    return sb.toString();
   }
   
   @Override
@@ -745,243 +970,109 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     return _builder.toString();
   }
   
-  private String provideLookupMethods(final NameResolutionSect nameResoSect) {
+  @Override
+  public String caseClassRef(final ClassRef object) {
+    StringConcatenation _builder = new StringConcatenation();
+    PathNameCS _className = object.getClassName();
+    String _doSwitch = this.doSwitch(_className);
+    _builder.append(_doSwitch, "");
+    return _builder.toString();
+  }
+  
+  private String provideLookupFromMethods(final Provider provider) {
     String _xblockexpression = null;
     {
       final StringBuilder sb = new StringBuilder();
-      EList<ClassNameResolution> _nameResolutions = nameResoSect.getNameResolutions();
-      for (final ClassNameResolution resolution : _nameResolutions) {
-        EList<ClassNameResolutionStmnt> _statements = resolution.getStatements();
-        for (final ClassNameResolutionStmnt statmt : _statements) {
-          {
-            PathNameCS _class_ = resolution.getClass_();
-            final String className = this.doSwitch(_class_);
-            final String nClassName = this.normalizeString(className);
-            String _lowerCase = className.toLowerCase();
-            char _charAt = _lowerCase.charAt(0);
-            final String nameParam = (Character.valueOf(_charAt) + "Name");
-            if ((statmt instanceof NamedElementDef)) {
-              String _xifexpression = null;
-              NameExpCS _namePoperty = ((NamedElementDef)statmt).getNamePoperty();
-              boolean _notEquals = (!Objects.equal(_namePoperty, null));
-              if (_notEquals) {
-                NameExpCS _namePoperty_1 = ((NamedElementDef)statmt).getNamePoperty();
-                _xifexpression = this.doSwitch(_namePoperty_1);
-              } else {
-                _xifexpression = this.defaultNEP;
-              }
-              final String nameProp = _xifexpression;
-              final FilterDef filter = ((NamedElementDef)statmt).getFilter();
-              final String filterParams = this.getOptionalAddedParamsText(filter);
-              final String filterArgs = this.getOptionalAddedArgsText(filter);
-              StringConcatenation _builder = new StringConcatenation();
-              _builder.append("-- ");
-              _builder.append(nClassName, "");
-              _builder.append(" lookup");
-              _builder.newLineIfNotEmpty();
-              _builder.append("def : _lookup");
-              _builder.append(nClassName, "");
-              _builder.append("(env : ");
-              _builder.append(this.lookupPck, "");
-              _builder.append("::");
-              _builder.append(this.lookupEnv, "");
-              _builder.append(", ");
-              _builder.append(nameParam, "");
-              _builder.append(" : String");
-              _builder.append(filterParams, "");
-              _builder.append(") : OrderedSet(");
-              _builder.append(className, "");
-              _builder.append(") =");
-              _builder.newLineIfNotEmpty();
-              _builder.append("let found");
-              _builder.append(nClassName, "");
-              _builder.append(" = env.namedElements->selectByKind(");
-              _builder.append(className, "");
-              _builder.append(")->select(");
-              _builder.append(nameProp, "");
-              _builder.append(" = ");
-              _builder.append(nameParam, "");
-              _builder.append(")");
-              _builder.newLineIfNotEmpty();
-              _builder.append("                                         ");
+      EList<ProviderStmnt> _statements = provider.getStatements();
+      for (final ProviderStmnt statmt : _statements) {
+        {
+          PathNameCS _classRef = provider.getClassRef();
+          final String className = this.doSwitch(_classRef);
+          final String nClassName = this.normalizeString(className);
+          String _lowerCase = className.toLowerCase();
+          char _charAt = _lowerCase.charAt(0);
+          final String nameParam = (Character.valueOf(_charAt) + "Name");
+          if ((statmt instanceof ExportDef)) {
+            EList<ProvisionDef> _provisionDefs = ((ExportDef)statmt).getProvisionDefs();
+            for (final ProvisionDef providerDef : _provisionDefs) {
               {
-                boolean _notEquals_1 = (!Objects.equal(filter, null));
-                if (_notEquals_1) {
-                  _builder.append("->select(");
-                  String _filterOpName = this.getFilterOpName(nClassName);
-                  _builder.append(_filterOpName, "                                         ");
-                  _builder.append("(");
-                  String _argsText = this.getArgsText(filter);
-                  _builder.append(_argsText, "                                         ");
-                  _builder.append("))");
-                }
-              }
-              _builder.newLineIfNotEmpty();
-              _builder.append("in  if found");
-              _builder.append(nClassName, "");
-              _builder.append("->isEmpty() and not (env.parentEnv = null)");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("then _lookup");
-              _builder.append(nClassName, "\t");
-              _builder.append("(env.parentEnv, ");
-              _builder.append(nameParam, "\t");
-              _builder.append(filterArgs, "\t");
-              _builder.append(")");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("else found");
-              _builder.append(nClassName, "\t");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("endif");
-              _builder.newLine();
-              _builder.append("\t");
-              _builder.newLine();
-              _builder.append("-- Note: when calling this method, the source element of the argument passed to this method, will be the contextual ");
-              _builder.newLine();
-              _builder.append("-- object on which error reports will be handled");
-              _builder.newLine();
-              _builder.append("def : _lookupUnqualified");
-              _builder.append(nClassName, "");
-              _builder.append("(");
-              _builder.append(nameParam, "");
-              _builder.append(" : String");
-              _builder.append(filterParams, "");
-              _builder.append(") : ");
-              _builder.append(className, "");
-              _builder.append("[?] =");
-              _builder.newLineIfNotEmpty();
-              _builder.append("let found");
-              _builder.append(nClassName, "");
-              _builder.append(" = _lookup");
-              _builder.append(nClassName, "");
-              _builder.append("(unqualified_env_");
-              _builder.append(nClassName, "");
-              _builder.append("(), ");
-              _builder.append(nameParam, "");
-              _builder.append(filterArgs, "");
-              _builder.append(")");
-              _builder.newLineIfNotEmpty();
-              _builder.append("in  if found");
-              _builder.append(nClassName, "");
-              _builder.append("->isEmpty()");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("then null");
-              _builder.newLine();
-              _builder.append("\t");
-              _builder.append("else found");
-              _builder.append(nClassName, "\t");
-              _builder.append("->first() -- LookupVisitor will report ambiguous result");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("endif");
-              _builder.newLine();
-              {
-                boolean _notEquals_2 = (!Objects.equal(this.defaultNR, null));
-                if (_notEquals_2) {
-                  CharSequence _provideLookupByNameReferencerMethod = this.provideLookupByNameReferencerMethod(className, "Unqualified", nClassName, filterParams, filterArgs);
-                  _builder.append(_provideLookupByNameReferencerMethod, "");
-                }
-              }
-              _builder.newLineIfNotEmpty();
-              _builder.newLine();
-              {
-                List<String> _get = this.element2qualifiers.get(className);
-                boolean _notEquals_3 = (!Objects.equal(_get, null));
-                if (_notEquals_3) {
-                  CharSequence _provideQualifiedLookupMethods = this.provideQualifiedLookupMethods(className, nClassName, filterParams, filterArgs);
-                  _builder.append(_provideQualifiedLookupMethods, "");
-                }
-              }
-              _builder.newLineIfNotEmpty();
-              _builder.newLine();
-              sb.append(_builder);
-            } else {
-              if ((statmt instanceof ExportDef)) {
-                EList<ProvisionDef> _provisionDefs = ((ExportDef)statmt).getProvisionDefs();
-                for (final ProvisionDef providerDef : _provisionDefs) {
-                  {
-                    TargetsDef _targetsDef = providerDef.getTargetsDef();
-                    EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-                    TypedRefCS _get_1 = _targetClasses.get(0);
-                    final String exportedClassName = this.doSwitch(_get_1);
-                    final String nExportedClassName = this.normalizeString(exportedClassName);
-                    final FilterDef filter_1 = this.element2filter.get(exportedClassName);
-                    final String filterParams_1 = this.getOptionalAddedParamsText(filter_1);
-                    final String filterArgs_1 = this.getOptionalAddedArgsText(filter_1);
-                    StringConcatenation _builder_1 = new StringConcatenation();
-                    _builder_1.append("-- ");
-                    _builder_1.append(nClassName, "");
-                    _builder_1.append(" exports ");
-                    _builder_1.append(nExportedClassName, "");
-                    _builder_1.newLineIfNotEmpty();
-                    _builder_1.append("\t");
-                    _builder_1.newLine();
-                    {
-                      boolean _equals = Objects.equal(this.defaultNR, null);
-                      if (_equals) {
-                        _builder_1.append("def : lookup");
-                        _builder_1.append(nExportedClassName, "");
-                        _builder_1.append("From(exporter : ");
-                        _builder_1.append(className, "");
-                        _builder_1.append(" , ");
-                        _builder_1.append(nameParam, "");
-                        _builder_1.append(" : String");
-                        _builder_1.append(filterParams_1, "");
-                        _builder_1.append(") : ");
-                        _builder_1.append(exportedClassName, "");
-                        _builder_1.append("[?] =");
-                        _builder_1.newLineIfNotEmpty();
-                        _builder_1.append("\t");
-                        _builder_1.append("exporter.lookupExported");
-                        _builder_1.append(nExportedClassName, "\t");
-                        _builder_1.append("(self, ");
-                        _builder_1.append(nameParam, "\t");
-                        _builder_1.append(filterArgs_1, "\t");
-                        _builder_1.append(")");
-                        _builder_1.newLineIfNotEmpty();
-                      } else {
-                        _builder_1.append("def : lookup");
-                        _builder_1.append(nExportedClassName, "");
-                        _builder_1.append("From(exporter : ");
-                        _builder_1.append(className, "");
-                        _builder_1.append(", a");
-                        _builder_1.append(this.defaultNR, "");
-                        _builder_1.append(" : ");
-                        _builder_1.append(this.sourcePckName, "");
-                        _builder_1.append("::");
-                        _builder_1.append(this.defaultNR, "");
-                        _builder_1.append(filterParams_1, "");
-                        _builder_1.append(") : ");
-                        _builder_1.append(exportedClassName, "");
-                        _builder_1.append("[?] =");
-                        _builder_1.newLineIfNotEmpty();
-                        _builder_1.append("\t");
-                        _builder_1.append("exporter.lookupExported");
-                        _builder_1.append(nExportedClassName, "\t");
-                        _builder_1.append("(self, a");
-                        _builder_1.append(this.defaultNR, "\t");
-                        _builder_1.append(filterArgs_1, "\t");
-                        _builder_1.append(")");
-                        _builder_1.newLineIfNotEmpty();
-                      }
-                    }
-                    _builder_1.newLine();
-                    {
-                      List<String> _get_2 = this.element2qualifiers.get(exportedClassName);
-                      boolean _notEquals_4 = (!Objects.equal(_get_2, null));
-                      if (_notEquals_4) {
-                        String _provideQualifiedLookupFromMethods = this.provideQualifiedLookupFromMethods(exportedClassName, nExportedClassName, className, filterParams_1, filterArgs_1);
-                        _builder_1.append(_provideQualifiedLookupFromMethods, "");
-                      }
-                    }
-                    _builder_1.append("\t");
-                    _builder_1.newLineIfNotEmpty();
-                    sb.append(_builder_1);
+                MultipleClassRef _targetsDef = providerDef.getTargetsDef();
+                EList<PathNameCS> _classNames = _targetsDef.getClassNames();
+                PathNameCS _get = _classNames.get(0);
+                final String exportedClassName = this.doSwitch(_get);
+                final String nExportedClassName = this.normalizeString(exportedClassName);
+                final FilterDef filter = this.element2filter.get(exportedClassName);
+                final String filterParams = this.getOptionalAddedParamsText(filter);
+                final String filterArgs = this.getOptionalAddedArgsText(filter);
+                StringConcatenation _builder = new StringConcatenation();
+                _builder.append("-- ");
+                _builder.append(nClassName, "");
+                _builder.append(" exports ");
+                _builder.append(nExportedClassName, "");
+                _builder.newLineIfNotEmpty();
+                _builder.append("   ");
+                _builder.newLine();
+                {
+                  boolean _equals = Objects.equal(this.defaultNR, null);
+                  if (_equals) {
+                    _builder.append("def : lookup");
+                    _builder.append(nExportedClassName, "");
+                    _builder.append("From(exporter : ");
+                    _builder.append(className, "");
+                    _builder.append(" , ");
+                    _builder.append(nameParam, "");
+                    _builder.append(" : String");
+                    _builder.append(filterParams, "");
+                    _builder.append(") : ");
+                    _builder.append(exportedClassName, "");
+                    _builder.append("[?] =");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("   ");
+                    _builder.append("exporter.lookupExported");
+                    _builder.append(nExportedClassName, "   ");
+                    _builder.append("(self, ");
+                    _builder.append(nameParam, "   ");
+                    _builder.append(filterArgs, "   ");
+                    _builder.append(")");
+                    _builder.newLineIfNotEmpty();
+                  } else {
+                    _builder.append("def : lookup");
+                    _builder.append(nExportedClassName, "");
+                    _builder.append("From(exporter : ");
+                    _builder.append(className, "");
+                    _builder.append(", a");
+                    _builder.append(this.defaultNR, "");
+                    _builder.append(" : ");
+                    _builder.append(this.sourcePckName, "");
+                    _builder.append("::");
+                    _builder.append(this.defaultNR, "");
+                    _builder.append(filterParams, "");
+                    _builder.append(") : ");
+                    _builder.append(exportedClassName, "");
+                    _builder.append("[?] =");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("   ");
+                    _builder.append("exporter.lookupExported");
+                    _builder.append(nExportedClassName, "   ");
+                    _builder.append("(self, a");
+                    _builder.append(this.defaultNR, "   ");
+                    _builder.append(filterArgs, "   ");
+                    _builder.append(")");
+                    _builder.newLineIfNotEmpty();
                   }
                 }
+                _builder.newLine();
+                {
+                  List<String> _get_1 = this.element2qualifiers.get(exportedClassName);
+                  boolean _notEquals = (!Objects.equal(_get_1, null));
+                  if (_notEquals) {
+                    String _provideQualifiedLookupFromMethods = this.provideQualifiedLookupFromMethods(exportedClassName, nExportedClassName, className, filterParams, filterArgs);
+                    _builder.append(_provideQualifiedLookupFromMethods, "");
+                  }
+                }
+                _builder.append("\t");
+                _builder.newLineIfNotEmpty();
+                sb.append(_builder);
               }
             }
           }
@@ -1018,8 +1109,6 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.append(filterArgs, "   ");
     _builder.append(")");
     _builder.newLineIfNotEmpty();
-    _builder.append("   ");
-    _builder.newLine();
     return _builder;
   }
   
@@ -1033,9 +1122,9 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _builder.append(")");
       final String qualifierSegments = _builder.toString();
       StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("-- QN ");
+      _builder_1.append("-- ");
       _builder_1.append(className, "");
-      _builder_1.append(" lookup");
+      _builder_1.append(" qualified-name lookup");
       _builder_1.newLineIfNotEmpty();
       _builder_1.append("def : lookup");
       _builder_1.append(nClassName, "");
@@ -1060,6 +1149,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _builder_1.append(filterArgs, "   ");
       _builder_1.append(")");
       _builder_1.newLineIfNotEmpty();
+      _builder_1.append("   ");
       _builder_1.newLine();
       _builder_1.append("def : lookup");
       _builder_1.append(nClassName, "");
@@ -1250,19 +1340,19 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     return _xblockexpression;
   }
   
-  private String provideUnqualifiedEnvMethods(final ClassNameResolution nameReso) {
+  private String provideUnqualifiedEnvMethods(final Provider provider) {
     String _xblockexpression = null;
     {
       final List<ProvisionDef> provisionDefs = CollectionLiterals.<ProvisionDef>newArrayList();
-      EList<ClassNameResolutionStmnt> _statements = nameReso.getStatements();
+      EList<ProviderStmnt> _statements = provider.getStatements();
       Iterable<ScopeDef> _filter = Iterables.<ScopeDef>filter(_statements, ScopeDef.class);
       for (final ScopeDef statmnt : _filter) {
         EList<ProvisionDef> _provisionDefs = statmnt.getProvisionDefs();
         provisionDefs.addAll(_provisionDefs);
       }
       final StringBuilder sb = new StringBuilder();
-      PathNameCS _class_ = nameReso.getClass_();
-      final String scopingClassName = this.doSwitch(_class_);
+      PathNameCS _classRef = provider.getClassRef();
+      final String scopingClassName = this.doSwitch(_classRef);
       final Map<String, Set<ProvisionDef>> scopedClasses = this.computeTargetClasses(provisionDefs);
       Set<String> _keySet = scopedClasses.keySet();
       for (final String scopedClassName : _keySet) {
@@ -1322,28 +1412,28 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _builder.append(this.lookupEnv, "");
       _builder.append(" =");
       _builder.newLineIfNotEmpty();
-      _builder.append("\t");
+      _builder.append("   ");
       String _provideScopeContributionsQuery = this.provideScopeContributionsQuery(scopedClassName, featureNames, allChildrenName);
-      _builder.append(_provideScopeContributionsQuery, "\t");
+      _builder.append(_provideScopeContributionsQuery, "   ");
       _builder.newLineIfNotEmpty();
       _xblockexpression = _builder.toString();
     }
     return _xblockexpression;
   }
   
-  private String provideExportedEnvMethods(final ClassNameResolution nameReso) {
+  private String provideExportedEnvMethods(final Provider provider) {
     String _xblockexpression = null;
     {
       final List<ProvisionDef> provisionDefs = CollectionLiterals.<ProvisionDef>newArrayList();
-      EList<ClassNameResolutionStmnt> _statements = nameReso.getStatements();
+      EList<ProviderStmnt> _statements = provider.getStatements();
       Iterable<ExportDef> _filter = Iterables.<ExportDef>filter(_statements, ExportDef.class);
       for (final ExportDef statmnt : _filter) {
         EList<ProvisionDef> _provisionDefs = statmnt.getProvisionDefs();
         provisionDefs.addAll(_provisionDefs);
       }
       final StringBuilder sb = new StringBuilder();
-      PathNameCS _class_ = nameReso.getClass_();
-      final String exportingClassName = this.doSwitch(_class_);
+      PathNameCS _classRef = provider.getClassRef();
+      final String exportingClassName = this.doSwitch(_classRef);
       final Map<String, Set<ProvisionDef>> exportedClasses = this.computeTargetClasses(provisionDefs);
       Set<String> _keySet = exportedClasses.keySet();
       for (final String exportedClassName : _keySet) {
@@ -1403,9 +1493,9 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _builder.append(this.lookupEnv, "");
       _builder.append(" =");
       _builder.newLineIfNotEmpty();
-      _builder.append("\t");
+      _builder.append("   ");
       String _provideExportsContributionsQuery = this.provideExportsContributionsQuery(exportedClassName, featureNames, allChildrenName);
-      _builder.append(_provideExportsContributionsQuery, "\t");
+      _builder.append(_provideExportsContributionsQuery, "   ");
       _builder.newLineIfNotEmpty();
       _xblockexpression = _builder.toString();
     }
@@ -1570,12 +1660,12 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       StringConcatenation _builder_1 = new StringConcatenation();
       _builder_1.append(scope, "");
       _builder_1.newLineIfNotEmpty();
-      _builder_1.append("\t");
+      _builder_1.append("   ");
       EList<ProvisionDef> _provisionDefs = object.getProvisionDefs();
       String _provideProvisionDefsContribution = this.provideProvisionDefsContribution(_provisionDefs, scopedClassName);
-      _builder_1.append(_provideProvisionDefsContribution, "\t");
+      _builder_1.append(_provideProvisionDefsContribution, "   ");
       _builder_1.newLineIfNotEmpty();
-      _builder_1.append("\t");
+      _builder_1.append("   ");
       _builder_1.newLine();
       _xblockexpression = _builder_1.toString();
     }
@@ -1587,12 +1677,12 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     {
       for(final ProvisionDef provisionDef : provisionDefs) {
         {
-          TargetsDef _targetsDef = provisionDef.getTargetsDef();
-          EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-          final Function1<TypedRefCS, String> _function = (TypedRefCS x) -> {
+          MultipleClassRef _targetsDef = provisionDef.getTargetsDef();
+          EList<PathNameCS> _classNames = _targetsDef.getClassNames();
+          final Function1<PathNameCS, String> _function = (PathNameCS x) -> {
             return this.doSwitch(x);
           };
-          List<String> _map = ListExtensions.<TypedRefCS, String>map(_targetClasses, _function);
+          List<String> _map = ListExtensions.<PathNameCS, String>map(_classNames, _function);
           boolean _contains = _map.contains(targetClassName);
           if (_contains) {
             String _doSwitch = this.doSwitch(provisionDef);
@@ -1636,19 +1726,19 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.newLineIfNotEmpty();
     _builder.append("in env");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("   ");
     EList<ProvisionDef> _provisionDefs = object.getProvisionDefs();
     String _provideProvisionDefsContribution = this.provideProvisionDefsContribution(_provisionDefs, exportedClassName);
-    _builder.append(_provideProvisionDefsContribution, "\t");
+    _builder.append(_provideProvisionDefsContribution, "   ");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     return _builder.toString();
   }
   
-  private String provideExporterLookupMethod(final ClassNameResolution nameReso) {
+  private String provideExporterLookupMethod(final Provider provider) {
     String _xblockexpression = null;
     {
-      EList<ClassNameResolutionStmnt> _statements = nameReso.getStatements();
+      EList<ProviderStmnt> _statements = provider.getStatements();
       final Iterable<ExportDef> exports = Iterables.<ExportDef>filter(_statements, ExportDef.class);
       String _xifexpression = null;
       boolean _isEmpty = IterableExtensions.isEmpty(exports);
@@ -1665,9 +1755,9 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           Iterable<ProvisionDef> _flatten = Iterables.<ProvisionDef>concat(_map);
           for (final ProvisionDef provisionDef : _flatten) {
             {
-              TargetsDef _targetsDef = provisionDef.getTargetsDef();
-              EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-              TypedRefCS _get = _targetClasses.get(0);
+              MultipleClassRef _targetsDef = provisionDef.getTargetsDef();
+              EList<PathNameCS> _classNames = _targetsDef.getClassNames();
+              PathNameCS _get = _classNames.get(0);
               final String className = this.doSwitch(_get);
               final String nClassName = this.normalizeString(className);
               String _lowerCase = className.toLowerCase();
@@ -1677,7 +1767,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               final String filterParams = this.getOptionalAddedParamsText(filter);
               final String filterArgs = this.getOptionalAddedArgsText(filter);
               StringConcatenation _builder = new StringConcatenation();
-              _builder.append("\t");
+              _builder.append("   ");
               _builder.newLine();
               _builder.append("def : _lookupExported");
               _builder.append(nClassName, "");
@@ -1689,35 +1779,35 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder.append(className, "");
               _builder.append("[?] =");
               _builder.newLineIfNotEmpty();
-              _builder.append("\t");
+              _builder.append("   ");
               _builder.append("let found");
-              _builder.append(nClassName, "\t");
+              _builder.append(nClassName, "   ");
               _builder.append(" = _lookup");
-              _builder.append(nClassName, "\t");
+              _builder.append(nClassName, "   ");
               _builder.append("(_exported_env_");
-              _builder.append(nClassName, "\t");
+              _builder.append(nClassName, "   ");
               _builder.append("(importer), ");
-              _builder.append(nameParam, "\t");
-              _builder.append(filterArgs, "\t");
+              _builder.append(nameParam, "   ");
+              _builder.append(filterArgs, "   ");
               _builder.append(")");
               _builder.newLineIfNotEmpty();
-              _builder.append("\t");
+              _builder.append("   ");
               _builder.append("in  if found");
-              _builder.append(nClassName, "\t");
+              _builder.append(nClassName, "   ");
               _builder.append("->isEmpty()");
               _builder.newLineIfNotEmpty();
-              _builder.append("\t\t");
+              _builder.append("      ");
               _builder.append("then null");
               _builder.newLine();
-              _builder.append("\t\t");
+              _builder.append("      ");
               _builder.append("else found");
-              _builder.append(nClassName, "\t\t");
+              _builder.append(nClassName, "      ");
               _builder.append("->first()");
               _builder.newLineIfNotEmpty();
-              _builder.append("\t\t");
+              _builder.append("      ");
               _builder.append("endif");
               _builder.newLine();
-              _builder.append("\t\t");
+              _builder.append("      ");
               _builder.newLine();
               {
                 boolean _equals = Objects.equal(this.defaultNR, null);
@@ -1732,11 +1822,11 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                   _builder.append(nClassName, "");
                   _builder.append("[?] =");
                   _builder.newLineIfNotEmpty();
-                  _builder.append("\t");
+                  _builder.append("   ");
                   _builder.append("_lookupExported");
-                  _builder.append(nClassName, "\t");
+                  _builder.append(nClassName, "   ");
                   _builder.append("(importer, nameParam»");
-                  _builder.append(filterArgs, "\t");
+                  _builder.append(filterArgs, "   ");
                   _builder.append(")");
                   _builder.newLineIfNotEmpty();
                 } else {
@@ -1753,14 +1843,14 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
                   _builder.append(nClassName, "");
                   _builder.append("[?] =");
                   _builder.newLineIfNotEmpty();
-                  _builder.append("\t");
+                  _builder.append("   ");
                   _builder.append("_lookupExported");
-                  _builder.append(nClassName, "\t");
+                  _builder.append(nClassName, "   ");
                   _builder.append("(importer, a");
-                  _builder.append(this.defaultNR, "\t");
+                  _builder.append(this.defaultNR, "   ");
                   _builder.append(".");
-                  _builder.append(this.defaultNRP, "\t");
-                  _builder.append(filterArgs, "\t");
+                  _builder.append(this.defaultNRP, "   ");
+                  _builder.append(filterArgs, "   ");
                   _builder.append(")");
                   _builder.newLineIfNotEmpty();
                 }
@@ -1878,9 +1968,9 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   private Map<String, Set<ProvisionDef>> computeTargetClasses(final List<ProvisionDef> provisionDefs) {
     final Map<String, Set<ProvisionDef>> targetClasses = CollectionLiterals.<String, Set<ProvisionDef>>newLinkedHashMap();
     for (final ProvisionDef provisionDef : provisionDefs) {
-      TargetsDef _targetsDef = provisionDef.getTargetsDef();
-      EList<TypedRefCS> _targetClasses = _targetsDef.getTargetClasses();
-      for (final TypedRefCS targetClass : _targetClasses) {
+      MultipleClassRef _targetsDef = provisionDef.getTargetsDef();
+      EList<PathNameCS> _classNames = _targetsDef.getClassNames();
+      for (final PathNameCS targetClass : _classNames) {
         {
           final String targetClassName = this.doSwitch(targetClass);
           Set<ProvisionDef> scopingDefs = targetClasses.get(targetClassName);

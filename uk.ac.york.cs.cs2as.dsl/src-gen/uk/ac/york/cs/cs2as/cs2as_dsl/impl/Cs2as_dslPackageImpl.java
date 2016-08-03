@@ -21,13 +21,10 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolution;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassNameResolutionStmnt;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslFactory;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNameReferencerDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.DefaultNamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
@@ -35,21 +32,26 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Input;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Inputs;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
-import uk.ac.york.cs.cs2as.cs2as_dsl.NameQualifierDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
-import uk.ac.york.cs.cs2as.cs2as_dsl.NamedElementDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Provider;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Providers;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
-import uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Target;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Targets;
 import uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS;
 
 /**
@@ -149,42 +151,49 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass defaultNamedElementDefEClass = null;
+  private EClass targetsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass defaultNameReferencerDefEClass = null;
+  private EClass targetEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass nameQualifierDefEClass = null;
+  private EClass inputsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass classNameResolutionEClass = null;
+  private EClass inputEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass classNameResolutionStmntEClass = null;
+  private EClass providersEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass namedElementDefEClass = null;
+  private EClass providerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass providerStmntEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -226,7 +235,14 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass targetsDefEClass = null;
+  private EClass classRefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multipleClassRefEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -706,7 +722,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNameResolutionSect_NamedElement()
+  public EReference getNameResolutionSect_TargetsDef()
   {
     return (EReference)nameResolutionSectEClass.getEStructuralFeatures().get(0);
   }
@@ -716,7 +732,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNameResolutionSect_NameReferencer()
+  public EReference getNameResolutionSect_InputsDef()
   {
     return (EReference)nameResolutionSectEClass.getEStructuralFeatures().get(1);
   }
@@ -726,7 +742,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNameResolutionSect_NameQualifier()
+  public EReference getNameResolutionSect_ProvidersDef()
   {
     return (EReference)nameResolutionSectEClass.getEStructuralFeatures().get(2);
   }
@@ -736,9 +752,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNameResolutionSect_NameResolutions()
+  public EClass getTargets()
   {
-    return (EReference)nameResolutionSectEClass.getEStructuralFeatures().get(3);
+    return targetsEClass;
   }
 
   /**
@@ -746,9 +762,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDefaultNamedElementDef()
+  public EReference getTargets_Targets()
   {
-    return defaultNamedElementDefEClass;
+    return (EReference)targetsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -756,9 +772,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDefaultNamedElementDef_NameElement()
+  public EClass getTarget()
   {
-    return (EAttribute)defaultNamedElementDefEClass.getEStructuralFeatures().get(0);
+    return targetEClass;
   }
 
   /**
@@ -766,9 +782,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDefaultNamedElementDef_NameProperty()
+  public EReference getTarget_ClassRef()
   {
-    return (EReference)defaultNamedElementDefEClass.getEStructuralFeatures().get(1);
+    return (EReference)targetEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -776,9 +792,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDefaultNameReferencerDef()
+  public EReference getTarget_PropRef()
   {
-    return defaultNameReferencerDefEClass;
+    return (EReference)targetEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -786,9 +802,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDefaultNameReferencerDef_NameReferencer()
+  public EReference getTarget_Filter()
   {
-    return (EAttribute)defaultNameReferencerDefEClass.getEStructuralFeatures().get(0);
+    return (EReference)targetEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -796,9 +812,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDefaultNameReferencerDef_NameProperty()
+  public EReference getTarget_Qualifications()
   {
-    return (EReference)defaultNameReferencerDefEClass.getEStructuralFeatures().get(1);
+    return (EReference)targetEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -806,9 +822,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNameQualifierDef()
+  public EClass getInputs()
   {
-    return nameQualifierDefEClass;
+    return inputsEClass;
   }
 
   /**
@@ -816,9 +832,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNameQualifierDef_NameQualifier()
+  public EReference getInputs_Inputs()
   {
-    return (EAttribute)nameQualifierDefEClass.getEStructuralFeatures().get(0);
+    return (EReference)inputsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -826,9 +842,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNameQualifierDef_SegmentsProp()
+  public EClass getInput()
   {
-    return (EReference)nameQualifierDefEClass.getEStructuralFeatures().get(1);
+    return inputEClass;
   }
 
   /**
@@ -836,9 +852,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getClassNameResolution()
+  public EAttribute getInput_Qualifier()
   {
-    return classNameResolutionEClass;
+    return (EAttribute)inputEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -846,9 +862,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getClassNameResolution_Class()
+  public EReference getInput_ClassRef()
   {
-    return (EReference)classNameResolutionEClass.getEStructuralFeatures().get(0);
+    return (EReference)inputEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -856,9 +872,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getClassNameResolution_Statements()
+  public EReference getInput_PropRef()
   {
-    return (EReference)classNameResolutionEClass.getEStructuralFeatures().get(1);
+    return (EReference)inputEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -866,9 +882,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getClassNameResolutionStmnt()
+  public EClass getProviders()
   {
-    return classNameResolutionStmntEClass;
+    return providersEClass;
   }
 
   /**
@@ -876,9 +892,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNamedElementDef()
+  public EReference getProviders_Providers()
   {
-    return namedElementDefEClass;
+    return (EReference)providersEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -886,9 +902,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNamedElementDef_NamePoperty()
+  public EClass getProvider()
   {
-    return (EReference)namedElementDefEClass.getEStructuralFeatures().get(0);
+    return providerEClass;
   }
 
   /**
@@ -896,9 +912,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNamedElementDef_Filter()
+  public EReference getProvider_ClassRef()
   {
-    return (EReference)namedElementDefEClass.getEStructuralFeatures().get(1);
+    return (EReference)providerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -906,9 +922,39 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNamedElementDef_Qualifications()
+  public EReference getProvider_Statements()
   {
-    return (EReference)namedElementDefEClass.getEStructuralFeatures().get(2);
+    return (EReference)providerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getProviderStmnt()
+  {
+    return providerStmntEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProviderStmnt_SelectionDef()
+  {
+    return (EReference)providerStmntEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProviderStmnt_ProvisionDefs()
+  {
+    return (EReference)providerStmntEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1026,19 +1072,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getScopeDef_SelectionDef()
-  {
-    return (EReference)scopeDefEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getScopeDef_SameScope()
   {
-    return (EAttribute)scopeDefEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)scopeDefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1048,7 +1084,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    */
   public EAttribute getScopeDef_EmptyScope()
   {
-    return (EAttribute)scopeDefEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)scopeDefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1058,17 +1094,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    */
   public EAttribute getScopeDef_AlsoExports()
   {
-    return (EAttribute)scopeDefEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getScopeDef_ProvisionDefs()
-  {
-    return (EReference)scopeDefEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)scopeDefEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1116,9 +1142,9 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTargetsDef()
+  public EClass getClassRef()
   {
-    return targetsDefEClass;
+    return classRefEClass;
   }
 
   /**
@@ -1126,9 +1152,29 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTargetsDef_TargetClasses()
+  public EReference getClassRef_ClassName()
   {
-    return (EReference)targetsDefEClass.getEStructuralFeatures().get(0);
+    return (EReference)classRefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMultipleClassRef()
+  {
+    return multipleClassRefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultipleClassRef_ClassNames()
+  {
+    return (EReference)multipleClassRefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1189,26 +1235,6 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
   public EClass getExportDef()
   {
     return exportDefEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExportDef_SelectionDef()
-  {
-    return (EReference)exportDefEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExportDef_ProvisionDefs()
-  {
-    return (EReference)exportDefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1475,33 +1501,37 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     createEReference(disambiguationDefEClass, DISAMBIGUATION_DEF__EXP);
 
     nameResolutionSectEClass = createEClass(NAME_RESOLUTION_SECT);
-    createEReference(nameResolutionSectEClass, NAME_RESOLUTION_SECT__NAMED_ELEMENT);
-    createEReference(nameResolutionSectEClass, NAME_RESOLUTION_SECT__NAME_REFERENCER);
-    createEReference(nameResolutionSectEClass, NAME_RESOLUTION_SECT__NAME_QUALIFIER);
-    createEReference(nameResolutionSectEClass, NAME_RESOLUTION_SECT__NAME_RESOLUTIONS);
+    createEReference(nameResolutionSectEClass, NAME_RESOLUTION_SECT__TARGETS_DEF);
+    createEReference(nameResolutionSectEClass, NAME_RESOLUTION_SECT__INPUTS_DEF);
+    createEReference(nameResolutionSectEClass, NAME_RESOLUTION_SECT__PROVIDERS_DEF);
 
-    defaultNamedElementDefEClass = createEClass(DEFAULT_NAMED_ELEMENT_DEF);
-    createEAttribute(defaultNamedElementDefEClass, DEFAULT_NAMED_ELEMENT_DEF__NAME_ELEMENT);
-    createEReference(defaultNamedElementDefEClass, DEFAULT_NAMED_ELEMENT_DEF__NAME_PROPERTY);
+    targetsEClass = createEClass(TARGETS);
+    createEReference(targetsEClass, TARGETS__TARGETS);
 
-    defaultNameReferencerDefEClass = createEClass(DEFAULT_NAME_REFERENCER_DEF);
-    createEAttribute(defaultNameReferencerDefEClass, DEFAULT_NAME_REFERENCER_DEF__NAME_REFERENCER);
-    createEReference(defaultNameReferencerDefEClass, DEFAULT_NAME_REFERENCER_DEF__NAME_PROPERTY);
+    targetEClass = createEClass(TARGET);
+    createEReference(targetEClass, TARGET__CLASS_REF);
+    createEReference(targetEClass, TARGET__PROP_REF);
+    createEReference(targetEClass, TARGET__FILTER);
+    createEReference(targetEClass, TARGET__QUALIFICATIONS);
 
-    nameQualifierDefEClass = createEClass(NAME_QUALIFIER_DEF);
-    createEAttribute(nameQualifierDefEClass, NAME_QUALIFIER_DEF__NAME_QUALIFIER);
-    createEReference(nameQualifierDefEClass, NAME_QUALIFIER_DEF__SEGMENTS_PROP);
+    inputsEClass = createEClass(INPUTS);
+    createEReference(inputsEClass, INPUTS__INPUTS);
 
-    classNameResolutionEClass = createEClass(CLASS_NAME_RESOLUTION);
-    createEReference(classNameResolutionEClass, CLASS_NAME_RESOLUTION__CLASS);
-    createEReference(classNameResolutionEClass, CLASS_NAME_RESOLUTION__STATEMENTS);
+    inputEClass = createEClass(INPUT);
+    createEAttribute(inputEClass, INPUT__QUALIFIER);
+    createEReference(inputEClass, INPUT__CLASS_REF);
+    createEReference(inputEClass, INPUT__PROP_REF);
 
-    classNameResolutionStmntEClass = createEClass(CLASS_NAME_RESOLUTION_STMNT);
+    providersEClass = createEClass(PROVIDERS);
+    createEReference(providersEClass, PROVIDERS__PROVIDERS);
 
-    namedElementDefEClass = createEClass(NAMED_ELEMENT_DEF);
-    createEReference(namedElementDefEClass, NAMED_ELEMENT_DEF__NAME_POPERTY);
-    createEReference(namedElementDefEClass, NAMED_ELEMENT_DEF__FILTER);
-    createEReference(namedElementDefEClass, NAMED_ELEMENT_DEF__QUALIFICATIONS);
+    providerEClass = createEClass(PROVIDER);
+    createEReference(providerEClass, PROVIDER__CLASS_REF);
+    createEReference(providerEClass, PROVIDER__STATEMENTS);
+
+    providerStmntEClass = createEClass(PROVIDER_STMNT);
+    createEReference(providerStmntEClass, PROVIDER_STMNT__SELECTION_DEF);
+    createEReference(providerStmntEClass, PROVIDER_STMNT__PROVISION_DEFS);
 
     filterDefEClass = createEClass(FILTER_DEF);
     createEReference(filterDefEClass, FILTER_DEF__PARAMS);
@@ -1517,19 +1547,20 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     createEReference(elementsContribExpEClass, ELEMENTS_CONTRIB_EXP__EXPRESSION);
 
     scopeDefEClass = createEClass(SCOPE_DEF);
-    createEReference(scopeDefEClass, SCOPE_DEF__SELECTION_DEF);
     createEAttribute(scopeDefEClass, SCOPE_DEF__SAME_SCOPE);
     createEAttribute(scopeDefEClass, SCOPE_DEF__EMPTY_SCOPE);
     createEAttribute(scopeDefEClass, SCOPE_DEF__ALSO_EXPORTS);
-    createEReference(scopeDefEClass, SCOPE_DEF__PROVISION_DEFS);
 
     provisionDefEClass = createEClass(PROVISION_DEF);
     createEReference(provisionDefEClass, PROVISION_DEF__TARGETS_DEF);
     createEReference(provisionDefEClass, PROVISION_DEF__CONTRIBUTION);
     createEReference(provisionDefEClass, PROVISION_DEF__OCCLUDING_DEFS);
 
-    targetsDefEClass = createEClass(TARGETS_DEF);
-    createEReference(targetsDefEClass, TARGETS_DEF__TARGET_CLASSES);
+    classRefEClass = createEClass(CLASS_REF);
+    createEReference(classRefEClass, CLASS_REF__CLASS_NAME);
+
+    multipleClassRefEClass = createEClass(MULTIPLE_CLASS_REF);
+    createEReference(multipleClassRefEClass, MULTIPLE_CLASS_REF__CLASS_NAMES);
 
     occludingDefEClass = createEClass(OCCLUDING_DEF);
     createEReference(occludingDefEClass, OCCLUDING_DEF__CONTRIBUTION);
@@ -1540,8 +1571,6 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     selectionDefEClass = createEClass(SELECTION_DEF);
 
     exportDefEClass = createEClass(EXPORT_DEF);
-    createEReference(exportDefEClass, EXPORT_DEF__SELECTION_DEF);
-    createEReference(exportDefEClass, EXPORT_DEF__PROVISION_DEFS);
 
     helpersSectEClass = createEClass(HELPERS_SECT);
     createEReference(helpersSectEClass, HELPERS_SECT__CLASS_HELPERS);
@@ -1607,9 +1636,8 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     modelEClass.getESuperTypes().add(theEssentialOCLCSPackage.getContextCS());
     propertyMapEClass.getESuperTypes().add(this.getClassMapStmnt());
     disambiguationDefEClass.getESuperTypes().add(this.getClassDisambiguationStmnt());
-    namedElementDefEClass.getESuperTypes().add(this.getClassNameResolutionStmnt());
-    scopeDefEClass.getESuperTypes().add(this.getClassNameResolutionStmnt());
-    exportDefEClass.getESuperTypes().add(this.getClassNameResolutionStmnt());
+    scopeDefEClass.getESuperTypes().add(this.getProviderStmnt());
+    exportDefEClass.getESuperTypes().add(this.getProviderStmnt());
     traceExpCSEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
     lookupExpCSEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
     selectionAllEClass.getESuperTypes().add(this.getSelectionDef());
@@ -1660,40 +1688,44 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     initEReference(getDisambiguationDef_Exp(), theEssentialOCLCSPackage.getExpCS(), null, "exp", null, 0, 1, DisambiguationDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nameResolutionSectEClass, NameResolutionSect.class, "NameResolutionSect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNameResolutionSect_NamedElement(), this.getDefaultNamedElementDef(), null, "namedElement", null, 0, 1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNameResolutionSect_NameReferencer(), this.getDefaultNameReferencerDef(), null, "nameReferencer", null, 0, 1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNameResolutionSect_NameQualifier(), this.getNameQualifierDef(), null, "nameQualifier", null, 0, 1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNameResolutionSect_NameResolutions(), this.getClassNameResolution(), null, "nameResolutions", null, 0, -1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameResolutionSect_TargetsDef(), this.getTargets(), null, "targetsDef", null, 0, 1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameResolutionSect_InputsDef(), this.getInputs(), null, "inputsDef", null, 0, 1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameResolutionSect_ProvidersDef(), this.getProviders(), null, "providersDef", null, 0, 1, NameResolutionSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(defaultNamedElementDefEClass, DefaultNamedElementDef.class, "DefaultNamedElementDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDefaultNamedElementDef_NameElement(), theEcorePackage.getEString(), "nameElement", null, 0, 1, DefaultNamedElementDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDefaultNamedElementDef_NameProperty(), theEssentialOCLCSPackage.getNameExpCS(), null, "nameProperty", null, 0, 1, DefaultNamedElementDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(targetsEClass, Targets.class, "Targets", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTargets_Targets(), this.getTarget(), null, "targets", null, 0, -1, Targets.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(defaultNameReferencerDefEClass, DefaultNameReferencerDef.class, "DefaultNameReferencerDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDefaultNameReferencerDef_NameReferencer(), theEcorePackage.getEString(), "nameReferencer", null, 0, 1, DefaultNameReferencerDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDefaultNameReferencerDef_NameProperty(), theEssentialOCLCSPackage.getNameExpCS(), null, "nameProperty", null, 0, 1, DefaultNameReferencerDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(targetEClass, Target.class, "Target", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTarget_ClassRef(), this.getClassRef(), null, "classRef", null, 0, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTarget_PropRef(), theBaseCSPackage.getPathNameCS(), null, "propRef", null, 0, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTarget_Filter(), this.getFilterDef(), null, "filter", null, 0, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTarget_Qualifications(), this.getQualificationDef(), null, "qualifications", null, 0, -1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(nameQualifierDefEClass, NameQualifierDef.class, "NameQualifierDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNameQualifierDef_NameQualifier(), theEcorePackage.getEString(), "nameQualifier", null, 0, 1, NameQualifierDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNameQualifierDef_SegmentsProp(), theEssentialOCLCSPackage.getNameExpCS(), null, "segmentsProp", null, 0, 1, NameQualifierDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(inputsEClass, Inputs.class, "Inputs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInputs_Inputs(), this.getInput(), null, "inputs", null, 0, -1, Inputs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(classNameResolutionEClass, ClassNameResolution.class, "ClassNameResolution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getClassNameResolution_Class(), theBaseCSPackage.getPathNameCS(), null, "class", null, 0, 1, ClassNameResolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClassNameResolution_Statements(), this.getClassNameResolutionStmnt(), null, "statements", null, 0, -1, ClassNameResolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInput_Qualifier(), theEcorePackage.getEBoolean(), "qualifier", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInput_ClassRef(), this.getClassRef(), null, "classRef", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInput_PropRef(), theBaseCSPackage.getPathNameCS(), null, "propRef", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(classNameResolutionStmntEClass, ClassNameResolutionStmnt.class, "ClassNameResolutionStmnt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(providersEClass, Providers.class, "Providers", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProviders_Providers(), this.getProvider(), null, "providers", null, 0, -1, Providers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(namedElementDefEClass, NamedElementDef.class, "NamedElementDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNamedElementDef_NamePoperty(), theEssentialOCLCSPackage.getNameExpCS(), null, "namePoperty", null, 0, 1, NamedElementDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNamedElementDef_Filter(), this.getFilterDef(), null, "filter", null, 0, 1, NamedElementDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNamedElementDef_Qualifications(), this.getQualificationDef(), null, "qualifications", null, 0, -1, NamedElementDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(providerEClass, Provider.class, "Provider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProvider_ClassRef(), theBaseCSPackage.getPathNameCS(), null, "classRef", null, 0, 1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProvider_Statements(), this.getProviderStmnt(), null, "statements", null, 0, -1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(providerStmntEClass, ProviderStmnt.class, "ProviderStmnt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProviderStmnt_SelectionDef(), this.getSelectionDef(), null, "selectionDef", null, 0, 1, ProviderStmnt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProviderStmnt_ProvisionDefs(), this.getProvisionDef(), null, "provisionDefs", null, 0, -1, ProviderStmnt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(filterDefEClass, FilterDef.class, "FilterDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFilterDef_Params(), theBaseCSPackage.getParameterCS(), null, "params", null, 0, -1, FilterDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFilterDef_Expression(), theEssentialOCLCSPackage.getExpCS(), null, "expression", null, 0, 1, FilterDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(qualificationDefEClass, QualificationDef.class, "QualificationDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getQualificationDef_TargetsDef(), this.getTargetsDef(), null, "targetsDef", null, 0, 1, QualificationDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQualificationDef_TargetsDef(), this.getMultipleClassRef(), null, "targetsDef", null, 0, 1, QualificationDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getQualificationDef_Contribution(), this.getElementsContribExp(), null, "contribution", null, 0, -1, QualificationDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementsContribExpEClass, ElementsContribExp.class, "ElementsContribExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1702,19 +1734,20 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     initEReference(getElementsContribExp_Expression(), theEssentialOCLCSPackage.getExpCS(), null, "expression", null, 0, 1, ElementsContribExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scopeDefEClass, ScopeDef.class, "ScopeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getScopeDef_SelectionDef(), this.getSelectionDef(), null, "selectionDef", null, 0, 1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScopeDef_SameScope(), theEcorePackage.getEBoolean(), "sameScope", null, 0, 1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScopeDef_EmptyScope(), theEcorePackage.getEBoolean(), "emptyScope", null, 0, 1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScopeDef_AlsoExports(), theEcorePackage.getEBoolean(), "alsoExports", null, 0, 1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScopeDef_ProvisionDefs(), this.getProvisionDef(), null, "provisionDefs", null, 0, -1, ScopeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(provisionDefEClass, ProvisionDef.class, "ProvisionDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getProvisionDef_TargetsDef(), this.getTargetsDef(), null, "targetsDef", null, 0, 1, ProvisionDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProvisionDef_TargetsDef(), this.getMultipleClassRef(), null, "targetsDef", null, 0, 1, ProvisionDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProvisionDef_Contribution(), this.getContributionDef(), null, "contribution", null, 0, 1, ProvisionDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProvisionDef_OccludingDefs(), this.getOccludingDef(), null, "occludingDefs", null, 0, -1, ProvisionDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(targetsDefEClass, TargetsDef.class, "TargetsDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTargetsDef_TargetClasses(), theBaseCSPackage.getTypedRefCS(), null, "targetClasses", null, 0, -1, TargetsDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(classRefEClass, ClassRef.class, "ClassRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getClassRef_ClassName(), theBaseCSPackage.getPathNameCS(), null, "className", null, 0, 1, ClassRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multipleClassRefEClass, MultipleClassRef.class, "MultipleClassRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMultipleClassRef_ClassNames(), theBaseCSPackage.getPathNameCS(), null, "classNames", null, 0, -1, MultipleClassRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(occludingDefEClass, OccludingDef.class, "OccludingDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOccludingDef_Contribution(), this.getContributionDef(), null, "contribution", null, 0, 1, OccludingDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1725,8 +1758,6 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
     initEClass(selectionDefEClass, SelectionDef.class, "SelectionDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(exportDefEClass, ExportDef.class, "ExportDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExportDef_SelectionDef(), this.getSelectionDef(), null, "selectionDef", null, 0, 1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExportDef_ProvisionDefs(), this.getProvisionDef(), null, "provisionDefs", null, 0, -1, ExportDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(helpersSectEClass, HelpersSect.class, "HelpersSect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getHelpersSect_ClassHelpers(), this.getClassHelper(), null, "classHelpers", null, 0, -1, HelpersSect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

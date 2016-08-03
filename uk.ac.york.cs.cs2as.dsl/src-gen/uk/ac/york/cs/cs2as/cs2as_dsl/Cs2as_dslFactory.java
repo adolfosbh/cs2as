@@ -131,58 +131,67 @@ public interface Cs2as_dslFactory extends EFactory
   NameResolutionSect createNameResolutionSect();
 
   /**
-   * Returns a new object of class '<em>Default Named Element Def</em>'.
+   * Returns a new object of class '<em>Targets</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Default Named Element Def</em>'.
+   * @return a new object of class '<em>Targets</em>'.
    * @generated
    */
-  DefaultNamedElementDef createDefaultNamedElementDef();
+  Targets createTargets();
 
   /**
-   * Returns a new object of class '<em>Default Name Referencer Def</em>'.
+   * Returns a new object of class '<em>Target</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Default Name Referencer Def</em>'.
+   * @return a new object of class '<em>Target</em>'.
    * @generated
    */
-  DefaultNameReferencerDef createDefaultNameReferencerDef();
+  Target createTarget();
 
   /**
-   * Returns a new object of class '<em>Name Qualifier Def</em>'.
+   * Returns a new object of class '<em>Inputs</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Name Qualifier Def</em>'.
+   * @return a new object of class '<em>Inputs</em>'.
    * @generated
    */
-  NameQualifierDef createNameQualifierDef();
+  Inputs createInputs();
 
   /**
-   * Returns a new object of class '<em>Class Name Resolution</em>'.
+   * Returns a new object of class '<em>Input</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Name Resolution</em>'.
+   * @return a new object of class '<em>Input</em>'.
    * @generated
    */
-  ClassNameResolution createClassNameResolution();
+  Input createInput();
 
   /**
-   * Returns a new object of class '<em>Class Name Resolution Stmnt</em>'.
+   * Returns a new object of class '<em>Providers</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Name Resolution Stmnt</em>'.
+   * @return a new object of class '<em>Providers</em>'.
    * @generated
    */
-  ClassNameResolutionStmnt createClassNameResolutionStmnt();
+  Providers createProviders();
 
   /**
-   * Returns a new object of class '<em>Named Element Def</em>'.
+   * Returns a new object of class '<em>Provider</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Named Element Def</em>'.
+   * @return a new object of class '<em>Provider</em>'.
    * @generated
    */
-  NamedElementDef createNamedElementDef();
+  Provider createProvider();
+
+  /**
+   * Returns a new object of class '<em>Provider Stmnt</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Provider Stmnt</em>'.
+   * @generated
+   */
+  ProviderStmnt createProviderStmnt();
 
   /**
    * Returns a new object of class '<em>Filter Def</em>'.
@@ -230,13 +239,22 @@ public interface Cs2as_dslFactory extends EFactory
   ProvisionDef createProvisionDef();
 
   /**
-   * Returns a new object of class '<em>Targets Def</em>'.
+   * Returns a new object of class '<em>Class Ref</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Targets Def</em>'.
+   * @return a new object of class '<em>Class Ref</em>'.
    * @generated
    */
-  TargetsDef createTargetsDef();
+  ClassRef createClassRef();
+
+  /**
+   * Returns a new object of class '<em>Multiple Class Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiple Class Ref</em>'.
+   * @generated
+   */
+  MultipleClassRef createMultipleClassRef();
 
   /**
    * Returns a new object of class '<em>Occluding Def</em>'.

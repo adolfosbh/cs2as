@@ -16,42 +16,41 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.basecs.TypedRefCS;
-
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.TargetsDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Target;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Targets;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Targets Def</b></em>'.
+ * An implementation of the model object '<em><b>Targets</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetsDefImpl#getTargetClasses <em>Target Classes</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetsImpl#getTargets <em>Targets</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TargetsDefImpl extends MinimalEObjectImpl.Container implements TargetsDef
+public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
 {
   /**
-   * The cached value of the '{@link #getTargetClasses() <em>Target Classes</em>}' containment reference list.
+   * The cached value of the '{@link #getTargets() <em>Targets</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTargetClasses()
+   * @see #getTargets()
    * @generated
    * @ordered
    */
-  protected EList<TypedRefCS> targetClasses;
+  protected EList<Target> targets;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TargetsDefImpl()
+  protected TargetsImpl()
   {
     super();
   }
@@ -64,7 +63,7 @@ public class TargetsDefImpl extends MinimalEObjectImpl.Container implements Targ
   @Override
   protected EClass eStaticClass()
   {
-    return Cs2as_dslPackage.Literals.TARGETS_DEF;
+    return Cs2as_dslPackage.Literals.TARGETS;
   }
 
   /**
@@ -72,13 +71,13 @@ public class TargetsDefImpl extends MinimalEObjectImpl.Container implements Targ
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TypedRefCS> getTargetClasses()
+  public EList<Target> getTargets()
   {
-    if (targetClasses == null)
+    if (targets == null)
     {
-      targetClasses = new EObjectContainmentEList<TypedRefCS>(TypedRefCS.class, this, Cs2as_dslPackage.TARGETS_DEF__TARGET_CLASSES);
+      targets = new EObjectContainmentEList<Target>(Target.class, this, Cs2as_dslPackage.TARGETS__TARGETS);
     }
-    return targetClasses;
+    return targets;
   }
 
   /**
@@ -91,8 +90,8 @@ public class TargetsDefImpl extends MinimalEObjectImpl.Container implements Targ
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.TARGETS_DEF__TARGET_CLASSES:
-        return ((InternalEList<?>)getTargetClasses()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.TARGETS__TARGETS:
+        return ((InternalEList<?>)getTargets()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +106,8 @@ public class TargetsDefImpl extends MinimalEObjectImpl.Container implements Targ
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.TARGETS_DEF__TARGET_CLASSES:
-        return getTargetClasses();
+      case Cs2as_dslPackage.TARGETS__TARGETS:
+        return getTargets();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +123,9 @@ public class TargetsDefImpl extends MinimalEObjectImpl.Container implements Targ
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.TARGETS_DEF__TARGET_CLASSES:
-        getTargetClasses().clear();
-        getTargetClasses().addAll((Collection<? extends TypedRefCS>)newValue);
+      case Cs2as_dslPackage.TARGETS__TARGETS:
+        getTargets().clear();
+        getTargets().addAll((Collection<? extends Target>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +141,8 @@ public class TargetsDefImpl extends MinimalEObjectImpl.Container implements Targ
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.TARGETS_DEF__TARGET_CLASSES:
-        getTargetClasses().clear();
+      case Cs2as_dslPackage.TARGETS__TARGETS:
+        getTargets().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +158,10 @@ public class TargetsDefImpl extends MinimalEObjectImpl.Container implements Targ
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.TARGETS_DEF__TARGET_CLASSES:
-        return targetClasses != null && !targetClasses.isEmpty();
+      case Cs2as_dslPackage.TARGETS__TARGETS:
+        return targets != null && !targets.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //TargetsDefImpl
+} //TargetsImpl

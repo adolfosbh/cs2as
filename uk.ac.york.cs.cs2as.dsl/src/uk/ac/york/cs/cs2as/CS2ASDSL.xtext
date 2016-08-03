@@ -77,42 +77,55 @@ DisambiguationDef:
 
 NameResolutionSect:
 	{NameResolutionSect}
-	'nameresolution' '{'
-		namedElement=DefaultNamedElementDef?
-		nameReferencer=DefaultNameReferencerDef?
-		nameQualifier=NameQualifierDef?
-		nameResolutions+=ClassNameResolution*
+	'name-resolution' '{'
+		targetsDef=Targets
+		inputsDef=Inputs
+		providersDef=Providers
 	'}'
 ;
 
-DefaultNamedElementDef:
-	'named-element' nameElement=SIMPLE_ID 'name-property' nameProperty=NameExpCS ';'
-;
-
-DefaultNameReferencerDef:
-	'name-referencer' nameReferencer=SIMPLE_ID 'name-property' nameProperty=NameExpCS ';'
-;
-
-NameQualifierDef:
-	'name-qualifier' nameQualifier=SIMPLE_ID 'name-segments-property' segmentsProp=NameExpCS ';'	
-;
-
-ClassNameResolution:
-	class=PathNameCS '{'
-		statements+=ClassNameResolutionStmnt*
+Targets:
+	{Targets}
+	'targets' '{'
+		targets+=Target*
 	'}'
+	
 ;
 
-ClassNameResolutionStmnt:
-	(NamedElementDef | ScopeDef | ExportDef)
+Target:
+	classRef=ClassRef  ('using' propRef=PathNameCS)?
+	filter=FilterDef?
+	('qualifies' qualifications+=QualificationDef (',' qualifications+=QualificationDef)*)?
 	';'
 ;
 
-NamedElementDef:
-	{NamedElementDef}
-	'named-element' ('name-property' namePoperty=NameExpCS)? 
-	filter=FilterDef?
-	('qualifies' qualifications+=QualificationDef (',' qualifications+=QualificationDef)*)?
+Inputs:
+	{Inputs}
+	'inputs' '{'
+		inputs+=Input*
+	'}'
+;
+
+Input:
+	(qualifier?='qualifier')?
+	classRef=ClassRef 'using' propRef=PathNameCS ';'
+;
+
+Providers:
+	{Providers}
+	'providers' '{'
+		providers+=Provider*
+	'}'
+;
+Provider:
+	classRef=PathNameCS '{'
+		statements+=ProviderStmnt*
+	'}'
+;
+
+ProviderStmnt:
+	(ScopeDef | ExportDef)
+	';'
 ;
 
 FilterDef:
@@ -120,7 +133,7 @@ FilterDef:
 ;
 
 QualificationDef:
-	targetsDef=TargetsDef
+	targetsDef=MultipleClassRef
 	'using' contribution+=ElementsContribExp
 ;
 	
@@ -136,13 +149,17 @@ ScopeDef:
 ;
 
 ProvisionDef:
-	targetsDef=TargetsDef 
+	targetsDef=MultipleClassRef 
 	'using' contribution=ContributionDef
 	occludingDefs+=OccludingDef*
 ;
 
-TargetsDef:
-	targetClasses+=TypeExpCS (',' targetClasses+=TypeExpCS)*	
+ClassRef:
+	className=PathNameCS
+;
+
+MultipleClassRef:
+	classNames+=PathNameCS (',' classNames+=PathNameCS)*	
 ;
 
 OccludingDef:

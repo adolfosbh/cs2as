@@ -76,18 +76,20 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.CLASS_DISAMBIGUATION_STMNT: return createClassDisambiguationStmnt();
       case Cs2as_dslPackage.DISAMBIGUATION_DEF: return createDisambiguationDef();
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT: return createNameResolutionSect();
-      case Cs2as_dslPackage.DEFAULT_NAMED_ELEMENT_DEF: return createDefaultNamedElementDef();
-      case Cs2as_dslPackage.DEFAULT_NAME_REFERENCER_DEF: return createDefaultNameReferencerDef();
-      case Cs2as_dslPackage.NAME_QUALIFIER_DEF: return createNameQualifierDef();
-      case Cs2as_dslPackage.CLASS_NAME_RESOLUTION: return createClassNameResolution();
-      case Cs2as_dslPackage.CLASS_NAME_RESOLUTION_STMNT: return createClassNameResolutionStmnt();
-      case Cs2as_dslPackage.NAMED_ELEMENT_DEF: return createNamedElementDef();
+      case Cs2as_dslPackage.TARGETS: return createTargets();
+      case Cs2as_dslPackage.TARGET: return createTarget();
+      case Cs2as_dslPackage.INPUTS: return createInputs();
+      case Cs2as_dslPackage.INPUT: return createInput();
+      case Cs2as_dslPackage.PROVIDERS: return createProviders();
+      case Cs2as_dslPackage.PROVIDER: return createProvider();
+      case Cs2as_dslPackage.PROVIDER_STMNT: return createProviderStmnt();
       case Cs2as_dslPackage.FILTER_DEF: return createFilterDef();
       case Cs2as_dslPackage.QUALIFICATION_DEF: return createQualificationDef();
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP: return createElementsContribExp();
       case Cs2as_dslPackage.SCOPE_DEF: return createScopeDef();
       case Cs2as_dslPackage.PROVISION_DEF: return createProvisionDef();
-      case Cs2as_dslPackage.TARGETS_DEF: return createTargetsDef();
+      case Cs2as_dslPackage.CLASS_REF: return createClassRef();
+      case Cs2as_dslPackage.MULTIPLE_CLASS_REF: return createMultipleClassRef();
       case Cs2as_dslPackage.OCCLUDING_DEF: return createOccludingDef();
       case Cs2as_dslPackage.CONTRIBUTION_DEF: return createContributionDef();
       case Cs2as_dslPackage.SELECTION_DEF: return createSelectionDef();
@@ -241,10 +243,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public DefaultNamedElementDef createDefaultNamedElementDef()
+  public Targets createTargets()
   {
-    DefaultNamedElementDefImpl defaultNamedElementDef = new DefaultNamedElementDefImpl();
-    return defaultNamedElementDef;
+    TargetsImpl targets = new TargetsImpl();
+    return targets;
   }
 
   /**
@@ -252,10 +254,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public DefaultNameReferencerDef createDefaultNameReferencerDef()
+  public Target createTarget()
   {
-    DefaultNameReferencerDefImpl defaultNameReferencerDef = new DefaultNameReferencerDefImpl();
-    return defaultNameReferencerDef;
+    TargetImpl target = new TargetImpl();
+    return target;
   }
 
   /**
@@ -263,10 +265,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public NameQualifierDef createNameQualifierDef()
+  public Inputs createInputs()
   {
-    NameQualifierDefImpl nameQualifierDef = new NameQualifierDefImpl();
-    return nameQualifierDef;
+    InputsImpl inputs = new InputsImpl();
+    return inputs;
   }
 
   /**
@@ -274,10 +276,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassNameResolution createClassNameResolution()
+  public Input createInput()
   {
-    ClassNameResolutionImpl classNameResolution = new ClassNameResolutionImpl();
-    return classNameResolution;
+    InputImpl input = new InputImpl();
+    return input;
   }
 
   /**
@@ -285,10 +287,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassNameResolutionStmnt createClassNameResolutionStmnt()
+  public Providers createProviders()
   {
-    ClassNameResolutionStmntImpl classNameResolutionStmnt = new ClassNameResolutionStmntImpl();
-    return classNameResolutionStmnt;
+    ProvidersImpl providers = new ProvidersImpl();
+    return providers;
   }
 
   /**
@@ -296,10 +298,21 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedElementDef createNamedElementDef()
+  public Provider createProvider()
   {
-    NamedElementDefImpl namedElementDef = new NamedElementDefImpl();
-    return namedElementDef;
+    ProviderImpl provider = new ProviderImpl();
+    return provider;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ProviderStmnt createProviderStmnt()
+  {
+    ProviderStmntImpl providerStmnt = new ProviderStmntImpl();
+    return providerStmnt;
   }
 
   /**
@@ -362,10 +375,21 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public TargetsDef createTargetsDef()
+  public ClassRef createClassRef()
   {
-    TargetsDefImpl targetsDef = new TargetsDefImpl();
-    return targetsDef;
+    ClassRefImpl classRef = new ClassRefImpl();
+    return classRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultipleClassRef createMultipleClassRef()
+  {
+    MultipleClassRefImpl multipleClassRef = new MultipleClassRefImpl();
+    return multipleClassRef;
   }
 
   /**

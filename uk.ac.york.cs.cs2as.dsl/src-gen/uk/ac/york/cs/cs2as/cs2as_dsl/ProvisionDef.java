@@ -35,12 +35,12 @@ public interface ProvisionDef extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Targets Def</em>' containment reference.
-   * @see #setTargetsDef(TargetsDef)
+   * @see #setTargetsDef(MultipleClassRef)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getProvisionDef_TargetsDef()
    * @model containment="true"
    * @generated
    */
-  TargetsDef getTargetsDef();
+  MultipleClassRef getTargetsDef();
 
   /**
    * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef#getTargetsDef <em>Targets Def</em>}' containment reference.
@@ -50,7 +50,7 @@ public interface ProvisionDef extends EObject
    * @see #getTargetsDef()
    * @generated
    */
-  void setTargetsDef(TargetsDef value);
+  void setTargetsDef(MultipleClassRef value);
 
   /**
    * Returns the value of the '<em><b>Contribution</b></em>' containment reference.

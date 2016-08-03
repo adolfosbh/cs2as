@@ -2,25 +2,14 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,27 +19,15 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getSelectionDef <em>Selection Def</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isSameScope <em>Same Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isEmptyScope <em>Empty Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isAlsoExports <em>Also Exports</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#getProvisionDefs <em>Provision Defs</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeDef
+public class ScopeDefImpl extends ProviderStmntImpl implements ScopeDef
 {
-  /**
-   * The cached value of the '{@link #getSelectionDef() <em>Selection Def</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSelectionDef()
-   * @generated
-   * @ordered
-   */
-  protected SelectionDef selectionDef;
-
   /**
    * The default value of the '{@link #isSameScope() <em>Same Scope</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -112,16 +89,6 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
   protected boolean alsoExports = ALSO_EXPORTS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getProvisionDefs() <em>Provision Defs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProvisionDefs()
-   * @generated
-   * @ordered
-   */
-  protected EList<ProvisionDef> provisionDefs;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -140,54 +107,6 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
   protected EClass eStaticClass()
   {
     return Cs2as_dslPackage.Literals.SCOPE_DEF;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SelectionDef getSelectionDef()
-  {
-    return selectionDef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetSelectionDef(SelectionDef newSelectionDef, NotificationChain msgs)
-  {
-    SelectionDef oldSelectionDef = selectionDef;
-    selectionDef = newSelectionDef;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF, oldSelectionDef, newSelectionDef);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSelectionDef(SelectionDef newSelectionDef)
-  {
-    if (newSelectionDef != selectionDef)
-    {
-      NotificationChain msgs = null;
-      if (selectionDef != null)
-        msgs = ((InternalEObject)selectionDef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF, null, msgs);
-      if (newSelectionDef != null)
-        msgs = ((InternalEObject)newSelectionDef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF, null, msgs);
-      msgs = basicSetSelectionDef(newSelectionDef, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF, newSelectionDef, newSelectionDef));
   }
 
   /**
@@ -264,53 +183,17 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ProvisionDef> getProvisionDefs()
-  {
-    if (provisionDefs == null)
-    {
-      provisionDefs = new EObjectContainmentEList<ProvisionDef>(ProvisionDef.class, this, Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS);
-    }
-    return provisionDefs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF:
-        return basicSetSelectionDef(null, msgs);
-      case Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS:
-        return ((InternalEList<?>)getProvisionDefs()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF:
-        return getSelectionDef();
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         return isSameScope();
       case Cs2as_dslPackage.SCOPE_DEF__EMPTY_SCOPE:
         return isEmptyScope();
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         return isAlsoExports();
-      case Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS:
-        return getProvisionDefs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -320,15 +203,11 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF:
-        setSelectionDef((SelectionDef)newValue);
-        return;
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         setSameScope((Boolean)newValue);
         return;
@@ -337,10 +216,6 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
         return;
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         setAlsoExports((Boolean)newValue);
-        return;
-      case Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS:
-        getProvisionDefs().clear();
-        getProvisionDefs().addAll((Collection<? extends ProvisionDef>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -356,9 +231,6 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF:
-        setSelectionDef((SelectionDef)null);
-        return;
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         setSameScope(SAME_SCOPE_EDEFAULT);
         return;
@@ -367,9 +239,6 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
         return;
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         setAlsoExports(ALSO_EXPORTS_EDEFAULT);
-        return;
-      case Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS:
-        getProvisionDefs().clear();
         return;
     }
     super.eUnset(featureID);
@@ -385,16 +254,12 @@ public class ScopeDefImpl extends ClassNameResolutionStmntImpl implements ScopeD
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SCOPE_DEF__SELECTION_DEF:
-        return selectionDef != null;
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         return sameScope != SAME_SCOPE_EDEFAULT;
       case Cs2as_dslPackage.SCOPE_DEF__EMPTY_SCOPE:
         return emptyScope != EMPTY_SCOPE_EDEFAULT;
       case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
         return alsoExports != ALSO_EXPORTS_EDEFAULT;
-      case Cs2as_dslPackage.SCOPE_DEF__PROVISION_DEFS:
-        return provisionDefs != null && !provisionDefs.isEmpty();
     }
     return super.eIsSet(featureID);
   }
