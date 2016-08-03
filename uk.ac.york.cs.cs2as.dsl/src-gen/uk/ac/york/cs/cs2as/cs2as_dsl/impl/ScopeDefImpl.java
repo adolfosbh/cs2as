@@ -19,15 +19,35 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isAlsoExports <em>Also Exports</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isSameScope <em>Same Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isEmptyScope <em>Empty Scope</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl#isAlsoExports <em>Also Exports</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ScopeDefImpl extends ProviderStmntImpl implements ScopeDef
 {
+  /**
+   * The default value of the '{@link #isAlsoExports() <em>Also Exports</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAlsoExports()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ALSO_EXPORTS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isAlsoExports() <em>Also Exports</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAlsoExports()
+   * @generated
+   * @ordered
+   */
+  protected boolean alsoExports = ALSO_EXPORTS_EDEFAULT;
+
   /**
    * The default value of the '{@link #isSameScope() <em>Same Scope</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -69,26 +89,6 @@ public class ScopeDefImpl extends ProviderStmntImpl implements ScopeDef
   protected boolean emptyScope = EMPTY_SCOPE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isAlsoExports() <em>Also Exports</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isAlsoExports()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean ALSO_EXPORTS_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isAlsoExports() <em>Also Exports</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isAlsoExports()
-   * @generated
-   * @ordered
-   */
-  protected boolean alsoExports = ALSO_EXPORTS_EDEFAULT;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -107,6 +107,29 @@ public class ScopeDefImpl extends ProviderStmntImpl implements ScopeDef
   protected EClass eStaticClass()
   {
     return Cs2as_dslPackage.Literals.SCOPE_DEF;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isAlsoExports()
+  {
+    return alsoExports;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAlsoExports(boolean newAlsoExports)
+  {
+    boolean oldAlsoExports = alsoExports;
+    alsoExports = newAlsoExports;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS, oldAlsoExports, alsoExports));
   }
 
   /**
@@ -160,40 +183,17 @@ public class ScopeDefImpl extends ProviderStmntImpl implements ScopeDef
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isAlsoExports()
-  {
-    return alsoExports;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAlsoExports(boolean newAlsoExports)
-  {
-    boolean oldAlsoExports = alsoExports;
-    alsoExports = newAlsoExports;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS, oldAlsoExports, alsoExports));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
+        return isAlsoExports();
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         return isSameScope();
       case Cs2as_dslPackage.SCOPE_DEF__EMPTY_SCOPE:
         return isEmptyScope();
-      case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
-        return isAlsoExports();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -208,14 +208,14 @@ public class ScopeDefImpl extends ProviderStmntImpl implements ScopeDef
   {
     switch (featureID)
     {
+      case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
+        setAlsoExports((Boolean)newValue);
+        return;
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         setSameScope((Boolean)newValue);
         return;
       case Cs2as_dslPackage.SCOPE_DEF__EMPTY_SCOPE:
         setEmptyScope((Boolean)newValue);
-        return;
-      case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
-        setAlsoExports((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -231,14 +231,14 @@ public class ScopeDefImpl extends ProviderStmntImpl implements ScopeDef
   {
     switch (featureID)
     {
+      case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
+        setAlsoExports(ALSO_EXPORTS_EDEFAULT);
+        return;
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         setSameScope(SAME_SCOPE_EDEFAULT);
         return;
       case Cs2as_dslPackage.SCOPE_DEF__EMPTY_SCOPE:
         setEmptyScope(EMPTY_SCOPE_EDEFAULT);
-        return;
-      case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
-        setAlsoExports(ALSO_EXPORTS_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -254,12 +254,12 @@ public class ScopeDefImpl extends ProviderStmntImpl implements ScopeDef
   {
     switch (featureID)
     {
+      case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
+        return alsoExports != ALSO_EXPORTS_EDEFAULT;
       case Cs2as_dslPackage.SCOPE_DEF__SAME_SCOPE:
         return sameScope != SAME_SCOPE_EDEFAULT;
       case Cs2as_dslPackage.SCOPE_DEF__EMPTY_SCOPE:
         return emptyScope != EMPTY_SCOPE_EDEFAULT;
-      case Cs2as_dslPackage.SCOPE_DEF__ALSO_EXPORTS:
-        return alsoExports != ALSO_EXPORTS_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -275,12 +275,12 @@ public class ScopeDefImpl extends ProviderStmntImpl implements ScopeDef
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (sameScope: ");
+    result.append(" (alsoExports: ");
+    result.append(alsoExports);
+    result.append(", sameScope: ");
     result.append(sameScope);
     result.append(", emptyScope: ");
     result.append(emptyScope);
-    result.append(", alsoExports: ");
-    result.append(alsoExports);
     result.append(')');
     return result.toString();
   }

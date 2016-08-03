@@ -82,17 +82,18 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
       case Cs2as_dslPackage.INPUT: return createInput();
       case Cs2as_dslPackage.PROVIDERS: return createProviders();
       case Cs2as_dslPackage.PROVIDER: return createProvider();
+      case Cs2as_dslPackage.PROVIDER_VARS: return createProviderVars();
       case Cs2as_dslPackage.PROVIDER_STMNT: return createProviderStmnt();
       case Cs2as_dslPackage.FILTER_DEF: return createFilterDef();
       case Cs2as_dslPackage.QUALIFICATION_DEF: return createQualificationDef();
       case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP: return createElementsContribExp();
       case Cs2as_dslPackage.SCOPE_DEF: return createScopeDef();
+      case Cs2as_dslPackage.SELECTION_DEF: return createSelectionDef();
       case Cs2as_dslPackage.PROVISION_DEF: return createProvisionDef();
       case Cs2as_dslPackage.CLASS_REF: return createClassRef();
       case Cs2as_dslPackage.MULTIPLE_CLASS_REF: return createMultipleClassRef();
       case Cs2as_dslPackage.OCCLUDING_DEF: return createOccludingDef();
       case Cs2as_dslPackage.CONTRIBUTION_DEF: return createContributionDef();
-      case Cs2as_dslPackage.SELECTION_DEF: return createSelectionDef();
       case Cs2as_dslPackage.EXPORT_DEF: return createExportDef();
       case Cs2as_dslPackage.HELPERS_SECT: return createHelpersSect();
       case Cs2as_dslPackage.CLASS_HELPER: return createClassHelper();
@@ -309,6 +310,17 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
+  public ProviderVars createProviderVars()
+  {
+    ProviderVarsImpl providerVars = new ProviderVarsImpl();
+    return providerVars;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ProviderStmnt createProviderStmnt()
   {
     ProviderStmntImpl providerStmnt = new ProviderStmntImpl();
@@ -364,6 +376,17 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
+  public SelectionDef createSelectionDef()
+  {
+    SelectionDefImpl selectionDef = new SelectionDefImpl();
+    return selectionDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ProvisionDef createProvisionDef()
   {
     ProvisionDefImpl provisionDef = new ProvisionDefImpl();
@@ -412,17 +435,6 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
   {
     ContributionDefImpl contributionDef = new ContributionDefImpl();
     return contributionDef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SelectionDef createSelectionDef()
-  {
-    SelectionDefImpl selectionDef = new SelectionDefImpl();
-    return selectionDef;
   }
 
   /**

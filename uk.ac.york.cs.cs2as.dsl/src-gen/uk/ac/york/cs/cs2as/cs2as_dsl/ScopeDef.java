@@ -12,9 +12,9 @@ package uk.ac.york.cs.cs2as.cs2as_dsl;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isAlsoExports <em>Also Exports</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isSameScope <em>Same Scope</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isEmptyScope <em>Empty Scope</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isAlsoExports <em>Also Exports</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef()
@@ -23,6 +23,32 @@ package uk.ac.york.cs.cs2as.cs2as_dsl;
  */
 public interface ScopeDef extends ProviderStmnt
 {
+  /**
+   * Returns the value of the '<em><b>Also Exports</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Also Exports</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Also Exports</em>' attribute.
+   * @see #setAlsoExports(boolean)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_AlsoExports()
+   * @model
+   * @generated
+   */
+  boolean isAlsoExports();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isAlsoExports <em>Also Exports</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Also Exports</em>' attribute.
+   * @see #isAlsoExports()
+   * @generated
+   */
+  void setAlsoExports(boolean value);
+
   /**
    * Returns the value of the '<em><b>Same Scope</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -74,31 +100,5 @@ public interface ScopeDef extends ProviderStmnt
    * @generated
    */
   void setEmptyScope(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Also Exports</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Also Exports</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Also Exports</em>' attribute.
-   * @see #setAlsoExports(boolean)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getScopeDef_AlsoExports()
-   * @model
-   * @generated
-   */
-  boolean isAlsoExports();
-
-  /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isAlsoExports <em>Also Exports</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Also Exports</em>' attribute.
-   * @see #isAlsoExports()
-   * @generated
-   */
-  void setAlsoExports(boolean value);
 
 } // ScopeDef

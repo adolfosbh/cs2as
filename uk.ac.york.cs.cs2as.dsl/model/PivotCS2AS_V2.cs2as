@@ -1,0 +1,171 @@
+source  cs : '/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#/'
+target  as : 'Pivot.ecore#/'
+
+mappings {
+	
+}
+
+disambiguation {
+	
+}
+
+name-resolution {
+	
+	targets { -- AS elements target of name resolution
+		NamedElement using name; -- the type must be EString or another EDataType whose instance type name is java.lang.String
+		Namespace /* using name */; -- Optional since already extends a fully defined target element
+		Class /* using name */ -- Optional since already extends a fully defined target element
+			qualifies 
+				Property using ownedProperties,
+				Operation using ownedOperations;
+		DataType /* using name */; -- Optional since already extends a fully defined target element
+		Enumeration /* using name */; -- Optional since already extends a fully defined target element
+		EnumerationLiteral /* using name */; -- Optional since already extends a fully defined target element
+		Variable /* using name */; -- Optional since already extends a fully defined target element
+		Behaviour /* using name */; -- Optional since already extends a fully defined target element
+		Libary /* using name */; -- Optional since already extends a fully defined target element		
+		Model /* using name */; -- Optional since already extends a fully defined target element
+		Operation /* using name */ -- Optional since already extends a fully defined target element
+			filtered by argTypes : OrderedSet(Type) -- Additional filtering information for the lookup
+				when matchesArgs(argTypes);
+			
+		Package /* using name */ -- Optional since already extends a fully defined target element
+			qualifies /* This clause can only be used on elements that have also defined as targets */
+				Class using ownedClasses, 
+				Package using ownedPackages;
+		Precedence /* using name */; -- Optional since already extends a fully defined target element
+		Property /* using name */; -- Optional since already extends a fully defined target element
+	}
+	
+	inputs { -- CS elements used as input to perform name resolution
+		
+		--String; /*A custom EDataType whose instance type name must be java.lang.String
+		PathElementCS using name; -- the property type must be an EString or another referencer
+		PathElementExtensionCS using name ; -- Using is Optional since already extends a fully defined referencer element 
+		PathElementWithURICS using uri; -- type must be EString or another referencer
+		
+		
+		  -- Defining one or more qualifier, enables qualifies clauses by providers (see below)
+		qualifier	PathNameCS using ownedPathElements; -- the type must be a collection of EString/Another referencer
+		qualifier	PathNameExtensionCS using name ; -- Using is Optional since already extends a fully defined qualifier element 
+		
+	}
+
+	providers { -- AS elements that contribute to name resolution
+		Class {
+			--TODO vars  allSuperClasses = self->closure(superClass) /* comma separated reusable vars */
+			
+			in current-scope  /*and exported-exports keywords can be optionally used, when the same elements contributed to children scope
+			 					are exactly the same to those which are exported for elements out of the contributor scope */
+			 	provides occluding /*alternatives: adding (default), resetting, occluding */
+					Property  
+						using ownedProperties->select(not isStatic)
+						occluding allSuperClasses.ownedProperties->select(not isStatic)
+					Operation
+						using ownedOperations->select(not isStatic)
+						occluding allSuperClasses.ownedOperations->select(not isStatic)
+					Behavior
+						using ownedBehaviors
+						occluding allSuperClasses.ownedBehaviors;
+					
+			in exported-scope provides
+				Property 
+					using ownedProperties->select(not isStatic)
+					occluding allSuperClasses.ownedProperties->select(not isStatic)
+				Operation
+					using ownedOperations->select(not isStatic)
+					occluding allSuperClasses.ownedOperations->select(not isStatic);
+		}
+		
+		Enumeration {
+			in current-scope provides occluding 
+				EnumerationLiteral using ownedLiterals
+				Property using  ownedProperties->select(not isStatic)
+				Operation using  ownedOperations->select(not isStatic)
+				Behavior using ownedBehaviors;
+		}
+		
+		ExpressionInOCL {
+			in current-scope provides occluding 
+				Variable using ownedContext, 
+							ownedResult;
+		}
+		
+		IterateExp{
+			for ownedIterators
+				in current-scope provides occluding
+					Variable using ownedResult, preceding ownedIterators;
+			for all /* remaining */
+				in current-scope provides occluding 
+					Variable using ownedIterators;
+		}
+		
+		IteratorExp {
+			for ownedIterators
+				in current-scope provides occluding  
+					Variable using preceding ownedIterators;
+			for all /* remaining */
+				in current-scope provides occluding  
+					Variable using ownedIterators;
+		}
+		
+		LetExp {
+			for ownedIn
+				in current-scope provides occluding  
+					Variable using ownedVariable;
+		}
+		
+		Library {
+			in current-scope provides occluding 
+				Package using ownedPackages
+				Class using	ownedClasses
+				Precedence using ownedPrecedences;
+		}
+		
+		Model {
+			--qualifies/* This clause can only be used on elements that have also defined as targets */
+			--	Package using ownedPackages;
+
+			in current-scope provides occluding 
+				Package, Namespace using ownedPackages
+				Namespace using ownedImports.importedNamespace
+				-- NOT SUPPORTED YET Namespace using imported ownedImports.importedNamespace
+				;
+				
+			in exported-scope provides
+				Package using ownedPackages;
+		}
+		
+		Operation {
+			for all excepting ownedParameters
+				in current-scope provides occluding
+					Variable using ownedParameters;
+		}
+		
+		Package {
+			in current-scope provides occluding
+				Class, Namespace using ownedClasses
+				Package, Namespace using ownedPackages;
+				
+			in exported-scope provides
+				Class using ownedClasses;
+		}
+	}
+}
+
+helpers {
+	as::Operation {
+		matchesArgs(argTypes : OrderedSet(Type)) : Boolean :=
+			argTypes->size() = ownedParameters->size() 
+			and argTypes->forAll(x | x.conformsTo(ownedParameters->at(argTypes->indexOf(x)).type));
+	}
+	
+	as::Class {
+		conformsTo(anotherType : Class) : Boolean :=
+			_conformsTo(anotherType) or 
+			superClasses->exists(conformsTo(anotherType));
+
+		_conformsTo(anotherType : Class) : Boolean :=
+			self = anotherType;
+	}
+}

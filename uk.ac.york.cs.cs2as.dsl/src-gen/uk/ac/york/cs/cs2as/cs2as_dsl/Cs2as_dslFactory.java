@@ -185,6 +185,15 @@ public interface Cs2as_dslFactory extends EFactory
   Provider createProvider();
 
   /**
+   * Returns a new object of class '<em>Provider Vars</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Provider Vars</em>'.
+   * @generated
+   */
+  ProviderVars createProviderVars();
+
+  /**
    * Returns a new object of class '<em>Provider Stmnt</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -230,6 +239,15 @@ public interface Cs2as_dslFactory extends EFactory
   ScopeDef createScopeDef();
 
   /**
+   * Returns a new object of class '<em>Selection Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Selection Def</em>'.
+   * @generated
+   */
+  SelectionDef createSelectionDef();
+
+  /**
    * Returns a new object of class '<em>Provision Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -273,15 +291,6 @@ public interface Cs2as_dslFactory extends EFactory
    * @generated
    */
   ContributionDef createContributionDef();
-
-  /**
-   * Returns a new object of class '<em>Selection Def</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Selection Def</em>'.
-   * @generated
-   */
-  SelectionDef createSelectionDef();
 
   /**
    * Returns a new object of class '<em>Export Def</em>'.

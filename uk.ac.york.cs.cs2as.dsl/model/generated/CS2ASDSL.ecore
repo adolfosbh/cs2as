@@ -101,8 +101,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Provider">
     <eStructuralFeatures xsi:type="ecore:EReference" name="classRef" eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.ecore#//PathNameCS"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varsDecl" eType="#//ProviderVars"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//ProviderStmnt" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProviderVars">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varDecl" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.ecore#//LetVariableCS"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProviderStmnt">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectionDef" eType="#//SelectionDef"
@@ -130,10 +137,11 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScopeDef" eSuperTypes="#//ProviderStmnt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alsoExports" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sameScope" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="emptyScope" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alsoExports" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectionDef"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProvisionDef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetsDef" eType="#//MultipleClassRef"
         containment="true"/>
@@ -159,7 +167,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="contributions" upperBound="-1"
         eType="#//ElementsContribExp" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectionDef"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExportDef" eSuperTypes="#//ProviderStmnt"/>
   <eClassifiers xsi:type="ecore:EClass" name="HelpersSect">
     <eStructuralFeatures xsi:type="ecore:EReference" name="classHelpers" upperBound="-1"

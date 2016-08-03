@@ -90,6 +90,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Provider;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Providers;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
@@ -293,6 +294,9 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 				return; 
 			case Cs2as_dslPackage.PROVIDER:
 				sequence_Provider(context, (Provider) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.PROVIDER_VARS:
+				sequence_ProviderVars(context, (ProviderVars) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.PROVIDERS:
 				sequence_Providers(context, (Providers) semanticObject); 
@@ -696,7 +700,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     Input returns Input
 	 *
 	 * Constraint:
-	 *     (qualifier?='qualifier'? classRef=ClassRef propRef=PathNameCS)
+	 *     (qualifier?='qualifier'? classRef=ClassRef propRef=PathNameCS?)
 	 */
 	protected void sequence_Input(ISerializationContext context, Input semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -850,10 +854,22 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     ProviderVars returns ProviderVars
+	 *
+	 * Constraint:
+	 *     (varDecl+=LetVariableCS varDecl+=LetVariableCS*)
+	 */
+	protected void sequence_ProviderVars(ISerializationContext context, ProviderVars semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Provider returns Provider
 	 *
 	 * Constraint:
-	 *     (classRef=PathNameCS statements+=ProviderStmnt*)
+	 *     (classRef=PathNameCS varsDecl=ProviderVars? statements+=ProviderStmnt*)
 	 */
 	protected void sequence_Provider(ISerializationContext context, Provider semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -902,12 +918,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     ScopeDef returns ScopeDef
 	 *
 	 * Constraint:
-	 *     (
-	 *         selectionDef=SelectionDef? 
-	 *         (sameScope?='scopes-adding' | emptyScope?='scopes-resetting')? 
-	 *         alsoExports?='also-exports'? 
-	 *         provisionDefs+=ProvisionDef+
-	 *     )
+	 *     (selectionDef=SelectionDef? alsoExports?='exported-scope'? (sameScope?='adding' | emptyScope?='resetting')? provisionDefs+=ProvisionDef+)
 	 */
 	protected void sequence_ScopeDef(ISerializationContext context, ScopeDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

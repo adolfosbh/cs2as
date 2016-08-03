@@ -21,6 +21,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific
 import uk.ac.york.cs.cs2as.cs2as_dsl.Target
 import uk.ac.york.cs.cs2as.cs2as_dsl.Targets
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars
 
 class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 
@@ -208,12 +209,12 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			var foundNR = false;
 			var foundNQ = false;
 			for (input : nameRef.inputs) { // FIXME so far just the first/one NR and NQ
-				if (!foundNR && !input.qualifier) {
+				if (!foundNR && !input.qualifier && input.propRef != null) {
 					defaultNR = input.classRef.doSwitch;
 					defaultNRP = input.propRef.doSwitch;
 					foundNR = true;		
 				}
-				if (!foundNQ && input.qualifier) {
+				if (!foundNQ && input.qualifier && input.propRef != null) {
 					defaultNQ = input.classRef.doSwitch;
 					defaultNQP = input.propRef.doSwitch;
 					foundNQ = true;
@@ -264,79 +265,20 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 				'''
 					
 				context «object.classRef.doSwitch»
+				«object.provideQualifiedEnvMethods»
+				«object.provideFilterMethod»
 				'''
 			);
-			
-			for (qualification : qualificationDefs) {
-				for (targetClass : qualification.targetsDef.classNames){
-					val className = targetClass.doSwitch;
-					val nClassName = className.normalizeString;
-					val nameParam = className.toLowerCase.charAt(0) + "Name";
-					val filter = element2filter.get(className);
-					val filterParams = filter.optionalAddedParamsText;
-					val filterArgs = filter.optionalAddedArgsText;
-					sb.append('''
-						
-					def : _lookupQualified«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
-					   let found«nClassName» = _lookup«nClassName»(_qualified_env_«nClassName»(), «nameParam»«filterArgs»)
-					   in  if found«nClassName»->isEmpty()
-					      then null
-					      else found«nClassName»->first()
-					      endif
-					def : _qualified_env_«nClassName»() : «lookupPck»::«lookupEnv» =
-					   let env = «lookupPck»::«lookupEnv»{}
-					   in env
-					   «FOR contrib : qualification.contribution»«contrib.doSwitch»
-						«ENDFOR»
-					«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, '', 'Qualified'+nClassName, filterParams, filterArgs)»«ENDIF»
-					''');
-					//qualificationConstribs.addAll(qualification.contribution);	
-				} 
-			}
-			if (filterDef != null) {
-				val className = object.classRef.doSwitch;
-				val nClassName = className.normalizeString;
-				val filterParams = filterDef.paramsText;
-				sb.append('''
-				   
-				def : «nClassName.filterOpName»(«filterParams») : Boolean =
-				   «filterDef.expression.doSwitch»
-				''')
-			}
-			sb.toString;
 		}
 		// We generate the general API to lookup the target
 		val className = object.classRef.doSwitch;
 		val nClassName = className.normalizeString;
-		val nameParam = className.toLowerCase.charAt(0) + "Name";
-		val nameProp = if (object.propRef != null) object.propRef.doSwitch else defaultNEP
 		val filter = object.filter;
 		val filterParams = filter.optionalAddedParamsText
 		val filterArgs = filter.optionalAddedArgsText;
 		sb.append('''
 		context Visitable
-		-- «nClassName» unqualified lookup
-		def : _lookup«nClassName»(env : «lookupPck»::«lookupEnv», «nameParam» : String«filterParams») : OrderedSet(«className») =
-		let found«nClassName» = env.namedElements->selectByKind(«className»)->select(«nameProp» = «nameParam»)
-		                                         «IF filter!=null»->select(«nClassName.getFilterOpName»(«filter.argsText»))«ENDIF»
-		in  if found«nClassName»->isEmpty() and not (env.parentEnv = null)
-		   then _lookup«nClassName»(env.parentEnv, «nameParam»«filterArgs»)
-		   else found«nClassName»
-		   endif
-		   
-		-- Note: when calling this method, the source element of the argument passed to this method, will be the contextual 
-		-- object on which error reports will be handled
-		def : _lookupUnqualified«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
-		let found«nClassName» = _lookup«nClassName»(unqualified_env_«nClassName»(), «nameParam»«filterArgs»)
-		in  if found«nClassName»->isEmpty()
-		   then null
-		   else found«nClassName»->first() -- LookupVisitor will report ambiguous result
-		   endif
-		   
-		def : lookup«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
-		   _lookupUnqualified«nClassName»(«nameParam»«filterArgs»)
-		«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, 'Unqualified', nClassName, filterParams, filterArgs)»«ENDIF»		
-		-- End of «nClassName» unqualified lookup 
+		«object.provideUnqualifiedLookupMethods»
 		   
 		«IF element2qualifiers.get(className) != null»«provideQualifiedLookupMethods(className, nClassName, filterParams, filterArgs)»«ENDIF»
 		''');
@@ -419,6 +361,19 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		return '''«object.className.doSwitch»'''
 	}
 	
+	override caseProviderVars(ProviderVars object) {
+		val sb = new StringBuilder;
+		for (varDecl : object.varDecl) {
+			val optType = varDecl.ownedType;
+			sb.append(
+				'''
+				let «varDecl.name»«IF optType!=null» : «optType.doSwitch»«ENDIF» = «varDecl.ownedInitExpression.doSwitch»
+				in 
+				'''
+			)
+		}
+		sb.toString;
+	}
 	def private provideLookupFromMethods(Provider provider) {
 		
 		val StringBuilder sb = new StringBuilder;
@@ -459,6 +414,40 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		def : lookup«nClassName»(a«defaultNR» : «sourcePckName»::«defaultNR»«filterParams») : «className»[?] =
 		   _lookup«protocol»«nClassName»(a«defaultNR».«defaultNRP»«filterArgs»)
 		'''
+	}
+	
+	def private String provideQualifiedEnvMethods(Target target) {
+		val sb = new StringBuilder;
+		val qualificationDefs = target.qualifications;
+		if (qualificationDefs != null) {
+			for (qualification : qualificationDefs) {
+				for (targetClass : qualification.targetsDef.classNames){
+					val className = targetClass.doSwitch;
+					val nClassName = className.normalizeString;
+					val nameParam = className.toLowerCase.charAt(0) + "Name";
+					val filter = element2filter.get(className);
+					val filterParams = filter.optionalAddedParamsText;
+					val filterArgs = filter.optionalAddedArgsText;
+					sb.append('''
+						
+					def : _lookupQualified«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
+					   let found«nClassName» = _lookup«nClassName»(_qualified_env_«nClassName»(), «nameParam»«filterArgs»)
+					   in  if found«nClassName»->isEmpty()
+					      then null
+					      else found«nClassName»->first()
+					      endif
+					def : _qualified_env_«nClassName»() : «lookupPck»::«lookupEnv» =
+					   let env = «lookupPck»::«lookupEnv»{}
+					   in env
+					   «FOR contrib : qualification.contribution»«contrib.doSwitch»
+						«ENDFOR»
+					«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, '', 'Qualified'+nClassName, filterParams, filterArgs)»«ENDIF»
+					''');
+					//qualificationConstribs.addAll(qualification.contribution);	
+				} 
+			}
+		}
+		sb.toString;
 	}
 	
 	def private provideQualifiedLookupMethods(String className, String nClassName, String filterParams, String filterArgs) {
@@ -515,7 +504,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		   endif
 		'''
 		
-		}
+	}
 		
 			
 	def private String provideUnqualifiedEnvMethods(Provider provider) {
@@ -525,17 +514,24 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			provisionDefs.addAll(statmnt.provisionDefs);
 		}
 		
-		val sb = new StringBuilder
+		
+		val providerVars = new StringBuilder;
+		val varsDecl = provider.varsDecl;
+		if (varsDecl != null) {
+			providerVars.append(varsDecl.doSwitch)
+		}
+		
+		val sb = new StringBuilder;
 		val scopingClassName = provider.classRef.doSwitch
 		val scopedClasses = computeTargetClasses(provisionDefs);
 		for (scopedClassName : scopedClasses.keySet) {
-			sb.append(provideUnqualifiedEnvMethod(scopingClassName, scopedClassName, scopedClasses.get(scopedClassName)))
+			sb.append(provideUnqualifiedEnvMethod(scopingClassName, scopedClassName, scopedClasses.get(scopedClassName), providerVars.toString))
 		}
 		sb.toString
 	}
 
 	
-	def private String provideUnqualifiedEnvMethod(String scopingClassName, String scopedClassName, Set<ProvisionDef> provisionDefs) {
+	def private String provideUnqualifiedEnvMethod(String scopingClassName, String scopedClassName, Set<ProvisionDef> provisionDefs, String providerVars) {
 		
 		var String allChildrenName = null;
 		val List<String> featureNames = newArrayList();		
@@ -555,9 +551,45 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		
 		'''
 		def : _unqualified_env_«scopedClassName.normalizeString»(child : ocl::OclElement) : «lookupPck»::«lookupEnv» =
-		   «provideScopeContributionsQuery(scopedClassName, featureNames, allChildrenName)»
+		   «providerVars»«provideScopeContributionsQuery(scopedClassName, featureNames, allChildrenName)»
 		''';
 	}
+	
+	def private String provideUnqualifiedLookupMethods(Target object){
+	
+		val className = object.classRef.doSwitch;
+		val nClassName = className.normalizeString;
+		val nameParam = className.toLowerCase.charAt(0) + "Name";
+		val nameProp = if (object.propRef != null) object.propRef.doSwitch else defaultNEP;
+		val filter = object.filter;
+		val filterParams = filter.optionalAddedParamsText
+		val filterArgs = filter.optionalAddedArgsText;
+		'''
+		-- «nClassName» unqualified lookup
+		def : _lookup«nClassName»(env : «lookupPck»::«lookupEnv», «nameParam» : String«filterParams») : OrderedSet(«className») =
+		let found«nClassName» = env.namedElements->selectByKind(«className»)->select(«nameProp» = «nameParam»)
+		                                         «IF filter!=null»->select(«nClassName.getFilterOpName»(«filter.argsText»))«ENDIF»
+		in  if found«nClassName»->isEmpty() and not (env.parentEnv = null)
+		   then _lookup«nClassName»(env.parentEnv, «nameParam»«filterArgs»)
+		   else found«nClassName»
+		   endif
+		   
+		-- Note: when calling this method, the source element of the argument passed to this method, will be the contextual 
+		-- object on which error reports will be handled
+		def : _lookupUnqualified«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
+		let found«nClassName» = _lookup«nClassName»(unqualified_env_«nClassName»(), «nameParam»«filterArgs»)
+		in  if found«nClassName»->isEmpty()
+		   then null
+		   else found«nClassName»->first() -- LookupVisitor will report ambiguous result
+		   endif
+		   
+		def : lookup«nClassName»(«nameParam» : String«filterParams») : «className»[?] =
+		   _lookupUnqualified«nClassName»(«nameParam»«filterArgs»)
+		«IF defaultNR!=null»«provideLookupByNameReferencerMethod(className, 'Unqualified', nClassName, filterParams, filterArgs)»«ENDIF»		
+		-- End of «nClassName» unqualified lookup 
+		'''	
+	}
+	
 	
 	// FIXME refactor
 	def private String provideExportedEnvMethods(Provider provider) {
@@ -720,6 +752,22 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 				''');
 			}
 			sb.toString;	
+		}
+	}
+	
+	def private String provideFilterMethod(Target object) {
+		val filterDef = object.filter;
+		if (filterDef != null) {
+				val className = object.classRef.doSwitch;
+				val nClassName = className.normalizeString;
+				val filterParams = filterDef.paramsText;
+				'''
+				   
+				def : «nClassName.filterOpName»(«filterParams») : Boolean =
+				   «filterDef.expression.doSwitch»
+				'''
+		} else {
+			''
 		}
 	}
 	

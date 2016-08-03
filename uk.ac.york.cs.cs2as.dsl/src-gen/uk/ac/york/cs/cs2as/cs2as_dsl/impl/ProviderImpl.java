@@ -23,6 +23,7 @@ import org.eclipse.ocl.xtext.basecs.PathNameCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Provider;
 import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +34,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderImpl#getClassRef <em>Class Ref</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderImpl#getVarsDecl <em>Vars Decl</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -49,6 +51,16 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
    * @ordered
    */
   protected PathNameCS classRef;
+
+  /**
+   * The cached value of the '{@link #getVarsDecl() <em>Vars Decl</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVarsDecl()
+   * @generated
+   * @ordered
+   */
+  protected ProviderVars varsDecl;
 
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -134,6 +146,54 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
    * <!-- end-user-doc -->
    * @generated
    */
+  public ProviderVars getVarsDecl()
+  {
+    return varsDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetVarsDecl(ProviderVars newVarsDecl, NotificationChain msgs)
+  {
+    ProviderVars oldVarsDecl = varsDecl;
+    varsDecl = newVarsDecl;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROVIDER__VARS_DECL, oldVarsDecl, newVarsDecl);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVarsDecl(ProviderVars newVarsDecl)
+  {
+    if (newVarsDecl != varsDecl)
+    {
+      NotificationChain msgs = null;
+      if (varsDecl != null)
+        msgs = ((InternalEObject)varsDecl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROVIDER__VARS_DECL, null, msgs);
+      if (newVarsDecl != null)
+        msgs = ((InternalEObject)newVarsDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROVIDER__VARS_DECL, null, msgs);
+      msgs = basicSetVarsDecl(newVarsDecl, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROVIDER__VARS_DECL, newVarsDecl, newVarsDecl));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<ProviderStmnt> getStatements()
   {
     if (statements == null)
@@ -155,6 +215,8 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
     {
       case Cs2as_dslPackage.PROVIDER__CLASS_REF:
         return basicSetClassRef(null, msgs);
+      case Cs2as_dslPackage.PROVIDER__VARS_DECL:
+        return basicSetVarsDecl(null, msgs);
       case Cs2as_dslPackage.PROVIDER__STATEMENTS:
         return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
@@ -173,6 +235,8 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
     {
       case Cs2as_dslPackage.PROVIDER__CLASS_REF:
         return getClassRef();
+      case Cs2as_dslPackage.PROVIDER__VARS_DECL:
+        return getVarsDecl();
       case Cs2as_dslPackage.PROVIDER__STATEMENTS:
         return getStatements();
     }
@@ -192,6 +256,9 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
     {
       case Cs2as_dslPackage.PROVIDER__CLASS_REF:
         setClassRef((PathNameCS)newValue);
+        return;
+      case Cs2as_dslPackage.PROVIDER__VARS_DECL:
+        setVarsDecl((ProviderVars)newValue);
         return;
       case Cs2as_dslPackage.PROVIDER__STATEMENTS:
         getStatements().clear();
@@ -214,6 +281,9 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
       case Cs2as_dslPackage.PROVIDER__CLASS_REF:
         setClassRef((PathNameCS)null);
         return;
+      case Cs2as_dslPackage.PROVIDER__VARS_DECL:
+        setVarsDecl((ProviderVars)null);
+        return;
       case Cs2as_dslPackage.PROVIDER__STATEMENTS:
         getStatements().clear();
         return;
@@ -233,6 +303,8 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
     {
       case Cs2as_dslPackage.PROVIDER__CLASS_REF:
         return classRef != null;
+      case Cs2as_dslPackage.PROVIDER__VARS_DECL:
+        return varsDecl != null;
       case Cs2as_dslPackage.PROVIDER__STATEMENTS:
         return statements != null && !statements.isEmpty();
     }

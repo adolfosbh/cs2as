@@ -223,6 +223,13 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Cs2as_dslPackage.PROVIDER_VARS:
+      {
+        ProviderVars providerVars = (ProviderVars)theEObject;
+        T result = caseProviderVars(providerVars);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Cs2as_dslPackage.PROVIDER_STMNT:
       {
         ProviderStmnt providerStmnt = (ProviderStmnt)theEObject;
@@ -259,6 +266,13 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Cs2as_dslPackage.SELECTION_DEF:
+      {
+        SelectionDef selectionDef = (SelectionDef)theEObject;
+        T result = caseSelectionDef(selectionDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Cs2as_dslPackage.PROVISION_DEF:
       {
         ProvisionDef provisionDef = (ProvisionDef)theEObject;
@@ -291,13 +305,6 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
       {
         ContributionDef contributionDef = (ContributionDef)theEObject;
         T result = caseContributionDef(contributionDef);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case Cs2as_dslPackage.SELECTION_DEF:
-      {
-        SelectionDef selectionDef = (SelectionDef)theEObject;
-        T result = caseSelectionDef(selectionDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -665,6 +672,22 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Provider Vars</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Provider Vars</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProviderVars(ProviderVars object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Provider Stmnt</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -745,6 +768,22 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Selection Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Selection Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSelectionDef(SelectionDef object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Provision Def</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -820,22 +859,6 @@ public class Cs2as_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseContributionDef(ContributionDef object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Selection Def</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Selection Def</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSelectionDef(SelectionDef object)
   {
     return null;
   }

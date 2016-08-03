@@ -16,7 +16,6 @@ Model:
 	& nameresoSect=NameResolutionSect?
 	& helpersSect=HelpersSect?
 	)
-	
 ;
 
 CSDecl:
@@ -62,7 +61,6 @@ DisambiguationSect:
 ClassDisambiguation:
 	class=PathNameCS '{'
 		statements+=ClassDisambiguationStmnt*
-		
 	'}'
 ;
 
@@ -108,7 +106,7 @@ Inputs:
 
 Input:
 	(qualifier?='qualifier')?
-	classRef=ClassRef 'using' propRef=PathNameCS ';'
+	classRef=ClassRef ('using' propRef=PathNameCS)? ';'
 ;
 
 Providers:
@@ -119,13 +117,17 @@ Providers:
 ;
 Provider:
 	classRef=PathNameCS '{'
+		varsDecl=ProviderVars?
 		statements+=ProviderStmnt*
 	'}'
 ;
 
+ProviderVars:
+	'vars' varDecl+= LetVariableCS (',' varDecl+=LetVariableCS)* ';'
+;
+
 ProviderStmnt:
-	(ScopeDef | ExportDef)
-	';'
+	(ScopeDef | ExportDef) ';'
 ;
 
 FilterDef:
@@ -143,13 +145,20 @@ ElementsContribExp:
 
 ScopeDef:
 	selectionDef=SelectionDef?
-	('scopes' | 'scopes-occluding' | sameScope?='scopes-adding' | emptyScope?='scopes-resetting')
-	(alsoExports?='also-exports')?
+	'in'  'current-scope' ('and' alsoExports?='exported-scope')? 'provides'
+	('occluding' | sameScope?='adding' | emptyScope?='resetting')?
 	provisionDefs+=ProvisionDef+
 ;
 
+SelectionDef:
+	'for'
+	( {SelectionAll} 'all' ('excepting' exceptionProperties+=ExpCS (',' exceptionProperties+=ExpCS)*)?
+	| {SelectionSpecific} (selectedProperties+=ExpCS (',' selectedProperties+=ExpCS)* )
+	)
+;
+
 ProvisionDef:
-	targetsDef=MultipleClassRef 
+	targetsDef=MultipleClassRef
 	'using' contribution=ContributionDef
 	occludingDefs+=OccludingDef*
 ;
@@ -170,16 +179,11 @@ ContributionDef:
 	 contributions+=ElementsContribExp (',' contributions+=ElementsContribExp)* 
 ;
 
-SelectionDef:
-	'for'
-	( {SelectionAll} 'all' ('excepting' exceptionProperties+=ExpCS (',' exceptionProperties+=ExpCS)*)?
-	| {SelectionSpecific} (selectedProperties+=ExpCS (',' selectedProperties+=ExpCS)* )
-	)
-;
+
 
 ExportDef:
 	selectionDef=SelectionDef?
-	'exports'
+	'in' 'exported-scope' 'provides'
 	provisionDefs+=ProvisionDef+
 ;
 
@@ -194,7 +198,6 @@ ClassHelper:
 	context=PathNameCS '{'
 		helpers+=HelperDef*
 	'}'
-	
 ;
 
 // Similar to Complete OCL definitions
@@ -209,8 +212,6 @@ HelperDef:
 ParameterDef returns base::ParameterCS:
 	name=UnrestrictedName ':' ownedType=TypeExpCS;
 
-
-	
 /* A primary expression identifies the basic expressions from which more complex expressions may be constructed. */
 PrimaryExpCS returns essentialocl::ExpCS:
 	NestedExpCS

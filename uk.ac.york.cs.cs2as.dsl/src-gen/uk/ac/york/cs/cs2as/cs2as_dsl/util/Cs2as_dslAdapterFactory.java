@@ -179,6 +179,11 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createProviderAdapter();
       }
       @Override
+      public Adapter caseProviderVars(ProviderVars object)
+      {
+        return createProviderVarsAdapter();
+      }
+      @Override
       public Adapter caseProviderStmnt(ProviderStmnt object)
       {
         return createProviderStmntAdapter();
@@ -204,6 +209,11 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createScopeDefAdapter();
       }
       @Override
+      public Adapter caseSelectionDef(SelectionDef object)
+      {
+        return createSelectionDefAdapter();
+      }
+      @Override
       public Adapter caseProvisionDef(ProvisionDef object)
       {
         return createProvisionDefAdapter();
@@ -227,11 +237,6 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseContributionDef(ContributionDef object)
       {
         return createContributionDefAdapter();
-      }
-      @Override
-      public Adapter caseSelectionDef(SelectionDef object)
-      {
-        return createSelectionDefAdapter();
       }
       @Override
       public Adapter caseExportDef(ExportDef object)
@@ -616,6 +621,21 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars <em>Provider Vars</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars
+   * @generated
+   */
+  public Adapter createProviderVarsAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt <em>Provider Stmnt</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -691,6 +711,21 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef <em>Selection Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
+   * @generated
+   */
+  public Adapter createSelectionDefAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef <em>Provision Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -761,21 +796,6 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createContributionDefAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef <em>Selection Def</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef
-   * @generated
-   */
-  public Adapter createSelectionDefAdapter()
   {
     return null;
   }

@@ -75,7 +75,11 @@
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//Provider">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provider/classRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provider/varsDecl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provider/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//ProviderVars">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProviderVars/varDecl"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ProviderStmnt">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProviderStmnt/selectionDef"/>
@@ -95,10 +99,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ElementsContribExp/expression"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ScopeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/alsoExports"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/sameScope"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/emptyScope"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/alsoExports"/>
     </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//SelectionDef"/>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ProvisionDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProvisionDef/targetsDef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProvisionDef/contribution"/>
@@ -116,7 +121,6 @@
     <genClasses ecoreClass="CS2ASDSL.ecore#//ContributionDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ContributionDef/contributions"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//SelectionDef"/>
     <genClasses ecoreClass="CS2ASDSL.ecore#//ExportDef"/>
     <genClasses ecoreClass="CS2ASDSL.ecore#//HelpersSect">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelpersSect/classHelpers"/>

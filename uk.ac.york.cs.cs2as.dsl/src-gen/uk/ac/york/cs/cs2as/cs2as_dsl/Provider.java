@@ -18,6 +18,7 @@ import org.eclipse.ocl.xtext.basecs.PathNameCS;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getClassRef <em>Class Ref</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getVarsDecl <em>Vars Decl</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -52,6 +53,32 @@ public interface Provider extends EObject
    * @generated
    */
   void setClassRef(PathNameCS value);
+
+  /**
+   * Returns the value of the '<em><b>Vars Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Vars Decl</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Vars Decl</em>' containment reference.
+   * @see #setVarsDecl(ProviderVars)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getProvider_VarsDecl()
+   * @model containment="true"
+   * @generated
+   */
+  ProviderVars getVarsDecl();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getVarsDecl <em>Vars Decl</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Vars Decl</em>' containment reference.
+   * @see #getVarsDecl()
+   * @generated
+   */
+  void setVarsDecl(ProviderVars value);
 
   /**
    * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
