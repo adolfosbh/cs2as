@@ -7,10 +7,9 @@ import "platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCL
 
 generate cs2as_dsl "http://www.ac.uk/york/cs/cs2as/CS2ASDSL"
 
-Model:
-	csDecl=CSDecl
-	asDecl=ASDecl
-	
+CS2ASModel:
+	source=SourceDomain
+	target=TargetDomain
 	(mappingSect=MappingSect 
 	& disambiguationSect=DisambiguationSect? 
 	& nameresoSect=NameResolutionSect?
@@ -18,67 +17,72 @@ Model:
 	)
 ;
 
-CSDecl:
-	'source' metamodels+=ImportCS (',' metamodels+=ImportCS)*
+SourceDomain:
+	'source' metamodels+=MetaModelDecl (',' metamodels+=MetaModelDecl)*
 ;
 
-ASDecl:
-	'target' metamodels+=ImportCS (',' metamodels+=ImportCS)*
+TargetDomain:
+	'target' metamodels+=MetaModelDecl (',' metamodels+=MetaModelDecl)*
 ;
 
-ImportCS returns base::ImportCS:
-	(name=Identifier ':')? ownedPathName=URIPathNameCS (isAll?='::*')?
+MetaModelDecl returns base::ImportCS:
+	(name=ID ':')? ownedPathName=URIPathNameCS (isAll?='::*')?
 ;
 
 MappingSect:
 	{MappingSect}
 	'mappings' '{'
-		mappings+=ClassMap*
+		mappings+=MappingDef*
 	'}'	
 ;
-ClassMap:
-	'map' to=PathNameCS 'from'  from=PathNameCS  ('when' rule=SIMPLE_ID )? '{'
-		statements += ClassMapStmnt*
+
+MappingDef:
+	MappingCreation | MappingReference
+;
+
+MappingCreation:
+	'create' to=PathNameCS 'from'  from=PathNameCS  ('when' rule=ID )? '{'
+		properties += PropertyDef*
 	'}'
 ;
 
-ClassMapStmnt:
-	PropertyMap
-	';'
+PropertyDef:
+	(redefine?='redefine')? propRef=PathNameCS ':=' 
+	propInit=ExpCS ';'
 ;
 
-PropertyMap:
-	(redefine?='redefine')? propName=SIMPLE_ID ':=' propInit=ExpCS
+
+MappingReference:
+	'ref' to=PathNameCS 'from'  from=PathNameCS
+	':=' expression=ExpCS
 ;
+
 
 DisambiguationSect:
 	{DisambiguationSect}
 	'disambiguation' '{'
-		disambiguations+=ClassDisambiguation*
+		disambiguations+=DisambiguationDef*
 	'}'
-;
-
-ClassDisambiguation:
-	class=PathNameCS '{'
-		statements+=ClassDisambiguationStmnt*
-	'}'
-;
-
-ClassDisambiguationStmnt:
-	DisambiguationDef
-	';'
 ;
 
 DisambiguationDef:
-	name=SIMPLE_ID ':=' exp=ExpCS
+	classRef=PathNameCS '{'
+		rules+=DisambiguationRule*
+	'}'
+;
+
+
+DisambiguationRule:
+	name=SIMPLE_ID ':=' exp=ExpCS 
+	';'
 ;
 
 NameResolutionSect:
 	{NameResolutionSect}
-	'name-resolution' '{'
-		targetsDef=Targets
-		inputsDef=Inputs
-		providersDef=Providers
+	'name_resolution' '{'
+		targetsDef=Targets?
+		inputsDef=Inputs?
+		providersDef=Providers?
 	'}'
 ;
 
@@ -87,26 +91,29 @@ Targets:
 	'targets' '{'
 		targets+=Target*
 	'}'
-	
 ;
 
 Target:
-	classRef=ClassRef  ('using' propRef=PathNameCS)?
+	classRef=PathNameCS  
+	('using' propRef=PathNameCS ignoreCase?='ignore_case'? 
+		escapeSeqDef=EscapeSequenceDef? )?
 	filter=FilterDef?
-	('qualifies' qualifications+=QualificationDef (',' qualifications+=QualificationDef)*)?
-	';'
-;
-
+	qualification=QualificationDef?
+	';' ;
+EscapeSequenceDef:
+	'scaped_with' escapes+=EscapeSequence (',' escapes+=EscapeSequence)* ;
+EscapeSequence:
+	prefix=StringLiteral ('and' suffix=StringLiteral)? ;
 Inputs:
 	{Inputs}
-	'inputs' '{'
+	'inputs' '{'	
 		inputs+=Input*
 	'}'
 ;
 
 Input:
 	(qualifier?='qualifier')?
-	classRef=ClassRef ('using' propRef=PathNameCS)? ';'
+	typeRef=PathNameCS ('using' propRef=PathNameCS)? ';'
 ;
 
 Providers:
@@ -115,93 +122,102 @@ Providers:
 		providers+=Provider*
 	'}'
 ;
+
 Provider:
 	classRef=PathNameCS '{'
-		varsDecl=ProviderVars?
-		statements+=ProviderStmnt*
+		varsDecl=ProviderVarsDecl?
+		currentScope=CurrentScopeDecl?
+		exportedscope=ExportedScopeDecl?
 	'}'
 ;
 
-ProviderVars:
+ProviderVarsDecl:
 	'vars' varDecl+= LetVariableCS (',' varDecl+=LetVariableCS)* ';'
 ;
 
-ProviderStmnt:
-	(ScopeDef | ExportDef) ';'
-;
-
 FilterDef:
-	'filtered' ('by' params+=ParameterDef (',' params+=ParameterDef)* )? 'when' expression=ExpCS
+	'filtered_by' params+=ParameterDef (',' params+=ParameterDef)* 'when' expression=ExpCS
 ;
 
 QualificationDef:
-	targetsDef=MultipleClassRef
-	'using' contribution+=ElementsContribExp
-;
-	
-ElementsContribExp:
-	(isPreceding?='preceding' | isImported?='imported'?)? expression=ExpCS 
+	'qualifies' qualifications+=Qualification (',' qualifications+=Qualification)*
 ;
 
-ScopeDef:
+Qualification:
+	qualifiedClasses=MultiplePathNames
+	'using' contributions+=ExpCS (',' contributions+=ExpCS)*
+;
+
+CurrentScopeDecl:
+	'in'  'current_scope' 
+	provisionsDef+=CurrentScopeProvisionDef+
+;
+
+CurrentScopeProvisionDef:
 	selectionDef=SelectionDef?
-	'in'  'current-scope' ('and' alsoExports?='exported-scope')? 'provides'
+	'provides'
 	('occluding' | sameScope?='adding' | emptyScope?='resetting')?
-	provisionDefs+=ProvisionDef+
+	 provisions+=Provision+
+	';'
 ;
 
 SelectionDef:
 	'for'
-	( {SelectionAll} 'all' ('excepting' exceptionProperties+=ExpCS (',' exceptionProperties+=ExpCS)*)?
-	| {SelectionSpecific} (selectedProperties+=ExpCS (',' selectedProperties+=ExpCS)* )
+	( {SelectionAll} 'all' ('excepting' exceptions+=PathNameCS (',' exceptions+=PathNameCS)*)?
+	| {SelectionSpecific} (selections+=PathNameCS (',' selections+=PathNameCS)* )
 	)
 ;
 
-ProvisionDef:
-	targetsDef=MultipleClassRef
-	'using' contribution=ContributionDef
+Provision:
+	(providedClasses=MultiplePathNames
+	'using')? contributionsDef=ContributionsDef
 	occludingDefs+=OccludingDef*
 ;
 
-ClassRef:
-	className=PathNameCS
-;
-
-MultipleClassRef:
-	classNames+=PathNameCS (',' classNames+=PathNameCS)*	
+MultiplePathNames:
+	pathNames+=PathNameCS (',' pathNames+=PathNameCS)*
 ;
 
 OccludingDef:
-	'occluding' contribution=ContributionDef 
+	'occluding' contributionsDef=ContributionsDef 
 ;
 
-ContributionDef:
-	 contributions+=ElementsContribExp (',' contributions+=ElementsContribExp)* 
+ContributionsDef:
+	 contributions+=Contribution (',' contributions+=Contribution)* 
 ;
 
+Contribution:
+	(('with_child' child=ParameterDef 'in')
+	 | isPreceding?='preceding' )?
+	expression=ExpCS
+;
 
+ExportedScopeDecl:
+	'in' 'exported_scope'
+	declarations+=ExportedScopeProvisionDef+
+;
 
-ExportDef:
-	selectionDef=SelectionDef?
-	'in' 'exported-scope' 'provides'
-	provisionDefs+=ProvisionDef+
+ExportedScopeProvisionDef:
+	// selectionDef=SelectionDef?
+	'provides' provisionDefs+=Provision+
+	';'
 ;
 
 HelpersSect:
 	{HelpersSect}
 	'helpers' '{'
-		classHelpers+=ClassHelper*
+		classHelpers+=HelperClass*
 	'}'
 ;
 
-ClassHelper:
+HelperClass:
 	context=PathNameCS '{'
-		helpers+=HelperDef*
+		helpers+=HelperOp*
 	'}'
 ;
 
 // Similar to Complete OCL definitions
-HelperDef:
+HelperOp:
 	(ownedSignature=TemplateSignatureCS)?
 	name=UnrestrictedName 
 	'(' (params+=ParameterDef (',' params+=ParameterDef)*)? ')' (':' ownedType=TypeExpCS)?
@@ -234,5 +250,6 @@ TraceExpCS:
 
 
 LookupExpCS:
-	('lookup' | fromExp?='lookupFrom') '(' args+=NavigatingArgExpCS (',' args+=NavigatingArgExpCS)* ')'
+	('lookup' | isExported?='lookupExported') 
+	'('	args+=NavigatingArgExpCS (',' args+=NavigatingArgExpCS)* ')'
 ;

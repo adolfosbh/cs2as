@@ -15,8 +15,7 @@ Workflow {
     bean = StandaloneSetup {
     	scanClassPath = true
     	platformUri = "${runtimeProject}/.."
-		registerGenModelFile = "platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.genmodel"
-    	
+    	registerGenModelFile = "platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.genmodel"
     }
     
     component = DirectoryCleaner {
