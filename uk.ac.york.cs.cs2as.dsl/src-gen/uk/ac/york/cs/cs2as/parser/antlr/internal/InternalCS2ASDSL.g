@@ -51,7 +51,7 @@ import uk.ac.york.cs.cs2as.services.CS2ASDSLGrammarAccess;
     
     @Override
     protected String getFirstRuleName() {
-    	return "Model";	
+    	return "CS2ASModel";	
    	}
    	
    	@Override
@@ -70,45 +70,45 @@ import uk.ac.york.cs.cs2as.services.CS2ASDSLGrammarAccess;
 
 
 
-// Entry rule entryRuleModel
-entryRuleModel returns [EObject current=null] 
+// Entry rule entryRuleCS2ASModel
+entryRuleCS2ASModel returns [EObject current=null] 
 	@init { 
 		UnorderedGroupState myUnorderedGroupState = getUnorderedGroupHelper().snapShot(
-			grammarAccess.getModelAccess().getUnorderedGroup_2()
+			grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2()
 		);
 	}
 	:
-	{ newCompositeNode(grammarAccess.getModelRule()); }
-	 iv_ruleModel=ruleModel 
-	 { $current=$iv_ruleModel.current; } 
+	{ newCompositeNode(grammarAccess.getCS2ASModelRule()); }
+	 iv_ruleCS2ASModel=ruleCS2ASModel 
+	 { $current=$iv_ruleCS2ASModel.current; } 
 	 EOF 
 ;
 finally {
 	myUnorderedGroupState.restore();
 }
 
-// Rule Model
-ruleModel returns [EObject current=null] 
+// Rule CS2ASModel
+ruleCS2ASModel returns [EObject current=null] 
     @init { enterRule(); 
 		UnorderedGroupState myUnorderedGroupState = getUnorderedGroupHelper().snapShot(
-			grammarAccess.getModelAccess().getUnorderedGroup_2()
+			grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2()
 		);
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getCsDeclCSDeclParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getCS2ASModelAccess().getSourceSourceDomainParserRuleCall_0_0()); 
 	    }
-		lv_csDecl_0_0=ruleCSDecl		{
+		lv_source_0_0=ruleSourceDomain		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	            $current = createModelElementForParent(grammarAccess.getCS2ASModelRule());
 	        }
        		set(
        			$current, 
-       			"csDecl",
-        		lv_csDecl_0_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.CSDecl");
+       			"source",
+        		lv_source_0_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.SourceDomain");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -116,17 +116,17 @@ ruleModel returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getAsDeclASDeclParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getCS2ASModelAccess().getTargetTargetDomainParserRuleCall_1_0()); 
 	    }
-		lv_asDecl_1_0=ruleASDecl		{
+		lv_target_1_0=ruleTargetDomain		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	            $current = createModelElementForParent(grammarAccess.getCS2ASModelRule());
 	        }
        		set(
        			$current, 
-       			"asDecl",
-        		lv_asDecl_1_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ASDecl");
+       			"target",
+        		lv_target_1_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.TargetDomain");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -135,24 +135,24 @@ ruleModel returns [EObject current=null]
 
 (
 	{ 
-	  getUnorderedGroupHelper().enter(grammarAccess.getModelAccess().getUnorderedGroup_2());
+	  getUnorderedGroupHelper().enter(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2());
 	}
 	(
 		(
 
 			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getModelAccess().getUnorderedGroup_2(), 0)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2(), 0)}?=>(
 					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getModelAccess().getUnorderedGroup_2(), 0);
+	 				  getUnorderedGroupHelper().select(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2(), 0);
 	 				}
 					({true}?=>(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getMappingSectMappingSectParserRuleCall_2_0_0()); 
+	        newCompositeNode(grammarAccess.getCS2ASModelAccess().getMappingSectMappingSectParserRuleCall_2_0_0()); 
 	    }
 		lv_mappingSect_3_0=ruleMappingSect		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	            $current = createModelElementForParent(grammarAccess.getCS2ASModelRule());
 	        }
        		set(
        			$current, 
@@ -165,24 +165,24 @@ ruleModel returns [EObject current=null]
 )
 ))
 					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getModelAccess().getUnorderedGroup_2());
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2());
 	 				}
  				)
 			)  |
 
 			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getModelAccess().getUnorderedGroup_2(), 1)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2(), 1)}?=>(
 					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getModelAccess().getUnorderedGroup_2(), 1);
+	 				  getUnorderedGroupHelper().select(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2(), 1);
 	 				}
 					({true}?=>(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getDisambiguationSectDisambiguationSectParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getCS2ASModelAccess().getDisambiguationSectDisambiguationSectParserRuleCall_2_1_0()); 
 	    }
 		lv_disambiguationSect_4_0=ruleDisambiguationSect		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	            $current = createModelElementForParent(grammarAccess.getCS2ASModelRule());
 	        }
        		set(
        			$current, 
@@ -195,24 +195,24 @@ ruleModel returns [EObject current=null]
 )
 ))
 					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getModelAccess().getUnorderedGroup_2());
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2());
 	 				}
  				)
 			)  |
 
 			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getModelAccess().getUnorderedGroup_2(), 2)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2(), 2)}?=>(
 					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getModelAccess().getUnorderedGroup_2(), 2);
+	 				  getUnorderedGroupHelper().select(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2(), 2);
 	 				}
 					({true}?=>(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getNameresoSectNameResolutionSectParserRuleCall_2_2_0()); 
+	        newCompositeNode(grammarAccess.getCS2ASModelAccess().getNameresoSectNameResolutionSectParserRuleCall_2_2_0()); 
 	    }
 		lv_nameresoSect_5_0=ruleNameResolutionSect		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	            $current = createModelElementForParent(grammarAccess.getCS2ASModelRule());
 	        }
        		set(
        			$current, 
@@ -225,24 +225,24 @@ ruleModel returns [EObject current=null]
 )
 ))
 					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getModelAccess().getUnorderedGroup_2());
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2());
 	 				}
  				)
 			)  |
 
 			( 
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getModelAccess().getUnorderedGroup_2(), 3)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2(), 3)}?=>(
 					{ 
-	 				  getUnorderedGroupHelper().select(grammarAccess.getModelAccess().getUnorderedGroup_2(), 3);
+	 				  getUnorderedGroupHelper().select(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2(), 3);
 	 				}
 					({true}?=>(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getHelpersSectHelpersSectParserRuleCall_2_3_0()); 
+	        newCompositeNode(grammarAccess.getCS2ASModelAccess().getHelpersSectHelpersSectParserRuleCall_2_3_0()); 
 	    }
 		lv_helpersSect_6_0=ruleHelpersSect		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	            $current = createModelElementForParent(grammarAccess.getCS2ASModelRule());
 	        }
        		set(
        			$current, 
@@ -255,17 +255,17 @@ ruleModel returns [EObject current=null]
 )
 ))
 					{ 
-	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getModelAccess().getUnorderedGroup_2());
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2());
 	 				}
  				)
 			)  
 
 		)+
-	  	{getUnorderedGroupHelper().canLeave(grammarAccess.getModelAccess().getUnorderedGroup_2())}?	
+	  	{getUnorderedGroupHelper().canLeave(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2())}?	
 	)
 )
 	{ 
-	  getUnorderedGroupHelper().leave(grammarAccess.getModelAccess().getUnorderedGroup_2());
+	  getUnorderedGroupHelper().leave(grammarAccess.getCS2ASModelAccess().getUnorderedGroup_2());
 	}
 
 ))
@@ -278,60 +278,60 @@ finally {
 
 
 
-// Entry rule entryRuleCSDecl
-entryRuleCSDecl returns [EObject current=null] 
+// Entry rule entryRuleSourceDomain
+entryRuleSourceDomain returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getCSDeclRule()); }
-	 iv_ruleCSDecl=ruleCSDecl 
-	 { $current=$iv_ruleCSDecl.current; } 
+	{ newCompositeNode(grammarAccess.getSourceDomainRule()); }
+	 iv_ruleSourceDomain=ruleSourceDomain 
+	 { $current=$iv_ruleSourceDomain.current; } 
 	 EOF 
 ;
 
-// Rule CSDecl
-ruleCSDecl returns [EObject current=null] 
+// Rule SourceDomain
+ruleSourceDomain returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (	otherlv_0='source' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getCSDeclAccess().getSourceKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getSourceDomainAccess().getSourceKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCSDeclAccess().getMetamodelsImportCSParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getSourceDomainAccess().getMetamodelsMetaModelDeclParserRuleCall_1_0()); 
 	    }
-		lv_metamodels_1_0=ruleImportCS		{
+		lv_metamodels_1_0=ruleMetaModelDecl		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getCSDeclRule());
+	            $current = createModelElementForParent(grammarAccess.getSourceDomainRule());
 	        }
        		add(
        			$current, 
        			"metamodels",
         		lv_metamodels_1_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ImportCS");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.MetaModelDecl");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )(	otherlv_2=',' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getCSDeclAccess().getCommaKeyword_2_0());
+    	newLeafNode(otherlv_2, grammarAccess.getSourceDomainAccess().getCommaKeyword_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCSDeclAccess().getMetamodelsImportCSParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getSourceDomainAccess().getMetamodelsMetaModelDeclParserRuleCall_2_1_0()); 
 	    }
-		lv_metamodels_3_0=ruleImportCS		{
+		lv_metamodels_3_0=ruleMetaModelDecl		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getCSDeclRule());
+	            $current = createModelElementForParent(grammarAccess.getSourceDomainRule());
 	        }
        		add(
        			$current, 
        			"metamodels",
         		lv_metamodels_3_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ImportCS");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.MetaModelDecl");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -343,60 +343,60 @@ ruleCSDecl returns [EObject current=null]
 
 
 
-// Entry rule entryRuleASDecl
-entryRuleASDecl returns [EObject current=null] 
+// Entry rule entryRuleTargetDomain
+entryRuleTargetDomain returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getASDeclRule()); }
-	 iv_ruleASDecl=ruleASDecl 
-	 { $current=$iv_ruleASDecl.current; } 
+	{ newCompositeNode(grammarAccess.getTargetDomainRule()); }
+	 iv_ruleTargetDomain=ruleTargetDomain 
+	 { $current=$iv_ruleTargetDomain.current; } 
 	 EOF 
 ;
 
-// Rule ASDecl
-ruleASDecl returns [EObject current=null] 
+// Rule TargetDomain
+ruleTargetDomain returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (	otherlv_0='target' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getASDeclAccess().getTargetKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getTargetDomainAccess().getTargetKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getASDeclAccess().getMetamodelsImportCSParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getTargetDomainAccess().getMetamodelsMetaModelDeclParserRuleCall_1_0()); 
 	    }
-		lv_metamodels_1_0=ruleImportCS		{
+		lv_metamodels_1_0=ruleMetaModelDecl		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getASDeclRule());
+	            $current = createModelElementForParent(grammarAccess.getTargetDomainRule());
 	        }
        		add(
        			$current, 
        			"metamodels",
         		lv_metamodels_1_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ImportCS");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.MetaModelDecl");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )(	otherlv_2=',' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getASDeclAccess().getCommaKeyword_2_0());
+    	newLeafNode(otherlv_2, grammarAccess.getTargetDomainAccess().getCommaKeyword_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getASDeclAccess().getMetamodelsImportCSParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getTargetDomainAccess().getMetamodelsMetaModelDeclParserRuleCall_2_1_0()); 
 	    }
-		lv_metamodels_3_0=ruleImportCS		{
+		lv_metamodels_3_0=ruleMetaModelDecl		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getASDeclRule());
+	            $current = createModelElementForParent(grammarAccess.getTargetDomainRule());
 	        }
        		add(
        			$current, 
        			"metamodels",
         		lv_metamodels_3_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ImportCS");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.MetaModelDecl");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -408,50 +408,50 @@ ruleASDecl returns [EObject current=null]
 
 
 
-// Entry rule entryRuleImportCS
-entryRuleImportCS returns [EObject current=null] 
+// Entry rule entryRuleMetaModelDecl
+entryRuleMetaModelDecl returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getImportCSRule()); }
-	 iv_ruleImportCS=ruleImportCS 
-	 { $current=$iv_ruleImportCS.current; } 
+	{ newCompositeNode(grammarAccess.getMetaModelDeclRule()); }
+	 iv_ruleMetaModelDecl=ruleMetaModelDecl 
+	 { $current=$iv_ruleMetaModelDecl.current; } 
 	 EOF 
 ;
 
-// Rule ImportCS
-ruleImportCS returns [EObject current=null] 
+// Rule MetaModelDecl
+ruleMetaModelDecl returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getImportCSAccess().getNameIdentifierParserRuleCall_0_0_0()); 
+	        newCompositeNode(grammarAccess.getMetaModelDeclAccess().getNameIDParserRuleCall_0_0_0()); 
 	    }
-		lv_name_0_0=ruleIdentifier		{
+		lv_name_0_0=ruleID		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getImportCSRule());
+	            $current = createModelElementForParent(grammarAccess.getMetaModelDeclRule());
 	        }
        		set(
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"org.eclipse.ocl.xtext.base.Base.Identifier");
+        		"org.eclipse.ocl.xtext.base.Base.ID");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )	otherlv_1=':' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getImportCSAccess().getColonKeyword_0_1());
+    	newLeafNode(otherlv_1, grammarAccess.getMetaModelDeclAccess().getColonKeyword_0_1());
     }
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getImportCSAccess().getOwnedPathNameURIPathNameCSParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getMetaModelDeclAccess().getOwnedPathNameURIPathNameCSParserRuleCall_1_0()); 
 	    }
 		lv_ownedPathName_2_0=ruleURIPathNameCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getImportCSRule());
+	            $current = createModelElementForParent(grammarAccess.getMetaModelDeclRule());
 	        }
        		set(
        			$current, 
@@ -466,12 +466,12 @@ ruleImportCS returns [EObject current=null]
 (
 		lv_isAll_3_0=	'::*' 
     {
-        newLeafNode(lv_isAll_3_0, grammarAccess.getImportCSAccess().getIsAllColonColonAsteriskKeyword_2_0());
+        newLeafNode(lv_isAll_3_0, grammarAccess.getMetaModelDeclAccess().getIsAllColonColonAsteriskKeyword_2_0());
     }
  
 	    {
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getImportCSRule());
+	            $current = createModelElement(grammarAccess.getMetaModelDeclRule());
 	        }
        		setWithLastConsumed($current, "isAll", true, "::*");
 	    }
@@ -518,9 +518,9 @@ ruleMappingSect returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMappingSectAccess().getMappingsClassMapParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getMappingSectAccess().getMappingsMappingDefParserRuleCall_3_0()); 
 	    }
-		lv_mappings_3_0=ruleClassMap		{
+		lv_mappings_3_0=ruleMappingDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMappingSectRule());
 	        }
@@ -528,7 +528,7 @@ ruleMappingSect returns [EObject current=null]
        			$current, 
        			"mappings",
         		lv_mappings_3_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassMap");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.MappingDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -544,32 +544,78 @@ ruleMappingSect returns [EObject current=null]
 
 
 
-// Entry rule entryRuleClassMap
-entryRuleClassMap returns [EObject current=null] 
+// Entry rule entryRuleMappingDef
+entryRuleMappingDef returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getClassMapRule()); }
-	 iv_ruleClassMap=ruleClassMap 
-	 { $current=$iv_ruleClassMap.current; } 
+	{ newCompositeNode(grammarAccess.getMappingDefRule()); }
+	 iv_ruleMappingDef=ruleMappingDef 
+	 { $current=$iv_ruleMappingDef.current; } 
 	 EOF 
 ;
 
-// Rule ClassMap
-ruleClassMap returns [EObject current=null] 
+// Rule MappingDef
+ruleMappingDef returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='map' 
+(
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getMappingDefAccess().getMappingCreationParserRuleCall_0()); 
+    }
+    this_MappingCreation_0=ruleMappingCreation
+    { 
+        $current = $this_MappingCreation_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getMappingDefAccess().getMappingReferenceParserRuleCall_1()); 
+    }
+    this_MappingReference_1=ruleMappingReference
+    { 
+        $current = $this_MappingReference_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleMappingCreation
+entryRuleMappingCreation returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMappingCreationRule()); }
+	 iv_ruleMappingCreation=ruleMappingCreation 
+	 { $current=$iv_ruleMappingCreation.current; } 
+	 EOF 
+;
+
+// Rule MappingCreation
+ruleMappingCreation returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='create' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getClassMapAccess().getMapKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getMappingCreationAccess().getCreateKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getClassMapAccess().getToPathNameCSParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getMappingCreationAccess().getToPathNameCSParserRuleCall_1_0()); 
 	    }
 		lv_to_1_0=rulePathNameCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getClassMapRule());
+	            $current = createModelElementForParent(grammarAccess.getMappingCreationRule());
 	        }
        		set(
        			$current, 
@@ -582,16 +628,16 @@ ruleClassMap returns [EObject current=null]
 )
 )	otherlv_2='from' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getClassMapAccess().getFromKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getMappingCreationAccess().getFromKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getClassMapAccess().getFromPathNameCSParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getMappingCreationAccess().getFromPathNameCSParserRuleCall_3_0()); 
 	    }
 		lv_from_3_0=rulePathNameCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getClassMapRule());
+	            $current = createModelElementForParent(grammarAccess.getMappingCreationRule());
 	        }
        		set(
        			$current, 
@@ -604,51 +650,51 @@ ruleClassMap returns [EObject current=null]
 )
 )(	otherlv_4='when' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getClassMapAccess().getWhenKeyword_4_0());
+    	newLeafNode(otherlv_4, grammarAccess.getMappingCreationAccess().getWhenKeyword_4_0());
     }
 (
 (
-		lv_rule_5_0=RULE_SIMPLE_ID
-		{
-			newLeafNode(lv_rule_5_0, grammarAccess.getClassMapAccess().getRuleSIMPLE_IDTerminalRuleCall_4_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getMappingCreationAccess().getRuleIDParserRuleCall_4_1_0()); 
+	    }
+		lv_rule_5_0=ruleID		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getClassMapRule());
+	            $current = createModelElementForParent(grammarAccess.getMappingCreationRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"rule",
         		lv_rule_5_0, 
-        		"org.eclipse.ocl.xtext.base.Base.SIMPLE_ID");
+        		"org.eclipse.ocl.xtext.base.Base.ID");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
 ))?	otherlv_6='{' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getClassMapAccess().getLeftCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_6, grammarAccess.getMappingCreationAccess().getLeftCurlyBracketKeyword_5());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getClassMapAccess().getStatementsClassMapStmntParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getMappingCreationAccess().getPropertiesPropertyDefParserRuleCall_6_0()); 
 	    }
-		lv_statements_7_0=ruleClassMapStmnt		{
+		lv_properties_7_0=rulePropertyDef		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getClassMapRule());
+	            $current = createModelElementForParent(grammarAccess.getMappingCreationRule());
 	        }
        		add(
        			$current, 
-       			"statements",
-        		lv_statements_7_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassMapStmnt");
+       			"properties",
+        		lv_properties_7_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.PropertyDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )*	otherlv_8='}' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getClassMapAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_8, grammarAccess.getMappingCreationAccess().getRightCurlyBracketKeyword_7());
     }
 )
 ;
@@ -657,54 +703,17 @@ ruleClassMap returns [EObject current=null]
 
 
 
-// Entry rule entryRuleClassMapStmnt
-entryRuleClassMapStmnt returns [EObject current=null] 
+// Entry rule entryRulePropertyDef
+entryRulePropertyDef returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getClassMapStmntRule()); }
-	 iv_ruleClassMapStmnt=ruleClassMapStmnt 
-	 { $current=$iv_ruleClassMapStmnt.current; } 
+	{ newCompositeNode(grammarAccess.getPropertyDefRule()); }
+	 iv_rulePropertyDef=rulePropertyDef 
+	 { $current=$iv_rulePropertyDef.current; } 
 	 EOF 
 ;
 
-// Rule ClassMapStmnt
-ruleClassMapStmnt returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-	{ 
-	  /* */ 
-	}
-    { 
-        newCompositeNode(grammarAccess.getClassMapStmntAccess().getPropertyMapParserRuleCall_0()); 
-    }
-    this_PropertyMap_0=rulePropertyMap
-    { 
-        $current = $this_PropertyMap_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-	otherlv_1=';' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getClassMapStmntAccess().getSemicolonKeyword_1());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRulePropertyMap
-entryRulePropertyMap returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getPropertyMapRule()); }
-	 iv_rulePropertyMap=rulePropertyMap 
-	 { $current=$iv_rulePropertyMap.current; } 
-	 EOF 
-;
-
-// Rule PropertyMap
-rulePropertyMap returns [EObject current=null] 
+// Rule PropertyDef
+rulePropertyDef returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
@@ -712,12 +721,12 @@ rulePropertyMap returns [EObject current=null]
 (
 		lv_redefine_0_0=	'redefine' 
     {
-        newLeafNode(lv_redefine_0_0, grammarAccess.getPropertyMapAccess().getRedefineRedefineKeyword_0_0());
+        newLeafNode(lv_redefine_0_0, grammarAccess.getPropertyDefAccess().getRedefineRedefineKeyword_0_0());
     }
  
 	    {
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getPropertyMapRule());
+	            $current = createModelElement(grammarAccess.getPropertyDefRule());
 	        }
        		setWithLastConsumed($current, "redefine", true, "redefine");
 	    }
@@ -725,39 +734,130 @@ rulePropertyMap returns [EObject current=null]
 )
 )?(
 (
-		lv_propName_1_0=RULE_SIMPLE_ID
-		{
-			newLeafNode(lv_propName_1_0, grammarAccess.getPropertyMapAccess().getPropNameSIMPLE_IDTerminalRuleCall_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getPropertyDefAccess().getPropRefPathNameCSParserRuleCall_1_0()); 
+	    }
+		lv_propRef_1_0=rulePathNameCS		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getPropertyMapRule());
+	            $current = createModelElementForParent(grammarAccess.getPropertyDefRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
-       			"propName",
-        		lv_propName_1_0, 
-        		"org.eclipse.ocl.xtext.base.Base.SIMPLE_ID");
+       			"propRef",
+        		lv_propRef_1_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )	otherlv_2=':=' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getPropertyMapAccess().getColonEqualsSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getPropertyDefAccess().getColonEqualsSignKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPropertyMapAccess().getPropInitExpCSParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getPropertyDefAccess().getPropInitExpCSParserRuleCall_3_0()); 
 	    }
 		lv_propInit_3_0=ruleExpCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPropertyMapRule());
+	            $current = createModelElementForParent(grammarAccess.getPropertyDefRule());
 	        }
        		set(
        			$current, 
        			"propInit",
         		lv_propInit_3_0, 
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_4=';' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getPropertyDefAccess().getSemicolonKeyword_4());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleMappingReference
+entryRuleMappingReference returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMappingReferenceRule()); }
+	 iv_ruleMappingReference=ruleMappingReference 
+	 { $current=$iv_ruleMappingReference.current; } 
+	 EOF 
+;
+
+// Rule MappingReference
+ruleMappingReference returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='ref' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getMappingReferenceAccess().getRefKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingReferenceAccess().getToPathNameCSParserRuleCall_1_0()); 
+	    }
+		lv_to_1_0=rulePathNameCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingReferenceRule());
+	        }
+       		set(
+       			$current, 
+       			"to",
+        		lv_to_1_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2='from' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getMappingReferenceAccess().getFromKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingReferenceAccess().getFromPathNameCSParserRuleCall_3_0()); 
+	    }
+		lv_from_3_0=rulePathNameCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingReferenceRule());
+	        }
+       		set(
+       			$current, 
+       			"from",
+        		lv_from_3_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_4=':=' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getMappingReferenceAccess().getColonEqualsSignKeyword_4());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingReferenceAccess().getExpressionExpCSParserRuleCall_5_0()); 
+	    }
+		lv_expression_5_0=ruleExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingReferenceRule());
+	        }
+       		set(
+       			$current, 
+       			"expression",
+        		lv_expression_5_0, 
         		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -804,9 +904,9 @@ ruleDisambiguationSect returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDisambiguationSectAccess().getDisambiguationsClassDisambiguationParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getDisambiguationSectAccess().getDisambiguationsDisambiguationDefParserRuleCall_3_0()); 
 	    }
-		lv_disambiguations_3_0=ruleClassDisambiguation		{
+		lv_disambiguations_3_0=ruleDisambiguationDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDisambiguationSectRule());
 	        }
@@ -814,7 +914,7 @@ ruleDisambiguationSect returns [EObject current=null]
        			$current, 
        			"disambiguations",
         		lv_disambiguations_3_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassDisambiguation");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.DisambiguationDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -822,108 +922,6 @@ ruleDisambiguationSect returns [EObject current=null]
 )*	otherlv_4='}' 
     {
     	newLeafNode(otherlv_4, grammarAccess.getDisambiguationSectAccess().getRightCurlyBracketKeyword_4());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleClassDisambiguation
-entryRuleClassDisambiguation returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getClassDisambiguationRule()); }
-	 iv_ruleClassDisambiguation=ruleClassDisambiguation 
-	 { $current=$iv_ruleClassDisambiguation.current; } 
-	 EOF 
-;
-
-// Rule ClassDisambiguation
-ruleClassDisambiguation returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getClassDisambiguationAccess().getClassPathNameCSParserRuleCall_0_0()); 
-	    }
-		lv_class_0_0=rulePathNameCS		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getClassDisambiguationRule());
-	        }
-       		set(
-       			$current, 
-       			"class",
-        		lv_class_0_0, 
-        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_1='{' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getClassDisambiguationAccess().getLeftCurlyBracketKeyword_1());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getClassDisambiguationAccess().getStatementsClassDisambiguationStmntParserRuleCall_2_0()); 
-	    }
-		lv_statements_2_0=ruleClassDisambiguationStmnt		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getClassDisambiguationRule());
-	        }
-       		add(
-       			$current, 
-       			"statements",
-        		lv_statements_2_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassDisambiguationStmnt");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*	otherlv_3='}' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getClassDisambiguationAccess().getRightCurlyBracketKeyword_3());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleClassDisambiguationStmnt
-entryRuleClassDisambiguationStmnt returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getClassDisambiguationStmntRule()); }
-	 iv_ruleClassDisambiguationStmnt=ruleClassDisambiguationStmnt 
-	 { $current=$iv_ruleClassDisambiguationStmnt.current; } 
-	 EOF 
-;
-
-// Rule ClassDisambiguationStmnt
-ruleClassDisambiguationStmnt returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-	{ 
-	  /* */ 
-	}
-    { 
-        newCompositeNode(grammarAccess.getClassDisambiguationStmntAccess().getDisambiguationDefParserRuleCall_0()); 
-    }
-    this_DisambiguationDef_0=ruleDisambiguationDef
-    { 
-        $current = $this_DisambiguationDef_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-	otherlv_1=';' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getClassDisambiguationStmntAccess().getSemicolonKeyword_1());
     }
 )
 ;
@@ -948,13 +946,78 @@ ruleDisambiguationDef returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
+		{ 
+	        newCompositeNode(grammarAccess.getDisambiguationDefAccess().getClassRefPathNameCSParserRuleCall_0_0()); 
+	    }
+		lv_classRef_0_0=rulePathNameCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDisambiguationDefRule());
+	        }
+       		set(
+       			$current, 
+       			"classRef",
+        		lv_classRef_0_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_1='{' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getDisambiguationDefAccess().getLeftCurlyBracketKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDisambiguationDefAccess().getRulesDisambiguationRuleParserRuleCall_2_0()); 
+	    }
+		lv_rules_2_0=ruleDisambiguationRule		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDisambiguationDefRule());
+	        }
+       		add(
+       			$current, 
+       			"rules",
+        		lv_rules_2_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.DisambiguationRule");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_3='}' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getDisambiguationDefAccess().getRightCurlyBracketKeyword_3());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleDisambiguationRule
+entryRuleDisambiguationRule returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDisambiguationRuleRule()); }
+	 iv_ruleDisambiguationRule=ruleDisambiguationRule 
+	 { $current=$iv_ruleDisambiguationRule.current; } 
+	 EOF 
+;
+
+// Rule DisambiguationRule
+ruleDisambiguationRule returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
 		lv_name_0_0=RULE_SIMPLE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getDisambiguationDefAccess().getNameSIMPLE_IDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_0_0, grammarAccess.getDisambiguationRuleAccess().getNameSIMPLE_IDTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDisambiguationDefRule());
+	            $current = createModelElement(grammarAccess.getDisambiguationRuleRule());
 	        }
        		setWithLastConsumed(
        			$current, 
@@ -966,16 +1029,16 @@ ruleDisambiguationDef returns [EObject current=null]
 )
 )	otherlv_1=':=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getDisambiguationDefAccess().getColonEqualsSignKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getDisambiguationRuleAccess().getColonEqualsSignKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDisambiguationDefAccess().getExpExpCSParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getDisambiguationRuleAccess().getExpExpCSParserRuleCall_2_0()); 
 	    }
 		lv_exp_2_0=ruleExpCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getDisambiguationDefRule());
+	            $current = createModelElementForParent(grammarAccess.getDisambiguationRuleRule());
 	        }
        		set(
        			$current, 
@@ -986,7 +1049,11 @@ ruleDisambiguationDef returns [EObject current=null]
 	    }
 
 )
-))
+)	otherlv_3=';' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getDisambiguationRuleAccess().getSemicolonKeyword_3());
+    }
+)
 ;
 
 
@@ -1016,9 +1083,9 @@ ruleNameResolutionSect returns [EObject current=null]
             grammarAccess.getNameResolutionSectAccess().getNameResolutionSectAction_0(),
             $current);
     }
-)	otherlv_1='name-resolution' 
+)	otherlv_1='name_resolution' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getNameResolutionSectAccess().getNameResolutionKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getNameResolutionSectAccess().getName_resolutionKeyword_1());
     }
 	otherlv_2='{' 
     {
@@ -1042,7 +1109,7 @@ ruleNameResolutionSect returns [EObject current=null]
 	    }
 
 )
-)(
+)?(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getNameResolutionSectAccess().getInputsDefInputsParserRuleCall_4_0()); 
@@ -1060,7 +1127,7 @@ ruleNameResolutionSect returns [EObject current=null]
 	    }
 
 )
-)(
+)?(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getNameResolutionSectAccess().getProvidersDefProvidersParserRuleCall_5_0()); 
@@ -1078,7 +1145,7 @@ ruleNameResolutionSect returns [EObject current=null]
 	    }
 
 )
-)	otherlv_6='}' 
+)?	otherlv_6='}' 
     {
     	newLeafNode(otherlv_6, grammarAccess.getNameResolutionSectAccess().getRightCurlyBracketKeyword_6());
     }
@@ -1166,9 +1233,9 @@ ruleTarget returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTargetAccess().getClassRefClassRefParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getTargetAccess().getClassRefPathNameCSParserRuleCall_0_0()); 
 	    }
-		lv_classRef_0_0=ruleClassRef		{
+		lv_classRef_0_0=rulePathNameCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTargetRule());
 	        }
@@ -1176,7 +1243,7 @@ ruleTarget returns [EObject current=null]
        			$current, 
        			"classRef",
         		lv_classRef_0_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassRef");
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1203,73 +1270,206 @@ ruleTarget returns [EObject current=null]
 	    }
 
 )
-))?(
+)(
+(
+		lv_ignoreCase_3_0=	'ignore_case' 
+    {
+        newLeafNode(lv_ignoreCase_3_0, grammarAccess.getTargetAccess().getIgnoreCaseIgnore_caseKeyword_1_2_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTargetRule());
+	        }
+       		setWithLastConsumed($current, "ignoreCase", true, "ignore_case");
+	    }
+
+)
+)?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTargetAccess().getEscapeSeqDefEscapeSequenceDefParserRuleCall_1_3_0()); 
+	    }
+		lv_escapeSeqDef_4_0=ruleEscapeSequenceDef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTargetRule());
+	        }
+       		set(
+       			$current, 
+       			"escapeSeqDef",
+        		lv_escapeSeqDef_4_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.EscapeSequenceDef");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?)?(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getTargetAccess().getFilterFilterDefParserRuleCall_2_0()); 
 	    }
-		lv_filter_3_0=ruleFilterDef		{
+		lv_filter_5_0=ruleFilterDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTargetRule());
 	        }
        		set(
        			$current, 
        			"filter",
-        		lv_filter_3_0, 
+        		lv_filter_5_0, 
         		"uk.ac.york.cs.cs2as.CS2ASDSL.FilterDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)?(	otherlv_4='qualifies' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getTargetAccess().getQualifiesKeyword_3_0());
-    }
-(
+)?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTargetAccess().getQualificationsQualificationDefParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getTargetAccess().getQualificationQualificationDefParserRuleCall_3_0()); 
 	    }
-		lv_qualifications_5_0=ruleQualificationDef		{
+		lv_qualification_6_0=ruleQualificationDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTargetRule());
 	        }
-       		add(
+       		set(
        			$current, 
-       			"qualifications",
-        		lv_qualifications_5_0, 
+       			"qualification",
+        		lv_qualification_6_0, 
         		"uk.ac.york.cs.cs2as.CS2ASDSL.QualificationDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_6=',' 
+)?	otherlv_7=';' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getTargetAccess().getCommaKeyword_3_2_0());
+    	newLeafNode(otherlv_7, grammarAccess.getTargetAccess().getSemicolonKeyword_4());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleEscapeSequenceDef
+entryRuleEscapeSequenceDef returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEscapeSequenceDefRule()); }
+	 iv_ruleEscapeSequenceDef=ruleEscapeSequenceDef 
+	 { $current=$iv_ruleEscapeSequenceDef.current; } 
+	 EOF 
+;
+
+// Rule EscapeSequenceDef
+ruleEscapeSequenceDef returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='scaped_with' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getEscapeSequenceDefAccess().getScaped_withKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTargetAccess().getQualificationsQualificationDefParserRuleCall_3_2_1_0()); 
+	        newCompositeNode(grammarAccess.getEscapeSequenceDefAccess().getEscapesEscapeSequenceParserRuleCall_1_0()); 
 	    }
-		lv_qualifications_7_0=ruleQualificationDef		{
+		lv_escapes_1_0=ruleEscapeSequence		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getTargetRule());
+	            $current = createModelElementForParent(grammarAccess.getEscapeSequenceDefRule());
 	        }
        		add(
        			$current, 
-       			"qualifications",
-        		lv_qualifications_7_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.QualificationDef");
+       			"escapes",
+        		lv_escapes_1_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.EscapeSequence");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*)?	otherlv_8=';' 
+)(	otherlv_2=',' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getTargetAccess().getSemicolonKeyword_4());
+    	newLeafNode(otherlv_2, grammarAccess.getEscapeSequenceDefAccess().getCommaKeyword_2_0());
     }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEscapeSequenceDefAccess().getEscapesEscapeSequenceParserRuleCall_2_1_0()); 
+	    }
+		lv_escapes_3_0=ruleEscapeSequence		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEscapeSequenceDefRule());
+	        }
+       		add(
+       			$current, 
+       			"escapes",
+        		lv_escapes_3_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.EscapeSequence");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+))*)
+;
+
+
+
+
+
+// Entry rule entryRuleEscapeSequence
+entryRuleEscapeSequence returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEscapeSequenceRule()); }
+	 iv_ruleEscapeSequence=ruleEscapeSequence 
+	 { $current=$iv_ruleEscapeSequence.current; } 
+	 EOF 
+;
+
+// Rule EscapeSequence
+ruleEscapeSequence returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEscapeSequenceAccess().getPrefixStringLiteralParserRuleCall_0_0()); 
+	    }
+		lv_prefix_0_0=ruleStringLiteral		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEscapeSequenceRule());
+	        }
+       		set(
+       			$current, 
+       			"prefix",
+        		lv_prefix_0_0, 
+        		"org.eclipse.ocl.xtext.base.Base.StringLiteral");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_1='and' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getEscapeSequenceAccess().getAndKeyword_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEscapeSequenceAccess().getSuffixStringLiteralParserRuleCall_1_1_0()); 
+	    }
+		lv_suffix_2_0=ruleStringLiteral		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEscapeSequenceRule());
+	        }
+       		set(
+       			$current, 
+       			"suffix",
+        		lv_suffix_2_0, 
+        		"org.eclipse.ocl.xtext.base.Base.StringLiteral");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
 ;
 
 
@@ -1368,17 +1568,17 @@ ruleInput returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getInputAccess().getClassRefClassRefParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getInputAccess().getTypeRefPathNameCSParserRuleCall_1_0()); 
 	    }
-		lv_classRef_1_0=ruleClassRef		{
+		lv_typeRef_1_0=rulePathNameCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getInputRule());
 	        }
        		set(
        			$current, 
-       			"classRef",
-        		lv_classRef_1_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassRef");
+       			"typeRef",
+        		lv_typeRef_1_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1515,9 +1715,9 @@ ruleProvider returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getProviderAccess().getVarsDeclProviderVarsParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getProviderAccess().getVarsDeclProviderVarsDeclParserRuleCall_2_0()); 
 	    }
-		lv_varsDecl_2_0=ruleProviderVars		{
+		lv_varsDecl_2_0=ruleProviderVarsDecl		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getProviderRule());
 	        }
@@ -1525,7 +1725,7 @@ ruleProvider returns [EObject current=null]
        			$current, 
        			"varsDecl",
         		lv_varsDecl_2_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ProviderVars");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ProviderVarsDecl");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1533,24 +1733,42 @@ ruleProvider returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getProviderAccess().getStatementsProviderStmntParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getProviderAccess().getCurrentScopeCurrentScopeDeclParserRuleCall_3_0()); 
 	    }
-		lv_statements_3_0=ruleProviderStmnt		{
+		lv_currentScope_3_0=ruleCurrentScopeDecl		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getProviderRule());
 	        }
-       		add(
+       		set(
        			$current, 
-       			"statements",
-        		lv_statements_3_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ProviderStmnt");
+       			"currentScope",
+        		lv_currentScope_3_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.CurrentScopeDecl");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_4='}' 
+)?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getProviderAccess().getExportedScopeExportedScopeDeclParserRuleCall_4_0()); 
+	    }
+		lv_exportedScope_4_0=ruleExportedScopeDecl		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getProviderRule());
+	        }
+       		set(
+       			$current, 
+       			"exportedScope",
+        		lv_exportedScope_4_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ExportedScopeDecl");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?	otherlv_5='}' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getProviderAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getProviderAccess().getRightCurlyBracketKeyword_5());
     }
 )
 ;
@@ -1559,32 +1777,32 @@ ruleProvider returns [EObject current=null]
 
 
 
-// Entry rule entryRuleProviderVars
-entryRuleProviderVars returns [EObject current=null] 
+// Entry rule entryRuleProviderVarsDecl
+entryRuleProviderVarsDecl returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getProviderVarsRule()); }
-	 iv_ruleProviderVars=ruleProviderVars 
-	 { $current=$iv_ruleProviderVars.current; } 
+	{ newCompositeNode(grammarAccess.getProviderVarsDeclRule()); }
+	 iv_ruleProviderVarsDecl=ruleProviderVarsDecl 
+	 { $current=$iv_ruleProviderVarsDecl.current; } 
 	 EOF 
 ;
 
-// Rule ProviderVars
-ruleProviderVars returns [EObject current=null] 
+// Rule ProviderVarsDecl
+ruleProviderVarsDecl returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (	otherlv_0='vars' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getProviderVarsAccess().getVarsKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getProviderVarsDeclAccess().getVarsKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getProviderVarsAccess().getVarDeclLetVariableCSParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getProviderVarsDeclAccess().getVarDeclLetVariableCSParserRuleCall_1_0()); 
 	    }
 		lv_varDecl_1_0=ruleLetVariableCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getProviderVarsRule());
+	            $current = createModelElementForParent(grammarAccess.getProviderVarsDeclRule());
 	        }
        		add(
        			$current, 
@@ -1597,16 +1815,16 @@ ruleProviderVars returns [EObject current=null]
 )
 )(	otherlv_2=',' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getProviderVarsAccess().getCommaKeyword_2_0());
+    	newLeafNode(otherlv_2, grammarAccess.getProviderVarsDeclAccess().getCommaKeyword_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getProviderVarsAccess().getVarDeclLetVariableCSParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getProviderVarsDeclAccess().getVarDeclLetVariableCSParserRuleCall_2_1_0()); 
 	    }
 		lv_varDecl_3_0=ruleLetVariableCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getProviderVarsRule());
+	            $current = createModelElementForParent(grammarAccess.getProviderVarsDeclRule());
 	        }
        		add(
        			$current, 
@@ -1619,57 +1837,7 @@ ruleProviderVars returns [EObject current=null]
 )
 ))*	otherlv_4=';' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getProviderVarsAccess().getSemicolonKeyword_3());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleProviderStmnt
-entryRuleProviderStmnt returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getProviderStmntRule()); }
-	 iv_ruleProviderStmnt=ruleProviderStmnt 
-	 { $current=$iv_ruleProviderStmnt.current; } 
-	 EOF 
-;
-
-// Rule ProviderStmnt
-ruleProviderStmnt returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-	{ 
-	  /* */ 
-	}
-    { 
-        newCompositeNode(grammarAccess.getProviderStmntAccess().getScopeDefParserRuleCall_0_0()); 
-    }
-    this_ScopeDef_0=ruleScopeDef
-    { 
-        $current = $this_ScopeDef_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-	{ 
-	  /* */ 
-	}
-    { 
-        newCompositeNode(grammarAccess.getProviderStmntAccess().getExportDefParserRuleCall_0_1()); 
-    }
-    this_ExportDef_1=ruleExportDef
-    { 
-        $current = $this_ExportDef_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-)	otherlv_2=';' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getProviderStmntAccess().getSemicolonKeyword_1());
+    	newLeafNode(otherlv_4, grammarAccess.getProviderVarsDeclAccess().getSemicolonKeyword_3());
     }
 )
 ;
@@ -1692,71 +1860,67 @@ ruleFilterDef returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='filtered' 
+(	otherlv_0='filtered_by' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getFilterDefAccess().getFilteredKeyword_0());
-    }
-(	otherlv_1='by' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getFilterDefAccess().getByKeyword_1_0());
+    	newLeafNode(otherlv_0, grammarAccess.getFilterDefAccess().getFiltered_byKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFilterDefAccess().getParamsParameterDefParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getFilterDefAccess().getParamsParameterDefParserRuleCall_1_0()); 
 	    }
-		lv_params_2_0=ruleParameterDef		{
+		lv_params_1_0=ruleParameterDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFilterDefRule());
 	        }
        		add(
        			$current, 
        			"params",
-        		lv_params_2_0, 
+        		lv_params_1_0, 
         		"uk.ac.york.cs.cs2as.CS2ASDSL.ParameterDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_3=',' 
+)(	otherlv_2=',' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getFilterDefAccess().getCommaKeyword_1_2_0());
+    	newLeafNode(otherlv_2, grammarAccess.getFilterDefAccess().getCommaKeyword_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFilterDefAccess().getParamsParameterDefParserRuleCall_1_2_1_0()); 
+	        newCompositeNode(grammarAccess.getFilterDefAccess().getParamsParameterDefParserRuleCall_2_1_0()); 
 	    }
-		lv_params_4_0=ruleParameterDef		{
+		lv_params_3_0=ruleParameterDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFilterDefRule());
 	        }
        		add(
        			$current, 
        			"params",
-        		lv_params_4_0, 
+        		lv_params_3_0, 
         		"uk.ac.york.cs.cs2as.CS2ASDSL.ParameterDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*)?	otherlv_5='when' 
+))*	otherlv_4='when' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getFilterDefAccess().getWhenKeyword_2());
+    	newLeafNode(otherlv_4, grammarAccess.getFilterDefAccess().getWhenKeyword_3());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFilterDefAccess().getExpressionExpCSParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getFilterDefAccess().getExpressionExpCSParserRuleCall_4_0()); 
 	    }
-		lv_expression_6_0=ruleExpCS		{
+		lv_expression_5_0=ruleExpCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFilterDefRule());
 	        }
        		set(
        			$current, 
        			"expression",
-        		lv_expression_6_0, 
+        		lv_expression_5_0, 
         		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1783,145 +1947,209 @@ ruleQualificationDef returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='qualifies' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getQualificationDefAccess().getQualifiesKeyword_0());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getQualificationDefAccess().getTargetsDefMultipleClassRefParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getQualificationDefAccess().getQualificationsQualificationParserRuleCall_1_0()); 
 	    }
-		lv_targetsDef_0_0=ruleMultipleClassRef		{
+		lv_qualifications_1_0=ruleQualification		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getQualificationDefRule());
 	        }
+       		add(
+       			$current, 
+       			"qualifications",
+        		lv_qualifications_1_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.Qualification");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getQualificationDefAccess().getCommaKeyword_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getQualificationDefAccess().getQualificationsQualificationParserRuleCall_2_1_0()); 
+	    }
+		lv_qualifications_3_0=ruleQualification		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getQualificationDefRule());
+	        }
+       		add(
+       			$current, 
+       			"qualifications",
+        		lv_qualifications_3_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.Qualification");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)
+;
+
+
+
+
+
+// Entry rule entryRuleQualification
+entryRuleQualification returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getQualificationRule()); }
+	 iv_ruleQualification=ruleQualification 
+	 { $current=$iv_ruleQualification.current; } 
+	 EOF 
+;
+
+// Rule Qualification
+ruleQualification returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getQualificationAccess().getQualifiedClassesMultiplePathNamesParserRuleCall_0_0()); 
+	    }
+		lv_qualifiedClasses_0_0=ruleMultiplePathNames		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getQualificationRule());
+	        }
        		set(
        			$current, 
-       			"targetsDef",
-        		lv_targetsDef_0_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.MultipleClassRef");
+       			"qualifiedClasses",
+        		lv_qualifiedClasses_0_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.MultiplePathNames");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )	otherlv_1='using' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getQualificationDefAccess().getUsingKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getQualificationAccess().getUsingKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getQualificationDefAccess().getContributionElementsContribExpParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getQualificationAccess().getContributionsExpCSParserRuleCall_2_0()); 
 	    }
-		lv_contribution_2_0=ruleElementsContribExp		{
+		lv_contributions_2_0=ruleExpCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getQualificationDefRule());
+	            $current = createModelElementForParent(grammarAccess.getQualificationRule());
 	        }
        		add(
        			$current, 
-       			"contribution",
-        		lv_contribution_2_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ElementsContribExp");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRuleElementsContribExp
-entryRuleElementsContribExp returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getElementsContribExpRule()); }
-	 iv_ruleElementsContribExp=ruleElementsContribExp 
-	 { $current=$iv_ruleElementsContribExp.current; } 
-	 EOF 
-;
-
-// Rule ElementsContribExp
-ruleElementsContribExp returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(((
-(
-		lv_isPreceding_0_0=	'preceding' 
-    {
-        newLeafNode(lv_isPreceding_0_0, grammarAccess.getElementsContribExpAccess().getIsPrecedingPrecedingKeyword_0_0_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getElementsContribExpRule());
-	        }
-       		setWithLastConsumed($current, "isPreceding", true, "preceding");
-	    }
-
-)
-)
-    |(
-(
-		lv_isImported_1_0=	'imported' 
-    {
-        newLeafNode(lv_isImported_1_0, grammarAccess.getElementsContribExpAccess().getIsImportedImportedKeyword_0_1_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getElementsContribExpRule());
-	        }
-       		setWithLastConsumed($current, "isImported", true, "imported");
-	    }
-
-)
-)?)?(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getElementsContribExpAccess().getExpressionExpCSParserRuleCall_1_0()); 
-	    }
-		lv_expression_2_0=ruleExpCS		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getElementsContribExpRule());
-	        }
-       		set(
-       			$current, 
-       			"expression",
-        		lv_expression_2_0, 
+       			"contributions",
+        		lv_contributions_2_0, 
         		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))
+)(	otherlv_3=',' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getQualificationAccess().getCommaKeyword_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getQualificationAccess().getContributionsExpCSParserRuleCall_3_1_0()); 
+	    }
+		lv_contributions_4_0=ruleExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getQualificationRule());
+	        }
+       		add(
+       			$current, 
+       			"contributions",
+        		lv_contributions_4_0, 
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)
 ;
 
 
 
 
 
-// Entry rule entryRuleScopeDef
-entryRuleScopeDef returns [EObject current=null] 
+// Entry rule entryRuleCurrentScopeDecl
+entryRuleCurrentScopeDecl returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getScopeDefRule()); }
-	 iv_ruleScopeDef=ruleScopeDef 
-	 { $current=$iv_ruleScopeDef.current; } 
+	{ newCompositeNode(grammarAccess.getCurrentScopeDeclRule()); }
+	 iv_ruleCurrentScopeDecl=ruleCurrentScopeDecl 
+	 { $current=$iv_ruleCurrentScopeDecl.current; } 
 	 EOF 
 ;
 
-// Rule ScopeDef
-ruleScopeDef returns [EObject current=null] 
+// Rule CurrentScopeDecl
+ruleCurrentScopeDecl returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='in' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getCurrentScopeDeclAccess().getInKeyword_0());
+    }
+	otherlv_1='current_scope' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getCurrentScopeDeclAccess().getCurrent_scopeKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCurrentScopeDeclAccess().getProvisionDefsCurrentScopeProvisionDefParserRuleCall_2_0()); 
+	    }
+		lv_provisionDefs_2_0=ruleCurrentScopeProvisionDef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCurrentScopeDeclRule());
+	        }
+       		add(
+       			$current, 
+       			"provisionDefs",
+        		lv_provisionDefs_2_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.CurrentScopeProvisionDef");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)+)
+;
+
+
+
+
+
+// Entry rule entryRuleCurrentScopeProvisionDef
+entryRuleCurrentScopeProvisionDef returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCurrentScopeProvisionDefRule()); }
+	 iv_ruleCurrentScopeProvisionDef=ruleCurrentScopeProvisionDef 
+	 { $current=$iv_ruleCurrentScopeProvisionDef.current; } 
+	 EOF 
+;
+
+// Rule CurrentScopeProvisionDef
+ruleCurrentScopeProvisionDef returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getScopeDefAccess().getSelectionDefSelectionDefParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getCurrentScopeProvisionDefAccess().getSelectionDefSelectionDefParserRuleCall_0_0()); 
 	    }
 		lv_selectionDef_0_0=ruleSelectionDef		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getScopeDefRule());
+	            $current = createModelElementForParent(grammarAccess.getCurrentScopeProvisionDefRule());
 	        }
        		set(
        			$current, 
@@ -1932,52 +2160,25 @@ ruleScopeDef returns [EObject current=null]
 	    }
 
 )
-)?	otherlv_1='in' 
+)?	otherlv_1='provides' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getScopeDefAccess().getInKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getCurrentScopeProvisionDefAccess().getProvidesKeyword_1());
     }
-	otherlv_2='current-scope' 
+(	otherlv_2='occluding' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getScopeDefAccess().getCurrentScopeKeyword_2());
-    }
-(	otherlv_3='and' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getScopeDefAccess().getAndKeyword_3_0());
-    }
-(
-(
-		lv_alsoExports_4_0=	'exported-scope' 
-    {
-        newLeafNode(lv_alsoExports_4_0, grammarAccess.getScopeDefAccess().getAlsoExportsExportedScopeKeyword_3_1_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getScopeDefRule());
-	        }
-       		setWithLastConsumed($current, "alsoExports", true, "exported-scope");
-	    }
-
-)
-))?	otherlv_5='provides' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getScopeDefAccess().getProvidesKeyword_4());
-    }
-(	otherlv_6='occluding' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getScopeDefAccess().getOccludingKeyword_5_0());
+    	newLeafNode(otherlv_2, grammarAccess.getCurrentScopeProvisionDefAccess().getOccludingKeyword_2_0());
     }
 
     |(
 (
-		lv_sameScope_7_0=	'adding' 
+		lv_sameScope_3_0=	'adding' 
     {
-        newLeafNode(lv_sameScope_7_0, grammarAccess.getScopeDefAccess().getSameScopeAddingKeyword_5_1_0());
+        newLeafNode(lv_sameScope_3_0, grammarAccess.getCurrentScopeProvisionDefAccess().getSameScopeAddingKeyword_2_1_0());
     }
  
 	    {
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getScopeDefRule());
+	            $current = createModelElement(grammarAccess.getCurrentScopeProvisionDefRule());
 	        }
        		setWithLastConsumed($current, "sameScope", true, "adding");
 	    }
@@ -1986,14 +2187,14 @@ ruleScopeDef returns [EObject current=null]
 )
     |(
 (
-		lv_emptyScope_8_0=	'resetting' 
+		lv_emptyScope_4_0=	'resetting' 
     {
-        newLeafNode(lv_emptyScope_8_0, grammarAccess.getScopeDefAccess().getEmptyScopeResettingKeyword_5_2_0());
+        newLeafNode(lv_emptyScope_4_0, grammarAccess.getCurrentScopeProvisionDefAccess().getEmptyScopeResettingKeyword_2_2_0());
     }
  
 	    {
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getScopeDefRule());
+	            $current = createModelElement(grammarAccess.getCurrentScopeProvisionDefRule());
 	        }
        		setWithLastConsumed($current, "emptyScope", true, "resetting");
 	    }
@@ -2002,22 +2203,26 @@ ruleScopeDef returns [EObject current=null]
 ))?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getScopeDefAccess().getProvisionDefsProvisionDefParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getCurrentScopeProvisionDefAccess().getProvisionsProvisionParserRuleCall_3_0()); 
 	    }
-		lv_provisionDefs_9_0=ruleProvisionDef		{
+		lv_provisions_5_0=ruleProvision		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getScopeDefRule());
+	            $current = createModelElementForParent(grammarAccess.getCurrentScopeProvisionDefRule());
 	        }
        		add(
        			$current, 
-       			"provisionDefs",
-        		lv_provisionDefs_9_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ProvisionDef");
+       			"provisions",
+        		lv_provisions_5_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.Provision");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)+)
+)+	otherlv_6=';' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getCurrentScopeProvisionDefAccess().getSemicolonKeyword_4());
+    }
+)
 ;
 
 
@@ -2062,17 +2267,17 @@ ruleSelectionDef returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSelectionDefAccess().getExceptionPropertiesExpCSParserRuleCall_1_0_2_1_0()); 
+	        newCompositeNode(grammarAccess.getSelectionDefAccess().getExceptionsPathNameCSParserRuleCall_1_0_2_1_0()); 
 	    }
-		lv_exceptionProperties_4_0=ruleExpCS		{
+		lv_exceptions_4_0=rulePathNameCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSelectionDefRule());
 	        }
        		add(
        			$current, 
-       			"exceptionProperties",
-        		lv_exceptionProperties_4_0, 
-        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
+       			"exceptions",
+        		lv_exceptions_4_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2084,17 +2289,17 @@ ruleSelectionDef returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSelectionDefAccess().getExceptionPropertiesExpCSParserRuleCall_1_0_2_2_1_0()); 
+	        newCompositeNode(grammarAccess.getSelectionDefAccess().getExceptionsPathNameCSParserRuleCall_1_0_2_2_1_0()); 
 	    }
-		lv_exceptionProperties_6_0=ruleExpCS		{
+		lv_exceptions_6_0=rulePathNameCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSelectionDefRule());
 	        }
        		add(
        			$current, 
-       			"exceptionProperties",
-        		lv_exceptionProperties_6_0, 
-        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
+       			"exceptions",
+        		lv_exceptions_6_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2112,17 +2317,17 @@ ruleSelectionDef returns [EObject current=null]
 )((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSelectionDefAccess().getSelectedPropertiesExpCSParserRuleCall_1_1_1_0_0()); 
+	        newCompositeNode(grammarAccess.getSelectionDefAccess().getSelectionsPathNameCSParserRuleCall_1_1_1_0_0()); 
 	    }
-		lv_selectedProperties_8_0=ruleExpCS		{
+		lv_selections_8_0=rulePathNameCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSelectionDefRule());
 	        }
        		add(
        			$current, 
-       			"selectedProperties",
-        		lv_selectedProperties_8_0, 
-        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
+       			"selections",
+        		lv_selections_8_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2134,17 +2339,17 @@ ruleSelectionDef returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSelectionDefAccess().getSelectedPropertiesExpCSParserRuleCall_1_1_1_1_1_0()); 
+	        newCompositeNode(grammarAccess.getSelectionDefAccess().getSelectionsPathNameCSParserRuleCall_1_1_1_1_1_0()); 
 	    }
-		lv_selectedProperties_10_0=ruleExpCS		{
+		lv_selections_10_0=rulePathNameCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSelectionDefRule());
 	        }
        		add(
        			$current, 
-       			"selectedProperties",
-        		lv_selectedProperties_10_0, 
-        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
+       			"selections",
+        		lv_selections_10_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2156,56 +2361,56 @@ ruleSelectionDef returns [EObject current=null]
 
 
 
-// Entry rule entryRuleProvisionDef
-entryRuleProvisionDef returns [EObject current=null] 
+// Entry rule entryRuleProvision
+entryRuleProvision returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getProvisionDefRule()); }
-	 iv_ruleProvisionDef=ruleProvisionDef 
-	 { $current=$iv_ruleProvisionDef.current; } 
+	{ newCompositeNode(grammarAccess.getProvisionRule()); }
+	 iv_ruleProvision=ruleProvision 
+	 { $current=$iv_ruleProvision.current; } 
 	 EOF 
 ;
 
-// Rule ProvisionDef
-ruleProvisionDef returns [EObject current=null] 
+// Rule Provision
+ruleProvision returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getProvisionDefAccess().getTargetsDefMultipleClassRefParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getProvisionAccess().getProvidedClassesMultiplePathNamesParserRuleCall_0_0_0()); 
 	    }
-		lv_targetsDef_0_0=ruleMultipleClassRef		{
+		lv_providedClasses_0_0=ruleMultiplePathNames		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getProvisionDefRule());
+	            $current = createModelElementForParent(grammarAccess.getProvisionRule());
 	        }
        		set(
        			$current, 
-       			"targetsDef",
-        		lv_targetsDef_0_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.MultipleClassRef");
+       			"providedClasses",
+        		lv_providedClasses_0_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.MultiplePathNames");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )	otherlv_1='using' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getProvisionDefAccess().getUsingKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getProvisionAccess().getUsingKeyword_0_1());
     }
-(
+)?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getProvisionDefAccess().getContributionContributionDefParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getProvisionAccess().getContributionsDefContributionsDefParserRuleCall_1_0()); 
 	    }
-		lv_contribution_2_0=ruleContributionDef		{
+		lv_contributionsDef_2_0=ruleContributionsDef		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getProvisionDefRule());
+	            $current = createModelElementForParent(grammarAccess.getProvisionRule());
 	        }
        		set(
        			$current, 
-       			"contribution",
-        		lv_contribution_2_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ContributionDef");
+       			"contributionsDef",
+        		lv_contributionsDef_2_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ContributionsDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2213,11 +2418,11 @@ ruleProvisionDef returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getProvisionDefAccess().getOccludingDefsOccludingDefParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getProvisionAccess().getOccludingDefsOccludingDefParserRuleCall_2_0()); 
 	    }
 		lv_occludingDefs_3_0=ruleOccludingDef		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getProvisionDefRule());
+	            $current = createModelElementForParent(grammarAccess.getProvisionRule());
 	        }
        		add(
        			$current, 
@@ -2235,72 +2440,33 @@ ruleProvisionDef returns [EObject current=null]
 
 
 
-// Entry rule entryRuleClassRef
-entryRuleClassRef returns [EObject current=null] 
+// Entry rule entryRuleMultiplePathNames
+entryRuleMultiplePathNames returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getClassRefRule()); }
-	 iv_ruleClassRef=ruleClassRef 
-	 { $current=$iv_ruleClassRef.current; } 
+	{ newCompositeNode(grammarAccess.getMultiplePathNamesRule()); }
+	 iv_ruleMultiplePathNames=ruleMultiplePathNames 
+	 { $current=$iv_ruleMultiplePathNames.current; } 
 	 EOF 
 ;
 
-// Rule ClassRef
-ruleClassRef returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getClassRefAccess().getClassNamePathNameCSParserRuleCall_0()); 
-	    }
-		lv_className_0_0=rulePathNameCS		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getClassRefRule());
-	        }
-       		set(
-       			$current, 
-       			"className",
-        		lv_className_0_0, 
-        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-;
-
-
-
-
-
-// Entry rule entryRuleMultipleClassRef
-entryRuleMultipleClassRef returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getMultipleClassRefRule()); }
-	 iv_ruleMultipleClassRef=ruleMultipleClassRef 
-	 { $current=$iv_ruleMultipleClassRef.current; } 
-	 EOF 
-;
-
-// Rule MultipleClassRef
-ruleMultipleClassRef returns [EObject current=null] 
+// Rule MultiplePathNames
+ruleMultiplePathNames returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMultipleClassRefAccess().getClassNamesPathNameCSParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getMultiplePathNamesAccess().getPathNamesPathNameCSParserRuleCall_0_0()); 
 	    }
-		lv_classNames_0_0=rulePathNameCS		{
+		lv_pathNames_0_0=rulePathNameCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getMultipleClassRefRule());
+	            $current = createModelElementForParent(grammarAccess.getMultiplePathNamesRule());
 	        }
        		add(
        			$current, 
-       			"classNames",
-        		lv_classNames_0_0, 
+       			"pathNames",
+        		lv_pathNames_0_0, 
         		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2308,21 +2474,21 @@ ruleMultipleClassRef returns [EObject current=null]
 )
 )(	otherlv_1=',' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getMultipleClassRefAccess().getCommaKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getMultiplePathNamesAccess().getCommaKeyword_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMultipleClassRefAccess().getClassNamesPathNameCSParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getMultiplePathNamesAccess().getPathNamesPathNameCSParserRuleCall_1_1_0()); 
 	    }
-		lv_classNames_2_0=rulePathNameCS		{
+		lv_pathNames_2_0=rulePathNameCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getMultipleClassRefRule());
+	            $current = createModelElementForParent(grammarAccess.getMultiplePathNamesRule());
 	        }
        		add(
        			$current, 
-       			"classNames",
-        		lv_classNames_2_0, 
+       			"pathNames",
+        		lv_pathNames_2_0, 
         		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2356,17 +2522,17 @@ ruleOccludingDef returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getOccludingDefAccess().getContributionContributionDefParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getOccludingDefAccess().getContributionsDefContributionsDefParserRuleCall_1_0()); 
 	    }
-		lv_contribution_1_0=ruleContributionDef		{
+		lv_contributionsDef_1_0=ruleContributionsDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getOccludingDefRule());
 	        }
        		set(
        			$current, 
-       			"contribution",
-        		lv_contribution_1_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ContributionDef");
+       			"contributionsDef",
+        		lv_contributionsDef_1_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ContributionsDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2378,56 +2544,56 @@ ruleOccludingDef returns [EObject current=null]
 
 
 
-// Entry rule entryRuleContributionDef
-entryRuleContributionDef returns [EObject current=null] 
+// Entry rule entryRuleContributionsDef
+entryRuleContributionsDef returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getContributionDefRule()); }
-	 iv_ruleContributionDef=ruleContributionDef 
-	 { $current=$iv_ruleContributionDef.current; } 
+	{ newCompositeNode(grammarAccess.getContributionsDefRule()); }
+	 iv_ruleContributionsDef=ruleContributionsDef 
+	 { $current=$iv_ruleContributionsDef.current; } 
 	 EOF 
 ;
 
-// Rule ContributionDef
-ruleContributionDef returns [EObject current=null] 
+// Rule ContributionsDef
+ruleContributionsDef returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getContributionDefAccess().getContributionsElementsContribExpParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getContributionsDefAccess().getContributionsContributionParserRuleCall_0_0()); 
 	    }
-		lv_contributions_0_0=ruleElementsContribExp		{
+		lv_contributions_0_0=ruleContribution		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getContributionDefRule());
+	            $current = createModelElementForParent(grammarAccess.getContributionsDefRule());
 	        }
        		add(
        			$current, 
        			"contributions",
         		lv_contributions_0_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ElementsContribExp");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.Contribution");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )(	otherlv_1=',' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getContributionDefAccess().getCommaKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getContributionsDefAccess().getCommaKeyword_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getContributionDefAccess().getContributionsElementsContribExpParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getContributionsDefAccess().getContributionsContributionParserRuleCall_1_1_0()); 
 	    }
-		lv_contributions_2_0=ruleElementsContribExp		{
+		lv_contributions_2_0=ruleContribution		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getContributionDefRule());
+	            $current = createModelElementForParent(grammarAccess.getContributionsDefRule());
 	        }
        		add(
        			$current, 
        			"contributions",
         		lv_contributions_2_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ElementsContribExp");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.Contribution");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2439,69 +2605,273 @@ ruleContributionDef returns [EObject current=null]
 
 
 
-// Entry rule entryRuleExportDef
-entryRuleExportDef returns [EObject current=null] 
+// Entry rule entryRuleContribution
+entryRuleContribution returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getExportDefRule()); }
-	 iv_ruleExportDef=ruleExportDef 
-	 { $current=$iv_ruleExportDef.current; } 
+	{ newCompositeNode(grammarAccess.getContributionRule()); }
+	 iv_ruleContribution=ruleContribution 
+	 { $current=$iv_ruleContribution.current; } 
 	 EOF 
 ;
 
-// Rule ExportDef
-ruleExportDef returns [EObject current=null] 
+// Rule Contribution
+ruleContribution returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(((	otherlv_0='child' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getContributionAccess().getChildKeyword_0_0_0());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExportDefAccess().getSelectionDefSelectionDefParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getContributionAccess().getChildParameterDefParserRuleCall_0_0_1_0()); 
 	    }
-		lv_selectionDef_0_0=ruleSelectionDef		{
+		lv_child_1_0=ruleParameterDef		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getExportDefRule());
+	            $current = createModelElementForParent(grammarAccess.getContributionRule());
 	        }
        		set(
        			$current, 
-       			"selectionDef",
-        		lv_selectionDef_0_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.SelectionDef");
+       			"child",
+        		lv_child_1_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ParameterDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)?	otherlv_1='in' 
+)	otherlv_2='in' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getExportDefAccess().getInKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getContributionAccess().getInKeyword_0_0_2());
     }
-	otherlv_2='exported-scope' 
+)
+    |(
+(
+		lv_isPreceding_3_0=	'preceding' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getExportDefAccess().getExportedScopeKeyword_2());
+        newLeafNode(lv_isPreceding_3_0, grammarAccess.getContributionAccess().getIsPrecedingPrecedingKeyword_0_1_0());
     }
-	otherlv_3='provides' 
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getContributionRule());
+	        }
+       		setWithLastConsumed($current, "isPreceding", true, "preceding");
+	    }
+
+)
+)
+    |((
+(
+		lv_isExported_4_0=	'exported' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getExportDefAccess().getProvidesKeyword_3());
+        newLeafNode(lv_isExported_4_0, grammarAccess.getContributionAccess().getIsExportedExportedKeyword_0_2_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getContributionRule());
+	        }
+       		setWithLastConsumed($current, "isExported", true, "exported");
+	    }
+
+)
+)((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getContributionAccess().getTypeRefsPathNameCSParserRuleCall_0_2_1_0_0()); 
+	    }
+		lv_typeRefs_5_0=rulePathNameCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getContributionRule());
+	        }
+       		add(
+       			$current, 
+       			"typeRefs",
+        		lv_typeRefs_5_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_6=',' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getContributionAccess().getCommaKeyword_0_2_1_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExportDefAccess().getProvisionDefsProvisionDefParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getContributionAccess().getTypeRefsPathNameCSParserRuleCall_0_2_1_1_1_0()); 
 	    }
-		lv_provisionDefs_4_0=ruleProvisionDef		{
+		lv_typeRefs_7_0=rulePathNameCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getExportDefRule());
+	            $current = createModelElementForParent(grammarAccess.getContributionRule());
+	        }
+       		add(
+       			$current, 
+       			"typeRefs",
+        		lv_typeRefs_7_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_8='from' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getContributionAccess().getFromKeyword_0_2_1_2());
+    }
+)?)
+    |((
+(
+		lv_isLoaded_9_0=	'loaded' 
+    {
+        newLeafNode(lv_isLoaded_9_0, grammarAccess.getContributionAccess().getIsLoadedLoadedKeyword_0_3_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getContributionRule());
+	        }
+       		setWithLastConsumed($current, "isLoaded", true, "loaded");
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getContributionAccess().getTypeRefsPathNameCSParserRuleCall_0_3_1_0()); 
+	    }
+		lv_typeRefs_10_0=rulePathNameCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getContributionRule());
+	        }
+       		add(
+       			$current, 
+       			"typeRefs",
+        		lv_typeRefs_10_0, 
+        		"org.eclipse.ocl.xtext.base.Base.PathNameCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_11='from' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getContributionAccess().getFromKeyword_0_3_2());
+    }
+))?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getContributionAccess().getExpressionExpCSParserRuleCall_1_0()); 
+	    }
+		lv_expression_12_0=ruleExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getContributionRule());
+	        }
+       		set(
+       			$current, 
+       			"expression",
+        		lv_expression_12_0, 
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.ExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleExportedScopeDecl
+entryRuleExportedScopeDecl returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getExportedScopeDeclRule()); }
+	 iv_ruleExportedScopeDecl=ruleExportedScopeDecl 
+	 { $current=$iv_ruleExportedScopeDecl.current; } 
+	 EOF 
+;
+
+// Rule ExportedScopeDecl
+ruleExportedScopeDecl returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='in' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getExportedScopeDeclAccess().getInKeyword_0());
+    }
+	otherlv_1='exported_scope' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getExportedScopeDeclAccess().getExported_scopeKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getExportedScopeDeclAccess().getProvisionDefsExportedScopeProvisionDefParserRuleCall_2_0()); 
+	    }
+		lv_provisionDefs_2_0=ruleExportedScopeProvisionDef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getExportedScopeDeclRule());
 	        }
        		add(
        			$current, 
        			"provisionDefs",
-        		lv_provisionDefs_4_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ProvisionDef");
+        		lv_provisionDefs_2_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.ExportedScopeProvisionDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )+)
+;
+
+
+
+
+
+// Entry rule entryRuleExportedScopeProvisionDef
+entryRuleExportedScopeProvisionDef returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getExportedScopeProvisionDefRule()); }
+	 iv_ruleExportedScopeProvisionDef=ruleExportedScopeProvisionDef 
+	 { $current=$iv_ruleExportedScopeProvisionDef.current; } 
+	 EOF 
+;
+
+// Rule ExportedScopeProvisionDef
+ruleExportedScopeProvisionDef returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='provides' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getExportedScopeProvisionDefAccess().getProvidesKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getExportedScopeProvisionDefAccess().getProvisionsProvisionParserRuleCall_1_0()); 
+	    }
+		lv_provisions_1_0=ruleProvision		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getExportedScopeProvisionDefRule());
+	        }
+       		add(
+       			$current, 
+       			"provisions",
+        		lv_provisions_1_0, 
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.Provision");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)+	otherlv_2=';' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getExportedScopeProvisionDefAccess().getSemicolonKeyword_2());
+    }
+)
 ;
 
 
@@ -2542,9 +2912,9 @@ ruleHelpersSect returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getHelpersSectAccess().getClassHelpersClassHelperParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getHelpersSectAccess().getClassHelpersHelperClassParserRuleCall_3_0()); 
 	    }
-		lv_classHelpers_3_0=ruleClassHelper		{
+		lv_classHelpers_3_0=ruleHelperClass		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getHelpersSectRule());
 	        }
@@ -2552,7 +2922,7 @@ ruleHelpersSect returns [EObject current=null]
        			$current, 
        			"classHelpers",
         		lv_classHelpers_3_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.ClassHelper");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.HelperClass");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2568,28 +2938,28 @@ ruleHelpersSect returns [EObject current=null]
 
 
 
-// Entry rule entryRuleClassHelper
-entryRuleClassHelper returns [EObject current=null] 
+// Entry rule entryRuleHelperClass
+entryRuleHelperClass returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getClassHelperRule()); }
-	 iv_ruleClassHelper=ruleClassHelper 
-	 { $current=$iv_ruleClassHelper.current; } 
+	{ newCompositeNode(grammarAccess.getHelperClassRule()); }
+	 iv_ruleHelperClass=ruleHelperClass 
+	 { $current=$iv_ruleHelperClass.current; } 
 	 EOF 
 ;
 
-// Rule ClassHelper
-ruleClassHelper returns [EObject current=null] 
+// Rule HelperClass
+ruleHelperClass returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getClassHelperAccess().getContextPathNameCSParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getHelperClassAccess().getContextPathNameCSParserRuleCall_0_0()); 
 	    }
 		lv_context_0_0=rulePathNameCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getClassHelperRule());
+	            $current = createModelElementForParent(grammarAccess.getHelperClassRule());
 	        }
        		set(
        			$current, 
@@ -2602,29 +2972,29 @@ ruleClassHelper returns [EObject current=null]
 )
 )	otherlv_1='{' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getClassHelperAccess().getLeftCurlyBracketKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getHelperClassAccess().getLeftCurlyBracketKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getClassHelperAccess().getHelpersHelperDefParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getHelperClassAccess().getHelpersHelperOpParserRuleCall_2_0()); 
 	    }
-		lv_helpers_2_0=ruleHelperDef		{
+		lv_helpers_2_0=ruleHelperOp		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getClassHelperRule());
+	            $current = createModelElementForParent(grammarAccess.getHelperClassRule());
 	        }
        		add(
        			$current, 
        			"helpers",
         		lv_helpers_2_0, 
-        		"uk.ac.york.cs.cs2as.CS2ASDSL.HelperDef");
+        		"uk.ac.york.cs.cs2as.CS2ASDSL.HelperOp");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )*	otherlv_3='}' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getClassHelperAccess().getRightCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getHelperClassAccess().getRightCurlyBracketKeyword_3());
     }
 )
 ;
@@ -2633,28 +3003,28 @@ ruleClassHelper returns [EObject current=null]
 
 
 
-// Entry rule entryRuleHelperDef
-entryRuleHelperDef returns [EObject current=null] 
+// Entry rule entryRuleHelperOp
+entryRuleHelperOp returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getHelperDefRule()); }
-	 iv_ruleHelperDef=ruleHelperDef 
-	 { $current=$iv_ruleHelperDef.current; } 
+	{ newCompositeNode(grammarAccess.getHelperOpRule()); }
+	 iv_ruleHelperOp=ruleHelperOp 
+	 { $current=$iv_ruleHelperOp.current; } 
 	 EOF 
 ;
 
-// Rule HelperDef
-ruleHelperDef returns [EObject current=null] 
+// Rule HelperOp
+ruleHelperOp returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getHelperDefAccess().getOwnedSignatureTemplateSignatureCSParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getHelperOpAccess().getOwnedSignatureTemplateSignatureCSParserRuleCall_0_0()); 
 	    }
 		lv_ownedSignature_0_0=ruleTemplateSignatureCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getHelperDefRule());
+	            $current = createModelElementForParent(grammarAccess.getHelperOpRule());
 	        }
        		set(
        			$current, 
@@ -2668,11 +3038,11 @@ ruleHelperDef returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getHelperDefAccess().getNameUnrestrictedNameParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getHelperOpAccess().getNameUnrestrictedNameParserRuleCall_1_0()); 
 	    }
 		lv_name_1_0=ruleUnrestrictedName		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getHelperDefRule());
+	            $current = createModelElementForParent(grammarAccess.getHelperOpRule());
 	        }
        		set(
        			$current, 
@@ -2685,16 +3055,16 @@ ruleHelperDef returns [EObject current=null]
 )
 )	otherlv_2='(' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getHelperDefAccess().getLeftParenthesisKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getHelperOpAccess().getLeftParenthesisKeyword_2());
     }
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getHelperDefAccess().getParamsParameterDefParserRuleCall_3_0_0()); 
+	        newCompositeNode(grammarAccess.getHelperOpAccess().getParamsParameterDefParserRuleCall_3_0_0()); 
 	    }
 		lv_params_3_0=ruleParameterDef		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getHelperDefRule());
+	            $current = createModelElementForParent(grammarAccess.getHelperOpRule());
 	        }
        		add(
        			$current, 
@@ -2707,16 +3077,16 @@ ruleHelperDef returns [EObject current=null]
 )
 )(	otherlv_4=',' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getHelperDefAccess().getCommaKeyword_3_1_0());
+    	newLeafNode(otherlv_4, grammarAccess.getHelperOpAccess().getCommaKeyword_3_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getHelperDefAccess().getParamsParameterDefParserRuleCall_3_1_1_0()); 
+	        newCompositeNode(grammarAccess.getHelperOpAccess().getParamsParameterDefParserRuleCall_3_1_1_0()); 
 	    }
 		lv_params_5_0=ruleParameterDef		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getHelperDefRule());
+	            $current = createModelElementForParent(grammarAccess.getHelperOpRule());
 	        }
        		add(
        			$current, 
@@ -2729,20 +3099,20 @@ ruleHelperDef returns [EObject current=null]
 )
 ))*)?	otherlv_6=')' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getHelperDefAccess().getRightParenthesisKeyword_4());
+    	newLeafNode(otherlv_6, grammarAccess.getHelperOpAccess().getRightParenthesisKeyword_4());
     }
 (	otherlv_7=':' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getHelperDefAccess().getColonKeyword_5_0());
+    	newLeafNode(otherlv_7, grammarAccess.getHelperOpAccess().getColonKeyword_5_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getHelperDefAccess().getOwnedTypeTypeExpCSParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getHelperOpAccess().getOwnedTypeTypeExpCSParserRuleCall_5_1_0()); 
 	    }
 		lv_ownedType_8_0=ruleTypeExpCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getHelperDefRule());
+	            $current = createModelElementForParent(grammarAccess.getHelperOpRule());
 	        }
        		set(
        			$current, 
@@ -2755,16 +3125,16 @@ ruleHelperDef returns [EObject current=null]
 )
 ))?	otherlv_9=':=' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getHelperDefAccess().getColonEqualsSignKeyword_6());
+    	newLeafNode(otherlv_9, grammarAccess.getHelperOpAccess().getColonEqualsSignKeyword_6());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getHelperDefAccess().getHelperBodyExpCSParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getHelperOpAccess().getHelperBodyExpCSParserRuleCall_7_0()); 
 	    }
 		lv_helperBody_10_0=ruleExpCS		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getHelperDefRule());
+	            $current = createModelElementForParent(grammarAccess.getHelperOpRule());
 	        }
        		set(
        			$current, 
@@ -2777,7 +3147,7 @@ ruleHelperDef returns [EObject current=null]
 )
 )	otherlv_11=';' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getHelperDefAccess().getSemicolonKeyword_8());
+    	newLeafNode(otherlv_11, grammarAccess.getHelperOpAccess().getSemicolonKeyword_8());
     }
 )
 ;
@@ -3078,16 +3448,16 @@ ruleLookupExpCS returns [EObject current=null]
 
     |(
 (
-		lv_fromExp_1_0=	'lookupFrom' 
+		lv_isExported_1_0=	'lookupExported' 
     {
-        newLeafNode(lv_fromExp_1_0, grammarAccess.getLookupExpCSAccess().getFromExpLookupFromKeyword_0_1_0());
+        newLeafNode(lv_isExported_1_0, grammarAccess.getLookupExpCSAccess().getIsExportedLookupExportedKeyword_0_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getLookupExpCSRule());
 	        }
-       		setWithLastConsumed($current, "fromExp", true, "lookupFrom");
+       		setWithLastConsumed($current, "isExported", true, "lookupExported");
 	    }
 
 )
@@ -3141,6 +3511,8 @@ ruleLookupExpCS returns [EObject current=null]
     }
 )
 ;
+
+
 
 
 

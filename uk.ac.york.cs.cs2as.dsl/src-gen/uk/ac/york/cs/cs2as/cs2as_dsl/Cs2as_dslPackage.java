@@ -59,104 +59,32 @@ public interface Cs2as_dslPackage extends EPackage
   Cs2as_dslPackage eINSTANCE = uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CS2ASModelImpl <em>CS2AS Model</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getModel()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.CS2ASModelImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getCS2ASModel()
    * @generated
    */
-  int MODEL = 0;
+  int CS2AS_MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Csi</b></em>' attribute.
+   * The feature id for the '<em><b>Source</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__CSI = EssentialOCLCSPackage.CONTEXT_CS__CSI;
+  int CS2AS_MODEL__SOURCE = 0;
 
   /**
-   * The feature id for the '<em><b>Parent</b></em>' reference.
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__PARENT = EssentialOCLCSPackage.CONTEXT_CS__PARENT;
-
-  /**
-   * The feature id for the '<em><b>Pivot</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__PIVOT = EssentialOCLCSPackage.CONTEXT_CS__PIVOT;
-
-  /**
-   * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__ORIGINAL_XMI_ID = EssentialOCLCSPackage.CONTEXT_CS__ORIGINAL_XMI_ID;
-
-  /**
-   * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__OWNED_ANNOTATIONS = EssentialOCLCSPackage.CONTEXT_CS__OWNED_ANNOTATIONS;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__NAME = EssentialOCLCSPackage.CONTEXT_CS__NAME;
-
-  /**
-   * The feature id for the '<em><b>Owned Imports</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__OWNED_IMPORTS = EssentialOCLCSPackage.CONTEXT_CS__OWNED_IMPORTS;
-
-  /**
-   * The feature id for the '<em><b>Owned Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__OWNED_EXPRESSION = EssentialOCLCSPackage.CONTEXT_CS__OWNED_EXPRESSION;
-
-  /**
-   * The feature id for the '<em><b>Cs Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__CS_DECL = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>As Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__AS_DECL = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 1;
+  int CS2AS_MODEL__TARGET = 1;
 
   /**
    * The feature id for the '<em><b>Mapping Sect</b></em>' containment reference.
@@ -165,7 +93,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__MAPPING_SECT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 2;
+  int CS2AS_MODEL__MAPPING_SECT = 2;
 
   /**
    * The feature id for the '<em><b>Disambiguation Sect</b></em>' containment reference.
@@ -174,7 +102,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__DISAMBIGUATION_SECT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 3;
+  int CS2AS_MODEL__DISAMBIGUATION_SECT = 3;
 
   /**
    * The feature id for the '<em><b>Namereso Sect</b></em>' containment reference.
@@ -183,7 +111,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__NAMERESO_SECT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 4;
+  int CS2AS_MODEL__NAMERESO_SECT = 4;
 
   /**
    * The feature id for the '<em><b>Helpers Sect</b></em>' containment reference.
@@ -192,26 +120,26 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__HELPERS_SECT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 5;
+  int CS2AS_MODEL__HELPERS_SECT = 5;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The number of structural features of the '<em>CS2AS Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = EssentialOCLCSPackage.CONTEXT_CS_FEATURE_COUNT + 6;
+  int CS2AS_MODEL_FEATURE_COUNT = 6;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CSDeclImpl <em>CS Decl</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SourceDomainImpl <em>Source Domain</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.CSDeclImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getCSDecl()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.SourceDomainImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSourceDomain()
    * @generated
    */
-  int CS_DECL = 1;
+  int SOURCE_DOMAIN = 1;
 
   /**
    * The feature id for the '<em><b>Metamodels</b></em>' containment reference list.
@@ -220,26 +148,26 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CS_DECL__METAMODELS = 0;
+  int SOURCE_DOMAIN__METAMODELS = 0;
 
   /**
-   * The number of structural features of the '<em>CS Decl</em>' class.
+   * The number of structural features of the '<em>Source Domain</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CS_DECL_FEATURE_COUNT = 1;
+  int SOURCE_DOMAIN_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ASDeclImpl <em>AS Decl</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetDomainImpl <em>Target Domain</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ASDeclImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getASDecl()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetDomainImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getTargetDomain()
    * @generated
    */
-  int AS_DECL = 2;
+  int TARGET_DOMAIN = 2;
 
   /**
    * The feature id for the '<em><b>Metamodels</b></em>' containment reference list.
@@ -248,16 +176,16 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AS_DECL__METAMODELS = 0;
+  int TARGET_DOMAIN__METAMODELS = 0;
 
   /**
-   * The number of structural features of the '<em>AS Decl</em>' class.
+   * The number of structural features of the '<em>Target Domain</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AS_DECL_FEATURE_COUNT = 1;
+  int TARGET_DOMAIN_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingSectImpl <em>Mapping Sect</em>}' class.
@@ -288,14 +216,14 @@ public interface Cs2as_dslPackage extends EPackage
   int MAPPING_SECT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl <em>Class Map</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingDefImpl <em>Mapping Def</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassMap()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingDefImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMappingDef()
    * @generated
    */
-  int CLASS_MAP = 4;
+  int MAPPING_DEF = 4;
 
   /**
    * The feature id for the '<em><b>To</b></em>' containment reference.
@@ -304,7 +232,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_MAP__TO = 0;
+  int MAPPING_DEF__TO = 0;
 
   /**
    * The feature id for the '<em><b>From</b></em>' containment reference.
@@ -313,7 +241,44 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_MAP__FROM = 1;
+  int MAPPING_DEF__FROM = 1;
+
+  /**
+   * The number of structural features of the '<em>Mapping Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_DEF_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingCreationImpl <em>Mapping Creation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingCreationImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMappingCreation()
+   * @generated
+   */
+  int MAPPING_CREATION = 5;
+
+  /**
+   * The feature id for the '<em><b>To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_CREATION__TO = MAPPING_DEF__TO;
+
+  /**
+   * The feature id for the '<em><b>From</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_CREATION__FROM = MAPPING_DEF__FROM;
 
   /**
    * The feature id for the '<em><b>Rule</b></em>' attribute.
@@ -322,54 +287,35 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_MAP__RULE = 2;
+  int MAPPING_CREATION__RULE = MAPPING_DEF_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_MAP__STATEMENTS = 3;
+  int MAPPING_CREATION__PROPERTIES = MAPPING_DEF_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Class Map</em>' class.
+   * The number of structural features of the '<em>Mapping Creation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_MAP_FEATURE_COUNT = 4;
+  int MAPPING_CREATION_FEATURE_COUNT = MAPPING_DEF_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapStmntImpl <em>Class Map Stmnt</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyDefImpl <em>Property Def</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapStmntImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassMapStmnt()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyDefImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getPropertyDef()
    * @generated
    */
-  int CLASS_MAP_STMNT = 5;
-
-  /**
-   * The number of structural features of the '<em>Class Map Stmnt</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_MAP_STMNT_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl <em>Property Map</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getPropertyMap()
-   * @generated
-   */
-  int PROPERTY_MAP = 6;
+  int PROPERTY_DEF = 6;
 
   /**
    * The feature id for the '<em><b>Redefine</b></em>' attribute.
@@ -378,16 +324,16 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY_MAP__REDEFINE = CLASS_MAP_STMNT_FEATURE_COUNT + 0;
+  int PROPERTY_DEF__REDEFINE = 0;
 
   /**
-   * The feature id for the '<em><b>Prop Name</b></em>' attribute.
+   * The feature id for the '<em><b>Prop Ref</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY_MAP__PROP_NAME = CLASS_MAP_STMNT_FEATURE_COUNT + 1;
+  int PROPERTY_DEF__PROP_REF = 1;
 
   /**
    * The feature id for the '<em><b>Prop Init</b></em>' containment reference.
@@ -396,16 +342,62 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY_MAP__PROP_INIT = CLASS_MAP_STMNT_FEATURE_COUNT + 2;
+  int PROPERTY_DEF__PROP_INIT = 2;
 
   /**
-   * The number of structural features of the '<em>Property Map</em>' class.
+   * The number of structural features of the '<em>Property Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY_MAP_FEATURE_COUNT = CLASS_MAP_STMNT_FEATURE_COUNT + 3;
+  int PROPERTY_DEF_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingReferenceImpl <em>Mapping Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingReferenceImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMappingReference()
+   * @generated
+   */
+  int MAPPING_REFERENCE = 7;
+
+  /**
+   * The feature id for the '<em><b>To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_REFERENCE__TO = MAPPING_DEF__TO;
+
+  /**
+   * The feature id for the '<em><b>From</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_REFERENCE__FROM = MAPPING_DEF__FROM;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_REFERENCE__EXPRESSION = MAPPING_DEF_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Mapping Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_REFERENCE_FEATURE_COUNT = MAPPING_DEF_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationSectImpl <em>Disambiguation Sect</em>}' class.
@@ -415,7 +407,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getDisambiguationSect()
    * @generated
    */
-  int DISAMBIGUATION_SECT = 7;
+  int DISAMBIGUATION_SECT = 8;
 
   /**
    * The feature id for the '<em><b>Disambiguations</b></em>' containment reference list.
@@ -436,62 +428,6 @@ public interface Cs2as_dslPackage extends EPackage
   int DISAMBIGUATION_SECT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassDisambiguationImpl <em>Class Disambiguation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassDisambiguationImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassDisambiguation()
-   * @generated
-   */
-  int CLASS_DISAMBIGUATION = 8;
-
-  /**
-   * The feature id for the '<em><b>Class</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DISAMBIGUATION__CLASS = 0;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DISAMBIGUATION__STATEMENTS = 1;
-
-  /**
-   * The number of structural features of the '<em>Class Disambiguation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DISAMBIGUATION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassDisambiguationStmntImpl <em>Class Disambiguation Stmnt</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassDisambiguationStmntImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassDisambiguationStmnt()
-   * @generated
-   */
-  int CLASS_DISAMBIGUATION_STMNT = 9;
-
-  /**
-   * The number of structural features of the '<em>Class Disambiguation Stmnt</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DISAMBIGUATION_STMNT_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationDefImpl <em>Disambiguation Def</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -499,25 +435,25 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getDisambiguationDef()
    * @generated
    */
-  int DISAMBIGUATION_DEF = 10;
+  int DISAMBIGUATION_DEF = 9;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Class Ref</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DISAMBIGUATION_DEF__NAME = CLASS_DISAMBIGUATION_STMNT_FEATURE_COUNT + 0;
+  int DISAMBIGUATION_DEF__CLASS_REF = 0;
 
   /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * The feature id for the '<em><b>Rules</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DISAMBIGUATION_DEF__EXP = CLASS_DISAMBIGUATION_STMNT_FEATURE_COUNT + 1;
+  int DISAMBIGUATION_DEF__RULES = 1;
 
   /**
    * The number of structural features of the '<em>Disambiguation Def</em>' class.
@@ -526,7 +462,44 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DISAMBIGUATION_DEF_FEATURE_COUNT = CLASS_DISAMBIGUATION_STMNT_FEATURE_COUNT + 2;
+  int DISAMBIGUATION_DEF_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationRuleImpl <em>Disambiguation Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationRuleImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getDisambiguationRule()
+   * @generated
+   */
+  int DISAMBIGUATION_RULE = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISAMBIGUATION_RULE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISAMBIGUATION_RULE__EXP = 1;
+
+  /**
+   * The number of structural features of the '<em>Disambiguation Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISAMBIGUATION_RULE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NameResolutionSectImpl <em>Name Resolution Sect</em>}' class.
@@ -631,22 +604,40 @@ public interface Cs2as_dslPackage extends EPackage
   int TARGET__PROP_REF = 1;
 
   /**
+   * The feature id for the '<em><b>Ignore Case</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET__IGNORE_CASE = 2;
+
+  /**
+   * The feature id for the '<em><b>Escape Seq Def</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET__ESCAPE_SEQ_DEF = 3;
+
+  /**
    * The feature id for the '<em><b>Filter</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TARGET__FILTER = 2;
+  int TARGET__FILTER = 4;
 
   /**
-   * The feature id for the '<em><b>Qualifications</b></em>' containment reference list.
+   * The feature id for the '<em><b>Qualification</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TARGET__QUALIFICATIONS = 3;
+  int TARGET__QUALIFICATION = 5;
 
   /**
    * The number of structural features of the '<em>Target</em>' class.
@@ -655,7 +646,72 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TARGET_FEATURE_COUNT = 4;
+  int TARGET_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.EscapeSequenceDefImpl <em>Escape Sequence Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.EscapeSequenceDefImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getEscapeSequenceDef()
+   * @generated
+   */
+  int ESCAPE_SEQUENCE_DEF = 14;
+
+  /**
+   * The feature id for the '<em><b>Escapes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESCAPE_SEQUENCE_DEF__ESCAPES = 0;
+
+  /**
+   * The number of structural features of the '<em>Escape Sequence Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESCAPE_SEQUENCE_DEF_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.EscapeSequenceImpl <em>Escape Sequence</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.EscapeSequenceImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getEscapeSequence()
+   * @generated
+   */
+  int ESCAPE_SEQUENCE = 15;
+
+  /**
+   * The feature id for the '<em><b>Prefix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESCAPE_SEQUENCE__PREFIX = 0;
+
+  /**
+   * The feature id for the '<em><b>Suffix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESCAPE_SEQUENCE__SUFFIX = 1;
+
+  /**
+   * The number of structural features of the '<em>Escape Sequence</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESCAPE_SEQUENCE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.InputsImpl <em>Inputs</em>}' class.
@@ -665,7 +721,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getInputs()
    * @generated
    */
-  int INPUTS = 14;
+  int INPUTS = 16;
 
   /**
    * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
@@ -693,7 +749,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getInput()
    * @generated
    */
-  int INPUT = 15;
+  int INPUT = 17;
 
   /**
    * The feature id for the '<em><b>Qualifier</b></em>' attribute.
@@ -705,13 +761,13 @@ public interface Cs2as_dslPackage extends EPackage
   int INPUT__QUALIFIER = 0;
 
   /**
-   * The feature id for the '<em><b>Class Ref</b></em>' containment reference.
+   * The feature id for the '<em><b>Type Ref</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT__CLASS_REF = 1;
+  int INPUT__TYPE_REF = 1;
 
   /**
    * The feature id for the '<em><b>Prop Ref</b></em>' containment reference.
@@ -739,7 +795,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProviders()
    * @generated
    */
-  int PROVIDERS = 16;
+  int PROVIDERS = 18;
 
   /**
    * The feature id for the '<em><b>Providers</b></em>' containment reference list.
@@ -767,7 +823,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProvider()
    * @generated
    */
-  int PROVIDER = 17;
+  int PROVIDER = 19;
 
   /**
    * The feature id for the '<em><b>Class Ref</b></em>' containment reference.
@@ -788,13 +844,22 @@ public interface Cs2as_dslPackage extends EPackage
   int PROVIDER__VARS_DECL = 1;
 
   /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Current Scope</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROVIDER__STATEMENTS = 2;
+  int PROVIDER__CURRENT_SCOPE = 2;
+
+  /**
+   * The feature id for the '<em><b>Exported Scope</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROVIDER__EXPORTED_SCOPE = 3;
 
   /**
    * The number of structural features of the '<em>Provider</em>' class.
@@ -803,17 +868,17 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROVIDER_FEATURE_COUNT = 3;
+  int PROVIDER_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderVarsImpl <em>Provider Vars</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderVarsDeclImpl <em>Provider Vars Decl</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderVarsImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProviderVars()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderVarsDeclImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProviderVarsDecl()
    * @generated
    */
-  int PROVIDER_VARS = 18;
+  int PROVIDER_VARS_DECL = 20;
 
   /**
    * The feature id for the '<em><b>Var Decl</b></em>' containment reference list.
@@ -822,53 +887,16 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROVIDER_VARS__VAR_DECL = 0;
+  int PROVIDER_VARS_DECL__VAR_DECL = 0;
 
   /**
-   * The number of structural features of the '<em>Provider Vars</em>' class.
+   * The number of structural features of the '<em>Provider Vars Decl</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROVIDER_VARS_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderStmntImpl <em>Provider Stmnt</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderStmntImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProviderStmnt()
-   * @generated
-   */
-  int PROVIDER_STMNT = 19;
-
-  /**
-   * The feature id for the '<em><b>Selection Def</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROVIDER_STMNT__SELECTION_DEF = 0;
-
-  /**
-   * The feature id for the '<em><b>Provision Defs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROVIDER_STMNT__PROVISION_DEFS = 1;
-
-  /**
-   * The number of structural features of the '<em>Provider Stmnt</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROVIDER_STMNT_FEATURE_COUNT = 2;
+  int PROVIDER_VARS_DECL_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.FilterDefImpl <em>Filter Def</em>}' class.
@@ -878,7 +906,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getFilterDef()
    * @generated
    */
-  int FILTER_DEF = 20;
+  int FILTER_DEF = 21;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -915,25 +943,16 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getQualificationDef()
    * @generated
    */
-  int QUALIFICATION_DEF = 21;
+  int QUALIFICATION_DEF = 22;
 
   /**
-   * The feature id for the '<em><b>Targets Def</b></em>' containment reference.
+   * The feature id for the '<em><b>Qualifications</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUALIFICATION_DEF__TARGETS_DEF = 0;
-
-  /**
-   * The feature id for the '<em><b>Contribution</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUALIFICATION_DEF__CONTRIBUTION = 1;
+  int QUALIFICATION_DEF__QUALIFICATIONS = 0;
 
   /**
    * The number of structural features of the '<em>Qualification Def</em>' class.
@@ -942,72 +961,54 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUALIFICATION_DEF_FEATURE_COUNT = 2;
+  int QUALIFICATION_DEF_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl <em>Elements Contrib Exp</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.QualificationImpl <em>Qualification</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getElementsContribExp()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.QualificationImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getQualification()
    * @generated
    */
-  int ELEMENTS_CONTRIB_EXP = 22;
+  int QUALIFICATION = 23;
 
   /**
-   * The feature id for the '<em><b>Is Preceding</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENTS_CONTRIB_EXP__IS_PRECEDING = 0;
-
-  /**
-   * The feature id for the '<em><b>Is Imported</b></em>' attribute.
+   * The feature id for the '<em><b>Qualified Classes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENTS_CONTRIB_EXP__IS_IMPORTED = 1;
+  int QUALIFICATION__QUALIFIED_CLASSES = 0;
 
   /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * The feature id for the '<em><b>Contributions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENTS_CONTRIB_EXP__EXPRESSION = 2;
+  int QUALIFICATION__CONTRIBUTIONS = 1;
 
   /**
-   * The number of structural features of the '<em>Elements Contrib Exp</em>' class.
+   * The number of structural features of the '<em>Qualification</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENTS_CONTRIB_EXP_FEATURE_COUNT = 3;
+  int QUALIFICATION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl <em>Scope Def</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CurrentScopeDeclImpl <em>Current Scope Decl</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getScopeDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.CurrentScopeDeclImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getCurrentScopeDecl()
    * @generated
    */
-  int SCOPE_DEF = 23;
-
-  /**
-   * The feature id for the '<em><b>Selection Def</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCOPE_DEF__SELECTION_DEF = PROVIDER_STMNT__SELECTION_DEF;
+  int CURRENT_SCOPE_DECL = 24;
 
   /**
    * The feature id for the '<em><b>Provision Defs</b></em>' containment reference list.
@@ -1016,16 +1017,35 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCOPE_DEF__PROVISION_DEFS = PROVIDER_STMNT__PROVISION_DEFS;
+  int CURRENT_SCOPE_DECL__PROVISION_DEFS = 0;
 
   /**
-   * The feature id for the '<em><b>Also Exports</b></em>' attribute.
+   * The number of structural features of the '<em>Current Scope Decl</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCOPE_DEF__ALSO_EXPORTS = PROVIDER_STMNT_FEATURE_COUNT + 0;
+  int CURRENT_SCOPE_DECL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CurrentScopeProvisionDefImpl <em>Current Scope Provision Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.CurrentScopeProvisionDefImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getCurrentScopeProvisionDef()
+   * @generated
+   */
+  int CURRENT_SCOPE_PROVISION_DEF = 25;
+
+  /**
+   * The feature id for the '<em><b>Selection Def</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CURRENT_SCOPE_PROVISION_DEF__SELECTION_DEF = 0;
 
   /**
    * The feature id for the '<em><b>Same Scope</b></em>' attribute.
@@ -1034,7 +1054,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCOPE_DEF__SAME_SCOPE = PROVIDER_STMNT_FEATURE_COUNT + 1;
+  int CURRENT_SCOPE_PROVISION_DEF__SAME_SCOPE = 1;
 
   /**
    * The feature id for the '<em><b>Empty Scope</b></em>' attribute.
@@ -1043,16 +1063,25 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCOPE_DEF__EMPTY_SCOPE = PROVIDER_STMNT_FEATURE_COUNT + 2;
+  int CURRENT_SCOPE_PROVISION_DEF__EMPTY_SCOPE = 2;
 
   /**
-   * The number of structural features of the '<em>Scope Def</em>' class.
+   * The feature id for the '<em><b>Provisions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCOPE_DEF_FEATURE_COUNT = PROVIDER_STMNT_FEATURE_COUNT + 3;
+  int CURRENT_SCOPE_PROVISION_DEF__PROVISIONS = 3;
+
+  /**
+   * The number of structural features of the '<em>Current Scope Provision Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CURRENT_SCOPE_PROVISION_DEF_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SelectionDefImpl <em>Selection Def</em>}' class.
@@ -1062,7 +1091,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSelectionDef()
    * @generated
    */
-  int SELECTION_DEF = 24;
+  int SELECTION_DEF = 26;
 
   /**
    * The number of structural features of the '<em>Selection Def</em>' class.
@@ -1074,32 +1103,32 @@ public interface Cs2as_dslPackage extends EPackage
   int SELECTION_DEF_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionDefImpl <em>Provision Def</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionImpl <em>Provision</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionDefImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProvisionDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProvision()
    * @generated
    */
-  int PROVISION_DEF = 25;
+  int PROVISION = 27;
 
   /**
-   * The feature id for the '<em><b>Targets Def</b></em>' containment reference.
+   * The feature id for the '<em><b>Provided Classes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROVISION_DEF__TARGETS_DEF = 0;
+  int PROVISION__PROVIDED_CLASSES = 0;
 
   /**
-   * The feature id for the '<em><b>Contribution</b></em>' containment reference.
+   * The feature id for the '<em><b>Contributions Def</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROVISION_DEF__CONTRIBUTION = 1;
+  int PROVISION__CONTRIBUTIONS_DEF = 1;
 
   /**
    * The feature id for the '<em><b>Occluding Defs</b></em>' containment reference list.
@@ -1108,72 +1137,44 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROVISION_DEF__OCCLUDING_DEFS = 2;
+  int PROVISION__OCCLUDING_DEFS = 2;
 
   /**
-   * The number of structural features of the '<em>Provision Def</em>' class.
+   * The number of structural features of the '<em>Provision</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROVISION_DEF_FEATURE_COUNT = 3;
+  int PROVISION_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassRefImpl <em>Class Ref</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MultiplePathNamesImpl <em>Multiple Path Names</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassRefImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassRef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.MultiplePathNamesImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMultiplePathNames()
    * @generated
    */
-  int CLASS_REF = 26;
+  int MULTIPLE_PATH_NAMES = 28;
 
   /**
-   * The feature id for the '<em><b>Class Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_REF__CLASS_NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Class Ref</em>' class.
+   * The feature id for the '<em><b>Path Names</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_REF_FEATURE_COUNT = 1;
+  int MULTIPLE_PATH_NAMES__PATH_NAMES = 0;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MultipleClassRefImpl <em>Multiple Class Ref</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.MultipleClassRefImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMultipleClassRef()
-   * @generated
-   */
-  int MULTIPLE_CLASS_REF = 27;
-
-  /**
-   * The feature id for the '<em><b>Class Names</b></em>' containment reference list.
+   * The number of structural features of the '<em>Multiple Path Names</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MULTIPLE_CLASS_REF__CLASS_NAMES = 0;
-
-  /**
-   * The number of structural features of the '<em>Multiple Class Ref</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLE_CLASS_REF_FEATURE_COUNT = 1;
+  int MULTIPLE_PATH_NAMES_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.OccludingDefImpl <em>Occluding Def</em>}' class.
@@ -1183,16 +1184,16 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getOccludingDef()
    * @generated
    */
-  int OCCLUDING_DEF = 28;
+  int OCCLUDING_DEF = 29;
 
   /**
-   * The feature id for the '<em><b>Contribution</b></em>' containment reference.
+   * The feature id for the '<em><b>Contributions Def</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OCCLUDING_DEF__CONTRIBUTION = 0;
+  int OCCLUDING_DEF__CONTRIBUTIONS_DEF = 0;
 
   /**
    * The number of structural features of the '<em>Occluding Def</em>' class.
@@ -1204,14 +1205,14 @@ public interface Cs2as_dslPackage extends EPackage
   int OCCLUDING_DEF_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionDefImpl <em>Contribution Def</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionsDefImpl <em>Contributions Def</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionDefImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getContributionDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionsDefImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getContributionsDef()
    * @generated
    */
-  int CONTRIBUTION_DEF = 29;
+  int CONTRIBUTIONS_DEF = 30;
 
   /**
    * The feature id for the '<em><b>Contributions</b></em>' containment reference list.
@@ -1220,35 +1221,99 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTRIBUTION_DEF__CONTRIBUTIONS = 0;
+  int CONTRIBUTIONS_DEF__CONTRIBUTIONS = 0;
 
   /**
-   * The number of structural features of the '<em>Contribution Def</em>' class.
+   * The number of structural features of the '<em>Contributions Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTRIBUTION_DEF_FEATURE_COUNT = 1;
+  int CONTRIBUTIONS_DEF_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl <em>Export Def</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionImpl <em>Contribution</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getExportDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getContribution()
    * @generated
    */
-  int EXPORT_DEF = 30;
+  int CONTRIBUTION = 31;
 
   /**
-   * The feature id for the '<em><b>Selection Def</b></em>' containment reference.
+   * The feature id for the '<em><b>Child</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPORT_DEF__SELECTION_DEF = PROVIDER_STMNT__SELECTION_DEF;
+  int CONTRIBUTION__CHILD = 0;
+
+  /**
+   * The feature id for the '<em><b>Is Preceding</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRIBUTION__IS_PRECEDING = 1;
+
+  /**
+   * The feature id for the '<em><b>Is Exported</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRIBUTION__IS_EXPORTED = 2;
+
+  /**
+   * The feature id for the '<em><b>Type Refs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRIBUTION__TYPE_REFS = 3;
+
+  /**
+   * The feature id for the '<em><b>Is Loaded</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRIBUTION__IS_LOADED = 4;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRIBUTION__EXPRESSION = 5;
+
+  /**
+   * The number of structural features of the '<em>Contribution</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRIBUTION_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportedScopeDeclImpl <em>Exported Scope Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportedScopeDeclImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getExportedScopeDecl()
+   * @generated
+   */
+  int EXPORTED_SCOPE_DECL = 32;
 
   /**
    * The feature id for the '<em><b>Provision Defs</b></em>' containment reference list.
@@ -1257,16 +1322,44 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPORT_DEF__PROVISION_DEFS = PROVIDER_STMNT__PROVISION_DEFS;
+  int EXPORTED_SCOPE_DECL__PROVISION_DEFS = 0;
 
   /**
-   * The number of structural features of the '<em>Export Def</em>' class.
+   * The number of structural features of the '<em>Exported Scope Decl</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPORT_DEF_FEATURE_COUNT = PROVIDER_STMNT_FEATURE_COUNT + 0;
+  int EXPORTED_SCOPE_DECL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportedScopeProvisionDefImpl <em>Exported Scope Provision Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportedScopeProvisionDefImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getExportedScopeProvisionDef()
+   * @generated
+   */
+  int EXPORTED_SCOPE_PROVISION_DEF = 33;
+
+  /**
+   * The feature id for the '<em><b>Provisions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPORTED_SCOPE_PROVISION_DEF__PROVISIONS = 0;
+
+  /**
+   * The number of structural features of the '<em>Exported Scope Provision Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPORTED_SCOPE_PROVISION_DEF_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelpersSectImpl <em>Helpers Sect</em>}' class.
@@ -1276,7 +1369,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelpersSect()
    * @generated
    */
-  int HELPERS_SECT = 31;
+  int HELPERS_SECT = 34;
 
   /**
    * The feature id for the '<em><b>Class Helpers</b></em>' containment reference list.
@@ -1297,14 +1390,14 @@ public interface Cs2as_dslPackage extends EPackage
   int HELPERS_SECT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassHelperImpl <em>Class Helper</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperClassImpl <em>Helper Class</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassHelperImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassHelper()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperClassImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelperClass()
    * @generated
    */
-  int CLASS_HELPER = 32;
+  int HELPER_CLASS = 35;
 
   /**
    * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -1313,7 +1406,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_HELPER__CONTEXT = 0;
+  int HELPER_CLASS__CONTEXT = 0;
 
   /**
    * The feature id for the '<em><b>Helpers</b></em>' containment reference list.
@@ -1322,26 +1415,26 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_HELPER__HELPERS = 1;
+  int HELPER_CLASS__HELPERS = 1;
 
   /**
-   * The number of structural features of the '<em>Class Helper</em>' class.
+   * The number of structural features of the '<em>Helper Class</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_HELPER_FEATURE_COUNT = 2;
+  int HELPER_CLASS_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl <em>Helper Def</em>}' class.
+   * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperOpImpl <em>Helper Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelperDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperOpImpl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelperOp()
    * @generated
    */
-  int HELPER_DEF = 33;
+  int HELPER_OP = 36;
 
   /**
    * The feature id for the '<em><b>Owned Signature</b></em>' containment reference.
@@ -1350,7 +1443,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HELPER_DEF__OWNED_SIGNATURE = 0;
+  int HELPER_OP__OWNED_SIGNATURE = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1359,7 +1452,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HELPER_DEF__NAME = 1;
+  int HELPER_OP__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -1368,7 +1461,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HELPER_DEF__PARAMS = 2;
+  int HELPER_OP__PARAMS = 2;
 
   /**
    * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
@@ -1377,7 +1470,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HELPER_DEF__OWNED_TYPE = 3;
+  int HELPER_OP__OWNED_TYPE = 3;
 
   /**
    * The feature id for the '<em><b>Helper Body</b></em>' containment reference.
@@ -1386,16 +1479,16 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HELPER_DEF__HELPER_BODY = 4;
+  int HELPER_OP__HELPER_BODY = 4;
 
   /**
-   * The number of structural features of the '<em>Helper Def</em>' class.
+   * The number of structural features of the '<em>Helper Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HELPER_DEF_FEATURE_COUNT = 5;
+  int HELPER_OP_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TraceExpCSImpl <em>Trace Exp CS</em>}' class.
@@ -1405,7 +1498,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getTraceExpCS()
    * @generated
    */
-  int TRACE_EXP_CS = 34;
+  int TRACE_EXP_CS = 37;
 
   /**
    * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -1532,7 +1625,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getLookupExpCS()
    * @generated
    */
-  int LOOKUP_EXP_CS = 35;
+  int LOOKUP_EXP_CS = 38;
 
   /**
    * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -1643,13 +1736,13 @@ public interface Cs2as_dslPackage extends EPackage
   int LOOKUP_EXP_CS__PRECEDENCE = EssentialOCLCSPackage.EXP_CS__PRECEDENCE;
 
   /**
-   * The feature id for the '<em><b>From Exp</b></em>' attribute.
+   * The feature id for the '<em><b>Is Exported</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOOKUP_EXP_CS__FROM_EXP = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
+  int LOOKUP_EXP_CS__IS_EXPORTED = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference list.
@@ -1677,16 +1770,16 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSelectionAll()
    * @generated
    */
-  int SELECTION_ALL = 36;
+  int SELECTION_ALL = 39;
 
   /**
-   * The feature id for the '<em><b>Exception Properties</b></em>' containment reference list.
+   * The feature id for the '<em><b>Exceptions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SELECTION_ALL__EXCEPTION_PROPERTIES = SELECTION_DEF_FEATURE_COUNT + 0;
+  int SELECTION_ALL__EXCEPTIONS = SELECTION_DEF_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Selection All</em>' class.
@@ -1705,16 +1798,16 @@ public interface Cs2as_dslPackage extends EPackage
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSelectionSpecific()
    * @generated
    */
-  int SELECTION_SPECIFIC = 37;
+  int SELECTION_SPECIFIC = 40;
 
   /**
-   * The feature id for the '<em><b>Selected Properties</b></em>' containment reference list.
+   * The feature id for the '<em><b>Selections</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SELECTION_SPECIFIC__SELECTED_PROPERTIES = SELECTION_DEF_FEATURE_COUNT + 0;
+  int SELECTION_SPECIFIC__SELECTIONS = SELECTION_DEF_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Selection Specific</em>' class.
@@ -1727,122 +1820,122 @@ public interface Cs2as_dslPackage extends EPackage
 
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel <em>CS2AS Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Model
+   * @return the meta object for class '<em>CS2AS Model</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel
    * @generated
    */
-  EClass getModel();
+  EClass getCS2ASModel();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getCsDecl <em>Cs Decl</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getSource <em>Source</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cs Decl</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Model#getCsDecl()
-   * @see #getModel()
+   * @return the meta object for the containment reference '<em>Source</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getSource()
+   * @see #getCS2ASModel()
    * @generated
    */
-  EReference getModel_CsDecl();
+  EReference getCS2ASModel_Source();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getAsDecl <em>As Decl</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>As Decl</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Model#getAsDecl()
-   * @see #getModel()
+   * @return the meta object for the containment reference '<em>Target</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getTarget()
+   * @see #getCS2ASModel()
    * @generated
    */
-  EReference getModel_AsDecl();
+  EReference getCS2ASModel_Target();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getMappingSect <em>Mapping Sect</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getMappingSect <em>Mapping Sect</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Mapping Sect</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Model#getMappingSect()
-   * @see #getModel()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getMappingSect()
+   * @see #getCS2ASModel()
    * @generated
    */
-  EReference getModel_MappingSect();
+  EReference getCS2ASModel_MappingSect();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getDisambiguationSect <em>Disambiguation Sect</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getDisambiguationSect <em>Disambiguation Sect</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Disambiguation Sect</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Model#getDisambiguationSect()
-   * @see #getModel()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getDisambiguationSect()
+   * @see #getCS2ASModel()
    * @generated
    */
-  EReference getModel_DisambiguationSect();
+  EReference getCS2ASModel_DisambiguationSect();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getNameresoSect <em>Namereso Sect</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getNameresoSect <em>Namereso Sect</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Namereso Sect</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Model#getNameresoSect()
-   * @see #getModel()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getNameresoSect()
+   * @see #getCS2ASModel()
    * @generated
    */
-  EReference getModel_NameresoSect();
+  EReference getCS2ASModel_NameresoSect();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model#getHelpersSect <em>Helpers Sect</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getHelpersSect <em>Helpers Sect</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Helpers Sect</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Model#getHelpersSect()
-   * @see #getModel()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel#getHelpersSect()
+   * @see #getCS2ASModel()
    * @generated
    */
-  EReference getModel_HelpersSect();
+  EReference getCS2ASModel_HelpersSect();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl <em>CS Decl</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SourceDomain <em>Source Domain</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>CS Decl</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl
+   * @return the meta object for class '<em>Source Domain</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SourceDomain
    * @generated
    */
-  EClass getCSDecl();
+  EClass getSourceDomain();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl#getMetamodels <em>Metamodels</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Metamodels</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl#getMetamodels()
-   * @see #getCSDecl()
-   * @generated
-   */
-  EReference getCSDecl_Metamodels();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl <em>AS Decl</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>AS Decl</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl
-   * @generated
-   */
-  EClass getASDecl();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl#getMetamodels <em>Metamodels</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SourceDomain#getMetamodels <em>Metamodels</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Metamodels</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl#getMetamodels()
-   * @see #getASDecl()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SourceDomain#getMetamodels()
+   * @see #getSourceDomain()
    * @generated
    */
-  EReference getASDecl_Metamodels();
+  EReference getSourceDomain_Metamodels();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.TargetDomain <em>Target Domain</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Target Domain</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.TargetDomain
+   * @generated
+   */
+  EClass getTargetDomain();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.TargetDomain#getMetamodels <em>Metamodels</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Metamodels</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.TargetDomain#getMetamodels()
+   * @see #getTargetDomain()
+   * @generated
+   */
+  EReference getTargetDomain_Metamodels();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect <em>Mapping Sect</em>}'.
@@ -1866,111 +1959,132 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getMappingSect_Mappings();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap <em>Class Map</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingDef <em>Mapping Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Map</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap
+   * @return the meta object for class '<em>Mapping Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingDef
    * @generated
    */
-  EClass getClassMap();
+  EClass getMappingDef();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getTo <em>To</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingDef#getTo <em>To</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>To</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getTo()
-   * @see #getClassMap()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingDef#getTo()
+   * @see #getMappingDef()
    * @generated
    */
-  EReference getClassMap_To();
+  EReference getMappingDef_To();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getFrom <em>From</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingDef#getFrom <em>From</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>From</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getFrom()
-   * @see #getClassMap()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingDef#getFrom()
+   * @see #getMappingDef()
    * @generated
    */
-  EReference getClassMap_From();
+  EReference getMappingDef_From();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getRule <em>Rule</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation <em>Mapping Creation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Mapping Creation</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation
+   * @generated
+   */
+  EClass getMappingCreation();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#getRule <em>Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Rule</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getRule()
-   * @see #getClassMap()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#getRule()
+   * @see #getMappingCreation()
    * @generated
    */
-  EAttribute getClassMap_Rule();
+  EAttribute getMappingCreation_Rule();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getStatements <em>Statements</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#getProperties <em>Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap#getStatements()
-   * @see #getClassMap()
+   * @return the meta object for the containment reference list '<em>Properties</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#getProperties()
+   * @see #getMappingCreation()
    * @generated
    */
-  EReference getClassMap_Statements();
+  EReference getMappingCreation_Properties();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt <em>Class Map Stmnt</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef <em>Property Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Map Stmnt</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt
+   * @return the meta object for class '<em>Property Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef
    * @generated
    */
-  EClass getClassMapStmnt();
+  EClass getPropertyDef();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap <em>Property Map</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Property Map</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap
-   * @generated
-   */
-  EClass getPropertyMap();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#isRedefine <em>Redefine</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef#isRedefine <em>Redefine</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Redefine</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#isRedefine()
-   * @see #getPropertyMap()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef#isRedefine()
+   * @see #getPropertyDef()
    * @generated
    */
-  EAttribute getPropertyMap_Redefine();
+  EAttribute getPropertyDef_Redefine();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropName <em>Prop Name</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef#getPropRef <em>Prop Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Prop Name</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropName()
-   * @see #getPropertyMap()
+   * @return the meta object for the containment reference '<em>Prop Ref</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef#getPropRef()
+   * @see #getPropertyDef()
    * @generated
    */
-  EAttribute getPropertyMap_PropName();
+  EReference getPropertyDef_PropRef();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropInit <em>Prop Init</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef#getPropInit <em>Prop Init</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Prop Init</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap#getPropInit()
-   * @see #getPropertyMap()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef#getPropInit()
+   * @see #getPropertyDef()
    * @generated
    */
-  EReference getPropertyMap_PropInit();
+  EReference getPropertyDef_PropInit();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingReference <em>Mapping Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Mapping Reference</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingReference
+   * @generated
+   */
+  EClass getMappingReference();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingReference#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingReference#getExpression()
+   * @see #getMappingReference()
+   * @generated
+   */
+  EReference getMappingReference_Expression();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect <em>Disambiguation Sect</em>}'.
@@ -1994,48 +2108,6 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getDisambiguationSect_Disambiguations();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation <em>Class Disambiguation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Disambiguation</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation
-   * @generated
-   */
-  EClass getClassDisambiguation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation#getClass_ <em>Class</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Class</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation#getClass_()
-   * @see #getClassDisambiguation()
-   * @generated
-   */
-  EReference getClassDisambiguation_Class();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation#getStatements <em>Statements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation#getStatements()
-   * @see #getClassDisambiguation()
-   * @generated
-   */
-  EReference getClassDisambiguation_Statements();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt <em>Class Disambiguation Stmnt</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Disambiguation Stmnt</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt
-   * @generated
-   */
-  EClass getClassDisambiguationStmnt();
-
-  /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef <em>Disambiguation Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2046,26 +2118,58 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getDisambiguationDef();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getClassRef <em>Class Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Class Ref</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getClassRef()
+   * @see #getDisambiguationDef()
+   * @generated
+   */
+  EReference getDisambiguationDef_ClassRef();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getRules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Rules</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getRules()
+   * @see #getDisambiguationDef()
+   * @generated
+   */
+  EReference getDisambiguationDef_Rules();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationRule <em>Disambiguation Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Disambiguation Rule</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationRule
+   * @generated
+   */
+  EClass getDisambiguationRule();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationRule#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getName()
-   * @see #getDisambiguationDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationRule#getName()
+   * @see #getDisambiguationRule()
    * @generated
    */
-  EAttribute getDisambiguationDef_Name();
+  EAttribute getDisambiguationRule_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getExp <em>Exp</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationRule#getExp <em>Exp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getExp()
-   * @see #getDisambiguationDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationRule#getExp()
+   * @see #getDisambiguationRule()
    * @generated
    */
-  EReference getDisambiguationDef_Exp();
+  EReference getDisambiguationRule_Exp();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect <em>Name Resolution Sect</em>}'.
@@ -2164,6 +2268,28 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getTarget_PropRef();
 
   /**
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Target#isIgnoreCase <em>Ignore Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ignore Case</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Target#isIgnoreCase()
+   * @see #getTarget()
+   * @generated
+   */
+  EAttribute getTarget_IgnoreCase();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Target#getEscapeSeqDef <em>Escape Seq Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Escape Seq Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Target#getEscapeSeqDef()
+   * @see #getTarget()
+   * @generated
+   */
+  EReference getTarget_EscapeSeqDef();
+
+  /**
    * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Target#getFilter <em>Filter</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2175,15 +2301,68 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getTarget_Filter();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Target#getQualifications <em>Qualifications</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Target#getQualification <em>Qualification</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Qualifications</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Target#getQualifications()
+   * @return the meta object for the containment reference '<em>Qualification</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Target#getQualification()
    * @see #getTarget()
    * @generated
    */
-  EReference getTarget_Qualifications();
+  EReference getTarget_Qualification();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequenceDef <em>Escape Sequence Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Escape Sequence Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequenceDef
+   * @generated
+   */
+  EClass getEscapeSequenceDef();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequenceDef#getEscapes <em>Escapes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Escapes</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequenceDef#getEscapes()
+   * @see #getEscapeSequenceDef()
+   * @generated
+   */
+  EReference getEscapeSequenceDef_Escapes();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequence <em>Escape Sequence</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Escape Sequence</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequence
+   * @generated
+   */
+  EClass getEscapeSequence();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequence#getPrefix <em>Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prefix</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequence#getPrefix()
+   * @see #getEscapeSequence()
+   * @generated
+   */
+  EAttribute getEscapeSequence_Prefix();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequence#getSuffix <em>Suffix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Suffix</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequence#getSuffix()
+   * @see #getEscapeSequence()
+   * @generated
+   */
+  EAttribute getEscapeSequence_Suffix();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Inputs <em>Inputs</em>}'.
@@ -2228,15 +2407,15 @@ public interface Cs2as_dslPackage extends EPackage
   EAttribute getInput_Qualifier();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Input#getClassRef <em>Class Ref</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Input#getTypeRef <em>Type Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Class Ref</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Input#getClassRef()
+   * @return the meta object for the containment reference '<em>Type Ref</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Input#getTypeRef()
    * @see #getInput()
    * @generated
    */
-  EReference getInput_ClassRef();
+  EReference getInput_TypeRef();
 
   /**
    * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Input#getPropRef <em>Prop Ref</em>}'.
@@ -2303,68 +2482,47 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getProvider_VarsDecl();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getStatements <em>Statements</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getCurrentScope <em>Current Scope</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getStatements()
+   * @return the meta object for the containment reference '<em>Current Scope</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getCurrentScope()
    * @see #getProvider()
    * @generated
    */
-  EReference getProvider_Statements();
+  EReference getProvider_CurrentScope();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars <em>Provider Vars</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getExportedScope <em>Exported Scope</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Provider Vars</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars
+   * @return the meta object for the containment reference '<em>Exported Scope</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getExportedScope()
+   * @see #getProvider()
    * @generated
    */
-  EClass getProviderVars();
+  EReference getProvider_ExportedScope();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars#getVarDecl <em>Var Decl</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVarsDecl <em>Provider Vars Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Provider Vars Decl</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVarsDecl
+   * @generated
+   */
+  EClass getProviderVarsDecl();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVarsDecl#getVarDecl <em>Var Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Var Decl</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars#getVarDecl()
-   * @see #getProviderVars()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVarsDecl#getVarDecl()
+   * @see #getProviderVarsDecl()
    * @generated
    */
-  EReference getProviderVars_VarDecl();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt <em>Provider Stmnt</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Provider Stmnt</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt
-   * @generated
-   */
-  EClass getProviderStmnt();
-
-  /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt#getSelectionDef <em>Selection Def</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Selection Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt#getSelectionDef()
-   * @see #getProviderStmnt()
-   * @generated
-   */
-  EReference getProviderStmnt_SelectionDef();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt#getProvisionDefs <em>Provision Defs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Provision Defs</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt#getProvisionDefs()
-   * @see #getProviderStmnt()
-   * @generated
-   */
-  EReference getProviderStmnt_ProvisionDefs();
+  EReference getProviderVarsDecl_VarDecl();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef <em>Filter Def</em>}'.
@@ -2409,112 +2567,122 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getQualificationDef();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getTargetsDef <em>Targets Def</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getQualifications <em>Qualifications</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Targets Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getTargetsDef()
+   * @return the meta object for the containment reference list '<em>Qualifications</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getQualifications()
    * @see #getQualificationDef()
    * @generated
    */
-  EReference getQualificationDef_TargetsDef();
+  EReference getQualificationDef_Qualifications();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getContribution <em>Contribution</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Qualification <em>Qualification</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Contribution</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getContribution()
-   * @see #getQualificationDef()
+   * @return the meta object for class '<em>Qualification</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Qualification
    * @generated
    */
-  EReference getQualificationDef_Contribution();
+  EClass getQualification();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp <em>Elements Contrib Exp</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Qualification#getQualifiedClasses <em>Qualified Classes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Elements Contrib Exp</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp
+   * @return the meta object for the containment reference '<em>Qualified Classes</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Qualification#getQualifiedClasses()
+   * @see #getQualification()
    * @generated
    */
-  EClass getElementsContribExp();
+  EReference getQualification_QualifiedClasses();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsPreceding <em>Is Preceding</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Qualification#getContributions <em>Contributions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Preceding</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsPreceding()
-   * @see #getElementsContribExp()
+   * @return the meta object for the containment reference list '<em>Contributions</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Qualification#getContributions()
+   * @see #getQualification()
    * @generated
    */
-  EAttribute getElementsContribExp_IsPreceding();
+  EReference getQualification_Contributions();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsImported <em>Is Imported</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeDecl <em>Current Scope Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Imported</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#isIsImported()
-   * @see #getElementsContribExp()
+   * @return the meta object for class '<em>Current Scope Decl</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeDecl
    * @generated
    */
-  EAttribute getElementsContribExp_IsImported();
+  EClass getCurrentScopeDecl();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#getExpression <em>Expression</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeDecl#getProvisionDefs <em>Provision Defs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp#getExpression()
-   * @see #getElementsContribExp()
+   * @return the meta object for the containment reference list '<em>Provision Defs</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeDecl#getProvisionDefs()
+   * @see #getCurrentScopeDecl()
    * @generated
    */
-  EReference getElementsContribExp_Expression();
+  EReference getCurrentScopeDecl_ProvisionDefs();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef <em>Scope Def</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef <em>Current Scope Provision Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Scope Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef
+   * @return the meta object for class '<em>Current Scope Provision Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef
    * @generated
    */
-  EClass getScopeDef();
+  EClass getCurrentScopeProvisionDef();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isAlsoExports <em>Also Exports</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef#getSelectionDef <em>Selection Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Also Exports</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isAlsoExports()
-   * @see #getScopeDef()
+   * @return the meta object for the containment reference '<em>Selection Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef#getSelectionDef()
+   * @see #getCurrentScopeProvisionDef()
    * @generated
    */
-  EAttribute getScopeDef_AlsoExports();
+  EReference getCurrentScopeProvisionDef_SelectionDef();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isSameScope <em>Same Scope</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef#isSameScope <em>Same Scope</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Same Scope</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isSameScope()
-   * @see #getScopeDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef#isSameScope()
+   * @see #getCurrentScopeProvisionDef()
    * @generated
    */
-  EAttribute getScopeDef_SameScope();
+  EAttribute getCurrentScopeProvisionDef_SameScope();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isEmptyScope <em>Empty Scope</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef#isEmptyScope <em>Empty Scope</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Empty Scope</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef#isEmptyScope()
-   * @see #getScopeDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef#isEmptyScope()
+   * @see #getCurrentScopeProvisionDef()
    * @generated
    */
-  EAttribute getScopeDef_EmptyScope();
+  EAttribute getCurrentScopeProvisionDef_EmptyScope();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef#getProvisions <em>Provisions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Provisions</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef#getProvisions()
+   * @see #getCurrentScopeProvisionDef()
+   * @generated
+   */
+  EReference getCurrentScopeProvisionDef_Provisions();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionDef <em>Selection Def</em>}'.
@@ -2527,89 +2695,68 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getSelectionDef();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef <em>Provision Def</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provision <em>Provision</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Provision Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef
+   * @return the meta object for class '<em>Provision</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Provision
    * @generated
    */
-  EClass getProvisionDef();
+  EClass getProvision();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef#getTargetsDef <em>Targets Def</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provision#getProvidedClasses <em>Provided Classes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Targets Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef#getTargetsDef()
-   * @see #getProvisionDef()
+   * @return the meta object for the containment reference '<em>Provided Classes</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Provision#getProvidedClasses()
+   * @see #getProvision()
    * @generated
    */
-  EReference getProvisionDef_TargetsDef();
+  EReference getProvision_ProvidedClasses();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef#getContribution <em>Contribution</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provision#getContributionsDef <em>Contributions Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Contribution</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef#getContribution()
-   * @see #getProvisionDef()
+   * @return the meta object for the containment reference '<em>Contributions Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Provision#getContributionsDef()
+   * @see #getProvision()
    * @generated
    */
-  EReference getProvisionDef_Contribution();
+  EReference getProvision_ContributionsDef();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef#getOccludingDefs <em>Occluding Defs</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provision#getOccludingDefs <em>Occluding Defs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Occluding Defs</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef#getOccludingDefs()
-   * @see #getProvisionDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Provision#getOccludingDefs()
+   * @see #getProvision()
    * @generated
    */
-  EReference getProvisionDef_OccludingDefs();
+  EReference getProvision_OccludingDefs();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef <em>Class Ref</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MultiplePathNames <em>Multiple Path Names</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Ref</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef
+   * @return the meta object for class '<em>Multiple Path Names</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MultiplePathNames
    * @generated
    */
-  EClass getClassRef();
+  EClass getMultiplePathNames();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef#getClassName <em>Class Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MultiplePathNames#getPathNames <em>Path Names</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Class Name</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef#getClassName()
-   * @see #getClassRef()
+   * @return the meta object for the containment reference list '<em>Path Names</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MultiplePathNames#getPathNames()
+   * @see #getMultiplePathNames()
    * @generated
    */
-  EReference getClassRef_ClassName();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef <em>Multiple Class Ref</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Multiple Class Ref</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef
-   * @generated
-   */
-  EClass getMultipleClassRef();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef#getClassNames <em>Class Names</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Class Names</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef#getClassNames()
-   * @see #getMultipleClassRef()
-   * @generated
-   */
-  EReference getMultipleClassRef_ClassNames();
+  EReference getMultiplePathNames_PathNames();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef <em>Occluding Def</em>}'.
@@ -2622,46 +2769,154 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getOccludingDef();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef#getContribution <em>Contribution</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef#getContributionsDef <em>Contributions Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Contribution</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef#getContribution()
+   * @return the meta object for the containment reference '<em>Contributions Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef#getContributionsDef()
    * @see #getOccludingDef()
    * @generated
    */
-  EReference getOccludingDef_Contribution();
+  EReference getOccludingDef_ContributionsDef();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef <em>Contribution Def</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ContributionsDef <em>Contributions Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Contribution Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef
+   * @return the meta object for class '<em>Contributions Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ContributionsDef
    * @generated
    */
-  EClass getContributionDef();
+  EClass getContributionsDef();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef#getContributions <em>Contributions</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ContributionsDef#getContributions <em>Contributions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Contributions</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef#getContributions()
-   * @see #getContributionDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ContributionsDef#getContributions()
+   * @see #getContributionsDef()
    * @generated
    */
-  EReference getContributionDef_Contributions();
+  EReference getContributionsDef_Contributions();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef <em>Export Def</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Contribution <em>Contribution</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Export Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef
+   * @return the meta object for class '<em>Contribution</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Contribution
    * @generated
    */
-  EClass getExportDef();
+  EClass getContribution();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#getChild <em>Child</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Child</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#getChild()
+   * @see #getContribution()
+   * @generated
+   */
+  EReference getContribution_Child();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#isIsPreceding <em>Is Preceding</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Preceding</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#isIsPreceding()
+   * @see #getContribution()
+   * @generated
+   */
+  EAttribute getContribution_IsPreceding();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#isIsExported <em>Is Exported</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Exported</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#isIsExported()
+   * @see #getContribution()
+   * @generated
+   */
+  EAttribute getContribution_IsExported();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#getTypeRefs <em>Type Refs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Type Refs</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#getTypeRefs()
+   * @see #getContribution()
+   * @generated
+   */
+  EReference getContribution_TypeRefs();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#isIsLoaded <em>Is Loaded</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Loaded</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#isIsLoaded()
+   * @see #getContribution()
+   * @generated
+   */
+  EAttribute getContribution_IsLoaded();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Contribution#getExpression()
+   * @see #getContribution()
+   * @generated
+   */
+  EReference getContribution_Expression();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeDecl <em>Exported Scope Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Exported Scope Decl</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeDecl
+   * @generated
+   */
+  EClass getExportedScopeDecl();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeDecl#getProvisionDefs <em>Provision Defs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Provision Defs</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeDecl#getProvisionDefs()
+   * @see #getExportedScopeDecl()
+   * @generated
+   */
+  EReference getExportedScopeDecl_ProvisionDefs();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeProvisionDef <em>Exported Scope Provision Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Exported Scope Provision Def</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeProvisionDef
+   * @generated
+   */
+  EClass getExportedScopeProvisionDef();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeProvisionDef#getProvisions <em>Provisions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Provisions</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeProvisionDef#getProvisions()
+   * @see #getExportedScopeProvisionDef()
+   * @generated
+   */
+  EReference getExportedScopeProvisionDef_Provisions();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect <em>Helpers Sect</em>}'.
@@ -2685,101 +2940,101 @@ public interface Cs2as_dslPackage extends EPackage
   EReference getHelpersSect_ClassHelpers();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper <em>Class Helper</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass <em>Helper Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Helper</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper
+   * @return the meta object for class '<em>Helper Class</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass
    * @generated
    */
-  EClass getClassHelper();
+  EClass getHelperClass();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getContext <em>Context</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass#getContext <em>Context</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Context</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getContext()
-   * @see #getClassHelper()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass#getContext()
+   * @see #getHelperClass()
    * @generated
    */
-  EReference getClassHelper_Context();
+  EReference getHelperClass_Context();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getHelpers <em>Helpers</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass#getHelpers <em>Helpers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Helpers</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper#getHelpers()
-   * @see #getClassHelper()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass#getHelpers()
+   * @see #getHelperClass()
    * @generated
    */
-  EReference getClassHelper_Helpers();
+  EReference getHelperClass_Helpers();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef <em>Helper Def</em>}'.
+   * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp <em>Helper Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Helper Def</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef
+   * @return the meta object for class '<em>Helper Op</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp
    * @generated
    */
-  EClass getHelperDef();
+  EClass getHelperOp();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedSignature <em>Owned Signature</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp#getOwnedSignature <em>Owned Signature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Owned Signature</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedSignature()
-   * @see #getHelperDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp#getOwnedSignature()
+   * @see #getHelperOp()
    * @generated
    */
-  EReference getHelperDef_OwnedSignature();
+  EReference getHelperOp_OwnedSignature();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getName()
-   * @see #getHelperDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp#getName()
+   * @see #getHelperOp()
    * @generated
    */
-  EAttribute getHelperDef_Name();
+  EAttribute getHelperOp_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getParams <em>Params</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp#getParams <em>Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Params</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getParams()
-   * @see #getHelperDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp#getParams()
+   * @see #getHelperOp()
    * @generated
    */
-  EReference getHelperDef_Params();
+  EReference getHelperOp_Params();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedType <em>Owned Type</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp#getOwnedType <em>Owned Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Owned Type</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getOwnedType()
-   * @see #getHelperDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp#getOwnedType()
+   * @see #getHelperOp()
    * @generated
    */
-  EReference getHelperDef_OwnedType();
+  EReference getHelperOp_OwnedType();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getHelperBody <em>Helper Body</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp#getHelperBody <em>Helper Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Helper Body</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef#getHelperBody()
-   * @see #getHelperDef()
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp#getHelperBody()
+   * @see #getHelperOp()
    * @generated
    */
-  EReference getHelperDef_HelperBody();
+  EReference getHelperOp_HelperBody();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS <em>Trace Exp CS</em>}'.
@@ -2802,15 +3057,15 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getLookupExpCS();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS#isFromExp <em>From Exp</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS#isIsExported <em>Is Exported</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>From Exp</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS#isFromExp()
+   * @return the meta object for the attribute '<em>Is Exported</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS#isIsExported()
    * @see #getLookupExpCS()
    * @generated
    */
-  EAttribute getLookupExpCS_FromExp();
+  EAttribute getLookupExpCS_IsExported();
 
   /**
    * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS#getArgs <em>Args</em>}'.
@@ -2834,15 +3089,15 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getSelectionAll();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll#getExceptionProperties <em>Exception Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll#getExceptions <em>Exceptions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Exception Properties</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll#getExceptionProperties()
+   * @return the meta object for the containment reference list '<em>Exceptions</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll#getExceptions()
    * @see #getSelectionAll()
    * @generated
    */
-  EReference getSelectionAll_ExceptionProperties();
+  EReference getSelectionAll_Exceptions();
 
   /**
    * Returns the meta object for class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific <em>Selection Specific</em>}'.
@@ -2855,15 +3110,15 @@ public interface Cs2as_dslPackage extends EPackage
   EClass getSelectionSpecific();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific#getSelectedProperties <em>Selected Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific#getSelections <em>Selections</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Selected Properties</em>'.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific#getSelectedProperties()
+   * @return the meta object for the containment reference list '<em>Selections</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific#getSelections()
    * @see #getSelectionSpecific()
    * @generated
    */
-  EReference getSelectionSpecific_SelectedProperties();
+  EReference getSelectionSpecific_Selections();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2889,30 +3144,30 @@ public interface Cs2as_dslPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CS2ASModelImpl <em>CS2AS Model</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ModelImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getModel()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.CS2ASModelImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getCS2ASModel()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass CS2AS_MODEL = eINSTANCE.getCS2ASModel();
 
     /**
-     * The meta object literal for the '<em><b>Cs Decl</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__CS_DECL = eINSTANCE.getModel_CsDecl();
+    EReference CS2AS_MODEL__SOURCE = eINSTANCE.getCS2ASModel_Source();
 
     /**
-     * The meta object literal for the '<em><b>As Decl</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__AS_DECL = eINSTANCE.getModel_AsDecl();
+    EReference CS2AS_MODEL__TARGET = eINSTANCE.getCS2ASModel_Target();
 
     /**
      * The meta object literal for the '<em><b>Mapping Sect</b></em>' containment reference feature.
@@ -2920,7 +3175,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__MAPPING_SECT = eINSTANCE.getModel_MappingSect();
+    EReference CS2AS_MODEL__MAPPING_SECT = eINSTANCE.getCS2ASModel_MappingSect();
 
     /**
      * The meta object literal for the '<em><b>Disambiguation Sect</b></em>' containment reference feature.
@@ -2928,7 +3183,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__DISAMBIGUATION_SECT = eINSTANCE.getModel_DisambiguationSect();
+    EReference CS2AS_MODEL__DISAMBIGUATION_SECT = eINSTANCE.getCS2ASModel_DisambiguationSect();
 
     /**
      * The meta object literal for the '<em><b>Namereso Sect</b></em>' containment reference feature.
@@ -2936,7 +3191,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__NAMERESO_SECT = eINSTANCE.getModel_NameresoSect();
+    EReference CS2AS_MODEL__NAMERESO_SECT = eINSTANCE.getCS2ASModel_NameresoSect();
 
     /**
      * The meta object literal for the '<em><b>Helpers Sect</b></em>' containment reference feature.
@@ -2944,35 +3199,17 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__HELPERS_SECT = eINSTANCE.getModel_HelpersSect();
+    EReference CS2AS_MODEL__HELPERS_SECT = eINSTANCE.getCS2ASModel_HelpersSect();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CSDeclImpl <em>CS Decl</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SourceDomainImpl <em>Source Domain</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.CSDeclImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getCSDecl()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.SourceDomainImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getSourceDomain()
      * @generated
      */
-    EClass CS_DECL = eINSTANCE.getCSDecl();
-
-    /**
-     * The meta object literal for the '<em><b>Metamodels</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CS_DECL__METAMODELS = eINSTANCE.getCSDecl_Metamodels();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ASDeclImpl <em>AS Decl</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ASDeclImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getASDecl()
-     * @generated
-     */
-    EClass AS_DECL = eINSTANCE.getASDecl();
+    EClass SOURCE_DOMAIN = eINSTANCE.getSourceDomain();
 
     /**
      * The meta object literal for the '<em><b>Metamodels</b></em>' containment reference list feature.
@@ -2980,7 +3217,25 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AS_DECL__METAMODELS = eINSTANCE.getASDecl_Metamodels();
+    EReference SOURCE_DOMAIN__METAMODELS = eINSTANCE.getSourceDomain_Metamodels();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetDomainImpl <em>Target Domain</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetDomainImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getTargetDomain()
+     * @generated
+     */
+    EClass TARGET_DOMAIN = eINSTANCE.getTargetDomain();
+
+    /**
+     * The meta object literal for the '<em><b>Metamodels</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TARGET_DOMAIN__METAMODELS = eINSTANCE.getTargetDomain_Metamodels();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingSectImpl <em>Mapping Sect</em>}' class.
@@ -3001,14 +3256,14 @@ public interface Cs2as_dslPackage extends EPackage
     EReference MAPPING_SECT__MAPPINGS = eINSTANCE.getMappingSect_Mappings();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl <em>Class Map</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingDefImpl <em>Mapping Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassMap()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingDefImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMappingDef()
      * @generated
      */
-    EClass CLASS_MAP = eINSTANCE.getClassMap();
+    EClass MAPPING_DEF = eINSTANCE.getMappingDef();
 
     /**
      * The meta object literal for the '<em><b>To</b></em>' containment reference feature.
@@ -3016,7 +3271,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_MAP__TO = eINSTANCE.getClassMap_To();
+    EReference MAPPING_DEF__TO = eINSTANCE.getMappingDef_To();
 
     /**
      * The meta object literal for the '<em><b>From</b></em>' containment reference feature.
@@ -3024,7 +3279,17 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_MAP__FROM = eINSTANCE.getClassMap_From();
+    EReference MAPPING_DEF__FROM = eINSTANCE.getMappingDef_From();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingCreationImpl <em>Mapping Creation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingCreationImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMappingCreation()
+     * @generated
+     */
+    EClass MAPPING_CREATION = eINSTANCE.getMappingCreation();
 
     /**
      * The meta object literal for the '<em><b>Rule</b></em>' attribute feature.
@@ -3032,35 +3297,25 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_MAP__RULE = eINSTANCE.getClassMap_Rule();
+    EAttribute MAPPING_CREATION__RULE = eINSTANCE.getMappingCreation_Rule();
 
     /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_MAP__STATEMENTS = eINSTANCE.getClassMap_Statements();
+    EReference MAPPING_CREATION__PROPERTIES = eINSTANCE.getMappingCreation_Properties();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapStmntImpl <em>Class Map Stmnt</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyDefImpl <em>Property Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassMapStmntImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassMapStmnt()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyDefImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getPropertyDef()
      * @generated
      */
-    EClass CLASS_MAP_STMNT = eINSTANCE.getClassMapStmnt();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl <em>Property Map</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyMapImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getPropertyMap()
-     * @generated
-     */
-    EClass PROPERTY_MAP = eINSTANCE.getPropertyMap();
+    EClass PROPERTY_DEF = eINSTANCE.getPropertyDef();
 
     /**
      * The meta object literal for the '<em><b>Redefine</b></em>' attribute feature.
@@ -3068,15 +3323,15 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROPERTY_MAP__REDEFINE = eINSTANCE.getPropertyMap_Redefine();
+    EAttribute PROPERTY_DEF__REDEFINE = eINSTANCE.getPropertyDef_Redefine();
 
     /**
-     * The meta object literal for the '<em><b>Prop Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Prop Ref</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROPERTY_MAP__PROP_NAME = eINSTANCE.getPropertyMap_PropName();
+    EReference PROPERTY_DEF__PROP_REF = eINSTANCE.getPropertyDef_PropRef();
 
     /**
      * The meta object literal for the '<em><b>Prop Init</b></em>' containment reference feature.
@@ -3084,7 +3339,25 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROPERTY_MAP__PROP_INIT = eINSTANCE.getPropertyMap_PropInit();
+    EReference PROPERTY_DEF__PROP_INIT = eINSTANCE.getPropertyDef_PropInit();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingReferenceImpl <em>Mapping Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingReferenceImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMappingReference()
+     * @generated
+     */
+    EClass MAPPING_REFERENCE = eINSTANCE.getMappingReference();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAPPING_REFERENCE__EXPRESSION = eINSTANCE.getMappingReference_Expression();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationSectImpl <em>Disambiguation Sect</em>}' class.
@@ -3105,42 +3378,6 @@ public interface Cs2as_dslPackage extends EPackage
     EReference DISAMBIGUATION_SECT__DISAMBIGUATIONS = eINSTANCE.getDisambiguationSect_Disambiguations();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassDisambiguationImpl <em>Class Disambiguation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassDisambiguationImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassDisambiguation()
-     * @generated
-     */
-    EClass CLASS_DISAMBIGUATION = eINSTANCE.getClassDisambiguation();
-
-    /**
-     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLASS_DISAMBIGUATION__CLASS = eINSTANCE.getClassDisambiguation_Class();
-
-    /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLASS_DISAMBIGUATION__STATEMENTS = eINSTANCE.getClassDisambiguation_Statements();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassDisambiguationStmntImpl <em>Class Disambiguation Stmnt</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassDisambiguationStmntImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassDisambiguationStmnt()
-     * @generated
-     */
-    EClass CLASS_DISAMBIGUATION_STMNT = eINSTANCE.getClassDisambiguationStmnt();
-
-    /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationDefImpl <em>Disambiguation Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3151,12 +3388,38 @@ public interface Cs2as_dslPackage extends EPackage
     EClass DISAMBIGUATION_DEF = eINSTANCE.getDisambiguationDef();
 
     /**
+     * The meta object literal for the '<em><b>Class Ref</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DISAMBIGUATION_DEF__CLASS_REF = eINSTANCE.getDisambiguationDef_ClassRef();
+
+    /**
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DISAMBIGUATION_DEF__RULES = eINSTANCE.getDisambiguationDef_Rules();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationRuleImpl <em>Disambiguation Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.DisambiguationRuleImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getDisambiguationRule()
+     * @generated
+     */
+    EClass DISAMBIGUATION_RULE = eINSTANCE.getDisambiguationRule();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DISAMBIGUATION_DEF__NAME = eINSTANCE.getDisambiguationDef_Name();
+    EAttribute DISAMBIGUATION_RULE__NAME = eINSTANCE.getDisambiguationRule_Name();
 
     /**
      * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
@@ -3164,7 +3427,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DISAMBIGUATION_DEF__EXP = eINSTANCE.getDisambiguationDef_Exp();
+    EReference DISAMBIGUATION_RULE__EXP = eINSTANCE.getDisambiguationRule_Exp();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.NameResolutionSectImpl <em>Name Resolution Sect</em>}' class.
@@ -3245,6 +3508,22 @@ public interface Cs2as_dslPackage extends EPackage
     EReference TARGET__PROP_REF = eINSTANCE.getTarget_PropRef();
 
     /**
+     * The meta object literal for the '<em><b>Ignore Case</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TARGET__IGNORE_CASE = eINSTANCE.getTarget_IgnoreCase();
+
+    /**
+     * The meta object literal for the '<em><b>Escape Seq Def</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TARGET__ESCAPE_SEQ_DEF = eINSTANCE.getTarget_EscapeSeqDef();
+
+    /**
      * The meta object literal for the '<em><b>Filter</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3253,12 +3532,56 @@ public interface Cs2as_dslPackage extends EPackage
     EReference TARGET__FILTER = eINSTANCE.getTarget_Filter();
 
     /**
-     * The meta object literal for the '<em><b>Qualifications</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Qualification</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TARGET__QUALIFICATIONS = eINSTANCE.getTarget_Qualifications();
+    EReference TARGET__QUALIFICATION = eINSTANCE.getTarget_Qualification();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.EscapeSequenceDefImpl <em>Escape Sequence Def</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.EscapeSequenceDefImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getEscapeSequenceDef()
+     * @generated
+     */
+    EClass ESCAPE_SEQUENCE_DEF = eINSTANCE.getEscapeSequenceDef();
+
+    /**
+     * The meta object literal for the '<em><b>Escapes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ESCAPE_SEQUENCE_DEF__ESCAPES = eINSTANCE.getEscapeSequenceDef_Escapes();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.EscapeSequenceImpl <em>Escape Sequence</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.EscapeSequenceImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getEscapeSequence()
+     * @generated
+     */
+    EClass ESCAPE_SEQUENCE = eINSTANCE.getEscapeSequence();
+
+    /**
+     * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ESCAPE_SEQUENCE__PREFIX = eINSTANCE.getEscapeSequence_Prefix();
+
+    /**
+     * The meta object literal for the '<em><b>Suffix</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ESCAPE_SEQUENCE__SUFFIX = eINSTANCE.getEscapeSequence_Suffix();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.InputsImpl <em>Inputs</em>}' class.
@@ -3297,12 +3620,12 @@ public interface Cs2as_dslPackage extends EPackage
     EAttribute INPUT__QUALIFIER = eINSTANCE.getInput_Qualifier();
 
     /**
-     * The meta object literal for the '<em><b>Class Ref</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Type Ref</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INPUT__CLASS_REF = eINSTANCE.getInput_ClassRef();
+    EReference INPUT__TYPE_REF = eINSTANCE.getInput_TypeRef();
 
     /**
      * The meta object literal for the '<em><b>Prop Ref</b></em>' containment reference feature.
@@ -3357,22 +3680,30 @@ public interface Cs2as_dslPackage extends EPackage
     EReference PROVIDER__VARS_DECL = eINSTANCE.getProvider_VarsDecl();
 
     /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Current Scope</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROVIDER__STATEMENTS = eINSTANCE.getProvider_Statements();
+    EReference PROVIDER__CURRENT_SCOPE = eINSTANCE.getProvider_CurrentScope();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderVarsImpl <em>Provider Vars</em>}' class.
+     * The meta object literal for the '<em><b>Exported Scope</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderVarsImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProviderVars()
      * @generated
      */
-    EClass PROVIDER_VARS = eINSTANCE.getProviderVars();
+    EReference PROVIDER__EXPORTED_SCOPE = eINSTANCE.getProvider_ExportedScope();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderVarsDeclImpl <em>Provider Vars Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderVarsDeclImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProviderVarsDecl()
+     * @generated
+     */
+    EClass PROVIDER_VARS_DECL = eINSTANCE.getProviderVarsDecl();
 
     /**
      * The meta object literal for the '<em><b>Var Decl</b></em>' containment reference list feature.
@@ -3380,33 +3711,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROVIDER_VARS__VAR_DECL = eINSTANCE.getProviderVars_VarDecl();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderStmntImpl <em>Provider Stmnt</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderStmntImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProviderStmnt()
-     * @generated
-     */
-    EClass PROVIDER_STMNT = eINSTANCE.getProviderStmnt();
-
-    /**
-     * The meta object literal for the '<em><b>Selection Def</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROVIDER_STMNT__SELECTION_DEF = eINSTANCE.getProviderStmnt_SelectionDef();
-
-    /**
-     * The meta object literal for the '<em><b>Provision Defs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROVIDER_STMNT__PROVISION_DEFS = eINSTANCE.getProviderStmnt_ProvisionDefs();
+    EReference PROVIDER_VARS_DECL__VAR_DECL = eINSTANCE.getProviderVarsDecl_VarDecl();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.FilterDefImpl <em>Filter Def</em>}' class.
@@ -3445,72 +3750,74 @@ public interface Cs2as_dslPackage extends EPackage
     EClass QUALIFICATION_DEF = eINSTANCE.getQualificationDef();
 
     /**
-     * The meta object literal for the '<em><b>Targets Def</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Qualifications</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference QUALIFICATION_DEF__TARGETS_DEF = eINSTANCE.getQualificationDef_TargetsDef();
+    EReference QUALIFICATION_DEF__QUALIFICATIONS = eINSTANCE.getQualificationDef_Qualifications();
 
     /**
-     * The meta object literal for the '<em><b>Contribution</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.QualificationImpl <em>Qualification</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.QualificationImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getQualification()
      * @generated
      */
-    EReference QUALIFICATION_DEF__CONTRIBUTION = eINSTANCE.getQualificationDef_Contribution();
+    EClass QUALIFICATION = eINSTANCE.getQualification();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl <em>Elements Contrib Exp</em>}' class.
+     * The meta object literal for the '<em><b>Qualified Classes</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ElementsContribExpImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getElementsContribExp()
      * @generated
      */
-    EClass ELEMENTS_CONTRIB_EXP = eINSTANCE.getElementsContribExp();
+    EReference QUALIFICATION__QUALIFIED_CLASSES = eINSTANCE.getQualification_QualifiedClasses();
 
     /**
-     * The meta object literal for the '<em><b>Is Preceding</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Contributions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ELEMENTS_CONTRIB_EXP__IS_PRECEDING = eINSTANCE.getElementsContribExp_IsPreceding();
+    EReference QUALIFICATION__CONTRIBUTIONS = eINSTANCE.getQualification_Contributions();
 
     /**
-     * The meta object literal for the '<em><b>Is Imported</b></em>' attribute feature.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CurrentScopeDeclImpl <em>Current Scope Decl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.CurrentScopeDeclImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getCurrentScopeDecl()
      * @generated
      */
-    EAttribute ELEMENTS_CONTRIB_EXP__IS_IMPORTED = eINSTANCE.getElementsContribExp_IsImported();
+    EClass CURRENT_SCOPE_DECL = eINSTANCE.getCurrentScopeDecl();
 
     /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Provision Defs</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ELEMENTS_CONTRIB_EXP__EXPRESSION = eINSTANCE.getElementsContribExp_Expression();
+    EReference CURRENT_SCOPE_DECL__PROVISION_DEFS = eINSTANCE.getCurrentScopeDecl_ProvisionDefs();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl <em>Scope Def</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.CurrentScopeProvisionDefImpl <em>Current Scope Provision Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ScopeDefImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getScopeDef()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.CurrentScopeProvisionDefImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getCurrentScopeProvisionDef()
      * @generated
      */
-    EClass SCOPE_DEF = eINSTANCE.getScopeDef();
+    EClass CURRENT_SCOPE_PROVISION_DEF = eINSTANCE.getCurrentScopeProvisionDef();
 
     /**
-     * The meta object literal for the '<em><b>Also Exports</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Selection Def</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SCOPE_DEF__ALSO_EXPORTS = eINSTANCE.getScopeDef_AlsoExports();
+    EReference CURRENT_SCOPE_PROVISION_DEF__SELECTION_DEF = eINSTANCE.getCurrentScopeProvisionDef_SelectionDef();
 
     /**
      * The meta object literal for the '<em><b>Same Scope</b></em>' attribute feature.
@@ -3518,7 +3825,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SCOPE_DEF__SAME_SCOPE = eINSTANCE.getScopeDef_SameScope();
+    EAttribute CURRENT_SCOPE_PROVISION_DEF__SAME_SCOPE = eINSTANCE.getCurrentScopeProvisionDef_SameScope();
 
     /**
      * The meta object literal for the '<em><b>Empty Scope</b></em>' attribute feature.
@@ -3526,7 +3833,15 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SCOPE_DEF__EMPTY_SCOPE = eINSTANCE.getScopeDef_EmptyScope();
+    EAttribute CURRENT_SCOPE_PROVISION_DEF__EMPTY_SCOPE = eINSTANCE.getCurrentScopeProvisionDef_EmptyScope();
+
+    /**
+     * The meta object literal for the '<em><b>Provisions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CURRENT_SCOPE_PROVISION_DEF__PROVISIONS = eINSTANCE.getCurrentScopeProvisionDef_Provisions();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SelectionDefImpl <em>Selection Def</em>}' class.
@@ -3539,30 +3854,30 @@ public interface Cs2as_dslPackage extends EPackage
     EClass SELECTION_DEF = eINSTANCE.getSelectionDef();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionDefImpl <em>Provision Def</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionImpl <em>Provision</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionDefImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProvisionDef()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProvisionImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getProvision()
      * @generated
      */
-    EClass PROVISION_DEF = eINSTANCE.getProvisionDef();
+    EClass PROVISION = eINSTANCE.getProvision();
 
     /**
-     * The meta object literal for the '<em><b>Targets Def</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Provided Classes</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROVISION_DEF__TARGETS_DEF = eINSTANCE.getProvisionDef_TargetsDef();
+    EReference PROVISION__PROVIDED_CLASSES = eINSTANCE.getProvision_ProvidedClasses();
 
     /**
-     * The meta object literal for the '<em><b>Contribution</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Contributions Def</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROVISION_DEF__CONTRIBUTION = eINSTANCE.getProvisionDef_Contribution();
+    EReference PROVISION__CONTRIBUTIONS_DEF = eINSTANCE.getProvision_ContributionsDef();
 
     /**
      * The meta object literal for the '<em><b>Occluding Defs</b></em>' containment reference list feature.
@@ -3570,43 +3885,25 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROVISION_DEF__OCCLUDING_DEFS = eINSTANCE.getProvisionDef_OccludingDefs();
+    EReference PROVISION__OCCLUDING_DEFS = eINSTANCE.getProvision_OccludingDefs();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassRefImpl <em>Class Ref</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MultiplePathNamesImpl <em>Multiple Path Names</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassRefImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassRef()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.MultiplePathNamesImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMultiplePathNames()
      * @generated
      */
-    EClass CLASS_REF = eINSTANCE.getClassRef();
+    EClass MULTIPLE_PATH_NAMES = eINSTANCE.getMultiplePathNames();
 
     /**
-     * The meta object literal for the '<em><b>Class Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLASS_REF__CLASS_NAME = eINSTANCE.getClassRef_ClassName();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MultipleClassRefImpl <em>Multiple Class Ref</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.MultipleClassRefImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getMultipleClassRef()
-     * @generated
-     */
-    EClass MULTIPLE_CLASS_REF = eINSTANCE.getMultipleClassRef();
-
-    /**
-     * The meta object literal for the '<em><b>Class Names</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Path Names</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MULTIPLE_CLASS_REF__CLASS_NAMES = eINSTANCE.getMultipleClassRef_ClassNames();
+    EReference MULTIPLE_PATH_NAMES__PATH_NAMES = eINSTANCE.getMultiplePathNames_PathNames();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.OccludingDefImpl <em>Occluding Def</em>}' class.
@@ -3619,22 +3916,22 @@ public interface Cs2as_dslPackage extends EPackage
     EClass OCCLUDING_DEF = eINSTANCE.getOccludingDef();
 
     /**
-     * The meta object literal for the '<em><b>Contribution</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Contributions Def</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OCCLUDING_DEF__CONTRIBUTION = eINSTANCE.getOccludingDef_Contribution();
+    EReference OCCLUDING_DEF__CONTRIBUTIONS_DEF = eINSTANCE.getOccludingDef_ContributionsDef();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionDefImpl <em>Contribution Def</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionsDefImpl <em>Contributions Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionDefImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getContributionDef()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionsDefImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getContributionsDef()
      * @generated
      */
-    EClass CONTRIBUTION_DEF = eINSTANCE.getContributionDef();
+    EClass CONTRIBUTIONS_DEF = eINSTANCE.getContributionsDef();
 
     /**
      * The meta object literal for the '<em><b>Contributions</b></em>' containment reference list feature.
@@ -3642,17 +3939,101 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONTRIBUTION_DEF__CONTRIBUTIONS = eINSTANCE.getContributionDef_Contributions();
+    EReference CONTRIBUTIONS_DEF__CONTRIBUTIONS = eINSTANCE.getContributionsDef_Contributions();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl <em>Export Def</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionImpl <em>Contribution</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportDefImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getExportDef()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ContributionImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getContribution()
      * @generated
      */
-    EClass EXPORT_DEF = eINSTANCE.getExportDef();
+    EClass CONTRIBUTION = eINSTANCE.getContribution();
+
+    /**
+     * The meta object literal for the '<em><b>Child</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRIBUTION__CHILD = eINSTANCE.getContribution_Child();
+
+    /**
+     * The meta object literal for the '<em><b>Is Preceding</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTRIBUTION__IS_PRECEDING = eINSTANCE.getContribution_IsPreceding();
+
+    /**
+     * The meta object literal for the '<em><b>Is Exported</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTRIBUTION__IS_EXPORTED = eINSTANCE.getContribution_IsExported();
+
+    /**
+     * The meta object literal for the '<em><b>Type Refs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRIBUTION__TYPE_REFS = eINSTANCE.getContribution_TypeRefs();
+
+    /**
+     * The meta object literal for the '<em><b>Is Loaded</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTRIBUTION__IS_LOADED = eINSTANCE.getContribution_IsLoaded();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRIBUTION__EXPRESSION = eINSTANCE.getContribution_Expression();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportedScopeDeclImpl <em>Exported Scope Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportedScopeDeclImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getExportedScopeDecl()
+     * @generated
+     */
+    EClass EXPORTED_SCOPE_DECL = eINSTANCE.getExportedScopeDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Provision Defs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPORTED_SCOPE_DECL__PROVISION_DEFS = eINSTANCE.getExportedScopeDecl_ProvisionDefs();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportedScopeProvisionDefImpl <em>Exported Scope Provision Def</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ExportedScopeProvisionDefImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getExportedScopeProvisionDef()
+     * @generated
+     */
+    EClass EXPORTED_SCOPE_PROVISION_DEF = eINSTANCE.getExportedScopeProvisionDef();
+
+    /**
+     * The meta object literal for the '<em><b>Provisions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPORTED_SCOPE_PROVISION_DEF__PROVISIONS = eINSTANCE.getExportedScopeProvisionDef_Provisions();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelpersSectImpl <em>Helpers Sect</em>}' class.
@@ -3673,14 +4054,14 @@ public interface Cs2as_dslPackage extends EPackage
     EReference HELPERS_SECT__CLASS_HELPERS = eINSTANCE.getHelpersSect_ClassHelpers();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassHelperImpl <em>Class Helper</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperClassImpl <em>Helper Class</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.ClassHelperImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getClassHelper()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperClassImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelperClass()
      * @generated
      */
-    EClass CLASS_HELPER = eINSTANCE.getClassHelper();
+    EClass HELPER_CLASS = eINSTANCE.getHelperClass();
 
     /**
      * The meta object literal for the '<em><b>Context</b></em>' containment reference feature.
@@ -3688,7 +4069,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_HELPER__CONTEXT = eINSTANCE.getClassHelper_Context();
+    EReference HELPER_CLASS__CONTEXT = eINSTANCE.getHelperClass_Context();
 
     /**
      * The meta object literal for the '<em><b>Helpers</b></em>' containment reference list feature.
@@ -3696,17 +4077,17 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_HELPER__HELPERS = eINSTANCE.getClassHelper_Helpers();
+    EReference HELPER_CLASS__HELPERS = eINSTANCE.getHelperClass_Helpers();
 
     /**
-     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl <em>Helper Def</em>}' class.
+     * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperOpImpl <em>Helper Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperDefImpl
-     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelperDef()
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.HelperOpImpl
+     * @see uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslPackageImpl#getHelperOp()
      * @generated
      */
-    EClass HELPER_DEF = eINSTANCE.getHelperDef();
+    EClass HELPER_OP = eINSTANCE.getHelperOp();
 
     /**
      * The meta object literal for the '<em><b>Owned Signature</b></em>' containment reference feature.
@@ -3714,7 +4095,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference HELPER_DEF__OWNED_SIGNATURE = eINSTANCE.getHelperDef_OwnedSignature();
+    EReference HELPER_OP__OWNED_SIGNATURE = eINSTANCE.getHelperOp_OwnedSignature();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3722,7 +4103,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute HELPER_DEF__NAME = eINSTANCE.getHelperDef_Name();
+    EAttribute HELPER_OP__NAME = eINSTANCE.getHelperOp_Name();
 
     /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
@@ -3730,7 +4111,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference HELPER_DEF__PARAMS = eINSTANCE.getHelperDef_Params();
+    EReference HELPER_OP__PARAMS = eINSTANCE.getHelperOp_Params();
 
     /**
      * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
@@ -3738,7 +4119,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference HELPER_DEF__OWNED_TYPE = eINSTANCE.getHelperDef_OwnedType();
+    EReference HELPER_OP__OWNED_TYPE = eINSTANCE.getHelperOp_OwnedType();
 
     /**
      * The meta object literal for the '<em><b>Helper Body</b></em>' containment reference feature.
@@ -3746,7 +4127,7 @@ public interface Cs2as_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference HELPER_DEF__HELPER_BODY = eINSTANCE.getHelperDef_HelperBody();
+    EReference HELPER_OP__HELPER_BODY = eINSTANCE.getHelperOp_HelperBody();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TraceExpCSImpl <em>Trace Exp CS</em>}' class.
@@ -3769,12 +4150,12 @@ public interface Cs2as_dslPackage extends EPackage
     EClass LOOKUP_EXP_CS = eINSTANCE.getLookupExpCS();
 
     /**
-     * The meta object literal for the '<em><b>From Exp</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Is Exported</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LOOKUP_EXP_CS__FROM_EXP = eINSTANCE.getLookupExpCS_FromExp();
+    EAttribute LOOKUP_EXP_CS__IS_EXPORTED = eINSTANCE.getLookupExpCS_IsExported();
 
     /**
      * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
@@ -3795,12 +4176,12 @@ public interface Cs2as_dslPackage extends EPackage
     EClass SELECTION_ALL = eINSTANCE.getSelectionAll();
 
     /**
-     * The meta object literal for the '<em><b>Exception Properties</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Exceptions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELECTION_ALL__EXCEPTION_PROPERTIES = eINSTANCE.getSelectionAll_ExceptionProperties();
+    EReference SELECTION_ALL__EXCEPTIONS = eINSTANCE.getSelectionAll_Exceptions();
 
     /**
      * The meta object literal for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SelectionSpecificImpl <em>Selection Specific</em>}' class.
@@ -3813,12 +4194,12 @@ public interface Cs2as_dslPackage extends EPackage
     EClass SELECTION_SPECIFIC = eINSTANCE.getSelectionSpecific();
 
     /**
-     * The meta object literal for the '<em><b>Selected Properties</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Selections</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELECTION_SPECIFIC__SELECTED_PROPERTIES = eINSTANCE.getSelectionSpecific_SelectedProperties();
+    EReference SELECTION_SPECIFIC__SELECTIONS = eINSTANCE.getSelectionSpecific_Selections();
 
   }
 

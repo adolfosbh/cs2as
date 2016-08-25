@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionsDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 
@@ -23,7 +23,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.OccludingDefImpl#getContribution <em>Contribution</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.OccludingDefImpl#getContributionsDef <em>Contributions Def</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +31,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
 public class OccludingDefImpl extends MinimalEObjectImpl.Container implements OccludingDef
 {
   /**
-   * The cached value of the '{@link #getContribution() <em>Contribution</em>}' containment reference.
+   * The cached value of the '{@link #getContributionsDef() <em>Contributions Def</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContribution()
+   * @see #getContributionsDef()
    * @generated
    * @ordered
    */
-  protected ContributionDef contribution;
+  protected ContributionsDef contributionsDef;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,9 +66,9 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
    * <!-- end-user-doc -->
    * @generated
    */
-  public ContributionDef getContribution()
+  public ContributionsDef getContributionsDef()
   {
-    return contribution;
+    return contributionsDef;
   }
 
   /**
@@ -76,13 +76,13 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetContribution(ContributionDef newContribution, NotificationChain msgs)
+  public NotificationChain basicSetContributionsDef(ContributionsDef newContributionsDef, NotificationChain msgs)
   {
-    ContributionDef oldContribution = contribution;
-    contribution = newContribution;
+    ContributionsDef oldContributionsDef = contributionsDef;
+    contributionsDef = newContributionsDef;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION, oldContribution, newContribution);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTIONS_DEF, oldContributionsDef, newContributionsDef);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -93,20 +93,20 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContribution(ContributionDef newContribution)
+  public void setContributionsDef(ContributionsDef newContributionsDef)
   {
-    if (newContribution != contribution)
+    if (newContributionsDef != contributionsDef)
     {
       NotificationChain msgs = null;
-      if (contribution != null)
-        msgs = ((InternalEObject)contribution).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION, null, msgs);
-      if (newContribution != null)
-        msgs = ((InternalEObject)newContribution).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION, null, msgs);
-      msgs = basicSetContribution(newContribution, msgs);
+      if (contributionsDef != null)
+        msgs = ((InternalEObject)contributionsDef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTIONS_DEF, null, msgs);
+      if (newContributionsDef != null)
+        msgs = ((InternalEObject)newContributionsDef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTIONS_DEF, null, msgs);
+      msgs = basicSetContributionsDef(newContributionsDef, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION, newContribution, newContribution));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTIONS_DEF, newContributionsDef, newContributionsDef));
   }
 
   /**
@@ -119,8 +119,8 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION:
-        return basicSetContribution(null, msgs);
+      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTIONS_DEF:
+        return basicSetContributionsDef(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +135,8 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION:
-        return getContribution();
+      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTIONS_DEF:
+        return getContributionsDef();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,8 +151,8 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION:
-        setContribution((ContributionDef)newValue);
+      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTIONS_DEF:
+        setContributionsDef((ContributionsDef)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +168,8 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION:
-        setContribution((ContributionDef)null);
+      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTIONS_DEF:
+        setContributionsDef((ContributionsDef)null);
         return;
     }
     super.eUnset(featureID);
@@ -185,8 +185,8 @@ public class OccludingDefImpl extends MinimalEObjectImpl.Container implements Oc
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTION:
-        return contribution != null;
+      case Cs2as_dslPackage.OCCLUDING_DEF__CONTRIBUTIONS_DEF:
+        return contributionsDef != null;
     }
     return super.eIsSet(featureID);
   }

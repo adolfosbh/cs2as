@@ -25,7 +25,7 @@ public class CS2ASDSLParser extends org.eclipse.xtext.parser.antlr.AbstractAntlr
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "CS2ASModel";
 	}
 	
 	public CS2ASDSLGrammarAccess getGrammarAccess() {

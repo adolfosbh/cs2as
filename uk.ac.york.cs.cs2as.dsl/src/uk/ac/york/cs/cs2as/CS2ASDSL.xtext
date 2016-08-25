@@ -127,7 +127,7 @@ Provider:
 	classRef=PathNameCS '{'
 		varsDecl=ProviderVarsDecl?
 		currentScope=CurrentScopeDecl?
-		exportedscope=ExportedScopeDecl?
+		exportedScope=ExportedScopeDecl?
 	'}'
 ;
 
@@ -150,7 +150,7 @@ Qualification:
 
 CurrentScopeDecl:
 	'in'  'current_scope' 
-	provisionsDef+=CurrentScopeProvisionDef+
+	provisionDefs+=CurrentScopeProvisionDef+
 ;
 
 CurrentScopeProvisionDef:
@@ -187,19 +187,23 @@ ContributionsDef:
 ;
 
 Contribution:
-	(('with_child' child=ParameterDef 'in')
-	 | isPreceding?='preceding' )?
+	(('child' child=ParameterDef 'in')
+	| isPreceding?='preceding'
+	| (isExported?='exported' 
+	  (typeRefs+=PathNameCS (',' typeRefs+=PathNameCS)* 'from')?)
+	| (isLoaded?='loaded' 
+	  typeRefs+=PathNameCS 'from'))?  
 	expression=ExpCS
 ;
 
 ExportedScopeDecl:
 	'in' 'exported_scope'
-	declarations+=ExportedScopeProvisionDef+
+	provisionDefs+=ExportedScopeProvisionDef+
 ;
 
 ExportedScopeProvisionDef:
 	// selectionDef=SelectionDef?
-	'provides' provisionDefs+=Provision+
+	'provides' provisions+=Provision+
 	';'
 ;
 

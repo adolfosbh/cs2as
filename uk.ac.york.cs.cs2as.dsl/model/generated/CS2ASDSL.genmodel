@@ -7,46 +7,49 @@
     editorPluginID="uk.ac.york.cs.cs2as.dsl.editor" runtimeVersion="2.11" usedGenPackages="platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/resource/org.eclipse.ocl.pivot/model/Pivot.genmodel#//pivot platform:/resource/org.eclipse.ocl.xtext.base/model/BaseCS.genmodel#//basecs platform:/resource/org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.genmodel#//essentialoclcs">
   <genPackages prefix="Cs2as_dsl" basePackage="uk.ac.york.cs.cs2as" disposableProviderFactory="true"
       fileExtensions="cs2as" ecorePackage="CS2ASDSL.ecore#/">
-    <genClasses ecoreClass="CS2ASDSL.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Model/csDecl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Model/asDecl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Model/mappingSect"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Model/disambiguationSect"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Model/nameresoSect"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Model/helpersSect"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//CS2ASModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//CS2ASModel/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//CS2ASModel/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//CS2ASModel/mappingSect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//CS2ASModel/disambiguationSect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//CS2ASModel/nameresoSect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//CS2ASModel/helpersSect"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//CSDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//CSDecl/metamodels"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//SourceDomain">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//SourceDomain/metamodels"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ASDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ASDecl/metamodels"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//TargetDomain">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//TargetDomain/metamodels"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//MappingSect">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//MappingSect/mappings"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ClassMap">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassMap/to"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassMap/from"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ClassMap/rule"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassMap/statements"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//MappingDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//MappingDef/to"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//MappingDef/from"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ClassMapStmnt"/>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//PropertyMap">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//PropertyMap/redefine"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//PropertyMap/propName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//PropertyMap/propInit"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//MappingCreation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//MappingCreation/rule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//MappingCreation/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//PropertyDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//PropertyDef/redefine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//PropertyDef/propRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//PropertyDef/propInit"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//MappingReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//MappingReference/expression"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//DisambiguationSect">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//DisambiguationSect/disambiguations"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ClassDisambiguation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassDisambiguation/class"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassDisambiguation/statements"/>
-    </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ClassDisambiguationStmnt"/>
     <genClasses ecoreClass="CS2ASDSL.ecore#//DisambiguationDef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//DisambiguationDef/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//DisambiguationDef/exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//DisambiguationDef/classRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//DisambiguationDef/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//DisambiguationRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//DisambiguationRule/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//DisambiguationRule/exp"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//NameResolutionSect">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//NameResolutionSect/targetsDef"/>
@@ -59,15 +62,24 @@
     <genClasses ecoreClass="CS2ASDSL.ecore#//Target">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Target/classRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Target/propRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//Target/ignoreCase"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Target/escapeSeqDef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Target/filter"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Target/qualifications"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Target/qualification"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//EscapeSequenceDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//EscapeSequenceDef/escapes"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//EscapeSequence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//EscapeSequence/prefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//EscapeSequence/suffix"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//Inputs">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Inputs/inputs"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//Input">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//Input/qualifier"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Input/classRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Input/typeRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Input/propRef"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//Providers">
@@ -76,76 +88,85 @@
     <genClasses ecoreClass="CS2ASDSL.ecore#//Provider">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provider/classRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provider/varsDecl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provider/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provider/currentScope"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provider/exportedScope"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ProviderVars">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProviderVars/varDecl"/>
-    </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ProviderStmnt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProviderStmnt/selectionDef"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProviderStmnt/provisionDefs"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//ProviderVarsDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProviderVarsDecl/varDecl"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//FilterDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//FilterDef/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//FilterDef/expression"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//QualificationDef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//QualificationDef/targetsDef"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//QualificationDef/contribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//QualificationDef/qualifications"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ElementsContribExp">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ElementsContribExp/isPreceding"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ElementsContribExp/isImported"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ElementsContribExp/expression"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//Qualification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Qualification/qualifiedClasses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Qualification/contributions"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ScopeDef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/alsoExports"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/sameScope"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//ScopeDef/emptyScope"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//CurrentScopeDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//CurrentScopeDecl/provisionDefs"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//CurrentScopeProvisionDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//CurrentScopeProvisionDef/selectionDef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//CurrentScopeProvisionDef/sameScope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//CurrentScopeProvisionDef/emptyScope"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//CurrentScopeProvisionDef/provisions"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//SelectionDef"/>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ProvisionDef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProvisionDef/targetsDef"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProvisionDef/contribution"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ProvisionDef/occludingDefs"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//Provision">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provision/providedClasses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provision/contributionsDef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Provision/occludingDefs"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ClassRef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassRef/className"/>
-    </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//MultipleClassRef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//MultipleClassRef/classNames"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//MultiplePathNames">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//MultiplePathNames/pathNames"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//OccludingDef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//OccludingDef/contribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//OccludingDef/contributionsDef"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ContributionDef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ContributionDef/contributions"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//ContributionsDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ContributionsDef/contributions"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ExportDef"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//Contribution">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Contribution/child"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//Contribution/isPreceding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//Contribution/isExported"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Contribution/typeRefs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//Contribution/isLoaded"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//Contribution/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//ExportedScopeDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportedScopeDecl/provisionDefs"/>
+    </genClasses>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//ExportedScopeProvisionDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ExportedScopeProvisionDef/provisions"/>
+    </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//HelpersSect">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelpersSect/classHelpers"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//ClassHelper">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassHelper/context"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//ClassHelper/helpers"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//HelperClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperClass/context"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperClass/helpers"/>
     </genClasses>
-    <genClasses ecoreClass="CS2ASDSL.ecore#//HelperDef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperDef/ownedSignature"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//HelperDef/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperDef/params"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperDef/ownedType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperDef/helperBody"/>
+    <genClasses ecoreClass="CS2ASDSL.ecore#//HelperOp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperOp/ownedSignature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//HelperOp/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperOp/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperOp/ownedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//HelperOp/helperBody"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//TraceExpCS"/>
     <genClasses ecoreClass="CS2ASDSL.ecore#//LookupExpCS">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//LookupExpCS/fromExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//LookupExpCS/isExported"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//LookupExpCS/args"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//SelectionAll">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//SelectionAll/exceptionProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//SelectionAll/exceptions"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//SelectionSpecific">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//SelectionSpecific/selectedProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//SelectionSpecific/selections"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

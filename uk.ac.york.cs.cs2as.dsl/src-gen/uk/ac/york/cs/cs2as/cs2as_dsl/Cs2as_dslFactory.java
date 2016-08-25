@@ -23,31 +23,31 @@ public interface Cs2as_dslFactory extends EFactory
   Cs2as_dslFactory eINSTANCE = uk.ac.york.cs.cs2as.cs2as_dsl.impl.Cs2as_dslFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>CS2AS Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>CS2AS Model</em>'.
    * @generated
    */
-  Model createModel();
+  CS2ASModel createCS2ASModel();
 
   /**
-   * Returns a new object of class '<em>CS Decl</em>'.
+   * Returns a new object of class '<em>Source Domain</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>CS Decl</em>'.
+   * @return a new object of class '<em>Source Domain</em>'.
    * @generated
    */
-  CSDecl createCSDecl();
+  SourceDomain createSourceDomain();
 
   /**
-   * Returns a new object of class '<em>AS Decl</em>'.
+   * Returns a new object of class '<em>Target Domain</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>AS Decl</em>'.
+   * @return a new object of class '<em>Target Domain</em>'.
    * @generated
    */
-  ASDecl createASDecl();
+  TargetDomain createTargetDomain();
 
   /**
    * Returns a new object of class '<em>Mapping Sect</em>'.
@@ -59,31 +59,40 @@ public interface Cs2as_dslFactory extends EFactory
   MappingSect createMappingSect();
 
   /**
-   * Returns a new object of class '<em>Class Map</em>'.
+   * Returns a new object of class '<em>Mapping Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Map</em>'.
+   * @return a new object of class '<em>Mapping Def</em>'.
    * @generated
    */
-  ClassMap createClassMap();
+  MappingDef createMappingDef();
 
   /**
-   * Returns a new object of class '<em>Class Map Stmnt</em>'.
+   * Returns a new object of class '<em>Mapping Creation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Map Stmnt</em>'.
+   * @return a new object of class '<em>Mapping Creation</em>'.
    * @generated
    */
-  ClassMapStmnt createClassMapStmnt();
+  MappingCreation createMappingCreation();
 
   /**
-   * Returns a new object of class '<em>Property Map</em>'.
+   * Returns a new object of class '<em>Property Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Property Map</em>'.
+   * @return a new object of class '<em>Property Def</em>'.
    * @generated
    */
-  PropertyMap createPropertyMap();
+  PropertyDef createPropertyDef();
+
+  /**
+   * Returns a new object of class '<em>Mapping Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mapping Reference</em>'.
+   * @generated
+   */
+  MappingReference createMappingReference();
 
   /**
    * Returns a new object of class '<em>Disambiguation Sect</em>'.
@@ -95,24 +104,6 @@ public interface Cs2as_dslFactory extends EFactory
   DisambiguationSect createDisambiguationSect();
 
   /**
-   * Returns a new object of class '<em>Class Disambiguation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Disambiguation</em>'.
-   * @generated
-   */
-  ClassDisambiguation createClassDisambiguation();
-
-  /**
-   * Returns a new object of class '<em>Class Disambiguation Stmnt</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Disambiguation Stmnt</em>'.
-   * @generated
-   */
-  ClassDisambiguationStmnt createClassDisambiguationStmnt();
-
-  /**
    * Returns a new object of class '<em>Disambiguation Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -120,6 +111,15 @@ public interface Cs2as_dslFactory extends EFactory
    * @generated
    */
   DisambiguationDef createDisambiguationDef();
+
+  /**
+   * Returns a new object of class '<em>Disambiguation Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Disambiguation Rule</em>'.
+   * @generated
+   */
+  DisambiguationRule createDisambiguationRule();
 
   /**
    * Returns a new object of class '<em>Name Resolution Sect</em>'.
@@ -147,6 +147,24 @@ public interface Cs2as_dslFactory extends EFactory
    * @generated
    */
   Target createTarget();
+
+  /**
+   * Returns a new object of class '<em>Escape Sequence Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Escape Sequence Def</em>'.
+   * @generated
+   */
+  EscapeSequenceDef createEscapeSequenceDef();
+
+  /**
+   * Returns a new object of class '<em>Escape Sequence</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Escape Sequence</em>'.
+   * @generated
+   */
+  EscapeSequence createEscapeSequence();
 
   /**
    * Returns a new object of class '<em>Inputs</em>'.
@@ -185,22 +203,13 @@ public interface Cs2as_dslFactory extends EFactory
   Provider createProvider();
 
   /**
-   * Returns a new object of class '<em>Provider Vars</em>'.
+   * Returns a new object of class '<em>Provider Vars Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Provider Vars</em>'.
+   * @return a new object of class '<em>Provider Vars Decl</em>'.
    * @generated
    */
-  ProviderVars createProviderVars();
-
-  /**
-   * Returns a new object of class '<em>Provider Stmnt</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Provider Stmnt</em>'.
-   * @generated
-   */
-  ProviderStmnt createProviderStmnt();
+  ProviderVarsDecl createProviderVarsDecl();
 
   /**
    * Returns a new object of class '<em>Filter Def</em>'.
@@ -221,22 +230,31 @@ public interface Cs2as_dslFactory extends EFactory
   QualificationDef createQualificationDef();
 
   /**
-   * Returns a new object of class '<em>Elements Contrib Exp</em>'.
+   * Returns a new object of class '<em>Qualification</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Elements Contrib Exp</em>'.
+   * @return a new object of class '<em>Qualification</em>'.
    * @generated
    */
-  ElementsContribExp createElementsContribExp();
+  Qualification createQualification();
 
   /**
-   * Returns a new object of class '<em>Scope Def</em>'.
+   * Returns a new object of class '<em>Current Scope Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Scope Def</em>'.
+   * @return a new object of class '<em>Current Scope Decl</em>'.
    * @generated
    */
-  ScopeDef createScopeDef();
+  CurrentScopeDecl createCurrentScopeDecl();
+
+  /**
+   * Returns a new object of class '<em>Current Scope Provision Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Current Scope Provision Def</em>'.
+   * @generated
+   */
+  CurrentScopeProvisionDef createCurrentScopeProvisionDef();
 
   /**
    * Returns a new object of class '<em>Selection Def</em>'.
@@ -248,31 +266,22 @@ public interface Cs2as_dslFactory extends EFactory
   SelectionDef createSelectionDef();
 
   /**
-   * Returns a new object of class '<em>Provision Def</em>'.
+   * Returns a new object of class '<em>Provision</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Provision Def</em>'.
+   * @return a new object of class '<em>Provision</em>'.
    * @generated
    */
-  ProvisionDef createProvisionDef();
+  Provision createProvision();
 
   /**
-   * Returns a new object of class '<em>Class Ref</em>'.
+   * Returns a new object of class '<em>Multiple Path Names</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Ref</em>'.
+   * @return a new object of class '<em>Multiple Path Names</em>'.
    * @generated
    */
-  ClassRef createClassRef();
-
-  /**
-   * Returns a new object of class '<em>Multiple Class Ref</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multiple Class Ref</em>'.
-   * @generated
-   */
-  MultipleClassRef createMultipleClassRef();
+  MultiplePathNames createMultiplePathNames();
 
   /**
    * Returns a new object of class '<em>Occluding Def</em>'.
@@ -284,22 +293,40 @@ public interface Cs2as_dslFactory extends EFactory
   OccludingDef createOccludingDef();
 
   /**
-   * Returns a new object of class '<em>Contribution Def</em>'.
+   * Returns a new object of class '<em>Contributions Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Contribution Def</em>'.
+   * @return a new object of class '<em>Contributions Def</em>'.
    * @generated
    */
-  ContributionDef createContributionDef();
+  ContributionsDef createContributionsDef();
 
   /**
-   * Returns a new object of class '<em>Export Def</em>'.
+   * Returns a new object of class '<em>Contribution</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Export Def</em>'.
+   * @return a new object of class '<em>Contribution</em>'.
    * @generated
    */
-  ExportDef createExportDef();
+  Contribution createContribution();
+
+  /**
+   * Returns a new object of class '<em>Exported Scope Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exported Scope Decl</em>'.
+   * @generated
+   */
+  ExportedScopeDecl createExportedScopeDecl();
+
+  /**
+   * Returns a new object of class '<em>Exported Scope Provision Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exported Scope Provision Def</em>'.
+   * @generated
+   */
+  ExportedScopeProvisionDef createExportedScopeProvisionDef();
 
   /**
    * Returns a new object of class '<em>Helpers Sect</em>'.
@@ -311,22 +338,22 @@ public interface Cs2as_dslFactory extends EFactory
   HelpersSect createHelpersSect();
 
   /**
-   * Returns a new object of class '<em>Class Helper</em>'.
+   * Returns a new object of class '<em>Helper Class</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Helper</em>'.
+   * @return a new object of class '<em>Helper Class</em>'.
    * @generated
    */
-  ClassHelper createClassHelper();
+  HelperClass createHelperClass();
 
   /**
-   * Returns a new object of class '<em>Helper Def</em>'.
+   * Returns a new object of class '<em>Helper Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Helper Def</em>'.
+   * @return a new object of class '<em>Helper Op</em>'.
    * @generated
    */
-  HelperDef createHelperDef();
+  HelperOp createHelperOp();
 
   /**
    * Returns a new object of class '<em>Trace Exp CS</em>'.

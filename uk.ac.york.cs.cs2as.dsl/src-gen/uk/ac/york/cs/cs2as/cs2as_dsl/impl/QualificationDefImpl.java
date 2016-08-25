@@ -4,7 +4,6 @@ package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,15 +11,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
-import uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Qualification;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 
 /**
@@ -31,8 +28,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.QualificationDefImpl#getTargetsDef <em>Targets Def</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.QualificationDefImpl#getContribution <em>Contribution</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.QualificationDefImpl#getQualifications <em>Qualifications</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,24 +36,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 public class QualificationDefImpl extends MinimalEObjectImpl.Container implements QualificationDef
 {
   /**
-   * The cached value of the '{@link #getTargetsDef() <em>Targets Def</em>}' containment reference.
+   * The cached value of the '{@link #getQualifications() <em>Qualifications</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTargetsDef()
+   * @see #getQualifications()
    * @generated
    * @ordered
    */
-  protected MultipleClassRef targetsDef;
-
-  /**
-   * The cached value of the '{@link #getContribution() <em>Contribution</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContribution()
-   * @generated
-   * @ordered
-   */
-  protected EList<ElementsContribExp> contribution;
+  protected EList<Qualification> qualifications;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,61 +71,13 @@ public class QualificationDefImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public MultipleClassRef getTargetsDef()
+  public EList<Qualification> getQualifications()
   {
-    return targetsDef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTargetsDef(MultipleClassRef newTargetsDef, NotificationChain msgs)
-  {
-    MultipleClassRef oldTargetsDef = targetsDef;
-    targetsDef = newTargetsDef;
-    if (eNotificationRequired())
+    if (qualifications == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.QUALIFICATION_DEF__TARGETS_DEF, oldTargetsDef, newTargetsDef);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      qualifications = new EObjectContainmentEList<Qualification>(Qualification.class, this, Cs2as_dslPackage.QUALIFICATION_DEF__QUALIFICATIONS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTargetsDef(MultipleClassRef newTargetsDef)
-  {
-    if (newTargetsDef != targetsDef)
-    {
-      NotificationChain msgs = null;
-      if (targetsDef != null)
-        msgs = ((InternalEObject)targetsDef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.QUALIFICATION_DEF__TARGETS_DEF, null, msgs);
-      if (newTargetsDef != null)
-        msgs = ((InternalEObject)newTargetsDef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.QUALIFICATION_DEF__TARGETS_DEF, null, msgs);
-      msgs = basicSetTargetsDef(newTargetsDef, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.QUALIFICATION_DEF__TARGETS_DEF, newTargetsDef, newTargetsDef));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ElementsContribExp> getContribution()
-  {
-    if (contribution == null)
-    {
-      contribution = new EObjectContainmentEList<ElementsContribExp>(ElementsContribExp.class, this, Cs2as_dslPackage.QUALIFICATION_DEF__CONTRIBUTION);
-    }
-    return contribution;
+    return qualifications;
   }
 
   /**
@@ -152,10 +90,8 @@ public class QualificationDefImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.QUALIFICATION_DEF__TARGETS_DEF:
-        return basicSetTargetsDef(null, msgs);
-      case Cs2as_dslPackage.QUALIFICATION_DEF__CONTRIBUTION:
-        return ((InternalEList<?>)getContribution()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.QUALIFICATION_DEF__QUALIFICATIONS:
+        return ((InternalEList<?>)getQualifications()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -170,10 +106,8 @@ public class QualificationDefImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.QUALIFICATION_DEF__TARGETS_DEF:
-        return getTargetsDef();
-      case Cs2as_dslPackage.QUALIFICATION_DEF__CONTRIBUTION:
-        return getContribution();
+      case Cs2as_dslPackage.QUALIFICATION_DEF__QUALIFICATIONS:
+        return getQualifications();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -189,12 +123,9 @@ public class QualificationDefImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.QUALIFICATION_DEF__TARGETS_DEF:
-        setTargetsDef((MultipleClassRef)newValue);
-        return;
-      case Cs2as_dslPackage.QUALIFICATION_DEF__CONTRIBUTION:
-        getContribution().clear();
-        getContribution().addAll((Collection<? extends ElementsContribExp>)newValue);
+      case Cs2as_dslPackage.QUALIFICATION_DEF__QUALIFICATIONS:
+        getQualifications().clear();
+        getQualifications().addAll((Collection<? extends Qualification>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -210,11 +141,8 @@ public class QualificationDefImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.QUALIFICATION_DEF__TARGETS_DEF:
-        setTargetsDef((MultipleClassRef)null);
-        return;
-      case Cs2as_dslPackage.QUALIFICATION_DEF__CONTRIBUTION:
-        getContribution().clear();
+      case Cs2as_dslPackage.QUALIFICATION_DEF__QUALIFICATIONS:
+        getQualifications().clear();
         return;
     }
     super.eUnset(featureID);
@@ -230,10 +158,8 @@ public class QualificationDefImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.QUALIFICATION_DEF__TARGETS_DEF:
-        return targetsDef != null;
-      case Cs2as_dslPackage.QUALIFICATION_DEF__CONTRIBUTION:
-        return contribution != null && !contribution.isEmpty();
+      case Cs2as_dslPackage.QUALIFICATION_DEF__QUALIFICATIONS:
+        return qualifications != null && !qualifications.isEmpty();
     }
     return super.eIsSet(featureID);
   }

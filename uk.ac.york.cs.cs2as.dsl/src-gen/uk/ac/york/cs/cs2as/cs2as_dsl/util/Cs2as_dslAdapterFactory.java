@@ -9,18 +9,14 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.ocl.pivot.utilities.Nameable;
 import org.eclipse.ocl.pivot.utilities.Pivotable;
 
 import org.eclipse.ocl.xtext.basecs.ElementCS;
 import org.eclipse.ocl.xtext.basecs.ModelElementCS;
-import org.eclipse.ocl.xtext.basecs.NamedElementCS;
 import org.eclipse.ocl.xtext.basecs.PivotableElementCS;
-import org.eclipse.ocl.xtext.basecs.RootCS;
 
 import org.eclipse.ocl.xtext.basecs.util.VisitableCS;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ContextCS;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.*;
@@ -89,19 +85,19 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
     new Cs2as_dslSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseCS2ASModel(CS2ASModel object)
       {
-        return createModelAdapter();
+        return createCS2ASModelAdapter();
       }
       @Override
-      public Adapter caseCSDecl(CSDecl object)
+      public Adapter caseSourceDomain(SourceDomain object)
       {
-        return createCSDeclAdapter();
+        return createSourceDomainAdapter();
       }
       @Override
-      public Adapter caseASDecl(ASDecl object)
+      public Adapter caseTargetDomain(TargetDomain object)
       {
-        return createASDeclAdapter();
+        return createTargetDomainAdapter();
       }
       @Override
       public Adapter caseMappingSect(MappingSect object)
@@ -109,19 +105,24 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createMappingSectAdapter();
       }
       @Override
-      public Adapter caseClassMap(ClassMap object)
+      public Adapter caseMappingDef(MappingDef object)
       {
-        return createClassMapAdapter();
+        return createMappingDefAdapter();
       }
       @Override
-      public Adapter caseClassMapStmnt(ClassMapStmnt object)
+      public Adapter caseMappingCreation(MappingCreation object)
       {
-        return createClassMapStmntAdapter();
+        return createMappingCreationAdapter();
       }
       @Override
-      public Adapter casePropertyMap(PropertyMap object)
+      public Adapter casePropertyDef(PropertyDef object)
       {
-        return createPropertyMapAdapter();
+        return createPropertyDefAdapter();
+      }
+      @Override
+      public Adapter caseMappingReference(MappingReference object)
+      {
+        return createMappingReferenceAdapter();
       }
       @Override
       public Adapter caseDisambiguationSect(DisambiguationSect object)
@@ -129,19 +130,14 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createDisambiguationSectAdapter();
       }
       @Override
-      public Adapter caseClassDisambiguation(ClassDisambiguation object)
-      {
-        return createClassDisambiguationAdapter();
-      }
-      @Override
-      public Adapter caseClassDisambiguationStmnt(ClassDisambiguationStmnt object)
-      {
-        return createClassDisambiguationStmntAdapter();
-      }
-      @Override
       public Adapter caseDisambiguationDef(DisambiguationDef object)
       {
         return createDisambiguationDefAdapter();
+      }
+      @Override
+      public Adapter caseDisambiguationRule(DisambiguationRule object)
+      {
+        return createDisambiguationRuleAdapter();
       }
       @Override
       public Adapter caseNameResolutionSect(NameResolutionSect object)
@@ -157,6 +153,16 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTarget(Target object)
       {
         return createTargetAdapter();
+      }
+      @Override
+      public Adapter caseEscapeSequenceDef(EscapeSequenceDef object)
+      {
+        return createEscapeSequenceDefAdapter();
+      }
+      @Override
+      public Adapter caseEscapeSequence(EscapeSequence object)
+      {
+        return createEscapeSequenceAdapter();
       }
       @Override
       public Adapter caseInputs(Inputs object)
@@ -179,14 +185,9 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createProviderAdapter();
       }
       @Override
-      public Adapter caseProviderVars(ProviderVars object)
+      public Adapter caseProviderVarsDecl(ProviderVarsDecl object)
       {
-        return createProviderVarsAdapter();
-      }
-      @Override
-      public Adapter caseProviderStmnt(ProviderStmnt object)
-      {
-        return createProviderStmntAdapter();
+        return createProviderVarsDeclAdapter();
       }
       @Override
       public Adapter caseFilterDef(FilterDef object)
@@ -199,14 +200,19 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createQualificationDefAdapter();
       }
       @Override
-      public Adapter caseElementsContribExp(ElementsContribExp object)
+      public Adapter caseQualification(Qualification object)
       {
-        return createElementsContribExpAdapter();
+        return createQualificationAdapter();
       }
       @Override
-      public Adapter caseScopeDef(ScopeDef object)
+      public Adapter caseCurrentScopeDecl(CurrentScopeDecl object)
       {
-        return createScopeDefAdapter();
+        return createCurrentScopeDeclAdapter();
+      }
+      @Override
+      public Adapter caseCurrentScopeProvisionDef(CurrentScopeProvisionDef object)
+      {
+        return createCurrentScopeProvisionDefAdapter();
       }
       @Override
       public Adapter caseSelectionDef(SelectionDef object)
@@ -214,19 +220,14 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createSelectionDefAdapter();
       }
       @Override
-      public Adapter caseProvisionDef(ProvisionDef object)
+      public Adapter caseProvision(Provision object)
       {
-        return createProvisionDefAdapter();
+        return createProvisionAdapter();
       }
       @Override
-      public Adapter caseClassRef(ClassRef object)
+      public Adapter caseMultiplePathNames(MultiplePathNames object)
       {
-        return createClassRefAdapter();
-      }
-      @Override
-      public Adapter caseMultipleClassRef(MultipleClassRef object)
-      {
-        return createMultipleClassRefAdapter();
+        return createMultiplePathNamesAdapter();
       }
       @Override
       public Adapter caseOccludingDef(OccludingDef object)
@@ -234,14 +235,24 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createOccludingDefAdapter();
       }
       @Override
-      public Adapter caseContributionDef(ContributionDef object)
+      public Adapter caseContributionsDef(ContributionsDef object)
       {
-        return createContributionDefAdapter();
+        return createContributionsDefAdapter();
       }
       @Override
-      public Adapter caseExportDef(ExportDef object)
+      public Adapter caseContribution(Contribution object)
       {
-        return createExportDefAdapter();
+        return createContributionAdapter();
+      }
+      @Override
+      public Adapter caseExportedScopeDecl(ExportedScopeDecl object)
+      {
+        return createExportedScopeDeclAdapter();
+      }
+      @Override
+      public Adapter caseExportedScopeProvisionDef(ExportedScopeProvisionDef object)
+      {
+        return createExportedScopeProvisionDefAdapter();
       }
       @Override
       public Adapter caseHelpersSect(HelpersSect object)
@@ -249,14 +260,14 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createHelpersSectAdapter();
       }
       @Override
-      public Adapter caseClassHelper(ClassHelper object)
+      public Adapter caseHelperClass(HelperClass object)
       {
-        return createClassHelperAdapter();
+        return createHelperClassAdapter();
       }
       @Override
-      public Adapter caseHelperDef(HelperDef object)
+      public Adapter caseHelperOp(HelperOp object)
       {
-        return createHelperDefAdapter();
+        return createHelperOpAdapter();
       }
       @Override
       public Adapter caseTraceExpCS(TraceExpCS object)
@@ -304,26 +315,6 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
         return createModelElementCSAdapter();
       }
       @Override
-      public Adapter caseNameable(Nameable object)
-      {
-        return createNameableAdapter();
-      }
-      @Override
-      public Adapter caseNamedElementCS(NamedElementCS object)
-      {
-        return createNamedElementCSAdapter();
-      }
-      @Override
-      public Adapter caseRootCS(RootCS object)
-      {
-        return createRootCSAdapter();
-      }
-      @Override
-      public Adapter caseContextCS(ContextCS object)
-      {
-        return createContextCSAdapter();
-      }
-      @Override
       public Adapter caseExpCS(ExpCS object)
       {
         return createExpCSAdapter();
@@ -351,46 +342,46 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel <em>CS2AS Model</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Model
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createCS2ASModelAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl <em>CS Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.SourceDomain <em>Source Domain</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.SourceDomain
    * @generated
    */
-  public Adapter createCSDeclAdapter()
+  public Adapter createSourceDomainAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl <em>AS Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.TargetDomain <em>Target Domain</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.TargetDomain
    * @generated
    */
-  public Adapter createASDeclAdapter()
+  public Adapter createTargetDomainAdapter()
   {
     return null;
   }
@@ -411,46 +402,61 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap <em>Class Map</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingDef <em>Mapping Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingDef
    * @generated
    */
-  public Adapter createClassMapAdapter()
+  public Adapter createMappingDefAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt <em>Class Map Stmnt</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation <em>Mapping Creation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassMapStmnt
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation
    * @generated
    */
-  public Adapter createClassMapStmntAdapter()
+  public Adapter createMappingCreationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap <em>Property Map</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef <em>Property Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef
    * @generated
    */
-  public Adapter createPropertyMapAdapter()
+  public Adapter createPropertyDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingReference <em>Mapping Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingReference
+   * @generated
+   */
+  public Adapter createMappingReferenceAdapter()
   {
     return null;
   }
@@ -471,36 +477,6 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation <em>Class Disambiguation</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation
-   * @generated
-   */
-  public Adapter createClassDisambiguationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt <em>Class Disambiguation Stmnt</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguationStmnt
-   * @generated
-   */
-  public Adapter createClassDisambiguationStmntAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef <em>Disambiguation Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -511,6 +487,21 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDisambiguationDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationRule <em>Disambiguation Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationRule
+   * @generated
+   */
+  public Adapter createDisambiguationRuleAdapter()
   {
     return null;
   }
@@ -556,6 +547,36 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTargetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequenceDef <em>Escape Sequence Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequenceDef
+   * @generated
+   */
+  public Adapter createEscapeSequenceDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequence <em>Escape Sequence</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequence
+   * @generated
+   */
+  public Adapter createEscapeSequenceAdapter()
   {
     return null;
   }
@@ -621,31 +642,16 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars <em>Provider Vars</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVarsDecl <em>Provider Vars Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVarsDecl
    * @generated
    */
-  public Adapter createProviderVarsAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt <em>Provider Stmnt</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt
-   * @generated
-   */
-  public Adapter createProviderStmntAdapter()
+  public Adapter createProviderVarsDeclAdapter()
   {
     return null;
   }
@@ -681,31 +687,46 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp <em>Elements Contrib Exp</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Qualification <em>Qualification</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Qualification
    * @generated
    */
-  public Adapter createElementsContribExpAdapter()
+  public Adapter createQualificationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef <em>Scope Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeDecl <em>Current Scope Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeDecl
    * @generated
    */
-  public Adapter createScopeDefAdapter()
+  public Adapter createCurrentScopeDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef <em>Current Scope Provision Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef
+   * @generated
+   */
+  public Adapter createCurrentScopeProvisionDefAdapter()
   {
     return null;
   }
@@ -726,46 +747,31 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef <em>Provision Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provision <em>Provision</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Provision
    * @generated
    */
-  public Adapter createProvisionDefAdapter()
+  public Adapter createProvisionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef <em>Class Ref</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MultiplePathNames <em>Multiple Path Names</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MultiplePathNames
    * @generated
    */
-  public Adapter createClassRefAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef <em>Multiple Class Ref</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef
-   * @generated
-   */
-  public Adapter createMultipleClassRefAdapter()
+  public Adapter createMultiplePathNamesAdapter()
   {
     return null;
   }
@@ -786,31 +792,61 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef <em>Contribution Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ContributionsDef <em>Contributions Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ContributionsDef
    * @generated
    */
-  public Adapter createContributionDefAdapter()
+  public Adapter createContributionsDefAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef <em>Export Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Contribution <em>Contribution</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Contribution
    * @generated
    */
-  public Adapter createExportDefAdapter()
+  public Adapter createContributionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeDecl <em>Exported Scope Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeDecl
+   * @generated
+   */
+  public Adapter createExportedScopeDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeProvisionDef <em>Exported Scope Provision Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeProvisionDef
+   * @generated
+   */
+  public Adapter createExportedScopeProvisionDefAdapter()
   {
     return null;
   }
@@ -831,31 +867,31 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper <em>Class Helper</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass <em>Helper Class</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass
    * @generated
    */
-  public Adapter createClassHelperAdapter()
+  public Adapter createHelperClassAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef <em>Helper Def</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp <em>Helper Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp
    * @generated
    */
-  public Adapter createHelperDefAdapter()
+  public Adapter createHelperOpAdapter()
   {
     return null;
   }
@@ -991,66 +1027,6 @@ public class Cs2as_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelElementCSAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.pivot.utilities.Nameable <em>Nameable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.pivot.utilities.Nameable
-   * @generated
-   */
-  public Adapter createNameableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.basecs.NamedElementCS <em>Named Element CS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.basecs.NamedElementCS
-   * @generated
-   */
-  public Adapter createNamedElementCSAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.basecs.RootCS <em>Root CS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.basecs.RootCS
-   * @generated
-   */
-  public Adapter createRootCSAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.essentialoclcs.ContextCS <em>Context CS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.ocl.xtext.essentialoclcs.ContextCS
-   * @generated
-   */
-  public Adapter createContextCSAdapter()
   {
     return null;
   }

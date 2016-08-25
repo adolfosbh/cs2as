@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.ocl.xtext.basecs.PathNameCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
@@ -27,7 +27,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SelectionSpecificImpl#getSelectedProperties <em>Selected Properties</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SelectionSpecificImpl#getSelections <em>Selections</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +35,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
 public class SelectionSpecificImpl extends SelectionDefImpl implements SelectionSpecific
 {
   /**
-   * The cached value of the '{@link #getSelectedProperties() <em>Selected Properties</em>}' containment reference list.
+   * The cached value of the '{@link #getSelections() <em>Selections</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSelectedProperties()
+   * @see #getSelections()
    * @generated
    * @ordered
    */
-  protected EList<ExpCS> selectedProperties;
+  protected EList<PathNameCS> selections;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,13 +70,13 @@ public class SelectionSpecificImpl extends SelectionDefImpl implements Selection
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ExpCS> getSelectedProperties()
+  public EList<PathNameCS> getSelections()
   {
-    if (selectedProperties == null)
+    if (selections == null)
     {
-      selectedProperties = new EObjectContainmentEList<ExpCS>(ExpCS.class, this, Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES);
+      selections = new EObjectContainmentEList<PathNameCS>(PathNameCS.class, this, Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTIONS);
     }
-    return selectedProperties;
+    return selections;
   }
 
   /**
@@ -89,8 +89,8 @@ public class SelectionSpecificImpl extends SelectionDefImpl implements Selection
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
-        return ((InternalEList<?>)getSelectedProperties()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTIONS:
+        return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -105,8 +105,8 @@ public class SelectionSpecificImpl extends SelectionDefImpl implements Selection
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
-        return getSelectedProperties();
+      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTIONS:
+        return getSelections();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -122,9 +122,9 @@ public class SelectionSpecificImpl extends SelectionDefImpl implements Selection
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
-        getSelectedProperties().clear();
-        getSelectedProperties().addAll((Collection<? extends ExpCS>)newValue);
+      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTIONS:
+        getSelections().clear();
+        getSelections().addAll((Collection<? extends PathNameCS>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,8 +140,8 @@ public class SelectionSpecificImpl extends SelectionDefImpl implements Selection
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
-        getSelectedProperties().clear();
+      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTIONS:
+        getSelections().clear();
         return;
     }
     super.eUnset(featureID);
@@ -157,8 +157,8 @@ public class SelectionSpecificImpl extends SelectionDefImpl implements Selection
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTED_PROPERTIES:
-        return selectedProperties != null && !selectedProperties.isEmpty();
+      case Cs2as_dslPackage.SELECTION_SPECIFIC__SELECTIONS:
+        return selections != null && !selections.isEmpty();
     }
     return super.eIsSet(featureID);
   }

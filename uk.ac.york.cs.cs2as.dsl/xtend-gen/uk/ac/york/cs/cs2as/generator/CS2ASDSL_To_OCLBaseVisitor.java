@@ -4,8 +4,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.xtext.basecs.ImportCS;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
-import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
+import uk.ac.york.cs.cs2as.cs2as_dsl.SourceDomain;
+import uk.ac.york.cs.cs2as.cs2as_dsl.TargetDomain;
 import uk.ac.york.cs.cs2as.cs2as_dsl.util.Cs2as_dslSwitch;
 import uk.ac.york.cs.cs2as.generator.EssentialOCLCSToStringVisitor;
 
@@ -19,7 +19,7 @@ public abstract class CS2ASDSL_To_OCLBaseVisitor extends Cs2as_dslSwitch<String>
   }
   
   @Override
-  public String caseASDecl(final ASDecl object) {
+  public String caseSourceDomain(final SourceDomain object) {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<ImportCS> _metamodels = object.getMetamodels();
@@ -33,7 +33,7 @@ public abstract class CS2ASDSL_To_OCLBaseVisitor extends Cs2as_dslSwitch<String>
   }
   
   @Override
-  public String caseCSDecl(final CSDecl object) {
+  public String caseTargetDomain(final TargetDomain object) {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<ImportCS> _metamodels = object.getMetamodels();

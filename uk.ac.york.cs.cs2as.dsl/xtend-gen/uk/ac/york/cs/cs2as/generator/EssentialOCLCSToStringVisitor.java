@@ -424,8 +424,8 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
     String _xblockexpression = null;
     {
       String _xifexpression = null;
-      boolean _isFromExp = object.isFromExp();
-      if (_isFromExp) {
+      boolean _isIsExported = object.isIsExported();
+      if (_isIsExported) {
         _xifexpression = "From";
       } else {
         _xifexpression = "";

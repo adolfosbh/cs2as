@@ -64,40 +64,43 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
   {
     switch (eClass.getClassifierID())
     {
-      case Cs2as_dslPackage.MODEL: return createModel();
-      case Cs2as_dslPackage.CS_DECL: return createCSDecl();
-      case Cs2as_dslPackage.AS_DECL: return createASDecl();
+      case Cs2as_dslPackage.CS2AS_MODEL: return createCS2ASModel();
+      case Cs2as_dslPackage.SOURCE_DOMAIN: return createSourceDomain();
+      case Cs2as_dslPackage.TARGET_DOMAIN: return createTargetDomain();
       case Cs2as_dslPackage.MAPPING_SECT: return createMappingSect();
-      case Cs2as_dslPackage.CLASS_MAP: return createClassMap();
-      case Cs2as_dslPackage.CLASS_MAP_STMNT: return createClassMapStmnt();
-      case Cs2as_dslPackage.PROPERTY_MAP: return createPropertyMap();
+      case Cs2as_dslPackage.MAPPING_DEF: return createMappingDef();
+      case Cs2as_dslPackage.MAPPING_CREATION: return createMappingCreation();
+      case Cs2as_dslPackage.PROPERTY_DEF: return createPropertyDef();
+      case Cs2as_dslPackage.MAPPING_REFERENCE: return createMappingReference();
       case Cs2as_dslPackage.DISAMBIGUATION_SECT: return createDisambiguationSect();
-      case Cs2as_dslPackage.CLASS_DISAMBIGUATION: return createClassDisambiguation();
-      case Cs2as_dslPackage.CLASS_DISAMBIGUATION_STMNT: return createClassDisambiguationStmnt();
       case Cs2as_dslPackage.DISAMBIGUATION_DEF: return createDisambiguationDef();
+      case Cs2as_dslPackage.DISAMBIGUATION_RULE: return createDisambiguationRule();
       case Cs2as_dslPackage.NAME_RESOLUTION_SECT: return createNameResolutionSect();
       case Cs2as_dslPackage.TARGETS: return createTargets();
       case Cs2as_dslPackage.TARGET: return createTarget();
+      case Cs2as_dslPackage.ESCAPE_SEQUENCE_DEF: return createEscapeSequenceDef();
+      case Cs2as_dslPackage.ESCAPE_SEQUENCE: return createEscapeSequence();
       case Cs2as_dslPackage.INPUTS: return createInputs();
       case Cs2as_dslPackage.INPUT: return createInput();
       case Cs2as_dslPackage.PROVIDERS: return createProviders();
       case Cs2as_dslPackage.PROVIDER: return createProvider();
-      case Cs2as_dslPackage.PROVIDER_VARS: return createProviderVars();
-      case Cs2as_dslPackage.PROVIDER_STMNT: return createProviderStmnt();
+      case Cs2as_dslPackage.PROVIDER_VARS_DECL: return createProviderVarsDecl();
       case Cs2as_dslPackage.FILTER_DEF: return createFilterDef();
       case Cs2as_dslPackage.QUALIFICATION_DEF: return createQualificationDef();
-      case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP: return createElementsContribExp();
-      case Cs2as_dslPackage.SCOPE_DEF: return createScopeDef();
+      case Cs2as_dslPackage.QUALIFICATION: return createQualification();
+      case Cs2as_dslPackage.CURRENT_SCOPE_DECL: return createCurrentScopeDecl();
+      case Cs2as_dslPackage.CURRENT_SCOPE_PROVISION_DEF: return createCurrentScopeProvisionDef();
       case Cs2as_dslPackage.SELECTION_DEF: return createSelectionDef();
-      case Cs2as_dslPackage.PROVISION_DEF: return createProvisionDef();
-      case Cs2as_dslPackage.CLASS_REF: return createClassRef();
-      case Cs2as_dslPackage.MULTIPLE_CLASS_REF: return createMultipleClassRef();
+      case Cs2as_dslPackage.PROVISION: return createProvision();
+      case Cs2as_dslPackage.MULTIPLE_PATH_NAMES: return createMultiplePathNames();
       case Cs2as_dslPackage.OCCLUDING_DEF: return createOccludingDef();
-      case Cs2as_dslPackage.CONTRIBUTION_DEF: return createContributionDef();
-      case Cs2as_dslPackage.EXPORT_DEF: return createExportDef();
+      case Cs2as_dslPackage.CONTRIBUTIONS_DEF: return createContributionsDef();
+      case Cs2as_dslPackage.CONTRIBUTION: return createContribution();
+      case Cs2as_dslPackage.EXPORTED_SCOPE_DECL: return createExportedScopeDecl();
+      case Cs2as_dslPackage.EXPORTED_SCOPE_PROVISION_DEF: return createExportedScopeProvisionDef();
       case Cs2as_dslPackage.HELPERS_SECT: return createHelpersSect();
-      case Cs2as_dslPackage.CLASS_HELPER: return createClassHelper();
-      case Cs2as_dslPackage.HELPER_DEF: return createHelperDef();
+      case Cs2as_dslPackage.HELPER_CLASS: return createHelperClass();
+      case Cs2as_dslPackage.HELPER_OP: return createHelperOp();
       case Cs2as_dslPackage.TRACE_EXP_CS: return createTraceExpCS();
       case Cs2as_dslPackage.LOOKUP_EXP_CS: return createLookupExpCS();
       case Cs2as_dslPackage.SELECTION_ALL: return createSelectionAll();
@@ -112,10 +115,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public Model createModel()
+  public CS2ASModel createCS2ASModel()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    CS2ASModelImpl cs2ASModel = new CS2ASModelImpl();
+    return cs2ASModel;
   }
 
   /**
@@ -123,10 +126,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public CSDecl createCSDecl()
+  public SourceDomain createSourceDomain()
   {
-    CSDeclImpl csDecl = new CSDeclImpl();
-    return csDecl;
+    SourceDomainImpl sourceDomain = new SourceDomainImpl();
+    return sourceDomain;
   }
 
   /**
@@ -134,10 +137,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ASDecl createASDecl()
+  public TargetDomain createTargetDomain()
   {
-    ASDeclImpl asDecl = new ASDeclImpl();
-    return asDecl;
+    TargetDomainImpl targetDomain = new TargetDomainImpl();
+    return targetDomain;
   }
 
   /**
@@ -156,10 +159,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassMap createClassMap()
+  public MappingDef createMappingDef()
   {
-    ClassMapImpl classMap = new ClassMapImpl();
-    return classMap;
+    MappingDefImpl mappingDef = new MappingDefImpl();
+    return mappingDef;
   }
 
   /**
@@ -167,10 +170,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassMapStmnt createClassMapStmnt()
+  public MappingCreation createMappingCreation()
   {
-    ClassMapStmntImpl classMapStmnt = new ClassMapStmntImpl();
-    return classMapStmnt;
+    MappingCreationImpl mappingCreation = new MappingCreationImpl();
+    return mappingCreation;
   }
 
   /**
@@ -178,10 +181,21 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public PropertyMap createPropertyMap()
+  public PropertyDef createPropertyDef()
   {
-    PropertyMapImpl propertyMap = new PropertyMapImpl();
-    return propertyMap;
+    PropertyDefImpl propertyDef = new PropertyDefImpl();
+    return propertyDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MappingReference createMappingReference()
+  {
+    MappingReferenceImpl mappingReference = new MappingReferenceImpl();
+    return mappingReference;
   }
 
   /**
@@ -200,32 +214,21 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassDisambiguation createClassDisambiguation()
-  {
-    ClassDisambiguationImpl classDisambiguation = new ClassDisambiguationImpl();
-    return classDisambiguation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ClassDisambiguationStmnt createClassDisambiguationStmnt()
-  {
-    ClassDisambiguationStmntImpl classDisambiguationStmnt = new ClassDisambiguationStmntImpl();
-    return classDisambiguationStmnt;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public DisambiguationDef createDisambiguationDef()
   {
     DisambiguationDefImpl disambiguationDef = new DisambiguationDefImpl();
     return disambiguationDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DisambiguationRule createDisambiguationRule()
+  {
+    DisambiguationRuleImpl disambiguationRule = new DisambiguationRuleImpl();
+    return disambiguationRule;
   }
 
   /**
@@ -259,6 +262,28 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
   {
     TargetImpl target = new TargetImpl();
     return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EscapeSequenceDef createEscapeSequenceDef()
+  {
+    EscapeSequenceDefImpl escapeSequenceDef = new EscapeSequenceDefImpl();
+    return escapeSequenceDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EscapeSequence createEscapeSequence()
+  {
+    EscapeSequenceImpl escapeSequence = new EscapeSequenceImpl();
+    return escapeSequence;
   }
 
   /**
@@ -310,21 +335,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProviderVars createProviderVars()
+  public ProviderVarsDecl createProviderVarsDecl()
   {
-    ProviderVarsImpl providerVars = new ProviderVarsImpl();
-    return providerVars;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ProviderStmnt createProviderStmnt()
-  {
-    ProviderStmntImpl providerStmnt = new ProviderStmntImpl();
-    return providerStmnt;
+    ProviderVarsDeclImpl providerVarsDecl = new ProviderVarsDeclImpl();
+    return providerVarsDecl;
   }
 
   /**
@@ -354,10 +368,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ElementsContribExp createElementsContribExp()
+  public Qualification createQualification()
   {
-    ElementsContribExpImpl elementsContribExp = new ElementsContribExpImpl();
-    return elementsContribExp;
+    QualificationImpl qualification = new QualificationImpl();
+    return qualification;
   }
 
   /**
@@ -365,10 +379,21 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ScopeDef createScopeDef()
+  public CurrentScopeDecl createCurrentScopeDecl()
   {
-    ScopeDefImpl scopeDef = new ScopeDefImpl();
-    return scopeDef;
+    CurrentScopeDeclImpl currentScopeDecl = new CurrentScopeDeclImpl();
+    return currentScopeDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CurrentScopeProvisionDef createCurrentScopeProvisionDef()
+  {
+    CurrentScopeProvisionDefImpl currentScopeProvisionDef = new CurrentScopeProvisionDefImpl();
+    return currentScopeProvisionDef;
   }
 
   /**
@@ -387,10 +412,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProvisionDef createProvisionDef()
+  public Provision createProvision()
   {
-    ProvisionDefImpl provisionDef = new ProvisionDefImpl();
-    return provisionDef;
+    ProvisionImpl provision = new ProvisionImpl();
+    return provision;
   }
 
   /**
@@ -398,21 +423,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassRef createClassRef()
+  public MultiplePathNames createMultiplePathNames()
   {
-    ClassRefImpl classRef = new ClassRefImpl();
-    return classRef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MultipleClassRef createMultipleClassRef()
-  {
-    MultipleClassRefImpl multipleClassRef = new MultipleClassRefImpl();
-    return multipleClassRef;
+    MultiplePathNamesImpl multiplePathNames = new MultiplePathNamesImpl();
+    return multiplePathNames;
   }
 
   /**
@@ -431,10 +445,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ContributionDef createContributionDef()
+  public ContributionsDef createContributionsDef()
   {
-    ContributionDefImpl contributionDef = new ContributionDefImpl();
-    return contributionDef;
+    ContributionsDefImpl contributionsDef = new ContributionsDefImpl();
+    return contributionsDef;
   }
 
   /**
@@ -442,10 +456,32 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExportDef createExportDef()
+  public Contribution createContribution()
   {
-    ExportDefImpl exportDef = new ExportDefImpl();
-    return exportDef;
+    ContributionImpl contribution = new ContributionImpl();
+    return contribution;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExportedScopeDecl createExportedScopeDecl()
+  {
+    ExportedScopeDeclImpl exportedScopeDecl = new ExportedScopeDeclImpl();
+    return exportedScopeDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExportedScopeProvisionDef createExportedScopeProvisionDef()
+  {
+    ExportedScopeProvisionDefImpl exportedScopeProvisionDef = new ExportedScopeProvisionDefImpl();
+    return exportedScopeProvisionDef;
   }
 
   /**
@@ -464,10 +500,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassHelper createClassHelper()
+  public HelperClass createHelperClass()
   {
-    ClassHelperImpl classHelper = new ClassHelperImpl();
-    return classHelper;
+    HelperClassImpl helperClass = new HelperClassImpl();
+    return helperClass;
   }
 
   /**
@@ -475,10 +511,10 @@ public class Cs2as_dslFactoryImpl extends EFactoryImpl implements Cs2as_dslFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public HelperDef createHelperDef()
+  public HelperOp createHelperOp()
   {
-    HelperDefImpl helperDef = new HelperDefImpl();
-    return helperDef;
+    HelperOpImpl helperOp = new HelperOpImpl();
+    return helperOp;
   }
 
   /**

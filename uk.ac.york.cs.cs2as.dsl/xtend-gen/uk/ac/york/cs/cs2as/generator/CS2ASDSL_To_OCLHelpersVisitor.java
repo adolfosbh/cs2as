@@ -14,35 +14,35 @@ import org.eclipse.ocl.xtext.basecs.TypedRefCS;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
-import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper;
-import uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel;
+import uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass;
+import uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp;
 import uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect;
-import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
+import uk.ac.york.cs.cs2as.cs2as_dsl.SourceDomain;
+import uk.ac.york.cs.cs2as.cs2as_dsl.TargetDomain;
 import uk.ac.york.cs.cs2as.generator.CS2ASDSL_To_OCLBaseVisitor;
 
 @SuppressWarnings("all")
 public class CS2ASDSL_To_OCLHelpersVisitor extends CS2ASDSL_To_OCLBaseVisitor {
-  private Map<String, List<ClassHelper>> package2classHelpers;
+  private Map<String, List<HelperClass>> package2classHelpers;
   
-  private Map<String, List<ClassHelper>> computePackage2classHelpers(final HelpersSect sect) {
+  private Map<String, List<HelperClass>> computePackage2classHelpers(final HelpersSect sect) {
     boolean _equals = Objects.equal(sect, null);
     if (_equals) {
-      return CollectionLiterals.<String, List<ClassHelper>>emptyMap();
+      return CollectionLiterals.<String, List<HelperClass>>emptyMap();
     }
-    final Map<String, List<ClassHelper>> result = CollectionLiterals.<String, List<ClassHelper>>newHashMap();
-    EList<ClassHelper> _classHelpers = sect.getClassHelpers();
-    for (final ClassHelper classHelper : _classHelpers) {
+    final Map<String, List<HelperClass>> result = CollectionLiterals.<String, List<HelperClass>>newHashMap();
+    EList<HelperClass> _classHelpers = sect.getClassHelpers();
+    for (final HelperClass classHelper : _classHelpers) {
       {
         PathNameCS _context = classHelper.getContext();
         EList<PathElementCS> _ownedPathElements = _context.getOwnedPathElements();
         PathElementCS _get = _ownedPathElements.get(0);
         final String packageName = _get.getName();
-        List<ClassHelper> classHelpers = result.get(packageName);
+        List<HelperClass> classHelpers = result.get(packageName);
         boolean _equals_1 = Objects.equal(classHelpers, null);
         if (_equals_1) {
-          ArrayList<ClassHelper> _newArrayList = CollectionLiterals.<ClassHelper>newArrayList();
+          ArrayList<HelperClass> _newArrayList = CollectionLiterals.<HelperClass>newArrayList();
           classHelpers = _newArrayList;
           result.put(packageName, classHelpers);
         }
@@ -53,25 +53,25 @@ public class CS2ASDSL_To_OCLHelpersVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   }
   
   @Override
-  public String caseModel(final Model object) {
+  public String caseCS2ASModel(final CS2ASModel object) {
     String _xblockexpression = null;
     {
       final StringBuilder sb = new StringBuilder();
       StringConcatenation _builder = new StringConcatenation();
-      CSDecl _csDecl = object.getCsDecl();
-      String _doSwitch = this.doSwitch(_csDecl);
+      SourceDomain _source = object.getSource();
+      String _doSwitch = this.doSwitch(_source);
       _builder.append(_doSwitch, "");
       _builder.newLineIfNotEmpty();
-      ASDecl _asDecl = object.getAsDecl();
-      String _doSwitch_1 = this.doSwitch(_asDecl);
+      TargetDomain _target = object.getTarget();
+      String _doSwitch_1 = this.doSwitch(_target);
       _builder.append(_doSwitch_1, "");
       _builder.newLineIfNotEmpty();
       sb.append(_builder);
       HelpersSect _helpersSect = object.getHelpersSect();
-      Map<String, List<ClassHelper>> _computePackage2classHelpers = this.computePackage2classHelpers(_helpersSect);
+      Map<String, List<HelperClass>> _computePackage2classHelpers = this.computePackage2classHelpers(_helpersSect);
       this.package2classHelpers = _computePackage2classHelpers;
-      Set<Map.Entry<String, List<ClassHelper>>> _entrySet = this.package2classHelpers.entrySet();
-      for (final Map.Entry<String, List<ClassHelper>> entry : _entrySet) {
+      Set<Map.Entry<String, List<HelperClass>>> _entrySet = this.package2classHelpers.entrySet();
+      for (final Map.Entry<String, List<HelperClass>> entry : _entrySet) {
         StringConcatenation _builder_1 = new StringConcatenation();
         _builder_1.append("package ");
         String _key = entry.getKey();
@@ -79,8 +79,8 @@ public class CS2ASDSL_To_OCLHelpersVisitor extends CS2ASDSL_To_OCLBaseVisitor {
         _builder_1.newLineIfNotEmpty();
         _builder_1.newLine();
         {
-          List<ClassHelper> _value = entry.getValue();
-          for(final ClassHelper classHelper : _value) {
+          List<HelperClass> _value = entry.getValue();
+          for(final HelperClass classHelper : _value) {
             String _doSwitch_2 = this.doSwitch(classHelper);
             _builder_1.append(_doSwitch_2, "");
             _builder_1.newLineIfNotEmpty();
@@ -97,7 +97,7 @@ public class CS2ASDSL_To_OCLHelpersVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   }
   
   @Override
-  public String caseClassHelper(final ClassHelper object) {
+  public String caseHelperClass(final HelperClass object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("context ");
     PathNameCS _context = object.getContext();
@@ -105,8 +105,8 @@ public class CS2ASDSL_To_OCLHelpersVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     _builder.append(_doSwitch, "");
     _builder.newLineIfNotEmpty();
     {
-      EList<HelperDef> _helpers = object.getHelpers();
-      for(final HelperDef helper : _helpers) {
+      EList<HelperOp> _helpers = object.getHelpers();
+      for(final HelperOp helper : _helpers) {
         String _doSwitch_1 = this.doSwitch(helper);
         _builder.append(_doSwitch_1, "");
         _builder.newLineIfNotEmpty();
@@ -116,7 +116,7 @@ public class CS2ASDSL_To_OCLHelpersVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   }
   
   @Override
-  public String caseHelperDef(final HelperDef object) {
+  public String caseHelperOp(final HelperOp object) {
     String _xblockexpression = null;
     {
       final EList<ParameterCS> params = object.getParams();

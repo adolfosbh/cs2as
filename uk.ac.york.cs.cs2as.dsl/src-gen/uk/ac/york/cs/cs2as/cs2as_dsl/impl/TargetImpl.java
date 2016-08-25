@@ -2,12 +2,8 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -15,13 +11,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.ocl.xtext.basecs.PathNameCS;
 
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequenceDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Target;
@@ -36,8 +29,10 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Target;
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetImpl#getClassRef <em>Class Ref</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetImpl#getPropRef <em>Prop Ref</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetImpl#isIgnoreCase <em>Ignore Case</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetImpl#getEscapeSeqDef <em>Escape Seq Def</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetImpl#getFilter <em>Filter</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetImpl#getQualifications <em>Qualifications</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.TargetImpl#getQualification <em>Qualification</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,7 +47,7 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
    * @generated
    * @ordered
    */
-  protected ClassRef classRef;
+  protected PathNameCS classRef;
 
   /**
    * The cached value of the '{@link #getPropRef() <em>Prop Ref</em>}' containment reference.
@@ -65,6 +60,36 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
   protected PathNameCS propRef;
 
   /**
+   * The default value of the '{@link #isIgnoreCase() <em>Ignore Case</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIgnoreCase()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IGNORE_CASE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIgnoreCase() <em>Ignore Case</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIgnoreCase()
+   * @generated
+   * @ordered
+   */
+  protected boolean ignoreCase = IGNORE_CASE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getEscapeSeqDef() <em>Escape Seq Def</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEscapeSeqDef()
+   * @generated
+   * @ordered
+   */
+  protected EscapeSequenceDef escapeSeqDef;
+
+  /**
    * The cached value of the '{@link #getFilter() <em>Filter</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -75,14 +100,14 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
   protected FilterDef filter;
 
   /**
-   * The cached value of the '{@link #getQualifications() <em>Qualifications</em>}' containment reference list.
+   * The cached value of the '{@link #getQualification() <em>Qualification</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQualifications()
+   * @see #getQualification()
    * @generated
    * @ordered
    */
-  protected EList<QualificationDef> qualifications;
+  protected QualificationDef qualification;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,7 +135,7 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassRef getClassRef()
+  public PathNameCS getClassRef()
   {
     return classRef;
   }
@@ -120,9 +145,9 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetClassRef(ClassRef newClassRef, NotificationChain msgs)
+  public NotificationChain basicSetClassRef(PathNameCS newClassRef, NotificationChain msgs)
   {
-    ClassRef oldClassRef = classRef;
+    PathNameCS oldClassRef = classRef;
     classRef = newClassRef;
     if (eNotificationRequired())
     {
@@ -137,7 +162,7 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClassRef(ClassRef newClassRef)
+  public void setClassRef(PathNameCS newClassRef)
   {
     if (newClassRef != classRef)
     {
@@ -206,6 +231,77 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isIgnoreCase()
+  {
+    return ignoreCase;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIgnoreCase(boolean newIgnoreCase)
+  {
+    boolean oldIgnoreCase = ignoreCase;
+    ignoreCase = newIgnoreCase;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.TARGET__IGNORE_CASE, oldIgnoreCase, ignoreCase));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EscapeSequenceDef getEscapeSeqDef()
+  {
+    return escapeSeqDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetEscapeSeqDef(EscapeSequenceDef newEscapeSeqDef, NotificationChain msgs)
+  {
+    EscapeSequenceDef oldEscapeSeqDef = escapeSeqDef;
+    escapeSeqDef = newEscapeSeqDef;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.TARGET__ESCAPE_SEQ_DEF, oldEscapeSeqDef, newEscapeSeqDef);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEscapeSeqDef(EscapeSequenceDef newEscapeSeqDef)
+  {
+    if (newEscapeSeqDef != escapeSeqDef)
+    {
+      NotificationChain msgs = null;
+      if (escapeSeqDef != null)
+        msgs = ((InternalEObject)escapeSeqDef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.TARGET__ESCAPE_SEQ_DEF, null, msgs);
+      if (newEscapeSeqDef != null)
+        msgs = ((InternalEObject)newEscapeSeqDef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.TARGET__ESCAPE_SEQ_DEF, null, msgs);
+      msgs = basicSetEscapeSeqDef(newEscapeSeqDef, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.TARGET__ESCAPE_SEQ_DEF, newEscapeSeqDef, newEscapeSeqDef));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FilterDef getFilter()
   {
     return filter;
@@ -254,13 +350,47 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<QualificationDef> getQualifications()
+  public QualificationDef getQualification()
   {
-    if (qualifications == null)
+    return qualification;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetQualification(QualificationDef newQualification, NotificationChain msgs)
+  {
+    QualificationDef oldQualification = qualification;
+    qualification = newQualification;
+    if (eNotificationRequired())
     {
-      qualifications = new EObjectContainmentEList<QualificationDef>(QualificationDef.class, this, Cs2as_dslPackage.TARGET__QUALIFICATIONS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.TARGET__QUALIFICATION, oldQualification, newQualification);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return qualifications;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setQualification(QualificationDef newQualification)
+  {
+    if (newQualification != qualification)
+    {
+      NotificationChain msgs = null;
+      if (qualification != null)
+        msgs = ((InternalEObject)qualification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.TARGET__QUALIFICATION, null, msgs);
+      if (newQualification != null)
+        msgs = ((InternalEObject)newQualification).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.TARGET__QUALIFICATION, null, msgs);
+      msgs = basicSetQualification(newQualification, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.TARGET__QUALIFICATION, newQualification, newQualification));
   }
 
   /**
@@ -277,10 +407,12 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
         return basicSetClassRef(null, msgs);
       case Cs2as_dslPackage.TARGET__PROP_REF:
         return basicSetPropRef(null, msgs);
+      case Cs2as_dslPackage.TARGET__ESCAPE_SEQ_DEF:
+        return basicSetEscapeSeqDef(null, msgs);
       case Cs2as_dslPackage.TARGET__FILTER:
         return basicSetFilter(null, msgs);
-      case Cs2as_dslPackage.TARGET__QUALIFICATIONS:
-        return ((InternalEList<?>)getQualifications()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.TARGET__QUALIFICATION:
+        return basicSetQualification(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -299,10 +431,14 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
         return getClassRef();
       case Cs2as_dslPackage.TARGET__PROP_REF:
         return getPropRef();
+      case Cs2as_dslPackage.TARGET__IGNORE_CASE:
+        return isIgnoreCase();
+      case Cs2as_dslPackage.TARGET__ESCAPE_SEQ_DEF:
+        return getEscapeSeqDef();
       case Cs2as_dslPackage.TARGET__FILTER:
         return getFilter();
-      case Cs2as_dslPackage.TARGET__QUALIFICATIONS:
-        return getQualifications();
+      case Cs2as_dslPackage.TARGET__QUALIFICATION:
+        return getQualification();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -312,24 +448,28 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case Cs2as_dslPackage.TARGET__CLASS_REF:
-        setClassRef((ClassRef)newValue);
+        setClassRef((PathNameCS)newValue);
         return;
       case Cs2as_dslPackage.TARGET__PROP_REF:
         setPropRef((PathNameCS)newValue);
         return;
+      case Cs2as_dslPackage.TARGET__IGNORE_CASE:
+        setIgnoreCase((Boolean)newValue);
+        return;
+      case Cs2as_dslPackage.TARGET__ESCAPE_SEQ_DEF:
+        setEscapeSeqDef((EscapeSequenceDef)newValue);
+        return;
       case Cs2as_dslPackage.TARGET__FILTER:
         setFilter((FilterDef)newValue);
         return;
-      case Cs2as_dslPackage.TARGET__QUALIFICATIONS:
-        getQualifications().clear();
-        getQualifications().addAll((Collection<? extends QualificationDef>)newValue);
+      case Cs2as_dslPackage.TARGET__QUALIFICATION:
+        setQualification((QualificationDef)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -346,16 +486,22 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
     switch (featureID)
     {
       case Cs2as_dslPackage.TARGET__CLASS_REF:
-        setClassRef((ClassRef)null);
+        setClassRef((PathNameCS)null);
         return;
       case Cs2as_dslPackage.TARGET__PROP_REF:
         setPropRef((PathNameCS)null);
         return;
+      case Cs2as_dslPackage.TARGET__IGNORE_CASE:
+        setIgnoreCase(IGNORE_CASE_EDEFAULT);
+        return;
+      case Cs2as_dslPackage.TARGET__ESCAPE_SEQ_DEF:
+        setEscapeSeqDef((EscapeSequenceDef)null);
+        return;
       case Cs2as_dslPackage.TARGET__FILTER:
         setFilter((FilterDef)null);
         return;
-      case Cs2as_dslPackage.TARGET__QUALIFICATIONS:
-        getQualifications().clear();
+      case Cs2as_dslPackage.TARGET__QUALIFICATION:
+        setQualification((QualificationDef)null);
         return;
     }
     super.eUnset(featureID);
@@ -375,12 +521,33 @@ public class TargetImpl extends MinimalEObjectImpl.Container implements Target
         return classRef != null;
       case Cs2as_dslPackage.TARGET__PROP_REF:
         return propRef != null;
+      case Cs2as_dslPackage.TARGET__IGNORE_CASE:
+        return ignoreCase != IGNORE_CASE_EDEFAULT;
+      case Cs2as_dslPackage.TARGET__ESCAPE_SEQ_DEF:
+        return escapeSeqDef != null;
       case Cs2as_dslPackage.TARGET__FILTER:
         return filter != null;
-      case Cs2as_dslPackage.TARGET__QUALIFICATIONS:
-        return qualifications != null && !qualifications.isEmpty();
+      case Cs2as_dslPackage.TARGET__QUALIFICATION:
+        return qualification != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (ignoreCase: ");
+    result.append(ignoreCase);
+    result.append(')');
+    return result.toString();
   }
 
 } //TargetImpl

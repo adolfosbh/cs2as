@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.ocl.xtext.basecs.PathNameCS;
 
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Input;
 
@@ -26,7 +25,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.Input;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.InputImpl#isQualifier <em>Qualifier</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.InputImpl#getClassRef <em>Class Ref</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.InputImpl#getTypeRef <em>Type Ref</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.InputImpl#getPropRef <em>Prop Ref</em>}</li>
  * </ul>
  *
@@ -55,14 +54,14 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
   protected boolean qualifier = QUALIFIER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getClassRef() <em>Class Ref</em>}' containment reference.
+   * The cached value of the '{@link #getTypeRef() <em>Type Ref</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClassRef()
+   * @see #getTypeRef()
    * @generated
    * @ordered
    */
-  protected ClassRef classRef;
+  protected PathNameCS typeRef;
 
   /**
    * The cached value of the '{@link #getPropRef() <em>Prop Ref</em>}' containment reference.
@@ -123,9 +122,9 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassRef getClassRef()
+  public PathNameCS getTypeRef()
   {
-    return classRef;
+    return typeRef;
   }
 
   /**
@@ -133,13 +132,13 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetClassRef(ClassRef newClassRef, NotificationChain msgs)
+  public NotificationChain basicSetTypeRef(PathNameCS newTypeRef, NotificationChain msgs)
   {
-    ClassRef oldClassRef = classRef;
-    classRef = newClassRef;
+    PathNameCS oldTypeRef = typeRef;
+    typeRef = newTypeRef;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.INPUT__CLASS_REF, oldClassRef, newClassRef);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.INPUT__TYPE_REF, oldTypeRef, newTypeRef);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -150,20 +149,20 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClassRef(ClassRef newClassRef)
+  public void setTypeRef(PathNameCS newTypeRef)
   {
-    if (newClassRef != classRef)
+    if (newTypeRef != typeRef)
     {
       NotificationChain msgs = null;
-      if (classRef != null)
-        msgs = ((InternalEObject)classRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.INPUT__CLASS_REF, null, msgs);
-      if (newClassRef != null)
-        msgs = ((InternalEObject)newClassRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.INPUT__CLASS_REF, null, msgs);
-      msgs = basicSetClassRef(newClassRef, msgs);
+      if (typeRef != null)
+        msgs = ((InternalEObject)typeRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.INPUT__TYPE_REF, null, msgs);
+      if (newTypeRef != null)
+        msgs = ((InternalEObject)newTypeRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.INPUT__TYPE_REF, null, msgs);
+      msgs = basicSetTypeRef(newTypeRef, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.INPUT__CLASS_REF, newClassRef, newClassRef));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.INPUT__TYPE_REF, newTypeRef, newTypeRef));
   }
 
   /**
@@ -224,8 +223,8 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.INPUT__CLASS_REF:
-        return basicSetClassRef(null, msgs);
+      case Cs2as_dslPackage.INPUT__TYPE_REF:
+        return basicSetTypeRef(null, msgs);
       case Cs2as_dslPackage.INPUT__PROP_REF:
         return basicSetPropRef(null, msgs);
     }
@@ -244,8 +243,8 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
     {
       case Cs2as_dslPackage.INPUT__QUALIFIER:
         return isQualifier();
-      case Cs2as_dslPackage.INPUT__CLASS_REF:
-        return getClassRef();
+      case Cs2as_dslPackage.INPUT__TYPE_REF:
+        return getTypeRef();
       case Cs2as_dslPackage.INPUT__PROP_REF:
         return getPropRef();
     }
@@ -265,8 +264,8 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
       case Cs2as_dslPackage.INPUT__QUALIFIER:
         setQualifier((Boolean)newValue);
         return;
-      case Cs2as_dslPackage.INPUT__CLASS_REF:
-        setClassRef((ClassRef)newValue);
+      case Cs2as_dslPackage.INPUT__TYPE_REF:
+        setTypeRef((PathNameCS)newValue);
         return;
       case Cs2as_dslPackage.INPUT__PROP_REF:
         setPropRef((PathNameCS)newValue);
@@ -288,8 +287,8 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
       case Cs2as_dslPackage.INPUT__QUALIFIER:
         setQualifier(QUALIFIER_EDEFAULT);
         return;
-      case Cs2as_dslPackage.INPUT__CLASS_REF:
-        setClassRef((ClassRef)null);
+      case Cs2as_dslPackage.INPUT__TYPE_REF:
+        setTypeRef((PathNameCS)null);
         return;
       case Cs2as_dslPackage.INPUT__PROP_REF:
         setPropRef((PathNameCS)null);
@@ -310,8 +309,8 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
     {
       case Cs2as_dslPackage.INPUT__QUALIFIER:
         return qualifier != QUALIFIER_EDEFAULT;
-      case Cs2as_dslPackage.INPUT__CLASS_REF:
-        return classRef != null;
+      case Cs2as_dslPackage.INPUT__TYPE_REF:
+        return typeRef != null;
       case Cs2as_dslPackage.INPUT__PROP_REF:
         return propRef != null;
     }

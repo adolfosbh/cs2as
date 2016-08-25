@@ -30,6 +30,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.CollectionLiteralExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.CollectionLiteralPartCS;
 import org.eclipse.ocl.xtext.essentialoclcs.CollectionPatternCS;
 import org.eclipse.ocl.xtext.essentialoclcs.CollectionTypeCS;
+import org.eclipse.ocl.xtext.essentialoclcs.ContextCS;
 import org.eclipse.ocl.xtext.essentialoclcs.CurlyBracketedClauseCS;
 import org.eclipse.ocl.xtext.essentialoclcs.EssentialOCLCSPackage;
 import org.eclipse.ocl.xtext.essentialoclcs.IfExpCS;
@@ -65,39 +66,44 @@ import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ASDecl;
-import uk.ac.york.cs.cs2as.cs2as_dsl.CSDecl;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassRef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Contribution;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ContributionsDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeDecl;
+import uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeProvisionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationRule;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ExportDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequence;
+import uk.ac.york.cs.cs2as.cs2as_dsl.EscapeSequenceDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeDecl;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeProvisionDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.FilterDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.HelperDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass;
+import uk.ac.york.cs.cs2as.cs2as_dsl.HelperOp;
 import uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Input;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Inputs;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
+import uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation;
+import uk.ac.york.cs.cs2as.cs2as_dsl.MappingReference;
 import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
-import uk.ac.york.cs.cs2as.cs2as_dsl.Model;
-import uk.ac.york.cs.cs2as.cs2as_dsl.MultipleClassRef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.MultiplePathNames;
 import uk.ac.york.cs.cs2as.cs2as_dsl.NameResolutionSect;
 import uk.ac.york.cs.cs2as.cs2as_dsl.OccludingDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyMap;
+import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Provider;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVarsDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Providers;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ProvisionDef;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Provision;
+import uk.ac.york.cs.cs2as.cs2as_dsl.Qualification;
 import uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ScopeDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionSpecific;
+import uk.ac.york.cs.cs2as.cs2as_dsl.SourceDomain;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Target;
+import uk.ac.york.cs.cs2as.cs2as_dsl.TargetDomain;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Targets;
 import uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS;
 import uk.ac.york.cs.cs2as.services.CS2ASDSLGrammarAccess;
@@ -117,7 +123,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 		if (epackage == BaseCSPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case BaseCSPackage.IMPORT_CS:
-				sequence_ImportCS(context, (ImportCS) semanticObject); 
+				sequence_MetaModelDecl(context, (ImportCS) semanticObject); 
 				return; 
 			case BaseCSPackage.MULTIPLICITY_BOUNDS_CS:
 				if (rule == grammarAccess.getMultiplicityBoundsCSRule()) {
@@ -223,44 +229,50 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			}
 		else if (epackage == Cs2as_dslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case Cs2as_dslPackage.AS_DECL:
-				sequence_ASDecl(context, (ASDecl) semanticObject); 
+			case Cs2as_dslPackage.CS2AS_MODEL:
+				sequence_CS2ASModel(context, (CS2ASModel) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.CS_DECL:
-				sequence_CSDecl(context, (CSDecl) semanticObject); 
+			case Cs2as_dslPackage.CONTRIBUTION:
+				sequence_Contribution(context, (Contribution) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.CLASS_DISAMBIGUATION:
-				sequence_ClassDisambiguation(context, (ClassDisambiguation) semanticObject); 
+			case Cs2as_dslPackage.CONTRIBUTIONS_DEF:
+				sequence_ContributionsDef(context, (ContributionsDef) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.CLASS_HELPER:
-				sequence_ClassHelper(context, (ClassHelper) semanticObject); 
+			case Cs2as_dslPackage.CURRENT_SCOPE_DECL:
+				sequence_CurrentScopeDecl(context, (CurrentScopeDecl) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.CLASS_MAP:
-				sequence_ClassMap(context, (ClassMap) semanticObject); 
-				return; 
-			case Cs2as_dslPackage.CLASS_REF:
-				sequence_ClassRef(context, (ClassRef) semanticObject); 
-				return; 
-			case Cs2as_dslPackage.CONTRIBUTION_DEF:
-				sequence_ContributionDef(context, (ContributionDef) semanticObject); 
+			case Cs2as_dslPackage.CURRENT_SCOPE_PROVISION_DEF:
+				sequence_CurrentScopeProvisionDef(context, (CurrentScopeProvisionDef) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.DISAMBIGUATION_DEF:
 				sequence_DisambiguationDef(context, (DisambiguationDef) semanticObject); 
 				return; 
+			case Cs2as_dslPackage.DISAMBIGUATION_RULE:
+				sequence_DisambiguationRule(context, (DisambiguationRule) semanticObject); 
+				return; 
 			case Cs2as_dslPackage.DISAMBIGUATION_SECT:
 				sequence_DisambiguationSect(context, (DisambiguationSect) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.ELEMENTS_CONTRIB_EXP:
-				sequence_ElementsContribExp(context, (ElementsContribExp) semanticObject); 
+			case Cs2as_dslPackage.ESCAPE_SEQUENCE:
+				sequence_EscapeSequence(context, (EscapeSequence) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.EXPORT_DEF:
-				sequence_ExportDef(context, (ExportDef) semanticObject); 
+			case Cs2as_dslPackage.ESCAPE_SEQUENCE_DEF:
+				sequence_EscapeSequenceDef(context, (EscapeSequenceDef) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.EXPORTED_SCOPE_DECL:
+				sequence_ExportedScopeDecl(context, (ExportedScopeDecl) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.EXPORTED_SCOPE_PROVISION_DEF:
+				sequence_ExportedScopeProvisionDef(context, (ExportedScopeProvisionDef) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.FILTER_DEF:
 				sequence_FilterDef(context, (FilterDef) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.HELPER_DEF:
-				sequence_HelperDef(context, (HelperDef) semanticObject); 
+			case Cs2as_dslPackage.HELPER_CLASS:
+				sequence_HelperClass(context, (HelperClass) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.HELPER_OP:
+				sequence_HelperOp(context, (HelperOp) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.HELPERS_SECT:
 				sequence_HelpersSect(context, (HelpersSect) semanticObject); 
@@ -274,14 +286,17 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case Cs2as_dslPackage.LOOKUP_EXP_CS:
 				sequence_LookupExpCS(context, (LookupExpCS) semanticObject); 
 				return; 
+			case Cs2as_dslPackage.MAPPING_CREATION:
+				sequence_MappingCreation(context, (MappingCreation) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.MAPPING_REFERENCE:
+				sequence_MappingReference(context, (MappingReference) semanticObject); 
+				return; 
 			case Cs2as_dslPackage.MAPPING_SECT:
 				sequence_MappingSect(context, (MappingSect) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.MODEL:
-				sequence_Model(context, (Model) semanticObject); 
-				return; 
-			case Cs2as_dslPackage.MULTIPLE_CLASS_REF:
-				sequence_MultipleClassRef(context, (MultipleClassRef) semanticObject); 
+			case Cs2as_dslPackage.MULTIPLE_PATH_NAMES:
+				sequence_MultiplePathNames(context, (MultiplePathNames) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.NAME_RESOLUTION_SECT:
 				sequence_NameResolutionSect(context, (NameResolutionSect) semanticObject); 
@@ -289,26 +304,26 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case Cs2as_dslPackage.OCCLUDING_DEF:
 				sequence_OccludingDef(context, (OccludingDef) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.PROPERTY_MAP:
-				sequence_PropertyMap(context, (PropertyMap) semanticObject); 
+			case Cs2as_dslPackage.PROPERTY_DEF:
+				sequence_PropertyDef(context, (PropertyDef) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.PROVIDER:
 				sequence_Provider(context, (Provider) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.PROVIDER_VARS:
-				sequence_ProviderVars(context, (ProviderVars) semanticObject); 
+			case Cs2as_dslPackage.PROVIDER_VARS_DECL:
+				sequence_ProviderVarsDecl(context, (ProviderVarsDecl) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.PROVIDERS:
 				sequence_Providers(context, (Providers) semanticObject); 
 				return; 
-			case Cs2as_dslPackage.PROVISION_DEF:
-				sequence_ProvisionDef(context, (ProvisionDef) semanticObject); 
+			case Cs2as_dslPackage.PROVISION:
+				sequence_Provision(context, (Provision) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.QUALIFICATION:
+				sequence_Qualification(context, (Qualification) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.QUALIFICATION_DEF:
 				sequence_QualificationDef(context, (QualificationDef) semanticObject); 
-				return; 
-			case Cs2as_dslPackage.SCOPE_DEF:
-				sequence_ScopeDef(context, (ScopeDef) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.SELECTION_ALL:
 				sequence_SelectionDef(context, (SelectionAll) semanticObject); 
@@ -316,8 +331,14 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case Cs2as_dslPackage.SELECTION_SPECIFIC:
 				sequence_SelectionDef(context, (SelectionSpecific) semanticObject); 
 				return; 
+			case Cs2as_dslPackage.SOURCE_DOMAIN:
+				sequence_SourceDomain(context, (SourceDomain) semanticObject); 
+				return; 
 			case Cs2as_dslPackage.TARGET:
 				sequence_Target(context, (Target) semanticObject); 
+				return; 
+			case Cs2as_dslPackage.TARGET_DOMAIN:
+				sequence_TargetDomain(context, (TargetDomain) semanticObject); 
 				return; 
 			case Cs2as_dslPackage.TARGETS:
 				sequence_Targets(context, (Targets) semanticObject); 
@@ -362,6 +383,9 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 					return; 
 				}
 				else break;
+			case EssentialOCLCSPackage.CONTEXT_CS:
+				sequence_Model(context, (ContextCS) semanticObject); 
+				return; 
 			case EssentialOCLCSPackage.CURLY_BRACKETED_CLAUSE_CS:
 				sequence_CurlyBracketedClauseCS(context, (CurlyBracketedClauseCS) semanticObject); 
 				return; 
@@ -500,112 +524,105 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     ASDecl returns ASDecl
+	 *     CS2ASModel returns CS2ASModel
 	 *
 	 * Constraint:
-	 *     (metamodels+=ImportCS metamodels+=ImportCS*)
+	 *     (
+	 *         source=SourceDomain 
+	 *         target=TargetDomain 
+	 *         (mappingSect=MappingSect | disambiguationSect=DisambiguationSect | nameresoSect=NameResolutionSect | helpersSect=HelpersSect)*
+	 *     )
 	 */
-	protected void sequence_ASDecl(ISerializationContext context, ASDecl semanticObject) {
+	protected void sequence_CS2ASModel(ISerializationContext context, CS2ASModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     CSDecl returns CSDecl
+	 *     Contribution returns Contribution
 	 *
 	 * Constraint:
-	 *     (metamodels+=ImportCS metamodels+=ImportCS*)
+	 *     (
+	 *         (
+	 *             child=ParameterDef | 
+	 *             isPreceding?='preceding' | 
+	 *             (isExported?='exported' (typeRefs+=PathNameCS typeRefs+=PathNameCS*)?) | 
+	 *             (isLoaded?='loaded' typeRefs+=PathNameCS)
+	 *         )? 
+	 *         expression=ExpCS
+	 *     )
 	 */
-	protected void sequence_CSDecl(ISerializationContext context, CSDecl semanticObject) {
+	protected void sequence_Contribution(ISerializationContext context, Contribution semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     ClassDisambiguation returns ClassDisambiguation
+	 *     ContributionsDef returns ContributionsDef
 	 *
 	 * Constraint:
-	 *     (class=PathNameCS statements+=ClassDisambiguationStmnt*)
+	 *     (contributions+=Contribution contributions+=Contribution*)
 	 */
-	protected void sequence_ClassDisambiguation(ISerializationContext context, ClassDisambiguation semanticObject) {
+	protected void sequence_ContributionsDef(ISerializationContext context, ContributionsDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     ClassHelper returns ClassHelper
+	 *     CurrentScopeDecl returns CurrentScopeDecl
 	 *
 	 * Constraint:
-	 *     (context=PathNameCS helpers+=HelperDef*)
+	 *     provisionDefs+=CurrentScopeProvisionDef+
 	 */
-	protected void sequence_ClassHelper(ISerializationContext context, ClassHelper semanticObject) {
+	protected void sequence_CurrentScopeDecl(ISerializationContext context, CurrentScopeDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     ClassMap returns ClassMap
+	 *     CurrentScopeProvisionDef returns CurrentScopeProvisionDef
 	 *
 	 * Constraint:
-	 *     (to=PathNameCS from=PathNameCS rule=SIMPLE_ID? statements+=ClassMapStmnt*)
+	 *     (selectionDef=SelectionDef? (sameScope?='adding' | emptyScope?='resetting')? provisions+=Provision+)
 	 */
-	protected void sequence_ClassMap(ISerializationContext context, ClassMap semanticObject) {
+	protected void sequence_CurrentScopeProvisionDef(ISerializationContext context, CurrentScopeProvisionDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     ClassRef returns ClassRef
-	 *
-	 * Constraint:
-	 *     className=PathNameCS
-	 */
-	protected void sequence_ClassRef(ISerializationContext context, ClassRef semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.CLASS_REF__CLASS_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.CLASS_REF__CLASS_NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClassRefAccess().getClassNamePathNameCSParserRuleCall_0(), semanticObject.getClassName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ContributionDef returns ContributionDef
-	 *
-	 * Constraint:
-	 *     (contributions+=ElementsContribExp contributions+=ElementsContribExp*)
-	 */
-	protected void sequence_ContributionDef(ISerializationContext context, ContributionDef semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ClassDisambiguationStmnt returns DisambiguationDef
 	 *     DisambiguationDef returns DisambiguationDef
+	 *
+	 * Constraint:
+	 *     (classRef=PathNameCS rules+=DisambiguationRule*)
+	 */
+	protected void sequence_DisambiguationDef(ISerializationContext context, DisambiguationDef semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DisambiguationRule returns DisambiguationRule
 	 *
 	 * Constraint:
 	 *     (name=SIMPLE_ID exp=ExpCS)
 	 */
-	protected void sequence_DisambiguationDef(ISerializationContext context, DisambiguationDef semanticObject) {
+	protected void sequence_DisambiguationRule(ISerializationContext context, DisambiguationRule semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_DEF__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_DEF__NAME));
-			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_DEF__EXP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_DEF__EXP));
+			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_RULE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_RULE__NAME));
+			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_RULE__EXP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.DISAMBIGUATION_RULE__EXP));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDisambiguationDefAccess().getNameSIMPLE_IDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDisambiguationDefAccess().getExpExpCSParserRuleCall_2_0(), semanticObject.getExp());
+		feeder.accept(grammarAccess.getDisambiguationRuleAccess().getNameSIMPLE_IDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDisambiguationRuleAccess().getExpExpCSParserRuleCall_2_0(), semanticObject.getExp());
 		feeder.finish();
 	}
 	
@@ -615,7 +632,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     DisambiguationSect returns DisambiguationSect
 	 *
 	 * Constraint:
-	 *     disambiguations+=ClassDisambiguation*
+	 *     disambiguations+=DisambiguationDef*
 	 */
 	protected void sequence_DisambiguationSect(ISerializationContext context, DisambiguationSect semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -624,25 +641,48 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     ElementsContribExp returns ElementsContribExp
+	 *     EscapeSequenceDef returns EscapeSequenceDef
 	 *
 	 * Constraint:
-	 *     ((isPreceding?='preceding' | isImported?='imported')? expression=ExpCS)
+	 *     (escapes+=EscapeSequence escapes+=EscapeSequence*)
 	 */
-	protected void sequence_ElementsContribExp(ISerializationContext context, ElementsContribExp semanticObject) {
+	protected void sequence_EscapeSequenceDef(ISerializationContext context, EscapeSequenceDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     ProviderStmnt returns ExportDef
-	 *     ExportDef returns ExportDef
+	 *     EscapeSequence returns EscapeSequence
 	 *
 	 * Constraint:
-	 *     (selectionDef=SelectionDef? provisionDefs+=ProvisionDef+)
+	 *     (prefix=StringLiteral suffix=StringLiteral?)
 	 */
-	protected void sequence_ExportDef(ISerializationContext context, ExportDef semanticObject) {
+	protected void sequence_EscapeSequence(ISerializationContext context, EscapeSequence semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ExportedScopeDecl returns ExportedScopeDecl
+	 *
+	 * Constraint:
+	 *     provisionDefs+=ExportedScopeProvisionDef+
+	 */
+	protected void sequence_ExportedScopeDecl(ISerializationContext context, ExportedScopeDecl semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ExportedScopeProvisionDef returns ExportedScopeProvisionDef
+	 *
+	 * Constraint:
+	 *     provisions+=Provision+
+	 */
+	protected void sequence_ExportedScopeProvisionDef(ISerializationContext context, ExportedScopeProvisionDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -652,7 +692,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     FilterDef returns FilterDef
 	 *
 	 * Constraint:
-	 *     ((params+=ParameterDef params+=ParameterDef*)? expression=ExpCS)
+	 *     (params+=ParameterDef params+=ParameterDef* expression=ExpCS)
 	 */
 	protected void sequence_FilterDef(ISerializationContext context, FilterDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -661,12 +701,24 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     HelperDef returns HelperDef
+	 *     HelperClass returns HelperClass
+	 *
+	 * Constraint:
+	 *     (context=PathNameCS helpers+=HelperOp*)
+	 */
+	protected void sequence_HelperClass(ISerializationContext context, HelperClass semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     HelperOp returns HelperOp
 	 *
 	 * Constraint:
 	 *     (ownedSignature=TemplateSignatureCS? name=UnrestrictedName (params+=ParameterDef params+=ParameterDef*)? ownedType=TypeExpCS? helperBody=ExpCS)
 	 */
-	protected void sequence_HelperDef(ISerializationContext context, HelperDef semanticObject) {
+	protected void sequence_HelperOp(ISerializationContext context, HelperOp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -676,21 +728,9 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     HelpersSect returns HelpersSect
 	 *
 	 * Constraint:
-	 *     classHelpers+=ClassHelper*
+	 *     classHelpers+=HelperClass*
 	 */
 	protected void sequence_HelpersSect(ISerializationContext context, HelpersSect semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ImportCS returns ImportCS
-	 *
-	 * Constraint:
-	 *     (name=Identifier? ownedPathName=URIPathNameCS isAll?='::*'?)
-	 */
-	protected void sequence_ImportCS(ISerializationContext context, ImportCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -700,7 +740,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     Input returns Input
 	 *
 	 * Constraint:
-	 *     (qualifier?='qualifier'? classRef=ClassRef propRef=PathNameCS?)
+	 *     (qualifier?='qualifier'? typeRef=PathNameCS propRef=PathNameCS?)
 	 */
 	protected void sequence_Input(ISerializationContext context, Input semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -729,7 +769,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     NavigatingArgExpCS returns LookupExpCS
 	 *
 	 * Constraint:
-	 *     (fromExp?='lookupFrom'? args+=NavigatingArgExpCS args+=NavigatingArgExpCS*)
+	 *     (isExported?='lookupExported'? args+=NavigatingArgExpCS args+=NavigatingArgExpCS*)
 	 */
 	protected void sequence_LookupExpCS(ISerializationContext context, LookupExpCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -738,10 +778,48 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     MappingDef returns MappingCreation
+	 *     MappingCreation returns MappingCreation
+	 *
+	 * Constraint:
+	 *     (to=PathNameCS from=PathNameCS rule=ID? properties+=PropertyDef*)
+	 */
+	protected void sequence_MappingCreation(ISerializationContext context, MappingCreation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MappingDef returns MappingReference
+	 *     MappingReference returns MappingReference
+	 *
+	 * Constraint:
+	 *     (to=PathNameCS from=PathNameCS expression=ExpCS)
+	 */
+	protected void sequence_MappingReference(ISerializationContext context, MappingReference semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.MAPPING_DEF__TO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.MAPPING_DEF__TO));
+			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.MAPPING_DEF__FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.MAPPING_DEF__FROM));
+			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.MAPPING_REFERENCE__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.MAPPING_REFERENCE__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMappingReferenceAccess().getToPathNameCSParserRuleCall_1_0(), semanticObject.getTo());
+		feeder.accept(grammarAccess.getMappingReferenceAccess().getFromPathNameCSParserRuleCall_3_0(), semanticObject.getFrom());
+		feeder.accept(grammarAccess.getMappingReferenceAccess().getExpressionExpCSParserRuleCall_5_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     MappingSect returns MappingSect
 	 *
 	 * Constraint:
-	 *     mappings+=ClassMap*
+	 *     mappings+=MappingDef*
 	 */
 	protected void sequence_MappingSect(ISerializationContext context, MappingSect semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -750,28 +828,24 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Model returns Model
+	 *     MetaModelDecl returns ImportCS
 	 *
 	 * Constraint:
-	 *     (
-	 *         csDecl=CSDecl 
-	 *         asDecl=ASDecl 
-	 *         (mappingSect=MappingSect | disambiguationSect=DisambiguationSect | nameresoSect=NameResolutionSect | helpersSect=HelpersSect)*
-	 *     )
+	 *     (name=ID? ownedPathName=URIPathNameCS isAll?='::*'?)
 	 */
-	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+	protected void sequence_MetaModelDecl(ISerializationContext context, ImportCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     MultipleClassRef returns MultipleClassRef
+	 *     MultiplePathNames returns MultiplePathNames
 	 *
 	 * Constraint:
-	 *     (classNames+=PathNameCS classNames+=PathNameCS*)
+	 *     (pathNames+=PathNameCS pathNames+=PathNameCS*)
 	 */
-	protected void sequence_MultipleClassRef(ISerializationContext context, MultipleClassRef semanticObject) {
+	protected void sequence_MultiplePathNames(ISerializationContext context, MultiplePathNames semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -781,22 +855,10 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     NameResolutionSect returns NameResolutionSect
 	 *
 	 * Constraint:
-	 *     (targetsDef=Targets inputsDef=Inputs providersDef=Providers)
+	 *     (targetsDef=Targets? inputsDef=Inputs? providersDef=Providers?)
 	 */
 	protected void sequence_NameResolutionSect(ISerializationContext context, NameResolutionSect semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.NAME_RESOLUTION_SECT__TARGETS_DEF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.NAME_RESOLUTION_SECT__TARGETS_DEF));
-			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.NAME_RESOLUTION_SECT__INPUTS_DEF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.NAME_RESOLUTION_SECT__INPUTS_DEF));
-			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.NAME_RESOLUTION_SECT__PROVIDERS_DEF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.NAME_RESOLUTION_SECT__PROVIDERS_DEF));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNameResolutionSectAccess().getTargetsDefTargetsParserRuleCall_3_0(), semanticObject.getTargetsDef());
-		feeder.accept(grammarAccess.getNameResolutionSectAccess().getInputsDefInputsParserRuleCall_4_0(), semanticObject.getInputsDef());
-		feeder.accept(grammarAccess.getNameResolutionSectAccess().getProvidersDefProvidersParserRuleCall_5_0(), semanticObject.getProvidersDef());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -805,15 +867,15 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     OccludingDef returns OccludingDef
 	 *
 	 * Constraint:
-	 *     contribution=ContributionDef
+	 *     contributionsDef=ContributionsDef
 	 */
 	protected void sequence_OccludingDef(ISerializationContext context, OccludingDef semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.OCCLUDING_DEF__CONTRIBUTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.OCCLUDING_DEF__CONTRIBUTION));
+			if (transientValues.isValueTransient(semanticObject, Cs2as_dslPackage.Literals.OCCLUDING_DEF__CONTRIBUTIONS_DEF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Cs2as_dslPackage.Literals.OCCLUDING_DEF__CONTRIBUTIONS_DEF));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOccludingDefAccess().getContributionContributionDefParserRuleCall_1_0(), semanticObject.getContribution());
+		feeder.accept(grammarAccess.getOccludingDefAccess().getContributionsDefContributionsDefParserRuleCall_1_0(), semanticObject.getContributionsDef());
 		feeder.finish();
 	}
 	
@@ -841,25 +903,24 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     ClassMapStmnt returns PropertyMap
-	 *     PropertyMap returns PropertyMap
+	 *     PropertyDef returns PropertyDef
 	 *
 	 * Constraint:
-	 *     (redefine?='redefine'? propName=SIMPLE_ID propInit=ExpCS)
+	 *     (redefine?='redefine'? propRef=PathNameCS propInit=ExpCS)
 	 */
-	protected void sequence_PropertyMap(ISerializationContext context, PropertyMap semanticObject) {
+	protected void sequence_PropertyDef(ISerializationContext context, PropertyDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     ProviderVars returns ProviderVars
+	 *     ProviderVarsDecl returns ProviderVarsDecl
 	 *
 	 * Constraint:
 	 *     (varDecl+=LetVariableCS varDecl+=LetVariableCS*)
 	 */
-	protected void sequence_ProviderVars(ISerializationContext context, ProviderVars semanticObject) {
+	protected void sequence_ProviderVarsDecl(ISerializationContext context, ProviderVarsDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -869,7 +930,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     Provider returns Provider
 	 *
 	 * Constraint:
-	 *     (classRef=PathNameCS varsDecl=ProviderVars? statements+=ProviderStmnt*)
+	 *     (classRef=PathNameCS varsDecl=ProviderVarsDecl? currentScope=CurrentScopeDecl? exportedScope=ExportedScopeDecl?)
 	 */
 	protected void sequence_Provider(ISerializationContext context, Provider semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -890,12 +951,12 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     ProvisionDef returns ProvisionDef
+	 *     Provision returns Provision
 	 *
 	 * Constraint:
-	 *     (targetsDef=MultipleClassRef contribution=ContributionDef occludingDefs+=OccludingDef*)
+	 *     (providedClasses=MultiplePathNames? contributionsDef=ContributionsDef occludingDefs+=OccludingDef*)
 	 */
-	protected void sequence_ProvisionDef(ISerializationContext context, ProvisionDef semanticObject) {
+	protected void sequence_Provision(ISerializationContext context, Provision semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -905,7 +966,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     QualificationDef returns QualificationDef
 	 *
 	 * Constraint:
-	 *     (targetsDef=MultipleClassRef contribution+=ElementsContribExp)
+	 *     (qualifications+=Qualification qualifications+=Qualification*)
 	 */
 	protected void sequence_QualificationDef(ISerializationContext context, QualificationDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -914,13 +975,12 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     ProviderStmnt returns ScopeDef
-	 *     ScopeDef returns ScopeDef
+	 *     Qualification returns Qualification
 	 *
 	 * Constraint:
-	 *     (selectionDef=SelectionDef? alsoExports?='exported-scope'? (sameScope?='adding' | emptyScope?='resetting')? provisionDefs+=ProvisionDef+)
+	 *     (qualifiedClasses=MultiplePathNames contributions+=ExpCS contributions+=ExpCS*)
 	 */
-	protected void sequence_ScopeDef(ISerializationContext context, ScopeDef semanticObject) {
+	protected void sequence_Qualification(ISerializationContext context, Qualification semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -930,7 +990,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     SelectionDef returns SelectionAll
 	 *
 	 * Constraint:
-	 *     (exceptionProperties+=ExpCS exceptionProperties+=ExpCS*)?
+	 *     (exceptions+=PathNameCS exceptions+=PathNameCS*)?
 	 */
 	protected void sequence_SelectionDef(ISerializationContext context, SelectionAll semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -942,9 +1002,33 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     SelectionDef returns SelectionSpecific
 	 *
 	 * Constraint:
-	 *     (selectedProperties+=ExpCS selectedProperties+=ExpCS*)
+	 *     (selections+=PathNameCS selections+=PathNameCS*)
 	 */
 	protected void sequence_SelectionDef(ISerializationContext context, SelectionSpecific semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SourceDomain returns SourceDomain
+	 *
+	 * Constraint:
+	 *     (metamodels+=MetaModelDecl metamodels+=MetaModelDecl*)
+	 */
+	protected void sequence_SourceDomain(ISerializationContext context, SourceDomain semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TargetDomain returns TargetDomain
+	 *
+	 * Constraint:
+	 *     (metamodels+=MetaModelDecl metamodels+=MetaModelDecl*)
+	 */
+	protected void sequence_TargetDomain(ISerializationContext context, TargetDomain semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -954,7 +1038,12 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     Target returns Target
 	 *
 	 * Constraint:
-	 *     (classRef=ClassRef propRef=PathNameCS? filter=FilterDef? (qualifications+=QualificationDef qualifications+=QualificationDef*)?)
+	 *     (
+	 *         classRef=PathNameCS 
+	 *         (propRef=PathNameCS ignoreCase?='ignore_case'? escapeSeqDef=EscapeSequenceDef?)? 
+	 *         filter=FilterDef? 
+	 *         qualification=QualificationDef?
+	 *     )
 	 */
 	protected void sequence_Target(ISerializationContext context, Target semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

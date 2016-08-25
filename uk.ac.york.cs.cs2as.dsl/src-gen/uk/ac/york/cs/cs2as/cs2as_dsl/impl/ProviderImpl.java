@@ -2,12 +2,8 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -15,15 +11,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.ocl.xtext.basecs.PathNameCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.CurrentScopeDecl;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ExportedScopeDecl;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Provider;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt;
-import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars;
+import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVarsDecl;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +29,8 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.ProviderVars;
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderImpl#getClassRef <em>Class Ref</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderImpl#getVarsDecl <em>Vars Decl</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderImpl#getCurrentScope <em>Current Scope</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.ProviderImpl#getExportedScope <em>Exported Scope</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,17 +55,27 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
    * @generated
    * @ordered
    */
-  protected ProviderVars varsDecl;
+  protected ProviderVarsDecl varsDecl;
 
   /**
-   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * The cached value of the '{@link #getCurrentScope() <em>Current Scope</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatements()
+   * @see #getCurrentScope()
    * @generated
    * @ordered
    */
-  protected EList<ProviderStmnt> statements;
+  protected CurrentScopeDecl currentScope;
+
+  /**
+   * The cached value of the '{@link #getExportedScope() <em>Exported Scope</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExportedScope()
+   * @generated
+   * @ordered
+   */
+  protected ExportedScopeDecl exportedScope;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,7 +151,7 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProviderVars getVarsDecl()
+  public ProviderVarsDecl getVarsDecl()
   {
     return varsDecl;
   }
@@ -156,9 +161,9 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVarsDecl(ProviderVars newVarsDecl, NotificationChain msgs)
+  public NotificationChain basicSetVarsDecl(ProviderVarsDecl newVarsDecl, NotificationChain msgs)
   {
-    ProviderVars oldVarsDecl = varsDecl;
+    ProviderVarsDecl oldVarsDecl = varsDecl;
     varsDecl = newVarsDecl;
     if (eNotificationRequired())
     {
@@ -173,7 +178,7 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVarsDecl(ProviderVars newVarsDecl)
+  public void setVarsDecl(ProviderVarsDecl newVarsDecl)
   {
     if (newVarsDecl != varsDecl)
     {
@@ -194,13 +199,95 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ProviderStmnt> getStatements()
+  public CurrentScopeDecl getCurrentScope()
   {
-    if (statements == null)
+    return currentScope;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCurrentScope(CurrentScopeDecl newCurrentScope, NotificationChain msgs)
+  {
+    CurrentScopeDecl oldCurrentScope = currentScope;
+    currentScope = newCurrentScope;
+    if (eNotificationRequired())
     {
-      statements = new EObjectContainmentEList<ProviderStmnt>(ProviderStmnt.class, this, Cs2as_dslPackage.PROVIDER__STATEMENTS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROVIDER__CURRENT_SCOPE, oldCurrentScope, newCurrentScope);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return statements;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCurrentScope(CurrentScopeDecl newCurrentScope)
+  {
+    if (newCurrentScope != currentScope)
+    {
+      NotificationChain msgs = null;
+      if (currentScope != null)
+        msgs = ((InternalEObject)currentScope).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROVIDER__CURRENT_SCOPE, null, msgs);
+      if (newCurrentScope != null)
+        msgs = ((InternalEObject)newCurrentScope).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROVIDER__CURRENT_SCOPE, null, msgs);
+      msgs = basicSetCurrentScope(newCurrentScope, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROVIDER__CURRENT_SCOPE, newCurrentScope, newCurrentScope));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExportedScopeDecl getExportedScope()
+  {
+    return exportedScope;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExportedScope(ExportedScopeDecl newExportedScope, NotificationChain msgs)
+  {
+    ExportedScopeDecl oldExportedScope = exportedScope;
+    exportedScope = newExportedScope;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROVIDER__EXPORTED_SCOPE, oldExportedScope, newExportedScope);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExportedScope(ExportedScopeDecl newExportedScope)
+  {
+    if (newExportedScope != exportedScope)
+    {
+      NotificationChain msgs = null;
+      if (exportedScope != null)
+        msgs = ((InternalEObject)exportedScope).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROVIDER__EXPORTED_SCOPE, null, msgs);
+      if (newExportedScope != null)
+        msgs = ((InternalEObject)newExportedScope).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Cs2as_dslPackage.PROVIDER__EXPORTED_SCOPE, null, msgs);
+      msgs = basicSetExportedScope(newExportedScope, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.PROVIDER__EXPORTED_SCOPE, newExportedScope, newExportedScope));
   }
 
   /**
@@ -217,8 +304,10 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
         return basicSetClassRef(null, msgs);
       case Cs2as_dslPackage.PROVIDER__VARS_DECL:
         return basicSetVarsDecl(null, msgs);
-      case Cs2as_dslPackage.PROVIDER__STATEMENTS:
-        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.PROVIDER__CURRENT_SCOPE:
+        return basicSetCurrentScope(null, msgs);
+      case Cs2as_dslPackage.PROVIDER__EXPORTED_SCOPE:
+        return basicSetExportedScope(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -237,8 +326,10 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
         return getClassRef();
       case Cs2as_dslPackage.PROVIDER__VARS_DECL:
         return getVarsDecl();
-      case Cs2as_dslPackage.PROVIDER__STATEMENTS:
-        return getStatements();
+      case Cs2as_dslPackage.PROVIDER__CURRENT_SCOPE:
+        return getCurrentScope();
+      case Cs2as_dslPackage.PROVIDER__EXPORTED_SCOPE:
+        return getExportedScope();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -248,7 +339,6 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -258,11 +348,13 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
         setClassRef((PathNameCS)newValue);
         return;
       case Cs2as_dslPackage.PROVIDER__VARS_DECL:
-        setVarsDecl((ProviderVars)newValue);
+        setVarsDecl((ProviderVarsDecl)newValue);
         return;
-      case Cs2as_dslPackage.PROVIDER__STATEMENTS:
-        getStatements().clear();
-        getStatements().addAll((Collection<? extends ProviderStmnt>)newValue);
+      case Cs2as_dslPackage.PROVIDER__CURRENT_SCOPE:
+        setCurrentScope((CurrentScopeDecl)newValue);
+        return;
+      case Cs2as_dslPackage.PROVIDER__EXPORTED_SCOPE:
+        setExportedScope((ExportedScopeDecl)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -282,10 +374,13 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
         setClassRef((PathNameCS)null);
         return;
       case Cs2as_dslPackage.PROVIDER__VARS_DECL:
-        setVarsDecl((ProviderVars)null);
+        setVarsDecl((ProviderVarsDecl)null);
         return;
-      case Cs2as_dslPackage.PROVIDER__STATEMENTS:
-        getStatements().clear();
+      case Cs2as_dslPackage.PROVIDER__CURRENT_SCOPE:
+        setCurrentScope((CurrentScopeDecl)null);
+        return;
+      case Cs2as_dslPackage.PROVIDER__EXPORTED_SCOPE:
+        setExportedScope((ExportedScopeDecl)null);
         return;
     }
     super.eUnset(featureID);
@@ -305,8 +400,10 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
         return classRef != null;
       case Cs2as_dslPackage.PROVIDER__VARS_DECL:
         return varsDecl != null;
-      case Cs2as_dslPackage.PROVIDER__STATEMENTS:
-        return statements != null && !statements.isEmpty();
+      case Cs2as_dslPackage.PROVIDER__CURRENT_SCOPE:
+        return currentScope != null;
+      case Cs2as_dslPackage.PROVIDER__EXPORTED_SCOPE:
+        return exportedScope != null;
     }
     return super.eIsSet(featureID);
   }

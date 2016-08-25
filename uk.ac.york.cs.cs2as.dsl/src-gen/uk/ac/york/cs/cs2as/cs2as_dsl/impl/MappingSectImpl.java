@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassMap;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.MappingDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect;
 
 /**
@@ -43,7 +43,7 @@ public class MappingSectImpl extends MinimalEObjectImpl.Container implements Map
    * @generated
    * @ordered
    */
-  protected EList<ClassMap> mappings;
+  protected EList<MappingDef> mappings;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class MappingSectImpl extends MinimalEObjectImpl.Container implements Map
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ClassMap> getMappings()
+  public EList<MappingDef> getMappings()
   {
     if (mappings == null)
     {
-      mappings = new EObjectContainmentEList<ClassMap>(ClassMap.class, this, Cs2as_dslPackage.MAPPING_SECT__MAPPINGS);
+      mappings = new EObjectContainmentEList<MappingDef>(MappingDef.class, this, Cs2as_dslPackage.MAPPING_SECT__MAPPINGS);
     }
     return mappings;
   }
@@ -125,7 +125,7 @@ public class MappingSectImpl extends MinimalEObjectImpl.Container implements Map
     {
       case Cs2as_dslPackage.MAPPING_SECT__MAPPINGS:
         getMappings().clear();
-        getMappings().addAll((Collection<? extends ClassMap>)newValue);
+        getMappings().addAll((Collection<? extends MappingDef>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

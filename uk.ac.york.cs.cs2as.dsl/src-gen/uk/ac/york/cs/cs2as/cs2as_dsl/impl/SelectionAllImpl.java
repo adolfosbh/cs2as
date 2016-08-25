@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.ocl.xtext.basecs.PathNameCS;
 
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
 import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
@@ -27,7 +27,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SelectionAllImpl#getExceptionProperties <em>Exception Properties</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.SelectionAllImpl#getExceptions <em>Exceptions</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +35,14 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.SelectionAll;
 public class SelectionAllImpl extends SelectionDefImpl implements SelectionAll
 {
   /**
-   * The cached value of the '{@link #getExceptionProperties() <em>Exception Properties</em>}' containment reference list.
+   * The cached value of the '{@link #getExceptions() <em>Exceptions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExceptionProperties()
+   * @see #getExceptions()
    * @generated
    * @ordered
    */
-  protected EList<ExpCS> exceptionProperties;
+  protected EList<PathNameCS> exceptions;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,13 +70,13 @@ public class SelectionAllImpl extends SelectionDefImpl implements SelectionAll
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ExpCS> getExceptionProperties()
+  public EList<PathNameCS> getExceptions()
   {
-    if (exceptionProperties == null)
+    if (exceptions == null)
     {
-      exceptionProperties = new EObjectContainmentEList<ExpCS>(ExpCS.class, this, Cs2as_dslPackage.SELECTION_ALL__EXCEPTION_PROPERTIES);
+      exceptions = new EObjectContainmentEList<PathNameCS>(PathNameCS.class, this, Cs2as_dslPackage.SELECTION_ALL__EXCEPTIONS);
     }
-    return exceptionProperties;
+    return exceptions;
   }
 
   /**
@@ -89,8 +89,8 @@ public class SelectionAllImpl extends SelectionDefImpl implements SelectionAll
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SELECTION_ALL__EXCEPTION_PROPERTIES:
-        return ((InternalEList<?>)getExceptionProperties()).basicRemove(otherEnd, msgs);
+      case Cs2as_dslPackage.SELECTION_ALL__EXCEPTIONS:
+        return ((InternalEList<?>)getExceptions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -105,8 +105,8 @@ public class SelectionAllImpl extends SelectionDefImpl implements SelectionAll
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SELECTION_ALL__EXCEPTION_PROPERTIES:
-        return getExceptionProperties();
+      case Cs2as_dslPackage.SELECTION_ALL__EXCEPTIONS:
+        return getExceptions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -122,9 +122,9 @@ public class SelectionAllImpl extends SelectionDefImpl implements SelectionAll
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SELECTION_ALL__EXCEPTION_PROPERTIES:
-        getExceptionProperties().clear();
-        getExceptionProperties().addAll((Collection<? extends ExpCS>)newValue);
+      case Cs2as_dslPackage.SELECTION_ALL__EXCEPTIONS:
+        getExceptions().clear();
+        getExceptions().addAll((Collection<? extends PathNameCS>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,8 +140,8 @@ public class SelectionAllImpl extends SelectionDefImpl implements SelectionAll
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SELECTION_ALL__EXCEPTION_PROPERTIES:
-        getExceptionProperties().clear();
+      case Cs2as_dslPackage.SELECTION_ALL__EXCEPTIONS:
+        getExceptions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -157,8 +157,8 @@ public class SelectionAllImpl extends SelectionDefImpl implements SelectionAll
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.SELECTION_ALL__EXCEPTION_PROPERTIES:
-        return exceptionProperties != null && !exceptionProperties.isEmpty();
+      case Cs2as_dslPackage.SELECTION_ALL__EXCEPTIONS:
+        return exceptions != null && !exceptions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

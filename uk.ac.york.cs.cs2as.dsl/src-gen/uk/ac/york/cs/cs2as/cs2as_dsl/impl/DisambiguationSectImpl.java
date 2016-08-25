@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef;
 import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect;
 
 /**
@@ -43,7 +43,7 @@ public class DisambiguationSectImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    * @ordered
    */
-  protected EList<ClassDisambiguation> disambiguations;
+  protected EList<DisambiguationDef> disambiguations;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class DisambiguationSectImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ClassDisambiguation> getDisambiguations()
+  public EList<DisambiguationDef> getDisambiguations()
   {
     if (disambiguations == null)
     {
-      disambiguations = new EObjectContainmentEList<ClassDisambiguation>(ClassDisambiguation.class, this, Cs2as_dslPackage.DISAMBIGUATION_SECT__DISAMBIGUATIONS);
+      disambiguations = new EObjectContainmentEList<DisambiguationDef>(DisambiguationDef.class, this, Cs2as_dslPackage.DISAMBIGUATION_SECT__DISAMBIGUATIONS);
     }
     return disambiguations;
   }
@@ -125,7 +125,7 @@ public class DisambiguationSectImpl extends MinimalEObjectImpl.Container impleme
     {
       case Cs2as_dslPackage.DISAMBIGUATION_SECT__DISAMBIGUATIONS:
         getDisambiguations().clear();
-        getDisambiguations().addAll((Collection<? extends ClassDisambiguation>)newValue);
+        getDisambiguations().addAll((Collection<? extends DisambiguationDef>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

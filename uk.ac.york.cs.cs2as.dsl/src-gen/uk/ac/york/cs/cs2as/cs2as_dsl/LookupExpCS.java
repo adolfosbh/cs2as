@@ -15,7 +15,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS#isFromExp <em>From Exp</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS#isIsExported <em>Is Exported</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS#getArgs <em>Args</em>}</li>
  * </ul>
  *
@@ -26,30 +26,30 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 public interface LookupExpCS extends ExpCS
 {
   /**
-   * Returns the value of the '<em><b>From Exp</b></em>' attribute.
+   * Returns the value of the '<em><b>Is Exported</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>From Exp</em>' attribute isn't clear,
+   * If the meaning of the '<em>Is Exported</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>From Exp</em>' attribute.
-   * @see #setFromExp(boolean)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getLookupExpCS_FromExp()
+   * @return the value of the '<em>Is Exported</em>' attribute.
+   * @see #setIsExported(boolean)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getLookupExpCS_IsExported()
    * @model
    * @generated
    */
-  boolean isFromExp();
+  boolean isIsExported();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS#isFromExp <em>From Exp</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS#isIsExported <em>Is Exported</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>From Exp</em>' attribute.
-   * @see #isFromExp()
+   * @param value the new value of the '<em>Is Exported</em>' attribute.
+   * @see #isIsExported()
    * @generated
    */
-  void setFromExp(boolean value);
+  void setIsExported(boolean value);
 
   /**
    * Returns the value of the '<em><b>Args</b></em>' containment reference list.

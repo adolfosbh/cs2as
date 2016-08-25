@@ -16,7 +16,7 @@ import org.eclipse.ocl.xtext.basecs.PathNameCS;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Input#isQualifier <em>Qualifier</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Input#getClassRef <em>Class Ref</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Input#getTypeRef <em>Type Ref</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Input#getPropRef <em>Prop Ref</em>}</li>
  * </ul>
  *
@@ -53,30 +53,30 @@ public interface Input extends EObject
   void setQualifier(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Class Ref</b></em>' containment reference.
+   * Returns the value of the '<em><b>Type Ref</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Class Ref</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Type Ref</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Class Ref</em>' containment reference.
-   * @see #setClassRef(ClassRef)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getInput_ClassRef()
+   * @return the value of the '<em>Type Ref</em>' containment reference.
+   * @see #setTypeRef(PathNameCS)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getInput_TypeRef()
    * @model containment="true"
    * @generated
    */
-  ClassRef getClassRef();
+  PathNameCS getTypeRef();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Input#getClassRef <em>Class Ref</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Input#getTypeRef <em>Type Ref</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Class Ref</em>' containment reference.
-   * @see #getClassRef()
+   * @param value the new value of the '<em>Type Ref</em>' containment reference.
+   * @see #getTypeRef()
    * @generated
    */
-  void setClassRef(ClassRef value);
+  void setTypeRef(PathNameCS value);
 
   /**
    * Returns the value of the '<em><b>Prop Ref</b></em>' containment reference.

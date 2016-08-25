@@ -138,7 +138,7 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	}
 	
 	def String caseLookupExp(LookupExpCS object) {
-		val lookupOpSuffix = if (object.isFromExp) 'From' else '' 
+		val lookupOpSuffix = if (object.isIsExported) 'From' else '' 
 		val args = object.args;
 		val firstArg = args.get(0);
 		val remainingArgs = newArrayList();

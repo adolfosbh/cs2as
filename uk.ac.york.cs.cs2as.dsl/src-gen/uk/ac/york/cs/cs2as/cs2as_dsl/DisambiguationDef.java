@@ -2,7 +2,11 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl;
 
-import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.ocl.xtext.basecs.PathNameCS;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,66 +17,56 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getExp <em>Exp</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getClassRef <em>Class Ref</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getRules <em>Rules</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getDisambiguationDef()
  * @model
  * @generated
  */
-public interface DisambiguationDef extends ClassDisambiguationStmnt
+public interface DisambiguationDef extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Class Ref</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Class Ref</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getDisambiguationDef_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Exp</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Exp</em>' containment reference.
-   * @see #setExp(ExpCS)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getDisambiguationDef_Exp()
+   * @return the value of the '<em>Class Ref</em>' containment reference.
+   * @see #setClassRef(PathNameCS)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getDisambiguationDef_ClassRef()
    * @model containment="true"
    * @generated
    */
-  ExpCS getExp();
+  PathNameCS getClassRef();
 
   /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getExp <em>Exp</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef#getClassRef <em>Class Ref</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Exp</em>' containment reference.
-   * @see #getExp()
+   * @param value the new value of the '<em>Class Ref</em>' containment reference.
+   * @see #getClassRef()
    * @generated
    */
-  void setExp(ExpCS value);
+  void setClassRef(PathNameCS value);
+
+  /**
+   * Returns the value of the '<em><b>Rules</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationRule}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Rules</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Rules</em>' containment reference list.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getDisambiguationDef_Rules()
+   * @model containment="true"
+   * @generated
+   */
+  EList<DisambiguationRule> getRules();
 
 } // DisambiguationDef

@@ -21,15 +21,15 @@ import uk.ac.york.cs.cs2as.services.CS2ASDSLGrammarAccess;
 public class CS2ASDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CS2ASDSLGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_CurrentScopeProvisionDef_OccludingKeyword_2_0_q;
 	protected AbstractElementAlias match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q;
-	protected AbstractElementAlias match_ScopeDef_OccludingKeyword_5_0_q;
 	protected AbstractElementAlias match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CS2ASDSLGrammarAccess) access;
+		match_CurrentScopeProvisionDef_OccludingKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getCurrentScopeProvisionDefAccess().getOccludingKeyword_2_0());
 		match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getMultiplicityCSAccess().getVerticalLineQuestionMarkKeyword_2_0());
-		match_ScopeDef_OccludingKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getScopeDefAccess().getOccludingKeyword_5_0());
 		match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getLeftParenthesisKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getRightParenthesisKeyword_1_2()));
 	}
 	
@@ -45,16 +45,28 @@ public class CS2ASDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q.equals(syntax))
+			if (match_CurrentScopeProvisionDef_OccludingKeyword_2_0_q.equals(syntax))
+				emit_CurrentScopeProvisionDef_OccludingKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q.equals(syntax))
 				emit_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ScopeDef_OccludingKeyword_5_0_q.equals(syntax))
-				emit_ScopeDef_OccludingKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q.equals(syntax))
 				emit_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'occluding'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'provides' (ambiguity) provisions+=Provision
+	 *     selectionDef=SelectionDef 'provides' (ambiguity) provisions+=Provision
+	 */
+	protected void emit_CurrentScopeProvisionDef_OccludingKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     '|?'?
@@ -67,19 +79,6 @@ public class CS2ASDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     upperBound=UPPER (ambiguity) ']' (rule end)
 	 */
 	protected void emit_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'occluding'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'in' 'current-scope' 'provides' (ambiguity) provisionDefs+=ProvisionDef
-	 *     alsoExports?='exported-scope' 'provides' (ambiguity) provisionDefs+=ProvisionDef
-	 *     selectionDef=SelectionDef 'in' 'current-scope' 'provides' (ambiguity) provisionDefs+=ProvisionDef
-	 */
-	protected void emit_ScopeDef_OccludingKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -26,7 +26,7 @@ public interface HelpersSect extends EObject
 {
   /**
    * Returns the value of the '<em><b>Class Helpers</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper}.
+   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Class Helpers</em>' containment reference list isn't clear,
@@ -38,6 +38,6 @@ public interface HelpersSect extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<ClassHelper> getClassHelpers();
+  EList<HelperClass> getClassHelpers();
 
 } // HelpersSect

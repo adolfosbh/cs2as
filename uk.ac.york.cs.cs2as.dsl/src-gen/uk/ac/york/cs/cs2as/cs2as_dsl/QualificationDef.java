@@ -15,8 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getTargetsDef <em>Targets Def</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getContribution <em>Contribution</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getQualifications <em>Qualifications</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getQualificationDef()
@@ -26,45 +25,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface QualificationDef extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Targets Def</b></em>' containment reference.
+   * Returns the value of the '<em><b>Qualifications</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.Qualification}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Targets Def</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Qualifications</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Targets Def</em>' containment reference.
-   * @see #setTargetsDef(MultipleClassRef)
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getQualificationDef_TargetsDef()
+   * @return the value of the '<em>Qualifications</em>' containment reference list.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getQualificationDef_Qualifications()
    * @model containment="true"
    * @generated
    */
-  MultipleClassRef getTargetsDef();
-
-  /**
-   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.QualificationDef#getTargetsDef <em>Targets Def</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Targets Def</em>' containment reference.
-   * @see #getTargetsDef()
-   * @generated
-   */
-  void setTargetsDef(MultipleClassRef value);
-
-  /**
-   * Returns the value of the '<em><b>Contribution</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.ElementsContribExp}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Contribution</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Contribution</em>' containment reference list.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getQualificationDef_Contribution()
-   * @model containment="true"
-   * @generated
-   */
-  EList<ElementsContribExp> getContribution();
+  EList<Qualification> getQualifications();
 
 } // QualificationDef

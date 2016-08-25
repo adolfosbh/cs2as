@@ -26,7 +26,7 @@ public interface DisambiguationSect extends EObject
 {
   /**
    * Returns the value of the '<em><b>Disambiguations</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.ClassDisambiguation}.
+   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Disambiguations</em>' containment reference list isn't clear,
@@ -38,6 +38,6 @@ public interface DisambiguationSect extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<ClassDisambiguation> getDisambiguations();
+  EList<DisambiguationDef> getDisambiguations();
 
 } // DisambiguationSect

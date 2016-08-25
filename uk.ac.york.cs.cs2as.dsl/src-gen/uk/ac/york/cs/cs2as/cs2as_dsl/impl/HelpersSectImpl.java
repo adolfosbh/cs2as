@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.york.cs.cs2as.cs2as_dsl.ClassHelper;
 import uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage;
+import uk.ac.york.cs.cs2as.cs2as_dsl.HelperClass;
 import uk.ac.york.cs.cs2as.cs2as_dsl.HelpersSect;
 
 /**
@@ -43,7 +43,7 @@ public class HelpersSectImpl extends MinimalEObjectImpl.Container implements Hel
    * @generated
    * @ordered
    */
-  protected EList<ClassHelper> classHelpers;
+  protected EList<HelperClass> classHelpers;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class HelpersSectImpl extends MinimalEObjectImpl.Container implements Hel
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ClassHelper> getClassHelpers()
+  public EList<HelperClass> getClassHelpers()
   {
     if (classHelpers == null)
     {
-      classHelpers = new EObjectContainmentEList<ClassHelper>(ClassHelper.class, this, Cs2as_dslPackage.HELPERS_SECT__CLASS_HELPERS);
+      classHelpers = new EObjectContainmentEList<HelperClass>(HelperClass.class, this, Cs2as_dslPackage.HELPERS_SECT__CLASS_HELPERS);
     }
     return classHelpers;
   }
@@ -125,7 +125,7 @@ public class HelpersSectImpl extends MinimalEObjectImpl.Container implements Hel
     {
       case Cs2as_dslPackage.HELPERS_SECT__CLASS_HELPERS:
         getClassHelpers().clear();
-        getClassHelpers().addAll((Collection<? extends ClassHelper>)newValue);
+        getClassHelpers().addAll((Collection<? extends HelperClass>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

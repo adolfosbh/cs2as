@@ -2,8 +2,6 @@
  */
 package uk.ac.york.cs.cs2as.cs2as_dsl;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.ocl.xtext.basecs.PathNameCS;
@@ -19,7 +17,8 @@ import org.eclipse.ocl.xtext.basecs.PathNameCS;
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getClassRef <em>Class Ref</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getVarsDecl <em>Vars Decl</em>}</li>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getStatements <em>Statements</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getCurrentScope <em>Current Scope</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getExportedScope <em>Exported Scope</em>}</li>
  * </ul>
  *
  * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getProvider()
@@ -63,12 +62,12 @@ public interface Provider extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Vars Decl</em>' containment reference.
-   * @see #setVarsDecl(ProviderVars)
+   * @see #setVarsDecl(ProviderVarsDecl)
    * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getProvider_VarsDecl()
    * @model containment="true"
    * @generated
    */
-  ProviderVars getVarsDecl();
+  ProviderVarsDecl getVarsDecl();
 
   /**
    * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getVarsDecl <em>Vars Decl</em>}' containment reference.
@@ -78,22 +77,58 @@ public interface Provider extends EObject
    * @see #getVarsDecl()
    * @generated
    */
-  void setVarsDecl(ProviderVars value);
+  void setVarsDecl(ProviderVarsDecl value);
 
   /**
-   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.york.cs.cs2as.cs2as_dsl.ProviderStmnt}.
+   * Returns the value of the '<em><b>Current Scope</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Current Scope</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statements</em>' containment reference list.
-   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getProvider_Statements()
+   * @return the value of the '<em>Current Scope</em>' containment reference.
+   * @see #setCurrentScope(CurrentScopeDecl)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getProvider_CurrentScope()
    * @model containment="true"
    * @generated
    */
-  EList<ProviderStmnt> getStatements();
+  CurrentScopeDecl getCurrentScope();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getCurrentScope <em>Current Scope</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Current Scope</em>' containment reference.
+   * @see #getCurrentScope()
+   * @generated
+   */
+  void setCurrentScope(CurrentScopeDecl value);
+
+  /**
+   * Returns the value of the '<em><b>Exported Scope</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Exported Scope</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Exported Scope</em>' containment reference.
+   * @see #setExportedScope(ExportedScopeDecl)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getProvider_ExportedScope()
+   * @model containment="true"
+   * @generated
+   */
+  ExportedScopeDecl getExportedScope();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.Provider#getExportedScope <em>Exported Scope</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Exported Scope</em>' containment reference.
+   * @see #getExportedScope()
+   * @generated
+   */
+  void setExportedScope(ExportedScopeDecl value);
 
 } // Provider

@@ -32,7 +32,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.LookupExpCSImpl#isFromExp <em>From Exp</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.LookupExpCSImpl#isIsExported <em>Is Exported</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.LookupExpCSImpl#getArgs <em>Args</em>}</li>
  * </ul>
  *
@@ -41,24 +41,24 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
 public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
 {
   /**
-   * The default value of the '{@link #isFromExp() <em>From Exp</em>}' attribute.
+   * The default value of the '{@link #isIsExported() <em>Is Exported</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isFromExp()
+   * @see #isIsExported()
    * @generated
    * @ordered
    */
-  protected static final boolean FROM_EXP_EDEFAULT = false;
+  protected static final boolean IS_EXPORTED_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isFromExp() <em>From Exp</em>}' attribute.
+   * The cached value of the '{@link #isIsExported() <em>Is Exported</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isFromExp()
+   * @see #isIsExported()
    * @generated
    * @ordered
    */
-  protected boolean fromExp = FROM_EXP_EDEFAULT;
+  protected boolean isExported = IS_EXPORTED_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference list.
@@ -96,9 +96,9 @@ public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isFromExp()
+  public boolean isIsExported()
   {
-    return fromExp;
+    return isExported;
   }
 
   /**
@@ -106,12 +106,12 @@ public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFromExp(boolean newFromExp)
+  public void setIsExported(boolean newIsExported)
   {
-    boolean oldFromExp = fromExp;
-    fromExp = newFromExp;
+    boolean oldIsExported = isExported;
+    isExported = newIsExported;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.LOOKUP_EXP_CS__FROM_EXP, oldFromExp, fromExp));
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.LOOKUP_EXP_CS__IS_EXPORTED, oldIsExported, isExported));
   }
 
   /**
@@ -154,8 +154,8 @@ public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.LOOKUP_EXP_CS__FROM_EXP:
-        return isFromExp();
+      case Cs2as_dslPackage.LOOKUP_EXP_CS__IS_EXPORTED:
+        return isIsExported();
       case Cs2as_dslPackage.LOOKUP_EXP_CS__ARGS:
         return getArgs();
     }
@@ -173,8 +173,8 @@ public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.LOOKUP_EXP_CS__FROM_EXP:
-        setFromExp((Boolean)newValue);
+      case Cs2as_dslPackage.LOOKUP_EXP_CS__IS_EXPORTED:
+        setIsExported((Boolean)newValue);
         return;
       case Cs2as_dslPackage.LOOKUP_EXP_CS__ARGS:
         getArgs().clear();
@@ -194,8 +194,8 @@ public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.LOOKUP_EXP_CS__FROM_EXP:
-        setFromExp(FROM_EXP_EDEFAULT);
+      case Cs2as_dslPackage.LOOKUP_EXP_CS__IS_EXPORTED:
+        setIsExported(IS_EXPORTED_EDEFAULT);
         return;
       case Cs2as_dslPackage.LOOKUP_EXP_CS__ARGS:
         getArgs().clear();
@@ -214,8 +214,8 @@ public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
   {
     switch (featureID)
     {
-      case Cs2as_dslPackage.LOOKUP_EXP_CS__FROM_EXP:
-        return fromExp != FROM_EXP_EDEFAULT;
+      case Cs2as_dslPackage.LOOKUP_EXP_CS__IS_EXPORTED:
+        return isExported != IS_EXPORTED_EDEFAULT;
       case Cs2as_dslPackage.LOOKUP_EXP_CS__ARGS:
         return args != null && !args.isEmpty();
     }
@@ -233,8 +233,8 @@ public class LookupExpCSImpl extends ExpCSImpl implements LookupExpCS
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (fromExp: ");
-    result.append(fromExp);
+    result.append(" (isExported: ");
+    result.append(isExported);
     result.append(')');
     return result.toString();
   }
