@@ -797,9 +797,9 @@ ruleMappingReference returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='ref' 
+(	otherlv_0='refer' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getMappingReferenceAccess().getRefKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getMappingReferenceAccess().getReferKeyword_0());
     }
 (
 (
@@ -863,7 +863,11 @@ ruleMappingReference returns [EObject current=null]
 	    }
 
 )
-))
+)	otherlv_6=';' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getMappingReferenceAccess().getSemicolonKeyword_6());
+    }
+)
 ;
 
 
@@ -4911,17 +4915,17 @@ ruleShadowPartCS returns [EObject current=null]
 ((
 (
 		{ 
-		  /* */ 
-		}
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getShadowPartCSRule());
-	        }
-        }
-		{ 
-	        newCompositeNode(grammarAccess.getShadowPartCSAccess().getReferredPropertyPropertyCrossReference_0_0()); 
+	        newCompositeNode(grammarAccess.getShadowPartCSAccess().getPropNameUnrestrictedNameParserRuleCall_0_0()); 
 	    }
-		ruleUnrestrictedName		{ 
+		lv_propName_0_0=ruleUnrestrictedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getShadowPartCSRule());
+	        }
+       		set(
+       			$current, 
+       			"propName",
+        		lv_propName_0_0, 
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.UnrestrictedName");
 	        afterParserOrEnumRuleCall();
 	    }
 

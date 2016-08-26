@@ -390,7 +390,7 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class MappingReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.york.cs.cs2as.CS2ASDSL.MappingReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cRefKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cReferKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cToAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cToPathNameCSParserRuleCall_1_0 = (RuleCall)cToAssignment_1.eContents().get(0);
 		private final Keyword cFromKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -399,17 +399,19 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cExpressionAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cExpressionExpCSParserRuleCall_5_0 = (RuleCall)cExpressionAssignment_5.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//MappingReference:
-		//	'ref' to=PathNameCS 'from' from=PathNameCS
-		//	':=' expression=ExpCS;
+		//	'refer' to=PathNameCS 'from' from=PathNameCS
+		//	':=' expression=ExpCS
+		//	';';
 		@Override public ParserRule getRule() { return rule; }
 
-		//'ref' to=PathNameCS 'from' from=PathNameCS ':=' expression=ExpCS
+		//'refer' to=PathNameCS 'from' from=PathNameCS ':=' expression=ExpCS ';'
 		public Group getGroup() { return cGroup; }
 
-		//'ref'
-		public Keyword getRefKeyword_0() { return cRefKeyword_0; }
+		//'refer'
+		public Keyword getReferKeyword_0() { return cReferKeyword_0; }
 
 		//to=PathNameCS
 		public Assignment getToAssignment_1() { return cToAssignment_1; }
@@ -434,6 +436,9 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ExpCS
 		public RuleCall getExpressionExpCSParserRuleCall_5_0() { return cExpressionExpCSParserRuleCall_5_0; }
+
+		//';'
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 	}
 
 	public class DisambiguationSectElements extends AbstractParserRuleElementFinder {
@@ -2280,8 +2285,9 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MappingReference:
-	//	'ref' to=PathNameCS 'from' from=PathNameCS
-	//	':=' expression=ExpCS;
+	//	'refer' to=PathNameCS 'from' from=PathNameCS
+	//	':=' expression=ExpCS
+	//	';';
 	public MappingReferenceElements getMappingReferenceAccess() {
 		return pMappingReference;
 	}
@@ -2982,7 +2988,7 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ShadowPartCS:
-	//	referredProperty=[pivot::Property|UnrestrictedName] '=' ownedInitExpression=(ExpCS | PatternExpCS);
+	//	propName=UnrestrictedName '=' ownedInitExpression=(ExpCS | PatternExpCS);
 	public EssentialOCLGrammarAccess.ShadowPartCSElements getShadowPartCSAccess() {
 		return gaEssentialOCL.getShadowPartCSAccess();
 	}

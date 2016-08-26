@@ -361,15 +361,18 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           if (_notEquals_3) {
             EList<ExportedScopeProvisionDef> _provisionDefs_1 = exportedScopeDecl.getProvisionDefs();
             for (final ExportedScopeProvisionDef provisionDef_1 : _provisionDefs_1) {
-              EList<Provision> _provisions = provisionDef_1.getProvisions();
-              for (final Provision pDefg : _provisions) {
-                MultiplePathNames _providedClasses = pDefg.getProvidedClasses();
-                EList<PathNameCS> _pathNames = _providedClasses.getPathNames();
-                for (final PathNameCS targetClass : _pathNames) {
-                  {
-                    final String exportedElement = this.doSwitch(targetClass);
-                    String _normalizeString = this.normalizeString(exportedElement);
-                    this.normalizedExportedElements.add(_normalizeString);
+              {
+                this.addProvision2Map(provisionDef_1, className);
+                EList<Provision> _provisions = provisionDef_1.getProvisions();
+                for (final Provision pDefg : _provisions) {
+                  MultiplePathNames _providedClasses = pDefg.getProvidedClasses();
+                  EList<PathNameCS> _pathNames = _providedClasses.getPathNames();
+                  for (final PathNameCS targetClass : _pathNames) {
+                    {
+                      final String exportedElement = this.doSwitch(targetClass);
+                      String _normalizeString = this.normalizeString(exportedElement);
+                      this.normalizedExportedElements.add(_normalizeString);
+                    }
                   }
                 }
               }
@@ -485,6 +488,14 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
+  }
+  
+  private ExportedScopeProvisionDef addProvision2Map(final ExportedScopeProvisionDef exportedScopeProv, final String className) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(className, "");
+    _builder.append("::");
+    _builder.append(this.ALL_CHILDREN, "");
+    return this.feaName2exports.put(_builder.toString(), exportedScopeProv);
   }
   
   @Override
@@ -1530,21 +1541,26 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       String allChildrenName = null;
       final List<String> featureNames = CollectionLiterals.<String>newArrayList();
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("def : _exported_env_");
-      String _normalizeString = this.normalizeString(exportedClassName);
-      _builder.append(_normalizeString, "");
-      _builder.append("(importer : ocl::OclElement) : ");
-      _builder.append(this.lookupPck, "");
+      _builder.append(exportingClassName, "");
       _builder.append("::");
-      _builder.append(this.lookupEnv, "");
-      _builder.append(" =");
-      _builder.newLineIfNotEmpty();
-      _builder.append("   ");
-      _builder.append(providerVars, "   ");
+      _builder.append(this.ALL_CHILDREN, "");
+      allChildrenName = _builder.toString();
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("def : _exported_env_");
+      String _normalizeString = this.normalizeString(exportedClassName);
+      _builder_1.append(_normalizeString, "");
+      _builder_1.append("(importer : ocl::OclElement) : ");
+      _builder_1.append(this.lookupPck, "");
+      _builder_1.append("::");
+      _builder_1.append(this.lookupEnv, "");
+      _builder_1.append(" =");
+      _builder_1.newLineIfNotEmpty();
+      _builder_1.append("   ");
+      _builder_1.append(providerVars, "   ");
       String _provideExportsContributionsQuery = this.provideExportsContributionsQuery(exportedClassName, featureNames, allChildrenName);
-      _builder.append(_provideExportsContributionsQuery, "   ");
-      _builder.newLineIfNotEmpty();
-      _xblockexpression = _builder.toString();
+      _builder_1.append(_provideExportsContributionsQuery, "   ");
+      _builder_1.newLineIfNotEmpty();
+      _xblockexpression = _builder_1.toString();
     }
     return _xblockexpression;
   }

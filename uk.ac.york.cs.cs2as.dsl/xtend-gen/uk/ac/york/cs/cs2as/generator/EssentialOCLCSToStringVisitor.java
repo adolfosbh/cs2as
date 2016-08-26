@@ -21,9 +21,11 @@ import org.eclipse.ocl.xtext.essentialoclcs.NameExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.NavigatingArgCS;
 import org.eclipse.ocl.xtext.essentialoclcs.NestedExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.NullLiteralExpCS;
+import org.eclipse.ocl.xtext.essentialoclcs.NumberLiteralExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.PrefixExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.RoundBracketedClauseCS;
 import org.eclipse.ocl.xtext.essentialoclcs.SelfExpCS;
+import org.eclipse.ocl.xtext.essentialoclcs.ShadowPartCS;
 import org.eclipse.ocl.xtext.essentialoclcs.SquareBracketedClauseCS;
 import org.eclipse.ocl.xtext.essentialoclcs.StringLiteralExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.TypeNameExpCS;
@@ -31,6 +33,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.VariableCS;
 import org.eclipse.ocl.xtext.essentialoclcs.util.EssentialOCLCSSwitch;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS;
 import uk.ac.york.cs.cs2as.generator.BaseCSToStringVisitor;
@@ -186,14 +189,35 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   
   @Override
   public String caseCurlyBracketedClauseCS(final CurlyBracketedClauseCS object) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("{");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("}");
-    return _builder.toString();
+    String _xblockexpression = null;
+    {
+      final EList<ShadowPartCS> parts = object.getOwnedParts();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(" ");
+      _builder.append("{");
+      _builder.newLine();
+      {
+        for(final ShadowPartCS part : parts) {
+          _builder.append("\t\t\t");
+          String _doSwitch = this.doSwitch(part);
+          _builder.append(_doSwitch, "\t\t\t");
+          {
+            int _indexOf = parts.indexOf(part);
+            int _length = ((Object[])Conversions.unwrapArray(parts, Object.class)).length;
+            int _minus = (_length - 1);
+            boolean _lessThan = (_indexOf < _minus);
+            if (_lessThan) {
+              _builder.append(",");
+            }
+          }
+          _builder.newLineIfNotEmpty();
+        }
+      }
+      _builder.append("\t\t");
+      _builder.append("}");
+      _xblockexpression = _builder.toString();
+    }
+    return _xblockexpression;
   }
   
   @Override
@@ -318,6 +342,12 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   }
   
   @Override
+  public String caseNumberLiteralExpCS(final NumberLiteralExpCS object) {
+    Number _symbol = object.getSymbol();
+    return _symbol.toString();
+  }
+  
+  @Override
   public String caseTypeNameExpCS(final TypeNameExpCS object) {
     PathNameCS _ownedPathName = object.getOwnedPathName();
     return this.doSwitch(_ownedPathName);
@@ -339,6 +369,18 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   @Override
   public String caseSelfExpCS(final SelfExpCS object) {
     return "self";
+  }
+  
+  @Override
+  public String caseShadowPartCS(final ShadowPartCS object) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _propName = object.getPropName();
+    _builder.append(_propName, "");
+    _builder.append(" = ");
+    ExpCS _ownedInitExpression = object.getOwnedInitExpression();
+    String _doSwitch = this.doSwitch(_ownedInitExpression);
+    _builder.append(_doSwitch, "");
+    return _builder.toString();
   }
   
   public String caseParameterCS(final ParameterCS object) {
@@ -439,7 +481,7 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
         remainingArgs.add(_get);
       }
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("lookup");
+      _builder.append("ast().lookup");
       String _doSwitch = this.doSwitch(firstArg);
       _builder.append(_doSwitch, "");
       _builder.append(lookupOpSuffix, "");

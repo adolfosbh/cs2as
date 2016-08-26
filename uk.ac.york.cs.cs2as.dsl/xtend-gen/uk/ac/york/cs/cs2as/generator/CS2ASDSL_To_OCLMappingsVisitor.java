@@ -1,6 +1,7 @@
 package uk.ac.york.cs.cs2as.generator;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -30,6 +31,10 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   
   private String baseFileName;
   
+  private String asMetamodelName;
+  
+  private String csMetamodelName;
+  
   public CS2ASDSL_To_OCLMappingsVisitor(final String baseFileName) {
     this.baseFileName = baseFileName;
   }
@@ -42,14 +47,24 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       DisambiguationSect _disambiguationSect = object.getDisambiguationSect();
       Map<String, MappingCreation[]> _csElementToAmbiguousRules = this.csElementToAmbiguousRules(_mappingSect, _disambiguationSect);
       this.csElement2AmbiguousRules = _csElementToAmbiguousRules;
+      SourceDomain _source = object.getSource();
+      EList<ImportCS> _metamodels = _source.getMetamodels();
+      ImportCS _get = _metamodels.get(0);
+      String _name = _get.getName();
+      this.csMetamodelName = _name;
+      TargetDomain _target = object.getTarget();
+      EList<ImportCS> _metamodels_1 = _target.getMetamodels();
+      ImportCS _get_1 = _metamodels_1.get(0);
+      String _name_1 = _get_1.getName();
+      this.asMetamodelName = _name_1;
       final StringBuilder sb = new StringBuilder();
       StringConcatenation _builder = new StringConcatenation();
-      SourceDomain _source = object.getSource();
-      String _doSwitch = this.doSwitch(_source);
+      SourceDomain _source_1 = object.getSource();
+      String _doSwitch = this.doSwitch(_source_1);
       _builder.append(_doSwitch, "");
       _builder.newLineIfNotEmpty();
-      TargetDomain _target = object.getTarget();
-      String _doSwitch_1 = this.doSwitch(_target);
+      TargetDomain _target_1 = object.getTarget();
+      String _doSwitch_1 = this.doSwitch(_target_1);
       _builder.append(_doSwitch_1, "");
       _builder.newLineIfNotEmpty();
       _builder.append("import \'");
@@ -67,11 +82,7 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       sb.append(_builder);
       StringConcatenation _builder_1 = new StringConcatenation();
       _builder_1.append("package ");
-      SourceDomain _source_1 = object.getSource();
-      EList<ImportCS> _metamodels = _source_1.getMetamodels();
-      ImportCS _get = _metamodels.get(0);
-      String _name = _get.getName();
-      _builder_1.append(_name, "");
+      _builder_1.append(this.csMetamodelName, "");
       _builder_1.newLineIfNotEmpty();
       _builder_1.newLine();
       MappingSect _mappingSect_1 = object.getMappingSect();
@@ -129,6 +140,8 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _builder.append(from, "");
       _builder.newLineIfNotEmpty();
       _builder.append("def : ast() : ");
+      _builder.append(this.asMetamodelName, "");
+      _builder.append("::");
       _builder.append(to, "");
       _builder.append(" =");
       _builder.newLineIfNotEmpty();
@@ -203,6 +216,8 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       int _minus = (_size - 1);
       final PropertyDef lastStmnt = _properties.get(_minus);
       StringConcatenation _builder = new StringConcatenation();
+      _builder.append(this.asMetamodelName, "");
+      _builder.append("::");
       _builder.append(to, "");
       _builder.append(" {");
       _builder.newLineIfNotEmpty();
@@ -283,30 +298,28 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   }
   
   private Map<String, MappingCreation[]> csElementToAmbiguousRules(final MappingSect mappingSect, final DisambiguationSect disambSect) {
-    HashMap<String, Map<String, Integer>> csName2Map = new HashMap<String, Map<String, Integer>>();
+    HashMap<String, Map<String, Integer>> csName2rulesPosMap = new HashMap<String, Map<String, Integer>>();
     EList<DisambiguationDef> _disambiguations = disambSect.getDisambiguations();
     for (final DisambiguationDef disambiguation : _disambiguations) {
       {
         PathNameCS _classRef = disambiguation.getClassRef();
         final String csName = this.doSwitch(_classRef);
-        final HashMap<String, Integer> ruleName2PosMap = new HashMap<String, Integer>();
-        csName2Map.put(csName, ruleName2PosMap);
+        final HashMap<String, Integer> ruleName2Pos = new HashMap<String, Integer>();
+        csName2rulesPosMap.put(csName, ruleName2Pos);
         {
           int i = 0;
-          final EList<DisambiguationRule> statements = disambiguation.getRules();
-          int _size = statements.size();
+          final EList<DisambiguationRule> rules = disambiguation.getRules();
+          int _size = rules.size();
           boolean _lessThan = (i < _size);
           boolean _while = _lessThan;
           while (_while) {
             {
-              final DisambiguationRule statement = statements.get(i);
-              if ((statement instanceof DisambiguationDef)) {
-                String _name = statement.getName();
-                ruleName2PosMap.put(_name, Integer.valueOf(i));
-              }
+              final DisambiguationRule statement = rules.get(i);
+              String _name = statement.getName();
+              ruleName2Pos.put(_name, Integer.valueOf(i));
             }
             i++;
-            int _size_1 = statements.size();
+            int _size_1 = rules.size();
             boolean _lessThan_1 = (i < _size_1);
             _while = _lessThan_1;
           }
@@ -315,11 +328,12 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     }
     final LinkedHashMap<String, MappingCreation[]> result = new LinkedHashMap<String, MappingCreation[]>();
     EList<MappingDef> _mappings = mappingSect.getMappings();
-    for (final MappingDef classMap : _mappings) {
-      if ((classMap instanceof MappingCreation)) {
-        PathNameCS _from = ((MappingCreation)classMap).getFrom();
+    Iterable<MappingCreation> _filter = Iterables.<MappingCreation>filter(_mappings, MappingCreation.class);
+    for (final MappingCreation classMap : _filter) {
+      {
+        PathNameCS _from = classMap.getFrom();
         final String csName = this.doSwitch(_from);
-        final Map<String, Integer> ruleName2PosMap = csName2Map.get(csName);
+        final Map<String, Integer> ruleName2PosMap = csName2rulesPosMap.get(csName);
         boolean _notEquals = (!Objects.equal(ruleName2PosMap, null));
         if (_notEquals) {
           MappingCreation[] mappings = result.get(csName);
@@ -330,9 +344,9 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
             mappings = _newArrayOfSize;
             result.put(csName, mappings);
           }
-          String _rule = ((MappingCreation)classMap).getRule();
+          String _rule = classMap.getRule();
           Integer _get = ruleName2PosMap.get(_rule);
-          mappings[(_get).intValue()] = ((MappingCreation)classMap);
+          mappings[(_get).intValue()] = classMap;
         }
       }
     }

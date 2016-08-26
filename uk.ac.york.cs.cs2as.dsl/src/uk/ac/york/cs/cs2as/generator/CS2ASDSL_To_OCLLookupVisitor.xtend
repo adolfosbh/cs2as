@@ -187,13 +187,13 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 				val exportedScopeDecl = provider.exportedScope;
 				if (exportedScopeDecl != null) {				
 					for (provisionDef : exportedScopeDecl.provisionDefs) {
+						provisionDef.addProvision2Map(className)
 						for (pDefg : provisionDef.provisions) {
 							for (targetClass : pDefg.providedClasses.pathNames) {
 								val exportedElement = targetClass.doSwitch;
 								normalizedExportedElements.add(exportedElement.normalizeString);
 							}
 						}
-						//provisionDef.addProvision2Map(className)
 					}
 				}
 			}	
@@ -242,17 +242,17 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		}
 	}
 	
-//	def private addProvision2Map (ExportedScopeProvisionDef exportedScopeProv, String className) {
-//		
+	def private addProvision2Map (ExportedScopeProvisionDef exportedScopeProv, String className) {
+		
 //		val selection = exportedScopeProv.selectionDef
 //		if (selection instanceof SelectionSpecific) {
 //			for (property : selection.selections) {
 //				feaName2exports.put('''«className»::«property.doSwitch»''', exportedScopeProv);
 //			}
 //		} else {
-//			feaName2exports.put('''«className»::«ALL_CHILDREN»''', exportedScopeProv);	
+			feaName2exports.put('''«className»::«ALL_CHILDREN»''', exportedScopeProv);	
 //		}
-//	}
+	}
 	
 	
 	
@@ -627,6 +627,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		val List<String> featureNames = newArrayList();
 //		FIXME SORT this disalignment out
 //		for (provisionDef : provisionDefs) {
+//	
 //			val exportsDef = provisionDef.eContainer as ExportedScopeProvisionDef
 //			val propagation = exportsDef.selectionDef;
 //			if (propagation instanceof SelectionSpecific) {
@@ -638,6 +639,7 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 //				allChildrenName = '''«exportingClassName»::«ALL_CHILDREN»''';
 //			}
 //		}
+		allChildrenName = '''«exportingClassName»::«ALL_CHILDREN»''';
 		
 		'''
 		def : _exported_env_«exportedClassName.normalizeString»(importer : ocl::OclElement) : «lookupPck»::«lookupEnv» =

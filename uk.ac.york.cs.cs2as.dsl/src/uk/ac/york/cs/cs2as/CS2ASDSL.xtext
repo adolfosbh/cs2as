@@ -53,8 +53,9 @@ PropertyDef:
 
 
 MappingReference:
-	'ref' to=PathNameCS 'from'  from=PathNameCS
+	'refer' to=PathNameCS 'from'  from=PathNameCS
 	':=' expression=ExpCS
+	';'
 ;
 
 

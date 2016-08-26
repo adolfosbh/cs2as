@@ -3,19 +3,20 @@ package uk.ac.york.cs.cs2as.generator
 import java.util.HashMap
 import java.util.LinkedHashMap
 import java.util.Map
-import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationDef
-import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect
-import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect
 import uk.ac.york.cs.cs2as.cs2as_dsl.CS2ASModel
+import uk.ac.york.cs.cs2as.cs2as_dsl.DisambiguationSect
 import uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation
-import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef
-import uk.ac.york.cs.cs2as.cs2as_dsl.MappingReference
 import uk.ac.york.cs.cs2as.cs2as_dsl.MappingDef
+import uk.ac.york.cs.cs2as.cs2as_dsl.MappingReference
+import uk.ac.york.cs.cs2as.cs2as_dsl.MappingSect
+import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef
 
 class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 
-	Map<String, MappingCreation[]> csElement2AmbiguousRules;	
+	Map<String, MappingCreation[]> csElement2AmbiguousRules;
 	String baseFileName;
+	String asMetamodelName;
+	String csMetamodelName;
 	
 	new (String baseFileName) {
 		this.baseFileName = baseFileName;
@@ -24,6 +25,8 @@ class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	override caseCS2ASModel(CS2ASModel object) {
 		// Some initial computations
 		csElement2AmbiguousRules = csElementToAmbiguousRules(object.mappingSect, object.disambiguationSect);
+		csMetamodelName = object.source.metamodels.get(0).name; // FIXME
+		asMetamodelName = object.target.metamodels.get(0).name;
 		
 		val StringBuilder sb = new StringBuilder();
 		sb.append('''
@@ -36,7 +39,7 @@ class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		
 		// FIXME this a temporal workaround
 		sb.append('''
-		package «object.source.metamodels.get(0).name»
+		package «csMetamodelName»
 		
 		«object.mappingSect.doSwitch»
 		endpackage
@@ -69,7 +72,7 @@ class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		// FIXME issue with disambiguation mappings: the to should be common supertype of all unambiguous created elements
 		'''
 		context «from»
-		def : ast() : «to» =
+		def : ast() : «asMetamodelName»::«to» =
 		'''
 	}
 	
@@ -103,7 +106,7 @@ class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		val to = object.to.doSwitch;
 		val lastStmnt = object.properties.get(object.properties.size-1);
 		'''
-		«to» {
+		«asMetamodelName»::«to» {
 			«FOR stmnt : object.properties»«stmnt.doSwitch»«IF stmnt != lastStmnt»,«ENDIF» 
 			«ENDFOR»
 		}
@@ -131,33 +134,29 @@ class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	def private Map<String, MappingCreation[]> csElementToAmbiguousRules(MappingSect mappingSect, DisambiguationSect disambSect) {
 			
 		// The disambiguation rules drive the order in which disambiguation takes place in the mapping section
-		var csName2Map = new HashMap<String,Map<String,Integer>>();
+		var csName2rulesPosMap = new HashMap<String,Map<String,Integer>>();
 		for (disambiguation : disambSect.disambiguations) {
 			val csName = disambiguation.classRef.doSwitch
-			val ruleName2PosMap = new HashMap<String,Integer>();
-			csName2Map.put(csName,ruleName2PosMap);
-			for (var i=0, val statements = disambiguation.rules; i < statements.size; i++) {
-				val statement = statements.get(i);
-				if (statement instanceof DisambiguationDef) {
-					ruleName2PosMap.put(statement.name,i);
-				}
+			val ruleName2Pos = new HashMap<String,Integer>();
+			csName2rulesPosMap.put(csName,ruleName2Pos);
+			for (var i=0, val rules = disambiguation.rules; i < rules.size; i++) {
+				val statement = rules.get(i);
+				ruleName2Pos.put(statement.name,i);
 			}
 		}
 		
 		val result = new LinkedHashMap<String, MappingCreation[]>();
-		for (classMap : mappingSect.mappings) {
-			if (classMap instanceof MappingCreation) {
-				val csName = classMap.from.doSwitch;
-				val ruleName2PosMap = csName2Map.get(csName);
-				if (ruleName2PosMap != null) {
-					var mappings = result.get(csName);
-					if (mappings == null) {
-						mappings = newArrayOfSize(ruleName2PosMap.size);
-						result.put(csName, mappings);
-					}
-					mappings.set(ruleName2PosMap.get(classMap.rule),classMap);
-				}	
-			}
+		for (classMap : mappingSect.mappings.filter(MappingCreation)) {
+			val csName = classMap.from.doSwitch;
+			val ruleName2PosMap = csName2rulesPosMap.get(csName);
+			if (ruleName2PosMap != null) {
+				var mappings = result.get(csName);
+				if (mappings == null) {
+					mappings = newArrayOfSize(ruleName2PosMap.size);
+					result.put(csName, mappings);
+				}
+				mappings.set(ruleName2PosMap.get(classMap.rule),classMap);
+			}	
 		}
 		return result;
 			

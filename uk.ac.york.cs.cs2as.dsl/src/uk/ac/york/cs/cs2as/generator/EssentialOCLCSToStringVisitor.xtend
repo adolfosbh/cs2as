@@ -21,6 +21,8 @@ import org.eclipse.ocl.xtext.essentialoclcs.SelfExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.LetExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.VariableCS
 import uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS
+import org.eclipse.ocl.xtext.essentialoclcs.ShadowPartCS
+import org.eclipse.ocl.xtext.essentialoclcs.NumberLiteralExpCS
 
 class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 
@@ -69,9 +71,11 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	}
 	
 	override caseCurlyBracketedClauseCS(CurlyBracketedClauseCS object) {
-		// TODO
-		'''{
-			
+		val parts =object.ownedParts;
+		''' {
+			«FOR part : parts»
+			«part.doSwitch»«IF parts.indexOf(part)<parts.length-1»,«ENDIF»
+			«ENDFOR»
 		}''';
 	}
 	
@@ -102,6 +106,10 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 		if (allSegments.trim.startsWith("'")) allSegments else ''''«allSegments»' '''
 	}
 	
+	override caseNumberLiteralExpCS(NumberLiteralExpCS object) {
+		object.symbol.toString
+	}
+	
 	override caseTypeNameExpCS(TypeNameExpCS object) {
 		object.ownedPathName.doSwitch; // FIXME
 	}
@@ -112,6 +120,10 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	
 	override caseSelfExpCS(SelfExpCS object) {
 		'self'
+	}
+	
+	override caseShadowPartCS(ShadowPartCS object) {
+		'''«object.propName» = «object.ownedInitExpression.doSwitch»'''
 	}
 	
 	def String caseParameterCS(ParameterCS object) {
@@ -145,6 +157,6 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 		for (var i=1;i < args.size; i++) {
 			remainingArgs.add(args.get(i));
 		}	
-		'''lookup«firstArg.doSwitch»«lookupOpSuffix»(«FOR arg : remainingArgs»«IF args.indexOf(arg)>1», «ENDIF»«arg.doSwitch»«ENDFOR»)''';
+		'''ast().lookup«firstArg.doSwitch»«lookupOpSuffix»(«FOR arg : remainingArgs»«IF args.indexOf(arg)>1», «ENDIF»«arg.doSwitch»«ENDFOR»)''';
 	}
 }

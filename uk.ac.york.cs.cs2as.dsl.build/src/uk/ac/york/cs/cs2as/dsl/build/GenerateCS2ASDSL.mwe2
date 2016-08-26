@@ -134,6 +134,9 @@ Workflow {
     
     		// provides a compare view
     		fragment = compare.CompareFragment auto-inject {}
+    		
+    		// Essential OCL bindings
+    		fragment = org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment {}  
     	}
     }
 }
