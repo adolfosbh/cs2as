@@ -189,7 +189,14 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           int _minus = (_size - 1);
           boolean _equals = (ambiguousMapIndex == _minus);
           if (_equals) {
-            _xifexpression_1 = this.createAmbiguousCase(object, null);
+            CharSequence _xifexpression_2 = null;
+            boolean _isIsFallback = object.isIsFallback();
+            if (_isIsFallback) {
+              _xifexpression_2 = this.createNormalCase(object);
+            } else {
+              _xifexpression_2 = this.createAmbiguousCase(object, null);
+            }
+            _xifexpression_1 = _xifexpression_2;
           } else {
             MappingCreation _get = ambiguousRules[(ambiguousMapIndex + 1)];
             _xifexpression_1 = this.createAmbiguousCase(object, _get);
@@ -344,9 +351,25 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
             mappings = _newArrayOfSize;
             result.put(csName, mappings);
           }
-          String _rule = classMap.getRule();
-          Integer _get = ruleName2PosMap.get(_rule);
-          mappings[(_get).intValue()] = classMap;
+          boolean _isIsFallback = classMap.isIsFallback();
+          if (_isIsFallback) {
+            final MappingCreation[] _converted_mappings = (MappingCreation[])mappings;
+            int _size_1 = ((List<MappingCreation>)Conversions.doWrapArray(_converted_mappings)).size();
+            int _plus = (_size_1 + 1);
+            MappingCreation[] newMappings = new MappingCreation[_plus];
+            for (int i = 0; (i < ((List<MappingCreation>)Conversions.doWrapArray(mappings)).size()); i++) {
+              MappingCreation _get = mappings[i];
+              newMappings[i] = _get;
+            }
+            final MappingCreation[] _converted_mappings_1 = (MappingCreation[])mappings;
+            int _size_2 = ((List<MappingCreation>)Conversions.doWrapArray(_converted_mappings_1)).size();
+            newMappings[_size_2] = classMap;
+            result.put(csName, newMappings);
+          } else {
+            String _rule = classMap.getRule();
+            Integer _get = ruleName2PosMap.get(_rule);
+            mappings[(_get).intValue()] = classMap;
+          }
         }
       }
     }

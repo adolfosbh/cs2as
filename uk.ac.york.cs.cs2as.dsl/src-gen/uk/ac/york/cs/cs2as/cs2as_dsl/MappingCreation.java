@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#getRule <em>Rule</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#isIsFallback <em>Is Fallback</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#getProperties <em>Properties</em>}</li>
  * </ul>
  *
@@ -48,6 +49,32 @@ public interface MappingCreation extends MappingDef
    * @generated
    */
   void setRule(String value);
+
+  /**
+   * Returns the value of the '<em><b>Is Fallback</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Is Fallback</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Fallback</em>' attribute.
+   * @see #setIsFallback(boolean)
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.Cs2as_dslPackage#getMappingCreation_IsFallback()
+   * @model
+   * @generated
+   */
+  boolean isIsFallback();
+
+  /**
+   * Sets the value of the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#isIsFallback <em>Is Fallback</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Fallback</em>' attribute.
+   * @see #isIsFallback()
+   * @generated
+   */
+  void setIsFallback(boolean value);
 
   /**
    * Returns the value of the '<em><b>Properties</b></em>' containment reference list.

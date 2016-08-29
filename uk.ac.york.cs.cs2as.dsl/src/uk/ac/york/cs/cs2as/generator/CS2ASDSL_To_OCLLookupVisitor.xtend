@@ -414,15 +414,12 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			val filterArgs = filter.optionalAddedArgsText;
 			sb.append('''
 			-- «nClassName» exports «nExportedClassName»
-			   
-			«IF defaultNR==null»
 			def : lookup«nExportedClassName»From(exporter : «className» , «nameParam» : String«filterParams») : «exportedClassName»[?] =
 			   exporter.lookupExported«nExportedClassName»(self, «nameParam»«filterArgs»)
-			«ELSE»
+			«IF defaultNR!=null»
 			def : lookup«nExportedClassName»From(exporter : «className», a«defaultNR» : «sourcePckName»::«defaultNR»«filterParams») : «exportedClassName»[?] =
 			   exporter.lookupExported«nExportedClassName»(self, a«defaultNR»«filterArgs»)
 			«ENDIF»
-			
 			«IF element2qualifiers.get(exportedClassName) != null»«provideQualifiedLookupFromMethods(exportedClassName, nExportedClassName, className, filterParams, filterArgs)»«ENDIF»	
 			''')	
 		}
@@ -752,14 +749,13 @@ class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			      then null
 			      else found«nClassName»->first()
 			      endif
-			      
-			«IF defaultNR==null»
-			def : lookupExported«nClassName»(importer : ocl::OclElement, «nameParam» : String«filterParams») : «nClassName»[?] =
-			   _lookupExported«nClassName»(importer, nameParam»«filterArgs»)
-			«ELSE»
+			def : lookupExported«nClassName»(importer : ocl::OclElement, «nameParam» : String«filterParams») : «className»[?] =
+			   _lookupExported«nClassName»(importer, «nameParam»«filterArgs»)
+			«IF defaultNR!=null»
 			def : lookupExported«nClassName»(importer : ocl::OclElement, a«defaultNR» : «sourcePckName»::«defaultNR»«filterParams») : «nClassName»[?] =
 			   _lookupExported«nClassName»(importer, a«defaultNR».«defaultNRP»«filterArgs»)
-			«ENDIF»		
+			«ENDIF»	
+
 			''');
 		}
 		sb.toString;	

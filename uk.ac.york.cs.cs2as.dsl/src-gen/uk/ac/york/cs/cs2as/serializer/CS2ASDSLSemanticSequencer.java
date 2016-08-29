@@ -782,7 +782,7 @@ public class CS2ASDSLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *     MappingCreation returns MappingCreation
 	 *
 	 * Constraint:
-	 *     (to=PathNameCS from=PathNameCS rule=ID? properties+=PropertyDef*)
+	 *     (to=PathNameCS from=PathNameCS (rule=ID | isFallback?='fall_back')? properties+=PropertyDef*)
 	 */
 	protected void sequence_MappingCreation(ISerializationContext context, MappingCreation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

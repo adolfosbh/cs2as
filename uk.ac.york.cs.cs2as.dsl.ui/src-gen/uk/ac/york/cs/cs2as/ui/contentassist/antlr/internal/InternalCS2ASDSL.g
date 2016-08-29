@@ -3535,6 +3535,28 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__MappingCreation__Alternatives_4_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMappingCreationAccess().getRuleAssignment_4_1_0()); }
+(rule__MappingCreation__RuleAssignment_4_1_0)
+{ after(grammarAccess.getMappingCreationAccess().getRuleAssignment_4_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getMappingCreationAccess().getIsFallbackAssignment_4_1_1()); }
+(rule__MappingCreation__IsFallbackAssignment_4_1_1)
+{ after(grammarAccess.getMappingCreationAccess().getIsFallbackAssignment_4_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__CurrentScopeProvisionDef__Alternatives_2
     @init {
 		int stackSize = keepStackSize();
@@ -5656,9 +5678,9 @@ rule__MappingCreation__Group_4__1__Impl
     }
 :
 (
-{ before(grammarAccess.getMappingCreationAccess().getRuleAssignment_4_1()); }
-(rule__MappingCreation__RuleAssignment_4_1)
-{ after(grammarAccess.getMappingCreationAccess().getRuleAssignment_4_1()); }
+{ before(grammarAccess.getMappingCreationAccess().getAlternatives_4_1()); }
+(rule__MappingCreation__Alternatives_4_1)
+{ after(grammarAccess.getMappingCreationAccess().getAlternatives_4_1()); }
 )
 
 ;
@@ -20374,14 +20396,37 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MappingCreation__RuleAssignment_4_1
+rule__MappingCreation__RuleAssignment_4_1_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMappingCreationAccess().getRuleIDParserRuleCall_4_1_0()); }
-	ruleID{ after(grammarAccess.getMappingCreationAccess().getRuleIDParserRuleCall_4_1_0()); }
+{ before(grammarAccess.getMappingCreationAccess().getRuleIDParserRuleCall_4_1_0_0()); }
+	ruleID{ after(grammarAccess.getMappingCreationAccess().getRuleIDParserRuleCall_4_1_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MappingCreation__IsFallbackAssignment_4_1_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMappingCreationAccess().getIsFallbackFall_backKeyword_4_1_1_0()); }
+(
+{ before(grammarAccess.getMappingCreationAccess().getIsFallbackFall_backKeyword_4_1_1_0()); }
+
+	'fall_back' 
+
+{ after(grammarAccess.getMappingCreationAccess().getIsFallbackFall_backKeyword_4_1_1_0()); }
+)
+
+{ after(grammarAccess.getMappingCreationAccess().getIsFallbackFall_backKeyword_4_1_1_0()); }
 )
 
 ;

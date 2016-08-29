@@ -41,7 +41,7 @@ MappingDef:
 ;
 
 MappingCreation:
-	'create' to=PathNameCS 'from'  from=PathNameCS  ('when' rule=ID )? '{'
+	'create' to=PathNameCS 'from'  from=PathNameCS  ('when' (rule=ID | isFallback?='fall_back' ))? '{'
 		properties += PropertyDef*
 	'}'
 ;

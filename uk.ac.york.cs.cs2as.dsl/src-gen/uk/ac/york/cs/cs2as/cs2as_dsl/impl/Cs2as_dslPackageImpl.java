@@ -604,9 +604,19 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getMappingCreation_IsFallback()
+  {
+    return (EAttribute)mappingCreationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getMappingCreation_Properties()
   {
-    return (EReference)mappingCreationEClass.getEStructuralFeatures().get(1);
+    return (EReference)mappingCreationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1692,6 +1702,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
 
     mappingCreationEClass = createEClass(MAPPING_CREATION);
     createEAttribute(mappingCreationEClass, MAPPING_CREATION__RULE);
+    createEAttribute(mappingCreationEClass, MAPPING_CREATION__IS_FALLBACK);
     createEReference(mappingCreationEClass, MAPPING_CREATION__PROPERTIES);
 
     propertyDefEClass = createEClass(PROPERTY_DEF);
@@ -1898,6 +1909,7 @@ public class Cs2as_dslPackageImpl extends EPackageImpl implements Cs2as_dslPacka
 
     initEClass(mappingCreationEClass, MappingCreation.class, "MappingCreation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMappingCreation_Rule(), theEcorePackage.getEString(), "rule", null, 0, 1, MappingCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMappingCreation_IsFallback(), theEcorePackage.getEBoolean(), "isFallback", null, 0, 1, MappingCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMappingCreation_Properties(), this.getPropertyDef(), null, "properties", null, 0, -1, MappingCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(propertyDefEClass, PropertyDef.class, "PropertyDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

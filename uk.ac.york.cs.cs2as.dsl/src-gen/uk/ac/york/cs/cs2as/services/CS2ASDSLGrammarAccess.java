@@ -283,20 +283,24 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFromPathNameCSParserRuleCall_3_0 = (RuleCall)cFromAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cWhenKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cRuleAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cRuleIDParserRuleCall_4_1_0 = (RuleCall)cRuleAssignment_4_1.eContents().get(0);
+		private final Alternatives cAlternatives_4_1 = (Alternatives)cGroup_4.eContents().get(1);
+		private final Assignment cRuleAssignment_4_1_0 = (Assignment)cAlternatives_4_1.eContents().get(0);
+		private final RuleCall cRuleIDParserRuleCall_4_1_0_0 = (RuleCall)cRuleAssignment_4_1_0.eContents().get(0);
+		private final Assignment cIsFallbackAssignment_4_1_1 = (Assignment)cAlternatives_4_1.eContents().get(1);
+		private final Keyword cIsFallbackFall_backKeyword_4_1_1_0 = (Keyword)cIsFallbackAssignment_4_1_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cPropertiesAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cPropertiesPropertyDefParserRuleCall_6_0 = (RuleCall)cPropertiesAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//MappingCreation:
-		//	'create' to=PathNameCS 'from' from=PathNameCS ('when' rule=ID)? '{'
+		//	'create' to=PathNameCS 'from' from=PathNameCS ('when' (rule=ID | isFallback?='fall_back'))? '{'
 		//	properties+=PropertyDef*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//'create' to=PathNameCS 'from' from=PathNameCS ('when' rule=ID)? '{' properties+=PropertyDef* '}'
+		//'create' to=PathNameCS 'from' from=PathNameCS ('when' (rule=ID | isFallback?='fall_back'))? '{' properties+=PropertyDef*
+		//'}'
 		public Group getGroup() { return cGroup; }
 
 		//'create'
@@ -317,17 +321,26 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//PathNameCS
 		public RuleCall getFromPathNameCSParserRuleCall_3_0() { return cFromPathNameCSParserRuleCall_3_0; }
 
-		//('when' rule=ID)?
+		//('when' (rule=ID | isFallback?='fall_back'))?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//'when'
 		public Keyword getWhenKeyword_4_0() { return cWhenKeyword_4_0; }
 
+		//(rule=ID | isFallback?='fall_back')
+		public Alternatives getAlternatives_4_1() { return cAlternatives_4_1; }
+
 		//rule=ID
-		public Assignment getRuleAssignment_4_1() { return cRuleAssignment_4_1; }
+		public Assignment getRuleAssignment_4_1_0() { return cRuleAssignment_4_1_0; }
 
 		//ID
-		public RuleCall getRuleIDParserRuleCall_4_1_0() { return cRuleIDParserRuleCall_4_1_0; }
+		public RuleCall getRuleIDParserRuleCall_4_1_0_0() { return cRuleIDParserRuleCall_4_1_0_0; }
+
+		//isFallback?='fall_back'
+		public Assignment getIsFallbackAssignment_4_1_1() { return cIsFallbackAssignment_4_1_1; }
+
+		//'fall_back'
+		public Keyword getIsFallbackFall_backKeyword_4_1_1_0() { return cIsFallbackFall_backKeyword_4_1_1_0; }
 
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
@@ -2262,7 +2275,7 @@ public class CS2ASDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MappingCreation:
-	//	'create' to=PathNameCS 'from' from=PathNameCS ('when' rule=ID)? '{'
+	//	'create' to=PathNameCS 'from' from=PathNameCS ('when' (rule=ID | isFallback?='fall_back'))? '{'
 	//	properties+=PropertyDef*
 	//	'}';
 	public MappingCreationElements getMappingCreationAccess() {

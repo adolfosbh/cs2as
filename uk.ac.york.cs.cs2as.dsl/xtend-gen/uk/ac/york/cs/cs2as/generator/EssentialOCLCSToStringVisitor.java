@@ -2,13 +2,15 @@ package uk.ac.york.cs.cs2as.generator;
 
 import com.google.common.base.Objects;
 import java.util.ArrayList;
-import java.util.Collections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.xtext.basecs.ParameterCS;
 import org.eclipse.ocl.xtext.basecs.PathNameCS;
 import org.eclipse.ocl.xtext.basecs.TypedRefCS;
 import org.eclipse.ocl.xtext.essentialoclcs.AbstractNameExpCS;
+import org.eclipse.ocl.xtext.essentialoclcs.BooleanLiteralExpCS;
+import org.eclipse.ocl.xtext.essentialoclcs.CollectionLiteralExpCS;
+import org.eclipse.ocl.xtext.essentialoclcs.CollectionLiteralPartCS;
 import org.eclipse.ocl.xtext.essentialoclcs.CollectionTypeCS;
 import org.eclipse.ocl.xtext.essentialoclcs.CurlyBracketedClauseCS;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
@@ -63,6 +65,56 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
       _xifexpression = _xifexpression_1;
     }
     return _xifexpression;
+  }
+  
+  @Override
+  public String caseCollectionLiteralExpCS(final CollectionLiteralExpCS object) {
+    String _xblockexpression = null;
+    {
+      final EList<CollectionLiteralPartCS> parts = object.getOwnedParts();
+      StringConcatenation _builder = new StringConcatenation();
+      CollectionTypeCS _ownedType = object.getOwnedType();
+      _builder.append(_ownedType, "");
+      _builder.append(" { ");
+      {
+        for(final CollectionLiteralPartCS part : parts) {
+          {
+            int _indexOf = parts.indexOf(part);
+            boolean _greaterThan = (_indexOf > 0);
+            if (_greaterThan) {
+              _builder.append(", ");
+            }
+          }
+          String _doSwitch = this.doSwitch(part);
+          _builder.append(_doSwitch, "");
+        }
+      }
+      _builder.append("}");
+      _xblockexpression = _builder.toString();
+    }
+    return _xblockexpression;
+  }
+  
+  @Override
+  public String caseCollectionLiteralPartCS(final CollectionLiteralPartCS object) {
+    String _xblockexpression = null;
+    {
+      final ExpCS last = object.getOwnedLastExpression();
+      StringConcatenation _builder = new StringConcatenation();
+      ExpCS _ownedExpression = object.getOwnedExpression();
+      String _doSwitch = this.doSwitch(_ownedExpression);
+      _builder.append(_doSwitch, "");
+      {
+        boolean _notEquals = (!Objects.equal(last, null));
+        if (_notEquals) {
+          _builder.append("..");
+          String _doSwitch_1 = this.doSwitch(last);
+          _builder.append(_doSwitch_1, "");
+        }
+      }
+      _xblockexpression = _builder.toString();
+    }
+    return _xblockexpression;
   }
   
   @Override
@@ -127,23 +179,24 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
       final boolean hasSBrackets = (!Objects.equal(sBrackets, null));
       StringConcatenation _builder = new StringConcatenation();
       PathNameCS _ownedPathName = object.getOwnedPathName();
-      _builder.append(_ownedPathName, "");
+      String _doSwitch = this.doSwitch(_ownedPathName);
+      _builder.append(_doSwitch, "");
       {
         if (hasRBracket) {
-          String _doSwitch = this.doSwitch(rBracket);
-          _builder.append(_doSwitch, "");
+          String _doSwitch_1 = this.doSwitch(rBracket);
+          _builder.append(_doSwitch_1, "");
         } else {
           {
             if (hasCBracket) {
-              String _doSwitch_1 = this.doSwitch(cBracket);
-              _builder.append(_doSwitch_1, "");
+              String _doSwitch_2 = this.doSwitch(cBracket);
+              _builder.append(_doSwitch_2, "");
             } else {
               {
                 if (hasSBrackets) {
                   {
                     for(final SquareBracketedClauseCS s : sBrackets) {
-                      String _doSwitch_2 = this.doSwitch(s);
-                      _builder.append(_doSwitch_2, "");
+                      String _doSwitch_3 = this.doSwitch(s);
+                      _builder.append(_doSwitch_3, "");
                     }
                   }
                 }
@@ -226,16 +279,51 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
     {
       AbstractNameExpCS _owningNameExp = object.getOwningNameExp();
       final NameExpCS nameExp = ((NameExpCS) _owningNameExp);
-      String _xifexpression = null;
+      String _switchResult = null;
       PathNameCS _ownedPathName = nameExp.getOwnedPathName();
       String _string = _ownedPathName.toString();
-      boolean _contains = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("exists", "forAll", "collect")).contains(_string);
-      if (_contains) {
-        _xifexpression = " | ";
-      } else {
-        _xifexpression = ", ";
+      switch (_string) {
+        case "exists":
+        case "forAll":
+        case "collect":
+          _switchResult = this.trivialArgs(object, " | ");
+          break;
+        case "iterate":
+          String _xblockexpression_1 = null;
+          {
+            final EList<NavigatingArgCS> args = object.getOwnedArguments();
+            StringConcatenation _builder = new StringConcatenation();
+            _builder.append("(");
+            NavigatingArgCS _get = args.get(0);
+            String _doSwitch = this.doSwitch(_get);
+            _builder.append(_doSwitch, "");
+            _builder.append(" ; ");
+            NavigatingArgCS _get_1 = args.get(1);
+            String _doSwitch_1 = this.doSwitch(_get_1);
+            _builder.append(_doSwitch_1, "");
+            _builder.append(" |");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t\t\t\t");
+            NavigatingArgCS _get_2 = args.get(2);
+            String _doSwitch_2 = this.doSwitch(_get_2);
+            _builder.append(_doSwitch_2, "\t\t\t\t");
+            _builder.append(")");
+            _xblockexpression_1 = _builder.toString();
+          }
+          _switchResult = _xblockexpression_1;
+          break;
+        default:
+          _switchResult = this.trivialArgs(object, ", ");
+          break;
       }
-      final String sep = _xifexpression;
+      _xblockexpression = _switchResult;
+    }
+    return _xblockexpression;
+  }
+  
+  private String trivialArgs(final RoundBracketedClauseCS object, final String sep) {
+    String _xblockexpression = null;
+    {
       EList<NavigatingArgCS> args = object.getOwnedArguments();
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(");
@@ -285,7 +373,7 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
       {
         boolean _notEquals = (!Objects.equal(optType, null));
         if (_notEquals) {
-          _builder.append(" ");
+          _builder.append(" : ");
           _builder.append(optType, "");
         }
       }
@@ -344,6 +432,12 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   @Override
   public String caseNumberLiteralExpCS(final NumberLiteralExpCS object) {
     Number _symbol = object.getSymbol();
+    return _symbol.toString();
+  }
+  
+  @Override
+  public String caseBooleanLiteralExpCS(final BooleanLiteralExpCS object) {
+    String _symbol = object.getSymbol();
     return _symbol.toString();
   }
   

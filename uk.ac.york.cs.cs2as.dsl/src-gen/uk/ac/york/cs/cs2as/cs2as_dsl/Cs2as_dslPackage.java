@@ -290,13 +290,22 @@ public interface Cs2as_dslPackage extends EPackage
   int MAPPING_CREATION__RULE = MAPPING_DEF_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Is Fallback</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_CREATION__IS_FALLBACK = MAPPING_DEF_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAPPING_CREATION__PROPERTIES = MAPPING_DEF_FEATURE_COUNT + 1;
+  int MAPPING_CREATION__PROPERTIES = MAPPING_DEF_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Mapping Creation</em>' class.
@@ -305,7 +314,7 @@ public interface Cs2as_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MAPPING_CREATION_FEATURE_COUNT = MAPPING_DEF_FEATURE_COUNT + 2;
+  int MAPPING_CREATION_FEATURE_COUNT = MAPPING_DEF_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.PropertyDefImpl <em>Property Def</em>}' class.
@@ -2012,6 +2021,17 @@ public interface Cs2as_dslPackage extends EPackage
   EAttribute getMappingCreation_Rule();
 
   /**
+   * Returns the meta object for the attribute '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#isIsFallback <em>Is Fallback</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Fallback</em>'.
+   * @see uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#isIsFallback()
+   * @see #getMappingCreation()
+   * @generated
+   */
+  EAttribute getMappingCreation_IsFallback();
+
+  /**
    * Returns the meta object for the containment reference list '{@link uk.ac.york.cs.cs2as.cs2as_dsl.MappingCreation#getProperties <em>Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3298,6 +3318,14 @@ public interface Cs2as_dslPackage extends EPackage
      * @generated
      */
     EAttribute MAPPING_CREATION__RULE = eINSTANCE.getMappingCreation_Rule();
+
+    /**
+     * The meta object literal for the '<em><b>Is Fallback</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPING_CREATION__IS_FALLBACK = eINSTANCE.getMappingCreation_IsFallback();
 
     /**
      * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.

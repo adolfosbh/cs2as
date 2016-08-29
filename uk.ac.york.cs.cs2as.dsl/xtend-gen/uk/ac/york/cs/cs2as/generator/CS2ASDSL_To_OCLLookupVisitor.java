@@ -834,32 +834,29 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           _builder.append(" exports ");
           _builder.append(nExportedClassName, "");
           _builder.newLineIfNotEmpty();
+          _builder.append("def : lookup");
+          _builder.append(nExportedClassName, "");
+          _builder.append("From(exporter : ");
+          _builder.append(className, "");
+          _builder.append(" , ");
+          _builder.append(nameParam, "");
+          _builder.append(" : String");
+          _builder.append(filterParams, "");
+          _builder.append(") : ");
+          _builder.append(exportedClassName, "");
+          _builder.append("[?] =");
+          _builder.newLineIfNotEmpty();
           _builder.append("   ");
-          _builder.newLine();
+          _builder.append("exporter.lookupExported");
+          _builder.append(nExportedClassName, "   ");
+          _builder.append("(self, ");
+          _builder.append(nameParam, "   ");
+          _builder.append(filterArgs, "   ");
+          _builder.append(")");
+          _builder.newLineIfNotEmpty();
           {
-            boolean _equals = Objects.equal(this.defaultNR, null);
-            if (_equals) {
-              _builder.append("def : lookup");
-              _builder.append(nExportedClassName, "");
-              _builder.append("From(exporter : ");
-              _builder.append(className, "");
-              _builder.append(" , ");
-              _builder.append(nameParam, "");
-              _builder.append(" : String");
-              _builder.append(filterParams, "");
-              _builder.append(") : ");
-              _builder.append(exportedClassName, "");
-              _builder.append("[?] =");
-              _builder.newLineIfNotEmpty();
-              _builder.append("   ");
-              _builder.append("exporter.lookupExported");
-              _builder.append(nExportedClassName, "   ");
-              _builder.append("(self, ");
-              _builder.append(nameParam, "   ");
-              _builder.append(filterArgs, "   ");
-              _builder.append(")");
-              _builder.newLineIfNotEmpty();
-            } else {
+            boolean _notEquals = (!Objects.equal(this.defaultNR, null));
+            if (_notEquals) {
               _builder.append("def : lookup");
               _builder.append(nExportedClassName, "");
               _builder.append("From(exporter : ");
@@ -885,11 +882,10 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder.newLineIfNotEmpty();
             }
           }
-          _builder.newLine();
           {
             List<String> _get_1 = this.element2qualifiers.get(exportedClassName);
-            boolean _notEquals = (!Objects.equal(_get_1, null));
-            if (_notEquals) {
+            boolean _notEquals_1 = (!Objects.equal(_get_1, null));
+            if (_notEquals_1) {
               String _provideQualifiedLookupFromMethods = this.provideQualifiedLookupFromMethods(exportedClassName, nExportedClassName, className, filterParams, filterArgs);
               _builder.append(_provideQualifiedLookupFromMethods, "");
             }
@@ -1862,29 +1858,27 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
           _builder.append("      ");
           _builder.append("endif");
           _builder.newLine();
-          _builder.append("      ");
-          _builder.newLine();
+          _builder.append("def : lookupExported");
+          _builder.append(nClassName, "");
+          _builder.append("(importer : ocl::OclElement, ");
+          _builder.append(nameParam, "");
+          _builder.append(" : String");
+          _builder.append(filterParams, "");
+          _builder.append(") : ");
+          _builder.append(className, "");
+          _builder.append("[?] =");
+          _builder.newLineIfNotEmpty();
+          _builder.append("   ");
+          _builder.append("_lookupExported");
+          _builder.append(nClassName, "   ");
+          _builder.append("(importer, ");
+          _builder.append(nameParam, "   ");
+          _builder.append(filterArgs, "   ");
+          _builder.append(")");
+          _builder.newLineIfNotEmpty();
           {
-            boolean _equals = Objects.equal(this.defaultNR, null);
-            if (_equals) {
-              _builder.append("def : lookupExported");
-              _builder.append(nClassName, "");
-              _builder.append("(importer : ocl::OclElement, ");
-              _builder.append(nameParam, "");
-              _builder.append(" : String");
-              _builder.append(filterParams, "");
-              _builder.append(") : ");
-              _builder.append(nClassName, "");
-              _builder.append("[?] =");
-              _builder.newLineIfNotEmpty();
-              _builder.append("   ");
-              _builder.append("_lookupExported");
-              _builder.append(nClassName, "   ");
-              _builder.append("(importer, nameParam»");
-              _builder.append(filterArgs, "   ");
-              _builder.append(")");
-              _builder.newLineIfNotEmpty();
-            } else {
+            boolean _notEquals = (!Objects.equal(this.defaultNR, null));
+            if (_notEquals) {
               _builder.append("def : lookupExported");
               _builder.append(nClassName, "");
               _builder.append("(importer : ocl::OclElement, a");
@@ -1910,6 +1904,7 @@ public class CS2ASDSL_To_OCLLookupVisitor extends CS2ASDSL_To_OCLBaseVisitor {
               _builder.newLineIfNotEmpty();
             }
           }
+          _builder.newLine();
           sb.append(_builder);
         }
       }

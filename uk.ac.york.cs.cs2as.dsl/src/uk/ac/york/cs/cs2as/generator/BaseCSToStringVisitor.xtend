@@ -18,7 +18,7 @@ class BaseCSToStringVisitor extends BaseCSSwitch<String>{
 	override caseImportCS(ImportCS object) {
 		var importName = if (object.name != null) ''' «object.name» :''' else '';
 		 
-		'''import «importName» «object.ownedPathName.doSwitch»'''
+		'''import «importName» '«object.ownedPathName.doSwitch»' '''
 	}
 
 	override casePathNameCS(PathNameCS object) {
@@ -27,7 +27,11 @@ class BaseCSToStringVisitor extends BaseCSSwitch<String>{
 	}
 	
 	override casePathElementCS(PathElementCS object) {
-		object.name;
+		// TODO include all additional CompleteOCL keywords
+		if (#['body','context'].contains(object.name))
+			'''_«object.name»'''
+		else
+			object.name;
 	}
 	
 	override casePathElementWithURICS(PathElementWithURICS object) {
@@ -38,6 +42,4 @@ class BaseCSToStringVisitor extends BaseCSSwitch<String>{
 		val mult = object.ownedMultiplicity;
 		'''«object.name»«IF mult!=null»«mult.doSwitch»«ENDIF»'''
 	}
-	
-	
 }

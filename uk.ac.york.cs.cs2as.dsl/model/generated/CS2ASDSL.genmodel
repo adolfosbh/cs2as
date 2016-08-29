@@ -30,6 +30,7 @@
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//MappingCreation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//MappingCreation/rule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CS2ASDSL.ecore#//MappingCreation/isFallback"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CS2ASDSL.ecore#//MappingCreation/properties"/>
     </genClasses>
     <genClasses ecoreClass="CS2ASDSL.ecore#//PropertyDef">

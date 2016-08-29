@@ -92,8 +92,12 @@ class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		if (csElement2AmbiguousRules.containsKey(csName)) {
 			val ambiguousRules = csElement2AmbiguousRules.get(csName);
 			val ambiguousMapIndex = ambiguousRules.indexOf(object);
-			if (ambiguousMapIndex == ambiguousRules.size-1) {
-				object.createAmbiguousCase(null);
+			if (ambiguousMapIndex == ambiguousRules.size-1) { // Last ambiguous mapping
+				if (object.isFallback) {
+					object.createNormalCase;
+				} else {
+					object.createAmbiguousCase(null); // null -> the else branch will be "invalid" literal exp 
+				}
 			} else {
 				object.createAmbiguousCase(ambiguousRules.get(ambiguousMapIndex+1));
 			}
@@ -151,16 +155,22 @@ class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 			val ruleName2PosMap = csName2rulesPosMap.get(csName);
 			if (ruleName2PosMap != null) {
 				var mappings = result.get(csName);
-				if (mappings == null) {
+				if (mappings == null) {					
 					mappings = newArrayOfSize(ruleName2PosMap.size);
 					result.put(csName, mappings);
 				}
-				mappings.set(ruleName2PosMap.get(classMap.rule),classMap);
+				if (classMap.isFallback) { // we increase the array in one position more, for the fallback one
+					var newMappings = newArrayOfSize(mappings.size+1);
+					for (var i=0; i < mappings.size; i++) {
+						newMappings.set(i,mappings.get(i));
+					}
+					newMappings.set(mappings.size,classMap); // we add teh fallback mapping to the end
+					result.put(csName,newMappings);
+				} else {
+					mappings.set(ruleName2PosMap.get(classMap.rule),classMap);	
+				}
 			}	
 		}
 		return result;
-			
 	}
-	
-
 }

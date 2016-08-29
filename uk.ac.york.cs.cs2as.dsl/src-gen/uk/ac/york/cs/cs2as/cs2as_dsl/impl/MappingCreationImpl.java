@@ -30,6 +30,7 @@ import uk.ac.york.cs.cs2as.cs2as_dsl.PropertyDef;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingCreationImpl#getRule <em>Rule</em>}</li>
+ *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingCreationImpl#isIsFallback <em>Is Fallback</em>}</li>
  *   <li>{@link uk.ac.york.cs.cs2as.cs2as_dsl.impl.MappingCreationImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  *
@@ -56,6 +57,26 @@ public class MappingCreationImpl extends MappingDefImpl implements MappingCreati
    * @ordered
    */
   protected String rule = RULE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsFallback() <em>Is Fallback</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsFallback()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_FALLBACK_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsFallback() <em>Is Fallback</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsFallback()
+   * @generated
+   * @ordered
+   */
+  protected boolean isFallback = IS_FALLBACK_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
@@ -116,6 +137,29 @@ public class MappingCreationImpl extends MappingDefImpl implements MappingCreati
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isIsFallback()
+  {
+    return isFallback;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIsFallback(boolean newIsFallback)
+  {
+    boolean oldIsFallback = isFallback;
+    isFallback = newIsFallback;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Cs2as_dslPackage.MAPPING_CREATION__IS_FALLBACK, oldIsFallback, isFallback));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<PropertyDef> getProperties()
   {
     if (properties == null)
@@ -153,6 +197,8 @@ public class MappingCreationImpl extends MappingDefImpl implements MappingCreati
     {
       case Cs2as_dslPackage.MAPPING_CREATION__RULE:
         return getRule();
+      case Cs2as_dslPackage.MAPPING_CREATION__IS_FALLBACK:
+        return isIsFallback();
       case Cs2as_dslPackage.MAPPING_CREATION__PROPERTIES:
         return getProperties();
     }
@@ -172,6 +218,9 @@ public class MappingCreationImpl extends MappingDefImpl implements MappingCreati
     {
       case Cs2as_dslPackage.MAPPING_CREATION__RULE:
         setRule((String)newValue);
+        return;
+      case Cs2as_dslPackage.MAPPING_CREATION__IS_FALLBACK:
+        setIsFallback((Boolean)newValue);
         return;
       case Cs2as_dslPackage.MAPPING_CREATION__PROPERTIES:
         getProperties().clear();
@@ -194,6 +243,9 @@ public class MappingCreationImpl extends MappingDefImpl implements MappingCreati
       case Cs2as_dslPackage.MAPPING_CREATION__RULE:
         setRule(RULE_EDEFAULT);
         return;
+      case Cs2as_dslPackage.MAPPING_CREATION__IS_FALLBACK:
+        setIsFallback(IS_FALLBACK_EDEFAULT);
+        return;
       case Cs2as_dslPackage.MAPPING_CREATION__PROPERTIES:
         getProperties().clear();
         return;
@@ -213,6 +265,8 @@ public class MappingCreationImpl extends MappingDefImpl implements MappingCreati
     {
       case Cs2as_dslPackage.MAPPING_CREATION__RULE:
         return RULE_EDEFAULT == null ? rule != null : !RULE_EDEFAULT.equals(rule);
+      case Cs2as_dslPackage.MAPPING_CREATION__IS_FALLBACK:
+        return isFallback != IS_FALLBACK_EDEFAULT;
       case Cs2as_dslPackage.MAPPING_CREATION__PROPERTIES:
         return properties != null && !properties.isEmpty();
     }
@@ -232,6 +286,8 @@ public class MappingCreationImpl extends MappingDefImpl implements MappingCreati
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (rule: ");
     result.append(rule);
+    result.append(", isFallback: ");
+    result.append(isFallback);
     result.append(')');
     return result.toString();
   }

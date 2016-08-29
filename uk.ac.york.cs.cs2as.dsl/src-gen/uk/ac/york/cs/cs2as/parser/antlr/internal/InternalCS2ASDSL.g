@@ -652,10 +652,10 @@ ruleMappingCreation returns [EObject current=null]
     {
     	newLeafNode(otherlv_4, grammarAccess.getMappingCreationAccess().getWhenKeyword_4_0());
     }
-(
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMappingCreationAccess().getRuleIDParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getMappingCreationAccess().getRuleIDParserRuleCall_4_1_0_0()); 
 	    }
 		lv_rule_5_0=ruleID		{
 	        if ($current==null) {
@@ -670,31 +670,47 @@ ruleMappingCreation returns [EObject current=null]
 	    }
 
 )
-))?	otherlv_6='{' 
+)
+    |(
+(
+		lv_isFallback_6_0=	'fall_back' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getMappingCreationAccess().getLeftCurlyBracketKeyword_5());
+        newLeafNode(lv_isFallback_6_0, grammarAccess.getMappingCreationAccess().getIsFallbackFall_backKeyword_4_1_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingCreationRule());
+	        }
+       		setWithLastConsumed($current, "isFallback", true, "fall_back");
+	    }
+
+)
+)))?	otherlv_7='{' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getMappingCreationAccess().getLeftCurlyBracketKeyword_5());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getMappingCreationAccess().getPropertiesPropertyDefParserRuleCall_6_0()); 
 	    }
-		lv_properties_7_0=rulePropertyDef		{
+		lv_properties_8_0=rulePropertyDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMappingCreationRule());
 	        }
        		add(
        			$current, 
        			"properties",
-        		lv_properties_7_0, 
+        		lv_properties_8_0, 
         		"uk.ac.york.cs.cs2as.CS2ASDSL.PropertyDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_8='}' 
+)*	otherlv_9='}' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getMappingCreationAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_9, grammarAccess.getMappingCreationAccess().getRightCurlyBracketKeyword_7());
     }
 )
 ;

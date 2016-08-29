@@ -38,6 +38,7 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getMappingDefAccess().getAlternatives(), "rule__MappingDef__Alternatives");
+					put(grammarAccess.getMappingCreationAccess().getAlternatives_4_1(), "rule__MappingCreation__Alternatives_4_1");
 					put(grammarAccess.getCurrentScopeProvisionDefAccess().getAlternatives_2(), "rule__CurrentScopeProvisionDef__Alternatives_2");
 					put(grammarAccess.getSelectionDefAccess().getAlternatives_1(), "rule__SelectionDef__Alternatives_1");
 					put(grammarAccess.getContributionAccess().getAlternatives_0(), "rule__Contribution__Alternatives_0");
@@ -252,7 +253,8 @@ public class CS2ASDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMappingSectAccess().getMappingsAssignment_3(), "rule__MappingSect__MappingsAssignment_3");
 					put(grammarAccess.getMappingCreationAccess().getToAssignment_1(), "rule__MappingCreation__ToAssignment_1");
 					put(grammarAccess.getMappingCreationAccess().getFromAssignment_3(), "rule__MappingCreation__FromAssignment_3");
-					put(grammarAccess.getMappingCreationAccess().getRuleAssignment_4_1(), "rule__MappingCreation__RuleAssignment_4_1");
+					put(grammarAccess.getMappingCreationAccess().getRuleAssignment_4_1_0(), "rule__MappingCreation__RuleAssignment_4_1_0");
+					put(grammarAccess.getMappingCreationAccess().getIsFallbackAssignment_4_1_1(), "rule__MappingCreation__IsFallbackAssignment_4_1_1");
 					put(grammarAccess.getMappingCreationAccess().getPropertiesAssignment_6(), "rule__MappingCreation__PropertiesAssignment_6");
 					put(grammarAccess.getPropertyDefAccess().getRedefineAssignment_0(), "rule__PropertyDef__RedefineAssignment_0");
 					put(grammarAccess.getPropertyDefAccess().getPropRefAssignment_1(), "rule__PropertyDef__PropRefAssignment_1");

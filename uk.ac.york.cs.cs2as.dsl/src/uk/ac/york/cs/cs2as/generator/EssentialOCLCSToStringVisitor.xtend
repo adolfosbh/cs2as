@@ -23,6 +23,9 @@ import org.eclipse.ocl.xtext.essentialoclcs.VariableCS
 import uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.ShadowPartCS
 import org.eclipse.ocl.xtext.essentialoclcs.NumberLiteralExpCS
+import org.eclipse.ocl.xtext.essentialoclcs.CollectionLiteralExpCS
+import org.eclipse.ocl.xtext.essentialoclcs.CollectionLiteralPartCS
+import org.eclipse.ocl.xtext.essentialoclcs.BooleanLiteralExpCS
 
 class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 
@@ -40,6 +43,16 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 		}
 	}	
 	
+	override caseCollectionLiteralExpCS(CollectionLiteralExpCS object) {
+		val parts =  object.ownedParts;
+		'''«object.ownedType» { «FOR part : parts»«IF parts.indexOf(part)>0», «ENDIF»«part.doSwitch»«ENDFOR»}''' 
+	}
+	
+	override caseCollectionLiteralPartCS(CollectionLiteralPartCS object) {
+		val last = object.ownedLastExpression
+		'''«object.ownedExpression.doSwitch»«IF last!= null »..«last.doSwitch»«ENDIF»'''
+	}
+		
 	override caseInfixExpCS(InfixExpCS object) {
 		val opName = object.name
 		val op = if (".".equals(opName) || "->".equals(opName) ) opName else ''' «object.name» '''
@@ -58,7 +71,7 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 		val sBrackets = object.ownedSquareBracketedClauses;
 		val hasSBrackets = sBrackets!=null;
 				
-		'''«object.ownedPathName»«IF hasRBracket»«rBracket.doSwitch»«ELSE»«IF hasCBracket»«cBracket.doSwitch»«ELSE»«IF hasSBrackets»«FOR s : sBrackets»«s.doSwitch»«ENDFOR»«ENDIF»«ENDIF»«ENDIF»''';
+		'''«object.ownedPathName.doSwitch»«IF hasRBracket»«rBracket.doSwitch»«ELSE»«IF hasCBracket»«cBracket.doSwitch»«ELSE»«IF hasSBrackets»«FOR s : sBrackets»«s.doSwitch»«ENDFOR»«ENDIF»«ENDIF»«ENDIF»''';
 		
 	}
 	
@@ -81,7 +94,21 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	
 	override caseRoundBracketedClauseCS(RoundBracketedClauseCS object) {
 		val nameExp =  object.owningNameExp as NameExpCS;
-		val sep = if (#['exists','forAll','collect'].contains(nameExp.ownedPathName.toString)) {' | '} else {', '}
+		switch nameExp.ownedPathName.toString {
+			case 'exists',
+			case 'forAll',
+			case 'collect': object.trivialArgs(' | ')
+			case 'iterate': {
+				val args = object.ownedArguments; 
+				'''(«args.get(0).doSwitch» ; «args.get(1).doSwitch» |
+				«args.get(2).doSwitch»)'''
+			}
+			
+			default: object.trivialArgs(', ')
+		} 
+	}
+	
+	def private String trivialArgs(RoundBracketedClauseCS object, String sep) {
 		var args = object.ownedArguments;
 		'''(«FOR arg : args»«IF args.indexOf(arg) !=0»«sep»«ENDIF»«arg.doSwitch»«ENDFOR»)'''
 	}
@@ -90,7 +117,7 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 		val name = object.ownedNameExpression?.doSwitch;
 		val optType = object.ownedType?.doSwitch;
 		val optInitExp = object.ownedInitExpression?.doSwitch;
-		'''«name»«IF optType!=null» «optType»«ENDIF»«IF optInitExp!=null» = «optInitExp»«ENDIF»'''
+		'''«name»«IF optType!=null» : «optType»«ENDIF»«IF optInitExp!=null» = «optInitExp»«ENDIF»'''
 	}
 	
 	override caseNullLiteralExpCS(NullLiteralExpCS object) {
@@ -107,6 +134,10 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	}
 	
 	override caseNumberLiteralExpCS(NumberLiteralExpCS object) {
+		object.symbol.toString
+	}
+	
+	override caseBooleanLiteralExpCS(BooleanLiteralExpCS object) {
 		object.symbol.toString
 	}
 	
