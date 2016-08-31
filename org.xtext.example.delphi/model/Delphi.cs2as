@@ -1,0 +1,192 @@
+source cs : ''
+target astm : ''
+
+helpers {
+	cs::ident {
+	    extract() : String := 
+	    	null; -- TODO	
+	}
+	
+	
+	cs::identList {
+	    extract() : String := 
+	    	null; -- TODO	
+	}
+	
+	cs::designator {
+		getDefinition() : as::ObjectDefintion :=
+			let method = lookup(FunctionDefinition, subpart.part)
+			in if method <> null 
+			   then method
+			   else lookup(VariableDefinition, subpart.part)
+			   endif;
+		
+	}
+	
+}
+mappings {
+	create astm::gastm::Project from mainRule {
+		files := file.trace; 
+	} 
+	create astm::sastm::DelphiUnit from unit {
+		name := astm::gastm::Name { nameString = id.extract()};
+		language := 'Delphi';
+		interface := interfaceSect.trace;
+		implementation := implementationSect.trace;
+		-- openScope TODO: deals with the scope
+		locationInfo := astm::gastm::SourceLocation {
+							inSourceFile = astm::gastm::SourceFile {
+								pathName = path
+							}};
+	}
+	create astm::sastm::DelphiInterfaceSection from interfaceSection {
+		uses := uses?.trace;
+		fragments := interfaceDecl.trace;
+	}
+	create astm::sastm::DelphiImplementationSection from implementationSection {
+		uses := uses?.trace;
+		exports := exports.trace;
+		fragments := declSect.trace;
+	}
+	create astm::gastm::LabelDefinition from labelDeclSection {
+		-- No additional mappings in Gra2Mol example
+	}
+	create astm::gastm::VariableDefinition from constantDecl {
+		identifierName := astm::gastm::Name { nameString = id.extract() };
+		initialValue := const.trace;
+	}
+	refer astm::gastm::VariableDefinition from constExpr :=
+		exps.trace;
+	create astm::gastm::TypeDefinition from typeDecl {
+		name := astm::gastm::Name { nameString = id.extract() };
+	}
+	create astm::gastm::VariableDefinition from varDecl  {
+		name := astm::gastm::Name { nameString = idList.extract() };
+		definitionType := type.trace;
+		isMutable := 'true';
+	}
+	create astm::gastm::FunctionDefinition from functionDecl {
+		identifierName := astm::gastm::Name{ nameString = heading.id.extract() };
+		formalParameters := heading.formalParams.trace;
+		body := block.trace;
+		returnType := heading.type.trace; 
+	}
+	create astm::gastm::FunctionDefinition from procedureDecl {
+		identifierName := astm::gastm::Name{ nameString = heading.id.extract() };
+		formalParameters := heading.formalParams?.params?.trace;
+		body := block.trace;
+	}
+	create astm::sastm::DelphiBlockStatement from	block {
+		declarations := declSection?.trace;
+		subStatements := compound.stmtList.statments.trace;
+	}
+	refer astm::gastm::Statement from statement :=
+		statement.trace; 
+	create astm::gastm::ExpressionStatement from assignmentStmnt {
+		expression := astm::gastm::BinaryExpression {
+						leftOperand = designator.trace,
+						operator = astm::gastm::Assign {},
+						rightOperand = expression.trace
+			};
+	}
+	create astm::gastm::ExpressionStatement from callStmnt {
+		expression := astm::gastm::FunctionCallExpression {
+						calledFunction = designator.trace,
+						actualParams = args.exps.trace
+					};
+	}
+	create astm::sastm::DelphiWithStatement from withStmt {
+		withs := _vars.ids.trace;
+		subStatements := stmt.trace;
+	}
+	create astm::gastm::IfStatement from ifStmt  {
+		condition := condition.trace;
+		thenBody := _then.trace;
+		elseElems := _else.trace;
+	}
+	
+	create astm::gastm::SwitchStament from caseStmt {
+		switchExpression := expression.trace;
+		cases            := cases.trace->includingAll(
+			                default.trace);
+	}
+	create astm::gastm::CaseBlock from caseSelector {
+--		caseExpressions := labels->collect(x | let first = x.first.trace 
+--			                                  in if x.last=null 
+--			                                     then first  
+--			                                     else first->including(x.last.trace)
+--			                                     endif);
+		caseExpressions := labels->collect(x | x.first.trace->including(x.last?.trace));
+		body:= stmt.trace;
+	}
+	create astm::gastm::DefaultBlock from stmtList {
+		body := statments.trace;
+	}
+	create astm::gastm::TryStatement from tryStmt { 
+		guardedStatement := stmtList.trace;
+		catchBlocks      := exception.trace;
+		finalStatement   := final.trace;
+	}
+	
+	create astm::gastm::IdentifierReference from designator 
+		when isIdentifierRef {
+		name := astm::gastm::Name {
+					nameString = subpart.part.id.extract() 
+				};
+		refersTo := getDefinition();
+		
+	}
+	create astm::gastm::QualifiedOverData from designator 
+		when isQualifiedOverData {
+		name := astm::gastm::Name {
+					nameString = subpart.part.id.extract() 
+				};
+		member := designator.trace;
+		refersTo := getDefinition();
+	}
+	refer astm::gastm::DefinitionObject from ident :=
+		let method = lookup(FunctionDefinition, subpart.part)
+		in if method <> null 
+		   then method
+		   else lookup(VariableDefinition, subpart.part)
+		   endif;
+	create astm::gastm::BinaryExpression from relExp {
+		leftOperand := left.trace;
+		rightOperand := right.trace;
+		operator := if relOp.op = '=' 
+					then astm::gastm::Equal
+					else null -- other cases missing
+					endif;
+	}
+	create astm::gastm::BinaryExpression from mulOp {
+		
+	}
+	create astm::gastm::IntegerLiteral from factor
+		when isANumber {
+		value := number;
+	}
+	create astm::gastm::StringLiteral from factor
+		when isAString {
+		value := string;
+	}
+	create astm::gastm::DelphiFunctionCallExpression from factor
+		when isAFunctionCall {
+		calledFunction := designator.trace;
+		actualParams   := expList.exps.trace;
+	}
+	create astm::gastm::ActualParameterExpression from 	expression {
+		value := exp;
+	}
+}
+
+disambiguation {
+	factor {
+		isANumber := numer <> null;
+		isAString := string <> null;
+		isAFunctionCall := expList <> null;
+	}
+	designator {
+		isIdentifierRef := designator = null;
+		isQualifiedOverData := designator <> null;
+	}
+}

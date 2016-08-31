@@ -1,0 +1,656 @@
+grammar org.xtext.example.delphi.Delphi hidden(WS, COMMENT, MORECOMMENT, LINE_COMMENT)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate delphi "http://www.xtext.org/example/delphi/Delphi"
+
+mainRule 
+	:  file=(program 
+	| 	packageDecl 
+	| 	library 
+	|	unit)
+	;
+
+
+	
+program  
+	:	('program' id=ident ('(' paramsList=identList ')')? ';')? block=programBlock '.'
+	; 
+          
+unit 
+	: 	'unit' id=ident (port=portabilityDirective)? ';' interfaceSect=interfaceSection implementationSect=implementationSection initSect=initSection '.'
+	;
+
+packageDecl 	
+	: 	'package' id=ident ';' (requires=requiresClause)? (contains=containsClause)? 'end' '.'
+	;
+
+library 
+	: 	'library' id=ident ';' pBlock=programBlock '.'	;
+
+programBlock 
+	: 	uses=(usesClause)? block=block
+	;  
+
+usesClause 
+	: 	'uses' idList=identList ';'
+	;
+
+portabilityDirective 
+	: 	'platform'
+    	|	'deprecated'
+    	|	'library'
+	;
+
+interfaceSection 
+	: 	{interfaceSection} 'interface' (uses=usesClause)? (interfaceDecl+=interfaceDecl)*
+	;
+
+interfaceDecl 
+	: 	constSection
+    	|	typeSection
+    	|	varSection
+    	|	exportedHeading
+	;
+
+exportedHeading 
+	: 	pHeading=procedureHeading ';' (directive=directive)?
+	| 	fHeading=functionHeading ';' (directive=directive)?
+	;
+
+implementationSection 
+	: 	{implementationSection} 'implementation' (uses=usesClause)? (declSect+=declSection)* (exports+=exportsStmt)*
+	;
+
+block 
+	: 	(declSect=declSection)? (exports+=exportsStmt)* compound=compoundStmt (exports+=exportsStmt)*
+	;
+
+
+exportsItem // modified	
+	: {exportsItem}	id=ident ('name' | 'index'  constExp+=constExpr)? ('index' | 'name' constExp+=constExpr)?
+	;
+exportsStmt 
+	: 	'exports' items+=exportsItem (',' items+=exportsItem)*
+	;
+
+
+declSection 
+	: 	labelDeclSection
+    	|	constSection
+    	| 	typeSection
+    	| 	varSection
+    	| 	procedureDeclSection
+	;
+
+labelDeclSection 
+	: 	'label' id=labelId
+	;
+
+constSection 
+	: {constSection} 'const' (constantDecl+=constantDecl ';')*
+	;
+
+constantDecl 
+	: 	id=ident '=' const=constExpr (port=portabilityDirective)?
+    	|	id=ident ':' typeRef=typeId '=' typedConstat=typedConstant (port=portabilityDirective)?
+	;
+
+typeSection 
+	:	{typeSection} 'type' (typeDecl+=typeDecl ';')*
+	;
+
+typeDecl 
+	: 	id=ident '=' ('type')? type=type (port=portabilityDirective)?
+	|	id=ident '=' ('type')? restrictedType=restrictedType (port=portabilityDirective)?
+	;
+
+typedConstant 
+	: 	{typedConstant}(const=constExpr | array=arrayConstant | record=recordConstant)
+	;
+
+arrayConstant 
+	: 	'(' typedConstant=typedConstant ',' ')'
+	;
+
+recordConstant 
+	: 	{recordConstant} '(' (recordField+=recordFieldConstant ';')* ')' 
+	;
+
+recordFieldConstant 
+	: 	id=ident ':' tpedConstant=typedConstant
+	;
+
+type 
+	: 	typeId
+    	|	simpleType
+   	|	strucType
+    	|	pointerType
+    	|	stringType 
+    	|	procedureType
+   	|	variantType
+    	|	classRefType
+	;
+
+restrictedType 
+	: 	objectType
+    	|	classType
+    	|	interfaceType
+	;
+
+classRefType 
+	: 	'class' 'of' typeRef=typeId
+	;
+
+simpleType 
+	: 	ordinalType 
+	| 	realType
+	;
+
+realType 
+	: {realType} ( 'real48'
+    	|	'real'
+    	|	'single'
+    	|	'double'
+    	|	'extended'
+    	|	'currency'
+    	|	'comp')
+	;
+
+ordinalType 
+	: 	subrangeType 
+	| 	enumeratedType 
+	| 	ordIdent
+	;
+
+ordIdent 
+	: {ordIdent} (	'shortint'
+    	|	'smallint'
+    	|	'integer'
+    	|	'byte'
+	| 	'longint'
+   	|	'int64'
+    	|	'word'
+    	|	'boolean'
+    	|	'char'
+    	|	'widechar'
+    	|	'longword'
+    	|	'pchar')
+	;
+
+variantType 
+	:  {variantType} ('variant'
+    	|	'olevariant')
+	;
+
+subrangeType 
+	: 	first=constExpr '..' last=constExpr
+	;
+
+enumeratedType 
+	: {enumeratedType}	'(' (element+=enumeratedTypeElement ',')* ')'
+	;
+
+enumeratedTypeElement 
+	: 	id=ident ('=' literalExp=constExpr )?
+	;
+
+stringType 
+	: 	{stringType} ('string'
+    	|	'ansistring'
+    	|	'widestring'
+    	|	'string' '(' constExp=constExpr ')')
+	;
+
+strucType 
+	: 	('packed')? (arrayType | setType | fileType | recType ('packed')?)
+	;
+
+arrayType 
+	: 	'array' ('[' ordinalType+=ordinalType (',' ordinalTyp+=ordinalType)* ']')? 'of' type=type (port=portabilityDirective)?
+	;
+
+recType 
+	:  {recType} 'record' (fields=fieldList)? 'end' (port=portabilityDirective) ?
+	;
+
+fieldList 
+	: 	(field+=fieldDecl ';')+ (variantSect=variantSection)? (';')?
+	;
+
+fieldDecl 
+	: 	idList=identList ':' type=type (port=portabilityDirective)?
+	;
+
+variantSection 
+	: 	'case' (id=ident ':')? typeRef=typeId 'of' (recVariants+=recVariant ';')+
+	;
+
+recVariant 
+	: 	constExp+=constExpr ',' (constExp+=constExpr)+ ':' '(' (fieldList=fieldList) ')'
+	;
+
+setType 
+	: 	'set' 'of' ordinal=ordinalType (port=portabilityDirective)?
+	;
+
+fileType 
+	: 	'file' 'of' typeRef=typeId (port=portabilityDirective)?
+	;
+
+pointerType 
+	: 	'^' typeId (portabilityDirective)?
+	;
+
+procedureType 
+	: 	(pHeading=procedureHeading | fHeading=functionHeading) ('of' 'object')?
+	;
+
+varSection 
+	: 	'var' (varDecls+=varDecl ';')+
+	;
+
+varDecl 
+	: 	idList=identList ':' type=type (('absolute' (absId=ident | absConst=constExpr)) | '=' absIniti=constExpr)? (portabilityDirective)?
+//	| 	identList ':' type ('absolute' (ident) | '=' constExpr)? (portabilityDirective)?
+	;
+
+expression 
+	: 	simpleExpression ({relExp.left=current} relOp=relOp right=simpleExpression)*
+	;
+
+simpleExpression 
+	: 	('+' | '-')? term ({addExp.left=current} addOp=addOp right=term)*
+	;
+
+term 
+	:	factor ({multExp.left=current}multOp=mulOp right=factor)*
+	;
+
+factor 
+	: {factor} (designator=designator ('(' expList=exprList ')')?
+   	|	'@' designator=designator
+    	|	number=number
+    	|	string=string
+    	|	'nil'
+    	|	'(' exp=expression ')'
+    	|	'not'  exp= factor
+    	|	setConstuctor=setConstructor
+    	|	typeRef=typeId '(' exp=expression ')')
+	;
+
+relOp 
+	: {relOp} op=('='
+	|	'>'
+    	|	'<'
+    	|	'<='
+    	|	'>='
+    	|	'<>'
+	|	'in'
+    	|	'is'
+    	|	'as')
+	;
+
+addOp 
+	: {adOp} op=('+'
+    	|	'-'
+    	|	'or'
+    	|	'xor')
+	;
+
+mulOp 
+	: {mulOp} op=('*'
+   	|	'/'
+    	|	'div'
+    	|	'mod'
+    	|	'and'
+    	|	'shl'
+    	|	'shr')
+	;
+
+designator 
+	:	subpart=designatorSubPart ('.' designator=designator)?
+	;
+
+designatorSubPart  // modified
+	: 	part=designatorPart ( '[' exprList+=exprList ']' | '^')*
+	;
+
+designatorPart // modified
+	: 	id=ID 
+	|	'&'reservedWord=reservedWord
+	|	id=ID '(' id2=ID '^' ')' // mine
+	;
+setConstructor 
+	: 	'[' (element+=setElement (',' element+=setElement)*) ']'
+	;
+
+setElement 
+	: 	first=expression ('..' last=expression)?
+	;
+
+exprList 
+	: 	exps+=expression (',' exps+=expression)*
+	;
+
+statement 
+	: 	(labelId=labelId ':')? statement=(simpleStatement | structStmt) 
+	;
+
+stmtList 
+	: {stmtList}	(statments+=statement (';')?)*
+	;
+	
+simpleStatement 
+	:	{assignmentStmnt} designator=designator operator=':=' exp=expression
+	|	{callStmnt}designator=designator ('(' args=exprList ')')?
+	| 	{inheritedStamnt} 'inherited'
+	|	{gotoStmnt}'goto' label=labelId
+	;
+
+structStmt 
+	: 	compoundStmt
+    	|	conditionalStmt
+    	|	loopStmt
+    	|	withStmt
+    	|	tryStmt
+    	|	raiseStmt
+    	|	assemblerStmt
+	;
+
+compoundStmt 
+	: 	'begin' stamtList=stmtList 'end'
+	;
+
+conditionalStmt  
+	: 	ifStmt
+	|	caseStmt
+	;
+
+ifStmt 
+	: 	'if' condition=expression 'then' then=statement  (';')? ('else' else=statement  (';')?)?
+	;
+
+caseStmt 
+	: 	'case' expression=expression 'of' cases+=caseSelector ';' (cases+=caseSelector ';')* ('else' default=stmtList) (';') 'end'
+	;
+
+caseSelector 
+	: 	labels+=caseLabel (',' labels+=caseLabel)* ':' stmt=statement  (';')?
+	;
+
+caseLabel 
+	: 	first=constExpr ('..' last=constExpr)?
+	;
+
+loopStmt 
+	: 	repeatStmt
+	|	whileStmt
+	|	forStmt
+	;
+
+repeatStmt 
+	: 	'repeat' stmt=statement  (';')? 'until' condition=expression
+	;
+
+whileStmt 
+	: 	'while' condition=expression 'do' stmt=statement  (';')?
+	;
+
+forStmt 
+	: 	'for' varId=qualId ':=' varInit=expression ('to' | 'downto') condition=expression 'do' stmt=statement  (';')?
+	;
+
+withStmt  // added simpleStatement
+	: 	'with' vars=identList 'do' stmt=statement (';')? // changed identList by expression
+	;
+
+tryStmt // Joined
+	: 	'try' stmtList=stmtList (';')? ('except' exception=exceptionBlock |  'finally' final=stmtList) 'end'
+	;
+
+exceptionBlock 
+	: 	{exceptionBlock} ('on' (exceptionId+=ident ':')? type+=type'id' 'do' doStmt+=statement (';')?)* (('else')? elseStmts=stmtList )?
+	;
+
+raiseStmt 
+	: 	//'raise' (object)? ('at' address)?
+		{raiseStmt} 'raise' (raise=ID)? ('at' at=ID)?
+	;
+
+assemblerStmt 
+	: 	{assemblerStmt} 'asm'
+    //|	<assemblylanguage>
+    //	|	'end'
+	;
+
+procedureDeclSection 
+	: 	procedureDecl
+    	|	functionDecl
+	;
+
+procedureDecl 
+	:	heading=procedureHeading ';' (directive=directive)? (port=portabilityDirective)? block=block ';'
+	;
+
+functionDecl 
+	: 	heading=functionHeading ';' (directive=directive)? (port=portabilityDirective)? block=block ';'
+	;
+
+functionHeading 
+	: 	('class')? 'function' id=ident (formalParams=formalParameters)? ':' type=type
+	;
+
+procedureHeading 
+	: 	('class')?'procedure' id=ident (formalParams=formalParameters)?
+	;
+
+formalParameters 
+	: 	'(' (params+=formalParm (';' params+=formalParm)*) ')'
+	;
+
+formalParm 
+	: 	('var' | 'const' | 'out')? param=parameter
+	;
+
+parameter 
+	: 	{parameterList} idList=identList (':' (('array' 'of')? type=type | 'file'))? // changed simpleType by type, deleted string alternative
+	| 	{parameterSimple} if=ident ':' type=type '=' initExp=constExpr // changed simpleType by type
+	;
+
+directive 
+	: 	dir='cdecl'
+    	|	dir='register'
+    	|	dir='dynamic'
+    	|	dir='virtual'
+    	|	dir='export'
+    	|	dir='external'
+    	|	dir='near'
+    	|	dir='far'
+    	|	dir='forward'
+	|	dir='message' messageExp=constExpr
+    	|	dir='override'
+    	|	dir='overload'
+   	|	dir='pascal'
+   	|	dir='reintroduce'
+    	|	dir='safecall'
+    	|	dir='stdcall'
+    	|	dir='varargs'
+    	|	dir='local'
+    	|	dir='abstract'
+	;
+
+objectType 
+	: 	{objectType} 'object' (heritage=objHeritage)? (fieldList=objFieldList)? (methodList=methodList)? 'end'
+	;
+
+objHeritage 
+	: 	'(' id=qualId ')'
+	;
+
+methodList 
+	: 	(heading=methodHeading (';' 'virtual')? (';' directive+=directive)*) ';'
+	;
+
+methodHeading 
+	: 	procedureHeading
+	|	functionHeading
+	|	constructorHeading
+    	|	destructorHeading
+	;
+
+constructorHeading 
+	: 	'constructor' id=ident (formalParams=formalParameters)?
+	;
+
+destructorHeading 	
+	: 	'destructor' id=ident (formalParams=formalParameters)?
+	;
+
+objFieldList 
+	: 	(identList ':' type=type) ';'
+	;
+
+initSection 
+	: 	{initSection} ('initialization' stmtList=stmtList ('finalization' endStmtList=stmtList)? 'end'
+    	|	'begin' stmtList=stmtList 'end'
+    	|	'end')
+	;
+
+classType 
+	: 	{classType} 'class' (heritage=classHeritage)? (visibility=classVisibility)? (fieldList=classFieldList)? (methodList=classMethodList)? (propList=classPropertyList)? 'end'
+	;
+
+classHeritage 
+	: 	'(' identList ')'
+	;
+
+classVisibility 
+	: 	'public' 
+	| 	'protected' 
+	| 	'private' 
+	| 	'published'
+	;
+
+classFieldList 
+	: 	field+=classField+
+	;
+
+classField
+	:	 visibility=classVisibility? fieldList=objFieldList
+	;
+
+classMethodList 
+	: 	metod+=classMethod+
+	;
+	
+classMethod
+	:	visibility=classVisibility? methodList=methodList
+	;
+
+classPropertyList  
+	: 	property+=classProperty+
+	;
+	
+classProperty
+	:	visibility=classVisibility 
+	|	visibility=classVisibility? propList=propertyList
+	;
+	
+propertyList 
+	: 	'property' id=ident (interface=propertyInterface)? (specifiers=propertySpecifiers)? (port=portabilityDirective)? ';'
+	;
+
+propertyInterface 
+	: 	(paramList=propertyParameterList)? ':' id=ident
+	;
+
+propertyParameterList 
+	: 	'[' idList+=identList ':' typeRef+=typeId ';' (idList+=identList ':' typeRef+=typeId ';')* ']' 
+	;
+
+propertySpecifiers  // Modified constExpr
+	: {propertySpecifiers} ('index' index=constExpr)? ('read' readId=ident)? ('write' writeId=ident)? ('stored' (storeId=ident | storeExp=constExpr))? (('default' defaulExp=constExpr) | 'nodefault')? ('implements' implement=typeId)?
+	;
+
+interfaceType 
+	: 	'interface' (heritage=interfaceHeritage) (methodList=classMethodList) (propList+=classPropertyList)* 'end'
+	;
+
+interfaceHeritage 
+	: 	'(' idList=identList ')'
+	;
+
+requiresClause 
+	: 	{requiresClause} 'requires' idList+=identList* ';'
+	;
+
+containsClause 
+	: 	{containsClause} 'contains' idList+=identList* ';'
+	;
+
+identList 
+	: 	ids+=ident (',' ids+=ident)*
+	;
+
+qualId 
+	: 	(unitId=unitId '.')? id=ident
+	;
+
+typeId  //modified
+	: 	(unitId=unitId '.')? id=qualId
+	;
+
+ident  // modified
+	: 	{MultipleId} id+=ID ('.' id+=ID)*
+	|	{ReservedId} '&' reservedWord=reservedWord
+	|	{MineID} first=ID '(' second=ID '^' ')' // mine
+	;
+
+reservedWord
+	: 	id=ID
+	;
+
+constExpr  // modified
+	:  exps+=expression
+	|  '(' exps+=constExpr (',' exps+=constExpr)*')'
+	|  '(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')'
+	;
+
+recordConstExpr // added
+	:	id=ident ':' constExp=constExpr
+	;
+
+unitId // modified
+	: 	id=ID
+	;
+
+labelId  // modified
+	: 	ID
+	|	INT
+	|	HEX
+	;
+
+number 
+	: 	INT
+	|	'#' INT
+	;
+
+string   
+	: 	QVALUE
+	|	DQVALUE
+	;
+
+// Lexer tokens
+terminal SLASH 			:	 '\u005C';
+terminal QUOTE			:	 '\u0027';
+terminal ID 			:	 ('a'..'z' | 'A'..'Z' | '_') ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | SLASH | '-')*;
+terminal DOUBLEQUOTE		: 	'\u0022';
+terminal DQVALUE			: 	DOUBLEQUOTE ('\\' . | !('\\'| DOUBLEQUOTE))*  DOUBLEQUOTE;
+terminal QVALUE			: 	QUOTE ('\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|QUOTE) )* QUOTE;
+terminal HEX				:	('+' | '-')?  '0' ('x' | 'X') ('0'..'9' | 'a'..'f' | 'A'..'F')+;
+terminal INT returns ecore::EInt			: 	('+' | '-')? ('0'..'9')+;
+terminal COMMENT			:  	 '/*' -> '*/' ;
+terminal MORECOMMENT	:  	 '{' -> '}';
+terminal LINE_COMMENT		: 	'//' !('\n'|'\r')* ('\r'? '\n')? ;
+terminal WS  				:  	(' '|'\r'|'\t'|'\u000C'|'\n');
