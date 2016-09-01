@@ -30,6 +30,67 @@ Workflow {
     bean = EcoreGenModelSetup { resourceSet = resourceSet }
     
     //  Generate the CS2AS CGed transformation
+     component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
+    	script = "org.xtext.example.companies.build.GenerateCS2AST"
+    	fromProject = "../../org.eclipse.qvtd-master/plugins/org.eclipse.qvtd.runtime/src"
+    	toProject = "../org.xtext.example.companies/src-gen"
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
+    		to = "org.xtext.example.companies.tx"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.evaluation"
+    		to = "org.xtext.example.companies.tx"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.internal.evaluation"
+    		to = "org.xtext.example.companies.internal.tx"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.labels"
+    		to = "org.xtext.example.companies.labels"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.library.model"
+    		to = "org.xtext.example.companies.library.model"
+    	}
+    	
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
+    		to = "org.xtext.example.companies.tx"
+    	}
+    	
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.evaluation"
+    		to = "org.xtext.example.companies.tx"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.internal.evaluation"
+    		to = "org.xtext.example.companies.internal.tx"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.labels"
+    		to = "org.xtext.example.companies.labels"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.library.model"
+    		to = "org.xtext.example.companies.library.model"
+    	}
+    }
+    
+     component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
+    	script = "org.xtext.example.companies.build.GenerateCS2ASTx"
+    	fromProject = "../../org.eclipse.qvtd-master/plugins/org.eclipse.qvtd.cs2as.xtext.runtime/src"
+    	toProject = "../org.xtext.example.companies/src-gen"
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.cs2as.xtext.runtime"
+    		to = "org.xtext.example.companies.tx"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
+    		to = "org.xtext.example.companies.tx"
+    	}
+    }
     component = @org.eclipse.qvtd.cs2as.build.mwe.GenerateCGedQVTiTransformation {
 		resourceSet = resourceSet
 		oclFileURI = "platform:/resource/org.xtext.example.companies/model/companies.ocl"

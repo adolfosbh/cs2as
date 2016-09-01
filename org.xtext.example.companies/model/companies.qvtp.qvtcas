@@ -125,14 +125,13 @@
               <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
                 <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                     referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
-                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                  <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
                       isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.4/@bottomPattern/@assignment.0/@value/@ownedIterators.0"/>
                 </ownedSource>
                 <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                     referredType="pivot:Class Company.ecore.oclas#T.company.Department"/>
               </ownedBody>
-              <ownedIterators name="1_" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" isImplicit="true"
-                  representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
+              <ownedIterators name="1_" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
             </value>
             <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Company" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
@@ -196,14 +195,13 @@
               <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
                 <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                     referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
-                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                  <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
                       isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.6/@bottomPattern/@assignment.0/@value/@ownedIterators.0"/>
                 </ownedSource>
                 <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                     referredType="pivot:Class Company.ecore.oclas#T.company.Department"/>
               </ownedBody>
-              <ownedIterators name="1_" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" isImplicit="true"
-                  representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
+              <ownedIterators name="1_" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
             </value>
             <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
@@ -280,14 +278,13 @@
               <ownedBody xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Employee" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
                 <ownedSource xsi:type="pivot:PropertyCallExp" isRequired="false" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
                     referredProperty="generated/Companies.ecore.oclas#p.companies.traceable.ast">
-                  <ownedSource xsi:type="pivot:VariableExp" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
-                      isImplicit="true" referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.8/@bottomPattern/@assignment.0/@value/@ownedIterators.0"/>
+                  <ownedSource xsi:type="pivot:VariableExp" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" isImplicit="true"
+                      referredVariable="#//@ownedPackages.0/@ownedClasses.0/@rule.8/@bottomPattern/@assignment.0/@value/@ownedIterators.0"/>
                 </ownedSource>
                 <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                     referredType="pivot:Class Company.ecore.oclas#T.company.Employee"/>
               </ownedBody>
-              <ownedIterators name="1_" isRequired="false" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" isImplicit="true"
-                  representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
+              <ownedIterators name="1_" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
             </value>
             <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
@@ -435,7 +432,7 @@
       </ownedBindings>
     </ownedClasses>
     <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.5 #//@ownedPackages.1/@ownedClasses.6"
-        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department">
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.department" isNullFree="true">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.department" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
       </ownedBindings>
@@ -446,7 +443,7 @@
       </ownedBindings>
     </ownedClasses>
     <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.8 #//@ownedPackages.1/@ownedClasses.9"
-        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee">
+        elementType="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" isNullFree="true">
       <ownedBindings>
         <ownedSubstitutions actual="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
       </ownedBindings>
