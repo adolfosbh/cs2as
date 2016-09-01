@@ -1,5 +1,5 @@
-source cs : ''
-target astm : ''
+source cs : 'generated/Delphi.ecore#/'
+target as : 'astm.ecore'
 
 helpers {
 	cs::ident {
@@ -7,14 +7,13 @@ helpers {
 	    	null; -- TODO	
 	}
 	
-	
 	cs::identList {
 	    extract() : String := 
 	    	null; -- TODO	
 	}
 	
 	cs::designator {
-		getDefinition() : as::ObjectDefintion :=
+		getDefinition() : astm::gastm::Definition :=
 			let method = lookup(FunctionDefinition, subpart.part)
 			in if method <> null 
 			   then method
@@ -22,7 +21,6 @@ helpers {
 			   endif;
 		
 	}
-	
 }
 mappings {
 	create astm::gastm::Project from mainRule {
@@ -188,5 +186,26 @@ disambiguation {
 	designator {
 		isIdentifierRef := designator = null;
 		isQualifiedOverData := designator <> null;
+	}
+}
+
+name_resolution {
+	targets {
+		VariableDefinition using identifierName;
+		FunctionDefinition using identifierName;
+	}
+	
+	providers {
+		CompilationUnit {
+			in current_scope provides
+				VariableDefinition using fragments->selectByKind(VariableDefinition)
+				FunctionDefinition using fragments->selectByKind(FunctionDefinition);
+		}
+		
+		DelphiBlockStatement {
+			in current_scope provides
+				VariableDefinition using declarations->selectByKind(VariableDefinition)
+				FunctionDefinition using declarations->selectByKind(FunctionDefinition);
+		}
 	}
 }
