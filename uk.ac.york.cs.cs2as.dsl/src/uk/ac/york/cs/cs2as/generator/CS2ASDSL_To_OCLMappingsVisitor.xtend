@@ -108,10 +108,10 @@ class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 	
 	def private createNormalCase(MappingCreation object) {
 		val to = object.to.doSwitch;
-		val lastStmnt = object.properties.get(object.properties.size-1);
+		val propAssigns = object.properties ;
 		'''
 		«asMetamodelName»::«to» {
-			«FOR stmnt : object.properties»«stmnt.doSwitch»«IF stmnt != lastStmnt»,«ENDIF» 
+			«FOR stmnt : propAssigns»«stmnt.doSwitch»«IF propAssigns.indexOf(stmnt) < propAssigns.size-1 »,«ENDIF» 
 			«ENDFOR»
 		}
 		'''
@@ -132,7 +132,7 @@ class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
 		'''«object.expression.doSwitch»'''
 	}
 	override casePropertyDef(PropertyDef object) {
-		'''«object.propRef» = «object.propInit.doSwitch»'''
+		'''«object.propRef.doSwitch» = «object.propInit.doSwitch»'''
 	}
 	
 	def private Map<String, MappingCreation[]> csElementToAmbiguousRules(MappingSect mappingSect, DisambiguationSect disambSect) {

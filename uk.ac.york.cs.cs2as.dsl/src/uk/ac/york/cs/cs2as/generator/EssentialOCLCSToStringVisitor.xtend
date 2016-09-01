@@ -26,6 +26,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.NumberLiteralExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.CollectionLiteralExpCS
 import org.eclipse.ocl.xtext.essentialoclcs.CollectionLiteralPartCS
 import org.eclipse.ocl.xtext.essentialoclcs.BooleanLiteralExpCS
+import static extension  uk.ac.york.cs.cs2as.generator.Helper.*
 
 class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 
@@ -129,7 +130,7 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	}
 	
 	override caseStringLiteralExpCS(StringLiteralExpCS object) {
-		val allSegments = '''«FOR segment : object.segments» «segment»«ENDFOR»'''.toString;
+		val allSegments = '''«FOR segment : object.segments»«segment»«ENDFOR»'''.toString;
 		if (allSegments.trim.startsWith("'")) allSegments else ''''«allSegments»' '''
 	}
 	
@@ -154,11 +155,11 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	}
 	
 	override caseShadowPartCS(ShadowPartCS object) {
-		'''«object.propName» = «object.ownedInitExpression.doSwitch»'''
+		'''«object.propName.scapeKeywords» = «object.ownedInitExpression.doSwitch»'''
 	}
 	
 	def String caseParameterCS(ParameterCS object) {
-		'''«object.name» : «object.ownedType.doSwitch»'''
+		'''«object.name.scapeKeywords» : «object.ownedType.doSwitch»'''
 	}
 	
 	override caseLetExpCS(LetExpCS object) {
@@ -173,7 +174,7 @@ class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String>{
 	override caseVariableCS(VariableCS object) {
 		val type = object.ownedType;
 		val init = object.ownedInitExpression;
-		'''«object.name» «IF type != null» : «type.doSwitch»«ENDIF»«IF init != null» = «init.doSwitch»«ENDIF»'''
+		'''«object.name.scapeKeywords» «IF type != null» : «type.doSwitch»«ENDIF»«IF init != null» = «init.doSwitch»«ENDIF»'''
 	}
 	
 	def String caseTraceExp(TraceExpCS object) {

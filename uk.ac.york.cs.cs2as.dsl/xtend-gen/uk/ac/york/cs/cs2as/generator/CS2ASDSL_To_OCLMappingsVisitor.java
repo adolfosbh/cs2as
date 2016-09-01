@@ -217,11 +217,7 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
     {
       PathNameCS _to = object.getTo();
       final String to = this.doSwitch(_to);
-      EList<PropertyDef> _properties = object.getProperties();
-      EList<PropertyDef> _properties_1 = object.getProperties();
-      int _size = _properties_1.size();
-      int _minus = (_size - 1);
-      final PropertyDef lastStmnt = _properties.get(_minus);
+      final EList<PropertyDef> propAssigns = object.getProperties();
       StringConcatenation _builder = new StringConcatenation();
       _builder.append(this.asMetamodelName, "");
       _builder.append("::");
@@ -230,13 +226,15 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
       {
-        EList<PropertyDef> _properties_2 = object.getProperties();
-        for(final PropertyDef stmnt : _properties_2) {
+        for(final PropertyDef stmnt : propAssigns) {
           String _doSwitch = this.doSwitch(stmnt);
           _builder.append(_doSwitch, "\t");
           {
-            boolean _notEquals = (!Objects.equal(stmnt, lastStmnt));
-            if (_notEquals) {
+            int _indexOf = propAssigns.indexOf(stmnt);
+            int _size = propAssigns.size();
+            int _minus = (_size - 1);
+            boolean _lessThan = (_indexOf < _minus);
+            if (_lessThan) {
               _builder.append(",");
             }
           }
@@ -296,11 +294,12 @@ public class CS2ASDSL_To_OCLMappingsVisitor extends CS2ASDSL_To_OCLBaseVisitor {
   public String casePropertyDef(final PropertyDef object) {
     StringConcatenation _builder = new StringConcatenation();
     PathNameCS _propRef = object.getPropRef();
-    _builder.append(_propRef, "");
+    String _doSwitch = this.doSwitch(_propRef);
+    _builder.append(_doSwitch, "");
     _builder.append(" = ");
     ExpCS _propInit = object.getPropInit();
-    String _doSwitch = this.doSwitch(_propInit);
-    _builder.append(_doSwitch, "");
+    String _doSwitch_1 = this.doSwitch(_propInit);
+    _builder.append(_doSwitch_1, "");
     return _builder.toString();
   }
   

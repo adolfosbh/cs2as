@@ -7,6 +7,8 @@ import org.eclipse.ocl.xtext.basecs.PathElementCS
 import org.eclipse.ocl.xtext.basecs.ImportCS
 import org.eclipse.ocl.xtext.basecs.PathElementWithURICS
 import org.eclipse.ocl.xtext.basecs.PrimitiveTypeRefCS
+import static extension  uk.ac.york.cs.cs2as.generator.Helper.*
+
 
 class BaseCSToStringVisitor extends BaseCSSwitch<String>{
 	
@@ -28,10 +30,7 @@ class BaseCSToStringVisitor extends BaseCSSwitch<String>{
 	
 	override casePathElementCS(PathElementCS object) {
 		// TODO include all additional CompleteOCL keywords
-		if (#['body','context'].contains(object.name))
-			'''_«object.name»'''
-		else
-			object.name;
+		object.name.scapeKeywords();
 	}
 	
 	override casePathElementWithURICS(PathElementWithURICS object) {

@@ -1,7 +1,6 @@
 package uk.ac.york.cs.cs2as.generator;
 
 import com.google.common.base.Objects;
-import java.util.Collections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -13,7 +12,7 @@ import org.eclipse.ocl.xtext.basecs.PathNameCS;
 import org.eclipse.ocl.xtext.basecs.PrimitiveTypeRefCS;
 import org.eclipse.ocl.xtext.basecs.util.BaseCSSwitch;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import uk.ac.york.cs.cs2as.generator.Helper;
 
 @SuppressWarnings("all")
 public class BaseCSToStringVisitor extends BaseCSSwitch<String> {
@@ -87,19 +86,8 @@ public class BaseCSToStringVisitor extends BaseCSSwitch<String> {
   
   @Override
   public String casePathElementCS(final PathElementCS object) {
-    String _xifexpression = null;
     String _name = object.getName();
-    boolean _contains = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("body", "context")).contains(_name);
-    if (_contains) {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("_");
-      String _name_1 = object.getName();
-      _builder.append(_name_1, "");
-      _xifexpression = _builder.toString();
-    } else {
-      _xifexpression = object.getName();
-    }
-    return _xifexpression;
+    return Helper.scapeKeywords(_name);
   }
   
   @Override

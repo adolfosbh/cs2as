@@ -39,6 +39,7 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import uk.ac.york.cs.cs2as.cs2as_dsl.LookupExpCS;
 import uk.ac.york.cs.cs2as.cs2as_dsl.TraceExpCS;
 import uk.ac.york.cs.cs2as.generator.BaseCSToStringVisitor;
+import uk.ac.york.cs.cs2as.generator.Helper;
 
 @SuppressWarnings("all")
 public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> {
@@ -407,7 +408,6 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
       {
         EList<String> _segments = object.getSegments();
         for(final String segment : _segments) {
-          _builder.append(" ");
           _builder.append(segment, "");
         }
       }
@@ -469,7 +469,8 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   public String caseShadowPartCS(final ShadowPartCS object) {
     StringConcatenation _builder = new StringConcatenation();
     String _propName = object.getPropName();
-    _builder.append(_propName, "");
+    String _scapeKeywords = Helper.scapeKeywords(_propName);
+    _builder.append(_scapeKeywords, "");
     _builder.append(" = ");
     ExpCS _ownedInitExpression = object.getOwnedInitExpression();
     String _doSwitch = this.doSwitch(_ownedInitExpression);
@@ -480,7 +481,8 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
   public String caseParameterCS(final ParameterCS object) {
     StringConcatenation _builder = new StringConcatenation();
     String _name = object.getName();
-    _builder.append(_name, "");
+    String _scapeKeywords = Helper.scapeKeywords(_name);
+    _builder.append(_scapeKeywords, "");
     _builder.append(" : ");
     TypedRefCS _ownedType = object.getOwnedType();
     String _doSwitch = this.doSwitch(_ownedType);
@@ -527,7 +529,8 @@ public class EssentialOCLCSToStringVisitor extends EssentialOCLCSSwitch<String> 
       final ExpCS init = object.getOwnedInitExpression();
       StringConcatenation _builder = new StringConcatenation();
       String _name = object.getName();
-      _builder.append(_name, "");
+      String _scapeKeywords = Helper.scapeKeywords(_name);
+      _builder.append(_scapeKeywords, "");
       _builder.append(" ");
       {
         boolean _notEquals = (!Objects.equal(type, null));
