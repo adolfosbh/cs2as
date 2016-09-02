@@ -1,0 +1,48 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Willink Transformations Ltd., University of York and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Adolfo Sanchez-Barbudo Herrera (University of York) - initial API and implementation
+ * 
+ *******************************************************************************/
+module org.xtext.example.companies.build.GenerateCompanyModels
+
+import org.eclipse.ocl.examples.build.utilities.*
+import org.eclipse.ocl.examples.build.xtend.*
+import org.eclipse.emf.ecore.resource.impl.*
+
+var projectName = "org.xtext.example.abnf"
+
+Workflow {
+	bean = ResourceSetImpl : resourceSet {}
+    bean = ProjectMapSetup{ resourceSet = resourceSet}
+    bean = EcoreGenModelSetup { resourceSet = resourceSet }
+    
+    component = org.eclipse.qvtd.cs2as.build.mwe.VisitableInjector {
+    	resourceSet = resourceSet
+		visitableInfo = org.eclipse.qvtd.cs2as.build.mwe.VisitableInjector.VisitableInfo {
+			targetGenModel = "platform:/resource/${projectName}/model/Ecore.genmodel"
+			mainPackageName = "ecore"
+			visitableInstanceTypeName = "${projectName}.ecore.util.Visitable" 
+		}
+    }
+    
+    component = GenerateModel { resourceSet = resourceSet
+    	genModel = "/${projectName}/model/Ecore.genmodel"
+    }
+    
+    component = GenerateASVisitors { resourceSet = resourceSet
+    	projectName = "${projectName}"
+    	genModelFile = "model/ecore.genmodel"
+    }
+
+//    component = @SubGenerateAutoASModel { resourceSet = resourceSet
+//    	projectName = "${projectName}"
+//    	genModelFile = "model/astm.genmodel"
+//    	lookupFilePath = "model/delphiLookup.ocl"
+//    }
+}

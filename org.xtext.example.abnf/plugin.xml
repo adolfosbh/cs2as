@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.xtext.org/example/abnf/ABNF"
+			class = "org.xtext.example.abnf.aBNF.ABNFPackage"
+			genModel = "model/generated/ABNF.genmodel" />
+	</extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Ecore -->
+      <package
+            uri="http://www.eclipse.org/emf/2002/Ecore"
+            class="org.xtext.example.ecore.EcorePackage"
+            genModel="model/Ecore.genmodel"/>
+   </extension>
+
+</plugin>

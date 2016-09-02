@@ -1,0 +1,146 @@
+source cs : 'generated/ABNF.ecore#/'
+target as : 'Ecore.ecore#/'
+
+helpers {
+	cs::abnf_definition {
+		unspecified_subclasses(): OrderedSet(subclassId) :=
+			rules->selectByKind(hierarchy_rule).subclassId
+					->select(not isSpecified());
+		unspecified_hierarchy_rule(): OrderedSet(hierarchy_rule) :=
+			rules->selectByKind(hierarchy_rule)
+					->select(not isSpecified());
+		getAllSubclassIds(anId : String) :=
+			self.rules->selectByKind(hierarchy_rule)
+						->select(x | x.subclassId->select(y | y.id = anId));
+	}
+	cs::rule{
+		getAllSubclassIds(anId : String) : OrderedSet(subclassId) :=
+			oclContainer().oclAsType(abnf_definition).getAllSubclassIds(anId);
+	}
+	cs::hierarchy_rule {
+		isSpecified() : Boolean :=
+			let abnf_definion = oclContainer().oclAsType(abnf_definition)
+			in abnf_definition.rules->selectByKind(specification_rule)->exists(x | x.classId.id = self.id);
+			
+		getEClass() : as::EClass :=
+			if isSpecified () 
+			then let abnf_definion = oclContainer().oclAsType(abnf_definition)
+				in abnf_definition.rules->selectByKind(specification_rule)->select(x | x.classId.id = self.id)->first()
+			else self.trace
+			endif;
+		getAllSubclassIds() : OrderedSet(subclassId) :=
+			getAllSubclassIds(self.classId.id);
+	}
+	
+	cs::subclassId {
+		isSpecified() : Boolean :=
+			oclContainer().oclAsType(hierarchy_rule).isSpecified();
+		getSuperType(): as::EClass :=
+			oclContainer().oclAsType(hierarchy_rule).getEClass();
+		getAllSubclassIds() := 
+			oclContainer().oclContainer().oclAsType(abnf_definition).getAllSubclassIds(id);
+	}
+	
+	cs::specification_rule { -- TODO check whether that rule factors classId out
+		getAllSubclassIds() : OrderedSet(subclassId) :=
+			getAllSubclassIds(self.classId.id);
+	}
+	
+	cs::attribute {
+		typeIsString() : Boolean := TYPE = 'String';
+		typeIsBoolean() : Boolean := TYPE = 'Boolean';
+		typeIsInteger() : Boolean := TYPE = 'Integer';
+		typeIsPrimitive() : Boolean :=
+			 typeIsString() or typeIsBoolean() or typeIsInteger();
+		getPrimitiveType() : EDataType :=
+			if  typeIsString()
+			then lookup(EDataType,'EString')
+			else if typeIsBoolean()
+				 then lookup(EDataType,'EBool')
+				 else if typeIsInteger()
+				 	  then lookup(EDataType,'EInt')
+				 	  else null
+				 endif endif
+			endif
+		;		
+		computeLowerBound() : Integer := 0;
+		computeUpperBound() : Integer := -1;
+	}
+}
+
+mappings {
+	create EPackage from abnf_definition {
+		name := 'astm';
+		nsURI := 'http://modelum.es/modernization/astm'; 
+		nsPrefix := 'astm';
+		eClassifiers := rules->selectByKind(specification_rule).trace
+						->includingAll(unspecified_hierarchy_rule().trace)
+						->includingAll(unspecified_subclasses().trace);
+	}
+	create EClass from specification_rule {
+		name := classId.id;
+		eStructuralFeatures := attributes.trace;
+		eSuperTypes := getAllSubclassIds().trace;  
+		abstract := getAllSubclassIds()->exist(isAbstract);
+	}
+	
+	create EClass from hierarchy_rule 
+		when isRuleUnspecified {
+		name := classId.id;
+		eSuperTypes := getAllSubclassIds().trace;
+		abstract := getAllSubclassIds()->exist(isAbstract); 
+	}
+	
+	create EClass from subclassId
+	when isSubclassUnspecified {
+		name := id;
+		eSuperTypes := getAllSubclassIds.trace;
+		abstract := isAbstract;	
+	}
+	
+	create EAtttribute from attribute 
+		when isAttribute{
+			name := NAME;
+			lower := computeLowerBound();
+			upper := computeUpperBound();
+			eType := getPrimitiveType();
+	}
+	
+	create EReference from attribute
+		when isReference {
+			name := NAME;
+			containment := true;
+			lower := computeLowerBound();
+			upper := computeUpperBound();
+			eType := lookup(EClass,TYPE);
+	}	
+}
+
+disambiguation {
+	subclassId {
+		isSubclassUnspecified := not isSpecified();
+	}
+	hierarchy_rule {
+		isRuleUnspecified := not isSpecified();
+	}
+	attribute {
+		isAttribute := isAttribute() ;
+		isReference := not isAttribute();
+	}
+}
+
+name_resolution {
+	targets {
+		ENamedElement using name;
+		EClass;
+		EDataType;
+	}
+	providers {
+		Package {
+			in current_scope provides
+				EClass using eClassifiers->selectByKind(EClass)
+				EDataType using eClassifiers->selectByKind(EDataType);
+		}
+	}
+	
+}

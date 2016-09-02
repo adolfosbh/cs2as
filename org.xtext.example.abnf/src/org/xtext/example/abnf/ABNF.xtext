@@ -1,0 +1,42 @@
+grammar org.xtext.example.abnf.ABNF hidden (WS)
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+generate aBNF "http://www.xtext.org/example/abnf/ABNF"
+
+abnf_definition
+	:{abnf_definition}	rules+=rule*
+	;
+	
+rule
+	:	hierarchy_rule
+	|	specification_rule
+	;
+
+hierarchy_rule
+	: 	classId=classId (DOUBLEARROW subclassId+=subclassId)+ ';'
+	;
+
+specification_rule
+	: 	classId=classId ARROW attribute+=attribute* ';'
+	;
+	
+classId
+	:	id=ID
+	;
+	
+subclassId
+	: 	id=ID
+	| 	isAbstract?=ABSTRACT id=ID
+	;
+
+attribute
+	:	(OPTA='[')? (SEM='<')? NAME=ID ':' TYPE=ID ('>')? (MULTA='*' | MULTB='+' | OPTB='?')? (']')?
+	;
+	
+	
+terminal ABSTRACT	: '!';
+terminal ARROW		: '->';
+terminal DOUBLEARROW	: '=>';
+terminal ID 			: ('a'..'z' | 'A'..'Z') ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | '-')*;
+terminal WS 			: (' ' | '\t' | '\n' | '\r')+ ;
