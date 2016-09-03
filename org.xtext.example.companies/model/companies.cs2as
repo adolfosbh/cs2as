@@ -28,12 +28,21 @@ nameresolution {
 	Employee {
 		named-element name-property name;
 	}
-	
 	Company {
 		scopes 
-			Employee using depts->closure(subdepts)
-				->collect(employees->including(manager));
+			Employee using getEmployees();
 	}
 }
 
-helpers{}
+helpers{
+	as::Company {
+		getEmployees() : Set(Employee) :=
+			depts.getEmployees()->asSet();
+	}
+	as::Department {
+		getEmployees() : Set(Employee) :=
+			subdepts.getEmployees()
+				->includingAll(employees)
+				->including(manager)->asSet()
+	}
+}

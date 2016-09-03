@@ -1,7 +1,7 @@
 import  cs : './generated/Companies.ecore#/'
 import  as : 'Company.ecore#/'
 import 'Lookup.ecore'
---import 'companiesHelpers.ocl'
+import 'companiesHelpers.ocl'
 
 
 package ocl
@@ -33,7 +33,7 @@ package as
 context Company
 def : _unqualified_env_Employee(child : ocl::OclElement) : lookup::LookupEnvironment =
 	parentEnv_Employee().nestedEnv()
-		.addElements(depts->closure(subdepts)->collect(employees->including(manager)))
+		.addElements(getEmployees())
 
 context Visitable
 -- Employee lookup
