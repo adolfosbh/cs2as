@@ -187,15 +187,15 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.@org.eclipse.jdt.annotation.NonNull Class TYP_companies_c_c_employee_0 = idResolver.getClass(CLSSid_employee, null);
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue objectsOfKind_1 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_employee, models[0/*leftCS*/], TYP_companies_c_c_employee_0);
             // connection variables
-            final SetValue.@NonNull Accumulator ji_company = (SetValue.Accumulator)ValueUtil.createCollectionAccumulatorValue(SET_CLSSid_company);
+            final SetValue.@NonNull Accumulator ji_company = createUnenforcedSetAccumulatorValue(SET_CLSSid_company);
             for (org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull company iterator : ValueUtil.typedIterable(company.class, objectsOfKind)) {
                 ji_company.add(iterator);
             }
-            final SetValue.@NonNull Accumulator ji_department = (SetValue.Accumulator)ValueUtil.createCollectionAccumulatorValue(SET_CLSSid_department);
+            final SetValue.@NonNull Accumulator ji_department = createUnenforcedSetAccumulatorValue(SET_CLSSid_department);
             for (org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull department iterator_0 : ValueUtil.typedIterable(department.class, objectsOfKind_0)) {
                 ji_department.add(iterator_0);
             }
-            final SetValue.@NonNull Accumulator ji_employee = (SetValue.Accumulator)ValueUtil.createCollectionAccumulatorValue(SET_CLSSid_employee);
+            final SetValue.@NonNull Accumulator ji_employee = createUnenforcedSetAccumulatorValue(SET_CLSSid_employee);
             for (org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull employee iterator_1 : ValueUtil.typedIterable(employee.class, objectsOfKind_1)) {
                 ji_employee.add(iterator_1);
             }
@@ -767,7 +767,13 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                 final /*@NonInvalid*/ org.eclipse.ocl.pivot.@org.eclipse.jdt.annotation.NonNull Class TYP_company_c_c_Employee_0 = idResolver.getClass(CLSSid_Employee, null);
                 final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Employee oclAsType = ClassUtil.nonNullState((Employee)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_company_c_c_Employee_0));
                 // property assignments
+                if (address == null) {
+                    throw throwNull(lEmployee_0, "Null value for company::Employee::address assignment");
+                }
                 oclAsType.setAddress(address);
+                if (name == null) {
+                    throw throwNull(lEmployee_0, "Null value for company::Employee::name assignment");
+                }
                 oclAsType.setName(name);
                 oclAsType.setSalary(salary);
                 final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable Boolean m_employee_address_ast_name_salary = ValueUtil.TRUE_VALUE;
@@ -830,7 +836,6 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                     if (_lookupResult.size() == 1) {
                         _lookupEmployee = _lookupResult.getSingleResult();
                     } else {
-                         handleLookupError(lEmployee_1,mentor);
                     };
                     symbol_1 = _lookupEmployee;
                 }

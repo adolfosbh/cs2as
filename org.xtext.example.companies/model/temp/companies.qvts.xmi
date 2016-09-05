@@ -5,7 +5,7 @@
     <datums xsi:type="qvts:ClassDatum" super="/0/@datums.1" requiredBy="/0/@actions.0 /0/@actions.3 /0/@actions.4" dataParameter="/0/@actions.0/@parameters.0 /0/@actions.3/@parameters.0 /0/@actions.4/@parameters.0">
       <typedModel href="../companies.qvtp.qvtcas#qT..companies_qvtp_qvtcas.leftCS"/>
       <type href="../generated/Companies.ecore.oclas#T.companies.company"/>
-      <propertyDatums super="/0/@datums.1/@propertyDatums.0" producedBy="/0/@actions.0">
+      <propertyDatums super="/0/@datums.1/@propertyDatums.0" producedBy="/0/@actions.0" requiredBy="/0/@actions.3 /0/@actions.4">
         <typedModel href="../companies.qvtp.qvtcas#qT..companies_qvtp_qvtcas.leftCS"/>
         <property href="../generated/Companies.ecore.oclas#p.companies.traceable.ast"/>
       </propertyDatums>
@@ -21,7 +21,7 @@
     <datums xsi:type="qvts:ClassDatum" super="/0/@datums.2" sub="/0/@datums.0 /0/@datums.8 /0/@datums.10 /0/@datums.12 /0/@datums.13">
       <typedModel href="../companies.qvtp.qvtcas#qT..companies_qvtp_qvtcas.leftCS"/>
       <type href="../generated/Companies.ecore.oclas#T.companies.traceable"/>
-      <propertyDatums sub="/0/@datums.0/@propertyDatums.0" producedBy="/0/@actions.1 /0/@actions.2" requiredBy="/0/@actions.3 /0/@actions.4 /0/@actions.5 /0/@actions.6 /0/@actions.7 /0/@actions.8 /0/@actions.9 /0/@actions.10 /0/@actions.11 /0/@actions.12">
+      <propertyDatums sub="/0/@datums.0/@propertyDatums.0" producedBy="/0/@actions.1 /0/@actions.2" requiredBy="/0/@actions.4 /0/@actions.5 /0/@actions.6 /0/@actions.7 /0/@actions.8 /0/@actions.9 /0/@actions.10 /0/@actions.11 /0/@actions.12">
         <typedModel href="../companies.qvtp.qvtcas#qT..companies_qvtp_qvtcas.leftCS"/>
         <property href="../generated/Companies.ecore.oclas#p.companies.traceable.ast"/>
       </propertyDatums>
@@ -133,11 +133,11 @@
       <type href="../Company.ecore.oclas#T.company.Employee"/>
       <propertyDatums producedBy="/0/@actions.7">
         <typedModel href="../companies.qvtp.qvtcas#qT..companies_qvtp_qvtcas.rightAS"/>
-        <property href="../Company.ecore.oclas#//@ownedPackages.0/@ownedClasses.2/@ownedProperties.6"/>
+        <property href="../Company.ecore.oclas#//@ownedPackages.0/@ownedClasses.2/@ownedProperties.4"/>
       </propertyDatums>
       <propertyDatums producedBy="/0/@actions.8">
         <typedModel href="../companies.qvtp.qvtcas#qT..companies_qvtp_qvtcas.rightAS"/>
-        <property href="../Company.ecore.oclas#//@ownedPackages.0/@ownedClasses.2/@ownedProperties.4"/>
+        <property href="../Company.ecore.oclas#//@ownedPackages.0/@ownedClasses.2/@ownedProperties.6"/>
       </propertyDatums>
       <propertyDatums producedBy="/0/@actions.9" requiredBy="/0/@actions.12">
         <typedModel href="../companies.qvtp.qvtcas#qT..companies_qvtp_qvtcas.rightAS"/>
@@ -218,13 +218,13 @@
       </results>
       <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.cemployee_2_Employee"/>
     </actions>
-    <actions xsi:type="qvts:MappingAction" productions="/0/@datums.4/@propertyDatums.0" requisites="/0/@datums.0 /0/@datums.0/@propertyDatums.1 /0/@datums.1/@propertyDatums.0">
+    <actions xsi:type="qvts:MappingAction" productions="/0/@datums.4/@propertyDatums.0" requisites="/0/@datums.0 /0/@datums.0/@propertyDatums.1 /0/@datums.0/@propertyDatums.0">
       <parameters datum="/0/@datums.0">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.ucompany_2_Company_name.leftCS.guard.lCompany"/>
       </parameters>
       <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.ucompany_2_Company_name"/>
     </actions>
-    <actions xsi:type="qvts:MappingAction" productions="/0/@datums.4/@propertyDatums.1 /0/@datums.9/@propertyDatums.0" requisites="/0/@datums.0 /0/@datums.0/@propertyDatums.2 /0/@datums.1/@propertyDatums.0">
+    <actions xsi:type="qvts:MappingAction" productions="/0/@datums.4/@propertyDatums.1 /0/@datums.9/@propertyDatums.0" requisites="/0/@datums.0 /0/@datums.0/@propertyDatums.2 /0/@datums.1/@propertyDatums.0 /0/@datums.0/@propertyDatums.0">
       <parameters datum="/0/@datums.0">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts.leftCS.guard.lCompany"/>
       </parameters>

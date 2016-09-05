@@ -11,13 +11,15 @@
  *******************************************************************************/
 package	org.xtext.example.company.util;
 import org.eclipse.jdt.annotation.NonNull;
+import org.eclipse.jdt.annotation.Nullable;
+
 import org.xtext.example.company.lookup.LookupEnvironment;
 import org.xtext.example.company.util.Visitable;
 
 public abstract class AbstractCompanyCommonLookupVisitor
-	extends AbstractExtendingVisitor<LookupEnvironment, LookupEnvironment> {
+	extends AbstractExtendingVisitor<@Nullable LookupEnvironment, @NonNull LookupEnvironment> {
 
-	protected AbstractCompanyCommonLookupVisitor(LookupEnvironment context) {
+	protected AbstractCompanyCommonLookupVisitor(@NonNull LookupEnvironment context) {
 		super(context);
 	}
 	
