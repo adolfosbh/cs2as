@@ -1,0 +1,7 @@
+-- Single line Comments
+/* multi line
+
+comments-- */
+
+This should be 
+ counted
