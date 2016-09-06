@@ -5,459 +5,449 @@
     importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" complianceLevel="8.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/OCL/GenModel/Visitor">
-    <details key="Root Visitor Class" value="org.xtext.example.delphi.astm.gastm.util.Visitor"/>
-    <details key="Derived Visitor Class" value="org.xtext.example.delphi.astm.gastm.util.Visitor"/>
-    <details key="Visitable Interface" value="org.xtext.example.delphi.astm.gastm.util.Visitable"/>
+    <details key="Root Visitor Class" value="org.xtext.example.delphi.astm.util.Visitor"/>
+    <details key="Derived Visitor Class" value="org.xtext.example.delphi.astm.util.Visitor"/>
+    <details key="Visitable Interface" value="org.xtext.example.delphi.astm.util.Visitable"/>
   </genAnnotations>
   <foreignModel>astm.ecore</foreignModel>
-  <genPackages prefix="Astm" basePackage="org.xtext.example" disposableProviderFactory="true"
+  <genPackages prefix="Astm" basePackage="org.xtext.example.delphi" disposableProviderFactory="true"
       ecorePackage="astm.ecore#/">
-    <nestedGenPackages prefix="Gastm" disposableProviderFactory="true" loadInitialization="true"
-        literalsInterface="false" ecorePackage="astm.ecore#//gastm">
-      <genClasses ecoreClass="astm.ecore#//gastm/GASTMObject"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/GASTMSourceObject"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/GASTMSemanticObject"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/OtherSyntaxObject"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/StorageSpecification"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/DataType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/AccessKind"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/UnaryOperator"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/BinaryOperator"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/ActualParameter"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/SourceFile">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/SourceFile/pathName"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/SourceLocation">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/SourceLocation/startLine"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/SourceLocation/startColumn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/SourceLocation/endLine"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/SourceLocation/endColumn"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/SourceLocation/inSourceFile"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/Project">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Project/files"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Project/outerScope"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/Scope">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Scope/definitionObject"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Scope/childScope"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/GASTMSyntaxObject">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/GASTMSyntaxObject/locationInfo"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/GASTMSyntaxObject/preProcessorElements"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/GASTMSyntaxObject/annotations"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/CompilationUnit">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/CompilationUnit/language"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/CompilationUnit/fragments"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/CompilationUnit/opensScope"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/Name">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/Name/nameString"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/DeclarationOrDefinition">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/DeclarationOrDefinition/isRegister"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/DeclarationOrDefinition/linkageSpecifier"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/DeclarationOrDefinition/storageSpecifiers"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/DeclarationOrDefinition/accessKind"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/Definition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Definition/identifierName"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Definition/definitionType"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/Declaration">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Declaration/defRef"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Declaration/identifierName"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Declaration/declarationType"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/FunctionDeclaration">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionDeclaration/formalParameters"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionDeclaration/functionMemberAttributes"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionDeclaration/returnType"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/VariableDeclaration">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/VariableDeclaration/isMutable"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/FunctionDefinition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionDefinition/returnType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionDefinition/formalParameters"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionDefinition/body"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionDefinition/functionMemberAttributes"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionDefinition/opensScope"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/FunctionMemberAttributes">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/FunctionMemberAttributes/isFriend"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/FunctionMemberAttributes/isInline"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/FunctionMemberAttributes/isThisConst"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionMemberAttributes/virtualSpecifier"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/EntryDefinition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/EntryDefinition/formalParameters"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/EntryDefinition/body"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/DataDefinition">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/DataDefinition/isMutable"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/DataDefinition/initialValue"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/BitFieldDefinition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/BitFieldDefinition/bitFieldSize"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/EnumLiteralDefinition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/EnumLiteralDefinition/value"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/TypeDefinition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/TypeDefinition/name"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/NamedTypeDefinition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/NamedTypeDefinition/definitionType"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/AggregateTypeDefinition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/AggregateTypeDefinition/aggregateType"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/NameSpaceDefinition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/NameSpaceDefinition/nameSpace"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/NameSpaceDefinition/body"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/NameSpaceDefinition/nameSpaceType"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/LabelDefinition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/LabelDefinition/labelName"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/LabelDefinition/labelType"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/IncludeUnit">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/IncludeUnit/file"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/MacroCall">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/MacroCall/refersTo"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/MacroDefinition">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/MacroDefinition/macroName"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/MacroDefinition/body"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/Comment">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/Comment/text"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/Type">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/Type/isConst"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/Type/isVolatile"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/PrimitiveType">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/PrimitiveType/isSigned"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/EnumType">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/EnumType/enumLiterals"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/ConstructedType">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ConstructedType/baseType"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/AggregateType">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/AggregateType/members"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/AggregateType/opensScope"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/ArrayType">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ArrayType/ranks"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/Dimension">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Dimension/lowBound"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Dimension/highBound"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/FunctionType">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionType/returnType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionType/parameterTypes"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/FormalParameterType">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FormalParameterType/type"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/NamedType">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/NamedType/body"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/ClassType">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ClassType/derivesFrom"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/DerivesFrom">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/DerivesFrom/isVirtual"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/DerivesFrom/accessKind"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/DerivesFrom/className"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/UnnamedTypeReference">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/UnnamedTypeReference/type"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/NamedTypeReference">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/NamedTypeReference/name"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference astm.ecore#//gastm/NamedTypeReference/type"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/DeleteStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/DeleteStatement/operand"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/DeclarationOrDefinitionStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/DeclarationOrDefinitionStatement/declOrDefn"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/ExpressionStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ExpressionStatement/expression"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/JumpStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/JumpStatement/target"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/BreakStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/BreakStatement/target"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/ContinueStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ContinueStatement/target"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/LabeledStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/LabeledStatement/label"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/LabeledStatement/statement"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/BlockStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/BlockStatement/subStatements"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/BlockStatement/opensScope"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/EmptyStatement"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/IfStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/IfStatement/condition"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/IfStatement/thenBody"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/IfStatement/elseBody"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/SwitchStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/SwitchStatement/switchExpression"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/SwitchStatement/cases"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/SwitchCase">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/SwitchCase/body"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/CaseBlock">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/CaseBlock/caseExpressions"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/ReturnStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ReturnStatement/returnValue"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/LoopStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/LoopStatement/condition"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/LoopStatement/body"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/ForStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ForStatement/initBody"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ForStatement/iterationBody"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/TryStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/TryStatement/guardedStatement"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/TryStatement/catchBlocks"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/TryStatement/finalStatement"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/CatchBlock">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/CatchBlock/body"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/TypesCatchBlock">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/TypesCatchBlock/exceptions"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/VariableCatchBlock">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/VariableCatchBlock/exceptionVariable"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/ThrowStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ThrowStatement/exception"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/Expression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/Expression/expressionType"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/NameReference">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/NameReference/name"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference astm.ecore#//gastm/NameReference/refersTo"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/ArrayAccess">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ArrayAccess/arrayName"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ArrayAccess/subscripts"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/QualifiedIdentifierReference">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/QualifiedIdentifierReference/qualifiers"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/QualifiedIdentifierReference/member"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/TypeQualifiedIdentifierReference">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/TypeQualifiedIdentifierReference/aggregateType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/TypeQualifiedIdentifierReference/member"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/Literal">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//gastm/Literal/value"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/CastExpression">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference astm.ecore#//gastm/CastExpression/castType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/CastExpression/expression"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/UnaryExpression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/UnaryExpression/operator"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/UnaryExpression/operand"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/BinaryExpression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/BinaryExpression/operator"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/BinaryExpression/leftOperand"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/BinaryExpression/rightOperand"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/OperatorAssign">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/OperatorAssign/operator"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/ConditionalExpression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ConditionalExpression/condition"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ConditionalExpression/onTrueOperand"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ConditionalExpression/onFalseOperand"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/RangeExpression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/RangeExpression/fromExpression"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/RangeExpression/toExpression"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/FunctionCallExpression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionCallExpression/calledFunction"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/FunctionCallExpression/actualParams"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/ActualParameterExpression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/ActualParameterExpression/value"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/NewExpression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/NewExpression/newType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/NewExpression/actualParams"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/LabelAccess">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/LabelAccess/name"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/LabelAccess/definition"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/AnnotationExpression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/AnnotationExpression/annotationType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/AnnotationExpression/memberValues"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/GlobalScope"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/PreprocessorElement"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/DefinitionObject"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/ProgramScope"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/TypeReference"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/Statement"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/FunctionScope"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/NameSpaceType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/LabelType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/AggregateScope"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/BlockScope"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/IdentifierReference"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/FormalParameterDefinition"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/VirtualSpecification"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/FormalParameterDeclaration"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/VariableDefinition"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/FunctionMemberAttribute"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/External"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/FunctionPersistent"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/FileLocal"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/PerClassMember"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/NoDef"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Virtual"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/PureVirtual"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/NonVirtual"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/ExceptionType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Void"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Byte"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/ShortInteger"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Integer"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/LongInteger"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Float"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Double"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/LongDouble"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Character"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/String"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Boolean"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/WideCharacter"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/CollectionType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/PointerType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/ReferenceType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/RangeType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/StructureType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/UnionType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/AnnotationType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/ByValueFormalParameterType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/ByReferenceFormalParameterType"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Public"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Protected"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Private"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/TerminateStatement"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/DefaultBlock"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/WhileStatement"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/DoWhileStatement"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/ForCheckBeforeStatement"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/ForCheckAfterStatement"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/AggregateExpression"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/QualifiedOverPointer"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/QualifiedOverData"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/IntegerLiteral"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/StringLiteral"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/CharLiteral"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/RealLiteral"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/BooleanLiteral"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/BitLiteral"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/UnaryPlus"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Negate"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Not"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/BitNot"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/AddressOf"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Deref"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Increment"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Decrement"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/PostIncrement"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/PostDecrement"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Add"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Subtract"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Multiply"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Divide"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Modulus"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Exponent"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/And"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Or"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Equal"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/NotEqual"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Greater"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/NotGreater"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Less"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/NotLess"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/BitAnd"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/BitOr"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/BitXor"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/BitLeftShift"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/BitRightShift"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/Assign"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/MissingActualParameter"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/ByValueActualParameterExpression"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/ByReferenceActualParameterExpression"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/SpecificTriggerDefinition">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//gastm/SpecificTriggerDefinition/body"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//gastm/SpecificLessEqual"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/SpecificGreaterEqual"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/SpecificIn"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/SpecificLike"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/SpecificConcatString"/>
-      <genClasses ecoreClass="astm.ecore#//gastm/SpecificSelectStatement"/>
-      <genClasses image="false" ecoreClass="astm.ecore#//gastm/Visitable"/>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Sastm" disposableProviderFactory="true" ecorePackage="astm.ecore#//sastm">
-      <genClasses ecoreClass="astm.ecore#//sastm/DelphiUnit">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//sastm/DelphiUnit/name"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//sastm/DelphiUnit/interface"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//sastm/DelphiUnit/implementation"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//sastm/DelphiInterfaceSection">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//sastm/DelphiInterfaceSection/uses"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//sastm/DelphiImplementationSection">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//sastm/DelphiImplementationSection/uses"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//sastm/DelphiImplementationSection/exports"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//sastm/DelphiBlockStatement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//sastm/DelphiBlockStatement/exports"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//sastm/DelphiBlockStatement/declarations"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//sastm/DelphiFunctionCallExpression">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference astm.ecore#//sastm/DelphiFunctionCallExpression/applyTo"/>
-      </genClasses>
-      <genClasses ecoreClass="astm.ecore#//sastm/DelphiWithStatement">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference astm.ecore#//sastm/DelphiWithStatement/withs"/>
-      </genClasses>
-    </nestedGenPackages>
+    <genClasses ecoreClass="astm.ecore#//DelphiUnit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DelphiUnit/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DelphiUnit/interface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DelphiUnit/implementation"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//DelphiInterfaceSection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DelphiInterfaceSection/uses"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//DelphiImplementationSection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DelphiImplementationSection/uses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DelphiImplementationSection/exports"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//DelphiBlockStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DelphiBlockStatement/exports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DelphiBlockStatement/declarations"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//DelphiFunctionCallExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference astm.ecore#//DelphiFunctionCallExpression/applyTo"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//DelphiWithStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference astm.ecore#//DelphiWithStatement/withs"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//GASTMObject"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//GASTMSourceObject"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//GASTMSemanticObject"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//OtherSyntaxObject"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//StorageSpecification"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//DataType"/>
+    <genClasses ecoreClass="astm.ecore#//AccessKind"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//UnaryOperator"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//BinaryOperator"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//ActualParameter"/>
+    <genClasses ecoreClass="astm.ecore#//SourceFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//SourceFile/pathName"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//SourceLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//SourceLocation/startLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//SourceLocation/startColumn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//SourceLocation/endLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//SourceLocation/endColumn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//SourceLocation/inSourceFile"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//Project">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Project/files"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Project/outerScope"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//Scope">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Scope/definitionObject"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Scope/childScope"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//GASTMSyntaxObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//GASTMSyntaxObject/locationInfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//GASTMSyntaxObject/preProcessorElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//GASTMSyntaxObject/annotations"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//CompilationUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//CompilationUnit/language"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//CompilationUnit/fragments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//CompilationUnit/opensScope"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//Name">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//Name/nameString"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//DeclarationOrDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//DeclarationOrDefinition/isRegister"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//DeclarationOrDefinition/linkageSpecifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DeclarationOrDefinition/storageSpecifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DeclarationOrDefinition/accessKind"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//Definition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Definition/identifierName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Definition/definitionType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//Declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Declaration/defRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Declaration/identifierName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Declaration/declarationType"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//FunctionDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionDeclaration/formalParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionDeclaration/functionMemberAttributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionDeclaration/returnType"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//VariableDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//VariableDeclaration/isMutable"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//FunctionDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionDefinition/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionDefinition/formalParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionDefinition/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionDefinition/functionMemberAttributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionDefinition/opensScope"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//FunctionMemberAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//FunctionMemberAttributes/isFriend"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//FunctionMemberAttributes/isInline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//FunctionMemberAttributes/isThisConst"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionMemberAttributes/virtualSpecifier"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//EntryDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//EntryDefinition/formalParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//EntryDefinition/body"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//DataDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//DataDefinition/isMutable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DataDefinition/initialValue"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//BitFieldDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//BitFieldDefinition/bitFieldSize"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//EnumLiteralDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//EnumLiteralDefinition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//TypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//TypeDefinition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//NamedTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//NamedTypeDefinition/definitionType"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//AggregateTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//AggregateTypeDefinition/aggregateType"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//NameSpaceDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//NameSpaceDefinition/nameSpace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//NameSpaceDefinition/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//NameSpaceDefinition/nameSpaceType"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//LabelDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//LabelDefinition/labelName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//LabelDefinition/labelType"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//IncludeUnit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//IncludeUnit/file"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//MacroCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//MacroCall/refersTo"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//MacroDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//MacroDefinition/macroName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//MacroDefinition/body"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//Comment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//Comment/text"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//Type/isConst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//Type/isVolatile"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//PrimitiveType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//PrimitiveType/isSigned"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//EnumType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//EnumType/enumLiterals"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//ConstructedType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ConstructedType/baseType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//AggregateType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//AggregateType/members"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//AggregateType/opensScope"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//ArrayType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ArrayType/ranks"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//Dimension">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Dimension/lowBound"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Dimension/highBound"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//FunctionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionType/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionType/parameterTypes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//FormalParameterType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FormalParameterType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//NamedType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//NamedType/body"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//ClassType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ClassType/derivesFrom"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//DerivesFrom">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//DerivesFrom/isVirtual"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DerivesFrom/accessKind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DerivesFrom/className"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//UnnamedTypeReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//UnnamedTypeReference/type"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//NamedTypeReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//NamedTypeReference/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference astm.ecore#//NamedTypeReference/type"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//DeleteStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DeleteStatement/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//DeclarationOrDefinitionStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//DeclarationOrDefinitionStatement/declOrDefn"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//ExpressionStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ExpressionStatement/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//JumpStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//JumpStatement/target"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//BreakStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//BreakStatement/target"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//ContinueStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ContinueStatement/target"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//LabeledStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//LabeledStatement/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//LabeledStatement/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//BlockStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//BlockStatement/subStatements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//BlockStatement/opensScope"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//EmptyStatement"/>
+    <genClasses ecoreClass="astm.ecore#//IfStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//IfStatement/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//IfStatement/thenBody"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//IfStatement/elseBody"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//SwitchStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//SwitchStatement/switchExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//SwitchStatement/cases"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//SwitchCase">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//SwitchCase/body"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//CaseBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//CaseBlock/caseExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//ReturnStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ReturnStatement/returnValue"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//LoopStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//LoopStatement/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//LoopStatement/body"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//ForStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ForStatement/initBody"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ForStatement/iterationBody"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//TryStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//TryStatement/guardedStatement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//TryStatement/catchBlocks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//TryStatement/finalStatement"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//CatchBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//CatchBlock/body"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//TypesCatchBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//TypesCatchBlock/exceptions"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//VariableCatchBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//VariableCatchBlock/exceptionVariable"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//ThrowStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ThrowStatement/exception"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//Expression/expressionType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//NameReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//NameReference/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference astm.ecore#//NameReference/refersTo"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//ArrayAccess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ArrayAccess/arrayName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ArrayAccess/subscripts"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="astm.ecore#//QualifiedIdentifierReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//QualifiedIdentifierReference/qualifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//QualifiedIdentifierReference/member"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//TypeQualifiedIdentifierReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//TypeQualifiedIdentifierReference/aggregateType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//TypeQualifiedIdentifierReference/member"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute astm.ecore#//Literal/value"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//CastExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference astm.ecore#//CastExpression/castType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//CastExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//UnaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//UnaryExpression/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//UnaryExpression/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//BinaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//BinaryExpression/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//BinaryExpression/leftOperand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//BinaryExpression/rightOperand"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//OperatorAssign">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//OperatorAssign/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//ConditionalExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ConditionalExpression/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ConditionalExpression/onTrueOperand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ConditionalExpression/onFalseOperand"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//RangeExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//RangeExpression/fromExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//RangeExpression/toExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//FunctionCallExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionCallExpression/calledFunction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//FunctionCallExpression/actualParams"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//ActualParameterExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//ActualParameterExpression/value"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//NewExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//NewExpression/newType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//NewExpression/actualParams"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//LabelAccess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//LabelAccess/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//LabelAccess/definition"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//AnnotationExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//AnnotationExpression/annotationType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//AnnotationExpression/memberValues"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//GlobalScope"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//PreprocessorElement"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//DefinitionObject"/>
+    <genClasses ecoreClass="astm.ecore#//ProgramScope"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//TypeReference"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//Statement"/>
+    <genClasses ecoreClass="astm.ecore#//FunctionScope"/>
+    <genClasses ecoreClass="astm.ecore#//NameSpaceType"/>
+    <genClasses ecoreClass="astm.ecore#//LabelType"/>
+    <genClasses ecoreClass="astm.ecore#//AggregateScope"/>
+    <genClasses ecoreClass="astm.ecore#//BlockScope"/>
+    <genClasses ecoreClass="astm.ecore#//IdentifierReference"/>
+    <genClasses ecoreClass="astm.ecore#//FormalParameterDefinition"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//VirtualSpecification"/>
+    <genClasses ecoreClass="astm.ecore#//FormalParameterDeclaration"/>
+    <genClasses ecoreClass="astm.ecore#//VariableDefinition"/>
+    <genClasses ecoreClass="astm.ecore#//FunctionMemberAttribute"/>
+    <genClasses ecoreClass="astm.ecore#//External"/>
+    <genClasses ecoreClass="astm.ecore#//FunctionPersistent"/>
+    <genClasses ecoreClass="astm.ecore#//FileLocal"/>
+    <genClasses ecoreClass="astm.ecore#//PerClassMember"/>
+    <genClasses ecoreClass="astm.ecore#//NoDef"/>
+    <genClasses ecoreClass="astm.ecore#//Virtual"/>
+    <genClasses ecoreClass="astm.ecore#//PureVirtual"/>
+    <genClasses ecoreClass="astm.ecore#//NonVirtual"/>
+    <genClasses ecoreClass="astm.ecore#//ExceptionType"/>
+    <genClasses ecoreClass="astm.ecore#//Void"/>
+    <genClasses ecoreClass="astm.ecore#//Byte"/>
+    <genClasses ecoreClass="astm.ecore#//ShortInteger"/>
+    <genClasses ecoreClass="astm.ecore#//Integer"/>
+    <genClasses ecoreClass="astm.ecore#//LongInteger"/>
+    <genClasses ecoreClass="astm.ecore#//Float"/>
+    <genClasses ecoreClass="astm.ecore#//Double"/>
+    <genClasses ecoreClass="astm.ecore#//LongDouble"/>
+    <genClasses ecoreClass="astm.ecore#//Character"/>
+    <genClasses ecoreClass="astm.ecore#//String"/>
+    <genClasses ecoreClass="astm.ecore#//Boolean"/>
+    <genClasses ecoreClass="astm.ecore#//WideCharacter"/>
+    <genClasses ecoreClass="astm.ecore#//CollectionType"/>
+    <genClasses ecoreClass="astm.ecore#//PointerType"/>
+    <genClasses ecoreClass="astm.ecore#//ReferenceType"/>
+    <genClasses ecoreClass="astm.ecore#//RangeType"/>
+    <genClasses ecoreClass="astm.ecore#//StructureType"/>
+    <genClasses ecoreClass="astm.ecore#//UnionType"/>
+    <genClasses ecoreClass="astm.ecore#//AnnotationType"/>
+    <genClasses ecoreClass="astm.ecore#//ByValueFormalParameterType"/>
+    <genClasses ecoreClass="astm.ecore#//ByReferenceFormalParameterType"/>
+    <genClasses ecoreClass="astm.ecore#//Public"/>
+    <genClasses ecoreClass="astm.ecore#//Protected"/>
+    <genClasses ecoreClass="astm.ecore#//Private"/>
+    <genClasses ecoreClass="astm.ecore#//TerminateStatement"/>
+    <genClasses ecoreClass="astm.ecore#//DefaultBlock"/>
+    <genClasses ecoreClass="astm.ecore#//WhileStatement"/>
+    <genClasses ecoreClass="astm.ecore#//DoWhileStatement"/>
+    <genClasses ecoreClass="astm.ecore#//ForCheckBeforeStatement"/>
+    <genClasses ecoreClass="astm.ecore#//ForCheckAfterStatement"/>
+    <genClasses ecoreClass="astm.ecore#//AggregateExpression"/>
+    <genClasses ecoreClass="astm.ecore#//QualifiedOverPointer"/>
+    <genClasses ecoreClass="astm.ecore#//QualifiedOverData"/>
+    <genClasses ecoreClass="astm.ecore#//IntegerLiteral"/>
+    <genClasses ecoreClass="astm.ecore#//StringLiteral"/>
+    <genClasses ecoreClass="astm.ecore#//CharLiteral"/>
+    <genClasses ecoreClass="astm.ecore#//RealLiteral"/>
+    <genClasses ecoreClass="astm.ecore#//BooleanLiteral"/>
+    <genClasses ecoreClass="astm.ecore#//BitLiteral"/>
+    <genClasses ecoreClass="astm.ecore#//UnaryPlus"/>
+    <genClasses ecoreClass="astm.ecore#//Negate"/>
+    <genClasses ecoreClass="astm.ecore#//Not"/>
+    <genClasses ecoreClass="astm.ecore#//BitNot"/>
+    <genClasses ecoreClass="astm.ecore#//AddressOf"/>
+    <genClasses ecoreClass="astm.ecore#//Deref"/>
+    <genClasses ecoreClass="astm.ecore#//Increment"/>
+    <genClasses ecoreClass="astm.ecore#//Decrement"/>
+    <genClasses ecoreClass="astm.ecore#//PostIncrement"/>
+    <genClasses ecoreClass="astm.ecore#//PostDecrement"/>
+    <genClasses ecoreClass="astm.ecore#//Add"/>
+    <genClasses ecoreClass="astm.ecore#//Subtract"/>
+    <genClasses ecoreClass="astm.ecore#//Multiply"/>
+    <genClasses ecoreClass="astm.ecore#//Divide"/>
+    <genClasses ecoreClass="astm.ecore#//Modulus"/>
+    <genClasses ecoreClass="astm.ecore#//Exponent"/>
+    <genClasses ecoreClass="astm.ecore#//And"/>
+    <genClasses ecoreClass="astm.ecore#//Or"/>
+    <genClasses ecoreClass="astm.ecore#//Equal"/>
+    <genClasses ecoreClass="astm.ecore#//NotEqual"/>
+    <genClasses ecoreClass="astm.ecore#//Greater"/>
+    <genClasses ecoreClass="astm.ecore#//NotGreater"/>
+    <genClasses ecoreClass="astm.ecore#//Less"/>
+    <genClasses ecoreClass="astm.ecore#//NotLess"/>
+    <genClasses ecoreClass="astm.ecore#//BitAnd"/>
+    <genClasses ecoreClass="astm.ecore#//BitOr"/>
+    <genClasses ecoreClass="astm.ecore#//BitXor"/>
+    <genClasses ecoreClass="astm.ecore#//BitLeftShift"/>
+    <genClasses ecoreClass="astm.ecore#//BitRightShift"/>
+    <genClasses ecoreClass="astm.ecore#//Assign"/>
+    <genClasses ecoreClass="astm.ecore#//MissingActualParameter"/>
+    <genClasses ecoreClass="astm.ecore#//ByValueActualParameterExpression"/>
+    <genClasses ecoreClass="astm.ecore#//ByReferenceActualParameterExpression"/>
+    <genClasses ecoreClass="astm.ecore#//SpecificTriggerDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference astm.ecore#//SpecificTriggerDefinition/body"/>
+    </genClasses>
+    <genClasses ecoreClass="astm.ecore#//SpecificLessEqual"/>
+    <genClasses ecoreClass="astm.ecore#//SpecificGreaterEqual"/>
+    <genClasses ecoreClass="astm.ecore#//SpecificIn"/>
+    <genClasses ecoreClass="astm.ecore#//SpecificLike"/>
+    <genClasses ecoreClass="astm.ecore#//SpecificConcatString"/>
+    <genClasses ecoreClass="astm.ecore#//SpecificSelectStatement"/>
+    <genClasses image="false" ecoreClass="astm.ecore#//Visitable"/>
   </genPackages>
 </genmodel:GenModel>

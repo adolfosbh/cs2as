@@ -7,4 +7,12 @@
 			class = "org.xtext.example.delphi.delphi.DelphiPackage"
 			genModel = "model/generated/Delphi.genmodel" />
 	</extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated astm -->
+      <package
+            uri="http://modelum.es/modernization/astm"
+            class="org.xtext.example.delphi.astm.AstmPackage"
+            genModel="model/astm.genmodel"/>
+   </extension>
+
 </plugin>

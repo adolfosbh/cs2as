@@ -22,14 +22,14 @@ Workflow {
     bean = ProjectMapSetup{ resourceSet = resourceSet}
     bean = EcoreGenModelSetup { resourceSet = resourceSet }
     
-//    component = org.eclipse.qvtd.cs2as.build.mwe.VisitableInjector {
-//    	resourceSet = resourceSet
-//		visitableInfo = org.eclipse.qvtd.cs2as.build.mwe.VisitableInjector.VisitableInfo {
-//			targetGenModel = "platform:/resource/org.xtext.example.delphi/model/astm.genmodel"
-//			mainPackageName = "gastm"
-//			visitableInstanceTypeName = "${projectName}.astm.gastm.util.Visitable" 
-//		}
-//    }
+    component = org.eclipse.qvtd.cs2as.build.mwe.VisitableInjector {
+    	resourceSet = resourceSet
+		visitableInfo = org.eclipse.qvtd.cs2as.build.mwe.VisitableInjector.VisitableInfo {
+			targetGenModel = "platform:/resource/org.xtext.example.delphi/model/astm.genmodel"
+			mainPackageName = "astm"
+			visitableInstanceTypeName = "${projectName}.astm.util.Visitable" 
+		}
+    }
     
     component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
     	genModel = "/${projectName}/model/astm.genmodel"

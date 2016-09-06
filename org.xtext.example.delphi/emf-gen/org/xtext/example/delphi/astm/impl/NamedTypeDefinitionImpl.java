@@ -1,0 +1,182 @@
+/**
+ */
+package org.xtext.example.delphi.astm.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.xtext.example.delphi.astm.AstmPackage;
+import org.xtext.example.delphi.astm.NamedType;
+import org.xtext.example.delphi.astm.NamedTypeDefinition;
+import org.xtext.example.delphi.astm.util.Visitor;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Named Type Definition</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.example.delphi.astm.impl.NamedTypeDefinitionImpl#getDefinitionType <em>Definition Type</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class NamedTypeDefinitionImpl extends TypeDefinitionImpl implements NamedTypeDefinition {
+	/**
+	 * The cached value of the '{@link #getDefinitionType() <em>Definition Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefinitionType()
+	 * @generated
+	 * @ordered
+	 */
+	protected NamedType definitionType;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NamedTypeDefinitionImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return AstmPackage.Literals.NAMED_TYPE_DEFINITION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NamedType getDefinitionType() {
+		return definitionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDefinitionType(NamedType newDefinitionType, NotificationChain msgs) {
+		NamedType oldDefinitionType = definitionType;
+		definitionType = newDefinitionType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstmPackage.NAMED_TYPE_DEFINITION__DEFINITION_TYPE, oldDefinitionType, newDefinitionType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefinitionType(NamedType newDefinitionType) {
+		if (newDefinitionType != definitionType) {
+			NotificationChain msgs = null;
+			if (definitionType != null)
+				msgs = ((InternalEObject)definitionType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstmPackage.NAMED_TYPE_DEFINITION__DEFINITION_TYPE, null, msgs);
+			if (newDefinitionType != null)
+				msgs = ((InternalEObject)newDefinitionType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstmPackage.NAMED_TYPE_DEFINITION__DEFINITION_TYPE, null, msgs);
+			msgs = basicSetDefinitionType(newDefinitionType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AstmPackage.NAMED_TYPE_DEFINITION__DEFINITION_TYPE, newDefinitionType, newDefinitionType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AstmPackage.NAMED_TYPE_DEFINITION__DEFINITION_TYPE:
+				return basicSetDefinitionType(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case AstmPackage.NAMED_TYPE_DEFINITION__DEFINITION_TYPE:
+				return getDefinitionType();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case AstmPackage.NAMED_TYPE_DEFINITION__DEFINITION_TYPE:
+				setDefinitionType((NamedType)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case AstmPackage.NAMED_TYPE_DEFINITION__DEFINITION_TYPE:
+				setDefinitionType((NamedType)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case AstmPackage.NAMED_TYPE_DEFINITION__DEFINITION_TYPE:
+				return definitionType != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @generated
+	 */
+	@Override
+	public <R> R accept(Visitor<R> visitor) {
+		return visitor.visitNamedTypeDefinition(this);
+	}
+
+} //NamedTypeDefinitionImpl
