@@ -1,0 +1,5 @@
+-- comment at the beggning 
+This should be  counted !!! _this_as_well_
+
+
+/* comment at the end */

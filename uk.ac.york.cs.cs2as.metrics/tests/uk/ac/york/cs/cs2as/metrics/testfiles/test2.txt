@@ -1,0 +1,10 @@
+Some words_at_the_start -- with a final comment
+/* multi line
+
+comments-- */
+
+This should be 
+ counted
+/*
+Multi line comment at the end
+*/

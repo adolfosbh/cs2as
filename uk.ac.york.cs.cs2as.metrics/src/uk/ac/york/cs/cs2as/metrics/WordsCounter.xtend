@@ -25,10 +25,10 @@ public class WordsCounter {
 			
 	def public int count(String stream) {
 		var finalStream = stream;
-		finalStream = if (multiLineCommentStart!=null) finalStream.replaceAll('''(?s)«multiLineCommentStart.scape».*«multiLineCommentEnd.scape»''','') else finalStream
+		finalStream = if (multiLineCommentStart!=null) finalStream.replaceAll('''(?s)«multiLineCommentStart.scape».*?«multiLineCommentEnd.scape»''','') else finalStream
 		finalStream = if (singleLineComment!=null) finalStream.replaceAll('''«singleLineComment.scape».*''', '') else finalStream
 		val split = finalStream.split("\\W+")
-		split.length-1;
+		split.filter[length > 0].length
 	}
 	
 	def public int countFile(String path) {

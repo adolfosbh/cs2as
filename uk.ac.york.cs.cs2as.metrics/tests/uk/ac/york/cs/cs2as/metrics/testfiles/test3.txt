@@ -1,0 +1,9 @@
+This should be  counted
+/* one line  line comment */
+/* multi
+line
+coment -- tricky
+ */
+/*   /* /*  tricky comment */
+
+Some words at the end
