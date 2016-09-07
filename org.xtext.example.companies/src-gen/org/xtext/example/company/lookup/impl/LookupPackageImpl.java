@@ -91,6 +91,7 @@ public class LookupPackageImpl extends EPackageImpl implements LookupPackage {
 
 		// Initialize simple dependencies
 		CompanyPackage.eINSTANCE.eClass();
+		OCLstdlibPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theLookupPackage.createPackageContents();
