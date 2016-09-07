@@ -25,14 +25,18 @@ Workflow {
 	component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
     	genModel = "/${projectName}/model/Company.genmodel"
     }
-    component = GenerateASVisitors { resourceSet = resourceSet
-    	projectName = "${projectName}"
-    	genModelFile = "model/Company.genmodel"
+    
+    component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
+    	genModel = "/${projectName}/model/Lookup.genmodel"
     }
-
-    component = @SubGenerateAutoASModel { resourceSet = resourceSet
-    	projectName = "${projectName}"
-    	genModelFile = "model/Company.genmodel"
-    	lookupFilePath = "model/companiesLookup.ocl"
-    }
+//    component = GenerateASVisitors { resourceSet = resourceSet
+//    	projectName = "${projectName}"
+//    	genModelFile = "model/Company.genmodel"
+//    }
+//
+//    component = @SubGenerateAutoASModel { resourceSet = resourceSet
+//    	projectName = "${projectName}"
+//    	genModelFile = "model/Company.genmodel"
+//    	lookupFilePath = "model/companiesLookup.ocl"
+//    }
 }

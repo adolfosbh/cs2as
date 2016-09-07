@@ -84,13 +84,13 @@ public class LookupPackageImpl extends EPackageImpl implements LookupPackage {
 		if (isInited) return (LookupPackage)EPackage.Registry.INSTANCE.getEPackage(LookupPackage.eNS_URI);
 
 		// Obtain or create and register package
-		LookupPackageImpl theLookupPackage = (LookupPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof LookupPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new LookupPackageImpl());
+		Object ePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		LookupPackageImpl theLookupPackage = (LookupPackageImpl)(ePackage instanceof LookupPackageImpl ? ePackage : new LookupPackageImpl());
 
 		isInited = true;
 
 		// Initialize simple dependencies
 		CompanyPackage.eINSTANCE.eClass();
-		OCLstdlibPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theLookupPackage.createPackageContents();

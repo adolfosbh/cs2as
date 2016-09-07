@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
 import org.xtext.example.company.lookup.*;
@@ -24,7 +25,7 @@ import org.xtext.example.company.lookup.*;
  * @see org.xtext.example.company.lookup.LookupPackage
  * @generated
  */
-public class LookupSwitch<T> extends Switch<T> {
+public class LookupSwitch<@Nullable T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

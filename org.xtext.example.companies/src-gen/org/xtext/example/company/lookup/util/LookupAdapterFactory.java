@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
 import org.xtext.example.company.lookup.*;
@@ -67,8 +68,8 @@ public class LookupAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LookupSwitch<Adapter> modelSwitch =
-		new LookupSwitch<Adapter>() {
+	protected LookupSwitch<@Nullable Adapter> modelSwitch =
+		new LookupSwitch<@Nullable Adapter>() {
 			@Override
 			public Adapter caseLookupEnvironment(LookupEnvironment object) {
 				return createLookupEnvironmentAdapter();
