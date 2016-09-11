@@ -4,16 +4,14 @@ target  as : 'Company.ecore#/'
 mappings {
 	map as::Company from company {
 		name := name
-		depts := department.resolve;
+		depts := department.trace;
 	}
-	
 	map as::Department from department {
 		name := name
-		subdepts := deparment.resolve;
-		manager := department_manager.employee.resolve;
-		employees := department_employees.employee.resolve;
+		subdepts := deparment.trace;
+		manager := department_manager.employee.trace;
+		employees := department_employees.employee.trace;
 	}
-	
 	map as::Employee from  employee {
 		name := name
 		address := address;
@@ -22,27 +20,15 @@ mappings {
 	}
 }
 
-disambiguation {}
-
 nameresolution {
-	Employee {
-		named-element name-property name;
+	targets {
+		Employee using name;
 	}
-	Company {
-		scopes 
-			Employee using getEmployees();
-	}
-}
-
-helpers{
-	as::Company {
-		getEmployees() : Set(Employee) :=
-			depts.getEmployees()->asSet();
-	}
-	as::Department {
-		getEmployees() : Set(Employee) :=
-			subdepts.getEmployees()
-				->includingAll(employees)
-				->including(manager)->asSet()
+	providers {
+		Company {
+			in current_scope provides
+				Employee using depts->closure(subdepts)
+					->collect(employees->including(manager));
+		}
 	}
 }
