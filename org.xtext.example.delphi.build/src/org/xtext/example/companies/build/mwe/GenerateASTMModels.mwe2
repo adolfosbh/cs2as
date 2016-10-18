@@ -21,7 +21,7 @@ Workflow {
 	bean = ResourceSetImpl : resourceSet {}
     bean = ProjectMapSetup{ resourceSet = resourceSet}
     bean = EcoreGenModelSetup { resourceSet = resourceSet }
-    
+
     component = org.eclipse.qvtd.cs2as.build.mwe.VisitableInjector {
     	resourceSet = resourceSet
 		visitableInfo = org.eclipse.qvtd.cs2as.build.mwe.VisitableInjector.VisitableInfo {
@@ -40,9 +40,10 @@ Workflow {
     	genModelFile = "model/astm.genmodel"
     }
 
-//    component = @SubGenerateAutoASModel { resourceSet = resourceSet
-//    	projectName = "${projectName}"
-//    	genModelFile = "model/astm.genmodel"
-//    	lookupFilePath = "model/delphiLookup.ocl"
-//    }
+//   Lookup infrastructure is not needed anymore
+//   component = @SubGenerateAutoASModel { resourceSet = resourceSet
+//   	projectName = "${projectName}"
+//   	genModelFile = "model/astm.genmodel"
+//   	lookupFilePath = "model/delphiLookup.ocl"
+//   }
 }

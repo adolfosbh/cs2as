@@ -40,6 +40,10 @@ Workflow {
 			targetTypeName = "GASTMObject"
 		}
 	}
+	
+	component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
+    	genModel = "/org.xtext.example.delphi/model/generated/Delphi.genmodel"
+    }
 //    //  Generate the CS2AS CGed transformation
 //     component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
 //    	script = "org.xtext.example.delphi.build.GenerateCS2AST"

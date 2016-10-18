@@ -307,8 +307,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="SwitchStatement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="switchExpression" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cases" eType="#//SwitchCase"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cases" upperBound="-1"
+        eType="#//SwitchCase" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SwitchCase" eSuperTypes="#//OtherSyntaxObject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1" eType="#//Statement"

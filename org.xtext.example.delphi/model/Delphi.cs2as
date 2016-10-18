@@ -4,7 +4,7 @@ target as : 'astm.ecore'
 helpers {
 	cs::ident {
 	    extract() : String := 
-	    	null; -- TODO	
+	    	null; -- TODO
 	}
 	
 	cs::identList {
@@ -12,6 +12,12 @@ helpers {
 	    	null; -- TODO	
 	}
 	
+	
+	cs::designatorPart {
+		extract() :String := id
+	}
+
+	id
 	cs::designator {
 		getDefinition() : astm::gastm::Definition :=
 			let method = lookup(FunctionDefinition, subpart.part)
@@ -34,16 +40,16 @@ mappings {
 		-- openScope TODO: deals with the scope
 		locationInfo := astm::gastm::SourceLocation {
 							inSourceFile = astm::gastm::SourceFile {
-								pathName = path
+								-- ISSUE pathName = path
 							}};
 	}
 	create astm::sastm::DelphiInterfaceSection from interfaceSection {
-		uses := uses?.trace;
+		-- ISSUE uses := uses?.trace;
 		fragments := interfaceDecl.trace;
 	}
 	create astm::sastm::DelphiImplementationSection from implementationSection {
-		uses := uses?.trace;
-		exports := exports.trace;
+		-- ISSUE uses := uses?.trace;
+		-- ISSUE exports := exports.trace;
 		fragments := declSect.trace;
 	}
 	create astm::gastm::LabelDefinition from labelDeclSection {
@@ -53,21 +59,15 @@ mappings {
 		identifierName := astm::gastm::Name { nameString = id.extract() };
 		initialValue := const.trace;
 	}
-	refer astm::gastm::VariableDefinition from constExpr :=
+	refer astm::gastm::Expression from constExpr :=
 		exps.trace;
 	create astm::gastm::TypeDefinition from typeDecl {
 		name := astm::gastm::Name { nameString = id.extract() };
 	}
 	create astm::gastm::VariableDefinition from varDecl  {
-		name := astm::gastm::Name { nameString = idList.extract() };
+		identifierName := astm::gastm::Name { nameString = idList.extract() };
 		definitionType := type.trace;
 		isMutable := 'true';
-	}
-	create astm::gastm::FunctionDefinition from functionDecl {
-		identifierName := astm::gastm::Name{ nameString = heading.id.extract() };
-		formalParameters := heading.formalParams.trace;
-		body := block.trace;
-		returnType := heading.type.trace; 
 	}
 	create astm::gastm::FunctionDefinition from procedureDecl {
 		identifierName := astm::gastm::Name{ nameString = heading.id.extract() };
@@ -76,7 +76,7 @@ mappings {
 	}
 	create astm::sastm::DelphiBlockStatement from	block {
 		declarations := declSection?.trace;
-		subStatements := compound.stmtList.statments.trace;
+		subStatements := compound.stamtList.statments.trace;
 	}
 	refer astm::gastm::Statement from statement :=
 		statement.trace; 
@@ -100,13 +100,12 @@ mappings {
 	create astm::gastm::IfStatement from ifStmt  {
 		condition := condition.trace;
 		thenBody := _then.trace;
-		elseElems := _else.trace;
+		elseBody := _else.trace;
 	}
 	
-	create astm::gastm::SwitchStament from caseStmt {
+	create astm::gastm::SwitchStatement from caseStmt {
 		switchExpression := expression.trace;
-		cases            := cases.trace->includingAll(
-			                default.trace);
+		cases            := cases.trace;
 	}
 	create astm::gastm::CaseBlock from caseSelector {
 --		caseExpressions := labels->collect(x | let first = x.first.trace 
@@ -117,19 +116,17 @@ mappings {
 		caseExpressions := labels->collect(x | x.first.trace->including(x.last?.trace));
 		body:= stmt.trace;
 	}
-	create astm::gastm::DefaultBlock from stmtList {
-		body := statments.trace;
-	}
+
 	create astm::gastm::TryStatement from tryStmt { 
-		guardedStatement := stmtList.trace;
-		catchBlocks      := exception.trace;
-		finalStatement   := final.trace;
+		guardedStatement := stmtList.statment->first().trace;
+		-- ISSUE catchBlocks      := exception.trace;
+		finalStatement   := final.statment->first().trace;
 	}
 	
 	create astm::gastm::IdentifierReference from designator 
 		when isIdentifierRef {
 		name := astm::gastm::Name {
-					nameString = subpart.part.id.extract() 
+					nameString = subpart.part.extract() 
 				};
 		refersTo := getDefinition();
 		
@@ -137,9 +134,9 @@ mappings {
 	create astm::gastm::QualifiedOverData from designator 
 		when isQualifiedOverData {
 		name := astm::gastm::Name {
-					nameString = subpart.part.id.extract() 
+					nameString = subpart.part.extract() 
 				};
-		member := designator.trace;
+		member := designator.trace.oclAsType(as::IdentifierReference);
 		refersTo := getDefinition();
 	}
 	refer astm::gastm::DefinitionObject from ident :=
