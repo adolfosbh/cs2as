@@ -18,7 +18,6 @@
  *******************************************************************************/
 package org.xtext.example.companies.tx;
 
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.companies.tx.CS2ASException;

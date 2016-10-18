@@ -18,7 +18,6 @@
  *******************************************************************************/
 package org.xtext.example.companies.tx;
 
-
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.pivot.ids.IdResolver;

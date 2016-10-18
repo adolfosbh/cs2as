@@ -18,7 +18,6 @@
  *******************************************************************************/
 package org.xtext.example.companies.tx;
 
-
 import java.util.List;
 
 import org.xtext.example.companies.tx.Transformer;

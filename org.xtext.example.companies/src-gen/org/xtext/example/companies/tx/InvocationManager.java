@@ -20,7 +20,6 @@ package org.xtext.example.companies.tx;
 
 import org.eclipse.jdt.annotation.NonNull;
 
-
 /**
  * An InvocationManager supervises the invocations of mappings, inhibiting re-executions and
  * maintaining a blocked list of invocations that have failed and a waiting list of invocations

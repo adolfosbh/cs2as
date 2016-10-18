@@ -18,7 +18,6 @@
  *******************************************************************************/
 package org.xtext.example.companies.tx;
 
-
 /**
  * The abstract implementation of a transformation instance provides the mandatory shared functionality for maintaining
  * a run-time representation of a transformation.

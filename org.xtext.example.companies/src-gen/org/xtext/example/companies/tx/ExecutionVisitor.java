@@ -25,7 +25,6 @@ package	org.xtext.example.companies.tx;
 
 import org.eclipse.jdt.annotation.NonNull;
 
-
 /**
  * at-since 1.1
  */

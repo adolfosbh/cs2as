@@ -18,7 +18,6 @@
  *******************************************************************************/
 package org.xtext.example.companies.library.model;
 
-
 import java.util.Collection;
 
 import org.eclipse.jdt.annotation.NonNull;

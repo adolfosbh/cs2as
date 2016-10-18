@@ -24,11 +24,11 @@
   <depts name="D2_">
     <manager name="D2_manager" address="D2_manager_addr" salary="10336.384098721204"/>
     <subdepts name="D2_1_">
-      <manager name="D2_1_manager" address="D2_1_manager_addr" salary="11450.430774428612"/>
+      <manager name="D2_1_manager" address="D2_1_manager_addr" salary="11450.430774428612" mentor="//@depts.0/@subdepts.1/@manager"/>
       <employees name="D2_1_employee1" address="D2_1_employee1_addr" salary="10781.376176495387" mentor="//@depts.1/@subdepts.0/@employees.3"/>
       <employees name="D2_1_employee2" address="D2_1_employee2_addr" salary="10992.195351221892"/>
       <employees name="D2_1_employee3" address="D2_1_employee3_addr" salary="10237.651286253044"/>
-      <employees name="D2_1_employee4" address="D2_1_employee4_addr" salary="11185.104028900696"/>
+      <employees name="D2_1_employee4" address="D2_1_employee4_addr" salary="11185.104028900696" mentor="//@depts.1/@subdepts.1/@employees.1"/>
     </subdepts>
     <subdepts name="D2_2_">
       <manager name="D2_2_manager" address="D2_2_manager_addr" salary="11660.199715660123"/>
@@ -40,6 +40,6 @@
     <employees name="D2_employee1" address="D2_employee1_addr" salary="10800.589809223293"/>
     <employees name="D2_employee2" address="D2_employee2_addr" salary="10294.681214389453"/>
     <employees name="D2_employee3" address="D2_employee3_addr" salary="10912.862980741324"/>
-    <employees name="D2_employee4" address="D2_employee4_addr" salary="10281.982202981908"/>
+    <employees name="D2_employee4" address="D2_employee4_addr" salary="10281.982202981908" mentor="//@depts.0/@subdepts.1/@employees.3"/>
   </depts>
 </com:Company>

@@ -23,7 +23,6 @@ import org.eclipse.jdt.annotation.Nullable;
 import org.xtext.example.companies.tx.Invocation;
 import org.xtext.example.companies.tx.SlotState;
 
-
 /**
  * AbstractInvocation provides the shared implementation of the intrusive blocked/waiting linked list functionality.
  * at-since 1.1
