@@ -17,27 +17,27 @@ import org.xtext.example.delphi.delphi.ident;
  *
  * @generated
  */
-public class identImpl extends MinimalEObjectImpl.Container implements ident
+public class identImpl extends CSTraceImpl implements ident
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected identImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.IDENT;
-  }
+		return DelphiPackage.Literals.IDENT;
+	}
 
 } //identImpl

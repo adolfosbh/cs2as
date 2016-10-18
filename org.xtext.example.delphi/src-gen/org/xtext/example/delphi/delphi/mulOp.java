@@ -21,32 +21,32 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface mulOp extends EObject
+public interface mulOp extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Op</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Op</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute.
-   * @see #setOp(String)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getmulOp_Op()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Op</em>' attribute.
+	 * @see #setOp(String)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getmulOp_Op()
+	 * @model
+	 * @generated
+	 */
   String getOp();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.mulOp#getOp <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.mulOp#getOp <em>Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' attribute.
-   * @see #getOp()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Op</em>' attribute.
+	 * @see #getOp()
+	 * @generated
+	 */
   void setOp(String value);
 
 } // mulOp

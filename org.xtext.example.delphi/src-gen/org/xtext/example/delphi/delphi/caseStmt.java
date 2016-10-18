@@ -14,7 +14,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.delphi.delphi.caseStmt#getCase <em>Case</em>}</li>
+ *   <li>{@link org.xtext.example.delphi.delphi.caseStmt#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.example.delphi.delphi.caseStmt#getCases <em>Cases</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.caseStmt#getDefault <em>Default</em>}</li>
  * </ul>
  *
@@ -25,45 +26,71 @@ import org.eclipse.emf.common.util.EList;
 public interface caseStmt extends conditionalStmt
 {
   /**
-   * Returns the value of the '<em><b>Case</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.caseSelector}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Case</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Case</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getcaseStmt_Case()
-   * @model containment="true"
-   * @generated
-   */
-  EList<caseSelector> getCase();
+	 * @return the value of the '<em>Expression</em>' containment reference.
+	 * @see #setExpression(expression)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getcaseStmt_Expression()
+	 * @model containment="true"
+	 * @generated
+	 */
+  expression getExpression();
 
   /**
-   * Returns the value of the '<em><b>Default</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.caseStmt#getExpression <em>Expression</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Expression</em>' containment reference.
+	 * @see #getExpression()
+	 * @generated
+	 */
+  void setExpression(expression value);
+
+  /**
+	 * Returns the value of the '<em><b>Cases</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.caseSelector}.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Cases</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cases</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getcaseStmt_Cases()
+	 * @model containment="true"
+	 * @generated
+	 */
+  EList<caseSelector> getCases();
+
+  /**
+	 * Returns the value of the '<em><b>Default</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Default</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Default</em>' containment reference.
-   * @see #setDefault(stmtList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getcaseStmt_Default()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Default</em>' containment reference.
+	 * @see #setDefault(stmtList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getcaseStmt_Default()
+	 * @model containment="true"
+	 * @generated
+	 */
   stmtList getDefault();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.caseStmt#getDefault <em>Default</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.caseStmt#getDefault <em>Default</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Default</em>' containment reference.
-   * @see #getDefault()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Default</em>' containment reference.
+	 * @see #getDefault()
+	 * @generated
+	 */
   void setDefault(stmtList value);
 
 } // caseStmt

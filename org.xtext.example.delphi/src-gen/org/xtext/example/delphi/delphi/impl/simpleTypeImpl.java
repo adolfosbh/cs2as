@@ -18,24 +18,24 @@ import org.xtext.example.delphi.delphi.simpleType;
 public class simpleTypeImpl extends typeImpl implements simpleType
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected simpleTypeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.SIMPLE_TYPE;
-  }
+		return DelphiPackage.Literals.SIMPLE_TYPE;
+	}
 
 } //simpleTypeImpl

@@ -5,8 +5,6 @@ package org.xtext.example.delphi.delphi.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.xtext.example.delphi.delphi.DelphiPackage;
 import org.xtext.example.delphi.delphi.structStmt;
 
@@ -17,27 +15,27 @@ import org.xtext.example.delphi.delphi.structStmt;
  *
  * @generated
  */
-public class structStmtImpl extends MinimalEObjectImpl.Container implements structStmt
+public class structStmtImpl extends unlabelledStatementImpl implements structStmt
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected structStmtImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.STRUCT_STMT;
-  }
+		return DelphiPackage.Literals.STRUCT_STMT;
+	}
 
 } //structStmtImpl

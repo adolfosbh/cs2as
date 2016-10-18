@@ -36,172 +36,165 @@ import org.xtext.example.delphi.delphi.typeId;
  *
  * @generated
  */
-public class propertyParameterListImpl extends MinimalEObjectImpl.Container implements propertyParameterList
+public class propertyParameterListImpl extends CSTraceImpl implements propertyParameterList
 {
   /**
-   * The cached value of the '{@link #getIdList() <em>Id List</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIdList() <em>Id List</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdList()
-   * @generated
-   * @ordered
-   */
+	 * @see #getIdList()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<identList> idList;
 
   /**
-   * The cached value of the '{@link #getTypeRef() <em>Type Ref</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTypeRef() <em>Type Ref</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypeRef()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTypeRef()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<typeId> typeRef;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected propertyParameterListImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.PROPERTY_PARAMETER_LIST;
-  }
+		return DelphiPackage.Literals.PROPERTY_PARAMETER_LIST;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<identList> getIdList()
   {
-    if (idList == null)
-    {
-      idList = new EObjectContainmentEList<identList>(identList.class, this, DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST);
-    }
-    return idList;
-  }
+		if (idList == null) {
+			idList = new EObjectContainmentEList<identList>(identList.class, this, DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST);
+		}
+		return idList;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<typeId> getTypeRef()
   {
-    if (typeRef == null)
-    {
-      typeRef = new EObjectContainmentEList<typeId>(typeId.class, this, DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF);
-    }
-    return typeRef;
-  }
+		if (typeRef == null) {
+			typeRef = new EObjectContainmentEList<typeId>(typeId.class, this, DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF);
+		}
+		return typeRef;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST:
-        return ((InternalEList<?>)getIdList()).basicRemove(otherEnd, msgs);
-      case DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF:
-        return ((InternalEList<?>)getTypeRef()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST:
+				return ((InternalEList<?>)getIdList()).basicRemove(otherEnd, msgs);
+			case DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF:
+				return ((InternalEList<?>)getTypeRef()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST:
-        return getIdList();
-      case DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF:
-        return getTypeRef();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST:
+				return getIdList();
+			case DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF:
+				return getTypeRef();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST:
-        getIdList().clear();
-        getIdList().addAll((Collection<? extends identList>)newValue);
-        return;
-      case DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF:
-        getTypeRef().clear();
-        getTypeRef().addAll((Collection<? extends typeId>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST:
+				getIdList().clear();
+				getIdList().addAll((Collection<? extends identList>)newValue);
+				return;
+			case DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF:
+				getTypeRef().clear();
+				getTypeRef().addAll((Collection<? extends typeId>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST:
-        getIdList().clear();
-        return;
-      case DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF:
-        getTypeRef().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST:
+				getIdList().clear();
+				return;
+			case DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF:
+				getTypeRef().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST:
-        return idList != null && !idList.isEmpty();
-      case DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF:
-        return typeRef != null && !typeRef.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.PROPERTY_PARAMETER_LIST__ID_LIST:
+				return idList != null && !idList.isEmpty();
+			case DelphiPackage.PROPERTY_PARAMETER_LIST__TYPE_REF:
+				return typeRef != null && !typeRef.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //propertyParameterListImpl

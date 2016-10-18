@@ -25,81 +25,81 @@ package org.xtext.example.delphi.delphi;
 public interface objectType extends restrictedType
 {
   /**
-   * Returns the value of the '<em><b>Heritage</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Heritage</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Heritage</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Heritage</em>' containment reference.
-   * @see #setHeritage(objHeritage)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getobjectType_Heritage()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Heritage</em>' containment reference.
+	 * @see #setHeritage(objHeritage)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getobjectType_Heritage()
+	 * @model containment="true"
+	 * @generated
+	 */
   objHeritage getHeritage();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.objectType#getHeritage <em>Heritage</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.objectType#getHeritage <em>Heritage</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Heritage</em>' containment reference.
-   * @see #getHeritage()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Heritage</em>' containment reference.
+	 * @see #getHeritage()
+	 * @generated
+	 */
   void setHeritage(objHeritage value);
 
   /**
-   * Returns the value of the '<em><b>Field List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Field List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Field List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Field List</em>' containment reference.
-   * @see #setFieldList(objFieldList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getobjectType_FieldList()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Field List</em>' containment reference.
+	 * @see #setFieldList(objFieldList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getobjectType_FieldList()
+	 * @model containment="true"
+	 * @generated
+	 */
   objFieldList getFieldList();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.objectType#getFieldList <em>Field List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.objectType#getFieldList <em>Field List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Field List</em>' containment reference.
-   * @see #getFieldList()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Field List</em>' containment reference.
+	 * @see #getFieldList()
+	 * @generated
+	 */
   void setFieldList(objFieldList value);
 
   /**
-   * Returns the value of the '<em><b>Method List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Method List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Method List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Method List</em>' containment reference.
-   * @see #setMethodList(methodList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getobjectType_MethodList()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Method List</em>' containment reference.
+	 * @see #setMethodList(methodList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getobjectType_MethodList()
+	 * @model containment="true"
+	 * @generated
+	 */
   methodList getMethodList();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.objectType#getMethodList <em>Method List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.objectType#getMethodList <em>Method List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Method List</em>' containment reference.
-   * @see #getMethodList()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Method List</em>' containment reference.
+	 * @see #getMethodList()
+	 * @generated
+	 */
   void setMethodList(methodList value);
 
 } // objectType

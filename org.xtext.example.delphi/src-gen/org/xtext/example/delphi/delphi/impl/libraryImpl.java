@@ -28,167 +28,160 @@ import org.xtext.example.delphi.delphi.programBlock;
  *
  * @generated
  */
-public class libraryImpl extends mainRuleImpl implements library
+public class libraryImpl extends fileImpl implements library
 {
   /**
-   * The cached value of the '{@link #getPBlock() <em>PBlock</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPBlock() <em>PBlock</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPBlock()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPBlock()
+	 * @generated
+	 * @ordered
+	 */
   protected programBlock pBlock;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected libraryImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.LIBRARY;
-  }
+		return DelphiPackage.Literals.LIBRARY;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public programBlock getPBlock()
   {
-    return pBlock;
-  }
+		return pBlock;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetPBlock(programBlock newPBlock, NotificationChain msgs)
   {
-    programBlock oldPBlock = pBlock;
-    pBlock = newPBlock;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.LIBRARY__PBLOCK, oldPBlock, newPBlock);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		programBlock oldPBlock = pBlock;
+		pBlock = newPBlock;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.LIBRARY__PBLOCK, oldPBlock, newPBlock);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPBlock(programBlock newPBlock)
   {
-    if (newPBlock != pBlock)
-    {
-      NotificationChain msgs = null;
-      if (pBlock != null)
-        msgs = ((InternalEObject)pBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.LIBRARY__PBLOCK, null, msgs);
-      if (newPBlock != null)
-        msgs = ((InternalEObject)newPBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.LIBRARY__PBLOCK, null, msgs);
-      msgs = basicSetPBlock(newPBlock, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.LIBRARY__PBLOCK, newPBlock, newPBlock));
-  }
+		if (newPBlock != pBlock) {
+			NotificationChain msgs = null;
+			if (pBlock != null)
+				msgs = ((InternalEObject)pBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.LIBRARY__PBLOCK, null, msgs);
+			if (newPBlock != null)
+				msgs = ((InternalEObject)newPBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.LIBRARY__PBLOCK, null, msgs);
+			msgs = basicSetPBlock(newPBlock, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.LIBRARY__PBLOCK, newPBlock, newPBlock));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.LIBRARY__PBLOCK:
-        return basicSetPBlock(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.LIBRARY__PBLOCK:
+				return basicSetPBlock(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.LIBRARY__PBLOCK:
-        return getPBlock();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.LIBRARY__PBLOCK:
+				return getPBlock();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.LIBRARY__PBLOCK:
-        setPBlock((programBlock)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.LIBRARY__PBLOCK:
+				setPBlock((programBlock)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.LIBRARY__PBLOCK:
-        setPBlock((programBlock)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.LIBRARY__PBLOCK:
+				setPBlock((programBlock)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.LIBRARY__PBLOCK:
-        return pBlock != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.LIBRARY__PBLOCK:
+				return pBlock != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //libraryImpl

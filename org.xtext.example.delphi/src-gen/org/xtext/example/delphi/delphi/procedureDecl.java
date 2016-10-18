@@ -23,29 +23,29 @@ package org.xtext.example.delphi.delphi;
 public interface procedureDecl extends procedureDeclSection
 {
   /**
-   * Returns the value of the '<em><b>Heading</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Heading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Heading</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Heading</em>' containment reference.
-   * @see #setHeading(procedureHeading)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getprocedureDecl_Heading()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Heading</em>' containment reference.
+	 * @see #setHeading(procedureHeading)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getprocedureDecl_Heading()
+	 * @model containment="true"
+	 * @generated
+	 */
   procedureHeading getHeading();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.procedureDecl#getHeading <em>Heading</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.procedureDecl#getHeading <em>Heading</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Heading</em>' containment reference.
-   * @see #getHeading()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Heading</em>' containment reference.
+	 * @see #getHeading()
+	 * @generated
+	 */
   void setHeading(procedureHeading value);
 
 } // procedureDecl

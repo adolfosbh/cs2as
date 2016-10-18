@@ -18,24 +18,24 @@ import org.xtext.example.delphi.delphi.ordIdent;
 public class ordIdentImpl extends ordinalTypeImpl implements ordIdent
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ordIdentImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.ORD_IDENT;
-  }
+		return DelphiPackage.Literals.ORD_IDENT;
+	}
 
 } //ordIdentImpl

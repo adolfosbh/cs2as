@@ -18,24 +18,24 @@ import org.xtext.example.delphi.delphi.assemblerStmt;
 public class assemblerStmtImpl extends structStmtImpl implements assemblerStmt
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected assemblerStmtImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.ASSEMBLER_STMT;
-  }
+		return DelphiPackage.Literals.ASSEMBLER_STMT;
+	}
 
 } //assemblerStmtImpl

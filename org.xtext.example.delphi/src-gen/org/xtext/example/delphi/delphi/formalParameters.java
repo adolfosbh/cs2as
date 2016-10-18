@@ -17,45 +17,28 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.delphi.delphi.formalParameters#getParams <em>Params</em>}</li>
- *   <li>{@link org.xtext.example.delphi.delphi.formalParameters#getParamas <em>Paramas</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.delphi.delphi.DelphiPackage#getformalParameters()
  * @model
  * @generated
  */
-public interface formalParameters extends EObject
+public interface formalParameters extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Params</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.formalParm}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Params</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.formalParm}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Params</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Params</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getformalParameters_Params()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Params</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getformalParameters_Params()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<formalParm> getParams();
-
-  /**
-   * Returns the value of the '<em><b>Paramas</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.formalParm}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Paramas</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Paramas</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getformalParameters_Paramas()
-   * @model containment="true"
-   * @generated
-   */
-  EList<formalParm> getParamas();
 
 } // formalParameters

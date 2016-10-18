@@ -38,205 +38,197 @@ import org.xtext.example.delphi.delphi.usesClause;
  *
  * @generated
  */
-public class interfaceSectionImpl extends MinimalEObjectImpl.Container implements interfaceSection
+public class interfaceSectionImpl extends CSTraceImpl implements interfaceSection
 {
   /**
-   * The cached value of the '{@link #getUses() <em>Uses</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getUses() <em>Uses</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUses()
-   * @generated
-   * @ordered
-   */
+	 * @see #getUses()
+	 * @generated
+	 * @ordered
+	 */
   protected usesClause uses;
 
   /**
-   * The cached value of the '{@link #getInterfaceDecl() <em>Interface Decl</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getInterfaceDecl() <em>Interface Decl</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInterfaceDecl()
-   * @generated
-   * @ordered
-   */
+	 * @see #getInterfaceDecl()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<interfaceDecl> interfaceDecl;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected interfaceSectionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.INTERFACE_SECTION;
-  }
+		return DelphiPackage.Literals.INTERFACE_SECTION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public usesClause getUses()
   {
-    return uses;
-  }
+		return uses;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetUses(usesClause newUses, NotificationChain msgs)
   {
-    usesClause oldUses = uses;
-    uses = newUses;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.INTERFACE_SECTION__USES, oldUses, newUses);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		usesClause oldUses = uses;
+		uses = newUses;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.INTERFACE_SECTION__USES, oldUses, newUses);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setUses(usesClause newUses)
   {
-    if (newUses != uses)
-    {
-      NotificationChain msgs = null;
-      if (uses != null)
-        msgs = ((InternalEObject)uses).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INTERFACE_SECTION__USES, null, msgs);
-      if (newUses != null)
-        msgs = ((InternalEObject)newUses).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INTERFACE_SECTION__USES, null, msgs);
-      msgs = basicSetUses(newUses, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.INTERFACE_SECTION__USES, newUses, newUses));
-  }
+		if (newUses != uses) {
+			NotificationChain msgs = null;
+			if (uses != null)
+				msgs = ((InternalEObject)uses).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INTERFACE_SECTION__USES, null, msgs);
+			if (newUses != null)
+				msgs = ((InternalEObject)newUses).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INTERFACE_SECTION__USES, null, msgs);
+			msgs = basicSetUses(newUses, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.INTERFACE_SECTION__USES, newUses, newUses));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<interfaceDecl> getInterfaceDecl()
   {
-    if (interfaceDecl == null)
-    {
-      interfaceDecl = new EObjectContainmentEList<interfaceDecl>(interfaceDecl.class, this, DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL);
-    }
-    return interfaceDecl;
-  }
+		if (interfaceDecl == null) {
+			interfaceDecl = new EObjectContainmentEList<interfaceDecl>(interfaceDecl.class, this, DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL);
+		}
+		return interfaceDecl;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.INTERFACE_SECTION__USES:
-        return basicSetUses(null, msgs);
-      case DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL:
-        return ((InternalEList<?>)getInterfaceDecl()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.INTERFACE_SECTION__USES:
+				return basicSetUses(null, msgs);
+			case DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL:
+				return ((InternalEList<?>)getInterfaceDecl()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.INTERFACE_SECTION__USES:
-        return getUses();
-      case DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL:
-        return getInterfaceDecl();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.INTERFACE_SECTION__USES:
+				return getUses();
+			case DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL:
+				return getInterfaceDecl();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.INTERFACE_SECTION__USES:
-        setUses((usesClause)newValue);
-        return;
-      case DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL:
-        getInterfaceDecl().clear();
-        getInterfaceDecl().addAll((Collection<? extends interfaceDecl>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.INTERFACE_SECTION__USES:
+				setUses((usesClause)newValue);
+				return;
+			case DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL:
+				getInterfaceDecl().clear();
+				getInterfaceDecl().addAll((Collection<? extends interfaceDecl>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.INTERFACE_SECTION__USES:
-        setUses((usesClause)null);
-        return;
-      case DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL:
-        getInterfaceDecl().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.INTERFACE_SECTION__USES:
+				setUses((usesClause)null);
+				return;
+			case DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL:
+				getInterfaceDecl().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.INTERFACE_SECTION__USES:
-        return uses != null;
-      case DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL:
-        return interfaceDecl != null && !interfaceDecl.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.INTERFACE_SECTION__USES:
+				return uses != null;
+			case DelphiPackage.INTERFACE_SECTION__INTERFACE_DECL:
+				return interfaceDecl != null && !interfaceDecl.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //interfaceSectionImpl

@@ -23,22 +23,22 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface exprList extends EObject
+public interface exprList extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Exps</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.expression}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Exps</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.expression}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Exps</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Exps</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getexprList_Exps()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Exps</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getexprList_Exps()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<expression> getExps();
 
 } // exprList

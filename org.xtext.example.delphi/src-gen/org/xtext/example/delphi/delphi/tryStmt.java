@@ -25,81 +25,81 @@ package org.xtext.example.delphi.delphi;
 public interface tryStmt extends structStmt
 {
   /**
-   * Returns the value of the '<em><b>Stmt List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Stmt List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Stmt List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Stmt List</em>' containment reference.
-   * @see #setStmtList(stmtList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#gettryStmt_StmtList()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Stmt List</em>' containment reference.
+	 * @see #setStmtList(stmtList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#gettryStmt_StmtList()
+	 * @model containment="true"
+	 * @generated
+	 */
   stmtList getStmtList();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.tryStmt#getStmtList <em>Stmt List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.tryStmt#getStmtList <em>Stmt List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Stmt List</em>' containment reference.
-   * @see #getStmtList()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Stmt List</em>' containment reference.
+	 * @see #getStmtList()
+	 * @generated
+	 */
   void setStmtList(stmtList value);
 
   /**
-   * Returns the value of the '<em><b>Exception</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Exception</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Exception</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Exception</em>' containment reference.
-   * @see #setException(exceptionBlock)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#gettryStmt_Exception()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Exception</em>' containment reference.
+	 * @see #setException(exceptionBlock)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#gettryStmt_Exception()
+	 * @model containment="true"
+	 * @generated
+	 */
   exceptionBlock getException();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.tryStmt#getException <em>Exception</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.tryStmt#getException <em>Exception</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Exception</em>' containment reference.
-   * @see #getException()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Exception</em>' containment reference.
+	 * @see #getException()
+	 * @generated
+	 */
   void setException(exceptionBlock value);
 
   /**
-   * Returns the value of the '<em><b>Final</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Final</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Final</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Final</em>' containment reference.
-   * @see #setFinal(stmtList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#gettryStmt_Final()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Final</em>' containment reference.
+	 * @see #setFinal(stmtList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#gettryStmt_Final()
+	 * @model containment="true"
+	 * @generated
+	 */
   stmtList getFinal();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.tryStmt#getFinal <em>Final</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.tryStmt#getFinal <em>Final</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Final</em>' containment reference.
-   * @see #getFinal()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Final</em>' containment reference.
+	 * @see #getFinal()
+	 * @generated
+	 */
   void setFinal(stmtList value);
 
 } // tryStmt

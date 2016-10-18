@@ -34,135 +34,129 @@ import org.xtext.example.delphi.delphi.classMethodList;
  *
  * @generated
  */
-public class classMethodListImpl extends MinimalEObjectImpl.Container implements classMethodList
+public class classMethodListImpl extends CSTraceImpl implements classMethodList
 {
   /**
-   * The cached value of the '{@link #getMetod() <em>Metod</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMetod() <em>Metod</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMetod()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMetod()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<classMethod> metod;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected classMethodListImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.CLASS_METHOD_LIST;
-  }
+		return DelphiPackage.Literals.CLASS_METHOD_LIST;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<classMethod> getMetod()
   {
-    if (metod == null)
-    {
-      metod = new EObjectContainmentEList<classMethod>(classMethod.class, this, DelphiPackage.CLASS_METHOD_LIST__METOD);
-    }
-    return metod;
-  }
+		if (metod == null) {
+			metod = new EObjectContainmentEList<classMethod>(classMethod.class, this, DelphiPackage.CLASS_METHOD_LIST__METOD);
+		}
+		return metod;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_METHOD_LIST__METOD:
-        return ((InternalEList<?>)getMetod()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_METHOD_LIST__METOD:
+				return ((InternalEList<?>)getMetod()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_METHOD_LIST__METOD:
-        return getMetod();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_METHOD_LIST__METOD:
+				return getMetod();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_METHOD_LIST__METOD:
-        getMetod().clear();
-        getMetod().addAll((Collection<? extends classMethod>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_METHOD_LIST__METOD:
+				getMetod().clear();
+				getMetod().addAll((Collection<? extends classMethod>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_METHOD_LIST__METOD:
-        getMetod().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_METHOD_LIST__METOD:
+				getMetod().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_METHOD_LIST__METOD:
-        return metod != null && !metod.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_METHOD_LIST__METOD:
+				return metod != null && !metod.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //classMethodListImpl

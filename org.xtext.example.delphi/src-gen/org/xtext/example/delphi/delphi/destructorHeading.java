@@ -9,12 +9,6 @@ package org.xtext.example.delphi.delphi;
  * A representation of the model object '<em><b>destructor Heading</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link org.xtext.example.delphi.delphi.destructorHeading#getFormalParams <em>Formal Params</em>}</li>
- * </ul>
  *
  * @see org.xtext.example.delphi.delphi.DelphiPackage#getdestructorHeading()
  * @model
@@ -22,30 +16,4 @@ package org.xtext.example.delphi.delphi;
  */
 public interface destructorHeading extends methodHeading
 {
-  /**
-   * Returns the value of the '<em><b>Formal Params</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Formal Params</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Formal Params</em>' containment reference.
-   * @see #setFormalParams(formalParameters)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getdestructorHeading_FormalParams()
-   * @model containment="true"
-   * @generated
-   */
-  formalParameters getFormalParams();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.destructorHeading#getFormalParams <em>Formal Params</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Formal Params</em>' containment reference.
-   * @see #getFormalParams()
-   * @generated
-   */
-  void setFormalParams(formalParameters value);
-
 } // destructorHeading

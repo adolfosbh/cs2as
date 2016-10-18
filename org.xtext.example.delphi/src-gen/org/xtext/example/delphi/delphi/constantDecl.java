@@ -25,136 +25,136 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface constantDecl extends EObject
+public interface constantDecl extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Id</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' containment reference.
-   * @see #setId(ident)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstantDecl_Id()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Id</em>' containment reference.
+	 * @see #setId(ident)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstantDecl_Id()
+	 * @model containment="true"
+	 * @generated
+	 */
   ident getId();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.constantDecl#getId <em>Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.constantDecl#getId <em>Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' containment reference.
-   * @see #getId()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Id</em>' containment reference.
+	 * @see #getId()
+	 * @generated
+	 */
   void setId(ident value);
 
   /**
-   * Returns the value of the '<em><b>Const</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Const</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Const</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Const</em>' containment reference.
-   * @see #setConst(constExpr)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstantDecl_Const()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Const</em>' containment reference.
+	 * @see #setConst(constExpr)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstantDecl_Const()
+	 * @model containment="true"
+	 * @generated
+	 */
   constExpr getConst();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.constantDecl#getConst <em>Const</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.constantDecl#getConst <em>Const</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Const</em>' containment reference.
-   * @see #getConst()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Const</em>' containment reference.
+	 * @see #getConst()
+	 * @generated
+	 */
   void setConst(constExpr value);
 
   /**
-   * Returns the value of the '<em><b>Port</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Port</em>' attribute.
-   * @see #setPort(String)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstantDecl_Port()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Port</em>' attribute.
+	 * @see #setPort(String)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstantDecl_Port()
+	 * @model
+	 * @generated
+	 */
   String getPort();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.constantDecl#getPort <em>Port</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.constantDecl#getPort <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Port</em>' attribute.
-   * @see #getPort()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Port</em>' attribute.
+	 * @see #getPort()
+	 * @generated
+	 */
   void setPort(String value);
 
   /**
-   * Returns the value of the '<em><b>Type Ref</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type Ref</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type Ref</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Ref</em>' containment reference.
-   * @see #setTypeRef(typeId)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstantDecl_TypeRef()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Type Ref</em>' containment reference.
+	 * @see #setTypeRef(typeId)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstantDecl_TypeRef()
+	 * @model containment="true"
+	 * @generated
+	 */
   typeId getTypeRef();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.constantDecl#getTypeRef <em>Type Ref</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.constantDecl#getTypeRef <em>Type Ref</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Ref</em>' containment reference.
-   * @see #getTypeRef()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Type Ref</em>' containment reference.
+	 * @see #getTypeRef()
+	 * @generated
+	 */
   void setTypeRef(typeId value);
 
   /**
-   * Returns the value of the '<em><b>Typed Constat</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Typed Constat</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Typed Constat</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Typed Constat</em>' containment reference.
-   * @see #setTypedConstat(typedConstant)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstantDecl_TypedConstat()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Typed Constat</em>' containment reference.
+	 * @see #setTypedConstat(typedConstant)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstantDecl_TypedConstat()
+	 * @model containment="true"
+	 * @generated
+	 */
   typedConstant getTypedConstat();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.constantDecl#getTypedConstat <em>Typed Constat</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.constantDecl#getTypedConstat <em>Typed Constat</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Typed Constat</em>' containment reference.
-   * @see #getTypedConstat()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Typed Constat</em>' containment reference.
+	 * @see #getTypedConstat()
+	 * @generated
+	 */
   void setTypedConstat(typedConstant value);
 
 } // constantDecl

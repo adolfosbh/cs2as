@@ -18,24 +18,24 @@ import org.xtext.example.delphi.delphi.repeatStmt;
 public class repeatStmtImpl extends loopStmtImpl implements repeatStmt
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected repeatStmtImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.REPEAT_STMT;
-  }
+		return DelphiPackage.Literals.REPEAT_STMT;
+	}
 
 } //repeatStmtImpl

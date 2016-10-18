@@ -23,29 +23,29 @@ package org.xtext.example.delphi.delphi;
 public interface fileType extends strucType
 {
   /**
-   * Returns the value of the '<em><b>Type Ref</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type Ref</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type Ref</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Ref</em>' containment reference.
-   * @see #setTypeRef(typeId)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getfileType_TypeRef()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Type Ref</em>' containment reference.
+	 * @see #setTypeRef(typeId)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getfileType_TypeRef()
+	 * @model containment="true"
+	 * @generated
+	 */
   typeId getTypeRef();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.fileType#getTypeRef <em>Type Ref</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.fileType#getTypeRef <em>Type Ref</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Ref</em>' containment reference.
-   * @see #getTypeRef()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Type Ref</em>' containment reference.
+	 * @see #getTypeRef()
+	 * @generated
+	 */
   void setTypeRef(typeId value);
 
 } // fileType

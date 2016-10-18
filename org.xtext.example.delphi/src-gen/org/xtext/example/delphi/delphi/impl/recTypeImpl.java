@@ -31,164 +31,157 @@ import org.xtext.example.delphi.delphi.recType;
 public class recTypeImpl extends strucTypeImpl implements recType
 {
   /**
-   * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFields()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFields()
+	 * @generated
+	 * @ordered
+	 */
   protected fieldList fields;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected recTypeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.REC_TYPE;
-  }
+		return DelphiPackage.Literals.REC_TYPE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public fieldList getFields()
   {
-    return fields;
-  }
+		return fields;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetFields(fieldList newFields, NotificationChain msgs)
   {
-    fieldList oldFields = fields;
-    fields = newFields;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.REC_TYPE__FIELDS, oldFields, newFields);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		fieldList oldFields = fields;
+		fields = newFields;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.REC_TYPE__FIELDS, oldFields, newFields);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setFields(fieldList newFields)
   {
-    if (newFields != fields)
-    {
-      NotificationChain msgs = null;
-      if (fields != null)
-        msgs = ((InternalEObject)fields).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.REC_TYPE__FIELDS, null, msgs);
-      if (newFields != null)
-        msgs = ((InternalEObject)newFields).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.REC_TYPE__FIELDS, null, msgs);
-      msgs = basicSetFields(newFields, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.REC_TYPE__FIELDS, newFields, newFields));
-  }
+		if (newFields != fields) {
+			NotificationChain msgs = null;
+			if (fields != null)
+				msgs = ((InternalEObject)fields).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.REC_TYPE__FIELDS, null, msgs);
+			if (newFields != null)
+				msgs = ((InternalEObject)newFields).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.REC_TYPE__FIELDS, null, msgs);
+			msgs = basicSetFields(newFields, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.REC_TYPE__FIELDS, newFields, newFields));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.REC_TYPE__FIELDS:
-        return basicSetFields(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.REC_TYPE__FIELDS:
+				return basicSetFields(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.REC_TYPE__FIELDS:
-        return getFields();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.REC_TYPE__FIELDS:
+				return getFields();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.REC_TYPE__FIELDS:
-        setFields((fieldList)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.REC_TYPE__FIELDS:
+				setFields((fieldList)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.REC_TYPE__FIELDS:
-        setFields((fieldList)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.REC_TYPE__FIELDS:
+				setFields((fieldList)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.REC_TYPE__FIELDS:
-        return fields != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.REC_TYPE__FIELDS:
+				return fields != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //recTypeImpl

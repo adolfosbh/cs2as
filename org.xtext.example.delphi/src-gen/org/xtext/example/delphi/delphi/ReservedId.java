@@ -23,29 +23,29 @@ package org.xtext.example.delphi.delphi;
 public interface ReservedId extends ident
 {
   /**
-   * Returns the value of the '<em><b>Reserved Word</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Reserved Word</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Reserved Word</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Reserved Word</em>' containment reference.
-   * @see #setReservedWord(reservedWord)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getReservedId_ReservedWord()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Reserved Word</em>' containment reference.
+	 * @see #setReservedWord(reservedWord)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getReservedId_ReservedWord()
+	 * @model containment="true"
+	 * @generated
+	 */
   reservedWord getReservedWord();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.ReservedId#getReservedWord <em>Reserved Word</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.ReservedId#getReservedWord <em>Reserved Word</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Reserved Word</em>' containment reference.
-   * @see #getReservedWord()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Reserved Word</em>' containment reference.
+	 * @see #getReservedWord()
+	 * @generated
+	 */
   void setReservedWord(reservedWord value);
 
 } // ReservedId

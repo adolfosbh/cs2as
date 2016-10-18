@@ -83,11 +83,47 @@ rulemainRule returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		(
+			{
+				newCompositeNode(grammarAccess.getMainRuleAccess().getFileFileParserRuleCall_0());
+			}
+			lv_file_0_0=rulefile
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getMainRuleRule());
+				}
+				set(
+					$current,
+					"file",
+					lv_file_0_0,
+					"org.xtext.example.delphi.Delphi.file");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Entry rule entryRulefile
+entryRulefile returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFileRule()); }
+	iv_rulefile=rulefile
+	{ $current=$iv_rulefile.current; }
+	EOF;
+
+// Rule file
+rulefile returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		{
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getMainRuleAccess().getProgramParserRuleCall_0());
+			newCompositeNode(grammarAccess.getFileAccess().getProgramParserRuleCall_0());
 		}
 		this_program_0=ruleprogram
 		{
@@ -99,7 +135,7 @@ rulemainRule returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getMainRuleAccess().getPackageDeclParserRuleCall_1());
+			newCompositeNode(grammarAccess.getFileAccess().getPackageDeclParserRuleCall_1());
 		}
 		this_packageDecl_1=rulepackageDecl
 		{
@@ -111,7 +147,7 @@ rulemainRule returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getMainRuleAccess().getLibraryParserRuleCall_2());
+			newCompositeNode(grammarAccess.getFileAccess().getLibraryParserRuleCall_2());
 		}
 		this_library_2=rulelibrary
 		{
@@ -123,7 +159,7 @@ rulemainRule returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getMainRuleAccess().getUnitParserRuleCall_3());
+			newCompositeNode(grammarAccess.getFileAccess().getUnitParserRuleCall_3());
 		}
 		this_unit_3=ruleunit
 		{
@@ -2075,17 +2111,17 @@ rulerecordFieldConstant returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRecordFieldConstantAccess().getTpedConstantTypedConstantParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getRecordFieldConstantAccess().getTypedConstantTypedConstantParserRuleCall_2_0());
 				}
-				lv_tpedConstant_2_0=ruletypedConstant
+				lv_typedConstant_2_0=ruletypedConstant
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRecordFieldConstantRule());
 					}
 					set(
 						$current,
-						"tpedConstant",
-						lv_tpedConstant_2_0,
+						"typedConstant",
+						lv_typedConstant_2_0,
 						"org.xtext.example.delphi.Delphi.typedConstant");
 					afterParserOrEnumRuleCall();
 				}
@@ -4124,24 +4160,24 @@ ruleterm returns [EObject current=null]
 				}
 				{
 					$current = forceCreateModelElementAndSet(
-						grammarAccess.getTermAccess().getMulExpLeftAction_1_0(),
+						grammarAccess.getTermAccess().getMultExpLeftAction_1_0(),
 						$current);
 				}
 			)
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTermAccess().getMulOpMulOpParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getTermAccess().getMultOpMulOpParserRuleCall_1_1_0());
 					}
-					lv_mulOp_2_0=rulemulOp
+					lv_multOp_2_0=rulemulOp
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTermRule());
 						}
 						set(
 							$current,
-							"mulOp",
-							lv_mulOp_2_0,
+							"multOp",
+							lv_multOp_2_0,
 							"org.xtext.example.delphi.Delphi.mulOp");
 						afterParserOrEnumRuleCall();
 					}
@@ -5262,39 +5298,21 @@ rulestatement returns [EObject current=null]
 		)?
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getStatementAccess().getStatementSimpleStatementParserRuleCall_1_0_0());
+				{
+					newCompositeNode(grammarAccess.getStatementAccess().getStatementUnlabelledStatementParserRuleCall_1_0());
+				}
+				lv_statement_2_0=ruleunlabelledStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStatementRule());
 					}
-					lv_statement_2_1=rulesimpleStatement
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getStatementRule());
-						}
-						set(
-							$current,
-							"statement",
-							lv_statement_2_1,
-							"org.xtext.example.delphi.Delphi.simpleStatement");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getStatementAccess().getStatementStructStmtParserRuleCall_1_0_1());
-					}
-					lv_statement_2_2=rulestructStmt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getStatementRule());
-						}
-						set(
-							$current,
-							"statement",
-							lv_statement_2_2,
-							"org.xtext.example.delphi.Delphi.structStmt");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"statement",
+						lv_statement_2_0,
+						"org.xtext.example.delphi.Delphi.unlabelledStatement");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 	)
@@ -5356,6 +5374,48 @@ rulestmtList returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleunlabelledStatement
+entryRuleunlabelledStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getUnlabelledStatementRule()); }
+	iv_ruleunlabelledStatement=ruleunlabelledStatement
+	{ $current=$iv_ruleunlabelledStatement.current; }
+	EOF;
+
+// Rule unlabelledStatement
+ruleunlabelledStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getUnlabelledStatementAccess().getSimpleStatementParserRuleCall_0());
+		}
+		this_simpleStatement_0=rulesimpleStatement
+		{
+			$current = $this_simpleStatement_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getUnlabelledStatementAccess().getStructStmtParserRuleCall_1());
+		}
+		this_structStmt_1=rulestructStmt
+		{
+			$current = $this_structStmt_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRulesimpleStatement
 entryRulesimpleStatement returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getSimpleStatementRule()); }
@@ -5402,10 +5462,20 @@ rulesimpleStatement returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_2=':='
-			{
-				newLeafNode(otherlv_2, grammarAccess.getSimpleStatementAccess().getColonEqualsSignKeyword_0_2());
-			}
+			(
+				(
+					lv_operator_2_0=':='
+					{
+						newLeafNode(lv_operator_2_0, grammarAccess.getSimpleStatementAccess().getOperatorColonEqualsSignKeyword_0_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSimpleStatementRule());
+						}
+						setWithLastConsumed($current, "operator", lv_operator_2_0, ":=");
+					}
+				)
+			)
 			(
 				(
 					{
@@ -5668,17 +5738,17 @@ rulecompoundStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCompoundStmtAccess().getStatmntsStmtListParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getCompoundStmtAccess().getStamtListStmtListParserRuleCall_1_0());
 				}
-				lv_statmnts_1_0=rulestmtList
+				lv_stamtList_1_0=rulestmtList
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCompoundStmtRule());
 					}
 					set(
 						$current,
-						"statmnts",
-						lv_statmnts_1_0,
+						"stamtList",
+						lv_stamtList_1_0,
 						"org.xtext.example.delphi.Delphi.stmtList");
 					afterParserOrEnumRuleCall();
 				}
@@ -5858,17 +5928,17 @@ rulecaseStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCaseStmtAccess().getConditionExpressionParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getCaseStmtAccess().getExpressionExpressionParserRuleCall_1_0());
 				}
-				lv_condition_1_0=ruleexpression
+				lv_expression_1_0=ruleexpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCaseStmtRule());
 					}
 					set(
 						$current,
-						"condition",
-						lv_condition_1_0,
+						"expression",
+						lv_expression_1_0,
 						"org.xtext.example.delphi.Delphi.expression");
 					afterParserOrEnumRuleCall();
 				}
@@ -5881,17 +5951,17 @@ rulecaseStmt returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCaseStmtAccess().getCaseCaseSelectorParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getCaseStmtAccess().getCasesCaseSelectorParserRuleCall_3_0());
 				}
-				lv_case_3_0=rulecaseSelector
+				lv_cases_3_0=rulecaseSelector
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCaseStmtRule());
 					}
 					add(
 						$current,
-						"case",
-						lv_case_3_0,
+						"cases",
+						lv_cases_3_0,
 						"org.xtext.example.delphi.Delphi.caseSelector");
 					afterParserOrEnumRuleCall();
 				}
@@ -5905,17 +5975,17 @@ rulecaseStmt returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCaseStmtAccess().getCaseCaseSelectorParserRuleCall_5_0_0());
+						newCompositeNode(grammarAccess.getCaseStmtAccess().getCasesCaseSelectorParserRuleCall_5_0_0());
 					}
-					lv_case_5_0=rulecaseSelector
+					lv_cases_5_0=rulecaseSelector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCaseStmtRule());
 						}
 						add(
 							$current,
-							"case",
-							lv_case_5_0,
+							"cases",
+							lv_cases_5_0,
 							"org.xtext.example.delphi.Delphi.caseSelector");
 						afterParserOrEnumRuleCall();
 					}
@@ -5981,17 +6051,17 @@ rulecaseSelector returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCaseSelectorAccess().getLabelCaseLabelParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getCaseSelectorAccess().getLabelsCaseLabelParserRuleCall_0_0());
 				}
-				lv_label_0_0=rulecaseLabel
+				lv_labels_0_0=rulecaseLabel
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCaseSelectorRule());
 					}
 					add(
 						$current,
-						"label",
-						lv_label_0_0,
+						"labels",
+						lv_labels_0_0,
 						"org.xtext.example.delphi.Delphi.caseLabel");
 					afterParserOrEnumRuleCall();
 				}
@@ -6005,17 +6075,17 @@ rulecaseSelector returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCaseSelectorAccess().getLabelCaseLabelParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getCaseSelectorAccess().getLabelsCaseLabelParserRuleCall_1_1_0());
 					}
-					lv_label_2_0=rulecaseLabel
+					lv_labels_2_0=rulecaseLabel
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCaseSelectorRule());
 						}
 						add(
 							$current,
-							"label",
-							lv_label_2_0,
+							"labels",
+							lv_labels_2_0,
 							"org.xtext.example.delphi.Delphi.caseLabel");
 						afterParserOrEnumRuleCall();
 					}
@@ -7156,17 +7226,17 @@ rulefunctionHeading returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionHeadingAccess().getParamsFormalParametersParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getFunctionHeadingAccess().getFormalParamsFormalParametersParserRuleCall_3_0());
 				}
-				lv_params_3_0=ruleformalParameters
+				lv_formalParams_3_0=ruleformalParameters
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionHeadingRule());
 					}
 					set(
 						$current,
-						"params",
-						lv_params_3_0,
+						"formalParams",
+						lv_formalParams_3_0,
 						"org.xtext.example.delphi.Delphi.formalParameters");
 					afterParserOrEnumRuleCall();
 				}
@@ -7313,17 +7383,17 @@ ruleformalParameters returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFormalParametersAccess().getParamasFormalParmParserRuleCall_1_1_1_0());
+							newCompositeNode(grammarAccess.getFormalParametersAccess().getParamsFormalParmParserRuleCall_1_1_1_0());
 						}
-						lv_paramas_3_0=ruleformalParm
+						lv_params_3_0=ruleformalParm
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFormalParametersRule());
 							}
 							add(
 								$current,
-								"paramas",
-								lv_paramas_3_0,
+								"params",
+								lv_params_3_0,
 								"org.xtext.example.delphi.Delphi.formalParm");
 							afterParserOrEnumRuleCall();
 						}
@@ -10135,56 +10205,34 @@ ruleconstExpr returns [EObject current=null]
 		(
 			(
 				{
-					/* */
+					newCompositeNode(grammarAccess.getConstExprAccess().getExpsExpressionParserRuleCall_0_0());
 				}
+				lv_exps_0_0=ruleexpression
 				{
-					$current = forceCreateModelElement(
-						grammarAccess.getConstExprAccess().getSimpleExpAction_0_0(),
-						$current);
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConstExprRule());
+					}
+					add(
+						$current,
+						"exps",
+						lv_exps_0_0,
+						"org.xtext.example.delphi.Delphi.expression");
+					afterParserOrEnumRuleCall();
 				}
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConstExprAccess().getExpExpressionParserRuleCall_0_1_0());
-					}
-					lv_exp_1_0=ruleexpression
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConstExprRule());
-						}
-						set(
-							$current,
-							"exp",
-							lv_exp_1_0,
-							"org.xtext.example.delphi.Delphi.expression");
-						afterParserOrEnumRuleCall();
-					}
-				)
 			)
 		)
 		    |
 		(
-			(
-				{
-					/* */
-				}
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getConstExprAccess().getMultipleConstExpAction_1_0(),
-						$current);
-				}
-			)
-			otherlv_3='('
+			otherlv_1='('
 			{
-				newLeafNode(otherlv_3, grammarAccess.getConstExprAccess().getLeftParenthesisKeyword_1_1());
+				newLeafNode(otherlv_1, grammarAccess.getConstExprAccess().getLeftParenthesisKeyword_1_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_2_0());
+						newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_1_0());
 					}
-					lv_exps_4_0=ruleconstExpr
+					lv_exps_2_0=ruleconstExpr
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getConstExprRule());
@@ -10192,23 +10240,23 @@ ruleconstExpr returns [EObject current=null]
 						add(
 							$current,
 							"exps",
-							lv_exps_4_0,
+							lv_exps_2_0,
 							"org.xtext.example.delphi.Delphi.constExpr");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_5=','
+				otherlv_3=','
 				{
-					newLeafNode(otherlv_5, grammarAccess.getConstExprAccess().getCommaKeyword_1_3_0());
+					newLeafNode(otherlv_3, grammarAccess.getConstExprAccess().getCommaKeyword_1_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_3_1_0());
+							newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_2_1_0());
 						}
-						lv_exps_6_0=ruleconstExpr
+						lv_exps_4_0=ruleconstExpr
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getConstExprRule());
@@ -10216,40 +10264,30 @@ ruleconstExpr returns [EObject current=null]
 							add(
 								$current,
 								"exps",
-								lv_exps_6_0,
+								lv_exps_4_0,
 								"org.xtext.example.delphi.Delphi.constExpr");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_7=')'
+			otherlv_5=')'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getConstExprAccess().getRightParenthesisKeyword_1_4());
+				newLeafNode(otherlv_5, grammarAccess.getConstExprAccess().getRightParenthesisKeyword_1_3());
 			}
 		)
 		    |
 		(
-			(
-				{
-					/* */
-				}
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getConstExprAccess().getRecordConstExpAction_2_0(),
-						$current);
-				}
-			)
-			otherlv_9='('
+			otherlv_6='('
 			{
-				newLeafNode(otherlv_9, grammarAccess.getConstExprAccess().getLeftParenthesisKeyword_2_1());
+				newLeafNode(otherlv_6, grammarAccess.getConstExprAccess().getLeftParenthesisKeyword_2_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getConstExprAccess().getExpsRecordConstExprParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getConstExprAccess().getExpsRecordConstExprParserRuleCall_2_1_0());
 					}
-					lv_exps_10_0=rulerecordConstExpr
+					lv_exps_7_0=rulerecordConstExpr
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getConstExprRule());
@@ -10257,23 +10295,23 @@ ruleconstExpr returns [EObject current=null]
 						add(
 							$current,
 							"exps",
-							lv_exps_10_0,
+							lv_exps_7_0,
 							"org.xtext.example.delphi.Delphi.recordConstExpr");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_11=','
+				otherlv_8=','
 				{
-					newLeafNode(otherlv_11, grammarAccess.getConstExprAccess().getCommaKeyword_2_3_0());
+					newLeafNode(otherlv_8, grammarAccess.getConstExprAccess().getCommaKeyword_2_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getConstExprAccess().getExpsRecordConstExprParserRuleCall_2_3_1_0());
+							newCompositeNode(grammarAccess.getConstExprAccess().getExpsRecordConstExprParserRuleCall_2_2_1_0());
 						}
-						lv_exps_12_0=rulerecordConstExpr
+						lv_exps_9_0=rulerecordConstExpr
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getConstExprRule());
@@ -10281,16 +10319,16 @@ ruleconstExpr returns [EObject current=null]
 							add(
 								$current,
 								"exps",
-								lv_exps_12_0,
+								lv_exps_9_0,
 								"org.xtext.example.delphi.Delphi.recordConstExpr");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_13=')'
+			otherlv_10=')'
 			{
-				newLeafNode(otherlv_13, grammarAccess.getConstExprAccess().getRightParenthesisKeyword_2_4());
+				newLeafNode(otherlv_10, grammarAccess.getConstExprAccess().getRightParenthesisKeyword_2_3());
 			}
 		)
 	)

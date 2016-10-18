@@ -30,237 +30,228 @@ import org.xtext.example.delphi.delphi.programBlock;
  *
  * @generated
  */
-public class programImpl extends mainRuleImpl implements program
+public class programImpl extends fileImpl implements program
 {
   /**
-   * The cached value of the '{@link #getParamsList() <em>Params List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getParamsList() <em>Params List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParamsList()
-   * @generated
-   * @ordered
-   */
+	 * @see #getParamsList()
+	 * @generated
+	 * @ordered
+	 */
   protected identList paramsList;
 
   /**
-   * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBlock()
-   * @generated
-   * @ordered
-   */
+	 * @see #getBlock()
+	 * @generated
+	 * @ordered
+	 */
   protected programBlock block;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected programImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.PROGRAM;
-  }
+		return DelphiPackage.Literals.PROGRAM;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public identList getParamsList()
   {
-    return paramsList;
-  }
+		return paramsList;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetParamsList(identList newParamsList, NotificationChain msgs)
   {
-    identList oldParamsList = paramsList;
-    paramsList = newParamsList;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.PROGRAM__PARAMS_LIST, oldParamsList, newParamsList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		identList oldParamsList = paramsList;
+		paramsList = newParamsList;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.PROGRAM__PARAMS_LIST, oldParamsList, newParamsList);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setParamsList(identList newParamsList)
   {
-    if (newParamsList != paramsList)
-    {
-      NotificationChain msgs = null;
-      if (paramsList != null)
-        msgs = ((InternalEObject)paramsList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.PROGRAM__PARAMS_LIST, null, msgs);
-      if (newParamsList != null)
-        msgs = ((InternalEObject)newParamsList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.PROGRAM__PARAMS_LIST, null, msgs);
-      msgs = basicSetParamsList(newParamsList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.PROGRAM__PARAMS_LIST, newParamsList, newParamsList));
-  }
+		if (newParamsList != paramsList) {
+			NotificationChain msgs = null;
+			if (paramsList != null)
+				msgs = ((InternalEObject)paramsList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.PROGRAM__PARAMS_LIST, null, msgs);
+			if (newParamsList != null)
+				msgs = ((InternalEObject)newParamsList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.PROGRAM__PARAMS_LIST, null, msgs);
+			msgs = basicSetParamsList(newParamsList, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.PROGRAM__PARAMS_LIST, newParamsList, newParamsList));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public programBlock getBlock()
   {
-    return block;
-  }
+		return block;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetBlock(programBlock newBlock, NotificationChain msgs)
   {
-    programBlock oldBlock = block;
-    block = newBlock;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.PROGRAM__BLOCK, oldBlock, newBlock);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		programBlock oldBlock = block;
+		block = newBlock;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.PROGRAM__BLOCK, oldBlock, newBlock);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setBlock(programBlock newBlock)
   {
-    if (newBlock != block)
-    {
-      NotificationChain msgs = null;
-      if (block != null)
-        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.PROGRAM__BLOCK, null, msgs);
-      if (newBlock != null)
-        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.PROGRAM__BLOCK, null, msgs);
-      msgs = basicSetBlock(newBlock, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.PROGRAM__BLOCK, newBlock, newBlock));
-  }
+		if (newBlock != block) {
+			NotificationChain msgs = null;
+			if (block != null)
+				msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.PROGRAM__BLOCK, null, msgs);
+			if (newBlock != null)
+				msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.PROGRAM__BLOCK, null, msgs);
+			msgs = basicSetBlock(newBlock, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.PROGRAM__BLOCK, newBlock, newBlock));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.PROGRAM__PARAMS_LIST:
-        return basicSetParamsList(null, msgs);
-      case DelphiPackage.PROGRAM__BLOCK:
-        return basicSetBlock(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.PROGRAM__PARAMS_LIST:
+				return basicSetParamsList(null, msgs);
+			case DelphiPackage.PROGRAM__BLOCK:
+				return basicSetBlock(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.PROGRAM__PARAMS_LIST:
-        return getParamsList();
-      case DelphiPackage.PROGRAM__BLOCK:
-        return getBlock();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.PROGRAM__PARAMS_LIST:
+				return getParamsList();
+			case DelphiPackage.PROGRAM__BLOCK:
+				return getBlock();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.PROGRAM__PARAMS_LIST:
-        setParamsList((identList)newValue);
-        return;
-      case DelphiPackage.PROGRAM__BLOCK:
-        setBlock((programBlock)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.PROGRAM__PARAMS_LIST:
+				setParamsList((identList)newValue);
+				return;
+			case DelphiPackage.PROGRAM__BLOCK:
+				setBlock((programBlock)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.PROGRAM__PARAMS_LIST:
-        setParamsList((identList)null);
-        return;
-      case DelphiPackage.PROGRAM__BLOCK:
-        setBlock((programBlock)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.PROGRAM__PARAMS_LIST:
+				setParamsList((identList)null);
+				return;
+			case DelphiPackage.PROGRAM__BLOCK:
+				setBlock((programBlock)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.PROGRAM__PARAMS_LIST:
-        return paramsList != null;
-      case DelphiPackage.PROGRAM__BLOCK:
-        return block != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.PROGRAM__PARAMS_LIST:
+				return paramsList != null;
+			case DelphiPackage.PROGRAM__BLOCK:
+				return block != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //programImpl

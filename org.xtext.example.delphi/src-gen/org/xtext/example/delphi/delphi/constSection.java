@@ -24,19 +24,19 @@ import org.eclipse.emf.common.util.EList;
 public interface constSection extends interfaceDecl, declSection
 {
   /**
-   * Returns the value of the '<em><b>Constant Decl</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.constantDecl}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Constant Decl</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.constantDecl}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Constant Decl</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Constant Decl</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstSection_ConstantDecl()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Constant Decl</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getconstSection_ConstantDecl()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<constantDecl> getConstantDecl();
 
 } // constSection

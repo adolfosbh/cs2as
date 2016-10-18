@@ -17,27 +17,27 @@ import org.xtext.example.delphi.delphi.interfaceDecl;
  *
  * @generated
  */
-public class interfaceDeclImpl extends MinimalEObjectImpl.Container implements interfaceDecl
+public class interfaceDeclImpl extends CSTraceImpl implements interfaceDecl
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected interfaceDeclImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.INTERFACE_DECL;
-  }
+		return DelphiPackage.Literals.INTERFACE_DECL;
+	}
 
 } //interfaceDeclImpl

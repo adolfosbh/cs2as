@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.jdt.annotation.Nullable;
 import org.xtext.example.delphi.delphi.*;
 
 /**
@@ -23,2851 +24,2707 @@ import org.xtext.example.delphi.delphi.*;
 public class DelphiAdapterFactory extends AdapterFactoryImpl
 {
   /**
-   * The cached model package.
-   * <!-- begin-user-doc -->
+	 * The cached model package.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected static DelphiPackage modelPackage;
 
   /**
-   * Creates an instance of the adapter factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the adapter factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DelphiAdapterFactory()
   {
-    if (modelPackage == null)
-    {
-      modelPackage = DelphiPackage.eINSTANCE;
-    }
-  }
+		if (modelPackage == null) {
+			modelPackage = DelphiPackage.eINSTANCE;
+		}
+	}
 
   /**
-   * Returns whether this factory is applicable for the type of the object.
-   * <!-- begin-user-doc -->
+	 * Returns whether this factory is applicable for the type of the object.
+	 * <!-- begin-user-doc -->
    * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
    * <!-- end-user-doc -->
-   * @return whether this factory is applicable for the type of the object.
-   * @generated
-   */
+	 * @return whether this factory is applicable for the type of the object.
+	 * @generated
+	 */
   @Override
   public boolean isFactoryForType(Object object)
   {
-    if (object == modelPackage)
-    {
-      return true;
-    }
-    if (object instanceof EObject)
-    {
-      return ((EObject)object).eClass().getEPackage() == modelPackage;
-    }
-    return false;
-  }
+		if (object == modelPackage) {
+			return true;
+		}
+		if (object instanceof EObject) {
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		}
+		return false;
+	}
 
   /**
-   * The switch that delegates to the <code>createXXX</code> methods.
-   * <!-- begin-user-doc -->
+	 * The switch that delegates to the <code>createXXX</code> methods.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  protected DelphiSwitch<Adapter> modelSwitch =
-    new DelphiSwitch<Adapter>()
-    {
-      @Override
-      public Adapter casemainRule(mainRule object)
-      {
-        return createmainRuleAdapter();
-      }
-      @Override
-      public Adapter caseprogram(program object)
-      {
-        return createprogramAdapter();
-      }
-      @Override
-      public Adapter caseunit(unit object)
-      {
-        return createunitAdapter();
-      }
-      @Override
-      public Adapter casepackageDecl(packageDecl object)
-      {
-        return createpackageDeclAdapter();
-      }
-      @Override
-      public Adapter caselibrary(library object)
-      {
-        return createlibraryAdapter();
-      }
-      @Override
-      public Adapter caseprogramBlock(programBlock object)
-      {
-        return createprogramBlockAdapter();
-      }
-      @Override
-      public Adapter caseusesClause(usesClause object)
-      {
-        return createusesClauseAdapter();
-      }
-      @Override
-      public Adapter caseinterfaceSection(interfaceSection object)
-      {
-        return createinterfaceSectionAdapter();
-      }
-      @Override
-      public Adapter caseinterfaceDecl(interfaceDecl object)
-      {
-        return createinterfaceDeclAdapter();
-      }
-      @Override
-      public Adapter caseexportedHeading(exportedHeading object)
-      {
-        return createexportedHeadingAdapter();
-      }
-      @Override
-      public Adapter caseimplementationSection(implementationSection object)
-      {
-        return createimplementationSectionAdapter();
-      }
-      @Override
-      public Adapter caseblock(block object)
-      {
-        return createblockAdapter();
-      }
-      @Override
-      public Adapter caseexportsItem(exportsItem object)
-      {
-        return createexportsItemAdapter();
-      }
-      @Override
-      public Adapter caseexportsStmt(exportsStmt object)
-      {
-        return createexportsStmtAdapter();
-      }
-      @Override
-      public Adapter casedeclSection(declSection object)
-      {
-        return createdeclSectionAdapter();
-      }
-      @Override
-      public Adapter caselabelDeclSection(labelDeclSection object)
-      {
-        return createlabelDeclSectionAdapter();
-      }
-      @Override
-      public Adapter caseconstSection(constSection object)
-      {
-        return createconstSectionAdapter();
-      }
-      @Override
-      public Adapter caseconstantDecl(constantDecl object)
-      {
-        return createconstantDeclAdapter();
-      }
-      @Override
-      public Adapter casetypeSection(typeSection object)
-      {
-        return createtypeSectionAdapter();
-      }
-      @Override
-      public Adapter casetypeDecl(typeDecl object)
-      {
-        return createtypeDeclAdapter();
-      }
-      @Override
-      public Adapter casetypedConstant(typedConstant object)
-      {
-        return createtypedConstantAdapter();
-      }
-      @Override
-      public Adapter casearrayConstant(arrayConstant object)
-      {
-        return createarrayConstantAdapter();
-      }
-      @Override
-      public Adapter caserecordConstant(recordConstant object)
-      {
-        return createrecordConstantAdapter();
-      }
-      @Override
-      public Adapter caserecordFieldConstant(recordFieldConstant object)
-      {
-        return createrecordFieldConstantAdapter();
-      }
-      @Override
-      public Adapter casetype(type object)
-      {
-        return createtypeAdapter();
-      }
-      @Override
-      public Adapter caserestrictedType(restrictedType object)
-      {
-        return createrestrictedTypeAdapter();
-      }
-      @Override
-      public Adapter caseclassRefType(classRefType object)
-      {
-        return createclassRefTypeAdapter();
-      }
-      @Override
-      public Adapter casesimpleType(simpleType object)
-      {
-        return createsimpleTypeAdapter();
-      }
-      @Override
-      public Adapter caserealType(realType object)
-      {
-        return createrealTypeAdapter();
-      }
-      @Override
-      public Adapter caseordinalType(ordinalType object)
-      {
-        return createordinalTypeAdapter();
-      }
-      @Override
-      public Adapter caseordIdent(ordIdent object)
-      {
-        return createordIdentAdapter();
-      }
-      @Override
-      public Adapter casevariantType(variantType object)
-      {
-        return createvariantTypeAdapter();
-      }
-      @Override
-      public Adapter casesubrangeType(subrangeType object)
-      {
-        return createsubrangeTypeAdapter();
-      }
-      @Override
-      public Adapter caseenumeratedType(enumeratedType object)
-      {
-        return createenumeratedTypeAdapter();
-      }
-      @Override
-      public Adapter caseenumeratedTypeElement(enumeratedTypeElement object)
-      {
-        return createenumeratedTypeElementAdapter();
-      }
-      @Override
-      public Adapter casestringType(stringType object)
-      {
-        return createstringTypeAdapter();
-      }
-      @Override
-      public Adapter casestrucType(strucType object)
-      {
-        return createstrucTypeAdapter();
-      }
-      @Override
-      public Adapter casearrayType(arrayType object)
-      {
-        return createarrayTypeAdapter();
-      }
-      @Override
-      public Adapter caserecType(recType object)
-      {
-        return createrecTypeAdapter();
-      }
-      @Override
-      public Adapter casefieldList(fieldList object)
-      {
-        return createfieldListAdapter();
-      }
-      @Override
-      public Adapter casefieldDecl(fieldDecl object)
-      {
-        return createfieldDeclAdapter();
-      }
-      @Override
-      public Adapter casevariantSection(variantSection object)
-      {
-        return createvariantSectionAdapter();
-      }
-      @Override
-      public Adapter caserecVariant(recVariant object)
-      {
-        return createrecVariantAdapter();
-      }
-      @Override
-      public Adapter casesetType(setType object)
-      {
-        return createsetTypeAdapter();
-      }
-      @Override
-      public Adapter casefileType(fileType object)
-      {
-        return createfileTypeAdapter();
-      }
-      @Override
-      public Adapter casepointerType(pointerType object)
-      {
-        return createpointerTypeAdapter();
-      }
-      @Override
-      public Adapter caseprocedureType(procedureType object)
-      {
-        return createprocedureTypeAdapter();
-      }
-      @Override
-      public Adapter casevarSection(varSection object)
-      {
-        return createvarSectionAdapter();
-      }
-      @Override
-      public Adapter casevarDecl(varDecl object)
-      {
-        return createvarDeclAdapter();
-      }
-      @Override
-      public Adapter caseexpression(expression object)
-      {
-        return createexpressionAdapter();
-      }
-      @Override
-      public Adapter casesimpleExpression(simpleExpression object)
-      {
-        return createsimpleExpressionAdapter();
-      }
-      @Override
-      public Adapter caseterm(term object)
-      {
-        return createtermAdapter();
-      }
-      @Override
-      public Adapter casefactor(factor object)
-      {
-        return createfactorAdapter();
-      }
-      @Override
-      public Adapter caserelOp(relOp object)
-      {
-        return createrelOpAdapter();
-      }
-      @Override
-      public Adapter caseaddOp(addOp object)
-      {
-        return createaddOpAdapter();
-      }
-      @Override
-      public Adapter casemulOp(mulOp object)
-      {
-        return createmulOpAdapter();
-      }
-      @Override
-      public Adapter casedesignator(designator object)
-      {
-        return createdesignatorAdapter();
-      }
-      @Override
-      public Adapter casedesignatorSubPart(designatorSubPart object)
-      {
-        return createdesignatorSubPartAdapter();
-      }
-      @Override
-      public Adapter casedesignatorPart(designatorPart object)
-      {
-        return createdesignatorPartAdapter();
-      }
-      @Override
-      public Adapter casesetConstructor(setConstructor object)
-      {
-        return createsetConstructorAdapter();
-      }
-      @Override
-      public Adapter casesetElement(setElement object)
-      {
-        return createsetElementAdapter();
-      }
-      @Override
-      public Adapter caseexprList(exprList object)
-      {
-        return createexprListAdapter();
-      }
-      @Override
-      public Adapter casestatement(statement object)
-      {
-        return createstatementAdapter();
-      }
-      @Override
-      public Adapter casestmtList(stmtList object)
-      {
-        return createstmtListAdapter();
-      }
-      @Override
-      public Adapter casesimpleStatement(simpleStatement object)
-      {
-        return createsimpleStatementAdapter();
-      }
-      @Override
-      public Adapter casestructStmt(structStmt object)
-      {
-        return createstructStmtAdapter();
-      }
-      @Override
-      public Adapter casecompoundStmt(compoundStmt object)
-      {
-        return createcompoundStmtAdapter();
-      }
-      @Override
-      public Adapter caseconditionalStmt(conditionalStmt object)
-      {
-        return createconditionalStmtAdapter();
-      }
-      @Override
-      public Adapter caseifStmt(ifStmt object)
-      {
-        return createifStmtAdapter();
-      }
-      @Override
-      public Adapter casecaseStmt(caseStmt object)
-      {
-        return createcaseStmtAdapter();
-      }
-      @Override
-      public Adapter casecaseSelector(caseSelector object)
-      {
-        return createcaseSelectorAdapter();
-      }
-      @Override
-      public Adapter casecaseLabel(caseLabel object)
-      {
-        return createcaseLabelAdapter();
-      }
-      @Override
-      public Adapter caseloopStmt(loopStmt object)
-      {
-        return createloopStmtAdapter();
-      }
-      @Override
-      public Adapter caserepeatStmt(repeatStmt object)
-      {
-        return createrepeatStmtAdapter();
-      }
-      @Override
-      public Adapter casewhileStmt(whileStmt object)
-      {
-        return createwhileStmtAdapter();
-      }
-      @Override
-      public Adapter caseforStmt(forStmt object)
-      {
-        return createforStmtAdapter();
-      }
-      @Override
-      public Adapter casewithStmt(withStmt object)
-      {
-        return createwithStmtAdapter();
-      }
-      @Override
-      public Adapter casetryStmt(tryStmt object)
-      {
-        return createtryStmtAdapter();
-      }
-      @Override
-      public Adapter caseexceptionBlock(exceptionBlock object)
-      {
-        return createexceptionBlockAdapter();
-      }
-      @Override
-      public Adapter caseraiseStmt(raiseStmt object)
-      {
-        return createraiseStmtAdapter();
-      }
-      @Override
-      public Adapter caseassemblerStmt(assemblerStmt object)
-      {
-        return createassemblerStmtAdapter();
-      }
-      @Override
-      public Adapter caseprocedureDeclSection(procedureDeclSection object)
-      {
-        return createprocedureDeclSectionAdapter();
-      }
-      @Override
-      public Adapter caseprocedureDecl(procedureDecl object)
-      {
-        return createprocedureDeclAdapter();
-      }
-      @Override
-      public Adapter casefunctionDecl(functionDecl object)
-      {
-        return createfunctionDeclAdapter();
-      }
-      @Override
-      public Adapter casefunctionHeading(functionHeading object)
-      {
-        return createfunctionHeadingAdapter();
-      }
-      @Override
-      public Adapter caseprocedureHeading(procedureHeading object)
-      {
-        return createprocedureHeadingAdapter();
-      }
-      @Override
-      public Adapter caseformalParameters(formalParameters object)
-      {
-        return createformalParametersAdapter();
-      }
-      @Override
-      public Adapter caseformalParm(formalParm object)
-      {
-        return createformalParmAdapter();
-      }
-      @Override
-      public Adapter caseparameter(parameter object)
-      {
-        return createparameterAdapter();
-      }
-      @Override
-      public Adapter casedirective(directive object)
-      {
-        return createdirectiveAdapter();
-      }
-      @Override
-      public Adapter caseobjectType(objectType object)
-      {
-        return createobjectTypeAdapter();
-      }
-      @Override
-      public Adapter caseobjHeritage(objHeritage object)
-      {
-        return createobjHeritageAdapter();
-      }
-      @Override
-      public Adapter casemethodList(methodList object)
-      {
-        return createmethodListAdapter();
-      }
-      @Override
-      public Adapter casemethodHeading(methodHeading object)
-      {
-        return createmethodHeadingAdapter();
-      }
-      @Override
-      public Adapter caseconstructorHeading(constructorHeading object)
-      {
-        return createconstructorHeadingAdapter();
-      }
-      @Override
-      public Adapter casedestructorHeading(destructorHeading object)
-      {
-        return createdestructorHeadingAdapter();
-      }
-      @Override
-      public Adapter caseobjFieldList(objFieldList object)
-      {
-        return createobjFieldListAdapter();
-      }
-      @Override
-      public Adapter caseinitSection(initSection object)
-      {
-        return createinitSectionAdapter();
-      }
-      @Override
-      public Adapter caseclassType(classType object)
-      {
-        return createclassTypeAdapter();
-      }
-      @Override
-      public Adapter caseclassHeritage(classHeritage object)
-      {
-        return createclassHeritageAdapter();
-      }
-      @Override
-      public Adapter caseclassFieldList(classFieldList object)
-      {
-        return createclassFieldListAdapter();
-      }
-      @Override
-      public Adapter caseclassField(classField object)
-      {
-        return createclassFieldAdapter();
-      }
-      @Override
-      public Adapter caseclassMethodList(classMethodList object)
-      {
-        return createclassMethodListAdapter();
-      }
-      @Override
-      public Adapter caseclassMethod(classMethod object)
-      {
-        return createclassMethodAdapter();
-      }
-      @Override
-      public Adapter caseclassPropertyList(classPropertyList object)
-      {
-        return createclassPropertyListAdapter();
-      }
-      @Override
-      public Adapter caseclassProperty(classProperty object)
-      {
-        return createclassPropertyAdapter();
-      }
-      @Override
-      public Adapter casepropertyList(propertyList object)
-      {
-        return createpropertyListAdapter();
-      }
-      @Override
-      public Adapter casepropertyInterface(propertyInterface object)
-      {
-        return createpropertyInterfaceAdapter();
-      }
-      @Override
-      public Adapter casepropertyParameterList(propertyParameterList object)
-      {
-        return createpropertyParameterListAdapter();
-      }
-      @Override
-      public Adapter casepropertySpecifiers(propertySpecifiers object)
-      {
-        return createpropertySpecifiersAdapter();
-      }
-      @Override
-      public Adapter caseinterfaceType(interfaceType object)
-      {
-        return createinterfaceTypeAdapter();
-      }
-      @Override
-      public Adapter caseinterfaceHeritage(interfaceHeritage object)
-      {
-        return createinterfaceHeritageAdapter();
-      }
-      @Override
-      public Adapter caserequiresClause(requiresClause object)
-      {
-        return createrequiresClauseAdapter();
-      }
-      @Override
-      public Adapter casecontainsClause(containsClause object)
-      {
-        return createcontainsClauseAdapter();
-      }
-      @Override
-      public Adapter caseidentList(identList object)
-      {
-        return createidentListAdapter();
-      }
-      @Override
-      public Adapter casequalId(qualId object)
-      {
-        return createqualIdAdapter();
-      }
-      @Override
-      public Adapter casetypeId(typeId object)
-      {
-        return createtypeIdAdapter();
-      }
-      @Override
-      public Adapter caseident(ident object)
-      {
-        return createidentAdapter();
-      }
-      @Override
-      public Adapter casereservedWord(reservedWord object)
-      {
-        return createreservedWordAdapter();
-      }
-      @Override
-      public Adapter caseconstExpr(constExpr object)
-      {
-        return createconstExprAdapter();
-      }
-      @Override
-      public Adapter caserecordConstExpr(recordConstExpr object)
-      {
-        return createrecordConstExprAdapter();
-      }
-      @Override
-      public Adapter caseunitId(unitId object)
-      {
-        return createunitIdAdapter();
-      }
-      @Override
-      public Adapter caserelExp(relExp object)
-      {
-        return createrelExpAdapter();
-      }
-      @Override
-      public Adapter caseaddExp(addExp object)
-      {
-        return createaddExpAdapter();
-      }
-      @Override
-      public Adapter casemulExp(mulExp object)
-      {
-        return createmulExpAdapter();
-      }
-      @Override
-      public Adapter caseadOp(adOp object)
-      {
-        return createadOpAdapter();
-      }
-      @Override
-      public Adapter caseAssignmentStmnt(AssignmentStmnt object)
-      {
-        return createAssignmentStmntAdapter();
-      }
-      @Override
-      public Adapter caseCallStmnt(CallStmnt object)
-      {
-        return createCallStmntAdapter();
-      }
-      @Override
-      public Adapter caseInheritedStamnt(InheritedStamnt object)
-      {
-        return createInheritedStamntAdapter();
-      }
-      @Override
-      public Adapter caseGotoStmnt(GotoStmnt object)
-      {
-        return createGotoStmntAdapter();
-      }
-      @Override
-      public Adapter caseparameterList(parameterList object)
-      {
-        return createparameterListAdapter();
-      }
-      @Override
-      public Adapter caseparameterSimple(parameterSimple object)
-      {
-        return createparameterSimpleAdapter();
-      }
-      @Override
-      public Adapter caseMultipleId(MultipleId object)
-      {
-        return createMultipleIdAdapter();
-      }
-      @Override
-      public Adapter caseReservedId(ReservedId object)
-      {
-        return createReservedIdAdapter();
-      }
-      @Override
-      public Adapter caseMineID(MineID object)
-      {
-        return createMineIDAdapter();
-      }
-      @Override
-      public Adapter caseSimpleExp(SimpleExp object)
-      {
-        return createSimpleExpAdapter();
-      }
-      @Override
-      public Adapter caseMultipleConstExp(MultipleConstExp object)
-      {
-        return createMultipleConstExpAdapter();
-      }
-      @Override
-      public Adapter caseRecordConstExp(RecordConstExp object)
-      {
-        return createRecordConstExpAdapter();
-      }
-      @Override
-      public Adapter defaultCase(EObject object)
-      {
-        return createEObjectAdapter();
-      }
-    };
+	 * @generated
+	 */
+  protected DelphiSwitch<@Nullable Adapter> modelSwitch =
+    new DelphiSwitch<@Nullable Adapter>() {
+			@Override
+			public Adapter casemainRule(mainRule object) {
+				return createmainRuleAdapter();
+			}
+			@Override
+			public Adapter casefile(file object) {
+				return createfileAdapter();
+			}
+			@Override
+			public Adapter caseprogram(program object) {
+				return createprogramAdapter();
+			}
+			@Override
+			public Adapter caseunit(unit object) {
+				return createunitAdapter();
+			}
+			@Override
+			public Adapter casepackageDecl(packageDecl object) {
+				return createpackageDeclAdapter();
+			}
+			@Override
+			public Adapter caselibrary(library object) {
+				return createlibraryAdapter();
+			}
+			@Override
+			public Adapter caseprogramBlock(programBlock object) {
+				return createprogramBlockAdapter();
+			}
+			@Override
+			public Adapter caseusesClause(usesClause object) {
+				return createusesClauseAdapter();
+			}
+			@Override
+			public Adapter caseinterfaceSection(interfaceSection object) {
+				return createinterfaceSectionAdapter();
+			}
+			@Override
+			public Adapter caseinterfaceDecl(interfaceDecl object) {
+				return createinterfaceDeclAdapter();
+			}
+			@Override
+			public Adapter caseexportedHeading(exportedHeading object) {
+				return createexportedHeadingAdapter();
+			}
+			@Override
+			public Adapter caseimplementationSection(implementationSection object) {
+				return createimplementationSectionAdapter();
+			}
+			@Override
+			public Adapter caseblock(block object) {
+				return createblockAdapter();
+			}
+			@Override
+			public Adapter caseexportsItem(exportsItem object) {
+				return createexportsItemAdapter();
+			}
+			@Override
+			public Adapter caseexportsStmt(exportsStmt object) {
+				return createexportsStmtAdapter();
+			}
+			@Override
+			public Adapter casedeclSection(declSection object) {
+				return createdeclSectionAdapter();
+			}
+			@Override
+			public Adapter caselabelDeclSection(labelDeclSection object) {
+				return createlabelDeclSectionAdapter();
+			}
+			@Override
+			public Adapter caseconstSection(constSection object) {
+				return createconstSectionAdapter();
+			}
+			@Override
+			public Adapter caseconstantDecl(constantDecl object) {
+				return createconstantDeclAdapter();
+			}
+			@Override
+			public Adapter casetypeSection(typeSection object) {
+				return createtypeSectionAdapter();
+			}
+			@Override
+			public Adapter casetypeDecl(typeDecl object) {
+				return createtypeDeclAdapter();
+			}
+			@Override
+			public Adapter casetypedConstant(typedConstant object) {
+				return createtypedConstantAdapter();
+			}
+			@Override
+			public Adapter casearrayConstant(arrayConstant object) {
+				return createarrayConstantAdapter();
+			}
+			@Override
+			public Adapter caserecordConstant(recordConstant object) {
+				return createrecordConstantAdapter();
+			}
+			@Override
+			public Adapter caserecordFieldConstant(recordFieldConstant object) {
+				return createrecordFieldConstantAdapter();
+			}
+			@Override
+			public Adapter casetype(type object) {
+				return createtypeAdapter();
+			}
+			@Override
+			public Adapter caserestrictedType(restrictedType object) {
+				return createrestrictedTypeAdapter();
+			}
+			@Override
+			public Adapter caseclassRefType(classRefType object) {
+				return createclassRefTypeAdapter();
+			}
+			@Override
+			public Adapter casesimpleType(simpleType object) {
+				return createsimpleTypeAdapter();
+			}
+			@Override
+			public Adapter caserealType(realType object) {
+				return createrealTypeAdapter();
+			}
+			@Override
+			public Adapter caseordinalType(ordinalType object) {
+				return createordinalTypeAdapter();
+			}
+			@Override
+			public Adapter caseordIdent(ordIdent object) {
+				return createordIdentAdapter();
+			}
+			@Override
+			public Adapter casevariantType(variantType object) {
+				return createvariantTypeAdapter();
+			}
+			@Override
+			public Adapter casesubrangeType(subrangeType object) {
+				return createsubrangeTypeAdapter();
+			}
+			@Override
+			public Adapter caseenumeratedType(enumeratedType object) {
+				return createenumeratedTypeAdapter();
+			}
+			@Override
+			public Adapter caseenumeratedTypeElement(enumeratedTypeElement object) {
+				return createenumeratedTypeElementAdapter();
+			}
+			@Override
+			public Adapter casestringType(stringType object) {
+				return createstringTypeAdapter();
+			}
+			@Override
+			public Adapter casestrucType(strucType object) {
+				return createstrucTypeAdapter();
+			}
+			@Override
+			public Adapter casearrayType(arrayType object) {
+				return createarrayTypeAdapter();
+			}
+			@Override
+			public Adapter caserecType(recType object) {
+				return createrecTypeAdapter();
+			}
+			@Override
+			public Adapter casefieldList(fieldList object) {
+				return createfieldListAdapter();
+			}
+			@Override
+			public Adapter casefieldDecl(fieldDecl object) {
+				return createfieldDeclAdapter();
+			}
+			@Override
+			public Adapter casevariantSection(variantSection object) {
+				return createvariantSectionAdapter();
+			}
+			@Override
+			public Adapter caserecVariant(recVariant object) {
+				return createrecVariantAdapter();
+			}
+			@Override
+			public Adapter casesetType(setType object) {
+				return createsetTypeAdapter();
+			}
+			@Override
+			public Adapter casefileType(fileType object) {
+				return createfileTypeAdapter();
+			}
+			@Override
+			public Adapter casepointerType(pointerType object) {
+				return createpointerTypeAdapter();
+			}
+			@Override
+			public Adapter caseprocedureType(procedureType object) {
+				return createprocedureTypeAdapter();
+			}
+			@Override
+			public Adapter casevarSection(varSection object) {
+				return createvarSectionAdapter();
+			}
+			@Override
+			public Adapter casevarDecl(varDecl object) {
+				return createvarDeclAdapter();
+			}
+			@Override
+			public Adapter caseexpression(expression object) {
+				return createexpressionAdapter();
+			}
+			@Override
+			public Adapter casesimpleExpression(simpleExpression object) {
+				return createsimpleExpressionAdapter();
+			}
+			@Override
+			public Adapter caseterm(term object) {
+				return createtermAdapter();
+			}
+			@Override
+			public Adapter casefactor(factor object) {
+				return createfactorAdapter();
+			}
+			@Override
+			public Adapter caserelOp(relOp object) {
+				return createrelOpAdapter();
+			}
+			@Override
+			public Adapter caseaddOp(addOp object) {
+				return createaddOpAdapter();
+			}
+			@Override
+			public Adapter casemulOp(mulOp object) {
+				return createmulOpAdapter();
+			}
+			@Override
+			public Adapter casedesignator(designator object) {
+				return createdesignatorAdapter();
+			}
+			@Override
+			public Adapter casedesignatorSubPart(designatorSubPart object) {
+				return createdesignatorSubPartAdapter();
+			}
+			@Override
+			public Adapter casedesignatorPart(designatorPart object) {
+				return createdesignatorPartAdapter();
+			}
+			@Override
+			public Adapter casesetConstructor(setConstructor object) {
+				return createsetConstructorAdapter();
+			}
+			@Override
+			public Adapter casesetElement(setElement object) {
+				return createsetElementAdapter();
+			}
+			@Override
+			public Adapter caseexprList(exprList object) {
+				return createexprListAdapter();
+			}
+			@Override
+			public Adapter casestatement(statement object) {
+				return createstatementAdapter();
+			}
+			@Override
+			public Adapter casestmtList(stmtList object) {
+				return createstmtListAdapter();
+			}
+			@Override
+			public Adapter caseunlabelledStatement(unlabelledStatement object) {
+				return createunlabelledStatementAdapter();
+			}
+			@Override
+			public Adapter casesimpleStatement(simpleStatement object) {
+				return createsimpleStatementAdapter();
+			}
+			@Override
+			public Adapter casestructStmt(structStmt object) {
+				return createstructStmtAdapter();
+			}
+			@Override
+			public Adapter casecompoundStmt(compoundStmt object) {
+				return createcompoundStmtAdapter();
+			}
+			@Override
+			public Adapter caseconditionalStmt(conditionalStmt object) {
+				return createconditionalStmtAdapter();
+			}
+			@Override
+			public Adapter caseifStmt(ifStmt object) {
+				return createifStmtAdapter();
+			}
+			@Override
+			public Adapter casecaseStmt(caseStmt object) {
+				return createcaseStmtAdapter();
+			}
+			@Override
+			public Adapter casecaseSelector(caseSelector object) {
+				return createcaseSelectorAdapter();
+			}
+			@Override
+			public Adapter casecaseLabel(caseLabel object) {
+				return createcaseLabelAdapter();
+			}
+			@Override
+			public Adapter caseloopStmt(loopStmt object) {
+				return createloopStmtAdapter();
+			}
+			@Override
+			public Adapter caserepeatStmt(repeatStmt object) {
+				return createrepeatStmtAdapter();
+			}
+			@Override
+			public Adapter casewhileStmt(whileStmt object) {
+				return createwhileStmtAdapter();
+			}
+			@Override
+			public Adapter caseforStmt(forStmt object) {
+				return createforStmtAdapter();
+			}
+			@Override
+			public Adapter casewithStmt(withStmt object) {
+				return createwithStmtAdapter();
+			}
+			@Override
+			public Adapter casetryStmt(tryStmt object) {
+				return createtryStmtAdapter();
+			}
+			@Override
+			public Adapter caseexceptionBlock(exceptionBlock object) {
+				return createexceptionBlockAdapter();
+			}
+			@Override
+			public Adapter caseraiseStmt(raiseStmt object) {
+				return createraiseStmtAdapter();
+			}
+			@Override
+			public Adapter caseassemblerStmt(assemblerStmt object) {
+				return createassemblerStmtAdapter();
+			}
+			@Override
+			public Adapter caseprocedureDeclSection(procedureDeclSection object) {
+				return createprocedureDeclSectionAdapter();
+			}
+			@Override
+			public Adapter caseprocedureDecl(procedureDecl object) {
+				return createprocedureDeclAdapter();
+			}
+			@Override
+			public Adapter casefunctionDecl(functionDecl object) {
+				return createfunctionDeclAdapter();
+			}
+			@Override
+			public Adapter casefunctionHeading(functionHeading object) {
+				return createfunctionHeadingAdapter();
+			}
+			@Override
+			public Adapter caseprocedureHeading(procedureHeading object) {
+				return createprocedureHeadingAdapter();
+			}
+			@Override
+			public Adapter caseformalParameters(formalParameters object) {
+				return createformalParametersAdapter();
+			}
+			@Override
+			public Adapter caseformalParm(formalParm object) {
+				return createformalParmAdapter();
+			}
+			@Override
+			public Adapter caseparameter(parameter object) {
+				return createparameterAdapter();
+			}
+			@Override
+			public Adapter casedirective(directive object) {
+				return createdirectiveAdapter();
+			}
+			@Override
+			public Adapter caseobjectType(objectType object) {
+				return createobjectTypeAdapter();
+			}
+			@Override
+			public Adapter caseobjHeritage(objHeritage object) {
+				return createobjHeritageAdapter();
+			}
+			@Override
+			public Adapter casemethodList(methodList object) {
+				return createmethodListAdapter();
+			}
+			@Override
+			public Adapter casemethodHeading(methodHeading object) {
+				return createmethodHeadingAdapter();
+			}
+			@Override
+			public Adapter caseconstructorHeading(constructorHeading object) {
+				return createconstructorHeadingAdapter();
+			}
+			@Override
+			public Adapter casedestructorHeading(destructorHeading object) {
+				return createdestructorHeadingAdapter();
+			}
+			@Override
+			public Adapter caseobjFieldList(objFieldList object) {
+				return createobjFieldListAdapter();
+			}
+			@Override
+			public Adapter caseinitSection(initSection object) {
+				return createinitSectionAdapter();
+			}
+			@Override
+			public Adapter caseclassType(classType object) {
+				return createclassTypeAdapter();
+			}
+			@Override
+			public Adapter caseclassHeritage(classHeritage object) {
+				return createclassHeritageAdapter();
+			}
+			@Override
+			public Adapter caseclassFieldList(classFieldList object) {
+				return createclassFieldListAdapter();
+			}
+			@Override
+			public Adapter caseclassField(classField object) {
+				return createclassFieldAdapter();
+			}
+			@Override
+			public Adapter caseclassMethodList(classMethodList object) {
+				return createclassMethodListAdapter();
+			}
+			@Override
+			public Adapter caseclassMethod(classMethod object) {
+				return createclassMethodAdapter();
+			}
+			@Override
+			public Adapter caseclassPropertyList(classPropertyList object) {
+				return createclassPropertyListAdapter();
+			}
+			@Override
+			public Adapter caseclassProperty(classProperty object) {
+				return createclassPropertyAdapter();
+			}
+			@Override
+			public Adapter casepropertyList(propertyList object) {
+				return createpropertyListAdapter();
+			}
+			@Override
+			public Adapter casepropertyInterface(propertyInterface object) {
+				return createpropertyInterfaceAdapter();
+			}
+			@Override
+			public Adapter casepropertyParameterList(propertyParameterList object) {
+				return createpropertyParameterListAdapter();
+			}
+			@Override
+			public Adapter casepropertySpecifiers(propertySpecifiers object) {
+				return createpropertySpecifiersAdapter();
+			}
+			@Override
+			public Adapter caseinterfaceType(interfaceType object) {
+				return createinterfaceTypeAdapter();
+			}
+			@Override
+			public Adapter caseinterfaceHeritage(interfaceHeritage object) {
+				return createinterfaceHeritageAdapter();
+			}
+			@Override
+			public Adapter caserequiresClause(requiresClause object) {
+				return createrequiresClauseAdapter();
+			}
+			@Override
+			public Adapter casecontainsClause(containsClause object) {
+				return createcontainsClauseAdapter();
+			}
+			@Override
+			public Adapter caseidentList(identList object) {
+				return createidentListAdapter();
+			}
+			@Override
+			public Adapter casequalId(qualId object) {
+				return createqualIdAdapter();
+			}
+			@Override
+			public Adapter casetypeId(typeId object) {
+				return createtypeIdAdapter();
+			}
+			@Override
+			public Adapter caseident(ident object) {
+				return createidentAdapter();
+			}
+			@Override
+			public Adapter casereservedWord(reservedWord object) {
+				return createreservedWordAdapter();
+			}
+			@Override
+			public Adapter caseconstExpr(constExpr object) {
+				return createconstExprAdapter();
+			}
+			@Override
+			public Adapter caserecordConstExpr(recordConstExpr object) {
+				return createrecordConstExprAdapter();
+			}
+			@Override
+			public Adapter caseunitId(unitId object) {
+				return createunitIdAdapter();
+			}
+			@Override
+			public Adapter caserelExp(relExp object) {
+				return createrelExpAdapter();
+			}
+			@Override
+			public Adapter caseaddExp(addExp object) {
+				return createaddExpAdapter();
+			}
+			@Override
+			public Adapter casemultExp(multExp object) {
+				return createmultExpAdapter();
+			}
+			@Override
+			public Adapter caseadOp(adOp object) {
+				return createadOpAdapter();
+			}
+			@Override
+			public Adapter caseassignmentStmnt(assignmentStmnt object) {
+				return createassignmentStmntAdapter();
+			}
+			@Override
+			public Adapter casecallStmnt(callStmnt object) {
+				return createcallStmntAdapter();
+			}
+			@Override
+			public Adapter caseinheritedStamnt(inheritedStamnt object) {
+				return createinheritedStamntAdapter();
+			}
+			@Override
+			public Adapter casegotoStmnt(gotoStmnt object) {
+				return creategotoStmntAdapter();
+			}
+			@Override
+			public Adapter caseparameterList(parameterList object) {
+				return createparameterListAdapter();
+			}
+			@Override
+			public Adapter caseparameterSimple(parameterSimple object) {
+				return createparameterSimpleAdapter();
+			}
+			@Override
+			public Adapter caseMultipleId(MultipleId object) {
+				return createMultipleIdAdapter();
+			}
+			@Override
+			public Adapter caseReservedId(ReservedId object) {
+				return createReservedIdAdapter();
+			}
+			@Override
+			public Adapter caseMineID(MineID object) {
+				return createMineIDAdapter();
+			}
+			@Override
+			public Adapter caseCSTrace(CSTrace object) {
+				return createCSTraceAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
   /**
-   * Creates an adapter for the <code>target</code>.
-   * <!-- begin-user-doc -->
+	 * Creates an adapter for the <code>target</code>.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param target the object to adapt.
-   * @return the adapter for the <code>target</code>.
-   * @generated
-   */
+	 * @param target the object to adapt.
+	 * @return the adapter for the <code>target</code>.
+	 * @generated
+	 */
   @Override
   public Adapter createAdapter(Notifier target)
   {
-    return modelSwitch.doSwitch((EObject)target);
-  }
+		return modelSwitch.doSwitch((EObject)target);
+	}
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.mainRule <em>main Rule</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.mainRule <em>main Rule</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.mainRule
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.mainRule
+	 * @generated
+	 */
   public Adapter createmainRuleAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.program <em>program</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.file <em>file</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.program
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.file
+	 * @generated
+	 */
+  public Adapter createfileAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.program <em>program</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.program
+	 * @generated
+	 */
   public Adapter createprogramAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.unit <em>unit</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.unit <em>unit</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.unit
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.unit
+	 * @generated
+	 */
   public Adapter createunitAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.packageDecl <em>package Decl</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.packageDecl <em>package Decl</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.packageDecl
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.packageDecl
+	 * @generated
+	 */
   public Adapter createpackageDeclAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.library <em>library</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.library <em>library</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.library
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.library
+	 * @generated
+	 */
   public Adapter createlibraryAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.programBlock <em>program Block</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.programBlock <em>program Block</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.programBlock
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.programBlock
+	 * @generated
+	 */
   public Adapter createprogramBlockAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.usesClause <em>uses Clause</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.usesClause <em>uses Clause</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.usesClause
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.usesClause
+	 * @generated
+	 */
   public Adapter createusesClauseAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.interfaceSection <em>interface Section</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.interfaceSection <em>interface Section</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.interfaceSection
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.interfaceSection
+	 * @generated
+	 */
   public Adapter createinterfaceSectionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.interfaceDecl <em>interface Decl</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.interfaceDecl <em>interface Decl</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.interfaceDecl
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.interfaceDecl
+	 * @generated
+	 */
   public Adapter createinterfaceDeclAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.exportedHeading <em>exported Heading</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.exportedHeading <em>exported Heading</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.exportedHeading
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.exportedHeading
+	 * @generated
+	 */
   public Adapter createexportedHeadingAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.implementationSection <em>implementation Section</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.implementationSection <em>implementation Section</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.implementationSection
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.implementationSection
+	 * @generated
+	 */
   public Adapter createimplementationSectionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.block <em>block</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.block <em>block</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.block
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.block
+	 * @generated
+	 */
   public Adapter createblockAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.exportsItem <em>exports Item</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.exportsItem <em>exports Item</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.exportsItem
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.exportsItem
+	 * @generated
+	 */
   public Adapter createexportsItemAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.exportsStmt <em>exports Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.exportsStmt <em>exports Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.exportsStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.exportsStmt
+	 * @generated
+	 */
   public Adapter createexportsStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.declSection <em>decl Section</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.declSection <em>decl Section</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.declSection
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.declSection
+	 * @generated
+	 */
   public Adapter createdeclSectionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.labelDeclSection <em>label Decl Section</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.labelDeclSection <em>label Decl Section</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.labelDeclSection
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.labelDeclSection
+	 * @generated
+	 */
   public Adapter createlabelDeclSectionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.constSection <em>const Section</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.constSection <em>const Section</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.constSection
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.constSection
+	 * @generated
+	 */
   public Adapter createconstSectionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.constantDecl <em>constant Decl</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.constantDecl <em>constant Decl</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.constantDecl
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.constantDecl
+	 * @generated
+	 */
   public Adapter createconstantDeclAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.typeSection <em>type Section</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.typeSection <em>type Section</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.typeSection
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.typeSection
+	 * @generated
+	 */
   public Adapter createtypeSectionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.typeDecl <em>type Decl</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.typeDecl <em>type Decl</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.typeDecl
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.typeDecl
+	 * @generated
+	 */
   public Adapter createtypeDeclAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.typedConstant <em>typed Constant</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.typedConstant <em>typed Constant</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.typedConstant
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.typedConstant
+	 * @generated
+	 */
   public Adapter createtypedConstantAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.arrayConstant <em>array Constant</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.arrayConstant <em>array Constant</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.arrayConstant
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.arrayConstant
+	 * @generated
+	 */
   public Adapter createarrayConstantAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.recordConstant <em>record Constant</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.recordConstant <em>record Constant</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.recordConstant
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.recordConstant
+	 * @generated
+	 */
   public Adapter createrecordConstantAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.recordFieldConstant <em>record Field Constant</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.recordFieldConstant <em>record Field Constant</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.recordFieldConstant
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.recordFieldConstant
+	 * @generated
+	 */
   public Adapter createrecordFieldConstantAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.type <em>type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.type <em>type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.type
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.type
+	 * @generated
+	 */
   public Adapter createtypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.restrictedType <em>restricted Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.restrictedType <em>restricted Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.restrictedType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.restrictedType
+	 * @generated
+	 */
   public Adapter createrestrictedTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classRefType <em>class Ref Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classRefType <em>class Ref Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.classRefType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.classRefType
+	 * @generated
+	 */
   public Adapter createclassRefTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.simpleType <em>simple Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.simpleType <em>simple Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.simpleType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.simpleType
+	 * @generated
+	 */
   public Adapter createsimpleTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.realType <em>real Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.realType <em>real Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.realType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.realType
+	 * @generated
+	 */
   public Adapter createrealTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ordinalType <em>ordinal Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ordinalType <em>ordinal Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.ordinalType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.ordinalType
+	 * @generated
+	 */
   public Adapter createordinalTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ordIdent <em>ord Ident</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ordIdent <em>ord Ident</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.ordIdent
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.ordIdent
+	 * @generated
+	 */
   public Adapter createordIdentAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.variantType <em>variant Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.variantType <em>variant Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.variantType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.variantType
+	 * @generated
+	 */
   public Adapter createvariantTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.subrangeType <em>subrange Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.subrangeType <em>subrange Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.subrangeType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.subrangeType
+	 * @generated
+	 */
   public Adapter createsubrangeTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.enumeratedType <em>enumerated Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.enumeratedType <em>enumerated Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.enumeratedType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.enumeratedType
+	 * @generated
+	 */
   public Adapter createenumeratedTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.enumeratedTypeElement <em>enumerated Type Element</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.enumeratedTypeElement <em>enumerated Type Element</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.enumeratedTypeElement
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.enumeratedTypeElement
+	 * @generated
+	 */
   public Adapter createenumeratedTypeElementAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.stringType <em>string Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.stringType <em>string Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.stringType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.stringType
+	 * @generated
+	 */
   public Adapter createstringTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.strucType <em>struc Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.strucType <em>struc Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.strucType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.strucType
+	 * @generated
+	 */
   public Adapter createstrucTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.arrayType <em>array Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.arrayType <em>array Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.arrayType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.arrayType
+	 * @generated
+	 */
   public Adapter createarrayTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.recType <em>rec Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.recType <em>rec Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.recType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.recType
+	 * @generated
+	 */
   public Adapter createrecTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.fieldList <em>field List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.fieldList <em>field List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.fieldList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.fieldList
+	 * @generated
+	 */
   public Adapter createfieldListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.fieldDecl <em>field Decl</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.fieldDecl <em>field Decl</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.fieldDecl
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.fieldDecl
+	 * @generated
+	 */
   public Adapter createfieldDeclAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.variantSection <em>variant Section</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.variantSection <em>variant Section</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.variantSection
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.variantSection
+	 * @generated
+	 */
   public Adapter createvariantSectionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.recVariant <em>rec Variant</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.recVariant <em>rec Variant</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.recVariant
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.recVariant
+	 * @generated
+	 */
   public Adapter createrecVariantAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.setType <em>set Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.setType <em>set Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.setType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.setType
+	 * @generated
+	 */
   public Adapter createsetTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.fileType <em>file Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.fileType <em>file Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.fileType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.fileType
+	 * @generated
+	 */
   public Adapter createfileTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.pointerType <em>pointer Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.pointerType <em>pointer Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.pointerType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.pointerType
+	 * @generated
+	 */
   public Adapter createpointerTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.procedureType <em>procedure Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.procedureType <em>procedure Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.procedureType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.procedureType
+	 * @generated
+	 */
   public Adapter createprocedureTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.varSection <em>var Section</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.varSection <em>var Section</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.varSection
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.varSection
+	 * @generated
+	 */
   public Adapter createvarSectionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.varDecl <em>var Decl</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.varDecl <em>var Decl</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.varDecl
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.varDecl
+	 * @generated
+	 */
   public Adapter createvarDeclAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.expression <em>expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.expression <em>expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.expression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.expression
+	 * @generated
+	 */
   public Adapter createexpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.simpleExpression <em>simple Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.simpleExpression <em>simple Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.simpleExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.simpleExpression
+	 * @generated
+	 */
   public Adapter createsimpleExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.term <em>term</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.term <em>term</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.term
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.term
+	 * @generated
+	 */
   public Adapter createtermAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.factor <em>factor</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.factor <em>factor</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.factor
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.factor
+	 * @generated
+	 */
   public Adapter createfactorAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.relOp <em>rel Op</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.relOp <em>rel Op</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.relOp
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.relOp
+	 * @generated
+	 */
   public Adapter createrelOpAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.addOp <em>add Op</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.addOp <em>add Op</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.addOp
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.addOp
+	 * @generated
+	 */
   public Adapter createaddOpAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.mulOp <em>mul Op</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.mulOp <em>mul Op</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.mulOp
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.mulOp
+	 * @generated
+	 */
   public Adapter createmulOpAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.designator <em>designator</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.designator <em>designator</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.designator
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.designator
+	 * @generated
+	 */
   public Adapter createdesignatorAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.designatorSubPart <em>designator Sub Part</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.designatorSubPart <em>designator Sub Part</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.designatorSubPart
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.designatorSubPart
+	 * @generated
+	 */
   public Adapter createdesignatorSubPartAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.designatorPart <em>designator Part</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.designatorPart <em>designator Part</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.designatorPart
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.designatorPart
+	 * @generated
+	 */
   public Adapter createdesignatorPartAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.setConstructor <em>set Constructor</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.setConstructor <em>set Constructor</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.setConstructor
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.setConstructor
+	 * @generated
+	 */
   public Adapter createsetConstructorAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.setElement <em>set Element</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.setElement <em>set Element</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.setElement
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.setElement
+	 * @generated
+	 */
   public Adapter createsetElementAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.exprList <em>expr List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.exprList <em>expr List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.exprList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.exprList
+	 * @generated
+	 */
   public Adapter createexprListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.statement <em>statement</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.statement <em>statement</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.statement
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.statement
+	 * @generated
+	 */
   public Adapter createstatementAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.stmtList <em>stmt List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.stmtList <em>stmt List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.stmtList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.stmtList
+	 * @generated
+	 */
   public Adapter createstmtListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.simpleStatement <em>simple Statement</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.unlabelledStatement <em>unlabelled Statement</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.simpleStatement
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.unlabelledStatement
+	 * @generated
+	 */
+  public Adapter createunlabelledStatementAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.simpleStatement <em>simple Statement</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.simpleStatement
+	 * @generated
+	 */
   public Adapter createsimpleStatementAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.structStmt <em>struct Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.structStmt <em>struct Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.structStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.structStmt
+	 * @generated
+	 */
   public Adapter createstructStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.compoundStmt <em>compound Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.compoundStmt <em>compound Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.compoundStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.compoundStmt
+	 * @generated
+	 */
   public Adapter createcompoundStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.conditionalStmt <em>conditional Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.conditionalStmt <em>conditional Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.conditionalStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.conditionalStmt
+	 * @generated
+	 */
   public Adapter createconditionalStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ifStmt <em>if Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ifStmt <em>if Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.ifStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.ifStmt
+	 * @generated
+	 */
   public Adapter createifStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.caseStmt <em>case Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.caseStmt <em>case Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.caseStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.caseStmt
+	 * @generated
+	 */
   public Adapter createcaseStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.caseSelector <em>case Selector</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.caseSelector <em>case Selector</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.caseSelector
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.caseSelector
+	 * @generated
+	 */
   public Adapter createcaseSelectorAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.caseLabel <em>case Label</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.caseLabel <em>case Label</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.caseLabel
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.caseLabel
+	 * @generated
+	 */
   public Adapter createcaseLabelAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.loopStmt <em>loop Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.loopStmt <em>loop Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.loopStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.loopStmt
+	 * @generated
+	 */
   public Adapter createloopStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.repeatStmt <em>repeat Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.repeatStmt <em>repeat Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.repeatStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.repeatStmt
+	 * @generated
+	 */
   public Adapter createrepeatStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.whileStmt <em>while Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.whileStmt <em>while Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.whileStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.whileStmt
+	 * @generated
+	 */
   public Adapter createwhileStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.forStmt <em>for Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.forStmt <em>for Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.forStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.forStmt
+	 * @generated
+	 */
   public Adapter createforStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.withStmt <em>with Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.withStmt <em>with Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.withStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.withStmt
+	 * @generated
+	 */
   public Adapter createwithStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.tryStmt <em>try Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.tryStmt <em>try Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.tryStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.tryStmt
+	 * @generated
+	 */
   public Adapter createtryStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.exceptionBlock <em>exception Block</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.exceptionBlock <em>exception Block</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.exceptionBlock
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.exceptionBlock
+	 * @generated
+	 */
   public Adapter createexceptionBlockAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.raiseStmt <em>raise Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.raiseStmt <em>raise Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.raiseStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.raiseStmt
+	 * @generated
+	 */
   public Adapter createraiseStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.assemblerStmt <em>assembler Stmt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.assemblerStmt <em>assembler Stmt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.assemblerStmt
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.assemblerStmt
+	 * @generated
+	 */
   public Adapter createassemblerStmtAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.procedureDeclSection <em>procedure Decl Section</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.procedureDeclSection <em>procedure Decl Section</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.procedureDeclSection
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.procedureDeclSection
+	 * @generated
+	 */
   public Adapter createprocedureDeclSectionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.procedureDecl <em>procedure Decl</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.procedureDecl <em>procedure Decl</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.procedureDecl
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.procedureDecl
+	 * @generated
+	 */
   public Adapter createprocedureDeclAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.functionDecl <em>function Decl</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.functionDecl <em>function Decl</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.functionDecl
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.functionDecl
+	 * @generated
+	 */
   public Adapter createfunctionDeclAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.functionHeading <em>function Heading</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.functionHeading <em>function Heading</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.functionHeading
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.functionHeading
+	 * @generated
+	 */
   public Adapter createfunctionHeadingAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.procedureHeading <em>procedure Heading</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.procedureHeading <em>procedure Heading</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.procedureHeading
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.procedureHeading
+	 * @generated
+	 */
   public Adapter createprocedureHeadingAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.formalParameters <em>formal Parameters</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.formalParameters <em>formal Parameters</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.formalParameters
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.formalParameters
+	 * @generated
+	 */
   public Adapter createformalParametersAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.formalParm <em>formal Parm</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.formalParm <em>formal Parm</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.formalParm
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.formalParm
+	 * @generated
+	 */
   public Adapter createformalParmAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.parameter <em>parameter</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.parameter <em>parameter</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.parameter
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.parameter
+	 * @generated
+	 */
   public Adapter createparameterAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.directive <em>directive</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.directive <em>directive</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.directive
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.directive
+	 * @generated
+	 */
   public Adapter createdirectiveAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.objectType <em>object Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.objectType <em>object Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.objectType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.objectType
+	 * @generated
+	 */
   public Adapter createobjectTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.objHeritage <em>obj Heritage</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.objHeritage <em>obj Heritage</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.objHeritage
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.objHeritage
+	 * @generated
+	 */
   public Adapter createobjHeritageAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.methodList <em>method List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.methodList <em>method List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.methodList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.methodList
+	 * @generated
+	 */
   public Adapter createmethodListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.methodHeading <em>method Heading</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.methodHeading <em>method Heading</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.methodHeading
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.methodHeading
+	 * @generated
+	 */
   public Adapter createmethodHeadingAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.constructorHeading <em>constructor Heading</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.constructorHeading <em>constructor Heading</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.constructorHeading
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.constructorHeading
+	 * @generated
+	 */
   public Adapter createconstructorHeadingAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.destructorHeading <em>destructor Heading</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.destructorHeading <em>destructor Heading</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.destructorHeading
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.destructorHeading
+	 * @generated
+	 */
   public Adapter createdestructorHeadingAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.objFieldList <em>obj Field List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.objFieldList <em>obj Field List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.objFieldList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.objFieldList
+	 * @generated
+	 */
   public Adapter createobjFieldListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.initSection <em>init Section</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.initSection <em>init Section</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.initSection
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.initSection
+	 * @generated
+	 */
   public Adapter createinitSectionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classType <em>class Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classType <em>class Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.classType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.classType
+	 * @generated
+	 */
   public Adapter createclassTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classHeritage <em>class Heritage</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classHeritage <em>class Heritage</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.classHeritage
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.classHeritage
+	 * @generated
+	 */
   public Adapter createclassHeritageAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classFieldList <em>class Field List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classFieldList <em>class Field List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.classFieldList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.classFieldList
+	 * @generated
+	 */
   public Adapter createclassFieldListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classField <em>class Field</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classField <em>class Field</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.classField
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.classField
+	 * @generated
+	 */
   public Adapter createclassFieldAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classMethodList <em>class Method List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classMethodList <em>class Method List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.classMethodList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.classMethodList
+	 * @generated
+	 */
   public Adapter createclassMethodListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classMethod <em>class Method</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classMethod <em>class Method</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.classMethod
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.classMethod
+	 * @generated
+	 */
   public Adapter createclassMethodAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classPropertyList <em>class Property List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classPropertyList <em>class Property List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.classPropertyList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.classPropertyList
+	 * @generated
+	 */
   public Adapter createclassPropertyListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classProperty <em>class Property</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.classProperty <em>class Property</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.classProperty
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.classProperty
+	 * @generated
+	 */
   public Adapter createclassPropertyAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.propertyList <em>property List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.propertyList <em>property List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.propertyList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.propertyList
+	 * @generated
+	 */
   public Adapter createpropertyListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.propertyInterface <em>property Interface</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.propertyInterface <em>property Interface</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.propertyInterface
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.propertyInterface
+	 * @generated
+	 */
   public Adapter createpropertyInterfaceAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.propertyParameterList <em>property Parameter List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.propertyParameterList <em>property Parameter List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.propertyParameterList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.propertyParameterList
+	 * @generated
+	 */
   public Adapter createpropertyParameterListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.propertySpecifiers <em>property Specifiers</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.propertySpecifiers <em>property Specifiers</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.propertySpecifiers
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.propertySpecifiers
+	 * @generated
+	 */
   public Adapter createpropertySpecifiersAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.interfaceType <em>interface Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.interfaceType <em>interface Type</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.interfaceType
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.interfaceType
+	 * @generated
+	 */
   public Adapter createinterfaceTypeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.interfaceHeritage <em>interface Heritage</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.interfaceHeritage <em>interface Heritage</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.interfaceHeritage
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.interfaceHeritage
+	 * @generated
+	 */
   public Adapter createinterfaceHeritageAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.requiresClause <em>requires Clause</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.requiresClause <em>requires Clause</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.requiresClause
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.requiresClause
+	 * @generated
+	 */
   public Adapter createrequiresClauseAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.containsClause <em>contains Clause</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.containsClause <em>contains Clause</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.containsClause
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.containsClause
+	 * @generated
+	 */
   public Adapter createcontainsClauseAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.identList <em>ident List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.identList <em>ident List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.identList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.identList
+	 * @generated
+	 */
   public Adapter createidentListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.qualId <em>qual Id</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.qualId <em>qual Id</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.qualId
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.qualId
+	 * @generated
+	 */
   public Adapter createqualIdAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.typeId <em>type Id</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.typeId <em>type Id</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.typeId
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.typeId
+	 * @generated
+	 */
   public Adapter createtypeIdAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ident <em>ident</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ident <em>ident</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.ident
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.ident
+	 * @generated
+	 */
   public Adapter createidentAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.reservedWord <em>reserved Word</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.reservedWord <em>reserved Word</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.reservedWord
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.reservedWord
+	 * @generated
+	 */
   public Adapter createreservedWordAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.constExpr <em>const Expr</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.constExpr <em>const Expr</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.constExpr
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.constExpr
+	 * @generated
+	 */
   public Adapter createconstExprAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.recordConstExpr <em>record Const Expr</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.recordConstExpr <em>record Const Expr</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.recordConstExpr
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.recordConstExpr
+	 * @generated
+	 */
   public Adapter createrecordConstExprAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.unitId <em>unit Id</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.unitId <em>unit Id</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.unitId
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.unitId
+	 * @generated
+	 */
   public Adapter createunitIdAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.relExp <em>rel Exp</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.relExp <em>rel Exp</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.relExp
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.relExp
+	 * @generated
+	 */
   public Adapter createrelExpAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.addExp <em>add Exp</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.addExp <em>add Exp</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.addExp
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.addExp
+	 * @generated
+	 */
   public Adapter createaddExpAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.mulExp <em>mul Exp</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.multExp <em>mult Exp</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.mulExp
-   * @generated
-   */
-  public Adapter createmulExpAdapter()
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.multExp
+	 * @generated
+	 */
+  public Adapter createmultExpAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.adOp <em>ad Op</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.adOp <em>ad Op</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.adOp
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.adOp
+	 * @generated
+	 */
   public Adapter createadOpAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.AssignmentStmnt <em>Assignment Stmnt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.assignmentStmnt <em>assignment Stmnt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.AssignmentStmnt
-   * @generated
-   */
-  public Adapter createAssignmentStmntAdapter()
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.assignmentStmnt
+	 * @generated
+	 */
+  public Adapter createassignmentStmntAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.CallStmnt <em>Call Stmnt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.callStmnt <em>call Stmnt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.CallStmnt
-   * @generated
-   */
-  public Adapter createCallStmntAdapter()
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.callStmnt
+	 * @generated
+	 */
+  public Adapter createcallStmntAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.InheritedStamnt <em>Inherited Stamnt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.inheritedStamnt <em>inherited Stamnt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.InheritedStamnt
-   * @generated
-   */
-  public Adapter createInheritedStamntAdapter()
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.inheritedStamnt
+	 * @generated
+	 */
+  public Adapter createinheritedStamntAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.GotoStmnt <em>Goto Stmnt</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.gotoStmnt <em>goto Stmnt</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.GotoStmnt
-   * @generated
-   */
-  public Adapter createGotoStmntAdapter()
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.gotoStmnt
+	 * @generated
+	 */
+  public Adapter creategotoStmntAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.parameterList <em>parameter List</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.parameterList <em>parameter List</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.parameterList
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.parameterList
+	 * @generated
+	 */
   public Adapter createparameterListAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.parameterSimple <em>parameter Simple</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.parameterSimple <em>parameter Simple</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.parameterSimple
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.parameterSimple
+	 * @generated
+	 */
   public Adapter createparameterSimpleAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.MultipleId <em>Multiple Id</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.MultipleId <em>Multiple Id</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.MultipleId
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.MultipleId
+	 * @generated
+	 */
   public Adapter createMultipleIdAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ReservedId <em>Reserved Id</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ReservedId <em>Reserved Id</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.ReservedId
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.ReservedId
+	 * @generated
+	 */
   public Adapter createReservedIdAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.MineID <em>Mine ID</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.MineID <em>Mine ID</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.MineID
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.MineID
+	 * @generated
+	 */
   public Adapter createMineIDAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.SimpleExp <em>Simple Exp</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.SimpleExp
-   * @generated
-   */
-  public Adapter createSimpleExpAdapter()
-  {
-    return null;
-  }
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.CSTrace <em>CS Trace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.CSTrace
+	 * @generated
+	 */
+	public Adapter createCSTraceAdapter() {
+		return null;
+	}
 
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.MultipleConstExp <em>Multiple Const Exp</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.MultipleConstExp
-   * @generated
-   */
-  public Adapter createMultipleConstExpAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.RecordConstExp <em>Record Const Exp</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.delphi.delphi.RecordConstExp
-   * @generated
-   */
-  public Adapter createRecordConstExpAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for the default case.
-   * <!-- begin-user-doc -->
+		/**
+	 * Creates a new adapter for the default case.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @generated
+	 */
   public Adapter createEObjectAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
 } //DelphiAdapterFactory

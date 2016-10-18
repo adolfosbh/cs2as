@@ -23,29 +23,29 @@ package org.xtext.example.delphi.delphi;
 public interface setType extends strucType
 {
   /**
-   * Returns the value of the '<em><b>Ordinal</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ordinal</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Ordinal</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ordinal</em>' containment reference.
-   * @see #setOrdinal(ordinalType)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getsetType_Ordinal()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Ordinal</em>' containment reference.
+	 * @see #setOrdinal(ordinalType)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getsetType_Ordinal()
+	 * @model containment="true"
+	 * @generated
+	 */
   ordinalType getOrdinal();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.setType#getOrdinal <em>Ordinal</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.setType#getOrdinal <em>Ordinal</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ordinal</em>' containment reference.
-   * @see #getOrdinal()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Ordinal</em>' containment reference.
+	 * @see #getOrdinal()
+	 * @generated
+	 */
   void setOrdinal(ordinalType value);
 
 } // setType

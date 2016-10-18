@@ -18,24 +18,24 @@ import org.xtext.example.delphi.delphi.realType;
 public class realTypeImpl extends simpleTypeImpl implements realType
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected realTypeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.REAL_TYPE;
-  }
+		return DelphiPackage.Literals.REAL_TYPE;
+	}
 
 } //realTypeImpl

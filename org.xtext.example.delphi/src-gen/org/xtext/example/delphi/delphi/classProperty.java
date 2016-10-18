@@ -22,58 +22,58 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface classProperty extends EObject
+public interface classProperty extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Visibility</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Visibility</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Visibility</em>' attribute.
-   * @see #setVisibility(String)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getclassProperty_Visibility()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Visibility</em>' attribute.
+	 * @see #setVisibility(String)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getclassProperty_Visibility()
+	 * @model
+	 * @generated
+	 */
   String getVisibility();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.classProperty#getVisibility <em>Visibility</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.classProperty#getVisibility <em>Visibility</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Visibility</em>' attribute.
-   * @see #getVisibility()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Visibility</em>' attribute.
+	 * @see #getVisibility()
+	 * @generated
+	 */
   void setVisibility(String value);
 
   /**
-   * Returns the value of the '<em><b>Prop List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Prop List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Prop List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Prop List</em>' containment reference.
-   * @see #setPropList(propertyList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getclassProperty_PropList()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Prop List</em>' containment reference.
+	 * @see #setPropList(propertyList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getclassProperty_PropList()
+	 * @model containment="true"
+	 * @generated
+	 */
   propertyList getPropList();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.classProperty#getPropList <em>Prop List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.classProperty#getPropList <em>Prop List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Prop List</em>' containment reference.
-   * @see #getPropList()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Prop List</em>' containment reference.
+	 * @see #getPropList()
+	 * @generated
+	 */
   void setPropList(propertyList value);
 
 } // classProperty

@@ -23,84 +23,84 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface typedConstant extends EObject
+public interface typedConstant extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Const</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Const</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Const</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Const</em>' containment reference.
-   * @see #setConst(constExpr)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypedConstant_Const()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Const</em>' containment reference.
+	 * @see #setConst(constExpr)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypedConstant_Const()
+	 * @model containment="true"
+	 * @generated
+	 */
   constExpr getConst();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.typedConstant#getConst <em>Const</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.typedConstant#getConst <em>Const</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Const</em>' containment reference.
-   * @see #getConst()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Const</em>' containment reference.
+	 * @see #getConst()
+	 * @generated
+	 */
   void setConst(constExpr value);
 
   /**
-   * Returns the value of the '<em><b>Array</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Array</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Array</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Array</em>' containment reference.
-   * @see #setArray(arrayConstant)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypedConstant_Array()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Array</em>' containment reference.
+	 * @see #setArray(arrayConstant)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypedConstant_Array()
+	 * @model containment="true"
+	 * @generated
+	 */
   arrayConstant getArray();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.typedConstant#getArray <em>Array</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.typedConstant#getArray <em>Array</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Array</em>' containment reference.
-   * @see #getArray()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Array</em>' containment reference.
+	 * @see #getArray()
+	 * @generated
+	 */
   void setArray(arrayConstant value);
 
   /**
-   * Returns the value of the '<em><b>Record</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Record</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Record</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Record</em>' containment reference.
-   * @see #setRecord(recordConstant)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypedConstant_Record()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Record</em>' containment reference.
+	 * @see #setRecord(recordConstant)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypedConstant_Record()
+	 * @model containment="true"
+	 * @generated
+	 */
   recordConstant getRecord();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.typedConstant#getRecord <em>Record</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.typedConstant#getRecord <em>Record</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Record</em>' containment reference.
-   * @see #getRecord()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Record</em>' containment reference.
+	 * @see #getRecord()
+	 * @generated
+	 */
   void setRecord(recordConstant value);
 
 } // typedConstant

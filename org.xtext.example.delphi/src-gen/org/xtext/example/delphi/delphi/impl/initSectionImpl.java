@@ -30,237 +30,228 @@ import org.xtext.example.delphi.delphi.stmtList;
  *
  * @generated
  */
-public class initSectionImpl extends MinimalEObjectImpl.Container implements initSection
+public class initSectionImpl extends CSTraceImpl implements initSection
 {
   /**
-   * The cached value of the '{@link #getStmtList() <em>Stmt List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getStmtList() <em>Stmt List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStmtList()
-   * @generated
-   * @ordered
-   */
+	 * @see #getStmtList()
+	 * @generated
+	 * @ordered
+	 */
   protected stmtList stmtList;
 
   /**
-   * The cached value of the '{@link #getEndStmtList() <em>End Stmt List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEndStmtList() <em>End Stmt List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEndStmtList()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEndStmtList()
+	 * @generated
+	 * @ordered
+	 */
   protected stmtList endStmtList;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected initSectionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.INIT_SECTION;
-  }
+		return DelphiPackage.Literals.INIT_SECTION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public stmtList getStmtList()
   {
-    return stmtList;
-  }
+		return stmtList;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetStmtList(stmtList newStmtList, NotificationChain msgs)
   {
-    stmtList oldStmtList = stmtList;
-    stmtList = newStmtList;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.INIT_SECTION__STMT_LIST, oldStmtList, newStmtList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		stmtList oldStmtList = stmtList;
+		stmtList = newStmtList;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.INIT_SECTION__STMT_LIST, oldStmtList, newStmtList);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setStmtList(stmtList newStmtList)
   {
-    if (newStmtList != stmtList)
-    {
-      NotificationChain msgs = null;
-      if (stmtList != null)
-        msgs = ((InternalEObject)stmtList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INIT_SECTION__STMT_LIST, null, msgs);
-      if (newStmtList != null)
-        msgs = ((InternalEObject)newStmtList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INIT_SECTION__STMT_LIST, null, msgs);
-      msgs = basicSetStmtList(newStmtList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.INIT_SECTION__STMT_LIST, newStmtList, newStmtList));
-  }
+		if (newStmtList != stmtList) {
+			NotificationChain msgs = null;
+			if (stmtList != null)
+				msgs = ((InternalEObject)stmtList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INIT_SECTION__STMT_LIST, null, msgs);
+			if (newStmtList != null)
+				msgs = ((InternalEObject)newStmtList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INIT_SECTION__STMT_LIST, null, msgs);
+			msgs = basicSetStmtList(newStmtList, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.INIT_SECTION__STMT_LIST, newStmtList, newStmtList));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public stmtList getEndStmtList()
   {
-    return endStmtList;
-  }
+		return endStmtList;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetEndStmtList(stmtList newEndStmtList, NotificationChain msgs)
   {
-    stmtList oldEndStmtList = endStmtList;
-    endStmtList = newEndStmtList;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.INIT_SECTION__END_STMT_LIST, oldEndStmtList, newEndStmtList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		stmtList oldEndStmtList = endStmtList;
+		endStmtList = newEndStmtList;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.INIT_SECTION__END_STMT_LIST, oldEndStmtList, newEndStmtList);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setEndStmtList(stmtList newEndStmtList)
   {
-    if (newEndStmtList != endStmtList)
-    {
-      NotificationChain msgs = null;
-      if (endStmtList != null)
-        msgs = ((InternalEObject)endStmtList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INIT_SECTION__END_STMT_LIST, null, msgs);
-      if (newEndStmtList != null)
-        msgs = ((InternalEObject)newEndStmtList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INIT_SECTION__END_STMT_LIST, null, msgs);
-      msgs = basicSetEndStmtList(newEndStmtList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.INIT_SECTION__END_STMT_LIST, newEndStmtList, newEndStmtList));
-  }
+		if (newEndStmtList != endStmtList) {
+			NotificationChain msgs = null;
+			if (endStmtList != null)
+				msgs = ((InternalEObject)endStmtList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INIT_SECTION__END_STMT_LIST, null, msgs);
+			if (newEndStmtList != null)
+				msgs = ((InternalEObject)newEndStmtList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.INIT_SECTION__END_STMT_LIST, null, msgs);
+			msgs = basicSetEndStmtList(newEndStmtList, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.INIT_SECTION__END_STMT_LIST, newEndStmtList, newEndStmtList));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.INIT_SECTION__STMT_LIST:
-        return basicSetStmtList(null, msgs);
-      case DelphiPackage.INIT_SECTION__END_STMT_LIST:
-        return basicSetEndStmtList(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.INIT_SECTION__STMT_LIST:
+				return basicSetStmtList(null, msgs);
+			case DelphiPackage.INIT_SECTION__END_STMT_LIST:
+				return basicSetEndStmtList(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.INIT_SECTION__STMT_LIST:
-        return getStmtList();
-      case DelphiPackage.INIT_SECTION__END_STMT_LIST:
-        return getEndStmtList();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.INIT_SECTION__STMT_LIST:
+				return getStmtList();
+			case DelphiPackage.INIT_SECTION__END_STMT_LIST:
+				return getEndStmtList();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.INIT_SECTION__STMT_LIST:
-        setStmtList((stmtList)newValue);
-        return;
-      case DelphiPackage.INIT_SECTION__END_STMT_LIST:
-        setEndStmtList((stmtList)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.INIT_SECTION__STMT_LIST:
+				setStmtList((stmtList)newValue);
+				return;
+			case DelphiPackage.INIT_SECTION__END_STMT_LIST:
+				setEndStmtList((stmtList)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.INIT_SECTION__STMT_LIST:
-        setStmtList((stmtList)null);
-        return;
-      case DelphiPackage.INIT_SECTION__END_STMT_LIST:
-        setEndStmtList((stmtList)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.INIT_SECTION__STMT_LIST:
+				setStmtList((stmtList)null);
+				return;
+			case DelphiPackage.INIT_SECTION__END_STMT_LIST:
+				setEndStmtList((stmtList)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.INIT_SECTION__STMT_LIST:
-        return stmtList != null;
-      case DelphiPackage.INIT_SECTION__END_STMT_LIST:
-        return endStmtList != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.INIT_SECTION__STMT_LIST:
+				return stmtList != null;
+			case DelphiPackage.INIT_SECTION__END_STMT_LIST:
+				return endStmtList != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //initSectionImpl

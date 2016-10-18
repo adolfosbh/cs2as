@@ -15,6 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface classHeritage extends EObject
+public interface classHeritage extends CSTrace
 {
 } // classHeritage

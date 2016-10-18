@@ -23,22 +23,22 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface classFieldList extends EObject
+public interface classFieldList extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Field</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.classField}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Field</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.classField}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Field</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Field</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getclassFieldList_Field()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Field</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getclassFieldList_Field()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<classField> getField();
 
 } // classFieldList

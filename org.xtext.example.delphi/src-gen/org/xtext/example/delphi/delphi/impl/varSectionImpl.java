@@ -35,132 +35,126 @@ import org.xtext.example.delphi.delphi.varSection;
 public class varSectionImpl extends interfaceDeclImpl implements varSection
 {
   /**
-   * The cached value of the '{@link #getVarDecls() <em>Var Decls</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVarDecls() <em>Var Decls</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarDecls()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVarDecls()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<varDecl> varDecls;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected varSectionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.VAR_SECTION;
-  }
+		return DelphiPackage.Literals.VAR_SECTION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<varDecl> getVarDecls()
   {
-    if (varDecls == null)
-    {
-      varDecls = new EObjectContainmentEList<varDecl>(varDecl.class, this, DelphiPackage.VAR_SECTION__VAR_DECLS);
-    }
-    return varDecls;
-  }
+		if (varDecls == null) {
+			varDecls = new EObjectContainmentEList<varDecl>(varDecl.class, this, DelphiPackage.VAR_SECTION__VAR_DECLS);
+		}
+		return varDecls;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.VAR_SECTION__VAR_DECLS:
-        return ((InternalEList<?>)getVarDecls()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.VAR_SECTION__VAR_DECLS:
+				return ((InternalEList<?>)getVarDecls()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.VAR_SECTION__VAR_DECLS:
-        return getVarDecls();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.VAR_SECTION__VAR_DECLS:
+				return getVarDecls();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.VAR_SECTION__VAR_DECLS:
-        getVarDecls().clear();
-        getVarDecls().addAll((Collection<? extends varDecl>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.VAR_SECTION__VAR_DECLS:
+				getVarDecls().clear();
+				getVarDecls().addAll((Collection<? extends varDecl>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.VAR_SECTION__VAR_DECLS:
-        getVarDecls().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.VAR_SECTION__VAR_DECLS:
+				getVarDecls().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.VAR_SECTION__VAR_DECLS:
-        return varDecls != null && !varDecls.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.VAR_SECTION__VAR_DECLS:
+				return varDecls != null && !varDecls.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //varSectionImpl

@@ -17,27 +17,27 @@ import org.xtext.example.delphi.delphi.classHeritage;
  *
  * @generated
  */
-public class classHeritageImpl extends MinimalEObjectImpl.Container implements classHeritage
+public class classHeritageImpl extends CSTraceImpl implements classHeritage
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected classHeritageImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.CLASS_HERITAGE;
-  }
+		return DelphiPackage.Literals.CLASS_HERITAGE;
+	}
 
 } //classHeritageImpl

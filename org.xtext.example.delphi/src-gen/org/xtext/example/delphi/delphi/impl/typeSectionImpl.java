@@ -35,132 +35,126 @@ import org.xtext.example.delphi.delphi.typeSection;
 public class typeSectionImpl extends interfaceDeclImpl implements typeSection
 {
   /**
-   * The cached value of the '{@link #getTypeDecl() <em>Type Decl</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTypeDecl() <em>Type Decl</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypeDecl()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTypeDecl()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<typeDecl> typeDecl;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected typeSectionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.TYPE_SECTION;
-  }
+		return DelphiPackage.Literals.TYPE_SECTION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<typeDecl> getTypeDecl()
   {
-    if (typeDecl == null)
-    {
-      typeDecl = new EObjectContainmentEList<typeDecl>(typeDecl.class, this, DelphiPackage.TYPE_SECTION__TYPE_DECL);
-    }
-    return typeDecl;
-  }
+		if (typeDecl == null) {
+			typeDecl = new EObjectContainmentEList<typeDecl>(typeDecl.class, this, DelphiPackage.TYPE_SECTION__TYPE_DECL);
+		}
+		return typeDecl;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.TYPE_SECTION__TYPE_DECL:
-        return ((InternalEList<?>)getTypeDecl()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.TYPE_SECTION__TYPE_DECL:
+				return ((InternalEList<?>)getTypeDecl()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.TYPE_SECTION__TYPE_DECL:
-        return getTypeDecl();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.TYPE_SECTION__TYPE_DECL:
+				return getTypeDecl();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.TYPE_SECTION__TYPE_DECL:
-        getTypeDecl().clear();
-        getTypeDecl().addAll((Collection<? extends typeDecl>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.TYPE_SECTION__TYPE_DECL:
+				getTypeDecl().clear();
+				getTypeDecl().addAll((Collection<? extends typeDecl>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.TYPE_SECTION__TYPE_DECL:
-        getTypeDecl().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.TYPE_SECTION__TYPE_DECL:
+				getTypeDecl().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.TYPE_SECTION__TYPE_DECL:
-        return typeDecl != null && !typeDecl.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.TYPE_SECTION__TYPE_DECL:
+				return typeDecl != null && !typeDecl.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //typeSectionImpl

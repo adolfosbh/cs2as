@@ -14,39 +14,39 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.delphi.delphi.mainRule#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.example.delphi.delphi.mainRule#getFile <em>File</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.delphi.delphi.DelphiPackage#getmainRule()
  * @model
  * @generated
  */
-public interface mainRule extends EObject
+public interface mainRule extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>File</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Id</em>' containment reference isn't clear,
+   * If the meaning of the '<em>File</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' containment reference.
-   * @see #setId(ident)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getmainRule_Id()
-   * @model containment="true"
-   * @generated
-   */
-  ident getId();
+	 * @return the value of the '<em>File</em>' containment reference.
+	 * @see #setFile(file)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getmainRule_File()
+	 * @model containment="true"
+	 * @generated
+	 */
+  file getFile();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.mainRule#getId <em>Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.mainRule#getFile <em>File</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' containment reference.
-   * @see #getId()
-   * @generated
-   */
-  void setId(ident value);
+	 * @param value the new value of the '<em>File</em>' containment reference.
+	 * @see #getFile()
+	 * @generated
+	 */
+  void setFile(file value);
 
 } // mainRule

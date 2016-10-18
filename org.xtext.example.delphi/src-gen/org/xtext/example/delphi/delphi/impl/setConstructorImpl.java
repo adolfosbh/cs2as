@@ -34,135 +34,129 @@ import org.xtext.example.delphi.delphi.setElement;
  *
  * @generated
  */
-public class setConstructorImpl extends MinimalEObjectImpl.Container implements setConstructor
+public class setConstructorImpl extends CSTraceImpl implements setConstructor
 {
   /**
-   * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElement()
-   * @generated
-   * @ordered
-   */
+	 * @see #getElement()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<setElement> element;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected setConstructorImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.SET_CONSTRUCTOR;
-  }
+		return DelphiPackage.Literals.SET_CONSTRUCTOR;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<setElement> getElement()
   {
-    if (element == null)
-    {
-      element = new EObjectContainmentEList<setElement>(setElement.class, this, DelphiPackage.SET_CONSTRUCTOR__ELEMENT);
-    }
-    return element;
-  }
+		if (element == null) {
+			element = new EObjectContainmentEList<setElement>(setElement.class, this, DelphiPackage.SET_CONSTRUCTOR__ELEMENT);
+		}
+		return element;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.SET_CONSTRUCTOR__ELEMENT:
-        return ((InternalEList<?>)getElement()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.SET_CONSTRUCTOR__ELEMENT:
+				return ((InternalEList<?>)getElement()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.SET_CONSTRUCTOR__ELEMENT:
-        return getElement();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.SET_CONSTRUCTOR__ELEMENT:
+				return getElement();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.SET_CONSTRUCTOR__ELEMENT:
-        getElement().clear();
-        getElement().addAll((Collection<? extends setElement>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.SET_CONSTRUCTOR__ELEMENT:
+				getElement().clear();
+				getElement().addAll((Collection<? extends setElement>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.SET_CONSTRUCTOR__ELEMENT:
-        getElement().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.SET_CONSTRUCTOR__ELEMENT:
+				getElement().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.SET_CONSTRUCTOR__ELEMENT:
-        return element != null && !element.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.SET_CONSTRUCTOR__ELEMENT:
+				return element != null && !element.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //setConstructorImpl

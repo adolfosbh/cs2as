@@ -38,205 +38,197 @@ import org.xtext.example.delphi.delphi.variantSection;
  *
  * @generated
  */
-public class fieldListImpl extends MinimalEObjectImpl.Container implements fieldList
+public class fieldListImpl extends CSTraceImpl implements fieldList
 {
   /**
-   * The cached value of the '{@link #getField() <em>Field</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getField() <em>Field</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getField()
-   * @generated
-   * @ordered
-   */
+	 * @see #getField()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<fieldDecl> field;
 
   /**
-   * The cached value of the '{@link #getVariantSect() <em>Variant Sect</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVariantSect() <em>Variant Sect</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariantSect()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVariantSect()
+	 * @generated
+	 * @ordered
+	 */
   protected variantSection variantSect;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected fieldListImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.FIELD_LIST;
-  }
+		return DelphiPackage.Literals.FIELD_LIST;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<fieldDecl> getField()
   {
-    if (field == null)
-    {
-      field = new EObjectContainmentEList<fieldDecl>(fieldDecl.class, this, DelphiPackage.FIELD_LIST__FIELD);
-    }
-    return field;
-  }
+		if (field == null) {
+			field = new EObjectContainmentEList<fieldDecl>(fieldDecl.class, this, DelphiPackage.FIELD_LIST__FIELD);
+		}
+		return field;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public variantSection getVariantSect()
   {
-    return variantSect;
-  }
+		return variantSect;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetVariantSect(variantSection newVariantSect, NotificationChain msgs)
   {
-    variantSection oldVariantSect = variantSect;
-    variantSect = newVariantSect;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.FIELD_LIST__VARIANT_SECT, oldVariantSect, newVariantSect);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		variantSection oldVariantSect = variantSect;
+		variantSect = newVariantSect;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.FIELD_LIST__VARIANT_SECT, oldVariantSect, newVariantSect);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setVariantSect(variantSection newVariantSect)
   {
-    if (newVariantSect != variantSect)
-    {
-      NotificationChain msgs = null;
-      if (variantSect != null)
-        msgs = ((InternalEObject)variantSect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FIELD_LIST__VARIANT_SECT, null, msgs);
-      if (newVariantSect != null)
-        msgs = ((InternalEObject)newVariantSect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FIELD_LIST__VARIANT_SECT, null, msgs);
-      msgs = basicSetVariantSect(newVariantSect, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.FIELD_LIST__VARIANT_SECT, newVariantSect, newVariantSect));
-  }
+		if (newVariantSect != variantSect) {
+			NotificationChain msgs = null;
+			if (variantSect != null)
+				msgs = ((InternalEObject)variantSect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FIELD_LIST__VARIANT_SECT, null, msgs);
+			if (newVariantSect != null)
+				msgs = ((InternalEObject)newVariantSect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FIELD_LIST__VARIANT_SECT, null, msgs);
+			msgs = basicSetVariantSect(newVariantSect, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.FIELD_LIST__VARIANT_SECT, newVariantSect, newVariantSect));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FIELD_LIST__FIELD:
-        return ((InternalEList<?>)getField()).basicRemove(otherEnd, msgs);
-      case DelphiPackage.FIELD_LIST__VARIANT_SECT:
-        return basicSetVariantSect(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.FIELD_LIST__FIELD:
+				return ((InternalEList<?>)getField()).basicRemove(otherEnd, msgs);
+			case DelphiPackage.FIELD_LIST__VARIANT_SECT:
+				return basicSetVariantSect(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FIELD_LIST__FIELD:
-        return getField();
-      case DelphiPackage.FIELD_LIST__VARIANT_SECT:
-        return getVariantSect();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.FIELD_LIST__FIELD:
+				return getField();
+			case DelphiPackage.FIELD_LIST__VARIANT_SECT:
+				return getVariantSect();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FIELD_LIST__FIELD:
-        getField().clear();
-        getField().addAll((Collection<? extends fieldDecl>)newValue);
-        return;
-      case DelphiPackage.FIELD_LIST__VARIANT_SECT:
-        setVariantSect((variantSection)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.FIELD_LIST__FIELD:
+				getField().clear();
+				getField().addAll((Collection<? extends fieldDecl>)newValue);
+				return;
+			case DelphiPackage.FIELD_LIST__VARIANT_SECT:
+				setVariantSect((variantSection)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FIELD_LIST__FIELD:
-        getField().clear();
-        return;
-      case DelphiPackage.FIELD_LIST__VARIANT_SECT:
-        setVariantSect((variantSection)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.FIELD_LIST__FIELD:
+				getField().clear();
+				return;
+			case DelphiPackage.FIELD_LIST__VARIANT_SECT:
+				setVariantSect((variantSection)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FIELD_LIST__FIELD:
-        return field != null && !field.isEmpty();
-      case DelphiPackage.FIELD_LIST__VARIANT_SECT:
-        return variantSect != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.FIELD_LIST__FIELD:
+				return field != null && !field.isEmpty();
+			case DelphiPackage.FIELD_LIST__VARIANT_SECT:
+				return variantSect != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //fieldListImpl

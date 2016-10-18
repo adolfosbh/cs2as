@@ -14,23 +14,18 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.xtext.example.delphi.delphi.AssignmentStmnt;
-import org.xtext.example.delphi.delphi.CallStmnt;
 import org.xtext.example.delphi.delphi.DelphiPackage;
-import org.xtext.example.delphi.delphi.GotoStmnt;
-import org.xtext.example.delphi.delphi.InheritedStamnt;
 import org.xtext.example.delphi.delphi.MineID;
-import org.xtext.example.delphi.delphi.MultipleConstExp;
 import org.xtext.example.delphi.delphi.MultipleId;
-import org.xtext.example.delphi.delphi.RecordConstExp;
 import org.xtext.example.delphi.delphi.ReservedId;
-import org.xtext.example.delphi.delphi.SimpleExp;
 import org.xtext.example.delphi.delphi.adOp;
 import org.xtext.example.delphi.delphi.addExp;
 import org.xtext.example.delphi.delphi.arrayConstant;
 import org.xtext.example.delphi.delphi.arrayType;
 import org.xtext.example.delphi.delphi.assemblerStmt;
+import org.xtext.example.delphi.delphi.assignmentStmnt;
 import org.xtext.example.delphi.delphi.block;
+import org.xtext.example.delphi.delphi.callStmnt;
 import org.xtext.example.delphi.delphi.caseLabel;
 import org.xtext.example.delphi.delphi.caseSelector;
 import org.xtext.example.delphi.delphi.caseStmt;
@@ -43,6 +38,7 @@ import org.xtext.example.delphi.delphi.classPropertyList;
 import org.xtext.example.delphi.delphi.classRefType;
 import org.xtext.example.delphi.delphi.classType;
 import org.xtext.example.delphi.delphi.compoundStmt;
+import org.xtext.example.delphi.delphi.constExpr;
 import org.xtext.example.delphi.delphi.constSection;
 import org.xtext.example.delphi.delphi.constantDecl;
 import org.xtext.example.delphi.delphi.constructorHeading;
@@ -68,18 +64,21 @@ import org.xtext.example.delphi.delphi.formalParameters;
 import org.xtext.example.delphi.delphi.formalParm;
 import org.xtext.example.delphi.delphi.functionDecl;
 import org.xtext.example.delphi.delphi.functionHeading;
+import org.xtext.example.delphi.delphi.gotoStmnt;
 import org.xtext.example.delphi.delphi.identList;
 import org.xtext.example.delphi.delphi.ifStmt;
 import org.xtext.example.delphi.delphi.implementationSection;
+import org.xtext.example.delphi.delphi.inheritedStamnt;
 import org.xtext.example.delphi.delphi.initSection;
 import org.xtext.example.delphi.delphi.interfaceHeritage;
 import org.xtext.example.delphi.delphi.interfaceSection;
 import org.xtext.example.delphi.delphi.interfaceType;
 import org.xtext.example.delphi.delphi.labelDeclSection;
 import org.xtext.example.delphi.delphi.library;
+import org.xtext.example.delphi.delphi.mainRule;
 import org.xtext.example.delphi.delphi.methodList;
-import org.xtext.example.delphi.delphi.mulExp;
 import org.xtext.example.delphi.delphi.mulOp;
+import org.xtext.example.delphi.delphi.multExp;
 import org.xtext.example.delphi.delphi.objHeritage;
 import org.xtext.example.delphi.delphi.objectType;
 import org.xtext.example.delphi.delphi.ordIdent;
@@ -145,35 +144,14 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == DelphiPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case DelphiPackage.ASSIGNMENT_STMNT:
-				sequence_simpleStatement(context, (AssignmentStmnt) semanticObject); 
-				return; 
-			case DelphiPackage.CALL_STMNT:
-				sequence_simpleStatement(context, (CallStmnt) semanticObject); 
-				return; 
-			case DelphiPackage.GOTO_STMNT:
-				sequence_simpleStatement(context, (GotoStmnt) semanticObject); 
-				return; 
-			case DelphiPackage.INHERITED_STAMNT:
-				sequence_simpleStatement(context, (InheritedStamnt) semanticObject); 
-				return; 
 			case DelphiPackage.MINE_ID:
 				sequence_ident(context, (MineID) semanticObject); 
-				return; 
-			case DelphiPackage.MULTIPLE_CONST_EXP:
-				sequence_constExpr(context, (MultipleConstExp) semanticObject); 
 				return; 
 			case DelphiPackage.MULTIPLE_ID:
 				sequence_ident(context, (MultipleId) semanticObject); 
 				return; 
-			case DelphiPackage.RECORD_CONST_EXP:
-				sequence_constExpr(context, (RecordConstExp) semanticObject); 
-				return; 
 			case DelphiPackage.RESERVED_ID:
 				sequence_ident(context, (ReservedId) semanticObject); 
-				return; 
-			case DelphiPackage.SIMPLE_EXP:
-				sequence_constExpr(context, (SimpleExp) semanticObject); 
 				return; 
 			case DelphiPackage.AD_OP:
 				sequence_addOp(context, (adOp) semanticObject); 
@@ -190,8 +168,14 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case DelphiPackage.ASSEMBLER_STMT:
 				sequence_assemblerStmt(context, (assemblerStmt) semanticObject); 
 				return; 
+			case DelphiPackage.ASSIGNMENT_STMNT:
+				sequence_simpleStatement(context, (assignmentStmnt) semanticObject); 
+				return; 
 			case DelphiPackage.BLOCK:
 				sequence_block(context, (block) semanticObject); 
+				return; 
+			case DelphiPackage.CALL_STMNT:
+				sequence_simpleStatement(context, (callStmnt) semanticObject); 
 				return; 
 			case DelphiPackage.CASE_LABEL:
 				sequence_caseLabel(context, (caseLabel) semanticObject); 
@@ -228,6 +212,9 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case DelphiPackage.COMPOUND_STMT:
 				sequence_compoundStmt(context, (compoundStmt) semanticObject); 
+				return; 
+			case DelphiPackage.CONST_EXPR:
+				sequence_constExpr(context, (constExpr) semanticObject); 
 				return; 
 			case DelphiPackage.CONST_SECTION:
 				sequence_constSection(context, (constSection) semanticObject); 
@@ -304,6 +291,9 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case DelphiPackage.FUNCTION_HEADING:
 				sequence_functionHeading(context, (functionHeading) semanticObject); 
 				return; 
+			case DelphiPackage.GOTO_STMNT:
+				sequence_simpleStatement(context, (gotoStmnt) semanticObject); 
+				return; 
 			case DelphiPackage.IDENT_LIST:
 				if (rule == grammarAccess.getClassHeritageRule()
 						|| rule == grammarAccess.getIdentListRule()) {
@@ -320,6 +310,9 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case DelphiPackage.IMPLEMENTATION_SECTION:
 				sequence_implementationSection(context, (implementationSection) semanticObject); 
+				return; 
+			case DelphiPackage.INHERITED_STAMNT:
+				sequence_simpleStatement(context, (inheritedStamnt) semanticObject); 
 				return; 
 			case DelphiPackage.INIT_SECTION:
 				sequence_initSection(context, (initSection) semanticObject); 
@@ -339,14 +332,17 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case DelphiPackage.LIBRARY:
 				sequence_library(context, (library) semanticObject); 
 				return; 
+			case DelphiPackage.MAIN_RULE:
+				sequence_mainRule(context, (mainRule) semanticObject); 
+				return; 
 			case DelphiPackage.METHOD_LIST:
 				sequence_methodList(context, (methodList) semanticObject); 
 				return; 
-			case DelphiPackage.MUL_EXP:
-				sequence_term(context, (mulExp) semanticObject); 
-				return; 
 			case DelphiPackage.MUL_OP:
 				sequence_mulOp(context, (mulOp) semanticObject); 
+				return; 
+			case DelphiPackage.MULT_EXP:
+				sequence_term(context, (multExp) semanticObject); 
 				return; 
 			case DelphiPackage.OBJ_HERITAGE:
 				sequence_objHeritage(context, (objHeritage) semanticObject); 
@@ -546,6 +542,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     unlabelledStatement returns assemblerStmt
 	 *     structStmt returns assemblerStmt
 	 *     assemblerStmt returns assemblerStmt
 	 *
@@ -586,7 +583,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     caseSelector returns caseSelector
 	 *
 	 * Constraint:
-	 *     (label+=caseLabel label+=caseLabel* stmt=statement)
+	 *     (labels+=caseLabel labels+=caseLabel* stmt=statement)
 	 */
 	protected void sequence_caseSelector(ISerializationContext context, caseSelector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -595,12 +592,13 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     unlabelledStatement returns caseStmt
 	 *     structStmt returns caseStmt
 	 *     conditionalStmt returns caseStmt
 	 *     caseStmt returns caseStmt
 	 *
 	 * Constraint:
-	 *     (condition=expression case+=caseSelector case+=caseSelector* default=stmtList)
+	 *     (expression=expression cases+=caseSelector cases+=caseSelector* default=stmtList)
 	 */
 	protected void sequence_caseStmt(ISerializationContext context, caseStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -713,62 +711,33 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     unlabelledStatement returns compoundStmt
 	 *     structStmt returns compoundStmt
 	 *     compoundStmt returns compoundStmt
 	 *
 	 * Constraint:
-	 *     statmnts=stmtList
+	 *     stamtList=stmtList
 	 */
 	protected void sequence_compoundStmt(ISerializationContext context, compoundStmt semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.COMPOUND_STMT__STATMNTS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.COMPOUND_STMT__STATMNTS));
+			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.COMPOUND_STMT__STAMT_LIST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.COMPOUND_STMT__STAMT_LIST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCompoundStmtAccess().getStatmntsStmtListParserRuleCall_1_0(), semanticObject.getStatmnts());
+		feeder.accept(grammarAccess.getCompoundStmtAccess().getStamtListStmtListParserRuleCall_1_0(), semanticObject.getStamtList());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     constExpr returns MultipleConstExp
+	 *     constExpr returns constExpr
 	 *
 	 * Constraint:
-	 *     (exps+=constExpr exps+=constExpr*)
+	 *     (exps+=expression | (exps+=constExpr exps+=constExpr*) | (exps+=recordConstExpr exps+=recordConstExpr*))
 	 */
-	protected void sequence_constExpr(ISerializationContext context, MultipleConstExp semanticObject) {
+	protected void sequence_constExpr(ISerializationContext context, constExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     constExpr returns RecordConstExp
-	 *
-	 * Constraint:
-	 *     (exps+=recordConstExpr exps+=recordConstExpr*)
-	 */
-	protected void sequence_constExpr(ISerializationContext context, RecordConstExp semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     constExpr returns SimpleExp
-	 *
-	 * Constraint:
-	 *     exp=expression
-	 */
-	protected void sequence_constExpr(ISerializationContext context, SimpleExp semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.SIMPLE_EXP__EXP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.SIMPLE_EXP__EXP));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConstExprAccess().getExpExpressionParserRuleCall_0_1_0(), semanticObject.getExp());
-		feeder.finish();
 	}
 	
 	
@@ -1024,7 +993,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     simpleExpression returns factor
 	 *     simpleExpression.addExp_2_0 returns factor
 	 *     term returns factor
-	 *     term.mulExp_1_0 returns factor
+	 *     term.multExp_1_0 returns factor
 	 *     factor returns factor
 	 *
 	 * Constraint:
@@ -1084,6 +1053,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     unlabelledStatement returns forStmt
 	 *     structStmt returns forStmt
 	 *     loopStmt returns forStmt
 	 *     forStmt returns forStmt
@@ -1116,7 +1086,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     formalParameters returns formalParameters
 	 *
 	 * Constraint:
-	 *     (params+=formalParm paramas+=formalParm*)
+	 *     (params+=formalParm params+=formalParm*)
 	 */
 	protected void sequence_formalParameters(ISerializationContext context, formalParameters semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1161,7 +1131,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     methodHeading returns functionHeading
 	 *
 	 * Constraint:
-	 *     (id=ident params=formalParameters? type=type)
+	 *     (id=ident formalParams=formalParameters? type=type)
 	 */
 	protected void sequence_functionHeading(ISerializationContext context, functionHeading semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1246,6 +1216,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     unlabelledStatement returns ifStmt
 	 *     structStmt returns ifStmt
 	 *     conditionalStmt returns ifStmt
 	 *     ifStmt returns ifStmt
@@ -1346,7 +1317,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     mainRule returns library
+	 *     file returns library
 	 *     library returns library
 	 *
 	 * Constraint:
@@ -1354,14 +1325,32 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_library(ISerializationContext context, library semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.MAIN_RULE__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.MAIN_RULE__ID));
+			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.FILE__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.FILE__ID));
 			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.LIBRARY__PBLOCK) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.LIBRARY__PBLOCK));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLibraryAccess().getIdIdentParserRuleCall_1_0(), semanticObject.getId());
 		feeder.accept(grammarAccess.getLibraryAccess().getPBlockProgramBlockParserRuleCall_3_0(), semanticObject.getPBlock());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     mainRule returns mainRule
+	 *
+	 * Constraint:
+	 *     file=file
+	 */
+	protected void sequence_mainRule(ISerializationContext context, mainRule semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.MAIN_RULE__FILE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.MAIN_RULE__FILE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMainRuleAccess().getFileFileParserRuleCall_0(), semanticObject.getFile());
 		feeder.finish();
 	}
 	
@@ -1446,7 +1435,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     mainRule returns packageDecl
+	 *     file returns packageDecl
 	 *     packageDecl returns packageDecl
 	 *
 	 * Constraint:
@@ -1547,7 +1536,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     mainRule returns program
+	 *     file returns program
 	 *     program returns program
 	 *
 	 * Constraint:
@@ -1627,6 +1616,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     unlabelledStatement returns raiseStmt
 	 *     structStmt returns raiseStmt
 	 *     raiseStmt returns raiseStmt
 	 *
@@ -1716,18 +1706,18 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     recordFieldConstant returns recordFieldConstant
 	 *
 	 * Constraint:
-	 *     (id=ident tpedConstant=typedConstant)
+	 *     (id=ident typedConstant=typedConstant)
 	 */
 	protected void sequence_recordFieldConstant(ISerializationContext context, recordFieldConstant semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.RECORD_FIELD_CONSTANT__ID) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.RECORD_FIELD_CONSTANT__ID));
-			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.RECORD_FIELD_CONSTANT__TPED_CONSTANT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.RECORD_FIELD_CONSTANT__TPED_CONSTANT));
+			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.RECORD_FIELD_CONSTANT__TYPED_CONSTANT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.RECORD_FIELD_CONSTANT__TYPED_CONSTANT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRecordFieldConstantAccess().getIdIdentParserRuleCall_0_0(), semanticObject.getId());
-		feeder.accept(grammarAccess.getRecordFieldConstantAccess().getTpedConstantTypedConstantParserRuleCall_2_0(), semanticObject.getTpedConstant());
+		feeder.accept(grammarAccess.getRecordFieldConstantAccess().getTypedConstantTypedConstantParserRuleCall_2_0(), semanticObject.getTypedConstant());
 		feeder.finish();
 	}
 	
@@ -1756,6 +1746,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     unlabelledStatement returns repeatStmt
 	 *     structStmt returns repeatStmt
 	 *     loopStmt returns repeatStmt
 	 *     repeatStmt returns repeatStmt
@@ -1874,20 +1865,24 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     simpleStatement returns AssignmentStmnt
+	 *     unlabelledStatement returns assignmentStmnt
+	 *     simpleStatement returns assignmentStmnt
 	 *
 	 * Constraint:
-	 *     (designator=designator exp=expression)
+	 *     (designator=designator operator=':=' exp=expression)
 	 */
-	protected void sequence_simpleStatement(ISerializationContext context, AssignmentStmnt semanticObject) {
+	protected void sequence_simpleStatement(ISerializationContext context, assignmentStmnt semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.ASSIGNMENT_STMNT__DESIGNATOR) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.ASSIGNMENT_STMNT__DESIGNATOR));
+			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.ASSIGNMENT_STMNT__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.ASSIGNMENT_STMNT__OPERATOR));
 			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.ASSIGNMENT_STMNT__EXP) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.ASSIGNMENT_STMNT__EXP));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSimpleStatementAccess().getDesignatorDesignatorParserRuleCall_0_1_0(), semanticObject.getDesignator());
+		feeder.accept(grammarAccess.getSimpleStatementAccess().getOperatorColonEqualsSignKeyword_0_2_0(), semanticObject.getOperator());
 		feeder.accept(grammarAccess.getSimpleStatementAccess().getExpExpressionParserRuleCall_0_3_0(), semanticObject.getExp());
 		feeder.finish();
 	}
@@ -1895,24 +1890,26 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     simpleStatement returns CallStmnt
+	 *     unlabelledStatement returns callStmnt
+	 *     simpleStatement returns callStmnt
 	 *
 	 * Constraint:
 	 *     (designator=designator args=exprList?)
 	 */
-	protected void sequence_simpleStatement(ISerializationContext context, CallStmnt semanticObject) {
+	protected void sequence_simpleStatement(ISerializationContext context, callStmnt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     simpleStatement returns GotoStmnt
+	 *     unlabelledStatement returns gotoStmnt
+	 *     simpleStatement returns gotoStmnt
 	 *
 	 * Constraint:
 	 *     label=labelId
 	 */
-	protected void sequence_simpleStatement(ISerializationContext context, GotoStmnt semanticObject) {
+	protected void sequence_simpleStatement(ISerializationContext context, gotoStmnt semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.GOTO_STMNT__LABEL) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.GOTO_STMNT__LABEL));
@@ -1925,12 +1922,13 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     simpleStatement returns InheritedStamnt
+	 *     unlabelledStatement returns inheritedStamnt
+	 *     simpleStatement returns inheritedStamnt
 	 *
 	 * Constraint:
-	 *     {InheritedStamnt}
+	 *     {inheritedStamnt}
 	 */
-	protected void sequence_simpleStatement(ISerializationContext context, InheritedStamnt semanticObject) {
+	protected void sequence_simpleStatement(ISerializationContext context, inheritedStamnt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1940,7 +1938,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     statement returns statement
 	 *
 	 * Constraint:
-	 *     (labelId=labelId? (statement=simpleStatement | statement=structStmt))
+	 *     (labelId=labelId? statement=unlabelledStatement)
 	 */
 	protected void sequence_statement(ISerializationContext context, statement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1998,28 +1996,28 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     expression returns mulExp
-	 *     expression.relExp_1_0 returns mulExp
-	 *     simpleExpression returns mulExp
-	 *     simpleExpression.addExp_2_0 returns mulExp
-	 *     term returns mulExp
-	 *     term.mulExp_1_0 returns mulExp
+	 *     expression returns multExp
+	 *     expression.relExp_1_0 returns multExp
+	 *     simpleExpression returns multExp
+	 *     simpleExpression.addExp_2_0 returns multExp
+	 *     term returns multExp
+	 *     term.multExp_1_0 returns multExp
 	 *
 	 * Constraint:
-	 *     (left=term_mulExp_1_0 mulOp=mulOp right=factor)
+	 *     (left=term_multExp_1_0 multOp=mulOp right=factor)
 	 */
-	protected void sequence_term(ISerializationContext context, mulExp semanticObject) {
+	protected void sequence_term(ISerializationContext context, multExp semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.MUL_EXP__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.MUL_EXP__LEFT));
-			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.MUL_EXP__MUL_OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.MUL_EXP__MUL_OP));
-			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.MUL_EXP__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.MUL_EXP__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.MULT_EXP__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.MULT_EXP__LEFT));
+			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.MULT_EXP__MULT_OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.MULT_EXP__MULT_OP));
+			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.MULT_EXP__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.MULT_EXP__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTermAccess().getMulExpLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getTermAccess().getMulOpMulOpParserRuleCall_1_1_0(), semanticObject.getMulOp());
+		feeder.accept(grammarAccess.getTermAccess().getMultExpLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getTermAccess().getMultOpMulOpParserRuleCall_1_1_0(), semanticObject.getMultOp());
 		feeder.accept(grammarAccess.getTermAccess().getRightFactorParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
@@ -2027,6 +2025,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     unlabelledStatement returns tryStmt
 	 *     structStmt returns tryStmt
 	 *     tryStmt returns tryStmt
 	 *
@@ -2110,7 +2109,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     mainRule returns unit
+	 *     file returns unit
 	 *     unit returns unit
 	 *
 	 * Constraint:
@@ -2192,6 +2191,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     unlabelledStatement returns whileStmt
 	 *     structStmt returns whileStmt
 	 *     loopStmt returns whileStmt
 	 *     whileStmt returns whileStmt
@@ -2215,6 +2215,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     unlabelledStatement returns withStmt
 	 *     structStmt returns withStmt
 	 *     withStmt returns withStmt
 	 *

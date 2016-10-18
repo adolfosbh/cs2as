@@ -17,27 +17,27 @@ import org.xtext.example.delphi.delphi.expression;
  *
  * @generated
  */
-public class expressionImpl extends MinimalEObjectImpl.Container implements expression
+public class expressionImpl extends CSTraceImpl implements expression
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected expressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.EXPRESSION;
-  }
+		return DelphiPackage.Literals.EXPRESSION;
+	}
 
 } //expressionImpl

@@ -23,84 +23,84 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface fieldDecl extends EObject
+public interface fieldDecl extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Id List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Id List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Id List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id List</em>' containment reference.
-   * @see #setIdList(identList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getfieldDecl_IdList()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Id List</em>' containment reference.
+	 * @see #setIdList(identList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getfieldDecl_IdList()
+	 * @model containment="true"
+	 * @generated
+	 */
   identList getIdList();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.fieldDecl#getIdList <em>Id List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.fieldDecl#getIdList <em>Id List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id List</em>' containment reference.
-   * @see #getIdList()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Id List</em>' containment reference.
+	 * @see #getIdList()
+	 * @generated
+	 */
   void setIdList(identList value);
 
   /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(type)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getfieldDecl_Type()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Type</em>' containment reference.
+	 * @see #setType(type)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getfieldDecl_Type()
+	 * @model containment="true"
+	 * @generated
+	 */
   type getType();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.fieldDecl#getType <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.fieldDecl#getType <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Type</em>' containment reference.
+	 * @see #getType()
+	 * @generated
+	 */
   void setType(type value);
 
   /**
-   * Returns the value of the '<em><b>Port</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Port</em>' attribute.
-   * @see #setPort(String)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getfieldDecl_Port()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Port</em>' attribute.
+	 * @see #setPort(String)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getfieldDecl_Port()
+	 * @model
+	 * @generated
+	 */
   String getPort();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.fieldDecl#getPort <em>Port</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.fieldDecl#getPort <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Port</em>' attribute.
-   * @see #getPort()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Port</em>' attribute.
+	 * @see #getPort()
+	 * @generated
+	 */
   void setPort(String value);
 
 } // fieldDecl

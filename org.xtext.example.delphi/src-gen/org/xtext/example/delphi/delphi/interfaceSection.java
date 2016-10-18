@@ -24,48 +24,48 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface interfaceSection extends EObject
+public interface interfaceSection extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Uses</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Uses</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Uses</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Uses</em>' containment reference.
-   * @see #setUses(usesClause)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getinterfaceSection_Uses()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Uses</em>' containment reference.
+	 * @see #setUses(usesClause)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getinterfaceSection_Uses()
+	 * @model containment="true"
+	 * @generated
+	 */
   usesClause getUses();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.interfaceSection#getUses <em>Uses</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.interfaceSection#getUses <em>Uses</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Uses</em>' containment reference.
-   * @see #getUses()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Uses</em>' containment reference.
+	 * @see #getUses()
+	 * @generated
+	 */
   void setUses(usesClause value);
 
   /**
-   * Returns the value of the '<em><b>Interface Decl</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.interfaceDecl}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Interface Decl</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.interfaceDecl}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Interface Decl</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Interface Decl</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getinterfaceSection_InterfaceDecl()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Interface Decl</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getinterfaceSection_InterfaceDecl()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<interfaceDecl> getInterfaceDecl();
 
 } // interfaceSection

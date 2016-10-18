@@ -32,211 +32,203 @@ import org.xtext.example.delphi.delphi.statement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.delphi.delphi.impl.caseSelectorImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.xtext.example.delphi.delphi.impl.caseSelectorImpl#getLabels <em>Labels</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.impl.caseSelectorImpl#getStmt <em>Stmt</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class caseSelectorImpl extends MinimalEObjectImpl.Container implements caseSelector
+public class caseSelectorImpl extends CSTraceImpl implements caseSelector
 {
   /**
-   * The cached value of the '{@link #getLabel() <em>Label</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabel()
-   * @generated
-   * @ordered
-   */
-  protected EList<caseLabel> label;
+	 * @see #getLabels()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<caseLabel> labels;
 
   /**
-   * The cached value of the '{@link #getStmt() <em>Stmt</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getStmt() <em>Stmt</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStmt()
-   * @generated
-   * @ordered
-   */
+	 * @see #getStmt()
+	 * @generated
+	 * @ordered
+	 */
   protected statement stmt;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected caseSelectorImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.CASE_SELECTOR;
-  }
+		return DelphiPackage.Literals.CASE_SELECTOR;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<caseLabel> getLabel()
+	 * @generated
+	 */
+  public EList<caseLabel> getLabels()
   {
-    if (label == null)
-    {
-      label = new EObjectContainmentEList<caseLabel>(caseLabel.class, this, DelphiPackage.CASE_SELECTOR__LABEL);
-    }
-    return label;
-  }
+		if (labels == null) {
+			labels = new EObjectContainmentEList<caseLabel>(caseLabel.class, this, DelphiPackage.CASE_SELECTOR__LABELS);
+		}
+		return labels;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public statement getStmt()
   {
-    return stmt;
-  }
+		return stmt;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetStmt(statement newStmt, NotificationChain msgs)
   {
-    statement oldStmt = stmt;
-    stmt = newStmt;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CASE_SELECTOR__STMT, oldStmt, newStmt);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		statement oldStmt = stmt;
+		stmt = newStmt;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CASE_SELECTOR__STMT, oldStmt, newStmt);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setStmt(statement newStmt)
   {
-    if (newStmt != stmt)
-    {
-      NotificationChain msgs = null;
-      if (stmt != null)
-        msgs = ((InternalEObject)stmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CASE_SELECTOR__STMT, null, msgs);
-      if (newStmt != null)
-        msgs = ((InternalEObject)newStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CASE_SELECTOR__STMT, null, msgs);
-      msgs = basicSetStmt(newStmt, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CASE_SELECTOR__STMT, newStmt, newStmt));
-  }
+		if (newStmt != stmt) {
+			NotificationChain msgs = null;
+			if (stmt != null)
+				msgs = ((InternalEObject)stmt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CASE_SELECTOR__STMT, null, msgs);
+			if (newStmt != null)
+				msgs = ((InternalEObject)newStmt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CASE_SELECTOR__STMT, null, msgs);
+			msgs = basicSetStmt(newStmt, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CASE_SELECTOR__STMT, newStmt, newStmt));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CASE_SELECTOR__LABEL:
-        return ((InternalEList<?>)getLabel()).basicRemove(otherEnd, msgs);
-      case DelphiPackage.CASE_SELECTOR__STMT:
-        return basicSetStmt(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.CASE_SELECTOR__LABELS:
+				return ((InternalEList<?>)getLabels()).basicRemove(otherEnd, msgs);
+			case DelphiPackage.CASE_SELECTOR__STMT:
+				return basicSetStmt(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CASE_SELECTOR__LABEL:
-        return getLabel();
-      case DelphiPackage.CASE_SELECTOR__STMT:
-        return getStmt();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.CASE_SELECTOR__LABELS:
+				return getLabels();
+			case DelphiPackage.CASE_SELECTOR__STMT:
+				return getStmt();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CASE_SELECTOR__LABEL:
-        getLabel().clear();
-        getLabel().addAll((Collection<? extends caseLabel>)newValue);
-        return;
-      case DelphiPackage.CASE_SELECTOR__STMT:
-        setStmt((statement)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.CASE_SELECTOR__LABELS:
+				getLabels().clear();
+				getLabels().addAll((Collection<? extends caseLabel>)newValue);
+				return;
+			case DelphiPackage.CASE_SELECTOR__STMT:
+				setStmt((statement)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CASE_SELECTOR__LABEL:
-        getLabel().clear();
-        return;
-      case DelphiPackage.CASE_SELECTOR__STMT:
-        setStmt((statement)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CASE_SELECTOR__LABELS:
+				getLabels().clear();
+				return;
+			case DelphiPackage.CASE_SELECTOR__STMT:
+				setStmt((statement)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CASE_SELECTOR__LABEL:
-        return label != null && !label.isEmpty();
-      case DelphiPackage.CASE_SELECTOR__STMT:
-        return stmt != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CASE_SELECTOR__LABELS:
+				return labels != null && !labels.isEmpty();
+			case DelphiPackage.CASE_SELECTOR__STMT:
+				return stmt != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //caseSelectorImpl

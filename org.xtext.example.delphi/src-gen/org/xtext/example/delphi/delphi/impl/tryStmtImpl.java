@@ -34,304 +34,293 @@ import org.xtext.example.delphi.delphi.tryStmt;
 public class tryStmtImpl extends structStmtImpl implements tryStmt
 {
   /**
-   * The cached value of the '{@link #getStmtList() <em>Stmt List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getStmtList() <em>Stmt List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStmtList()
-   * @generated
-   * @ordered
-   */
+	 * @see #getStmtList()
+	 * @generated
+	 * @ordered
+	 */
   protected stmtList stmtList;
 
   /**
-   * The cached value of the '{@link #getException() <em>Exception</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getException() <em>Exception</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getException()
-   * @generated
-   * @ordered
-   */
+	 * @see #getException()
+	 * @generated
+	 * @ordered
+	 */
   protected exceptionBlock exception;
 
   /**
-   * The cached value of the '{@link #getFinal() <em>Final</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFinal() <em>Final</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFinal()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFinal()
+	 * @generated
+	 * @ordered
+	 */
   protected stmtList final_;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected tryStmtImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.TRY_STMT;
-  }
+		return DelphiPackage.Literals.TRY_STMT;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public stmtList getStmtList()
   {
-    return stmtList;
-  }
+		return stmtList;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetStmtList(stmtList newStmtList, NotificationChain msgs)
   {
-    stmtList oldStmtList = stmtList;
-    stmtList = newStmtList;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__STMT_LIST, oldStmtList, newStmtList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		stmtList oldStmtList = stmtList;
+		stmtList = newStmtList;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__STMT_LIST, oldStmtList, newStmtList);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setStmtList(stmtList newStmtList)
   {
-    if (newStmtList != stmtList)
-    {
-      NotificationChain msgs = null;
-      if (stmtList != null)
-        msgs = ((InternalEObject)stmtList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__STMT_LIST, null, msgs);
-      if (newStmtList != null)
-        msgs = ((InternalEObject)newStmtList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__STMT_LIST, null, msgs);
-      msgs = basicSetStmtList(newStmtList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__STMT_LIST, newStmtList, newStmtList));
-  }
+		if (newStmtList != stmtList) {
+			NotificationChain msgs = null;
+			if (stmtList != null)
+				msgs = ((InternalEObject)stmtList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__STMT_LIST, null, msgs);
+			if (newStmtList != null)
+				msgs = ((InternalEObject)newStmtList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__STMT_LIST, null, msgs);
+			msgs = basicSetStmtList(newStmtList, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__STMT_LIST, newStmtList, newStmtList));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public exceptionBlock getException()
   {
-    return exception;
-  }
+		return exception;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetException(exceptionBlock newException, NotificationChain msgs)
   {
-    exceptionBlock oldException = exception;
-    exception = newException;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__EXCEPTION, oldException, newException);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		exceptionBlock oldException = exception;
+		exception = newException;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__EXCEPTION, oldException, newException);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setException(exceptionBlock newException)
   {
-    if (newException != exception)
-    {
-      NotificationChain msgs = null;
-      if (exception != null)
-        msgs = ((InternalEObject)exception).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__EXCEPTION, null, msgs);
-      if (newException != null)
-        msgs = ((InternalEObject)newException).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__EXCEPTION, null, msgs);
-      msgs = basicSetException(newException, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__EXCEPTION, newException, newException));
-  }
+		if (newException != exception) {
+			NotificationChain msgs = null;
+			if (exception != null)
+				msgs = ((InternalEObject)exception).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__EXCEPTION, null, msgs);
+			if (newException != null)
+				msgs = ((InternalEObject)newException).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__EXCEPTION, null, msgs);
+			msgs = basicSetException(newException, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__EXCEPTION, newException, newException));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public stmtList getFinal()
   {
-    return final_;
-  }
+		return final_;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetFinal(stmtList newFinal, NotificationChain msgs)
   {
-    stmtList oldFinal = final_;
-    final_ = newFinal;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__FINAL, oldFinal, newFinal);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		stmtList oldFinal = final_;
+		final_ = newFinal;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__FINAL, oldFinal, newFinal);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setFinal(stmtList newFinal)
   {
-    if (newFinal != final_)
-    {
-      NotificationChain msgs = null;
-      if (final_ != null)
-        msgs = ((InternalEObject)final_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__FINAL, null, msgs);
-      if (newFinal != null)
-        msgs = ((InternalEObject)newFinal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__FINAL, null, msgs);
-      msgs = basicSetFinal(newFinal, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__FINAL, newFinal, newFinal));
-  }
+		if (newFinal != final_) {
+			NotificationChain msgs = null;
+			if (final_ != null)
+				msgs = ((InternalEObject)final_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__FINAL, null, msgs);
+			if (newFinal != null)
+				msgs = ((InternalEObject)newFinal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.TRY_STMT__FINAL, null, msgs);
+			msgs = basicSetFinal(newFinal, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.TRY_STMT__FINAL, newFinal, newFinal));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.TRY_STMT__STMT_LIST:
-        return basicSetStmtList(null, msgs);
-      case DelphiPackage.TRY_STMT__EXCEPTION:
-        return basicSetException(null, msgs);
-      case DelphiPackage.TRY_STMT__FINAL:
-        return basicSetFinal(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.TRY_STMT__STMT_LIST:
+				return basicSetStmtList(null, msgs);
+			case DelphiPackage.TRY_STMT__EXCEPTION:
+				return basicSetException(null, msgs);
+			case DelphiPackage.TRY_STMT__FINAL:
+				return basicSetFinal(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.TRY_STMT__STMT_LIST:
-        return getStmtList();
-      case DelphiPackage.TRY_STMT__EXCEPTION:
-        return getException();
-      case DelphiPackage.TRY_STMT__FINAL:
-        return getFinal();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.TRY_STMT__STMT_LIST:
+				return getStmtList();
+			case DelphiPackage.TRY_STMT__EXCEPTION:
+				return getException();
+			case DelphiPackage.TRY_STMT__FINAL:
+				return getFinal();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.TRY_STMT__STMT_LIST:
-        setStmtList((stmtList)newValue);
-        return;
-      case DelphiPackage.TRY_STMT__EXCEPTION:
-        setException((exceptionBlock)newValue);
-        return;
-      case DelphiPackage.TRY_STMT__FINAL:
-        setFinal((stmtList)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.TRY_STMT__STMT_LIST:
+				setStmtList((stmtList)newValue);
+				return;
+			case DelphiPackage.TRY_STMT__EXCEPTION:
+				setException((exceptionBlock)newValue);
+				return;
+			case DelphiPackage.TRY_STMT__FINAL:
+				setFinal((stmtList)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.TRY_STMT__STMT_LIST:
-        setStmtList((stmtList)null);
-        return;
-      case DelphiPackage.TRY_STMT__EXCEPTION:
-        setException((exceptionBlock)null);
-        return;
-      case DelphiPackage.TRY_STMT__FINAL:
-        setFinal((stmtList)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.TRY_STMT__STMT_LIST:
+				setStmtList((stmtList)null);
+				return;
+			case DelphiPackage.TRY_STMT__EXCEPTION:
+				setException((exceptionBlock)null);
+				return;
+			case DelphiPackage.TRY_STMT__FINAL:
+				setFinal((stmtList)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.TRY_STMT__STMT_LIST:
-        return stmtList != null;
-      case DelphiPackage.TRY_STMT__EXCEPTION:
-        return exception != null;
-      case DelphiPackage.TRY_STMT__FINAL:
-        return final_ != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.TRY_STMT__STMT_LIST:
+				return stmtList != null;
+			case DelphiPackage.TRY_STMT__EXCEPTION:
+				return exception != null;
+			case DelphiPackage.TRY_STMT__FINAL:
+				return final_ != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //tryStmtImpl

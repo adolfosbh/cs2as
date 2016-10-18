@@ -26,71 +26,71 @@ import org.eclipse.emf.common.util.EList;
 public interface interfaceType extends restrictedType
 {
   /**
-   * Returns the value of the '<em><b>Heritage</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Heritage</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Heritage</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Heritage</em>' containment reference.
-   * @see #setHeritage(interfaceHeritage)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getinterfaceType_Heritage()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Heritage</em>' containment reference.
+	 * @see #setHeritage(interfaceHeritage)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getinterfaceType_Heritage()
+	 * @model containment="true"
+	 * @generated
+	 */
   interfaceHeritage getHeritage();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.interfaceType#getHeritage <em>Heritage</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.interfaceType#getHeritage <em>Heritage</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Heritage</em>' containment reference.
-   * @see #getHeritage()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Heritage</em>' containment reference.
+	 * @see #getHeritage()
+	 * @generated
+	 */
   void setHeritage(interfaceHeritage value);
 
   /**
-   * Returns the value of the '<em><b>Method List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Method List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Method List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Method List</em>' containment reference.
-   * @see #setMethodList(classMethodList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getinterfaceType_MethodList()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Method List</em>' containment reference.
+	 * @see #setMethodList(classMethodList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getinterfaceType_MethodList()
+	 * @model containment="true"
+	 * @generated
+	 */
   classMethodList getMethodList();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.interfaceType#getMethodList <em>Method List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.interfaceType#getMethodList <em>Method List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Method List</em>' containment reference.
-   * @see #getMethodList()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Method List</em>' containment reference.
+	 * @see #getMethodList()
+	 * @generated
+	 */
   void setMethodList(classMethodList value);
 
   /**
-   * Returns the value of the '<em><b>Prop List</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.classPropertyList}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Prop List</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.classPropertyList}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Prop List</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Prop List</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getinterfaceType_PropList()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Prop List</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getinterfaceType_PropList()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<classPropertyList> getPropList();
 
 } // interfaceType

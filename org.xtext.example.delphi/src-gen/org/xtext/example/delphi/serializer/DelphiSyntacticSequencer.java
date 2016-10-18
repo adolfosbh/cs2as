@@ -526,7 +526,7 @@ public class DelphiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) setConstuctor=setConstructor
 	 *     (rule start) (ambiguity) string=string
 	 *     (rule start) (ambiguity) typeRef=typeId
-	 *     (rule start) (ambiguity) {mulExp.left=}
+	 *     (rule start) (ambiguity) {multExp.left=}
 	 */
 	protected void emit_simpleExpression___HyphenMinusKeyword_0_1_or_PlusSignKeyword_0_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

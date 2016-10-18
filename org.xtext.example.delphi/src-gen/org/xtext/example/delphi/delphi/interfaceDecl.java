@@ -15,6 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface interfaceDecl extends EObject
+public interface interfaceDecl extends CSTrace
 {
 } // interfaceDecl

@@ -13,7 +13,6 @@ package org.xtext.example.delphi.delphi;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.delphi.delphi.functionHeading#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.functionHeading#getType <em>Type</em>}</li>
  * </ul>
  *
@@ -24,55 +23,29 @@ package org.xtext.example.delphi.delphi;
 public interface functionHeading extends methodHeading
 {
   /**
-   * Returns the value of the '<em><b>Params</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Params</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Params</em>' containment reference.
-   * @see #setParams(formalParameters)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getfunctionHeading_Params()
-   * @model containment="true"
-   * @generated
-   */
-  formalParameters getParams();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.functionHeading#getParams <em>Params</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Params</em>' containment reference.
-   * @see #getParams()
-   * @generated
-   */
-  void setParams(formalParameters value);
-
-  /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(type)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getfunctionHeading_Type()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Type</em>' containment reference.
+	 * @see #setType(type)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getfunctionHeading_Type()
+	 * @model containment="true"
+	 * @generated
+	 */
   type getType();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.functionHeading#getType <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.functionHeading#getType <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Type</em>' containment reference.
+	 * @see #getType()
+	 * @generated
+	 */
   void setType(type value);
 
 } // functionHeading

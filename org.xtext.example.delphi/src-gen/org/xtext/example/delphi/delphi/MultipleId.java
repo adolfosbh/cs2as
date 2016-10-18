@@ -24,19 +24,19 @@ import org.eclipse.emf.common.util.EList;
 public interface MultipleId extends ident
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Id</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Id</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getMultipleId_Id()
-   * @model unique="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Id</em>' attribute list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getMultipleId_Id()
+	 * @model unique="false"
+	 * @generated
+	 */
   EList<String> getId();
 
 } // MultipleId

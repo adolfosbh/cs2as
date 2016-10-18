@@ -17,27 +17,27 @@ import org.xtext.example.delphi.delphi.objFieldList;
  *
  * @generated
  */
-public class objFieldListImpl extends MinimalEObjectImpl.Container implements objFieldList
+public class objFieldListImpl extends CSTraceImpl implements objFieldList
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected objFieldListImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.OBJ_FIELD_LIST;
-  }
+		return DelphiPackage.Literals.OBJ_FIELD_LIST;
+	}
 
 } //objFieldListImpl

@@ -15,6 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface declSection extends EObject
+public interface declSection extends CSTrace
 {
 } // declSection

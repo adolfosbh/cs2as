@@ -24,55 +24,55 @@ package org.xtext.example.delphi.delphi;
 public interface forStmt extends loopStmt
 {
   /**
-   * Returns the value of the '<em><b>Var Id</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Var Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Var Id</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Id</em>' containment reference.
-   * @see #setVarId(qualId)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getforStmt_VarId()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Var Id</em>' containment reference.
+	 * @see #setVarId(qualId)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getforStmt_VarId()
+	 * @model containment="true"
+	 * @generated
+	 */
   qualId getVarId();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.forStmt#getVarId <em>Var Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.forStmt#getVarId <em>Var Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var Id</em>' containment reference.
-   * @see #getVarId()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Var Id</em>' containment reference.
+	 * @see #getVarId()
+	 * @generated
+	 */
   void setVarId(qualId value);
 
   /**
-   * Returns the value of the '<em><b>Var Init</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Var Init</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Var Init</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Init</em>' containment reference.
-   * @see #setVarInit(expression)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getforStmt_VarInit()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Var Init</em>' containment reference.
+	 * @see #setVarInit(expression)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getforStmt_VarInit()
+	 * @model containment="true"
+	 * @generated
+	 */
   expression getVarInit();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.forStmt#getVarInit <em>Var Init</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.forStmt#getVarInit <em>Var Init</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var Init</em>' containment reference.
-   * @see #getVarInit()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Var Init</em>' containment reference.
+	 * @see #getVarInit()
+	 * @generated
+	 */
   void setVarInit(expression value);
 
 } // forStmt

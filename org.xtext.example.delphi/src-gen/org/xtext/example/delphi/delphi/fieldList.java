@@ -24,48 +24,48 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface fieldList extends EObject
+public interface fieldList extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Field</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.fieldDecl}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Field</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.fieldDecl}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Field</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Field</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getfieldList_Field()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Field</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getfieldList_Field()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<fieldDecl> getField();
 
   /**
-   * Returns the value of the '<em><b>Variant Sect</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Variant Sect</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Variant Sect</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variant Sect</em>' containment reference.
-   * @see #setVariantSect(variantSection)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getfieldList_VariantSect()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Variant Sect</em>' containment reference.
+	 * @see #setVariantSect(variantSection)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getfieldList_VariantSect()
+	 * @model containment="true"
+	 * @generated
+	 */
   variantSection getVariantSect();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.fieldList#getVariantSect <em>Variant Sect</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.fieldList#getVariantSect <em>Variant Sect</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Variant Sect</em>' containment reference.
-   * @see #getVariantSect()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Variant Sect</em>' containment reference.
+	 * @see #getVariantSect()
+	 * @generated
+	 */
   void setVariantSect(variantSection value);
 
 } // fieldList

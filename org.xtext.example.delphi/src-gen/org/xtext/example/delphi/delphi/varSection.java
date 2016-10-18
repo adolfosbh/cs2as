@@ -24,19 +24,19 @@ import org.eclipse.emf.common.util.EList;
 public interface varSection extends interfaceDecl, declSection
 {
   /**
-   * Returns the value of the '<em><b>Var Decls</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.varDecl}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Var Decls</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.varDecl}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Var Decls</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Decls</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getvarSection_VarDecls()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Var Decls</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getvarSection_VarDecls()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<varDecl> getVarDecls();
 
 } // varSection

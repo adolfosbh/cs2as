@@ -31,164 +31,157 @@ import org.xtext.example.delphi.delphi.functionHeading;
 public class functionDeclImpl extends procedureDeclSectionImpl implements functionDecl
 {
   /**
-   * The cached value of the '{@link #getHeading() <em>Heading</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHeading() <em>Heading</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHeading()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHeading()
+	 * @generated
+	 * @ordered
+	 */
   protected functionHeading heading;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected functionDeclImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.FUNCTION_DECL;
-  }
+		return DelphiPackage.Literals.FUNCTION_DECL;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public functionHeading getHeading()
   {
-    return heading;
-  }
+		return heading;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetHeading(functionHeading newHeading, NotificationChain msgs)
   {
-    functionHeading oldHeading = heading;
-    heading = newHeading;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.FUNCTION_DECL__HEADING, oldHeading, newHeading);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		functionHeading oldHeading = heading;
+		heading = newHeading;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.FUNCTION_DECL__HEADING, oldHeading, newHeading);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setHeading(functionHeading newHeading)
   {
-    if (newHeading != heading)
-    {
-      NotificationChain msgs = null;
-      if (heading != null)
-        msgs = ((InternalEObject)heading).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FUNCTION_DECL__HEADING, null, msgs);
-      if (newHeading != null)
-        msgs = ((InternalEObject)newHeading).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FUNCTION_DECL__HEADING, null, msgs);
-      msgs = basicSetHeading(newHeading, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.FUNCTION_DECL__HEADING, newHeading, newHeading));
-  }
+		if (newHeading != heading) {
+			NotificationChain msgs = null;
+			if (heading != null)
+				msgs = ((InternalEObject)heading).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FUNCTION_DECL__HEADING, null, msgs);
+			if (newHeading != null)
+				msgs = ((InternalEObject)newHeading).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FUNCTION_DECL__HEADING, null, msgs);
+			msgs = basicSetHeading(newHeading, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.FUNCTION_DECL__HEADING, newHeading, newHeading));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FUNCTION_DECL__HEADING:
-        return basicSetHeading(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.FUNCTION_DECL__HEADING:
+				return basicSetHeading(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FUNCTION_DECL__HEADING:
-        return getHeading();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.FUNCTION_DECL__HEADING:
+				return getHeading();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FUNCTION_DECL__HEADING:
-        setHeading((functionHeading)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.FUNCTION_DECL__HEADING:
+				setHeading((functionHeading)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FUNCTION_DECL__HEADING:
-        setHeading((functionHeading)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.FUNCTION_DECL__HEADING:
+				setHeading((functionHeading)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FUNCTION_DECL__HEADING:
-        return heading != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.FUNCTION_DECL__HEADING:
+				return heading != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //functionDeclImpl

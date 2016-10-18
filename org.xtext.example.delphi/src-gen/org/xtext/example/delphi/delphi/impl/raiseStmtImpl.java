@@ -29,205 +29,201 @@ import org.xtext.example.delphi.delphi.raiseStmt;
 public class raiseStmtImpl extends structStmtImpl implements raiseStmt
 {
   /**
-   * The default value of the '{@link #getRaise() <em>Raise</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getRaise() <em>Raise</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRaise()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRaise()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String RAISE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getRaise() <em>Raise</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRaise() <em>Raise</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRaise()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRaise()
+	 * @generated
+	 * @ordered
+	 */
   protected String raise = RAISE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getAt() <em>At</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getAt() <em>At</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAt()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAt()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String AT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAt() <em>At</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAt() <em>At</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAt()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAt()
+	 * @generated
+	 * @ordered
+	 */
   protected String at = AT_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected raiseStmtImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.RAISE_STMT;
-  }
+		return DelphiPackage.Literals.RAISE_STMT;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getRaise()
   {
-    return raise;
-  }
+		return raise;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setRaise(String newRaise)
   {
-    String oldRaise = raise;
-    raise = newRaise;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.RAISE_STMT__RAISE, oldRaise, raise));
-  }
+		String oldRaise = raise;
+		raise = newRaise;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.RAISE_STMT__RAISE, oldRaise, raise));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getAt()
   {
-    return at;
-  }
+		return at;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setAt(String newAt)
   {
-    String oldAt = at;
-    at = newAt;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.RAISE_STMT__AT, oldAt, at));
-  }
+		String oldAt = at;
+		at = newAt;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.RAISE_STMT__AT, oldAt, at));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.RAISE_STMT__RAISE:
-        return getRaise();
-      case DelphiPackage.RAISE_STMT__AT:
-        return getAt();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.RAISE_STMT__RAISE:
+				return getRaise();
+			case DelphiPackage.RAISE_STMT__AT:
+				return getAt();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.RAISE_STMT__RAISE:
-        setRaise((String)newValue);
-        return;
-      case DelphiPackage.RAISE_STMT__AT:
-        setAt((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.RAISE_STMT__RAISE:
+				setRaise((String)newValue);
+				return;
+			case DelphiPackage.RAISE_STMT__AT:
+				setAt((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.RAISE_STMT__RAISE:
-        setRaise(RAISE_EDEFAULT);
-        return;
-      case DelphiPackage.RAISE_STMT__AT:
-        setAt(AT_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.RAISE_STMT__RAISE:
+				setRaise(RAISE_EDEFAULT);
+				return;
+			case DelphiPackage.RAISE_STMT__AT:
+				setAt(AT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.RAISE_STMT__RAISE:
-        return RAISE_EDEFAULT == null ? raise != null : !RAISE_EDEFAULT.equals(raise);
-      case DelphiPackage.RAISE_STMT__AT:
-        return AT_EDEFAULT == null ? at != null : !AT_EDEFAULT.equals(at);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.RAISE_STMT__RAISE:
+				return RAISE_EDEFAULT == null ? raise != null : !RAISE_EDEFAULT.equals(raise);
+			case DelphiPackage.RAISE_STMT__AT:
+				return AT_EDEFAULT == null ? at != null : !AT_EDEFAULT.equals(at);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (raise: ");
-    result.append(raise);
-    result.append(", at: ");
-    result.append(at);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (raise: ");
+		result.append(raise);
+		result.append(", at: ");
+		result.append(at);
+		result.append(')');
+		return result.toString();
+	}
 
 } //raiseStmtImpl

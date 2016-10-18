@@ -18,24 +18,24 @@ import org.xtext.example.delphi.delphi.simpleExpression;
 public class simpleExpressionImpl extends expressionImpl implements simpleExpression
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected simpleExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.SIMPLE_EXPRESSION;
-  }
+		return DelphiPackage.Literals.SIMPLE_EXPRESSION;
+	}
 
 } //simpleExpressionImpl

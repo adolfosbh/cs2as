@@ -23,22 +23,22 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface recordConstant extends EObject
+public interface recordConstant extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Record Field</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.recordFieldConstant}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Record Field</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.recordFieldConstant}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Record Field</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Record Field</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getrecordConstant_RecordField()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Record Field</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getrecordConstant_RecordField()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<recordFieldConstant> getRecordField();
 
 } // recordConstant

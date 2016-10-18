@@ -24,110 +24,110 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface typeDecl extends EObject
+public interface typeDecl extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Id</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' containment reference.
-   * @see #setId(ident)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypeDecl_Id()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Id</em>' containment reference.
+	 * @see #setId(ident)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypeDecl_Id()
+	 * @model containment="true"
+	 * @generated
+	 */
   ident getId();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.typeDecl#getId <em>Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.typeDecl#getId <em>Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' containment reference.
-   * @see #getId()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Id</em>' containment reference.
+	 * @see #getId()
+	 * @generated
+	 */
   void setId(ident value);
 
   /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(type)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypeDecl_Type()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Type</em>' containment reference.
+	 * @see #setType(type)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypeDecl_Type()
+	 * @model containment="true"
+	 * @generated
+	 */
   type getType();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.typeDecl#getType <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.typeDecl#getType <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Type</em>' containment reference.
+	 * @see #getType()
+	 * @generated
+	 */
   void setType(type value);
 
   /**
-   * Returns the value of the '<em><b>Port</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Port</em>' attribute.
-   * @see #setPort(String)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypeDecl_Port()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Port</em>' attribute.
+	 * @see #setPort(String)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypeDecl_Port()
+	 * @model
+	 * @generated
+	 */
   String getPort();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.typeDecl#getPort <em>Port</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.typeDecl#getPort <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Port</em>' attribute.
-   * @see #getPort()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Port</em>' attribute.
+	 * @see #getPort()
+	 * @generated
+	 */
   void setPort(String value);
 
   /**
-   * Returns the value of the '<em><b>Restricted Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Restricted Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Restricted Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Restricted Type</em>' containment reference.
-   * @see #setRestrictedType(restrictedType)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypeDecl_RestrictedType()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Restricted Type</em>' containment reference.
+	 * @see #setRestrictedType(restrictedType)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#gettypeDecl_RestrictedType()
+	 * @model containment="true"
+	 * @generated
+	 */
   restrictedType getRestrictedType();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.typeDecl#getRestrictedType <em>Restricted Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.typeDecl#getRestrictedType <em>Restricted Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Restricted Type</em>' containment reference.
-   * @see #getRestrictedType()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Restricted Type</em>' containment reference.
+	 * @see #getRestrictedType()
+	 * @generated
+	 */
   void setRestrictedType(restrictedType value);
 
 } // typeDecl

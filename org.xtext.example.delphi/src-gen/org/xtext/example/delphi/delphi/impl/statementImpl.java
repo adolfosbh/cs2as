@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -15,6 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.delphi.delphi.DelphiPackage;
 import org.xtext.example.delphi.delphi.statement;
+import org.xtext.example.delphi.delphi.unlabelledStatement;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,237 +30,230 @@ import org.xtext.example.delphi.delphi.statement;
  *
  * @generated
  */
-public class statementImpl extends MinimalEObjectImpl.Container implements statement
+public class statementImpl extends CSTraceImpl implements statement
 {
   /**
-   * The default value of the '{@link #getLabelId() <em>Label Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLabelId() <em>Label Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabelId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLabelId()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String LABEL_ID_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getLabelId() <em>Label Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLabelId() <em>Label Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabelId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLabelId()
+	 * @generated
+	 * @ordered
+	 */
   protected String labelId = LABEL_ID_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatement()
-   * @generated
-   * @ordered
-   */
-  protected EObject statement;
+	 * @see #getStatement()
+	 * @generated
+	 * @ordered
+	 */
+  protected unlabelledStatement statement;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected statementImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.STATEMENT;
-  }
+		return DelphiPackage.Literals.STATEMENT;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getLabelId()
   {
-    return labelId;
-  }
+		return labelId;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setLabelId(String newLabelId)
   {
-    String oldLabelId = labelId;
-    labelId = newLabelId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.STATEMENT__LABEL_ID, oldLabelId, labelId));
-  }
+		String oldLabelId = labelId;
+		labelId = newLabelId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.STATEMENT__LABEL_ID, oldLabelId, labelId));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public EObject getStatement()
+	 * @generated
+	 */
+  public unlabelledStatement getStatement()
   {
-    return statement;
-  }
+		return statement;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStatement(EObject newStatement, NotificationChain msgs)
+	 * @generated
+	 */
+  public NotificationChain basicSetStatement(unlabelledStatement newStatement, NotificationChain msgs)
   {
-    EObject oldStatement = statement;
-    statement = newStatement;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.STATEMENT__STATEMENT, oldStatement, newStatement);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		unlabelledStatement oldStatement = statement;
+		statement = newStatement;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.STATEMENT__STATEMENT, oldStatement, newStatement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStatement(EObject newStatement)
+	 * @generated
+	 */
+  public void setStatement(unlabelledStatement newStatement)
   {
-    if (newStatement != statement)
-    {
-      NotificationChain msgs = null;
-      if (statement != null)
-        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.STATEMENT__STATEMENT, null, msgs);
-      if (newStatement != null)
-        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.STATEMENT__STATEMENT, null, msgs);
-      msgs = basicSetStatement(newStatement, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.STATEMENT__STATEMENT, newStatement, newStatement));
-  }
+		if (newStatement != statement) {
+			NotificationChain msgs = null;
+			if (statement != null)
+				msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.STATEMENT__STATEMENT, null, msgs);
+			if (newStatement != null)
+				msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.STATEMENT__STATEMENT, null, msgs);
+			msgs = basicSetStatement(newStatement, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.STATEMENT__STATEMENT, newStatement, newStatement));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.STATEMENT__STATEMENT:
-        return basicSetStatement(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.STATEMENT__STATEMENT:
+				return basicSetStatement(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.STATEMENT__LABEL_ID:
-        return getLabelId();
-      case DelphiPackage.STATEMENT__STATEMENT:
-        return getStatement();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.STATEMENT__LABEL_ID:
+				return getLabelId();
+			case DelphiPackage.STATEMENT__STATEMENT:
+				return getStatement();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.STATEMENT__LABEL_ID:
-        setLabelId((String)newValue);
-        return;
-      case DelphiPackage.STATEMENT__STATEMENT:
-        setStatement((EObject)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.STATEMENT__LABEL_ID:
+				setLabelId((String)newValue);
+				return;
+			case DelphiPackage.STATEMENT__STATEMENT:
+				setStatement((unlabelledStatement)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.STATEMENT__LABEL_ID:
-        setLabelId(LABEL_ID_EDEFAULT);
-        return;
-      case DelphiPackage.STATEMENT__STATEMENT:
-        setStatement((EObject)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.STATEMENT__LABEL_ID:
+				setLabelId(LABEL_ID_EDEFAULT);
+				return;
+			case DelphiPackage.STATEMENT__STATEMENT:
+				setStatement((unlabelledStatement)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.STATEMENT__LABEL_ID:
-        return LABEL_ID_EDEFAULT == null ? labelId != null : !LABEL_ID_EDEFAULT.equals(labelId);
-      case DelphiPackage.STATEMENT__STATEMENT:
-        return statement != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.STATEMENT__LABEL_ID:
+				return LABEL_ID_EDEFAULT == null ? labelId != null : !LABEL_ID_EDEFAULT.equals(labelId);
+			case DelphiPackage.STATEMENT__STATEMENT:
+				return statement != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (labelId: ");
-    result.append(labelId);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (labelId: ");
+		result.append(labelId);
+		result.append(')');
+		return result.toString();
+	}
 
 } //statementImpl

@@ -35,132 +35,126 @@ import org.xtext.example.delphi.delphi.constantDecl;
 public class constSectionImpl extends interfaceDeclImpl implements constSection
 {
   /**
-   * The cached value of the '{@link #getConstantDecl() <em>Constant Decl</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConstantDecl() <em>Constant Decl</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConstantDecl()
-   * @generated
-   * @ordered
-   */
+	 * @see #getConstantDecl()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<constantDecl> constantDecl;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected constSectionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.CONST_SECTION;
-  }
+		return DelphiPackage.Literals.CONST_SECTION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<constantDecl> getConstantDecl()
   {
-    if (constantDecl == null)
-    {
-      constantDecl = new EObjectContainmentEList<constantDecl>(constantDecl.class, this, DelphiPackage.CONST_SECTION__CONSTANT_DECL);
-    }
-    return constantDecl;
-  }
+		if (constantDecl == null) {
+			constantDecl = new EObjectContainmentEList<constantDecl>(constantDecl.class, this, DelphiPackage.CONST_SECTION__CONSTANT_DECL);
+		}
+		return constantDecl;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CONST_SECTION__CONSTANT_DECL:
-        return ((InternalEList<?>)getConstantDecl()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.CONST_SECTION__CONSTANT_DECL:
+				return ((InternalEList<?>)getConstantDecl()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CONST_SECTION__CONSTANT_DECL:
-        return getConstantDecl();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.CONST_SECTION__CONSTANT_DECL:
+				return getConstantDecl();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CONST_SECTION__CONSTANT_DECL:
-        getConstantDecl().clear();
-        getConstantDecl().addAll((Collection<? extends constantDecl>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.CONST_SECTION__CONSTANT_DECL:
+				getConstantDecl().clear();
+				getConstantDecl().addAll((Collection<? extends constantDecl>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CONST_SECTION__CONSTANT_DECL:
-        getConstantDecl().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CONST_SECTION__CONSTANT_DECL:
+				getConstantDecl().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CONST_SECTION__CONSTANT_DECL:
-        return constantDecl != null && !constantDecl.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CONST_SECTION__CONSTANT_DECL:
+				return constantDecl != null && !constantDecl.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //constSectionImpl

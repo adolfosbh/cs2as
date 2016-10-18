@@ -17,27 +17,27 @@ import org.xtext.example.delphi.delphi.declSection;
  *
  * @generated
  */
-public class declSectionImpl extends MinimalEObjectImpl.Container implements declSection
+public class declSectionImpl extends CSTraceImpl implements declSection
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected declSectionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.DECL_SECTION;
-  }
+		return DelphiPackage.Literals.DECL_SECTION;
+	}
 
 } //declSectionImpl

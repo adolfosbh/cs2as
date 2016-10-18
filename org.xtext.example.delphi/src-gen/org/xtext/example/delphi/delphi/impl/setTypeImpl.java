@@ -31,164 +31,157 @@ import org.xtext.example.delphi.delphi.setType;
 public class setTypeImpl extends strucTypeImpl implements setType
 {
   /**
-   * The cached value of the '{@link #getOrdinal() <em>Ordinal</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOrdinal() <em>Ordinal</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOrdinal()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOrdinal()
+	 * @generated
+	 * @ordered
+	 */
   protected ordinalType ordinal;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected setTypeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.SET_TYPE;
-  }
+		return DelphiPackage.Literals.SET_TYPE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ordinalType getOrdinal()
   {
-    return ordinal;
-  }
+		return ordinal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetOrdinal(ordinalType newOrdinal, NotificationChain msgs)
   {
-    ordinalType oldOrdinal = ordinal;
-    ordinal = newOrdinal;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.SET_TYPE__ORDINAL, oldOrdinal, newOrdinal);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		ordinalType oldOrdinal = ordinal;
+		ordinal = newOrdinal;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.SET_TYPE__ORDINAL, oldOrdinal, newOrdinal);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setOrdinal(ordinalType newOrdinal)
   {
-    if (newOrdinal != ordinal)
-    {
-      NotificationChain msgs = null;
-      if (ordinal != null)
-        msgs = ((InternalEObject)ordinal).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.SET_TYPE__ORDINAL, null, msgs);
-      if (newOrdinal != null)
-        msgs = ((InternalEObject)newOrdinal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.SET_TYPE__ORDINAL, null, msgs);
-      msgs = basicSetOrdinal(newOrdinal, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.SET_TYPE__ORDINAL, newOrdinal, newOrdinal));
-  }
+		if (newOrdinal != ordinal) {
+			NotificationChain msgs = null;
+			if (ordinal != null)
+				msgs = ((InternalEObject)ordinal).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.SET_TYPE__ORDINAL, null, msgs);
+			if (newOrdinal != null)
+				msgs = ((InternalEObject)newOrdinal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.SET_TYPE__ORDINAL, null, msgs);
+			msgs = basicSetOrdinal(newOrdinal, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.SET_TYPE__ORDINAL, newOrdinal, newOrdinal));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.SET_TYPE__ORDINAL:
-        return basicSetOrdinal(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.SET_TYPE__ORDINAL:
+				return basicSetOrdinal(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.SET_TYPE__ORDINAL:
-        return getOrdinal();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.SET_TYPE__ORDINAL:
+				return getOrdinal();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.SET_TYPE__ORDINAL:
-        setOrdinal((ordinalType)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.SET_TYPE__ORDINAL:
+				setOrdinal((ordinalType)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.SET_TYPE__ORDINAL:
-        setOrdinal((ordinalType)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.SET_TYPE__ORDINAL:
+				setOrdinal((ordinalType)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.SET_TYPE__ORDINAL:
-        return ordinal != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.SET_TYPE__ORDINAL:
+				return ordinal != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //setTypeImpl

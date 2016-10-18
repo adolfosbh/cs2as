@@ -26,61 +26,61 @@ import org.eclipse.emf.common.util.EList;
 public interface arrayType extends strucType
 {
   /**
-   * Returns the value of the '<em><b>Ordinal Type</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.ordinalType}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ordinal Type</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.ordinalType}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Ordinal Type</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ordinal Type</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getarrayType_OrdinalType()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Ordinal Type</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getarrayType_OrdinalType()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<ordinalType> getOrdinalType();
 
   /**
-   * Returns the value of the '<em><b>Ordinal Typ</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.ordinalType}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ordinal Typ</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.ordinalType}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Ordinal Typ</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ordinal Typ</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getarrayType_OrdinalTyp()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Ordinal Typ</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getarrayType_OrdinalTyp()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<ordinalType> getOrdinalTyp();
 
   /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(type)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getarrayType_Type()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Type</em>' containment reference.
+	 * @see #setType(type)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getarrayType_Type()
+	 * @model containment="true"
+	 * @generated
+	 */
   type getType();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.arrayType#getType <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.arrayType#getType <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Type</em>' containment reference.
+	 * @see #getType()
+	 * @generated
+	 */
   void setType(type value);
 
 } // arrayType

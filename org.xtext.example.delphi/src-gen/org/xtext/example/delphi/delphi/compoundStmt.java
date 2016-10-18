@@ -13,7 +13,7 @@ package org.xtext.example.delphi.delphi;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.delphi.delphi.compoundStmt#getStatmnts <em>Statmnts</em>}</li>
+ *   <li>{@link org.xtext.example.delphi.delphi.compoundStmt#getStamtList <em>Stamt List</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.delphi.delphi.DelphiPackage#getcompoundStmt()
@@ -23,29 +23,29 @@ package org.xtext.example.delphi.delphi;
 public interface compoundStmt extends structStmt
 {
   /**
-   * Returns the value of the '<em><b>Statmnts</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Stamt List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Statmnts</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Stamt List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statmnts</em>' containment reference.
-   * @see #setStatmnts(stmtList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getcompoundStmt_Statmnts()
-   * @model containment="true"
-   * @generated
-   */
-  stmtList getStatmnts();
+	 * @return the value of the '<em>Stamt List</em>' containment reference.
+	 * @see #setStamtList(stmtList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getcompoundStmt_StamtList()
+	 * @model containment="true"
+	 * @generated
+	 */
+  stmtList getStamtList();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.compoundStmt#getStatmnts <em>Statmnts</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.compoundStmt#getStamtList <em>Stamt List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Statmnts</em>' containment reference.
-   * @see #getStatmnts()
-   * @generated
-   */
-  void setStatmnts(stmtList value);
+	 * @param value the new value of the '<em>Stamt List</em>' containment reference.
+	 * @see #getStamtList()
+	 * @generated
+	 */
+  void setStamtList(stmtList value);
 
 } // compoundStmt

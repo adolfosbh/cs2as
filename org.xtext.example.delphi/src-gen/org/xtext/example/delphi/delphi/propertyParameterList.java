@@ -24,38 +24,38 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface propertyParameterList extends EObject
+public interface propertyParameterList extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Id List</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.identList}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Id List</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.identList}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Id List</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id List</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getpropertyParameterList_IdList()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Id List</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getpropertyParameterList_IdList()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<identList> getIdList();
 
   /**
-   * Returns the value of the '<em><b>Type Ref</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.typeId}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type Ref</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.typeId}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type Ref</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Ref</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getpropertyParameterList_TypeRef()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Type Ref</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getpropertyParameterList_TypeRef()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<typeId> getTypeRef();
 
 } // propertyParameterList

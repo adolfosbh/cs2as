@@ -34,135 +34,129 @@ import org.xtext.example.delphi.delphi.classFieldList;
  *
  * @generated
  */
-public class classFieldListImpl extends MinimalEObjectImpl.Container implements classFieldList
+public class classFieldListImpl extends CSTraceImpl implements classFieldList
 {
   /**
-   * The cached value of the '{@link #getField() <em>Field</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getField() <em>Field</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getField()
-   * @generated
-   * @ordered
-   */
+	 * @see #getField()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<classField> field;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected classFieldListImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.CLASS_FIELD_LIST;
-  }
+		return DelphiPackage.Literals.CLASS_FIELD_LIST;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<classField> getField()
   {
-    if (field == null)
-    {
-      field = new EObjectContainmentEList<classField>(classField.class, this, DelphiPackage.CLASS_FIELD_LIST__FIELD);
-    }
-    return field;
-  }
+		if (field == null) {
+			field = new EObjectContainmentEList<classField>(classField.class, this, DelphiPackage.CLASS_FIELD_LIST__FIELD);
+		}
+		return field;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_FIELD_LIST__FIELD:
-        return ((InternalEList<?>)getField()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_FIELD_LIST__FIELD:
+				return ((InternalEList<?>)getField()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_FIELD_LIST__FIELD:
-        return getField();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_FIELD_LIST__FIELD:
+				return getField();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_FIELD_LIST__FIELD:
-        getField().clear();
-        getField().addAll((Collection<? extends classField>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_FIELD_LIST__FIELD:
+				getField().clear();
+				getField().addAll((Collection<? extends classField>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_FIELD_LIST__FIELD:
-        getField().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_FIELD_LIST__FIELD:
+				getField().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_FIELD_LIST__FIELD:
-        return field != null && !field.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_FIELD_LIST__FIELD:
+				return field != null && !field.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //classFieldListImpl

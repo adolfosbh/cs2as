@@ -17,27 +17,27 @@ import org.xtext.example.delphi.delphi.restrictedType;
  *
  * @generated
  */
-public class restrictedTypeImpl extends MinimalEObjectImpl.Container implements restrictedType
+public class restrictedTypeImpl extends CSTraceImpl implements restrictedType
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected restrictedTypeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.RESTRICTED_TYPE;
-  }
+		return DelphiPackage.Literals.RESTRICTED_TYPE;
+	}
 
 } //restrictedTypeImpl

@@ -30,237 +30,230 @@ import org.xtext.example.delphi.delphi.propertyList;
  *
  * @generated
  */
-public class classPropertyImpl extends MinimalEObjectImpl.Container implements classProperty
+public class classPropertyImpl extends CSTraceImpl implements classProperty
 {
   /**
-   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVisibility()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVisibility()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String VISIBILITY_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVisibility()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVisibility()
+	 * @generated
+	 * @ordered
+	 */
   protected String visibility = VISIBILITY_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPropList() <em>Prop List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPropList() <em>Prop List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPropList()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPropList()
+	 * @generated
+	 * @ordered
+	 */
   protected propertyList propList;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected classPropertyImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.CLASS_PROPERTY;
-  }
+		return DelphiPackage.Literals.CLASS_PROPERTY;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getVisibility()
   {
-    return visibility;
-  }
+		return visibility;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setVisibility(String newVisibility)
   {
-    String oldVisibility = visibility;
-    visibility = newVisibility;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_PROPERTY__VISIBILITY, oldVisibility, visibility));
-  }
+		String oldVisibility = visibility;
+		visibility = newVisibility;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_PROPERTY__VISIBILITY, oldVisibility, visibility));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public propertyList getPropList()
   {
-    return propList;
-  }
+		return propList;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetPropList(propertyList newPropList, NotificationChain msgs)
   {
-    propertyList oldPropList = propList;
-    propList = newPropList;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_PROPERTY__PROP_LIST, oldPropList, newPropList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		propertyList oldPropList = propList;
+		propList = newPropList;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_PROPERTY__PROP_LIST, oldPropList, newPropList);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPropList(propertyList newPropList)
   {
-    if (newPropList != propList)
-    {
-      NotificationChain msgs = null;
-      if (propList != null)
-        msgs = ((InternalEObject)propList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CLASS_PROPERTY__PROP_LIST, null, msgs);
-      if (newPropList != null)
-        msgs = ((InternalEObject)newPropList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CLASS_PROPERTY__PROP_LIST, null, msgs);
-      msgs = basicSetPropList(newPropList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_PROPERTY__PROP_LIST, newPropList, newPropList));
-  }
+		if (newPropList != propList) {
+			NotificationChain msgs = null;
+			if (propList != null)
+				msgs = ((InternalEObject)propList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CLASS_PROPERTY__PROP_LIST, null, msgs);
+			if (newPropList != null)
+				msgs = ((InternalEObject)newPropList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CLASS_PROPERTY__PROP_LIST, null, msgs);
+			msgs = basicSetPropList(newPropList, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_PROPERTY__PROP_LIST, newPropList, newPropList));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_PROPERTY__PROP_LIST:
-        return basicSetPropList(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_PROPERTY__PROP_LIST:
+				return basicSetPropList(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_PROPERTY__VISIBILITY:
-        return getVisibility();
-      case DelphiPackage.CLASS_PROPERTY__PROP_LIST:
-        return getPropList();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_PROPERTY__VISIBILITY:
+				return getVisibility();
+			case DelphiPackage.CLASS_PROPERTY__PROP_LIST:
+				return getPropList();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_PROPERTY__VISIBILITY:
-        setVisibility((String)newValue);
-        return;
-      case DelphiPackage.CLASS_PROPERTY__PROP_LIST:
-        setPropList((propertyList)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_PROPERTY__VISIBILITY:
+				setVisibility((String)newValue);
+				return;
+			case DelphiPackage.CLASS_PROPERTY__PROP_LIST:
+				setPropList((propertyList)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_PROPERTY__VISIBILITY:
-        setVisibility(VISIBILITY_EDEFAULT);
-        return;
-      case DelphiPackage.CLASS_PROPERTY__PROP_LIST:
-        setPropList((propertyList)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_PROPERTY__VISIBILITY:
+				setVisibility(VISIBILITY_EDEFAULT);
+				return;
+			case DelphiPackage.CLASS_PROPERTY__PROP_LIST:
+				setPropList((propertyList)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_PROPERTY__VISIBILITY:
-        return VISIBILITY_EDEFAULT == null ? visibility != null : !VISIBILITY_EDEFAULT.equals(visibility);
-      case DelphiPackage.CLASS_PROPERTY__PROP_LIST:
-        return propList != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_PROPERTY__VISIBILITY:
+				return VISIBILITY_EDEFAULT == null ? visibility != null : !VISIBILITY_EDEFAULT.equals(visibility);
+			case DelphiPackage.CLASS_PROPERTY__PROP_LIST:
+				return propList != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (visibility: ");
-    result.append(visibility);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (visibility: ");
+		result.append(visibility);
+		result.append(')');
+		return result.toString();
+	}
 
 } //classPropertyImpl

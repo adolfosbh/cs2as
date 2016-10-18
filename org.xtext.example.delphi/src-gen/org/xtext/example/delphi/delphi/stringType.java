@@ -23,29 +23,29 @@ package org.xtext.example.delphi.delphi;
 public interface stringType extends type
 {
   /**
-   * Returns the value of the '<em><b>Const Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Const Exp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Const Exp</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Const Exp</em>' containment reference.
-   * @see #setConstExp(constExpr)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getstringType_ConstExp()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Const Exp</em>' containment reference.
+	 * @see #setConstExp(constExpr)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getstringType_ConstExp()
+	 * @model containment="true"
+	 * @generated
+	 */
   constExpr getConstExp();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.stringType#getConstExp <em>Const Exp</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.stringType#getConstExp <em>Const Exp</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Const Exp</em>' containment reference.
-   * @see #getConstExp()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Const Exp</em>' containment reference.
+	 * @see #getConstExp()
+	 * @generated
+	 */
   void setConstExp(constExpr value);
 
 } // stringType

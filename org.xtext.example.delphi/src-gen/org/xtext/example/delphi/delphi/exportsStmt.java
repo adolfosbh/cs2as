@@ -23,22 +23,22 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface exportsStmt extends EObject
+public interface exportsStmt extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Items</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.exportsItem}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Items</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.exportsItem}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Items</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Items</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getexportsStmt_Items()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Items</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getexportsStmt_Items()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<exportsItem> getItems();
 
 } // exportsStmt

@@ -25,45 +25,45 @@ import org.eclipse.emf.common.util.EList;
 public interface identList extends objFieldList, classHeritage
 {
   /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(type)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getidentList_Type()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Type</em>' containment reference.
+	 * @see #setType(type)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getidentList_Type()
+	 * @model containment="true"
+	 * @generated
+	 */
   type getType();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.identList#getType <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.identList#getType <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Type</em>' containment reference.
+	 * @see #getType()
+	 * @generated
+	 */
   void setType(type value);
 
   /**
-   * Returns the value of the '<em><b>Ids</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.ident}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ids</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.ident}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Ids</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ids</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getidentList_Ids()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Ids</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getidentList_Ids()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<ident> getIds();
 
 } // identList

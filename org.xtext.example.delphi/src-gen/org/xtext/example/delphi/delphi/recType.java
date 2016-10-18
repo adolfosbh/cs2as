@@ -23,29 +23,29 @@ package org.xtext.example.delphi.delphi;
 public interface recType extends strucType
 {
   /**
-   * Returns the value of the '<em><b>Fields</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Fields</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Fields</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fields</em>' containment reference.
-   * @see #setFields(fieldList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getrecType_Fields()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Fields</em>' containment reference.
+	 * @see #setFields(fieldList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getrecType_Fields()
+	 * @model containment="true"
+	 * @generated
+	 */
   fieldList getFields();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.recType#getFields <em>Fields</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.recType#getFields <em>Fields</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fields</em>' containment reference.
-   * @see #getFields()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Fields</em>' containment reference.
+	 * @see #getFields()
+	 * @generated
+	 */
   void setFields(fieldList value);
 
 } // recType

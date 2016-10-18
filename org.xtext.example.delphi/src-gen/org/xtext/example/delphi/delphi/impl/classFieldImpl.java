@@ -30,237 +30,230 @@ import org.xtext.example.delphi.delphi.objFieldList;
  *
  * @generated
  */
-public class classFieldImpl extends MinimalEObjectImpl.Container implements classField
+public class classFieldImpl extends CSTraceImpl implements classField
 {
   /**
-   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVisibility()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVisibility()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String VISIBILITY_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVisibility()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVisibility()
+	 * @generated
+	 * @ordered
+	 */
   protected String visibility = VISIBILITY_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getFieldList() <em>Field List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFieldList() <em>Field List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFieldList()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFieldList()
+	 * @generated
+	 * @ordered
+	 */
   protected objFieldList fieldList;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected classFieldImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.CLASS_FIELD;
-  }
+		return DelphiPackage.Literals.CLASS_FIELD;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getVisibility()
   {
-    return visibility;
-  }
+		return visibility;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setVisibility(String newVisibility)
   {
-    String oldVisibility = visibility;
-    visibility = newVisibility;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_FIELD__VISIBILITY, oldVisibility, visibility));
-  }
+		String oldVisibility = visibility;
+		visibility = newVisibility;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_FIELD__VISIBILITY, oldVisibility, visibility));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public objFieldList getFieldList()
   {
-    return fieldList;
-  }
+		return fieldList;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetFieldList(objFieldList newFieldList, NotificationChain msgs)
   {
-    objFieldList oldFieldList = fieldList;
-    fieldList = newFieldList;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_FIELD__FIELD_LIST, oldFieldList, newFieldList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		objFieldList oldFieldList = fieldList;
+		fieldList = newFieldList;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_FIELD__FIELD_LIST, oldFieldList, newFieldList);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setFieldList(objFieldList newFieldList)
   {
-    if (newFieldList != fieldList)
-    {
-      NotificationChain msgs = null;
-      if (fieldList != null)
-        msgs = ((InternalEObject)fieldList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CLASS_FIELD__FIELD_LIST, null, msgs);
-      if (newFieldList != null)
-        msgs = ((InternalEObject)newFieldList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CLASS_FIELD__FIELD_LIST, null, msgs);
-      msgs = basicSetFieldList(newFieldList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_FIELD__FIELD_LIST, newFieldList, newFieldList));
-  }
+		if (newFieldList != fieldList) {
+			NotificationChain msgs = null;
+			if (fieldList != null)
+				msgs = ((InternalEObject)fieldList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CLASS_FIELD__FIELD_LIST, null, msgs);
+			if (newFieldList != null)
+				msgs = ((InternalEObject)newFieldList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CLASS_FIELD__FIELD_LIST, null, msgs);
+			msgs = basicSetFieldList(newFieldList, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CLASS_FIELD__FIELD_LIST, newFieldList, newFieldList));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_FIELD__FIELD_LIST:
-        return basicSetFieldList(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_FIELD__FIELD_LIST:
+				return basicSetFieldList(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_FIELD__VISIBILITY:
-        return getVisibility();
-      case DelphiPackage.CLASS_FIELD__FIELD_LIST:
-        return getFieldList();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_FIELD__VISIBILITY:
+				return getVisibility();
+			case DelphiPackage.CLASS_FIELD__FIELD_LIST:
+				return getFieldList();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_FIELD__VISIBILITY:
-        setVisibility((String)newValue);
-        return;
-      case DelphiPackage.CLASS_FIELD__FIELD_LIST:
-        setFieldList((objFieldList)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_FIELD__VISIBILITY:
+				setVisibility((String)newValue);
+				return;
+			case DelphiPackage.CLASS_FIELD__FIELD_LIST:
+				setFieldList((objFieldList)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_FIELD__VISIBILITY:
-        setVisibility(VISIBILITY_EDEFAULT);
-        return;
-      case DelphiPackage.CLASS_FIELD__FIELD_LIST:
-        setFieldList((objFieldList)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_FIELD__VISIBILITY:
+				setVisibility(VISIBILITY_EDEFAULT);
+				return;
+			case DelphiPackage.CLASS_FIELD__FIELD_LIST:
+				setFieldList((objFieldList)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CLASS_FIELD__VISIBILITY:
-        return VISIBILITY_EDEFAULT == null ? visibility != null : !VISIBILITY_EDEFAULT.equals(visibility);
-      case DelphiPackage.CLASS_FIELD__FIELD_LIST:
-        return fieldList != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CLASS_FIELD__VISIBILITY:
+				return VISIBILITY_EDEFAULT == null ? visibility != null : !VISIBILITY_EDEFAULT.equals(visibility);
+			case DelphiPackage.CLASS_FIELD__FIELD_LIST:
+				return fieldList != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (visibility: ");
-    result.append(visibility);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (visibility: ");
+		result.append(visibility);
+		result.append(')');
+		return result.toString();
+	}
 
 } //classFieldImpl

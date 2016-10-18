@@ -18,24 +18,24 @@ import org.xtext.example.delphi.delphi.pointerType;
 public class pointerTypeImpl extends typeImpl implements pointerType
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected pointerTypeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.POINTER_TYPE;
-  }
+		return DelphiPackage.Literals.POINTER_TYPE;
+	}
 
 } //pointerTypeImpl

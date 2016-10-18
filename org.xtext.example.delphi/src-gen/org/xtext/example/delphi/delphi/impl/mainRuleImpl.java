@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.delphi.delphi.DelphiPackage;
-import org.xtext.example.delphi.delphi.ident;
+import org.xtext.example.delphi.delphi.file;
 import org.xtext.example.delphi.delphi.mainRule;
 
 /**
@@ -24,172 +24,165 @@ import org.xtext.example.delphi.delphi.mainRule;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.delphi.delphi.impl.mainRuleImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.example.delphi.delphi.impl.mainRuleImpl#getFile <em>File</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class mainRuleImpl extends MinimalEObjectImpl.Container implements mainRule
+public class mainRuleImpl extends CSTraceImpl implements mainRule
 {
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFile() <em>File</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
-  protected ident id;
+	 * @see #getFile()
+	 * @generated
+	 * @ordered
+	 */
+  protected file file;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected mainRuleImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.MAIN_RULE;
-  }
+		return DelphiPackage.Literals.MAIN_RULE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public ident getId()
+	 * @generated
+	 */
+  public file getFile()
   {
-    return id;
-  }
+		return file;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetId(ident newId, NotificationChain msgs)
+	 * @generated
+	 */
+  public NotificationChain basicSetFile(file newFile, NotificationChain msgs)
   {
-    ident oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.MAIN_RULE__ID, oldId, newId);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		file oldFile = file;
+		file = newFile;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.MAIN_RULE__FILE, oldFile, newFile);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setId(ident newId)
+	 * @generated
+	 */
+  public void setFile(file newFile)
   {
-    if (newId != id)
-    {
-      NotificationChain msgs = null;
-      if (id != null)
-        msgs = ((InternalEObject)id).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.MAIN_RULE__ID, null, msgs);
-      if (newId != null)
-        msgs = ((InternalEObject)newId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.MAIN_RULE__ID, null, msgs);
-      msgs = basicSetId(newId, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.MAIN_RULE__ID, newId, newId));
-  }
+		if (newFile != file) {
+			NotificationChain msgs = null;
+			if (file != null)
+				msgs = ((InternalEObject)file).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.MAIN_RULE__FILE, null, msgs);
+			if (newFile != null)
+				msgs = ((InternalEObject)newFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.MAIN_RULE__FILE, null, msgs);
+			msgs = basicSetFile(newFile, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.MAIN_RULE__FILE, newFile, newFile));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.MAIN_RULE__ID:
-        return basicSetId(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.MAIN_RULE__FILE:
+				return basicSetFile(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.MAIN_RULE__ID:
-        return getId();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.MAIN_RULE__FILE:
+				return getFile();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.MAIN_RULE__ID:
-        setId((ident)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.MAIN_RULE__FILE:
+				setFile((file)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.MAIN_RULE__ID:
-        setId((ident)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.MAIN_RULE__FILE:
+				setFile((file)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.MAIN_RULE__ID:
-        return id != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.MAIN_RULE__FILE:
+				return file != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //mainRuleImpl

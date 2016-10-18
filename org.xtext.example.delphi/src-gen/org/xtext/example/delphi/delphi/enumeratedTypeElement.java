@@ -22,58 +22,58 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface enumeratedTypeElement extends EObject
+public interface enumeratedTypeElement extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Id</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' containment reference.
-   * @see #setId(ident)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getenumeratedTypeElement_Id()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Id</em>' containment reference.
+	 * @see #setId(ident)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getenumeratedTypeElement_Id()
+	 * @model containment="true"
+	 * @generated
+	 */
   ident getId();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.enumeratedTypeElement#getId <em>Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.enumeratedTypeElement#getId <em>Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' containment reference.
-   * @see #getId()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Id</em>' containment reference.
+	 * @see #getId()
+	 * @generated
+	 */
   void setId(ident value);
 
   /**
-   * Returns the value of the '<em><b>Literal Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Literal Exp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Literal Exp</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Literal Exp</em>' containment reference.
-   * @see #setLiteralExp(constExpr)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getenumeratedTypeElement_LiteralExp()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Literal Exp</em>' containment reference.
+	 * @see #setLiteralExp(constExpr)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getenumeratedTypeElement_LiteralExp()
+	 * @model containment="true"
+	 * @generated
+	 */
   constExpr getLiteralExp();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.enumeratedTypeElement#getLiteralExp <em>Literal Exp</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.enumeratedTypeElement#getLiteralExp <em>Literal Exp</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Literal Exp</em>' containment reference.
-   * @see #getLiteralExp()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Literal Exp</em>' containment reference.
+	 * @see #getLiteralExp()
+	 * @generated
+	 */
   void setLiteralExp(constExpr value);
 
 } // enumeratedTypeElement

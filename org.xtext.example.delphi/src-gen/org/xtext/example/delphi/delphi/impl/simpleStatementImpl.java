@@ -5,8 +5,6 @@ package org.xtext.example.delphi.delphi.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.xtext.example.delphi.delphi.DelphiPackage;
 import org.xtext.example.delphi.delphi.simpleStatement;
 
@@ -17,27 +15,27 @@ import org.xtext.example.delphi.delphi.simpleStatement;
  *
  * @generated
  */
-public class simpleStatementImpl extends MinimalEObjectImpl.Container implements simpleStatement
+public class simpleStatementImpl extends unlabelledStatementImpl implements simpleStatement
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected simpleStatementImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.SIMPLE_STATEMENT;
-  }
+		return DelphiPackage.Literals.SIMPLE_STATEMENT;
+	}
 
 } //simpleStatementImpl

@@ -34,135 +34,129 @@ import org.xtext.example.delphi.delphi.expression;
  *
  * @generated
  */
-public class exprListImpl extends MinimalEObjectImpl.Container implements exprList
+public class exprListImpl extends CSTraceImpl implements exprList
 {
   /**
-   * The cached value of the '{@link #getExps() <em>Exps</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getExps() <em>Exps</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExps()
-   * @generated
-   * @ordered
-   */
+	 * @see #getExps()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<expression> exps;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected exprListImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.EXPR_LIST;
-  }
+		return DelphiPackage.Literals.EXPR_LIST;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<expression> getExps()
   {
-    if (exps == null)
-    {
-      exps = new EObjectContainmentEList<expression>(expression.class, this, DelphiPackage.EXPR_LIST__EXPS);
-    }
-    return exps;
-  }
+		if (exps == null) {
+			exps = new EObjectContainmentEList<expression>(expression.class, this, DelphiPackage.EXPR_LIST__EXPS);
+		}
+		return exps;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.EXPR_LIST__EXPS:
-        return ((InternalEList<?>)getExps()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.EXPR_LIST__EXPS:
+				return ((InternalEList<?>)getExps()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.EXPR_LIST__EXPS:
-        return getExps();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.EXPR_LIST__EXPS:
+				return getExps();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.EXPR_LIST__EXPS:
-        getExps().clear();
-        getExps().addAll((Collection<? extends expression>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.EXPR_LIST__EXPS:
+				getExps().clear();
+				getExps().addAll((Collection<? extends expression>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.EXPR_LIST__EXPS:
-        getExps().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.EXPR_LIST__EXPS:
+				getExps().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.EXPR_LIST__EXPS:
-        return exps != null && !exps.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.EXPR_LIST__EXPS:
+				return exps != null && !exps.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //exprListImpl

@@ -21,32 +21,32 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface arrayConstant extends EObject
+public interface arrayConstant extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Typed Constant</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Typed Constant</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Typed Constant</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Typed Constant</em>' containment reference.
-   * @see #setTypedConstant(typedConstant)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getarrayConstant_TypedConstant()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Typed Constant</em>' containment reference.
+	 * @see #setTypedConstant(typedConstant)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getarrayConstant_TypedConstant()
+	 * @model containment="true"
+	 * @generated
+	 */
   typedConstant getTypedConstant();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.arrayConstant#getTypedConstant <em>Typed Constant</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.arrayConstant#getTypedConstant <em>Typed Constant</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Typed Constant</em>' containment reference.
-   * @see #getTypedConstant()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Typed Constant</em>' containment reference.
+	 * @see #getTypedConstant()
+	 * @generated
+	 */
   void setTypedConstant(typedConstant value);
 
 } // arrayConstant

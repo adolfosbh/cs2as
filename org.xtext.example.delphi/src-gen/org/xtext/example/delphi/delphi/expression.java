@@ -15,6 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface expression extends EObject
+public interface expression extends CSTrace
 {
 } // expression

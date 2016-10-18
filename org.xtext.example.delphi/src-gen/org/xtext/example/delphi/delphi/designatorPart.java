@@ -23,84 +23,84 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface designatorPart extends EObject
+public interface designatorPart extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Id</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getdesignatorPart_Id()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getdesignatorPart_Id()
+	 * @model
+	 * @generated
+	 */
   String getId();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.designatorPart#getId <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.designatorPart#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
   void setId(String value);
 
   /**
-   * Returns the value of the '<em><b>Reserved Word</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Reserved Word</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Reserved Word</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Reserved Word</em>' containment reference.
-   * @see #setReservedWord(reservedWord)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getdesignatorPart_ReservedWord()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Reserved Word</em>' containment reference.
+	 * @see #setReservedWord(reservedWord)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getdesignatorPart_ReservedWord()
+	 * @model containment="true"
+	 * @generated
+	 */
   reservedWord getReservedWord();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.designatorPart#getReservedWord <em>Reserved Word</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.designatorPart#getReservedWord <em>Reserved Word</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Reserved Word</em>' containment reference.
-   * @see #getReservedWord()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Reserved Word</em>' containment reference.
+	 * @see #getReservedWord()
+	 * @generated
+	 */
   void setReservedWord(reservedWord value);
 
   /**
-   * Returns the value of the '<em><b>Id2</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Id2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Id2</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id2</em>' attribute.
-   * @see #setId2(String)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getdesignatorPart_Id2()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Id2</em>' attribute.
+	 * @see #setId2(String)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getdesignatorPart_Id2()
+	 * @model
+	 * @generated
+	 */
   String getId2();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.designatorPart#getId2 <em>Id2</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.designatorPart#getId2 <em>Id2</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id2</em>' attribute.
-   * @see #getId2()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Id2</em>' attribute.
+	 * @see #getId2()
+	 * @generated
+	 */
   void setId2(String value);
 
 } // designatorPart

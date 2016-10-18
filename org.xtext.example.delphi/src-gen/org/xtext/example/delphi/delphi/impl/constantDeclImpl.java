@@ -36,447 +36,434 @@ import org.xtext.example.delphi.delphi.typedConstant;
  *
  * @generated
  */
-public class constantDeclImpl extends MinimalEObjectImpl.Container implements constantDecl
+public class constantDeclImpl extends CSTraceImpl implements constantDecl
 {
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
   protected ident id;
 
   /**
-   * The cached value of the '{@link #getConst() <em>Const</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConst() <em>Const</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConst()
-   * @generated
-   * @ordered
-   */
+	 * @see #getConst()
+	 * @generated
+	 * @ordered
+	 */
   protected constExpr const_;
 
   /**
-   * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPort()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String PORT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPort()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
   protected String port = PORT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTypeRef() <em>Type Ref</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTypeRef() <em>Type Ref</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypeRef()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTypeRef()
+	 * @generated
+	 * @ordered
+	 */
   protected typeId typeRef;
 
   /**
-   * The cached value of the '{@link #getTypedConstat() <em>Typed Constat</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTypedConstat() <em>Typed Constat</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypedConstat()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTypedConstat()
+	 * @generated
+	 * @ordered
+	 */
   protected typedConstant typedConstat;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected constantDeclImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.CONSTANT_DECL;
-  }
+		return DelphiPackage.Literals.CONSTANT_DECL;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ident getId()
   {
-    return id;
-  }
+		return id;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetId(ident newId, NotificationChain msgs)
   {
-    ident oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__ID, oldId, newId);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		ident oldId = id;
+		id = newId;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__ID, oldId, newId);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setId(ident newId)
   {
-    if (newId != id)
-    {
-      NotificationChain msgs = null;
-      if (id != null)
-        msgs = ((InternalEObject)id).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__ID, null, msgs);
-      if (newId != null)
-        msgs = ((InternalEObject)newId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__ID, null, msgs);
-      msgs = basicSetId(newId, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__ID, newId, newId));
-  }
+		if (newId != id) {
+			NotificationChain msgs = null;
+			if (id != null)
+				msgs = ((InternalEObject)id).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__ID, null, msgs);
+			if (newId != null)
+				msgs = ((InternalEObject)newId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__ID, null, msgs);
+			msgs = basicSetId(newId, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__ID, newId, newId));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public constExpr getConst()
   {
-    return const_;
-  }
+		return const_;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetConst(constExpr newConst, NotificationChain msgs)
   {
-    constExpr oldConst = const_;
-    const_ = newConst;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__CONST, oldConst, newConst);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		constExpr oldConst = const_;
+		const_ = newConst;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__CONST, oldConst, newConst);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setConst(constExpr newConst)
   {
-    if (newConst != const_)
-    {
-      NotificationChain msgs = null;
-      if (const_ != null)
-        msgs = ((InternalEObject)const_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__CONST, null, msgs);
-      if (newConst != null)
-        msgs = ((InternalEObject)newConst).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__CONST, null, msgs);
-      msgs = basicSetConst(newConst, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__CONST, newConst, newConst));
-  }
+		if (newConst != const_) {
+			NotificationChain msgs = null;
+			if (const_ != null)
+				msgs = ((InternalEObject)const_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__CONST, null, msgs);
+			if (newConst != null)
+				msgs = ((InternalEObject)newConst).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__CONST, null, msgs);
+			msgs = basicSetConst(newConst, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__CONST, newConst, newConst));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getPort()
   {
-    return port;
-  }
+		return port;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPort(String newPort)
   {
-    String oldPort = port;
-    port = newPort;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__PORT, oldPort, port));
-  }
+		String oldPort = port;
+		port = newPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__PORT, oldPort, port));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public typeId getTypeRef()
   {
-    return typeRef;
-  }
+		return typeRef;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetTypeRef(typeId newTypeRef, NotificationChain msgs)
   {
-    typeId oldTypeRef = typeRef;
-    typeRef = newTypeRef;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__TYPE_REF, oldTypeRef, newTypeRef);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		typeId oldTypeRef = typeRef;
+		typeRef = newTypeRef;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__TYPE_REF, oldTypeRef, newTypeRef);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setTypeRef(typeId newTypeRef)
   {
-    if (newTypeRef != typeRef)
-    {
-      NotificationChain msgs = null;
-      if (typeRef != null)
-        msgs = ((InternalEObject)typeRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__TYPE_REF, null, msgs);
-      if (newTypeRef != null)
-        msgs = ((InternalEObject)newTypeRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__TYPE_REF, null, msgs);
-      msgs = basicSetTypeRef(newTypeRef, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__TYPE_REF, newTypeRef, newTypeRef));
-  }
+		if (newTypeRef != typeRef) {
+			NotificationChain msgs = null;
+			if (typeRef != null)
+				msgs = ((InternalEObject)typeRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__TYPE_REF, null, msgs);
+			if (newTypeRef != null)
+				msgs = ((InternalEObject)newTypeRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__TYPE_REF, null, msgs);
+			msgs = basicSetTypeRef(newTypeRef, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__TYPE_REF, newTypeRef, newTypeRef));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public typedConstant getTypedConstat()
   {
-    return typedConstat;
-  }
+		return typedConstat;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetTypedConstat(typedConstant newTypedConstat, NotificationChain msgs)
   {
-    typedConstant oldTypedConstat = typedConstat;
-    typedConstat = newTypedConstat;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT, oldTypedConstat, newTypedConstat);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		typedConstant oldTypedConstat = typedConstat;
+		typedConstat = newTypedConstat;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT, oldTypedConstat, newTypedConstat);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setTypedConstat(typedConstant newTypedConstat)
   {
-    if (newTypedConstat != typedConstat)
-    {
-      NotificationChain msgs = null;
-      if (typedConstat != null)
-        msgs = ((InternalEObject)typedConstat).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT, null, msgs);
-      if (newTypedConstat != null)
-        msgs = ((InternalEObject)newTypedConstat).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT, null, msgs);
-      msgs = basicSetTypedConstat(newTypedConstat, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT, newTypedConstat, newTypedConstat));
-  }
+		if (newTypedConstat != typedConstat) {
+			NotificationChain msgs = null;
+			if (typedConstat != null)
+				msgs = ((InternalEObject)typedConstat).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT, null, msgs);
+			if (newTypedConstat != null)
+				msgs = ((InternalEObject)newTypedConstat).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT, null, msgs);
+			msgs = basicSetTypedConstat(newTypedConstat, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT, newTypedConstat, newTypedConstat));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CONSTANT_DECL__ID:
-        return basicSetId(null, msgs);
-      case DelphiPackage.CONSTANT_DECL__CONST:
-        return basicSetConst(null, msgs);
-      case DelphiPackage.CONSTANT_DECL__TYPE_REF:
-        return basicSetTypeRef(null, msgs);
-      case DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT:
-        return basicSetTypedConstat(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.CONSTANT_DECL__ID:
+				return basicSetId(null, msgs);
+			case DelphiPackage.CONSTANT_DECL__CONST:
+				return basicSetConst(null, msgs);
+			case DelphiPackage.CONSTANT_DECL__TYPE_REF:
+				return basicSetTypeRef(null, msgs);
+			case DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT:
+				return basicSetTypedConstat(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CONSTANT_DECL__ID:
-        return getId();
-      case DelphiPackage.CONSTANT_DECL__CONST:
-        return getConst();
-      case DelphiPackage.CONSTANT_DECL__PORT:
-        return getPort();
-      case DelphiPackage.CONSTANT_DECL__TYPE_REF:
-        return getTypeRef();
-      case DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT:
-        return getTypedConstat();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.CONSTANT_DECL__ID:
+				return getId();
+			case DelphiPackage.CONSTANT_DECL__CONST:
+				return getConst();
+			case DelphiPackage.CONSTANT_DECL__PORT:
+				return getPort();
+			case DelphiPackage.CONSTANT_DECL__TYPE_REF:
+				return getTypeRef();
+			case DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT:
+				return getTypedConstat();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CONSTANT_DECL__ID:
-        setId((ident)newValue);
-        return;
-      case DelphiPackage.CONSTANT_DECL__CONST:
-        setConst((constExpr)newValue);
-        return;
-      case DelphiPackage.CONSTANT_DECL__PORT:
-        setPort((String)newValue);
-        return;
-      case DelphiPackage.CONSTANT_DECL__TYPE_REF:
-        setTypeRef((typeId)newValue);
-        return;
-      case DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT:
-        setTypedConstat((typedConstant)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.CONSTANT_DECL__ID:
+				setId((ident)newValue);
+				return;
+			case DelphiPackage.CONSTANT_DECL__CONST:
+				setConst((constExpr)newValue);
+				return;
+			case DelphiPackage.CONSTANT_DECL__PORT:
+				setPort((String)newValue);
+				return;
+			case DelphiPackage.CONSTANT_DECL__TYPE_REF:
+				setTypeRef((typeId)newValue);
+				return;
+			case DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT:
+				setTypedConstat((typedConstant)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CONSTANT_DECL__ID:
-        setId((ident)null);
-        return;
-      case DelphiPackage.CONSTANT_DECL__CONST:
-        setConst((constExpr)null);
-        return;
-      case DelphiPackage.CONSTANT_DECL__PORT:
-        setPort(PORT_EDEFAULT);
-        return;
-      case DelphiPackage.CONSTANT_DECL__TYPE_REF:
-        setTypeRef((typeId)null);
-        return;
-      case DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT:
-        setTypedConstat((typedConstant)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CONSTANT_DECL__ID:
+				setId((ident)null);
+				return;
+			case DelphiPackage.CONSTANT_DECL__CONST:
+				setConst((constExpr)null);
+				return;
+			case DelphiPackage.CONSTANT_DECL__PORT:
+				setPort(PORT_EDEFAULT);
+				return;
+			case DelphiPackage.CONSTANT_DECL__TYPE_REF:
+				setTypeRef((typeId)null);
+				return;
+			case DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT:
+				setTypedConstat((typedConstant)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.CONSTANT_DECL__ID:
-        return id != null;
-      case DelphiPackage.CONSTANT_DECL__CONST:
-        return const_ != null;
-      case DelphiPackage.CONSTANT_DECL__PORT:
-        return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
-      case DelphiPackage.CONSTANT_DECL__TYPE_REF:
-        return typeRef != null;
-      case DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT:
-        return typedConstat != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.CONSTANT_DECL__ID:
+				return id != null;
+			case DelphiPackage.CONSTANT_DECL__CONST:
+				return const_ != null;
+			case DelphiPackage.CONSTANT_DECL__PORT:
+				return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
+			case DelphiPackage.CONSTANT_DECL__TYPE_REF:
+				return typeRef != null;
+			case DelphiPackage.CONSTANT_DECL__TYPED_CONSTAT:
+				return typedConstat != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (port: ");
-    result.append(port);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (port: ");
+		result.append(port);
+		result.append(')');
+		return result.toString();
+	}
 
 } //constantDeclImpl

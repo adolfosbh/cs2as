@@ -2,15 +2,18 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="delphi" nsURI="http://www.xtext.org/example/delphi/Delphi" nsPrefix="delphi">
   <eClassifiers xsi:type="ecore:EClass" name="mainRule" eSuperTypes="#//CSTrace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="file" eType="#//file" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="file" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//ident" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="program" eSuperTypes="#//mainRule">
+  <eClassifiers xsi:type="ecore:EClass" name="program" eSuperTypes="#//file">
     <eStructuralFeatures xsi:type="ecore:EReference" name="paramsList" eType="#//identList"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//programBlock"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="unit" eSuperTypes="#//mainRule">
+  <eClassifiers xsi:type="ecore:EClass" name="unit" eSuperTypes="#//file">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceSect" eType="#//interfaceSection"
         containment="true"/>
@@ -19,13 +22,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="initSect" eType="#//initSection"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="packageDecl" eSuperTypes="#//mainRule">
+  <eClassifiers xsi:type="ecore:EClass" name="packageDecl" eSuperTypes="#//file">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requires" eType="#//requiresClause"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contains" eType="#//containsClause"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="library" eSuperTypes="#//mainRule">
+  <eClassifiers xsi:type="ecore:EClass" name="library" eSuperTypes="#//file">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pBlock" eType="#//programBlock"
         containment="true"/>
   </eClassifiers>
@@ -126,7 +129,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="recordFieldConstant" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//ident" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tpedConstant" eType="#//typedConstant"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typedConstant" eType="#//typedConstant"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="type" eSuperTypes="#//CSTrace"/>
@@ -286,37 +289,39 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="statement" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//unlabelledStatement"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="stmtList" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statments" upperBound="-1"
         eType="#//statement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="simpleStatement" eSuperTypes="#//CSTrace"/>
-  <eClassifiers xsi:type="ecore:EClass" name="structStmt" eSuperTypes="#//CSTrace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="unlabelledStatement" eSuperTypes="#//CSTrace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="simpleStatement" eSuperTypes="#//unlabelledStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="structStmt" eSuperTypes="#//unlabelledStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="compoundStmt" eSuperTypes="#//structStmt">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statmnts" eType="#//stmtList"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stamtList" eType="#//stmtList"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="conditionalStmt" eSuperTypes="#//structStmt">
+  <eClassifiers xsi:type="ecore:EClass" name="conditionalStmt" eSuperTypes="#//structStmt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ifStmt" eSuperTypes="#//conditionalStmt">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//expression"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ifStmt" eSuperTypes="#//conditionalStmt">
     <eStructuralFeatures xsi:type="ecore:EReference" name="then" eType="#//statement"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//statement"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="caseStmt" eSuperTypes="#//conditionalStmt">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="case" upperBound="-1" eType="#//caseSelector"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//expression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cases" upperBound="-1"
+        eType="#//caseSelector" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="default" eType="#//stmtList"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="caseSelector" eSuperTypes="#//CSTrace">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="label" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
         eType="#//caseLabel" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stmt" eType="#//statement"
         containment="true"/>
@@ -386,18 +391,11 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="functionHeading" eSuperTypes="#//methodHeading">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="params" eType="#//formalParameters"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//type" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="procedureHeading" eSuperTypes="#//methodHeading">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="formalParams" eType="#//formalParameters"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="procedureHeading" eSuperTypes="#//methodHeading"/>
   <eClassifiers xsi:type="ecore:EClass" name="formalParameters" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//formalParm" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="paramas" upperBound="-1"
         eType="#//formalParm" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="formalParm" eSuperTypes="#//CSTrace">
@@ -431,15 +429,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="methodHeading" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//ident" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="constructorHeading" eSuperTypes="#//methodHeading">
     <eStructuralFeatures xsi:type="ecore:EReference" name="formalParams" eType="#//formalParameters"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="destructorHeading" eSuperTypes="#//methodHeading">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="formalParams" eType="#//formalParameters"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="constructorHeading" eSuperTypes="#//methodHeading"/>
+  <eClassifiers xsi:type="ecore:EClass" name="destructorHeading" eSuperTypes="#//methodHeading"/>
   <eClassifiers xsi:type="ecore:EClass" name="objFieldList" eSuperTypes="#//CSTrace"/>
   <eClassifiers xsi:type="ecore:EClass" name="initSection" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="stmtList" eType="#//stmtList"
@@ -560,7 +554,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="reservedWord" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="constExpr" eSuperTypes="#//CSTrace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="constExpr" eSuperTypes="#//CSTrace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exps" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="recordConstExpr" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//ident" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constExp" eType="#//constExpr"
@@ -585,9 +582,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//term"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="mulExp" eSuperTypes="#//term">
+  <eClassifiers xsi:type="ecore:EClass" name="multExp" eSuperTypes="#//term">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//term" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mulOp" eType="#//mulOp"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multOp" eType="#//mulOp"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//factor"
         containment="true"/>
@@ -595,20 +592,21 @@
   <eClassifiers xsi:type="ecore:EClass" name="adOp" eSuperTypes="#//addOp">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssignmentStmnt" eSuperTypes="#//simpleStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="assignmentStmnt" eSuperTypes="#//simpleStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="designator" eType="#//designator"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CallStmnt" eSuperTypes="#//simpleStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="callStmnt" eSuperTypes="#//simpleStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="designator" eType="#//designator"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="args" eType="#//exprList"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InheritedStamnt" eSuperTypes="#//simpleStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GotoStmnt" eSuperTypes="#//simpleStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="inheritedStamnt" eSuperTypes="#//simpleStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="gotoStmnt" eSuperTypes="#//simpleStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="parameterList" eSuperTypes="#//parameter">
@@ -631,18 +629,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="MineID" eSuperTypes="#//ident">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="first" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleExp" eSuperTypes="#//constExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//expression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultipleConstExp" eSuperTypes="#//constExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="exps" upperBound="-1" eType="#//constExpr"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RecordConstExp" eSuperTypes="#//constExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="exps" upperBound="-1" eType="#//recordConstExpr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CSTrace" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ast" eType="ecore:EClass ../astm.ecore#//GASTMObject"

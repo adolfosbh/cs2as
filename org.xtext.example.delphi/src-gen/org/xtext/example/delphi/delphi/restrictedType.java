@@ -15,6 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface restrictedType extends EObject
+public interface restrictedType extends CSTrace
 {
 } // restrictedType

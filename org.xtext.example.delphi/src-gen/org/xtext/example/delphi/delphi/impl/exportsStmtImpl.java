@@ -34,135 +34,129 @@ import org.xtext.example.delphi.delphi.exportsStmt;
  *
  * @generated
  */
-public class exportsStmtImpl extends MinimalEObjectImpl.Container implements exportsStmt
+public class exportsStmtImpl extends CSTraceImpl implements exportsStmt
 {
   /**
-   * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getItems()
-   * @generated
-   * @ordered
-   */
+	 * @see #getItems()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<exportsItem> items;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected exportsStmtImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.EXPORTS_STMT;
-  }
+		return DelphiPackage.Literals.EXPORTS_STMT;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<exportsItem> getItems()
   {
-    if (items == null)
-    {
-      items = new EObjectContainmentEList<exportsItem>(exportsItem.class, this, DelphiPackage.EXPORTS_STMT__ITEMS);
-    }
-    return items;
-  }
+		if (items == null) {
+			items = new EObjectContainmentEList<exportsItem>(exportsItem.class, this, DelphiPackage.EXPORTS_STMT__ITEMS);
+		}
+		return items;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.EXPORTS_STMT__ITEMS:
-        return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.EXPORTS_STMT__ITEMS:
+				return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.EXPORTS_STMT__ITEMS:
-        return getItems();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.EXPORTS_STMT__ITEMS:
+				return getItems();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.EXPORTS_STMT__ITEMS:
-        getItems().clear();
-        getItems().addAll((Collection<? extends exportsItem>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.EXPORTS_STMT__ITEMS:
+				getItems().clear();
+				getItems().addAll((Collection<? extends exportsItem>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.EXPORTS_STMT__ITEMS:
-        getItems().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.EXPORTS_STMT__ITEMS:
+				getItems().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.EXPORTS_STMT__ITEMS:
-        return items != null && !items.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.EXPORTS_STMT__ITEMS:
+				return items != null && !items.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //exportsStmtImpl

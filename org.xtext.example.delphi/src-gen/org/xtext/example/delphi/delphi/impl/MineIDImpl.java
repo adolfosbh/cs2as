@@ -29,205 +29,201 @@ import org.xtext.example.delphi.delphi.MineID;
 public class MineIDImpl extends identImpl implements MineID
 {
   /**
-   * The default value of the '{@link #getFirst() <em>First</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getFirst() <em>First</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFirst()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFirst()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String FIRST_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getFirst() <em>First</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFirst() <em>First</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFirst()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFirst()
+	 * @generated
+	 * @ordered
+	 */
   protected String first = FIRST_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSecond() <em>Second</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSecond() <em>Second</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSecond()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSecond()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String SECOND_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSecond() <em>Second</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSecond() <em>Second</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSecond()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSecond()
+	 * @generated
+	 * @ordered
+	 */
   protected String second = SECOND_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MineIDImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.MINE_ID;
-  }
+		return DelphiPackage.Literals.MINE_ID;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getFirst()
   {
-    return first;
-  }
+		return first;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setFirst(String newFirst)
   {
-    String oldFirst = first;
-    first = newFirst;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.MINE_ID__FIRST, oldFirst, first));
-  }
+		String oldFirst = first;
+		first = newFirst;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.MINE_ID__FIRST, oldFirst, first));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getSecond()
   {
-    return second;
-  }
+		return second;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSecond(String newSecond)
   {
-    String oldSecond = second;
-    second = newSecond;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.MINE_ID__SECOND, oldSecond, second));
-  }
+		String oldSecond = second;
+		second = newSecond;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.MINE_ID__SECOND, oldSecond, second));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.MINE_ID__FIRST:
-        return getFirst();
-      case DelphiPackage.MINE_ID__SECOND:
-        return getSecond();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.MINE_ID__FIRST:
+				return getFirst();
+			case DelphiPackage.MINE_ID__SECOND:
+				return getSecond();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.MINE_ID__FIRST:
-        setFirst((String)newValue);
-        return;
-      case DelphiPackage.MINE_ID__SECOND:
-        setSecond((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.MINE_ID__FIRST:
+				setFirst((String)newValue);
+				return;
+			case DelphiPackage.MINE_ID__SECOND:
+				setSecond((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.MINE_ID__FIRST:
-        setFirst(FIRST_EDEFAULT);
-        return;
-      case DelphiPackage.MINE_ID__SECOND:
-        setSecond(SECOND_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.MINE_ID__FIRST:
+				setFirst(FIRST_EDEFAULT);
+				return;
+			case DelphiPackage.MINE_ID__SECOND:
+				setSecond(SECOND_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.MINE_ID__FIRST:
-        return FIRST_EDEFAULT == null ? first != null : !FIRST_EDEFAULT.equals(first);
-      case DelphiPackage.MINE_ID__SECOND:
-        return SECOND_EDEFAULT == null ? second != null : !SECOND_EDEFAULT.equals(second);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.MINE_ID__FIRST:
+				return FIRST_EDEFAULT == null ? first != null : !FIRST_EDEFAULT.equals(first);
+			case DelphiPackage.MINE_ID__SECOND:
+				return SECOND_EDEFAULT == null ? second != null : !SECOND_EDEFAULT.equals(second);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (first: ");
-    result.append(first);
-    result.append(", second: ");
-    result.append(second);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (first: ");
+		result.append(first);
+		result.append(", second: ");
+		result.append(second);
+		result.append(')');
+		return result.toString();
+	}
 
 } //MineIDImpl

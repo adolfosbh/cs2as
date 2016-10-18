@@ -31,164 +31,157 @@ import org.xtext.example.delphi.delphi.typeId;
 public class fileTypeImpl extends strucTypeImpl implements fileType
 {
   /**
-   * The cached value of the '{@link #getTypeRef() <em>Type Ref</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTypeRef() <em>Type Ref</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypeRef()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTypeRef()
+	 * @generated
+	 * @ordered
+	 */
   protected typeId typeRef;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected fileTypeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.FILE_TYPE;
-  }
+		return DelphiPackage.Literals.FILE_TYPE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public typeId getTypeRef()
   {
-    return typeRef;
-  }
+		return typeRef;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetTypeRef(typeId newTypeRef, NotificationChain msgs)
   {
-    typeId oldTypeRef = typeRef;
-    typeRef = newTypeRef;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.FILE_TYPE__TYPE_REF, oldTypeRef, newTypeRef);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		typeId oldTypeRef = typeRef;
+		typeRef = newTypeRef;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.FILE_TYPE__TYPE_REF, oldTypeRef, newTypeRef);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setTypeRef(typeId newTypeRef)
   {
-    if (newTypeRef != typeRef)
-    {
-      NotificationChain msgs = null;
-      if (typeRef != null)
-        msgs = ((InternalEObject)typeRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FILE_TYPE__TYPE_REF, null, msgs);
-      if (newTypeRef != null)
-        msgs = ((InternalEObject)newTypeRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FILE_TYPE__TYPE_REF, null, msgs);
-      msgs = basicSetTypeRef(newTypeRef, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.FILE_TYPE__TYPE_REF, newTypeRef, newTypeRef));
-  }
+		if (newTypeRef != typeRef) {
+			NotificationChain msgs = null;
+			if (typeRef != null)
+				msgs = ((InternalEObject)typeRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FILE_TYPE__TYPE_REF, null, msgs);
+			if (newTypeRef != null)
+				msgs = ((InternalEObject)newTypeRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FILE_TYPE__TYPE_REF, null, msgs);
+			msgs = basicSetTypeRef(newTypeRef, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.FILE_TYPE__TYPE_REF, newTypeRef, newTypeRef));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FILE_TYPE__TYPE_REF:
-        return basicSetTypeRef(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.FILE_TYPE__TYPE_REF:
+				return basicSetTypeRef(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FILE_TYPE__TYPE_REF:
-        return getTypeRef();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.FILE_TYPE__TYPE_REF:
+				return getTypeRef();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FILE_TYPE__TYPE_REF:
-        setTypeRef((typeId)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.FILE_TYPE__TYPE_REF:
+				setTypeRef((typeId)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FILE_TYPE__TYPE_REF:
-        setTypeRef((typeId)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.FILE_TYPE__TYPE_REF:
+				setTypeRef((typeId)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.FILE_TYPE__TYPE_REF:
-        return typeRef != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.FILE_TYPE__TYPE_REF:
+				return typeRef != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //fileTypeImpl

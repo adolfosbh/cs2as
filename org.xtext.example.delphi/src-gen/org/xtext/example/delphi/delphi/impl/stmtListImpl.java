@@ -34,135 +34,129 @@ import org.xtext.example.delphi.delphi.stmtList;
  *
  * @generated
  */
-public class stmtListImpl extends MinimalEObjectImpl.Container implements stmtList
+public class stmtListImpl extends CSTraceImpl implements stmtList
 {
   /**
-   * The cached value of the '{@link #getStatments() <em>Statments</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getStatments() <em>Statments</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatments()
-   * @generated
-   * @ordered
-   */
+	 * @see #getStatments()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<statement> statments;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected stmtListImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.STMT_LIST;
-  }
+		return DelphiPackage.Literals.STMT_LIST;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<statement> getStatments()
   {
-    if (statments == null)
-    {
-      statments = new EObjectContainmentEList<statement>(statement.class, this, DelphiPackage.STMT_LIST__STATMENTS);
-    }
-    return statments;
-  }
+		if (statments == null) {
+			statments = new EObjectContainmentEList<statement>(statement.class, this, DelphiPackage.STMT_LIST__STATMENTS);
+		}
+		return statments;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.STMT_LIST__STATMENTS:
-        return ((InternalEList<?>)getStatments()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.STMT_LIST__STATMENTS:
+				return ((InternalEList<?>)getStatments()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.STMT_LIST__STATMENTS:
-        return getStatments();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.STMT_LIST__STATMENTS:
+				return getStatments();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.STMT_LIST__STATMENTS:
-        getStatments().clear();
-        getStatments().addAll((Collection<? extends statement>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.STMT_LIST__STATMENTS:
+				getStatments().clear();
+				getStatments().addAll((Collection<? extends statement>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.STMT_LIST__STATMENTS:
-        getStatments().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.STMT_LIST__STATMENTS:
+				getStatments().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.STMT_LIST__STATMENTS:
-        return statments != null && !statments.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.STMT_LIST__STATMENTS:
+				return statments != null && !statments.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //stmtListImpl

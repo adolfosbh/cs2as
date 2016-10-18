@@ -15,6 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface objFieldList extends EObject
+public interface objFieldList extends CSTrace
 {
 } // objFieldList

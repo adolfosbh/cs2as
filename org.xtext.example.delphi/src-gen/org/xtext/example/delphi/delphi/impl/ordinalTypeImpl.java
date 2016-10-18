@@ -18,24 +18,24 @@ import org.xtext.example.delphi.delphi.ordinalType;
 public class ordinalTypeImpl extends simpleTypeImpl implements ordinalType
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ordinalTypeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.ORDINAL_TYPE;
-  }
+		return DelphiPackage.Literals.ORDINAL_TYPE;
+	}
 
 } //ordinalTypeImpl

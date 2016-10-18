@@ -25,81 +25,81 @@ package org.xtext.example.delphi.delphi;
 public interface procedureDeclSection extends declSection
 {
   /**
-   * Returns the value of the '<em><b>Directive</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Directive</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Directive</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Directive</em>' containment reference.
-   * @see #setDirective(directive)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getprocedureDeclSection_Directive()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Directive</em>' containment reference.
+	 * @see #setDirective(directive)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getprocedureDeclSection_Directive()
+	 * @model containment="true"
+	 * @generated
+	 */
   directive getDirective();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.procedureDeclSection#getDirective <em>Directive</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.procedureDeclSection#getDirective <em>Directive</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Directive</em>' containment reference.
-   * @see #getDirective()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Directive</em>' containment reference.
+	 * @see #getDirective()
+	 * @generated
+	 */
   void setDirective(directive value);
 
   /**
-   * Returns the value of the '<em><b>Port</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Port</em>' attribute.
-   * @see #setPort(String)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getprocedureDeclSection_Port()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Port</em>' attribute.
+	 * @see #setPort(String)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getprocedureDeclSection_Port()
+	 * @model
+	 * @generated
+	 */
   String getPort();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.procedureDeclSection#getPort <em>Port</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.procedureDeclSection#getPort <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Port</em>' attribute.
-   * @see #getPort()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Port</em>' attribute.
+	 * @see #getPort()
+	 * @generated
+	 */
   void setPort(String value);
 
   /**
-   * Returns the value of the '<em><b>Block</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Block</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Block</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Block</em>' containment reference.
-   * @see #setBlock(block)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getprocedureDeclSection_Block()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Block</em>' containment reference.
+	 * @see #setBlock(block)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getprocedureDeclSection_Block()
+	 * @model containment="true"
+	 * @generated
+	 */
   block getBlock();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.procedureDeclSection#getBlock <em>Block</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.procedureDeclSection#getBlock <em>Block</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Block</em>' containment reference.
-   * @see #getBlock()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Block</em>' containment reference.
+	 * @see #getBlock()
+	 * @generated
+	 */
   void setBlock(block value);
 
 } // procedureDeclSection

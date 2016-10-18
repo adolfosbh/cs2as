@@ -26,242 +26,233 @@ import org.xtext.example.delphi.delphi.typedConstant;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.delphi.delphi.impl.recordFieldConstantImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.xtext.example.delphi.delphi.impl.recordFieldConstantImpl#getTpedConstant <em>Tped Constant</em>}</li>
+ *   <li>{@link org.xtext.example.delphi.delphi.impl.recordFieldConstantImpl#getTypedConstant <em>Typed Constant</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class recordFieldConstantImpl extends MinimalEObjectImpl.Container implements recordFieldConstant
+public class recordFieldConstantImpl extends CSTraceImpl implements recordFieldConstant
 {
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
   protected ident id;
 
   /**
-   * The cached value of the '{@link #getTpedConstant() <em>Tped Constant</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTypedConstant() <em>Typed Constant</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTpedConstant()
-   * @generated
-   * @ordered
-   */
-  protected typedConstant tpedConstant;
+	 * @see #getTypedConstant()
+	 * @generated
+	 * @ordered
+	 */
+  protected typedConstant typedConstant;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected recordFieldConstantImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.RECORD_FIELD_CONSTANT;
-  }
+		return DelphiPackage.Literals.RECORD_FIELD_CONSTANT;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ident getId()
   {
-    return id;
-  }
+		return id;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetId(ident newId, NotificationChain msgs)
   {
-    ident oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.RECORD_FIELD_CONSTANT__ID, oldId, newId);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		ident oldId = id;
+		id = newId;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.RECORD_FIELD_CONSTANT__ID, oldId, newId);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setId(ident newId)
   {
-    if (newId != id)
-    {
-      NotificationChain msgs = null;
-      if (id != null)
-        msgs = ((InternalEObject)id).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.RECORD_FIELD_CONSTANT__ID, null, msgs);
-      if (newId != null)
-        msgs = ((InternalEObject)newId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.RECORD_FIELD_CONSTANT__ID, null, msgs);
-      msgs = basicSetId(newId, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.RECORD_FIELD_CONSTANT__ID, newId, newId));
-  }
+		if (newId != id) {
+			NotificationChain msgs = null;
+			if (id != null)
+				msgs = ((InternalEObject)id).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.RECORD_FIELD_CONSTANT__ID, null, msgs);
+			if (newId != null)
+				msgs = ((InternalEObject)newId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.RECORD_FIELD_CONSTANT__ID, null, msgs);
+			msgs = basicSetId(newId, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.RECORD_FIELD_CONSTANT__ID, newId, newId));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public typedConstant getTpedConstant()
+	 * @generated
+	 */
+  public typedConstant getTypedConstant()
   {
-    return tpedConstant;
-  }
+		return typedConstant;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTpedConstant(typedConstant newTpedConstant, NotificationChain msgs)
+	 * @generated
+	 */
+  public NotificationChain basicSetTypedConstant(typedConstant newTypedConstant, NotificationChain msgs)
   {
-    typedConstant oldTpedConstant = tpedConstant;
-    tpedConstant = newTpedConstant;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.RECORD_FIELD_CONSTANT__TPED_CONSTANT, oldTpedConstant, newTpedConstant);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		typedConstant oldTypedConstant = typedConstant;
+		typedConstant = newTypedConstant;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.RECORD_FIELD_CONSTANT__TYPED_CONSTANT, oldTypedConstant, newTypedConstant);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTpedConstant(typedConstant newTpedConstant)
+	 * @generated
+	 */
+  public void setTypedConstant(typedConstant newTypedConstant)
   {
-    if (newTpedConstant != tpedConstant)
-    {
-      NotificationChain msgs = null;
-      if (tpedConstant != null)
-        msgs = ((InternalEObject)tpedConstant).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.RECORD_FIELD_CONSTANT__TPED_CONSTANT, null, msgs);
-      if (newTpedConstant != null)
-        msgs = ((InternalEObject)newTpedConstant).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.RECORD_FIELD_CONSTANT__TPED_CONSTANT, null, msgs);
-      msgs = basicSetTpedConstant(newTpedConstant, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.RECORD_FIELD_CONSTANT__TPED_CONSTANT, newTpedConstant, newTpedConstant));
-  }
+		if (newTypedConstant != typedConstant) {
+			NotificationChain msgs = null;
+			if (typedConstant != null)
+				msgs = ((InternalEObject)typedConstant).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.RECORD_FIELD_CONSTANT__TYPED_CONSTANT, null, msgs);
+			if (newTypedConstant != null)
+				msgs = ((InternalEObject)newTypedConstant).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.RECORD_FIELD_CONSTANT__TYPED_CONSTANT, null, msgs);
+			msgs = basicSetTypedConstant(newTypedConstant, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.RECORD_FIELD_CONSTANT__TYPED_CONSTANT, newTypedConstant, newTypedConstant));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.RECORD_FIELD_CONSTANT__ID:
-        return basicSetId(null, msgs);
-      case DelphiPackage.RECORD_FIELD_CONSTANT__TPED_CONSTANT:
-        return basicSetTpedConstant(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.RECORD_FIELD_CONSTANT__ID:
+				return basicSetId(null, msgs);
+			case DelphiPackage.RECORD_FIELD_CONSTANT__TYPED_CONSTANT:
+				return basicSetTypedConstant(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.RECORD_FIELD_CONSTANT__ID:
-        return getId();
-      case DelphiPackage.RECORD_FIELD_CONSTANT__TPED_CONSTANT:
-        return getTpedConstant();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.RECORD_FIELD_CONSTANT__ID:
+				return getId();
+			case DelphiPackage.RECORD_FIELD_CONSTANT__TYPED_CONSTANT:
+				return getTypedConstant();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.RECORD_FIELD_CONSTANT__ID:
-        setId((ident)newValue);
-        return;
-      case DelphiPackage.RECORD_FIELD_CONSTANT__TPED_CONSTANT:
-        setTpedConstant((typedConstant)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.RECORD_FIELD_CONSTANT__ID:
+				setId((ident)newValue);
+				return;
+			case DelphiPackage.RECORD_FIELD_CONSTANT__TYPED_CONSTANT:
+				setTypedConstant((typedConstant)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.RECORD_FIELD_CONSTANT__ID:
-        setId((ident)null);
-        return;
-      case DelphiPackage.RECORD_FIELD_CONSTANT__TPED_CONSTANT:
-        setTpedConstant((typedConstant)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.RECORD_FIELD_CONSTANT__ID:
+				setId((ident)null);
+				return;
+			case DelphiPackage.RECORD_FIELD_CONSTANT__TYPED_CONSTANT:
+				setTypedConstant((typedConstant)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.RECORD_FIELD_CONSTANT__ID:
-        return id != null;
-      case DelphiPackage.RECORD_FIELD_CONSTANT__TPED_CONSTANT:
-        return tpedConstant != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.RECORD_FIELD_CONSTANT__ID:
+				return id != null;
+			case DelphiPackage.RECORD_FIELD_CONSTANT__TYPED_CONSTANT:
+				return typedConstant != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //recordFieldConstantImpl

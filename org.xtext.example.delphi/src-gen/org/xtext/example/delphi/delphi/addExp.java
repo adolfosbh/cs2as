@@ -25,81 +25,81 @@ package org.xtext.example.delphi.delphi;
 public interface addExp extends simpleExpression
 {
   /**
-   * Returns the value of the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Left</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(simpleExpression)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getaddExp_Left()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Left</em>' containment reference.
+	 * @see #setLeft(simpleExpression)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getaddExp_Left()
+	 * @model containment="true"
+	 * @generated
+	 */
   simpleExpression getLeft();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.addExp#getLeft <em>Left</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.addExp#getLeft <em>Left</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Left</em>' containment reference.
-   * @see #getLeft()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Left</em>' containment reference.
+	 * @see #getLeft()
+	 * @generated
+	 */
   void setLeft(simpleExpression value);
 
   /**
-   * Returns the value of the '<em><b>Add Op</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Add Op</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Add Op</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Add Op</em>' containment reference.
-   * @see #setAddOp(addOp)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getaddExp_AddOp()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Add Op</em>' containment reference.
+	 * @see #setAddOp(addOp)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getaddExp_AddOp()
+	 * @model containment="true"
+	 * @generated
+	 */
   addOp getAddOp();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.addExp#getAddOp <em>Add Op</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.addExp#getAddOp <em>Add Op</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Add Op</em>' containment reference.
-   * @see #getAddOp()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Add Op</em>' containment reference.
+	 * @see #getAddOp()
+	 * @generated
+	 */
   void setAddOp(addOp value);
 
   /**
-   * Returns the value of the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Right</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(term)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getaddExp_Right()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Right</em>' containment reference.
+	 * @see #setRight(term)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getaddExp_Right()
+	 * @model containment="true"
+	 * @generated
+	 */
   term getRight();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.addExp#getRight <em>Right</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.addExp#getRight <em>Right</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Right</em>' containment reference.
-   * @see #getRight()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Right</em>' containment reference.
+	 * @see #getRight()
+	 * @generated
+	 */
   void setRight(term value);
 
 } // addExp

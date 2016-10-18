@@ -18,24 +18,24 @@ import org.xtext.example.delphi.delphi.variantType;
 public class variantTypeImpl extends typeImpl implements variantType
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected variantTypeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.VARIANT_TYPE;
-  }
+		return DelphiPackage.Literals.VARIANT_TYPE;
+	}
 
 } //variantTypeImpl

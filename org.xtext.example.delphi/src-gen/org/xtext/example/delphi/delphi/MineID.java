@@ -24,55 +24,55 @@ package org.xtext.example.delphi.delphi;
 public interface MineID extends ident
 {
   /**
-   * Returns the value of the '<em><b>First</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>First</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>First</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>First</em>' attribute.
-   * @see #setFirst(String)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getMineID_First()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>First</em>' attribute.
+	 * @see #setFirst(String)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getMineID_First()
+	 * @model
+	 * @generated
+	 */
   String getFirst();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.MineID#getFirst <em>First</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.MineID#getFirst <em>First</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>First</em>' attribute.
-   * @see #getFirst()
-   * @generated
-   */
+	 * @param value the new value of the '<em>First</em>' attribute.
+	 * @see #getFirst()
+	 * @generated
+	 */
   void setFirst(String value);
 
   /**
-   * Returns the value of the '<em><b>Second</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Second</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Second</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Second</em>' attribute.
-   * @see #setSecond(String)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getMineID_Second()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Second</em>' attribute.
+	 * @see #setSecond(String)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getMineID_Second()
+	 * @model
+	 * @generated
+	 */
   String getSecond();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.MineID#getSecond <em>Second</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.MineID#getSecond <em>Second</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Second</em>' attribute.
-   * @see #getSecond()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Second</em>' attribute.
+	 * @see #getSecond()
+	 * @generated
+	 */
   void setSecond(String value);
 
 } // MineID

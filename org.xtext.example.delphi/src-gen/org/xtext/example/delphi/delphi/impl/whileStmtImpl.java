@@ -18,24 +18,24 @@ import org.xtext.example.delphi.delphi.whileStmt;
 public class whileStmtImpl extends loopStmtImpl implements whileStmt
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected whileStmtImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.WHILE_STMT;
-  }
+		return DelphiPackage.Literals.WHILE_STMT;
+	}
 
 } //whileStmtImpl

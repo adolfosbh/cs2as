@@ -3,7 +3,6 @@
  */
 package org.xtext.example.delphi.delphi;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface structStmt extends EObject
+public interface structStmt extends unlabelledStatement
 {
 } // structStmt

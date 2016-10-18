@@ -24,13 +24,29 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class MainRuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.mainRule");
+		private final Assignment cFileAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cFileFileParserRuleCall_0 = (RuleCall)cFileAssignment.eContents().get(0);
+		
+		//mainRule:
+		//	file=file // ASBH modified
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//file=file
+		public Assignment getFileAssignment() { return cFileAssignment; }
+		
+		//file
+		public RuleCall getFileFileParserRuleCall_0() { return cFileFileParserRuleCall_0; }
+	}
+	public class FileElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.file");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cProgramParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cPackageDeclParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cLibraryParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cUnitParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		//mainRule:
+		//file:
 		//	program
 		//	| packageDecl
 		//	| library
@@ -1092,14 +1108,14 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cIdAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cIdIdentParserRuleCall_0_0 = (RuleCall)cIdAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cTpedConstantAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTpedConstantTypedConstantParserRuleCall_2_0 = (RuleCall)cTpedConstantAssignment_2.eContents().get(0);
+		private final Assignment cTypedConstantAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypedConstantTypedConstantParserRuleCall_2_0 = (RuleCall)cTypedConstantAssignment_2.eContents().get(0);
 		
 		//recordFieldConstant:
-		//	id=ident ':' tpedConstant=typedConstant;
+		//	id=ident ':' typedConstant=typedConstant;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//id=ident ':' tpedConstant=typedConstant
+		//id=ident ':' typedConstant=typedConstant
 		public Group getGroup() { return cGroup; }
 		
 		//id=ident
@@ -1111,11 +1127,11 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//tpedConstant=typedConstant
-		public Assignment getTpedConstantAssignment_2() { return cTpedConstantAssignment_2; }
+		//typedConstant=typedConstant
+		public Assignment getTypedConstantAssignment_2() { return cTypedConstantAssignment_2; }
 		
 		//typedConstant
-		public RuleCall getTpedConstantTypedConstantParserRuleCall_2_0() { return cTpedConstantTypedConstantParserRuleCall_2_0; }
+		public RuleCall getTypedConstantTypedConstantParserRuleCall_2_0() { return cTypedConstantTypedConstantParserRuleCall_2_0; }
 	}
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.type");
@@ -2278,33 +2294,33 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cFactorParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cMulExpLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cMulOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cMulOpMulOpParserRuleCall_1_1_0 = (RuleCall)cMulOpAssignment_1_1.eContents().get(0);
+		private final Action cMultExpLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cMultOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cMultOpMulOpParserRuleCall_1_1_0 = (RuleCall)cMultOpAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightFactorParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//term:
-		//	factor ({mulExp.left=current} mulOp=mulOp right=factor)*;
+		//	factor ({multExp.left=current} multOp=mulOp right=factor)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//factor ({mulExp.left=current} mulOp=mulOp right=factor)*
+		//factor ({multExp.left=current} multOp=mulOp right=factor)*
 		public Group getGroup() { return cGroup; }
 		
 		//factor
 		public RuleCall getFactorParserRuleCall_0() { return cFactorParserRuleCall_0; }
 		
-		//({mulExp.left=current} mulOp=mulOp right=factor)*
+		//({multExp.left=current} multOp=mulOp right=factor)*
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//{mulExp.left=current}
-		public Action getMulExpLeftAction_1_0() { return cMulExpLeftAction_1_0; }
+		//{multExp.left=current}
+		public Action getMultExpLeftAction_1_0() { return cMultExpLeftAction_1_0; }
 		
-		//mulOp=mulOp
-		public Assignment getMulOpAssignment_1_1() { return cMulOpAssignment_1_1; }
+		//multOp=mulOp
+		public Assignment getMultOpAssignment_1_1() { return cMultOpAssignment_1_1; }
 		
 		//mulOp
-		public RuleCall getMulOpMulOpParserRuleCall_1_1_0() { return cMulOpMulOpParserRuleCall_1_1_0; }
+		public RuleCall getMultOpMulOpParserRuleCall_1_1_0() { return cMultOpMulOpParserRuleCall_1_1_0; }
 		
 		//right=factor
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
@@ -2927,15 +2943,13 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLabelIdLabelIdParserRuleCall_0_0_0 = (RuleCall)cLabelIdAssignment_0_0.eContents().get(0);
 		private final Keyword cColonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Assignment cStatementAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Alternatives cStatementAlternatives_1_0 = (Alternatives)cStatementAssignment_1.eContents().get(0);
-		private final RuleCall cStatementSimpleStatementParserRuleCall_1_0_0 = (RuleCall)cStatementAlternatives_1_0.eContents().get(0);
-		private final RuleCall cStatementStructStmtParserRuleCall_1_0_1 = (RuleCall)cStatementAlternatives_1_0.eContents().get(1);
+		private final RuleCall cStatementUnlabelledStatementParserRuleCall_1_0 = (RuleCall)cStatementAssignment_1.eContents().get(0);
 		
 		//statement:
-		//	(labelId=labelId ':')? statement=(simpleStatement | structStmt);
+		//	(labelId=labelId ':')? statement=unlabelledStatement;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(labelId=labelId ':')? statement=(simpleStatement | structStmt)
+		//(labelId=labelId ':')? statement=unlabelledStatement
 		public Group getGroup() { return cGroup; }
 		
 		//(labelId=labelId ':')?
@@ -2950,17 +2964,11 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_0_1() { return cColonKeyword_0_1; }
 		
-		//statement=(simpleStatement | structStmt)
+		//statement=unlabelledStatement
 		public Assignment getStatementAssignment_1() { return cStatementAssignment_1; }
 		
-		//(simpleStatement | structStmt)
-		public Alternatives getStatementAlternatives_1_0() { return cStatementAlternatives_1_0; }
-		
-		//simpleStatement
-		public RuleCall getStatementSimpleStatementParserRuleCall_1_0_0() { return cStatementSimpleStatementParserRuleCall_1_0_0; }
-		
-		//structStmt
-		public RuleCall getStatementStructStmtParserRuleCall_1_0_1() { return cStatementStructStmtParserRuleCall_1_0_1; }
+		//unlabelledStatement
+		public RuleCall getStatementUnlabelledStatementParserRuleCall_1_0() { return cStatementUnlabelledStatementParserRuleCall_1_0; }
 	}
 	public class StmtListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.stmtList");
@@ -2993,6 +3001,25 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		//';'?
 		public Keyword getSemicolonKeyword_1_1() { return cSemicolonKeyword_1_1; }
 	}
+	public class UnlabelledStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.unlabelledStatement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSimpleStatementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cStructStmtParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//unlabelledStatement:
+		//	simpleStatement | structStmt;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//simpleStatement | structStmt
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//simpleStatement
+		public RuleCall getSimpleStatementParserRuleCall_0() { return cSimpleStatementParserRuleCall_0; }
+		
+		//structStmt
+		public RuleCall getStructStmtParserRuleCall_1() { return cStructStmtParserRuleCall_1; }
+	}
 	public class SimpleStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.simpleStatement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -3000,7 +3027,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cAssignmentStmntAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Assignment cDesignatorAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cDesignatorDesignatorParserRuleCall_0_1_0 = (RuleCall)cDesignatorAssignment_0_1.eContents().get(0);
-		private final Keyword cColonEqualsSignKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cOperatorAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final Keyword cOperatorColonEqualsSignKeyword_0_2_0 = (Keyword)cOperatorAssignment_0_2.eContents().get(0);
 		private final Assignment cExpAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
 		private final RuleCall cExpExpressionParserRuleCall_0_3_0 = (RuleCall)cExpAssignment_0_3.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
@@ -3022,20 +3050,20 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLabelLabelIdParserRuleCall_3_2_0 = (RuleCall)cLabelAssignment_3_2.eContents().get(0);
 		
 		//simpleStatement:
-		//	{AssignmentStmnt} designator=designator ':=' exp=expression
-		//	| {CallStmnt} designator=designator ('(' args=exprList ')')?
-		//	| {InheritedStamnt} 'inherited'
-		//	| {GotoStmnt} 'goto' label=labelId;
+		//	{assignmentStmnt} designator=designator operator=':=' exp=expression
+		//	| {callStmnt} designator=designator ('(' args=exprList ')')?
+		//	| {inheritedStamnt} 'inherited'
+		//	| {gotoStmnt} 'goto' label=labelId;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{AssignmentStmnt} designator=designator ':=' exp=expression | {CallStmnt} designator=designator ('(' args=exprList ')')?
-		//| {InheritedStamnt} 'inherited' | {GotoStmnt} 'goto' label=labelId
+		//{assignmentStmnt} designator=designator operator=':=' exp=expression | {callStmnt} designator=designator ('('
+		//args=exprList ')')? | {inheritedStamnt} 'inherited' | {gotoStmnt} 'goto' label=labelId
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{AssignmentStmnt} designator=designator ':=' exp=expression
+		//{assignmentStmnt} designator=designator operator=':=' exp=expression
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//{AssignmentStmnt}
+		//{assignmentStmnt}
 		public Action getAssignmentStmntAction_0_0() { return cAssignmentStmntAction_0_0; }
 		
 		//designator=designator
@@ -3044,8 +3072,11 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		//designator
 		public RuleCall getDesignatorDesignatorParserRuleCall_0_1_0() { return cDesignatorDesignatorParserRuleCall_0_1_0; }
 		
+		//operator=':='
+		public Assignment getOperatorAssignment_0_2() { return cOperatorAssignment_0_2; }
+		
 		//':='
-		public Keyword getColonEqualsSignKeyword_0_2() { return cColonEqualsSignKeyword_0_2; }
+		public Keyword getOperatorColonEqualsSignKeyword_0_2_0() { return cOperatorColonEqualsSignKeyword_0_2_0; }
 		
 		//exp=expression
 		public Assignment getExpAssignment_0_3() { return cExpAssignment_0_3; }
@@ -3053,10 +3084,10 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		//expression
 		public RuleCall getExpExpressionParserRuleCall_0_3_0() { return cExpExpressionParserRuleCall_0_3_0; }
 		
-		//{CallStmnt} designator=designator ('(' args=exprList ')')?
+		//{callStmnt} designator=designator ('(' args=exprList ')')?
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//{CallStmnt}
+		//{callStmnt}
 		public Action getCallStmntAction_1_0() { return cCallStmntAction_1_0; }
 		
 		//designator=designator
@@ -3080,19 +3111,19 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_1_2_2() { return cRightParenthesisKeyword_1_2_2; }
 		
-		//{InheritedStamnt} 'inherited'
+		//{inheritedStamnt} 'inherited'
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//{InheritedStamnt}
+		//{inheritedStamnt}
 		public Action getInheritedStamntAction_2_0() { return cInheritedStamntAction_2_0; }
 		
 		//'inherited'
 		public Keyword getInheritedKeyword_2_1() { return cInheritedKeyword_2_1; }
 		
-		//{GotoStmnt} 'goto' label=labelId
+		//{gotoStmnt} 'goto' label=labelId
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//{GotoStmnt}
+		//{gotoStmnt}
 		public Action getGotoStmntAction_3_0() { return cGotoStmntAction_3_0; }
 		
 		//'goto'
@@ -3153,25 +3184,25 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.compoundStmt");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBeginKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cStatmntsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cStatmntsStmtListParserRuleCall_1_0 = (RuleCall)cStatmntsAssignment_1.eContents().get(0);
+		private final Assignment cStamtListAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStamtListStmtListParserRuleCall_1_0 = (RuleCall)cStamtListAssignment_1.eContents().get(0);
 		private final Keyword cEndKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//compoundStmt:
-		//	'begin' statmnts=stmtList 'end';
+		//	'begin' stamtList=stmtList 'end';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'begin' statmnts=stmtList 'end'
+		//'begin' stamtList=stmtList 'end'
 		public Group getGroup() { return cGroup; }
 		
 		//'begin'
 		public Keyword getBeginKeyword_0() { return cBeginKeyword_0; }
 		
-		//statmnts=stmtList
-		public Assignment getStatmntsAssignment_1() { return cStatmntsAssignment_1; }
+		//stamtList=stmtList
+		public Assignment getStamtListAssignment_1() { return cStamtListAssignment_1; }
 		
 		//stmtList
-		public RuleCall getStatmntsStmtListParserRuleCall_1_0() { return cStatmntsStmtListParserRuleCall_1_0; }
+		public RuleCall getStamtListStmtListParserRuleCall_1_0() { return cStamtListStmtListParserRuleCall_1_0; }
 		
 		//'end'
 		public Keyword getEndKeyword_2() { return cEndKeyword_2; }
@@ -3259,15 +3290,15 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.caseStmt");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCaseKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cConditionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cConditionExpressionParserRuleCall_1_0 = (RuleCall)cConditionAssignment_1.eContents().get(0);
+		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpressionExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
 		private final Keyword cOfKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cCaseAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCaseCaseSelectorParserRuleCall_3_0 = (RuleCall)cCaseAssignment_3.eContents().get(0);
+		private final Assignment cCasesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCasesCaseSelectorParserRuleCall_3_0 = (RuleCall)cCasesAssignment_3.eContents().get(0);
 		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Assignment cCaseAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final RuleCall cCaseCaseSelectorParserRuleCall_5_0_0 = (RuleCall)cCaseAssignment_5_0.eContents().get(0);
+		private final Assignment cCasesAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final RuleCall cCasesCaseSelectorParserRuleCall_5_0_0 = (RuleCall)cCasesAssignment_5_0.eContents().get(0);
 		private final Keyword cSemicolonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cElseKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
@@ -3277,42 +3308,42 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//caseStmt:
-		//	'case' condition=expression 'of' case+=caseSelector ';' (case+=caseSelector ';')* ('else' default=stmtList) ';'
+		//	'case' expression=expression 'of' cases+=caseSelector ';' (cases+=caseSelector ';')* ('else' default=stmtList) ';'
 		//	'end';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'case' condition=expression 'of' case+=caseSelector ';' (case+=caseSelector ';')* ('else' default=stmtList) ';' 'end'
+		//'case' expression=expression 'of' cases+=caseSelector ';' (cases+=caseSelector ';')* ('else' default=stmtList) ';' 'end'
 		public Group getGroup() { return cGroup; }
 		
 		//'case'
 		public Keyword getCaseKeyword_0() { return cCaseKeyword_0; }
 		
-		//condition=expression
-		public Assignment getConditionAssignment_1() { return cConditionAssignment_1; }
+		//expression=expression
+		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
 		
 		//expression
-		public RuleCall getConditionExpressionParserRuleCall_1_0() { return cConditionExpressionParserRuleCall_1_0; }
+		public RuleCall getExpressionExpressionParserRuleCall_1_0() { return cExpressionExpressionParserRuleCall_1_0; }
 		
 		//'of'
 		public Keyword getOfKeyword_2() { return cOfKeyword_2; }
 		
-		//case+=caseSelector
-		public Assignment getCaseAssignment_3() { return cCaseAssignment_3; }
+		//cases+=caseSelector
+		public Assignment getCasesAssignment_3() { return cCasesAssignment_3; }
 		
 		//caseSelector
-		public RuleCall getCaseCaseSelectorParserRuleCall_3_0() { return cCaseCaseSelectorParserRuleCall_3_0; }
+		public RuleCall getCasesCaseSelectorParserRuleCall_3_0() { return cCasesCaseSelectorParserRuleCall_3_0; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 		
-		//(case+=caseSelector ';')*
+		//(cases+=caseSelector ';')*
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//case+=caseSelector
-		public Assignment getCaseAssignment_5_0() { return cCaseAssignment_5_0; }
+		//cases+=caseSelector
+		public Assignment getCasesAssignment_5_0() { return cCasesAssignment_5_0; }
 		
 		//caseSelector
-		public RuleCall getCaseCaseSelectorParserRuleCall_5_0_0() { return cCaseCaseSelectorParserRuleCall_5_0_0; }
+		public RuleCall getCasesCaseSelectorParserRuleCall_5_0_0() { return cCasesCaseSelectorParserRuleCall_5_0_0; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_5_1() { return cSemicolonKeyword_5_1; }
@@ -3338,41 +3369,41 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	public class CaseSelectorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.caseSelector");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cLabelAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cLabelCaseLabelParserRuleCall_0_0 = (RuleCall)cLabelAssignment_0.eContents().get(0);
+		private final Assignment cLabelsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLabelsCaseLabelParserRuleCall_0_0 = (RuleCall)cLabelsAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cLabelAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cLabelCaseLabelParserRuleCall_1_1_0 = (RuleCall)cLabelAssignment_1_1.eContents().get(0);
+		private final Assignment cLabelsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cLabelsCaseLabelParserRuleCall_1_1_0 = (RuleCall)cLabelsAssignment_1_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cStmtAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cStmtStatementParserRuleCall_3_0 = (RuleCall)cStmtAssignment_3.eContents().get(0);
 		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//caseSelector:
-		//	label+=caseLabel (',' label+=caseLabel)* ':' stmt=statement ';'?;
+		//	labels+=caseLabel (',' labels+=caseLabel)* ':' stmt=statement ';'?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//label+=caseLabel (',' label+=caseLabel)* ':' stmt=statement ';'?
+		//labels+=caseLabel (',' labels+=caseLabel)* ':' stmt=statement ';'?
 		public Group getGroup() { return cGroup; }
 		
-		//label+=caseLabel
-		public Assignment getLabelAssignment_0() { return cLabelAssignment_0; }
+		//labels+=caseLabel
+		public Assignment getLabelsAssignment_0() { return cLabelsAssignment_0; }
 		
 		//caseLabel
-		public RuleCall getLabelCaseLabelParserRuleCall_0_0() { return cLabelCaseLabelParserRuleCall_0_0; }
+		public RuleCall getLabelsCaseLabelParserRuleCall_0_0() { return cLabelsCaseLabelParserRuleCall_0_0; }
 		
-		//(',' label+=caseLabel)*
+		//(',' labels+=caseLabel)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
-		//label+=caseLabel
-		public Assignment getLabelAssignment_1_1() { return cLabelAssignment_1_1; }
+		//labels+=caseLabel
+		public Assignment getLabelsAssignment_1_1() { return cLabelsAssignment_1_1; }
 		
 		//caseLabel
-		public RuleCall getLabelCaseLabelParserRuleCall_1_1_0() { return cLabelCaseLabelParserRuleCall_1_1_0; }
+		public RuleCall getLabelsCaseLabelParserRuleCall_1_1_0() { return cLabelsCaseLabelParserRuleCall_1_1_0; }
 		
 		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
@@ -3983,17 +4014,17 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFunctionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cIdAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cIdIdentParserRuleCall_2_0 = (RuleCall)cIdAssignment_2.eContents().get(0);
-		private final Assignment cParamsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cParamsFormalParametersParserRuleCall_3_0 = (RuleCall)cParamsAssignment_3.eContents().get(0);
+		private final Assignment cFormalParamsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFormalParamsFormalParametersParserRuleCall_3_0 = (RuleCall)cFormalParamsAssignment_3.eContents().get(0);
 		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cTypeTypeParserRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
 		
 		//functionHeading:
-		//	'class'? 'function' id=ident params=formalParameters? ':' type=type;
+		//	'class'? 'function' id=ident formalParams=formalParameters? ':' type=type;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'class'? 'function' id=ident params=formalParameters? ':' type=type
+		//'class'? 'function' id=ident formalParams=formalParameters? ':' type=type
 		public Group getGroup() { return cGroup; }
 		
 		//'class'?
@@ -4008,11 +4039,11 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		//ident
 		public RuleCall getIdIdentParserRuleCall_2_0() { return cIdIdentParserRuleCall_2_0; }
 		
-		//params=formalParameters?
-		public Assignment getParamsAssignment_3() { return cParamsAssignment_3; }
+		//formalParams=formalParameters?
+		public Assignment getFormalParamsAssignment_3() { return cFormalParamsAssignment_3; }
 		
 		//formalParameters
-		public RuleCall getParamsFormalParametersParserRuleCall_3_0() { return cParamsFormalParametersParserRuleCall_3_0; }
+		public RuleCall getFormalParamsFormalParametersParserRuleCall_3_0() { return cFormalParamsFormalParametersParserRuleCall_3_0; }
 		
 		//':'
 		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
@@ -4067,21 +4098,21 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParamsFormalParmParserRuleCall_1_0_0 = (RuleCall)cParamsAssignment_1_0.eContents().get(0);
 		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
 		private final Keyword cSemicolonKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
-		private final Assignment cParamasAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cParamasFormalParmParserRuleCall_1_1_1_0 = (RuleCall)cParamasAssignment_1_1_1.eContents().get(0);
+		private final Assignment cParamsAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cParamsFormalParmParserRuleCall_1_1_1_0 = (RuleCall)cParamsAssignment_1_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//formalParameters:
-		//	'(' (params+=formalParm (';' paramas+=formalParm)*) ')';
+		//	'(' (params+=formalParm (';' params+=formalParm)*) ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' (params+=formalParm (';' paramas+=formalParm)*) ')'
+		//'(' (params+=formalParm (';' params+=formalParm)*) ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
 		
-		//(params+=formalParm (';' paramas+=formalParm)*)
+		//(params+=formalParm (';' params+=formalParm)*)
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//params+=formalParm
@@ -4090,17 +4121,17 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		//formalParm
 		public RuleCall getParamsFormalParmParserRuleCall_1_0_0() { return cParamsFormalParmParserRuleCall_1_0_0; }
 		
-		//(';' paramas+=formalParm)*
+		//(';' params+=formalParm)*
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_1_1_0() { return cSemicolonKeyword_1_1_0; }
 		
-		//paramas+=formalParm
-		public Assignment getParamasAssignment_1_1_1() { return cParamasAssignment_1_1_1; }
+		//params+=formalParm
+		public Assignment getParamsAssignment_1_1_1() { return cParamsAssignment_1_1_1; }
 		
 		//formalParm
-		public RuleCall getParamasFormalParmParserRuleCall_1_1_1_0() { return cParamasFormalParmParserRuleCall_1_1_1_0; }
+		public RuleCall getParamsFormalParmParserRuleCall_1_1_1_0() { return cParamsFormalParmParserRuleCall_1_1_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
@@ -5688,113 +5719,97 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	public class ConstExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.constExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cSimpleExpAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cExpAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cExpExpressionParserRuleCall_0_1_0 = (RuleCall)cExpAssignment_0_1.eContents().get(0);
+		private final Assignment cExpsAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cExpsExpressionParserRuleCall_0_0 = (RuleCall)cExpsAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cMultipleConstExpAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cExpsAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cExpsConstExprParserRuleCall_1_2_0 = (RuleCall)cExpsAssignment_1_2.eContents().get(0);
-		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
-		private final Keyword cCommaKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
-		private final Assignment cExpsAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
-		private final RuleCall cExpsConstExprParserRuleCall_1_3_1_0 = (RuleCall)cExpsAssignment_1_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
+		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cExpsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cExpsConstExprParserRuleCall_1_1_0 = (RuleCall)cExpsAssignment_1_1.eContents().get(0);
+		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
+		private final Keyword cCommaKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Assignment cExpsAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
+		private final RuleCall cExpsConstExprParserRuleCall_1_2_1_0 = (RuleCall)cExpsAssignment_1_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cRecordConstExpAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cExpsAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cExpsRecordConstExprParserRuleCall_2_2_0 = (RuleCall)cExpsAssignment_2_2.eContents().get(0);
-		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
-		private final Keyword cCommaKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
-		private final Assignment cExpsAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
-		private final RuleCall cExpsRecordConstExprParserRuleCall_2_3_1_0 = (RuleCall)cExpsAssignment_2_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
+		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cExpsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cExpsRecordConstExprParserRuleCall_2_1_0 = (RuleCall)cExpsAssignment_2_1.eContents().get(0);
+		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
+		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+		private final Assignment cExpsAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
+		private final RuleCall cExpsRecordConstExprParserRuleCall_2_2_1_0 = (RuleCall)cExpsAssignment_2_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		
 		//constExpr // modified
 		//:
-		//	{SimpleExp} exp=expression
-		//	| {MultipleConstExp} '(' exps+=constExpr (',' exps+=constExpr)* ')'
-		//	| {RecordConstExp} '(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')';
+		//	exps+=expression
+		//	| '(' exps+=constExpr (',' exps+=constExpr)* ')'
+		//	| '(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{SimpleExp} exp=expression | {MultipleConstExp} '(' exps+=constExpr (',' exps+=constExpr)* ')' | {RecordConstExp} '('
-		//exps+=recordConstExpr (',' exps+=recordConstExpr)* ')'
+		//exps+=expression | '(' exps+=constExpr (',' exps+=constExpr)* ')' | '(' exps+=recordConstExpr (','
+		//exps+=recordConstExpr)* ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{SimpleExp} exp=expression
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//{SimpleExp}
-		public Action getSimpleExpAction_0_0() { return cSimpleExpAction_0_0; }
-		
-		//exp=expression
-		public Assignment getExpAssignment_0_1() { return cExpAssignment_0_1; }
+		//exps+=expression
+		public Assignment getExpsAssignment_0() { return cExpsAssignment_0; }
 		
 		//expression
-		public RuleCall getExpExpressionParserRuleCall_0_1_0() { return cExpExpressionParserRuleCall_0_1_0; }
+		public RuleCall getExpsExpressionParserRuleCall_0_0() { return cExpsExpressionParserRuleCall_0_0; }
 		
-		//{MultipleConstExp} '(' exps+=constExpr (',' exps+=constExpr)* ')'
+		//'(' exps+=constExpr (',' exps+=constExpr)* ')'
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//{MultipleConstExp}
-		public Action getMultipleConstExpAction_1_0() { return cMultipleConstExpAction_1_0; }
-		
 		//'('
-		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
+		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
 		
 		//exps+=constExpr
-		public Assignment getExpsAssignment_1_2() { return cExpsAssignment_1_2; }
+		public Assignment getExpsAssignment_1_1() { return cExpsAssignment_1_1; }
 		
 		//constExpr
-		public RuleCall getExpsConstExprParserRuleCall_1_2_0() { return cExpsConstExprParserRuleCall_1_2_0; }
+		public RuleCall getExpsConstExprParserRuleCall_1_1_0() { return cExpsConstExprParserRuleCall_1_1_0; }
 		
 		//(',' exps+=constExpr)*
-		public Group getGroup_1_3() { return cGroup_1_3; }
+		public Group getGroup_1_2() { return cGroup_1_2; }
 		
 		//','
-		public Keyword getCommaKeyword_1_3_0() { return cCommaKeyword_1_3_0; }
+		public Keyword getCommaKeyword_1_2_0() { return cCommaKeyword_1_2_0; }
 		
 		//exps+=constExpr
-		public Assignment getExpsAssignment_1_3_1() { return cExpsAssignment_1_3_1; }
+		public Assignment getExpsAssignment_1_2_1() { return cExpsAssignment_1_2_1; }
 		
 		//constExpr
-		public RuleCall getExpsConstExprParserRuleCall_1_3_1_0() { return cExpsConstExprParserRuleCall_1_3_1_0; }
+		public RuleCall getExpsConstExprParserRuleCall_1_2_1_0() { return cExpsConstExprParserRuleCall_1_2_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_1_4() { return cRightParenthesisKeyword_1_4; }
+		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
 		
-		//{RecordConstExp} '(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')'
+		//'(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')'
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//{RecordConstExp}
-		public Action getRecordConstExpAction_2_0() { return cRecordConstExpAction_2_0; }
-		
 		//'('
-		public Keyword getLeftParenthesisKeyword_2_1() { return cLeftParenthesisKeyword_2_1; }
+		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 		
 		//exps+=recordConstExpr
-		public Assignment getExpsAssignment_2_2() { return cExpsAssignment_2_2; }
+		public Assignment getExpsAssignment_2_1() { return cExpsAssignment_2_1; }
 		
 		//recordConstExpr
-		public RuleCall getExpsRecordConstExprParserRuleCall_2_2_0() { return cExpsRecordConstExprParserRuleCall_2_2_0; }
+		public RuleCall getExpsRecordConstExprParserRuleCall_2_1_0() { return cExpsRecordConstExprParserRuleCall_2_1_0; }
 		
 		//(',' exps+=recordConstExpr)*
-		public Group getGroup_2_3() { return cGroup_2_3; }
+		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//','
-		public Keyword getCommaKeyword_2_3_0() { return cCommaKeyword_2_3_0; }
+		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
 		
 		//exps+=recordConstExpr
-		public Assignment getExpsAssignment_2_3_1() { return cExpsAssignment_2_3_1; }
+		public Assignment getExpsAssignment_2_2_1() { return cExpsAssignment_2_2_1; }
 		
 		//recordConstExpr
-		public RuleCall getExpsRecordConstExprParserRuleCall_2_3_1_0() { return cExpsRecordConstExprParserRuleCall_2_3_1_0; }
+		public RuleCall getExpsRecordConstExprParserRuleCall_2_2_1_0() { return cExpsRecordConstExprParserRuleCall_2_2_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_2_4() { return cRightParenthesisKeyword_2_4; }
+		public Keyword getRightParenthesisKeyword_2_3() { return cRightParenthesisKeyword_2_3; }
 	}
 	public class RecordConstExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.recordConstExpr");
@@ -5921,6 +5936,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private final MainRuleElements pMainRule;
+	private final FileElements pFile;
 	private final ProgramElements pProgram;
 	private final UnitElements pUnit;
 	private final PackageDeclElements pPackageDecl;
@@ -5985,6 +6001,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	private final ExprListElements pExprList;
 	private final StatementElements pStatement;
 	private final StmtListElements pStmtList;
+	private final UnlabelledStatementElements pUnlabelledStatement;
 	private final SimpleStatementElements pSimpleStatement;
 	private final StructStmtElements pStructStmt;
 	private final CompoundStmtElements pCompoundStmt;
@@ -6066,6 +6083,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	public DelphiGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.pMainRule = new MainRuleElements();
+		this.pFile = new FileElements();
 		this.pProgram = new ProgramElements();
 		this.pUnit = new UnitElements();
 		this.pPackageDecl = new PackageDeclElements();
@@ -6130,6 +6148,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		this.pExprList = new ExprListElements();
 		this.pStatement = new StatementElements();
 		this.pStmtList = new StmtListElements();
+		this.pUnlabelledStatement = new UnlabelledStatementElements();
 		this.pSimpleStatement = new SimpleStatementElements();
 		this.pStructStmt = new StructStmtElements();
 		this.pCompoundStmt = new CompoundStmtElements();
@@ -6230,16 +6249,27 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//mainRule:
-	//	program
-	//	| packageDecl
-	//	| library
-	//	| unit;
+	//	file=file // ASBH modified
+	//;
 	public MainRuleElements getMainRuleAccess() {
 		return pMainRule;
 	}
 	
 	public ParserRule getMainRuleRule() {
 		return getMainRuleAccess().getRule();
+	}
+	
+	//file:
+	//	program
+	//	| packageDecl
+	//	| library
+	//	| unit;
+	public FileElements getFileAccess() {
+		return pFile;
+	}
+	
+	public ParserRule getFileRule() {
+		return getFileAccess().getRule();
 	}
 	
 	//program:
@@ -6487,7 +6517,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//recordFieldConstant:
-	//	id=ident ':' tpedConstant=typedConstant;
+	//	id=ident ':' typedConstant=typedConstant;
 	public RecordFieldConstantElements getRecordFieldConstantAccess() {
 		return pRecordFieldConstant;
 	}
@@ -6803,7 +6833,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//term:
-	//	factor ({mulExp.left=current} mulOp=mulOp right=factor)*;
+	//	factor ({multExp.left=current} multOp=mulOp right=factor)*;
 	public TermElements getTermAccess() {
 		return pTerm;
 	}
@@ -6943,7 +6973,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//statement:
-	//	(labelId=labelId ':')? statement=(simpleStatement | structStmt);
+	//	(labelId=labelId ':')? statement=unlabelledStatement;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -6962,11 +6992,21 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		return getStmtListAccess().getRule();
 	}
 	
+	//unlabelledStatement:
+	//	simpleStatement | structStmt;
+	public UnlabelledStatementElements getUnlabelledStatementAccess() {
+		return pUnlabelledStatement;
+	}
+	
+	public ParserRule getUnlabelledStatementRule() {
+		return getUnlabelledStatementAccess().getRule();
+	}
+	
 	//simpleStatement:
-	//	{AssignmentStmnt} designator=designator ':=' exp=expression
-	//	| {CallStmnt} designator=designator ('(' args=exprList ')')?
-	//	| {InheritedStamnt} 'inherited'
-	//	| {GotoStmnt} 'goto' label=labelId;
+	//	{assignmentStmnt} designator=designator operator=':=' exp=expression
+	//	| {callStmnt} designator=designator ('(' args=exprList ')')?
+	//	| {inheritedStamnt} 'inherited'
+	//	| {gotoStmnt} 'goto' label=labelId;
 	public SimpleStatementElements getSimpleStatementAccess() {
 		return pSimpleStatement;
 	}
@@ -6992,7 +7032,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//compoundStmt:
-	//	'begin' statmnts=stmtList 'end';
+	//	'begin' stamtList=stmtList 'end';
 	public CompoundStmtElements getCompoundStmtAccess() {
 		return pCompoundStmt;
 	}
@@ -7023,7 +7063,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//caseStmt:
-	//	'case' condition=expression 'of' case+=caseSelector ';' (case+=caseSelector ';')* ('else' default=stmtList) ';'
+	//	'case' expression=expression 'of' cases+=caseSelector ';' (cases+=caseSelector ';')* ('else' default=stmtList) ';'
 	//	'end';
 	public CaseStmtElements getCaseStmtAccess() {
 		return pCaseStmt;
@@ -7034,7 +7074,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//caseSelector:
-	//	label+=caseLabel (',' label+=caseLabel)* ':' stmt=statement ';'?;
+	//	labels+=caseLabel (',' labels+=caseLabel)* ':' stmt=statement ';'?;
 	public CaseSelectorElements getCaseSelectorAccess() {
 		return pCaseSelector;
 	}
@@ -7184,7 +7224,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//functionHeading:
-	//	'class'? 'function' id=ident params=formalParameters? ':' type=type;
+	//	'class'? 'function' id=ident formalParams=formalParameters? ':' type=type;
 	public FunctionHeadingElements getFunctionHeadingAccess() {
 		return pFunctionHeading;
 	}
@@ -7204,7 +7244,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//formalParameters:
-	//	'(' (params+=formalParm (';' paramas+=formalParm)*) ')';
+	//	'(' (params+=formalParm (';' params+=formalParm)*) ')';
 	public FormalParametersElements getFormalParametersAccess() {
 		return pFormalParameters;
 	}
@@ -7583,9 +7623,9 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//constExpr // modified
 	//:
-	//	{SimpleExp} exp=expression
-	//	| {MultipleConstExp} '(' exps+=constExpr (',' exps+=constExpr)* ')'
-	//	| {RecordConstExp} '(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')';
+	//	exps+=expression
+	//	| '(' exps+=constExpr (',' exps+=constExpr)* ')'
+	//	| '(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')';
 	public ConstExprElements getConstExprAccess() {
 		return pConstExpr;
 	}

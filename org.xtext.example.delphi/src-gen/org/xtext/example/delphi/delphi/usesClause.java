@@ -21,32 +21,32 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface usesClause extends EObject
+public interface usesClause extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Id List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Id List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Id List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id List</em>' containment reference.
-   * @see #setIdList(identList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getusesClause_IdList()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Id List</em>' containment reference.
+	 * @see #setIdList(identList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getusesClause_IdList()
+	 * @model containment="true"
+	 * @generated
+	 */
   identList getIdList();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.usesClause#getIdList <em>Id List</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.usesClause#getIdList <em>Id List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id List</em>' containment reference.
-   * @see #getIdList()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Id List</em>' containment reference.
+	 * @see #getIdList()
+	 * @generated
+	 */
   void setIdList(identList value);
 
 } // usesClause

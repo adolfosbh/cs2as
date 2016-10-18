@@ -17,27 +17,27 @@ import org.xtext.example.delphi.delphi.type;
  *
  * @generated
  */
-public class typeImpl extends MinimalEObjectImpl.Container implements type
+public class typeImpl extends CSTraceImpl implements type
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected typeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.TYPE;
-  }
+		return DelphiPackage.Literals.TYPE;
+	}
 
 } //typeImpl

@@ -23,7 +23,7 @@ import org.xtext.example.delphi.delphi.stmtList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.delphi.delphi.impl.compoundStmtImpl#getStatmnts <em>Statmnts</em>}</li>
+ *   <li>{@link org.xtext.example.delphi.delphi.impl.compoundStmtImpl#getStamtList <em>Stamt List</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,164 +31,157 @@ import org.xtext.example.delphi.delphi.stmtList;
 public class compoundStmtImpl extends structStmtImpl implements compoundStmt
 {
   /**
-   * The cached value of the '{@link #getStatmnts() <em>Statmnts</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getStamtList() <em>Stamt List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatmnts()
-   * @generated
-   * @ordered
-   */
-  protected stmtList statmnts;
+	 * @see #getStamtList()
+	 * @generated
+	 * @ordered
+	 */
+  protected stmtList stamtList;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected compoundStmtImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.COMPOUND_STMT;
-  }
+		return DelphiPackage.Literals.COMPOUND_STMT;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public stmtList getStatmnts()
+	 * @generated
+	 */
+  public stmtList getStamtList()
   {
-    return statmnts;
-  }
+		return stamtList;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStatmnts(stmtList newStatmnts, NotificationChain msgs)
+	 * @generated
+	 */
+  public NotificationChain basicSetStamtList(stmtList newStamtList, NotificationChain msgs)
   {
-    stmtList oldStatmnts = statmnts;
-    statmnts = newStatmnts;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.COMPOUND_STMT__STATMNTS, oldStatmnts, newStatmnts);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		stmtList oldStamtList = stamtList;
+		stamtList = newStamtList;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.COMPOUND_STMT__STAMT_LIST, oldStamtList, newStamtList);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStatmnts(stmtList newStatmnts)
+	 * @generated
+	 */
+  public void setStamtList(stmtList newStamtList)
   {
-    if (newStatmnts != statmnts)
-    {
-      NotificationChain msgs = null;
-      if (statmnts != null)
-        msgs = ((InternalEObject)statmnts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.COMPOUND_STMT__STATMNTS, null, msgs);
-      if (newStatmnts != null)
-        msgs = ((InternalEObject)newStatmnts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.COMPOUND_STMT__STATMNTS, null, msgs);
-      msgs = basicSetStatmnts(newStatmnts, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.COMPOUND_STMT__STATMNTS, newStatmnts, newStatmnts));
-  }
+		if (newStamtList != stamtList) {
+			NotificationChain msgs = null;
+			if (stamtList != null)
+				msgs = ((InternalEObject)stamtList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.COMPOUND_STMT__STAMT_LIST, null, msgs);
+			if (newStamtList != null)
+				msgs = ((InternalEObject)newStamtList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.COMPOUND_STMT__STAMT_LIST, null, msgs);
+			msgs = basicSetStamtList(newStamtList, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.COMPOUND_STMT__STAMT_LIST, newStamtList, newStamtList));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.COMPOUND_STMT__STATMNTS:
-        return basicSetStatmnts(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.COMPOUND_STMT__STAMT_LIST:
+				return basicSetStamtList(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.COMPOUND_STMT__STATMNTS:
-        return getStatmnts();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.COMPOUND_STMT__STAMT_LIST:
+				return getStamtList();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.COMPOUND_STMT__STATMNTS:
-        setStatmnts((stmtList)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.COMPOUND_STMT__STAMT_LIST:
+				setStamtList((stmtList)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.COMPOUND_STMT__STATMNTS:
-        setStatmnts((stmtList)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.COMPOUND_STMT__STAMT_LIST:
+				setStamtList((stmtList)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.COMPOUND_STMT__STATMNTS:
-        return statmnts != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.COMPOUND_STMT__STAMT_LIST:
+				return stamtList != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //compoundStmtImpl

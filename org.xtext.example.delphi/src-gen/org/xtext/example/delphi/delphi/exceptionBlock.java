@@ -26,80 +26,80 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface exceptionBlock extends EObject
+public interface exceptionBlock extends CSTrace
 {
   /**
-   * Returns the value of the '<em><b>Exception Id</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.ident}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Exception Id</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.ident}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Exception Id</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Exception Id</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getexceptionBlock_ExceptionId()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Exception Id</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getexceptionBlock_ExceptionId()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<ident> getExceptionId();
 
   /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.type}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.type}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getexceptionBlock_Type()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Type</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getexceptionBlock_Type()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<type> getType();
 
   /**
-   * Returns the value of the '<em><b>Do Stmt</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.delphi.delphi.statement}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Do Stmt</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.delphi.statement}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Do Stmt</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Do Stmt</em>' containment reference list.
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getexceptionBlock_DoStmt()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Do Stmt</em>' containment reference list.
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getexceptionBlock_DoStmt()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<statement> getDoStmt();
 
   /**
-   * Returns the value of the '<em><b>Else Stmts</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Else Stmts</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Else Stmts</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Else Stmts</em>' containment reference.
-   * @see #setElseStmts(stmtList)
-   * @see org.xtext.example.delphi.delphi.DelphiPackage#getexceptionBlock_ElseStmts()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Else Stmts</em>' containment reference.
+	 * @see #setElseStmts(stmtList)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getexceptionBlock_ElseStmts()
+	 * @model containment="true"
+	 * @generated
+	 */
   stmtList getElseStmts();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.delphi.delphi.exceptionBlock#getElseStmts <em>Else Stmts</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.exceptionBlock#getElseStmts <em>Else Stmts</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Else Stmts</em>' containment reference.
-   * @see #getElseStmts()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Else Stmts</em>' containment reference.
+	 * @see #getElseStmts()
+	 * @generated
+	 */
   void setElseStmts(stmtList value);
 
 } // exceptionBlock

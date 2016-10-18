@@ -41,239 +41,230 @@ import org.xtext.example.delphi.delphi.type;
 public class arrayTypeImpl extends strucTypeImpl implements arrayType
 {
   /**
-   * The cached value of the '{@link #getOrdinalType() <em>Ordinal Type</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOrdinalType() <em>Ordinal Type</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOrdinalType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOrdinalType()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<ordinalType> ordinalType;
 
   /**
-   * The cached value of the '{@link #getOrdinalTyp() <em>Ordinal Typ</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOrdinalTyp() <em>Ordinal Typ</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOrdinalTyp()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOrdinalTyp()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<ordinalType> ordinalTyp;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
   protected type type;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected arrayTypeImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.ARRAY_TYPE;
-  }
+		return DelphiPackage.Literals.ARRAY_TYPE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<ordinalType> getOrdinalType()
   {
-    if (ordinalType == null)
-    {
-      ordinalType = new EObjectContainmentEList<ordinalType>(ordinalType.class, this, DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE);
-    }
-    return ordinalType;
-  }
+		if (ordinalType == null) {
+			ordinalType = new EObjectContainmentEList<ordinalType>(ordinalType.class, this, DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE);
+		}
+		return ordinalType;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<ordinalType> getOrdinalTyp()
   {
-    if (ordinalTyp == null)
-    {
-      ordinalTyp = new EObjectContainmentEList<ordinalType>(ordinalType.class, this, DelphiPackage.ARRAY_TYPE__ORDINAL_TYP);
-    }
-    return ordinalTyp;
-  }
+		if (ordinalTyp == null) {
+			ordinalTyp = new EObjectContainmentEList<ordinalType>(ordinalType.class, this, DelphiPackage.ARRAY_TYPE__ORDINAL_TYP);
+		}
+		return ordinalTyp;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public type getType()
   {
-    return type;
-  }
+		return type;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetType(type newType, NotificationChain msgs)
   {
-    type oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.ARRAY_TYPE__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		type oldType = type;
+		type = newType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.ARRAY_TYPE__TYPE, oldType, newType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setType(type newType)
   {
-    if (newType != type)
-    {
-      NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.ARRAY_TYPE__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.ARRAY_TYPE__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.ARRAY_TYPE__TYPE, newType, newType));
-  }
+		if (newType != type) {
+			NotificationChain msgs = null;
+			if (type != null)
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.ARRAY_TYPE__TYPE, null, msgs);
+			if (newType != null)
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.ARRAY_TYPE__TYPE, null, msgs);
+			msgs = basicSetType(newType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.ARRAY_TYPE__TYPE, newType, newType));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE:
-        return ((InternalEList<?>)getOrdinalType()).basicRemove(otherEnd, msgs);
-      case DelphiPackage.ARRAY_TYPE__ORDINAL_TYP:
-        return ((InternalEList<?>)getOrdinalTyp()).basicRemove(otherEnd, msgs);
-      case DelphiPackage.ARRAY_TYPE__TYPE:
-        return basicSetType(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE:
+				return ((InternalEList<?>)getOrdinalType()).basicRemove(otherEnd, msgs);
+			case DelphiPackage.ARRAY_TYPE__ORDINAL_TYP:
+				return ((InternalEList<?>)getOrdinalTyp()).basicRemove(otherEnd, msgs);
+			case DelphiPackage.ARRAY_TYPE__TYPE:
+				return basicSetType(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE:
-        return getOrdinalType();
-      case DelphiPackage.ARRAY_TYPE__ORDINAL_TYP:
-        return getOrdinalTyp();
-      case DelphiPackage.ARRAY_TYPE__TYPE:
-        return getType();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE:
+				return getOrdinalType();
+			case DelphiPackage.ARRAY_TYPE__ORDINAL_TYP:
+				return getOrdinalTyp();
+			case DelphiPackage.ARRAY_TYPE__TYPE:
+				return getType();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE:
-        getOrdinalType().clear();
-        getOrdinalType().addAll((Collection<? extends ordinalType>)newValue);
-        return;
-      case DelphiPackage.ARRAY_TYPE__ORDINAL_TYP:
-        getOrdinalTyp().clear();
-        getOrdinalTyp().addAll((Collection<? extends ordinalType>)newValue);
-        return;
-      case DelphiPackage.ARRAY_TYPE__TYPE:
-        setType((type)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE:
+				getOrdinalType().clear();
+				getOrdinalType().addAll((Collection<? extends ordinalType>)newValue);
+				return;
+			case DelphiPackage.ARRAY_TYPE__ORDINAL_TYP:
+				getOrdinalTyp().clear();
+				getOrdinalTyp().addAll((Collection<? extends ordinalType>)newValue);
+				return;
+			case DelphiPackage.ARRAY_TYPE__TYPE:
+				setType((type)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE:
-        getOrdinalType().clear();
-        return;
-      case DelphiPackage.ARRAY_TYPE__ORDINAL_TYP:
-        getOrdinalTyp().clear();
-        return;
-      case DelphiPackage.ARRAY_TYPE__TYPE:
-        setType((type)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE:
+				getOrdinalType().clear();
+				return;
+			case DelphiPackage.ARRAY_TYPE__ORDINAL_TYP:
+				getOrdinalTyp().clear();
+				return;
+			case DelphiPackage.ARRAY_TYPE__TYPE:
+				setType((type)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE:
-        return ordinalType != null && !ordinalType.isEmpty();
-      case DelphiPackage.ARRAY_TYPE__ORDINAL_TYP:
-        return ordinalTyp != null && !ordinalTyp.isEmpty();
-      case DelphiPackage.ARRAY_TYPE__TYPE:
-        return type != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DelphiPackage.ARRAY_TYPE__ORDINAL_TYPE:
+				return ordinalType != null && !ordinalType.isEmpty();
+			case DelphiPackage.ARRAY_TYPE__ORDINAL_TYP:
+				return ordinalTyp != null && !ordinalTyp.isEmpty();
+			case DelphiPackage.ARRAY_TYPE__TYPE:
+				return type != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //arrayTypeImpl

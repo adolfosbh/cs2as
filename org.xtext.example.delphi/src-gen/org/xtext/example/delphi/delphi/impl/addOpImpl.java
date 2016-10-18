@@ -17,27 +17,27 @@ import org.xtext.example.delphi.delphi.addOp;
  *
  * @generated
  */
-public class addOpImpl extends MinimalEObjectImpl.Container implements addOp
+public class addOpImpl extends CSTraceImpl implements addOp
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected addOpImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DelphiPackage.Literals.ADD_OP;
-  }
+		return DelphiPackage.Literals.ADD_OP;
+	}
 
 } //addOpImpl
