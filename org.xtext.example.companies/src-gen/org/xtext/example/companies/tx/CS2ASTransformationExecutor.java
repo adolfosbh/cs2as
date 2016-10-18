@@ -22,6 +22,7 @@ import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.utilities.EnvironmentFactory;
 import org.xtext.example.companies.tx.AbstractTransformationExecutor;
 
+
 public class CS2ASTransformationExecutor extends AbstractTransformationExecutor {
 
 	public CS2ASTransformationExecutor(@NonNull EnvironmentFactory environmentFactory,

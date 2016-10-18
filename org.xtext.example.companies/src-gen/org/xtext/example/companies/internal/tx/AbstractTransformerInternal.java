@@ -19,6 +19,7 @@
 package org.xtext.example.companies.internal.tx;
 
 
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;

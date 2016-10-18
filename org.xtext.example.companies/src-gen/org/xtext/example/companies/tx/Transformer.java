@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.evaluation.ModelManager;
 
+
 /**
  * A Transformer provides the core support to execute an auto-generated transformation
  * between models.

@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 
+
 /**
  * An ObjectManager supervises the state of relevant properties in objects used by a mapping invocation.
  *

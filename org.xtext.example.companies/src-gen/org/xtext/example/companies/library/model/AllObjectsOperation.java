@@ -20,6 +20,7 @@ package org.xtext.example.companies.library.model;
 
 import java.util.Collection;
 
+
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.pivot.evaluation.Executor;

@@ -20,6 +20,7 @@ package org.xtext.example.companies.tx;
 
 import org.eclipse.jdt.annotation.NonNull;
 
+
 /**
  * AbstractInvocationManager provides the mandatory shared functionality for a mapping invocation manager.
  */

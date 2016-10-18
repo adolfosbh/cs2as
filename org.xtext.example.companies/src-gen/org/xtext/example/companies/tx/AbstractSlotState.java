@@ -25,6 +25,7 @@ import java.util.Set;
 
 import org.eclipse.jdt.annotation.NonNull;
 
+
 /**
  * The abstract implementation of a SlotState provides the mandatory shared functionality for maintaining
  * the state of an object slot.

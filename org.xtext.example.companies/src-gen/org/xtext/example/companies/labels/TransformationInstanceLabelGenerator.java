@@ -22,6 +22,7 @@ import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.labels.AbstractLabelGenerator;
 import org.xtext.example.companies.tx.TransformationInstance;
 
+
 /**
  * at-since 1.1
  */

@@ -18,6 +18,7 @@
  *******************************************************************************/
 package org.xtext.example.companies.tx;
 
+
 import org.eclipse.jdt.annotation.Nullable;
 
 /**

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.pivot.Class;
+import org.eclipse.ocl.pivot.Property;
 import org.eclipse.ocl.pivot.TypedElement;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.ClassId;
@@ -24,10 +25,15 @@ import org.eclipse.ocl.pivot.ids.DataTypeId;
 import org.eclipse.ocl.pivot.ids.IdManager;
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.NsURIPackageId;
+import org.eclipse.ocl.pivot.ids.PropertyId;
 import org.eclipse.ocl.pivot.ids.RootPackageId;
 import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.internal.library.executor.AbstractDispatchOperation;
 import org.eclipse.ocl.pivot.internal.library.executor.AbstractEvaluationOperation;
 import org.eclipse.ocl.pivot.library.classifier.ClassifierOclContainerOperation;
+import org.eclipse.ocl.pivot.library.collection.CollectionAsSetOperation;
+import org.eclipse.ocl.pivot.library.collection.CollectionIncludingAllOperation;
+import org.eclipse.ocl.pivot.library.collection.CollectionIncludingOperation;
 import org.eclipse.ocl.pivot.library.collection.CollectionIsEmptyOperation;
 import org.eclipse.ocl.pivot.library.collection.CollectionSelectByKindOperation;
 import org.eclipse.ocl.pivot.library.collection.OrderedCollectionFirstOperation;
@@ -36,6 +42,7 @@ import org.eclipse.ocl.pivot.library.logical.BooleanNotOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.BagValue;
 import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SequenceValue;
@@ -93,11 +100,15 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull ClassId CLSSid_department_manager = PACKid_http_c_s_s_www_xtext_org_s_example_s_mydsl_s_Companies.getClassId("department_manager", 0);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull ClassId CLSSid_employee = PACKid_http_c_s_s_www_xtext_org_s_example_s_mydsl_s_Companies.getClassId("employee", 0);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull DataTypeId DATAid_EDouble = PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EDouble", 0);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId BAG_CLSSid_Employee = TypeId.BAG.getSpecializedId(CLSSid_Employee);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId ORD_CLSSid_Employee = TypeId.ORDERED_SET.getSpecializedId(CLSSid_Employee);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId ORD_CLSSid_department = TypeId.ORDERED_SET.getSpecializedId(CLSSid_department);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId ORD_CLSSid_employee = TypeId.ORDERED_SET.getSpecializedId(CLSSid_employee);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull PropertyId PROPid_parentEnv = CLSSid_LookupEnvironment.getPropertyId("parentEnv");
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId SEQ_CLSSid_Department = TypeId.SEQUENCE.getSpecializedId(CLSSid_Department);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId SEQ_CLSSid_Employee = TypeId.SEQUENCE.getSpecializedId(CLSSid_Employee);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId SET_CLSSid_Department = TypeId.SET.getSpecializedId(CLSSid_Department);
+    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId SET_CLSSid_Employee = TypeId.SET.getSpecializedId(CLSSid_Employee);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId SET_CLSSid_company = TypeId.SET.getSpecializedId(CLSSid_company);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId SET_CLSSid_department = TypeId.SET.getSpecializedId(CLSSid_department);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId SET_CLSSid_employee = TypeId.SET.getSpecializedId(CLSSid_employee);
@@ -124,6 +135,7 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     };
     
     private final CompanyLookupSolver lookupSolver = new CompanyLookupSolver(executor);
+    
     public companies_qvtp_qvtcas(final @NonNull Executor executor) {
         super(executor, new @NonNull String[] {"leftCS", "rightAS"}, null, classIndex2classId, classIndex2allClassIndexes);
     }
@@ -234,9 +246,8 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                     throw new InvalidValueException("Null source for \'\'http://xtext.eclipse.org/example/companies\'::LookupEnvironment::parentEnv\'");
                 }
                 final /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.Nullable LookupEnvironment parentEnv_0 = env.getParentEnv();
-                final /*@Thrown*/ java.util.@org.eclipse.jdt.annotation.NonNull List<Employee> _lookupEmployee = INST_Visitable__lookupEmployee.evaluate(self_0, parentEnv_0, eName);
-                final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull OrderedSetValue BOXED__lookupEmployee = idResolver.createOrderedSetOfAll(ORD_CLSSid_Employee, _lookupEmployee);
-                symbol_0 = BOXED__lookupEmployee;
+                final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull OrderedSetValue _lookupEmployee = INST_Visitable__lookupEmployee.evaluate(self_0, parentEnv_0, eName);
+                symbol_0 = _lookupEmployee;
             }
             else {
                 if (CAUGHT_foundEmployee instanceof InvalidValueException) {
@@ -248,12 +259,27 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
         }
         
         @SuppressWarnings("unchecked")
-        public java.util.@org.eclipse.jdt.annotation.NonNull List<Employee> evaluate(final /*@NonInvalid*/ org.xtext.example.company.util.@org.eclipse.jdt.annotation.NonNull Visitable self_0, final /*@NonInvalid*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.Nullable LookupEnvironment env, final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable String eName) {
-            return (java.util.@org.eclipse.jdt.annotation.NonNull List<Employee>)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_0, env, eName});
+        public org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ org.xtext.example.company.util.@org.eclipse.jdt.annotation.NonNull Visitable self_0, final /*@NonInvalid*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.Nullable LookupEnvironment env, final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable String eName) {
+            return (org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_0, env, eName});
         }
     }
     
     protected final @NonNull CACHE_Visitable__lookupEmployee INST_Visitable__lookupEmployee = new CACHE_Visitable__lookupEmployee();
+    
+    protected class VCACHE_OclElement__unqualified_env_Employee extends AbstractDispatchOperation
+    {
+        private VCACHE_OclElement__unqualified_env_Employee() {
+            install(Object.class, new CACHE_OclElement__unqualified_env_Employee());
+            install(Company.class, new CACHE_Company__unqualified_env_Employee());
+        }
+        
+        @SuppressWarnings("null")
+        public org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object self_2, final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable Object child) {
+            return (org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_2, child});
+        }
+    }
+    
+    protected final @NonNull VCACHE_OclElement__unqualified_env_Employee INST_OclElement__unqualified_env_Employee = new VCACHE_OclElement__unqualified_env_Employee();
     
     /**
      * ocl::OclElement::parentEnv_Employee() : lookup::LookupEnvironment[1]
@@ -270,34 +296,161 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     {
         @Override
         public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-            @SuppressWarnings("null") final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object self_2 = (/*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object)sourceAndArgumentValues[0];
+            @SuppressWarnings("null") final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object self_3 = (/*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object)sourceAndArgumentValues[0];
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
-            final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable Object parent = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, self_2);
+            final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable Object parent = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, self_3);
             final /*@NonInvalid*/ boolean eq = parent == null;
             /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment symbol_1;
             if (eq) {
                 final /*@NonInvalid*/ org.eclipse.ocl.pivot.@org.eclipse.jdt.annotation.NonNull Class TYP_lookup_c_c_LookupEnvironment_0 = idResolver.getClass(CLSSid_LookupEnvironment, null);
                 final /*@NonInvalid*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment symbol_0 = (LookupEnvironment)TYP_lookup_c_c_LookupEnvironment_0.createInstance();
-                models[-1/*null*/].add(symbol_0);
                 symbol_1 = symbol_0;
             }
             else {
                 if (parent == null) {
-                    throw new InvalidValueException("Null where non-null value required");
+                    throw new InvalidValueException("Null source for \'OclElement::_unqualified_env_Employee(OclElement[?]) : lookup::LookupEnvironment[1]\'");
                 }
-                final /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment parentEnv_Employee = INST_OclElement_parentEnv_Employee.evaluate(parent);
-                symbol_1 = parentEnv_Employee;
+                final /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment _unqualified_env_Employee = INST_OclElement__unqualified_env_Employee.evaluate(parent, self_3);
+                symbol_1 = _unqualified_env_Employee;
             }
             return symbol_1;
         }
         
         @SuppressWarnings("null")
-        public org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object self_2) {
-            return (org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_2});
+        public org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object self_3) {
+            return (org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_3});
         }
     }
     
     protected final @NonNull CACHE_OclElement_parentEnv_Employee INST_OclElement_parentEnv_Employee = new CACHE_OclElement_parentEnv_Employee();
+    
+    /**
+     * ocl::OclElement::_unqualified_env_Employee(child : OclElement[?]) : lookup::LookupEnvironment[1]
+     * 
+     * parentEnv_Employee()
+     */
+    protected class CACHE_OclElement__unqualified_env_Employee extends AbstractEvaluationOperation
+    {
+        @Override
+        public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+            @SuppressWarnings("null") final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object self_2 = (/*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object)sourceAndArgumentValues[0];
+            final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable Object child = (/*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable Object)sourceAndArgumentValues[1];
+            final /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment parentEnv_Employee = INST_OclElement_parentEnv_Employee.evaluate(self_2);
+            return parentEnv_Employee;
+        }
+        
+        @SuppressWarnings("null")
+        public org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object self_2, final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable Object child) {
+            return (org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_2, child});
+        }
+    }
+    
+    /**
+     * company::Department::getEmployees() : Set(company::Employee)
+     * 
+     * 
+     * subdepts.getEmployees()
+     * ->includingAll(employees)
+     * ->including(manager)
+     * ->asSet()
+     */
+    protected class CACHE_Department_getEmployees extends AbstractEvaluationOperation
+    {
+        @Override
+        public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+            @SuppressWarnings("null") final /*@NonInvalid*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Department self_5 = (/*@NonInvalid*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Department)sourceAndArgumentValues[0];
+            final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
+            @SuppressWarnings("null")
+            final /*@Thrown*/ java.util.@org.eclipse.jdt.annotation.NonNull List<Department> subdepts = self_5.getSubdepts();
+            final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue BOXED_subdepts = idResolver.createSetOfAll(SET_CLSSid_Department, subdepts);
+            /*@Thrown*/ BagValue.@org.eclipse.jdt.annotation.NonNull Accumulator accumulator = ValueUtil.createBagAccumulatorValue(BAG_CLSSid_Employee);
+            @NonNull Iterator<Object> ITERATOR__1 = BOXED_subdepts.iterator();
+            /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull BagValue collect;
+            while (true) {
+                if (!ITERATOR__1.hasNext()) {
+                    collect = accumulator;
+                    break;
+                }
+                @SuppressWarnings("null")
+                /*@NonInvalid*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Department _1 = (Department)ITERATOR__1.next();
+                /**
+                 * getEmployees()
+                 */
+                final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue getEmployees = INST_Department_getEmployees.evaluate(_1);
+                //
+                for (Object value : getEmployees.flatten().getElements()) {
+                    accumulator.add(value);
+                }
+            }
+            @SuppressWarnings("null")
+            final /*@Thrown*/ java.util.@org.eclipse.jdt.annotation.NonNull List<Employee> employees = self_5.getEmployees();
+            final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue BOXED_employees = idResolver.createSetOfAll(SET_CLSSid_Employee, employees);
+            final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull BagValue includingAll = (BagValue)CollectionIncludingAllOperation.INSTANCE.evaluate(collect, BOXED_employees);
+            @SuppressWarnings("null")
+            final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Employee manager = self_5.getManager();
+            final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull BagValue including = (BagValue)CollectionIncludingOperation.INSTANCE.evaluate(includingAll, manager);
+            final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue asSet = CollectionAsSetOperation.INSTANCE.evaluate(including);
+            return asSet;
+        }
+        
+        @SuppressWarnings("unchecked")
+        public org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue evaluate(final /*@NonInvalid*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Department self_5) {
+            return (org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_5});
+        }
+    }
+    
+    protected final @NonNull CACHE_Department_getEmployees INST_Department_getEmployees = new CACHE_Department_getEmployees();
+    
+    /**
+     * company::Company::_unqualified_env_Employee(child : OclElement[?]) : lookup::LookupEnvironment[?]
+     * 
+     * parentEnv_Employee().nestedEnv().addElements(getEmployees())
+     */
+    protected class CACHE_Company__unqualified_env_Employee extends AbstractEvaluationOperation
+    {
+        @Override
+        public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+            @SuppressWarnings("null") final /*@NonInvalid*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Company self_4 = (/*@NonInvalid*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Company)sourceAndArgumentValues[0];
+            final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable Object child_0 = (/*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable Object)sourceAndArgumentValues[1];
+            final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
+            final /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment self_6 = INST_OclElement_parentEnv_Employee.evaluate(self_4);
+            final /*@NonInvalid*/ org.eclipse.ocl.pivot.@org.eclipse.jdt.annotation.NonNull Property CTORid_parentEnv = idResolver.getProperty(PROPid_parentEnv);
+            final /*@NonInvalid*/ org.eclipse.ocl.pivot.@org.eclipse.jdt.annotation.NonNull Class TYP_lookup_c_c_LookupEnvironment_0 = idResolver.getClass(CLSSid_LookupEnvironment, null);
+            final /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment symbol_0 = (LookupEnvironment)TYP_lookup_c_c_LookupEnvironment_0.createInstance();
+            CTORid_parentEnv.initValue(symbol_0, self_6);
+            @SuppressWarnings("null")
+            final /*@Thrown*/ java.util.@org.eclipse.jdt.annotation.NonNull List<Department> depts = self_4.getDepts();
+            final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue BOXED_depts = idResolver.createSetOfAll(SET_CLSSid_Department, depts);
+            /*@Thrown*/ BagValue.@org.eclipse.jdt.annotation.NonNull Accumulator accumulator = ValueUtil.createBagAccumulatorValue(BAG_CLSSid_Employee);
+            @NonNull Iterator<Object> ITERATOR__1 = BOXED_depts.iterator();
+            /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull BagValue collect;
+            while (true) {
+                if (!ITERATOR__1.hasNext()) {
+                    collect = accumulator;
+                    break;
+                }
+                @SuppressWarnings("null")
+                /*@NonInvalid*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Department _1 = (Department)ITERATOR__1.next();
+                /**
+                 * _'null' : Set(company::Employee)
+                 */
+                final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue getEmployees = INST_Department_getEmployees.evaluate(_1);
+                //
+                for (Object value : getEmployees.flatten().getElements()) {
+                    accumulator.add(value);
+                }
+            }
+            final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue asSet = CollectionAsSetOperation.INSTANCE.evaluate(collect);
+            final /*@Thrown*/ java.util.@org.eclipse.jdt.annotation.NonNull List<Employee> ECORE_asSet = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Employee.class, asSet);
+            @SuppressWarnings("null")
+            final /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment addElements = symbol_0.addElements(ECORE_asSet);
+            return addElements;
+        }
+        
+        public LookupEnvironment evaluate(final /*@NonInvalid*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Company self_4, final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.Nullable Object child_0) {
+            return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_4, child_0});
+        }
+    }
     
     /**
      * ocl::OclElement::env_Employee() : lookup::LookupEnvironment[1]
@@ -309,8 +462,8 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
         @Override
         public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
             @SuppressWarnings("null") final /*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object self_1 = (/*@NonInvalid*/ java.lang.@org.eclipse.jdt.annotation.NonNull Object)sourceAndArgumentValues[0];
-            final /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment parentEnv_Employee = INST_OclElement_parentEnv_Employee.evaluate(self_1);
-            return parentEnv_Employee;
+            final /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment _unqualified_env_Employee = INST_OclElement__unqualified_env_Employee.evaluate(self_1, null);
+            return _unqualified_env_Employee;
         }
         
         @SuppressWarnings("null")
@@ -324,65 +477,60 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     /**
      * 
      * map __root__ in companies_qvtp_qvtcas {
-     *   where ( |)
-     * {_'\u00ABcompany\u00BB' : Set(companies::company) = leftCS.objectsOfKind(companies::company)
+     * 
+     *   var _'\u00ABcompany\u00BB' : Set(companies::company) := leftCS.objectsOfKind(companies::company)
      *   ;
-     * _'\u00ABdepartment\u00BB' : Set(companies::department) = leftCS.objectsOfKind(companies::department)
+     * ::ji_company : Set(companies::company)[*|1]var _'\u00ABdepartment\u00BB' : Set(companies::department) := leftCS.objectsOfKind(companies::department)
      *   ;
-     * _'\u00ABemployee\u00BB' : Set(companies::employee) = leftCS.objectsOfKind(companies::employee)
+     * ::ji_department : Set(companies::department)[*|1]var _'\u00ABemployee\u00BB' : Set(companies::employee) := leftCS.objectsOfKind(companies::employee)
      *   ;
-     * ji_company : Set(companies::company)[*|1] = _'\u00ABcompany\u00BB';
-     * ji_department : Set(companies::department)[*|1] = _'\u00ABdepartment\u00BB';
-     * ji_employee : Set(companies::employee)[*|1] = _'\u00ABemployee\u00BB';
-     *  |}
-     * for loop0 : companies::company in ji_company {
+     * ::ji_employee : Set(companies::employee)[*|1]for loop0 : companies::company[1] in ji_company {
      *     call m_Company_company {
-     * lCompany := loop0;
+     * lCompany iterates loop0 : companies::company[1];
      * }}
-     *   for loop0 : companies::department in ji_department {
+     *   for loop0 : companies::department[1] in ji_department {
      *     call m_Department_department {
-     * lDepartment := loop0;
+     * lDepartment iterates loop0 : companies::department[1];
      * }}
-     *   for loop0 : companies::employee in ji_employee {
+     *   for loop0 : companies::employee[1] in ji_employee {
      *     call m_Employee_employee {
-     * lEmployee := loop0;
+     * lEmployee iterates loop0 : companies::employee[1];
      * }}
-     *   for loop0 : companies::company in ji_company {
+     *   for loop0 : companies::company[1] in ji_company {
      *     call m_company_ast_deparment {
-     * lCompany := loop0;
+     * lCompany iterates loop0 : companies::company[1];
      * }}
-     *   for loop0 : companies::company in ji_company {
+     *   for loop0 : companies::company[1] in ji_company {
      *     call m_company_ast_name {
-     * lCompany := loop0;
+     * lCompany iterates loop0 : companies::company[1];
      * }}
-     *   for loop0 : companies::department in ji_department {
+     *   for loop0 : companies::department[1] in ji_department {
      *     call m_department_ast_department__employees {
-     * lDepartment := loop0;
+     * lDepartment iterates loop0 : companies::department[1];
      * }}
-     *   for loop0 : companies::department in ji_department {
+     *   for loop0 : companies::department[1] in ji_department {
      *     call m_department_ast_department__manager {
-     * lDepartment := loop0;
+     * lDepartment iterates loop0 : companies::department[1];
      * }}
-     *   for loop0 : companies::department in ji_department {
+     *   for loop0 : companies::department[1] in ji_department {
      *     call m_department_ast_name {
-     * lDepartment := loop0;
+     * lDepartment iterates loop0 : companies::department[1];
      * }}
-     *   for loop0 : companies::department in ji_department {
+     *   for loop0 : companies::department[1] in ji_department {
      *     call m_department_ast_deparment {
-     * lDepartment := loop0;
+     * lDepartment iterates loop0 : companies::department[1];
      * }}
-     *   for loop0 : companies::employee in ji_employee {
+     *   for loop0 : companies::employee[1] in ji_employee {
      *     call m_employee_address_ast_name_salary {
-     * lEmployee := loop0;
+     * lEmployee iterates loop0 : companies::employee[1];
      * }}
-     *   for loop0 : companies::employee in ji_employee {
+     *   for loop0 : companies::employee[1] in ji_employee {
      *     call m_employee_ast_mentor {
-     * lEmployee := loop0;
+     * lEmployee iterates loop0 : companies::employee[1];
      * }}
      */
     protected boolean MAP___root__()  {
         try {
-            // predicates and unrealized variables
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.@org.eclipse.jdt.annotation.NonNull Class TYP_companies_c_c_company_0 = idResolver.getClass(CLSSid_company, null);
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull SetValue objectsOfKind = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_company, models[0/*leftCS*/], TYP_companies_c_c_company_0);
@@ -446,26 +594,19 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     
     /**
      * 
-     * map m_Company_company in companies_qvtp_qvtcas {leftCS (lCompany : companies::company[1];
-     *  |)
-     * { |}
-     * rightAS ( |)
-     * {realize rCompany : company::Company[1];
-     *  |}
-     * where ( |)
-     * { |
-     * lCompany.ast := rCompany;
-     * }
+     * map m_Company_company in companies_qvtp_qvtcas {
+     * guard:leftCS lCompany  : companies::company[1];
+     * new:rightAS rCompany : company::Company[1];
+     * set lCompany.ast := rCompany;
      * 
      */
     protected boolean MAP_m_Company_company(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull company lCompany)  {
         try {
-            // predicates and unrealized variables
             // creations
             final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.Nullable Company rCompany = CompanyFactory.eINSTANCE.createCompany();
             assert rCompany != null;
             models[1/*rightAS*/].add(rCompany);
-            // property assignments
+            // mapping statements
             lCompany.setAst(rCompany);
             final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable Boolean m_Company_company = ValueUtil.TRUE_VALUE;
             return m_Company_company;
@@ -476,26 +617,19 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     
     /**
      * 
-     * map m_Department_department in companies_qvtp_qvtcas {leftCS (lDepartment : companies::department[1];
-     *  |)
-     * { |}
-     * rightAS ( |)
-     * {realize rDepartment : company::Department[1];
-     *  |}
-     * where ( |)
-     * { |
-     * lDepartment.ast := rDepartment;
-     * }
+     * map m_Department_department in companies_qvtp_qvtcas {
+     * guard:leftCS lDepartment  : companies::department[1];
+     * new:rightAS rDepartment : company::Department[1];
+     * set lDepartment.ast := rDepartment;
      * 
      */
     protected boolean MAP_m_Department_department(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull department lDepartment)  {
         try {
-            // predicates and unrealized variables
             // creations
             final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.Nullable Department rDepartment = CompanyFactory.eINSTANCE.createDepartment();
             assert rDepartment != null;
             models[1/*rightAS*/].add(rDepartment);
-            // property assignments
+            // mapping statements
             lDepartment.setAst(rDepartment);
             final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable Boolean m_Department_department = ValueUtil.TRUE_VALUE;
             return m_Department_department;
@@ -506,26 +640,19 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     
     /**
      * 
-     * map m_Employee_employee in companies_qvtp_qvtcas {leftCS (lEmployee : companies::employee[1];
-     *  |)
-     * { |}
-     * rightAS ( |)
-     * {realize rEmployee : company::Employee[1];
-     *  |}
-     * where ( |)
-     * { |
-     * lEmployee.ast := rEmployee;
-     * }
+     * map m_Employee_employee in companies_qvtp_qvtcas {
+     * guard:leftCS lEmployee  : companies::employee[1];
+     * new:rightAS rEmployee : company::Employee[1];
+     * set lEmployee.ast := rEmployee;
      * 
      */
     protected boolean MAP_m_Employee_employee(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull employee lEmployee)  {
         try {
-            // predicates and unrealized variables
             // creations
             final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.Nullable Employee rEmployee = CompanyFactory.eINSTANCE.createEmployee();
             assert rEmployee != null;
             models[1/*rightAS*/].add(rEmployee);
-            // property assignments
+            // mapping statements
             lEmployee.setAst(rEmployee);
             final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable Boolean m_Employee_employee = ValueUtil.TRUE_VALUE;
             return m_Employee_employee;
@@ -537,30 +664,19 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     /**
      * 
      * map m_company_ast_deparment in companies_qvtp_qvtcas {
-     *   leftCS (lCompany : companies::company[1];
-     *  |)
-     * {deparment : OrderedSet(companies::department)[*|1];
-     *  |}
-     * rightAS ( |)
-     * {aCompany : company::Company[1];
-     * _'\u00ABcollect\u00BB' : Sequence(company::Department);
-     *  |}
-     * where ( |)
-     * {ast : ecore::EObject[1];
-     *  |
-     * ast := lCompany.ast;
-     * deparment := lCompany.deparment;
-     * aCompany := ast.oclAsType(company::Company)
+     * 
+     *   guard:leftCS lCompany  : companies::company[1];
+     * var ast : ecore::EObject[1] := lCompany.ast;
+     * var deparment : OrderedSet(companies::department)[*|1] := lCompany.deparment;
+     * var aCompany : company::Company[1] := ast.oclAsType(company::Company)
      *   ;
-     * _'\u00ABcollect\u00BB' := deparment->collect(_'1_' |
+     * var _'\u00ABcollect\u00BB' : Sequence(company::Department) := deparment->collect(_'1_' |
      *     _'1_'.ast.oclAsType(company::Department));
-     * aCompany.depts := _'\u00ABcollect\u00BB';
-     * }
+     * set aCompany.depts := _'\u00ABcollect\u00BB';
      * 
      */
     protected boolean MAP_m_company_ast_deparment(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull company lCompany_0)  {
         try {
-            // predicates and unrealized variables
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
             final /*@Thrown*/ org.eclipse.emf.ecore.@org.eclipse.jdt.annotation.Nullable EObject ast = lCompany_0.getAst();
             final /*@Thrown*/ boolean symbol_0 = ast != null;
@@ -593,7 +709,7 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                     //
                     accumulator.add(oclAsType_0);
                 }
-                // property assignments
+                // mapping statements
                 final /*@Thrown*/ java.util.@org.eclipse.jdt.annotation.NonNull List<Department> ECORE_collect = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Department.class, collect);
                 oclAsType.getDepts().addAll(ECORE_collect);
                 final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable Boolean m_company_ast_deparment = ValueUtil.TRUE_VALUE;
@@ -611,26 +727,16 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     /**
      * 
      * map m_company_ast_name in companies_qvtp_qvtcas {
-     *   leftCS (lCompany : companies::company[1];
-     *  |)
-     * { |}
-     * rightAS ( |)
-     * {aCompany : company::Company[1];
-     *  |}
-     * where ( |)
-     * {ast : ecore::EObject[1];
-     * name : String[?];
-     *  |
-     * ast := lCompany.ast;
-     * name := lCompany.name;
-     * aCompany := ast.oclAsType(company::Company);
-     * aCompany.name := name;
-     * }
+     * 
+     *   guard:leftCS lCompany  : companies::company[1];
+     * var ast : ecore::EObject[1] := lCompany.ast;
+     * var name : String[?] := lCompany.name;
+     * var aCompany : company::Company[1] := ast.oclAsType(company::Company);
+     * set aCompany.name := name;
      * 
      */
     protected boolean MAP_m_company_ast_name(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull company lCompany_1)  {
         try {
-            // predicates and unrealized variables
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
             final /*@Thrown*/ org.eclipse.emf.ecore.@org.eclipse.jdt.annotation.Nullable EObject ast = lCompany_1.getAst();
             final /*@Thrown*/ boolean symbol_0 = ast != null;
@@ -642,7 +748,7 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                 final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable String name = lCompany_1.getName();
                 final /*@NonInvalid*/ org.eclipse.ocl.pivot.@org.eclipse.jdt.annotation.NonNull Class TYP_company_c_c_Company_0 = idResolver.getClass(CLSSid_Company, null);
                 final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Company oclAsType = ClassUtil.nonNullState((Company)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_company_c_c_Company_0));
-                // property assignments
+                // mapping statements
                 if (name == null) {
                     throw throwNull(lCompany_1, "Null value for company::Company::name assignment");
                 }
@@ -662,30 +768,19 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     /**
      * 
      * map m_department_ast_deparment in companies_qvtp_qvtcas {
-     *   leftCS (lDepartment : companies::department[1];
-     *  |)
-     * {deparment : OrderedSet(companies::department)[*|1];
-     *  |}
-     * rightAS ( |)
-     * {aDepartment : company::Department[1];
-     * _'\u00ABcollect\u00BB' : Sequence(company::Department);
-     *  |}
-     * where ( |)
-     * {ast : ecore::EObject[1];
-     *  |
-     * ast := lDepartment.ast;
-     * deparment := lDepartment.deparment;
-     * aDepartment := ast.oclAsType(company::Department)
+     * 
+     *   guard:leftCS lDepartment  : companies::department[1];
+     * var ast : ecore::EObject[1] := lDepartment.ast;
+     * var deparment : OrderedSet(companies::department)[*|1] := lDepartment.deparment;
+     * var aDepartment : company::Department[1] := ast.oclAsType(company::Department)
      *   ;
-     * _'\u00ABcollect\u00BB' := deparment->collect(_'1_' |
+     * var _'\u00ABcollect\u00BB' : Sequence(company::Department) := deparment->collect(_'1_' |
      *     _'1_'.ast.oclAsType(company::Department));
-     * aDepartment.subdepts := _'\u00ABcollect\u00BB';
-     * }
+     * set aDepartment.subdepts := _'\u00ABcollect\u00BB';
      * 
      */
     protected boolean MAP_m_department_ast_deparment(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull department lDepartment_0)  {
         try {
-            // predicates and unrealized variables
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
             final /*@Thrown*/ org.eclipse.emf.ecore.@org.eclipse.jdt.annotation.Nullable EObject ast = lDepartment_0.getAst();
             final /*@Thrown*/ boolean symbol_0 = ast != null;
@@ -717,7 +812,7 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                     //
                     accumulator.add(oclAsType_0);
                 }
-                // property assignments
+                // mapping statements
                 final /*@Thrown*/ java.util.@org.eclipse.jdt.annotation.NonNull List<Department> ECORE_collect = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Department.class, collect);
                 oclAsType.getSubdepts().addAll(ECORE_collect);
                 final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable Boolean m_department_ast_deparment = ValueUtil.TRUE_VALUE;
@@ -735,32 +830,20 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     /**
      * 
      * map m_department_ast_department__employees in companies_qvtp_qvtcas {
-     *   leftCS (lDepartment : companies::department[1];
-     *  |)
-     * {department_employees : companies::department_employees[?];
-     * employee : OrderedSet(companies::employee)[*|1];
-     *  |}
-     * rightAS ( |)
-     * {aDepartment : company::Department[1];
-     * _'\u00ABcollect\u00BB' : Sequence(company::Employee);
-     *  |}
-     * where ( |)
-     * {ast : ecore::EObject[1];
-     *  |
-     * ast := lDepartment.ast;
-     * department_employees := lDepartment.department_employees;
-     * aDepartment := ast.oclAsType(company::Department)
+     * 
+     *   guard:leftCS lDepartment  : companies::department[1];
+     * var ast : ecore::EObject[1] := lDepartment.ast;
+     * var department_employees : companies::department_employees[?] := lDepartment.department_employees;
+     * var aDepartment : company::Department[1] := ast.oclAsType(company::Department)
      *   ;
-     * employee := department_employees.employee;
-     * _'\u00ABcollect\u00BB' := employee->collect(_'1_' |
+     * var employee : OrderedSet(companies::employee)[*|1] := department_employees.employee;
+     * var _'\u00ABcollect\u00BB' : Sequence(company::Employee) := employee->collect(_'1_' |
      *     _'1_'.ast.oclAsType(company::Employee));
-     * aDepartment.employees := _'\u00ABcollect\u00BB';
-     * }
+     * set aDepartment.employees := _'\u00ABcollect\u00BB';
      * 
      */
     protected boolean MAP_m_department_ast_department__employees(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull department lDepartment_1)  {
         try {
-            // predicates and unrealized variables
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
             final /*@Thrown*/ org.eclipse.emf.ecore.@org.eclipse.jdt.annotation.Nullable EObject ast = lDepartment_1.getAst();
             final /*@Thrown*/ boolean symbol_0 = ast != null;
@@ -797,7 +880,7 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                     //
                     accumulator.add(oclAsType_0);
                 }
-                // property assignments
+                // mapping statements
                 final /*@Thrown*/ java.util.@org.eclipse.jdt.annotation.NonNull List<Employee> ECORE_collect = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Employee.class, collect);
                 oclAsType.getEmployees().addAll(ECORE_collect);
                 final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable Boolean m_department_ast_department__employees = ValueUtil.TRUE_VALUE;
@@ -815,33 +898,20 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     /**
      * 
      * map m_department_ast_department__manager in companies_qvtp_qvtcas {
-     *   leftCS (lDepartment : companies::department[1];
-     *  |)
-     * {department_manager : companies::department_manager[?];
-     * employee : companies::employee[?];
-     *  |}
-     * rightAS ( |)
-     * {aDepartment : company::Department[1];
-     * aEmployee : company::Employee[1];
-     *  |}
-     * where ( |)
-     * {ast : ecore::EObject[1];
-     * ast1 : ecore::EObject[?];
-     *  |
-     * ast := lDepartment.ast;
-     * department_manager := lDepartment.department_manager;
-     * aDepartment := ast.oclAsType(company::Department)
+     * 
+     *   guard:leftCS lDepartment  : companies::department[1];
+     * var ast : ecore::EObject[1] := lDepartment.ast;
+     * var department_manager : companies::department_manager[?] := lDepartment.department_manager;
+     * var aDepartment : company::Department[1] := ast.oclAsType(company::Department)
      *   ;
-     * employee := department_manager.employee;
-     * ast1 := employee.ast;
-     * aEmployee := ast1.oclAsType(company::Employee);
-     * aDepartment.manager := aEmployee;
-     * }
+     * var employee : companies::employee[?] := department_manager.employee;
+     * var ast1 : ecore::EObject[?] := employee.ast;
+     * var aEmployee : company::Employee[1] := ast1.oclAsType(company::Employee);
+     * set aDepartment.manager := aEmployee;
      * 
      */
     protected boolean MAP_m_department_ast_department__manager(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull department lDepartment_2)  {
         try {
-            // predicates and unrealized variables
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
             final /*@Thrown*/ org.eclipse.emf.ecore.@org.eclipse.jdt.annotation.Nullable EObject ast = lDepartment_2.getAst();
             final /*@Thrown*/ boolean symbol_0 = ast != null;
@@ -863,7 +933,7 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                 final /*@Thrown*/ org.eclipse.emf.ecore.@org.eclipse.jdt.annotation.Nullable EObject ast_0 = employee.getAst();
                 final /*@NonInvalid*/ org.eclipse.ocl.pivot.@org.eclipse.jdt.annotation.NonNull Class TYP_company_c_c_Employee_0 = idResolver.getClass(CLSSid_Employee, null);
                 final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Employee oclAsType_0 = ClassUtil.nonNullState((Employee)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast_0, TYP_company_c_c_Employee_0));
-                // property assignments
+                // mapping statements
                 oclAsType.setManager(oclAsType_0);
                 final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable Boolean m_department_ast_department__manager = ValueUtil.TRUE_VALUE;
                 raw_ast = m_department_ast_department__manager;
@@ -880,26 +950,16 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     /**
      * 
      * map m_department_ast_name in companies_qvtp_qvtcas {
-     *   leftCS (lDepartment : companies::department[1];
-     *  |)
-     * { |}
-     * rightAS ( |)
-     * {aDepartment : company::Department[1];
-     *  |}
-     * where ( |)
-     * {ast : ecore::EObject[1];
-     * name : String[?];
-     *  |
-     * ast := lDepartment.ast;
-     * name := lDepartment.name;
-     * aDepartment := ast.oclAsType(company::Department);
-     * aDepartment.name := name;
-     * }
+     * 
+     *   guard:leftCS lDepartment  : companies::department[1];
+     * var ast : ecore::EObject[1] := lDepartment.ast;
+     * var name : String[?] := lDepartment.name;
+     * var aDepartment : company::Department[1] := ast.oclAsType(company::Department);
+     * set aDepartment.name := name;
      * 
      */
     protected boolean MAP_m_department_ast_name(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull department lDepartment_3)  {
         try {
-            // predicates and unrealized variables
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
             final /*@Thrown*/ org.eclipse.emf.ecore.@org.eclipse.jdt.annotation.Nullable EObject ast = lDepartment_3.getAst();
             final /*@Thrown*/ boolean symbol_0 = ast != null;
@@ -911,7 +971,7 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                 final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable String name = lDepartment_3.getName();
                 final /*@NonInvalid*/ org.eclipse.ocl.pivot.@org.eclipse.jdt.annotation.NonNull Class TYP_company_c_c_Department_0 = idResolver.getClass(CLSSid_Department, null);
                 final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Department oclAsType = ClassUtil.nonNullState((Department)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_company_c_c_Department_0));
-                // property assignments
+                // mapping statements
                 if (name == null) {
                     throw throwNull(lDepartment_3, "Null value for company::Department::name assignment");
                 }
@@ -931,32 +991,20 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     /**
      * 
      * map m_employee_address_ast_name_salary in companies_qvtp_qvtcas {
-     *   leftCS (lEmployee : companies::employee[1];
-     *  |)
-     * { |}
-     * rightAS ( |)
-     * {aEmployee : company::Employee[1];
-     *  |}
-     * where ( |)
-     * {address : String[?];
-     * ast : ecore::EObject[1];
-     * name : String[?];
-     * salary : ecore::EDouble[?];
-     *  |
-     * address := lEmployee.address;
-     * ast := lEmployee.ast;
-     * name := lEmployee.name;
-     * salary := lEmployee.salary;
-     * aEmployee := ast.oclAsType(company::Employee);
-     * aEmployee.address := address;
-     * aEmployee.name := name;
-     * aEmployee.salary := salary;
-     * }
+     * 
+     *   guard:leftCS lEmployee  : companies::employee[1];
+     * var address : String[?] := lEmployee.address;
+     * var ast : ecore::EObject[1] := lEmployee.ast;
+     * var name : String[?] := lEmployee.name;
+     * var salary : ecore::EDouble[?] := lEmployee.salary;
+     * var aEmployee : company::Employee[1] := ast.oclAsType(company::Employee);
+     * set aEmployee.address := address;
+     * set aEmployee.name := name;
+     * set aEmployee.salary := salary;
      * 
      */
     protected boolean MAP_m_employee_address_ast_name_salary(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull employee lEmployee_0)  {
         try {
-            // predicates and unrealized variables
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
             final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable String address = lEmployee_0.getAddress();
             final /*@Thrown*/ org.eclipse.emf.ecore.@org.eclipse.jdt.annotation.Nullable EObject ast = lEmployee_0.getAst();
@@ -970,7 +1018,7 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                 final /*@Thrown*/ double salary = lEmployee_0.getSalary();
                 final /*@NonInvalid*/ org.eclipse.ocl.pivot.@org.eclipse.jdt.annotation.NonNull Class TYP_company_c_c_Employee_0 = idResolver.getClass(CLSSid_Employee, null);
                 final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.NonNull Employee oclAsType = ClassUtil.nonNullState((Employee)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_company_c_c_Employee_0));
-                // property assignments
+                // mapping statements
                 if (address == null) {
                     throw throwNull(lEmployee_0, "Null value for company::Employee::address assignment");
                 }
@@ -995,29 +1043,18 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
     /**
      * 
      * map m_employee_ast_mentor in companies_qvtp_qvtcas {
-     *   leftCS (lEmployee : companies::employee[1];
-     *  |)
-     * { |}
-     * rightAS ( |)
-     * {aEmployee : company::Employee[1];
-     * lookupEmployee : company::Employee[?];
-     *  |}
-     * where ( |)
-     * {ast : ecore::EObject[1];
-     * mentor : String[?];
-     *  |
-     * ast := lEmployee.ast;
-     * mentor := lEmployee.mentor;
-     * aEmployee := ast.oclAsType(company::Employee)
+     * 
+     *   guard:leftCS lEmployee  : companies::employee[1];
+     * var ast : ecore::EObject[1] := lEmployee.ast;
+     * var mentor : String[?] := lEmployee.mentor;
+     * var aEmployee : company::Employee[1] := ast.oclAsType(company::Employee)
      *   ;
-     * lookupEmployee := aEmployee.lookupEmployee(mentor);
-     * aEmployee.mentor := lookupEmployee;
-     * }
+     * var lookupEmployee : company::Employee[?] := aEmployee.lookupEmployee(mentor);
+     * set aEmployee.mentor := lookupEmployee;
      * 
      */
     protected boolean MAP_m_employee_ast_mentor(final /*@NonInvalid*/ org.xtext.example.mydsl.companies.@org.eclipse.jdt.annotation.NonNull employee lEmployee_1)  {
         try {
-            // predicates and unrealized variables
             final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull IdResolver idResolver = executor.getIdResolver();
             final /*@Thrown*/ org.eclipse.emf.ecore.@org.eclipse.jdt.annotation.Nullable EObject ast = lEmployee_1.getAst();
             final /*@Thrown*/ boolean symbol_0 = ast != null;
@@ -1036,20 +1073,19 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
                 }
                 else {
                     final /*@Thrown*/ org.xtext.example.company.lookup.@org.eclipse.jdt.annotation.NonNull LookupEnvironment env_Employee = INST_OclElement_env_Employee.evaluate(oclAsType);
-                    final /*@Thrown*/ java.util.@org.eclipse.jdt.annotation.NonNull List<Employee> foundEmployee = INST_Visitable__lookupEmployee.evaluate(oclAsType, env_Employee, mentor);
-                    final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull OrderedSetValue BOXED_foundEmployee_0 = idResolver.createOrderedSetOfAll(ORD_CLSSid_Employee, foundEmployee);
-                    final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(BOXED_foundEmployee_0).booleanValue();
+                    final /*@Thrown*/ org.eclipse.ocl.pivot.values.@org.eclipse.jdt.annotation.NonNull OrderedSetValue foundEmployee = INST_Visitable__lookupEmployee.evaluate(oclAsType, env_Employee, mentor);
+                    final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(foundEmployee).booleanValue();
                     /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.Nullable Employee symbol_1;
                     if (isEmpty) {
                         symbol_1 = null;
                     }
                     else {
-                        final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.Nullable Employee first = (Employee)OrderedCollectionFirstOperation.INSTANCE.evaluate(BOXED_foundEmployee_0);
+                        final /*@Thrown*/ org.xtext.example.company.@org.eclipse.jdt.annotation.Nullable Employee first = (Employee)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundEmployee);
                         symbol_1 = first;
                     }
                     symbol_2 = symbol_1;
                 }
-                // property assignments
+                // mapping statements
                 oclAsType.setMentor(symbol_2);
                 final /*@Thrown*/ java.lang.@org.eclipse.jdt.annotation.Nullable Boolean m_employee_ast_mentor = ValueUtil.TRUE_VALUE;
                 raw_ast = m_employee_ast_mentor;

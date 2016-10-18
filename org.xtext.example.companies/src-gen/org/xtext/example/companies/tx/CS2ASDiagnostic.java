@@ -18,6 +18,7 @@
  *******************************************************************************/
 package org.xtext.example.companies.tx;
 
+
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;

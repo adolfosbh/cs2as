@@ -20,6 +20,7 @@ package org.xtext.example.companies.tx;
 
 import org.eclipse.jdt.annotation.NonNull;
 
+
 /**
  * AbstractValueOccurrence provides the mandatory shared functionality of a cached value.
  */

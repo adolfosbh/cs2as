@@ -21,6 +21,7 @@ package org.xtext.example.companies.tx;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;

@@ -18,6 +18,7 @@
  *******************************************************************************/
 package org.xtext.example.companies.labels;
 
+
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.labels.AbstractLabelGenerator;
 import org.xtext.example.companies.tx.TypedModelInstance;

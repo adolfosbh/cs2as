@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:qvtb="http://www.eclipse.org/qvt/2015/QVTbase"
-    xmlns:qvtc="http://www.eclipse.org/qvt/2015/QVTcore" xmlns:qvts="http://www.eclipse.org/qvt/2015/Schedule">
+    xmlns:qvts="http://www.eclipse.org/qvt/2015/Schedule">
   <qvts:Schedule>
     <datums xsi:type="qvts:ClassDatum" super="/0/@datums.1" requiredBy="/0/@actions.0 /0/@actions.3 /0/@actions.4" dataParameter="/0/@actions.0/@parameters.0 /0/@actions.3/@parameters.0 /0/@actions.4/@parameters.0">
       <typedModel href="../companies.qvtp.qvtcas#qT..companies_qvtp_qvtcas.leftCS"/>
@@ -133,7 +133,7 @@
       <type href="../Company.ecore.oclas#T.company.Employee"/>
       <propertyDatums producedBy="/0/@actions.7">
         <typedModel href="../companies.qvtp.qvtcas#qT..companies_qvtp_qvtcas.rightAS"/>
-        <property href="../Company.ecore.oclas#//@ownedPackages.0/@ownedClasses.2/@ownedProperties.4"/>
+        <property href="../Company.ecore.oclas#//@ownedPackages.0/@ownedClasses.2/@ownedProperties.5"/>
       </propertyDatums>
       <propertyDatums producedBy="/0/@actions.8">
         <typedModel href="../companies.qvtp.qvtcas#qT..companies_qvtp_qvtcas.rightAS"/>
@@ -198,7 +198,7 @@
       <results datum="/0/@datums.4">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.ccompany_2_Company.rightAS.bottom.rCompany"/>
       </results>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.ccompany_2_Company"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.ccompany_2_Company"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.9 /0/@datums.1/@propertyDatums.0" requisites="/0/@datums.8">
       <parameters datum="/0/@datums.8">
@@ -207,7 +207,7 @@
       <results datum="/0/@datums.9">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.cdepartment_2_Department.rightAS.bottom.rDepartment"/>
       </results>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.cdepartment_2_Department"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.cdepartment_2_Department"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.11 /0/@datums.1/@propertyDatums.0" requisites="/0/@datums.10">
       <parameters datum="/0/@datums.10">
@@ -216,67 +216,67 @@
       <results datum="/0/@datums.11">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.cemployee_2_Employee.rightAS.bottom.rEmployee"/>
       </results>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.cemployee_2_Employee"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.cemployee_2_Employee"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.4/@propertyDatums.0" requisites="/0/@datums.0 /0/@datums.0/@propertyDatums.1 /0/@datums.0/@propertyDatums.0">
       <parameters datum="/0/@datums.0">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.ucompany_2_Company_name.leftCS.guard.lCompany"/>
       </parameters>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.ucompany_2_Company_name"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.ucompany_2_Company_name"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.4/@propertyDatums.1 /0/@datums.9/@propertyDatums.0" requisites="/0/@datums.0 /0/@datums.0/@propertyDatums.2 /0/@datums.1/@propertyDatums.0 /0/@datums.0/@propertyDatums.0">
       <parameters datum="/0/@datums.0">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.ucompany_2_Company_depts.leftCS.guard.lCompany"/>
       </parameters>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.ucompany_2_Company_depts"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.ucompany_2_Company_depts"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.9/@propertyDatums.1" requisites="/0/@datums.8 /0/@datums.8/@propertyDatums.0 /0/@datums.1/@propertyDatums.0">
       <parameters datum="/0/@datums.8">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.udepartment_2_Department_name.leftCS.guard.lDepartment"/>
       </parameters>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.udepartment_2_Department_name"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.udepartment_2_Department_name"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.9/@propertyDatums.2 /0/@datums.9/@propertyDatums.3" requisites="/0/@datums.8 /0/@datums.8/@propertyDatums.1 /0/@datums.1/@propertyDatums.0">
       <parameters datum="/0/@datums.8">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.udepartment_2_Department_subdepts.leftCS.guard.lDepartment"/>
       </parameters>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.udepartment_2_Department_subdepts"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.udepartment_2_Department_subdepts"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.9/@propertyDatums.4 /0/@datums.11/@propertyDatums.0" requisites="/0/@datums.8 /0/@datums.1/@propertyDatums.0 /0/@datums.12/@propertyDatums.0 /0/@datums.8/@propertyDatums.2">
       <parameters datum="/0/@datums.8">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.leftCS.guard.lDepartment"/>
       </parameters>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.udepartment_2_Department_manager"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.udepartment_2_Department_manager"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.9/@propertyDatums.5 /0/@datums.11/@propertyDatums.1" requisites="/0/@datums.8 /0/@datums.13/@propertyDatums.0 /0/@datums.8/@propertyDatums.3 /0/@datums.1/@propertyDatums.0">
       <parameters datum="/0/@datums.8">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.udepartment_2_Department_employees.leftCS.guard.lDepartment"/>
       </parameters>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.udepartment_2_Department_employees"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.udepartment_2_Department_employees"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.11/@propertyDatums.2" requisites="/0/@datums.10 /0/@datums.10/@propertyDatums.0 /0/@datums.1/@propertyDatums.0">
       <parameters datum="/0/@datums.10">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.uemployee_2_Employee_name.leftCS.guard.lEmployee"/>
       </parameters>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.uemployee_2_Employee_name"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.uemployee_2_Employee_name"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.11/@propertyDatums.3" requisites="/0/@datums.10 /0/@datums.10/@propertyDatums.1 /0/@datums.1/@propertyDatums.0">
       <parameters datum="/0/@datums.10">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.uemployee_2_Employee_address.leftCS.guard.lEmployee"/>
       </parameters>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.uemployee_2_Employee_address"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.uemployee_2_Employee_address"/>
     </actions>
     <actions xsi:type="qvts:MappingAction" productions="/0/@datums.11/@propertyDatums.4" requisites="/0/@datums.10 /0/@datums.10/@propertyDatums.2 /0/@datums.1/@propertyDatums.0">
       <parameters datum="/0/@datums.10">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.uemployee_2_Employee_salary.leftCS.guard.lEmployee"/>
       </parameters>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.uemployee_2_Employee_salary"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.uemployee_2_Employee_salary"/>
     </actions>
-    <actions xsi:type="qvts:MappingAction" productions="/0/@datums.11/@propertyDatums.5 /0/@datums.11/@propertyDatums.6" requisites="/0/@datums.10 /0/@datums.1/@propertyDatums.0 /0/@datums.10/@propertyDatums.3 /0/@datums.14/@propertyDatums.0 /0/@datums.14/@propertyDatums.1 /0/@datums.11/@propertyDatums.2 /0/@datums.4/@propertyDatums.1 /0/@datums.9/@propertyDatums.2 /0/@datums.9/@propertyDatums.4 /0/@datums.9/@propertyDatums.5">
+    <actions xsi:type="qvts:MappingAction" productions="/0/@datums.11/@propertyDatums.5 /0/@datums.11/@propertyDatums.6" requisites="/0/@datums.10 /0/@datums.1/@propertyDatums.0 /0/@datums.10/@propertyDatums.3 /0/@datums.14/@propertyDatums.0 /0/@datums.14/@propertyDatums.1 /0/@datums.11/@propertyDatums.2 /0/@datums.9/@propertyDatums.2 /0/@datums.4/@propertyDatums.1 /0/@datums.9/@propertyDatums.4 /0/@datums.9/@propertyDatums.5">
       <parameters datum="/0/@datums.10">
         <variable href="../companies.qvtp.qvtcas#qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee"/>
       </parameters>
-      <mapping xsi:type="qvtc:Mapping" href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.uemployee_2_Employee_mentor"/>
+      <mapping href="../companies.qvtp.qvtcas#m..companies_qvtp_qvtcas.uemployee_2_Employee_mentor"/>
     </actions>
   </qvts:Schedule>
   <qvtb:TypedModel name="$primitive$"/>

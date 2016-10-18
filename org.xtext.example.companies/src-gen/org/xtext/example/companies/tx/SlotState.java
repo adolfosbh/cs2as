@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 
+
 /**
  * A SlotState identifies the assigned/not assigned state of an Object slot. Except for debug purposes, it does not
  * maintain the assigned values, just whether an assignment has occurred.

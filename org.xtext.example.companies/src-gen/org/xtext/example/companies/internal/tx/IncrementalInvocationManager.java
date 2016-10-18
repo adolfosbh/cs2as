@@ -18,6 +18,7 @@
  *******************************************************************************/
 package org.xtext.example.companies.internal.tx;
 
+
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 import org.xtext.example.companies.tx.AbstractInvocationManager;
