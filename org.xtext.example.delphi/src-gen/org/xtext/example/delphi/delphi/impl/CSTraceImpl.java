@@ -6,6 +6,7 @@ package org.xtext.example.delphi.delphi.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -13,6 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.delphi.astm.GASTMObject;
 
+import org.xtext.example.delphi.astm.util.Visitable;
 import org.xtext.example.delphi.delphi.CSTrace;
 import org.xtext.example.delphi.delphi.DelphiPackage;
 
@@ -38,7 +40,7 @@ public abstract class CSTraceImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected GASTMObject ast;
+	protected Visitable ast;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,10 +66,10 @@ public abstract class CSTraceImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GASTMObject getAst() {
-		if (ast != null && ast.eIsProxy()) {
+	public Visitable getAst() {
+		if (ast != null && ((EObject)ast).eIsProxy()) {
 			InternalEObject oldAst = (InternalEObject)ast;
-			ast = (GASTMObject)eResolveProxy(oldAst);
+			ast = (Visitable)eResolveProxy(oldAst);
 			if (ast != oldAst) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DelphiPackage.CS_TRACE__AST, oldAst, ast));
@@ -81,7 +83,7 @@ public abstract class CSTraceImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GASTMObject basicGetAst() {
+	public Visitable basicGetAst() {
 		return ast;
 	}
 
@@ -90,8 +92,8 @@ public abstract class CSTraceImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAst(GASTMObject newAst) {
-		GASTMObject oldAst = ast;
+	public void setAst(Visitable newAst) {
+		Visitable oldAst = ast;
 		ast = newAst;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.CS_TRACE__AST, oldAst, ast));
@@ -121,7 +123,7 @@ public abstract class CSTraceImpl extends MinimalEObjectImpl.Container implement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DelphiPackage.CS_TRACE__AST:
-				setAst((GASTMObject)newValue);
+				setAst((Visitable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,7 +138,7 @@ public abstract class CSTraceImpl extends MinimalEObjectImpl.Container implement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DelphiPackage.CS_TRACE__AST:
-				setAst((GASTMObject)null);
+				setAst((Visitable)null);
 				return;
 		}
 		super.eUnset(featureID);

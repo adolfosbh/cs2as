@@ -100,7 +100,7 @@ as::astm::FunctionDefinition {
 context block
 def : ast() : as::astm::DelphiBlockStatement =
 as::astm::DelphiBlockStatement {
-	declarations = declSect ?. ast(), 
+	declarations = declSect . ast(), 
 subStatements = compound.stamtList.statments.ast() 
 }
 
@@ -134,7 +134,7 @@ context withStmt
 def : ast() : as::astm::DelphiWithStatement =
 as::astm::DelphiWithStatement {
 	withs = _vars.ids.ast(), 
-subStatements = stmt.ast() 
+subStatements = OrderedSet{stmt.ast()} 
 }
 context ifStmt
 def : ast() : as::astm::IfStatement =
@@ -152,7 +152,7 @@ cases = cases.ast()
 context caseSelector
 def : ast() : as::astm::CaseBlock =
 as::astm::CaseBlock {
-	caseExpressions = labels->collect(x | x.first.ast()->including(x.last ?. ast())), 
+	caseExpressions = labels->collect(x | x.first.ast()->including(x.last . ast())), 
 _body = stmt.ast() 
 }
 

@@ -5956,7 +5956,7 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		initEAttribute(getMineID_Second(), ecorePackage.getEString(), "second", null, 0, 1, MineID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(csTraceEClass, CSTrace.class, "CSTrace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCSTrace_Ast(), theAstmPackage.getGASTMObject(), null, "ast", null, 0, 1, CSTrace.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCSTrace_Ast(), theAstmPackage.getVisitable(), null, "ast", null, 0, 1, CSTrace.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

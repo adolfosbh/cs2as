@@ -6,6 +6,7 @@ package org.xtext.example.delphi.delphi;
 import org.eclipse.emf.ecore.EObject;
 
 import org.xtext.example.delphi.astm.GASTMObject;
+import org.xtext.example.delphi.astm.util.Visitable;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,12 +34,12 @@ public interface CSTrace extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ast</em>' reference.
-	 * @see #setAst(GASTMObject)
+	 * @see #setAst(Visitable)
 	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getCSTrace_Ast()
-	 * @model transient="true"
+	 * @model type="org.xtext.example.delphi.astm.Visitable" transient="true"
 	 * @generated
 	 */
-	GASTMObject getAst();
+	Visitable getAst();
 
 	/**
 	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.CSTrace#getAst <em>Ast</em>}' reference.
@@ -48,6 +49,6 @@ public interface CSTrace extends EObject {
 	 * @see #getAst()
 	 * @generated
 	 */
-	void setAst(GASTMObject value);
+	void setAst(Visitable value);
 
 } // CSTrace

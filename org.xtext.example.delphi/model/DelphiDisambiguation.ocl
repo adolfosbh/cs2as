@@ -6,14 +6,14 @@ package cs
 
 context factor
 def : isANumber() : Boolean =
-	number <> null
+	self.number <> null
 def : isAString() : Boolean =
-	string <> null
+	self.string <> null
 def : isAFunctionCall() : Boolean =
-	expList <> null
+	self.expList <> null
 context designator
 def : isIdentifierRef() : Boolean =
-	designator = null
+	self.designator = null
 def : isQualifiedOverData() : Boolean =
-	designator <> null
+	self.designator <> null
 endpackage

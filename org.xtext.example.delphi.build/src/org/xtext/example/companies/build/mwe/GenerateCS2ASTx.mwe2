@@ -37,7 +37,7 @@ Workflow {
 		}
 		aSTraceType = org.eclipse.qvtd.cs2as.build.mwe.CSTracePropertyInjector.ASTraceInfo {
 			targetGenModel = "platform:/resource/org.xtext.example.delphi/model/astm.genmodel"
-			targetTypeName = "GASTMObject"
+			targetTypeName = "Visitable"
 		}
 	}
 	
@@ -106,13 +106,13 @@ Workflow {
 //    		to = "org.xtext.example.delphi.tx"
 //    	}
 //    }
-//    component = @org.eclipse.qvtd.cs2as.build.mwe.GenerateCGedQVTiTransformation {
-//		resourceSet = resourceSet
-//		oclFileURI = "platform:/resource/org.xtext.example.delphi/model/delphi.ocl"
-//		// FIXME the following only works if the output project are in the same FS folder. Better use a projectName and improve generator 
-//		javaFolder = "../org.xtext.example.delphi/src-gen"
-//		javaPackage = "org.xtext.example.delphi"
-//		lookupResolverClassName = "org.xtext.example.company.lookup.util.CompanyLookupSolver"
-//		lookupResultItfName = "org.xtext.example.company.lookup.util.CompanyLookupResult"
-//	}
+    component = @org.eclipse.qvtd.cs2as.build.mwe.GenerateCGedQVTiTransformation {
+		resourceSet = resourceSet
+		oclFileURI = "platform:/resource/org.xtext.example.delphi/model/delphi.ocl"
+		// FIXME the following only works if the output project are in the same FS folder. Better use a projectName and improve generator 
+		javaFolder = "../org.xtext.example.delphi/src-gen"
+		javaPackage = "org.xtext.example.delphi"
+		lookupResolverClassName = "org.xtext.example.company.lookup.util.CompanyLookupSolver"
+		lookupResultItfName = "org.xtext.example.company.lookup.util.CompanyLookupResult"
+	}
 }

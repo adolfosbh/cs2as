@@ -631,7 +631,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CSTrace" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ast" eType="ecore:EClass ../astm.ecore#//GASTMObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ast" eType="ecore:EClass ../astm.ecore#//Visitable"
         transient="true"/>
   </eClassifiers>
 </ecore:EPackage>
