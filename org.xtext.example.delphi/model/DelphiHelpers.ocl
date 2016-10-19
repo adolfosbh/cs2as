@@ -1,0 +1,18 @@
+import  cs : 'generated/Delphi.ecore#/' 
+import  as : 'astm.ecore#/'
+	 
+package cs
+context cs::ident
+def : extract() :String =
+	null
+context cs::identList
+def : extract() :String =
+	null
+	
+context cs::designatorPart
+def : extract() :String =
+	id
+		
+
+
+endpackage

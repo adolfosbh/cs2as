@@ -1,0 +1,19 @@
+import  cs : 'generated/Delphi.ecore#/' 
+import  as : 'astm.ecore' 
+import 'DelphiHelpers.ocl'
+import 'DelphiLookup.ocl'
+package cs
+
+context factor
+def : isANumber() : Boolean =
+	number <> null
+def : isAString() : Boolean =
+	string <> null
+def : isAFunctionCall() : Boolean =
+	expList <> null
+context designator
+def : isIdentifierRef() : Boolean =
+	designator = null
+def : isQualifiedOverData() : Boolean =
+	designator <> null
+endpackage

@@ -1,0 +1,230 @@
+import  cs : 'generated/Delphi.ecore#/' 
+import  as : 'astm.ecore' 
+import 'DelphiHelpers.ocl'
+import 'DelphiLookup.ocl'
+import 'DelphiDisambiguation.ocl'
+package cs
+
+context mainRule
+def : ast() : as::astm::Project =
+as::astm::Project {
+	files = file.ast()
+}
+
+context file
+def : ast() : as::astm::CompilationUnit =
+	null -- to be overriden 
+
+context unit
+def : ast() : as::astm::DelphiUnit =
+as::astm::DelphiUnit {
+	name = astm::Name {
+				nameString = id.extract()
+			}, 
+language = 'Delphi' , 
+interface = interfaceSect.ast(), 
+implementation = implementationSect.ast(), 
+locationInfo = astm::SourceLocation {
+				inSourceFile = astm::SourceFile {
+						}
+			} 
+}
+context interfaceSection
+def : ast() : as::astm::DelphiInterfaceSection =
+as::astm::DelphiInterfaceSection { 
+	fragments = interfaceDecl.ast() 
+}
+
+context interfaceDecl
+def : ast() : as::astm::DefinitionObject =
+	null -- to be overriden 
+	
+context implementationSection
+def : ast() : as::astm::DelphiImplementationSection =
+as::astm::DelphiImplementationSection {  
+	fragments = declSect.ast() 
+}
+context declSection
+def : ast() : as::astm::DefinitionObject =
+   null -- to be overriden
+   
+context labelDeclSection
+def : ast() : as::astm::LabelDefinition =
+as::astm::LabelDefinition {
+	}
+context constantDecl
+def : ast() : as::astm::VariableDefinition =
+as::astm::VariableDefinition {
+	identifierName = astm::Name {
+				nameString = id.extract()
+			}, 
+initialValue = const.ast() 
+}
+context expression
+def : ast() : as::astm::Expression =
+	null -- to be overriden
+
+context constExpr
+def : ast() : as::astm::Expression =
+	exps.oclAsType(expression).ast()
+
+context typeDecl
+def : ast() : as::astm::TypeDefinition =
+as::astm::TypeDefinition {
+	name = astm::Name {
+				nameString = id.extract()
+			} 
+}
+context varDecl
+def : ast() : as::astm::VariableDefinition =
+as::astm::VariableDefinition {
+	identifierName = astm::Name {
+				nameString = idList.extract()
+			}, 
+definitionType = type.ast(), 
+isMutable = 'true'  
+}
+
+context type
+def : ast() : as::astm::TypeReference =
+	null -- to be overriden
+	
+context procedureDecl
+def : ast() : as::astm::FunctionDefinition =
+as::astm::FunctionDefinition {
+	identifierName = astm::Name {
+				nameString = heading.id.extract()
+			}, 
+	_body = block.ast() 
+}
+context block
+def : ast() : as::astm::DelphiBlockStatement =
+as::astm::DelphiBlockStatement {
+	declarations = declSection ?. ast(), 
+subStatements = compound.stamtList.statments.ast() 
+}
+
+context unlabelledStatement
+def : ast() : as::astm::Statement =
+	null -- to be overriden
+	
+context statement
+def : ast() : as::astm::Statement =
+	self.statement.ast()
+
+context assignmentStmnt
+def : ast() : as::astm::ExpressionStatement =
+as::astm::ExpressionStatement {
+	expression = astm::BinaryExpression {
+				leftOperand = designator.ast(),
+				operator = astm::Assign {
+						},
+				rightOperand = expression.ast()
+			} 
+}
+context callStmnt
+def : ast() : as::astm::ExpressionStatement =
+as::astm::ExpressionStatement {
+	expression = astm::FunctionCallExpression {
+				calledFunction = designator.ast(),
+				actualParams = args.exps.ast()
+			} 
+}
+context withStmt
+def : ast() : as::astm::DelphiWithStatement =
+as::astm::DelphiWithStatement {
+	withs = _vars.ids.ast(), 
+subStatements = stmt.ast() 
+}
+context ifStmt
+def : ast() : as::astm::IfStatement =
+as::astm::IfStatement {
+	condition = condition.ast(), 
+thenBody = _then.ast(), 
+elseBody = _else.ast() 
+}
+context caseStmt
+def : ast() : as::astm::SwitchStatement =
+as::astm::SwitchStatement {
+	switchExpression = expression.ast(), 
+cases = cases.ast() 
+}
+context caseSelector
+def : ast() : as::astm::CaseBlock =
+as::astm::CaseBlock {
+	caseExpressions = labels->collect(x | x.first.ast()->including(x.last ?. ast())), 
+_body = stmt.ast() 
+}
+
+context tryStmt
+def : ast() : as::astm::TryStatement =
+as::astm::TryStatement {
+	guardedStatement = stmtList.statments->first().ast(),  
+	finalStatement = final.statments->first().ast() 
+}
+
+context designator
+def : ast() : as::astm::NameReference =
+if isIdentifierRef()
+then as::astm::IdentifierReference {
+	name = astm::Name {
+				nameString = subpart.part.extract()
+			}, 
+refersTo = getDefinition() 
+}
+else
+	if isQualifiedOverData()
+	then as::astm::QualifiedOverData {
+		name = astm::Name {
+					nameString = subpart.part.extract()
+				}, 
+--	member = designator.ast().oclAsType(as::astm::IdentifierReference), 
+	refersTo = getDefinition() 
+	}
+	else
+		invalid
+	endif
+endif
+
+
+--context ident
+--def : ast() : as::astm::DefinitionObject =
+--let method  = ast().lookupFunctionDefinition(id->first())
+--in if method <> null then method else ast().lookupVariableDefinition(id->first()) endif
+
+context relExp
+def : ast() : as::astm::BinaryExpression =
+as::astm::BinaryExpression {
+	leftOperand = left.ast(), 
+rightOperand = right.ast(), 
+operator = if relOp.op = '='  then astm::Equal else null endif 
+}
+context mulOp
+def : ast() : as::astm::BinaryExpression =
+as::astm::BinaryExpression {
+	}
+context factor
+def : ast() : as::astm::Expression =
+if isANumber()
+then as::astm::IntegerLiteral {
+	value = number 
+}
+else
+	if isAString()
+	then as::astm::StringLiteral {
+		value = string 
+	}
+	else
+		if isAFunctionCall()
+		then as::astm::DelphiFunctionCallExpression {
+			calledFunction = designator.ast(), 
+		actualParams = expList.exps.ast() 
+		}
+		else
+			invalid
+		endif
+	endif
+endif
+
+
+endpackage
