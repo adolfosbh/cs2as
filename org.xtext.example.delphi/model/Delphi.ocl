@@ -8,7 +8,7 @@ package cs
 context mainRule
 def : ast() : as::astm::Project =
 as::astm::Project {
-	files = file.ast()
+	files = OrderedSet{self.file.ast()}
 }
 
 context file
@@ -32,7 +32,7 @@ locationInfo = astm::SourceLocation {
 context interfaceSection
 def : ast() : as::astm::DelphiInterfaceSection =
 as::astm::DelphiInterfaceSection { 
-	fragments = interfaceDecl.ast() 
+	fragments = self.interfaceDecl.ast()->asOrderedSet()
 }
 
 context interfaceDecl
@@ -81,7 +81,7 @@ as::astm::VariableDefinition {
 	identifierName = astm::Name {
 				nameString = idList.extract()
 			}, 
-definitionType = type.ast(), 
+definitionType = self.type.ast(), 
 isMutable = 'true'  
 }
 
@@ -95,12 +95,12 @@ as::astm::FunctionDefinition {
 	identifierName = astm::Name {
 				nameString = heading.id.extract()
 			}, 
-	_body = block.ast() 
+	_body = self.block.ast() 
 }
 context block
 def : ast() : as::astm::DelphiBlockStatement =
 as::astm::DelphiBlockStatement {
-	declarations = declSection ?. ast(), 
+	declarations = declSect ?. ast(), 
 subStatements = compound.stamtList.statments.ast() 
 }
 
@@ -116,17 +116,17 @@ context assignmentStmnt
 def : ast() : as::astm::ExpressionStatement =
 as::astm::ExpressionStatement {
 	expression = astm::BinaryExpression {
-				leftOperand = designator.ast(),
+				leftOperand = self.designator.ast(),
 				operator = astm::Assign {
 						},
-				rightOperand = expression.ast()
+				rightOperand = exp.ast()
 			} 
 }
 context callStmnt
 def : ast() : as::astm::ExpressionStatement =
 as::astm::ExpressionStatement {
 	expression = astm::FunctionCallExpression {
-				calledFunction = designator.ast(),
+				calledFunction = self.designator.ast(),
 				actualParams = args.exps.ast()
 			} 
 }
@@ -146,7 +146,7 @@ elseBody = _else.ast()
 context caseStmt
 def : ast() : as::astm::SwitchStatement =
 as::astm::SwitchStatement {
-	switchExpression = expression.ast(), 
+	switchExpression = self.expression.ast(), 
 cases = cases.ast() 
 }
 context caseSelector
@@ -187,7 +187,10 @@ else
 endif
 
 
---context ident
+context ident
+def : ast() :  as::astm::DefinitionObject =
+	null -- to be overriden
+	
 --def : ast() : as::astm::DefinitionObject =
 --let method  = ast().lookupFunctionDefinition(id->first())
 --in if method <> null then method else ast().lookupVariableDefinition(id->first()) endif
@@ -217,7 +220,7 @@ else
 	else
 		if isAFunctionCall()
 		then as::astm::DelphiFunctionCallExpression {
-			calledFunction = designator.ast(), 
+			calledFunction = self.designator.ast(), 
 		actualParams = expList.exps.ast() 
 		}
 		else
