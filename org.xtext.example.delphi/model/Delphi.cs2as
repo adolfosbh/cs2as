@@ -59,15 +59,19 @@ mappings {
 		identifierName := astm::gastm::Name { nameString = id.extract() };
 		initialValue := const.trace;
 	}
-	refer astm::gastm::Expression from constExpr :=
-		exps.trace;
+	refer as::astm::Expression from ConstExp :=
+		exp.trace
+	refer as::astm::Expression from MultipleConstExp :=
+		exps.trace->first()
+	refer as::astm::Expression from RecordConstExp :=
+		exps.constExp.trace->first()
 	create astm::gastm::TypeDefinition from typeDecl {
 		name := astm::gastm::Name { nameString = id.extract() };
 	}
 	create astm::gastm::VariableDefinition from varDecl  {
 		identifierName := astm::gastm::Name { nameString = idList.extract() };
 		definitionType := type.trace;
-		isMutable := 'true';
+		isMutable := true;
 	}
 	create astm::gastm::FunctionDefinition from procedureDecl {
 		identifierName := astm::gastm::Name{ nameString = heading.id.extract() };
@@ -149,7 +153,7 @@ mappings {
 		leftOperand := left.trace;
 		rightOperand := right.trace;
 		operator := if relOp.op = '=' 
-					then astm::gastm::Equal
+					then astm::gastm::Equal{}
 					else null -- other cases missing
 					endif;
 	}

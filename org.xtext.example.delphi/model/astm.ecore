@@ -40,8 +40,8 @@
       eSuperTypes="#//Visitable"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="AccessKind" eSuperTypes="#//Visitable"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UnaryOperator" abstract="true" eSuperTypes="#//Visitable"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BinaryOperator" abstract="true" eSuperTypes="#//Visitable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryOperator" abstract="true" eSuperTypes="#//Operator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryOperator" abstract="true" eSuperTypes="#//Operator"/>
   <eClassifiers xsi:type="ecore:EClass" name="ActualParameter" abstract="true" eSuperTypes="#//Visitable"/>
   <eClassifiers xsi:type="ecore:EClass" name="SourceFile" eSuperTypes="#//GASTMSourceObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -565,4 +565,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="SpecificSelectStatement" eSuperTypes="#//Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Visitable" instanceClassName="org.xtext.example.delphi.astm.util.Visitable"
       abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operator" eSuperTypes="#//OtherSyntaxObject"/>
 </ecore:EPackage>

@@ -449,5 +449,6 @@
     <genClasses ecoreClass="astm.ecore#//SpecificConcatString"/>
     <genClasses ecoreClass="astm.ecore#//SpecificSelectStatement"/>
     <genClasses image="false" ecoreClass="astm.ecore#//Visitable"/>
+    <genClasses ecoreClass="astm.ecore#//Operator"/>
   </genPackages>
 </genmodel:GenModel>

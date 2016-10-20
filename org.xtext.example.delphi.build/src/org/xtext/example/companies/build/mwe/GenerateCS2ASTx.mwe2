@@ -108,7 +108,7 @@ Workflow {
 //    }
     component = @org.eclipse.qvtd.cs2as.build.mwe.GenerateCGedQVTiTransformation {
 		resourceSet = resourceSet
-		oclFileURI = "platform:/resource/org.xtext.example.delphi/model/delphi.ocl"
+		oclFileURI = "platform:/resource/org.xtext.example.delphi/model/Delphi.ocl"
 		// FIXME the following only works if the output project are in the same FS folder. Better use a projectName and improve generator 
 		javaFolder = "../org.xtext.example.delphi/src-gen"
 		javaPackage = "org.xtext.example.delphi"

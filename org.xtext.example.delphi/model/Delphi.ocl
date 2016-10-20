@@ -60,14 +60,27 @@ as::astm::VariableDefinition {
 			}, 
 initialValue = const.ast() 
 }
+
 context expression
 def : ast() : as::astm::Expression =
 	null -- to be overriden
 
 context constExpr
 def : ast() : as::astm::Expression =
-	exps.oclAsType(expression).ast()
+	null -- to be overriden
+	
+context ConstExp
+def : ast() : as::astm::Expression =
+	exp.ast()
 
+context MultipleConstExp
+def : ast() : as::astm::Expression =
+	exps.ast()->first()
+	
+context RecordConstExp
+def : ast() : as::astm::Expression =
+	exps.constExp.ast()->first()
+		
 context typeDecl
 def : ast() : as::astm::TypeDefinition =
 as::astm::TypeDefinition {
@@ -82,7 +95,7 @@ as::astm::VariableDefinition {
 				nameString = idList.extract()
 			}, 
 definitionType = self.type.ast(), 
-isMutable = 'true'  
+isMutable = true  
 }
 
 context type
@@ -95,12 +108,12 @@ as::astm::FunctionDefinition {
 	identifierName = astm::Name {
 				nameString = heading.id.extract()
 			}, 
-	_body = self.block.ast() 
+	_body = OrderedSet{self.block.ast()} 
 }
 context block
 def : ast() : as::astm::DelphiBlockStatement =
 as::astm::DelphiBlockStatement {
-	declarations = declSect . ast(), 
+	declarations = OrderedSet{declSect . ast()}, 
 subStatements = compound.stamtList.statments.ast() 
 }
 
@@ -153,7 +166,7 @@ context caseSelector
 def : ast() : as::astm::CaseBlock =
 as::astm::CaseBlock {
 	caseExpressions = labels->collect(x | x.first.ast()->including(x.last . ast())), 
-_body = stmt.ast() 
+_body = OrderedSet{stmt.ast()} 
 }
 
 context tryStmt
@@ -200,7 +213,7 @@ def : ast() : as::astm::BinaryExpression =
 as::astm::BinaryExpression {
 	leftOperand = left.ast(), 
 rightOperand = right.ast(), 
-operator = if relOp.op = '='  then astm::Equal else null endif 
+operator = if relOp.op = '='  then astm::Equal{} else null endif 
 }
 context mulOp
 def : ast() : as::astm::BinaryExpression =

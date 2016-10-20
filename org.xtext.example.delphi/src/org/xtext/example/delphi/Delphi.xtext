@@ -617,10 +617,11 @@ reservedWord
 	: 	id=ID
 	;
 
+// ASBH modified
 constExpr  // modified
-	:  exps+=expression
-	|  '(' exps+=constExpr (',' exps+=constExpr)*')'
-	|  '(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')'
+	: {ConstExp} exp=expression
+	| {MultipleConstExp} '(' exps+=constExpr (',' exps+=constExpr)*')'
+	| {RecordConstExp} '(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')'
 	;
 
 recordConstExpr // added

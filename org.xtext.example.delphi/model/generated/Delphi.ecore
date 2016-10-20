@@ -287,14 +287,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="exps" upperBound="-1" eType="#//expression"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="stmtList" eSuperTypes="#//CSTrace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statments" upperBound="-1"
+        eType="#//statement" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="statement" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//unlabelledStatement"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="stmtList" eSuperTypes="#//CSTrace">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statments" upperBound="-1"
-        eType="#//statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="unlabelledStatement" eSuperTypes="#//CSTrace"/>
   <eClassifiers xsi:type="ecore:EClass" name="simpleStatement" eSuperTypes="#//unlabelledStatement"/>
@@ -554,10 +554,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="reservedWord" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="constExpr" eSuperTypes="#//CSTrace">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="exps" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="constExpr" eSuperTypes="#//CSTrace"/>
   <eClassifiers xsi:type="ecore:EClass" name="recordConstExpr" eSuperTypes="#//CSTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//ident" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constExp" eType="#//constExpr"
@@ -629,6 +626,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="MineID" eSuperTypes="#//ident">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="first" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstExp" eSuperTypes="#//constExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultipleConstExp" eSuperTypes="#//constExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exps" upperBound="-1" eType="#//constExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RecordConstExp" eSuperTypes="#//constExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exps" upperBound="-1" eType="#//recordConstExpr"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CSTrace" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ast" eType="ecore:EClass ../astm.ecore#//Visitable"
