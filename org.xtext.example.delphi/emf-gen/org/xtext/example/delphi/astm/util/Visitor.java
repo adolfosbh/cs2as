@@ -172,6 +172,7 @@ public interface Visitor<R>
 	R visitNotEqual(org.xtext.example.delphi.astm.@NonNull NotEqual object);
 	R visitNotGreater(org.xtext.example.delphi.astm.@NonNull NotGreater object);
 	R visitNotLess(org.xtext.example.delphi.astm.@NonNull NotLess object);
+	R visitOperator(org.xtext.example.delphi.astm.@NonNull Operator object);
 	R visitOperatorAssign(org.xtext.example.delphi.astm.@NonNull OperatorAssign object);
 	R visitOr(org.xtext.example.delphi.astm.@NonNull Or object);
 	R visitOtherSyntaxObject(org.xtext.example.delphi.astm.@NonNull OtherSyntaxObject object);

@@ -15549,8 +15549,199 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleexprList"
 
 
+    // $ANTLR start "entryRulestmtList"
+    // InternalDelphi.g:5259:1: entryRulestmtList returns [EObject current=null] : iv_rulestmtList= rulestmtList EOF ;
+    public final EObject entryRulestmtList() throws RecognitionException {
+        EObject current = null;
+        int entryRulestmtList_StartIndex = input.index();
+        EObject iv_rulestmtList = null;
+
+
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 129) ) { return current; }
+            // InternalDelphi.g:5259:49: (iv_rulestmtList= rulestmtList EOF )
+            // InternalDelphi.g:5260:2: iv_rulestmtList= rulestmtList EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getStmtListRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_rulestmtList=rulestmtList();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_rulestmtList; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 129, entryRulestmtList_StartIndex); }
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulestmtList"
+
+
+    // $ANTLR start "rulestmtList"
+    // InternalDelphi.g:5266:1: rulestmtList returns [EObject current=null] : ( () ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )* ) ;
+    public final EObject rulestmtList() throws RecognitionException {
+        EObject current = null;
+        int rulestmtList_StartIndex = input.index();
+        Token otherlv_2=null;
+        EObject lv_statments_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 130) ) { return current; }
+            // InternalDelphi.g:5272:2: ( ( () ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )* ) )
+            // InternalDelphi.g:5273:2: ( () ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )* )
+            {
+            // InternalDelphi.g:5273:2: ( () ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )* )
+            // InternalDelphi.g:5274:3: () ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )*
+            {
+            // InternalDelphi.g:5274:3: ()
+            // InternalDelphi.g:5275:4: 
+            {
+            if ( state.backtracking==0 ) {
+
+              				/* */
+              			
+            }
+            if ( state.backtracking==0 ) {
+
+              				current = forceCreateModelElement(
+              					grammarAccess.getStmtListAccess().getStmtListAction_0(),
+              					current);
+              			
+            }
+
+            }
+
+            // InternalDelphi.g:5284:3: ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )*
+            loop87:
+            do {
+                int alt87=2;
+                int LA87_0 = input.LA(1);
+
+                if ( ((LA87_0>=RULE_ID && LA87_0<=RULE_HEX)||LA87_0==71||LA87_0==100||(LA87_0>=102 && LA87_0<=105)||LA87_0==108||LA87_0==110||LA87_0==112||(LA87_0>=115 && LA87_0<=116)||LA87_0==121||LA87_0==123) ) {
+                    alt87=1;
+                }
+
+
+                switch (alt87) {
+            	case 1 :
+            	    // InternalDelphi.g:5285:4: ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )?
+            	    {
+            	    // InternalDelphi.g:5285:4: ( (lv_statments_1_0= rulestatement ) )
+            	    // InternalDelphi.g:5286:5: (lv_statments_1_0= rulestatement )
+            	    {
+            	    // InternalDelphi.g:5286:5: (lv_statments_1_0= rulestatement )
+            	    // InternalDelphi.g:5287:6: lv_statments_1_0= rulestatement
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      						newCompositeNode(grammarAccess.getStmtListAccess().getStatmentsStatementParserRuleCall_1_0_0());
+            	      					
+            	    }
+            	    pushFollow(FOLLOW_61);
+            	    lv_statments_1_0=rulestatement();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getStmtListRule());
+            	      						}
+            	      						add(
+            	      							current,
+            	      							"statments",
+            	      							lv_statments_1_0,
+            	      							"org.xtext.example.delphi.Delphi.statement");
+            	      						afterParserOrEnumRuleCall();
+            	      					
+            	    }
+
+            	    }
+
+
+            	    }
+
+            	    // InternalDelphi.g:5304:4: (otherlv_2= ';' )?
+            	    int alt86=2;
+            	    int LA86_0 = input.LA(1);
+
+            	    if ( (LA86_0==19) ) {
+            	        int LA86_1 = input.LA(2);
+
+            	        if ( (synpred149_InternalDelphi()) ) {
+            	            alt86=1;
+            	        }
+            	    }
+            	    switch (alt86) {
+            	        case 1 :
+            	            // InternalDelphi.g:5305:5: otherlv_2= ';'
+            	            {
+            	            otherlv_2=(Token)match(input,19,FOLLOW_61); if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	              					newLeafNode(otherlv_2, grammarAccess.getStmtListAccess().getSemicolonKeyword_1_1());
+            	              				
+            	            }
+
+            	            }
+            	            break;
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop87;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 130, rulestmtList_StartIndex); }
+        }
+        return current;
+    }
+    // $ANTLR end "rulestmtList"
+
+
     // $ANTLR start "entryRulestatement"
-    // InternalDelphi.g:5259:1: entryRulestatement returns [EObject current=null] : iv_rulestatement= rulestatement EOF ;
+    // InternalDelphi.g:5315:1: entryRulestatement returns [EObject current=null] : iv_rulestatement= rulestatement EOF ;
     public final EObject entryRulestatement() throws RecognitionException {
         EObject current = null;
         int entryRulestatement_StartIndex = input.index();
@@ -15558,9 +15749,9 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 129) ) { return current; }
-            // InternalDelphi.g:5259:50: (iv_rulestatement= rulestatement EOF )
-            // InternalDelphi.g:5260:2: iv_rulestatement= rulestatement EOF
+            if ( state.backtracking>0 && alreadyParsedRule(input, 131) ) { return current; }
+            // InternalDelphi.g:5315:50: (iv_rulestatement= rulestatement EOF )
+            // InternalDelphi.g:5316:2: iv_rulestatement= rulestatement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStatementRule()); 
@@ -15584,7 +15775,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 129, entryRulestatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 131, entryRulestatement_StartIndex); }
         }
         return current;
     }
@@ -15592,7 +15783,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulestatement"
-    // InternalDelphi.g:5266:1: rulestatement returns [EObject current=null] : ( ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )? ( (lv_statement_2_0= ruleunlabelledStatement ) ) ) ;
+    // InternalDelphi.g:5322:1: rulestatement returns [EObject current=null] : ( ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )? ( (lv_statement_2_0= ruleunlabelledStatement ) ) ) ;
     public final EObject rulestatement() throws RecognitionException {
         EObject current = null;
         int rulestatement_StartIndex = input.index();
@@ -15606,36 +15797,36 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 130) ) { return current; }
-            // InternalDelphi.g:5272:2: ( ( ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )? ( (lv_statement_2_0= ruleunlabelledStatement ) ) ) )
-            // InternalDelphi.g:5273:2: ( ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )? ( (lv_statement_2_0= ruleunlabelledStatement ) ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 132) ) { return current; }
+            // InternalDelphi.g:5328:2: ( ( ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )? ( (lv_statement_2_0= ruleunlabelledStatement ) ) ) )
+            // InternalDelphi.g:5329:2: ( ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )? ( (lv_statement_2_0= ruleunlabelledStatement ) ) )
             {
-            // InternalDelphi.g:5273:2: ( ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )? ( (lv_statement_2_0= ruleunlabelledStatement ) ) )
-            // InternalDelphi.g:5274:3: ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )? ( (lv_statement_2_0= ruleunlabelledStatement ) )
+            // InternalDelphi.g:5329:2: ( ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )? ( (lv_statement_2_0= ruleunlabelledStatement ) ) )
+            // InternalDelphi.g:5330:3: ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )? ( (lv_statement_2_0= ruleunlabelledStatement ) )
             {
-            // InternalDelphi.g:5274:3: ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )?
-            int alt86=2;
-            int LA86_0 = input.LA(1);
+            // InternalDelphi.g:5330:3: ( ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':' )?
+            int alt88=2;
+            int LA88_0 = input.LA(1);
 
-            if ( (LA86_0==RULE_ID) ) {
-                int LA86_1 = input.LA(2);
+            if ( (LA88_0==RULE_ID) ) {
+                int LA88_1 = input.LA(2);
 
-                if ( (LA86_1==37) ) {
-                    alt86=1;
+                if ( (LA88_1==37) ) {
+                    alt88=1;
                 }
             }
-            else if ( ((LA86_0>=RULE_INT && LA86_0<=RULE_HEX)) ) {
-                alt86=1;
+            else if ( ((LA88_0>=RULE_INT && LA88_0<=RULE_HEX)) ) {
+                alt88=1;
             }
-            switch (alt86) {
+            switch (alt88) {
                 case 1 :
-                    // InternalDelphi.g:5275:4: ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':'
+                    // InternalDelphi.g:5331:4: ( (lv_labelId_0_0= rulelabelId ) ) otherlv_1= ':'
                     {
-                    // InternalDelphi.g:5275:4: ( (lv_labelId_0_0= rulelabelId ) )
-                    // InternalDelphi.g:5276:5: (lv_labelId_0_0= rulelabelId )
+                    // InternalDelphi.g:5331:4: ( (lv_labelId_0_0= rulelabelId ) )
+                    // InternalDelphi.g:5332:5: (lv_labelId_0_0= rulelabelId )
                     {
-                    // InternalDelphi.g:5276:5: (lv_labelId_0_0= rulelabelId )
-                    // InternalDelphi.g:5277:6: lv_labelId_0_0= rulelabelId
+                    // InternalDelphi.g:5332:5: (lv_labelId_0_0= rulelabelId )
+                    // InternalDelphi.g:5333:6: lv_labelId_0_0= rulelabelId
                     {
                     if ( state.backtracking==0 ) {
 
@@ -15666,7 +15857,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,37,FOLLOW_61); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,37,FOLLOW_62); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_1, grammarAccess.getStatementAccess().getColonKeyword_0_1());
@@ -15678,11 +15869,11 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDelphi.g:5299:3: ( (lv_statement_2_0= ruleunlabelledStatement ) )
-            // InternalDelphi.g:5300:4: (lv_statement_2_0= ruleunlabelledStatement )
+            // InternalDelphi.g:5355:3: ( (lv_statement_2_0= ruleunlabelledStatement ) )
+            // InternalDelphi.g:5356:4: (lv_statement_2_0= ruleunlabelledStatement )
             {
-            // InternalDelphi.g:5300:4: (lv_statement_2_0= ruleunlabelledStatement )
-            // InternalDelphi.g:5301:5: lv_statement_2_0= ruleunlabelledStatement
+            // InternalDelphi.g:5356:4: (lv_statement_2_0= ruleunlabelledStatement )
+            // InternalDelphi.g:5357:5: lv_statement_2_0= ruleunlabelledStatement
             {
             if ( state.backtracking==0 ) {
 
@@ -15731,202 +15922,11 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 130, rulestatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 132, rulestatement_StartIndex); }
         }
         return current;
     }
     // $ANTLR end "rulestatement"
-
-
-    // $ANTLR start "entryRulestmtList"
-    // InternalDelphi.g:5322:1: entryRulestmtList returns [EObject current=null] : iv_rulestmtList= rulestmtList EOF ;
-    public final EObject entryRulestmtList() throws RecognitionException {
-        EObject current = null;
-        int entryRulestmtList_StartIndex = input.index();
-        EObject iv_rulestmtList = null;
-
-
-        try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 131) ) { return current; }
-            // InternalDelphi.g:5322:49: (iv_rulestmtList= rulestmtList EOF )
-            // InternalDelphi.g:5323:2: iv_rulestmtList= rulestmtList EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getStmtListRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_rulestmtList=rulestmtList();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_rulestmtList; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-            if ( state.backtracking>0 ) { memoize(input, 131, entryRulestmtList_StartIndex); }
-        }
-        return current;
-    }
-    // $ANTLR end "entryRulestmtList"
-
-
-    // $ANTLR start "rulestmtList"
-    // InternalDelphi.g:5329:1: rulestmtList returns [EObject current=null] : ( () ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )* ) ;
-    public final EObject rulestmtList() throws RecognitionException {
-        EObject current = null;
-        int rulestmtList_StartIndex = input.index();
-        Token otherlv_2=null;
-        EObject lv_statments_1_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 132) ) { return current; }
-            // InternalDelphi.g:5335:2: ( ( () ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )* ) )
-            // InternalDelphi.g:5336:2: ( () ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )* )
-            {
-            // InternalDelphi.g:5336:2: ( () ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )* )
-            // InternalDelphi.g:5337:3: () ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )*
-            {
-            // InternalDelphi.g:5337:3: ()
-            // InternalDelphi.g:5338:4: 
-            {
-            if ( state.backtracking==0 ) {
-
-              				/* */
-              			
-            }
-            if ( state.backtracking==0 ) {
-
-              				current = forceCreateModelElement(
-              					grammarAccess.getStmtListAccess().getStmtListAction_0(),
-              					current);
-              			
-            }
-
-            }
-
-            // InternalDelphi.g:5347:3: ( ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )? )*
-            loop88:
-            do {
-                int alt88=2;
-                int LA88_0 = input.LA(1);
-
-                if ( ((LA88_0>=RULE_ID && LA88_0<=RULE_HEX)||LA88_0==71||LA88_0==100||(LA88_0>=102 && LA88_0<=105)||LA88_0==108||LA88_0==110||LA88_0==112||(LA88_0>=115 && LA88_0<=116)||LA88_0==121||LA88_0==123) ) {
-                    alt88=1;
-                }
-
-
-                switch (alt88) {
-            	case 1 :
-            	    // InternalDelphi.g:5348:4: ( (lv_statments_1_0= rulestatement ) ) (otherlv_2= ';' )?
-            	    {
-            	    // InternalDelphi.g:5348:4: ( (lv_statments_1_0= rulestatement ) )
-            	    // InternalDelphi.g:5349:5: (lv_statments_1_0= rulestatement )
-            	    {
-            	    // InternalDelphi.g:5349:5: (lv_statments_1_0= rulestatement )
-            	    // InternalDelphi.g:5350:6: lv_statments_1_0= rulestatement
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      						newCompositeNode(grammarAccess.getStmtListAccess().getStatmentsStatementParserRuleCall_1_0_0());
-            	      					
-            	    }
-            	    pushFollow(FOLLOW_62);
-            	    lv_statments_1_0=rulestatement();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      						if (current==null) {
-            	      							current = createModelElementForParent(grammarAccess.getStmtListRule());
-            	      						}
-            	      						add(
-            	      							current,
-            	      							"statments",
-            	      							lv_statments_1_0,
-            	      							"org.xtext.example.delphi.Delphi.statement");
-            	      						afterParserOrEnumRuleCall();
-            	      					
-            	    }
-
-            	    }
-
-
-            	    }
-
-            	    // InternalDelphi.g:5367:4: (otherlv_2= ';' )?
-            	    int alt87=2;
-            	    int LA87_0 = input.LA(1);
-
-            	    if ( (LA87_0==19) ) {
-            	        int LA87_1 = input.LA(2);
-
-            	        if ( (synpred150_InternalDelphi()) ) {
-            	            alt87=1;
-            	        }
-            	    }
-            	    switch (alt87) {
-            	        case 1 :
-            	            // InternalDelphi.g:5368:5: otherlv_2= ';'
-            	            {
-            	            otherlv_2=(Token)match(input,19,FOLLOW_62); if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	              					newLeafNode(otherlv_2, grammarAccess.getStmtListAccess().getSemicolonKeyword_1_1());
-            	              				
-            	            }
-
-            	            }
-            	            break;
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop88;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-            if ( state.backtracking>0 ) { memoize(input, 132, rulestmtList_StartIndex); }
-        }
-        return current;
-    }
-    // $ANTLR end "rulestmtList"
 
 
     // $ANTLR start "entryRuleunlabelledStatement"
@@ -17001,7 +17001,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             // InternalDelphi.g:5733:2: (otherlv_0= 'begin' ( (lv_stamtList_1_0= rulestmtList ) ) otherlv_2= 'end' )
             // InternalDelphi.g:5734:3: otherlv_0= 'begin' ( (lv_stamtList_1_0= rulestmtList ) ) otherlv_2= 'end'
             {
-            otherlv_0=(Token)match(input,104,FOLLOW_64); if (state.failed) return current;
+            otherlv_0=(Token)match(input,104,FOLLOW_62); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getCompoundStmtAccess().getBeginKeyword_0());
@@ -17317,7 +17317,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getIfStmtAccess().getConditionExpressionParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_65);
+            pushFollow(FOLLOW_64);
             lv_condition_1_0=ruleexpression();
 
             state._fsp--;
@@ -17341,7 +17341,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,106,FOLLOW_66); if (state.failed) return current;
+            otherlv_2=(Token)match(input,106,FOLLOW_65); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getIfStmtAccess().getThenKeyword_2());
@@ -17358,7 +17358,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getIfStmtAccess().getThenStatementParserRuleCall_3_0());
               				
             }
-            pushFollow(FOLLOW_67);
+            pushFollow(FOLLOW_66);
             lv_then_3_0=rulestatement();
 
             state._fsp--;
@@ -17397,7 +17397,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalDelphi.g:5869:4: otherlv_4= ';'
                     {
-                    otherlv_4=(Token)match(input,19,FOLLOW_68); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,19,FOLLOW_67); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_4, grammarAccess.getIfStmtAccess().getSemicolonKeyword_4());
@@ -17424,7 +17424,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalDelphi.g:5875:4: otherlv_5= 'else' ( (lv_else_6_0= rulestatement ) ) (otherlv_7= ';' )?
                     {
-                    otherlv_5=(Token)match(input,107,FOLLOW_64); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,107,FOLLOW_62); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_5, grammarAccess.getIfStmtAccess().getElseKeyword_5_0());
@@ -17679,7 +17679,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,19,FOLLOW_69); if (state.failed) return current;
+            otherlv_4=(Token)match(input,19,FOLLOW_68); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_4, grammarAccess.getCaseStmtAccess().getSemicolonKeyword_4());
@@ -17735,7 +17735,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_6=(Token)match(input,19,FOLLOW_69); if (state.failed) return current;
+            	    otherlv_6=(Token)match(input,19,FOLLOW_68); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_6, grammarAccess.getCaseStmtAccess().getSemicolonKeyword_5_1());
@@ -17753,7 +17753,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             // InternalDelphi.g:5999:3: (otherlv_7= 'else' ( (lv_default_8_0= rulestmtList ) ) )
             // InternalDelphi.g:6000:4: otherlv_7= 'else' ( (lv_default_8_0= rulestmtList ) )
             {
-            otherlv_7=(Token)match(input,107,FOLLOW_64); if (state.failed) return current;
+            otherlv_7=(Token)match(input,107,FOLLOW_62); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               				newLeafNode(otherlv_7, grammarAccess.getCaseStmtAccess().getElseKeyword_6_0());
@@ -17913,7 +17913,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getCaseSelectorAccess().getLabelsCaseLabelParserRuleCall_0_0());
               				
             }
-            pushFollow(FOLLOW_70);
+            pushFollow(FOLLOW_69);
             lv_labels_0_0=rulecaseLabel();
 
             state._fsp--;
@@ -17969,7 +17969,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	      						newCompositeNode(grammarAccess.getCaseSelectorAccess().getLabelsCaseLabelParserRuleCall_1_1_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_70);
+            	    pushFollow(FOLLOW_69);
             	    lv_labels_2_0=rulecaseLabel();
 
             	    state._fsp--;
@@ -18002,7 +18002,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,37,FOLLOW_64); if (state.failed) return current;
+            otherlv_3=(Token)match(input,37,FOLLOW_62); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_3, grammarAccess.getCaseSelectorAccess().getColonKeyword_2());
@@ -18545,7 +18545,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             // InternalDelphi.g:6259:2: (otherlv_0= 'repeat' ( (lv_stmt_1_0= rulestatement ) ) (otherlv_2= ';' )? otherlv_3= 'until' ( (lv_condition_4_0= ruleexpression ) ) )
             // InternalDelphi.g:6260:3: otherlv_0= 'repeat' ( (lv_stmt_1_0= rulestatement ) ) (otherlv_2= ';' )? otherlv_3= 'until' ( (lv_condition_4_0= ruleexpression ) )
             {
-            otherlv_0=(Token)match(input,108,FOLLOW_71); if (state.failed) return current;
+            otherlv_0=(Token)match(input,108,FOLLOW_70); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getRepeatStmtAccess().getRepeatKeyword_0());
@@ -18562,7 +18562,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getRepeatStmtAccess().getStmtStatementParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_72);
+            pushFollow(FOLLOW_71);
             lv_stmt_1_0=rulestatement();
 
             state._fsp--;
@@ -18597,7 +18597,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalDelphi.g:6284:4: otherlv_2= ';'
                     {
-                    otherlv_2=(Token)match(input,19,FOLLOW_73); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,19,FOLLOW_72); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_2, grammarAccess.getRepeatStmtAccess().getSemicolonKeyword_2());
@@ -18758,7 +18758,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getWhileStmtAccess().getConditionExpressionParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_74);
+            pushFollow(FOLLOW_73);
             lv_condition_1_0=ruleexpression();
 
             state._fsp--;
@@ -18782,7 +18782,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,111,FOLLOW_64); if (state.failed) return current;
+            otherlv_2=(Token)match(input,111,FOLLOW_62); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getWhileStmtAccess().getDoKeyword_2());
@@ -19006,7 +19006,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getForStmtAccess().getVarInitExpressionParserRuleCall_3_0());
               				
             }
-            pushFollow(FOLLOW_75);
+            pushFollow(FOLLOW_74);
             lv_varInit_3_0=ruleexpression();
 
             state._fsp--;
@@ -19086,7 +19086,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getForStmtAccess().getConditionExpressionParserRuleCall_5_0());
               				
             }
-            pushFollow(FOLLOW_74);
+            pushFollow(FOLLOW_73);
             lv_condition_6_0=ruleexpression();
 
             state._fsp--;
@@ -19110,7 +19110,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,111,FOLLOW_64); if (state.failed) return current;
+            otherlv_7=(Token)match(input,111,FOLLOW_62); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_7, grammarAccess.getForStmtAccess().getDoKeyword_6());
@@ -19286,7 +19286,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getWithStmtAccess().getVarsIdentListParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_74);
+            pushFollow(FOLLOW_73);
             lv_vars_1_0=ruleidentList();
 
             state._fsp--;
@@ -19310,7 +19310,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,111,FOLLOW_64); if (state.failed) return current;
+            otherlv_2=(Token)match(input,111,FOLLOW_62); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getWithStmtAccess().getDoKeyword_2());
@@ -19473,7 +19473,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             // InternalDelphi.g:6596:2: (otherlv_0= 'try' ( (lv_stmtList_1_0= rulestmtList ) ) (otherlv_2= ';' )? ( (otherlv_3= 'except' ( (lv_exception_4_0= ruleexceptionBlock ) ) ) | (otherlv_5= 'finally' ( (lv_final_6_0= rulestmtList ) ) ) ) otherlv_7= 'end' )
             // InternalDelphi.g:6597:3: otherlv_0= 'try' ( (lv_stmtList_1_0= rulestmtList ) ) (otherlv_2= ';' )? ( (otherlv_3= 'except' ( (lv_exception_4_0= ruleexceptionBlock ) ) ) | (otherlv_5= 'finally' ( (lv_final_6_0= rulestmtList ) ) ) ) otherlv_7= 'end'
             {
-            otherlv_0=(Token)match(input,116,FOLLOW_64); if (state.failed) return current;
+            otherlv_0=(Token)match(input,116,FOLLOW_62); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getTryStmtAccess().getTryKeyword_0());
@@ -19490,7 +19490,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getTryStmtAccess().getStmtListStmtListParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_76);
+            pushFollow(FOLLOW_75);
             lv_stmtList_1_0=rulestmtList();
 
             state._fsp--;
@@ -19525,7 +19525,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalDelphi.g:6621:4: otherlv_2= ';'
                     {
-                    otherlv_2=(Token)match(input,19,FOLLOW_77); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,19,FOLLOW_76); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_2, grammarAccess.getTryStmtAccess().getSemicolonKeyword_2());
@@ -19561,7 +19561,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     // InternalDelphi.g:6627:4: (otherlv_3= 'except' ( (lv_exception_4_0= ruleexceptionBlock ) ) )
                     // InternalDelphi.g:6628:5: otherlv_3= 'except' ( (lv_exception_4_0= ruleexceptionBlock ) )
                     {
-                    otherlv_3=(Token)match(input,117,FOLLOW_78); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,117,FOLLOW_77); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(otherlv_3, grammarAccess.getTryStmtAccess().getExceptKeyword_3_0_0());
@@ -19614,7 +19614,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     // InternalDelphi.g:6653:4: (otherlv_5= 'finally' ( (lv_final_6_0= rulestmtList ) ) )
                     // InternalDelphi.g:6654:5: otherlv_5= 'finally' ( (lv_final_6_0= rulestmtList ) )
                     {
-                    otherlv_5=(Token)match(input,118,FOLLOW_64); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,118,FOLLOW_62); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(otherlv_5, grammarAccess.getTryStmtAccess().getFinallyKeyword_3_1_0());
@@ -19872,7 +19872,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	      						newCompositeNode(grammarAccess.getExceptionBlockAccess().getTypeTypeParserRuleCall_1_2_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_79);
+            	    pushFollow(FOLLOW_78);
             	    lv_type_4_0=ruletype();
 
             	    state._fsp--;
@@ -19896,13 +19896,13 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_5=(Token)match(input,120,FOLLOW_74); if (state.failed) return current;
+            	    otherlv_5=(Token)match(input,120,FOLLOW_73); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_5, grammarAccess.getExceptionBlockAccess().getIdKeyword_1_3());
             	      			
             	    }
-            	    otherlv_6=(Token)match(input,111,FOLLOW_80); if (state.failed) return current;
+            	    otherlv_6=(Token)match(input,111,FOLLOW_79); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_6, grammarAccess.getExceptionBlockAccess().getDoKeyword_1_4());
@@ -19919,7 +19919,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	      						newCompositeNode(grammarAccess.getExceptionBlockAccess().getDoStmtStatementParserRuleCall_1_5_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_80);
             	    lv_doStmt_7_0=rulestatement();
 
             	    state._fsp--;
@@ -19954,7 +19954,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	        case 1 :
             	            // InternalDelphi.g:6789:5: otherlv_8= ';'
             	            {
-            	            otherlv_8=(Token)match(input,19,FOLLOW_81); if (state.failed) return current;
+            	            otherlv_8=(Token)match(input,19,FOLLOW_80); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	              					newLeafNode(otherlv_8, grammarAccess.getExceptionBlockAccess().getSemicolonKeyword_1_6());
@@ -20034,7 +20034,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // InternalDelphi.g:6797:5: otherlv_9= 'else'
                             {
-                            otherlv_9=(Token)match(input,107,FOLLOW_64); if (state.failed) return current;
+                            otherlv_9=(Token)match(input,107,FOLLOW_62); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                               					newLeafNode(otherlv_9, grammarAccess.getExceptionBlockAccess().getElseKeyword_2_0());
@@ -20193,7 +20193,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,121,FOLLOW_82); if (state.failed) return current;
+            otherlv_1=(Token)match(input,121,FOLLOW_81); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getRaiseStmtAccess().getRaiseKeyword_1());
@@ -20217,7 +20217,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     // InternalDelphi.g:6856:4: (lv_raise_2_0= RULE_ID )
                     // InternalDelphi.g:6857:5: lv_raise_2_0= RULE_ID
                     {
-                    lv_raise_2_0=(Token)match(input,RULE_ID,FOLLOW_83); if (state.failed) return current;
+                    lv_raise_2_0=(Token)match(input,RULE_ID,FOLLOW_82); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_raise_2_0, grammarAccess.getRaiseStmtAccess().getRaiseIDTerminalRuleCall_2_0());
@@ -20715,7 +20715,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,19,FOLLOW_84); if (state.failed) return current;
+            otherlv_1=(Token)match(input,19,FOLLOW_83); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getProcedureDeclAccess().getSemicolonKeyword_1());
@@ -20740,7 +20740,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       					newCompositeNode(grammarAccess.getProcedureDeclAccess().getDirectiveDirectiveParserRuleCall_2_0());
                       				
                     }
-                    pushFollow(FOLLOW_85);
+                    pushFollow(FOLLOW_84);
                     lv_directive_2_0=ruledirective();
 
                     state._fsp--;
@@ -20983,7 +20983,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,19,FOLLOW_84); if (state.failed) return current;
+            otherlv_1=(Token)match(input,19,FOLLOW_83); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getFunctionDeclAccess().getSemicolonKeyword_1());
@@ -21008,7 +21008,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       					newCompositeNode(grammarAccess.getFunctionDeclAccess().getDirectiveDirectiveParserRuleCall_2_0());
                       				
                     }
-                    pushFollow(FOLLOW_85);
+                    pushFollow(FOLLOW_84);
                     lv_directive_2_0=ruledirective();
 
                     state._fsp--;
@@ -21226,7 +21226,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalDelphi.g:7198:4: otherlv_0= 'class'
                     {
-                    otherlv_0=(Token)match(input,39,FOLLOW_86); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,39,FOLLOW_85); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_0, grammarAccess.getFunctionHeadingAccess().getClassKeyword_0());
@@ -21255,7 +21255,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getFunctionHeadingAccess().getIdIdentParserRuleCall_2_0());
               				
             }
-            pushFollow(FOLLOW_87);
+            pushFollow(FOLLOW_86);
             lv_id_2_0=ruleident();
 
             state._fsp--;
@@ -21467,7 +21467,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalDelphi.g:7288:4: otherlv_0= 'class'
                     {
-                    otherlv_0=(Token)match(input,39,FOLLOW_88); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,39,FOLLOW_87); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_0, grammarAccess.getProcedureHeadingAccess().getClassKeyword_0());
@@ -21657,7 +21657,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             // InternalDelphi.g:7353:2: (otherlv_0= '(' ( ( (lv_params_1_0= ruleformalParm ) ) (otherlv_2= ';' ( (lv_params_3_0= ruleformalParm ) ) )* ) otherlv_4= ')' )
             // InternalDelphi.g:7354:3: otherlv_0= '(' ( ( (lv_params_1_0= ruleformalParm ) ) (otherlv_2= ';' ( (lv_params_3_0= ruleformalParm ) ) )* ) otherlv_4= ')'
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_89); if (state.failed) return current;
+            otherlv_0=(Token)match(input,17,FOLLOW_88); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getFormalParametersAccess().getLeftParenthesisKeyword_0());
@@ -21677,7 +21677,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               						newCompositeNode(grammarAccess.getFormalParametersAccess().getParamsFormalParmParserRuleCall_1_0_0());
               					
             }
-            pushFollow(FOLLOW_90);
+            pushFollow(FOLLOW_89);
             lv_params_1_0=ruleformalParm();
 
             state._fsp--;
@@ -21716,7 +21716,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalDelphi.g:7379:5: otherlv_2= ';' ( (lv_params_3_0= ruleformalParm ) )
             	    {
-            	    otherlv_2=(Token)match(input,19,FOLLOW_89); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,19,FOLLOW_88); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      					newLeafNode(otherlv_2, grammarAccess.getFormalParametersAccess().getSemicolonKeyword_1_1_0());
@@ -21733,7 +21733,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	      							newCompositeNode(grammarAccess.getFormalParametersAccess().getParamsFormalParmParserRuleCall_1_1_1_0());
             	      						
             	    }
-            	    pushFollow(FOLLOW_90);
+            	    pushFollow(FOLLOW_89);
             	    lv_params_3_0=ruleformalParm();
 
             	    state._fsp--;
@@ -21888,7 +21888,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalDelphi.g:7428:4: otherlv_0= 'var'
                     {
-                    otherlv_0=(Token)match(input,76,FOLLOW_89); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,76,FOLLOW_88); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_0, grammarAccess.getFormalParmAccess().getVarKeyword_0_0());
@@ -21900,7 +21900,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // InternalDelphi.g:7433:4: otherlv_1= 'const'
                     {
-                    otherlv_1=(Token)match(input,35,FOLLOW_89); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,35,FOLLOW_88); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_1, grammarAccess.getFormalParmAccess().getConstKeyword_0_1());
@@ -21912,7 +21912,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 3 :
                     // InternalDelphi.g:7438:4: otherlv_2= 'out'
                     {
-                    otherlv_2=(Token)match(input,126,FOLLOW_89); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,126,FOLLOW_88); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_2, grammarAccess.getFormalParmAccess().getOutKeyword_0_2());
@@ -22137,7 +22137,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       						newCompositeNode(grammarAccess.getParameterAccess().getIdListIdentListParserRuleCall_0_1_0());
                       					
                     }
-                    pushFollow(FOLLOW_91);
+                    pushFollow(FOLLOW_90);
                     lv_idList_1_0=ruleidentList();
 
                     state._fsp--;
@@ -23424,7 +23424,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,75,FOLLOW_92); if (state.failed) return current;
+            otherlv_1=(Token)match(input,75,FOLLOW_91); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getObjectTypeAccess().getObjectKeyword_1());
@@ -23449,7 +23449,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       					newCompositeNode(grammarAccess.getObjectTypeAccess().getHeritageObjHeritageParserRuleCall_2_0());
                       				
                     }
-                    pushFollow(FOLLOW_93);
+                    pushFollow(FOLLOW_92);
                     lv_heritage_2_0=ruleobjHeritage();
 
                     state._fsp--;
@@ -23495,7 +23495,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       					newCompositeNode(grammarAccess.getObjectTypeAccess().getFieldListObjFieldListParserRuleCall_3_0());
                       				
                     }
-                    pushFollow(FOLLOW_94);
+                    pushFollow(FOLLOW_93);
                     lv_fieldList_3_0=ruleobjFieldList();
 
                     state._fsp--;
@@ -23858,7 +23858,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalDelphi.g:8138:5: otherlv_1= ';' otherlv_2= 'virtual'
                     {
-                    otherlv_1=(Token)match(input,19,FOLLOW_95); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,19,FOLLOW_94); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(otherlv_1, grammarAccess.getMethodListAccess().getSemicolonKeyword_0_1_0());
@@ -23897,7 +23897,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalDelphi.g:8148:5: otherlv_3= ';' ( (lv_directive_4_0= ruledirective ) )
             	    {
-            	    otherlv_3=(Token)match(input,19,FOLLOW_96); if (state.failed) return current;
+            	    otherlv_3=(Token)match(input,19,FOLLOW_95); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      					newLeafNode(otherlv_3, grammarAccess.getMethodListAccess().getSemicolonKeyword_0_2_0());
@@ -24867,7 +24867,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     // InternalDelphi.g:8454:4: (otherlv_1= 'initialization' ( (lv_stmtList_2_0= rulestmtList ) ) (otherlv_3= 'finalization' ( (lv_endStmtList_4_0= rulestmtList ) ) )? otherlv_5= 'end' )
                     // InternalDelphi.g:8455:5: otherlv_1= 'initialization' ( (lv_stmtList_2_0= rulestmtList ) ) (otherlv_3= 'finalization' ( (lv_endStmtList_4_0= rulestmtList ) ) )? otherlv_5= 'end'
                     {
-                    otherlv_1=(Token)match(input,148,FOLLOW_64); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,148,FOLLOW_62); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(otherlv_1, grammarAccess.getInitSectionAccess().getInitializationKeyword_1_0_0());
@@ -24884,7 +24884,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       							newCompositeNode(grammarAccess.getInitSectionAccess().getStmtListStmtListParserRuleCall_1_0_1_0());
                       						
                     }
-                    pushFollow(FOLLOW_97);
+                    pushFollow(FOLLOW_96);
                     lv_stmtList_2_0=rulestmtList();
 
                     state._fsp--;
@@ -24919,7 +24919,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // InternalDelphi.g:8479:6: otherlv_3= 'finalization' ( (lv_endStmtList_4_0= rulestmtList ) )
                             {
-                            otherlv_3=(Token)match(input,149,FOLLOW_64); if (state.failed) return current;
+                            otherlv_3=(Token)match(input,149,FOLLOW_62); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                               						newLeafNode(otherlv_3, grammarAccess.getInitSectionAccess().getFinalizationKeyword_1_0_2_0());
@@ -24984,7 +24984,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     // InternalDelphi.g:8509:4: (otherlv_6= 'begin' ( (lv_stmtList_7_0= rulestmtList ) ) otherlv_8= 'end' )
                     // InternalDelphi.g:8510:5: otherlv_6= 'begin' ( (lv_stmtList_7_0= rulestmtList ) ) otherlv_8= 'end'
                     {
-                    otherlv_6=(Token)match(input,104,FOLLOW_64); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,104,FOLLOW_62); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(otherlv_6, grammarAccess.getInitSectionAccess().getBeginKeyword_1_1_0());
@@ -25166,7 +25166,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,39,FOLLOW_98); if (state.failed) return current;
+            otherlv_1=(Token)match(input,39,FOLLOW_97); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getClassTypeAccess().getClassKeyword_1());
@@ -25191,7 +25191,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       					newCompositeNode(grammarAccess.getClassTypeAccess().getHeritageClassHeritageParserRuleCall_2_0());
                       				
                     }
-                    pushFollow(FOLLOW_99);
+                    pushFollow(FOLLOW_98);
                     lv_heritage_2_0=ruleclassHeritage();
 
                     state._fsp--;
@@ -25271,7 +25271,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       					newCompositeNode(grammarAccess.getClassTypeAccess().getVisibilityClassVisibilityParserRuleCall_3_0());
                       				
                     }
-                    pushFollow(FOLLOW_99);
+                    pushFollow(FOLLOW_98);
                     lv_visibility_3_0=ruleclassVisibility();
 
                     state._fsp--;
@@ -25357,7 +25357,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       					newCompositeNode(grammarAccess.getClassTypeAccess().getFieldListClassFieldListParserRuleCall_4_0());
                       				
                     }
-                    pushFollow(FOLLOW_100);
+                    pushFollow(FOLLOW_99);
                     lv_fieldList_4_0=ruleclassFieldList();
 
                     state._fsp--;
@@ -25446,7 +25446,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       					newCompositeNode(grammarAccess.getClassTypeAccess().getMethodListClassMethodListParserRuleCall_5_0());
                       				
                     }
-                    pushFollow(FOLLOW_101);
+                    pushFollow(FOLLOW_100);
                     lv_methodList_5_0=ruleclassMethodList();
 
                     state._fsp--;
@@ -25966,7 +25966,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	      				newCompositeNode(grammarAccess.getClassFieldListAccess().getFieldClassFieldParserRuleCall_0());
             	      			
             	    }
-            	    pushFollow(FOLLOW_102);
+            	    pushFollow(FOLLOW_101);
             	    lv_field_0_0=ruleclassField();
 
             	    state._fsp--;
@@ -26324,7 +26324,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	      				newCompositeNode(grammarAccess.getClassMethodListAccess().getMetodClassMethodParserRuleCall_0());
             	      			
             	    }
-            	    pushFollow(FOLLOW_103);
+            	    pushFollow(FOLLOW_102);
             	    lv_metod_0_0=ruleclassMethod();
 
             	    state._fsp--;
@@ -26463,7 +26463,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       					newCompositeNode(grammarAccess.getClassMethodAccess().getVisibilityClassVisibilityParserRuleCall_0_0());
                       				
                     }
-                    pushFollow(FOLLOW_104);
+                    pushFollow(FOLLOW_103);
                     lv_visibility_0_0=ruleclassVisibility();
 
                     state._fsp--;
@@ -26684,7 +26684,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	      				newCompositeNode(grammarAccess.getClassPropertyListAccess().getPropertyClassPropertyParserRuleCall_0());
             	      			
             	    }
-            	    pushFollow(FOLLOW_105);
+            	    pushFollow(FOLLOW_104);
             	    lv_property_0_0=ruleclassProperty();
 
             	    state._fsp--;
@@ -26962,7 +26962,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                               						newCompositeNode(grammarAccess.getClassPropertyAccess().getVisibilityClassVisibilityParserRuleCall_1_0_0());
                               					
                             }
-                            pushFollow(FOLLOW_106);
+                            pushFollow(FOLLOW_105);
                             lv_visibility_1_0=ruleclassVisibility();
 
                             state._fsp--;
@@ -27141,7 +27141,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getPropertyListAccess().getIdIdentParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_107);
+            pushFollow(FOLLOW_106);
             lv_id_1_0=ruleident();
 
             state._fsp--;
@@ -27184,7 +27184,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       					newCompositeNode(grammarAccess.getPropertyListAccess().getInterfacePropertyInterfaceParserRuleCall_2_0());
                       				
                     }
-                    pushFollow(FOLLOW_108);
+                    pushFollow(FOLLOW_107);
                     lv_interface_2_0=rulepropertyInterface();
 
                     state._fsp--;
@@ -27710,7 +27710,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,19,FOLLOW_109); if (state.failed) return current;
+            otherlv_4=(Token)match(input,19,FOLLOW_108); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_4, grammarAccess.getPropertyParameterListAccess().getSemicolonKeyword_4());
@@ -27807,7 +27807,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_8=(Token)match(input,19,FOLLOW_109); if (state.failed) return current;
+            	    otherlv_8=(Token)match(input,19,FOLLOW_108); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_8, grammarAccess.getPropertyParameterListAccess().getSemicolonKeyword_5_3());
@@ -27979,7 +27979,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       						newCompositeNode(grammarAccess.getPropertySpecifiersAccess().getIndexConstExprParserRuleCall_1_1_0());
                       					
                     }
-                    pushFollow(FOLLOW_110);
+                    pushFollow(FOLLOW_109);
                     lv_index_2_0=ruleconstExpr();
 
                     state._fsp--;
@@ -28037,7 +28037,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       						newCompositeNode(grammarAccess.getPropertySpecifiersAccess().getReadIdIdentParserRuleCall_2_1_0());
                       					
                     }
-                    pushFollow(FOLLOW_111);
+                    pushFollow(FOLLOW_110);
                     lv_readId_4_0=ruleident();
 
                     state._fsp--;
@@ -28095,7 +28095,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       						newCompositeNode(grammarAccess.getPropertySpecifiersAccess().getWriteIdIdentParserRuleCall_3_1_0());
                       					
                     }
-                    pushFollow(FOLLOW_112);
+                    pushFollow(FOLLOW_111);
                     lv_writeId_6_0=ruleident();
 
                     state._fsp--;
@@ -28232,7 +28232,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                               							newCompositeNode(grammarAccess.getPropertySpecifiersAccess().getStoreIdIdentParserRuleCall_4_1_0_0());
                               						
                             }
-                            pushFollow(FOLLOW_113);
+                            pushFollow(FOLLOW_112);
                             lv_storeId_8_0=ruleident();
 
                             state._fsp--;
@@ -28273,7 +28273,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                               							newCompositeNode(grammarAccess.getPropertySpecifiersAccess().getStoreExpConstExprParserRuleCall_4_1_1_0());
                               						
                             }
-                            pushFollow(FOLLOW_113);
+                            pushFollow(FOLLOW_112);
                             lv_storeExp_9_0=ruleconstExpr();
 
                             state._fsp--;
@@ -28343,7 +28343,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       							newCompositeNode(grammarAccess.getPropertySpecifiersAccess().getDefaulExpConstExprParserRuleCall_5_0_1_0());
                       						
                     }
-                    pushFollow(FOLLOW_114);
+                    pushFollow(FOLLOW_113);
                     lv_defaulExp_11_0=ruleconstExpr();
 
                     state._fsp--;
@@ -28376,7 +28376,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // InternalDelphi.g:9520:4: otherlv_12= 'nodefault'
                     {
-                    otherlv_12=(Token)match(input,159,FOLLOW_114); if (state.failed) return current;
+                    otherlv_12=(Token)match(input,159,FOLLOW_113); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_12, grammarAccess.getPropertySpecifiersAccess().getNodefaultKeyword_5_1());
@@ -28555,7 +28555,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getInterfaceTypeAccess().getHeritageInterfaceHeritageParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_115);
+            pushFollow(FOLLOW_114);
             lv_heritage_1_0=ruleinterfaceHeritage();
 
             state._fsp--;
@@ -28590,7 +28590,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getInterfaceTypeAccess().getMethodListClassMethodListParserRuleCall_2_0());
               				
             }
-            pushFollow(FOLLOW_101);
+            pushFollow(FOLLOW_100);
             lv_methodList_2_0=ruleclassMethodList();
 
             state._fsp--;
@@ -28637,7 +28637,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	      					newCompositeNode(grammarAccess.getInterfaceTypeAccess().getPropListClassPropertyListParserRuleCall_3_0());
             	      				
             	    }
-            	    pushFollow(FOLLOW_101);
+            	    pushFollow(FOLLOW_100);
             	    lv_propList_3_0=ruleclassPropertyList();
 
             	    state._fsp--;
@@ -28914,7 +28914,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,161,FOLLOW_116); if (state.failed) return current;
+            otherlv_1=(Token)match(input,161,FOLLOW_115); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getRequiresClauseAccess().getRequiresKeyword_1());
@@ -28943,7 +28943,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	      					newCompositeNode(grammarAccess.getRequiresClauseAccess().getIdListIdentListParserRuleCall_2_0());
             	      				
             	    }
-            	    pushFollow(FOLLOW_116);
+            	    pushFollow(FOLLOW_115);
             	    lv_idList_2_0=ruleidentList();
 
             	    state._fsp--;
@@ -29085,7 +29085,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,162,FOLLOW_116); if (state.failed) return current;
+            otherlv_1=(Token)match(input,162,FOLLOW_115); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getContainsClauseAccess().getContainsKeyword_1());
@@ -29114,7 +29114,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             	      					newCompositeNode(grammarAccess.getContainsClauseAccess().getIdListIdentListParserRuleCall_2_0());
             	      				
             	    }
-            	    pushFollow(FOLLOW_116);
+            	    pushFollow(FOLLOW_115);
             	    lv_idList_2_0=ruleidentList();
 
             	    state._fsp--;
@@ -30388,25 +30388,25 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleconstExpr"
-    // InternalDelphi.g:10197:1: ruleconstExpr returns [EObject current=null] : ( ( (lv_exps_0_0= ruleexpression ) ) | (otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')' ) | (otherlv_6= '(' ( (lv_exps_7_0= rulerecordConstExpr ) ) (otherlv_8= ',' ( (lv_exps_9_0= rulerecordConstExpr ) ) )* otherlv_10= ')' ) ) ;
+    // InternalDelphi.g:10197:1: ruleconstExpr returns [EObject current=null] : ( ( () ( (lv_exp_1_0= ruleexpression ) ) ) | ( () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')' ) | ( () otherlv_9= '(' ( (lv_exps_10_0= rulerecordConstExpr ) ) (otherlv_11= ',' ( (lv_exps_12_0= rulerecordConstExpr ) ) )* otherlv_13= ')' ) ) ;
     public final EObject ruleconstExpr() throws RecognitionException {
         EObject current = null;
         int ruleconstExpr_StartIndex = input.index();
-        Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_10=null;
-        EObject lv_exps_0_0 = null;
-
-        EObject lv_exps_2_0 = null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
+        Token otherlv_13=null;
+        EObject lv_exp_1_0 = null;
 
         EObject lv_exps_4_0 = null;
 
-        EObject lv_exps_7_0 = null;
+        EObject lv_exps_6_0 = null;
 
-        EObject lv_exps_9_0 = null;
+        EObject lv_exps_10_0 = null;
+
+        EObject lv_exps_12_0 = null;
 
 
 
@@ -30414,45 +30414,69 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 248) ) { return current; }
-            // InternalDelphi.g:10203:2: ( ( ( (lv_exps_0_0= ruleexpression ) ) | (otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')' ) | (otherlv_6= '(' ( (lv_exps_7_0= rulerecordConstExpr ) ) (otherlv_8= ',' ( (lv_exps_9_0= rulerecordConstExpr ) ) )* otherlv_10= ')' ) ) )
-            // InternalDelphi.g:10204:2: ( ( (lv_exps_0_0= ruleexpression ) ) | (otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')' ) | (otherlv_6= '(' ( (lv_exps_7_0= rulerecordConstExpr ) ) (otherlv_8= ',' ( (lv_exps_9_0= rulerecordConstExpr ) ) )* otherlv_10= ')' ) )
+            // InternalDelphi.g:10203:2: ( ( ( () ( (lv_exp_1_0= ruleexpression ) ) ) | ( () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')' ) | ( () otherlv_9= '(' ( (lv_exps_10_0= rulerecordConstExpr ) ) (otherlv_11= ',' ( (lv_exps_12_0= rulerecordConstExpr ) ) )* otherlv_13= ')' ) ) )
+            // InternalDelphi.g:10204:2: ( ( () ( (lv_exp_1_0= ruleexpression ) ) ) | ( () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')' ) | ( () otherlv_9= '(' ( (lv_exps_10_0= rulerecordConstExpr ) ) (otherlv_11= ',' ( (lv_exps_12_0= rulerecordConstExpr ) ) )* otherlv_13= ')' ) )
             {
-            // InternalDelphi.g:10204:2: ( ( (lv_exps_0_0= ruleexpression ) ) | (otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')' ) | (otherlv_6= '(' ( (lv_exps_7_0= rulerecordConstExpr ) ) (otherlv_8= ',' ( (lv_exps_9_0= rulerecordConstExpr ) ) )* otherlv_10= ')' ) )
+            // InternalDelphi.g:10204:2: ( ( () ( (lv_exp_1_0= ruleexpression ) ) ) | ( () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')' ) | ( () otherlv_9= '(' ( (lv_exps_10_0= rulerecordConstExpr ) ) (otherlv_11= ',' ( (lv_exps_12_0= rulerecordConstExpr ) ) )* otherlv_13= ')' ) )
             int alt177=3;
             alt177 = dfa177.predict(input);
             switch (alt177) {
                 case 1 :
-                    // InternalDelphi.g:10205:3: ( (lv_exps_0_0= ruleexpression ) )
+                    // InternalDelphi.g:10205:3: ( () ( (lv_exp_1_0= ruleexpression ) ) )
                     {
-                    // InternalDelphi.g:10205:3: ( (lv_exps_0_0= ruleexpression ) )
-                    // InternalDelphi.g:10206:4: (lv_exps_0_0= ruleexpression )
+                    // InternalDelphi.g:10205:3: ( () ( (lv_exp_1_0= ruleexpression ) ) )
+                    // InternalDelphi.g:10206:4: () ( (lv_exp_1_0= ruleexpression ) )
                     {
-                    // InternalDelphi.g:10206:4: (lv_exps_0_0= ruleexpression )
-                    // InternalDelphi.g:10207:5: lv_exps_0_0= ruleexpression
+                    // InternalDelphi.g:10206:4: ()
+                    // InternalDelphi.g:10207:5: 
                     {
                     if ( state.backtracking==0 ) {
 
-                      					newCompositeNode(grammarAccess.getConstExprAccess().getExpsExpressionParserRuleCall_0_0());
+                      					/* */
                       				
                     }
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getConstExprAccess().getConstExpAction_0_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    // InternalDelphi.g:10216:4: ( (lv_exp_1_0= ruleexpression ) )
+                    // InternalDelphi.g:10217:5: (lv_exp_1_0= ruleexpression )
+                    {
+                    // InternalDelphi.g:10217:5: (lv_exp_1_0= ruleexpression )
+                    // InternalDelphi.g:10218:6: lv_exp_1_0= ruleexpression
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      						newCompositeNode(grammarAccess.getConstExprAccess().getExpExpressionParserRuleCall_0_1_0());
+                      					
+                    }
                     pushFollow(FOLLOW_2);
-                    lv_exps_0_0=ruleexpression();
+                    lv_exp_1_0=ruleexpression();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      					if (current==null) {
-                      						current = createModelElementForParent(grammarAccess.getConstExprRule());
-                      					}
-                      					add(
-                      						current,
-                      						"exps",
-                      						lv_exps_0_0,
-                      						"org.xtext.example.delphi.Delphi.expression");
-                      					afterParserOrEnumRuleCall();
-                      				
+                      						if (current==null) {
+                      							current = createModelElementForParent(grammarAccess.getConstExprRule());
+                      						}
+                      						set(
+                      							current,
+                      							"exp",
+                      							lv_exp_1_0,
+                      							"org.xtext.example.delphi.Delphi.expression");
+                      						afterParserOrEnumRuleCall();
+                      					
                     }
+
+                    }
+
 
                     }
 
@@ -30463,30 +30487,48 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDelphi.g:10225:3: (otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')' )
+                    // InternalDelphi.g:10237:3: ( () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')' )
                     {
-                    // InternalDelphi.g:10225:3: (otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')' )
-                    // InternalDelphi.g:10226:4: otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')'
+                    // InternalDelphi.g:10237:3: ( () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')' )
+                    // InternalDelphi.g:10238:4: () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')'
                     {
-                    otherlv_1=(Token)match(input,17,FOLLOW_23); if (state.failed) return current;
+                    // InternalDelphi.g:10238:4: ()
+                    // InternalDelphi.g:10239:5: 
+                    {
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_1, grammarAccess.getConstExprAccess().getLeftParenthesisKeyword_1_0());
+                      					/* */
+                      				
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getConstExprAccess().getMultipleConstExpAction_1_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    otherlv_3=(Token)match(input,17,FOLLOW_23); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_3, grammarAccess.getConstExprAccess().getLeftParenthesisKeyword_1_1());
                       			
                     }
-                    // InternalDelphi.g:10230:4: ( (lv_exps_2_0= ruleconstExpr ) )
-                    // InternalDelphi.g:10231:5: (lv_exps_2_0= ruleconstExpr )
+                    // InternalDelphi.g:10252:4: ( (lv_exps_4_0= ruleconstExpr ) )
+                    // InternalDelphi.g:10253:5: (lv_exps_4_0= ruleconstExpr )
                     {
-                    // InternalDelphi.g:10231:5: (lv_exps_2_0= ruleconstExpr )
-                    // InternalDelphi.g:10232:6: lv_exps_2_0= ruleconstExpr
+                    // InternalDelphi.g:10253:5: (lv_exps_4_0= ruleconstExpr )
+                    // InternalDelphi.g:10254:6: lv_exps_4_0= ruleconstExpr
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_1_0());
+                      						newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_2_0());
                       					
                     }
-                    pushFollow(FOLLOW_117);
-                    lv_exps_2_0=ruleconstExpr();
+                    pushFollow(FOLLOW_116);
+                    lv_exps_4_0=ruleconstExpr();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -30498,7 +30540,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       						add(
                       							current,
                       							"exps",
-                      							lv_exps_2_0,
+                      							lv_exps_4_0,
                       							"org.xtext.example.delphi.Delphi.constExpr");
                       						afterParserOrEnumRuleCall();
                       					
@@ -30509,7 +30551,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalDelphi.g:10249:4: (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )*
+                    // InternalDelphi.g:10271:4: (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )*
                     loop175:
                     do {
                         int alt175=2;
@@ -30522,27 +30564,27 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
                         switch (alt175) {
                     	case 1 :
-                    	    // InternalDelphi.g:10250:5: otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) )
+                    	    // InternalDelphi.g:10272:5: otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,33,FOLLOW_23); if (state.failed) return current;
+                    	    otherlv_5=(Token)match(input,33,FOLLOW_23); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
-                    	      					newLeafNode(otherlv_3, grammarAccess.getConstExprAccess().getCommaKeyword_1_2_0());
+                    	      					newLeafNode(otherlv_5, grammarAccess.getConstExprAccess().getCommaKeyword_1_3_0());
                     	      				
                     	    }
-                    	    // InternalDelphi.g:10254:5: ( (lv_exps_4_0= ruleconstExpr ) )
-                    	    // InternalDelphi.g:10255:6: (lv_exps_4_0= ruleconstExpr )
+                    	    // InternalDelphi.g:10276:5: ( (lv_exps_6_0= ruleconstExpr ) )
+                    	    // InternalDelphi.g:10277:6: (lv_exps_6_0= ruleconstExpr )
                     	    {
-                    	    // InternalDelphi.g:10255:6: (lv_exps_4_0= ruleconstExpr )
-                    	    // InternalDelphi.g:10256:7: lv_exps_4_0= ruleconstExpr
+                    	    // InternalDelphi.g:10277:6: (lv_exps_6_0= ruleconstExpr )
+                    	    // InternalDelphi.g:10278:7: lv_exps_6_0= ruleconstExpr
                     	    {
                     	    if ( state.backtracking==0 ) {
 
-                    	      							newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_2_1_0());
+                    	      							newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_3_1_0());
                     	      						
                     	    }
-                    	    pushFollow(FOLLOW_117);
-                    	    lv_exps_4_0=ruleconstExpr();
+                    	    pushFollow(FOLLOW_116);
+                    	    lv_exps_6_0=ruleconstExpr();
 
                     	    state._fsp--;
                     	    if (state.failed) return current;
@@ -30554,7 +30596,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     	      							add(
                     	      								current,
                     	      								"exps",
-                    	      								lv_exps_4_0,
+                    	      								lv_exps_6_0,
                     	      								"org.xtext.example.delphi.Delphi.constExpr");
                     	      							afterParserOrEnumRuleCall();
                     	      						
@@ -30574,10 +30616,10 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,18,FOLLOW_2); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,18,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_5, grammarAccess.getConstExprAccess().getRightParenthesisKeyword_1_3());
+                      				newLeafNode(otherlv_7, grammarAccess.getConstExprAccess().getRightParenthesisKeyword_1_4());
                       			
                     }
 
@@ -30587,30 +30629,48 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDelphi.g:10280:3: (otherlv_6= '(' ( (lv_exps_7_0= rulerecordConstExpr ) ) (otherlv_8= ',' ( (lv_exps_9_0= rulerecordConstExpr ) ) )* otherlv_10= ')' )
+                    // InternalDelphi.g:10302:3: ( () otherlv_9= '(' ( (lv_exps_10_0= rulerecordConstExpr ) ) (otherlv_11= ',' ( (lv_exps_12_0= rulerecordConstExpr ) ) )* otherlv_13= ')' )
                     {
-                    // InternalDelphi.g:10280:3: (otherlv_6= '(' ( (lv_exps_7_0= rulerecordConstExpr ) ) (otherlv_8= ',' ( (lv_exps_9_0= rulerecordConstExpr ) ) )* otherlv_10= ')' )
-                    // InternalDelphi.g:10281:4: otherlv_6= '(' ( (lv_exps_7_0= rulerecordConstExpr ) ) (otherlv_8= ',' ( (lv_exps_9_0= rulerecordConstExpr ) ) )* otherlv_10= ')'
+                    // InternalDelphi.g:10302:3: ( () otherlv_9= '(' ( (lv_exps_10_0= rulerecordConstExpr ) ) (otherlv_11= ',' ( (lv_exps_12_0= rulerecordConstExpr ) ) )* otherlv_13= ')' )
+                    // InternalDelphi.g:10303:4: () otherlv_9= '(' ( (lv_exps_10_0= rulerecordConstExpr ) ) (otherlv_11= ',' ( (lv_exps_12_0= rulerecordConstExpr ) ) )* otherlv_13= ')'
                     {
-                    otherlv_6=(Token)match(input,17,FOLLOW_3); if (state.failed) return current;
+                    // InternalDelphi.g:10303:4: ()
+                    // InternalDelphi.g:10304:5: 
+                    {
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_6, grammarAccess.getConstExprAccess().getLeftParenthesisKeyword_2_0());
+                      					/* */
+                      				
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getConstExprAccess().getRecordConstExpAction_2_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    otherlv_9=(Token)match(input,17,FOLLOW_3); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_9, grammarAccess.getConstExprAccess().getLeftParenthesisKeyword_2_1());
                       			
                     }
-                    // InternalDelphi.g:10285:4: ( (lv_exps_7_0= rulerecordConstExpr ) )
-                    // InternalDelphi.g:10286:5: (lv_exps_7_0= rulerecordConstExpr )
+                    // InternalDelphi.g:10317:4: ( (lv_exps_10_0= rulerecordConstExpr ) )
+                    // InternalDelphi.g:10318:5: (lv_exps_10_0= rulerecordConstExpr )
                     {
-                    // InternalDelphi.g:10286:5: (lv_exps_7_0= rulerecordConstExpr )
-                    // InternalDelphi.g:10287:6: lv_exps_7_0= rulerecordConstExpr
+                    // InternalDelphi.g:10318:5: (lv_exps_10_0= rulerecordConstExpr )
+                    // InternalDelphi.g:10319:6: lv_exps_10_0= rulerecordConstExpr
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getConstExprAccess().getExpsRecordConstExprParserRuleCall_2_1_0());
+                      						newCompositeNode(grammarAccess.getConstExprAccess().getExpsRecordConstExprParserRuleCall_2_2_0());
                       					
                     }
-                    pushFollow(FOLLOW_117);
-                    lv_exps_7_0=rulerecordConstExpr();
+                    pushFollow(FOLLOW_116);
+                    lv_exps_10_0=rulerecordConstExpr();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -30622,7 +30682,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       						add(
                       							current,
                       							"exps",
-                      							lv_exps_7_0,
+                      							lv_exps_10_0,
                       							"org.xtext.example.delphi.Delphi.recordConstExpr");
                       						afterParserOrEnumRuleCall();
                       					
@@ -30633,7 +30693,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalDelphi.g:10304:4: (otherlv_8= ',' ( (lv_exps_9_0= rulerecordConstExpr ) ) )*
+                    // InternalDelphi.g:10336:4: (otherlv_11= ',' ( (lv_exps_12_0= rulerecordConstExpr ) ) )*
                     loop176:
                     do {
                         int alt176=2;
@@ -30646,27 +30706,27 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
                         switch (alt176) {
                     	case 1 :
-                    	    // InternalDelphi.g:10305:5: otherlv_8= ',' ( (lv_exps_9_0= rulerecordConstExpr ) )
+                    	    // InternalDelphi.g:10337:5: otherlv_11= ',' ( (lv_exps_12_0= rulerecordConstExpr ) )
                     	    {
-                    	    otherlv_8=(Token)match(input,33,FOLLOW_3); if (state.failed) return current;
+                    	    otherlv_11=(Token)match(input,33,FOLLOW_3); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
-                    	      					newLeafNode(otherlv_8, grammarAccess.getConstExprAccess().getCommaKeyword_2_2_0());
+                    	      					newLeafNode(otherlv_11, grammarAccess.getConstExprAccess().getCommaKeyword_2_3_0());
                     	      				
                     	    }
-                    	    // InternalDelphi.g:10309:5: ( (lv_exps_9_0= rulerecordConstExpr ) )
-                    	    // InternalDelphi.g:10310:6: (lv_exps_9_0= rulerecordConstExpr )
+                    	    // InternalDelphi.g:10341:5: ( (lv_exps_12_0= rulerecordConstExpr ) )
+                    	    // InternalDelphi.g:10342:6: (lv_exps_12_0= rulerecordConstExpr )
                     	    {
-                    	    // InternalDelphi.g:10310:6: (lv_exps_9_0= rulerecordConstExpr )
-                    	    // InternalDelphi.g:10311:7: lv_exps_9_0= rulerecordConstExpr
+                    	    // InternalDelphi.g:10342:6: (lv_exps_12_0= rulerecordConstExpr )
+                    	    // InternalDelphi.g:10343:7: lv_exps_12_0= rulerecordConstExpr
                     	    {
                     	    if ( state.backtracking==0 ) {
 
-                    	      							newCompositeNode(grammarAccess.getConstExprAccess().getExpsRecordConstExprParserRuleCall_2_2_1_0());
+                    	      							newCompositeNode(grammarAccess.getConstExprAccess().getExpsRecordConstExprParserRuleCall_2_3_1_0());
                     	      						
                     	    }
-                    	    pushFollow(FOLLOW_117);
-                    	    lv_exps_9_0=rulerecordConstExpr();
+                    	    pushFollow(FOLLOW_116);
+                    	    lv_exps_12_0=rulerecordConstExpr();
 
                     	    state._fsp--;
                     	    if (state.failed) return current;
@@ -30678,7 +30738,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     	      							add(
                     	      								current,
                     	      								"exps",
-                    	      								lv_exps_9_0,
+                    	      								lv_exps_12_0,
                     	      								"org.xtext.example.delphi.Delphi.recordConstExpr");
                     	      							afterParserOrEnumRuleCall();
                     	      						
@@ -30698,10 +30758,10 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_10=(Token)match(input,18,FOLLOW_2); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,18,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_10, grammarAccess.getConstExprAccess().getRightParenthesisKeyword_2_3());
+                      				newLeafNode(otherlv_13, grammarAccess.getConstExprAccess().getRightParenthesisKeyword_2_4());
                       			
                     }
 
@@ -30736,7 +30796,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulerecordConstExpr"
-    // InternalDelphi.g:10338:1: entryRulerecordConstExpr returns [EObject current=null] : iv_rulerecordConstExpr= rulerecordConstExpr EOF ;
+    // InternalDelphi.g:10370:1: entryRulerecordConstExpr returns [EObject current=null] : iv_rulerecordConstExpr= rulerecordConstExpr EOF ;
     public final EObject entryRulerecordConstExpr() throws RecognitionException {
         EObject current = null;
         int entryRulerecordConstExpr_StartIndex = input.index();
@@ -30745,8 +30805,8 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 249) ) { return current; }
-            // InternalDelphi.g:10338:56: (iv_rulerecordConstExpr= rulerecordConstExpr EOF )
-            // InternalDelphi.g:10339:2: iv_rulerecordConstExpr= rulerecordConstExpr EOF
+            // InternalDelphi.g:10370:56: (iv_rulerecordConstExpr= rulerecordConstExpr EOF )
+            // InternalDelphi.g:10371:2: iv_rulerecordConstExpr= rulerecordConstExpr EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRecordConstExprRule()); 
@@ -30778,7 +30838,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulerecordConstExpr"
-    // InternalDelphi.g:10345:1: rulerecordConstExpr returns [EObject current=null] : ( ( (lv_id_0_0= ruleident ) ) otherlv_1= ':' ( (lv_constExp_2_0= ruleconstExpr ) ) ) ;
+    // InternalDelphi.g:10377:1: rulerecordConstExpr returns [EObject current=null] : ( ( (lv_id_0_0= ruleident ) ) otherlv_1= ':' ( (lv_constExp_2_0= ruleconstExpr ) ) ) ;
     public final EObject rulerecordConstExpr() throws RecognitionException {
         EObject current = null;
         int rulerecordConstExpr_StartIndex = input.index();
@@ -30793,17 +30853,17 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 250) ) { return current; }
-            // InternalDelphi.g:10351:2: ( ( ( (lv_id_0_0= ruleident ) ) otherlv_1= ':' ( (lv_constExp_2_0= ruleconstExpr ) ) ) )
-            // InternalDelphi.g:10352:2: ( ( (lv_id_0_0= ruleident ) ) otherlv_1= ':' ( (lv_constExp_2_0= ruleconstExpr ) ) )
+            // InternalDelphi.g:10383:2: ( ( ( (lv_id_0_0= ruleident ) ) otherlv_1= ':' ( (lv_constExp_2_0= ruleconstExpr ) ) ) )
+            // InternalDelphi.g:10384:2: ( ( (lv_id_0_0= ruleident ) ) otherlv_1= ':' ( (lv_constExp_2_0= ruleconstExpr ) ) )
             {
-            // InternalDelphi.g:10352:2: ( ( (lv_id_0_0= ruleident ) ) otherlv_1= ':' ( (lv_constExp_2_0= ruleconstExpr ) ) )
-            // InternalDelphi.g:10353:3: ( (lv_id_0_0= ruleident ) ) otherlv_1= ':' ( (lv_constExp_2_0= ruleconstExpr ) )
+            // InternalDelphi.g:10384:2: ( ( (lv_id_0_0= ruleident ) ) otherlv_1= ':' ( (lv_constExp_2_0= ruleconstExpr ) ) )
+            // InternalDelphi.g:10385:3: ( (lv_id_0_0= ruleident ) ) otherlv_1= ':' ( (lv_constExp_2_0= ruleconstExpr ) )
             {
-            // InternalDelphi.g:10353:3: ( (lv_id_0_0= ruleident ) )
-            // InternalDelphi.g:10354:4: (lv_id_0_0= ruleident )
+            // InternalDelphi.g:10385:3: ( (lv_id_0_0= ruleident ) )
+            // InternalDelphi.g:10386:4: (lv_id_0_0= ruleident )
             {
-            // InternalDelphi.g:10354:4: (lv_id_0_0= ruleident )
-            // InternalDelphi.g:10355:5: lv_id_0_0= ruleident
+            // InternalDelphi.g:10386:4: (lv_id_0_0= ruleident )
+            // InternalDelphi.g:10387:5: lv_id_0_0= ruleident
             {
             if ( state.backtracking==0 ) {
 
@@ -30840,11 +30900,11 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getRecordConstExprAccess().getColonKeyword_1());
               		
             }
-            // InternalDelphi.g:10376:3: ( (lv_constExp_2_0= ruleconstExpr ) )
-            // InternalDelphi.g:10377:4: (lv_constExp_2_0= ruleconstExpr )
+            // InternalDelphi.g:10408:3: ( (lv_constExp_2_0= ruleconstExpr ) )
+            // InternalDelphi.g:10409:4: (lv_constExp_2_0= ruleconstExpr )
             {
-            // InternalDelphi.g:10377:4: (lv_constExp_2_0= ruleconstExpr )
-            // InternalDelphi.g:10378:5: lv_constExp_2_0= ruleconstExpr
+            // InternalDelphi.g:10409:4: (lv_constExp_2_0= ruleconstExpr )
+            // InternalDelphi.g:10410:5: lv_constExp_2_0= ruleconstExpr
             {
             if ( state.backtracking==0 ) {
 
@@ -30901,7 +30961,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleunitId"
-    // InternalDelphi.g:10399:1: entryRuleunitId returns [EObject current=null] : iv_ruleunitId= ruleunitId EOF ;
+    // InternalDelphi.g:10431:1: entryRuleunitId returns [EObject current=null] : iv_ruleunitId= ruleunitId EOF ;
     public final EObject entryRuleunitId() throws RecognitionException {
         EObject current = null;
         int entryRuleunitId_StartIndex = input.index();
@@ -30910,8 +30970,8 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 251) ) { return current; }
-            // InternalDelphi.g:10399:47: (iv_ruleunitId= ruleunitId EOF )
-            // InternalDelphi.g:10400:2: iv_ruleunitId= ruleunitId EOF
+            // InternalDelphi.g:10431:47: (iv_ruleunitId= ruleunitId EOF )
+            // InternalDelphi.g:10432:2: iv_ruleunitId= ruleunitId EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnitIdRule()); 
@@ -30943,7 +31003,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleunitId"
-    // InternalDelphi.g:10406:1: ruleunitId returns [EObject current=null] : ( (lv_id_0_0= RULE_ID ) ) ;
+    // InternalDelphi.g:10438:1: ruleunitId returns [EObject current=null] : ( (lv_id_0_0= RULE_ID ) ) ;
     public final EObject ruleunitId() throws RecognitionException {
         EObject current = null;
         int ruleunitId_StartIndex = input.index();
@@ -30954,14 +31014,14 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 252) ) { return current; }
-            // InternalDelphi.g:10412:2: ( ( (lv_id_0_0= RULE_ID ) ) )
-            // InternalDelphi.g:10413:2: ( (lv_id_0_0= RULE_ID ) )
+            // InternalDelphi.g:10444:2: ( ( (lv_id_0_0= RULE_ID ) ) )
+            // InternalDelphi.g:10445:2: ( (lv_id_0_0= RULE_ID ) )
             {
-            // InternalDelphi.g:10413:2: ( (lv_id_0_0= RULE_ID ) )
-            // InternalDelphi.g:10414:3: (lv_id_0_0= RULE_ID )
+            // InternalDelphi.g:10445:2: ( (lv_id_0_0= RULE_ID ) )
+            // InternalDelphi.g:10446:3: (lv_id_0_0= RULE_ID )
             {
-            // InternalDelphi.g:10414:3: (lv_id_0_0= RULE_ID )
-            // InternalDelphi.g:10415:4: lv_id_0_0= RULE_ID
+            // InternalDelphi.g:10446:3: (lv_id_0_0= RULE_ID )
+            // InternalDelphi.g:10447:4: lv_id_0_0= RULE_ID
             {
             lv_id_0_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -31010,7 +31070,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulelabelId"
-    // InternalDelphi.g:10434:1: entryRulelabelId returns [String current=null] : iv_rulelabelId= rulelabelId EOF ;
+    // InternalDelphi.g:10466:1: entryRulelabelId returns [String current=null] : iv_rulelabelId= rulelabelId EOF ;
     public final String entryRulelabelId() throws RecognitionException {
         String current = null;
         int entryRulelabelId_StartIndex = input.index();
@@ -31019,8 +31079,8 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 253) ) { return current; }
-            // InternalDelphi.g:10434:47: (iv_rulelabelId= rulelabelId EOF )
-            // InternalDelphi.g:10435:2: iv_rulelabelId= rulelabelId EOF
+            // InternalDelphi.g:10466:47: (iv_rulelabelId= rulelabelId EOF )
+            // InternalDelphi.g:10467:2: iv_rulelabelId= rulelabelId EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLabelIdRule()); 
@@ -31052,7 +31112,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulelabelId"
-    // InternalDelphi.g:10441:1: rulelabelId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_HEX_2= RULE_HEX ) ;
+    // InternalDelphi.g:10473:1: rulelabelId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_HEX_2= RULE_HEX ) ;
     public final AntlrDatatypeRuleToken rulelabelId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
         int rulelabelId_StartIndex = input.index();
@@ -31065,10 +31125,10 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 254) ) { return current; }
-            // InternalDelphi.g:10447:2: ( (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_HEX_2= RULE_HEX ) )
-            // InternalDelphi.g:10448:2: (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_HEX_2= RULE_HEX )
+            // InternalDelphi.g:10479:2: ( (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_HEX_2= RULE_HEX ) )
+            // InternalDelphi.g:10480:2: (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_HEX_2= RULE_HEX )
             {
-            // InternalDelphi.g:10448:2: (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_HEX_2= RULE_HEX )
+            // InternalDelphi.g:10480:2: (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_HEX_2= RULE_HEX )
             int alt178=3;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -31096,7 +31156,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             switch (alt178) {
                 case 1 :
-                    // InternalDelphi.g:10449:3: this_ID_0= RULE_ID
+                    // InternalDelphi.g:10481:3: this_ID_0= RULE_ID
                     {
                     this_ID_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31113,7 +31173,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDelphi.g:10457:3: this_INT_1= RULE_INT
+                    // InternalDelphi.g:10489:3: this_INT_1= RULE_INT
                     {
                     this_INT_1=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31130,7 +31190,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDelphi.g:10465:3: this_HEX_2= RULE_HEX
+                    // InternalDelphi.g:10497:3: this_HEX_2= RULE_HEX
                     {
                     this_HEX_2=(Token)match(input,RULE_HEX,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31172,7 +31232,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulenumber"
-    // InternalDelphi.g:10476:1: entryRulenumber returns [String current=null] : iv_rulenumber= rulenumber EOF ;
+    // InternalDelphi.g:10508:1: entryRulenumber returns [String current=null] : iv_rulenumber= rulenumber EOF ;
     public final String entryRulenumber() throws RecognitionException {
         String current = null;
         int entryRulenumber_StartIndex = input.index();
@@ -31181,8 +31241,8 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 255) ) { return current; }
-            // InternalDelphi.g:10476:46: (iv_rulenumber= rulenumber EOF )
-            // InternalDelphi.g:10477:2: iv_rulenumber= rulenumber EOF
+            // InternalDelphi.g:10508:46: (iv_rulenumber= rulenumber EOF )
+            // InternalDelphi.g:10509:2: iv_rulenumber= rulenumber EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNumberRule()); 
@@ -31214,7 +31274,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulenumber"
-    // InternalDelphi.g:10483:1: rulenumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | (kw= '#' this_INT_2= RULE_INT ) ) ;
+    // InternalDelphi.g:10515:1: rulenumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | (kw= '#' this_INT_2= RULE_INT ) ) ;
     public final AntlrDatatypeRuleToken rulenumber() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
         int rulenumber_StartIndex = input.index();
@@ -31227,10 +31287,10 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 256) ) { return current; }
-            // InternalDelphi.g:10489:2: ( (this_INT_0= RULE_INT | (kw= '#' this_INT_2= RULE_INT ) ) )
-            // InternalDelphi.g:10490:2: (this_INT_0= RULE_INT | (kw= '#' this_INT_2= RULE_INT ) )
+            // InternalDelphi.g:10521:2: ( (this_INT_0= RULE_INT | (kw= '#' this_INT_2= RULE_INT ) ) )
+            // InternalDelphi.g:10522:2: (this_INT_0= RULE_INT | (kw= '#' this_INT_2= RULE_INT ) )
             {
-            // InternalDelphi.g:10490:2: (this_INT_0= RULE_INT | (kw= '#' this_INT_2= RULE_INT ) )
+            // InternalDelphi.g:10522:2: (this_INT_0= RULE_INT | (kw= '#' this_INT_2= RULE_INT ) )
             int alt179=2;
             int LA179_0 = input.LA(1);
 
@@ -31249,7 +31309,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             }
             switch (alt179) {
                 case 1 :
-                    // InternalDelphi.g:10491:3: this_INT_0= RULE_INT
+                    // InternalDelphi.g:10523:3: this_INT_0= RULE_INT
                     {
                     this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31266,12 +31326,12 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDelphi.g:10499:3: (kw= '#' this_INT_2= RULE_INT )
+                    // InternalDelphi.g:10531:3: (kw= '#' this_INT_2= RULE_INT )
                     {
-                    // InternalDelphi.g:10499:3: (kw= '#' this_INT_2= RULE_INT )
-                    // InternalDelphi.g:10500:4: kw= '#' this_INT_2= RULE_INT
+                    // InternalDelphi.g:10531:3: (kw= '#' this_INT_2= RULE_INT )
+                    // InternalDelphi.g:10532:4: kw= '#' this_INT_2= RULE_INT
                     {
-                    kw=(Token)match(input,163,FOLLOW_118); if (state.failed) return current;
+                    kw=(Token)match(input,163,FOLLOW_117); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current.merge(kw);
@@ -31321,7 +31381,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulestring"
-    // InternalDelphi.g:10517:1: entryRulestring returns [String current=null] : iv_rulestring= rulestring EOF ;
+    // InternalDelphi.g:10549:1: entryRulestring returns [String current=null] : iv_rulestring= rulestring EOF ;
     public final String entryRulestring() throws RecognitionException {
         String current = null;
         int entryRulestring_StartIndex = input.index();
@@ -31330,8 +31390,8 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 257) ) { return current; }
-            // InternalDelphi.g:10517:46: (iv_rulestring= rulestring EOF )
-            // InternalDelphi.g:10518:2: iv_rulestring= rulestring EOF
+            // InternalDelphi.g:10549:46: (iv_rulestring= rulestring EOF )
+            // InternalDelphi.g:10550:2: iv_rulestring= rulestring EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStringRule()); 
@@ -31363,7 +31423,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulestring"
-    // InternalDelphi.g:10524:1: rulestring returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QVALUE_0= RULE_QVALUE | this_DQVALUE_1= RULE_DQVALUE ) ;
+    // InternalDelphi.g:10556:1: rulestring returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QVALUE_0= RULE_QVALUE | this_DQVALUE_1= RULE_DQVALUE ) ;
     public final AntlrDatatypeRuleToken rulestring() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
         int rulestring_StartIndex = input.index();
@@ -31375,10 +31435,10 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 258) ) { return current; }
-            // InternalDelphi.g:10530:2: ( (this_QVALUE_0= RULE_QVALUE | this_DQVALUE_1= RULE_DQVALUE ) )
-            // InternalDelphi.g:10531:2: (this_QVALUE_0= RULE_QVALUE | this_DQVALUE_1= RULE_DQVALUE )
+            // InternalDelphi.g:10562:2: ( (this_QVALUE_0= RULE_QVALUE | this_DQVALUE_1= RULE_DQVALUE ) )
+            // InternalDelphi.g:10563:2: (this_QVALUE_0= RULE_QVALUE | this_DQVALUE_1= RULE_DQVALUE )
             {
-            // InternalDelphi.g:10531:2: (this_QVALUE_0= RULE_QVALUE | this_DQVALUE_1= RULE_DQVALUE )
+            // InternalDelphi.g:10563:2: (this_QVALUE_0= RULE_QVALUE | this_DQVALUE_1= RULE_DQVALUE )
             int alt180=2;
             int LA180_0 = input.LA(1);
 
@@ -31397,7 +31457,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             }
             switch (alt180) {
                 case 1 :
-                    // InternalDelphi.g:10532:3: this_QVALUE_0= RULE_QVALUE
+                    // InternalDelphi.g:10564:3: this_QVALUE_0= RULE_QVALUE
                     {
                     this_QVALUE_0=(Token)match(input,RULE_QVALUE,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31414,7 +31474,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDelphi.g:10540:3: this_DQVALUE_1= RULE_DQVALUE
+                    // InternalDelphi.g:10572:3: this_DQVALUE_1= RULE_DQVALUE
                     {
                     this_DQVALUE_1=(Token)match(input,RULE_DQVALUE,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32281,18 +32341,18 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end synpred144_InternalDelphi
 
-    // $ANTLR start synpred150_InternalDelphi
-    public final void synpred150_InternalDelphi_fragment() throws RecognitionException {   
+    // $ANTLR start synpred149_InternalDelphi
+    public final void synpred149_InternalDelphi_fragment() throws RecognitionException {   
         Token otherlv_2=null;
 
-        // InternalDelphi.g:5368:5: (otherlv_2= ';' )
-        // InternalDelphi.g:5368:5: otherlv_2= ';'
+        // InternalDelphi.g:5305:5: (otherlv_2= ';' )
+        // InternalDelphi.g:5305:5: otherlv_2= ';'
         {
         otherlv_2=(Token)match(input,19,FOLLOW_2); if (state.failed) return ;
 
         }
     }
-    // $ANTLR end synpred150_InternalDelphi
+    // $ANTLR end synpred149_InternalDelphi
 
     // $ANTLR start synpred153_InternalDelphi
     public final void synpred153_InternalDelphi_fragment() throws RecognitionException {   
@@ -32517,7 +32577,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
         // InternalDelphi.g:5875:4: (otherlv_5= 'else' ( (lv_else_6_0= rulestatement ) ) (otherlv_7= ';' )? )
         // InternalDelphi.g:5875:4: otherlv_5= 'else' ( (lv_else_6_0= rulestatement ) ) (otherlv_7= ';' )?
         {
-        otherlv_5=(Token)match(input,107,FOLLOW_64); if (state.failed) return ;
+        otherlv_5=(Token)match(input,107,FOLLOW_62); if (state.failed) return ;
         // InternalDelphi.g:5879:4: ( (lv_else_6_0= rulestatement ) )
         // InternalDelphi.g:5880:5: (lv_else_6_0= rulestatement )
         {
@@ -32659,7 +32719,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             case 1 :
                 // InternalDelphi.g:6797:5: otherlv_9= 'else'
                 {
-                otherlv_9=(Token)match(input,107,FOLLOW_64); if (state.failed) return ;
+                otherlv_9=(Token)match(input,107,FOLLOW_62); if (state.failed) return ;
 
                 }
                 break;
@@ -32766,7 +32826,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
           						newCompositeNode(grammarAccess.getParameterAccess().getIdListIdentListParserRuleCall_0_1_0());
           					
         }
-        pushFollow(FOLLOW_91);
+        pushFollow(FOLLOW_90);
         lv_idList_1_0=ruleidentList();
 
         state._fsp--;
@@ -32902,7 +32962,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
         // InternalDelphi.g:8138:5: (otherlv_1= ';' otherlv_2= 'virtual' )
         // InternalDelphi.g:8138:5: otherlv_1= ';' otherlv_2= 'virtual'
         {
-        otherlv_1=(Token)match(input,19,FOLLOW_95); if (state.failed) return ;
+        otherlv_1=(Token)match(input,19,FOLLOW_94); if (state.failed) return ;
         otherlv_2=(Token)match(input,130,FOLLOW_2); if (state.failed) return ;
 
         }
@@ -33224,28 +33284,45 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred272_InternalDelphi
     public final void synpred272_InternalDelphi_fragment() throws RecognitionException {   
-        EObject lv_exps_0_0 = null;
+        EObject lv_exp_1_0 = null;
 
 
-        // InternalDelphi.g:10205:3: ( ( (lv_exps_0_0= ruleexpression ) ) )
-        // InternalDelphi.g:10205:3: ( (lv_exps_0_0= ruleexpression ) )
+        // InternalDelphi.g:10205:3: ( ( () ( (lv_exp_1_0= ruleexpression ) ) ) )
+        // InternalDelphi.g:10205:3: ( () ( (lv_exp_1_0= ruleexpression ) ) )
         {
-        // InternalDelphi.g:10205:3: ( (lv_exps_0_0= ruleexpression ) )
-        // InternalDelphi.g:10206:4: (lv_exps_0_0= ruleexpression )
+        // InternalDelphi.g:10205:3: ( () ( (lv_exp_1_0= ruleexpression ) ) )
+        // InternalDelphi.g:10206:4: () ( (lv_exp_1_0= ruleexpression ) )
         {
-        // InternalDelphi.g:10206:4: (lv_exps_0_0= ruleexpression )
-        // InternalDelphi.g:10207:5: lv_exps_0_0= ruleexpression
+        // InternalDelphi.g:10206:4: ()
+        // InternalDelphi.g:10207:5: 
         {
         if ( state.backtracking==0 ) {
 
-          					newCompositeNode(grammarAccess.getConstExprAccess().getExpsExpressionParserRuleCall_0_0());
+          					/* */
           				
         }
+
+        }
+
+        // InternalDelphi.g:10216:4: ( (lv_exp_1_0= ruleexpression ) )
+        // InternalDelphi.g:10217:5: (lv_exp_1_0= ruleexpression )
+        {
+        // InternalDelphi.g:10217:5: (lv_exp_1_0= ruleexpression )
+        // InternalDelphi.g:10218:6: lv_exp_1_0= ruleexpression
+        {
+        if ( state.backtracking==0 ) {
+
+          						newCompositeNode(grammarAccess.getConstExprAccess().getExpExpressionParserRuleCall_0_1_0());
+          					
+        }
         pushFollow(FOLLOW_2);
-        lv_exps_0_0=ruleexpression();
+        lv_exp_1_0=ruleexpression();
 
         state._fsp--;
         if (state.failed) return ;
+
+        }
+
 
         }
 
@@ -33259,34 +33336,45 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred274_InternalDelphi
     public final void synpred274_InternalDelphi_fragment() throws RecognitionException {   
-        Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
-        EObject lv_exps_2_0 = null;
-
+        Token otherlv_7=null;
         EObject lv_exps_4_0 = null;
 
+        EObject lv_exps_6_0 = null;
 
-        // InternalDelphi.g:10225:3: ( (otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')' ) )
-        // InternalDelphi.g:10225:3: (otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')' )
+
+        // InternalDelphi.g:10237:3: ( ( () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')' ) )
+        // InternalDelphi.g:10237:3: ( () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')' )
         {
-        // InternalDelphi.g:10225:3: (otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')' )
-        // InternalDelphi.g:10226:4: otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')'
+        // InternalDelphi.g:10237:3: ( () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')' )
+        // InternalDelphi.g:10238:4: () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')'
         {
-        otherlv_1=(Token)match(input,17,FOLLOW_23); if (state.failed) return ;
-        // InternalDelphi.g:10230:4: ( (lv_exps_2_0= ruleconstExpr ) )
-        // InternalDelphi.g:10231:5: (lv_exps_2_0= ruleconstExpr )
-        {
-        // InternalDelphi.g:10231:5: (lv_exps_2_0= ruleconstExpr )
-        // InternalDelphi.g:10232:6: lv_exps_2_0= ruleconstExpr
+        // InternalDelphi.g:10238:4: ()
+        // InternalDelphi.g:10239:5: 
         {
         if ( state.backtracking==0 ) {
 
-          						newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_1_0());
+          					/* */
+          				
+        }
+
+        }
+
+        otherlv_3=(Token)match(input,17,FOLLOW_23); if (state.failed) return ;
+        // InternalDelphi.g:10252:4: ( (lv_exps_4_0= ruleconstExpr ) )
+        // InternalDelphi.g:10253:5: (lv_exps_4_0= ruleconstExpr )
+        {
+        // InternalDelphi.g:10253:5: (lv_exps_4_0= ruleconstExpr )
+        // InternalDelphi.g:10254:6: lv_exps_4_0= ruleconstExpr
+        {
+        if ( state.backtracking==0 ) {
+
+          						newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_2_0());
           					
         }
-        pushFollow(FOLLOW_117);
-        lv_exps_2_0=ruleconstExpr();
+        pushFollow(FOLLOW_116);
+        lv_exps_4_0=ruleconstExpr();
 
         state._fsp--;
         if (state.failed) return ;
@@ -33296,7 +33384,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         }
 
-        // InternalDelphi.g:10249:4: (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )*
+        // InternalDelphi.g:10271:4: (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )*
         loop204:
         do {
             int alt204=2;
@@ -33309,22 +33397,22 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
             switch (alt204) {
         	case 1 :
-        	    // InternalDelphi.g:10250:5: otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) )
+        	    // InternalDelphi.g:10272:5: otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) )
         	    {
-        	    otherlv_3=(Token)match(input,33,FOLLOW_23); if (state.failed) return ;
-        	    // InternalDelphi.g:10254:5: ( (lv_exps_4_0= ruleconstExpr ) )
-        	    // InternalDelphi.g:10255:6: (lv_exps_4_0= ruleconstExpr )
+        	    otherlv_5=(Token)match(input,33,FOLLOW_23); if (state.failed) return ;
+        	    // InternalDelphi.g:10276:5: ( (lv_exps_6_0= ruleconstExpr ) )
+        	    // InternalDelphi.g:10277:6: (lv_exps_6_0= ruleconstExpr )
         	    {
-        	    // InternalDelphi.g:10255:6: (lv_exps_4_0= ruleconstExpr )
-        	    // InternalDelphi.g:10256:7: lv_exps_4_0= ruleconstExpr
+        	    // InternalDelphi.g:10277:6: (lv_exps_6_0= ruleconstExpr )
+        	    // InternalDelphi.g:10278:7: lv_exps_6_0= ruleconstExpr
         	    {
         	    if ( state.backtracking==0 ) {
 
-        	      							newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_2_1_0());
+        	      							newCompositeNode(grammarAccess.getConstExprAccess().getExpsConstExprParserRuleCall_1_3_1_0());
         	      						
         	    }
-        	    pushFollow(FOLLOW_117);
-        	    lv_exps_4_0=ruleconstExpr();
+        	    pushFollow(FOLLOW_116);
+        	    lv_exps_6_0=ruleconstExpr();
 
         	    state._fsp--;
         	    if (state.failed) return ;
@@ -33343,7 +33431,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             }
         } while (true);
 
-        otherlv_5=(Token)match(input,18,FOLLOW_2); if (state.failed) return ;
+        otherlv_7=(Token)match(input,18,FOLLOW_2); if (state.failed) return ;
 
         }
 
@@ -33844,6 +33932,20 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
+    public final boolean synpred149_InternalDelphi() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred149_InternalDelphi_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
     public final boolean synpred248_InternalDelphi() {
         state.backtracking++;
         int start = input.mark();
@@ -33947,20 +34049,6 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
         int start = input.mark();
         try {
             synpred176_InternalDelphi_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred150_InternalDelphi() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred150_InternalDelphi_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -35281,7 +35369,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             this.transition = dfa_12;
         }
         public String getDescription() {
-            return "10204:2: ( ( (lv_exps_0_0= ruleexpression ) ) | (otherlv_1= '(' ( (lv_exps_2_0= ruleconstExpr ) ) (otherlv_3= ',' ( (lv_exps_4_0= ruleconstExpr ) ) )* otherlv_5= ')' ) | (otherlv_6= '(' ( (lv_exps_7_0= rulerecordConstExpr ) ) (otherlv_8= ',' ( (lv_exps_9_0= rulerecordConstExpr ) ) )* otherlv_10= ')' ) )";
+            return "10204:2: ( ( () ( (lv_exp_1_0= ruleexpression ) ) ) | ( () otherlv_3= '(' ( (lv_exps_4_0= ruleconstExpr ) ) (otherlv_5= ',' ( (lv_exps_6_0= ruleconstExpr ) ) )* otherlv_7= ')' ) | ( () otherlv_9= '(' ( (lv_exps_10_0= rulerecordConstExpr ) ) (otherlv_11= ',' ( (lv_exps_12_0= rulerecordConstExpr ) ) )* otherlv_13= ')' ) )";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -35418,63 +35506,62 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
     public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x4000000000000002L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x000000CD02000010L,0x3A1953D000001080L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x000000CD02080072L,0x3A1953D000001080L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x000000CD02080072L,0x3A1953D000001080L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x000000CD02080070L,0x3A1953D000001080L});
     public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x000000CD02080070L,0x3A1953D000001080L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000000L,0x0000040000000000L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x000000CD02080070L,0x3A195BD000001080L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000080002L,0x0000080000000000L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x00000000000201B0L,0x000008100007C010L,0x0000000800000000L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000002200000000L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x000000CD02080070L,0x3A1973D000001080L});
-    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000080000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000800000000000L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0006000000000000L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000080000L,0x0060000000000000L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0060000000000000L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x000000CD02880070L,0x3A995BD000001080L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x000000CD02080070L,0x3A995BD000001080L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x000000CD02080072L,0x3A995BD000001080L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000012L,0x0400000000000000L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000002L,0x0400000000000000L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x000000CD0F000000L,0xB000010000001000L,0x000000000003FFFFL});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x000000CD0F000000L,0x3000010000001000L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
-    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000002000020000L});
-    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000800000010L,0x4000001000001000L});
-    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x00000000000C0000L});
-    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000002000000002L});
-    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x000000CC00820010L,0x3000001000001000L,0x00000000000C0000L});
-    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x000000CC00800010L,0x3000001000001000L,0x00000000000C0000L});
-    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x000000CC00800000L,0x3000000000001000L,0x00000000000C0000L});
-    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L,0x000000000003FFFFL});
-    public static final BitSet FOLLOW_97 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_98 = new BitSet(new long[]{0x000000CC00820010L,0x3000001000001000L,0x0000000007CC0000L});
-    public static final BitSet FOLLOW_99 = new BitSet(new long[]{0x000000CC00800010L,0x3000001000001000L,0x0000000007CC0000L});
-    public static final BitSet FOLLOW_100 = new BitSet(new long[]{0x000000CC00800000L,0x3000000000001000L,0x0000000007CC0000L});
-    public static final BitSet FOLLOW_101 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000000L,0x0000000007C00000L});
-    public static final BitSet FOLLOW_102 = new BitSet(new long[]{0x0000000000000012L,0x0000001000000000L,0x0000000003C00000L});
-    public static final BitSet FOLLOW_103 = new BitSet(new long[]{0x000000CC00000002L,0x3000000000001000L,0x0000000003CC0000L});
-    public static final BitSet FOLLOW_104 = new BitSet(new long[]{0x000000CC00000000L,0x3000000000001000L,0x00000000000C0000L});
-    public static final BitSet FOLLOW_105 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000007C00000L});
-    public static final BitSet FOLLOW_106 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000007C00000L});
-    public static final BitSet FOLLOW_107 = new BitSet(new long[]{0x000000208D080000L,0x0000000000000010L,0x00000001F8000000L});
-    public static final BitSet FOLLOW_108 = new BitSet(new long[]{0x000000008D080000L,0x0000000000000000L,0x00000001F8000000L});
-    public static final BitSet FOLLOW_109 = new BitSet(new long[]{0x0000000000000010L,0x0000001000000020L});
-    public static final BitSet FOLLOW_110 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001F8000000L});
-    public static final BitSet FOLLOW_111 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001F0000000L});
-    public static final BitSet FOLLOW_112 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001E0000000L});
-    public static final BitSet FOLLOW_113 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001C0000000L});
-    public static final BitSet FOLLOW_114 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_115 = new BitSet(new long[]{0x000000CC00000000L,0x3000000000001000L,0x0000000003CC0000L});
-    public static final BitSet FOLLOW_116 = new BitSet(new long[]{0x0000000000080010L,0x0000001000000000L});
-    public static final BitSet FOLLOW_117 = new BitSet(new long[]{0x0000000200040000L});
-    public static final BitSet FOLLOW_118 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000000L,0x0000040000000000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x000000CD02080070L,0x3A195BD000001080L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000080002L,0x0000080000000000L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x00000000000201B0L,0x000008100007C010L,0x0000000800000000L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000002200000000L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x000000CD02080070L,0x3A1973D000001080L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000080000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0006000000000000L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000080000L,0x0060000000000000L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0060000000000000L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x000000CD02880070L,0x3A995BD000001080L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x000000CD02080070L,0x3A995BD000001080L});
+    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x000000CD02080072L,0x3A995BD000001080L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000000000012L,0x0400000000000000L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000002L,0x0400000000000000L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x000000CD0F000000L,0xB000010000001000L,0x000000000003FFFFL});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x000000CD0F000000L,0x3000010000001000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000002000020000L});
+    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000800000010L,0x4000001000001000L});
+    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x00000000000C0000L});
+    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000002000000002L});
+    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x000000CC00820010L,0x3000001000001000L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x000000CC00800010L,0x3000001000001000L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x000000CC00800000L,0x3000000000001000L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L,0x000000000003FFFFL});
+    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_97 = new BitSet(new long[]{0x000000CC00820010L,0x3000001000001000L,0x0000000007CC0000L});
+    public static final BitSet FOLLOW_98 = new BitSet(new long[]{0x000000CC00800010L,0x3000001000001000L,0x0000000007CC0000L});
+    public static final BitSet FOLLOW_99 = new BitSet(new long[]{0x000000CC00800000L,0x3000000000001000L,0x0000000007CC0000L});
+    public static final BitSet FOLLOW_100 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000000L,0x0000000007C00000L});
+    public static final BitSet FOLLOW_101 = new BitSet(new long[]{0x0000000000000012L,0x0000001000000000L,0x0000000003C00000L});
+    public static final BitSet FOLLOW_102 = new BitSet(new long[]{0x000000CC00000002L,0x3000000000001000L,0x0000000003CC0000L});
+    public static final BitSet FOLLOW_103 = new BitSet(new long[]{0x000000CC00000000L,0x3000000000001000L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_104 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000007C00000L});
+    public static final BitSet FOLLOW_105 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000007C00000L});
+    public static final BitSet FOLLOW_106 = new BitSet(new long[]{0x000000208D080000L,0x0000000000000010L,0x00000001F8000000L});
+    public static final BitSet FOLLOW_107 = new BitSet(new long[]{0x000000008D080000L,0x0000000000000000L,0x00000001F8000000L});
+    public static final BitSet FOLLOW_108 = new BitSet(new long[]{0x0000000000000010L,0x0000001000000020L});
+    public static final BitSet FOLLOW_109 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001F8000000L});
+    public static final BitSet FOLLOW_110 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001F0000000L});
+    public static final BitSet FOLLOW_111 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001E0000000L});
+    public static final BitSet FOLLOW_112 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001C0000000L});
+    public static final BitSet FOLLOW_113 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_114 = new BitSet(new long[]{0x000000CC00000000L,0x3000000000001000L,0x0000000003CC0000L});
+    public static final BitSet FOLLOW_115 = new BitSet(new long[]{0x0000000000080010L,0x0000001000000000L});
+    public static final BitSet FOLLOW_116 = new BitSet(new long[]{0x0000000200040000L});
+    public static final BitSet FOLLOW_117 = new BitSet(new long[]{0x0000000000000020L});
 
 }

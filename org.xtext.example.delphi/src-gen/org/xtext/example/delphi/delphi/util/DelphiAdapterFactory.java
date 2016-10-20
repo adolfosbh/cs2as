@@ -325,12 +325,12 @@ public class DelphiAdapterFactory extends AdapterFactoryImpl
 				return createexprListAdapter();
 			}
 			@Override
-			public Adapter casestatement(statement object) {
-				return createstatementAdapter();
-			}
-			@Override
 			public Adapter casestmtList(stmtList object) {
 				return createstmtListAdapter();
+			}
+			@Override
+			public Adapter casestatement(statement object) {
+				return createstatementAdapter();
 			}
 			@Override
 			public Adapter caseunlabelledStatement(unlabelledStatement object) {
@@ -619,6 +619,18 @@ public class DelphiAdapterFactory extends AdapterFactoryImpl
 			@Override
 			public Adapter caseMineID(MineID object) {
 				return createMineIDAdapter();
+			}
+			@Override
+			public Adapter caseConstExp(ConstExp object) {
+				return createConstExpAdapter();
+			}
+			@Override
+			public Adapter caseMultipleConstExp(MultipleConstExp object) {
+				return createMultipleConstExpAdapter();
+			}
+			@Override
+			public Adapter caseRecordConstExp(RecordConstExp object) {
+				return createRecordConstExpAdapter();
 			}
 			@Override
 			public Adapter caseCSTrace(CSTrace object) {
@@ -1591,21 +1603,6 @@ public class DelphiAdapterFactory extends AdapterFactoryImpl
 	}
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.statement <em>statement</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.example.delphi.delphi.statement
-	 * @generated
-	 */
-  public Adapter createstatementAdapter()
-  {
-		return null;
-	}
-
-  /**
 	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.stmtList <em>stmt List</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1616,6 +1613,21 @@ public class DelphiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createstmtListAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.statement <em>statement</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.statement
+	 * @generated
+	 */
+  public Adapter createstatementAdapter()
   {
 		return null;
 	}
@@ -2696,6 +2708,51 @@ public class DelphiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createMineIDAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.ConstExp <em>Const Exp</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.ConstExp
+	 * @generated
+	 */
+  public Adapter createConstExpAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.MultipleConstExp <em>Multiple Const Exp</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.MultipleConstExp
+	 * @generated
+	 */
+  public Adapter createMultipleConstExpAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.RecordConstExp <em>Record Const Exp</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.RecordConstExp
+	 * @generated
+	 */
+  public Adapter createRecordConstExpAdapter()
   {
 		return null;
 	}

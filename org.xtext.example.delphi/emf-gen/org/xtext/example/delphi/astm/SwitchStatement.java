@@ -2,6 +2,8 @@
  */
 package org.xtext.example.delphi.astm;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -48,29 +50,19 @@ public interface SwitchStatement extends Statement {
 	void setSwitchExpression(Expression value);
 
 	/**
-	 * Returns the value of the '<em><b>Cases</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Cases</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.example.delphi.astm.SwitchCase}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cases</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cases</em>' containment reference.
-	 * @see #setCases(SwitchCase)
+	 * @return the value of the '<em>Cases</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getSwitchStatement_Cases()
 	 * @model containment="true"
 	 * @generated
 	 */
-	SwitchCase getCases();
-
-	/**
-	 * Sets the value of the '{@link org.xtext.example.delphi.astm.SwitchStatement#getCases <em>Cases</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cases</em>' containment reference.
-	 * @see #getCases()
-	 * @generated
-	 */
-	void setCases(SwitchCase value);
+	EList<SwitchCase> getCases();
 
 } // SwitchStatement

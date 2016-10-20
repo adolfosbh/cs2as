@@ -559,17 +559,17 @@ public class DelphiSwitch<@Nullable T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DelphiPackage.STATEMENT: {
-				statement statement = (statement)theEObject;
-				T result = casestatement(statement);
-				if (result == null) result = caseCSTrace(statement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case DelphiPackage.STMT_LIST: {
 				stmtList stmtList = (stmtList)theEObject;
 				T result = casestmtList(stmtList);
 				if (result == null) result = caseCSTrace(stmtList);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DelphiPackage.STATEMENT: {
+				statement statement = (statement)theEObject;
+				T result = casestatement(statement);
+				if (result == null) result = caseCSTrace(statement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1141,6 +1141,30 @@ public class DelphiSwitch<@Nullable T> extends Switch<T>
 				T result = caseMineID(mineID);
 				if (result == null) result = caseident(mineID);
 				if (result == null) result = caseCSTrace(mineID);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DelphiPackage.CONST_EXP: {
+				ConstExp constExp = (ConstExp)theEObject;
+				T result = caseConstExp(constExp);
+				if (result == null) result = caseconstExpr(constExp);
+				if (result == null) result = caseCSTrace(constExp);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DelphiPackage.MULTIPLE_CONST_EXP: {
+				MultipleConstExp multipleConstExp = (MultipleConstExp)theEObject;
+				T result = caseMultipleConstExp(multipleConstExp);
+				if (result == null) result = caseconstExpr(multipleConstExp);
+				if (result == null) result = caseCSTrace(multipleConstExp);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DelphiPackage.RECORD_CONST_EXP: {
+				RecordConstExp recordConstExp = (RecordConstExp)theEObject;
+				T result = caseRecordConstExp(recordConstExp);
+				if (result == null) result = caseconstExpr(recordConstExp);
+				if (result == null) result = caseCSTrace(recordConstExp);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2163,22 +2187,6 @@ public class DelphiSwitch<@Nullable T> extends Switch<T>
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>statement</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>statement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T casestatement(statement object)
-  {
-		return null;
-	}
-
-  /**
 	 * Returns the result of interpreting the object as an instance of '<em>stmt List</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2190,6 +2198,22 @@ public class DelphiSwitch<@Nullable T> extends Switch<T>
 	 * @generated
 	 */
   public T casestmtList(stmtList object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>statement</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T casestatement(statement object)
   {
 		return null;
 	}
@@ -3342,6 +3366,54 @@ public class DelphiSwitch<@Nullable T> extends Switch<T>
 	 * @generated
 	 */
   public T caseMineID(MineID object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Const Exp</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Const Exp</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseConstExp(ConstExp object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Multiple Const Exp</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Multiple Const Exp</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseMultipleConstExp(MultipleConstExp object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Record Const Exp</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Record Const Exp</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseRecordConstExp(RecordConstExp object)
   {
 		return null;
 	}

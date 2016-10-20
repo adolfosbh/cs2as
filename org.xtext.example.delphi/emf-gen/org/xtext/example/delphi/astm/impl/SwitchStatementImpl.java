@@ -2,11 +2,15 @@
  */
 package org.xtext.example.delphi.astm.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.xtext.example.delphi.astm.AstmPackage;
 import org.xtext.example.delphi.astm.Expression;
 import org.xtext.example.delphi.astm.SwitchCase;
@@ -39,14 +43,14 @@ public class SwitchStatementImpl extends StatementImpl implements SwitchStatemen
 	protected Expression switchExpression;
 
 	/**
-	 * The cached value of the '{@link #getCases() <em>Cases</em>}' containment reference.
+	 * The cached value of the '{@link #getCases() <em>Cases</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCases()
 	 * @generated
 	 * @ordered
 	 */
-	protected SwitchCase cases;
+	protected EList<SwitchCase> cases;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,42 +119,11 @@ public class SwitchStatementImpl extends StatementImpl implements SwitchStatemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SwitchCase getCases() {
+	public EList<SwitchCase> getCases() {
+		if (cases == null) {
+			cases = new EObjectContainmentEList<SwitchCase>(SwitchCase.class, this, AstmPackage.SWITCH_STATEMENT__CASES);
+		}
 		return cases;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCases(SwitchCase newCases, NotificationChain msgs) {
-		SwitchCase oldCases = cases;
-		cases = newCases;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstmPackage.SWITCH_STATEMENT__CASES, oldCases, newCases);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCases(SwitchCase newCases) {
-		if (newCases != cases) {
-			NotificationChain msgs = null;
-			if (cases != null)
-				msgs = ((InternalEObject)cases).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstmPackage.SWITCH_STATEMENT__CASES, null, msgs);
-			if (newCases != null)
-				msgs = ((InternalEObject)newCases).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstmPackage.SWITCH_STATEMENT__CASES, null, msgs);
-			msgs = basicSetCases(newCases, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AstmPackage.SWITCH_STATEMENT__CASES, newCases, newCases));
 	}
 
 	/**
@@ -164,7 +137,7 @@ public class SwitchStatementImpl extends StatementImpl implements SwitchStatemen
 			case AstmPackage.SWITCH_STATEMENT__SWITCH_EXPRESSION:
 				return basicSetSwitchExpression(null, msgs);
 			case AstmPackage.SWITCH_STATEMENT__CASES:
-				return basicSetCases(null, msgs);
+				return ((InternalEList<?>)getCases()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -190,6 +163,7 @@ public class SwitchStatementImpl extends StatementImpl implements SwitchStatemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -197,7 +171,8 @@ public class SwitchStatementImpl extends StatementImpl implements SwitchStatemen
 				setSwitchExpression((Expression)newValue);
 				return;
 			case AstmPackage.SWITCH_STATEMENT__CASES:
-				setCases((SwitchCase)newValue);
+				getCases().clear();
+				getCases().addAll((Collection<? extends SwitchCase>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -215,7 +190,7 @@ public class SwitchStatementImpl extends StatementImpl implements SwitchStatemen
 				setSwitchExpression((Expression)null);
 				return;
 			case AstmPackage.SWITCH_STATEMENT__CASES:
-				setCases((SwitchCase)null);
+				getCases().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -232,7 +207,7 @@ public class SwitchStatementImpl extends StatementImpl implements SwitchStatemen
 			case AstmPackage.SWITCH_STATEMENT__SWITCH_EXPRESSION:
 				return switchExpression != null;
 			case AstmPackage.SWITCH_STATEMENT__CASES:
-				return cases != null;
+				return cases != null && !cases.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

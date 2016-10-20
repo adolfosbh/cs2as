@@ -114,7 +114,7 @@ public abstract class AbstractExtendingVisitor<R, C>
 
 	@Override
 	public R visitBinaryOperator(org.xtext.example.delphi.astm.@NonNull BinaryOperator object) {
-		return visiting(object);
+		return visitOperator(object);
 	}
 
 	@Override
@@ -718,6 +718,11 @@ public abstract class AbstractExtendingVisitor<R, C>
 	}
 
 	@Override
+	public R visitOperator(org.xtext.example.delphi.astm.@NonNull Operator object) {
+		return visitOtherSyntaxObject(object);
+	}
+
+	@Override
 	public R visitOperatorAssign(org.xtext.example.delphi.astm.@NonNull OperatorAssign object) {
 		return visitBinaryOperator(object);
 	}
@@ -974,7 +979,7 @@ public abstract class AbstractExtendingVisitor<R, C>
 
 	@Override
 	public R visitUnaryOperator(org.xtext.example.delphi.astm.@NonNull UnaryOperator object) {
-		return visiting(object);
+		return visitOperator(object);
 	}
 
 	@Override

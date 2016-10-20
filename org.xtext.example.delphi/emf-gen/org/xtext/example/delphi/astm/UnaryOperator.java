@@ -12,8 +12,8 @@ import org.xtext.example.delphi.astm.util.Visitable;
  *
  *
  * @see org.xtext.example.delphi.astm.AstmPackage#getUnaryOperator()
- * @model abstract="true" superTypes="org.xtext.example.delphi.astm.Visitable"
+ * @model abstract="true"
  * @generated
  */
-public interface UnaryOperator extends EObject, Visitable {
+public interface UnaryOperator extends Operator {
 } // UnaryOperator

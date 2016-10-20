@@ -140,6 +140,7 @@ import org.xtext.example.delphi.astm.Not;
 import org.xtext.example.delphi.astm.NotEqual;
 import org.xtext.example.delphi.astm.NotGreater;
 import org.xtext.example.delphi.astm.NotLess;
+import org.xtext.example.delphi.astm.Operator;
 import org.xtext.example.delphi.astm.OperatorAssign;
 import org.xtext.example.delphi.astm.Or;
 import org.xtext.example.delphi.astm.OtherSyntaxObject;
@@ -1617,6 +1618,13 @@ public class AstmPackageImpl extends EPackageImpl implements AstmPackage {
 	 * @generated
 	 */
 	private EClass visitableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass operatorEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -4853,6 +4861,15 @@ public class AstmPackageImpl extends EPackageImpl implements AstmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOperator() {
+		return operatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AstmFactory getAstmFactory() {
 		return (AstmFactory)getEFactoryInstance();
 	}
@@ -5428,6 +5445,8 @@ public class AstmPackageImpl extends EPackageImpl implements AstmPackage {
 		specificSelectStatementEClass = createEClass(SPECIFIC_SELECT_STATEMENT);
 
 		visitableEClass = createEClass(VISITABLE);
+
+		operatorEClass = createEClass(OPERATOR);
 	}
 
 	/**
@@ -5471,8 +5490,8 @@ public class AstmPackageImpl extends EPackageImpl implements AstmPackage {
 		storageSpecificationEClass.getESuperTypes().add(this.getVisitable());
 		dataTypeEClass.getESuperTypes().add(this.getType());
 		accessKindEClass.getESuperTypes().add(this.getVisitable());
-		unaryOperatorEClass.getESuperTypes().add(this.getVisitable());
-		binaryOperatorEClass.getESuperTypes().add(this.getVisitable());
+		unaryOperatorEClass.getESuperTypes().add(this.getOperator());
+		binaryOperatorEClass.getESuperTypes().add(this.getOperator());
 		actualParameterEClass.getESuperTypes().add(this.getVisitable());
 		sourceFileEClass.getESuperTypes().add(this.getGASTMSourceObject());
 		sourceLocationEClass.getESuperTypes().add(this.getGASTMSourceObject());
@@ -5658,6 +5677,7 @@ public class AstmPackageImpl extends EPackageImpl implements AstmPackage {
 		specificLikeEClass.getESuperTypes().add(this.getBinaryOperator());
 		specificConcatStringEClass.getESuperTypes().add(this.getBinaryOperator());
 		specificSelectStatementEClass.getESuperTypes().add(this.getStatement());
+		operatorEClass.getESuperTypes().add(this.getOtherSyntaxObject());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(delphiUnitEClass, DelphiUnit.class, "DelphiUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -5898,7 +5918,7 @@ public class AstmPackageImpl extends EPackageImpl implements AstmPackage {
 
 		initEClass(switchStatementEClass, SwitchStatement.class, "SwitchStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSwitchStatement_SwitchExpression(), this.getExpression(), null, "switchExpression", null, 0, 1, SwitchStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSwitchStatement_Cases(), this.getSwitchCase(), null, "cases", null, 0, 1, SwitchStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSwitchStatement_Cases(), this.getSwitchCase(), null, "cases", null, 0, -1, SwitchStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(switchCaseEClass, SwitchCase.class, "SwitchCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSwitchCase_Body(), this.getStatement(), null, "body", null, 0, -1, SwitchCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6212,6 +6232,8 @@ public class AstmPackageImpl extends EPackageImpl implements AstmPackage {
 		initEClass(specificSelectStatementEClass, SpecificSelectStatement.class, "SpecificSelectStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(visitableEClass, Visitable.class, "Visitable", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(operatorEClass, Operator.class, "Operator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

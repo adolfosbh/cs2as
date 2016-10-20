@@ -141,6 +141,7 @@ import org.xtext.example.delphi.astm.Not;
 import org.xtext.example.delphi.astm.NotEqual;
 import org.xtext.example.delphi.astm.NotGreater;
 import org.xtext.example.delphi.astm.NotLess;
+import org.xtext.example.delphi.astm.Operator;
 import org.xtext.example.delphi.astm.OperatorAssign;
 import org.xtext.example.delphi.astm.Or;
 import org.xtext.example.delphi.astm.OtherSyntaxObject;
@@ -383,6 +384,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 			case AstmPackage.UNARY_OPERATOR: {
 				UnaryOperator unaryOperator = (UnaryOperator)theEObject;
 				T result = caseUnaryOperator(unaryOperator);
+				if (result == null) result = caseOperator(unaryOperator);
+				if (result == null) result = caseOtherSyntaxObject(unaryOperator);
+				if (result == null) result = caseGASTMSyntaxObject(unaryOperator);
+				if (result == null) result = caseGASTMObject(unaryOperator);
 				if (result == null) result = caseVisitable(unaryOperator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -390,6 +395,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 			case AstmPackage.BINARY_OPERATOR: {
 				BinaryOperator binaryOperator = (BinaryOperator)theEObject;
 				T result = caseBinaryOperator(binaryOperator);
+				if (result == null) result = caseOperator(binaryOperator);
+				if (result == null) result = caseOtherSyntaxObject(binaryOperator);
+				if (result == null) result = caseGASTMSyntaxObject(binaryOperator);
+				if (result == null) result = caseGASTMObject(binaryOperator);
 				if (result == null) result = caseVisitable(binaryOperator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1137,6 +1146,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				OperatorAssign operatorAssign = (OperatorAssign)theEObject;
 				T result = caseOperatorAssign(operatorAssign);
 				if (result == null) result = caseBinaryOperator(operatorAssign);
+				if (result == null) result = caseOperator(operatorAssign);
+				if (result == null) result = caseOtherSyntaxObject(operatorAssign);
+				if (result == null) result = caseGASTMSyntaxObject(operatorAssign);
+				if (result == null) result = caseGASTMObject(operatorAssign);
 				if (result == null) result = caseVisitable(operatorAssign);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1911,6 +1924,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				UnaryPlus unaryPlus = (UnaryPlus)theEObject;
 				T result = caseUnaryPlus(unaryPlus);
 				if (result == null) result = caseUnaryOperator(unaryPlus);
+				if (result == null) result = caseOperator(unaryPlus);
+				if (result == null) result = caseOtherSyntaxObject(unaryPlus);
+				if (result == null) result = caseGASTMSyntaxObject(unaryPlus);
+				if (result == null) result = caseGASTMObject(unaryPlus);
 				if (result == null) result = caseVisitable(unaryPlus);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1919,6 +1936,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Negate negate = (Negate)theEObject;
 				T result = caseNegate(negate);
 				if (result == null) result = caseUnaryOperator(negate);
+				if (result == null) result = caseOperator(negate);
+				if (result == null) result = caseOtherSyntaxObject(negate);
+				if (result == null) result = caseGASTMSyntaxObject(negate);
+				if (result == null) result = caseGASTMObject(negate);
 				if (result == null) result = caseVisitable(negate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1927,6 +1948,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Not not = (Not)theEObject;
 				T result = caseNot(not);
 				if (result == null) result = caseUnaryOperator(not);
+				if (result == null) result = caseOperator(not);
+				if (result == null) result = caseOtherSyntaxObject(not);
+				if (result == null) result = caseGASTMSyntaxObject(not);
+				if (result == null) result = caseGASTMObject(not);
 				if (result == null) result = caseVisitable(not);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1935,6 +1960,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				BitNot bitNot = (BitNot)theEObject;
 				T result = caseBitNot(bitNot);
 				if (result == null) result = caseUnaryOperator(bitNot);
+				if (result == null) result = caseOperator(bitNot);
+				if (result == null) result = caseOtherSyntaxObject(bitNot);
+				if (result == null) result = caseGASTMSyntaxObject(bitNot);
+				if (result == null) result = caseGASTMObject(bitNot);
 				if (result == null) result = caseVisitable(bitNot);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1943,6 +1972,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				AddressOf addressOf = (AddressOf)theEObject;
 				T result = caseAddressOf(addressOf);
 				if (result == null) result = caseUnaryOperator(addressOf);
+				if (result == null) result = caseOperator(addressOf);
+				if (result == null) result = caseOtherSyntaxObject(addressOf);
+				if (result == null) result = caseGASTMSyntaxObject(addressOf);
+				if (result == null) result = caseGASTMObject(addressOf);
 				if (result == null) result = caseVisitable(addressOf);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1951,6 +1984,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Deref deref = (Deref)theEObject;
 				T result = caseDeref(deref);
 				if (result == null) result = caseUnaryOperator(deref);
+				if (result == null) result = caseOperator(deref);
+				if (result == null) result = caseOtherSyntaxObject(deref);
+				if (result == null) result = caseGASTMSyntaxObject(deref);
+				if (result == null) result = caseGASTMObject(deref);
 				if (result == null) result = caseVisitable(deref);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1959,6 +1996,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Increment increment = (Increment)theEObject;
 				T result = caseIncrement(increment);
 				if (result == null) result = caseUnaryOperator(increment);
+				if (result == null) result = caseOperator(increment);
+				if (result == null) result = caseOtherSyntaxObject(increment);
+				if (result == null) result = caseGASTMSyntaxObject(increment);
+				if (result == null) result = caseGASTMObject(increment);
 				if (result == null) result = caseVisitable(increment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1967,6 +2008,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Decrement decrement = (Decrement)theEObject;
 				T result = caseDecrement(decrement);
 				if (result == null) result = caseUnaryOperator(decrement);
+				if (result == null) result = caseOperator(decrement);
+				if (result == null) result = caseOtherSyntaxObject(decrement);
+				if (result == null) result = caseGASTMSyntaxObject(decrement);
+				if (result == null) result = caseGASTMObject(decrement);
 				if (result == null) result = caseVisitable(decrement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1975,6 +2020,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				PostIncrement postIncrement = (PostIncrement)theEObject;
 				T result = casePostIncrement(postIncrement);
 				if (result == null) result = caseUnaryOperator(postIncrement);
+				if (result == null) result = caseOperator(postIncrement);
+				if (result == null) result = caseOtherSyntaxObject(postIncrement);
+				if (result == null) result = caseGASTMSyntaxObject(postIncrement);
+				if (result == null) result = caseGASTMObject(postIncrement);
 				if (result == null) result = caseVisitable(postIncrement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1983,6 +2032,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				PostDecrement postDecrement = (PostDecrement)theEObject;
 				T result = casePostDecrement(postDecrement);
 				if (result == null) result = caseUnaryOperator(postDecrement);
+				if (result == null) result = caseOperator(postDecrement);
+				if (result == null) result = caseOtherSyntaxObject(postDecrement);
+				if (result == null) result = caseGASTMSyntaxObject(postDecrement);
+				if (result == null) result = caseGASTMObject(postDecrement);
 				if (result == null) result = caseVisitable(postDecrement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1991,6 +2044,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Add add = (Add)theEObject;
 				T result = caseAdd(add);
 				if (result == null) result = caseBinaryOperator(add);
+				if (result == null) result = caseOperator(add);
+				if (result == null) result = caseOtherSyntaxObject(add);
+				if (result == null) result = caseGASTMSyntaxObject(add);
+				if (result == null) result = caseGASTMObject(add);
 				if (result == null) result = caseVisitable(add);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1999,6 +2056,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Subtract subtract = (Subtract)theEObject;
 				T result = caseSubtract(subtract);
 				if (result == null) result = caseBinaryOperator(subtract);
+				if (result == null) result = caseOperator(subtract);
+				if (result == null) result = caseOtherSyntaxObject(subtract);
+				if (result == null) result = caseGASTMSyntaxObject(subtract);
+				if (result == null) result = caseGASTMObject(subtract);
 				if (result == null) result = caseVisitable(subtract);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2007,6 +2068,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Multiply multiply = (Multiply)theEObject;
 				T result = caseMultiply(multiply);
 				if (result == null) result = caseBinaryOperator(multiply);
+				if (result == null) result = caseOperator(multiply);
+				if (result == null) result = caseOtherSyntaxObject(multiply);
+				if (result == null) result = caseGASTMSyntaxObject(multiply);
+				if (result == null) result = caseGASTMObject(multiply);
 				if (result == null) result = caseVisitable(multiply);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2015,6 +2080,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Divide divide = (Divide)theEObject;
 				T result = caseDivide(divide);
 				if (result == null) result = caseBinaryOperator(divide);
+				if (result == null) result = caseOperator(divide);
+				if (result == null) result = caseOtherSyntaxObject(divide);
+				if (result == null) result = caseGASTMSyntaxObject(divide);
+				if (result == null) result = caseGASTMObject(divide);
 				if (result == null) result = caseVisitable(divide);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2023,6 +2092,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Modulus modulus = (Modulus)theEObject;
 				T result = caseModulus(modulus);
 				if (result == null) result = caseBinaryOperator(modulus);
+				if (result == null) result = caseOperator(modulus);
+				if (result == null) result = caseOtherSyntaxObject(modulus);
+				if (result == null) result = caseGASTMSyntaxObject(modulus);
+				if (result == null) result = caseGASTMObject(modulus);
 				if (result == null) result = caseVisitable(modulus);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2031,6 +2104,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Exponent exponent = (Exponent)theEObject;
 				T result = caseExponent(exponent);
 				if (result == null) result = caseBinaryOperator(exponent);
+				if (result == null) result = caseOperator(exponent);
+				if (result == null) result = caseOtherSyntaxObject(exponent);
+				if (result == null) result = caseGASTMSyntaxObject(exponent);
+				if (result == null) result = caseGASTMObject(exponent);
 				if (result == null) result = caseVisitable(exponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2039,6 +2116,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				And and = (And)theEObject;
 				T result = caseAnd(and);
 				if (result == null) result = caseBinaryOperator(and);
+				if (result == null) result = caseOperator(and);
+				if (result == null) result = caseOtherSyntaxObject(and);
+				if (result == null) result = caseGASTMSyntaxObject(and);
+				if (result == null) result = caseGASTMObject(and);
 				if (result == null) result = caseVisitable(and);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2047,6 +2128,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Or or = (Or)theEObject;
 				T result = caseOr(or);
 				if (result == null) result = caseBinaryOperator(or);
+				if (result == null) result = caseOperator(or);
+				if (result == null) result = caseOtherSyntaxObject(or);
+				if (result == null) result = caseGASTMSyntaxObject(or);
+				if (result == null) result = caseGASTMObject(or);
 				if (result == null) result = caseVisitable(or);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2055,6 +2140,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Equal equal = (Equal)theEObject;
 				T result = caseEqual(equal);
 				if (result == null) result = caseBinaryOperator(equal);
+				if (result == null) result = caseOperator(equal);
+				if (result == null) result = caseOtherSyntaxObject(equal);
+				if (result == null) result = caseGASTMSyntaxObject(equal);
+				if (result == null) result = caseGASTMObject(equal);
 				if (result == null) result = caseVisitable(equal);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2063,6 +2152,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				NotEqual notEqual = (NotEqual)theEObject;
 				T result = caseNotEqual(notEqual);
 				if (result == null) result = caseBinaryOperator(notEqual);
+				if (result == null) result = caseOperator(notEqual);
+				if (result == null) result = caseOtherSyntaxObject(notEqual);
+				if (result == null) result = caseGASTMSyntaxObject(notEqual);
+				if (result == null) result = caseGASTMObject(notEqual);
 				if (result == null) result = caseVisitable(notEqual);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2071,6 +2164,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Greater greater = (Greater)theEObject;
 				T result = caseGreater(greater);
 				if (result == null) result = caseBinaryOperator(greater);
+				if (result == null) result = caseOperator(greater);
+				if (result == null) result = caseOtherSyntaxObject(greater);
+				if (result == null) result = caseGASTMSyntaxObject(greater);
+				if (result == null) result = caseGASTMObject(greater);
 				if (result == null) result = caseVisitable(greater);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2079,6 +2176,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				NotGreater notGreater = (NotGreater)theEObject;
 				T result = caseNotGreater(notGreater);
 				if (result == null) result = caseBinaryOperator(notGreater);
+				if (result == null) result = caseOperator(notGreater);
+				if (result == null) result = caseOtherSyntaxObject(notGreater);
+				if (result == null) result = caseGASTMSyntaxObject(notGreater);
+				if (result == null) result = caseGASTMObject(notGreater);
 				if (result == null) result = caseVisitable(notGreater);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2087,6 +2188,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Less less = (Less)theEObject;
 				T result = caseLess(less);
 				if (result == null) result = caseBinaryOperator(less);
+				if (result == null) result = caseOperator(less);
+				if (result == null) result = caseOtherSyntaxObject(less);
+				if (result == null) result = caseGASTMSyntaxObject(less);
+				if (result == null) result = caseGASTMObject(less);
 				if (result == null) result = caseVisitable(less);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2095,6 +2200,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				NotLess notLess = (NotLess)theEObject;
 				T result = caseNotLess(notLess);
 				if (result == null) result = caseBinaryOperator(notLess);
+				if (result == null) result = caseOperator(notLess);
+				if (result == null) result = caseOtherSyntaxObject(notLess);
+				if (result == null) result = caseGASTMSyntaxObject(notLess);
+				if (result == null) result = caseGASTMObject(notLess);
 				if (result == null) result = caseVisitable(notLess);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2103,6 +2212,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				BitAnd bitAnd = (BitAnd)theEObject;
 				T result = caseBitAnd(bitAnd);
 				if (result == null) result = caseBinaryOperator(bitAnd);
+				if (result == null) result = caseOperator(bitAnd);
+				if (result == null) result = caseOtherSyntaxObject(bitAnd);
+				if (result == null) result = caseGASTMSyntaxObject(bitAnd);
+				if (result == null) result = caseGASTMObject(bitAnd);
 				if (result == null) result = caseVisitable(bitAnd);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2111,6 +2224,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				BitOr bitOr = (BitOr)theEObject;
 				T result = caseBitOr(bitOr);
 				if (result == null) result = caseBinaryOperator(bitOr);
+				if (result == null) result = caseOperator(bitOr);
+				if (result == null) result = caseOtherSyntaxObject(bitOr);
+				if (result == null) result = caseGASTMSyntaxObject(bitOr);
+				if (result == null) result = caseGASTMObject(bitOr);
 				if (result == null) result = caseVisitable(bitOr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2119,6 +2236,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				BitXor bitXor = (BitXor)theEObject;
 				T result = caseBitXor(bitXor);
 				if (result == null) result = caseBinaryOperator(bitXor);
+				if (result == null) result = caseOperator(bitXor);
+				if (result == null) result = caseOtherSyntaxObject(bitXor);
+				if (result == null) result = caseGASTMSyntaxObject(bitXor);
+				if (result == null) result = caseGASTMObject(bitXor);
 				if (result == null) result = caseVisitable(bitXor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2127,6 +2248,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				BitLeftShift bitLeftShift = (BitLeftShift)theEObject;
 				T result = caseBitLeftShift(bitLeftShift);
 				if (result == null) result = caseBinaryOperator(bitLeftShift);
+				if (result == null) result = caseOperator(bitLeftShift);
+				if (result == null) result = caseOtherSyntaxObject(bitLeftShift);
+				if (result == null) result = caseGASTMSyntaxObject(bitLeftShift);
+				if (result == null) result = caseGASTMObject(bitLeftShift);
 				if (result == null) result = caseVisitable(bitLeftShift);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2135,6 +2260,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				BitRightShift bitRightShift = (BitRightShift)theEObject;
 				T result = caseBitRightShift(bitRightShift);
 				if (result == null) result = caseBinaryOperator(bitRightShift);
+				if (result == null) result = caseOperator(bitRightShift);
+				if (result == null) result = caseOtherSyntaxObject(bitRightShift);
+				if (result == null) result = caseGASTMSyntaxObject(bitRightShift);
+				if (result == null) result = caseGASTMObject(bitRightShift);
 				if (result == null) result = caseVisitable(bitRightShift);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2143,6 +2272,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				Assign assign = (Assign)theEObject;
 				T result = caseAssign(assign);
 				if (result == null) result = caseBinaryOperator(assign);
+				if (result == null) result = caseOperator(assign);
+				if (result == null) result = caseOtherSyntaxObject(assign);
+				if (result == null) result = caseGASTMSyntaxObject(assign);
+				if (result == null) result = caseGASTMObject(assign);
 				if (result == null) result = caseVisitable(assign);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2189,6 +2322,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				SpecificLessEqual specificLessEqual = (SpecificLessEqual)theEObject;
 				T result = caseSpecificLessEqual(specificLessEqual);
 				if (result == null) result = caseBinaryOperator(specificLessEqual);
+				if (result == null) result = caseOperator(specificLessEqual);
+				if (result == null) result = caseOtherSyntaxObject(specificLessEqual);
+				if (result == null) result = caseGASTMSyntaxObject(specificLessEqual);
+				if (result == null) result = caseGASTMObject(specificLessEqual);
 				if (result == null) result = caseVisitable(specificLessEqual);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2197,6 +2334,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				SpecificGreaterEqual specificGreaterEqual = (SpecificGreaterEqual)theEObject;
 				T result = caseSpecificGreaterEqual(specificGreaterEqual);
 				if (result == null) result = caseBinaryOperator(specificGreaterEqual);
+				if (result == null) result = caseOperator(specificGreaterEqual);
+				if (result == null) result = caseOtherSyntaxObject(specificGreaterEqual);
+				if (result == null) result = caseGASTMSyntaxObject(specificGreaterEqual);
+				if (result == null) result = caseGASTMObject(specificGreaterEqual);
 				if (result == null) result = caseVisitable(specificGreaterEqual);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2205,6 +2346,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				SpecificIn specificIn = (SpecificIn)theEObject;
 				T result = caseSpecificIn(specificIn);
 				if (result == null) result = caseBinaryOperator(specificIn);
+				if (result == null) result = caseOperator(specificIn);
+				if (result == null) result = caseOtherSyntaxObject(specificIn);
+				if (result == null) result = caseGASTMSyntaxObject(specificIn);
+				if (result == null) result = caseGASTMObject(specificIn);
 				if (result == null) result = caseVisitable(specificIn);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2213,6 +2358,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				SpecificLike specificLike = (SpecificLike)theEObject;
 				T result = caseSpecificLike(specificLike);
 				if (result == null) result = caseBinaryOperator(specificLike);
+				if (result == null) result = caseOperator(specificLike);
+				if (result == null) result = caseOtherSyntaxObject(specificLike);
+				if (result == null) result = caseGASTMSyntaxObject(specificLike);
+				if (result == null) result = caseGASTMObject(specificLike);
 				if (result == null) result = caseVisitable(specificLike);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2221,6 +2370,10 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 				SpecificConcatString specificConcatString = (SpecificConcatString)theEObject;
 				T result = caseSpecificConcatString(specificConcatString);
 				if (result == null) result = caseBinaryOperator(specificConcatString);
+				if (result == null) result = caseOperator(specificConcatString);
+				if (result == null) result = caseOtherSyntaxObject(specificConcatString);
+				if (result == null) result = caseGASTMSyntaxObject(specificConcatString);
+				if (result == null) result = caseGASTMObject(specificConcatString);
 				if (result == null) result = caseVisitable(specificConcatString);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -2238,6 +2391,16 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 			case AstmPackage.VISITABLE: {
 				Visitable visitable = (Visitable)theEObject;
 				T result = caseVisitable(visitable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AstmPackage.OPERATOR: {
+				Operator operator = (Operator)theEObject;
+				T result = caseOperator(operator);
+				if (result == null) result = caseOtherSyntaxObject(operator);
+				if (result == null) result = caseGASTMSyntaxObject(operator);
+				if (result == null) result = caseGASTMObject(operator);
+				if (result == null) result = caseVisitable(operator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -5257,6 +5420,21 @@ public class AstmSwitch<@Nullable T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVisitable(Visitable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Operator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOperator(Operator object) {
 		return null;
 	}
 

@@ -591,15 +591,6 @@ public interface DelphiFactory extends EFactory
   exprList createexprList();
 
   /**
-	 * Returns a new object of class '<em>statement</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>statement</em>'.
-	 * @generated
-	 */
-  statement createstatement();
-
-  /**
 	 * Returns a new object of class '<em>stmt List</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -607,6 +598,15 @@ public interface DelphiFactory extends EFactory
 	 * @generated
 	 */
   stmtList createstmtList();
+
+  /**
+	 * Returns a new object of class '<em>statement</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>statement</em>'.
+	 * @generated
+	 */
+  statement createstatement();
 
   /**
 	 * Returns a new object of class '<em>unlabelled Statement</em>'.
@@ -1255,6 +1255,33 @@ public interface DelphiFactory extends EFactory
 	 * @generated
 	 */
   MineID createMineID();
+
+  /**
+	 * Returns a new object of class '<em>Const Exp</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Const Exp</em>'.
+	 * @generated
+	 */
+  ConstExp createConstExp();
+
+  /**
+	 * Returns a new object of class '<em>Multiple Const Exp</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Multiple Const Exp</em>'.
+	 * @generated
+	 */
+  MultipleConstExp createMultipleConstExp();
+
+  /**
+	 * Returns a new object of class '<em>Record Const Exp</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Record Const Exp</em>'.
+	 * @generated
+	 */
+  RecordConstExp createRecordConstExp();
 
   /**
 	 * Returns the package supported by this factory.

@@ -12,9 +12,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.example.delphi.astm.GASTMObject;
-
 import org.xtext.example.delphi.astm.util.Visitable;
+
 import org.xtext.example.delphi.delphi.CSTrace;
 import org.xtext.example.delphi.delphi.DelphiPackage;
 

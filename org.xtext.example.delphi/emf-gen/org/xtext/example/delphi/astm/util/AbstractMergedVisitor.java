@@ -710,6 +710,11 @@ public abstract class AbstractMergedVisitor<R, C>
 	}
 
 	@Override
+	public R visitOperator(org.xtext.example.delphi.astm.@NonNull Operator object) {
+		return visiting(object);
+	}
+
+	@Override
 	public R visitOperatorAssign(org.xtext.example.delphi.astm.@NonNull OperatorAssign object) {
 		return visiting(object);
 	}

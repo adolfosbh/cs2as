@@ -3203,13 +3203,95 @@ public interface AstmPackage extends EPackage {
 	int ACCESS_KIND_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.xtext.example.delphi.astm.impl.OperatorImpl <em>Operator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.xtext.example.delphi.astm.impl.OperatorImpl
+	 * @see org.xtext.example.delphi.astm.impl.AstmPackageImpl#getOperator()
+	 * @generated
+	 */
+	int OPERATOR = 201;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR__LOCATION_INFO = OTHER_SYNTAX_OBJECT__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR__PRE_PROCESSOR_ELEMENTS = OTHER_SYNTAX_OBJECT__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR__ANNOTATIONS = OTHER_SYNTAX_OBJECT__ANNOTATIONS;
+
+	/**
+	 * The number of structural features of the '<em>Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR_FEATURE_COUNT = OTHER_SYNTAX_OBJECT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR_OPERATION_COUNT = OTHER_SYNTAX_OBJECT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_OPERATOR__LOCATION_INFO = OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS = OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_OPERATOR__ANNOTATIONS = OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Unary Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_OPERATOR_FEATURE_COUNT = VISITABLE_FEATURE_COUNT + 0;
+	int UNARY_OPERATOR_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Unary Operator</em>' class.
@@ -3218,7 +3300,34 @@ public interface AstmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_OPERATOR_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
+	int UNARY_OPERATOR_OPERATION_COUNT = OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR__LOCATION_INFO = OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS = OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR__ANNOTATIONS = OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Binary Operator</em>' class.
@@ -3227,7 +3336,7 @@ public interface AstmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_OPERATOR_FEATURE_COUNT = VISITABLE_FEATURE_COUNT + 0;
+	int BINARY_OPERATOR_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Binary Operator</em>' class.
@@ -3236,7 +3345,7 @@ public interface AstmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_OPERATOR_OPERATION_COUNT = VISITABLE_OPERATION_COUNT + 0;
+	int BINARY_OPERATOR_OPERATION_COUNT = OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Actual Parameter</em>' class.
@@ -6893,7 +7002,7 @@ public interface AstmPackage extends EPackage {
 	int SWITCH_STATEMENT__SWITCH_EXPRESSION = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Cases</b></em>' containment reference.
+	 * The feature id for the '<em><b>Cases</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8151,6 +8260,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int BINARY_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR_ASSIGN__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR_ASSIGN__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR_ASSIGN__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Operator</b></em>' containment reference.
@@ -12266,6 +12402,33 @@ public interface AstmPackage extends EPackage {
 	int BIT_LITERAL_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_PLUS__LOCATION_INFO = UNARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_PLUS__PRE_PROCESSOR_ELEMENTS = UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_PLUS__ANNOTATIONS = UNARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Unary Plus</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12282,6 +12445,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNARY_PLUS_OPERATION_COUNT = UNARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEGATE__LOCATION_INFO = UNARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEGATE__PRE_PROCESSOR_ELEMENTS = UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEGATE__ANNOTATIONS = UNARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Negate</em>' class.
@@ -12302,6 +12492,33 @@ public interface AstmPackage extends EPackage {
 	int NEGATE_OPERATION_COUNT = UNARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT__LOCATION_INFO = UNARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT__PRE_PROCESSOR_ELEMENTS = UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT__ANNOTATIONS = UNARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Not</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12318,6 +12535,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int NOT_OPERATION_COUNT = UNARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_NOT__LOCATION_INFO = UNARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_NOT__PRE_PROCESSOR_ELEMENTS = UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_NOT__ANNOTATIONS = UNARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Bit Not</em>' class.
@@ -12338,6 +12582,33 @@ public interface AstmPackage extends EPackage {
 	int BIT_NOT_OPERATION_COUNT = UNARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDRESS_OF__LOCATION_INFO = UNARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDRESS_OF__PRE_PROCESSOR_ELEMENTS = UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDRESS_OF__ANNOTATIONS = UNARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Address Of</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12354,6 +12625,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADDRESS_OF_OPERATION_COUNT = UNARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEREF__LOCATION_INFO = UNARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEREF__PRE_PROCESSOR_ELEMENTS = UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEREF__ANNOTATIONS = UNARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Deref</em>' class.
@@ -12374,6 +12672,33 @@ public interface AstmPackage extends EPackage {
 	int DEREF_OPERATION_COUNT = UNARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCREMENT__LOCATION_INFO = UNARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCREMENT__PRE_PROCESSOR_ELEMENTS = UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCREMENT__ANNOTATIONS = UNARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Increment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12390,6 +12715,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int INCREMENT_OPERATION_COUNT = UNARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECREMENT__LOCATION_INFO = UNARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECREMENT__PRE_PROCESSOR_ELEMENTS = UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECREMENT__ANNOTATIONS = UNARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Decrement</em>' class.
@@ -12410,6 +12762,33 @@ public interface AstmPackage extends EPackage {
 	int DECREMENT_OPERATION_COUNT = UNARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_INCREMENT__LOCATION_INFO = UNARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_INCREMENT__PRE_PROCESSOR_ELEMENTS = UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_INCREMENT__ANNOTATIONS = UNARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Post Increment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12426,6 +12805,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int POST_INCREMENT_OPERATION_COUNT = UNARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_DECREMENT__LOCATION_INFO = UNARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_DECREMENT__PRE_PROCESSOR_ELEMENTS = UNARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_DECREMENT__ANNOTATIONS = UNARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Post Decrement</em>' class.
@@ -12446,6 +12852,33 @@ public interface AstmPackage extends EPackage {
 	int POST_DECREMENT_OPERATION_COUNT = UNARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Add</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12462,6 +12895,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADD_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBTRACT__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBTRACT__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBTRACT__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Subtract</em>' class.
@@ -12482,6 +12942,33 @@ public interface AstmPackage extends EPackage {
 	int SUBTRACT_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLY__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLY__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLY__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Multiply</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12498,6 +12985,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int MULTIPLY_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVIDE__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVIDE__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVIDE__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Divide</em>' class.
@@ -12518,6 +13032,33 @@ public interface AstmPackage extends EPackage {
 	int DIVIDE_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULUS__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULUS__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULUS__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Modulus</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12534,6 +13075,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int MODULUS_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENT__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENT__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENT__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Exponent</em>' class.
@@ -12554,6 +13122,33 @@ public interface AstmPackage extends EPackage {
 	int EXPONENT_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>And</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12570,6 +13165,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int AND_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Or</em>' class.
@@ -12590,6 +13212,33 @@ public interface AstmPackage extends EPackage {
 	int OR_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUAL__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUAL__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUAL__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Equal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12606,6 +13255,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int EQUAL_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_EQUAL__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_EQUAL__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_EQUAL__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Not Equal</em>' class.
@@ -12626,6 +13302,33 @@ public interface AstmPackage extends EPackage {
 	int NOT_EQUAL_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GREATER__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GREATER__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GREATER__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Greater</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12642,6 +13345,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int GREATER_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_GREATER__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_GREATER__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_GREATER__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Not Greater</em>' class.
@@ -12662,6 +13392,33 @@ public interface AstmPackage extends EPackage {
 	int NOT_GREATER_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LESS__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LESS__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LESS__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Less</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12678,6 +13435,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int LESS_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_LESS__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_LESS__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_LESS__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Not Less</em>' class.
@@ -12698,6 +13482,33 @@ public interface AstmPackage extends EPackage {
 	int NOT_LESS_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_AND__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_AND__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_AND__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Bit And</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12714,6 +13525,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int BIT_AND_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_OR__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_OR__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_OR__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Bit Or</em>' class.
@@ -12734,6 +13572,33 @@ public interface AstmPackage extends EPackage {
 	int BIT_OR_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_XOR__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_XOR__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_XOR__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Bit Xor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12750,6 +13615,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int BIT_XOR_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_LEFT_SHIFT__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_LEFT_SHIFT__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_LEFT_SHIFT__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Bit Left Shift</em>' class.
@@ -12770,6 +13662,33 @@ public interface AstmPackage extends EPackage {
 	int BIT_LEFT_SHIFT_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_RIGHT_SHIFT__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_RIGHT_SHIFT__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIT_RIGHT_SHIFT__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Bit Right Shift</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12786,6 +13705,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int BIT_RIGHT_SHIFT_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGN__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGN__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGN__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Assign</em>' class.
@@ -12986,6 +13932,33 @@ public interface AstmPackage extends EPackage {
 	int SPECIFIC_TRIGGER_DEFINITION_OPERATION_COUNT = DEFINITION_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_LESS_EQUAL__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_LESS_EQUAL__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_LESS_EQUAL__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Specific Less Equal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13002,6 +13975,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SPECIFIC_LESS_EQUAL_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_GREATER_EQUAL__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_GREATER_EQUAL__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_GREATER_EQUAL__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Specific Greater Equal</em>' class.
@@ -13022,6 +14022,33 @@ public interface AstmPackage extends EPackage {
 	int SPECIFIC_GREATER_EQUAL_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_IN__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_IN__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_IN__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Specific In</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13040,6 +14067,33 @@ public interface AstmPackage extends EPackage {
 	int SPECIFIC_IN_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_LIKE__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_LIKE__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_LIKE__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Specific Like</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13056,6 +14110,33 @@ public interface AstmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SPECIFIC_LIKE_OPERATION_COUNT = BINARY_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Location Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_CONCAT_STRING__LOCATION_INFO = BINARY_OPERATOR__LOCATION_INFO;
+
+	/**
+	 * The feature id for the '<em><b>Pre Processor Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_CONCAT_STRING__PRE_PROCESSOR_ELEMENTS = BINARY_OPERATOR__PRE_PROCESSOR_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_CONCAT_STRING__ANNOTATIONS = BINARY_OPERATOR__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Specific Concat String</em>' class.
@@ -14935,10 +16016,10 @@ public interface AstmPackage extends EPackage {
 	EReference getSwitchStatement_SwitchExpression();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.xtext.example.delphi.astm.SwitchStatement#getCases <em>Cases</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.xtext.example.delphi.astm.SwitchStatement#getCases <em>Cases</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Cases</em>'.
+	 * @return the meta object for the containment reference list '<em>Cases</em>'.
 	 * @see org.xtext.example.delphi.astm.SwitchStatement#getCases()
 	 * @see #getSwitchStatement()
 	 * @generated
@@ -16794,6 +17875,16 @@ public interface AstmPackage extends EPackage {
 	EClass getVisitable();
 
 	/**
+	 * Returns the meta object for class '{@link org.xtext.example.delphi.astm.Operator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operator</em>'.
+	 * @see org.xtext.example.delphi.astm.Operator
+	 * @generated
+	 */
+	EClass getOperator();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -18321,7 +19412,7 @@ public interface AstmPackage extends EPackage {
 		EReference SWITCH_STATEMENT__SWITCH_EXPRESSION = eINSTANCE.getSwitchStatement_SwitchExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Cases</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Cases</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -20033,6 +21124,16 @@ public interface AstmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass VISITABLE = eINSTANCE.getVisitable();
+
+		/**
+		 * The meta object literal for the '{@link org.xtext.example.delphi.astm.impl.OperatorImpl <em>Operator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.xtext.example.delphi.astm.impl.OperatorImpl
+		 * @see org.xtext.example.delphi.astm.impl.AstmPackageImpl#getOperator()
+		 * @generated
+		 */
+		EClass OPERATOR = eINSTANCE.getOperator();
 
 	}
 

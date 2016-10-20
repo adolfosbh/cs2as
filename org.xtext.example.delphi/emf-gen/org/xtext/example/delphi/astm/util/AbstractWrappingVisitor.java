@@ -1721,6 +1721,18 @@ public abstract class AbstractWrappingVisitor<R, C, @NonNull D extends Visitor<R
 	}
 
 	@Override
+	public R visitOperator(org.xtext.example.delphi.astm.@NonNull Operator object) {
+		@Nullable P prologue = preVisit(object);
+		try {
+			R result = delegate.visitOperator(object);
+			return postVisit(object, prologue, result);
+		}
+		catch (Throwable e) {
+			return badVisit(object, prologue, e);
+		}
+	}
+
+	@Override
 	public R visitOperatorAssign(org.xtext.example.delphi.astm.@NonNull OperatorAssign object) {
 		@Nullable P prologue = preVisit(object);
 		try {

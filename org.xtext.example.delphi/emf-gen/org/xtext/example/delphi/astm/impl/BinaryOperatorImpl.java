@@ -14,7 +14,7 @@ import org.xtext.example.delphi.astm.BinaryOperator;
  *
  * @generated
  */
-public abstract class BinaryOperatorImpl extends MinimalEObjectImpl.Container implements BinaryOperator {
+public abstract class BinaryOperatorImpl extends OperatorImpl implements BinaryOperator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

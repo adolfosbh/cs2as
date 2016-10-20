@@ -14,7 +14,7 @@ import org.xtext.example.delphi.astm.UnaryOperator;
  *
  * @generated
  */
-public abstract class UnaryOperatorImpl extends MinimalEObjectImpl.Container implements UnaryOperator {
+public abstract class UnaryOperatorImpl extends OperatorImpl implements UnaryOperator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

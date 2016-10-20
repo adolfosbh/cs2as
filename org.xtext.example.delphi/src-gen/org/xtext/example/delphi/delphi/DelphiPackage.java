@@ -65,7 +65,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getCSTrace()
 	 * @generated
 	 */
-	int CS_TRACE = 137;
+	int CS_TRACE = 140;
 
 		/**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -2813,6 +2813,43 @@ public interface DelphiPackage extends EPackage
   int EXPR_LIST_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 1;
 
   /**
+	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.stmtListImpl <em>stmt List</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see org.xtext.example.delphi.delphi.impl.stmtListImpl
+	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getstmtList()
+	 * @generated
+	 */
+  int STMT_LIST = 63;
+
+  /**
+	 * The feature id for the '<em><b>Ast</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STMT_LIST__AST = CS_TRACE__AST;
+
+		/**
+	 * The feature id for the '<em><b>Statments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int STMT_LIST__STATMENTS = CS_TRACE_FEATURE_COUNT + 0;
+
+  /**
+	 * The number of structural features of the '<em>stmt List</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int STMT_LIST_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 1;
+
+  /**
 	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.statementImpl <em>statement</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2820,7 +2857,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getstatement()
 	 * @generated
 	 */
-  int STATEMENT = 63;
+  int STATEMENT = 64;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -2857,43 +2894,6 @@ public interface DelphiPackage extends EPackage
 	 * @ordered
 	 */
   int STATEMENT_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 2;
-
-  /**
-	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.stmtListImpl <em>stmt List</em>}' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see org.xtext.example.delphi.delphi.impl.stmtListImpl
-	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getstmtList()
-	 * @generated
-	 */
-  int STMT_LIST = 64;
-
-  /**
-	 * The feature id for the '<em><b>Ast</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STMT_LIST__AST = CS_TRACE__AST;
-
-		/**
-	 * The feature id for the '<em><b>Statments</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int STMT_LIST__STATMENTS = CS_TRACE_FEATURE_COUNT + 0;
-
-  /**
-	 * The number of structural features of the '<em>stmt List</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int STMT_LIST_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 1;
 
   /**
 	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.unlabelledStatementImpl <em>unlabelled Statement</em>}' class.
@@ -5464,22 +5464,13 @@ public interface DelphiPackage extends EPackage
 	int CONST_EXPR__AST = CS_TRACE__AST;
 
 		/**
-	 * The feature id for the '<em><b>Exps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CONST_EXPR__EXPS = CS_TRACE_FEATURE_COUNT + 0;
-
-  /**
 	 * The number of structural features of the '<em>const Expr</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int CONST_EXPR_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 1;
+  int CONST_EXPR_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 0;
 
   /**
 	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.recordConstExprImpl <em>record Const Expr</em>}' class.
@@ -6152,6 +6143,117 @@ public interface DelphiPackage extends EPackage
 	 * @ordered
 	 */
   int MINE_ID_FEATURE_COUNT = IDENT_FEATURE_COUNT + 2;
+
+  /**
+	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.ConstExpImpl <em>Const Exp</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see org.xtext.example.delphi.delphi.impl.ConstExpImpl
+	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getConstExp()
+	 * @generated
+	 */
+  int CONST_EXP = 137;
+
+  /**
+	 * The feature id for the '<em><b>Ast</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONST_EXP__AST = CONST_EXPR__AST;
+
+		/**
+	 * The feature id for the '<em><b>Exp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int CONST_EXP__EXP = CONST_EXPR_FEATURE_COUNT + 0;
+
+  /**
+	 * The number of structural features of the '<em>Const Exp</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int CONST_EXP_FEATURE_COUNT = CONST_EXPR_FEATURE_COUNT + 1;
+
+  /**
+	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.MultipleConstExpImpl <em>Multiple Const Exp</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see org.xtext.example.delphi.delphi.impl.MultipleConstExpImpl
+	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getMultipleConstExp()
+	 * @generated
+	 */
+  int MULTIPLE_CONST_EXP = 138;
+
+  /**
+	 * The feature id for the '<em><b>Ast</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLE_CONST_EXP__AST = CONST_EXPR__AST;
+
+		/**
+	 * The feature id for the '<em><b>Exps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int MULTIPLE_CONST_EXP__EXPS = CONST_EXPR_FEATURE_COUNT + 0;
+
+  /**
+	 * The number of structural features of the '<em>Multiple Const Exp</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int MULTIPLE_CONST_EXP_FEATURE_COUNT = CONST_EXPR_FEATURE_COUNT + 1;
+
+  /**
+	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.RecordConstExpImpl <em>Record Const Exp</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see org.xtext.example.delphi.delphi.impl.RecordConstExpImpl
+	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getRecordConstExp()
+	 * @generated
+	 */
+  int RECORD_CONST_EXP = 139;
+
+  /**
+	 * The feature id for the '<em><b>Ast</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_CONST_EXP__AST = CONST_EXPR__AST;
+
+		/**
+	 * The feature id for the '<em><b>Exps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int RECORD_CONST_EXP__EXPS = CONST_EXPR_FEATURE_COUNT + 0;
+
+  /**
+	 * The number of structural features of the '<em>Record Const Exp</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int RECORD_CONST_EXP_FEATURE_COUNT = CONST_EXPR_FEATURE_COUNT + 1;
 
 
   /**
@@ -7874,6 +7976,27 @@ public interface DelphiPackage extends EPackage
   EReference getexprList_Exps();
 
   /**
+	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.stmtList <em>stmt List</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>stmt List</em>'.
+	 * @see org.xtext.example.delphi.delphi.stmtList
+	 * @generated
+	 */
+  EClass getstmtList();
+
+  /**
+	 * Returns the meta object for the containment reference list '{@link org.xtext.example.delphi.delphi.stmtList#getStatments <em>Statments</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Statments</em>'.
+	 * @see org.xtext.example.delphi.delphi.stmtList#getStatments()
+	 * @see #getstmtList()
+	 * @generated
+	 */
+  EReference getstmtList_Statments();
+
+  /**
 	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.statement <em>statement</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -7904,27 +8027,6 @@ public interface DelphiPackage extends EPackage
 	 * @generated
 	 */
   EReference getstatement_Statement();
-
-  /**
-	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.stmtList <em>stmt List</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>stmt List</em>'.
-	 * @see org.xtext.example.delphi.delphi.stmtList
-	 * @generated
-	 */
-  EClass getstmtList();
-
-  /**
-	 * Returns the meta object for the containment reference list '{@link org.xtext.example.delphi.delphi.stmtList#getStatments <em>Statments</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statments</em>'.
-	 * @see org.xtext.example.delphi.delphi.stmtList#getStatments()
-	 * @see #getstmtList()
-	 * @generated
-	 */
-  EReference getstmtList_Statments();
 
   /**
 	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.unlabelledStatement <em>unlabelled Statement</em>}'.
@@ -9476,17 +9578,6 @@ public interface DelphiPackage extends EPackage
   EClass getconstExpr();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link org.xtext.example.delphi.delphi.constExpr#getExps <em>Exps</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Exps</em>'.
-	 * @see org.xtext.example.delphi.delphi.constExpr#getExps()
-	 * @see #getconstExpr()
-	 * @generated
-	 */
-  EReference getconstExpr_Exps();
-
-  /**
 	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.recordConstExpr <em>record Const Expr</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -9921,6 +10012,69 @@ public interface DelphiPackage extends EPackage
 	 * @generated
 	 */
   EAttribute getMineID_Second();
+
+  /**
+	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.ConstExp <em>Const Exp</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Const Exp</em>'.
+	 * @see org.xtext.example.delphi.delphi.ConstExp
+	 * @generated
+	 */
+  EClass getConstExp();
+
+  /**
+	 * Returns the meta object for the containment reference '{@link org.xtext.example.delphi.delphi.ConstExp#getExp <em>Exp</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Exp</em>'.
+	 * @see org.xtext.example.delphi.delphi.ConstExp#getExp()
+	 * @see #getConstExp()
+	 * @generated
+	 */
+  EReference getConstExp_Exp();
+
+  /**
+	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.MultipleConstExp <em>Multiple Const Exp</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Multiple Const Exp</em>'.
+	 * @see org.xtext.example.delphi.delphi.MultipleConstExp
+	 * @generated
+	 */
+  EClass getMultipleConstExp();
+
+  /**
+	 * Returns the meta object for the containment reference list '{@link org.xtext.example.delphi.delphi.MultipleConstExp#getExps <em>Exps</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Exps</em>'.
+	 * @see org.xtext.example.delphi.delphi.MultipleConstExp#getExps()
+	 * @see #getMultipleConstExp()
+	 * @generated
+	 */
+  EReference getMultipleConstExp_Exps();
+
+  /**
+	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.RecordConstExp <em>Record Const Exp</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Record Const Exp</em>'.
+	 * @see org.xtext.example.delphi.delphi.RecordConstExp
+	 * @generated
+	 */
+  EClass getRecordConstExp();
+
+  /**
+	 * Returns the meta object for the containment reference list '{@link org.xtext.example.delphi.delphi.RecordConstExp#getExps <em>Exps</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Exps</em>'.
+	 * @see org.xtext.example.delphi.delphi.RecordConstExp#getExps()
+	 * @see #getRecordConstExp()
+	 * @generated
+	 */
+  EReference getRecordConstExp_Exps();
 
   /**
 	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.CSTrace <em>CS Trace</em>}'.
@@ -11389,6 +11543,24 @@ public interface DelphiPackage extends EPackage
     EReference EXPR_LIST__EXPS = eINSTANCE.getexprList_Exps();
 
     /**
+		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.stmtListImpl <em>stmt List</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see org.xtext.example.delphi.delphi.impl.stmtListImpl
+		 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getstmtList()
+		 * @generated
+		 */
+    EClass STMT_LIST = eINSTANCE.getstmtList();
+
+    /**
+		 * The meta object literal for the '<em><b>Statments</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EReference STMT_LIST__STATMENTS = eINSTANCE.getstmtList_Statments();
+
+    /**
 		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.statementImpl <em>statement</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11413,24 +11585,6 @@ public interface DelphiPackage extends EPackage
 		 * @generated
 		 */
     EReference STATEMENT__STATEMENT = eINSTANCE.getstatement_Statement();
-
-    /**
-		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.stmtListImpl <em>stmt List</em>}' class.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @see org.xtext.example.delphi.delphi.impl.stmtListImpl
-		 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getstmtList()
-		 * @generated
-		 */
-    EClass STMT_LIST = eINSTANCE.getstmtList();
-
-    /**
-		 * The meta object literal for the '<em><b>Statments</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EReference STMT_LIST__STATMENTS = eINSTANCE.getstmtList_Statments();
 
     /**
 		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.unlabelledStatementImpl <em>unlabelled Statement</em>}' class.
@@ -12715,14 +12869,6 @@ public interface DelphiPackage extends EPackage
     EClass CONST_EXPR = eINSTANCE.getconstExpr();
 
     /**
-		 * The meta object literal for the '<em><b>Exps</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EReference CONST_EXPR__EXPS = eINSTANCE.getconstExpr_Exps();
-
-    /**
 		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.recordConstExprImpl <em>record Const Expr</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13079,6 +13225,60 @@ public interface DelphiPackage extends EPackage
 		 * @generated
 		 */
     EAttribute MINE_ID__SECOND = eINSTANCE.getMineID_Second();
+
+    /**
+		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.ConstExpImpl <em>Const Exp</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see org.xtext.example.delphi.delphi.impl.ConstExpImpl
+		 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getConstExp()
+		 * @generated
+		 */
+    EClass CONST_EXP = eINSTANCE.getConstExp();
+
+    /**
+		 * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EReference CONST_EXP__EXP = eINSTANCE.getConstExp_Exp();
+
+    /**
+		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.MultipleConstExpImpl <em>Multiple Const Exp</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see org.xtext.example.delphi.delphi.impl.MultipleConstExpImpl
+		 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getMultipleConstExp()
+		 * @generated
+		 */
+    EClass MULTIPLE_CONST_EXP = eINSTANCE.getMultipleConstExp();
+
+    /**
+		 * The meta object literal for the '<em><b>Exps</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EReference MULTIPLE_CONST_EXP__EXPS = eINSTANCE.getMultipleConstExp_Exps();
+
+    /**
+		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.RecordConstExpImpl <em>Record Const Exp</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see org.xtext.example.delphi.delphi.impl.RecordConstExpImpl
+		 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getRecordConstExp()
+		 * @generated
+		 */
+    EClass RECORD_CONST_EXP = eINSTANCE.getRecordConstExp();
+
+    /**
+		 * The meta object literal for the '<em><b>Exps</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EReference RECORD_CONST_EXP__EXPS = eINSTANCE.getRecordConstExp_Exps();
 
 				/**
 		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.CSTraceImpl <em>CS Trace</em>}' class.

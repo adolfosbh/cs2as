@@ -718,6 +718,11 @@ public abstract class AbstractNullVisitor<@Nullable R, C>
 	}
 
 	@Override
+	public R visitOperator(org.xtext.example.delphi.astm.@NonNull Operator object) {
+		return null;
+	}
+
+	@Override
 	public R visitOperatorAssign(org.xtext.example.delphi.astm.@NonNull OperatorAssign object) {
 		return null;
 	}

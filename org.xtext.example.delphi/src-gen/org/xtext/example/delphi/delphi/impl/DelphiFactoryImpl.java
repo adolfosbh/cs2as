@@ -124,8 +124,8 @@ public class DelphiFactoryImpl extends EFactoryImpl implements DelphiFactory
 			case DelphiPackage.SET_CONSTRUCTOR: return createsetConstructor();
 			case DelphiPackage.SET_ELEMENT: return createsetElement();
 			case DelphiPackage.EXPR_LIST: return createexprList();
-			case DelphiPackage.STATEMENT: return createstatement();
 			case DelphiPackage.STMT_LIST: return createstmtList();
+			case DelphiPackage.STATEMENT: return createstatement();
 			case DelphiPackage.UNLABELLED_STATEMENT: return createunlabelledStatement();
 			case DelphiPackage.SIMPLE_STATEMENT: return createsimpleStatement();
 			case DelphiPackage.STRUCT_STMT: return createstructStmt();
@@ -198,6 +198,9 @@ public class DelphiFactoryImpl extends EFactoryImpl implements DelphiFactory
 			case DelphiPackage.MULTIPLE_ID: return createMultipleId();
 			case DelphiPackage.RESERVED_ID: return createReservedId();
 			case DelphiPackage.MINE_ID: return createMineID();
+			case DelphiPackage.CONST_EXP: return createConstExp();
+			case DelphiPackage.MULTIPLE_CONST_EXP: return createMultipleConstExp();
+			case DelphiPackage.RECORD_CONST_EXP: return createRecordConstExp();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -901,10 +904,10 @@ public class DelphiFactoryImpl extends EFactoryImpl implements DelphiFactory
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public statement createstatement()
+  public stmtList createstmtList()
   {
-		statementImpl statement = new statementImpl();
-		return statement;
+		stmtListImpl stmtList = new stmtListImpl();
+		return stmtList;
 	}
 
   /**
@@ -912,10 +915,10 @@ public class DelphiFactoryImpl extends EFactoryImpl implements DelphiFactory
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public stmtList createstmtList()
+  public statement createstatement()
   {
-		stmtListImpl stmtList = new stmtListImpl();
-		return stmtList;
+		statementImpl statement = new statementImpl();
+		return statement;
 	}
 
   /**
@@ -1708,6 +1711,39 @@ public class DelphiFactoryImpl extends EFactoryImpl implements DelphiFactory
   {
 		MineIDImpl mineID = new MineIDImpl();
 		return mineID;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public ConstExp createConstExp()
+  {
+		ConstExpImpl constExp = new ConstExpImpl();
+		return constExp;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public MultipleConstExp createMultipleConstExp()
+  {
+		MultipleConstExpImpl multipleConstExp = new MultipleConstExpImpl();
+		return multipleConstExp;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public RecordConstExp createRecordConstExp()
+  {
+		RecordConstExpImpl recordConstExp = new RecordConstExpImpl();
+		return recordConstExp;
 	}
 
   /**

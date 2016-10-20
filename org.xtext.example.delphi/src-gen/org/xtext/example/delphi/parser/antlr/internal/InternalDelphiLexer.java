@@ -3279,8 +3279,8 @@ public class InternalDelphiLexer extends Lexer {
     // $ANTLR start "RULE_SLASH"
     public final void mRULE_SLASH() throws RecognitionException {
         try {
-            // InternalDelphi.g:10550:21: ( '\\\\' )
-            // InternalDelphi.g:10550:23: '\\\\'
+            // InternalDelphi.g:10582:21: ( '\\\\' )
+            // InternalDelphi.g:10582:23: '\\\\'
             {
             match('\\'); 
 
@@ -3295,8 +3295,8 @@ public class InternalDelphiLexer extends Lexer {
     // $ANTLR start "RULE_QUOTE"
     public final void mRULE_QUOTE() throws RecognitionException {
         try {
-            // InternalDelphi.g:10552:21: ( '\\'' )
-            // InternalDelphi.g:10552:23: '\\''
+            // InternalDelphi.g:10584:21: ( '\\'' )
+            // InternalDelphi.g:10584:23: '\\''
             {
             match('\''); 
 
@@ -3313,8 +3313,8 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10554:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | RULE_SLASH | '-' )* )
-            // InternalDelphi.g:10554:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | RULE_SLASH | '-' )*
+            // InternalDelphi.g:10586:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | RULE_SLASH | '-' )* )
+            // InternalDelphi.g:10586:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | RULE_SLASH | '-' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -3325,7 +3325,7 @@ public class InternalDelphiLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalDelphi.g:10554:35: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | RULE_SLASH | '-' )*
+            // InternalDelphi.g:10586:35: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | RULE_SLASH | '-' )*
             loop1:
             do {
                 int alt1=2;
@@ -3372,8 +3372,8 @@ public class InternalDelphiLexer extends Lexer {
     // $ANTLR start "RULE_DOUBLEQUOTE"
     public final void mRULE_DOUBLEQUOTE() throws RecognitionException {
         try {
-            // InternalDelphi.g:10556:27: ( '\"' )
-            // InternalDelphi.g:10556:29: '\"'
+            // InternalDelphi.g:10588:27: ( '\"' )
+            // InternalDelphi.g:10588:29: '\"'
             {
             match('\"'); 
 
@@ -3390,11 +3390,11 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_DQVALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10558:14: ( RULE_DOUBLEQUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) ) )* RULE_DOUBLEQUOTE )
-            // InternalDelphi.g:10558:16: RULE_DOUBLEQUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) ) )* RULE_DOUBLEQUOTE
+            // InternalDelphi.g:10590:14: ( RULE_DOUBLEQUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) ) )* RULE_DOUBLEQUOTE )
+            // InternalDelphi.g:10590:16: RULE_DOUBLEQUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) ) )* RULE_DOUBLEQUOTE
             {
             mRULE_DOUBLEQUOTE(); 
-            // InternalDelphi.g:10558:33: ( '\\\\' . | ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) ) )*
+            // InternalDelphi.g:10590:33: ( '\\\\' . | ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) ) )*
             loop2:
             do {
                 int alt2=3;
@@ -3410,7 +3410,7 @@ public class InternalDelphiLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalDelphi.g:10558:34: '\\\\' .
+            	    // InternalDelphi.g:10590:34: '\\\\' .
             	    {
             	    match('\\'); 
             	    matchAny(); 
@@ -3418,7 +3418,7 @@ public class InternalDelphiLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDelphi.g:10558:41: ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) )
+            	    // InternalDelphi.g:10590:41: ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3455,11 +3455,11 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_QVALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10560:13: ( RULE_QUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_QUOTE ) ) )* RULE_QUOTE )
-            // InternalDelphi.g:10560:15: RULE_QUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_QUOTE ) ) )* RULE_QUOTE
+            // InternalDelphi.g:10592:13: ( RULE_QUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_QUOTE ) ) )* RULE_QUOTE )
+            // InternalDelphi.g:10592:15: RULE_QUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_QUOTE ) ) )* RULE_QUOTE
             {
             mRULE_QUOTE(); 
-            // InternalDelphi.g:10560:26: ( '\\\\' . | ~ ( ( '\\\\' | RULE_QUOTE ) ) )*
+            // InternalDelphi.g:10592:26: ( '\\\\' . | ~ ( ( '\\\\' | RULE_QUOTE ) ) )*
             loop3:
             do {
                 int alt3=3;
@@ -3475,7 +3475,7 @@ public class InternalDelphiLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalDelphi.g:10560:27: '\\\\' .
+            	    // InternalDelphi.g:10592:27: '\\\\' .
             	    {
             	    match('\\'); 
             	    matchAny(); 
@@ -3483,7 +3483,7 @@ public class InternalDelphiLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDelphi.g:10560:34: ~ ( ( '\\\\' | RULE_QUOTE ) )
+            	    // InternalDelphi.g:10592:34: ~ ( ( '\\\\' | RULE_QUOTE ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3520,10 +3520,10 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10562:10: ( ( '+' | '-' )? '0' ( 'x' | 'X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
-            // InternalDelphi.g:10562:12: ( '+' | '-' )? '0' ( 'x' | 'X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+            // InternalDelphi.g:10594:10: ( ( '+' | '-' )? '0' ( 'x' | 'X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
+            // InternalDelphi.g:10594:12: ( '+' | '-' )? '0' ( 'x' | 'X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
             {
-            // InternalDelphi.g:10562:12: ( '+' | '-' )?
+            // InternalDelphi.g:10594:12: ( '+' | '-' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -3559,7 +3559,7 @@ public class InternalDelphiLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalDelphi.g:10562:37: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+            // InternalDelphi.g:10594:37: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
             int cnt5=0;
             loop5:
             do {
@@ -3613,10 +3613,10 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10564:10: ( ( '+' | '-' )? ( '0' .. '9' )+ )
-            // InternalDelphi.g:10564:12: ( '+' | '-' )? ( '0' .. '9' )+
+            // InternalDelphi.g:10596:10: ( ( '+' | '-' )? ( '0' .. '9' )+ )
+            // InternalDelphi.g:10596:12: ( '+' | '-' )? ( '0' .. '9' )+
             {
-            // InternalDelphi.g:10564:12: ( '+' | '-' )?
+            // InternalDelphi.g:10596:12: ( '+' | '-' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -3642,7 +3642,7 @@ public class InternalDelphiLexer extends Lexer {
 
             }
 
-            // InternalDelphi.g:10564:23: ( '0' .. '9' )+
+            // InternalDelphi.g:10596:23: ( '0' .. '9' )+
             int cnt7=0;
             loop7:
             do {
@@ -3656,7 +3656,7 @@ public class InternalDelphiLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalDelphi.g:10564:24: '0' .. '9'
+            	    // InternalDelphi.g:10596:24: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -3688,12 +3688,12 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10566:14: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalDelphi.g:10566:16: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalDelphi.g:10598:14: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalDelphi.g:10598:16: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalDelphi.g:10566:21: ( options {greedy=false; } : . )*
+            // InternalDelphi.g:10598:21: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -3718,7 +3718,7 @@ public class InternalDelphiLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalDelphi.g:10566:49: .
+            	    // InternalDelphi.g:10598:49: .
             	    {
             	    matchAny(); 
 
@@ -3748,11 +3748,11 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_MORECOMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10568:18: ( '{' ( options {greedy=false; } : . )* '}' )
-            // InternalDelphi.g:10568:20: '{' ( options {greedy=false; } : . )* '}'
+            // InternalDelphi.g:10600:18: ( '{' ( options {greedy=false; } : . )* '}' )
+            // InternalDelphi.g:10600:20: '{' ( options {greedy=false; } : . )* '}'
             {
             match('{'); 
-            // InternalDelphi.g:10568:24: ( options {greedy=false; } : . )*
+            // InternalDelphi.g:10600:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -3768,7 +3768,7 @@ public class InternalDelphiLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalDelphi.g:10568:52: .
+            	    // InternalDelphi.g:10600:52: .
             	    {
             	    matchAny(); 
 
@@ -3797,12 +3797,12 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_LINE_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10570:19: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalDelphi.g:10570:21: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalDelphi.g:10602:19: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalDelphi.g:10602:21: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalDelphi.g:10570:26: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalDelphi.g:10602:26: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -3815,7 +3815,7 @@ public class InternalDelphiLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalDelphi.g:10570:26: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalDelphi.g:10602:26: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3835,7 +3835,7 @@ public class InternalDelphiLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalDelphi.g:10570:42: ( ( '\\r' )? '\\n' )?
+            // InternalDelphi.g:10602:42: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -3844,9 +3844,9 @@ public class InternalDelphiLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalDelphi.g:10570:43: ( '\\r' )? '\\n'
+                    // InternalDelphi.g:10602:43: ( '\\r' )? '\\n'
                     {
-                    // InternalDelphi.g:10570:43: ( '\\r' )?
+                    // InternalDelphi.g:10602:43: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -3855,7 +3855,7 @@ public class InternalDelphiLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalDelphi.g:10570:43: '\\r'
+                            // InternalDelphi.g:10602:43: '\\r'
                             {
                             match('\r'); 
 
@@ -3887,8 +3887,8 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10572:9: ( ( ' ' | '\\r' | '\\t' | '\\f' | '\\n' ) )
-            // InternalDelphi.g:10572:11: ( ' ' | '\\r' | '\\t' | '\\f' | '\\n' )
+            // InternalDelphi.g:10604:9: ( ( ' ' | '\\r' | '\\t' | '\\f' | '\\n' ) )
+            // InternalDelphi.g:10604:11: ( ' ' | '\\r' | '\\t' | '\\f' | '\\n' )
             {
             if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ' ) {
                 input.consume();

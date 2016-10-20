@@ -143,6 +143,7 @@ import org.xtext.example.delphi.astm.Not;
 import org.xtext.example.delphi.astm.NotEqual;
 import org.xtext.example.delphi.astm.NotGreater;
 import org.xtext.example.delphi.astm.NotLess;
+import org.xtext.example.delphi.astm.Operator;
 import org.xtext.example.delphi.astm.OperatorAssign;
 import org.xtext.example.delphi.astm.Or;
 import org.xtext.example.delphi.astm.OtherSyntaxObject;
@@ -1064,6 +1065,10 @@ public class AstmAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseVisitable(Visitable object) {
 				return createVisitableAdapter();
+			}
+			@Override
+			public Adapter caseOperator(Operator object) {
+				return createOperatorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -3896,6 +3901,20 @@ public class AstmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVisitableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.astm.Operator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.astm.Operator
+	 * @generated
+	 */
+	public Adapter createOperatorAdapter() {
 		return null;
 	}
 

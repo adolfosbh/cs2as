@@ -735,6 +735,11 @@ public abstract class AbstractDelegatingVisitor<R, C, @NonNull D extends Visitor
 	}
 
 	@Override
+	public R visitOperator(org.xtext.example.delphi.astm.@NonNull Operator object) {
+		return delegate.visitOperator(object);
+	}
+
+	@Override
 	public R visitOperatorAssign(org.xtext.example.delphi.astm.@NonNull OperatorAssign object) {
 		return delegate.visitOperatorAssign(object);
 	}

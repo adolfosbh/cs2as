@@ -12,10 +12,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.delphi.astm.AstmPackage;
 import org.xtext.example.delphi.delphi.CSTrace;
+import org.xtext.example.delphi.delphi.ConstExp;
 import org.xtext.example.delphi.delphi.DelphiFactory;
 import org.xtext.example.delphi.delphi.DelphiPackage;
 import org.xtext.example.delphi.delphi.MineID;
+import org.xtext.example.delphi.delphi.MultipleConstExp;
 import org.xtext.example.delphi.delphi.MultipleId;
+import org.xtext.example.delphi.delphi.RecordConstExp;
 import org.xtext.example.delphi.delphi.ReservedId;
 import org.xtext.example.delphi.delphi.adOp;
 import org.xtext.example.delphi.delphi.addExp;
@@ -606,14 +609,14 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private EClass statementEClass = null;
+  private EClass stmtListEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private EClass stmtListEClass = null;
+  private EClass statementEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -1118,6 +1121,27 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 	 * @generated
 	 */
   private EClass mineIDEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass constExpEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass multipleConstExpEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass recordConstExpEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -2818,6 +2842,26 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EClass getstmtList()
+  {
+		return stmtListEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getstmtList_Statments()
+  {
+		return (EReference)stmtListEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EClass getstatement()
   {
 		return statementEClass;
@@ -2841,26 +2885,6 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
   public EReference getstatement_Statement()
   {
 		return (EReference)statementEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getstmtList()
-  {
-		return stmtListEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getstmtList_Statments()
-  {
-		return (EReference)stmtListEClass.getEStructuralFeatures().get(0);
 	}
 
   /**
@@ -4328,16 +4352,6 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getconstExpr_Exps()
-  {
-		return (EReference)constExprEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EClass getrecordConstExpr()
   {
 		return recordConstExprEClass;
@@ -4745,6 +4759,66 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 
   /**
 	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getConstExp()
+  {
+		return constExpEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getConstExp_Exp()
+  {
+		return (EReference)constExpEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getMultipleConstExp()
+  {
+		return multipleConstExpEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getMultipleConstExp_Exps()
+  {
+		return (EReference)multipleConstExpEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getRecordConstExp()
+  {
+		return recordConstExpEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getRecordConstExp_Exps()
+  {
+		return (EReference)recordConstExpEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -5016,12 +5090,12 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		exprListEClass = createEClass(EXPR_LIST);
 		createEReference(exprListEClass, EXPR_LIST__EXPS);
 
+		stmtListEClass = createEClass(STMT_LIST);
+		createEReference(stmtListEClass, STMT_LIST__STATMENTS);
+
 		statementEClass = createEClass(STATEMENT);
 		createEAttribute(statementEClass, STATEMENT__LABEL_ID);
 		createEReference(statementEClass, STATEMENT__STATEMENT);
-
-		stmtListEClass = createEClass(STMT_LIST);
-		createEReference(stmtListEClass, STMT_LIST__STATMENTS);
 
 		unlabelledStatementEClass = createEClass(UNLABELLED_STATEMENT);
 
@@ -5225,7 +5299,6 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		createEAttribute(reservedWordEClass, RESERVED_WORD__ID);
 
 		constExprEClass = createEClass(CONST_EXPR);
-		createEReference(constExprEClass, CONST_EXPR__EXPS);
 
 		recordConstExprEClass = createEClass(RECORD_CONST_EXPR);
 		createEReference(recordConstExprEClass, RECORD_CONST_EXPR__ID);
@@ -5282,6 +5355,15 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		mineIDEClass = createEClass(MINE_ID);
 		createEAttribute(mineIDEClass, MINE_ID__FIRST);
 		createEAttribute(mineIDEClass, MINE_ID__SECOND);
+
+		constExpEClass = createEClass(CONST_EXP);
+		createEReference(constExpEClass, CONST_EXP__EXP);
+
+		multipleConstExpEClass = createEClass(MULTIPLE_CONST_EXP);
+		createEReference(multipleConstExpEClass, MULTIPLE_CONST_EXP__EXPS);
+
+		recordConstExpEClass = createEClass(RECORD_CONST_EXP);
+		createEReference(recordConstExpEClass, RECORD_CONST_EXP__EXPS);
 
 		csTraceEClass = createEClass(CS_TRACE);
 		createEReference(csTraceEClass, CS_TRACE__AST);
@@ -5385,8 +5467,8 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		setConstructorEClass.getESuperTypes().add(this.getCSTrace());
 		setElementEClass.getESuperTypes().add(this.getCSTrace());
 		exprListEClass.getESuperTypes().add(this.getCSTrace());
-		statementEClass.getESuperTypes().add(this.getCSTrace());
 		stmtListEClass.getESuperTypes().add(this.getCSTrace());
+		statementEClass.getESuperTypes().add(this.getCSTrace());
 		unlabelledStatementEClass.getESuperTypes().add(this.getCSTrace());
 		simpleStatementEClass.getESuperTypes().add(this.getunlabelledStatement());
 		structStmtEClass.getESuperTypes().add(this.getunlabelledStatement());
@@ -5461,6 +5543,9 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		multipleIdEClass.getESuperTypes().add(this.getident());
 		reservedIdEClass.getESuperTypes().add(this.getident());
 		mineIDEClass.getESuperTypes().add(this.getident());
+		constExpEClass.getESuperTypes().add(this.getconstExpr());
+		multipleConstExpEClass.getESuperTypes().add(this.getconstExpr());
+		recordConstExpEClass.getESuperTypes().add(this.getconstExpr());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(mainRuleEClass, mainRule.class, "mainRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -5688,12 +5773,12 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		initEClass(exprListEClass, exprList.class, "exprList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getexprList_Exps(), this.getexpression(), null, "exps", null, 0, -1, exprList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(stmtListEClass, stmtList.class, "stmtList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getstmtList_Statments(), this.getstatement(), null, "statments", null, 0, -1, stmtList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(statementEClass, statement.class, "statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getstatement_LabelId(), ecorePackage.getEString(), "labelId", null, 0, 1, statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getstatement_Statement(), this.getunlabelledStatement(), null, "statement", null, 0, 1, statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(stmtListEClass, stmtList.class, "stmtList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getstmtList_Statments(), this.getstatement(), null, "statments", null, 0, -1, stmtList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unlabelledStatementEClass, unlabelledStatement.class, "unlabelledStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -5897,7 +5982,6 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		initEAttribute(getreservedWord_Id(), ecorePackage.getEString(), "id", null, 0, 1, reservedWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constExprEClass, constExpr.class, "constExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getconstExpr_Exps(), ecorePackage.getEObject(), null, "exps", null, 0, -1, constExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(recordConstExprEClass, recordConstExpr.class, "recordConstExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getrecordConstExpr_Id(), this.getident(), null, "id", null, 0, 1, recordConstExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5954,6 +6038,15 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		initEClass(mineIDEClass, MineID.class, "MineID", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMineID_First(), ecorePackage.getEString(), "first", null, 0, 1, MineID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMineID_Second(), ecorePackage.getEString(), "second", null, 0, 1, MineID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(constExpEClass, ConstExp.class, "ConstExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConstExp_Exp(), this.getexpression(), null, "exp", null, 0, 1, ConstExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(multipleConstExpEClass, MultipleConstExp.class, "MultipleConstExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMultipleConstExp_Exps(), this.getconstExpr(), null, "exps", null, 0, -1, MultipleConstExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(recordConstExpEClass, RecordConstExp.class, "RecordConstExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRecordConstExp_Exps(), this.getrecordConstExpr(), null, "exps", null, 0, -1, RecordConstExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(csTraceEClass, CSTrace.class, "CSTrace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCSTrace_Ast(), theAstmPackage.getVisitable(), null, "ast", null, 0, 1, CSTrace.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

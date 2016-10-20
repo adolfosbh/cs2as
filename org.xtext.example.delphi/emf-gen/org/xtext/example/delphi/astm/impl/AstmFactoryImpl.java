@@ -123,6 +123,7 @@ import org.xtext.example.delphi.astm.Not;
 import org.xtext.example.delphi.astm.NotEqual;
 import org.xtext.example.delphi.astm.NotGreater;
 import org.xtext.example.delphi.astm.NotLess;
+import org.xtext.example.delphi.astm.Operator;
 import org.xtext.example.delphi.astm.OperatorAssign;
 import org.xtext.example.delphi.astm.Or;
 import org.xtext.example.delphi.astm.PerClassMember;
@@ -393,6 +394,7 @@ public class AstmFactoryImpl extends EFactoryImpl implements AstmFactory {
 			case AstmPackage.SPECIFIC_LIKE: return createSpecificLike();
 			case AstmPackage.SPECIFIC_CONCAT_STRING: return createSpecificConcatString();
 			case AstmPackage.SPECIFIC_SELECT_STATEMENT: return createSpecificSelectStatement();
+			case AstmPackage.OPERATOR: return createOperator();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -2126,6 +2128,16 @@ public class AstmFactoryImpl extends EFactoryImpl implements AstmFactory {
 	public SpecificSelectStatement createSpecificSelectStatement() {
 		SpecificSelectStatementImpl specificSelectStatement = new SpecificSelectStatementImpl();
 		return specificSelectStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Operator createOperator() {
+		OperatorImpl operator = new OperatorImpl();
+		return operator;
 	}
 
 	/**

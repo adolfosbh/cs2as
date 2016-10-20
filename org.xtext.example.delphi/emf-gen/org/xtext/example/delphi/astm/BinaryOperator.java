@@ -12,8 +12,8 @@ import org.xtext.example.delphi.astm.util.Visitable;
  *
  *
  * @see org.xtext.example.delphi.astm.AstmPackage#getBinaryOperator()
- * @model abstract="true" superTypes="org.xtext.example.delphi.astm.Visitable"
+ * @model abstract="true"
  * @generated
  */
-public interface BinaryOperator extends EObject, Visitable {
+public interface BinaryOperator extends Operator {
 } // BinaryOperator

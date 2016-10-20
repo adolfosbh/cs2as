@@ -5,7 +5,6 @@ package org.xtext.example.delphi.delphi;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.xtext.example.delphi.astm.GASTMObject;
 import org.xtext.example.delphi.astm.util.Visitable;
 
 /**

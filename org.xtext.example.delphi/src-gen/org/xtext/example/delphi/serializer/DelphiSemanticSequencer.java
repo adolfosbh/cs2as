@@ -14,9 +14,12 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.example.delphi.delphi.ConstExp;
 import org.xtext.example.delphi.delphi.DelphiPackage;
 import org.xtext.example.delphi.delphi.MineID;
+import org.xtext.example.delphi.delphi.MultipleConstExp;
 import org.xtext.example.delphi.delphi.MultipleId;
+import org.xtext.example.delphi.delphi.RecordConstExp;
 import org.xtext.example.delphi.delphi.ReservedId;
 import org.xtext.example.delphi.delphi.adOp;
 import org.xtext.example.delphi.delphi.addExp;
@@ -38,7 +41,6 @@ import org.xtext.example.delphi.delphi.classPropertyList;
 import org.xtext.example.delphi.delphi.classRefType;
 import org.xtext.example.delphi.delphi.classType;
 import org.xtext.example.delphi.delphi.compoundStmt;
-import org.xtext.example.delphi.delphi.constExpr;
 import org.xtext.example.delphi.delphi.constSection;
 import org.xtext.example.delphi.delphi.constantDecl;
 import org.xtext.example.delphi.delphi.constructorHeading;
@@ -144,11 +146,20 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == DelphiPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case DelphiPackage.CONST_EXP:
+				sequence_constExpr(context, (ConstExp) semanticObject); 
+				return; 
 			case DelphiPackage.MINE_ID:
 				sequence_ident(context, (MineID) semanticObject); 
 				return; 
+			case DelphiPackage.MULTIPLE_CONST_EXP:
+				sequence_constExpr(context, (MultipleConstExp) semanticObject); 
+				return; 
 			case DelphiPackage.MULTIPLE_ID:
 				sequence_ident(context, (MultipleId) semanticObject); 
+				return; 
+			case DelphiPackage.RECORD_CONST_EXP:
+				sequence_constExpr(context, (RecordConstExp) semanticObject); 
 				return; 
 			case DelphiPackage.RESERVED_ID:
 				sequence_ident(context, (ReservedId) semanticObject); 
@@ -212,9 +223,6 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case DelphiPackage.COMPOUND_STMT:
 				sequence_compoundStmt(context, (compoundStmt) semanticObject); 
-				return; 
-			case DelphiPackage.CONST_EXPR:
-				sequence_constExpr(context, (constExpr) semanticObject); 
 				return; 
 			case DelphiPackage.CONST_SECTION:
 				sequence_constSection(context, (constSection) semanticObject); 
@@ -731,12 +739,42 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     constExpr returns constExpr
+	 *     constExpr returns ConstExp
 	 *
 	 * Constraint:
-	 *     (exps+=expression | (exps+=constExpr exps+=constExpr*) | (exps+=recordConstExpr exps+=recordConstExpr*))
+	 *     exp=expression
 	 */
-	protected void sequence_constExpr(ISerializationContext context, constExpr semanticObject) {
+	protected void sequence_constExpr(ISerializationContext context, ConstExp semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DelphiPackage.Literals.CONST_EXP__EXP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DelphiPackage.Literals.CONST_EXP__EXP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConstExprAccess().getExpExpressionParserRuleCall_0_1_0(), semanticObject.getExp());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     constExpr returns MultipleConstExp
+	 *
+	 * Constraint:
+	 *     (exps+=constExpr exps+=constExpr*)
+	 */
+	protected void sequence_constExpr(ISerializationContext context, MultipleConstExp semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     constExpr returns RecordConstExp
+	 *
+	 * Constraint:
+	 *     (exps+=recordConstExpr exps+=recordConstExpr*)
+	 */
+	protected void sequence_constExpr(ISerializationContext context, RecordConstExp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
