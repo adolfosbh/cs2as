@@ -9,7 +9,7 @@
  *     Adolfo Sanchez-Barbudo Herrera (University of York) - initial API and implementation
  * 
  *******************************************************************************/
-module org.xtext.example.companies.build.GenerateCompanyModels
+module org.xtext.example.delphi.build.GenerateASModels
 
 import org.eclipse.ocl.examples.build.utilities.*
 import org.eclipse.ocl.examples.build.xtend.*
@@ -33,6 +33,10 @@ Workflow {
     
     component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
     	genModel = "/${projectName}/model/astm.genmodel"
+    }
+    
+    component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
+    	genModel = "/${projectName}/model/Lookup.genmodel"
     }
     
     component = GenerateASVisitors { resourceSet = resourceSet
