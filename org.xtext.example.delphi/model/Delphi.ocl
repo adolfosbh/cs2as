@@ -140,7 +140,7 @@ def : ast() : as::astm::ExpressionStatement =
 as::astm::ExpressionStatement {
 	expression = astm::FunctionCallExpression {
 				calledFunction = self.designator.ast(),
-				actualParams = args.exps.ast()
+				actualParams = args.createActualParams()
 			} 
 }
 context withStmt
@@ -234,7 +234,7 @@ else
 		if isAFunctionCall()
 		then as::astm::DelphiFunctionCallExpression {
 			calledFunction = self.designator.ast(), 
-		actualParams = expList.exps.ast() 
+		actualParams = expList.createActualParams()
 		}
 		else
 			invalid

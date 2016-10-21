@@ -4,15 +4,31 @@ import  as : 'astm.ecore#/'
 package cs
 context cs::ident
 def : extract() :String =
-	null
+	null -- to be overriden
+
+context cs::MultipleId
+def : extract() :String =
+	id->first()
+	
+context cs::ReservedId
+def : extract() :String =
+	reservedWord.id
+	
+context cs::MineID
+def : extract() :String =
+	first
+	
 context cs::identList
 def : extract() :String =
-	null
-	
+	ids->first().extract()
+
 context cs::designatorPart
 def : extract() :String =
 	id
 		
-
-
+context cs::exprList
+def : createActualParams() : OrderedSet(as::ActualParameterExpression) =
+	self.exps->collect(x | 
+		as::ActualParameterExpression { value = x.ast.oclAsType(as::Expression) }
+	)->asOrderedSet()
 endpackage

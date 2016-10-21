@@ -649,10 +649,10 @@ string
 	;
 
 // Lexer tokens
-terminal SLASH 			:	 '\u005C';
-terminal QUOTE			:	 '\u0027';
+terminal SLASH 			:	 '\\';
+terminal QUOTE			:	 '\'';
 terminal ID 			:	 ('a'..'z' | 'A'..'Z' | '_') ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '$' | '#' | SLASH | '-')*;
-terminal DOUBLEQUOTE		: 	'\u0022';
+terminal DOUBLEQUOTE		: 	'"';
 terminal DQVALUE			: 	DOUBLEQUOTE ('\\' . | !('\\'| DOUBLEQUOTE))*  DOUBLEQUOTE;
 terminal QVALUE			: 	QUOTE ('\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|QUOTE) )* QUOTE;
 terminal HEX				:	('+' | '-')?  '0' ('x' | 'X') ('0'..'9' | 'a'..'f' | 'A'..'F')+;
