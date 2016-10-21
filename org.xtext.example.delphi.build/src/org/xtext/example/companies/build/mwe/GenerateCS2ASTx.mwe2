@@ -9,7 +9,7 @@
  *     Adolfo Sanchez-Barbudo Herrera (University of York) - 
  *
  *******************************************************************************/
-module org.xtext.example.companies.GenerateCS2ASTx
+module org.xtext.example.delphi.GenerateCS2ASTx
 
 import org.eclipse.ocl.examples.build.*
 import org.eclipse.ocl.examples.build.utilities.*
@@ -44,68 +44,68 @@ Workflow {
 	component = GenerateModel { resourceSet = resourceSet skipOnErrors = true
     	genModel = "/org.xtext.example.delphi/model/generated/Delphi.genmodel"
     }
-//    //  Generate the CS2AS CGed transformation
-//     component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
-//    	script = "org.xtext.example.delphi.build.GenerateCS2AST"
-//    	fromProject = "../../org.eclipse.qvtd-master/plugins/org.eclipse.qvtd.runtime/src"
-//    	toProject = "../org.xtext.example.delphi/src-gen"
-//    	packageCopy = {
-//    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
-//    		to = "org.xtext.example.delphi.tx"
-//    	}
-//    	packageCopy = {
-//    		from = "org.eclipse.qvtd.runtime.evaluation"
-//    		to = "org.xtext.example.delphi.tx"
-//    	}
-//    	packageCopy = {
-//    		from = "org.eclipse.qvtd.runtime.internal.evaluation"
-//    		to = "org.xtext.example.delphi.internal.tx"
-//    	}
-//    	packageCopy = {
-//    		from = "org.eclipse.qvtd.runtime.labels"
-//    		to = "org.xtext.example.delphi.labels"
-//    	}
-//    	packageCopy = {
-//    		from = "org.eclipse.qvtd.runtime.library.model"
-//    		to = "org.xtext.example.delphi.library.model"
-//    	}
-//    	
-//    	packageRename = {
-//    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
-//    		to = "org.xtext.example.delphi.tx"
-//    	}
-//    	
-//    	packageRename = {
-//    		from = "org.eclipse.qvtd.runtime.evaluation"
-//    		to = "org.xtext.example.delphi.tx"
-//    	}
-//    	packageRename = {
-//    		from = "org.eclipse.qvtd.runtime.internal.evaluation"
-//    		to = "org.xtext.example.delphi.internal.tx"
-//    	}
-//    	packageRename = {
-//    		from = "org.eclipse.qvtd.runtime.labels"
-//    		to = "org.xtext.example.delphi.labels"
-//    	}
-//    	packageRename = {
-//    		from = "org.eclipse.qvtd.runtime.library.model"
-//    		to = "org.xtext.example.delphi.library.model"
-//    	}
-//    }
-//    
-//     component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
-//    	script = "org.xtext.example.delphi.build.GenerateCS2ASTx"
-//    	fromProject = "../../org.eclipse.qvtd-master/plugins/org.eclipse.qvtd.cs2as.xtext.runtime/src"
-//    	toProject = "../org.xtext.example.delphi/src-gen"
-//    	packageCopy = {
-//    		from = "org.eclipse.qvtd.cs2as.xtext.runtime"
-//    		to = "org.xtext.example.delphi.tx"
-//    	}
-//    	packageRename = {
-//    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
-//    		to = "org.xtext.example.delphi.tx"
-//    	}
-//    }
+    //  Generate the CS2AS CGed transformation
+     component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
+    	script = "org.xtext.example.delphi.build.GenerateCS2AST"
+    	fromProject = "../../org.eclipse.qvtd-master/plugins/org.eclipse.qvtd.runtime/src"
+    	toProject = "../org.xtext.example.delphi/src-gen"
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
+    		to = "org.xtext.example.delphi.tx"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.evaluation"
+    		to = "org.xtext.example.delphi.tx"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.internal.evaluation"
+    		to = "org.xtext.example.delphi.internal.tx"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.labels"
+    		to = "org.xtext.example.delphi.labels"
+    	}
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.runtime.library.model"
+    		to = "org.xtext.example.delphi.library.model"
+    	}
+    	
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
+    		to = "org.xtext.example.delphi.tx"
+    	}
+    	
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.evaluation"
+    		to = "org.xtext.example.delphi.tx"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.internal.evaluation"
+    		to = "org.xtext.example.delphi.internal.tx"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.labels"
+    		to = "org.xtext.example.delphi.labels"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.library.model"
+    		to = "org.xtext.example.delphi.library.model"
+    	}
+    }
+    
+     component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
+    	script = "org.xtext.example.delphi.build.GenerateCS2ASTx"
+    	fromProject = "../../org.eclipse.qvtd-master/plugins/org.eclipse.qvtd.cs2as.xtext.runtime/src"
+    	toProject = "../org.xtext.example.delphi/src-gen"
+    	packageCopy = {
+    		from = "org.eclipse.qvtd.cs2as.xtext.runtime"
+    		to = "org.xtext.example.delphi.tx"
+    	}
+    	packageRename = {
+    		from = "org.eclipse.qvtd.runtime.internal.cs2as"
+    		to = "org.xtext.example.delphi.tx"
+    	}
+    }
     component = @org.eclipse.qvtd.cs2as.build.mwe.GenerateCGedQVTiTransformation {
 		resourceSet = resourceSet
 		oclFileURI = "platform:/resource/org.xtext.example.delphi/model/Delphi.ocl"
@@ -114,5 +114,7 @@ Workflow {
 		javaPackage = "org.xtext.example.delphi"
 		lookupResolverClassName = "org.xtext.example.company.lookup.util.CompanyLookupSolver"
 		lookupResultItfName = "org.xtext.example.company.lookup.util.CompanyLookupResult"
+		
+		
 	}
 }
