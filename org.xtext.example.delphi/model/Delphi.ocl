@@ -172,7 +172,7 @@ _body = OrderedSet{stmt.ast()}
 context tryStmt
 def : ast() : as::astm::TryStatement =
 as::astm::TryStatement {
-	guardedStatement = stmtList.statments->first().ast(),  
+	guardedStatement = self.stmtList.statments->first().ast(),  
 	finalStatement = final.statments->first().ast() 
 }
 
@@ -213,7 +213,7 @@ def : ast() : as::astm::BinaryExpression =
 as::astm::BinaryExpression {
 	leftOperand = left.ast(), 
 rightOperand = right.ast(), 
-operator = if relOp.op = '='  then astm::Equal{} else null endif 
+operator = if self.relOp.op = '='  then astm::Equal{} else null endif 
 }
 context mulOp
 def : ast() : as::astm::BinaryExpression =
