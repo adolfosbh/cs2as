@@ -15,4 +15,12 @@
             genModel="model/astm.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Lookup -->
+      <package
+            uri="http://xtext.eclipse.org/example/companies"
+            class="org.xtext.example.delphi.astm.lookup.LookupPackage"
+            genModel="model/Lookup.genmodel"/>
+   </extension>
+
 </plugin>

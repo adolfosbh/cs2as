@@ -7712,13 +7712,13 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal SLASH:
-	//	'\\u005C';
+	//	'\\';
 	public TerminalRule getSLASHRule() {
 		return tSLASH;
 	}
 	
 	//terminal QUOTE:
-	//	'\\u0027';
+	//	'\'';
 	public TerminalRule getQUOTERule() {
 		return tQUOTE;
 	}
@@ -7730,7 +7730,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal DOUBLEQUOTE:
-	//	'\\u0022';
+	//	'"';
 	public TerminalRule getDOUBLEQUOTERule() {
 		return tDOUBLEQUOTE;
 	}

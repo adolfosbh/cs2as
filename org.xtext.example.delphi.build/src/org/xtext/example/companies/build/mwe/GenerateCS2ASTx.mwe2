@@ -112,9 +112,7 @@ Workflow {
 		// FIXME the following only works if the output project are in the same FS folder. Better use a projectName and improve generator 
 		javaFolder = "../org.xtext.example.delphi/src-gen"
 		javaPackage = "org.xtext.example.delphi"
-		lookupResolverClassName = "org.xtext.example.company.lookup.util.CompanyLookupSolver"
-		lookupResultItfName = "org.xtext.example.company.lookup.util.CompanyLookupResult"
-		
-		
+		lookupResolverClassName = "org.xtext.example.delphi.astm.lookup.util.AstmLookupSolver"
+		lookupResultItfName = "org.xtext.example.delphi.astm.lookup.util.AstmLookupResult"
 	}
 }
