@@ -32,13 +32,26 @@ locationInfo = astm::SourceLocation {
 context interfaceSection
 def : ast() : as::astm::DelphiInterfaceSection =
 as::astm::DelphiInterfaceSection { 
-	fragments = self.interfaceDecl.ast()->asOrderedSet()
+	fragments = self.interfaceDecl.getFragments()->asOrderedSet()
 }
 
 context interfaceDecl
-def : ast() : as::astm::DefinitionObject =
-	null -- to be overriden 
+def : getFragments() : OrderedSet(as::astm::DefinitionObject) =
+	null -- to be overriden
+
+context constSection
+def : getFragments() : OrderedSet(as::astm::VariableDefinition) =
+	self.constantDecl.ast()->asOrderedSet()
 	
+context constantDecl
+def : ast() : as::astm::VariableDefinition =
+as::astm::VariableDefinition {
+	identifierName = astm::Name {
+				nameString = id.extract()
+			}, 
+initialValue = const.ast() 
+}
+
 context implementationSection
 def : ast() : as::astm::DelphiImplementationSection =
 as::astm::DelphiImplementationSection {  
@@ -50,17 +63,9 @@ def : ast() : as::astm::DefinitionObject =
    
 context labelDeclSection
 def : ast() : as::astm::LabelDefinition =
-as::astm::LabelDefinition {
+	as::astm::LabelDefinition {
 	}
-context constantDecl
-def : ast() : as::astm::VariableDefinition =
-as::astm::VariableDefinition {
-	identifierName = astm::Name {
-				nameString = id.extract()
-			}, 
-initialValue = const.ast() 
-}
-
+	
 context expression
 def : ast() : as::astm::Expression =
 	null -- to be overriden
