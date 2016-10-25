@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Family -->
+      <package
+            uri="http://www.spoofax.com/family"
+            class="family.FamilyPackage"
+            genModel="model/Family.genmodel"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="families.metamodel.util.FamilyResourceFactory"
+            type="fam">
+      </parser>
+   </extension>
+</plugin>

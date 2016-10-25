@@ -1,0 +1,14 @@
+module Families
+imports Common
+
+exports
+  context-free start-symbols
+    Start
+
+  context-free syntax
+    "family" ID "{" "mum" ID "dad" ID ChildrenCS* "}" -> Start      {cons("FamilyCS")}
+    "child" ID                                        -> ChildrenCS {cons("ChildrenCS")}
+
+  context-free syntax
+    CONTENTCOMPLETE -> Start      {cons("COMPLETION-Start")}
+    CONTENTCOMPLETE -> ChildrenCS {cons("COMPLETION-ChildrenCS")}

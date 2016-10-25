@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         point="org.eclipse.imp.runtime.languageDescription">
+      <language
+            extensions="fam"
+            description="Families"
+            language="Families"
+            derivedFrom="DynamicRoot"
+            validator="org.spoofax.families.FamiliesValidator"
+            validatorClass="org.spoofax.families.FamiliesValidator"
+      ></language>
+   </extension>
+   <extension
+         id="org.spoofax.families.parser"
+         name="Families Parser"
+         point="org.eclipse.imp.runtime.parser">
+      <parser
+            class="org.spoofax.families.FamiliesParseController"
+            language="Families">
+      </parser>
+   </extension>    
+</plugin>

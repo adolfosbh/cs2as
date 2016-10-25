@@ -1,0 +1,10 @@
+module editor/Families-Outliner.generated
+
+imports
+  
+  include/Families
+  lib/runtime/editor/outline-library
+
+rules
+  
+  to-outline-label = ?FamilyCS(<id>, _, _, _)

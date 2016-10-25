@@ -1,0 +1,15 @@
+module cs2as
+
+signature 
+	constructors
+		Family : ID * ID * ID * LIST(ID) -> Family	
+
+imports
+  include/Families
+
+rules
+  CS2AS:
+  	FamilyCS(name, mum, dad, children) -> Family(name, mum, dad, children)
+
+  CS2AS:
+  	ChildrenCS(name) -> name

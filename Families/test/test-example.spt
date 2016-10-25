@@ -1,0 +1,18 @@
+/**
+* Unit tests for the Families language.
+*/
+module test-example
+
+language Families
+
+setup Common [[
+  module test
+]]
+/*
+test Simple entity [[
+  entity User {
+    name  : String
+    other : User
+  }
+]] 0 errors*/
+

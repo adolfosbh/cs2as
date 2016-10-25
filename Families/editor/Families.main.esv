@@ -1,0 +1,33 @@
+module Families.main
+
+imports
+  Families-Colorer
+  Families-Completions
+  Families-Folding
+  Families-Menus
+  Families-Refactorings
+  Families-References
+  Families-Syntax
+  Families-Views
+
+language General properties
+  
+  name:          Families
+  id:            org.spoofax.families
+  extends:       Root
+  
+  description:   "Spoofax-generated editor for the Families language"
+  url:           http://strategoxt.org
+  
+  extensions:    fam
+  table:         include/Families.tbl
+  start symbols: Start
+  
+  provider:      include/families.ctree
+  provider:      include/families-java.jar
+  
+  observer:      editor-analyze (multifile)
+  
+  on save:       editor-save
+  
+  jvm opts:      -server -Xss8m -Xmx1024m

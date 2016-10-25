@@ -1,0 +1,13 @@
+module editor/Families-Outliner
+
+imports
+  
+  include/Families
+  lib/runtime/editor/outline-library
+  lib/runtime/editor/origins
+  editor/Families-Outliner.generated
+
+rules
+  
+  to-outline-label = fail
+  

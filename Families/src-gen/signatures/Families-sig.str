@@ -1,0 +1,10 @@
+module src-gen/signatures/Families-sig
+
+imports
+  src-gen/signatures/Common-sig
+
+
+signature
+  constructors
+    FamilyCS   : ID * ID * ID * List(ChildrenCS) -> Start
+    ChildrenCS : ID -> ChildrenCS

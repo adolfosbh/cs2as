@@ -1,0 +1,18 @@
+module check
+
+imports
+
+	include/Families
+	lib/editor-common.generated
+
+rules
+	
+	//constraint-warning:
+	//	FamilyCS(x, members) -> (x, $[Family needs one head])
+	//	where
+	//		not(<string-starts-with-capital> x)
+
+	//constraint-note:
+	//	Module(x @ "example", _) -> (x, $[This is just an example program in the "entities" language 
+	//	                                  (this note is defined in trans/check.str)])
+

@@ -1,0 +1,11 @@
+
+module src-gen/completions/Families-esv
+
+imports
+  src-gen/completions/Common-esv
+
+completions
+  completion template Start : "family ID { mum ID dad ID }" =
+    "family " <ID:ID> " {\n\tmum " <ID:ID> "\n\tdad " <ID:ID> "\n\t" (cursor) "\n}" (blank)  
+  completion template ChildrenCS : "child ID " =
+    "child " <ID:ID> " "                    
