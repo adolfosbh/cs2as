@@ -1,0 +1,14 @@
+module cs2as
+
+imports
+  include/CompaniesTest
+
+rules
+  CS2AS:
+  	DeptManager(manager) -> manager
+
+  CS2AS:
+  	DeptEmployee(employee) -> employee
+  	
+  CS2AS:
+  	Mentor(mentor) -> mentor

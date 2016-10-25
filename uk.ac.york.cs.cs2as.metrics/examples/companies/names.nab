@@ -1,0 +1,24 @@
+module names
+
+imports
+	
+	include/CompaniesTest
+	
+namespaces
+	
+	Employee
+		
+binding rules
+
+	/*Company(c, _) : 
+		defines Company c
+		
+	Department(d,_,_,_) :
+		defines Department d*/ 
+
+		
+	Employee(e,_,_,_) :
+		defines Employee e 
+		
+	Mentor(m):
+		refers to Employee m
