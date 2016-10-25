@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:astm="http://modelum.es/modernization/astm">
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="Size"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+        <calledFunction xsi:type="astm:IdentifierReference">
+          <name nameString="GetFileVersionInfoSize"/>
+        </calledFunction>
+      </rightOperand>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:DelphiBlockStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:IdentifierReference>
+    <name nameString="Rut"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Size2"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Size"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="GetMem"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Pt"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Size"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="GetFileVersionInfo"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Rut"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Size"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Pt"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Pt"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Desea"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="buscar"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="actualizaciones"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="para"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="el"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="programa"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Actualizador"/>
+  </astm:IdentifierReference>
+  <astm:IntegerLiteral value="0"/>
+  <astm:IntegerLiteral value="3"/>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:Project>
+    <files xsi:type="astm:DelphiUnit" language="Delphi">
+      <locationInfo>
+        <inSourceFile/>
+      </locationInfo>
+      <name nameString="untClAux"/>
+      <interface/>
+      <implementation/>
+    </files>
+  </astm:Project>
+  <astm:TryStatement>
+    <guardedStatement xsi:type="astm:ExpressionStatement"/>
+  </astm:TryStatement>
+  <astm:TypeDefinition>
+    <name nameString="TEstado"/>
+  </astm:TypeDefinition>
+  <astm:TypeDefinition>
+    <name nameString="versTipo"/>
+  </astm:TypeDefinition>
+  <astm:VariableDefinition isMutable="true">
+    <identifierName nameString="frmPost"/>
+  </astm:VariableDefinition>
+  <astm:VariableDefinition isMutable="true">
+    <identifierName nameString="ActualizacionesPendientes"/>
+  </astm:VariableDefinition>
+  <astm:VariableDefinition isMutable="true">
+    <identifierName nameString="Size"/>
+  </astm:VariableDefinition>
+  <astm:VariableDefinition isMutable="true">
+    <identifierName nameString="Pt"/>
+  </astm:VariableDefinition>
+  <astm:VariableDefinition isMutable="true">
+    <identifierName nameString="vers"/>
+  </astm:VariableDefinition>
+</xmi:XMI>

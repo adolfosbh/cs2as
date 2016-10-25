@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:astm="http://modelum.es/modernization/astm">
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="cbSize"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+        <calledFunction xsi:type="astm:IdentifierReference">
+          <name nameString="SizeOf"/>
+        </calledFunction>
+      </rightOperand>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="lpFile"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+        <calledFunction xsi:type="astm:IdentifierReference">
+          <name nameString="PChar"/>
+        </calledFunction>
+      </rightOperand>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="lpParameters"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+        <calledFunction xsi:type="astm:IdentifierReference">
+          <name nameString="Pchar"/>
+        </calledFunction>
+      </rightOperand>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="hInstApp"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+        <calledFunction xsi:type="astm:QualifiedOverData">
+          <name nameString="dmDatos"/>
+        </calledFunction>
+      </rightOperand>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="f"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+        <calledFunction xsi:type="astm:QualifiedOverData">
+          <name nameString="TFrmSelFil"/>
+        </calledFunction>
+      </rightOperand>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="1"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="3"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="2"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="4"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="res"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+        <calledFunction xsi:type="astm:IdentifierReference">
+          <name nameString="BorraArchivo"/>
+        </calledFunction>
+      </rightOperand>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="5"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="6"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="9"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="8"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="7"/>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Assign"/>
+      <leftOperand xsi:type="astm:IdentifierReference">
+        <name nameString="result"/>
+      </leftOperand>
+      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+        <calledFunction xsi:type="astm:IdentifierReference">
+          <name nameString="BorraArchivo"/>
+        </calledFunction>
+      </rightOperand>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:DelphiBlockStatement/>
+  <astm:DelphiBlockStatement/>
+  <astm:DelphiBlockStatement/>
+  <astm:DelphiBlockStatement/>
+  <astm:DelphiBlockStatement/>
+  <astm:DelphiBlockStatement/>
+  <astm:DelphiBlockStatement/>
+  <astm:DelphiBlockStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement/>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:QualifiedOverData">
+        <name nameString="TMensa"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:StringLiteral" value="'Se ha borrado el archivo en disco duro pero no el registro en base de datos'"/>
+      </actualParams>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:QualifiedOverData">
+        <name nameString="TMensa"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:StringLiteral" value="'Ha ocurrido un error inesperado'"/>
+      </actualParams>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:QualifiedOverData">
+        <name nameString="TMensa"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:StringLiteral" value="'El archivo est&#xfffd; bloqueado, no puede borrarse'"/>
+      </actualParams>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:QualifiedOverData">
+        <name nameString="TMensa"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:StringLiteral" value="'Ha ocurrido un error inesperado borrando el archivo del disco duro'"/>
+      </actualParams>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:QualifiedOverData">
+        <name nameString="TMensa"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:StringLiteral" value="'Ha ocurrido un error borrando el archivo este ha sido renombrado con sufijo &quot;borrado&quot;'"/>
+      </actualParams>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:QualifiedOverData">
+        <name nameString="TMensa"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:StringLiteral" value="'Recibido Dataset nulo'"/>
+      </actualParams>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:QualifiedOverData">
+        <name nameString="TMensa"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:StringLiteral" value="'Dataset Vacio'"/>
+      </actualParams>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:QualifiedOverData">
+        <name nameString="TMensa"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:StringLiteral" value="'Dataset en estado no valido'"/>
+      </actualParams>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:QualifiedOverData">
+        <name nameString="TMensa"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:StringLiteral" value="'Error no controlado'"/>
+      </actualParams>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:VariableDefinition>
+    <identifierName nameString="FILWORD"/>
+    <initialValue xsi:type="astm:IntegerLiteral" value="1"/>
+  </astm:VariableDefinition>
+  <astm:VariableDefinition>
+    <identifierName nameString="FILEXCEL"/>
+    <initialValue xsi:type="astm:IntegerLiteral" value="2"/>
+  </astm:VariableDefinition>
+  <astm:IdentifierReference>
+    <name nameString="pInfo"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="fMask"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="SEE_MASK_NOCLOSEPROCESS"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="wnd"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Handle"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="lpVerb"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Ejecutable"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Argumentos"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="lpDirectory"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="nShow"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Visibilidad"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ShellExecuteEx"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="pInfo"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="RutaDoc"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="idruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Create"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ShowModal"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="mrOk"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="idruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="nombre"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="fichero"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Free"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="close"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="commandtext"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="idruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="open"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="IsEmpty"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="AsString"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="close"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="close"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="CommandText"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="proyecto"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="modulo"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="open"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="IsEmpty"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="AsString"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="close"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="close"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="CommandText"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="proyecto"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="open"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="IsEmpty"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="AsString"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="close"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="close"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="CommandText"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="proyecto"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="modulo"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Submod"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="open"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="IsEmpty"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="AsString"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="close"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Ruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="cds"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="IsEmpty"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="State"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="dsBrowse"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Delete"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="res"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="res"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ApplyUpdates"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="res"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="ruta"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="cds"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="exit"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="result"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:IdentifierReference>
+    <name nameString="Info"/>
+  </astm:IdentifierReference>
+  <astm:QualifiedOverData>
+    <name nameString="Application"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="f"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="f"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="f"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="f"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="Fields"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="Fields"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="Fields"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="Fields"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="cds"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="cds"/>
+  </astm:QualifiedOverData>
+  <astm:QualifiedOverData>
+    <name nameString="cds"/>
+  </astm:QualifiedOverData>
+  <astm:DelphiFunctionCallExpression>
+    <calledFunction xsi:type="astm:IdentifierReference">
+      <name nameString="QuotedStr"/>
+    </calledFunction>
+  </astm:DelphiFunctionCallExpression>
+  <astm:DelphiFunctionCallExpression>
+    <calledFunction xsi:type="astm:IdentifierReference">
+      <name nameString="QuotedStr"/>
+    </calledFunction>
+  </astm:DelphiFunctionCallExpression>
+  <astm:DelphiFunctionCallExpression>
+    <calledFunction xsi:type="astm:IdentifierReference">
+      <name nameString="QuotedStr"/>
+    </calledFunction>
+  </astm:DelphiFunctionCallExpression>
+  <astm:DelphiFunctionCallExpression>
+    <calledFunction xsi:type="astm:IdentifierReference">
+      <name nameString="QuotedStr"/>
+    </calledFunction>
+  </astm:DelphiFunctionCallExpression>
+  <astm:DelphiFunctionCallExpression>
+    <calledFunction xsi:type="astm:IdentifierReference">
+      <name nameString="QuotedStr"/>
+    </calledFunction>
+  </astm:DelphiFunctionCallExpression>
+  <astm:DelphiFunctionCallExpression>
+    <calledFunction xsi:type="astm:IdentifierReference">
+      <name nameString="QuotedStr"/>
+    </calledFunction>
+  </astm:DelphiFunctionCallExpression>
+  <astm:DelphiFunctionCallExpression>
+    <calledFunction xsi:type="astm:IdentifierReference">
+      <name nameString="FileExists"/>
+    </calledFunction>
+  </astm:DelphiFunctionCallExpression>
+  <astm:DelphiFunctionCallExpression>
+    <calledFunction xsi:type="astm:IdentifierReference">
+      <name nameString="RenameFile"/>
+    </calledFunction>
+  </astm:DelphiFunctionCallExpression>
+  <astm:IntegerLiteral value="#0"/>
+  <astm:IntegerLiteral value="0"/>
+  <astm:IntegerLiteral value="0"/>
+  <astm:IntegerLiteral value="0"/>
+  <astm:IntegerLiteral value="0"/>
+  <astm:StringLiteral value="'SELECT SRUTA FROM FSRUTAS '"/>
+  <astm:StringLiteral value="' WHERE IDRUTA = '"/>
+  <astm:StringLiteral value="'SELECT IDRUTA FROM FSMODULO '"/>
+  <astm:StringLiteral value="' WHERE IDPROJEC = '"/>
+  <astm:StringLiteral value="' AND IDMODULO = '"/>
+  <astm:StringLiteral value="'SELECT IDRUTA FROM FSPROJEC '"/>
+  <astm:StringLiteral value="' WHERE IDPROJEC = '"/>
+  <astm:StringLiteral value="'SELECT IDRUTA FROM FSSUBMOD '"/>
+  <astm:StringLiteral value="' WHERE IDPROJEC = '"/>
+  <astm:StringLiteral value="' AND IDMODULO = '"/>
+  <astm:StringLiteral value="' AND IDSUBMOD = '"/>
+  <astm:StringLiteral value="'borrado'"/>
+  <astm:StringLiteral value="'borrado'"/>
+  <astm:StringLiteral value="'borrado'"/>
+  <astm:IfStatement/>
+  <astm:IfStatement/>
+  <astm:IfStatement/>
+  <astm:IfStatement/>
+  <astm:IfStatement/>
+  <astm:IfStatement>
+    <condition xsi:type="astm:DelphiFunctionCallExpression">
+      <calledFunction xsi:type="astm:IdentifierReference">
+        <name nameString="RenameFile"/>
+      </calledFunction>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:DelphiFunctionCallExpression">
+      <calledFunction xsi:type="astm:IdentifierReference">
+        <name nameString="deleteFile"/>
+      </calledFunction>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="3"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement/>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression"/>
+  </astm:IfStatement>
+  <astm:IfStatement/>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement/>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <leftOperand xsi:type="astm:DelphiFunctionCallExpression">
+        <calledFunction xsi:type="astm:QualifiedOverData">
+          <name nameString="cds"/>
+        </calledFunction>
+        <actualParams xsi:type="astm:ActualParameterExpression">
+          <value xsi:type="astm:IntegerLiteral" value="0"/>
+        </actualParams>
+      </leftOperand>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="5"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="6"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="2"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="3"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="4"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="7"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="8"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:IfStatement>
+    <condition xsi:type="astm:BinaryExpression">
+      <operator xsi:type="astm:Equal"/>
+      <rightOperand xsi:type="astm:IntegerLiteral" value="9"/>
+    </condition>
+  </astm:IfStatement>
+  <astm:Project>
+    <files xsi:type="astm:DelphiUnit" language="Delphi">
+      <locationInfo>
+        <inSourceFile/>
+      </locationInfo>
+      <name nameString="untClArchivo"/>
+      <interface/>
+      <implementation/>
+    </files>
+  </astm:Project>
+  <astm:FunctionDefinition>
+    <identifierName nameString="TArchivo"/>
+    <body xsi:type="astm:DelphiBlockStatement"/>
+  </astm:FunctionDefinition>
+  <astm:FunctionDefinition>
+    <identifierName nameString="TArchivo"/>
+    <body xsi:type="astm:DelphiBlockStatement"/>
+  </astm:FunctionDefinition>
+  <astm:FunctionDefinition>
+    <identifierName nameString="TArchivo"/>
+    <body xsi:type="astm:DelphiBlockStatement"/>
+  </astm:FunctionDefinition>
+  <astm:BinaryExpression>
+    <operator xsi:type="astm:Equal"/>
+    <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+  </astm:BinaryExpression>
+  <astm:BinaryExpression>
+    <operator xsi:type="astm:Equal"/>
+    <rightOperand xsi:type="astm:IntegerLiteral" value="1"/>
+  </astm:BinaryExpression>
+  <astm:TryStatement>
+    <guardedStatement xsi:type="astm:IfStatement">
+      <condition xsi:type="astm:BinaryExpression">
+        <operator xsi:type="astm:Equal"/>
+      </condition>
+    </guardedStatement>
+    <finalStatement xsi:type="astm:ExpressionStatement"/>
+  </astm:TryStatement>
+  <astm:TryStatement>
+    <guardedStatement xsi:type="astm:ExpressionStatement"/>
+  </astm:TryStatement>
+  <astm:TypeDefinition>
+    <name nameString="TArchivo"/>
+  </astm:TypeDefinition>
+  <astm:VariableDefinition isMutable="true">
+    <identifierName nameString="Info"/>
+  </astm:VariableDefinition>
+  <astm:VariableDefinition isMutable="true">
+    <identifierName nameString="pInfo"/>
+  </astm:VariableDefinition>
+  <astm:VariableDefinition isMutable="true">
+    <identifierName nameString="f"/>
+  </astm:VariableDefinition>
+  <astm:VariableDefinition isMutable="true">
+    <identifierName nameString="res"/>
+  </astm:VariableDefinition>
+  <astm:DelphiWithStatement/>
+  <astm:DelphiWithStatement/>
+  <astm:DelphiWithStatement/>
+  <astm:DelphiWithStatement/>
+  <astm:DelphiWithStatement/>
+</xmi:XMI>
