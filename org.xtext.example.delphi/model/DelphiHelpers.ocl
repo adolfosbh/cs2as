@@ -31,4 +31,24 @@ def : createActualParams() : OrderedSet(as::ActualParameterExpression) =
 	self.exps->collect(x | 
 		as::ActualParameterExpression { value = x.ast.oclAsType(as::Expression) }
 	)->asOrderedSet()
+
+context interfaceDecl
+def : getFragments() : OrderedSet(as::DefinitionObject) =
+	OrderedSet{} -- to be overriden
+
+context constSection
+def : getFragments() : OrderedSet(as::VariableDefinition) =
+	self.constantDecl.ast.oclAsType(as::VariableDefinition)->asOrderedSet()
+
+context declSection
+def : getFragments() : OrderedSet(as::DefinitionObject) =
+   OrderedSet{}  -- to be overriden
+   	
+context procedureDeclSection
+def : getFragments() : OrderedSet(as::FunctionDefinition) =
+	OrderedSet{self.ast.oclAsType(as::FunctionDefinition)}
+
+context functionDecl
+def : getFragments() : OrderedSet(as::FunctionDefinition) =
+	OrderedSet{self.ast.oclAsType(as::FunctionDefinition)}	
 endpackage

@@ -67,10 +67,6 @@
       </rightOperand>
     </expression>
   </astm:ExpressionStatement>
-  <astm:DelphiBlockStatement/>
-  <astm:DelphiBlockStatement/>
-  <astm:DelphiBlockStatement/>
-  <astm:DelphiBlockStatement/>
   <astm:ExpressionStatement>
     <expression xsi:type="astm:FunctionCallExpression">
       <calledFunction xsi:type="astm:IdentifierReference">
@@ -176,13 +172,30 @@
       </locationInfo>
       <name nameString="untClFormatos"/>
       <interface/>
-      <implementation/>
+      <implementation>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TFecha"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TFecha"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TFecha"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TNumber"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TNumber"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+      </implementation>
     </files>
   </astm:Project>
-  <astm:FunctionDefinition>
-    <identifierName nameString="TFecha"/>
-    <body xsi:type="astm:DelphiBlockStatement"/>
-  </astm:FunctionDefinition>
   <astm:TryStatement>
     <guardedStatement xsi:type="astm:IfStatement">
       <condition xsi:type="astm:BinaryExpression">

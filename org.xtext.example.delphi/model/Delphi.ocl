@@ -32,16 +32,10 @@ locationInfo = astm::SourceLocation {
 context interfaceSection
 def : ast() : as::astm::DelphiInterfaceSection =
 as::astm::DelphiInterfaceSection { 
-	fragments = self.interfaceDecl.getFragments()->asOrderedSet()
+	fragments = self.interfaceDecl.getFragments()
 }
 
-context interfaceDecl
-def : getFragments() : OrderedSet(as::astm::DefinitionObject) =
-	null -- to be overriden
 
-context constSection
-def : getFragments() : OrderedSet(as::astm::VariableDefinition) =
-	self.constantDecl.ast()->asOrderedSet()
 	
 context constantDecl
 def : ast() : as::astm::VariableDefinition =
@@ -55,11 +49,9 @@ initialValue = const.ast()
 context implementationSection
 def : ast() : as::astm::DelphiImplementationSection =
 as::astm::DelphiImplementationSection {  
-	fragments = declSect.ast() 
+	fragments = self.declSect.getFragments()
 }
-context declSection
-def : ast() : as::astm::DefinitionObject =
-   null -- to be overriden
+
    
 context labelDeclSection
 def : ast() : as::astm::LabelDefinition =
@@ -107,6 +99,9 @@ context type
 def : ast() : as::astm::TypeReference =
 	null -- to be overriden
 	
+
+
+	
 context procedureDecl
 def : ast() : as::astm::FunctionDefinition =
 as::astm::FunctionDefinition {
@@ -115,10 +110,20 @@ as::astm::FunctionDefinition {
 			}, 
 	_body = OrderedSet{self.block.ast()} 
 }
+
+context functionDecl
+def : ast() : as::astm::FunctionDefinition =
+as::astm::FunctionDefinition {
+	identifierName = astm::Name {
+				nameString = heading.id.extract()
+			}, 
+	_body = OrderedSet{self.block.ast()} 
+}
+	
 context block
 def : ast() : as::astm::DelphiBlockStatement =
 as::astm::DelphiBlockStatement {
-	declarations = OrderedSet{declSect . ast()}, 
+	declarations = declSect?.getFragments(), 
 subStatements = compound.stamtList.statments.ast() 
 }
 
@@ -204,14 +209,15 @@ else
 	endif
 endif
 
-
-context ident
-def : ast() :  as::astm::DefinitionObject =
-	null -- to be overriden
+context CSTrace
+def : ast() : as::astm::Visitable =
+	null -- to override
 	
---def : ast() : as::astm::DefinitionObject =
---let method  = ast().lookupFunctionDefinition(id->first())
---in if method <> null then method else ast().lookupVariableDefinition(id->first()) endif
+context ident
+def : ast() : as::astm::DefinitionObject =
+let parent = oclContainer().oclAsType(CSTrace).ast,
+    method  = parent.lookupFunctionDefinition(self.extract())
+in if method <> null then method else parent.lookupVariableDefinition(self.extract()) endif
 
 context relExp
 def : ast() : as::astm::BinaryExpression =

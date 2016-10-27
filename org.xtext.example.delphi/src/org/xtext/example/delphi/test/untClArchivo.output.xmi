@@ -216,14 +216,6 @@
       </rightOperand>
     </expression>
   </astm:ExpressionStatement>
-  <astm:DelphiBlockStatement/>
-  <astm:DelphiBlockStatement/>
-  <astm:DelphiBlockStatement/>
-  <astm:DelphiBlockStatement/>
-  <astm:DelphiBlockStatement/>
-  <astm:DelphiBlockStatement/>
-  <astm:DelphiBlockStatement/>
-  <astm:DelphiBlockStatement/>
   <astm:ExpressionStatement/>
   <astm:ExpressionStatement/>
   <astm:ExpressionStatement/>
@@ -328,14 +320,6 @@
       </actualParams>
     </expression>
   </astm:ExpressionStatement>
-  <astm:VariableDefinition>
-    <identifierName nameString="FILWORD"/>
-    <initialValue xsi:type="astm:IntegerLiteral" value="1"/>
-  </astm:VariableDefinition>
-  <astm:VariableDefinition>
-    <identifierName nameString="FILEXCEL"/>
-    <initialValue xsi:type="astm:IntegerLiteral" value="2"/>
-  </astm:VariableDefinition>
   <astm:IdentifierReference>
     <name nameString="pInfo"/>
   </astm:IdentifierReference>
@@ -838,22 +822,64 @@
         <inSourceFile/>
       </locationInfo>
       <name nameString="untClArchivo"/>
-      <interface/>
-      <implementation/>
+      <interface>
+        <fragments xsi:type="astm:VariableDefinition">
+          <identifierName nameString="FILWORD"/>
+          <initialValue xsi:type="astm:IntegerLiteral" value="1"/>
+        </fragments>
+        <fragments xsi:type="astm:VariableDefinition">
+          <identifierName nameString="FILEXCEL"/>
+          <initialValue xsi:type="astm:IntegerLiteral" value="2"/>
+        </fragments>
+      </interface>
+      <implementation>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="TArchivo"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+      </implementation>
     </files>
   </astm:Project>
-  <astm:FunctionDefinition>
-    <identifierName nameString="TArchivo"/>
-    <body xsi:type="astm:DelphiBlockStatement"/>
-  </astm:FunctionDefinition>
-  <astm:FunctionDefinition>
-    <identifierName nameString="TArchivo"/>
-    <body xsi:type="astm:DelphiBlockStatement"/>
-  </astm:FunctionDefinition>
-  <astm:FunctionDefinition>
-    <identifierName nameString="TArchivo"/>
-    <body xsi:type="astm:DelphiBlockStatement"/>
-  </astm:FunctionDefinition>
   <astm:BinaryExpression>
     <operator xsi:type="astm:Equal"/>
     <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>

@@ -13,7 +13,6 @@
       </rightOperand>
     </expression>
   </astm:ExpressionStatement>
-  <astm:DelphiBlockStatement/>
   <astm:ExpressionStatement/>
   <astm:ExpressionStatement/>
   <astm:ExpressionStatement/>
@@ -91,7 +90,12 @@
       </locationInfo>
       <name nameString="untClAux"/>
       <interface/>
-      <implementation/>
+      <implementation>
+        <fragments xsi:type="astm:FunctionDefinition">
+          <identifierName nameString="ObtenerAppVersion"/>
+          <body xsi:type="astm:DelphiBlockStatement"/>
+        </fragments>
+      </implementation>
     </files>
   </astm:Project>
   <astm:TryStatement>
