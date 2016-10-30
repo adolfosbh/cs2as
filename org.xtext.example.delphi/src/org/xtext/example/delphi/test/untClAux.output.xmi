@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:astm="http://modelum.es/modernization/astm">
   <astm:ExpressionStatement>
-    <expression xsi:type="astm:BinaryExpression">
-      <operator xsi:type="astm:Assign"/>
-      <leftOperand xsi:type="astm:IdentifierReference">
-        <name nameString="Size"/>
-      </leftOperand>
-      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
-        <calledFunction xsi:type="astm:IdentifierReference">
-          <name nameString="GetFileVersionInfoSize"/>
-        </calledFunction>
-      </rightOperand>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:IdentifierReference">
+        <name nameString="GetMem"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:IdentifierReference">
+          <name nameString="Pt"/>
+        </value>
+      </actualParams>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:IdentifierReference">
+          <name nameString="Size"/>
+        </value>
+      </actualParams>
     </expression>
   </astm:ExpressionStatement>
-  <astm:ExpressionStatement/>
-  <astm:ExpressionStatement/>
   <astm:ExpressionStatement/>
   <astm:ExpressionStatement/>
   <astm:ExpressionStatement/>
@@ -29,28 +31,7 @@
     <name nameString="Size2"/>
   </astm:IdentifierReference>
   <astm:IdentifierReference>
-    <name nameString="Size"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="GetMem"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Pt"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Size"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="GetFileVersionInfo"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
     <name nameString="Rut"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Size"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Pt"/>
   </astm:IdentifierReference>
   <astm:IdentifierReference>
     <name nameString="Pt"/>
@@ -78,11 +59,6 @@
   </astm:IdentifierReference>
   <astm:IntegerLiteral value="0"/>
   <astm:IntegerLiteral value="3"/>
-  <astm:IfStatement>
-    <condition xsi:type="astm:BinaryExpression">
-      <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
-    </condition>
-  </astm:IfStatement>
   <astm:Project>
     <files xsi:type="astm:DelphiUnit" language="Delphi">
       <locationInfo>
@@ -93,13 +69,62 @@
       <implementation>
         <fragments xsi:type="astm:FunctionDefinition">
           <identifierName nameString="ObtenerAppVersion"/>
-          <body xsi:type="astm:DelphiBlockStatement"/>
+          <body xsi:type="astm:DelphiBlockStatement">
+            <subStatements xsi:type="astm:ExpressionStatement">
+              <expression xsi:type="astm:BinaryExpression">
+                <operator xsi:type="astm:Assign"/>
+                <leftOperand xsi:type="astm:IdentifierReference">
+                  <name nameString="Size"/>
+                </leftOperand>
+                <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+                  <calledFunction xsi:type="astm:IdentifierReference">
+                    <name nameString="GetFileVersionInfoSize"/>
+                  </calledFunction>
+                </rightOperand>
+              </expression>
+            </subStatements>
+            <subStatements xsi:type="astm:IfStatement">
+              <condition xsi:type="astm:BinaryExpression">
+                <leftOperand xsi:type="astm:IdentifierReference">
+                  <name nameString="Size"/>
+                </leftOperand>
+                <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+              </condition>
+            </subStatements>
+            <subStatements xsi:type="astm:ExpressionStatement"/>
+          </body>
         </fragments>
       </implementation>
     </files>
   </astm:Project>
   <astm:TryStatement>
-    <guardedStatement xsi:type="astm:ExpressionStatement"/>
+    <guardedStatement xsi:type="astm:ExpressionStatement">
+      <expression xsi:type="astm:FunctionCallExpression">
+        <calledFunction xsi:type="astm:IdentifierReference">
+          <name nameString="GetFileVersionInfo"/>
+        </calledFunction>
+        <actualParams xsi:type="astm:ActualParameterExpression">
+          <value xsi:type="astm:DelphiFunctionCallExpression">
+            <calledFunction xsi:type="astm:IdentifierReference">
+              <name nameString="PChar"/>
+            </calledFunction>
+          </value>
+        </actualParams>
+        <actualParams xsi:type="astm:ActualParameterExpression">
+          <value xsi:type="astm:IntegerLiteral" value="0"/>
+        </actualParams>
+        <actualParams xsi:type="astm:ActualParameterExpression">
+          <value xsi:type="astm:IdentifierReference">
+            <name nameString="Size"/>
+          </value>
+        </actualParams>
+        <actualParams xsi:type="astm:ActualParameterExpression">
+          <value xsi:type="astm:IdentifierReference">
+            <name nameString="Pt"/>
+          </value>
+        </actualParams>
+      </expression>
+    </guardedStatement>
   </astm:TryStatement>
   <astm:TypeDefinition>
     <name nameString="TEstado"/>

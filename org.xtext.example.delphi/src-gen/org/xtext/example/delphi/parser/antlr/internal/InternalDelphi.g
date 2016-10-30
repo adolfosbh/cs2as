@@ -4223,262 +4223,302 @@ rulefactor returns [EObject current=null]
 }:
 	(
 		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFactorAccess().getDesignatorDesignatorParserRuleCall_0_0_0());
+					}
+					lv_designator_0_0=ruledesignator
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFactorRule());
+						}
+						set(
+							$current,
+							"designator",
+							lv_designator_0_0,
+							"org.xtext.example.delphi.Delphi.designator");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_1='('
 			{
-				/* */
+				newLeafNode(otherlv_1, grammarAccess.getFactorAccess().getLeftParenthesisKeyword_0_1());
 			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFactorAccess().getExpListExprListParserRuleCall_0_2_0());
+					}
+					lv_expList_2_0=ruleexprList
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFactorRule());
+						}
+						set(
+							$current,
+							"expList",
+							lv_expList_2_0,
+							"org.xtext.example.delphi.Delphi.exprList");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_3=')'
 			{
-				$current = forceCreateModelElement(
-					grammarAccess.getFactorAccess().getFactorAction_0(),
-					$current);
+				newLeafNode(otherlv_3, grammarAccess.getFactorAccess().getRightParenthesisKeyword_0_3());
 			}
 		)
+		    |
+		(
+			(
+				{
+					/* */
+				}
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getFactorAccess().getSimpleFactorAction_1_0(),
+						$current);
+				}
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFactorAccess().getDesignatorDesignatorParserRuleCall_1_1_0());
+					}
+					lv_designator_5_0=ruledesignator
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFactorRule());
+						}
+						set(
+							$current,
+							"designator",
+							lv_designator_5_0,
+							"org.xtext.example.delphi.Delphi.designator");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			otherlv_6='@'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getFactorAccess().getCommercialAtKeyword_2_0());
+			}
+			(
+				{
+					/* */
+				}
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getFactorAccess().getSimpleFactorAction_2_1(),
+						$current);
+				}
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFactorAccess().getDesignatorDesignatorParserRuleCall_2_2_0());
+					}
+					lv_designator_8_0=ruledesignator
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFactorRule());
+						}
+						set(
+							$current,
+							"designator",
+							lv_designator_8_0,
+							"org.xtext.example.delphi.Delphi.designator");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFactorAccess().getNumberNumberParserRuleCall_3_0());
+				}
+				lv_number_9_0=rulenumber
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFactorRule());
+					}
+					set(
+						$current,
+						"number",
+						lv_number_9_0,
+						"org.xtext.example.delphi.Delphi.number");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFactorAccess().getStringStringParserRuleCall_4_0());
+				}
+				lv_string_10_0=rulestring
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFactorRule());
+					}
+					set(
+						$current,
+						"string",
+						lv_string_10_0,
+						"org.xtext.example.delphi.Delphi.string");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					/* */
+				}
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getFactorAccess().getFactorAction_5_0(),
+						$current);
+				}
+			)
+			otherlv_12='nil'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getFactorAccess().getNilKeyword_5_1());
+			}
+		)
+		    |
+		(
+			otherlv_13='('
+			{
+				newLeafNode(otherlv_13, grammarAccess.getFactorAccess().getLeftParenthesisKeyword_6_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFactorAccess().getExpExpressionParserRuleCall_6_1_0());
+					}
+					lv_exp_14_0=ruleexpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFactorRule());
+						}
+						set(
+							$current,
+							"exp",
+							lv_exp_14_0,
+							"org.xtext.example.delphi.Delphi.expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_15=')'
+			{
+				newLeafNode(otherlv_15, grammarAccess.getFactorAccess().getRightParenthesisKeyword_6_2());
+			}
+		)
+		    |
+		(
+			otherlv_16='not'
+			{
+				newLeafNode(otherlv_16, grammarAccess.getFactorAccess().getNotKeyword_7_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFactorAccess().getExpFactorParserRuleCall_7_1_0());
+					}
+					lv_exp_17_0=rulefactor
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFactorRule());
+						}
+						set(
+							$current,
+							"exp",
+							lv_exp_17_0,
+							"org.xtext.example.delphi.Delphi.factor");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFactorAccess().getSetConstuctorSetConstructorParserRuleCall_8_0());
+				}
+				lv_setConstuctor_18_0=rulesetConstructor
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFactorRule());
+					}
+					set(
+						$current,
+						"setConstuctor",
+						lv_setConstuctor_18_0,
+						"org.xtext.example.delphi.Delphi.setConstructor");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
 		(
 			(
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getFactorAccess().getDesignatorDesignatorParserRuleCall_1_0_0_0());
-						}
-						lv_designator_1_0=ruledesignator
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getFactorRule());
-							}
-							set(
-								$current,
-								"designator",
-								lv_designator_1_0,
-								"org.xtext.example.delphi.Delphi.designator");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				(
-					otherlv_2='('
 					{
-						newLeafNode(otherlv_2, grammarAccess.getFactorAccess().getLeftParenthesisKeyword_1_0_1_0());
+						newCompositeNode(grammarAccess.getFactorAccess().getTypeRefTypeIdParserRuleCall_9_0_0());
 					}
-					(
-						(
-							{
-								newCompositeNode(grammarAccess.getFactorAccess().getExpListExprListParserRuleCall_1_0_1_1_0());
-							}
-							lv_expList_3_0=ruleexprList
-							{
-								if ($current==null) {
-									$current = createModelElementForParent(grammarAccess.getFactorRule());
-								}
-								set(
-									$current,
-									"expList",
-									lv_expList_3_0,
-									"org.xtext.example.delphi.Delphi.exprList");
-								afterParserOrEnumRuleCall();
-							}
-						)
-					)
-					otherlv_4=')'
-					{
-						newLeafNode(otherlv_4, grammarAccess.getFactorAccess().getRightParenthesisKeyword_1_0_1_2());
-					}
-				)?
-			)
-			    |
-			(
-				otherlv_5='@'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getFactorAccess().getCommercialAtKeyword_1_1_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getFactorAccess().getDesignatorDesignatorParserRuleCall_1_1_1_0());
-						}
-						lv_designator_6_0=ruledesignator
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getFactorRule());
-							}
-							set(
-								$current,
-								"designator",
-								lv_designator_6_0,
-								"org.xtext.example.delphi.Delphi.designator");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)
-			    |
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getFactorAccess().getNumberNumberParserRuleCall_1_2_0());
-					}
-					lv_number_7_0=rulenumber
+					lv_typeRef_19_0=ruletypeId
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFactorRule());
 						}
 						set(
 							$current,
-							"number",
-							lv_number_7_0,
-							"org.xtext.example.delphi.Delphi.number");
+							"typeRef",
+							lv_typeRef_19_0,
+							"org.xtext.example.delphi.Delphi.typeId");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			    |
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getFactorAccess().getStringStringParserRuleCall_1_3_0());
-					}
-					lv_string_8_0=rulestring
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFactorRule());
-						}
-						set(
-							$current,
-							"string",
-							lv_string_8_0,
-							"org.xtext.example.delphi.Delphi.string");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			    |
-			otherlv_9='nil'
+			otherlv_20='('
 			{
-				newLeafNode(otherlv_9, grammarAccess.getFactorAccess().getNilKeyword_1_4());
+				newLeafNode(otherlv_20, grammarAccess.getFactorAccess().getLeftParenthesisKeyword_9_1());
 			}
-			    |
-			(
-				otherlv_10='('
-				{
-					newLeafNode(otherlv_10, grammarAccess.getFactorAccess().getLeftParenthesisKeyword_1_5_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getFactorAccess().getExpExpressionParserRuleCall_1_5_1_0());
-						}
-						lv_exp_11_0=ruleexpression
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getFactorRule());
-							}
-							set(
-								$current,
-								"exp",
-								lv_exp_11_0,
-								"org.xtext.example.delphi.Delphi.expression");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				otherlv_12=')'
-				{
-					newLeafNode(otherlv_12, grammarAccess.getFactorAccess().getRightParenthesisKeyword_1_5_2());
-				}
-			)
-			    |
-			(
-				otherlv_13='not'
-				{
-					newLeafNode(otherlv_13, grammarAccess.getFactorAccess().getNotKeyword_1_6_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getFactorAccess().getExpFactorParserRuleCall_1_6_1_0());
-						}
-						lv_exp_14_0=rulefactor
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getFactorRule());
-							}
-							set(
-								$current,
-								"exp",
-								lv_exp_14_0,
-								"org.xtext.example.delphi.Delphi.factor");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)
-			    |
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFactorAccess().getSetConstuctorSetConstructorParserRuleCall_1_7_0());
+						newCompositeNode(grammarAccess.getFactorAccess().getExpExpressionParserRuleCall_9_2_0());
 					}
-					lv_setConstuctor_15_0=rulesetConstructor
+					lv_exp_21_0=ruleexpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFactorRule());
 						}
 						set(
 							$current,
-							"setConstuctor",
-							lv_setConstuctor_15_0,
-							"org.xtext.example.delphi.Delphi.setConstructor");
+							"exp",
+							lv_exp_21_0,
+							"org.xtext.example.delphi.Delphi.expression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			    |
-			(
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getFactorAccess().getTypeRefTypeIdParserRuleCall_1_8_0_0());
-						}
-						lv_typeRef_16_0=ruletypeId
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getFactorRule());
-							}
-							set(
-								$current,
-								"typeRef",
-								lv_typeRef_16_0,
-								"org.xtext.example.delphi.Delphi.typeId");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				otherlv_17='('
-				{
-					newLeafNode(otherlv_17, grammarAccess.getFactorAccess().getLeftParenthesisKeyword_1_8_1());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getFactorAccess().getExpExpressionParserRuleCall_1_8_2_0());
-						}
-						lv_exp_18_0=ruleexpression
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getFactorRule());
-							}
-							set(
-								$current,
-								"exp",
-								lv_exp_18_0,
-								"org.xtext.example.delphi.Delphi.expression");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				otherlv_19=')'
-				{
-					newLeafNode(otherlv_19, grammarAccess.getFactorAccess().getRightParenthesisKeyword_1_8_3());
-				}
-			)
+			otherlv_22=')'
+			{
+				newLeafNode(otherlv_22, grammarAccess.getFactorAccess().getRightParenthesisKeyword_9_3());
+			}
 		)
 	)
 ;

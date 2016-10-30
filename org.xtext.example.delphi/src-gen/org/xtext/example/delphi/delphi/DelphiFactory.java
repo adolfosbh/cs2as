@@ -1167,6 +1167,15 @@ public interface DelphiFactory extends EFactory
   multExp createmultExp();
 
   /**
+	 * Returns a new object of class '<em>simple Factor</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>simple Factor</em>'.
+	 * @generated
+	 */
+  simpleFactor createsimpleFactor();
+
+  /**
 	 * Returns a new object of class '<em>ad Op</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

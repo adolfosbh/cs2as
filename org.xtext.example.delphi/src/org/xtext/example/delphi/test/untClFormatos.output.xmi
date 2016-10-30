@@ -1,100 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:astm="http://modelum.es/modernization/astm">
   <astm:ExpressionStatement/>
-  <astm:ExpressionStatement>
-    <expression xsi:type="astm:BinaryExpression">
-      <operator xsi:type="astm:Assign"/>
-      <leftOperand xsi:type="astm:IdentifierReference">
-        <name nameString="result"/>
-      </leftOperand>
-      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
-        <calledFunction xsi:type="astm:IdentifierReference">
-          <name nameString="FechaSql"/>
-        </calledFunction>
-        <actualParams xsi:type="astm:ActualParameterExpression">
-          <value xsi:type="astm:DelphiFunctionCallExpression">
-            <calledFunction xsi:type="astm:IdentifierReference">
-              <name nameString="DateToStr"/>
-            </calledFunction>
-          </value>
-        </actualParams>
-      </rightOperand>
-    </expression>
-  </astm:ExpressionStatement>
-  <astm:ExpressionStatement>
-    <expression xsi:type="astm:BinaryExpression">
-      <operator xsi:type="astm:Assign"/>
-      <leftOperand xsi:type="astm:IdentifierReference">
-        <name nameString="ed"/>
-      </leftOperand>
-      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
-        <calledFunction xsi:type="astm:IdentifierReference">
-          <name nameString="TEdit"/>
-        </calledFunction>
-      </rightOperand>
-    </expression>
-  </astm:ExpressionStatement>
-  <astm:ExpressionStatement>
-    <expression xsi:type="astm:BinaryExpression">
-      <operator xsi:type="astm:Assign"/>
-      <leftOperand xsi:type="astm:IdentifierReference">
-        <name nameString="Result"/>
-      </leftOperand>
-      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
-        <calledFunction xsi:type="astm:IdentifierReference">
-          <name nameString="AnsiReplaceText"/>
-        </calledFunction>
-      </rightOperand>
-    </expression>
-  </astm:ExpressionStatement>
-  <astm:ExpressionStatement>
-    <expression xsi:type="astm:BinaryExpression">
-      <operator xsi:type="astm:Assign"/>
-      <leftOperand xsi:type="astm:IdentifierReference">
-        <name nameString="Result"/>
-      </leftOperand>
-      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
-        <calledFunction xsi:type="astm:IdentifierReference">
-          <name nameString="FloatSql"/>
-        </calledFunction>
-        <actualParams xsi:type="astm:ActualParameterExpression">
-          <value xsi:type="astm:DelphiFunctionCallExpression">
-            <calledFunction xsi:type="astm:IdentifierReference">
-              <name nameString="FloatToStr"/>
-            </calledFunction>
-          </value>
-        </actualParams>
-      </rightOperand>
-    </expression>
-  </astm:ExpressionStatement>
-  <astm:ExpressionStatement>
-    <expression xsi:type="astm:FunctionCallExpression">
-      <calledFunction xsi:type="astm:IdentifierReference">
-        <name nameString="Assert"/>
-      </calledFunction>
-      <actualParams xsi:type="astm:ActualParameterExpression">
-        <value xsi:type="astm:BinaryExpression"/>
-      </actualParams>
-      <actualParams xsi:type="astm:ActualParameterExpression">
-        <value xsi:type="astm:StringLiteral" value="'Clase de objeto no v&#xfffd;lida en el campo fecha'"/>
-      </actualParams>
-    </expression>
-  </astm:ExpressionStatement>
-  <astm:ExpressionStatement>
-    <expression xsi:type="astm:FunctionCallExpression">
-      <calledFunction xsi:type="astm:IdentifierReference">
-        <name nameString="StrToDate"/>
-      </calledFunction>
-      <actualParams xsi:type="astm:ActualParameterExpression">
-        <value xsi:type="astm:DelphiFunctionCallExpression">
-          <calledFunction xsi:type="astm:IdentifierReference">
-            <name nameString="Trim"/>
-          </calledFunction>
-        </value>
-      </actualParams>
-    </expression>
-  </astm:ExpressionStatement>
-  <astm:ExpressionStatement/>
   <astm:ExpressionStatement/>
   <astm:IdentifierReference>
     <name nameString="result"/>
@@ -104,12 +10,6 @@
   </astm:IdentifierReference>
   <astm:IdentifierReference>
     <name nameString="fecha"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="ob"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="TEdit"/>
   </astm:IdentifierReference>
   <astm:IdentifierReference>
     <name nameString="ob"/>
@@ -135,9 +35,6 @@
   <astm:IdentifierReference>
     <name nameString="f"/>
   </astm:IdentifierReference>
-  <astm:QualifiedOverData>
-    <name nameString="ed"/>
-  </astm:QualifiedOverData>
   <astm:QualifiedOverData>
     <name nameString="ed"/>
   </astm:QualifiedOverData>
@@ -175,34 +72,143 @@
       <implementation>
         <fragments xsi:type="astm:FunctionDefinition">
           <identifierName nameString="TFecha"/>
-          <body xsi:type="astm:DelphiBlockStatement"/>
+          <body xsi:type="astm:DelphiBlockStatement">
+            <subStatements xsi:type="astm:ExpressionStatement"/>
+          </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
           <identifierName nameString="TFecha"/>
-          <body xsi:type="astm:DelphiBlockStatement"/>
+          <body xsi:type="astm:DelphiBlockStatement">
+            <subStatements xsi:type="astm:ExpressionStatement">
+              <expression xsi:type="astm:BinaryExpression">
+                <operator xsi:type="astm:Assign"/>
+                <leftOperand xsi:type="astm:IdentifierReference">
+                  <name nameString="result"/>
+                </leftOperand>
+                <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+                  <calledFunction xsi:type="astm:IdentifierReference">
+                    <name nameString="FechaSql"/>
+                  </calledFunction>
+                  <actualParams xsi:type="astm:ActualParameterExpression">
+                    <value xsi:type="astm:DelphiFunctionCallExpression">
+                      <calledFunction xsi:type="astm:IdentifierReference">
+                        <name nameString="DateToStr"/>
+                      </calledFunction>
+                    </value>
+                  </actualParams>
+                </rightOperand>
+              </expression>
+            </subStatements>
+          </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
           <identifierName nameString="TFecha"/>
-          <body xsi:type="astm:DelphiBlockStatement"/>
+          <body xsi:type="astm:DelphiBlockStatement">
+            <subStatements xsi:type="astm:ExpressionStatement">
+              <expression xsi:type="astm:FunctionCallExpression">
+                <calledFunction xsi:type="astm:IdentifierReference">
+                  <name nameString="Assert"/>
+                </calledFunction>
+                <actualParams xsi:type="astm:ActualParameterExpression">
+                  <value xsi:type="astm:BinaryExpression">
+                    <leftOperand xsi:type="astm:IdentifierReference">
+                      <name nameString="ob"/>
+                    </leftOperand>
+                    <rightOperand xsi:type="astm:IdentifierReference">
+                      <name nameString="TEdit"/>
+                    </rightOperand>
+                  </value>
+                </actualParams>
+                <actualParams xsi:type="astm:ActualParameterExpression">
+                  <value xsi:type="astm:StringLiteral" value="'Clase de objeto no v&#xfffd;lida en el campo fecha'"/>
+                </actualParams>
+              </expression>
+            </subStatements>
+            <subStatements xsi:type="astm:ExpressionStatement">
+              <expression xsi:type="astm:BinaryExpression">
+                <operator xsi:type="astm:Assign"/>
+                <leftOperand xsi:type="astm:IdentifierReference">
+                  <name nameString="ed"/>
+                </leftOperand>
+                <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+                  <calledFunction xsi:type="astm:IdentifierReference">
+                    <name nameString="TEdit"/>
+                  </calledFunction>
+                </rightOperand>
+              </expression>
+            </subStatements>
+            <subStatements xsi:type="astm:TryStatement">
+              <guardedStatement xsi:type="astm:IfStatement">
+                <condition xsi:type="astm:BinaryExpression">
+                  <leftOperand xsi:type="astm:QualifiedOverData">
+                    <name nameString="ed"/>
+                  </leftOperand>
+                  <rightOperand xsi:type="astm:StringLiteral" value="''"/>
+                </condition>
+                <thenBody xsi:type="astm:ExpressionStatement">
+                  <expression xsi:type="astm:FunctionCallExpression">
+                    <calledFunction xsi:type="astm:IdentifierReference">
+                      <name nameString="StrToDate"/>
+                    </calledFunction>
+                    <actualParams xsi:type="astm:ActualParameterExpression">
+                      <value xsi:type="astm:DelphiFunctionCallExpression">
+                        <calledFunction xsi:type="astm:IdentifierReference">
+                          <name nameString="Trim"/>
+                        </calledFunction>
+                      </value>
+                    </actualParams>
+                  </expression>
+                </thenBody>
+              </guardedStatement>
+            </subStatements>
+          </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
           <identifierName nameString="TNumber"/>
-          <body xsi:type="astm:DelphiBlockStatement"/>
+          <body xsi:type="astm:DelphiBlockStatement">
+            <subStatements xsi:type="astm:ExpressionStatement">
+              <expression xsi:type="astm:BinaryExpression">
+                <operator xsi:type="astm:Assign"/>
+                <leftOperand xsi:type="astm:IdentifierReference">
+                  <name nameString="Result"/>
+                </leftOperand>
+                <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+                  <calledFunction xsi:type="astm:IdentifierReference">
+                    <name nameString="AnsiReplaceText"/>
+                  </calledFunction>
+                </rightOperand>
+              </expression>
+            </subStatements>
+          </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
           <identifierName nameString="TNumber"/>
-          <body xsi:type="astm:DelphiBlockStatement"/>
+          <body xsi:type="astm:DelphiBlockStatement">
+            <subStatements xsi:type="astm:ExpressionStatement">
+              <expression xsi:type="astm:BinaryExpression">
+                <operator xsi:type="astm:Assign"/>
+                <leftOperand xsi:type="astm:IdentifierReference">
+                  <name nameString="Result"/>
+                </leftOperand>
+                <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+                  <calledFunction xsi:type="astm:IdentifierReference">
+                    <name nameString="FloatSql"/>
+                  </calledFunction>
+                  <actualParams xsi:type="astm:ActualParameterExpression">
+                    <value xsi:type="astm:DelphiFunctionCallExpression">
+                      <calledFunction xsi:type="astm:IdentifierReference">
+                        <name nameString="FloatToStr"/>
+                      </calledFunction>
+                    </value>
+                  </actualParams>
+                </rightOperand>
+              </expression>
+            </subStatements>
+          </body>
         </fragments>
       </implementation>
     </files>
   </astm:Project>
-  <astm:TryStatement>
-    <guardedStatement xsi:type="astm:IfStatement">
-      <condition xsi:type="astm:BinaryExpression">
-        <rightOperand xsi:type="astm:StringLiteral" value="''"/>
-      </condition>
-    </guardedStatement>
-  </astm:TryStatement>
   <astm:TypeDefinition>
     <name nameString="TFecha"/>
   </astm:TypeDefinition>

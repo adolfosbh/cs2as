@@ -65,7 +65,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getCSTrace()
 	 * @generated
 	 */
-	int CS_TRACE = 140;
+	int CS_TRACE = 141;
 
 		/**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -5721,6 +5721,97 @@ public interface DelphiPackage extends EPackage
   int MULT_EXP_FEATURE_COUNT = TERM_FEATURE_COUNT + 3;
 
   /**
+	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.simpleFactorImpl <em>simple Factor</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see org.xtext.example.delphi.delphi.impl.simpleFactorImpl
+	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getsimpleFactor()
+	 * @generated
+	 */
+  int SIMPLE_FACTOR = 127;
+
+  /**
+	 * The feature id for the '<em><b>Ast</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_FACTOR__AST = FACTOR__AST;
+
+		/**
+	 * The feature id for the '<em><b>Designator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SIMPLE_FACTOR__DESIGNATOR = FACTOR__DESIGNATOR;
+
+  /**
+	 * The feature id for the '<em><b>Exp List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SIMPLE_FACTOR__EXP_LIST = FACTOR__EXP_LIST;
+
+  /**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SIMPLE_FACTOR__NUMBER = FACTOR__NUMBER;
+
+  /**
+	 * The feature id for the '<em><b>String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SIMPLE_FACTOR__STRING = FACTOR__STRING;
+
+  /**
+	 * The feature id for the '<em><b>Exp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SIMPLE_FACTOR__EXP = FACTOR__EXP;
+
+  /**
+	 * The feature id for the '<em><b>Set Constuctor</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SIMPLE_FACTOR__SET_CONSTUCTOR = FACTOR__SET_CONSTUCTOR;
+
+  /**
+	 * The feature id for the '<em><b>Type Ref</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SIMPLE_FACTOR__TYPE_REF = FACTOR__TYPE_REF;
+
+  /**
+	 * The number of structural features of the '<em>simple Factor</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SIMPLE_FACTOR_FEATURE_COUNT = FACTOR_FEATURE_COUNT + 0;
+
+  /**
 	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.adOpImpl <em>ad Op</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5728,7 +5819,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getadOp()
 	 * @generated
 	 */
-  int AD_OP = 127;
+  int AD_OP = 128;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -5765,7 +5856,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getassignmentStmnt()
 	 * @generated
 	 */
-  int ASSIGNMENT_STMNT = 128;
+  int ASSIGNMENT_STMNT = 129;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -5820,7 +5911,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getcallStmnt()
 	 * @generated
 	 */
-  int CALL_STMNT = 129;
+  int CALL_STMNT = 130;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -5866,7 +5957,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getinheritedStamnt()
 	 * @generated
 	 */
-  int INHERITED_STAMNT = 130;
+  int INHERITED_STAMNT = 131;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -5894,7 +5985,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getgotoStmnt()
 	 * @generated
 	 */
-  int GOTO_STMNT = 131;
+  int GOTO_STMNT = 132;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -5931,7 +6022,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getparameterList()
 	 * @generated
 	 */
-  int PARAMETER_LIST = 132;
+  int PARAMETER_LIST = 133;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -5977,7 +6068,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getparameterSimple()
 	 * @generated
 	 */
-  int PARAMETER_SIMPLE = 133;
+  int PARAMETER_SIMPLE = 134;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -6032,7 +6123,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getMultipleId()
 	 * @generated
 	 */
-  int MULTIPLE_ID = 134;
+  int MULTIPLE_ID = 135;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -6069,7 +6160,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getReservedId()
 	 * @generated
 	 */
-  int RESERVED_ID = 135;
+  int RESERVED_ID = 136;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -6106,7 +6197,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getMineID()
 	 * @generated
 	 */
-  int MINE_ID = 136;
+  int MINE_ID = 137;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -6152,7 +6243,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getConstExp()
 	 * @generated
 	 */
-  int CONST_EXP = 137;
+  int CONST_EXP = 138;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -6189,7 +6280,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getMultipleConstExp()
 	 * @generated
 	 */
-  int MULTIPLE_CONST_EXP = 138;
+  int MULTIPLE_CONST_EXP = 139;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -6226,7 +6317,7 @@ public interface DelphiPackage extends EPackage
 	 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getRecordConstExp()
 	 * @generated
 	 */
-  int RECORD_CONST_EXP = 139;
+  int RECORD_CONST_EXP = 140;
 
   /**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
@@ -9760,6 +9851,16 @@ public interface DelphiPackage extends EPackage
   EReference getmultExp_Right();
 
   /**
+	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.simpleFactor <em>simple Factor</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>simple Factor</em>'.
+	 * @see org.xtext.example.delphi.delphi.simpleFactor
+	 * @generated
+	 */
+  EClass getsimpleFactor();
+
+  /**
 	 * Returns the meta object for class '{@link org.xtext.example.delphi.delphi.adOp <em>ad Op</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -13013,6 +13114,16 @@ public interface DelphiPackage extends EPackage
 		 * @generated
 		 */
     EReference MULT_EXP__RIGHT = eINSTANCE.getmultExp_Right();
+
+    /**
+		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.simpleFactorImpl <em>simple Factor</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see org.xtext.example.delphi.delphi.impl.simpleFactorImpl
+		 * @see org.xtext.example.delphi.delphi.impl.DelphiPackageImpl#getsimpleFactor()
+		 * @generated
+		 */
+    EClass SIMPLE_FACTOR = eINSTANCE.getsimpleFactor();
 
     /**
 		 * The meta object literal for the '{@link org.xtext.example.delphi.delphi.impl.adOpImpl <em>ad Op</em>}' class.

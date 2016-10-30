@@ -269,15 +269,17 @@ term
 	;
 
 factor 
-	: {factor} (designator=designator ('(' expList=exprList ')')?
-   	|	'@' designator=designator
+	:  
+	designator=designator '(' expList=exprList ')'
+	| {simpleFactor} designator=designator
+   	|	'@' {simpleFactor} designator=designator
     	|	number=number
     	|	string=string
-    	|	'nil'
+    	|	{factor} 'nil'
     	|	'(' exp=expression ')'
     	|	'not'  exp= factor
     	|	setConstuctor=setConstructor
-    	|	typeRef=typeId '(' exp=expression ')')
+    	|	typeRef=typeId '(' exp=expression ')'
 	;
 
 relOp 

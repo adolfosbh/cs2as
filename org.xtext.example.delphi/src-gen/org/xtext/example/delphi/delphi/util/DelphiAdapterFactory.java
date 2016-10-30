@@ -581,6 +581,10 @@ public class DelphiAdapterFactory extends AdapterFactoryImpl
 				return createmultExpAdapter();
 			}
 			@Override
+			public Adapter casesimpleFactor(simpleFactor object) {
+				return createsimpleFactorAdapter();
+			}
+			@Override
 			public Adapter caseadOp(adOp object) {
 				return createadOpAdapter();
 			}
@@ -2558,6 +2562,21 @@ public class DelphiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createmultExpAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.delphi.delphi.simpleFactor <em>simple Factor</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.delphi.delphi.simpleFactor
+	 * @generated
+	 */
+  public Adapter createsimpleFactorAdapter()
   {
 		return null;
 	}

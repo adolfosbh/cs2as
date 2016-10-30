@@ -435,6 +435,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Delphi.ecore#//multExp/multOp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Delphi.ecore#//multExp/right"/>
     </genClasses>
+    <genClasses ecoreClass="Delphi.ecore#//simpleFactor"/>
     <genClasses ecoreClass="Delphi.ecore#//adOp">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Delphi.ecore#//adOp/op"/>
     </genClasses>

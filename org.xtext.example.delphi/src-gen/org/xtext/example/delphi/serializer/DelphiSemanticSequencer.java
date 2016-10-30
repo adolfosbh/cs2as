@@ -112,6 +112,7 @@ import org.xtext.example.delphi.delphi.reservedWord;
 import org.xtext.example.delphi.delphi.setConstructor;
 import org.xtext.example.delphi.delphi.setElement;
 import org.xtext.example.delphi.delphi.setType;
+import org.xtext.example.delphi.delphi.simpleFactor;
 import org.xtext.example.delphi.delphi.statement;
 import org.xtext.example.delphi.delphi.stmtList;
 import org.xtext.example.delphi.delphi.stringType;
@@ -444,6 +445,9 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case DelphiPackage.SET_TYPE:
 				sequence_setType(context, (setType) semanticObject); 
+				return; 
+			case DelphiPackage.SIMPLE_FACTOR:
+				sequence_factor(context, (simpleFactor) semanticObject); 
 				return; 
 			case DelphiPackage.STATEMENT:
 				sequence_statement(context, (statement) semanticObject); 
@@ -1036,8 +1040,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *
 	 * Constraint:
 	 *     (
-	 *         (designator=designator expList=exprList?) | 
-	 *         designator=designator | 
+	 *         (designator=designator expList=exprList) | 
 	 *         number=number | 
 	 *         string=string | 
 	 *         exp=expression | 
@@ -1047,6 +1050,24 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     )?
 	 */
 	protected void sequence_factor(ISerializationContext context, factor semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     expression returns simpleFactor
+	 *     expression.relExp_1_0 returns simpleFactor
+	 *     simpleExpression returns simpleFactor
+	 *     simpleExpression.addExp_2_0 returns simpleFactor
+	 *     term returns simpleFactor
+	 *     term.multExp_1_0 returns simpleFactor
+	 *     factor returns simpleFactor
+	 *
+	 * Constraint:
+	 *     (designator=designator | designator=designator)
+	 */
+	protected void sequence_factor(ISerializationContext context, simpleFactor semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

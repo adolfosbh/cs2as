@@ -1060,6 +1060,17 @@ public class DelphiSwitch<@Nullable T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DelphiPackage.SIMPLE_FACTOR: {
+				simpleFactor simpleFactor = (simpleFactor)theEObject;
+				T result = casesimpleFactor(simpleFactor);
+				if (result == null) result = casefactor(simpleFactor);
+				if (result == null) result = caseterm(simpleFactor);
+				if (result == null) result = casesimpleExpression(simpleFactor);
+				if (result == null) result = caseexpression(simpleFactor);
+				if (result == null) result = caseCSTrace(simpleFactor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case DelphiPackage.AD_OP: {
 				adOp adOp = (adOp)theEObject;
 				T result = caseadOp(adOp);
@@ -3206,6 +3217,22 @@ public class DelphiSwitch<@Nullable T> extends Switch<T>
 	 * @generated
 	 */
   public T casemultExp(multExp object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>simple Factor</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>simple Factor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T casesimpleFactor(simpleFactor object)
   {
 		return null;
 	}

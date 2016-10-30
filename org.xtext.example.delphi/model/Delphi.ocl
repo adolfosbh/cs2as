@@ -123,25 +123,24 @@ as::astm::FunctionDefinition {
 context block
 def : ast() : as::astm::DelphiBlockStatement =
 as::astm::DelphiBlockStatement {
-	declarations = declSect?.getFragments(), 
+	declarations = declSect?.getFragments(),
 subStatements = compound.stamtList.statments.ast() 
 }
 
-context unlabelledStatement
-def : ast() : as::astm::Statement =
-	null -- to be overriden
-	
 context statement
 def : ast() : as::astm::Statement =
 	self.statement.ast()
+	
+context unlabelledStatement
+def : ast() : as::astm::Statement =
+	null -- to be overriden
 
 context assignmentStmnt
 def : ast() : as::astm::ExpressionStatement =
 as::astm::ExpressionStatement {
 	expression = astm::BinaryExpression {
 				leftOperand = self.designator.ast(),
-				operator = astm::Assign {
-						},
+				operator = astm::Assign {},
 				rightOperand = exp.ast()
 			} 
 }
@@ -230,6 +229,9 @@ context mulOp
 def : ast() : as::astm::BinaryExpression =
 as::astm::BinaryExpression {
 	}
+context simpleFactor
+def : ast() : as::astm::Expression =
+	self.designator.ast()
 context factor
 def : ast() : as::astm::Expression =
 if isANumber()
@@ -247,7 +249,7 @@ else
 			calledFunction = self.designator.ast(), 
 		actualParams = expList.createActualParams()
 		}
-		else
+		else 
 			invalid
 		endif
 	endif

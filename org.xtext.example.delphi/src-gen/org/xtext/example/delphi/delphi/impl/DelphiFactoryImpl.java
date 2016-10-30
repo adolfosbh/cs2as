@@ -188,6 +188,7 @@ public class DelphiFactoryImpl extends EFactoryImpl implements DelphiFactory
 			case DelphiPackage.REL_EXP: return createrelExp();
 			case DelphiPackage.ADD_EXP: return createaddExp();
 			case DelphiPackage.MULT_EXP: return createmultExp();
+			case DelphiPackage.SIMPLE_FACTOR: return createsimpleFactor();
 			case DelphiPackage.AD_OP: return createadOp();
 			case DelphiPackage.ASSIGNMENT_STMNT: return createassignmentStmnt();
 			case DelphiPackage.CALL_STMNT: return createcallStmnt();
@@ -1601,6 +1602,17 @@ public class DelphiFactoryImpl extends EFactoryImpl implements DelphiFactory
   {
 		multExpImpl multExp = new multExpImpl();
 		return multExp;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public simpleFactor createsimpleFactor()
+  {
+		simpleFactorImpl simpleFactor = new simpleFactorImpl();
+		return simpleFactor;
 	}
 
   /**

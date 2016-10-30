@@ -586,6 +586,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//factor"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="simpleFactor" eSuperTypes="#//factor"/>
   <eClassifiers xsi:type="ecore:EClass" name="adOp" eSuperTypes="#//addOp">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

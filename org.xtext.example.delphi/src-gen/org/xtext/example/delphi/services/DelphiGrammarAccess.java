@@ -47,10 +47,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cUnitParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//file:
-		//	program
-		//	| packageDecl
-		//	| library
-		//	| unit;
+		//	program | packageDecl | library | unit;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//program | packageDecl | library | unit
@@ -348,9 +345,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLibraryKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
 		//portabilityDirective:
-		//	'platform'
-		//	| 'deprecated'
-		//	| 'library';
+		//	'platform' | 'deprecated' | 'library';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'platform' | 'deprecated' | 'library'
@@ -409,10 +404,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExportedHeadingParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//interfaceDecl:
-		//	constSection
-		//	| typeSection
-		//	| varSection
-		//	| exportedHeading;
+		//	constSection | typeSection | varSection | exportedHeading;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//constSection | typeSection | varSection | exportedHeading
@@ -447,8 +439,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDirectiveDirectiveParserRuleCall_1_2_0 = (RuleCall)cDirectiveAssignment_1_2.eContents().get(0);
 		
 		//exportedHeading:
-		//	pHeading=procedureHeading ';' directive=directive?
-		//	| fHeading=functionHeading ';' directive=directive?;
+		//	pHeading=procedureHeading ';' directive=directive? | fHeading=functionHeading ';' directive=directive?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//pHeading=procedureHeading ';' directive=directive? | fHeading=functionHeading ';' directive=directive?
@@ -697,11 +688,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cProcedureDeclSectionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//declSection:
-		//	labelDeclSection
-		//	| constSection
-		//	| typeSection
-		//	| varSection
-		//	| procedureDeclSection;
+		//	labelDeclSection | constSection | typeSection | varSection | procedureDeclSection;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//labelDeclSection | constSection | typeSection | varSection | procedureDeclSection
@@ -804,8 +791,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPortPortabilityDirectiveParserRuleCall_1_5_0 = (RuleCall)cPortAssignment_1_5.eContents().get(0);
 		
 		//constantDecl:
-		//	id=ident '=' const=constExpr port=portabilityDirective?
-		//	| id=ident ':' typeRef=typeId '=' typedConstat=typedConstant port=portabilityDirective?;
+		//	id=ident '=' const=constExpr port=portabilityDirective? | id=ident ':' typeRef=typeId '=' typedConstat=typedConstant
+		//	port=portabilityDirective?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//id=ident '=' const=constExpr port=portabilityDirective? | id=ident ':' typeRef=typeId '=' typedConstat=typedConstant
@@ -927,8 +914,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPortPortabilityDirectiveParserRuleCall_1_4_0 = (RuleCall)cPortAssignment_1_4.eContents().get(0);
 		
 		//typeDecl:
-		//	id=ident '=' 'type'? type=type port=portabilityDirective?
-		//	| id=ident '=' 'type'? restrictedType=restrictedType port=portabilityDirective?;
+		//	id=ident '=' 'type'? type=type port=portabilityDirective? | id=ident '=' 'type'? restrictedType=restrictedType
+		//	port=portabilityDirective?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//id=ident '=' 'type'? type=type port=portabilityDirective? | id=ident '=' 'type'? restrictedType=restrictedType
@@ -1146,14 +1133,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cClassRefTypeParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//type:
-		//	typeId
-		//	| simpleType
-		//	| strucType
-		//	| pointerType
-		//	| stringType
-		//	| procedureType
-		//	| variantType
-		//	| classRefType;
+		//	typeId | simpleType | strucType | pointerType | stringType | procedureType | variantType | classRefType;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//typeId | simpleType | strucType | pointerType | stringType | procedureType | variantType | classRefType
@@ -1191,9 +1171,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInterfaceTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//restrictedType:
-		//	objectType
-		//	| classType
-		//	| interfaceType;
+		//	objectType | classType | interfaceType;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//objectType | classType | interfaceType
@@ -1242,8 +1220,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRealTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//simpleType:
-		//	ordinalType
-		//	| realType;
+		//	ordinalType | realType;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ordinalType | realType
@@ -1269,13 +1246,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCompKeyword_1_6 = (Keyword)cAlternatives_1.eContents().get(6);
 		
 		//realType:
-		//	{realType} ('real48'
-		//	| 'real'
-		//	| 'single'
-		//	| 'double'
-		//	| 'extended'
-		//	| 'currency'
-		//	| 'comp');
+		//	{realType} ('real48' | 'real' | 'single' | 'double' | 'extended' | 'currency' | 'comp');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{realType} ('real48' | 'real' | 'single' | 'double' | 'extended' | 'currency' | 'comp')
@@ -1316,9 +1287,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOrdIdentParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//ordinalType:
-		//	subrangeType
-		//	| enumeratedType
-		//	| ordIdent;
+		//	subrangeType | enumeratedType | ordIdent;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//subrangeType | enumeratedType | ordIdent
@@ -1352,18 +1321,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPcharKeyword_1_11 = (Keyword)cAlternatives_1.eContents().get(11);
 		
 		//ordIdent:
-		//	{ordIdent} ('shortint'
-		//	| 'smallint'
-		//	| 'integer'
-		//	| 'byte'
-		//	| 'longint'
-		//	| 'int64'
-		//	| 'word'
-		//	| 'boolean'
-		//	| 'char'
-		//	| 'widechar'
-		//	| 'longword'
-		//	| 'pchar');
+		//	{ordIdent} ('shortint' | 'smallint' | 'integer' | 'byte' | 'longint' | 'int64' | 'word' | 'boolean' | 'char' |
+		//	'widechar' | 'longword' | 'pchar');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ordIdent} ('shortint' | 'smallint' | 'integer' | 'byte' | 'longint' | 'int64' | 'word' | 'boolean' | 'char' |
@@ -1422,8 +1381,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cOlevariantKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		
 		//variantType:
-		//	{variantType} ('variant'
-		//	| 'olevariant');
+		//	{variantType} ('variant' | 'olevariant');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{variantType} ('variant' | 'olevariant')
@@ -1562,10 +1520,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_1_3_3 = (Keyword)cGroup_1_3.eContents().get(3);
 		
 		//stringType:
-		//	{stringType} ('string'
-		//	| 'ansistring'
-		//	| 'widestring'
-		//	| 'string' '(' constExp=constExpr ')');
+		//	{stringType} ('string' | 'ansistring' | 'widestring' | 'string' '(' constExp=constExpr ')');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{stringType} ('string' | 'ansistring' | 'widestring' | 'string' '(' constExp=constExpr ')')
@@ -2136,8 +2091,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//varDecl:
 		//	idList=identList ':' type=type ('absolute' (absId=ident | absConst=constExpr) | '=' absIniti=constExpr)?
-		//	portabilityDirective?
-		//	//	| 	identList ':' type ('absolute' (ident) | '=' constExpr)? (portabilityDirective)?
+		//	portabilityDirective? //	| 	identList ':' type ('absolute' (ident) | '=' constExpr)? (portabilityDirective)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -2330,173 +2284,182 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class FactorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.factor");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cFactorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
-		private final Assignment cDesignatorAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
-		private final RuleCall cDesignatorDesignatorParserRuleCall_1_0_0_0 = (RuleCall)cDesignatorAssignment_1_0_0.eContents().get(0);
-		private final Group cGroup_1_0_1 = (Group)cGroup_1_0.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1_0_1_0 = (Keyword)cGroup_1_0_1.eContents().get(0);
-		private final Assignment cExpListAssignment_1_0_1_1 = (Assignment)cGroup_1_0_1.eContents().get(1);
-		private final RuleCall cExpListExprListParserRuleCall_1_0_1_1_0 = (RuleCall)cExpListAssignment_1_0_1_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_0_1_2 = (Keyword)cGroup_1_0_1.eContents().get(2);
-		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
-		private final Keyword cCommercialAtKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
-		private final Assignment cDesignatorAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cDesignatorDesignatorParserRuleCall_1_1_1_0 = (RuleCall)cDesignatorAssignment_1_1_1.eContents().get(0);
-		private final Assignment cNumberAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
-		private final RuleCall cNumberNumberParserRuleCall_1_2_0 = (RuleCall)cNumberAssignment_1_2.eContents().get(0);
-		private final Assignment cStringAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
-		private final RuleCall cStringStringParserRuleCall_1_3_0 = (RuleCall)cStringAssignment_1_3.eContents().get(0);
-		private final Keyword cNilKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
-		private final Group cGroup_1_5 = (Group)cAlternatives_1.eContents().get(5);
-		private final Keyword cLeftParenthesisKeyword_1_5_0 = (Keyword)cGroup_1_5.eContents().get(0);
-		private final Assignment cExpAssignment_1_5_1 = (Assignment)cGroup_1_5.eContents().get(1);
-		private final RuleCall cExpExpressionParserRuleCall_1_5_1_0 = (RuleCall)cExpAssignment_1_5_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_5_2 = (Keyword)cGroup_1_5.eContents().get(2);
-		private final Group cGroup_1_6 = (Group)cAlternatives_1.eContents().get(6);
-		private final Keyword cNotKeyword_1_6_0 = (Keyword)cGroup_1_6.eContents().get(0);
-		private final Assignment cExpAssignment_1_6_1 = (Assignment)cGroup_1_6.eContents().get(1);
-		private final RuleCall cExpFactorParserRuleCall_1_6_1_0 = (RuleCall)cExpAssignment_1_6_1.eContents().get(0);
-		private final Assignment cSetConstuctorAssignment_1_7 = (Assignment)cAlternatives_1.eContents().get(7);
-		private final RuleCall cSetConstuctorSetConstructorParserRuleCall_1_7_0 = (RuleCall)cSetConstuctorAssignment_1_7.eContents().get(0);
-		private final Group cGroup_1_8 = (Group)cAlternatives_1.eContents().get(8);
-		private final Assignment cTypeRefAssignment_1_8_0 = (Assignment)cGroup_1_8.eContents().get(0);
-		private final RuleCall cTypeRefTypeIdParserRuleCall_1_8_0_0 = (RuleCall)cTypeRefAssignment_1_8_0.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1_8_1 = (Keyword)cGroup_1_8.eContents().get(1);
-		private final Assignment cExpAssignment_1_8_2 = (Assignment)cGroup_1_8.eContents().get(2);
-		private final RuleCall cExpExpressionParserRuleCall_1_8_2_0 = (RuleCall)cExpAssignment_1_8_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_8_3 = (Keyword)cGroup_1_8.eContents().get(3);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cDesignatorAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cDesignatorDesignatorParserRuleCall_0_0_0 = (RuleCall)cDesignatorAssignment_0_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cExpListAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cExpListExprListParserRuleCall_0_2_0 = (RuleCall)cExpListAssignment_0_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cSimpleFactorAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cDesignatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cDesignatorDesignatorParserRuleCall_1_1_0 = (RuleCall)cDesignatorAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cCommercialAtKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Action cSimpleFactorAction_2_1 = (Action)cGroup_2.eContents().get(1);
+		private final Assignment cDesignatorAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cDesignatorDesignatorParserRuleCall_2_2_0 = (RuleCall)cDesignatorAssignment_2_2.eContents().get(0);
+		private final Assignment cNumberAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cNumberNumberParserRuleCall_3_0 = (RuleCall)cNumberAssignment_3.eContents().get(0);
+		private final Assignment cStringAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cStringStringParserRuleCall_4_0 = (RuleCall)cStringAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Action cFactorAction_5_0 = (Action)cGroup_5.eContents().get(0);
+		private final Keyword cNilKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
+		private final Keyword cLeftParenthesisKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cExpAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cExpExpressionParserRuleCall_6_1_0 = (RuleCall)cExpAssignment_6_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
+		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
+		private final Keyword cNotKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cExpAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cExpFactorParserRuleCall_7_1_0 = (RuleCall)cExpAssignment_7_1.eContents().get(0);
+		private final Assignment cSetConstuctorAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
+		private final RuleCall cSetConstuctorSetConstructorParserRuleCall_8_0 = (RuleCall)cSetConstuctorAssignment_8.eContents().get(0);
+		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
+		private final Assignment cTypeRefAssignment_9_0 = (Assignment)cGroup_9.eContents().get(0);
+		private final RuleCall cTypeRefTypeIdParserRuleCall_9_0_0 = (RuleCall)cTypeRefAssignment_9_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cExpAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cExpExpressionParserRuleCall_9_2_0 = (RuleCall)cExpAssignment_9_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_9_3 = (Keyword)cGroup_9.eContents().get(3);
 		
 		//factor:
-		//	{factor} (designator=designator ('(' expList=exprList ')')?
-		//	| '@' designator=designator
-		//	| number=number
-		//	| string=string
-		//	| 'nil'
-		//	| '(' exp=expression ')'
-		//	| 'not' exp=factor
-		//	| setConstuctor=setConstructor
-		//	| typeRef=typeId '(' exp=expression ')');
+		//	designator=designator '(' expList=exprList ')' | {simpleFactor} designator=designator | '@' {simpleFactor}
+		//	designator=designator | number=number | string=string | {factor} 'nil' | '(' exp=expression ')' | 'not' exp=factor |
+		//	setConstuctor=setConstructor | typeRef=typeId '(' exp=expression ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{factor} (designator=designator ('(' expList=exprList ')')? | '@' designator=designator | number=number | string=string
-		//| 'nil' | '(' exp=expression ')' | 'not' exp=factor | setConstuctor=setConstructor | typeRef=typeId '(' exp=expression
-		//')')
-		public Group getGroup() { return cGroup; }
+		//designator=designator '(' expList=exprList ')' | {simpleFactor} designator=designator | '@' {simpleFactor}
+		//designator=designator | number=number | string=string | {factor} 'nil' | '(' exp=expression ')' | 'not' exp=factor |
+		//setConstuctor=setConstructor | typeRef=typeId '(' exp=expression ')'
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{factor}
-		public Action getFactorAction_0() { return cFactorAction_0; }
-		
-		//(designator=designator ('(' expList=exprList ')')? | '@' designator=designator | number=number | string=string | 'nil' |
-		//'(' exp=expression ')' | 'not' exp=factor | setConstuctor=setConstructor | typeRef=typeId '(' exp=expression ')')
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-		
-		//designator=designator ('(' expList=exprList ')')?
-		public Group getGroup_1_0() { return cGroup_1_0; }
+		//designator=designator '(' expList=exprList ')'
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//designator=designator
-		public Assignment getDesignatorAssignment_1_0_0() { return cDesignatorAssignment_1_0_0; }
+		public Assignment getDesignatorAssignment_0_0() { return cDesignatorAssignment_0_0; }
 		
 		//designator
-		public RuleCall getDesignatorDesignatorParserRuleCall_1_0_0_0() { return cDesignatorDesignatorParserRuleCall_1_0_0_0; }
-		
-		//('(' expList=exprList ')')?
-		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
+		public RuleCall getDesignatorDesignatorParserRuleCall_0_0_0() { return cDesignatorDesignatorParserRuleCall_0_0_0; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_1_0_1_0() { return cLeftParenthesisKeyword_1_0_1_0; }
+		public Keyword getLeftParenthesisKeyword_0_1() { return cLeftParenthesisKeyword_0_1; }
 		
 		//expList=exprList
-		public Assignment getExpListAssignment_1_0_1_1() { return cExpListAssignment_1_0_1_1; }
+		public Assignment getExpListAssignment_0_2() { return cExpListAssignment_0_2; }
 		
 		//exprList
-		public RuleCall getExpListExprListParserRuleCall_1_0_1_1_0() { return cExpListExprListParserRuleCall_1_0_1_1_0; }
+		public RuleCall getExpListExprListParserRuleCall_0_2_0() { return cExpListExprListParserRuleCall_0_2_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_1_0_1_2() { return cRightParenthesisKeyword_1_0_1_2; }
+		public Keyword getRightParenthesisKeyword_0_3() { return cRightParenthesisKeyword_0_3; }
 		
-		//'@' designator=designator
-		public Group getGroup_1_1() { return cGroup_1_1; }
+		//{simpleFactor} designator=designator
+		public Group getGroup_1() { return cGroup_1; }
 		
-		//'@'
-		public Keyword getCommercialAtKeyword_1_1_0() { return cCommercialAtKeyword_1_1_0; }
+		//{simpleFactor}
+		public Action getSimpleFactorAction_1_0() { return cSimpleFactorAction_1_0; }
 		
 		//designator=designator
-		public Assignment getDesignatorAssignment_1_1_1() { return cDesignatorAssignment_1_1_1; }
+		public Assignment getDesignatorAssignment_1_1() { return cDesignatorAssignment_1_1; }
 		
 		//designator
-		public RuleCall getDesignatorDesignatorParserRuleCall_1_1_1_0() { return cDesignatorDesignatorParserRuleCall_1_1_1_0; }
+		public RuleCall getDesignatorDesignatorParserRuleCall_1_1_0() { return cDesignatorDesignatorParserRuleCall_1_1_0; }
+		
+		//'@' {simpleFactor} designator=designator
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'@'
+		public Keyword getCommercialAtKeyword_2_0() { return cCommercialAtKeyword_2_0; }
+		
+		//{simpleFactor}
+		public Action getSimpleFactorAction_2_1() { return cSimpleFactorAction_2_1; }
+		
+		//designator=designator
+		public Assignment getDesignatorAssignment_2_2() { return cDesignatorAssignment_2_2; }
+		
+		//designator
+		public RuleCall getDesignatorDesignatorParserRuleCall_2_2_0() { return cDesignatorDesignatorParserRuleCall_2_2_0; }
 		
 		//number=number
-		public Assignment getNumberAssignment_1_2() { return cNumberAssignment_1_2; }
+		public Assignment getNumberAssignment_3() { return cNumberAssignment_3; }
 		
 		//number
-		public RuleCall getNumberNumberParserRuleCall_1_2_0() { return cNumberNumberParserRuleCall_1_2_0; }
+		public RuleCall getNumberNumberParserRuleCall_3_0() { return cNumberNumberParserRuleCall_3_0; }
 		
 		//string=string
-		public Assignment getStringAssignment_1_3() { return cStringAssignment_1_3; }
+		public Assignment getStringAssignment_4() { return cStringAssignment_4; }
 		
 		//string
-		public RuleCall getStringStringParserRuleCall_1_3_0() { return cStringStringParserRuleCall_1_3_0; }
+		public RuleCall getStringStringParserRuleCall_4_0() { return cStringStringParserRuleCall_4_0; }
+		
+		//{factor} 'nil'
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//{factor}
+		public Action getFactorAction_5_0() { return cFactorAction_5_0; }
 		
 		//'nil'
-		public Keyword getNilKeyword_1_4() { return cNilKeyword_1_4; }
+		public Keyword getNilKeyword_5_1() { return cNilKeyword_5_1; }
 		
 		//'(' exp=expression ')'
-		public Group getGroup_1_5() { return cGroup_1_5; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_1_5_0() { return cLeftParenthesisKeyword_1_5_0; }
+		public Keyword getLeftParenthesisKeyword_6_0() { return cLeftParenthesisKeyword_6_0; }
 		
 		//exp=expression
-		public Assignment getExpAssignment_1_5_1() { return cExpAssignment_1_5_1; }
+		public Assignment getExpAssignment_6_1() { return cExpAssignment_6_1; }
 		
 		//expression
-		public RuleCall getExpExpressionParserRuleCall_1_5_1_0() { return cExpExpressionParserRuleCall_1_5_1_0; }
+		public RuleCall getExpExpressionParserRuleCall_6_1_0() { return cExpExpressionParserRuleCall_6_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_1_5_2() { return cRightParenthesisKeyword_1_5_2; }
+		public Keyword getRightParenthesisKeyword_6_2() { return cRightParenthesisKeyword_6_2; }
 		
 		//'not' exp=factor
-		public Group getGroup_1_6() { return cGroup_1_6; }
+		public Group getGroup_7() { return cGroup_7; }
 		
 		//'not'
-		public Keyword getNotKeyword_1_6_0() { return cNotKeyword_1_6_0; }
+		public Keyword getNotKeyword_7_0() { return cNotKeyword_7_0; }
 		
 		//exp=factor
-		public Assignment getExpAssignment_1_6_1() { return cExpAssignment_1_6_1; }
+		public Assignment getExpAssignment_7_1() { return cExpAssignment_7_1; }
 		
 		//factor
-		public RuleCall getExpFactorParserRuleCall_1_6_1_0() { return cExpFactorParserRuleCall_1_6_1_0; }
+		public RuleCall getExpFactorParserRuleCall_7_1_0() { return cExpFactorParserRuleCall_7_1_0; }
 		
 		//setConstuctor=setConstructor
-		public Assignment getSetConstuctorAssignment_1_7() { return cSetConstuctorAssignment_1_7; }
+		public Assignment getSetConstuctorAssignment_8() { return cSetConstuctorAssignment_8; }
 		
 		//setConstructor
-		public RuleCall getSetConstuctorSetConstructorParserRuleCall_1_7_0() { return cSetConstuctorSetConstructorParserRuleCall_1_7_0; }
+		public RuleCall getSetConstuctorSetConstructorParserRuleCall_8_0() { return cSetConstuctorSetConstructorParserRuleCall_8_0; }
 		
 		//typeRef=typeId '(' exp=expression ')'
-		public Group getGroup_1_8() { return cGroup_1_8; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//typeRef=typeId
-		public Assignment getTypeRefAssignment_1_8_0() { return cTypeRefAssignment_1_8_0; }
+		public Assignment getTypeRefAssignment_9_0() { return cTypeRefAssignment_9_0; }
 		
 		//typeId
-		public RuleCall getTypeRefTypeIdParserRuleCall_1_8_0_0() { return cTypeRefTypeIdParserRuleCall_1_8_0_0; }
+		public RuleCall getTypeRefTypeIdParserRuleCall_9_0_0() { return cTypeRefTypeIdParserRuleCall_9_0_0; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_1_8_1() { return cLeftParenthesisKeyword_1_8_1; }
+		public Keyword getLeftParenthesisKeyword_9_1() { return cLeftParenthesisKeyword_9_1; }
 		
 		//exp=expression
-		public Assignment getExpAssignment_1_8_2() { return cExpAssignment_1_8_2; }
+		public Assignment getExpAssignment_9_2() { return cExpAssignment_9_2; }
 		
 		//expression
-		public RuleCall getExpExpressionParserRuleCall_1_8_2_0() { return cExpExpressionParserRuleCall_1_8_2_0; }
+		public RuleCall getExpExpressionParserRuleCall_9_2_0() { return cExpExpressionParserRuleCall_9_2_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_1_8_3() { return cRightParenthesisKeyword_1_8_3; }
+		public Keyword getRightParenthesisKeyword_9_3() { return cRightParenthesisKeyword_9_3; }
 	}
 	public class RelOpElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.delphi.Delphi.relOp");
@@ -2515,15 +2478,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cOpAsKeyword_1_0_8 = (Keyword)cOpAlternatives_1_0.eContents().get(8);
 		
 		//relOp:
-		//	{relOp} op=('='
-		//	| '>'
-		//	| '<'
-		//	| '<='
-		//	| '>='
-		//	| '<>'
-		//	| 'in'
-		//	| 'is'
-		//	| 'as');
+		//	{relOp} op=('=' | '>' | '<' | '<=' | '>=' | '<>' | 'in' | 'is' | 'as');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{relOp} op=('=' | '>' | '<' | '<=' | '>=' | '<>' | 'in' | 'is' | 'as')
@@ -2577,10 +2532,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cOpXorKeyword_1_0_3 = (Keyword)cOpAlternatives_1_0.eContents().get(3);
 		
 		//addOp:
-		//	{adOp} op=('+'
-		//	| '-'
-		//	| 'or'
-		//	| 'xor');
+		//	{adOp} op=('+' | '-' | 'or' | 'xor');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{adOp} op=('+' | '-' | 'or' | 'xor')
@@ -2622,13 +2574,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cOpShrKeyword_1_0_6 = (Keyword)cOpAlternatives_1_0.eContents().get(6);
 		
 		//mulOp:
-		//	{mulOp} op=('*'
-		//	| '/'
-		//	| 'div'
-		//	| 'mod'
-		//	| 'and'
-		//	| 'shl'
-		//	| 'shr');
+		//	{mulOp} op=('*' | '/' | 'div' | 'mod' | 'and' | 'shl' | 'shr');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{mulOp} op=('*' | '/' | 'div' | 'mod' | 'and' | 'shl' | 'shr')
@@ -2767,9 +2713,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//designatorPart // modified
 		//:
-		//	id=ID
-		//	| '&' reservedWord=reservedWord
-		//	| id=ID '(' id2=ID '^' ')' // mine
+		//	id=ID | '&' reservedWord=reservedWord | id=ID '(' id2=ID '^' ')' // mine
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -3051,10 +2995,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLabelLabelIdParserRuleCall_3_2_0 = (RuleCall)cLabelAssignment_3_2.eContents().get(0);
 		
 		//simpleStatement:
-		//	{assignmentStmnt} designator=designator operator=':=' exp=expression
-		//	| {callStmnt} designator=designator ('(' args=exprList ')')?
-		//	| {inheritedStamnt} 'inherited'
-		//	| {gotoStmnt} 'goto' label=labelId;
+		//	{assignmentStmnt} designator=designator operator=':=' exp=expression | {callStmnt} designator=designator ('('
+		//	args=exprList ')')? | {inheritedStamnt} 'inherited' | {gotoStmnt} 'goto' label=labelId;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{assignmentStmnt} designator=designator operator=':=' exp=expression | {callStmnt} designator=designator ('('
@@ -3148,13 +3090,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAssemblerStmtParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		//structStmt:
-		//	compoundStmt
-		//	| conditionalStmt
-		//	| loopStmt
-		//	| withStmt
-		//	| tryStmt
-		//	| raiseStmt
-		//	| assemblerStmt;
+		//	compoundStmt | conditionalStmt | loopStmt | withStmt | tryStmt | raiseStmt | assemblerStmt;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//compoundStmt | conditionalStmt | loopStmt | withStmt | tryStmt | raiseStmt | assemblerStmt
@@ -3215,8 +3151,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCaseStmtParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//conditionalStmt:
-		//	ifStmt
-		//	| caseStmt;
+		//	ifStmt | caseStmt;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ifStmt | caseStmt
@@ -3461,9 +3396,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cForStmtParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//loopStmt:
-		//	repeatStmt
-		//	| whileStmt
-		//	| forStmt;
+		//	repeatStmt | whileStmt | forStmt;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//repeatStmt | whileStmt | forStmt
@@ -3871,9 +3804,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAsmKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//assemblerStmt:
-		//	{assemblerStmt} 'asm'
-		//	//|	<assemblylanguage>
-		//	//	|	'end'
+		//	{assemblerStmt} 'asm' //|	<assemblylanguage>
+		// //	|	'end'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -3893,8 +3825,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFunctionDeclParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//procedureDeclSection:
-		//	procedureDecl
-		//	| functionDecl;
+		//	procedureDecl | functionDecl;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//procedureDecl | functionDecl
@@ -4201,13 +4132,17 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInitExpConstExprParserRuleCall_1_5_0 = (RuleCall)cInitExpAssignment_1_5.eContents().get(0);
 		
 		//parameter:
-		//	{parameterList} idList=identList (':' (('array' 'of')? type=type | 'file'))? // changed simpleType by type, deleted string alternative
-		//	| {parameterSimple} if=ident ':' type=type '=' initExp=constExpr // changed simpleType by type
+		//	{parameterList} idList=identList (':' (('array' 'of')? type=type | 'file'))?
+		//	// changed simpleType by type, deleted string alternative
+		// | {parameterSimple} if=ident ':' type=type '='
+		//	initExp=constExpr // changed simpleType by type
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{parameterList} idList=identList (':' (('array' 'of')? type=type | 'file'))? // changed simpleType by type, deleted string alternative
-		//| {parameterSimple} if=ident ':' type=type '=' initExp=constExpr
+		//{parameterList} idList=identList (':' (('array' 'of')? type=type | 'file'))?
+		//// changed simpleType by type, deleted string alternative
+		// | {parameterSimple} if=ident ':' type=type '='
+		//initExp=constExpr
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{parameterList} idList=identList (':' (('array' 'of')? type=type | 'file'))?
@@ -4328,25 +4263,9 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDirAbstractKeyword_18_0 = (Keyword)cDirAssignment_18.eContents().get(0);
 		
 		//directive:
-		//	dir='cdecl'
-		//	| dir='register'
-		//	| dir='dynamic'
-		//	| dir='virtual'
-		//	| dir='export'
-		//	| dir='external'
-		//	| dir='near'
-		//	| dir='far'
-		//	| dir='forward'
-		//	| dir='message' messageExp=constExpr
-		//	| dir='override'
-		//	| dir='overload'
-		//	| dir='pascal'
-		//	| dir='reintroduce'
-		//	| dir='safecall'
-		//	| dir='stdcall'
-		//	| dir='varargs'
-		//	| dir='local'
-		//	| dir='abstract';
+		//	dir='cdecl' | dir='register' | dir='dynamic' | dir='virtual' | dir='export' | dir='external' | dir='near' | dir='far'
+		//	| dir='forward' | dir='message' messageExp=constExpr | dir='override' | dir='overload' | dir='pascal' |
+		//	dir='reintroduce' | dir='safecall' | dir='stdcall' | dir='varargs' | dir='local' | dir='abstract';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//dir='cdecl' | dir='register' | dir='dynamic' | dir='virtual' | dir='export' | dir='external' | dir='near' | dir='far' |
@@ -4615,10 +4534,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDestructorHeadingParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//methodHeading:
-		//	procedureHeading
-		//	| functionHeading
-		//	| constructorHeading
-		//	| destructorHeading;
+		//	procedureHeading | functionHeading | constructorHeading | destructorHeading;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//procedureHeading | functionHeading | constructorHeading | destructorHeading
@@ -4755,9 +4671,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
 		
 		//initSection:
-		//	{initSection} ('initialization' stmtList=stmtList ('finalization' endStmtList=stmtList)? 'end'
-		//	| 'begin' stmtList=stmtList 'end'
-		//	| 'end');
+		//	{initSection} ('initialization' stmtList=stmtList ('finalization' endStmtList=stmtList)? 'end' | 'begin'
+		//	stmtList=stmtList 'end' | 'end');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{initSection} ('initialization' stmtList=stmtList ('finalization' endStmtList=stmtList)? 'end' | 'begin'
@@ -4913,10 +4828,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPublishedKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		
 		//classVisibility:
-		//	'public'
-		//	| 'protected'
-		//	| 'private'
-		//	| 'published';
+		//	'public' | 'protected' | 'private' | 'published';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'public' | 'protected' | 'private' | 'published'
@@ -5045,8 +4957,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPropListPropertyListParserRuleCall_1_1_0 = (RuleCall)cPropListAssignment_1_1.eContents().get(0);
 		
 		//classProperty:
-		//	visibility=classVisibility
-		//	| visibility=classVisibility? propList=propertyList;
+		//	visibility=classVisibility | visibility=classVisibility? propList=propertyList;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//visibility=classVisibility | visibility=classVisibility? propList=propertyList
@@ -5627,9 +5538,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ident // modified
 		//:
-		//	{MultipleId} id+=ID ('.' id+=ID)*
-		//	| {ReservedId} '&' reservedWord=reservedWord
-		//	| {MineID} first=ID '(' second=ID '^' ')' // mine
+		//	{MultipleId} id+=ID ('.' id+=ID)* | {ReservedId} '&' reservedWord=reservedWord | {MineID} first=ID '(' second=ID '^'
+		//	')' // mine
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -5746,11 +5656,10 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
 		
 		//// ASBH modified
-		//constExpr // modified
+		// constExpr // modified
 		//:
-		//	{ConstExp} exp=expression
-		//	| {MultipleConstExp} '(' exps+=constExpr (',' exps+=constExpr)* ')'
-		//	| {RecordConstExp} '(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')';
+		//	{ConstExp} exp=expression | {MultipleConstExp} '(' exps+=constExpr (',' exps+=constExpr)* ')' | {RecordConstExp} '('
+		//	exps+=recordConstExpr (',' exps+=recordConstExpr)* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ConstExp} exp=expression | {MultipleConstExp} '(' exps+=constExpr (',' exps+=constExpr)* ')' | {RecordConstExp} '('
@@ -5886,9 +5795,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//labelId // modified
 		//:
-		//	ID
-		//	| INT
-		//	| HEX;
+		//	ID | INT | HEX;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ID | INT | HEX
@@ -5912,8 +5819,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//number:
-		//	INT
-		//	| '#' INT;
+		//	INT | '#' INT;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//INT | '#' INT
@@ -5938,8 +5844,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDQVALUETerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//string:
-		//	QVALUE
-		//	| DQVALUE;
+		//	QVALUE | DQVALUE;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//QVALUE | DQVALUE
@@ -6278,10 +6183,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//file:
-	//	program
-	//	| packageDecl
-	//	| library
-	//	| unit;
+	//	program | packageDecl | library | unit;
 	public FileElements getFileAccess() {
 		return pFile;
 	}
@@ -6352,9 +6254,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//portabilityDirective:
-	//	'platform'
-	//	| 'deprecated'
-	//	| 'library';
+	//	'platform' | 'deprecated' | 'library';
 	public PortabilityDirectiveElements getPortabilityDirectiveAccess() {
 		return pPortabilityDirective;
 	}
@@ -6374,10 +6274,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//interfaceDecl:
-	//	constSection
-	//	| typeSection
-	//	| varSection
-	//	| exportedHeading;
+	//	constSection | typeSection | varSection | exportedHeading;
 	public InterfaceDeclElements getInterfaceDeclAccess() {
 		return pInterfaceDecl;
 	}
@@ -6387,8 +6284,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//exportedHeading:
-	//	pHeading=procedureHeading ';' directive=directive?
-	//	| fHeading=functionHeading ';' directive=directive?;
+	//	pHeading=procedureHeading ';' directive=directive? | fHeading=functionHeading ';' directive=directive?;
 	public ExportedHeadingElements getExportedHeadingAccess() {
 		return pExportedHeading;
 	}
@@ -6439,11 +6335,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//declSection:
-	//	labelDeclSection
-	//	| constSection
-	//	| typeSection
-	//	| varSection
-	//	| procedureDeclSection;
+	//	labelDeclSection | constSection | typeSection | varSection | procedureDeclSection;
 	public DeclSectionElements getDeclSectionAccess() {
 		return pDeclSection;
 	}
@@ -6473,8 +6365,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//constantDecl:
-	//	id=ident '=' const=constExpr port=portabilityDirective?
-	//	| id=ident ':' typeRef=typeId '=' typedConstat=typedConstant port=portabilityDirective?;
+	//	id=ident '=' const=constExpr port=portabilityDirective? | id=ident ':' typeRef=typeId '=' typedConstat=typedConstant
+	//	port=portabilityDirective?;
 	public ConstantDeclElements getConstantDeclAccess() {
 		return pConstantDecl;
 	}
@@ -6494,8 +6386,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//typeDecl:
-	//	id=ident '=' 'type'? type=type port=portabilityDirective?
-	//	| id=ident '=' 'type'? restrictedType=restrictedType port=portabilityDirective?;
+	//	id=ident '=' 'type'? type=type port=portabilityDirective? | id=ident '=' 'type'? restrictedType=restrictedType
+	//	port=portabilityDirective?;
 	public TypeDeclElements getTypeDeclAccess() {
 		return pTypeDecl;
 	}
@@ -6545,14 +6437,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//type:
-	//	typeId
-	//	| simpleType
-	//	| strucType
-	//	| pointerType
-	//	| stringType
-	//	| procedureType
-	//	| variantType
-	//	| classRefType;
+	//	typeId | simpleType | strucType | pointerType | stringType | procedureType | variantType | classRefType;
 	public TypeElements getTypeAccess() {
 		return pType;
 	}
@@ -6562,9 +6447,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//restrictedType:
-	//	objectType
-	//	| classType
-	//	| interfaceType;
+	//	objectType | classType | interfaceType;
 	public RestrictedTypeElements getRestrictedTypeAccess() {
 		return pRestrictedType;
 	}
@@ -6584,8 +6467,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//simpleType:
-	//	ordinalType
-	//	| realType;
+	//	ordinalType | realType;
 	public SimpleTypeElements getSimpleTypeAccess() {
 		return pSimpleType;
 	}
@@ -6595,13 +6477,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//realType:
-	//	{realType} ('real48'
-	//	| 'real'
-	//	| 'single'
-	//	| 'double'
-	//	| 'extended'
-	//	| 'currency'
-	//	| 'comp');
+	//	{realType} ('real48' | 'real' | 'single' | 'double' | 'extended' | 'currency' | 'comp');
 	public RealTypeElements getRealTypeAccess() {
 		return pRealType;
 	}
@@ -6611,9 +6487,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ordinalType:
-	//	subrangeType
-	//	| enumeratedType
-	//	| ordIdent;
+	//	subrangeType | enumeratedType | ordIdent;
 	public OrdinalTypeElements getOrdinalTypeAccess() {
 		return pOrdinalType;
 	}
@@ -6623,18 +6497,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ordIdent:
-	//	{ordIdent} ('shortint'
-	//	| 'smallint'
-	//	| 'integer'
-	//	| 'byte'
-	//	| 'longint'
-	//	| 'int64'
-	//	| 'word'
-	//	| 'boolean'
-	//	| 'char'
-	//	| 'widechar'
-	//	| 'longword'
-	//	| 'pchar');
+	//	{ordIdent} ('shortint' | 'smallint' | 'integer' | 'byte' | 'longint' | 'int64' | 'word' | 'boolean' | 'char' |
+	//	'widechar' | 'longword' | 'pchar');
 	public OrdIdentElements getOrdIdentAccess() {
 		return pOrdIdent;
 	}
@@ -6644,8 +6508,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//variantType:
-	//	{variantType} ('variant'
-	//	| 'olevariant');
+	//	{variantType} ('variant' | 'olevariant');
 	public VariantTypeElements getVariantTypeAccess() {
 		return pVariantType;
 	}
@@ -6685,10 +6548,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//stringType:
-	//	{stringType} ('string'
-	//	| 'ansistring'
-	//	| 'widestring'
-	//	| 'string' '(' constExp=constExpr ')');
+	//	{stringType} ('string' | 'ansistring' | 'widestring' | 'string' '(' constExp=constExpr ')');
 	public StringTypeElements getStringTypeAccess() {
 		return pStringType;
 	}
@@ -6819,8 +6679,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//varDecl:
 	//	idList=identList ':' type=type ('absolute' (absId=ident | absConst=constExpr) | '=' absIniti=constExpr)?
-	//	portabilityDirective?
-	//	//	| 	identList ':' type ('absolute' (ident) | '=' constExpr)? (portabilityDirective)?
+	//	portabilityDirective? //	| 	identList ':' type ('absolute' (ident) | '=' constExpr)? (portabilityDirective)?
 	//;
 	public VarDeclElements getVarDeclAccess() {
 		return pVarDecl;
@@ -6861,15 +6720,9 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//factor:
-	//	{factor} (designator=designator ('(' expList=exprList ')')?
-	//	| '@' designator=designator
-	//	| number=number
-	//	| string=string
-	//	| 'nil'
-	//	| '(' exp=expression ')'
-	//	| 'not' exp=factor
-	//	| setConstuctor=setConstructor
-	//	| typeRef=typeId '(' exp=expression ')');
+	//	designator=designator '(' expList=exprList ')' | {simpleFactor} designator=designator | '@' {simpleFactor}
+	//	designator=designator | number=number | string=string | {factor} 'nil' | '(' exp=expression ')' | 'not' exp=factor |
+	//	setConstuctor=setConstructor | typeRef=typeId '(' exp=expression ')';
 	public FactorElements getFactorAccess() {
 		return pFactor;
 	}
@@ -6879,15 +6732,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//relOp:
-	//	{relOp} op=('='
-	//	| '>'
-	//	| '<'
-	//	| '<='
-	//	| '>='
-	//	| '<>'
-	//	| 'in'
-	//	| 'is'
-	//	| 'as');
+	//	{relOp} op=('=' | '>' | '<' | '<=' | '>=' | '<>' | 'in' | 'is' | 'as');
 	public RelOpElements getRelOpAccess() {
 		return pRelOp;
 	}
@@ -6897,10 +6742,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//addOp:
-	//	{adOp} op=('+'
-	//	| '-'
-	//	| 'or'
-	//	| 'xor');
+	//	{adOp} op=('+' | '-' | 'or' | 'xor');
 	public AddOpElements getAddOpAccess() {
 		return pAddOp;
 	}
@@ -6910,13 +6752,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//mulOp:
-	//	{mulOp} op=('*'
-	//	| '/'
-	//	| 'div'
-	//	| 'mod'
-	//	| 'and'
-	//	| 'shl'
-	//	| 'shr');
+	//	{mulOp} op=('*' | '/' | 'div' | 'mod' | 'and' | 'shl' | 'shr');
 	public MulOpElements getMulOpAccess() {
 		return pMulOp;
 	}
@@ -6948,9 +6784,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//designatorPart // modified
 	//:
-	//	id=ID
-	//	| '&' reservedWord=reservedWord
-	//	| id=ID '(' id2=ID '^' ')' // mine
+	//	id=ID | '&' reservedWord=reservedWord | id=ID '(' id2=ID '^' ')' // mine
 	//;
 	public DesignatorPartElements getDesignatorPartAccess() {
 		return pDesignatorPart;
@@ -7022,10 +6856,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//simpleStatement:
-	//	{assignmentStmnt} designator=designator operator=':=' exp=expression
-	//	| {callStmnt} designator=designator ('(' args=exprList ')')?
-	//	| {inheritedStamnt} 'inherited'
-	//	| {gotoStmnt} 'goto' label=labelId;
+	//	{assignmentStmnt} designator=designator operator=':=' exp=expression | {callStmnt} designator=designator ('('
+	//	args=exprList ')')? | {inheritedStamnt} 'inherited' | {gotoStmnt} 'goto' label=labelId;
 	public SimpleStatementElements getSimpleStatementAccess() {
 		return pSimpleStatement;
 	}
@@ -7035,13 +6867,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//structStmt:
-	//	compoundStmt
-	//	| conditionalStmt
-	//	| loopStmt
-	//	| withStmt
-	//	| tryStmt
-	//	| raiseStmt
-	//	| assemblerStmt;
+	//	compoundStmt | conditionalStmt | loopStmt | withStmt | tryStmt | raiseStmt | assemblerStmt;
 	public StructStmtElements getStructStmtAccess() {
 		return pStructStmt;
 	}
@@ -7061,8 +6887,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//conditionalStmt:
-	//	ifStmt
-	//	| caseStmt;
+	//	ifStmt | caseStmt;
 	public ConditionalStmtElements getConditionalStmtAccess() {
 		return pConditionalStmt;
 	}
@@ -7113,9 +6938,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//loopStmt:
-	//	repeatStmt
-	//	| whileStmt
-	//	| forStmt;
+	//	repeatStmt | whileStmt | forStmt;
 	public LoopStmtElements getLoopStmtAccess() {
 		return pLoopStmt;
 	}
@@ -7199,9 +7022,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//assemblerStmt:
-	//	{assemblerStmt} 'asm'
-	//	//|	<assemblylanguage>
-	//	//	|	'end'
+	//	{assemblerStmt} 'asm' //|	<assemblylanguage>
+	// //	|	'end'
 	//;
 	public AssemblerStmtElements getAssemblerStmtAccess() {
 		return pAssemblerStmt;
@@ -7212,8 +7034,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//procedureDeclSection:
-	//	procedureDecl
-	//	| functionDecl;
+	//	procedureDecl | functionDecl;
 	public ProcedureDeclSectionElements getProcedureDeclSectionAccess() {
 		return pProcedureDeclSection;
 	}
@@ -7283,8 +7104,10 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//parameter:
-	//	{parameterList} idList=identList (':' (('array' 'of')? type=type | 'file'))? // changed simpleType by type, deleted string alternative
-	//	| {parameterSimple} if=ident ':' type=type '=' initExp=constExpr // changed simpleType by type
+	//	{parameterList} idList=identList (':' (('array' 'of')? type=type | 'file'))?
+	//	// changed simpleType by type, deleted string alternative
+	// | {parameterSimple} if=ident ':' type=type '='
+	//	initExp=constExpr // changed simpleType by type
 	//;
 	public ParameterElements getParameterAccess() {
 		return pParameter;
@@ -7295,25 +7118,9 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//directive:
-	//	dir='cdecl'
-	//	| dir='register'
-	//	| dir='dynamic'
-	//	| dir='virtual'
-	//	| dir='export'
-	//	| dir='external'
-	//	| dir='near'
-	//	| dir='far'
-	//	| dir='forward'
-	//	| dir='message' messageExp=constExpr
-	//	| dir='override'
-	//	| dir='overload'
-	//	| dir='pascal'
-	//	| dir='reintroduce'
-	//	| dir='safecall'
-	//	| dir='stdcall'
-	//	| dir='varargs'
-	//	| dir='local'
-	//	| dir='abstract';
+	//	dir='cdecl' | dir='register' | dir='dynamic' | dir='virtual' | dir='export' | dir='external' | dir='near' | dir='far'
+	//	| dir='forward' | dir='message' messageExp=constExpr | dir='override' | dir='overload' | dir='pascal' |
+	//	dir='reintroduce' | dir='safecall' | dir='stdcall' | dir='varargs' | dir='local' | dir='abstract';
 	public DirectiveElements getDirectiveAccess() {
 		return pDirective;
 	}
@@ -7353,10 +7160,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//methodHeading:
-	//	procedureHeading
-	//	| functionHeading
-	//	| constructorHeading
-	//	| destructorHeading;
+	//	procedureHeading | functionHeading | constructorHeading | destructorHeading;
 	public MethodHeadingElements getMethodHeadingAccess() {
 		return pMethodHeading;
 	}
@@ -7396,9 +7200,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//initSection:
-	//	{initSection} ('initialization' stmtList=stmtList ('finalization' endStmtList=stmtList)? 'end'
-	//	| 'begin' stmtList=stmtList 'end'
-	//	| 'end');
+	//	{initSection} ('initialization' stmtList=stmtList ('finalization' endStmtList=stmtList)? 'end' | 'begin'
+	//	stmtList=stmtList 'end' | 'end');
 	public InitSectionElements getInitSectionAccess() {
 		return pInitSection;
 	}
@@ -7429,10 +7232,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//classVisibility:
-	//	'public'
-	//	| 'protected'
-	//	| 'private'
-	//	| 'published';
+	//	'public' | 'protected' | 'private' | 'published';
 	public ClassVisibilityElements getClassVisibilityAccess() {
 		return pClassVisibility;
 	}
@@ -7492,8 +7292,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//classProperty:
-	//	visibility=classVisibility
-	//	| visibility=classVisibility? propList=propertyList;
+	//	visibility=classVisibility | visibility=classVisibility? propList=propertyList;
 	public ClassPropertyElements getClassPropertyAccess() {
 		return pClassProperty;
 	}
@@ -7618,9 +7417,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ident // modified
 	//:
-	//	{MultipleId} id+=ID ('.' id+=ID)*
-	//	| {ReservedId} '&' reservedWord=reservedWord
-	//	| {MineID} first=ID '(' second=ID '^' ')' // mine
+	//	{MultipleId} id+=ID ('.' id+=ID)* | {ReservedId} '&' reservedWord=reservedWord | {MineID} first=ID '(' second=ID '^'
+	//	')' // mine
 	//;
 	public IdentElements getIdentAccess() {
 		return pIdent;
@@ -7641,11 +7439,10 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//// ASBH modified
-	//constExpr // modified
+	// constExpr // modified
 	//:
-	//	{ConstExp} exp=expression
-	//	| {MultipleConstExp} '(' exps+=constExpr (',' exps+=constExpr)* ')'
-	//	| {RecordConstExp} '(' exps+=recordConstExpr (',' exps+=recordConstExpr)* ')';
+	//	{ConstExp} exp=expression | {MultipleConstExp} '(' exps+=constExpr (',' exps+=constExpr)* ')' | {RecordConstExp} '('
+	//	exps+=recordConstExpr (',' exps+=recordConstExpr)* ')';
 	public ConstExprElements getConstExprAccess() {
 		return pConstExpr;
 	}
@@ -7678,9 +7475,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//labelId // modified
 	//:
-	//	ID
-	//	| INT
-	//	| HEX;
+	//	ID | INT | HEX;
 	public LabelIdElements getLabelIdAccess() {
 		return pLabelId;
 	}
@@ -7690,8 +7485,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//number:
-	//	INT
-	//	| '#' INT;
+	//	INT | '#' INT;
 	public NumberElements getNumberAccess() {
 		return pNumber;
 	}
@@ -7701,8 +7495,7 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//string:
-	//	QVALUE
-	//	| DQVALUE;
+	//	QVALUE | DQVALUE;
 	public StringElements getStringAccess() {
 		return pString;
 	}

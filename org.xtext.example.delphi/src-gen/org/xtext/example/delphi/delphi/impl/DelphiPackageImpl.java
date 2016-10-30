@@ -129,6 +129,7 @@ import org.xtext.example.delphi.delphi.setConstructor;
 import org.xtext.example.delphi.delphi.setElement;
 import org.xtext.example.delphi.delphi.setType;
 import org.xtext.example.delphi.delphi.simpleExpression;
+import org.xtext.example.delphi.delphi.simpleFactor;
 import org.xtext.example.delphi.delphi.simpleStatement;
 import org.xtext.example.delphi.delphi.simpleType;
 import org.xtext.example.delphi.delphi.statement;
@@ -1051,6 +1052,13 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 	 * @generated
 	 */
   private EClass multExpEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass simpleFactorEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -4522,6 +4530,16 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EClass getsimpleFactor()
+  {
+		return simpleFactorEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EClass getadOp()
   {
 		return adOpEClass;
@@ -5322,6 +5340,8 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		createEReference(multExpEClass, MULT_EXP__MULT_OP);
 		createEReference(multExpEClass, MULT_EXP__RIGHT);
 
+		simpleFactorEClass = createEClass(SIMPLE_FACTOR);
+
 		adOpEClass = createEClass(AD_OP);
 		createEAttribute(adOpEClass, AD_OP__OP);
 
@@ -5533,6 +5553,7 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		relExpEClass.getESuperTypes().add(this.getexpression());
 		addExpEClass.getESuperTypes().add(this.getsimpleExpression());
 		multExpEClass.getESuperTypes().add(this.getterm());
+		simpleFactorEClass.getESuperTypes().add(this.getfactor());
 		adOpEClass.getESuperTypes().add(this.getaddOp());
 		assignmentStmntEClass.getESuperTypes().add(this.getsimpleStatement());
 		callStmntEClass.getESuperTypes().add(this.getsimpleStatement());
@@ -6004,6 +6025,8 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		initEReference(getmultExp_Left(), this.getterm(), null, "left", null, 0, 1, multExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getmultExp_MultOp(), this.getmulOp(), null, "multOp", null, 0, 1, multExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getmultExp_Right(), this.getfactor(), null, "right", null, 0, 1, multExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(simpleFactorEClass, simpleFactor.class, "simpleFactor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(adOpEClass, adOp.class, "adOp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getadOp_Op(), ecorePackage.getEString(), "op", null, 0, 1, adOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
