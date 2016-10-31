@@ -24,11 +24,11 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.jdt.annotation.NonNull;
+import org.eclipse.ocl.pivot.ids.TypeId;
 import org.xtext.example.delphi.internal.tx.AbstractInvocationInternal;
 
 /**
  * AbstractInvocation provides the mandatory shared functionality of the intrusive blocked/waiting linked list functionality.
- * at-since 1.1
  */
 public abstract class AbstractInvocation extends AbstractInvocationInternal
 {
@@ -37,9 +37,18 @@ public abstract class AbstractInvocation extends AbstractInvocationInternal
 		public static final @NonNull List<@NonNull Object> EMPTY_OBJECT_LIST = Collections.emptyList();
 		public static final @NonNull List<SlotState.@NonNull Incremental> EMPTY_SLOT_LIST = Collections.emptyList();
 
+		protected final @NonNull InvocationConstructor constructor;
+		protected final int sequence;
+
 		private Set<@NonNull Object> createdObjects = null;
 		private Set<SlotState.@NonNull Incremental> readSlots = null;
 		private Set<SlotState.@NonNull Incremental> writeSlots = null;
+
+		protected Incremental(InvocationConstructor.@NonNull Incremental constructor) {
+			super(constructor);
+			this.constructor = constructor;
+			this.sequence = constructor.nextSequence();
+		}
 
 		@Override
 		public void addCreatedObject(@NonNull Object createdObject) {
@@ -67,9 +76,24 @@ public abstract class AbstractInvocation extends AbstractInvocationInternal
 			writeSlot.addSourceInternal(this);
 		}
 
+		protected @NonNull Connection createConnection(@NonNull String name, @NonNull TypeId typeId, boolean isStrict) {
+			return constructor.getInterval().createConnection(name, typeId, isStrict);
+		}
+
+		protected Connection.@NonNull Incremental createIncrementalConnection(@NonNull String name, @NonNull TypeId typeId, boolean isStrict) {
+			return constructor.getInterval().createIncrementalConnection(name, typeId, isStrict);
+		}
+
 		@Override
 		public @NonNull Iterable<@NonNull Object> getCreatedObjects() {
 			return createdObjects != null ? createdObjects : EMPTY_OBJECT_LIST;
+		}
+
+		@SuppressWarnings("null")
+		@Override
+		public @NonNull String getName() {
+			InvocationConstructor constructor2 = constructor;	// May be invoked from toString() during constructor debugging
+			return (constructor2 != null ? constructor2.getName() : "null") + "-" + sequence;
 		}
 
 		@Override
@@ -81,10 +105,24 @@ public abstract class AbstractInvocation extends AbstractInvocationInternal
 		public @NonNull Iterable<SlotState.@NonNull Incremental> getWriteSlots() {
 			return writeSlots != null ? writeSlots : EMPTY_SLOT_LIST;
 		}
+
+		@Override
+		public @NonNull String toString() {
+			return getName();
+		}
+	}
+
+	protected AbstractInvocation(@NonNull InvocationConstructor constructor) {
+		super(constructor.getInterval());
 	}
 
 	@Override
 	public <R> R accept(@NonNull ExecutionVisitor<R> visitor) {
 		return visitor.visitInvocation(this);
+	}
+
+	@Override
+	public @NonNull String getName() {
+		return toString().replace("@",  "\n@");
 	}
 }

@@ -33,7 +33,6 @@ import org.xtext.example.delphi.tx.TypedModelInstance;
 
 /**
  * ModelObjectsOfTypeOperation realises the Model::objectsOfType() library operation.
- * at-since 1.1
  */
 public class ModelObjectsOfTypeOperation extends AbstractBinaryOperation
 {
