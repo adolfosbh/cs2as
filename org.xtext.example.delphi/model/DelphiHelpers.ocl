@@ -36,6 +36,7 @@ context interfaceDecl
 def : getFragments() : OrderedSet(as::DefinitionObject) =
 	OrderedSet{} -- to be overriden
 
+-- fragments
 context constSection
 def : getFragments() : OrderedSet(as::VariableDefinition) =
 	self.constantDecl.ast.oclAsType(as::VariableDefinition)->asOrderedSet()
@@ -50,5 +51,20 @@ def : getFragments() : OrderedSet(as::FunctionDefinition) =
 
 context functionDecl
 def : getFragments() : OrderedSet(as::FunctionDefinition) =
-	OrderedSet{self.ast.oclAsType(as::FunctionDefinition)}	
+	OrderedSet{self.ast.oclAsType(as::FunctionDefinition)}
+	
+-- statements
+
+--context statement
+--def : getStatements() : OrderedSet(as::Statement) =
+--	self.statement.getStatements()
+--context unlabelledStatement
+--def : getStatements() : OrderedSet(as::Statement) =
+--	OrderedSet{self.ast.oclAsType(as::Statement)}
+--context compoundStmt
+--def : getStatements() : OrderedSet(as::Statement) =
+--	self.stamtList.getStatements()
+--context stmtList
+--def : getStatements() : OrderedSet(as::Statement) =
+--	self.statments.getStatements()
 endpackage

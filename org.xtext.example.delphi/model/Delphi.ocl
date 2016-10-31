@@ -34,8 +34,6 @@ def : ast() : as::astm::DelphiInterfaceSection =
 as::astm::DelphiInterfaceSection { 
 	fragments = self.interfaceDecl.getFragments()
 }
-
-
 	
 context constantDecl
 def : ast() : as::astm::VariableDefinition =
@@ -52,7 +50,6 @@ as::astm::DelphiImplementationSection {
 	fragments = self.declSect.getFragments()
 }
 
-   
 context labelDeclSection
 def : ast() : as::astm::LabelDefinition =
 	as::astm::LabelDefinition {
@@ -124,7 +121,7 @@ context block
 def : ast() : as::astm::DelphiBlockStatement =
 as::astm::DelphiBlockStatement {
 	declarations = declSect?.getFragments(),
-subStatements = compound.stamtList.statments.ast() 
+   subStatements = OrderedSet{compound.ast()}
 }
 
 context statement
@@ -135,6 +132,11 @@ context unlabelledStatement
 def : ast() : as::astm::Statement =
 	null -- to be overriden
 
+context compoundStmt
+def : ast() : as::astm::BlockStatement =
+   as::astm::BlockStatement {
+   	subStatements = stamtList.statments.ast() 
+   }
 context assignmentStmnt
 def : ast() : as::astm::ExpressionStatement =
 as::astm::ExpressionStatement {
@@ -149,13 +151,13 @@ def : ast() : as::astm::ExpressionStatement =
 as::astm::ExpressionStatement {
 	expression = astm::FunctionCallExpression {
 				calledFunction = self.designator.ast(),
-				actualParams = args.createActualParams()
+				actualParams = args?->collect(createActualParams())
 			} 
 }
 context withStmt
 def : ast() : as::astm::DelphiWithStatement =
 as::astm::DelphiWithStatement {
-	withs = _vars.ids.ast(), 
+	withs = _vars.ids.ast(),  
 subStatements = OrderedSet{stmt.ast()} 
 }
 context ifStmt
@@ -163,7 +165,7 @@ def : ast() : as::astm::IfStatement =
 as::astm::IfStatement {
 	condition = condition.ast(), 
 thenBody = _then.ast(), 
-elseBody = _else.ast() 
+elseBody =  _else?.ast() 
 }
 context caseStmt
 def : ast() : as::astm::SwitchStatement =
@@ -175,6 +177,7 @@ context caseSelector
 def : ast() : as::astm::CaseBlock =
 as::astm::CaseBlock {
 	caseExpressions = labels->collect(x | x.first.ast()->including(x.last . ast())), 
+
 _body = OrderedSet{stmt.ast()} 
 }
 
@@ -250,10 +253,17 @@ else
 		actualParams = expList.createActualParams()
 		}
 		else 
-			invalid
+			as::astm::NewExpression {}
 		endif
 	endif
 endif
 
+context addExp
+def : ast() : as::astm::BinaryExpression =
+as::astm::BinaryExpression {
+	leftOperand = left.ast(),
+	operator = astm::Add{},  
+	rightOperand = right.ast() 
+}
 
 endpackage
