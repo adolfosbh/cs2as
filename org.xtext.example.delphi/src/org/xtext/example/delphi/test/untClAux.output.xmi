@@ -3,6 +3,38 @@
   <astm:ExpressionStatement>
     <expression xsi:type="astm:FunctionCallExpression">
       <calledFunction xsi:type="astm:IdentifierReference">
+        <name nameString="GetFileVersionInfo"/>
+      </calledFunction>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:IdentifierReference">
+          <name nameString="Pt"/>
+        </value>
+      </actualParams>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:IntegerLiteral" value="0"/>
+      </actualParams>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:DelphiFunctionCallExpression">
+          <calledFunction xsi:type="astm:IdentifierReference">
+            <name nameString="PChar"/>
+          </calledFunction>
+          <actualParams xsi:type="astm:ActualParameterExpression">
+            <value xsi:type="astm:IdentifierReference">
+              <name nameString="Rut"/>
+            </value>
+          </actualParams>
+        </value>
+      </actualParams>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:IdentifierReference">
+          <name nameString="Size"/>
+        </value>
+      </actualParams>
+    </expression>
+  </astm:ExpressionStatement>
+  <astm:ExpressionStatement>
+    <expression xsi:type="astm:FunctionCallExpression">
+      <calledFunction xsi:type="astm:IdentifierReference">
         <name nameString="Pt"/>
       </calledFunction>
     </expression>
@@ -15,7 +47,14 @@
         <inSourceFile/>
       </locationInfo>
       <name nameString="untClAux"/>
-      <interface/>
+      <interface>
+        <fragments xsi:type="astm:VariableDefinition" isMutable="true">
+          <identifierName nameString="frmPost"/>
+        </fragments>
+        <fragments xsi:type="astm:VariableDefinition" isMutable="true">
+          <identifierName nameString="ActualizacionesPendientes"/>
+        </fragments>
+      </interface>
       <implementation>
         <fragments xsi:type="astm:FunctionDefinition">
           <identifierName nameString="ObtenerAppVersion"/>
@@ -76,40 +115,7 @@
                       </actualParams>
                     </expression>
                   </subStatements>
-                  <subStatements xsi:type="astm:TryStatement">
-                    <guardedStatement xsi:type="astm:ExpressionStatement">
-                      <expression xsi:type="astm:FunctionCallExpression">
-                        <calledFunction xsi:type="astm:IdentifierReference">
-                          <name nameString="GetFileVersionInfo"/>
-                        </calledFunction>
-                        <actualParams xsi:type="astm:ActualParameterExpression">
-                          <value xsi:type="astm:IdentifierReference">
-                            <name nameString="Pt"/>
-                          </value>
-                        </actualParams>
-                        <actualParams xsi:type="astm:ActualParameterExpression">
-                          <value xsi:type="astm:IntegerLiteral" value="0"/>
-                        </actualParams>
-                        <actualParams xsi:type="astm:ActualParameterExpression">
-                          <value xsi:type="astm:DelphiFunctionCallExpression">
-                            <calledFunction xsi:type="astm:IdentifierReference">
-                              <name nameString="PChar"/>
-                            </calledFunction>
-                            <actualParams xsi:type="astm:ActualParameterExpression">
-                              <value xsi:type="astm:IdentifierReference">
-                                <name nameString="Rut"/>
-                              </value>
-                            </actualParams>
-                          </value>
-                        </actualParams>
-                        <actualParams xsi:type="astm:ActualParameterExpression">
-                          <value xsi:type="astm:IdentifierReference">
-                            <name nameString="Size"/>
-                          </value>
-                        </actualParams>
-                      </expression>
-                    </guardedStatement>
-                  </subStatements>
+                  <subStatements xsi:type="astm:TryStatement"/>
                   <subStatements xsi:type="astm:ExpressionStatement">
                     <expression xsi:type="astm:FunctionCallExpression">
                       <calledFunction xsi:type="astm:IdentifierReference">
@@ -162,6 +168,15 @@
                 </expression>
               </subStatements>
             </subStatements>
+            <declarations xsi:type="astm:VariableDefinition" isMutable="true">
+              <identifierName nameString="vers"/>
+            </declarations>
+            <declarations xsi:type="astm:VariableDefinition" isMutable="true">
+              <identifierName nameString="Size"/>
+            </declarations>
+            <declarations xsi:type="astm:VariableDefinition" isMutable="true">
+              <identifierName nameString="Pt"/>
+            </declarations>
           </body>
         </fragments>
       </implementation>
@@ -173,19 +188,4 @@
   <astm:TypeDefinition>
     <name nameString="versTipo"/>
   </astm:TypeDefinition>
-  <astm:VariableDefinition isMutable="true">
-    <identifierName nameString="frmPost"/>
-  </astm:VariableDefinition>
-  <astm:VariableDefinition isMutable="true">
-    <identifierName nameString="ActualizacionesPendientes"/>
-  </astm:VariableDefinition>
-  <astm:VariableDefinition isMutable="true">
-    <identifierName nameString="Size"/>
-  </astm:VariableDefinition>
-  <astm:VariableDefinition isMutable="true">
-    <identifierName nameString="Pt"/>
-  </astm:VariableDefinition>
-  <astm:VariableDefinition isMutable="true">
-    <identifierName nameString="vers"/>
-  </astm:VariableDefinition>
 </xmi:XMI>

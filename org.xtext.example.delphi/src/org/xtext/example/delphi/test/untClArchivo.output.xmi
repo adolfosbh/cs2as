@@ -4,115 +4,28 @@
     <expression xsi:type="astm:BinaryExpression">
       <operator xsi:type="astm:Assign"/>
       <leftOperand xsi:type="astm:IdentifierReference">
-        <name nameString="res"/>
-      </leftOperand>
-      <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
-        <calledFunction xsi:type="astm:IdentifierReference">
-          <name nameString="BorraArchivo"/>
-        </calledFunction>
-        <actualParams xsi:type="astm:ActualParameterExpression">
-          <value xsi:type="astm:IdentifierReference">
-            <name nameString="ruta"/>
-          </value>
-        </actualParams>
-      </rightOperand>
-    </expression>
-  </astm:ExpressionStatement>
-  <astm:ExpressionStatement>
-    <expression xsi:type="astm:BinaryExpression">
-      <operator xsi:type="astm:Assign"/>
-      <leftOperand xsi:type="astm:IdentifierReference">
         <name nameString="result"/>
       </leftOperand>
       <rightOperand xsi:type="astm:IntegerLiteral" value="6"/>
     </expression>
   </astm:ExpressionStatement>
   <astm:IdentifierReference>
-    <name nameString="Handle"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="RutaDoc"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Create"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="ShowModal"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="ruta"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="fichero"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Free"/>
+    <name nameString="IsEmpty"/>
   </astm:IdentifierReference>
   <astm:IdentifierReference>
     <name nameString="IsEmpty"/>
   </astm:IdentifierReference>
   <astm:IdentifierReference>
-    <name nameString="AsString"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
     <name nameString="IsEmpty"/>
   </astm:IdentifierReference>
   <astm:IdentifierReference>
-    <name nameString="AsString"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
     <name nameString="IsEmpty"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="AsString"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="IsEmpty"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="AsString"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="IsEmpty"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="State"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Delete"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="ApplyUpdates"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Info"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Info"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Info"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Info"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Info"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Info"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Info"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Info"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Info"/>
   </astm:IdentifierReference>
   <astm:QualifiedOverData>
     <name nameString="cds"/>
+    <member>
+      <name nameString="IsEmpty"/>
+    </member>
   </astm:QualifiedOverData>
   <astm:DelphiFunctionCallExpression>
     <calledFunction xsi:type="astm:IdentifierReference">
@@ -147,58 +60,6 @@
   <astm:IntegerLiteral value="0"/>
   <astm:IntegerLiteral value="0"/>
   <astm:IntegerLiteral value="0"/>
-  <astm:IfStatement>
-    <condition xsi:type="astm:BinaryExpression">
-      <operator xsi:type="astm:Add"/>
-      <leftOperand xsi:type="astm:NewExpression"/>
-      <rightOperand xsi:type="astm:NewExpression"/>
-    </condition>
-    <thenBody xsi:type="astm:BlockStatement">
-      <subStatements xsi:type="astm:IfStatement">
-        <condition xsi:type="astm:BinaryExpression">
-          <operator xsi:type="astm:Equal"/>
-          <leftOperand xsi:type="astm:DelphiFunctionCallExpression">
-            <calledFunction xsi:type="astm:QualifiedOverData">
-              <name nameString="cds"/>
-            </calledFunction>
-            <actualParams xsi:type="astm:ActualParameterExpression">
-              <value xsi:type="astm:IntegerLiteral" value="0"/>
-            </actualParams>
-          </leftOperand>
-          <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
-        </condition>
-        <thenBody xsi:type="astm:ExpressionStatement">
-          <expression xsi:type="astm:BinaryExpression">
-            <operator xsi:type="astm:Assign"/>
-            <leftOperand xsi:type="astm:IdentifierReference">
-              <name nameString="result"/>
-            </leftOperand>
-            <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
-          </expression>
-        </thenBody>
-        <elseBody xsi:type="astm:ExpressionStatement">
-          <expression xsi:type="astm:BinaryExpression">
-            <operator xsi:type="astm:Assign"/>
-            <leftOperand xsi:type="astm:IdentifierReference">
-              <name nameString="result"/>
-            </leftOperand>
-            <rightOperand xsi:type="astm:IntegerLiteral" value="5"/>
-          </expression>
-        </elseBody>
-      </subStatements>
-    </thenBody>
-    <elseBody xsi:type="astm:ExpressionStatement">
-      <expression xsi:type="astm:BinaryExpression">
-        <operator xsi:type="astm:Assign"/>
-        <leftOperand xsi:type="astm:IdentifierReference">
-          <name nameString="result"/>
-        </leftOperand>
-        <rightOperand xsi:type="astm:IdentifierReference">
-          <name nameString="res"/>
-        </rightOperand>
-      </expression>
-    </elseBody>
-  </astm:IfStatement>
   <astm:Project>
     <files xsi:type="astm:DelphiUnit" language="Delphi">
       <locationInfo>
@@ -276,6 +137,9 @@
                       </leftOperand>
                       <rightOperand xsi:type="astm:QualifiedOverData">
                         <name nameString="Application"/>
+                        <member>
+                          <name nameString="Handle"/>
+                        </member>
                       </rightOperand>
                     </expression>
                   </subStatements>
@@ -372,6 +236,12 @@
                 </expression>
               </subStatements>
             </subStatements>
+            <declarations xsi:type="astm:VariableDefinition" isMutable="true">
+              <identifierName nameString="Info"/>
+            </declarations>
+            <declarations xsi:type="astm:VariableDefinition" isMutable="true">
+              <identifierName nameString="pInfo"/>
+            </declarations>
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
@@ -387,6 +257,9 @@
                   <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
                     <calledFunction xsi:type="astm:QualifiedOverData">
                       <name nameString="dmDatos"/>
+                      <member>
+                        <name nameString="RutaDoc"/>
+                      </member>
                     </calledFunction>
                     <actualParams xsi:type="astm:ActualParameterExpression">
                       <value xsi:type="astm:IdentifierReference">
@@ -412,6 +285,9 @@
                   <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
                     <calledFunction xsi:type="astm:QualifiedOverData">
                       <name nameString="TFrmSelFil"/>
+                      <member>
+                        <name nameString="Create"/>
+                      </member>
                     </calledFunction>
                     <actualParams xsi:type="astm:ActualParameterExpression">
                       <value xsi:type="astm:NewExpression"/>
@@ -420,50 +296,67 @@
                 </expression>
               </subStatements>
               <subStatements xsi:type="astm:TryStatement">
-                <guardedStatement xsi:type="astm:IfStatement">
-                  <condition xsi:type="astm:BinaryExpression">
-                    <operator xsi:type="astm:Equal"/>
-                    <leftOperand xsi:type="astm:QualifiedOverData">
-                      <name nameString="f"/>
-                    </leftOperand>
-                    <rightOperand xsi:type="astm:IdentifierReference">
-                      <name nameString="mrOk"/>
-                    </rightOperand>
-                  </condition>
-                  <thenBody xsi:type="astm:BlockStatement">
-                    <subStatements xsi:type="astm:ExpressionStatement">
-                      <expression xsi:type="astm:BinaryExpression">
-                        <operator xsi:type="astm:Assign"/>
-                        <leftOperand xsi:type="astm:IdentifierReference">
-                          <name nameString="idruta"/>
-                        </leftOperand>
-                        <rightOperand xsi:type="astm:QualifiedOverData">
-                          <name nameString="f"/>
-                        </rightOperand>
-                      </expression>
-                    </subStatements>
-                    <subStatements xsi:type="astm:ExpressionStatement">
-                      <expression xsi:type="astm:BinaryExpression">
-                        <operator xsi:type="astm:Assign"/>
-                        <leftOperand xsi:type="astm:IdentifierReference">
-                          <name nameString="nombre"/>
-                        </leftOperand>
-                        <rightOperand xsi:type="astm:QualifiedOverData">
-                          <name nameString="f"/>
-                        </rightOperand>
-                      </expression>
-                    </subStatements>
-                  </thenBody>
+                <guardedStatement xsi:type="astm:BlockStatement">
+                  <subStatements xsi:type="astm:IfStatement">
+                    <condition xsi:type="astm:BinaryExpression">
+                      <operator xsi:type="astm:Equal"/>
+                      <leftOperand xsi:type="astm:QualifiedOverData">
+                        <name nameString="f"/>
+                        <member>
+                          <name nameString="ShowModal"/>
+                        </member>
+                      </leftOperand>
+                      <rightOperand xsi:type="astm:IdentifierReference">
+                        <name nameString="mrOk"/>
+                      </rightOperand>
+                    </condition>
+                    <thenBody xsi:type="astm:BlockStatement">
+                      <subStatements xsi:type="astm:ExpressionStatement">
+                        <expression xsi:type="astm:BinaryExpression">
+                          <operator xsi:type="astm:Assign"/>
+                          <leftOperand xsi:type="astm:IdentifierReference">
+                            <name nameString="idruta"/>
+                          </leftOperand>
+                          <rightOperand xsi:type="astm:QualifiedOverData">
+                            <name nameString="f"/>
+                            <member>
+                              <name nameString="ruta"/>
+                            </member>
+                          </rightOperand>
+                        </expression>
+                      </subStatements>
+                      <subStatements xsi:type="astm:ExpressionStatement">
+                        <expression xsi:type="astm:BinaryExpression">
+                          <operator xsi:type="astm:Assign"/>
+                          <leftOperand xsi:type="astm:IdentifierReference">
+                            <name nameString="nombre"/>
+                          </leftOperand>
+                          <rightOperand xsi:type="astm:QualifiedOverData">
+                            <name nameString="f"/>
+                            <member>
+                              <name nameString="fichero"/>
+                            </member>
+                          </rightOperand>
+                        </expression>
+                      </subStatements>
+                    </thenBody>
+                  </subStatements>
                 </guardedStatement>
                 <finalStatement xsi:type="astm:ExpressionStatement">
                   <expression xsi:type="astm:FunctionCallExpression">
                     <calledFunction xsi:type="astm:QualifiedOverData">
                       <name nameString="f"/>
+                      <member>
+                        <name nameString="Free"/>
+                      </member>
                     </calledFunction>
                   </expression>
                 </finalStatement>
               </subStatements>
             </subStatements>
+            <declarations xsi:type="astm:VariableDefinition" isMutable="true">
+              <identifierName nameString="f"/>
+            </declarations>
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
@@ -515,6 +408,9 @@
                         </leftOperand>
                         <rightOperand xsi:type="astm:QualifiedOverData">
                           <name nameString="Fields"/>
+                          <member>
+                            <name nameString="AsString"/>
+                          </member>
                         </rightOperand>
                       </expression>
                     </thenBody>
@@ -604,6 +500,9 @@
                         </leftOperand>
                         <rightOperand xsi:type="astm:QualifiedOverData">
                           <name nameString="Fields"/>
+                          <member>
+                            <name nameString="AsString"/>
+                          </member>
                         </rightOperand>
                       </expression>
                     </thenBody>
@@ -676,6 +575,9 @@
                         </leftOperand>
                         <rightOperand xsi:type="astm:QualifiedOverData">
                           <name nameString="Fields"/>
+                          <member>
+                            <name nameString="AsString"/>
+                          </member>
                         </rightOperand>
                       </expression>
                     </thenBody>
@@ -782,6 +684,9 @@
                         </leftOperand>
                         <rightOperand xsi:type="astm:QualifiedOverData">
                           <name nameString="Fields"/>
+                          <member>
+                            <name nameString="AsString"/>
+                          </member>
                         </rightOperand>
                       </expression>
                     </thenBody>
@@ -924,6 +829,9 @@
                           <operator xsi:type="astm:Equal"/>
                           <leftOperand xsi:type="astm:QualifiedOverData">
                             <name nameString="cds"/>
+                            <member>
+                              <name nameString="State"/>
+                            </member>
                           </leftOperand>
                           <rightOperand xsi:type="astm:IdentifierReference">
                             <name nameString="dsBrowse"/>
@@ -931,12 +839,90 @@
                         </condition>
                         <thenBody xsi:type="astm:BlockStatement">
                           <subStatements xsi:type="astm:TryStatement">
-                            <guardedStatement xsi:type="astm:ExpressionStatement">
-                              <expression xsi:type="astm:FunctionCallExpression">
-                                <calledFunction xsi:type="astm:QualifiedOverData">
-                                  <name nameString="cds"/>
-                                </calledFunction>
-                              </expression>
+                            <guardedStatement xsi:type="astm:BlockStatement">
+                              <subStatements xsi:type="astm:ExpressionStatement">
+                                <expression xsi:type="astm:FunctionCallExpression">
+                                  <calledFunction xsi:type="astm:QualifiedOverData">
+                                    <name nameString="cds"/>
+                                    <member>
+                                      <name nameString="Delete"/>
+                                    </member>
+                                  </calledFunction>
+                                </expression>
+                              </subStatements>
+                              <subStatements xsi:type="astm:ExpressionStatement">
+                                <expression xsi:type="astm:BinaryExpression">
+                                  <operator xsi:type="astm:Assign"/>
+                                  <leftOperand xsi:type="astm:IdentifierReference">
+                                    <name nameString="res"/>
+                                  </leftOperand>
+                                  <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+                                    <calledFunction xsi:type="astm:IdentifierReference">
+                                      <name nameString="BorraArchivo"/>
+                                    </calledFunction>
+                                    <actualParams xsi:type="astm:ActualParameterExpression">
+                                      <value xsi:type="astm:IdentifierReference">
+                                        <name nameString="ruta"/>
+                                      </value>
+                                    </actualParams>
+                                  </rightOperand>
+                                </expression>
+                              </subStatements>
+                              <subStatements xsi:type="astm:IfStatement">
+                                <condition xsi:type="astm:BinaryExpression">
+                                  <operator xsi:type="astm:Add"/>
+                                  <leftOperand xsi:type="astm:NewExpression"/>
+                                  <rightOperand xsi:type="astm:NewExpression"/>
+                                </condition>
+                                <thenBody xsi:type="astm:BlockStatement">
+                                  <subStatements xsi:type="astm:IfStatement">
+                                    <condition xsi:type="astm:BinaryExpression">
+                                      <operator xsi:type="astm:Equal"/>
+                                      <leftOperand xsi:type="astm:DelphiFunctionCallExpression">
+                                        <calledFunction xsi:type="astm:QualifiedOverData">
+                                          <name nameString="cds"/>
+                                          <member>
+                                            <name nameString="ApplyUpdates"/>
+                                          </member>
+                                        </calledFunction>
+                                        <actualParams xsi:type="astm:ActualParameterExpression">
+                                          <value xsi:type="astm:IntegerLiteral" value="0"/>
+                                        </actualParams>
+                                      </leftOperand>
+                                      <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+                                    </condition>
+                                    <thenBody xsi:type="astm:ExpressionStatement">
+                                      <expression xsi:type="astm:BinaryExpression">
+                                        <operator xsi:type="astm:Assign"/>
+                                        <leftOperand xsi:type="astm:IdentifierReference">
+                                          <name nameString="result"/>
+                                        </leftOperand>
+                                        <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+                                      </expression>
+                                    </thenBody>
+                                    <elseBody xsi:type="astm:ExpressionStatement">
+                                      <expression xsi:type="astm:BinaryExpression">
+                                        <operator xsi:type="astm:Assign"/>
+                                        <leftOperand xsi:type="astm:IdentifierReference">
+                                          <name nameString="result"/>
+                                        </leftOperand>
+                                        <rightOperand xsi:type="astm:IntegerLiteral" value="5"/>
+                                      </expression>
+                                    </elseBody>
+                                  </subStatements>
+                                </thenBody>
+                                <elseBody xsi:type="astm:ExpressionStatement">
+                                  <expression xsi:type="astm:BinaryExpression">
+                                    <operator xsi:type="astm:Assign"/>
+                                    <leftOperand xsi:type="astm:IdentifierReference">
+                                      <name nameString="result"/>
+                                    </leftOperand>
+                                    <rightOperand xsi:type="astm:IdentifierReference">
+                                      <name nameString="res"/>
+                                    </rightOperand>
+                                  </expression>
+                                </elseBody>
+                              </subStatements>
                             </guardedStatement>
                           </subStatements>
                         </thenBody>
@@ -973,6 +959,9 @@
                 </elseBody>
               </subStatements>
             </subStatements>
+            <declarations xsi:type="astm:VariableDefinition" isMutable="true">
+              <identifierName nameString="res"/>
+            </declarations>
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
@@ -1030,6 +1019,9 @@
                       <expression xsi:type="astm:FunctionCallExpression">
                         <calledFunction xsi:type="astm:QualifiedOverData">
                           <name nameString="TMensa"/>
+                          <member>
+                            <name nameString="Info"/>
+                          </member>
                         </calledFunction>
                         <actualParams xsi:type="astm:ActualParameterExpression">
                           <value xsi:type="astm:StringLiteral" value="'Se ha borrado el archivo en disco duro pero no el registro en base de datos'"/>
@@ -1048,6 +1040,9 @@
                         <expression xsi:type="astm:FunctionCallExpression">
                           <calledFunction xsi:type="astm:QualifiedOverData">
                             <name nameString="TMensa"/>
+                            <member>
+                              <name nameString="Info"/>
+                            </member>
                           </calledFunction>
                           <actualParams xsi:type="astm:ActualParameterExpression">
                             <value xsi:type="astm:StringLiteral" value="'Ha ocurrido un error inesperado'"/>
@@ -1066,6 +1061,9 @@
                           <expression xsi:type="astm:FunctionCallExpression">
                             <calledFunction xsi:type="astm:QualifiedOverData">
                               <name nameString="TMensa"/>
+                              <member>
+                                <name nameString="Info"/>
+                              </member>
                             </calledFunction>
                             <actualParams xsi:type="astm:ActualParameterExpression">
                               <value xsi:type="astm:StringLiteral" value="'El archivo est&#xfffd; bloqueado, no puede borrarse'"/>
@@ -1084,6 +1082,9 @@
                             <expression xsi:type="astm:FunctionCallExpression">
                               <calledFunction xsi:type="astm:QualifiedOverData">
                                 <name nameString="TMensa"/>
+                                <member>
+                                  <name nameString="Info"/>
+                                </member>
                               </calledFunction>
                               <actualParams xsi:type="astm:ActualParameterExpression">
                                 <value xsi:type="astm:StringLiteral" value="'Ha ocurrido un error inesperado borrando el archivo del disco duro'"/>
@@ -1102,6 +1103,9 @@
                               <expression xsi:type="astm:FunctionCallExpression">
                                 <calledFunction xsi:type="astm:QualifiedOverData">
                                   <name nameString="TMensa"/>
+                                  <member>
+                                    <name nameString="Info"/>
+                                  </member>
                                 </calledFunction>
                                 <actualParams xsi:type="astm:ActualParameterExpression">
                                   <value xsi:type="astm:StringLiteral" value="'Ha ocurrido un error borrando el archivo este ha sido renombrado con sufijo &quot;borrado&quot;'"/>
@@ -1120,6 +1124,9 @@
                                 <expression xsi:type="astm:FunctionCallExpression">
                                   <calledFunction xsi:type="astm:QualifiedOverData">
                                     <name nameString="TMensa"/>
+                                    <member>
+                                      <name nameString="Info"/>
+                                    </member>
                                   </calledFunction>
                                   <actualParams xsi:type="astm:ActualParameterExpression">
                                     <value xsi:type="astm:StringLiteral" value="'Recibido Dataset nulo'"/>
@@ -1138,6 +1145,9 @@
                                   <expression xsi:type="astm:FunctionCallExpression">
                                     <calledFunction xsi:type="astm:QualifiedOverData">
                                       <name nameString="TMensa"/>
+                                      <member>
+                                        <name nameString="Info"/>
+                                      </member>
                                     </calledFunction>
                                     <actualParams xsi:type="astm:ActualParameterExpression">
                                       <value xsi:type="astm:StringLiteral" value="'Dataset Vacio'"/>
@@ -1156,6 +1166,9 @@
                                     <expression xsi:type="astm:FunctionCallExpression">
                                       <calledFunction xsi:type="astm:QualifiedOverData">
                                         <name nameString="TMensa"/>
+                                        <member>
+                                          <name nameString="Info"/>
+                                        </member>
                                       </calledFunction>
                                       <actualParams xsi:type="astm:ActualParameterExpression">
                                         <value xsi:type="astm:StringLiteral" value="'Dataset en estado no valido'"/>
@@ -1166,6 +1179,9 @@
                                     <expression xsi:type="astm:FunctionCallExpression">
                                       <calledFunction xsi:type="astm:QualifiedOverData">
                                         <name nameString="TMensa"/>
+                                        <member>
+                                          <name nameString="Info"/>
+                                        </member>
                                       </calledFunction>
                                       <actualParams xsi:type="astm:ActualParameterExpression">
                                         <value xsi:type="astm:StringLiteral" value="'Error no controlado'"/>
@@ -1205,16 +1221,4 @@
   <astm:TypeDefinition>
     <name nameString="TArchivo"/>
   </astm:TypeDefinition>
-  <astm:VariableDefinition isMutable="true">
-    <identifierName nameString="Info"/>
-  </astm:VariableDefinition>
-  <astm:VariableDefinition isMutable="true">
-    <identifierName nameString="pInfo"/>
-  </astm:VariableDefinition>
-  <astm:VariableDefinition isMutable="true">
-    <identifierName nameString="f"/>
-  </astm:VariableDefinition>
-  <astm:VariableDefinition isMutable="true">
-    <identifierName nameString="res"/>
-  </astm:VariableDefinition>
 </xmi:XMI>

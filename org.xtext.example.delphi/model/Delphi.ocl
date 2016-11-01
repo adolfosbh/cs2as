@@ -120,7 +120,7 @@ as::astm::FunctionDefinition {
 context block
 def : ast() : as::astm::DelphiBlockStatement =
 as::astm::DelphiBlockStatement {
-	declarations = declSect?.getFragments(),
+   declarations = declSect?->collect(getFragments()),
    subStatements = OrderedSet{compound.ast()}
 }
 
@@ -184,10 +184,10 @@ _body = OrderedSet{stmt.ast()}
 context tryStmt
 def : ast() : as::astm::TryStatement =
 as::astm::TryStatement {
-	guardedStatement = self.stmtList.statments->first().ast(),  
-	finalStatement = final.statments->first().ast() 
+	guardedStatement = as::astm::BlockStatement{subStatements = self.stmtList.statments.ast()},
+	finalStatement = if final = null then null else final.statments->first().ast()endif
 }
-
+ 
 context designator
 def : ast() : as::astm::NameReference =
 if isIdentifierRef()
@@ -203,7 +203,7 @@ else
 		name = astm::Name {
 					nameString = subpart.part.extract()
 				}, 
---	member = designator.ast().oclAsType(as::astm::IdentifierReference), 
+	member = self.designator.ast().oclAsType(as::astm::IdentifierReference), 
 	refersTo = getDefinition() 
 	}
 	else

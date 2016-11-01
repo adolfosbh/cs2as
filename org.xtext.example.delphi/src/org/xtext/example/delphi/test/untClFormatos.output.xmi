@@ -4,6 +4,9 @@
     <expression xsi:type="astm:FunctionCallExpression">
       <calledFunction xsi:type="astm:QualifiedOverData">
         <name nameString="ed"/>
+        <member>
+          <name nameString="SetFocus"/>
+        </member>
       </calledFunction>
     </expression>
   </astm:ExpressionStatement>
@@ -11,6 +14,9 @@
     <expression xsi:type="astm:FunctionCallExpression">
       <calledFunction xsi:type="astm:QualifiedOverData">
         <name nameString="TMensa"/>
+        <member>
+          <name nameString="Error"/>
+        </member>
       </calledFunction>
       <actualParams xsi:type="astm:ActualParameterExpression">
         <value xsi:type="astm:BinaryExpression">
@@ -22,6 +28,9 @@
             <actualParams xsi:type="astm:ActualParameterExpression">
               <value xsi:type="astm:QualifiedOverData">
                 <name nameString="ed"/>
+                <member>
+                  <name nameString="Text"/>
+                </member>
               </value>
             </actualParams>
           </leftOperand>
@@ -30,21 +39,6 @@
       </actualParams>
     </expression>
   </astm:ExpressionStatement>
-  <astm:IdentifierReference>
-    <name nameString="Text"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Text"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="SetFocus"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Error"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="Text"/>
-  </astm:IdentifierReference>
   <astm:Project>
     <files xsi:type="astm:DelphiUnit" language="Delphi">
       <locationInfo>
@@ -161,35 +155,46 @@
                 </expression>
               </subStatements>
               <subStatements xsi:type="astm:TryStatement">
-                <guardedStatement xsi:type="astm:IfStatement">
-                  <condition xsi:type="astm:BinaryExpression">
-                    <leftOperand xsi:type="astm:QualifiedOverData">
-                      <name nameString="ed"/>
-                    </leftOperand>
-                    <rightOperand xsi:type="astm:StringLiteral" value="''"/>
-                  </condition>
-                  <thenBody xsi:type="astm:ExpressionStatement">
-                    <expression xsi:type="astm:FunctionCallExpression">
-                      <calledFunction xsi:type="astm:IdentifierReference">
-                        <name nameString="StrToDate"/>
-                      </calledFunction>
-                      <actualParams xsi:type="astm:ActualParameterExpression">
-                        <value xsi:type="astm:DelphiFunctionCallExpression">
-                          <calledFunction xsi:type="astm:IdentifierReference">
-                            <name nameString="Trim"/>
-                          </calledFunction>
-                          <actualParams xsi:type="astm:ActualParameterExpression">
-                            <value xsi:type="astm:QualifiedOverData">
-                              <name nameString="ed"/>
-                            </value>
-                          </actualParams>
-                        </value>
-                      </actualParams>
-                    </expression>
-                  </thenBody>
+                <guardedStatement xsi:type="astm:BlockStatement">
+                  <subStatements xsi:type="astm:IfStatement">
+                    <condition xsi:type="astm:BinaryExpression">
+                      <leftOperand xsi:type="astm:QualifiedOverData">
+                        <name nameString="ed"/>
+                        <member>
+                          <name nameString="Text"/>
+                        </member>
+                      </leftOperand>
+                      <rightOperand xsi:type="astm:StringLiteral" value="''"/>
+                    </condition>
+                    <thenBody xsi:type="astm:ExpressionStatement">
+                      <expression xsi:type="astm:FunctionCallExpression">
+                        <calledFunction xsi:type="astm:IdentifierReference">
+                          <name nameString="StrToDate"/>
+                        </calledFunction>
+                        <actualParams xsi:type="astm:ActualParameterExpression">
+                          <value xsi:type="astm:DelphiFunctionCallExpression">
+                            <calledFunction xsi:type="astm:IdentifierReference">
+                              <name nameString="Trim"/>
+                            </calledFunction>
+                            <actualParams xsi:type="astm:ActualParameterExpression">
+                              <value xsi:type="astm:QualifiedOverData">
+                                <name nameString="ed"/>
+                                <member>
+                                  <name nameString="Text"/>
+                                </member>
+                              </value>
+                            </actualParams>
+                          </value>
+                        </actualParams>
+                      </expression>
+                    </thenBody>
+                  </subStatements>
                 </guardedStatement>
               </subStatements>
             </subStatements>
+            <declarations xsi:type="astm:VariableDefinition" isMutable="true">
+              <identifierName nameString="ed"/>
+            </declarations>
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
@@ -264,7 +269,4 @@
   <astm:TypeDefinition>
     <name nameString="TNumber"/>
   </astm:TypeDefinition>
-  <astm:VariableDefinition isMutable="true">
-    <identifierName nameString="ed"/>
-  </astm:VariableDefinition>
 </xmi:XMI>
