@@ -185,7 +185,7 @@ context tryStmt
 def : ast() : as::astm::TryStatement =
 as::astm::TryStatement {
 	guardedStatement = as::astm::BlockStatement{subStatements = self.stmtList.statments.ast()},
-	finalStatement = if final = null then null else final.statments->first().ast()endif
+	finalStatement = if final = null then null else final.statments->first().ast() endif
 }
  
 context designator

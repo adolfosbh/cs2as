@@ -7,8 +7,13 @@ def : extract() :String =
 	null -- to be overriden
 
 context cs::MultipleId
-def : extract() :String =
-	id->first()
+def : extract() : String =	
+	id->iterate(x ; acc : String = '' |
+		if self.id->indexOf(x) = 1
+		then acc + x
+		else acc + '.' + x
+		endif
+	)
 	
 context cs::ReservedId
 def : extract() :String =
