@@ -33,7 +33,6 @@ import org.xtext.example.companies.tx.TypedModelInstance;
 
 /**
  * ModelObjectsOfKindOperation realises the Model::objectsOfKind() library operation.
- * at-since 1.1
  */
 public class ModelObjectsOfKindOperation extends AbstractBinaryOperation
 {

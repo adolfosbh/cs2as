@@ -40,20 +40,19 @@ import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.pivot.internal.utilities.PivotConstantsInternal;
 import org.eclipse.ocl.pivot.oclstdlib.OCLstdlibPackage;
+import org.eclipse.ocl.pivot.utilities.LabelUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.UnlimitedNaturalValue;
 import org.xtext.example.companies.tx.AbstractObjectManager;
 import org.xtext.example.companies.tx.AbstractSlotState;
 import org.xtext.example.companies.tx.AbstractTransformer;
+import org.xtext.example.companies.tx.Execution;
 import org.xtext.example.companies.tx.Invocation;
 import org.xtext.example.companies.tx.InvocationFailedException;
 import org.xtext.example.companies.tx.ObjectManager;
 import org.xtext.example.companies.tx.SlotState;
 
-/**
- * at-since 1.1
- */
 public class LazyObjectManager extends AbstractObjectManager
 {
 	/**
@@ -225,7 +224,7 @@ public class LazyObjectManager extends AbstractObjectManager
 			s.append("::");
 			s.append(debug_eFeature.getName());
 			s.append(" for ");
-			s.append(debug_eObject);
+			s.append(LabelUtil.getLabel(debug_eObject));
 			s.append("]");
 			return s.toString();
 		}
@@ -233,13 +232,13 @@ public class LazyObjectManager extends AbstractObjectManager
 		protected synchronized void unblock(@NonNull ObjectManager objectManager) {
 			final Object blockedInvocations2 = blockedInvocations;
 			if (blockedInvocations2 instanceof Invocation) {
-				objectManager.unblock((Invocation) blockedInvocations2);
+				((Invocation) blockedInvocations2).unblock();
 			}
 			else if (blockedInvocations2 != null) {
 				@SuppressWarnings("unchecked")
 				List<Invocation> blockedInvocationList = (List<Invocation>)blockedInvocations2;
 				for (@SuppressWarnings("null")@NonNull Invocation invocation : blockedInvocationList) {
-					objectManager.unblock(invocation);
+					invocation.unblock();
 				}
 			}
 			blockedInvocations = null;
@@ -734,7 +733,7 @@ public class LazyObjectManager extends AbstractObjectManager
 	public synchronized void assigned(@NonNull Object eObject, /*@NonNull*/ EStructuralFeature eFeature, @Nullable Object ecoreValue, @Nullable Object childKey) {
 		assert eFeature != null;
 		if (debugInvocations) {
-			AbstractTransformer.INVOCATIONS.println("assigned " + eFeature.getEContainingClass().getName() + "::" + eFeature.getName() + " for " + eObject + " = " + ecoreValue);
+			AbstractTransformer.INVOCATIONS.println("assigned " + eFeature.getEContainingClass().getName() + "::" + eFeature.getName() + " for " + LabelUtil.getLabel(eObject) + " = " + LabelUtil.getLabel(ecoreValue));
 		}
 		Map<@NonNull EStructuralFeature, @NonNull SlotState> objectState = getObjectState(eObject);
 		SlotState slotState = objectState.get(eFeature);
@@ -1014,7 +1013,7 @@ public class LazyObjectManager extends AbstractObjectManager
 	public synchronized void getting(@NonNull Object eObject, /*@NonNull*/ EStructuralFeature eFeature, boolean isOpposite) {
 		assert eFeature != null;
 		if (debugInvocations) {
-			AbstractTransformer.INVOCATIONS.println("getting " + eFeature.getEContainingClass().getName() + "::" + eFeature.getName() + (isOpposite ? "<opposite> " : "") + " for " + eObject);
+			AbstractTransformer.INVOCATIONS.println("getting " + eFeature.getEContainingClass().getName() + "::" + eFeature.getName() + (isOpposite ? "<opposite> " : "") + " for " + LabelUtil.getLabel(eObject));
 		}
 		if (isOpposite) {
 			eFeature = getEOppositeReference((EReference) eFeature);
@@ -1024,7 +1023,7 @@ public class LazyObjectManager extends AbstractObjectManager
 	}
 
 	@Override
-	public void got(Invocation.@NonNull Incremental invocation, @NonNull Object eObject, EStructuralFeature eFeature, @Nullable Object ecoreValue) {
+	public void got(Execution.@NonNull Incremental computation, @NonNull Object eObject, EStructuralFeature eFeature, @Nullable Object ecoreValue) {
 		// Ignore incremental API
 	}
 }

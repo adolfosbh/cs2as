@@ -33,7 +33,6 @@ import org.xtext.example.companies.tx.TypedModelInstance;
 
 /**
  * AllObjectsOperation realises the Model::allObjects() library operation.
- * at-since 1.1
  */
 public class AllObjectsOperation extends AbstractUnaryOperation
 {

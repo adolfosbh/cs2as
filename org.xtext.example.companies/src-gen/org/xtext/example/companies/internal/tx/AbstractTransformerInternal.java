@@ -39,7 +39,6 @@ import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ocl.pivot.evaluation.AbstractModelManager;
 import org.eclipse.ocl.pivot.evaluation.Evaluator;
-import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.ClassId;
 import org.eclipse.ocl.pivot.ids.CollectionTypeId;
 import org.eclipse.ocl.pivot.ids.IdManager;
@@ -55,18 +54,17 @@ import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.SetValue;
 import org.xtext.example.companies.tx.AbstractTransformer;
 import org.xtext.example.companies.tx.AbstractTypedModelInstance;
+import org.xtext.example.companies.tx.Connection;
 import org.xtext.example.companies.tx.ExecutionVisitable;
-import org.xtext.example.companies.tx.Invocation;
 import org.xtext.example.companies.tx.InvocationFailedException;
 import org.xtext.example.companies.tx.InvocationManager;
 import org.xtext.example.companies.tx.ObjectManager;
+import org.xtext.example.companies.tx.TransformationExecutor;
 import org.xtext.example.companies.tx.Transformer;
 
 /**
  * The abstract implementation of an auto-generated transformation provides the shared infrastructure for maintaining
  * models and deferring invocation of not-ready mapping invocations.
- *
- * at-since 1.1
  */
 public abstract class AbstractTransformerInternal extends AbstractModelManager implements Transformer, ExecutionVisitable
 {
@@ -403,7 +401,7 @@ public abstract class AbstractTransformerInternal extends AbstractModelManager i
 		}
 	}
 
-	protected final @NonNull Executor executor;
+	protected final @NonNull TransformationExecutor executor;
 	/** deprecated use executor */
 	@Deprecated
 	protected final @NonNull Evaluator evaluator;
@@ -461,7 +459,7 @@ public abstract class AbstractTransformerInternal extends AbstractModelManager i
 	 */
 	protected final @NonNull EvaluationCache evaluationCache;
 
-	protected AbstractTransformerInternal(@NonNull Executor executor, @NonNull String @NonNull [] modelNames,
+	protected AbstractTransformerInternal(@NonNull TransformationExecutor executor, @NonNull String @NonNull [] modelNames,
 			@NonNull PropertyId @Nullable [] propertyIndex2propertyId, @NonNull ClassId @Nullable [] classIndex2classId, int @Nullable [] @NonNull [] classIndex2allClassIndexes) {
 		this.executor = executor;
 		this.evaluator = executor;
@@ -538,6 +536,10 @@ public abstract class AbstractTransformerInternal extends AbstractModelManager i
 		models[modelIndex].addRootObjects(eRootObjects);
 	}
 
+	protected @NonNull Connection createConnection(@NonNull String name, @NonNull TypeId typeId, boolean isStrict) {
+		return invocationManager.getRootInterval().createConnection(name, typeId, isStrict);
+	}
+
 	/**
 	 * Create the evaluationCache. Creates a EvaluationCache by default.
 	 */
@@ -549,9 +551,10 @@ public abstract class AbstractTransformerInternal extends AbstractModelManager i
 	 * Create the InvocationManager. Creates a LazyInvocationManager by default.
 	 */
 	protected @NonNull InvocationManager createInvocationManager() {
-		return new LazyInvocationManager();
+		return new LazyInvocationManager(executor);
 	}
 
+	@Deprecated // Use createConnection
 	protected SetValue.@NonNull Accumulator createUnenforcedSetAccumulatorValue(@NonNull CollectionTypeId typeId) {
 		return new UnenforcedSetAccumulator(typeId);
 	}
@@ -589,6 +592,26 @@ public abstract class AbstractTransformerInternal extends AbstractModelManager i
 			classId2classIndexes.put(classId, classIndexes);
 		}
 		return classIndexes;
+	}
+
+	@Override
+	public @NonNull EvaluationCache getEvaluationCache() {
+		return evaluationCache;
+	}
+
+	@Override
+	public @NonNull TransformationExecutor getExecutor() {
+		return executor;
+	}
+
+	@Override
+	public @NonNull InvocationManager getInvocationManager() {
+		return invocationManager;
+	}
+
+	@Override
+	public @NonNull ObjectManager getObjectManager() {
+		return objectManager;
 	}
 
 	/**
@@ -713,28 +736,17 @@ public abstract class AbstractTransformerInternal extends AbstractModelManager i
 		return false;
 	}
 
-	/**
-	 * Invoke a mapping with the given constructor with a given set of boundValues once. This shortform of invokeOnce
-	 * should only be used when it is known that recursive invocation is impossible.
-	 */
-	public <@Nullable T extends Invocation> void invoke(Invocation.@NonNull Constructor constructor, @NonNull Object @NonNull ... boundValues) {
-		@NonNull Invocation invocation = constructor.newInstance(boundValues);
-		if (debugInvocations) {
-			AbstractTransformer.INVOCATIONS.println("invoke " + invocation);
+	/*	protected void install(@NonNull InvocationConstructor constructor, int consumedConnections, @NonNull Connection @NonNull ... connections) {
+		//		InvocationConstructor invoker = invocationManager.createInvoker(constructor, consumedConnections, interval, connections);
+		for (int i = 0; i < consumedConnections; i++) {
+			Connection consumedConnection = connections[i];
+			consumedConnection.addConsumer(constructor);
+			constructor.addConsumedConection(consumedConnection);
 		}
-		invocationManager.invoke(invocation, true);
-	}
-
-	/**
-	 * Invoke a mapping with the given constructor with a given set of boundValues once. Repeated invocation attempts are ignored.
-	 */
-	public void invokeOnce(Invocation.@NonNull Constructor constructor, @NonNull Object @NonNull ... boundValues) {
-		@Nullable Invocation invocation = constructor.getFirstInvocation(boundValues);
-		if (invocation != null) {
-			if (debugInvocations) {
-				AbstractTransformer.INVOCATIONS.println("invokeOnce " + invocation);
-			}
-			invocationManager.invoke(invocation, true);
+		for (int i = consumedConnections; i < connections.length; i++) {
+			Connection appendedConnection = connections[i];
+			appendedConnection.addProducer(constructor);
+			constructor.addAppendedConnection(appendedConnection);
 		}
-	}
+	} */
 }

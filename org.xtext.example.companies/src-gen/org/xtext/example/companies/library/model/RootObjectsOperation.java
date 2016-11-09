@@ -33,7 +33,6 @@ import org.xtext.example.companies.tx.TypedModelInstance;
 
 /**
  * RootObjectsOperation realises the Model::rootObjects() library operation.
- * at-since 1.1
  */
 public class RootObjectsOperation extends AbstractUnaryOperation
 {
