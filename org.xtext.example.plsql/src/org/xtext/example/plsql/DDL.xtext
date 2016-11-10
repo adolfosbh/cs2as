@@ -1,0 +1,82 @@
+grammar org.xtext.example.plsql.DDL with org.eclipse.xtext.common.Terminals
+
+generate dDL "http://www.xtext.org/example/plsql/DDL"
+
+Data_definition :
+	definitions+= Definition+
+;
+
+Definition:
+	Create_table | Alter_table | Create_sequence | Comment;
+	
+Create_table :
+	'CREATE' 'TABLE' id=ID
+	'('
+		columns+=Column (',' columns+=Column)*
+		(',' constraints+=Constraint)*
+	')' ';'
+;
+
+Column :
+	id=ID type=TYPE ('(' number=INT ')')? isNull=ISNULL?
+;
+
+Alter_table :
+	'ALTER' 'TABLE' tabname=Tabname
+		((add='ADD' constraint=Constraint) | (enable='ENABLE' 'CONSTRAINT') id=ID)
+	';'
+;
+
+Comment :
+	'COMMENT' 'ON' (('TABLE' tabname=Tabname) | ('COLUMN' columnId=ID '.' colname=Colname)) 'IS' string=STRING ';'
+;
+
+Create_sequence :
+	'CREATE' 'SEQUENCE' id=ID sequence_options+=Sequence_options* ';'
+;
+
+Sequence_options :
+	increment='INCREMENT' 'BY' INT | start='START' 'WITH' INT |
+	maxvalue='MAXVALUE' INT | nomaxvalue='NOMAXVALUE' |
+	minvalue='MINVALUE' INT | nominvalue='NOMINVALUE' |
+	cycle='CYCLE' | nocycle='NOCYCLE' |
+	cache='CACHE' INT | nocache='NOCACHE' |
+	order='ORDER' | noorder='NOORDER'
+;
+
+Constraint :
+	'CONSTRAINT' id=ID key=Key
+;
+
+Key:
+	Primary_key | Unique_key | Foreign_key
+;
+
+Primary_key :
+	'PRIMARY' 'KEY' '(' colNames+=Colname (',' colNames+=Colname)* ')'
+;
+
+Unique_key :
+	'UNIQUE' '(' colNames+=Colname (',' colNames+=Colname)* ')'
+;
+
+Foreign_key :
+	'FOREIGN' 'KEY' '(' colNames+=Colname ')'
+	'REFERENCES' tabname=Tabname '(' colNames+=Colname ')'
+;
+
+Colname :
+	id=ID
+;
+
+Tabname :
+	(id=ID '.')? basename=ID
+;
+
+ISNULL : null?='NULL' | (nonNull?='NOT' 'NULL')
+;
+
+
+TYPE : id=('NUMBER' | 'VARCHAR2' | 'DATE') 
+;
+

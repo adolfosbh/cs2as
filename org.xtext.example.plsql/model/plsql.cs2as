@@ -1,0 +1,86 @@
+source cs : 'generated/DDL.ecore#/'
+target as : 'astm.ecore#/'
+
+mappings {
+	create Project from Data_definition {
+		files := as::CompilationUnit { 
+					language = 'PL/SQL',
+					fragments = definitions.trace
+				 };
+	}
+	 
+	create RDBTableDefinition from Create_table {
+		identifierName := as::Name { nameString = id };
+		Column := columns.trace;
+		PrimKey := constraints->select(oclIsKindOf(Primary_key)).trace;
+		Constraint := constraints->select(not oclIsKindOf(Primary_key)).trace;
+	}
+	
+	create RDBColumnDefinition from Column {
+		identifierName := as::Name { nameString = id};
+		type := if type.id = 'NUMBER'
+				then as::RDBNumber{}
+				else if type.id = 'VARCHAR2'
+					then as::RDBVarchar{}
+					else
+						if  type.id = 'DATE'
+						then as::RDBDate
+						else invalid
+						endif
+					endif
+				endif;
+		NotNull := if isNull.nonNull then 'false' else 'true' endif;
+	}
+	
+	create RDBColumnReference from Constraint
+	when isPrimaryKey {
+		name := as::Name{nameString = key.oclAsType(Primary_key).colNames->first().id};
+		refersTo := lookup(RDBColumnDefinition,trace.name.nameString);
+	}
+		
+	create RDBUniqueKey from Constraint
+	when isUniqueKey {
+		Column := key.oclAsType(Unique_key).colNames.trace;
+	}
+	
+	create RDBRefIntegrity from Constraint 
+	when isForeignKey {
+		ForeignKey := key.colNames->at(1).trace;
+		ParentKey := key.colNames->at(2).trace;
+		ParentTable := as::RDBTableReference {
+						name = as::Name {nameString = key.oclAsType(Foreign_key).tabname.basename},
+						refersTo = lookup(RDBTableDefinition,key.oclAsType(Foreign_key).tabname.basename)
+						};
+	}
+	
+	create RDBColumnReference from Colname {
+		name := as::Name{nameString = id};
+		refersTo := lookup(RDBColumnDefinition, id);
+	}
+}
+
+disambiguation {
+	Constraint {
+		isPrimaryKey := key.oclIsKindOf(Primary_key);
+		isUniqueKey := key.oclIsKindOf(Unique_key);
+		isForeignKey := key.oclIsKindOf(Foreign_key);
+	}
+}
+name_resolution {
+	targets {
+		Definition using identifierName;
+		RDBTableDefinition;
+		RDBColumnDefinition;
+	}
+	providers {
+		CompilationUnit {
+			in current_scope provides
+				RDBTableDefinition using fragments->selectByKind(RDBTableDefinition)
+				RDBColumnDefinition using fragments->selectByKind(RDBTableDefinition).Column;
+		}
+		RDBTableDefinition {
+			in current_scope provides
+				RDBColumnDefinition using Column;
+		}
+	}
+}
