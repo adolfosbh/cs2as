@@ -192,8 +192,9 @@ disambiguation {
 
 name_resolution {
 	targets {
-		VariableDefinition using identifierName;
-		FunctionDefinition using identifierName;
+		Definition using identifierName;
+		VariableDefinition;
+		FunctionDefinition;
 	}
 	
 	providers {
