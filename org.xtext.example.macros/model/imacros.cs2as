@@ -1,0 +1,15 @@
+source cs : 'generated/Macros.ecore#/'
+target as : 'iMacros.ecore#/'
+
+mappings {
+	create Script from MainRule {
+		version := version.trace;
+		instructions := statement.trace; 
+	}
+	create Version from Version_Statement {
+		build := attribute.value;
+	} 
+	create Tag from Tag_Statement {}
+}
+
+disambiguation {}

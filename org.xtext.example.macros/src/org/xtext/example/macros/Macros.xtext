@@ -1,0 +1,49 @@
+grammar org.xtext.example.macros.Macros hidden(WS)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate macros "http://www.xtext.org/example/macros/Macros"
+
+MainRule
+	: version=Version_Statement? statement+=Statement*
+	;
+
+Version_Statement
+	: {Version_Statement} 'VERSION' attribute=Version_attr
+	;
+		
+Statement
+	: Tag_Statement | Url_Statement | Tab_Statement
+	; 
+	
+Tag_Statement
+	: {Tag_Statement} 'TAG' tags+=Tag_attr*
+	; 
+
+Url_Statement
+	: {Url_Statement} 'URL' urls+=url_attr*
+	;
+	
+Tab_Statement
+	: {Tab_Statement} 'TAB' tabs+=tab_attr*
+	;
+	
+Version_attr
+	: 'BUILD' '=' value=DQVAL
+	;
+	
+Tag_attr
+	: tag=('TYPE' | 'ATTR' | 'POS' | 'CONTENT') '=' value=DQVAL
+	;
+	
+url_attr
+	: 'GOTO' '=' value=DQVAL
+	;
+	
+tab_attr
+	: 'T' '=' value=DQVAL
+	;
+
+terminal WS : (' '|'\t'|'\r'|'\n')+;
+
+terminal DQVAL : (!(' '|'\t'|'\r'|'\n'))+;
