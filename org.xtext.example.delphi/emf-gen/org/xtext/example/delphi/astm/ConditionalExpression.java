@@ -34,6 +34,7 @@ public interface ConditionalExpression extends Expression {
 	 * @see #setCondition(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getConditionalExpression_Condition()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ConditionalExpression!condition'"
 	 * @generated
 	 */
 	Expression getCondition();
@@ -60,6 +61,7 @@ public interface ConditionalExpression extends Expression {
 	 * @see #setOnTrueOperand(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getConditionalExpression_OnTrueOperand()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ConditionalExpression!onTrueOperand'"
 	 * @generated
 	 */
 	Expression getOnTrueOperand();
@@ -86,6 +88,7 @@ public interface ConditionalExpression extends Expression {
 	 * @see #setOnFalseOperand(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getConditionalExpression_OnFalseOperand()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ConditionalExpression!onFalseOperand'"
 	 * @generated
 	 */
 	Expression getOnFalseOperand();

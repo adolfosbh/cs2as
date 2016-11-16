@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.delphi.astm.AstmPackage;
 import org.xtext.example.delphi.astm.DelphiImplementationSection;
 import org.xtext.example.delphi.astm.NamedTypeReference;
@@ -185,7 +186,7 @@ public class DelphiImplementationSectionImpl extends CompilationUnitImpl impleme
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitDelphiImplementationSection(this);
 	}
 

@@ -34,6 +34,7 @@ public interface FunctionCallExpression extends Expression {
 	 * @see #setCalledFunction(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionCallExpression_CalledFunction()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionCallExpression!calledFunction'"
 	 * @generated
 	 */
 	Expression getCalledFunction();
@@ -60,6 +61,7 @@ public interface FunctionCallExpression extends Expression {
 	 * @return the value of the '<em>Actual Params</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionCallExpression_ActualParams()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionCallExpression!actualParams'"
 	 * @generated
 	 */
 	EList<ActualParameter> getActualParams();

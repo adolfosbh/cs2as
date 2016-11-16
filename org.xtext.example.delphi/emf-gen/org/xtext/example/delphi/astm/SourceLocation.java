@@ -35,7 +35,7 @@ public interface SourceLocation extends GASTMSourceObject {
 	 * @return the value of the '<em>Start Line</em>' attribute.
 	 * @see #setStartLine(int)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getSourceLocation_StartLine()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!SourceLocation!startLine'"
 	 * @generated
 	 */
 	int getStartLine();
@@ -61,7 +61,7 @@ public interface SourceLocation extends GASTMSourceObject {
 	 * @return the value of the '<em>Start Column</em>' attribute.
 	 * @see #setStartColumn(int)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getSourceLocation_StartColumn()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!SourceLocation!startColumn'"
 	 * @generated
 	 */
 	int getStartColumn();
@@ -87,7 +87,7 @@ public interface SourceLocation extends GASTMSourceObject {
 	 * @return the value of the '<em>End Line</em>' attribute.
 	 * @see #setEndLine(int)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getSourceLocation_EndLine()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!SourceLocation!endLine'"
 	 * @generated
 	 */
 	int getEndLine();
@@ -113,7 +113,7 @@ public interface SourceLocation extends GASTMSourceObject {
 	 * @return the value of the '<em>End Column</em>' attribute.
 	 * @see #setEndColumn(int)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getSourceLocation_EndColumn()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!SourceLocation!endColumn'"
 	 * @generated
 	 */
 	int getEndColumn();
@@ -140,6 +140,7 @@ public interface SourceLocation extends GASTMSourceObject {
 	 * @see #setInSourceFile(SourceFile)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getSourceLocation_InSourceFile()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!SourceLocation!inSourceFile'"
 	 * @generated
 	 */
 	SourceFile getInSourceFile();

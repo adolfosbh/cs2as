@@ -33,6 +33,7 @@ public interface EnumType extends DataType {
 	 * @return the value of the '<em>Enum Literals</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getEnumType_EnumLiterals()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!EnumType!enumLiterals'"
 	 * @generated
 	 */
 	EList<EnumLiteralDefinition> getEnumLiterals();

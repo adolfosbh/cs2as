@@ -32,7 +32,7 @@ public interface Name extends OtherSyntaxObject {
 	 * @return the value of the '<em>Name String</em>' attribute.
 	 * @see #setNameString(String)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getName_NameString()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Name!nameString'"
 	 * @generated
 	 */
 	String getNameString();

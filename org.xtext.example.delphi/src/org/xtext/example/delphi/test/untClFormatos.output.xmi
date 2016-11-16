@@ -146,7 +146,7 @@
               <subStatements xsi:type="astm:ExpressionStatement">
                 <expression xsi:type="astm:BinaryExpression">
                   <operator xsi:type="astm:Assign"/>
-                  <leftOperand xsi:type="astm:IdentifierReference">
+                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/2/@files.0/@implementation/@fragments.2/@body.0/@declarations.0">
                     <name nameString="ed"/>
                   </leftOperand>
                   <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
@@ -165,7 +165,7 @@
                 <guardedStatement xsi:type="astm:BlockStatement">
                   <subStatements xsi:type="astm:IfStatement">
                     <condition xsi:type="astm:BinaryExpression">
-                      <leftOperand xsi:type="astm:QualifiedOverData">
+                      <leftOperand xsi:type="astm:QualifiedOverData" refersTo="/2/@files.0/@implementation/@fragments.2/@body.0/@declarations.0">
                         <name nameString="ed"/>
                         <member>
                           <name nameString="Text"/>
@@ -184,7 +184,7 @@
                               <name nameString="Trim"/>
                             </calledFunction>
                             <actualParams xsi:type="astm:ActualParameterExpression">
-                              <value xsi:type="astm:QualifiedOverData">
+                              <value xsi:type="astm:QualifiedOverData" refersTo="/2/@files.0/@implementation/@fragments.2/@body.0/@declarations.0">
                                 <name nameString="ed"/>
                                 <member>
                                   <name nameString="Text"/>

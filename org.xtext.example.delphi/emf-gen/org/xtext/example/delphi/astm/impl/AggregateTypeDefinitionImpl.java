@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.delphi.astm.AggregateType;
 import org.xtext.example.delphi.astm.AggregateTypeDefinition;
 import org.xtext.example.delphi.astm.AstmPackage;
@@ -175,7 +176,7 @@ public class AggregateTypeDefinitionImpl extends TypeDefinitionImpl implements A
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitAggregateTypeDefinition(this);
 	}
 

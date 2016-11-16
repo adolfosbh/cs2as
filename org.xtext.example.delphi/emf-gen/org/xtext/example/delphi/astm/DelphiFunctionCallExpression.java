@@ -31,7 +31,7 @@ public interface DelphiFunctionCallExpression extends FunctionCallExpression {
 	 * @return the value of the '<em>Apply To</em>' reference.
 	 * @see #setApplyTo(DefinitionObject)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDelphiFunctionCallExpression_ApplyTo()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DelphiFunctionCallExpression!applyTo'"
 	 * @generated
 	 */
 	DefinitionObject getApplyTo();

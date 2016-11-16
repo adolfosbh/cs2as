@@ -34,6 +34,7 @@ public interface TypeQualifiedIdentifierReference extends NameReference {
 	 * @return the value of the '<em>Aggregate Type</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getTypeQualifiedIdentifierReference_AggregateType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!TypeQualifiedIdentifierReference!aggregateType'"
 	 * @generated
 	 */
 	EList<TypeReference> getAggregateType();
@@ -50,6 +51,7 @@ public interface TypeQualifiedIdentifierReference extends NameReference {
 	 * @see #setMember(IdentifierReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getTypeQualifiedIdentifierReference_Member()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!TypeQualifiedIdentifierReference!member'"
 	 * @generated
 	 */
 	IdentifierReference getMember();

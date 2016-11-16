@@ -33,6 +33,7 @@ public interface Dimension extends OtherSyntaxObject {
 	 * @see #setLowBound(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDimension_LowBound()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Dimension!lowBound'"
 	 * @generated
 	 */
 	Expression getLowBound();
@@ -59,6 +60,7 @@ public interface Dimension extends OtherSyntaxObject {
 	 * @see #setHighBound(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDimension_HighBound()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Dimension!highBound'"
 	 * @generated
 	 */
 	Expression getHighBound();

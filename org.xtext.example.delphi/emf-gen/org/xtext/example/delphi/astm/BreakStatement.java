@@ -32,6 +32,7 @@ public interface BreakStatement extends Statement {
 	 * @see #setTarget(LabelAccess)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getBreakStatement_Target()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!BreakStatement!target'"
 	 * @generated
 	 */
 	LabelAccess getTarget();

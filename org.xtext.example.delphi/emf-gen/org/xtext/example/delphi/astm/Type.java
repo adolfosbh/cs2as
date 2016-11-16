@@ -32,7 +32,7 @@ public interface Type extends GASTMSyntaxObject {
 	 * @return the value of the '<em>Is Const</em>' attribute.
 	 * @see #setIsConst(boolean)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getType_IsConst()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Type!isConst'"
 	 * @generated
 	 */
 	boolean isIsConst();
@@ -58,7 +58,7 @@ public interface Type extends GASTMSyntaxObject {
 	 * @return the value of the '<em>Is Volatile</em>' attribute.
 	 * @see #setIsVolatile(boolean)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getType_IsVolatile()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Type!isVolatile'"
 	 * @generated
 	 */
 	boolean isIsVolatile();

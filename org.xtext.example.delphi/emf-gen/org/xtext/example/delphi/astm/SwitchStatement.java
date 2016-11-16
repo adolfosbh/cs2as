@@ -35,6 +35,7 @@ public interface SwitchStatement extends Statement {
 	 * @see #setSwitchExpression(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getSwitchStatement_SwitchExpression()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!SwitchStatement!switchExpression'"
 	 * @generated
 	 */
 	Expression getSwitchExpression();
@@ -61,6 +62,7 @@ public interface SwitchStatement extends Statement {
 	 * @return the value of the '<em>Cases</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getSwitchStatement_Cases()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!SwitchStatement!cases'"
 	 * @generated
 	 */
 	EList<SwitchCase> getCases();

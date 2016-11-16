@@ -32,6 +32,7 @@ public interface MacroCall extends PreprocessorElement {
 	 * @see #setRefersTo(MacroDefinition)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getMacroCall_RefersTo()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!MacroCall!refersTo'"
 	 * @generated
 	 */
 	MacroDefinition getRefersTo();

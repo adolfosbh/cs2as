@@ -31,7 +31,7 @@ public interface PrimitiveType extends DataType {
 	 * @return the value of the '<em>Is Signed</em>' attribute.
 	 * @see #setIsSigned(boolean)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getPrimitiveType_IsSigned()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!PrimitiveType!isSigned'"
 	 * @generated
 	 */
 	boolean isIsSigned();

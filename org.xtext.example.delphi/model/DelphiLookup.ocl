@@ -28,9 +28,9 @@ def : _unqualified_env_FunctionDefinition(child : Visitable) : lookup::LookupEnv
 	parentEnv_FunctionDefinition()
 
 def : parentEnv_VariableDefinition() : lookup::LookupEnvironment[1] =
-	let parent = oclContainer().oclAsType(Visitable) in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_VariableDefinition(self) endif
+	let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent.oclAsType(Visitable)._unqualified_env_VariableDefinition(self) endif
 def : parentEnv_FunctionDefinition() : lookup::LookupEnvironment[1] =
-	let parent = oclContainer().oclAsType(Visitable) in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_FunctionDefinition(self) endif
+	let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent.oclAsType(Visitable)._unqualified_env_FunctionDefinition(self) endif
 
 
 -- End of domain specific default functionality
@@ -38,7 +38,7 @@ def : parentEnv_FunctionDefinition() : lookup::LookupEnvironment[1] =
 context Visitable
 -- VariableDefinition unqualified lookup
 def : _lookupVariableDefinition(env : lookup::LookupEnvironment, vName : String) : OrderedSet(VariableDefinition) =
-let foundVariableDefinition = env.namedElements->selectByKind(VariableDefinition)->select(identifierName = vName)
+let foundVariableDefinition = env.namedElements->selectByKind(VariableDefinition)->select(identifierName.nameString = vName)
 in  if foundVariableDefinition->isEmpty() and not (env.parentEnv = null)
    then _lookupVariableDefinition(env.parentEnv, vName)
    else foundVariableDefinition
@@ -60,7 +60,7 @@ def : lookupVariableDefinition(vName : String) : VariableDefinition[?] =
 context Visitable
 -- FunctionDefinition unqualified lookup
 def : _lookupFunctionDefinition(env : lookup::LookupEnvironment, fName : String) : OrderedSet(FunctionDefinition) =
-let foundFunctionDefinition = env.namedElements->selectByKind(FunctionDefinition)->select(identifierName = fName)
+let foundFunctionDefinition = env.namedElements->selectByKind(FunctionDefinition)->select(identifierName.nameString = fName)
 in  if foundFunctionDefinition->isEmpty() and not (env.parentEnv = null)
    then _lookupFunctionDefinition(env.parentEnv, fName)
    else foundFunctionDefinition

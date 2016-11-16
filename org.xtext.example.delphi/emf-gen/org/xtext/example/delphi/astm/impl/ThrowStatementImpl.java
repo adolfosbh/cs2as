@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.delphi.astm.AstmPackage;
 import org.xtext.example.delphi.astm.Expression;
 import org.xtext.example.delphi.astm.ThrowStatement;
@@ -175,7 +176,7 @@ public class ThrowStatementImpl extends StatementImpl implements ThrowStatement 
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitThrowStatement(this);
 	}
 

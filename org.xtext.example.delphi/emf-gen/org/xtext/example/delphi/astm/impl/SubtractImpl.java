@@ -3,6 +3,7 @@
 package org.xtext.example.delphi.astm.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.delphi.astm.AstmPackage;
 import org.xtext.example.delphi.astm.Subtract;
 import org.xtext.example.delphi.astm.util.Visitor;
@@ -39,7 +40,7 @@ public class SubtractImpl extends BinaryOperatorImpl implements Subtract {
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitSubtract(this);
 	}
 

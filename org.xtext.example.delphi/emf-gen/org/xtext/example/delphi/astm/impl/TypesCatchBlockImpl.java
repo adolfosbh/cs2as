@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.delphi.astm.AstmPackage;
 import org.xtext.example.delphi.astm.Type;
 import org.xtext.example.delphi.astm.TypesCatchBlock;
@@ -149,7 +150,7 @@ public class TypesCatchBlockImpl extends CatchBlockImpl implements TypesCatchBlo
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitTypesCatchBlock(this);
 	}
 

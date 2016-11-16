@@ -3,6 +3,7 @@
 package org.xtext.example.delphi.astm.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.delphi.astm.AstmPackage;
 import org.xtext.example.delphi.astm.DefaultBlock;
 import org.xtext.example.delphi.astm.util.Visitor;
@@ -39,7 +40,7 @@ public class DefaultBlockImpl extends SwitchCaseImpl implements DefaultBlock {
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitDefaultBlock(this);
 	}
 

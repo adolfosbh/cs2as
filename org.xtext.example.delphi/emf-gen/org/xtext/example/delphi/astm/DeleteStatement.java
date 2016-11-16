@@ -32,6 +32,7 @@ public interface DeleteStatement extends Statement {
 	 * @see #setOperand(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDeleteStatement_Operand()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DeleteStatement!operand'"
 	 * @generated
 	 */
 	Expression getOperand();

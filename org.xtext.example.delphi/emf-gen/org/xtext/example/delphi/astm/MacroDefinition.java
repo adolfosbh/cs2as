@@ -33,7 +33,7 @@ public interface MacroDefinition extends PreprocessorElement {
 	 * @return the value of the '<em>Macro Name</em>' attribute.
 	 * @see #setMacroName(String)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getMacroDefinition_MacroName()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!MacroDefinition!macroName'"
 	 * @generated
 	 */
 	String getMacroName();
@@ -59,7 +59,7 @@ public interface MacroDefinition extends PreprocessorElement {
 	 * @return the value of the '<em>Body</em>' attribute.
 	 * @see #setBody(String)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getMacroDefinition_Body()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!MacroDefinition!body'"
 	 * @generated
 	 */
 	String getBody();

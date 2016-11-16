@@ -33,6 +33,7 @@ public interface LabelDefinition extends DefinitionObject {
 	 * @see #setLabelName(Name)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getLabelDefinition_LabelName()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!LabelDefinition!labelName'"
 	 * @generated
 	 */
 	Name getLabelName();
@@ -59,6 +60,7 @@ public interface LabelDefinition extends DefinitionObject {
 	 * @see #setLabelType(LabelType)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getLabelDefinition_LabelType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!LabelDefinition!labelType'"
 	 * @generated
 	 */
 	LabelType getLabelType();

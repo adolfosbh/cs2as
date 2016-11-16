@@ -34,6 +34,7 @@ public interface ArrayAccess extends Expression {
 	 * @see #setArrayName(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getArrayAccess_ArrayName()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ArrayAccess!arrayName'"
 	 * @generated
 	 */
 	Expression getArrayName();
@@ -60,6 +61,7 @@ public interface ArrayAccess extends Expression {
 	 * @return the value of the '<em>Subscripts</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getArrayAccess_Subscripts()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ArrayAccess!subscripts'"
 	 * @generated
 	 */
 	EList<Expression> getSubscripts();

@@ -34,6 +34,7 @@ public interface DelphiBlockStatement extends BlockStatement {
 	 * @return the value of the '<em>Exports</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDelphiBlockStatement_Exports()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DelphiBlockStatement!exports'"
 	 * @generated
 	 */
 	EList<NamedTypeReference> getExports();
@@ -50,6 +51,7 @@ public interface DelphiBlockStatement extends BlockStatement {
 	 * @return the value of the '<em>Declarations</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDelphiBlockStatement_Declarations()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DelphiBlockStatement!declarations'"
 	 * @generated
 	 */
 	EList<DefinitionObject> getDeclarations();

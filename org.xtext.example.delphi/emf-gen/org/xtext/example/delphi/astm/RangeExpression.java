@@ -33,6 +33,7 @@ public interface RangeExpression extends Expression {
 	 * @see #setFromExpression(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getRangeExpression_FromExpression()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!RangeExpression!fromExpression'"
 	 * @generated
 	 */
 	Expression getFromExpression();
@@ -59,6 +60,7 @@ public interface RangeExpression extends Expression {
 	 * @see #setToExpression(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getRangeExpression_ToExpression()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!RangeExpression!toExpression'"
 	 * @generated
 	 */
 	Expression getToExpression();

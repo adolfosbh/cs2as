@@ -32,6 +32,7 @@ public interface AggregateTypeDefinition extends TypeDefinition {
 	 * @see #setAggregateType(AggregateType)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getAggregateTypeDefinition_AggregateType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!AggregateTypeDefinition!aggregateType'"
 	 * @generated
 	 */
 	AggregateType getAggregateType();

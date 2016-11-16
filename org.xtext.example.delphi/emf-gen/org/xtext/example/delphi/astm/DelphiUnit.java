@@ -34,6 +34,7 @@ public interface DelphiUnit extends CompilationUnit {
 	 * @see #setName(Name)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDelphiUnit_Name()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DelphiUnit!name'"
 	 * @generated
 	 */
 	Name getName();
@@ -60,6 +61,7 @@ public interface DelphiUnit extends CompilationUnit {
 	 * @see #setInterface(DelphiInterfaceSection)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDelphiUnit_Interface()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DelphiUnit!interface'"
 	 * @generated
 	 */
 	DelphiInterfaceSection getInterface();
@@ -86,6 +88,7 @@ public interface DelphiUnit extends CompilationUnit {
 	 * @see #setImplementation(DelphiImplementationSection)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDelphiUnit_Implementation()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DelphiUnit!implementation'"
 	 * @generated
 	 */
 	DelphiImplementationSection getImplementation();

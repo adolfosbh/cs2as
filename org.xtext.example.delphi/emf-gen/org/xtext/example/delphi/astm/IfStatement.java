@@ -34,6 +34,7 @@ public interface IfStatement extends Statement {
 	 * @see #setCondition(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getIfStatement_Condition()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!IfStatement!condition'"
 	 * @generated
 	 */
 	Expression getCondition();
@@ -60,6 +61,7 @@ public interface IfStatement extends Statement {
 	 * @see #setThenBody(Statement)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getIfStatement_ThenBody()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!IfStatement!thenBody'"
 	 * @generated
 	 */
 	Statement getThenBody();
@@ -86,6 +88,7 @@ public interface IfStatement extends Statement {
 	 * @see #setElseBody(Statement)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getIfStatement_ElseBody()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!IfStatement!elseBody'"
 	 * @generated
 	 */
 	Statement getElseBody();

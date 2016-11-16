@@ -32,6 +32,7 @@ public interface JumpStatement extends Statement {
 	 * @see #setTarget(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getJumpStatement_Target()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!JumpStatement!target'"
 	 * @generated
 	 */
 	Expression getTarget();

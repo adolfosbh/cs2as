@@ -35,6 +35,7 @@ public interface TryStatement extends Statement {
 	 * @see #setGuardedStatement(Statement)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getTryStatement_GuardedStatement()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!TryStatement!guardedStatement'"
 	 * @generated
 	 */
 	Statement getGuardedStatement();
@@ -61,6 +62,7 @@ public interface TryStatement extends Statement {
 	 * @return the value of the '<em>Catch Blocks</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getTryStatement_CatchBlocks()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!TryStatement!catchBlocks'"
 	 * @generated
 	 */
 	EList<CatchBlock> getCatchBlocks();
@@ -77,6 +79,7 @@ public interface TryStatement extends Statement {
 	 * @see #setFinalStatement(Statement)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getTryStatement_FinalStatement()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!TryStatement!finalStatement'"
 	 * @generated
 	 */
 	Statement getFinalStatement();

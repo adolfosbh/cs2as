@@ -33,6 +33,7 @@ public interface Definition extends DeclarationOrDefinition {
 	 * @see #setIdentifierName(Name)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDefinition_IdentifierName()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Definition!identifierName'"
 	 * @generated
 	 */
 	Name getIdentifierName();
@@ -59,6 +60,7 @@ public interface Definition extends DeclarationOrDefinition {
 	 * @see #setDefinitionType(TypeReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDefinition_DefinitionType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Definition!definitionType'"
 	 * @generated
 	 */
 	TypeReference getDefinitionType();

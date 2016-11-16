@@ -33,6 +33,7 @@ public interface LabeledStatement extends Statement {
 	 * @see #setLabel(LabelDefinition)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getLabeledStatement_Label()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!LabeledStatement!label'"
 	 * @generated
 	 */
 	LabelDefinition getLabel();
@@ -59,6 +60,7 @@ public interface LabeledStatement extends Statement {
 	 * @see #setStatement(Statement)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getLabeledStatement_Statement()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!LabeledStatement!statement'"
 	 * @generated
 	 */
 	Statement getStatement();

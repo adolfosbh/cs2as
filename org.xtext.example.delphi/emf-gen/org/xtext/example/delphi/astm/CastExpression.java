@@ -32,7 +32,7 @@ public interface CastExpression extends Expression {
 	 * @return the value of the '<em>Cast Type</em>' reference.
 	 * @see #setCastType(TypeReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getCastExpression_CastType()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!CastExpression!castType'"
 	 * @generated
 	 */
 	TypeReference getCastType();
@@ -59,6 +59,7 @@ public interface CastExpression extends Expression {
 	 * @see #setExpression(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getCastExpression_Expression()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!CastExpression!expression'"
 	 * @generated
 	 */
 	Expression getExpression();

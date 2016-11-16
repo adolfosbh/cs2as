@@ -4,6 +4,7 @@ package org.xtext.example.delphi.astm.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.delphi.astm.AstmPackage;
 import org.xtext.example.delphi.astm.GASTMObject;
 import org.xtext.example.delphi.astm.util.Visitor;
@@ -40,7 +41,7 @@ public class GASTMObjectImpl extends MinimalEObjectImpl.Container implements GAS
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitGASTMObject(this);
 	}
 

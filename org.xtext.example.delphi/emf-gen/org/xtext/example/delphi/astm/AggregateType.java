@@ -34,6 +34,7 @@ public interface AggregateType extends DataType {
 	 * @return the value of the '<em>Members</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getAggregateType_Members()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!AggregateType!members'"
 	 * @generated
 	 */
 	EList<DefinitionObject> getMembers();
@@ -50,6 +51,7 @@ public interface AggregateType extends DataType {
 	 * @see #setOpensScope(AggregateScope)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getAggregateType_OpensScope()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!AggregateType!opensScope'"
 	 * @generated
 	 */
 	AggregateScope getOpensScope();

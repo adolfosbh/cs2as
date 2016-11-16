@@ -32,6 +32,7 @@ public interface EnumLiteralDefinition extends Definition {
 	 * @see #setValue(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getEnumLiteralDefinition_Value()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!EnumLiteralDefinition!value'"
 	 * @generated
 	 */
 	Expression getValue();

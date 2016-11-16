@@ -35,6 +35,7 @@ public interface NameSpaceDefinition extends DefinitionObject {
 	 * @see #setNameSpace(Name)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getNameSpaceDefinition_NameSpace()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!NameSpaceDefinition!nameSpace'"
 	 * @generated
 	 */
 	Name getNameSpace();
@@ -61,6 +62,7 @@ public interface NameSpaceDefinition extends DefinitionObject {
 	 * @return the value of the '<em>Body</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getNameSpaceDefinition_Body()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!NameSpaceDefinition!body'"
 	 * @generated
 	 */
 	EList<DefinitionObject> getBody();
@@ -77,6 +79,7 @@ public interface NameSpaceDefinition extends DefinitionObject {
 	 * @see #setNameSpaceType(NameSpaceType)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getNameSpaceDefinition_NameSpaceType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!NameSpaceDefinition!nameSpaceType'"
 	 * @generated
 	 */
 	NameSpaceType getNameSpaceType();

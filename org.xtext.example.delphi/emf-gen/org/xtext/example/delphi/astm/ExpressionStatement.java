@@ -32,6 +32,7 @@ public interface ExpressionStatement extends Statement {
 	 * @see #setExpression(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getExpressionStatement_Expression()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ExpressionStatement!expression'"
 	 * @generated
 	 */
 	Expression getExpression();

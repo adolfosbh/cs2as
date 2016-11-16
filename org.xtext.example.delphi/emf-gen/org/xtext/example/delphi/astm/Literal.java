@@ -32,7 +32,7 @@ public interface Literal extends Expression {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getLiteral_Value()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Literal!value'"
 	 * @generated
 	 */
 	String getValue();

@@ -33,6 +33,7 @@ public interface TypesCatchBlock extends CatchBlock {
 	 * @return the value of the '<em>Exceptions</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getTypesCatchBlock_Exceptions()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!TypesCatchBlock!exceptions'"
 	 * @generated
 	 */
 	EList<Type> getExceptions();

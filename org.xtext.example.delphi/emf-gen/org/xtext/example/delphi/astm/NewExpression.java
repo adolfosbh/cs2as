@@ -34,6 +34,7 @@ public interface NewExpression extends Expression {
 	 * @see #setNewType(TypeReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getNewExpression_NewType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!NewExpression!newType'"
 	 * @generated
 	 */
 	TypeReference getNewType();
@@ -60,6 +61,7 @@ public interface NewExpression extends Expression {
 	 * @return the value of the '<em>Actual Params</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getNewExpression_ActualParams()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!NewExpression!actualParams'"
 	 * @generated
 	 */
 	EList<OtherSyntaxObject> getActualParams();

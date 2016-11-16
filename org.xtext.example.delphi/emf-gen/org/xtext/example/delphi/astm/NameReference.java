@@ -33,6 +33,7 @@ public interface NameReference extends Expression {
 	 * @see #setName(Name)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getNameReference_Name()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!NameReference!name'"
 	 * @generated
 	 */
 	Name getName();
@@ -58,7 +59,7 @@ public interface NameReference extends Expression {
 	 * @return the value of the '<em>Refers To</em>' reference.
 	 * @see #setRefersTo(DefinitionObject)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getNameReference_RefersTo()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!NameReference!refersTo'"
 	 * @generated
 	 */
 	DefinitionObject getRefersTo();

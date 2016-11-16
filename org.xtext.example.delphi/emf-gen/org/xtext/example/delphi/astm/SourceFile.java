@@ -32,7 +32,7 @@ public interface SourceFile extends GASTMSourceObject {
 	 * @return the value of the '<em>Path Name</em>' attribute.
 	 * @see #setPathName(String)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getSourceFile_PathName()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!SourceFile!pathName'"
 	 * @generated
 	 */
 	String getPathName();

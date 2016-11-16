@@ -34,6 +34,7 @@ public interface FunctionType extends Type {
 	 * @see #setReturnType(TypeReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionType_ReturnType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionType!returnType'"
 	 * @generated
 	 */
 	TypeReference getReturnType();
@@ -60,6 +61,7 @@ public interface FunctionType extends Type {
 	 * @return the value of the '<em>Parameter Types</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionType_ParameterTypes()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionType!parameterTypes'"
 	 * @generated
 	 */
 	EList<FormalParameterType> getParameterTypes();

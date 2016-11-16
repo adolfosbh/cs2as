@@ -32,6 +32,7 @@ public interface DeclarationOrDefinitionStatement extends Statement {
 	 * @see #setDeclOrDefn(DefinitionObject)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDeclarationOrDefinitionStatement_DeclOrDefn()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DeclarationOrDefinitionStatement!declOrDefn'"
 	 * @generated
 	 */
 	DefinitionObject getDeclOrDefn();

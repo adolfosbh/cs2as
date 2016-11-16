@@ -33,6 +33,7 @@ public interface LabelAccess extends Expression {
 	 * @see #setName(Name)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getLabelAccess_Name()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!LabelAccess!name'"
 	 * @generated
 	 */
 	Name getName();
@@ -59,6 +60,7 @@ public interface LabelAccess extends Expression {
 	 * @see #setDefinition(LabelDefinition)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getLabelAccess_Definition()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!LabelAccess!definition'"
 	 * @generated
 	 */
 	LabelDefinition getDefinition();

@@ -6237,6 +6237,25 @@ public class AstmPackageImpl extends EPackageImpl implements AstmPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		java.lang.String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new java.lang.String[] {
+		   });
 	}
 
 } //AstmPackageImpl

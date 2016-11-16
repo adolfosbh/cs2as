@@ -33,6 +33,7 @@ public interface QualifiedIdentifierReference extends NameReference {
 	 * @see #setQualifiers(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getQualifiedIdentifierReference_Qualifiers()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!QualifiedIdentifierReference!qualifiers'"
 	 * @generated
 	 */
 	Expression getQualifiers();
@@ -59,6 +60,7 @@ public interface QualifiedIdentifierReference extends NameReference {
 	 * @see #setMember(IdentifierReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getQualifiedIdentifierReference_Member()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!QualifiedIdentifierReference!member'"
 	 * @generated
 	 */
 	IdentifierReference getMember();

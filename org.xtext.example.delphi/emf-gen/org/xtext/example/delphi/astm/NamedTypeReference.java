@@ -33,6 +33,7 @@ public interface NamedTypeReference extends TypeReference {
 	 * @see #setName(Name)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getNamedTypeReference_Name()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!NamedTypeReference!name'"
 	 * @generated
 	 */
 	Name getName();
@@ -58,7 +59,7 @@ public interface NamedTypeReference extends TypeReference {
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(TypeDefinition)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getNamedTypeReference_Type()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!NamedTypeReference!type'"
 	 * @generated
 	 */
 	TypeDefinition getType();

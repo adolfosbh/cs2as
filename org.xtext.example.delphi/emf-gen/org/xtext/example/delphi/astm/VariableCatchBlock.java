@@ -32,6 +32,7 @@ public interface VariableCatchBlock extends CatchBlock {
 	 * @see #setExceptionVariable(DataDefinition)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getVariableCatchBlock_ExceptionVariable()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!VariableCatchBlock!exceptionVariable'"
 	 * @generated
 	 */
 	DataDefinition getExceptionVariable();

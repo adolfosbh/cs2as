@@ -32,7 +32,7 @@ public interface DataDefinition extends Definition {
 	 * @return the value of the '<em>Is Mutable</em>' attribute.
 	 * @see #setIsMutable(boolean)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDataDefinition_IsMutable()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DataDefinition!isMutable'"
 	 * @generated
 	 */
 	boolean isIsMutable();
@@ -59,6 +59,7 @@ public interface DataDefinition extends Definition {
 	 * @see #setInitialValue(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDataDefinition_InitialValue()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DataDefinition!initialValue'"
 	 * @generated
 	 */
 	Expression getInitialValue();

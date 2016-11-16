@@ -33,6 +33,7 @@ public interface UnaryExpression extends Expression {
 	 * @see #setOperator(OtherSyntaxObject)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getUnaryExpression_Operator()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!UnaryExpression!operator'"
 	 * @generated
 	 */
 	OtherSyntaxObject getOperator();
@@ -59,6 +60,7 @@ public interface UnaryExpression extends Expression {
 	 * @see #setOperand(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getUnaryExpression_Operand()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!UnaryExpression!operand'"
 	 * @generated
 	 */
 	Expression getOperand();

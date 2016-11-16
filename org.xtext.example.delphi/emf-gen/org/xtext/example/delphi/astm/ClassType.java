@@ -33,6 +33,7 @@ public interface ClassType extends AggregateType {
 	 * @return the value of the '<em>Derives From</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getClassType_DerivesFrom()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ClassType!derivesFrom'"
 	 * @generated
 	 */
 	EList<DerivesFrom> getDerivesFrom();

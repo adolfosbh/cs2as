@@ -32,6 +32,7 @@ public interface NamedTypeDefinition extends TypeDefinition {
 	 * @see #setDefinitionType(NamedType)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getNamedTypeDefinition_DefinitionType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!NamedTypeDefinition!definitionType'"
 	 * @generated
 	 */
 	NamedType getDefinitionType();

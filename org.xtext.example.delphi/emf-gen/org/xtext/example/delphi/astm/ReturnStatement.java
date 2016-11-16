@@ -32,6 +32,7 @@ public interface ReturnStatement extends Statement {
 	 * @see #setReturnValue(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getReturnStatement_ReturnValue()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ReturnStatement!returnValue'"
 	 * @generated
 	 */
 	Expression getReturnValue();

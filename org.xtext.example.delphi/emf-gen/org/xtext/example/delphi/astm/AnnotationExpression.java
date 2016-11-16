@@ -34,6 +34,7 @@ public interface AnnotationExpression extends Expression {
 	 * @see #setAnnotationType(TypeReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getAnnotationExpression_AnnotationType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!AnnotationExpression!annotationType'"
 	 * @generated
 	 */
 	TypeReference getAnnotationType();
@@ -60,6 +61,7 @@ public interface AnnotationExpression extends Expression {
 	 * @return the value of the '<em>Member Values</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getAnnotationExpression_MemberValues()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!AnnotationExpression!memberValues'"
 	 * @generated
 	 */
 	EList<Expression> getMemberValues();

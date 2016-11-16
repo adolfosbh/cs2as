@@ -31,7 +31,7 @@ public interface VariableDeclaration extends Declaration {
 	 * @return the value of the '<em>Is Mutable</em>' attribute.
 	 * @see #setIsMutable(boolean)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getVariableDeclaration_IsMutable()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!VariableDeclaration!isMutable'"
 	 * @generated
 	 */
 	boolean isIsMutable();

@@ -6,6 +6,7 @@ import java.lang.String;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.delphi.astm.AstmPackage;
 import org.xtext.example.delphi.astm.Literal;
 import org.xtext.example.delphi.astm.util.Visitor;
@@ -163,7 +164,7 @@ public class LiteralImpl extends ExpressionImpl implements Literal {
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitLiteral(this);
 	}
 

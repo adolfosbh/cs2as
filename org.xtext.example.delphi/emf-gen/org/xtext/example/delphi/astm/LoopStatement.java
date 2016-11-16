@@ -33,6 +33,7 @@ public interface LoopStatement extends Statement {
 	 * @see #setCondition(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getLoopStatement_Condition()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!LoopStatement!condition'"
 	 * @generated
 	 */
 	Expression getCondition();
@@ -59,6 +60,7 @@ public interface LoopStatement extends Statement {
 	 * @see #setBody(Statement)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getLoopStatement_Body()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!LoopStatement!body'"
 	 * @generated
 	 */
 	Statement getBody();

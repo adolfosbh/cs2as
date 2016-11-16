@@ -32,6 +32,7 @@ public interface ConstructedType extends DataType {
 	 * @see #setBaseType(TypeReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getConstructedType_BaseType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ConstructedType!baseType'"
 	 * @generated
 	 */
 	TypeReference getBaseType();

@@ -34,6 +34,7 @@ public interface Declaration extends DeclarationOrDefinition {
 	 * @see #setDefRef(Definition)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDeclaration_DefRef()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Declaration!defRef'"
 	 * @generated
 	 */
 	Definition getDefRef();
@@ -60,6 +61,7 @@ public interface Declaration extends DeclarationOrDefinition {
 	 * @see #setIdentifierName(Name)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDeclaration_IdentifierName()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Declaration!identifierName'"
 	 * @generated
 	 */
 	Name getIdentifierName();
@@ -86,6 +88,7 @@ public interface Declaration extends DeclarationOrDefinition {
 	 * @see #setDeclarationType(TypeReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDeclaration_DeclarationType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Declaration!declarationType'"
 	 * @generated
 	 */
 	TypeReference getDeclarationType();

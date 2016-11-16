@@ -34,6 +34,7 @@ public interface DelphiImplementationSection extends CompilationUnit {
 	 * @return the value of the '<em>Uses</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDelphiImplementationSection_Uses()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DelphiImplementationSection!uses'"
 	 * @generated
 	 */
 	EList<NamedTypeReference> getUses();
@@ -50,6 +51,7 @@ public interface DelphiImplementationSection extends CompilationUnit {
 	 * @return the value of the '<em>Exports</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDelphiImplementationSection_Exports()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DelphiImplementationSection!exports'"
 	 * @generated
 	 */
 	EList<NamedTypeReference> getExports();

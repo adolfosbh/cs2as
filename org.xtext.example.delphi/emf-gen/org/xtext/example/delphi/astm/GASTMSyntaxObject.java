@@ -35,6 +35,7 @@ public interface GASTMSyntaxObject extends GASTMObject {
 	 * @see #setLocationInfo(SourceLocation)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getGASTMSyntaxObject_LocationInfo()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!GASTMSyntaxObject!locationInfo'"
 	 * @generated
 	 */
 	SourceLocation getLocationInfo();
@@ -61,6 +62,7 @@ public interface GASTMSyntaxObject extends GASTMObject {
 	 * @return the value of the '<em>Pre Processor Elements</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getGASTMSyntaxObject_PreProcessorElements()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!GASTMSyntaxObject!preProcessorElements'"
 	 * @generated
 	 */
 	EList<PreprocessorElement> getPreProcessorElements();
@@ -77,6 +79,7 @@ public interface GASTMSyntaxObject extends GASTMObject {
 	 * @return the value of the '<em>Annotations</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getGASTMSyntaxObject_Annotations()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!GASTMSyntaxObject!annotations'"
 	 * @generated
 	 */
 	EList<AnnotationExpression> getAnnotations();

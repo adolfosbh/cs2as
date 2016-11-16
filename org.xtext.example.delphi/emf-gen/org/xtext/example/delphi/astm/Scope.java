@@ -34,6 +34,7 @@ public interface Scope extends GASTMSemanticObject {
 	 * @return the value of the '<em>Definition Object</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getScope_DefinitionObject()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Scope!definitionObject'"
 	 * @generated
 	 */
 	EList<DefinitionObject> getDefinitionObject();
@@ -50,6 +51,7 @@ public interface Scope extends GASTMSemanticObject {
 	 * @return the value of the '<em>Child Scope</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getScope_ChildScope()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Scope!childScope'"
 	 * @generated
 	 */
 	EList<Scope> getChildScope();

@@ -35,6 +35,7 @@ public interface FunctionDeclaration extends Declaration {
 	 * @return the value of the '<em>Formal Parameters</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionDeclaration_FormalParameters()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionDeclaration!formalParameters'"
 	 * @generated
 	 */
 	EList<FormalParameterDeclaration> getFormalParameters();
@@ -51,6 +52,7 @@ public interface FunctionDeclaration extends Declaration {
 	 * @see #setFunctionMemberAttributes(FunctionMemberAttributes)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionDeclaration_FunctionMemberAttributes()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionDeclaration!functionMemberAttributes'"
 	 * @generated
 	 */
 	FunctionMemberAttributes getFunctionMemberAttributes();
@@ -77,6 +79,7 @@ public interface FunctionDeclaration extends Declaration {
 	 * @see #setReturnType(TypeReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionDeclaration_ReturnType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionDeclaration!returnType'"
 	 * @generated
 	 */
 	TypeReference getReturnType();

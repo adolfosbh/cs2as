@@ -34,6 +34,7 @@ public interface Project extends GASTMSemanticObject {
 	 * @return the value of the '<em>Files</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getProject_Files()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Project!files'"
 	 * @generated
 	 */
 	EList<CompilationUnit> getFiles();
@@ -50,6 +51,7 @@ public interface Project extends GASTMSemanticObject {
 	 * @see #setOuterScope(GlobalScope)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getProject_OuterScope()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!Project!outerScope'"
 	 * @generated
 	 */
 	GlobalScope getOuterScope();

@@ -36,7 +36,7 @@ public interface CompilationUnit extends OtherSyntaxObject {
 	 * @return the value of the '<em>Language</em>' attribute.
 	 * @see #setLanguage(String)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getCompilationUnit_Language()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!CompilationUnit!language'"
 	 * @generated
 	 */
 	String getLanguage();
@@ -63,6 +63,7 @@ public interface CompilationUnit extends OtherSyntaxObject {
 	 * @return the value of the '<em>Fragments</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getCompilationUnit_Fragments()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!CompilationUnit!fragments'"
 	 * @generated
 	 */
 	EList<DefinitionObject> getFragments();
@@ -79,6 +80,7 @@ public interface CompilationUnit extends OtherSyntaxObject {
 	 * @see #setOpensScope(ProgramScope)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getCompilationUnit_OpensScope()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!CompilationUnit!opensScope'"
 	 * @generated
 	 */
 	ProgramScope getOpensScope();

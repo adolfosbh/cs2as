@@ -33,6 +33,7 @@ public interface DelphiInterfaceSection extends CompilationUnit {
 	 * @return the value of the '<em>Uses</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDelphiInterfaceSection_Uses()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DelphiInterfaceSection!uses'"
 	 * @generated
 	 */
 	EList<NamedTypeReference> getUses();

@@ -7,6 +7,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.delphi.astm.AstmPackage;
 import org.xtext.example.delphi.astm.DefinitionObject;
 import org.xtext.example.delphi.astm.DelphiWithStatement;
@@ -132,7 +133,7 @@ public class DelphiWithStatementImpl extends BlockStatementImpl implements Delph
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitDelphiWithStatement(this);
 	}
 

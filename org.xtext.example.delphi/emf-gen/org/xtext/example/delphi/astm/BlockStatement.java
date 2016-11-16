@@ -34,6 +34,7 @@ public interface BlockStatement extends Statement {
 	 * @return the value of the '<em>Sub Statements</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getBlockStatement_SubStatements()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!BlockStatement!subStatements'"
 	 * @generated
 	 */
 	EList<Statement> getSubStatements();
@@ -50,6 +51,7 @@ public interface BlockStatement extends Statement {
 	 * @see #setOpensScope(BlockScope)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getBlockStatement_OpensScope()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!BlockStatement!opensScope'"
 	 * @generated
 	 */
 	BlockScope getOpensScope();

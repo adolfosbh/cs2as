@@ -34,6 +34,7 @@ public interface BinaryExpression extends Expression {
 	 * @see #setOperator(OtherSyntaxObject)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getBinaryExpression_Operator()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!BinaryExpression!operator'"
 	 * @generated
 	 */
 	OtherSyntaxObject getOperator();
@@ -60,6 +61,7 @@ public interface BinaryExpression extends Expression {
 	 * @see #setLeftOperand(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getBinaryExpression_LeftOperand()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!BinaryExpression!leftOperand'"
 	 * @generated
 	 */
 	Expression getLeftOperand();
@@ -86,6 +88,7 @@ public interface BinaryExpression extends Expression {
 	 * @see #setRightOperand(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getBinaryExpression_RightOperand()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!BinaryExpression!rightOperand'"
 	 * @generated
 	 */
 	Expression getRightOperand();

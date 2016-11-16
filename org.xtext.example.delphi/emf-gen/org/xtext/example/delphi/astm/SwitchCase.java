@@ -33,6 +33,7 @@ public interface SwitchCase extends OtherSyntaxObject {
 	 * @return the value of the '<em>Body</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getSwitchCase_Body()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!SwitchCase!body'"
 	 * @generated
 	 */
 	EList<Statement> getBody();

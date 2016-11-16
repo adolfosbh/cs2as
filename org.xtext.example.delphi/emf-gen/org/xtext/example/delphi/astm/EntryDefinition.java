@@ -34,6 +34,7 @@ public interface EntryDefinition extends Definition {
 	 * @return the value of the '<em>Formal Parameters</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getEntryDefinition_FormalParameters()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!EntryDefinition!formalParameters'"
 	 * @generated
 	 */
 	EList<FormalParameterDefinition> getFormalParameters();
@@ -50,6 +51,7 @@ public interface EntryDefinition extends Definition {
 	 * @return the value of the '<em>Body</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getEntryDefinition_Body()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!EntryDefinition!body'"
 	 * @generated
 	 */
 	EList<Statement> getBody();

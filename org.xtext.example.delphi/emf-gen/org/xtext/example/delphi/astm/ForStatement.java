@@ -34,6 +34,7 @@ public interface ForStatement extends LoopStatement {
 	 * @see #setInitBody(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getForStatement_InitBody()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ForStatement!initBody'"
 	 * @generated
 	 */
 	Expression getInitBody();
@@ -60,6 +61,7 @@ public interface ForStatement extends LoopStatement {
 	 * @return the value of the '<em>Iteration Body</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getForStatement_IterationBody()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ForStatement!iterationBody'"
 	 * @generated
 	 */
 	EList<Expression> getIterationBody();

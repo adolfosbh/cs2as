@@ -35,7 +35,7 @@ public interface DeclarationOrDefinition extends DefinitionObject {
 	 * @return the value of the '<em>Is Register</em>' attribute.
 	 * @see #setIsRegister(boolean)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDeclarationOrDefinition_IsRegister()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DeclarationOrDefinition!isRegister'"
 	 * @generated
 	 */
 	boolean isIsRegister();
@@ -61,7 +61,7 @@ public interface DeclarationOrDefinition extends DefinitionObject {
 	 * @return the value of the '<em>Linkage Specifier</em>' attribute.
 	 * @see #setLinkageSpecifier(String)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDeclarationOrDefinition_LinkageSpecifier()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DeclarationOrDefinition!linkageSpecifier'"
 	 * @generated
 	 */
 	String getLinkageSpecifier();
@@ -88,6 +88,7 @@ public interface DeclarationOrDefinition extends DefinitionObject {
 	 * @see #setStorageSpecifiers(OtherSyntaxObject)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDeclarationOrDefinition_StorageSpecifiers()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DeclarationOrDefinition!storageSpecifiers'"
 	 * @generated
 	 */
 	OtherSyntaxObject getStorageSpecifiers();
@@ -114,6 +115,7 @@ public interface DeclarationOrDefinition extends DefinitionObject {
 	 * @see #setAccessKind(OtherSyntaxObject)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDeclarationOrDefinition_AccessKind()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DeclarationOrDefinition!accessKind'"
 	 * @generated
 	 */
 	OtherSyntaxObject getAccessKind();

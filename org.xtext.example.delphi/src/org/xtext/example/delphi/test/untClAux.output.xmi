@@ -6,17 +6,12 @@
         <name nameString="GetFileVersionInfo"/>
       </calledFunction>
       <actualParams xsi:type="astm:ActualParameterExpression">
-        <value xsi:type="astm:IdentifierReference">
-          <name nameString="Size"/>
-        </value>
+        <value xsi:type="astm:IntegerLiteral" value="0"/>
       </actualParams>
       <actualParams xsi:type="astm:ActualParameterExpression">
         <value xsi:type="astm:IdentifierReference">
           <name nameString="Pt"/>
         </value>
-      </actualParams>
-      <actualParams xsi:type="astm:ActualParameterExpression">
-        <value xsi:type="astm:IntegerLiteral" value="0"/>
       </actualParams>
       <actualParams xsi:type="astm:ActualParameterExpression">
         <value xsi:type="astm:DelphiFunctionCallExpression">
@@ -28,6 +23,11 @@
               <name nameString="Rut"/>
             </value>
           </actualParams>
+        </value>
+      </actualParams>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:IdentifierReference">
+          <name nameString="Size"/>
         </value>
       </actualParams>
     </expression>
@@ -69,7 +69,7 @@
               <subStatements xsi:type="astm:ExpressionStatement">
                 <expression xsi:type="astm:BinaryExpression">
                   <operator xsi:type="astm:Assign"/>
-                  <leftOperand xsi:type="astm:IdentifierReference">
+                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.0/@body.0/@declarations.1">
                     <name nameString="Size"/>
                   </leftOperand>
                   <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
@@ -98,7 +98,7 @@
               </subStatements>
               <subStatements xsi:type="astm:IfStatement">
                 <condition xsi:type="astm:BinaryExpression">
-                  <leftOperand xsi:type="astm:IdentifierReference">
+                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.0/@body.0/@declarations.1">
                     <name nameString="Size"/>
                   </leftOperand>
                   <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
@@ -110,13 +110,13 @@
                         <name nameString="GetMem"/>
                       </calledFunction>
                       <actualParams xsi:type="astm:ActualParameterExpression">
-                        <value xsi:type="astm:IdentifierReference">
-                          <name nameString="Pt"/>
+                        <value xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.0/@body.0/@declarations.1">
+                          <name nameString="Size"/>
                         </value>
                       </actualParams>
                       <actualParams xsi:type="astm:ActualParameterExpression">
-                        <value xsi:type="astm:IdentifierReference">
-                          <name nameString="Size"/>
+                        <value xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.0/@body.0/@declarations.0">
+                          <name nameString="Pt"/>
                         </value>
                       </actualParams>
                     </expression>
@@ -175,10 +175,10 @@
               </subStatements>
             </subStatements>
             <declarations xsi:type="astm:VariableDefinition" isMutable="true">
-              <identifierName nameString="Size"/>
+              <identifierName nameString="Pt"/>
             </declarations>
             <declarations xsi:type="astm:VariableDefinition" isMutable="true">
-              <identifierName nameString="Pt"/>
+              <identifierName nameString="Size"/>
             </declarations>
             <declarations xsi:type="astm:VariableDefinition" isMutable="true">
               <identifierName nameString="vers"/>

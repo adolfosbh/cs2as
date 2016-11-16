@@ -37,6 +37,7 @@ public interface FunctionDefinition extends Definition {
 	 * @see #setReturnType(TypeReference)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionDefinition_ReturnType()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionDefinition!returnType'"
 	 * @generated
 	 */
 	TypeReference getReturnType();
@@ -63,6 +64,7 @@ public interface FunctionDefinition extends Definition {
 	 * @return the value of the '<em>Formal Parameters</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionDefinition_FormalParameters()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionDefinition!formalParameters'"
 	 * @generated
 	 */
 	EList<FormalParameterDefinition> getFormalParameters();
@@ -79,6 +81,7 @@ public interface FunctionDefinition extends Definition {
 	 * @return the value of the '<em>Body</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionDefinition_Body()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionDefinition!body'"
 	 * @generated
 	 */
 	EList<Statement> getBody();
@@ -95,6 +98,7 @@ public interface FunctionDefinition extends Definition {
 	 * @see #setFunctionMemberAttributes(FunctionMemberAttributes)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionDefinition_FunctionMemberAttributes()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionDefinition!functionMemberAttributes'"
 	 * @generated
 	 */
 	FunctionMemberAttributes getFunctionMemberAttributes();
@@ -121,6 +125,7 @@ public interface FunctionDefinition extends Definition {
 	 * @see #setOpensScope(FunctionScope)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionDefinition_OpensScope()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionDefinition!opensScope'"
 	 * @generated
 	 */
 	FunctionScope getOpensScope();

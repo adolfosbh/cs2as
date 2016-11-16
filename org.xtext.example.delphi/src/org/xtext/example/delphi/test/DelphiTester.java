@@ -37,11 +37,11 @@ public class DelphiTester {
 		CompleteOCLStandaloneSetup.doSetup();
 		DelphiStandaloneSetup.doSetup();
 		
-		// warmup with model 2
-		System.out.println("* Running Warmup *");
-		for (int i=0; i < 3000 ; i++) {
-			execute_CG(baseURI, "test.delphi");
-		}
+//		// warmup with model 2
+//		System.out.println("* Running Warmup *");
+//		for (int i=0; i < 3000 ; i++) {
+//			execute_CG(baseURI, "test.delphi");
+//		}
 		
 		printMemory();
         

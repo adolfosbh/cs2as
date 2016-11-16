@@ -4,6 +4,10 @@
     modelName="Astm" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" complianceLevel="8.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
+    <details key="Use Delegates" value="false"/>
+    <details key="Use Null Annotations" value="true"/>
+  </genAnnotations>
   <genAnnotations source="http://www.eclipse.org/OCL/GenModel/Visitor">
     <details key="Root Visitor Class" value="org.xtext.example.delphi.astm.util.Visitor"/>
     <details key="Derived Visitor Class" value="org.xtext.example.delphi.astm.util.Visitor"/>

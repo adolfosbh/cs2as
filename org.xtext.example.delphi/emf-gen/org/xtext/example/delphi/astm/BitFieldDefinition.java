@@ -32,6 +32,7 @@ public interface BitFieldDefinition extends DataDefinition {
 	 * @see #setBitFieldSize(Expression)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getBitFieldDefinition_BitFieldSize()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!BitFieldDefinition!bitFieldSize'"
 	 * @generated
 	 */
 	Expression getBitFieldSize();

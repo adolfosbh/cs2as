@@ -33,6 +33,7 @@ public interface ArrayType extends ConstructedType {
 	 * @return the value of the '<em>Ranks</em>' containment reference list.
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getArrayType_Ranks()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!ArrayType!ranks'"
 	 * @generated
 	 */
 	EList<Dimension> getRanks();

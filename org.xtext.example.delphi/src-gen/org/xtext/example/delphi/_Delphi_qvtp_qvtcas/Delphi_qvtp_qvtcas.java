@@ -13,7 +13,6 @@ import java.util.Iterator;
 import java.util.List;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
-import org.eclipse.ocl.pivot.Class;
 import org.eclipse.ocl.pivot.Property;
 import org.eclipse.ocl.pivot.TypedElement;
 import org.eclipse.ocl.pivot.evaluation.Executor;
@@ -34,15 +33,18 @@ import org.eclipse.ocl.pivot.library.collection.CollectionIncludingOperation;
 import org.eclipse.ocl.pivot.library.collection.CollectionIsEmptyOperation;
 import org.eclipse.ocl.pivot.library.collection.CollectionSelectByKindOperation;
 import org.eclipse.ocl.pivot.library.collection.OrderedCollectionFirstOperation;
+import org.eclipse.ocl.pivot.library.collection.OrderedCollectionIndexOfOperation;
 import org.eclipse.ocl.pivot.library.logical.BooleanAndOperation;
 import org.eclipse.ocl.pivot.library.logical.BooleanNotOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsSetOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsTypeOfOperation;
+import org.eclipse.ocl.pivot.library.string.StringConcatOperation;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import org.eclipse.ocl.pivot.values.BagValue;
 import org.eclipse.ocl.pivot.values.CollectionValue;
+import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SequenceValue;
@@ -83,6 +85,7 @@ import org.xtext.example.delphi.astm.LabelDefinition;
 import org.xtext.example.delphi.astm.Name;
 import org.xtext.example.delphi.astm.NameReference;
 import org.xtext.example.delphi.astm.NewExpression;
+import org.xtext.example.delphi.astm.Not;
 import org.xtext.example.delphi.astm.Project;
 import org.xtext.example.delphi.astm.QualifiedOverData;
 import org.xtext.example.delphi.astm.SourceFile;
@@ -93,6 +96,7 @@ import org.xtext.example.delphi.astm.SwitchStatement;
 import org.xtext.example.delphi.astm.TryStatement;
 import org.xtext.example.delphi.astm.TypeDefinition;
 import org.xtext.example.delphi.astm.TypeReference;
+import org.xtext.example.delphi.astm.UnaryExpression;
 import org.xtext.example.delphi.astm.VariableDefinition;
 import org.xtext.example.delphi.astm.lookup.LookupEnvironment;
 import org.xtext.example.delphi.astm.lookup.LookupPackage;
@@ -150,6 +154,7 @@ import org.xtext.example.delphi.delphi.term;
 import org.xtext.example.delphi.delphi.tryStmt;
 import org.xtext.example.delphi.delphi.type;
 import org.xtext.example.delphi.delphi.typeDecl;
+import org.xtext.example.delphi.delphi.typeSection;
 import org.xtext.example.delphi.delphi.unit;
 import org.xtext.example.delphi.delphi.unlabelledStatement;
 import org.xtext.example.delphi.delphi.varDecl;
@@ -211,6 +216,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_Name = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("Name", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_NameReference = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("NameReference", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_NewExpression = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("NewExpression", 0);
+	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_Not = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("Not", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_OclElement = PACKid_$metamodel$.getClassId("OclElement", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_OtherSyntaxObject = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("OtherSyntaxObject", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_Project = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("Project", 0);
@@ -225,6 +231,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_TryStatement = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("TryStatement", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_TypeDefinition = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("TypeDefinition", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_TypeReference = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("TypeReference", 0);
+	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_UnaryExpression = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("UnaryExpression", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_VariableDefinition = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("VariableDefinition", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_Visitable = PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("Visitable", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_addExp = PACKid_http_c_s_s_www_xtext_org_s_example_s_delphi_s_Delphi.getClassId("addExp", 0);
@@ -271,14 +278,18 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_tryStmt = PACKid_http_c_s_s_www_xtext_org_s_example_s_delphi_s_Delphi.getClassId("tryStmt", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_type = PACKid_http_c_s_s_www_xtext_org_s_example_s_delphi_s_Delphi.getClassId("type", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_typeDecl = PACKid_http_c_s_s_www_xtext_org_s_example_s_delphi_s_Delphi.getClassId("typeDecl", 0);
+	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_typeSection = PACKid_http_c_s_s_www_xtext_org_s_example_s_delphi_s_Delphi.getClassId("typeSection", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_unit = PACKid_http_c_s_s_www_xtext_org_s_example_s_delphi_s_Delphi.getClassId("unit", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_unlabelledStatement = PACKid_http_c_s_s_www_xtext_org_s_example_s_delphi_s_Delphi.getClassId("unlabelledStatement", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_varDecl = PACKid_http_c_s_s_www_xtext_org_s_example_s_delphi_s_Delphi.getClassId("varDecl", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_varSection = PACKid_http_c_s_s_www_xtext_org_s_example_s_delphi_s_Delphi.getClassId("varSection", 0);
 	public static final /*@NonInvalid*/ @NonNull ClassId CLSSid_withStmt = PACKid_http_c_s_s_www_xtext_org_s_example_s_delphi_s_Delphi.getClassId("withStmt", 0);
+	public static final /*@NonInvalid*/ @NonNull IntegerValue INT_1 = ValueUtil.integerValueOf("1");
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_NULLid = TypeId.ORDERED_SET.getSpecializedId(TypeId.OCL_VOID);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId SEQ_PRIMid_String = TypeId.SEQUENCE.getSpecializedId(TypeId.STRING);
+	public static final /*@NonInvalid*/ @NonNull String STR_ = "";
 	public static final /*@NonInvalid*/ @NonNull String STR_Delphi = "Delphi";
+	public static final /*@NonInvalid*/ @NonNull String STR__0 = ".";
 	public static final /*@NonInvalid*/ @NonNull String STR_eq = "=";
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId BAG_CLSSid_ActualParameterExpression = TypeId.BAG.getSpecializedId(CLSSid_ActualParameterExpression);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId BAG_CLSSid_DefinitionObject = TypeId.BAG.getSpecializedId(CLSSid_DefinitionObject);
@@ -293,6 +304,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_DelphiBlockStatement = TypeId.ORDERED_SET.getSpecializedId(CLSSid_DelphiBlockStatement);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_FunctionDefinition = TypeId.ORDERED_SET.getSpecializedId(CLSSid_FunctionDefinition);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_Statement = TypeId.ORDERED_SET.getSpecializedId(CLSSid_Statement);
+	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_TypeDefinition = TypeId.ORDERED_SET.getSpecializedId(CLSSid_TypeDefinition);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_VariableDefinition = TypeId.ORDERED_SET.getSpecializedId(CLSSid_VariableDefinition);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_caseLabel = TypeId.ORDERED_SET.getSpecializedId(CLSSid_caseLabel);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_caseSelector = TypeId.ORDERED_SET.getSpecializedId(CLSSid_caseSelector);
@@ -304,6 +316,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_interfaceDecl = TypeId.ORDERED_SET.getSpecializedId(CLSSid_interfaceDecl);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_recordConstExpr = TypeId.ORDERED_SET.getSpecializedId(CLSSid_recordConstExpr);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_statement = TypeId.ORDERED_SET.getSpecializedId(CLSSid_statement);
+	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_typeDecl = TypeId.ORDERED_SET.getSpecializedId(CLSSid_typeDecl);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_varDecl = TypeId.ORDERED_SET.getSpecializedId(CLSSid_varDecl);
 	public static final /*@NonInvalid*/ @NonNull OrderedSetValue OrderedSet_0 = ValueUtil.createOrderedSetOfEach(ORD_NULLid);
 	public static final /*@NonInvalid*/ @NonNull PropertyId PROPid_actualParams = CLSSid_FunctionCallExpression.getPropertyId("actualParams");
@@ -321,6 +334,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId SEQ_CLSSid_DefinitionObject = TypeId.SEQUENCE.getSpecializedId(CLSSid_DefinitionObject);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId SEQ_CLSSid_Expression = TypeId.SEQUENCE.getSpecializedId(CLSSid_Expression);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId SEQ_CLSSid_Statement = TypeId.SEQUENCE.getSpecializedId(CLSSid_Statement);
+	public static final /*@NonInvalid*/ @NonNull CollectionTypeId SEQ_CLSSid_TypeDefinition = TypeId.SEQUENCE.getSpecializedId(CLSSid_TypeDefinition);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId SEQ_CLSSid_VariableDefinition = TypeId.SEQUENCE.getSpecializedId(CLSSid_VariableDefinition);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId SEQ_CLSSid_Visitable = TypeId.SEQUENCE.getSpecializedId(CLSSid_Visitable);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId SEQ_CLSSid_constExpr = TypeId.SEQUENCE.getSpecializedId(CLSSid_constExpr);
@@ -480,39 +494,20 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	}
 
 	/**
-	 * delphi::declSection::getFragments() : OrderedSet(astm::DefinitionObject)
-	 *
-	 * OrderedSet{}
-	 */
-	protected class CACHE_declSection_getFragments extends AbstractEvaluationOperation
-	{
-		@Override
-		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull declSection self_0 = (/*@NonInvalid*/ @NonNull declSection)sourceAndArgumentValues[0];
-			return OrderedSet_0;
-		}
-
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull declSection self_0) {
-			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_0});
-		}
-	}
-
-	/**
 	 * delphi::constSection::getFragments() : OrderedSet(astm::VariableDefinition)
 	 *
 	 *
 	 * self.constantDecl.ast.oclAsType(astm::VariableDefinition)
 	 * ->asOrderedSet()
 	 */
-	protected class CACHE_constSection_getFragments extends AbstractEvaluationOperation
+	public class CACHE_constSection_getFragments extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull constSection self_1 = (/*@NonInvalid*/ @NonNull constSection)sourceAndArgumentValues[0];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull constSection self_0 = (/*@NonInvalid*/ @NonNull constSection)sourceAndArgumentValues[0];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
 			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull List<constantDecl> constantDecl = self_1.getConstantDecl();
+			final /*@Thrown*/ @NonNull List<constantDecl> constantDecl = self_0.getConstantDecl();
 			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_constantDecl = idResolver.createOrderedSetOfAll(ORD_CLSSid_constantDecl, constantDecl);
 			/*@Thrown*/ SequenceValue.@NonNull Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(SEQ_CLSSid_Visitable);
 			@NonNull Iterator<Object> ITERATOR__1 = BOXED_constantDecl.iterator();
@@ -552,78 +547,75 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return asOrderedSet;
 		}
 
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull constSection self_1) {
+		@SuppressWarnings("null")
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull constSection self_0) {
+			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_0});
+		}
+	}
+
+	protected final @NonNull CACHE_constSection_getFragments INST_constSection_getFragments = new CACHE_constSection_getFragments();
+
+	/**
+	 * delphi::typeSection::getFragments() : OrderedSet(astm::TypeDefinition)
+	 *
+	 *
+	 * self.typeDecl.ast.oclAsType(astm::TypeDefinition)
+	 * ->asOrderedSet()
+	 */
+	public class CACHE_typeSection_getFragments extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull typeSection self_1 = (/*@NonInvalid*/ @NonNull typeSection)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			@SuppressWarnings("null")
+			final /*@Thrown*/ @NonNull List<typeDecl> typeDecl = self_1.getTypeDecl();
+			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_typeDecl = idResolver.createOrderedSetOfAll(ORD_CLSSid_typeDecl, typeDecl);
+			/*@Thrown*/ SequenceValue.@NonNull Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(SEQ_CLSSid_Visitable);
+			@NonNull Iterator<Object> ITERATOR__1 = BOXED_typeDecl.iterator();
+			/*@Thrown*/ @NonNull SequenceValue collect_0;
+			while (true) {
+				if (!ITERATOR__1.hasNext()) {
+					collect_0 = accumulator;
+					break;
+				}
+				@SuppressWarnings("null")
+				/*@NonInvalid*/ @NonNull typeDecl _1 = (typeDecl)ITERATOR__1.next();
+				/**
+				 * ast
+				 */
+				final /*@Thrown*/ @Nullable Visitable ast = _1.getAst();
+				//
+				accumulator.add(ast);
+			}
+			/*@Thrown*/ SequenceValue.@NonNull Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(SEQ_CLSSid_TypeDefinition);
+			@Nullable Iterator<Object> ITERATOR__1_0 = collect_0.iterator();
+			/*@Thrown*/ @NonNull SequenceValue collect;
+			while (true) {
+				if (!ITERATOR__1_0.hasNext()) {
+					collect = accumulator_0;
+					break;
+				}
+				/*@NonInvalid*/ @Nullable Visitable _1_0 = (Visitable)ITERATOR__1_0.next();
+				/**
+				 * oclAsType(astm::TypeDefinition)
+				 */
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_TypeDefinition_0 = idResolver.getClass(CLSSid_TypeDefinition, null);
+				final /*@Thrown*/ @NonNull TypeDefinition oclAsType = ClassUtil.nonNullState((TypeDefinition)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, _1_0, TYP_astm_c_c_TypeDefinition_0));
+				//
+				accumulator_0.add(oclAsType);
+			}
+			final /*@Thrown*/ @NonNull OrderedSetValue asOrderedSet = CollectionAsOrderedSetOperation.INSTANCE.evaluate(collect);
+			return asOrderedSet;
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull typeSection self_1) {
 			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_1});
 		}
 	}
 
-	/**
-	 * delphi::procedureDecl::getFragments() : OrderedSet(astm::FunctionDefinition)
-	 *
-	 * OrderedSet{self.ast.oclAsType(astm::FunctionDefinition)}
-	 */
-	protected class CACHE_procedureDecl_getFragments extends AbstractEvaluationOperation
-	{
-		@Override
-		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull procedureDecl self_2 = (/*@NonInvalid*/ @NonNull procedureDecl)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_FunctionDefinition_0 = idResolver.getClass(CLSSid_FunctionDefinition, null);
-			final /*@Thrown*/ @Nullable Visitable ast = self_2.getAst();
-			final /*@Thrown*/ @NonNull FunctionDefinition oclAsType = ClassUtil.nonNullState((FunctionDefinition)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_FunctionDefinition_0));
-			final /*@Thrown*/ @NonNull OrderedSetValue OrderedSet = ValueUtil.createOrderedSetOfEach(ORD_CLSSid_FunctionDefinition, oclAsType);
-			return OrderedSet;
-		}
-
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull procedureDecl self_2) {
-			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_2});
-		}
-	}
-
-	/**
-	 * delphi::functionDecl::getFragments() : OrderedSet(astm::FunctionDefinition)
-	 *
-	 * OrderedSet{self.ast.oclAsType(astm::FunctionDefinition)}
-	 */
-	protected class CACHE_functionDecl_getFragments extends AbstractEvaluationOperation
-	{
-		@Override
-		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull functionDecl self_3 = (/*@NonInvalid*/ @NonNull functionDecl)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_FunctionDefinition_0 = idResolver.getClass(CLSSid_FunctionDefinition, null);
-			final /*@Thrown*/ @Nullable Visitable ast = self_3.getAst();
-			final /*@Thrown*/ @NonNull FunctionDefinition oclAsType = ClassUtil.nonNullState((FunctionDefinition)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_FunctionDefinition_0));
-			final /*@Thrown*/ @NonNull OrderedSetValue OrderedSet = ValueUtil.createOrderedSetOfEach(ORD_CLSSid_FunctionDefinition, oclAsType);
-			return OrderedSet;
-		}
-
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull functionDecl self_3) {
-			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_3});
-		}
-	}
-
-	/**
-	 * delphi::interfaceDecl::getFragments() : OrderedSet(astm::DefinitionObject)
-	 *
-	 * OrderedSet{}
-	 */
-	protected class CACHE_interfaceDecl_getFragments extends AbstractEvaluationOperation
-	{
-		@Override
-		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull interfaceDecl self_4 = (/*@NonInvalid*/ @NonNull interfaceDecl)sourceAndArgumentValues[0];
-			return OrderedSet_0;
-		}
-
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull interfaceDecl self_4) {
-			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_4});
-		}
-	}
+	protected final @NonNull CACHE_typeSection_getFragments INST_typeSection_getFragments = new CACHE_typeSection_getFragments();
 
 	/**
 	 * delphi::varSection::getFragments() : OrderedSet(astm::VariableDefinition)
@@ -632,14 +624,14 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * self.varDecls.ast.oclAsType(astm::VariableDefinition)
 	 * ->asOrderedSet()
 	 */
-	protected class CACHE_varSection_getFragments extends AbstractEvaluationOperation
+	public class CACHE_varSection_getFragments extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull varSection self_5 = (/*@NonInvalid*/ @NonNull varSection)sourceAndArgumentValues[0];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull varSection self_2 = (/*@NonInvalid*/ @NonNull varSection)sourceAndArgumentValues[0];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
 			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull List<varDecl> varDecls = self_5.getVarDecls();
+			final /*@Thrown*/ @NonNull List<varDecl> varDecls = self_2.getVarDecls();
 			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_varDecls = idResolver.createOrderedSetOfAll(ORD_CLSSid_varDecl, varDecls);
 			/*@Thrown*/ SequenceValue.@NonNull Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(SEQ_CLSSid_Visitable);
 			@NonNull Iterator<Object> ITERATOR__1 = BOXED_varDecls.iterator();
@@ -679,140 +671,317 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return asOrderedSet;
 		}
 
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull varSection self_5) {
+		@SuppressWarnings("null")
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull varSection self_2) {
+			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_2});
+		}
+	}
+
+	protected final @NonNull CACHE_varSection_getFragments INST_varSection_getFragments = new CACHE_varSection_getFragments();
+
+	/**
+	 * delphi::procedureDecl::getFragments() : OrderedSet(astm::FunctionDefinition)
+	 *
+	 * OrderedSet{self.ast.oclAsType(astm::FunctionDefinition)}
+	 */
+	public class CACHE_procedureDecl_getFragments extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull procedureDecl self_3 = (/*@NonInvalid*/ @NonNull procedureDecl)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_FunctionDefinition_0 = idResolver.getClass(CLSSid_FunctionDefinition, null);
+			final /*@Thrown*/ @Nullable Visitable ast = self_3.getAst();
+			final /*@Thrown*/ @NonNull FunctionDefinition oclAsType = ClassUtil.nonNullState((FunctionDefinition)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_FunctionDefinition_0));
+			final /*@Thrown*/ @NonNull OrderedSetValue OrderedSet = ValueUtil.createOrderedSetOfEach(ORD_CLSSid_FunctionDefinition, oclAsType);
+			return OrderedSet;
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull procedureDecl self_3) {
+			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_3});
+		}
+	}
+
+	protected final @NonNull CACHE_procedureDecl_getFragments INST_procedureDecl_getFragments = new CACHE_procedureDecl_getFragments();
+
+	/**
+	 * delphi::declSection::getFragments() : OrderedSet(astm::DefinitionObject)
+	 *
+	 * OrderedSet{}
+	 */
+	public class CACHE_declSection_getFragments extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull declSection self_4 = (/*@NonInvalid*/ @NonNull declSection)sourceAndArgumentValues[0];
+			return OrderedSet_0;
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull declSection self_4) {
+			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_4});
+		}
+	}
+
+	protected final @NonNull CACHE_declSection_getFragments INST_declSection_getFragments = new CACHE_declSection_getFragments();
+
+	/**
+	 * delphi::functionDecl::getFragments() : OrderedSet(astm::FunctionDefinition)
+	 *
+	 * OrderedSet{self.ast.oclAsType(astm::FunctionDefinition)}
+	 */
+	public class CACHE_functionDecl_getFragments extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull functionDecl self_5 = (/*@NonInvalid*/ @NonNull functionDecl)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_FunctionDefinition_0 = idResolver.getClass(CLSSid_FunctionDefinition, null);
+			final /*@Thrown*/ @Nullable Visitable ast = self_5.getAst();
+			final /*@Thrown*/ @NonNull FunctionDefinition oclAsType = ClassUtil.nonNullState((FunctionDefinition)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_FunctionDefinition_0));
+			final /*@Thrown*/ @NonNull OrderedSetValue OrderedSet = ValueUtil.createOrderedSetOfEach(ORD_CLSSid_FunctionDefinition, oclAsType);
+			return OrderedSet;
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull functionDecl self_5) {
 			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_5});
 		}
 	}
 
-	protected class VCACHE_declSection_getFragments extends AbstractDispatchOperation
-	{
-		private VCACHE_declSection_getFragments() {
-			install(procedureDecl.class, new CACHE_procedureDecl_getFragments());
-			install(functionDecl.class, new CACHE_functionDecl_getFragments());
-		}
-
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull declSection self_0) {
-			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_0});
-		}
-	}
-
-	protected final @NonNull VCACHE_declSection_getFragments INST_declSection_getFragments = new VCACHE_declSection_getFragments();
-
-	/**
-	 * delphi::MineID::extract() : String[?]
-	 *
-	 * first
-	 */
-	protected class CACHE_MineID_extract extends AbstractEvaluationOperation
-	{
-		@Override
-		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull MineID self_6 = (/*@NonInvalid*/ @NonNull MineID)sourceAndArgumentValues[0];
-			final /*@Thrown*/ @Nullable String first = self_6.getFirst();
-			return first;
-		}
-
-		public String evaluate(final /*@NonInvalid*/ @NonNull MineID self_6) {
-			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_6});
-		}
-	}
-
-	/**
-	 * delphi::ident::extract() : String[?]
-	 *
-	 * null
-	 */
-	protected class CACHE_ident_extract extends AbstractEvaluationOperation
-	{
-		@Override
-		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull ident self_7 = (/*@NonInvalid*/ @NonNull ident)sourceAndArgumentValues[0];
-			return null;
-		}
-
-		public String evaluate(final /*@NonInvalid*/ @NonNull ident self_7) {
-			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_7});
-		}
-	}
+	protected final @NonNull CACHE_functionDecl_getFragments INST_functionDecl_getFragments = new CACHE_functionDecl_getFragments();
 
 	/**
 	 * delphi::ReservedId::extract() : String[?]
 	 *
 	 * reservedWord.id
 	 */
-	protected class CACHE_ReservedId_extract extends AbstractEvaluationOperation
+	public class CACHE_ReservedId_extract extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull ReservedId self_8 = (/*@NonInvalid*/ @NonNull ReservedId)sourceAndArgumentValues[0];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull ReservedId self_6 = (/*@NonInvalid*/ @NonNull ReservedId)sourceAndArgumentValues[0];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
 			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_reservedWord_0 = idResolver.getClass(CLSSid_reservedWord, null);
 			final /*@Thrown*/ @Nullable String id = ((reservedWord)TYP_delphi_c_c_reservedWord_0).getId();
 			return id;
 		}
 
-		public String evaluate(final /*@NonInvalid*/ @NonNull ReservedId self_8) {
-			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_8});
+		public String evaluate(final /*@NonInvalid*/ @NonNull ReservedId self_6) {
+			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_6});
 		}
 	}
 
+	protected final @NonNull CACHE_ReservedId_extract INST_ReservedId_extract = new CACHE_ReservedId_extract();
+
 	/**
-	 * delphi::MultipleId::extract() : String[?]
+	 * delphi::MineID::extract() : String[?]
 	 *
-	 * id->first()
+	 * first
 	 */
-	protected class CACHE_MultipleId_extract extends AbstractEvaluationOperation
+	public class CACHE_MineID_extract extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull MultipleId self_9 = (/*@NonInvalid*/ @NonNull MultipleId)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull List<String> id = self_9.getId();
-			final /*@Thrown*/ @NonNull SequenceValue BOXED_id = idResolver.createSequenceOfAll(SEQ_PRIMid_String, id);
-			final /*@Thrown*/ @Nullable String first = (String)OrderedCollectionFirstOperation.INSTANCE.evaluate(BOXED_id);
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull MineID self_7 = (/*@NonInvalid*/ @NonNull MineID)sourceAndArgumentValues[0];
+			final /*@Thrown*/ @Nullable String first = self_7.getFirst();
 			return first;
 		}
 
-		public String evaluate(final /*@NonInvalid*/ @NonNull MultipleId self_9) {
-			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_9});
-		}
-	}
-
-	protected class VCACHE_ident_extract extends AbstractDispatchOperation
-	{
-		private VCACHE_ident_extract() {
-			install(MineID.class, new CACHE_MineID_extract());
-			install(ident.class, new CACHE_ident_extract());
-			install(ReservedId.class, new CACHE_ReservedId_extract());
-			install(MultipleId.class, new CACHE_MultipleId_extract());
-		}
-
-		public String evaluate(final /*@NonInvalid*/ @NonNull ident self_7) {
+		public String evaluate(final /*@NonInvalid*/ @NonNull MineID self_7) {
 			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_7});
 		}
 	}
 
-	protected final @NonNull VCACHE_ident_extract INST_ident_extract = new VCACHE_ident_extract();
+	protected final @NonNull CACHE_MineID_extract INST_MineID_extract = new CACHE_MineID_extract();
 
-	protected class VCACHE_interfaceDecl_getFragments extends AbstractDispatchOperation
+	/**
+	 * delphi::MultipleId::extract() : String[?]
+	 *
+	 * id->iterate(x; acc : String[?] = '' |
+	 *   if self.id->indexOf(x) = 1
+	 *   then acc + x
+	 *   else acc + '.' + x
+	 *   endif)
+	 */
+	public class CACHE_MultipleId_extract extends AbstractEvaluationOperation
 	{
-		private VCACHE_interfaceDecl_getFragments() {
-			install(declSection.class, new CACHE_declSection_getFragments());
-			install(constSection.class, new CACHE_constSection_getFragments());
-			install(interfaceDecl.class, new CACHE_interfaceDecl_getFragments());
-			install(varSection.class, new CACHE_varSection_getFragments());
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull MultipleId self_8 = (/*@NonInvalid*/ @NonNull MultipleId)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			@SuppressWarnings("null")
+			final /*@Thrown*/ @NonNull List<String> id = self_8.getId();
+			final /*@Thrown*/ @NonNull SequenceValue BOXED_id = idResolver.createSequenceOfAll(SEQ_PRIMid_String, id);
+			/*@NonInvalid*/ @NonNull String acc = STR_;
+			@NonNull Iterator<Object> ITERATOR_x = BOXED_id.iterator();
+			/*@Thrown*/ @Nullable String iterate;
+			while (true) {
+				if (!ITERATOR_x.hasNext()) {
+					iterate = acc;
+					break;
+				}
+				@SuppressWarnings("null")
+				/*@NonInvalid*/ @NonNull String x = (String)ITERATOR_x.next();
+				/**
+				 *
+				 * if self.id->indexOf(x) = 1
+				 * then acc + x
+				 * else acc + '.' + x
+				 * endif
+				 */
+				final /*@Thrown*/ @NonNull IntegerValue indexOf = OrderedCollectionIndexOfOperation.INSTANCE.evaluate(BOXED_id, x);
+				final /*@Thrown*/ boolean eq = indexOf.equals(INT_1);
+				/*@NonInvalid*/ @NonNull String symbol_0;
+				if (eq) {
+					final /*@NonInvalid*/ @NonNull String sum = StringConcatOperation.INSTANCE.evaluate(acc, x);
+					symbol_0 = sum;
+				}
+				else {
+					final /*@NonInvalid*/ @NonNull String sum_0 = StringConcatOperation.INSTANCE.evaluate(acc, STR__0);
+					final /*@NonInvalid*/ @NonNull String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, x);
+					symbol_0 = sum_1;
+				}
+				//
+				acc = symbol_0;
+			}
+			return iterate;
 		}
 
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull interfaceDecl self_4) {
-			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_4});
+		public String evaluate(final /*@NonInvalid*/ @NonNull MultipleId self_8) {
+			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_8});
 		}
 	}
 
-	protected final @NonNull VCACHE_interfaceDecl_getFragments INST_interfaceDecl_getFragments = new VCACHE_interfaceDecl_getFragments();
+	protected final @NonNull CACHE_MultipleId_extract INST_MultipleId_extract = new CACHE_MultipleId_extract();
+
+	/**
+	 * delphi::ident::extract() : String[?]
+	 *
+	 * null
+	 */
+	public class CACHE_ident_extract extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull ident self_9 = (/*@NonInvalid*/ @NonNull ident)sourceAndArgumentValues[0];
+			return null;
+		}
+
+		public String evaluate(final /*@NonInvalid*/ @NonNull ident self_9) {
+			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_9});
+		}
+	}
+
+	protected final @NonNull CACHE_ident_extract INST_ident_extract = new CACHE_ident_extract();
+
+	/**
+	 * delphi::interfaceDecl::getFragments() : OrderedSet(astm::DefinitionObject)
+	 *
+	 * OrderedSet{}
+	 */
+	public class CACHE_interfaceDecl_getFragments extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull interfaceDecl self_10 = (/*@NonInvalid*/ @NonNull interfaceDecl)sourceAndArgumentValues[0];
+			return OrderedSet_0;
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull interfaceDecl self_10) {
+			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_10});
+		}
+	}
+
+	protected final @NonNull CACHE_interfaceDecl_getFragments INST_interfaceDecl_getFragments = new CACHE_interfaceDecl_getFragments();
+
+	/**
+	 * delphi::exprList::createActualParams() : OrderedSet(astm::ActualParameterExpression)
+	 *
+	 *
+	 * self.exps->collect(x |
+	 *   astm::ActualParameterExpression{
+	 *     value = x.ast.oclAsType(astm::Expression)
+	 *   })
+	 * ->asOrderedSet()
+	 */
+	public class CACHE_exprList_createActualParams extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull exprList self_11 = (/*@NonInvalid*/ @NonNull exprList)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			@SuppressWarnings("null")
+			final /*@Thrown*/ @NonNull List<expression> exps = self_11.getExps();
+			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_exps = idResolver.createOrderedSetOfAll(ORD_CLSSid_expression, exps);
+			/*@Thrown*/ SequenceValue.@NonNull Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(SEQ_CLSSid_ActualParameterExpression);
+			@NonNull Iterator<Object> ITERATOR_x = BOXED_exps.iterator();
+			/*@Thrown*/ @NonNull SequenceValue collect;
+			while (true) {
+				if (!ITERATOR_x.hasNext()) {
+					collect = accumulator;
+					break;
+				}
+				@SuppressWarnings("null")
+				/*@NonInvalid*/ @NonNull expression x = (expression)ITERATOR_x.next();
+				/**
+				 *
+				 * astm::ActualParameterExpression{
+				 *   value = x.ast.oclAsType(astm::Expression)
+				 * }
+				 */
+				final /*@NonInvalid*/ @NonNull Property CTORid_value = idResolver.getProperty(PROPid_value_0);
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_ActualParameterExpression_0 = idResolver.getClass(CLSSid_ActualParameterExpression, null);
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Expression_0 = idResolver.getClass(CLSSid_Expression, null);
+				final /*@Thrown*/ @NonNull ActualParameterExpression symbol_0 = (ActualParameterExpression)TYP_astm_c_c_ActualParameterExpression_0.createInstance();
+				final /*@Thrown*/ @Nullable Visitable ast = x.getAst();
+				final /*@Thrown*/ @NonNull Expression oclAsType = ClassUtil.nonNullState((Expression)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_Expression_0));
+				CTORid_value.initValue(symbol_0, oclAsType);
+				//
+				accumulator.add(symbol_0);
+			}
+			final /*@Thrown*/ @NonNull OrderedSetValue asOrderedSet = CollectionAsOrderedSetOperation.INSTANCE.evaluate(collect);
+			return asOrderedSet;
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull exprList self_11) {
+			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_11});
+		}
+	}
+
+	protected final @NonNull CACHE_exprList_createActualParams INSTANCE_exprList_createActualParams = new CACHE_exprList_createActualParams();
+
+	/**
+	 * delphi::identList::extract() : String[?]
+	 *
+	 * ids->first().extract()
+	 */
+	public class CACHE_identList_extract extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull identList self_12 = (/*@NonInvalid*/ @NonNull identList)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			@SuppressWarnings("null")
+			final /*@Thrown*/ @NonNull List<ident> ids = self_12.getIds();
+			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_ids = idResolver.createOrderedSetOfAll(ORD_CLSSid_ident, ids);
+			final /*@Thrown*/ @Nullable ident first = (ident)OrderedCollectionFirstOperation.INSTANCE.evaluate(BOXED_ids);
+			if (first == null) {
+				throw new InvalidValueException("Null source for \'delphi::ident::extract() : String[?]\'");
+			}
+			final /*@Thrown*/ @Nullable String extract = INSTANCE_ident_extract.evaluate(first);
+			return extract;
+		}
+
+		public String evaluate(final /*@NonInvalid*/ @NonNull identList self_12) {
+			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_12});
+		}
+	}
+
+	protected final @NonNull CACHE_identList_extract INSTANCE_identList_extract = new CACHE_identList_extract();
 
 	/**
 	 * astm::Visitable::_lookupFunctionDefinition(env : lookup::LookupEnvironment[?], fName : String[?]) : OrderedSet(astm::FunctionDefinition)
@@ -820,7 +989,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *
 	 * let
 	 *   foundFunctionDefinition : OrderedSet(astm::FunctionDefinition)[*|1] = env.namedElements->selectByKind(FunctionDefinition)
-	 *   ->select(identifierName = fName)
+	 *   ->select(identifierName.nameString = fName)
 	 * in
 	 *   if
 	 *     foundFunctionDefinition->isEmpty() and
@@ -831,11 +1000,11 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   else foundFunctionDefinition
 	 *   endif
 	 */
-	protected class CACHE_Visitable__lookupFunctionDefinition extends AbstractEvaluationOperation
+	public class CACHE_Visitable__lookupFunctionDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Visitable self_10 = (/*@NonInvalid*/ @NonNull Visitable)sourceAndArgumentValues[0];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Visitable self_14 = (/*@NonInvalid*/ @NonNull Visitable)sourceAndArgumentValues[0];
 			final /*@NonInvalid*/ @Nullable LookupEnvironment env = (/*@NonInvalid*/ @Nullable LookupEnvironment)sourceAndArgumentValues[1];
 			final /*@NonInvalid*/ @Nullable String fName = (/*@NonInvalid*/ @Nullable String)sourceAndArgumentValues[2];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
@@ -860,10 +1029,14 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 					@SuppressWarnings("null")
 					/*@NonInvalid*/ @NonNull FunctionDefinition _1 = (FunctionDefinition)ITERATOR__1.next();
 					/**
-					 * identifierName = fName
+					 * identifierName.nameString = fName
 					 */
 					final /*@Thrown*/ @Nullable Name identifierName = _1.getIdentifierName();
-					final /*@Thrown*/ boolean eq = (identifierName != null) ? identifierName.equals(fName) : (fName == null);
+					if (identifierName == null) {
+						throw new InvalidValueException("Null source for \'\'http://modelum.es/modernization/astm\'::Name::nameString\'");
+					}
+					final /*@Thrown*/ @Nullable String nameString = identifierName.getNameString();
+					final /*@Thrown*/ boolean eq = (nameString != null) ? nameString.equals(fName) : (fName == null);
 					//
 					if (eq == ValueUtil.TRUE_VALUE) {
 						accumulator.add(_1);
@@ -915,7 +1088,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 					throw new InvalidValueException("Null source for \'\'http://xtext.eclipse.org/example/companies\'::LookupEnvironment::parentEnv\'");
 				}
 				final /*@Thrown*/ @Nullable LookupEnvironment parentEnv_0 = env.getParentEnv();
-				final /*@Thrown*/ @NonNull OrderedSetValue _lookupFunctionDefinition = INST_Visitable__lookupFunctionDefinition.evaluate(self_10, parentEnv_0, fName);
+				final /*@Thrown*/ @NonNull OrderedSetValue _lookupFunctionDefinition = INSTANCE_Visitable__lookupFunctionDefinition.evaluate(self_14, parentEnv_0, fName);
 				symbol_0 = _lookupFunctionDefinition;
 			}
 			else {
@@ -927,48 +1100,34 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return symbol_0;
 		}
 
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull Visitable self_10, final /*@NonInvalid*/ @Nullable LookupEnvironment env, final /*@NonInvalid*/ @Nullable String fName) {
-			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_10, env, fName});
-		}
-	}
-
-	protected final @NonNull CACHE_Visitable__lookupFunctionDefinition INST_Visitable__lookupFunctionDefinition = new CACHE_Visitable__lookupFunctionDefinition();
-
-	protected class VCACHE_OclElement__unqualified_env_FunctionDefinition extends AbstractDispatchOperation
-	{
-		private VCACHE_OclElement__unqualified_env_FunctionDefinition() {
-			install(CompilationUnit.class, new CACHE_CompilationUnit__unqualified_env_FunctionDefinition());
-			install(Object.class, new CACHE_OclElement__unqualified_env_FunctionDefinition());
-			install(DelphiBlockStatement.class, new CACHE_DelphiBlockStatement__unqualified_env_FunctionDefinition());
-		}
-
 		@SuppressWarnings("null")
-		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_14, final /*@NonInvalid*/ @Nullable Object child_0) {
-			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_14, child_0});
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull Visitable self_14, final /*@NonInvalid*/ @Nullable LookupEnvironment env, final /*@NonInvalid*/ @Nullable String fName) {
+			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_14, env, fName});
 		}
 	}
 
-	protected final @NonNull VCACHE_OclElement__unqualified_env_FunctionDefinition INST_OclElement__unqualified_env_FunctionDefinition = new VCACHE_OclElement__unqualified_env_FunctionDefinition();
+	protected final @NonNull CACHE_Visitable__lookupFunctionDefinition INSTANCE_Visitable__lookupFunctionDefinition = new CACHE_Visitable__lookupFunctionDefinition();
 
 	/**
-	 * ocl::OclElement::parentEnv_FunctionDefinition() : lookup::LookupEnvironment[1]
+	 * astm::Visitable::parentEnv_FunctionDefinition() : lookup::LookupEnvironment[1]
 	 *
 	 *
 	 * let parent : OclElement[?] = oclContainer()
 	 * in
 	 *   if parent = null
 	 *   then lookup::LookupEnvironment{}
-	 *   else parent._unqualified_env_FunctionDefinition(self)
+	 *   else
+	 *     parent.oclAsType(Visitable)
+	 *     ._unqualified_env_FunctionDefinition(self)
 	 *   endif
 	 */
-	protected class CACHE_OclElement_parentEnv_FunctionDefinition extends AbstractEvaluationOperation
+	public class CACHE_Visitable_parentEnv_FunctionDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Object self_13 = (/*@NonInvalid*/ @NonNull Object)sourceAndArgumentValues[0];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Visitable self_17 = (/*@NonInvalid*/ @NonNull Visitable)sourceAndArgumentValues[0];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ @Nullable Object parent = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, self_13);
+			final /*@NonInvalid*/ @Nullable Object parent = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, self_17);
 			final /*@NonInvalid*/ boolean eq = parent == null;
 			/*@Thrown*/ @NonNull LookupEnvironment symbol_1;
 			if (eq) {
@@ -977,46 +1136,68 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				symbol_1 = symbol_0;
 			}
 			else {
-				if (parent == null) {
-					throw new InvalidValueException("Null source for \'OclElement::_unqualified_env_FunctionDefinition(OclElement[?]) : lookup::LookupEnvironment[1]\'");
-				}
-				final /*@Thrown*/ @NonNull LookupEnvironment _unqualified_env_FunctionDefinition = INST_OclElement__unqualified_env_FunctionDefinition.evaluate(parent, self_13);
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Visitable_0 = idResolver.getClass(CLSSid_Visitable, null);
+				final /*@Thrown*/ @NonNull Visitable oclAsType = ClassUtil.nonNullState((Visitable)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, parent, TYP_astm_c_c_Visitable_0));
+				final /*@Thrown*/ @NonNull LookupEnvironment _unqualified_env_FunctionDefinition = INSTANCE_Visitable__unqualified_env_FunctionDefinition.evaluate(oclAsType, self_17);
 				symbol_1 = _unqualified_env_FunctionDefinition;
 			}
 			return symbol_1;
 		}
 
 		@SuppressWarnings("null")
-		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_13) {
-			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_13});
+		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Visitable self_17) {
+			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_17});
 		}
 	}
 
-	protected final @NonNull CACHE_OclElement_parentEnv_FunctionDefinition INST_OclElement_parentEnv_FunctionDefinition = new CACHE_OclElement_parentEnv_FunctionDefinition();
+	protected final @NonNull CACHE_Visitable_parentEnv_FunctionDefinition INSTANCE_Visitable_parentEnv_FunctionDefinition = new CACHE_Visitable_parentEnv_FunctionDefinition();
 
 	/**
-	 * astm::CompilationUnit::_unqualified_env_FunctionDefinition(child : OclElement[?]) : lookup::LookupEnvironment[?]
+	 * astm::Visitable::_unqualified_env_FunctionDefinition(child : astm::Visitable[?]) : lookup::LookupEnvironment[1]
+	 *
+	 * parentEnv_FunctionDefinition()
+	 */
+	public class CACHE_Visitable__unqualified_env_FunctionDefinition extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Visitable self_16 = (/*@NonInvalid*/ @NonNull Visitable)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @Nullable Visitable child = (/*@NonInvalid*/ @Nullable Visitable)sourceAndArgumentValues[1];
+			final /*@Thrown*/ @NonNull LookupEnvironment parentEnv_FunctionDefinition = INSTANCE_Visitable_parentEnv_FunctionDefinition.evaluate(self_16);
+			return parentEnv_FunctionDefinition;
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Visitable self_16, final /*@NonInvalid*/ @Nullable Visitable child) {
+			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_16, child});
+		}
+	}
+
+	protected final @NonNull CACHE_Visitable__unqualified_env_FunctionDefinition INST_Visitable__unqualified_env_FunctionDefinition = new CACHE_Visitable__unqualified_env_FunctionDefinition();
+
+	/**
+	 * astm::CompilationUnit::_unqualified_env_FunctionDefinition(child : astm::Visitable[?]) : lookup::LookupEnvironment[?]
 	 *
 	 *
 	 * parentEnv_FunctionDefinition()
 	 * .nestedEnv()
 	 * .addElements(fragments->selectByKind(FunctionDefinition))
 	 */
-	protected class CACHE_CompilationUnit__unqualified_env_FunctionDefinition extends AbstractEvaluationOperation
+	public class CACHE_CompilationUnit__unqualified_env_FunctionDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull CompilationUnit self_12 = (/*@NonInvalid*/ @NonNull CompilationUnit)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @Nullable Object child = (/*@NonInvalid*/ @Nullable Object)sourceAndArgumentValues[1];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull CompilationUnit self_18 = (/*@NonInvalid*/ @NonNull CompilationUnit)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @Nullable Visitable child_0 = (/*@NonInvalid*/ @Nullable Visitable)sourceAndArgumentValues[1];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
 			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_FunctionDefinition_0 = idResolver.getClass(CLSSid_FunctionDefinition, null);
-			final /*@Thrown*/ @NonNull LookupEnvironment self_24 = INST_OclElement_parentEnv_FunctionDefinition.evaluate(self_12);
+			final /*@Thrown*/ @NonNull LookupEnvironment self_26 = INSTANCE_Visitable_parentEnv_FunctionDefinition.evaluate(self_18);
 			final /*@NonInvalid*/ @NonNull Property CTORid_parentEnv = idResolver.getProperty(PROPid_parentEnv);
 			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_lookup_c_c_LookupEnvironment_0 = idResolver.getClass(CLSSid_LookupEnvironment, null);
 			final /*@Thrown*/ @NonNull LookupEnvironment symbol_0 = (LookupEnvironment)TYP_lookup_c_c_LookupEnvironment_0.createInstance();
-			CTORid_parentEnv.initValue(symbol_0, self_24);
+			CTORid_parentEnv.initValue(symbol_0, self_26);
 			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull List<DefinitionObject> fragments = self_12.getFragments();
+			final /*@Thrown*/ @NonNull List<DefinitionObject> fragments = self_18.getFragments();
 			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_fragments = idResolver.createOrderedSetOfAll(ORD_CLSSid_DefinitionObject, fragments);
 			final /*@Thrown*/ @NonNull OrderedSetValue selectByKind = (OrderedSetValue)CollectionSelectByKindOperation.INSTANCE.evaluate(executor, BOXED_fragments, TYP_astm_c_c_FunctionDefinition_0);
 			final /*@Thrown*/ @NonNull List<FunctionDefinition> ECORE_selectByKind = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(FunctionDefinition.class, selectByKind);
@@ -1025,55 +1206,36 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return addElements;
 		}
 
-		public LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull CompilationUnit self_12, final /*@NonInvalid*/ @Nullable Object child) {
-			return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_12, child});
+		public LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull CompilationUnit self_18, final /*@NonInvalid*/ @Nullable Visitable child_0) {
+			return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_18, child_0});
 		}
 	}
 
-	/**
-	 * ocl::OclElement::_unqualified_env_FunctionDefinition(child : OclElement[?]) : lookup::LookupEnvironment[1]
-	 *
-	 * parentEnv_FunctionDefinition()
-	 */
-	protected class CACHE_OclElement__unqualified_env_FunctionDefinition extends AbstractEvaluationOperation
-	{
-		@Override
-		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Object self_14 = (/*@NonInvalid*/ @NonNull Object)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @Nullable Object child_0 = (/*@NonInvalid*/ @Nullable Object)sourceAndArgumentValues[1];
-			final /*@Thrown*/ @NonNull LookupEnvironment parentEnv_FunctionDefinition = INST_OclElement_parentEnv_FunctionDefinition.evaluate(self_14);
-			return parentEnv_FunctionDefinition;
-		}
-
-		@SuppressWarnings("null")
-		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_14, final /*@NonInvalid*/ @Nullable Object child_0) {
-			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_14, child_0});
-		}
-	}
+	protected final @NonNull CACHE_CompilationUnit__unqualified_env_FunctionDefinition INST_CompilationUnit__unqualified_env_FunctionDefinition = new CACHE_CompilationUnit__unqualified_env_FunctionDefinition();
 
 	/**
-	 * astm::DelphiBlockStatement::_unqualified_env_FunctionDefinition(child : OclElement[?]) : lookup::LookupEnvironment[?]
+	 * astm::DelphiBlockStatement::_unqualified_env_FunctionDefinition(child : astm::Visitable[?]) : lookup::LookupEnvironment[?]
 	 *
 	 *
 	 * parentEnv_FunctionDefinition()
 	 * .nestedEnv()
 	 * .addElements(declarations->selectByKind(FunctionDefinition))
 	 */
-	protected class CACHE_DelphiBlockStatement__unqualified_env_FunctionDefinition extends AbstractEvaluationOperation
+	public class CACHE_DelphiBlockStatement__unqualified_env_FunctionDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull DelphiBlockStatement self_15 = (/*@NonInvalid*/ @NonNull DelphiBlockStatement)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @Nullable Object child_1 = (/*@NonInvalid*/ @Nullable Object)sourceAndArgumentValues[1];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull DelphiBlockStatement self_19 = (/*@NonInvalid*/ @NonNull DelphiBlockStatement)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @Nullable Visitable child_1 = (/*@NonInvalid*/ @Nullable Visitable)sourceAndArgumentValues[1];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
 			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_FunctionDefinition_0 = idResolver.getClass(CLSSid_FunctionDefinition, null);
-			final /*@Thrown*/ @NonNull LookupEnvironment self_24 = INST_OclElement_parentEnv_FunctionDefinition.evaluate(self_15);
+			final /*@Thrown*/ @NonNull LookupEnvironment self_26 = INSTANCE_Visitable_parentEnv_FunctionDefinition.evaluate(self_19);
 			final /*@NonInvalid*/ @NonNull Property CTORid_parentEnv = idResolver.getProperty(PROPid_parentEnv);
 			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_lookup_c_c_LookupEnvironment_0 = idResolver.getClass(CLSSid_LookupEnvironment, null);
 			final /*@Thrown*/ @NonNull LookupEnvironment symbol_0 = (LookupEnvironment)TYP_lookup_c_c_LookupEnvironment_0.createInstance();
-			CTORid_parentEnv.initValue(symbol_0, self_24);
+			CTORid_parentEnv.initValue(symbol_0, self_26);
 			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull List<DefinitionObject> declarations = self_15.getDeclarations();
+			final /*@Thrown*/ @NonNull List<DefinitionObject> declarations = self_19.getDeclarations();
 			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_declarations = idResolver.createOrderedSetOfAll(ORD_CLSSid_DefinitionObject, declarations);
 			final /*@Thrown*/ @NonNull OrderedSetValue selectByKind = (OrderedSetValue)CollectionSelectByKindOperation.INSTANCE.evaluate(executor, BOXED_declarations, TYP_astm_c_c_FunctionDefinition_0);
 			final /*@Thrown*/ @NonNull List<FunctionDefinition> ECORE_selectByKind = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(FunctionDefinition.class, selectByKind);
@@ -1082,32 +1244,34 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return addElements;
 		}
 
-		public LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull DelphiBlockStatement self_15, final /*@NonInvalid*/ @Nullable Object child_1) {
-			return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_15, child_1});
+		public LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull DelphiBlockStatement self_19, final /*@NonInvalid*/ @Nullable Visitable child_1) {
+			return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_19, child_1});
 		}
 	}
 
+	protected final @NonNull CACHE_DelphiBlockStatement__unqualified_env_FunctionDefinition INST_DelphiBlockStatement__unqualified_env_FunctionDefinition = new CACHE_DelphiBlockStatement__unqualified_env_FunctionDefinition();
+
 	/**
-	 * ocl::OclElement::unqualified_env_FunctionDefinition() : lookup::LookupEnvironment[1]
+	 * astm::Visitable::unqualified_env_FunctionDefinition() : lookup::LookupEnvironment[1]
 	 *
 	 * _unqualified_env_FunctionDefinition(null)
 	 */
-	protected class CACHE_OclElement_unqualified_env_FunctionDefinition extends AbstractEvaluationOperation
+	public class CACHE_Visitable_unqualified_env_FunctionDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Object self_11 = (/*@NonInvalid*/ @NonNull Object)sourceAndArgumentValues[0];
-			final /*@Thrown*/ @NonNull LookupEnvironment _unqualified_env_FunctionDefinition = INST_OclElement__unqualified_env_FunctionDefinition.evaluate(self_11, null);
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Visitable self_15 = (/*@NonInvalid*/ @NonNull Visitable)sourceAndArgumentValues[0];
+			final /*@Thrown*/ @NonNull LookupEnvironment _unqualified_env_FunctionDefinition = INSTANCE_Visitable__unqualified_env_FunctionDefinition.evaluate(self_15, null);
 			return _unqualified_env_FunctionDefinition;
 		}
 
 		@SuppressWarnings("null")
-		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_11) {
-			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_11});
+		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Visitable self_15) {
+			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_15});
 		}
 	}
 
-	protected final @NonNull CACHE_OclElement_unqualified_env_FunctionDefinition INST_OclElement_unqualified_env_FunctionDefinition = new CACHE_OclElement_unqualified_env_FunctionDefinition();
+	protected final @NonNull CACHE_Visitable_unqualified_env_FunctionDefinition INSTANCE_Visitable_unqualified_env_FunctionDefinition = new CACHE_Visitable_unqualified_env_FunctionDefinition();
 
 	/**
 	 * astm::Visitable::_lookupVariableDefinition(env : lookup::LookupEnvironment[?], vName : String[?]) : OrderedSet(astm::VariableDefinition)
@@ -1115,7 +1279,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *
 	 * let
 	 *   foundVariableDefinition : OrderedSet(astm::VariableDefinition)[*|1] = env.namedElements->selectByKind(VariableDefinition)
-	 *   ->select(identifierName = vName)
+	 *   ->select(identifierName.nameString = vName)
 	 * in
 	 *   if
 	 *     foundVariableDefinition->isEmpty() and
@@ -1126,11 +1290,11 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   else foundVariableDefinition
 	 *   endif
 	 */
-	protected class CACHE_Visitable__lookupVariableDefinition extends AbstractEvaluationOperation
+	public class CACHE_Visitable__lookupVariableDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Visitable self_16 = (/*@NonInvalid*/ @NonNull Visitable)sourceAndArgumentValues[0];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Visitable self_20 = (/*@NonInvalid*/ @NonNull Visitable)sourceAndArgumentValues[0];
 			final /*@NonInvalid*/ @Nullable LookupEnvironment env_0 = (/*@NonInvalid*/ @Nullable LookupEnvironment)sourceAndArgumentValues[1];
 			final /*@NonInvalid*/ @Nullable String vName = (/*@NonInvalid*/ @Nullable String)sourceAndArgumentValues[2];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
@@ -1155,10 +1319,14 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 					@SuppressWarnings("null")
 					/*@NonInvalid*/ @NonNull VariableDefinition _1 = (VariableDefinition)ITERATOR__1.next();
 					/**
-					 * identifierName = vName
+					 * identifierName.nameString = vName
 					 */
 					final /*@Thrown*/ @Nullable Name identifierName = _1.getIdentifierName();
-					final /*@Thrown*/ boolean eq = (identifierName != null) ? identifierName.equals(vName) : (vName == null);
+					if (identifierName == null) {
+						throw new InvalidValueException("Null source for \'\'http://modelum.es/modernization/astm\'::Name::nameString\'");
+					}
+					final /*@Thrown*/ @Nullable String nameString = identifierName.getNameString();
+					final /*@Thrown*/ boolean eq = (nameString != null) ? nameString.equals(vName) : (vName == null);
 					//
 					if (eq == ValueUtil.TRUE_VALUE) {
 						accumulator.add(_1);
@@ -1210,7 +1378,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 					throw new InvalidValueException("Null source for \'\'http://xtext.eclipse.org/example/companies\'::LookupEnvironment::parentEnv\'");
 				}
 				final /*@Thrown*/ @Nullable LookupEnvironment parentEnv_0 = env_0.getParentEnv();
-				final /*@Thrown*/ @NonNull OrderedSetValue _lookupVariableDefinition = INST_Visitable__lookupVariableDefinition.evaluate(self_16, parentEnv_0, vName);
+				final /*@Thrown*/ @NonNull OrderedSetValue _lookupVariableDefinition = INSTANCE_Visitable__lookupVariableDefinition.evaluate(self_20, parentEnv_0, vName);
 				symbol_0 = _lookupVariableDefinition;
 			}
 			else {
@@ -1222,48 +1390,34 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return symbol_0;
 		}
 
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull Visitable self_16, final /*@NonInvalid*/ @Nullable LookupEnvironment env_0, final /*@NonInvalid*/ @Nullable String vName) {
-			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_16, env_0, vName});
-		}
-	}
-
-	protected final @NonNull CACHE_Visitable__lookupVariableDefinition INST_Visitable__lookupVariableDefinition = new CACHE_Visitable__lookupVariableDefinition();
-
-	protected class VCACHE_OclElement__unqualified_env_VariableDefinition extends AbstractDispatchOperation
-	{
-		private VCACHE_OclElement__unqualified_env_VariableDefinition() {
-			install(DelphiBlockStatement.class, new CACHE_DelphiBlockStatement__unqualified_env_VariableDefinition());
-			install(CompilationUnit.class, new CACHE_CompilationUnit__unqualified_env_VariableDefinition());
-			install(Object.class, new CACHE_OclElement__unqualified_env_VariableDefinition());
-		}
-
 		@SuppressWarnings("null")
-		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_20, final /*@NonInvalid*/ @Nullable Object child_3) {
-			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_20, child_3});
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull Visitable self_20, final /*@NonInvalid*/ @Nullable LookupEnvironment env_0, final /*@NonInvalid*/ @Nullable String vName) {
+			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_20, env_0, vName});
 		}
 	}
 
-	protected final @NonNull VCACHE_OclElement__unqualified_env_VariableDefinition INST_OclElement__unqualified_env_VariableDefinition = new VCACHE_OclElement__unqualified_env_VariableDefinition();
+	protected final @NonNull CACHE_Visitable__lookupVariableDefinition INSTANCE_Visitable__lookupVariableDefinition = new CACHE_Visitable__lookupVariableDefinition();
 
 	/**
-	 * ocl::OclElement::parentEnv_VariableDefinition() : lookup::LookupEnvironment[1]
+	 * astm::Visitable::parentEnv_VariableDefinition() : lookup::LookupEnvironment[1]
 	 *
 	 *
 	 * let parent : OclElement[?] = oclContainer()
 	 * in
 	 *   if parent = null
 	 *   then lookup::LookupEnvironment{}
-	 *   else parent._unqualified_env_VariableDefinition(self)
+	 *   else
+	 *     parent.oclAsType(Visitable)
+	 *     ._unqualified_env_VariableDefinition(self)
 	 *   endif
 	 */
-	protected class CACHE_OclElement_parentEnv_VariableDefinition extends AbstractEvaluationOperation
+	public class CACHE_Visitable_parentEnv_VariableDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Object self_19 = (/*@NonInvalid*/ @NonNull Object)sourceAndArgumentValues[0];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Visitable self_23 = (/*@NonInvalid*/ @NonNull Visitable)sourceAndArgumentValues[0];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ @Nullable Object parent = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, self_19);
+			final /*@NonInvalid*/ @Nullable Object parent = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, self_23);
 			final /*@NonInvalid*/ boolean eq = parent == null;
 			/*@Thrown*/ @NonNull LookupEnvironment symbol_1;
 			if (eq) {
@@ -1272,82 +1426,45 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				symbol_1 = symbol_0;
 			}
 			else {
-				if (parent == null) {
-					throw new InvalidValueException("Null source for \'OclElement::_unqualified_env_VariableDefinition(OclElement[?]) : lookup::LookupEnvironment[1]\'");
-				}
-				final /*@Thrown*/ @NonNull LookupEnvironment _unqualified_env_VariableDefinition = INST_OclElement__unqualified_env_VariableDefinition.evaluate(parent, self_19);
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Visitable_0 = idResolver.getClass(CLSSid_Visitable, null);
+				final /*@Thrown*/ @NonNull Visitable oclAsType = ClassUtil.nonNullState((Visitable)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, parent, TYP_astm_c_c_Visitable_0));
+				final /*@Thrown*/ @NonNull LookupEnvironment _unqualified_env_VariableDefinition = INSTANCE_Visitable__unqualified_env_VariableDefinition.evaluate(oclAsType, self_23);
 				symbol_1 = _unqualified_env_VariableDefinition;
 			}
 			return symbol_1;
 		}
 
 		@SuppressWarnings("null")
-		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_19) {
-			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_19});
+		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Visitable self_23) {
+			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_23});
 		}
 	}
 
-	protected final @NonNull CACHE_OclElement_parentEnv_VariableDefinition INST_OclElement_parentEnv_VariableDefinition = new CACHE_OclElement_parentEnv_VariableDefinition();
+	protected final @NonNull CACHE_Visitable_parentEnv_VariableDefinition INSTANCE_Visitable_parentEnv_VariableDefinition = new CACHE_Visitable_parentEnv_VariableDefinition();
 
 	/**
-	 * astm::DelphiBlockStatement::_unqualified_env_VariableDefinition(child : OclElement[?]) : lookup::LookupEnvironment[?]
-	 *
-	 *
-	 * parentEnv_VariableDefinition()
-	 * .nestedEnv()
-	 * .addElements(declarations->selectByKind(VariableDefinition))
-	 */
-	protected class CACHE_DelphiBlockStatement__unqualified_env_VariableDefinition extends AbstractEvaluationOperation
-	{
-		@Override
-		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull DelphiBlockStatement self_18 = (/*@NonInvalid*/ @NonNull DelphiBlockStatement)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @Nullable Object child_2 = (/*@NonInvalid*/ @Nullable Object)sourceAndArgumentValues[1];
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_VariableDefinition_0 = idResolver.getClass(CLSSid_VariableDefinition, null);
-			final /*@Thrown*/ @NonNull LookupEnvironment self_24 = INST_OclElement_parentEnv_VariableDefinition.evaluate(self_18);
-			final /*@NonInvalid*/ @NonNull Property CTORid_parentEnv = idResolver.getProperty(PROPid_parentEnv);
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_lookup_c_c_LookupEnvironment_0 = idResolver.getClass(CLSSid_LookupEnvironment, null);
-			final /*@Thrown*/ @NonNull LookupEnvironment symbol_0 = (LookupEnvironment)TYP_lookup_c_c_LookupEnvironment_0.createInstance();
-			CTORid_parentEnv.initValue(symbol_0, self_24);
-			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull List<DefinitionObject> declarations = self_18.getDeclarations();
-			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_declarations = idResolver.createOrderedSetOfAll(ORD_CLSSid_DefinitionObject, declarations);
-			final /*@Thrown*/ @NonNull OrderedSetValue selectByKind = (OrderedSetValue)CollectionSelectByKindOperation.INSTANCE.evaluate(executor, BOXED_declarations, TYP_astm_c_c_VariableDefinition_0);
-			final /*@Thrown*/ @NonNull List<VariableDefinition> ECORE_selectByKind = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(VariableDefinition.class, selectByKind);
-			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull LookupEnvironment addElements = symbol_0.addElements(ECORE_selectByKind);
-			return addElements;
-		}
-
-		public LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull DelphiBlockStatement self_18, final /*@NonInvalid*/ @Nullable Object child_2) {
-			return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_18, child_2});
-		}
-	}
-
-	/**
-	 * astm::CompilationUnit::_unqualified_env_VariableDefinition(child : OclElement[?]) : lookup::LookupEnvironment[?]
+	 * astm::CompilationUnit::_unqualified_env_VariableDefinition(child : astm::Visitable[?]) : lookup::LookupEnvironment[?]
 	 *
 	 *
 	 * parentEnv_VariableDefinition()
 	 * .nestedEnv()
 	 * .addElements(fragments->selectByKind(VariableDefinition))
 	 */
-	protected class CACHE_CompilationUnit__unqualified_env_VariableDefinition extends AbstractEvaluationOperation
+	public class CACHE_CompilationUnit__unqualified_env_VariableDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull CompilationUnit self_21 = (/*@NonInvalid*/ @NonNull CompilationUnit)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @Nullable Object child_4 = (/*@NonInvalid*/ @Nullable Object)sourceAndArgumentValues[1];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull CompilationUnit self_22 = (/*@NonInvalid*/ @NonNull CompilationUnit)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @Nullable Visitable child_2 = (/*@NonInvalid*/ @Nullable Visitable)sourceAndArgumentValues[1];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
 			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_VariableDefinition_0 = idResolver.getClass(CLSSid_VariableDefinition, null);
-			final /*@Thrown*/ @NonNull LookupEnvironment self_24 = INST_OclElement_parentEnv_VariableDefinition.evaluate(self_21);
+			final /*@Thrown*/ @NonNull LookupEnvironment self_26 = INSTANCE_Visitable_parentEnv_VariableDefinition.evaluate(self_22);
 			final /*@NonInvalid*/ @NonNull Property CTORid_parentEnv = idResolver.getProperty(PROPid_parentEnv);
 			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_lookup_c_c_LookupEnvironment_0 = idResolver.getClass(CLSSid_LookupEnvironment, null);
 			final /*@Thrown*/ @NonNull LookupEnvironment symbol_0 = (LookupEnvironment)TYP_lookup_c_c_LookupEnvironment_0.createInstance();
-			CTORid_parentEnv.initValue(symbol_0, self_24);
+			CTORid_parentEnv.initValue(symbol_0, self_26);
 			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull List<DefinitionObject> fragments = self_21.getFragments();
+			final /*@Thrown*/ @NonNull List<DefinitionObject> fragments = self_22.getFragments();
 			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_fragments = idResolver.createOrderedSetOfAll(ORD_CLSSid_DefinitionObject, fragments);
 			final /*@Thrown*/ @NonNull OrderedSetValue selectByKind = (OrderedSetValue)CollectionSelectByKindOperation.INSTANCE.evaluate(executor, BOXED_fragments, TYP_astm_c_c_VariableDefinition_0);
 			final /*@Thrown*/ @NonNull List<VariableDefinition> ECORE_selectByKind = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(VariableDefinition.class, selectByKind);
@@ -1356,139 +1473,261 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return addElements;
 		}
 
-		public LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull CompilationUnit self_21, final /*@NonInvalid*/ @Nullable Object child_4) {
-			return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_21, child_4});
+		public LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull CompilationUnit self_22, final /*@NonInvalid*/ @Nullable Visitable child_2) {
+			return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_22, child_2});
 		}
 	}
 
+	protected final @NonNull CACHE_CompilationUnit__unqualified_env_VariableDefinition INST_CompilationUnit__unqualified_env_VariableDefinition = new CACHE_CompilationUnit__unqualified_env_VariableDefinition();
+
 	/**
-	 * ocl::OclElement::_unqualified_env_VariableDefinition(child : OclElement[?]) : lookup::LookupEnvironment[1]
+	 * astm::DelphiBlockStatement::_unqualified_env_VariableDefinition(child : astm::Visitable[?]) : lookup::LookupEnvironment[?]
+	 *
 	 *
 	 * parentEnv_VariableDefinition()
+	 * .nestedEnv()
+	 * .addElements(declarations->selectByKind(VariableDefinition))
 	 */
-	protected class CACHE_OclElement__unqualified_env_VariableDefinition extends AbstractEvaluationOperation
+	public class CACHE_DelphiBlockStatement__unqualified_env_VariableDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Object self_20 = (/*@NonInvalid*/ @NonNull Object)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @Nullable Object child_3 = (/*@NonInvalid*/ @Nullable Object)sourceAndArgumentValues[1];
-			final /*@Thrown*/ @NonNull LookupEnvironment parentEnv_VariableDefinition = INST_OclElement_parentEnv_VariableDefinition.evaluate(self_20);
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull DelphiBlockStatement self_25 = (/*@NonInvalid*/ @NonNull DelphiBlockStatement)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @Nullable Visitable child_4 = (/*@NonInvalid*/ @Nullable Visitable)sourceAndArgumentValues[1];
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_VariableDefinition_0 = idResolver.getClass(CLSSid_VariableDefinition, null);
+			final /*@Thrown*/ @NonNull LookupEnvironment self_26 = INSTANCE_Visitable_parentEnv_VariableDefinition.evaluate(self_25);
+			final /*@NonInvalid*/ @NonNull Property CTORid_parentEnv = idResolver.getProperty(PROPid_parentEnv);
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_lookup_c_c_LookupEnvironment_0 = idResolver.getClass(CLSSid_LookupEnvironment, null);
+			final /*@Thrown*/ @NonNull LookupEnvironment symbol_0 = (LookupEnvironment)TYP_lookup_c_c_LookupEnvironment_0.createInstance();
+			CTORid_parentEnv.initValue(symbol_0, self_26);
+			@SuppressWarnings("null")
+			final /*@Thrown*/ @NonNull List<DefinitionObject> declarations = self_25.getDeclarations();
+			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_declarations = idResolver.createOrderedSetOfAll(ORD_CLSSid_DefinitionObject, declarations);
+			final /*@Thrown*/ @NonNull OrderedSetValue selectByKind = (OrderedSetValue)CollectionSelectByKindOperation.INSTANCE.evaluate(executor, BOXED_declarations, TYP_astm_c_c_VariableDefinition_0);
+			final /*@Thrown*/ @NonNull List<VariableDefinition> ECORE_selectByKind = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(VariableDefinition.class, selectByKind);
+			@SuppressWarnings("null")
+			final /*@Thrown*/ @NonNull LookupEnvironment addElements = symbol_0.addElements(ECORE_selectByKind);
+			return addElements;
+		}
+
+		public LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull DelphiBlockStatement self_25, final /*@NonInvalid*/ @Nullable Visitable child_4) {
+			return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_25, child_4});
+		}
+	}
+
+	protected final @NonNull CACHE_DelphiBlockStatement__unqualified_env_VariableDefinition INST_DelphiBlockStatement__unqualified_env_VariableDefinition = new CACHE_DelphiBlockStatement__unqualified_env_VariableDefinition();
+
+	/**
+	 * astm::Visitable::_unqualified_env_VariableDefinition(child : astm::Visitable[?]) : lookup::LookupEnvironment[1]
+	 *
+	 * parentEnv_VariableDefinition()
+	 */
+	public class CACHE_Visitable__unqualified_env_VariableDefinition extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Visitable self_24 = (/*@NonInvalid*/ @NonNull Visitable)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @Nullable Visitable child_3 = (/*@NonInvalid*/ @Nullable Visitable)sourceAndArgumentValues[1];
+			final /*@Thrown*/ @NonNull LookupEnvironment parentEnv_VariableDefinition = INSTANCE_Visitable_parentEnv_VariableDefinition.evaluate(self_24);
 			return parentEnv_VariableDefinition;
 		}
 
 		@SuppressWarnings("null")
-		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_20, final /*@NonInvalid*/ @Nullable Object child_3) {
-			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_20, child_3});
+		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Visitable self_24, final /*@NonInvalid*/ @Nullable Visitable child_3) {
+			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_24, child_3});
 		}
 	}
 
+	protected final @NonNull CACHE_Visitable__unqualified_env_VariableDefinition INST_Visitable__unqualified_env_VariableDefinition = new CACHE_Visitable__unqualified_env_VariableDefinition();
+
 	/**
-	 * ocl::OclElement::unqualified_env_VariableDefinition() : lookup::LookupEnvironment[1]
+	 * astm::Visitable::unqualified_env_VariableDefinition() : lookup::LookupEnvironment[1]
 	 *
 	 * _unqualified_env_VariableDefinition(null)
 	 */
-	protected class CACHE_OclElement_unqualified_env_VariableDefinition extends AbstractEvaluationOperation
+	public class CACHE_Visitable_unqualified_env_VariableDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Object self_17 = (/*@NonInvalid*/ @NonNull Object)sourceAndArgumentValues[0];
-			final /*@Thrown*/ @NonNull LookupEnvironment _unqualified_env_VariableDefinition = INST_OclElement__unqualified_env_VariableDefinition.evaluate(self_17, null);
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Visitable self_21 = (/*@NonInvalid*/ @NonNull Visitable)sourceAndArgumentValues[0];
+			final /*@Thrown*/ @NonNull LookupEnvironment _unqualified_env_VariableDefinition = INSTANCE_Visitable__unqualified_env_VariableDefinition.evaluate(self_21, null);
 			return _unqualified_env_VariableDefinition;
 		}
 
 		@SuppressWarnings("null")
-		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_17) {
-			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_17});
+		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Visitable self_21) {
+			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_21});
 		}
 	}
 
-	protected final @NonNull CACHE_OclElement_unqualified_env_VariableDefinition INST_OclElement_unqualified_env_VariableDefinition = new CACHE_OclElement_unqualified_env_VariableDefinition();
+	protected final @NonNull CACHE_Visitable_unqualified_env_VariableDefinition INSTANCE_Visitable_unqualified_env_VariableDefinition = new CACHE_Visitable_unqualified_env_VariableDefinition();
 
 	/**
-	 * delphi::exprList::createActualParams() : OrderedSet(astm::ActualParameterExpression)
+	 * delphi::designator::getDefinition() : astm::Definition[?]
 	 *
 	 *
-	 * self.exps->collect(x |
-	 *   astm::ActualParameterExpression{
-	 *     value = x.ast.oclAsType(astm::Expression)
-	 *   })
-	 * ->asOrderedSet()
+	 * let
+	 *   method : astm::FunctionDefinition[?] = ast.oclAsType(astm::NameReference)
+	 *   .lookupFunctionDefinition(subpart.part.id)
+	 * in
+	 *   if method <> null
+	 *   then method
+	 *   else
+	 *     ast.oclAsType(astm::NameReference)
+	 *     .lookupVariableDefinition(subpart.part.id)
+	 *   endif
 	 */
-	protected class CACHE_exprList_createActualParams extends AbstractEvaluationOperation
+	public class CACHE_designator_getDefinition extends AbstractEvaluationOperation
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull exprList self_22 = (/*@NonInvalid*/ @NonNull exprList)sourceAndArgumentValues[0];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull designator self_13 = (/*@NonInvalid*/ @NonNull designator)sourceAndArgumentValues[0];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull List<expression> exps = self_22.getExps();
-			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_exps = idResolver.createOrderedSetOfAll(ORD_CLSSid_expression, exps);
-			/*@Thrown*/ SequenceValue.@NonNull Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(SEQ_CLSSid_ActualParameterExpression);
-			@NonNull Iterator<Object> ITERATOR_x = BOXED_exps.iterator();
-			/*@Thrown*/ @NonNull SequenceValue collect;
-			while (true) {
-				if (!ITERATOR_x.hasNext()) {
-					collect = accumulator;
-					break;
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_NameReference_1 = idResolver.getClass(CLSSid_NameReference, null);
+			final /*@Thrown*/ @Nullable Visitable ast_0 = self_13.getAst();
+			final /*@Thrown*/ @NonNull NameReference self_27 = ClassUtil.nonNullState((NameReference)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast_0, TYP_astm_c_c_NameReference_1));
+			final /*@Thrown*/ @Nullable designatorSubPart subpart = self_13.getSubpart();
+			if (subpart == null) {
+				throw new InvalidValueException("Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorSubPart::part\'");
+			}
+			final /*@Thrown*/ @Nullable designatorPart part = subpart.getPart();
+			if (part == null) {
+				throw new InvalidValueException("Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorPart::id\'");
+			}
+			final /*@Thrown*/ @Nullable String fName_0 = part.getId();
+			final /*@Thrown*/ @NonNull LookupEnvironment unqualified_env_FunctionDefinition = INSTANCE_Visitable_unqualified_env_FunctionDefinition.evaluate(self_27);
+			final /*@Thrown*/ @NonNull OrderedSetValue foundFunctionDefinition = INSTANCE_Visitable__lookupFunctionDefinition.evaluate(self_27, unqualified_env_FunctionDefinition, fName_0);
+			final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(foundFunctionDefinition).booleanValue();
+			/*@Thrown*/ @Nullable FunctionDefinition symbol_0;
+			if (isEmpty) {
+				symbol_0 = null;
+			}
+			else {
+				final /*@Thrown*/ @Nullable FunctionDefinition first = (FunctionDefinition)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundFunctionDefinition);
+				symbol_0 = first;
+			}
+			final /*@Thrown*/ boolean ne = symbol_0 != null;
+			/*@Thrown*/ @Nullable Definition symbol_2;
+			if (ne) {
+				symbol_2 = symbol_0;
+			}
+			else {
+				final /*@Thrown*/ @Nullable designatorSubPart subpart_0 = self_13.getSubpart();
+				if (subpart_0 == null) {
+					throw new InvalidValueException("Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorSubPart::part\'");
 				}
-				@SuppressWarnings("null")
-				/*@NonInvalid*/ @NonNull expression x = (expression)ITERATOR_x.next();
-				/**
-				 *
-				 * astm::ActualParameterExpression{
-				 *   value = x.ast.oclAsType(astm::Expression)
-				 * }
-				 */
-				final /*@NonInvalid*/ @NonNull Property CTORid_value = idResolver.getProperty(PROPid_value_0);
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_ActualParameterExpression_0 = idResolver.getClass(CLSSid_ActualParameterExpression, null);
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Expression_0 = idResolver.getClass(CLSSid_Expression, null);
-				final /*@Thrown*/ @NonNull ActualParameterExpression symbol_0 = (ActualParameterExpression)TYP_astm_c_c_ActualParameterExpression_0.createInstance();
-				final /*@Thrown*/ @Nullable Visitable ast = x.getAst();
-				final /*@Thrown*/ @NonNull Expression oclAsType = ClassUtil.nonNullState((Expression)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_Expression_0));
-				CTORid_value.initValue(symbol_0, oclAsType);
-				//
-				accumulator.add(symbol_0);
+				final /*@Thrown*/ @Nullable designatorPart part_0 = subpart_0.getPart();
+				if (part_0 == null) {
+					throw new InvalidValueException("Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorPart::id\'");
+				}
+				final /*@Thrown*/ @Nullable String vName_0 = part_0.getId();
+				final /*@Thrown*/ @NonNull LookupEnvironment unqualified_env_VariableDefinition = INSTANCE_Visitable_unqualified_env_VariableDefinition.evaluate(self_27);
+				final /*@Thrown*/ @NonNull OrderedSetValue foundVariableDefinition = INSTANCE_Visitable__lookupVariableDefinition.evaluate(self_27, unqualified_env_VariableDefinition, vName_0);
+				final /*@Thrown*/ boolean isEmpty_0 = CollectionIsEmptyOperation.INSTANCE.evaluate(foundVariableDefinition).booleanValue();
+				/*@Thrown*/ @Nullable VariableDefinition symbol_1;
+				if (isEmpty_0) {
+					symbol_1 = null;
+				}
+				else {
+					final /*@Thrown*/ @Nullable VariableDefinition first_0 = (VariableDefinition)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundVariableDefinition);
+					symbol_1 = first_0;
+				}
+				symbol_2 = symbol_1;
 			}
-			final /*@Thrown*/ @NonNull OrderedSetValue asOrderedSet = CollectionAsOrderedSetOperation.INSTANCE.evaluate(collect);
-			return asOrderedSet;
+			return symbol_2;
 		}
 
-		@SuppressWarnings("unchecked")
-		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull exprList self_22) {
-			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_22});
+		public Definition evaluate(final /*@NonInvalid*/ @NonNull designator self_13) {
+			return (Definition)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_13});
 		}
 	}
 
-	protected final @NonNull CACHE_exprList_createActualParams INST_exprList_createActualParams = new CACHE_exprList_createActualParams();
+	protected final @NonNull CACHE_designator_getDefinition INSTANCE_designator_getDefinition = new CACHE_designator_getDefinition();
 
-	/**
-	 * delphi::identList::extract() : String[?]
-	 *
-	 * ids->first().extract()
-	 */
-	protected class CACHE_identList_extract extends AbstractEvaluationOperation
+	protected class VCACHE_declSection_getFragments extends AbstractDispatchOperation
 	{
-		@Override
-		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull identList self_23 = (/*@NonInvalid*/ @NonNull identList)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull List<ident> ids = self_23.getIds();
-			final /*@Thrown*/ @NonNull OrderedSetValue BOXED_ids = idResolver.createOrderedSetOfAll(ORD_CLSSid_ident, ids);
-			final /*@Thrown*/ @Nullable ident first = (ident)OrderedCollectionFirstOperation.INSTANCE.evaluate(BOXED_ids);
-			if (first == null) {
-				throw new InvalidValueException("Null source for \'delphi::ident::extract() : String[?]\'");
-			}
-			final /*@Thrown*/ @Nullable String extract = INST_ident_extract.evaluate(first);
-			return extract;
+		private VCACHE_declSection_getFragments() {
+			install(constSection.class, INST_constSection_getFragments);
+			install(typeSection.class, INST_typeSection_getFragments);
+			install(varSection.class, INST_varSection_getFragments);
+			install(procedureDecl.class, INST_procedureDecl_getFragments);
+			install(declSection.class, INST_declSection_getFragments);
+			install(functionDecl.class, INST_functionDecl_getFragments);
 		}
 
-		public String evaluate(final /*@NonInvalid*/ @NonNull identList self_23) {
-			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_23});
+		@SuppressWarnings("null")
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull declSection self_4) {
+			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_4});
 		}
 	}
 
-	protected final @NonNull CACHE_identList_extract INST_identList_extract = new CACHE_identList_extract();
+	protected final @NonNull VCACHE_declSection_getFragments INSTANCE_declSection_getFragments = new VCACHE_declSection_getFragments();
+
+	protected class VCACHE_ident_extract extends AbstractDispatchOperation
+	{
+		private VCACHE_ident_extract() {
+			install(ReservedId.class, INST_ReservedId_extract);
+			install(MineID.class, INST_MineID_extract);
+			install(MultipleId.class, INST_MultipleId_extract);
+			install(ident.class, INST_ident_extract);
+		}
+
+		public String evaluate(final /*@NonInvalid*/ @NonNull ident self_9) {
+			return (String)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_9});
+		}
+	}
+
+	protected final @NonNull VCACHE_ident_extract INSTANCE_ident_extract = new VCACHE_ident_extract();
+
+	protected class VCACHE_interfaceDecl_getFragments extends AbstractDispatchOperation
+	{
+		private VCACHE_interfaceDecl_getFragments() {
+			install(constSection.class, INST_constSection_getFragments);
+			install(typeSection.class, INST_typeSection_getFragments);
+			install(varSection.class, INST_varSection_getFragments);
+			install(interfaceDecl.class, INST_interfaceDecl_getFragments);
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull OrderedSetValue evaluate(final /*@NonInvalid*/ @NonNull interfaceDecl self_10) {
+			return (@NonNull OrderedSetValue)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_10});
+		}
+	}
+
+	protected final @NonNull VCACHE_interfaceDecl_getFragments INSTANCE_interfaceDecl_getFragments = new VCACHE_interfaceDecl_getFragments();
+
+	protected class VCACHE_Visitable__unqualified_env_FunctionDefinition extends AbstractDispatchOperation
+	{
+		private VCACHE_Visitable__unqualified_env_FunctionDefinition() {
+			install(Visitable.class, INST_Visitable__unqualified_env_FunctionDefinition);
+			install(CompilationUnit.class, INST_CompilationUnit__unqualified_env_FunctionDefinition);
+			install(DelphiBlockStatement.class, INST_DelphiBlockStatement__unqualified_env_FunctionDefinition);
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Visitable self_16, final /*@NonInvalid*/ @Nullable Visitable child) {
+			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_16, child});
+		}
+	}
+
+	protected final @NonNull VCACHE_Visitable__unqualified_env_FunctionDefinition INSTANCE_Visitable__unqualified_env_FunctionDefinition = new VCACHE_Visitable__unqualified_env_FunctionDefinition();
+
+	protected class VCACHE_Visitable__unqualified_env_VariableDefinition extends AbstractDispatchOperation
+	{
+		private VCACHE_Visitable__unqualified_env_VariableDefinition() {
+			install(CompilationUnit.class, INST_CompilationUnit__unqualified_env_VariableDefinition);
+			install(DelphiBlockStatement.class, INST_DelphiBlockStatement__unqualified_env_VariableDefinition);
+			install(Visitable.class, INST_Visitable__unqualified_env_VariableDefinition);
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Visitable self_24, final /*@NonInvalid*/ @Nullable Visitable child_3) {
+			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_24, child_3});
+		}
+	}
+
+	protected final @NonNull VCACHE_Visitable__unqualified_env_VariableDefinition INSTANCE_Visitable__unqualified_env_VariableDefinition = new VCACHE_Visitable__unqualified_env_VariableDefinition();
 
 	/**
 	 *
@@ -1608,6 +1847,9 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   install m_StringLiteral_factor_Boolean_Boolean_Boolean {
 	 * lFactor consumes ::ji_factor : delphi::factor[1];
 	 * }
+	 *   install m_UnaryExpression_factor_Boolean_Boolean_Boolean_B {
+	 * lFactor consumes ::ji_factor : delphi::factor[1];
+	 * }
 	 *   install m_FunctionDefinition_functionDecl {
 	 * lFunctionDecl consumes ::ji_functionDecl : delphi::functionDecl[1];
 	 * }
@@ -1689,6 +1931,9 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   install m_factor_ast_string {
 	 * lFactor consumes ::ji_factor : delphi::factor[1];
 	 * }
+	 *   install m_factor_ast {
+	 * lFactor consumes ::ji_factor : delphi::factor[1];
+	 * }
 	 *   install m_file_ast0 {
 	 * lFile consumes ::ji_file : delphi::file[1];
 	 * }
@@ -1713,12 +1958,6 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   install m_procedureDecl_ast_heading {
 	 * lProcedureDecl consumes ::ji_procedureDecl : delphi::procedureDecl[1];
 	 * }
-	 *   install m_designator_ast {
-	 * lDesignator consumes ::ji_designator : delphi::designator[1];
-	 * }
-	 *   install m_designator_ast_1 {
-	 * lDesignator consumes ::ji_designator : delphi::designator[1];
-	 * }
 	 *   install m_relExp_ast_relOp {
 	 * lRelExp consumes ::ji_relExp : delphi::relExp[1];
 	 * }
@@ -1735,6 +1974,9 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * lAddExp consumes ::ji_addExp : delphi::addExp[1];
 	 * }
 	 *   install m_factor_ast_expList {
+	 * lFactor consumes ::ji_factor : delphi::factor[1];
+	 * }
+	 *   install m_factor_ast_exp {
 	 * lFactor consumes ::ji_factor : delphi::factor[1];
 	 * }
 	 *   install m_relExp_ast_left {
@@ -1818,6 +2060,12 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   install m_constantDecl_ast_const {
 	 * lConstantDecl consumes ::ji_constantDecl : delphi::constantDecl[1];
 	 * }
+	 *   install m_designator_ast {
+	 * lDesignator consumes ::ji_designator : delphi::designator[1];
+	 * }
+	 *   install m_designator_ast_1 {
+	 * lDesignator consumes ::ji_designator : delphi::designator[1];
+	 * }
 	 *   install m_ident_ast_oclContainer {
 	 * lIdent consumes ::ji_ident : delphi::ident[1];
 	 * }
@@ -1871,8 +2119,8 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				final /*@NonInvalid*/ @NonNull SetValue objectsOfKind_15 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_file, models[0/*leftCS*/], TYP_delphi_c_c_file_1);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_functionDecl_0 = idResolver.getClass(CLSSid_functionDecl, null);
 				final /*@NonInvalid*/ @NonNull SetValue objectsOfKind_16 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_functionDecl, models[0/*leftCS*/], TYP_delphi_c_c_functionDecl_0);
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_ident_1 = idResolver.getClass(CLSSid_ident, null);
-				final /*@NonInvalid*/ @NonNull SetValue objectsOfKind_17 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_ident, models[0/*leftCS*/], TYP_delphi_c_c_ident_1);
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_ident_0 = idResolver.getClass(CLSSid_ident, null);
+				final /*@NonInvalid*/ @NonNull SetValue objectsOfKind_17 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_ident, models[0/*leftCS*/], TYP_delphi_c_c_ident_0);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_ifStmt_0 = idResolver.getClass(CLSSid_ifStmt, null);
 				final /*@NonInvalid*/ @NonNull SetValue objectsOfKind_18 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_ifStmt, models[0/*leftCS*/], TYP_delphi_c_c_ifStmt_0);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_implementationSection_0 = idResolver.getClass(CLSSid_implementationSection, null);
@@ -1895,8 +2143,8 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				final /*@NonInvalid*/ @NonNull SetValue objectsOfKind_27 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_statement, models[0/*leftCS*/], TYP_delphi_c_c_statement_0);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_tryStmt_0 = idResolver.getClass(CLSSid_tryStmt, null);
 				final /*@NonInvalid*/ @NonNull SetValue objectsOfKind_28 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_tryStmt, models[0/*leftCS*/], TYP_delphi_c_c_tryStmt_0);
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_type_1 = idResolver.getClass(CLSSid_type, null);
-				final /*@NonInvalid*/ @NonNull SetValue objectsOfKind_29 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_type, models[0/*leftCS*/], TYP_delphi_c_c_type_1);
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_type_0 = idResolver.getClass(CLSSid_type, null);
+				final /*@NonInvalid*/ @NonNull SetValue objectsOfKind_29 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_type, models[0/*leftCS*/], TYP_delphi_c_c_type_0);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_typeDecl_0 = idResolver.getClass(CLSSid_typeDecl, null);
 				final /*@NonInvalid*/ @NonNull SetValue objectsOfKind_30 = ModelObjectsOfKindOperation.INSTANCE.evaluate(executor, SET_CLSSid_typeDecl, models[0/*leftCS*/], TYP_delphi_c_c_typeDecl_0);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_unit_0 = idResolver.getClass(CLSSid_unit, null);
@@ -2083,17 +2331,20 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				for (@NonNull designator lDesignator_7 : ji_designator.typedIterable(designator.class)) {
 					MAP_m_QualifiedOverData_designator_Boolean_Boolean(lDesignator_7);
 				}
-				for (@NonNull factor lFactor_7 : ji_factor.typedIterable(factor.class)) {
-					MAP_m_DelphiFunctionCallExpression_factor_Boolean_Bool(lFactor_7);
-				}
-				for (@NonNull factor lFactor_8 : ji_factor.typedIterable(factor.class)) {
-					MAP_m_IntegerLiteral_factor_Boolean_Boolean(lFactor_8);
-				}
-				for (@NonNull factor lFactor_9 : ji_factor.typedIterable(factor.class)) {
-					MAP_m_NewExpression_factor_Boolean_Boolean_Boolean_Boo(lFactor_9);
-				}
 				for (@NonNull factor lFactor_10 : ji_factor.typedIterable(factor.class)) {
-					MAP_m_StringLiteral_factor_Boolean_Boolean_Boolean(lFactor_10);
+					MAP_m_DelphiFunctionCallExpression_factor_Boolean_Bool(lFactor_10);
+				}
+				for (@NonNull factor lFactor_11 : ji_factor.typedIterable(factor.class)) {
+					MAP_m_IntegerLiteral_factor_Boolean_Boolean(lFactor_11);
+				}
+				for (@NonNull factor lFactor_12 : ji_factor.typedIterable(factor.class)) {
+					MAP_m_NewExpression_factor_Boolean_Boolean_Boolean_Boo(lFactor_12);
+				}
+				for (@NonNull factor lFactor_13 : ji_factor.typedIterable(factor.class)) {
+					MAP_m_StringLiteral_factor_Boolean_Boolean_Boolean(lFactor_13);
+				}
+				for (@NonNull factor lFactor_14 : ji_factor.typedIterable(factor.class)) {
+					MAP_m_UnaryExpression_factor_Boolean_Boolean_Boolean_B(lFactor_14);
 				}
 				for (@NonNull functionDecl lFunctionDecl_2 : ji_functionDecl.typedIterable(functionDecl.class)) {
 					MAP_m_FunctionDefinition_functionDecl(lFunctionDecl_2);
@@ -2167,14 +2418,17 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				for (@NonNull expression lExpression_0 : ji_expression.typedIterable(expression.class)) {
 					MAP_m_expression_ast0(lExpression_0);
 				}
-				for (@NonNull factor lFactor_11 : ji_factor.typedIterable(factor.class)) {
-					MAP_m_factor_ast_designator(lFactor_11);
+				for (@NonNull factor lFactor_15 : ji_factor.typedIterable(factor.class)) {
+					MAP_m_factor_ast_designator(lFactor_15);
 				}
-				for (@NonNull factor lFactor_12 : ji_factor.typedIterable(factor.class)) {
-					MAP_m_factor_ast_number(lFactor_12);
+				for (@NonNull factor lFactor_16 : ji_factor.typedIterable(factor.class)) {
+					MAP_m_factor_ast_number(lFactor_16);
 				}
-				for (@NonNull factor lFactor_13 : ji_factor.typedIterable(factor.class)) {
-					MAP_m_factor_ast_string(lFactor_13);
+				for (@NonNull factor lFactor_17 : ji_factor.typedIterable(factor.class)) {
+					MAP_m_factor_ast_string(lFactor_17);
+				}
+				for (@NonNull factor lFactor_18 : ji_factor.typedIterable(factor.class)) {
+					MAP_m_factor_ast(lFactor_18);
 				}
 				for (@NonNull file lFile_0 : ji_file.typedIterable(file.class)) {
 					MAP_m_file_ast0(lFile_0);
@@ -2200,12 +2454,6 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				for (@NonNull procedureDecl lProcedureDecl_4 : ji_procedureDecl.typedIterable(procedureDecl.class)) {
 					MAP_m_procedureDecl_ast_heading(lProcedureDecl_4);
 				}
-				for (@NonNull designator lDesignator_11 : ji_designator.typedIterable(designator.class)) {
-					MAP_m_designator_ast(lDesignator_11);
-				}
-				for (@NonNull designator lDesignator_12 : ji_designator.typedIterable(designator.class)) {
-					MAP_m_designator_ast_1(lDesignator_12);
-				}
 				for (@NonNull relExp lRelExp_4 : ji_relExp.typedIterable(relExp.class)) {
 					MAP_m_relExp_ast_relOp(lRelExp_4);
 				}
@@ -2221,8 +2469,11 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				for (@NonNull addExp lAddExp_6 : ji_addExp.typedIterable(addExp.class)) {
 					MAP_m_addExp_ast_right(lAddExp_6);
 				}
-				for (@NonNull factor lFactor_14 : ji_factor.typedIterable(factor.class)) {
-					MAP_m_factor_ast_expList(lFactor_14);
+				for (@NonNull factor lFactor_19 : ji_factor.typedIterable(factor.class)) {
+					MAP_m_factor_ast_expList(lFactor_19);
+				}
+				for (@NonNull factor lFactor_20 : ji_factor.typedIterable(factor.class)) {
+					MAP_m_factor_ast_exp(lFactor_20);
 				}
 				for (@NonNull relExp lRelExp_5 : ji_relExp.typedIterable(relExp.class)) {
 					MAP_m_relExp_ast_left(lRelExp_5);
@@ -2304,6 +2555,12 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				}
 				for (@NonNull constantDecl lConstantDecl_4 : ji_constantDecl.typedIterable(constantDecl.class)) {
 					MAP_m_constantDecl_ast_const(lConstantDecl_4);
+				}
+				for (@NonNull designator lDesignator_11 : ji_designator.typedIterable(designator.class)) {
+					MAP_m_designator_ast(lDesignator_11);
+				}
+				for (@NonNull designator lDesignator_12 : ji_designator.typedIterable(designator.class)) {
+					MAP_m_designator_ast_1(lDesignator_12);
 				}
 				invocationManager.flush();
 				CTOR_m_ident_ast_oclContainer.addConsumedConnection(ji_ident);
@@ -2613,11 +2870,11 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * map m_DelphiFunctionCallExpression_factor_Boolean_Bool in Delphi_qvtp_qvtcas {
 	 *
 	 *   guard:leftCS lFactor  : delphi::factor[1];
-	 * check lFactor.oclIsTypeOf(delphi::factor)
-	 *   ;
 	 * check lFactor.isAFunctionCall()
 	 *   ;
 	 * check not lFactor.isAString()
+	 *   ;
+	 * check lFactor.oclIsTypeOf(delphi::factor)
 	 *   ;
 	 * check not lFactor.isANumber();
 	 * new:rightAS rDelphiFunctionCallExpression : astm::DelphiFunctionCallExpression[1];
@@ -2627,29 +2884,29 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	protected boolean MAP_m_DelphiFunctionCallExpression_factor_Boolean_Bool(final /*@NonInvalid*/ @NonNull factor lFactor)  {
 		try {
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
-			final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor, TYP_delphi_c_c_factor_0).booleanValue();
+			final /*@Thrown*/ @Nullable exprList expList = lFactor.getExpList();
+			final /*@Thrown*/ boolean ne = expList != null;
 			/*@Thrown*/ @Nullable Boolean symbol_5;
-			if (oclIsTypeOf) {
-				final /*@Thrown*/ @Nullable exprList expList = lFactor.getExpList();
-				final /*@Thrown*/ boolean ne = expList != null;
+			if (ne) {
+				/*@Caught*/ @NonNull Object CAUGHT_ne_0;
+				try {
+					final /*@Thrown*/ @Nullable String string = lFactor.getString();
+					final /*@Thrown*/ boolean ne_0 = string != null;
+					CAUGHT_ne_0 = ne_0;
+				}
+				catch (Exception e) {
+					CAUGHT_ne_0 = ValueUtil.createInvalidValue(e);
+				}
+				final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_0);
+				if (not == null) {
+					throw throwNull(lFactor, "Null if condition");
+				}
 				/*@Thrown*/ @Nullable Boolean symbol_4;
-				if (ne) {
-					/*@Caught*/ @NonNull Object CAUGHT_ne_0;
-					try {
-						final /*@Thrown*/ @Nullable String string = lFactor.getString();
-						final /*@Thrown*/ boolean ne_0 = string != null;
-						CAUGHT_ne_0 = ne_0;
-					}
-					catch (Exception e) {
-						CAUGHT_ne_0 = ValueUtil.createInvalidValue(e);
-					}
-					final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_0);
-					if (not == null) {
-						throw throwNull(lFactor, "Null if condition");
-					}
+				if (not) {
+					final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
+					final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor, TYP_delphi_c_c_factor_0).booleanValue();
 					/*@Thrown*/ @Nullable Boolean symbol_3;
-					if (not) {
+					if (oclIsTypeOf) {
 						/*@Caught*/ @NonNull Object CAUGHT_ne_1;
 						try {
 							final /*@Thrown*/ @Nullable String number = lFactor.getNumber();
@@ -2751,13 +3008,15 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * map m_NewExpression_factor_Boolean_Boolean_Boolean_Boo in Delphi_qvtp_qvtcas {
 	 *
 	 *   guard:leftCS lFactor  : delphi::factor[1];
-	 * check not lFactor.isAString()
-	 *   ;
-	 * check lFactor.oclIsTypeOf(delphi::factor)
-	 *   ;
 	 * check not lFactor.isAFunctionCall()
 	 *   ;
-	 * check not lFactor.isANumber();
+	 * check not lFactor.isNotExp()
+	 *   ;
+	 * check not lFactor.isANumber()
+	 *   ;
+	 * check not lFactor.isAString()
+	 *   ;
+	 * check lFactor.oclIsTypeOf(delphi::factor);
 	 * new:rightAS rNewExpression : astm::NewExpression[1];
 	 * notify set lFactor.ast := rNewExpression;
 	 *
@@ -2767,8 +3026,8 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
 			/*@Caught*/ @NonNull Object CAUGHT_ne;
 			try {
-				final /*@Thrown*/ @Nullable String string = lFactor_1.getString();
-				final /*@Thrown*/ boolean ne = string != null;
+				final /*@Thrown*/ @Nullable exprList expList = lFactor_1.getExpList();
+				final /*@Thrown*/ boolean ne = expList != null;
 				CAUGHT_ne = ne;
 			}
 			catch (Exception e) {
@@ -2778,71 +3037,91 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			if (not == null) {
 				throw throwNull(lFactor_1, "Null if condition");
 			}
-			/*@Thrown*/ @Nullable Boolean symbol_5;
+			/*@Thrown*/ @Nullable Boolean symbol_6;
 			if (not) {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
-				final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_1, TYP_delphi_c_c_factor_0).booleanValue();
-				/*@Thrown*/ @Nullable Boolean symbol_4;
-				if (oclIsTypeOf) {
-					/*@Caught*/ @NonNull Object CAUGHT_ne_0;
+				/*@Caught*/ @NonNull Object CAUGHT_ne_0;
+				try {
+					final /*@Thrown*/ @Nullable expression exp = lFactor_1.getExp();
+					final /*@Thrown*/ boolean ne_0 = exp != null;
+					CAUGHT_ne_0 = ne_0;
+				}
+				catch (Exception e) {
+					CAUGHT_ne_0 = ValueUtil.createInvalidValue(e);
+				}
+				final /*@Thrown*/ @Nullable Boolean not_0 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_0);
+				if (not_0 == null) {
+					throw throwNull(lFactor_1, "Null if condition");
+				}
+				/*@Thrown*/ @Nullable Boolean symbol_5;
+				if (not_0) {
+					/*@Caught*/ @NonNull Object CAUGHT_ne_1;
 					try {
-						final /*@Thrown*/ @Nullable exprList expList = lFactor_1.getExpList();
-						final /*@Thrown*/ boolean ne_0 = expList != null;
-						CAUGHT_ne_0 = ne_0;
+						final /*@Thrown*/ @Nullable String number = lFactor_1.getNumber();
+						final /*@Thrown*/ boolean ne_1 = number != null;
+						CAUGHT_ne_1 = ne_1;
 					}
 					catch (Exception e) {
-						CAUGHT_ne_0 = ValueUtil.createInvalidValue(e);
+						CAUGHT_ne_1 = ValueUtil.createInvalidValue(e);
 					}
-					final /*@Thrown*/ @Nullable Boolean not_0 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_0);
-					if (not_0 == null) {
+					final /*@Thrown*/ @Nullable Boolean not_1 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_1);
+					if (not_1 == null) {
 						throw throwNull(lFactor_1, "Null if condition");
 					}
-					/*@Thrown*/ @Nullable Boolean symbol_3;
-					if (not_0) {
-						/*@Caught*/ @NonNull Object CAUGHT_ne_1;
+					/*@Thrown*/ @Nullable Boolean symbol_4;
+					if (not_1) {
+						/*@Caught*/ @NonNull Object CAUGHT_ne_2;
 						try {
-							final /*@Thrown*/ @Nullable String number = lFactor_1.getNumber();
-							final /*@Thrown*/ boolean ne_1 = number != null;
-							CAUGHT_ne_1 = ne_1;
+							final /*@Thrown*/ @Nullable String string = lFactor_1.getString();
+							final /*@Thrown*/ boolean ne_2 = string != null;
+							CAUGHT_ne_2 = ne_2;
 						}
 						catch (Exception e) {
-							CAUGHT_ne_1 = ValueUtil.createInvalidValue(e);
+							CAUGHT_ne_2 = ValueUtil.createInvalidValue(e);
 						}
-						final /*@Thrown*/ @Nullable Boolean not_1 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_1);
-						if (not_1 == null) {
+						final /*@Thrown*/ @Nullable Boolean not_2 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_2);
+						if (not_2 == null) {
 							throw throwNull(lFactor_1, "Null if condition");
 						}
-						/*@Thrown*/ @Nullable Boolean symbol_2;
-						if (not_1) {
-							// creations
-							final /*@Thrown*/ @Nullable NewExpression rNewExpression = AstmFactory.eINSTANCE.createNewExpression();
-							assert rNewExpression != null;
-							models[1/*rightAS*/].add(rNewExpression);
-							// mapping statements
-							lFactor_1.setAst(rNewExpression);
-							objectManager.assigned(lFactor_1, DelphiPackage.Literals.CS_TRACE__AST, rNewExpression, null);
-							final /*@Thrown*/ @Nullable Boolean m_NewExpression_factor_Boolean_Boolean_Boolean_Boo = ValueUtil.TRUE_VALUE;
-							symbol_2 = m_NewExpression_factor_Boolean_Boolean_Boolean_Boo;
+						/*@Thrown*/ @Nullable Boolean symbol_3;
+						if (not_2) {
+							final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
+							final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_1, TYP_delphi_c_c_factor_0).booleanValue();
+							/*@Thrown*/ @Nullable Boolean symbol_2;
+							if (oclIsTypeOf) {
+								// creations
+								final /*@Thrown*/ @Nullable NewExpression rNewExpression = AstmFactory.eINSTANCE.createNewExpression();
+								assert rNewExpression != null;
+								models[1/*rightAS*/].add(rNewExpression);
+								// mapping statements
+								lFactor_1.setAst(rNewExpression);
+								objectManager.assigned(lFactor_1, DelphiPackage.Literals.CS_TRACE__AST, rNewExpression, null);
+								final /*@Thrown*/ @Nullable Boolean m_NewExpression_factor_Boolean_Boolean_Boolean_Boo = ValueUtil.TRUE_VALUE;
+								symbol_2 = m_NewExpression_factor_Boolean_Boolean_Boolean_Boo;
+							}
+							else {
+								symbol_2 = ValueUtil.FALSE_VALUE;
+							}
+							symbol_3 = symbol_2;
 						}
 						else {
-							symbol_2 = ValueUtil.FALSE_VALUE;
+							symbol_3 = ValueUtil.FALSE_VALUE;
 						}
-						symbol_3 = symbol_2;
+						symbol_4 = symbol_3;
 					}
 					else {
-						symbol_3 = ValueUtil.FALSE_VALUE;
+						symbol_4 = ValueUtil.FALSE_VALUE;
 					}
-					symbol_4 = symbol_3;
+					symbol_5 = symbol_4;
 				}
 				else {
-					symbol_4 = ValueUtil.FALSE_VALUE;
+					symbol_5 = ValueUtil.FALSE_VALUE;
 				}
-				symbol_5 = symbol_4;
+				symbol_6 = symbol_5;
 			}
 			else {
-				symbol_5 = ValueUtil.FALSE_VALUE;
+				symbol_6 = ValueUtil.FALSE_VALUE;
 			}
-			return symbol_5;
+			return symbol_6;
 		} catch (Throwable e) {
 			return handleExecutionFailure("MAP_m_NewExpression_factor_Boolean_Boolean_Boolean_Boo", e);
 		}
@@ -2914,6 +3193,119 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return symbol_4;
 		} catch (Throwable e) {
 			return handleExecutionFailure("MAP_m_StringLiteral_factor_Boolean_Boolean_Boolean", e);
+		}
+	}
+
+	/**
+	 *
+	 * map m_UnaryExpression_factor_Boolean_Boolean_Boolean_B in Delphi_qvtp_qvtcas {
+	 *
+	 *   guard:leftCS lFactor  : delphi::factor[1];
+	 * check lFactor.oclIsTypeOf(delphi::factor)
+	 *   ;
+	 * check not lFactor.isANumber()
+	 *   ;
+	 * check not lFactor.isAFunctionCall()
+	 *   ;
+	 * check not lFactor.isAString()
+	 *   ;
+	 * check lFactor.isNotExp();
+	 * new:rightAS rUnaryExpression : astm::UnaryExpression[1];
+	 * notify set lFactor.ast := rUnaryExpression;
+	 *
+	 */
+	protected boolean MAP_m_UnaryExpression_factor_Boolean_Boolean_Boolean_B(final /*@NonInvalid*/ @NonNull factor lFactor_3)  {
+		try {
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
+			final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_3, TYP_delphi_c_c_factor_0).booleanValue();
+			/*@Thrown*/ @Nullable Boolean symbol_6;
+			if (oclIsTypeOf) {
+				/*@Caught*/ @NonNull Object CAUGHT_ne;
+				try {
+					final /*@Thrown*/ @Nullable String number = lFactor_3.getNumber();
+					final /*@Thrown*/ boolean ne = number != null;
+					CAUGHT_ne = ne;
+				}
+				catch (Exception e) {
+					CAUGHT_ne = ValueUtil.createInvalidValue(e);
+				}
+				final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne);
+				if (not == null) {
+					throw throwNull(lFactor_3, "Null if condition");
+				}
+				/*@Thrown*/ @Nullable Boolean symbol_5;
+				if (not) {
+					/*@Caught*/ @NonNull Object CAUGHT_ne_0;
+					try {
+						final /*@Thrown*/ @Nullable exprList expList = lFactor_3.getExpList();
+						final /*@Thrown*/ boolean ne_0 = expList != null;
+						CAUGHT_ne_0 = ne_0;
+					}
+					catch (Exception e) {
+						CAUGHT_ne_0 = ValueUtil.createInvalidValue(e);
+					}
+					final /*@Thrown*/ @Nullable Boolean not_0 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_0);
+					if (not_0 == null) {
+						throw throwNull(lFactor_3, "Null if condition");
+					}
+					/*@Thrown*/ @Nullable Boolean symbol_4;
+					if (not_0) {
+						/*@Caught*/ @NonNull Object CAUGHT_ne_1;
+						try {
+							final /*@Thrown*/ @Nullable String string = lFactor_3.getString();
+							final /*@Thrown*/ boolean ne_1 = string != null;
+							CAUGHT_ne_1 = ne_1;
+						}
+						catch (Exception e) {
+							CAUGHT_ne_1 = ValueUtil.createInvalidValue(e);
+						}
+						final /*@Thrown*/ @Nullable Boolean not_1 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_1);
+						if (not_1 == null) {
+							throw throwNull(lFactor_3, "Null if condition");
+						}
+						/*@Thrown*/ @Nullable Boolean symbol_3;
+						if (not_1) {
+							final /*@Thrown*/ @Nullable expression exp = lFactor_3.getExp();
+							final /*@Thrown*/ boolean ne_2 = exp != null;
+							/*@Thrown*/ @Nullable Boolean symbol_2;
+							if (ne_2) {
+								// creations
+								final /*@Thrown*/ @Nullable UnaryExpression rUnaryExpression = AstmFactory.eINSTANCE.createUnaryExpression();
+								assert rUnaryExpression != null;
+								models[1/*rightAS*/].add(rUnaryExpression);
+								// mapping statements
+								lFactor_3.setAst(rUnaryExpression);
+								objectManager.assigned(lFactor_3, DelphiPackage.Literals.CS_TRACE__AST, rUnaryExpression, null);
+								final /*@Thrown*/ @Nullable Boolean m_UnaryExpression_factor_Boolean_Boolean_Boolean_B = ValueUtil.TRUE_VALUE;
+								symbol_2 = m_UnaryExpression_factor_Boolean_Boolean_Boolean_B;
+							}
+							else {
+								symbol_2 = ValueUtil.FALSE_VALUE;
+							}
+							symbol_3 = symbol_2;
+						}
+						else {
+							symbol_3 = ValueUtil.FALSE_VALUE;
+						}
+						symbol_4 = symbol_3;
+					}
+					else {
+						symbol_4 = ValueUtil.FALSE_VALUE;
+					}
+					symbol_5 = symbol_4;
+				}
+				else {
+					symbol_5 = ValueUtil.FALSE_VALUE;
+				}
+				symbol_6 = symbol_5;
+			}
+			else {
+				symbol_6 = ValueUtil.FALSE_VALUE;
+			}
+			return symbol_6;
+		} catch (Throwable e) {
+			return handleExecutionFailure("MAP_m_UnaryExpression_factor_Boolean_Boolean_Boolean_B", e);
 		}
 	}
 
@@ -3440,7 +3832,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 					/**
 					 * _'1_'.getFragments()
 					 */
-					final /*@Thrown*/ @NonNull OrderedSetValue getFragments = INST_declSection_getFragments.evaluate(_1);
+					final /*@Thrown*/ @NonNull OrderedSetValue getFragments = INSTANCE_declSection_getFragments.evaluate(_1);
 					//
 					for (Object value : getFragments.flatten().getElements()) {
 						accumulator.add(value);
@@ -3525,7 +3917,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				if (id == null) {
 					throw throwNull(lConstantDecl_0, "Null source for \'delphi::ident::extract() : String[?]\'");
 				}
-				final /*@Thrown*/ @Nullable String extract = INST_ident_extract.evaluate(id);
+				final /*@Thrown*/ @Nullable String extract = INSTANCE_ident_extract.evaluate(id);
 				final /*@NonInvalid*/ @NonNull Property CTORid_nameString = idResolver.getProperty(PROPid_nameString);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Name_0 = idResolver.getClass(CLSSid_Name, null);
 				final /*@Thrown*/ @NonNull Name symbol_2 = (Name)TYP_astm_c_c_Name_0.createInstance();
@@ -3618,9 +4010,9 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   guard:leftCS lDesignator  : delphi::designator[1];
 	 * var ast : astm::Visitable[1] := lDesignator.ast;
 	 * var designator1 : delphi::designator[?] := lDesignator.designator;
-	 * check lDesignator.isQualifiedOverData()
-	 *   ;
 	 * check not lDesignator.isIdentifierRef()
+	 *   ;
+	 * check lDesignator.isQualifiedOverData()
 	 *   ;
 	 * var aQualifiedOverData : astm::QualifiedOverData[1] := ast.oclAsType(astm::QualifiedOverData)
 	 *   ;
@@ -3642,25 +4034,25 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 					throw throwNull(lDesignator_2, "Null where non-null value required");
 				}
 				final /*@Thrown*/ @Nullable designator designator = lDesignator_2.getDesignator();
-				final /*@Thrown*/ @Nullable designator designator_0 = lDesignator_2.getDesignator();
-				final /*@Thrown*/ boolean ne = designator_0 != null;
+				/*@Caught*/ @NonNull Object CAUGHT_eq;
+				try {
+					final /*@Thrown*/ @Nullable designator designator_0 = lDesignator_2.getDesignator();
+					final /*@Thrown*/ boolean eq = designator_0 == null;
+					CAUGHT_eq = eq;
+				}
+				catch (Exception e) {
+					CAUGHT_eq = ValueUtil.createInvalidValue(e);
+				}
+				final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_eq);
+				if (not == null) {
+					throw throwNull(lDesignator_2, "Null if condition");
+				}
 				/*@Thrown*/ @Nullable Boolean symbol_4;
-				if (ne) {
-					/*@Caught*/ @NonNull Object CAUGHT_eq;
-					try {
-						final /*@Thrown*/ @Nullable designator designator_1 = lDesignator_2.getDesignator();
-						final /*@Thrown*/ boolean eq = designator_1 == null;
-						CAUGHT_eq = eq;
-					}
-					catch (Exception e) {
-						CAUGHT_eq = ValueUtil.createInvalidValue(e);
-					}
-					final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_eq);
-					if (not == null) {
-						throw throwNull(lDesignator_2, "Null if condition");
-					}
+				if (not) {
+					final /*@Thrown*/ @Nullable designator designator_1 = lDesignator_2.getDesignator();
+					final /*@Thrown*/ boolean ne = designator_1 != null;
 					/*@Thrown*/ @Nullable Boolean symbol_3;
-					if (not) {
+					if (ne) {
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_QualifiedOverData_0 = idResolver.getClass(CLSSid_QualifiedOverData, null);
 						final /*@Thrown*/ @NonNull QualifiedOverData oclAsType = ClassUtil.nonNullState((QualifiedOverData)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_QualifiedOverData_0));
 						if (designator == null) {
@@ -3702,9 +4094,9 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   guard:leftCS lDesignator  : delphi::designator[1];
 	 * var ast : astm::Visitable[1] := lDesignator.ast;
 	 * var subpart : delphi::designatorSubPart[?] := lDesignator.subpart;
-	 * check not lDesignator.isIdentifierRef()
-	 *   ;
 	 * check lDesignator.isQualifiedOverData()
+	 *   ;
+	 * check not lDesignator.isIdentifierRef()
 	 *   ;
 	 * var aQualifiedOverData : astm::QualifiedOverData[1] := ast.oclAsType(astm::QualifiedOverData)
 	 *   ;
@@ -3727,25 +4119,25 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 					throw throwNull(lDesignator_3, "Null where non-null value required");
 				}
 				final /*@Thrown*/ @Nullable designatorSubPart subpart = lDesignator_3.getSubpart();
-				/*@Caught*/ @NonNull Object CAUGHT_eq;
-				try {
-					final /*@Thrown*/ @Nullable designator designator = lDesignator_3.getDesignator();
-					final /*@Thrown*/ boolean eq = designator == null;
-					CAUGHT_eq = eq;
-				}
-				catch (Exception e) {
-					CAUGHT_eq = ValueUtil.createInvalidValue(e);
-				}
-				final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_eq);
-				if (not == null) {
-					throw throwNull(lDesignator_3, "Null if condition");
-				}
+				final /*@Thrown*/ @Nullable designator designator = lDesignator_3.getDesignator();
+				final /*@Thrown*/ boolean ne = designator != null;
 				/*@Thrown*/ @Nullable Boolean symbol_6;
-				if (not) {
-					final /*@Thrown*/ @Nullable designator designator_0 = lDesignator_3.getDesignator();
-					final /*@Thrown*/ boolean ne = designator_0 != null;
+				if (ne) {
+					/*@Caught*/ @NonNull Object CAUGHT_eq;
+					try {
+						final /*@Thrown*/ @Nullable designator designator_0 = lDesignator_3.getDesignator();
+						final /*@Thrown*/ boolean eq = designator_0 == null;
+						CAUGHT_eq = eq;
+					}
+					catch (Exception e) {
+						CAUGHT_eq = ValueUtil.createInvalidValue(e);
+					}
+					final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_eq);
+					if (not == null) {
+						throw throwNull(lDesignator_3, "Null if condition");
+					}
 					/*@Thrown*/ @Nullable Boolean symbol_5;
-					if (ne) {
+					if (not) {
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_QualifiedOverData_0 = idResolver.getClass(CLSSid_QualifiedOverData, null);
 						final /*@Thrown*/ @NonNull QualifiedOverData oclAsType = ClassUtil.nonNullState((QualifiedOverData)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_QualifiedOverData_0));
 						if (subpart == null) {
@@ -3822,11 +4214,11 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   guard:leftCS lFactor  : delphi::factor[1];
 	 * var ast : astm::Visitable[1] := lFactor.ast;
 	 * var designator1 : delphi::designator[?] := lFactor.designator;
-	 * check not lFactor.isANumber()
+	 * check not lFactor.isAString()
 	 *   ;
 	 * check lFactor.oclIsTypeOf(delphi::factor)
 	 *   ;
-	 * check not lFactor.isAString()
+	 * check not lFactor.isANumber()
 	 *   ;
 	 * check lFactor.isAFunctionCall()
 	 *   ;
@@ -3837,21 +4229,21 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * set aDelphiFunctionCallExpression.calledFunction := aNameReference;
 	 *
 	 */
-	protected boolean MAP_m_factor_ast_designator(final /*@NonInvalid*/ @NonNull factor lFactor_3)  {
+	protected boolean MAP_m_factor_ast_designator(final /*@NonInvalid*/ @NonNull factor lFactor_4)  {
 		try {
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable Visitable ast = lFactor_3.getAst();
+			final /*@Thrown*/ @Nullable Visitable ast = lFactor_4.getAst();
 			final /*@Thrown*/ boolean symbol_0 = ast != null;
 			/*@Thrown*/ @Nullable Boolean raw_ast;
 			if (symbol_0) {
 				if (ast == null) {
-					throw throwNull(lFactor_3, "Null where non-null value required");
+					throw throwNull(lFactor_4, "Null where non-null value required");
 				}
-				final /*@Thrown*/ @Nullable designator designator = lFactor_3.getDesignator();
+				final /*@Thrown*/ @Nullable designator designator = lFactor_4.getDesignator();
 				/*@Caught*/ @NonNull Object CAUGHT_ne;
 				try {
-					final /*@Thrown*/ @Nullable String number = lFactor_3.getNumber();
-					final /*@Thrown*/ boolean ne = number != null;
+					final /*@Thrown*/ @Nullable String string = lFactor_4.getString();
+					final /*@Thrown*/ boolean ne = string != null;
 					CAUGHT_ne = ne;
 				}
 				catch (Exception e) {
@@ -3859,18 +4251,18 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				}
 				final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne);
 				if (not == null) {
-					throw throwNull(lFactor_3, "Null if condition");
+					throw throwNull(lFactor_4, "Null if condition");
 				}
 				/*@Thrown*/ @Nullable Boolean symbol_6;
 				if (not) {
 					final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
-					final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_3, TYP_delphi_c_c_factor_0).booleanValue();
+					final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_4, TYP_delphi_c_c_factor_0).booleanValue();
 					/*@Thrown*/ @Nullable Boolean symbol_5;
 					if (oclIsTypeOf) {
 						/*@Caught*/ @NonNull Object CAUGHT_ne_0;
 						try {
-							final /*@Thrown*/ @Nullable String string = lFactor_3.getString();
-							final /*@Thrown*/ boolean ne_0 = string != null;
+							final /*@Thrown*/ @Nullable String number = lFactor_4.getNumber();
+							final /*@Thrown*/ boolean ne_0 = number != null;
 							CAUGHT_ne_0 = ne_0;
 						}
 						catch (Exception e) {
@@ -3878,18 +4270,18 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 						}
 						final /*@Thrown*/ @Nullable Boolean not_0 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_0);
 						if (not_0 == null) {
-							throw throwNull(lFactor_3, "Null if condition");
+							throw throwNull(lFactor_4, "Null if condition");
 						}
 						/*@Thrown*/ @Nullable Boolean symbol_4;
 						if (not_0) {
-							final /*@Thrown*/ @Nullable exprList expList = lFactor_3.getExpList();
+							final /*@Thrown*/ @Nullable exprList expList = lFactor_4.getExpList();
 							final /*@Thrown*/ boolean ne_1 = expList != null;
 							/*@Thrown*/ @Nullable Boolean symbol_3;
 							if (ne_1) {
 								final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_DelphiFunctionCallExpression_0 = idResolver.getClass(CLSSid_DelphiFunctionCallExpression, null);
 								final /*@Thrown*/ @NonNull DelphiFunctionCallExpression oclAsType = ClassUtil.nonNullState((DelphiFunctionCallExpression)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_DelphiFunctionCallExpression_0));
 								if (designator == null) {
-									throw throwNull(lFactor_3, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::CSTrace::ast\'");
+									throw throwNull(lFactor_4, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::CSTrace::ast\'");
 								}
 								final /*@Thrown*/ @Nullable Visitable ast_0 = designator.getAst();
 								final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_NameReference_0 = idResolver.getClass(CLSSid_NameReference, null);
@@ -3935,33 +4327,33 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   guard:leftCS lFactor  : delphi::factor[1];
 	 * var ast : astm::Visitable[1] := lFactor.ast;
 	 * var number : String[?] := lFactor.number;
-	 * check lFactor.isANumber()
-	 *   ;
 	 * check lFactor.oclIsTypeOf(delphi::factor)
+	 *   ;
+	 * check lFactor.isANumber()
 	 *   ;
 	 * var aIntegerLiteral : astm::IntegerLiteral[1] := ast.oclAsType(astm::IntegerLiteral);
 	 * set aIntegerLiteral.value := number;
 	 *
 	 */
-	protected boolean MAP_m_factor_ast_number(final /*@NonInvalid*/ @NonNull factor lFactor_4)  {
+	protected boolean MAP_m_factor_ast_number(final /*@NonInvalid*/ @NonNull factor lFactor_5)  {
 		try {
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable Visitable ast = lFactor_4.getAst();
+			final /*@Thrown*/ @Nullable Visitable ast = lFactor_5.getAst();
 			final /*@Thrown*/ boolean symbol_0 = ast != null;
 			/*@Thrown*/ @Nullable Boolean raw_ast;
 			if (symbol_0) {
 				if (ast == null) {
-					throw throwNull(lFactor_4, "Null where non-null value required");
+					throw throwNull(lFactor_5, "Null where non-null value required");
 				}
-				final /*@Thrown*/ @Nullable String number = lFactor_4.getNumber();
-				final /*@Thrown*/ @Nullable String number_0 = lFactor_4.getNumber();
-				final /*@Thrown*/ boolean ne = number_0 != null;
+				final /*@Thrown*/ @Nullable String number = lFactor_5.getNumber();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
+				final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_5, TYP_delphi_c_c_factor_0).booleanValue();
 				/*@Thrown*/ @Nullable Boolean symbol_4;
-				if (ne) {
-					final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
-					final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_4, TYP_delphi_c_c_factor_0).booleanValue();
+				if (oclIsTypeOf) {
+					final /*@Thrown*/ @Nullable String number_0 = lFactor_5.getNumber();
+					final /*@Thrown*/ boolean ne = number_0 != null;
 					/*@Thrown*/ @Nullable Boolean symbol_3;
-					if (oclIsTypeOf) {
+					if (ne) {
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_IntegerLiteral_0 = idResolver.getClass(CLSSid_IntegerLiteral, null);
 						final /*@Thrown*/ @NonNull IntegerLiteral oclAsType = ClassUtil.nonNullState((IntegerLiteral)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_IntegerLiteral_0));
 						// mapping statements
@@ -4005,20 +4397,20 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * set aStringLiteral.value := string;
 	 *
 	 */
-	protected boolean MAP_m_factor_ast_string(final /*@NonInvalid*/ @NonNull factor lFactor_5)  {
+	protected boolean MAP_m_factor_ast_string(final /*@NonInvalid*/ @NonNull factor lFactor_6)  {
 		try {
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable Visitable ast = lFactor_5.getAst();
+			final /*@Thrown*/ @Nullable Visitable ast = lFactor_6.getAst();
 			final /*@Thrown*/ boolean symbol_0 = ast != null;
 			/*@Thrown*/ @Nullable Boolean raw_ast;
 			if (symbol_0) {
 				if (ast == null) {
-					throw throwNull(lFactor_5, "Null where non-null value required");
+					throw throwNull(lFactor_6, "Null where non-null value required");
 				}
-				final /*@Thrown*/ @Nullable String string = lFactor_5.getString();
+				final /*@Thrown*/ @Nullable String string = lFactor_6.getString();
 				/*@Caught*/ @NonNull Object CAUGHT_ne;
 				try {
-					final /*@Thrown*/ @Nullable String number = lFactor_5.getNumber();
+					final /*@Thrown*/ @Nullable String number = lFactor_6.getNumber();
 					final /*@Thrown*/ boolean ne = number != null;
 					CAUGHT_ne = ne;
 				}
@@ -4027,15 +4419,15 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				}
 				final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne);
 				if (not == null) {
-					throw throwNull(lFactor_5, "Null if condition");
+					throw throwNull(lFactor_6, "Null if condition");
 				}
 				/*@Thrown*/ @Nullable Boolean symbol_5;
 				if (not) {
 					final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
-					final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_5, TYP_delphi_c_c_factor_0).booleanValue();
+					final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_6, TYP_delphi_c_c_factor_0).booleanValue();
 					/*@Thrown*/ @Nullable Boolean symbol_4;
 					if (oclIsTypeOf) {
-						final /*@Thrown*/ @Nullable String string_0 = lFactor_5.getString();
+						final /*@Thrown*/ @Nullable String string_0 = lFactor_6.getString();
 						final /*@Thrown*/ boolean ne_0 = string_0 != null;
 						/*@Thrown*/ @Nullable Boolean symbol_3;
 						if (ne_0) {
@@ -4067,6 +4459,135 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return raw_ast;
 		} catch (Throwable e) {
 			return handleExecutionFailure("MAP_m_factor_ast_string", e);
+		}
+	}
+
+	/**
+	 *
+	 * map m_factor_ast in Delphi_qvtp_qvtcas {
+	 *
+	 *   guard:leftCS lFactor  : delphi::factor[1];
+	 * var Not1 : astm::Not[1] := astm::Not{
+	 *   }
+	 *   ;
+	 * var ast : astm::Visitable[1] := lFactor.ast;
+	 * check not lFactor.isANumber()
+	 *   ;
+	 * check lFactor.oclIsTypeOf(delphi::factor)
+	 *   ;
+	 * check not lFactor.isAString()
+	 *   ;
+	 * check not lFactor.isAFunctionCall()
+	 *   ;
+	 * check lFactor.isNotExp()
+	 *   ;
+	 * var aUnaryExpression : astm::UnaryExpression[1] := ast.oclAsType(astm::UnaryExpression);
+	 * set aUnaryExpression.operator := Not1;
+	 *
+	 */
+	protected boolean MAP_m_factor_ast(final /*@NonInvalid*/ @NonNull factor lFactor_7)  {
+		try {
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Not_0 = idResolver.getClass(CLSSid_Not, null);
+			final /*@NonInvalid*/ @NonNull Not symbol_0 = (Not)TYP_astm_c_c_Not_0.createInstance();
+			final /*@Thrown*/ @Nullable Visitable ast = lFactor_7.getAst();
+			final /*@Thrown*/ boolean symbol_1 = ast != null;
+			/*@Thrown*/ @Nullable Boolean raw_ast;
+			if (symbol_1) {
+				if (ast == null) {
+					throw throwNull(lFactor_7, "Null where non-null value required");
+				}
+				/*@Caught*/ @NonNull Object CAUGHT_ne;
+				try {
+					final /*@Thrown*/ @Nullable String number = lFactor_7.getNumber();
+					final /*@Thrown*/ boolean ne = number != null;
+					CAUGHT_ne = ne;
+				}
+				catch (Exception e) {
+					CAUGHT_ne = ValueUtil.createInvalidValue(e);
+				}
+				final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne);
+				if (not == null) {
+					throw throwNull(lFactor_7, "Null if condition");
+				}
+				/*@Thrown*/ @Nullable Boolean symbol_8;
+				if (not) {
+					final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
+					final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_7, TYP_delphi_c_c_factor_0).booleanValue();
+					/*@Thrown*/ @Nullable Boolean symbol_7;
+					if (oclIsTypeOf) {
+						/*@Caught*/ @NonNull Object CAUGHT_ne_0;
+						try {
+							final /*@Thrown*/ @Nullable String string = lFactor_7.getString();
+							final /*@Thrown*/ boolean ne_0 = string != null;
+							CAUGHT_ne_0 = ne_0;
+						}
+						catch (Exception e) {
+							CAUGHT_ne_0 = ValueUtil.createInvalidValue(e);
+						}
+						final /*@Thrown*/ @Nullable Boolean not_0 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_0);
+						if (not_0 == null) {
+							throw throwNull(lFactor_7, "Null if condition");
+						}
+						/*@Thrown*/ @Nullable Boolean symbol_6;
+						if (not_0) {
+							/*@Caught*/ @NonNull Object CAUGHT_ne_1;
+							try {
+								final /*@Thrown*/ @Nullable exprList expList = lFactor_7.getExpList();
+								final /*@Thrown*/ boolean ne_1 = expList != null;
+								CAUGHT_ne_1 = ne_1;
+							}
+							catch (Exception e) {
+								CAUGHT_ne_1 = ValueUtil.createInvalidValue(e);
+							}
+							final /*@Thrown*/ @Nullable Boolean not_1 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_1);
+							if (not_1 == null) {
+								throw throwNull(lFactor_7, "Null if condition");
+							}
+							/*@Thrown*/ @Nullable Boolean symbol_5;
+							if (not_1) {
+								final /*@Thrown*/ @Nullable expression exp = lFactor_7.getExp();
+								final /*@Thrown*/ boolean ne_2 = exp != null;
+								/*@Thrown*/ @Nullable Boolean symbol_4;
+								if (ne_2) {
+									final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_UnaryExpression_0 = idResolver.getClass(CLSSid_UnaryExpression, null);
+									final /*@Thrown*/ @NonNull UnaryExpression oclAsType = ClassUtil.nonNullState((UnaryExpression)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_UnaryExpression_0));
+									// mapping statements
+									oclAsType.setOperator(symbol_0);
+									final /*@Thrown*/ @Nullable Boolean m_factor_ast = ValueUtil.TRUE_VALUE;
+									symbol_4 = m_factor_ast;
+								}
+								else {
+									symbol_4 = ValueUtil.FALSE_VALUE;
+								}
+								symbol_5 = symbol_4;
+							}
+							else {
+								symbol_5 = ValueUtil.FALSE_VALUE;
+							}
+							symbol_6 = symbol_5;
+						}
+						else {
+							symbol_6 = ValueUtil.FALSE_VALUE;
+						}
+						symbol_7 = symbol_6;
+					}
+					else {
+						symbol_7 = ValueUtil.FALSE_VALUE;
+					}
+					symbol_8 = symbol_7;
+				}
+				else {
+					symbol_8 = ValueUtil.FALSE_VALUE;
+				}
+				raw_ast = symbol_8;
+			}
+			else {
+				raw_ast = ValueUtil.FALSE_VALUE;
+			}
+			return raw_ast;
+		} catch (Throwable e) {
+			return handleExecutionFailure("MAP_m_factor_ast", e);
 		}
 	}
 
@@ -4190,7 +4711,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				if (id == null) {
 					throw throwNull(lFunctionDecl_1, "Null source for \'delphi::ident::extract() : String[?]\'");
 				}
-				final /*@Thrown*/ @Nullable String extract = INST_ident_extract.evaluate(id);
+				final /*@Thrown*/ @Nullable String extract = INSTANCE_ident_extract.evaluate(id);
 				final /*@NonInvalid*/ @NonNull Property CTORid_nameString = idResolver.getProperty(PROPid_nameString);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Name_0 = idResolver.getClass(CLSSid_Name, null);
 				final /*@Thrown*/ @NonNull Name symbol_2 = (Name)TYP_astm_c_c_Name_0.createInstance();
@@ -4251,7 +4772,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 					/**
 					 * _'1_'.getFragments()
 					 */
-					final /*@Thrown*/ @NonNull OrderedSetValue getFragments = INST_declSection_getFragments.evaluate(_1);
+					final /*@Thrown*/ @NonNull OrderedSetValue getFragments = INSTANCE_declSection_getFragments.evaluate(_1);
 					//
 					for (Object value : getFragments.flatten().getElements()) {
 						accumulator.add(value);
@@ -4314,7 +4835,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 					/**
 					 * _'1_'.getFragments()
 					 */
-					final /*@Thrown*/ @NonNull OrderedSetValue getFragments = INST_interfaceDecl_getFragments.evaluate(_1);
+					final /*@Thrown*/ @NonNull OrderedSetValue getFragments = INSTANCE_interfaceDecl_getFragments.evaluate(_1);
 					//
 					for (Object value : getFragments.flatten().getElements()) {
 						accumulator.add(value);
@@ -4476,7 +4997,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				if (id == null) {
 					throw throwNull(lProcedureDecl_1, "Null source for \'delphi::ident::extract() : String[?]\'");
 				}
-				final /*@Thrown*/ @Nullable String extract = INST_ident_extract.evaluate(id);
+				final /*@Thrown*/ @Nullable String extract = INSTANCE_ident_extract.evaluate(id);
 				final /*@NonInvalid*/ @NonNull Property CTORid_nameString = idResolver.getProperty(PROPid_nameString);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Name_0 = idResolver.getClass(CLSSid_Name, null);
 				final /*@Thrown*/ @NonNull Name symbol_2 = (Name)TYP_astm_c_c_Name_0.createInstance();
@@ -4492,230 +5013,6 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return raw_ast;
 		} catch (Throwable e) {
 			return handleExecutionFailure("MAP_m_procedureDecl_ast_heading", e);
-		}
-	}
-
-	/**
-	 *
-	 * map m_designator_ast in Delphi_qvtp_qvtcas {
-	 *
-	 *   guard:leftCS lDesignator  : delphi::designator[1];
-	 * var ast : astm::Visitable[1] := lDesignator.ast;
-	 * var getDefinition : astm::Definition[?] := lDesignator.getDefinition()
-	 *   ;
-	 * check lDesignator.isIdentifierRef()
-	 *   ;
-	 * var aIdentifierReference : astm::IdentifierReference[1] := ast.oclAsType(astm::IdentifierReference);
-	 * set aIdentifierReference.refersTo := getDefinition;
-	 *
-	 */
-	protected boolean MAP_m_designator_ast(final /*@NonInvalid*/ @NonNull designator lDesignator_4)  {
-		try {
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable Visitable ast = lDesignator_4.getAst();
-			final /*@Thrown*/ boolean symbol_0 = ast != null;
-			/*@Thrown*/ @Nullable Boolean raw_ast;
-			if (symbol_0) {
-				if (ast == null) {
-					throw throwNull(lDesignator_4, "Null where non-null value required");
-				}
-				final /*@Thrown*/ @Nullable Visitable self_25 = lDesignator_4.getAst();
-				if (self_25 == null) {
-					throw throwNull(lDesignator_4, "Null where non-null value required");
-				}
-				final /*@Thrown*/ @Nullable designatorSubPart subpart = lDesignator_4.getSubpart();
-				if (subpart == null) {
-					throw throwNull(lDesignator_4, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorSubPart::part\'");
-				}
-				final /*@Thrown*/ @Nullable designatorPart part = subpart.getPart();
-				if (part == null) {
-					throw throwNull(lDesignator_4, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorPart::id\'");
-				}
-				final /*@Thrown*/ @Nullable String fName_0 = part.getId();
-				final /*@Thrown*/ @NonNull LookupEnvironment unqualified_env_FunctionDefinition = INST_OclElement_unqualified_env_FunctionDefinition.evaluate(self_25);
-				final /*@Thrown*/ @NonNull OrderedSetValue foundFunctionDefinition = INST_Visitable__lookupFunctionDefinition.evaluate(self_25, unqualified_env_FunctionDefinition, fName_0);
-				final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(foundFunctionDefinition).booleanValue();
-				/*@Thrown*/ @Nullable FunctionDefinition symbol_1;
-				if (isEmpty) {
-					symbol_1 = null;
-				}
-				else {
-					final /*@Thrown*/ @Nullable FunctionDefinition first = (FunctionDefinition)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundFunctionDefinition);
-					symbol_1 = first;
-				}
-				final /*@Thrown*/ boolean ne = symbol_1 != null;
-				/*@Thrown*/ @Nullable Definition symbol_3;
-				if (ne) {
-					symbol_3 = symbol_1;
-				}
-				else {
-					final /*@Thrown*/ @Nullable designatorSubPart subpart_0 = lDesignator_4.getSubpart();
-					if (subpart_0 == null) {
-						throw throwNull(lDesignator_4, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorSubPart::part\'");
-					}
-					final /*@Thrown*/ @Nullable designatorPart part_0 = subpart_0.getPart();
-					if (part_0 == null) {
-						throw throwNull(lDesignator_4, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorPart::id\'");
-					}
-					final /*@Thrown*/ @Nullable String vName_0 = part_0.getId();
-					final /*@Thrown*/ @NonNull LookupEnvironment unqualified_env_VariableDefinition = INST_OclElement_unqualified_env_VariableDefinition.evaluate(self_25);
-					final /*@Thrown*/ @NonNull OrderedSetValue foundVariableDefinition = INST_Visitable__lookupVariableDefinition.evaluate(self_25, unqualified_env_VariableDefinition, vName_0);
-					final /*@Thrown*/ boolean isEmpty_0 = CollectionIsEmptyOperation.INSTANCE.evaluate(foundVariableDefinition).booleanValue();
-					/*@Thrown*/ @Nullable VariableDefinition symbol_2;
-					if (isEmpty_0) {
-						symbol_2 = null;
-					}
-					else {
-						final /*@Thrown*/ @Nullable VariableDefinition first_0 = (VariableDefinition)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundVariableDefinition);
-						symbol_2 = first_0;
-					}
-					symbol_3 = symbol_2;
-				}
-				final /*@Thrown*/ @Nullable designator designator = lDesignator_4.getDesignator();
-				final /*@Thrown*/ boolean eq = designator == null;
-				/*@Thrown*/ @Nullable Boolean symbol_6;
-				if (eq) {
-					final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_IdentifierReference_0 = idResolver.getClass(CLSSid_IdentifierReference, null);
-					final /*@Thrown*/ @NonNull IdentifierReference oclAsType = ClassUtil.nonNullState((IdentifierReference)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_IdentifierReference_0));
-					// mapping statements
-					oclAsType.setRefersTo(symbol_3);
-					final /*@Thrown*/ @Nullable Boolean m_designator_ast = ValueUtil.TRUE_VALUE;
-					symbol_6 = m_designator_ast;
-				}
-				else {
-					symbol_6 = ValueUtil.FALSE_VALUE;
-				}
-				raw_ast = symbol_6;
-			}
-			else {
-				raw_ast = ValueUtil.FALSE_VALUE;
-			}
-			return raw_ast;
-		} catch (Throwable e) {
-			return handleExecutionFailure("MAP_m_designator_ast", e);
-		}
-	}
-
-	/**
-	 *
-	 * map m_designator_ast_1 in Delphi_qvtp_qvtcas {
-	 *
-	 *   guard:leftCS lDesignator  : delphi::designator[1];
-	 * var ast : astm::Visitable[1] := lDesignator.ast;
-	 * var getDefinition : astm::Definition[?] := lDesignator.getDefinition()
-	 *   ;
-	 * check not lDesignator.isIdentifierRef()
-	 *   ;
-	 * check lDesignator.isQualifiedOverData()
-	 *   ;
-	 * var aQualifiedOverData : astm::QualifiedOverData[1] := ast.oclAsType(astm::QualifiedOverData);
-	 * set aQualifiedOverData.refersTo := getDefinition;
-	 *
-	 */
-	protected boolean MAP_m_designator_ast_1(final /*@NonInvalid*/ @NonNull designator lDesignator_5)  {
-		try {
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable Visitable ast = lDesignator_5.getAst();
-			final /*@Thrown*/ boolean symbol_0 = ast != null;
-			/*@Thrown*/ @Nullable Boolean raw_ast;
-			if (symbol_0) {
-				if (ast == null) {
-					throw throwNull(lDesignator_5, "Null where non-null value required");
-				}
-				final /*@Thrown*/ @Nullable Visitable self_25 = lDesignator_5.getAst();
-				if (self_25 == null) {
-					throw throwNull(lDesignator_5, "Null where non-null value required");
-				}
-				final /*@Thrown*/ @Nullable designatorSubPart subpart = lDesignator_5.getSubpart();
-				if (subpart == null) {
-					throw throwNull(lDesignator_5, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorSubPart::part\'");
-				}
-				final /*@Thrown*/ @Nullable designatorPart part = subpart.getPart();
-				if (part == null) {
-					throw throwNull(lDesignator_5, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorPart::id\'");
-				}
-				final /*@Thrown*/ @Nullable String fName_0 = part.getId();
-				final /*@Thrown*/ @NonNull LookupEnvironment unqualified_env_FunctionDefinition = INST_OclElement_unqualified_env_FunctionDefinition.evaluate(self_25);
-				final /*@Thrown*/ @NonNull OrderedSetValue foundFunctionDefinition = INST_Visitable__lookupFunctionDefinition.evaluate(self_25, unqualified_env_FunctionDefinition, fName_0);
-				final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(foundFunctionDefinition).booleanValue();
-				/*@Thrown*/ @Nullable FunctionDefinition symbol_1;
-				if (isEmpty) {
-					symbol_1 = null;
-				}
-				else {
-					final /*@Thrown*/ @Nullable FunctionDefinition first = (FunctionDefinition)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundFunctionDefinition);
-					symbol_1 = first;
-				}
-				final /*@Thrown*/ boolean ne = symbol_1 != null;
-				/*@Thrown*/ @Nullable Definition symbol_3;
-				if (ne) {
-					symbol_3 = symbol_1;
-				}
-				else {
-					final /*@Thrown*/ @Nullable designatorSubPart subpart_0 = lDesignator_5.getSubpart();
-					if (subpart_0 == null) {
-						throw throwNull(lDesignator_5, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorSubPart::part\'");
-					}
-					final /*@Thrown*/ @Nullable designatorPart part_0 = subpart_0.getPart();
-					if (part_0 == null) {
-						throw throwNull(lDesignator_5, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::designatorPart::id\'");
-					}
-					final /*@Thrown*/ @Nullable String vName_0 = part_0.getId();
-					final /*@Thrown*/ @NonNull LookupEnvironment unqualified_env_VariableDefinition = INST_OclElement_unqualified_env_VariableDefinition.evaluate(self_25);
-					final /*@Thrown*/ @NonNull OrderedSetValue foundVariableDefinition = INST_Visitable__lookupVariableDefinition.evaluate(self_25, unqualified_env_VariableDefinition, vName_0);
-					final /*@Thrown*/ boolean isEmpty_0 = CollectionIsEmptyOperation.INSTANCE.evaluate(foundVariableDefinition).booleanValue();
-					/*@Thrown*/ @Nullable VariableDefinition symbol_2;
-					if (isEmpty_0) {
-						symbol_2 = null;
-					}
-					else {
-						final /*@Thrown*/ @Nullable VariableDefinition first_0 = (VariableDefinition)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundVariableDefinition);
-						symbol_2 = first_0;
-					}
-					symbol_3 = symbol_2;
-				}
-				/*@Caught*/ @NonNull Object CAUGHT_eq;
-				try {
-					final /*@Thrown*/ @Nullable designator designator = lDesignator_5.getDesignator();
-					final /*@Thrown*/ boolean eq = designator == null;
-					CAUGHT_eq = eq;
-				}
-				catch (Exception e) {
-					CAUGHT_eq = ValueUtil.createInvalidValue(e);
-				}
-				final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_eq);
-				if (not == null) {
-					throw throwNull(lDesignator_5, "Null if condition");
-				}
-				/*@Thrown*/ @Nullable Boolean symbol_7;
-				if (not) {
-					final /*@Thrown*/ @Nullable designator designator_0 = lDesignator_5.getDesignator();
-					final /*@Thrown*/ boolean ne_0 = designator_0 != null;
-					/*@Thrown*/ @Nullable Boolean symbol_6;
-					if (ne_0) {
-						final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_QualifiedOverData_0 = idResolver.getClass(CLSSid_QualifiedOverData, null);
-						final /*@Thrown*/ @NonNull QualifiedOverData oclAsType = ClassUtil.nonNullState((QualifiedOverData)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_QualifiedOverData_0));
-						// mapping statements
-						oclAsType.setRefersTo(symbol_3);
-						final /*@Thrown*/ @Nullable Boolean m_designator_ast_1 = ValueUtil.TRUE_VALUE;
-						symbol_6 = m_designator_ast_1;
-					}
-					else {
-						symbol_6 = ValueUtil.FALSE_VALUE;
-					}
-					symbol_7 = symbol_6;
-				}
-				else {
-					symbol_7 = ValueUtil.FALSE_VALUE;
-				}
-				raw_ast = symbol_7;
-			}
-			else {
-				raw_ast = ValueUtil.FALSE_VALUE;
-			}
-			return raw_ast;
-		} catch (Throwable e) {
-			return handleExecutionFailure("MAP_m_designator_ast_1", e);
 		}
 	}
 
@@ -4941,13 +5238,13 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   guard:leftCS lFactor  : delphi::factor[1];
 	 * var ast : astm::Visitable[1] := lFactor.ast;
 	 * var expList : delphi::exprList[?] := lFactor.expList;
-	 * check lFactor.oclIsTypeOf(delphi::factor)
-	 *   ;
-	 * check not lFactor.isANumber()
+	 * check lFactor.isAFunctionCall()
 	 *   ;
 	 * check not lFactor.isAString()
 	 *   ;
-	 * check lFactor.isAFunctionCall()
+	 * check not lFactor.isANumber()
+	 *   ;
+	 * check lFactor.oclIsTypeOf(delphi::factor)
 	 *   ;
 	 * var aDelphiFunctionCallExpression : astm::DelphiFunctionCallExpression[1] := ast.oclAsType(astm::DelphiFunctionCallExpression)
 	 *   ;
@@ -4955,61 +5252,61 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * set aDelphiFunctionCallExpression.actualParams := createActualParams;
 	 *
 	 */
-	protected boolean MAP_m_factor_ast_expList(final /*@NonInvalid*/ @NonNull factor lFactor_6)  {
+	protected boolean MAP_m_factor_ast_expList(final /*@NonInvalid*/ @NonNull factor lFactor_8)  {
 		try {
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable Visitable ast = lFactor_6.getAst();
+			final /*@Thrown*/ @Nullable Visitable ast = lFactor_8.getAst();
 			final /*@Thrown*/ boolean symbol_0 = ast != null;
 			/*@Thrown*/ @Nullable Boolean raw_ast;
 			if (symbol_0) {
 				if (ast == null) {
-					throw throwNull(lFactor_6, "Null where non-null value required");
+					throw throwNull(lFactor_8, "Null where non-null value required");
 				}
-				final /*@Thrown*/ @Nullable exprList expList = lFactor_6.getExpList();
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
-				final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_6, TYP_delphi_c_c_factor_0).booleanValue();
+				final /*@Thrown*/ @Nullable exprList expList = lFactor_8.getExpList();
+				final /*@Thrown*/ @Nullable exprList expList_0 = lFactor_8.getExpList();
+				final /*@Thrown*/ boolean ne = expList_0 != null;
 				/*@Thrown*/ @Nullable Boolean symbol_6;
-				if (oclIsTypeOf) {
-					/*@Caught*/ @NonNull Object CAUGHT_ne;
+				if (ne) {
+					/*@Caught*/ @NonNull Object CAUGHT_ne_0;
 					try {
-						final /*@Thrown*/ @Nullable String number = lFactor_6.getNumber();
-						final /*@Thrown*/ boolean ne = number != null;
-						CAUGHT_ne = ne;
+						final /*@Thrown*/ @Nullable String string = lFactor_8.getString();
+						final /*@Thrown*/ boolean ne_0 = string != null;
+						CAUGHT_ne_0 = ne_0;
 					}
 					catch (Exception e) {
-						CAUGHT_ne = ValueUtil.createInvalidValue(e);
+						CAUGHT_ne_0 = ValueUtil.createInvalidValue(e);
 					}
-					final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne);
+					final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_0);
 					if (not == null) {
-						throw throwNull(lFactor_6, "Null if condition");
+						throw throwNull(lFactor_8, "Null if condition");
 					}
 					/*@Thrown*/ @Nullable Boolean symbol_5;
 					if (not) {
-						/*@Caught*/ @NonNull Object CAUGHT_ne_0;
+						/*@Caught*/ @NonNull Object CAUGHT_ne_1;
 						try {
-							final /*@Thrown*/ @Nullable String string = lFactor_6.getString();
-							final /*@Thrown*/ boolean ne_0 = string != null;
-							CAUGHT_ne_0 = ne_0;
+							final /*@Thrown*/ @Nullable String number = lFactor_8.getNumber();
+							final /*@Thrown*/ boolean ne_1 = number != null;
+							CAUGHT_ne_1 = ne_1;
 						}
 						catch (Exception e) {
-							CAUGHT_ne_0 = ValueUtil.createInvalidValue(e);
+							CAUGHT_ne_1 = ValueUtil.createInvalidValue(e);
 						}
-						final /*@Thrown*/ @Nullable Boolean not_0 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_0);
+						final /*@Thrown*/ @Nullable Boolean not_0 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_1);
 						if (not_0 == null) {
-							throw throwNull(lFactor_6, "Null if condition");
+							throw throwNull(lFactor_8, "Null if condition");
 						}
 						/*@Thrown*/ @Nullable Boolean symbol_4;
 						if (not_0) {
-							final /*@Thrown*/ @Nullable exprList expList_0 = lFactor_6.getExpList();
-							final /*@Thrown*/ boolean ne_1 = expList_0 != null;
+							final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
+							final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_8, TYP_delphi_c_c_factor_0).booleanValue();
 							/*@Thrown*/ @Nullable Boolean symbol_3;
-							if (ne_1) {
+							if (oclIsTypeOf) {
 								final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_DelphiFunctionCallExpression_0 = idResolver.getClass(CLSSid_DelphiFunctionCallExpression, null);
 								final /*@Thrown*/ @NonNull DelphiFunctionCallExpression oclAsType = ClassUtil.nonNullState((DelphiFunctionCallExpression)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_DelphiFunctionCallExpression_0));
 								if (expList == null) {
-									throw throwNull(lFactor_6, "Null source for \'delphi::exprList::createActualParams() : OrderedSet(astm::ActualParameterExpression)\'");
+									throw throwNull(lFactor_8, "Null source for \'delphi::exprList::createActualParams() : OrderedSet(astm::ActualParameterExpression)\'");
 								}
-								final /*@Thrown*/ @NonNull OrderedSetValue createActualParams = INST_exprList_createActualParams.evaluate(expList);
+								final /*@Thrown*/ @NonNull OrderedSetValue createActualParams = INSTANCE_exprList_createActualParams.evaluate(expList);
 								// mapping statements
 								final /*@Thrown*/ @NonNull List<ActualParameterExpression> ECORE_createActualParams = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(ActualParameterExpression.class, createActualParams);
 								oclAsType.getActualParams().addAll(ECORE_createActualParams);
@@ -5042,6 +5339,141 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return raw_ast;
 		} catch (Throwable e) {
 			return handleExecutionFailure("MAP_m_factor_ast_expList", e);
+		}
+	}
+
+	/**
+	 *
+	 * map m_factor_ast_exp in Delphi_qvtp_qvtcas {
+	 *
+	 *   guard:leftCS lFactor  : delphi::factor[1];
+	 * var ast : astm::Visitable[1] := lFactor.ast;
+	 * var exp : delphi::expression[?] := lFactor.exp;
+	 * check lFactor.oclIsTypeOf(delphi::factor)
+	 *   ;
+	 * check lFactor.isNotExp()
+	 *   ;
+	 * check not lFactor.isANumber()
+	 *   ;
+	 * check not lFactor.isAString()
+	 *   ;
+	 * check not lFactor.isAFunctionCall()
+	 *   ;
+	 * var aUnaryExpression : astm::UnaryExpression[1] := ast.oclAsType(astm::UnaryExpression)
+	 *   ;
+	 * var ast1 : astm::Visitable[?] := exp.ast;
+	 * var aExpression : astm::Expression[1] := ast1.oclAsType(astm::Expression);
+	 * set aUnaryExpression.operand := aExpression;
+	 *
+	 */
+	protected boolean MAP_m_factor_ast_exp(final /*@NonInvalid*/ @NonNull factor lFactor_9)  {
+		try {
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			final /*@Thrown*/ @Nullable Visitable ast = lFactor_9.getAst();
+			final /*@Thrown*/ boolean symbol_0 = ast != null;
+			/*@Thrown*/ @Nullable Boolean raw_ast;
+			if (symbol_0) {
+				if (ast == null) {
+					throw throwNull(lFactor_9, "Null where non-null value required");
+				}
+				final /*@Thrown*/ @Nullable expression exp = lFactor_9.getExp();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_factor_0 = idResolver.getClass(CLSSid_factor, null);
+				final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lFactor_9, TYP_delphi_c_c_factor_0).booleanValue();
+				/*@Thrown*/ @Nullable Boolean symbol_7;
+				if (oclIsTypeOf) {
+					final /*@Thrown*/ @Nullable expression exp_0 = lFactor_9.getExp();
+					final /*@Thrown*/ boolean ne = exp_0 != null;
+					/*@Thrown*/ @Nullable Boolean symbol_6;
+					if (ne) {
+						/*@Caught*/ @NonNull Object CAUGHT_ne_0;
+						try {
+							final /*@Thrown*/ @Nullable String number = lFactor_9.getNumber();
+							final /*@Thrown*/ boolean ne_0 = number != null;
+							CAUGHT_ne_0 = ne_0;
+						}
+						catch (Exception e) {
+							CAUGHT_ne_0 = ValueUtil.createInvalidValue(e);
+						}
+						final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_0);
+						if (not == null) {
+							throw throwNull(lFactor_9, "Null if condition");
+						}
+						/*@Thrown*/ @Nullable Boolean symbol_5;
+						if (not) {
+							/*@Caught*/ @NonNull Object CAUGHT_ne_1;
+							try {
+								final /*@Thrown*/ @Nullable String string = lFactor_9.getString();
+								final /*@Thrown*/ boolean ne_1 = string != null;
+								CAUGHT_ne_1 = ne_1;
+							}
+							catch (Exception e) {
+								CAUGHT_ne_1 = ValueUtil.createInvalidValue(e);
+							}
+							final /*@Thrown*/ @Nullable Boolean not_0 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_1);
+							if (not_0 == null) {
+								throw throwNull(lFactor_9, "Null if condition");
+							}
+							/*@Thrown*/ @Nullable Boolean symbol_4;
+							if (not_0) {
+								/*@Caught*/ @NonNull Object CAUGHT_ne_2;
+								try {
+									final /*@Thrown*/ @Nullable exprList expList = lFactor_9.getExpList();
+									final /*@Thrown*/ boolean ne_2 = expList != null;
+									CAUGHT_ne_2 = ne_2;
+								}
+								catch (Exception e) {
+									CAUGHT_ne_2 = ValueUtil.createInvalidValue(e);
+								}
+								final /*@Thrown*/ @Nullable Boolean not_1 = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_ne_2);
+								if (not_1 == null) {
+									throw throwNull(lFactor_9, "Null if condition");
+								}
+								/*@Thrown*/ @Nullable Boolean symbol_3;
+								if (not_1) {
+									final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_UnaryExpression_0 = idResolver.getClass(CLSSid_UnaryExpression, null);
+									final /*@Thrown*/ @NonNull UnaryExpression oclAsType = ClassUtil.nonNullState((UnaryExpression)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_UnaryExpression_0));
+									if (exp == null) {
+										throw throwNull(lFactor_9, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::CSTrace::ast\'");
+									}
+									final /*@Thrown*/ @Nullable Visitable ast_0 = exp.getAst();
+									final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Expression_0 = idResolver.getClass(CLSSid_Expression, null);
+									final /*@Thrown*/ @NonNull Expression oclAsType_0 = ClassUtil.nonNullState((Expression)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast_0, TYP_astm_c_c_Expression_0));
+									// mapping statements
+									oclAsType.setOperand(oclAsType_0);
+									final /*@Thrown*/ @Nullable Boolean m_factor_ast_exp = ValueUtil.TRUE_VALUE;
+									symbol_3 = m_factor_ast_exp;
+								}
+								else {
+									symbol_3 = ValueUtil.FALSE_VALUE;
+								}
+								symbol_4 = symbol_3;
+							}
+							else {
+								symbol_4 = ValueUtil.FALSE_VALUE;
+							}
+							symbol_5 = symbol_4;
+						}
+						else {
+							symbol_5 = ValueUtil.FALSE_VALUE;
+						}
+						symbol_6 = symbol_5;
+					}
+					else {
+						symbol_6 = ValueUtil.FALSE_VALUE;
+					}
+					symbol_7 = symbol_6;
+				}
+				else {
+					symbol_7 = ValueUtil.FALSE_VALUE;
+				}
+				raw_ast = symbol_7;
+			}
+			else {
+				raw_ast = ValueUtil.FALSE_VALUE;
+			}
+			return raw_ast;
+		} catch (Throwable e) {
+			return handleExecutionFailure("MAP_m_factor_ast_exp", e);
 		}
 	}
 
@@ -5171,7 +5603,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				if (id == null) {
 					throw throwNull(lTypeDecl_0, "Null source for \'delphi::ident::extract() : String[?]\'");
 				}
-				final /*@Thrown*/ @Nullable String extract = INST_ident_extract.evaluate(id);
+				final /*@Thrown*/ @Nullable String extract = INSTANCE_ident_extract.evaluate(id);
 				final /*@NonInvalid*/ @NonNull Property CTORid_nameString = idResolver.getProperty(PROPid_nameString);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Name_0 = idResolver.getClass(CLSSid_Name, null);
 				final /*@Thrown*/ @NonNull Name symbol_2 = (Name)TYP_astm_c_c_Name_0.createInstance();
@@ -5193,29 +5625,17 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	/**
 	 *
 	 * map m_type_ast0 in Delphi_qvtp_qvtcas {
-	 *
-	 *   guard:leftCS lType  : delphi::type[1];
-	 * check lType.oclIsTypeOf(delphi::type);
+	 * guard:leftCS lType  : delphi::type[1];
 	 * notify set lType.ast := null;
 	 *
 	 */
 	protected boolean MAP_m_type_ast0(final /*@NonInvalid*/ @NonNull type lType)  {
 		try {
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_type_0_0 = idResolver.getClass(CLSSid_type, null);
-			final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lType, TYP_delphi_c_c_type_0_0).booleanValue();
-			/*@Thrown*/ @Nullable Boolean symbol_2;
-			if (oclIsTypeOf) {
-				// mapping statements
-				lType.setAst(null);
-				objectManager.assigned(lType, DelphiPackage.Literals.CS_TRACE__AST, null, null);
-				final /*@Thrown*/ @Nullable Boolean m_type_ast0 = ValueUtil.TRUE_VALUE;
-				symbol_2 = m_type_ast0;
-			}
-			else {
-				symbol_2 = ValueUtil.FALSE_VALUE;
-			}
-			return symbol_2;
+			// mapping statements
+			lType.setAst(null);
+			objectManager.assigned(lType, DelphiPackage.Literals.CS_TRACE__AST, null, null);
+			final /*@Thrown*/ @Nullable Boolean m_type_ast0 = ValueUtil.TRUE_VALUE;
+			return m_type_ast0;
 		} catch (Throwable e) {
 			return handleExecutionFailure("MAP_m_type_ast0", e);
 		}
@@ -5361,7 +5781,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				if (id == null) {
 					throw throwNull(lUnit_2, "Null source for \'delphi::ident::extract() : String[?]\'");
 				}
-				final /*@Thrown*/ @Nullable String extract = INST_ident_extract.evaluate(id);
+				final /*@Thrown*/ @Nullable String extract = INSTANCE_ident_extract.evaluate(id);
 				final /*@NonInvalid*/ @NonNull Property CTORid_nameString = idResolver.getProperty(PROPid_nameString);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Name_0 = idResolver.getClass(CLSSid_Name, null);
 				final /*@Thrown*/ @NonNull Name symbol_5 = (Name)TYP_astm_c_c_Name_0.createInstance();
@@ -5426,11 +5846,11 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * var exp : delphi::expression[?] := lAssignmentStmnt.exp;
 	 * var aExpressionStatement : astm::ExpressionStatement[1] := ast.oclAsType(astm::ExpressionStatement)
 	 *   ;
-	 * var ast1 : astm::Visitable[?] := designator1.ast;
-	 * var ast2 : astm::Visitable[?] := exp.ast;
-	 * var aExpression : astm::Expression[1] := ast2.oclAsType(astm::Expression)
+	 * var ast1 : astm::Visitable[?] := exp.ast;
+	 * var ast2 : astm::Visitable[?] := designator1.ast;
+	 * var aExpression : astm::Expression[1] := ast1.oclAsType(astm::Expression)
 	 *   ;
-	 * var aNameReference : astm::NameReference[1] := ast1.oclAsType(astm::NameReference)
+	 * var aNameReference : astm::NameReference[1] := ast2.oclAsType(astm::NameReference)
 	 *   ;
 	 * var BinaryExpression1 : astm::BinaryExpression[1] := astm::BinaryExpression{leftOperand = aNameReference, operator = Assign1, rightOperand = aExpression
 	 *   };
@@ -5453,18 +5873,18 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				final /*@Thrown*/ @Nullable expression exp = lAssignmentStmnt_0.getExp();
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_ExpressionStatement_0 = idResolver.getClass(CLSSid_ExpressionStatement, null);
 				final /*@Thrown*/ @NonNull ExpressionStatement oclAsType = ClassUtil.nonNullState((ExpressionStatement)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_ExpressionStatement_0));
-				if (designator == null) {
-					throw throwNull(lAssignmentStmnt_0, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::CSTrace::ast\'");
-				}
-				final /*@Thrown*/ @Nullable Visitable ast_0 = designator.getAst();
 				if (exp == null) {
 					throw throwNull(lAssignmentStmnt_0, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::CSTrace::ast\'");
 				}
-				final /*@Thrown*/ @Nullable Visitable ast_1 = exp.getAst();
+				final /*@Thrown*/ @Nullable Visitable ast_0 = exp.getAst();
+				if (designator == null) {
+					throw throwNull(lAssignmentStmnt_0, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::CSTrace::ast\'");
+				}
+				final /*@Thrown*/ @Nullable Visitable ast_1 = designator.getAst();
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Expression_0 = idResolver.getClass(CLSSid_Expression, null);
-				final /*@Thrown*/ @NonNull Expression oclAsType_0 = ClassUtil.nonNullState((Expression)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast_1, TYP_astm_c_c_Expression_0));
+				final /*@Thrown*/ @NonNull Expression oclAsType_0 = ClassUtil.nonNullState((Expression)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast_0, TYP_astm_c_c_Expression_0));
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_NameReference_0 = idResolver.getClass(CLSSid_NameReference, null);
-				final /*@Thrown*/ @NonNull NameReference oclAsType_1 = ClassUtil.nonNullState((NameReference)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast_0, TYP_astm_c_c_NameReference_0));
+				final /*@Thrown*/ @NonNull NameReference oclAsType_1 = ClassUtil.nonNullState((NameReference)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast_1, TYP_astm_c_c_NameReference_0));
 				final /*@NonInvalid*/ @NonNull Property CTORid_leftOperand = idResolver.getProperty(PROPid_leftOperand);
 				final /*@NonInvalid*/ @NonNull Property CTORid_operator = idResolver.getProperty(PROPid_operator);
 				final /*@NonInvalid*/ @NonNull Property CTORid_rightOperand = idResolver.getProperty(PROPid_rightOperand);
@@ -5598,7 +6018,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 					/**
 					 * _'1_'.createActualParams()
 					 */
-					final /*@Thrown*/ @NonNull OrderedSetValue createActualParams = INST_exprList_createActualParams.evaluate(_1);
+					final /*@Thrown*/ @NonNull OrderedSetValue createActualParams = INSTANCE_exprList_createActualParams.evaluate(_1);
 					//
 					for (Object value : createActualParams.flatten().getElements()) {
 						accumulator.add(value);
@@ -5945,10 +6365,9 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   null;
 	 * var aIfStatement : astm::IfStatement[1] := ast.oclAsType(astm::IfStatement)
 	 *   ;
-	 * var ast1 : astm::Visitable[?] := _'else'.ast;
 	 * var _'if' : astm::Visitable[?] := if _'='
 	 *   then null
-	 *   else ast1
+	 *   else _'else'.ast
 	 *   endif;
 	 * var _'=1' : Boolean[1] := _'if' =
 	 *   null;
@@ -5973,15 +6392,15 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				final /*@Thrown*/ boolean symbol_2 = symbol_1 == null;
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_IfStatement_0 = idResolver.getClass(CLSSid_IfStatement, null);
 				final /*@Thrown*/ @NonNull IfStatement oclAsType = ClassUtil.nonNullState((IfStatement)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_IfStatement_0));
-				if (symbol_1 == null) {
-					throw throwNull(lIfStmt_1, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::CSTrace::ast\'");
-				}
-				final /*@Thrown*/ @Nullable Visitable ast_0 = symbol_1.getAst();
 				/*@Thrown*/ @Nullable Visitable symbol_3;
 				if (symbol_2) {
 					symbol_3 = null;
 				}
 				else {
+					if (symbol_1 == null) {
+						throw throwNull(lIfStmt_1, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::CSTrace::ast\'");
+					}
+					final /*@Thrown*/ @Nullable Visitable ast_0 = symbol_1.getAst();
 					symbol_3 = ast_0;
 				}
 				final /*@Thrown*/ boolean symbol_4 = symbol_3 == null;
@@ -6065,10 +6484,9 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   null;
 	 * var aTryStatement : astm::TryStatement[1] := ast.oclAsType(astm::TryStatement)
 	 *   ;
-	 * var statments : OrderedSet(delphi::statement)[*|1] := final.statments;
 	 * var _'if' : astm::Statement[?] := if _'='
 	 *   then null
-	 *   else statments->first().ast.oclAsType(astm::Statement)
+	 *   else final.statments->first().ast.oclAsType(astm::Statement)
 	 *   endif;
 	 * set aTryStatement.finalStatement := _'if';
 	 *
@@ -6087,17 +6505,17 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				final /*@Thrown*/ boolean symbol_2 = symbol_1 == null;
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_TryStatement_0 = idResolver.getClass(CLSSid_TryStatement, null);
 				final /*@Thrown*/ @NonNull TryStatement oclAsType = ClassUtil.nonNullState((TryStatement)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_TryStatement_0));
-				if (symbol_1 == null) {
-					throw throwNull(lTryStmt_0, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::stmtList::statments\'");
-				}
-				@SuppressWarnings("null")
-				final /*@Thrown*/ @NonNull List<statement> statments = symbol_1.getStatments();
 				/*@Thrown*/ @Nullable Statement symbol_3;
 				if (symbol_2) {
 					symbol_3 = null;
 				}
 				else {
 					final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Statement_0 = idResolver.getClass(CLSSid_Statement, null);
+					if (symbol_1 == null) {
+						throw throwNull(lTryStmt_0, "Null source for \'\'http://www.xtext.org/example/delphi/Delphi\'::stmtList::statments\'");
+					}
+					@SuppressWarnings("null")
+					final /*@Thrown*/ @NonNull List<statement> statments = symbol_1.getStatments();
 					final /*@Thrown*/ @NonNull OrderedSetValue BOXED_statments = idResolver.createOrderedSetOfAll(ORD_CLSSid_statement, statments);
 					final /*@Thrown*/ @Nullable statement first = (statement)OrderedCollectionFirstOperation.INSTANCE.evaluate(BOXED_statments);
 					if (first == null) {
@@ -6277,7 +6695,7 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 				if (idList == null) {
 					throw throwNull(lVarDecl_1, "Null source for \'delphi::identList::extract() : String[?]\'");
 				}
-				final /*@Thrown*/ @Nullable String extract = INST_identList_extract.evaluate(idList);
+				final /*@Thrown*/ @Nullable String extract = INSTANCE_identList_extract.evaluate(idList);
 				final /*@NonInvalid*/ @NonNull Property CTORid_nameString = idResolver.getProperty(PROPid_nameString);
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_Name_0 = idResolver.getClass(CLSSid_Name, null);
 				final /*@Thrown*/ @NonNull Name symbol_2 = (Name)TYP_astm_c_c_Name_0.createInstance();
@@ -6529,14 +6947,134 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 
 	/**
 	 *
+	 * map m_designator_ast in Delphi_qvtp_qvtcas {
+	 *
+	 *   guard:leftCS lDesignator  : delphi::designator[1];
+	 * var ast : astm::Visitable[1] := lDesignator.ast;
+	 * var getDefinition : astm::Definition[?] := lDesignator.getDefinition()
+	 *   ;
+	 * check lDesignator.isIdentifierRef()
+	 *   ;
+	 * var aIdentifierReference : astm::IdentifierReference[1] := ast.oclAsType(astm::IdentifierReference);
+	 * set aIdentifierReference.refersTo := getDefinition;
+	 *
+	 */
+	protected boolean MAP_m_designator_ast(final /*@NonInvalid*/ @NonNull designator lDesignator_4)  {
+		try {
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			final /*@Thrown*/ @Nullable Visitable ast = lDesignator_4.getAst();
+			final /*@Thrown*/ boolean symbol_0 = ast != null;
+			/*@Thrown*/ @Nullable Boolean raw_ast;
+			if (symbol_0) {
+				if (ast == null) {
+					throw throwNull(lDesignator_4, "Null where non-null value required");
+				}
+				final /*@Thrown*/ @Nullable Definition getDefinition = INSTANCE_designator_getDefinition.evaluate(lDesignator_4);
+				final /*@Thrown*/ @Nullable designator designator = lDesignator_4.getDesignator();
+				final /*@Thrown*/ boolean eq = designator == null;
+				/*@Thrown*/ @Nullable Boolean symbol_3;
+				if (eq) {
+					final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_IdentifierReference_0 = idResolver.getClass(CLSSid_IdentifierReference, null);
+					final /*@Thrown*/ @NonNull IdentifierReference oclAsType = ClassUtil.nonNullState((IdentifierReference)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_IdentifierReference_0));
+					// mapping statements
+					oclAsType.setRefersTo(getDefinition);
+					final /*@Thrown*/ @Nullable Boolean m_designator_ast = ValueUtil.TRUE_VALUE;
+					symbol_3 = m_designator_ast;
+				}
+				else {
+					symbol_3 = ValueUtil.FALSE_VALUE;
+				}
+				raw_ast = symbol_3;
+			}
+			else {
+				raw_ast = ValueUtil.FALSE_VALUE;
+			}
+			return raw_ast;
+		} catch (Throwable e) {
+			return handleExecutionFailure("MAP_m_designator_ast", e);
+		}
+	}
+
+	/**
+	 *
+	 * map m_designator_ast_1 in Delphi_qvtp_qvtcas {
+	 *
+	 *   guard:leftCS lDesignator  : delphi::designator[1];
+	 * var ast : astm::Visitable[1] := lDesignator.ast;
+	 * var getDefinition : astm::Definition[?] := lDesignator.getDefinition()
+	 *   ;
+	 * check not lDesignator.isIdentifierRef()
+	 *   ;
+	 * check lDesignator.isQualifiedOverData()
+	 *   ;
+	 * var aQualifiedOverData : astm::QualifiedOverData[1] := ast.oclAsType(astm::QualifiedOverData);
+	 * set aQualifiedOverData.refersTo := getDefinition;
+	 *
+	 */
+	protected boolean MAP_m_designator_ast_1(final /*@NonInvalid*/ @NonNull designator lDesignator_5)  {
+		try {
+			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
+			final /*@Thrown*/ @Nullable Visitable ast = lDesignator_5.getAst();
+			final /*@Thrown*/ boolean symbol_0 = ast != null;
+			/*@Thrown*/ @Nullable Boolean raw_ast;
+			if (symbol_0) {
+				if (ast == null) {
+					throw throwNull(lDesignator_5, "Null where non-null value required");
+				}
+				final /*@Thrown*/ @Nullable Definition getDefinition = INSTANCE_designator_getDefinition.evaluate(lDesignator_5);
+				/*@Caught*/ @NonNull Object CAUGHT_eq;
+				try {
+					final /*@Thrown*/ @Nullable designator designator = lDesignator_5.getDesignator();
+					final /*@Thrown*/ boolean eq = designator == null;
+					CAUGHT_eq = eq;
+				}
+				catch (Exception e) {
+					CAUGHT_eq = ValueUtil.createInvalidValue(e);
+				}
+				final /*@Thrown*/ @Nullable Boolean not = BooleanNotOperation.INSTANCE.evaluate(CAUGHT_eq);
+				if (not == null) {
+					throw throwNull(lDesignator_5, "Null if condition");
+				}
+				/*@Thrown*/ @Nullable Boolean symbol_4;
+				if (not) {
+					final /*@Thrown*/ @Nullable designator designator_0 = lDesignator_5.getDesignator();
+					final /*@Thrown*/ boolean ne = designator_0 != null;
+					/*@Thrown*/ @Nullable Boolean symbol_3;
+					if (ne) {
+						final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_astm_c_c_QualifiedOverData_0 = idResolver.getClass(CLSSid_QualifiedOverData, null);
+						final /*@Thrown*/ @NonNull QualifiedOverData oclAsType = ClassUtil.nonNullState((QualifiedOverData)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_astm_c_c_QualifiedOverData_0));
+						// mapping statements
+						oclAsType.setRefersTo(getDefinition);
+						final /*@Thrown*/ @Nullable Boolean m_designator_ast_1 = ValueUtil.TRUE_VALUE;
+						symbol_3 = m_designator_ast_1;
+					}
+					else {
+						symbol_3 = ValueUtil.FALSE_VALUE;
+					}
+					symbol_4 = symbol_3;
+				}
+				else {
+					symbol_4 = ValueUtil.FALSE_VALUE;
+				}
+				raw_ast = symbol_4;
+			}
+			else {
+				raw_ast = ValueUtil.FALSE_VALUE;
+			}
+			return raw_ast;
+		} catch (Throwable e) {
+			return handleExecutionFailure("MAP_m_designator_ast_1", e);
+		}
+	}
+
+	/**
+	 *
 	 * map m_ident_ast_oclContainer in Delphi_qvtp_qvtcas {
 	 *
 	 *   guard:leftCS lIdent  : delphi::ident[1];
 	 * var extract : String[?] := lIdent.extract()
 	 *   ;
 	 * var oclContainer : OclElement[?] := lIdent.oclContainer;
-	 * check lIdent.oclIsTypeOf(delphi::ident)
-	 *   ;
 	 * var aCSTrace : delphi::CSTrace[1] := oclContainer.oclAsType(delphi::CSTrace)
 	 *   ;
 	 * var ast : astm::Visitable[?] := aCSTrace.ast;
@@ -6563,59 +7101,50 @@ public class Delphi_qvtp_qvtcas extends AbstractCS2ASTransformer
 		public boolean execute()  {
 			try {
 				final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-				final /*@Thrown*/ @Nullable String extract = INST_ident_extract.evaluate(lIdent);
+				final /*@Thrown*/ @Nullable String extract = INSTANCE_ident_extract.evaluate(lIdent);
 				final /*@Thrown*/ @Nullable Object oclContainer = lIdent.eContainer();
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_ident_0_0 = idResolver.getClass(CLSSid_ident, null);
-				final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, lIdent, TYP_delphi_c_c_ident_0_0).booleanValue();
-				/*@Thrown*/ @Nullable Boolean symbol_6;
-				if (oclIsTypeOf) {
-					final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_CSTrace_1 = idResolver.getClass(CLSSid_CSTrace, null);
-					final /*@Thrown*/ @NonNull CSTrace oclAsType = ClassUtil.nonNullState((CSTrace)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer, TYP_delphi_c_c_CSTrace_1));
-					objectManager.getting(oclAsType, DelphiPackage.Literals.CS_TRACE__AST, false);
-					final /*@Thrown*/ @Nullable Visitable ast = oclAsType.getAst();
-					if (ast == null) {
-						throw throwNull(lIdent, "Null where non-null value required");
-					}
-					final /*@Thrown*/ @NonNull LookupEnvironment unqualified_env_FunctionDefinition = INST_OclElement_unqualified_env_FunctionDefinition.evaluate(ast);
-					final /*@Thrown*/ @NonNull OrderedSetValue foundFunctionDefinition = INST_Visitable__lookupFunctionDefinition.evaluate(ast, unqualified_env_FunctionDefinition, extract);
-					final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(foundFunctionDefinition).booleanValue();
-					/*@Thrown*/ @Nullable FunctionDefinition symbol_0;
-					if (isEmpty) {
-						symbol_0 = null;
-					}
-					else {
-						final /*@Thrown*/ @Nullable FunctionDefinition first = (FunctionDefinition)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundFunctionDefinition);
-						symbol_0 = first;
-					}
-					final /*@Thrown*/ boolean symbol_1 = symbol_0 != null;
-					/*@Thrown*/ @Nullable Definition symbol_3;
-					if (symbol_1) {
-						symbol_3 = symbol_0;
-					}
-					else {
-						final /*@Thrown*/ @NonNull LookupEnvironment unqualified_env_VariableDefinition = INST_OclElement_unqualified_env_VariableDefinition.evaluate(ast);
-						final /*@Thrown*/ @NonNull OrderedSetValue foundVariableDefinition = INST_Visitable__lookupVariableDefinition.evaluate(ast, unqualified_env_VariableDefinition, extract);
-						final /*@Thrown*/ boolean isEmpty_0 = CollectionIsEmptyOperation.INSTANCE.evaluate(foundVariableDefinition).booleanValue();
-						/*@Thrown*/ @Nullable VariableDefinition symbol_2;
-						if (isEmpty_0) {
-							symbol_2 = null;
-						}
-						else {
-							final /*@Thrown*/ @Nullable VariableDefinition first_0 = (VariableDefinition)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundVariableDefinition);
-							symbol_2 = first_0;
-						}
-						symbol_3 = symbol_2;
-					}
-					// mapping statements
-					lIdent.setAst(symbol_3);
-					objectManager.assigned(lIdent, DelphiPackage.Literals.CS_TRACE__AST, symbol_3, null);
-					final /*@Thrown*/ @Nullable Boolean m_ident_ast_oclContainer = ValueUtil.TRUE_VALUE;
-					symbol_6 = m_ident_ast_oclContainer;
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_delphi_c_c_CSTrace_1 = idResolver.getClass(CLSSid_CSTrace, null);
+				final /*@Thrown*/ @NonNull CSTrace oclAsType = ClassUtil.nonNullState((CSTrace)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer, TYP_delphi_c_c_CSTrace_1));
+				objectManager.getting(oclAsType, DelphiPackage.Literals.CS_TRACE__AST, false);
+				final /*@Thrown*/ @Nullable Visitable ast = oclAsType.getAst();
+				if (ast == null) {
+					throw throwNull(lIdent, "Null where non-null value required");
+				}
+				final /*@Thrown*/ @NonNull LookupEnvironment unqualified_env_FunctionDefinition = INSTANCE_Visitable_unqualified_env_FunctionDefinition.evaluate(ast);
+				final /*@Thrown*/ @NonNull OrderedSetValue foundFunctionDefinition = INSTANCE_Visitable__lookupFunctionDefinition.evaluate(ast, unqualified_env_FunctionDefinition, extract);
+				final /*@Thrown*/ boolean isEmpty = CollectionIsEmptyOperation.INSTANCE.evaluate(foundFunctionDefinition).booleanValue();
+				/*@Thrown*/ @Nullable FunctionDefinition symbol_0;
+				if (isEmpty) {
+					symbol_0 = null;
 				}
 				else {
-					symbol_6 = ValueUtil.FALSE_VALUE;
+					final /*@Thrown*/ @Nullable FunctionDefinition first = (FunctionDefinition)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundFunctionDefinition);
+					symbol_0 = first;
 				}
-				return symbol_6;
+				final /*@Thrown*/ boolean symbol_1 = symbol_0 != null;
+				/*@Thrown*/ @Nullable Definition symbol_3;
+				if (symbol_1) {
+					symbol_3 = symbol_0;
+				}
+				else {
+					final /*@Thrown*/ @NonNull LookupEnvironment unqualified_env_VariableDefinition = INSTANCE_Visitable_unqualified_env_VariableDefinition.evaluate(ast);
+					final /*@Thrown*/ @NonNull OrderedSetValue foundVariableDefinition = INSTANCE_Visitable__lookupVariableDefinition.evaluate(ast, unqualified_env_VariableDefinition, extract);
+					final /*@Thrown*/ boolean isEmpty_0 = CollectionIsEmptyOperation.INSTANCE.evaluate(foundVariableDefinition).booleanValue();
+					/*@Thrown*/ @Nullable VariableDefinition symbol_2;
+					if (isEmpty_0) {
+						symbol_2 = null;
+					}
+					else {
+						final /*@Thrown*/ @Nullable VariableDefinition first_0 = (VariableDefinition)OrderedCollectionFirstOperation.INSTANCE.evaluate(foundVariableDefinition);
+						symbol_2 = first_0;
+					}
+					symbol_3 = symbol_2;
+				}
+				// mapping statements
+				lIdent.setAst(symbol_3);
+				objectManager.assigned(lIdent, DelphiPackage.Literals.CS_TRACE__AST, symbol_3, null);
+				final /*@Thrown*/ @Nullable Boolean m_ident_ast_oclContainer = ValueUtil.TRUE_VALUE;
+				return m_ident_ast_oclContainer;
 			} catch (Throwable e) {
 				return handleExecutionFailure("MAP_m_ident_ast_oclContainer", e);
 			}

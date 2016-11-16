@@ -36,7 +36,7 @@ public interface FunctionMemberAttributes extends EObject, Visitable {
 	 * @return the value of the '<em>Is Friend</em>' attribute.
 	 * @see #setIsFriend(boolean)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionMemberAttributes_IsFriend()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionMemberAttributes!isFriend'"
 	 * @generated
 	 */
 	boolean isIsFriend();
@@ -62,7 +62,7 @@ public interface FunctionMemberAttributes extends EObject, Visitable {
 	 * @return the value of the '<em>Is Inline</em>' attribute.
 	 * @see #setIsInline(boolean)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionMemberAttributes_IsInline()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionMemberAttributes!isInline'"
 	 * @generated
 	 */
 	boolean isIsInline();
@@ -88,7 +88,7 @@ public interface FunctionMemberAttributes extends EObject, Visitable {
 	 * @return the value of the '<em>Is This Const</em>' attribute.
 	 * @see #setIsThisConst(boolean)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionMemberAttributes_IsThisConst()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionMemberAttributes!isThisConst'"
 	 * @generated
 	 */
 	boolean isIsThisConst();
@@ -115,6 +115,7 @@ public interface FunctionMemberAttributes extends EObject, Visitable {
 	 * @see #setVirtualSpecifier(VirtualSpecification)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getFunctionMemberAttributes_VirtualSpecifier()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!FunctionMemberAttributes!virtualSpecifier'"
 	 * @generated
 	 */
 	VirtualSpecification getVirtualSpecifier();

@@ -33,7 +33,7 @@ public interface DerivesFrom extends OtherSyntaxObject {
 	 * @return the value of the '<em>Is Virtual</em>' attribute.
 	 * @see #setIsVirtual(boolean)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDerivesFrom_IsVirtual()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DerivesFrom!isVirtual'"
 	 * @generated
 	 */
 	boolean isIsVirtual();
@@ -60,6 +60,7 @@ public interface DerivesFrom extends OtherSyntaxObject {
 	 * @see #setAccessKind(OtherSyntaxObject)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDerivesFrom_AccessKind()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DerivesFrom!accessKind'"
 	 * @generated
 	 */
 	OtherSyntaxObject getAccessKind();
@@ -86,6 +87,7 @@ public interface DerivesFrom extends OtherSyntaxObject {
 	 * @see #setClassName(NamedType)
 	 * @see org.xtext.example.delphi.astm.AstmPackage#getDerivesFrom_ClassName()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://modelum.es/modernization/astm!DerivesFrom!className'"
 	 * @generated
 	 */
 	NamedType getClassName();
