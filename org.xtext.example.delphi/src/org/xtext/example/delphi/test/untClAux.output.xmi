@@ -7,6 +7,11 @@
       </calledFunction>
       <actualParams xsi:type="astm:ActualParameterExpression">
         <value xsi:type="astm:IdentifierReference">
+          <name nameString="Size"/>
+        </value>
+      </actualParams>
+      <actualParams xsi:type="astm:ActualParameterExpression">
+        <value xsi:type="astm:IdentifierReference">
           <name nameString="Pt"/>
         </value>
       </actualParams>
@@ -23,11 +28,6 @@
               <name nameString="Rut"/>
             </value>
           </actualParams>
-        </value>
-      </actualParams>
-      <actualParams xsi:type="astm:ActualParameterExpression">
-        <value xsi:type="astm:IdentifierReference">
-          <name nameString="Size"/>
         </value>
       </actualParams>
     </expression>
@@ -48,6 +48,12 @@
       </locationInfo>
       <name nameString="untClAux"/>
       <interface>
+        <fragments xsi:type="astm:TypeDefinition">
+          <name nameString="TEstado"/>
+        </fragments>
+        <fragments xsi:type="astm:TypeDefinition">
+          <name nameString="versTipo"/>
+        </fragments>
         <fragments xsi:type="astm:VariableDefinition" isMutable="true">
           <identifierName nameString="frmPost"/>
         </fragments>
@@ -105,12 +111,12 @@
                       </calledFunction>
                       <actualParams xsi:type="astm:ActualParameterExpression">
                         <value xsi:type="astm:IdentifierReference">
-                          <name nameString="Size"/>
+                          <name nameString="Pt"/>
                         </value>
                       </actualParams>
                       <actualParams xsi:type="astm:ActualParameterExpression">
                         <value xsi:type="astm:IdentifierReference">
-                          <name nameString="Pt"/>
+                          <name nameString="Size"/>
                         </value>
                       </actualParams>
                     </expression>
@@ -169,23 +175,17 @@
               </subStatements>
             </subStatements>
             <declarations xsi:type="astm:VariableDefinition" isMutable="true">
-              <identifierName nameString="vers"/>
-            </declarations>
-            <declarations xsi:type="astm:VariableDefinition" isMutable="true">
               <identifierName nameString="Size"/>
             </declarations>
             <declarations xsi:type="astm:VariableDefinition" isMutable="true">
               <identifierName nameString="Pt"/>
+            </declarations>
+            <declarations xsi:type="astm:VariableDefinition" isMutable="true">
+              <identifierName nameString="vers"/>
             </declarations>
           </body>
         </fragments>
       </implementation>
     </files>
   </astm:Project>
-  <astm:TypeDefinition>
-    <name nameString="TEstado"/>
-  </astm:TypeDefinition>
-  <astm:TypeDefinition>
-    <name nameString="versTipo"/>
-  </astm:TypeDefinition>
 </xmi:XMI>

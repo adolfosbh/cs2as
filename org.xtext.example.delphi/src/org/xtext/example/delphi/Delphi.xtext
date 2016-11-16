@@ -276,7 +276,7 @@ factor
     	|	number=number
     	|	string=string
     	|	{factor} 'nil'
-    	|	'(' exp=expression ')'
+    	|	'(' nestedExp=expression ')'
     	|	'not'  exp= factor
     	|	setConstuctor=setConstructor
     	|	typeRef=typeId '(' exp=expression ')'

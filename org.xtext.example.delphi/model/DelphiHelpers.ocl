@@ -54,7 +54,9 @@ def : getFragments() : OrderedSet(as::VariableDefinition) =
 context varSection
 def : getFragments() : OrderedSet(as::VariableDefinition) =
 	self.varDecls.ast.oclAsType(as::VariableDefinition)->asOrderedSet()
-	
+context typeSection
+def : getFragments() : OrderedSet(as::TypeDefinition) =
+	self.typeDecl.ast.oclAsType(as::TypeDefinition)->asOrderedSet()
 context procedureDecl
 def : getFragments() : OrderedSet(as::FunctionDefinition) =
 	OrderedSet{self.ast.oclAsType(as::FunctionDefinition)}

@@ -252,8 +252,15 @@ else
 			calledFunction = self.designator.ast(), 
 		actualParams = expList.createActualParams()
 		}
-		else 
-			as::astm::NewExpression {}
+		else
+			if isNotExp()
+			then as::astm::UnaryExpression {
+				operator = as::astm::Not {},
+				operand = exp.ast()
+			}
+			else 
+				as::astm::NewExpression {}
+			endif
 		endif
 	endif
 endif

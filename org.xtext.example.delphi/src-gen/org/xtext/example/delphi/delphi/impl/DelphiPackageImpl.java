@@ -2600,7 +2600,7 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getfactor_Exp()
+  public EReference getfactor_NestedExp()
   {
 		return (EReference)factorEClass.getEStructuralFeatures().get(4);
 	}
@@ -2610,7 +2610,7 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getfactor_SetConstuctor()
+  public EReference getfactor_Exp()
   {
 		return (EReference)factorEClass.getEStructuralFeatures().get(5);
 	}
@@ -2620,9 +2620,19 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getfactor_TypeRef()
+  public EReference getfactor_SetConstuctor()
   {
 		return (EReference)factorEClass.getEStructuralFeatures().get(6);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getfactor_TypeRef()
+  {
+		return (EReference)factorEClass.getEStructuralFeatures().get(7);
 	}
 
   /**
@@ -5073,6 +5083,7 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		createEReference(factorEClass, FACTOR__EXP_LIST);
 		createEAttribute(factorEClass, FACTOR__NUMBER);
 		createEAttribute(factorEClass, FACTOR__STRING);
+		createEReference(factorEClass, FACTOR__NESTED_EXP);
 		createEReference(factorEClass, FACTOR__EXP);
 		createEReference(factorEClass, FACTOR__SET_CONSTUCTOR);
 		createEReference(factorEClass, FACTOR__TYPE_REF);
@@ -5759,6 +5770,7 @@ public class DelphiPackageImpl extends EPackageImpl implements DelphiPackage
 		initEReference(getfactor_ExpList(), this.getexprList(), null, "expList", null, 0, 1, factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getfactor_Number(), ecorePackage.getEString(), "number", null, 0, 1, factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getfactor_String(), ecorePackage.getEString(), "string", null, 0, 1, factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getfactor_NestedExp(), this.getexpression(), null, "nestedExp", null, 0, 1, factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getfactor_Exp(), this.getexpression(), null, "exp", null, 0, 1, factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getfactor_SetConstuctor(), this.getsetConstructor(), null, "setConstuctor", null, 0, 1, factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getfactor_TypeRef(), this.gettypeId(), null, "typeRef", null, 0, 1, factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

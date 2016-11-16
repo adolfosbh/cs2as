@@ -9,53 +9,6 @@
       <rightOperand xsi:type="astm:IntegerLiteral" value="6"/>
     </expression>
   </astm:ExpressionStatement>
-  <astm:IdentifierReference>
-    <name nameString="IsEmpty"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="IsEmpty"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="IsEmpty"/>
-  </astm:IdentifierReference>
-  <astm:IdentifierReference>
-    <name nameString="IsEmpty"/>
-  </astm:IdentifierReference>
-  <astm:QualifiedOverData>
-    <name nameString="cds"/>
-    <member>
-      <name nameString="IsEmpty"/>
-    </member>
-  </astm:QualifiedOverData>
-  <astm:DelphiFunctionCallExpression>
-    <calledFunction xsi:type="astm:IdentifierReference">
-      <name nameString="FileExists"/>
-    </calledFunction>
-    <actualParams xsi:type="astm:ActualParameterExpression">
-      <value xsi:type="astm:IdentifierReference">
-        <name nameString="Ruta"/>
-      </value>
-    </actualParams>
-  </astm:DelphiFunctionCallExpression>
-  <astm:DelphiFunctionCallExpression>
-    <calledFunction xsi:type="astm:IdentifierReference">
-      <name nameString="RenameFile"/>
-    </calledFunction>
-    <actualParams xsi:type="astm:ActualParameterExpression">
-      <value xsi:type="astm:BinaryExpression">
-        <operator xsi:type="astm:Add"/>
-        <leftOperand xsi:type="astm:IdentifierReference">
-          <name nameString="ruta"/>
-        </leftOperand>
-        <rightOperand xsi:type="astm:StringLiteral" value="'borrado'"/>
-      </value>
-    </actualParams>
-    <actualParams xsi:type="astm:ActualParameterExpression">
-      <value xsi:type="astm:IdentifierReference">
-        <name nameString="ruta"/>
-      </value>
-    </actualParams>
-  </astm:DelphiFunctionCallExpression>
   <astm:IntegerLiteral value="0"/>
   <astm:IntegerLiteral value="0"/>
   <astm:IntegerLiteral value="0"/>
@@ -75,16 +28,19 @@
           <identifierName nameString="FILEXCEL"/>
           <initialValue xsi:type="astm:IntegerLiteral" value="2"/>
         </fragments>
+        <fragments xsi:type="astm:TypeDefinition">
+          <name nameString="TArchivo"/>
+        </fragments>
       </interface>
       <implementation>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.nuevoWord"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement"/>
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.EjercutarProg"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement">
               <subStatements xsi:type="astm:ExpressionStatement">
@@ -245,7 +201,7 @@
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.RutaReal"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement">
               <subStatements xsi:type="astm:ExpressionStatement">
@@ -273,7 +229,7 @@
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.SelecFicheroRutaRelativa"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement">
               <subStatements xsi:type="astm:ExpressionStatement">
@@ -360,7 +316,7 @@
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.PathRutaRelativa"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement">
               <subStatements xsi:type="astm:DelphiWithStatement">
@@ -399,7 +355,12 @@
                     </expression>
                   </subStatements>
                   <subStatements xsi:type="astm:IfStatement">
-                    <condition xsi:type="astm:NewExpression"/>
+                    <condition xsi:type="astm:UnaryExpression">
+                      <operator xsi:type="astm:Not"/>
+                      <operand xsi:type="astm:IdentifierReference">
+                        <name nameString="IsEmpty"/>
+                      </operand>
+                    </condition>
                     <thenBody xsi:type="astm:ExpressionStatement">
                       <expression xsi:type="astm:BinaryExpression">
                         <operator xsi:type="astm:Assign"/>
@@ -428,7 +389,7 @@
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.RutaModulo"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement">
               <subStatements xsi:type="astm:DelphiWithStatement">
@@ -491,7 +452,12 @@
                     </expression>
                   </subStatements>
                   <subStatements xsi:type="astm:IfStatement">
-                    <condition xsi:type="astm:NewExpression"/>
+                    <condition xsi:type="astm:UnaryExpression">
+                      <operator xsi:type="astm:Not"/>
+                      <operand xsi:type="astm:IdentifierReference">
+                        <name nameString="IsEmpty"/>
+                      </operand>
+                    </condition>
                     <thenBody xsi:type="astm:ExpressionStatement">
                       <expression xsi:type="astm:BinaryExpression">
                         <operator xsi:type="astm:Assign"/>
@@ -520,7 +486,7 @@
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.RutaProyecto"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement">
               <subStatements xsi:type="astm:DelphiWithStatement">
@@ -566,7 +532,12 @@
                     </expression>
                   </subStatements>
                   <subStatements xsi:type="astm:IfStatement">
-                    <condition xsi:type="astm:NewExpression"/>
+                    <condition xsi:type="astm:UnaryExpression">
+                      <operator xsi:type="astm:Not"/>
+                      <operand xsi:type="astm:IdentifierReference">
+                        <name nameString="IsEmpty"/>
+                      </operand>
+                    </condition>
                     <thenBody xsi:type="astm:ExpressionStatement">
                       <expression xsi:type="astm:BinaryExpression">
                         <operator xsi:type="astm:Assign"/>
@@ -595,7 +566,7 @@
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.RutaSubMod"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement">
               <subStatements xsi:type="astm:DelphiWithStatement">
@@ -675,7 +646,12 @@
                     </expression>
                   </subStatements>
                   <subStatements xsi:type="astm:IfStatement">
-                    <condition xsi:type="astm:NewExpression"/>
+                    <condition xsi:type="astm:UnaryExpression">
+                      <operator xsi:type="astm:Not"/>
+                      <operand xsi:type="astm:IdentifierReference">
+                        <name nameString="IsEmpty"/>
+                      </operand>
+                    </condition>
                     <thenBody xsi:type="astm:ExpressionStatement">
                       <expression xsi:type="astm:BinaryExpression">
                         <operator xsi:type="astm:Assign"/>
@@ -704,11 +680,23 @@
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.BorraArchivo"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement">
               <subStatements xsi:type="astm:IfStatement">
-                <condition xsi:type="astm:NewExpression"/>
+                <condition xsi:type="astm:UnaryExpression">
+                  <operator xsi:type="astm:Not"/>
+                  <operand xsi:type="astm:DelphiFunctionCallExpression">
+                    <calledFunction xsi:type="astm:IdentifierReference">
+                      <name nameString="FileExists"/>
+                    </calledFunction>
+                    <actualParams xsi:type="astm:ActualParameterExpression">
+                      <value xsi:type="astm:IdentifierReference">
+                        <name nameString="Ruta"/>
+                      </value>
+                    </actualParams>
+                  </operand>
+                </condition>
                 <thenBody xsi:type="astm:ExpressionStatement">
                   <expression xsi:type="astm:BinaryExpression">
                     <operator xsi:type="astm:Assign"/>
@@ -794,7 +782,28 @@
                   <rightOperand xsi:type="astm:IntegerLiteral" value="3"/>
                 </condition>
                 <thenBody xsi:type="astm:IfStatement">
-                  <condition xsi:type="astm:NewExpression"/>
+                  <condition xsi:type="astm:UnaryExpression">
+                    <operator xsi:type="astm:Not"/>
+                    <operand xsi:type="astm:DelphiFunctionCallExpression">
+                      <calledFunction xsi:type="astm:IdentifierReference">
+                        <name nameString="RenameFile"/>
+                      </calledFunction>
+                      <actualParams xsi:type="astm:ActualParameterExpression">
+                        <value xsi:type="astm:BinaryExpression">
+                          <operator xsi:type="astm:Add"/>
+                          <leftOperand xsi:type="astm:IdentifierReference">
+                            <name nameString="ruta"/>
+                          </leftOperand>
+                          <rightOperand xsi:type="astm:StringLiteral" value="'borrado'"/>
+                        </value>
+                      </actualParams>
+                      <actualParams xsi:type="astm:ActualParameterExpression">
+                        <value xsi:type="astm:IdentifierReference">
+                          <name nameString="ruta"/>
+                        </value>
+                      </actualParams>
+                    </operand>
+                  </condition>
                   <thenBody xsi:type="astm:ExpressionStatement">
                     <expression xsi:type="astm:BinaryExpression">
                       <operator xsi:type="astm:Assign"/>
@@ -810,7 +819,7 @@
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.BorraArchivo"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement">
               <subStatements xsi:type="astm:IfStatement">
@@ -822,7 +831,15 @@
                 </condition>
                 <thenBody xsi:type="astm:BlockStatement">
                   <subStatements xsi:type="astm:IfStatement">
-                    <condition xsi:type="astm:NewExpression"/>
+                    <condition xsi:type="astm:UnaryExpression">
+                      <operator xsi:type="astm:Not"/>
+                      <operand xsi:type="astm:QualifiedOverData">
+                        <name nameString="cds"/>
+                        <member>
+                          <name nameString="IsEmpty"/>
+                        </member>
+                      </operand>
+                    </condition>
                     <thenBody xsi:type="astm:BlockStatement">
                       <subStatements xsi:type="astm:IfStatement">
                         <condition xsi:type="astm:BinaryExpression">
@@ -871,8 +888,26 @@
                               <subStatements xsi:type="astm:IfStatement">
                                 <condition xsi:type="astm:BinaryExpression">
                                   <operator xsi:type="astm:Add"/>
-                                  <leftOperand xsi:type="astm:NewExpression"/>
-                                  <rightOperand xsi:type="astm:NewExpression"/>
+                                  <leftOperand xsi:type="astm:UnaryExpression">
+                                    <operator xsi:type="astm:Not"/>
+                                    <operand xsi:type="astm:BinaryExpression">
+                                      <operator xsi:type="astm:Equal"/>
+                                      <leftOperand xsi:type="astm:IdentifierReference">
+                                        <name nameString="res"/>
+                                      </leftOperand>
+                                      <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
+                                    </operand>
+                                  </leftOperand>
+                                  <rightOperand xsi:type="astm:UnaryExpression">
+                                    <operator xsi:type="astm:Not"/>
+                                    <operand xsi:type="astm:BinaryExpression">
+                                      <operator xsi:type="astm:Equal"/>
+                                      <leftOperand xsi:type="astm:IdentifierReference">
+                                        <name nameString="res"/>
+                                      </leftOperand>
+                                      <rightOperand xsi:type="astm:IntegerLiteral" value="1"/>
+                                    </operand>
+                                  </rightOperand>
                                 </condition>
                                 <thenBody xsi:type="astm:BlockStatement">
                                   <subStatements xsi:type="astm:IfStatement">
@@ -965,7 +1000,7 @@
           </body>
         </fragments>
         <fragments xsi:type="astm:FunctionDefinition">
-          <identifierName nameString="TArchivo"/>
+          <identifierName nameString="TArchivo.BorraArchivoDefecto"/>
           <body xsi:type="astm:DelphiBlockStatement">
             <subStatements xsi:type="astm:BlockStatement">
               <subStatements xsi:type="astm:ExpressionStatement">
@@ -1204,21 +1239,4 @@
       </implementation>
     </files>
   </astm:Project>
-  <astm:BinaryExpression>
-    <operator xsi:type="astm:Equal"/>
-    <leftOperand xsi:type="astm:IdentifierReference">
-      <name nameString="res"/>
-    </leftOperand>
-    <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
-  </astm:BinaryExpression>
-  <astm:BinaryExpression>
-    <operator xsi:type="astm:Equal"/>
-    <leftOperand xsi:type="astm:IdentifierReference">
-      <name nameString="res"/>
-    </leftOperand>
-    <rightOperand xsi:type="astm:IntegerLiteral" value="1"/>
-  </astm:BinaryExpression>
-  <astm:TypeDefinition>
-    <name nameString="TArchivo"/>
-  </astm:TypeDefinition>
 </xmi:XMI>

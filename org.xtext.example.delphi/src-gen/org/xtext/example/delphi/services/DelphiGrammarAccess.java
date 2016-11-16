@@ -2310,8 +2310,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNilKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
 		private final Keyword cLeftParenthesisKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cExpAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cExpExpressionParserRuleCall_6_1_0 = (RuleCall)cExpAssignment_6_1.eContents().get(0);
+		private final Assignment cNestedExpAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cNestedExpExpressionParserRuleCall_6_1_0 = (RuleCall)cNestedExpAssignment_6_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
 		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
 		private final Keyword cNotKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
@@ -2329,13 +2329,13 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//factor:
 		//	designator=designator '(' expList=exprList ')' | {simpleFactor} designator=designator | '@' {simpleFactor}
-		//	designator=designator | number=number | string=string | {factor} 'nil' | '(' exp=expression ')' | 'not' exp=factor |
-		//	setConstuctor=setConstructor | typeRef=typeId '(' exp=expression ')';
+		//	designator=designator | number=number | string=string | {factor} 'nil' | '(' nestedExp=expression ')' | 'not'
+		//	exp=factor | setConstuctor=setConstructor | typeRef=typeId '(' exp=expression ')';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//designator=designator '(' expList=exprList ')' | {simpleFactor} designator=designator | '@' {simpleFactor}
-		//designator=designator | number=number | string=string | {factor} 'nil' | '(' exp=expression ')' | 'not' exp=factor |
-		//setConstuctor=setConstructor | typeRef=typeId '(' exp=expression ')'
+		//designator=designator | number=number | string=string | {factor} 'nil' | '(' nestedExp=expression ')' | 'not'
+		//exp=factor | setConstuctor=setConstructor | typeRef=typeId '(' exp=expression ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//designator=designator '(' expList=exprList ')'
@@ -2407,17 +2407,17 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 		//'nil'
 		public Keyword getNilKeyword_5_1() { return cNilKeyword_5_1; }
 		
-		//'(' exp=expression ')'
+		//'(' nestedExp=expression ')'
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_6_0() { return cLeftParenthesisKeyword_6_0; }
 		
-		//exp=expression
-		public Assignment getExpAssignment_6_1() { return cExpAssignment_6_1; }
+		//nestedExp=expression
+		public Assignment getNestedExpAssignment_6_1() { return cNestedExpAssignment_6_1; }
 		
 		//expression
-		public RuleCall getExpExpressionParserRuleCall_6_1_0() { return cExpExpressionParserRuleCall_6_1_0; }
+		public RuleCall getNestedExpExpressionParserRuleCall_6_1_0() { return cNestedExpExpressionParserRuleCall_6_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_6_2() { return cRightParenthesisKeyword_6_2; }
@@ -6721,8 +6721,8 @@ public class DelphiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//factor:
 	//	designator=designator '(' expList=exprList ')' | {simpleFactor} designator=designator | '@' {simpleFactor}
-	//	designator=designator | number=number | string=string | {factor} 'nil' | '(' exp=expression ')' | 'not' exp=factor |
-	//	setConstuctor=setConstructor | typeRef=typeId '(' exp=expression ')';
+	//	designator=designator | number=number | string=string | {factor} 'nil' | '(' nestedExp=expression ')' | 'not'
+	//	exp=factor | setConstuctor=setConstructor | typeRef=typeId '(' exp=expression ')';
 	public FactorElements getFactorAccess() {
 		return pFactor;
 	}

@@ -11,6 +11,8 @@ def : isAString() : Boolean =
 	self.string <> null
 def : isAFunctionCall() : Boolean =
 	self.expList <> null
+def : isNotExp() : Boolean=
+	self.exp <> null
 context designator
 def : isIdentifierRef() : Boolean =
 	self.designator = null

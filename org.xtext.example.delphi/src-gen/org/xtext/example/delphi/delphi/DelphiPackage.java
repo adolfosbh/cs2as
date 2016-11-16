@@ -2408,13 +2408,22 @@ public interface DelphiPackage extends EPackage
   int FACTOR__STRING = TERM_FEATURE_COUNT + 3;
 
   /**
+	 * The feature id for the '<em><b>Nested Exp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int FACTOR__NESTED_EXP = TERM_FEATURE_COUNT + 4;
+
+  /**
 	 * The feature id for the '<em><b>Exp</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int FACTOR__EXP = TERM_FEATURE_COUNT + 4;
+  int FACTOR__EXP = TERM_FEATURE_COUNT + 5;
 
   /**
 	 * The feature id for the '<em><b>Set Constuctor</b></em>' containment reference.
@@ -2423,7 +2432,7 @@ public interface DelphiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int FACTOR__SET_CONSTUCTOR = TERM_FEATURE_COUNT + 5;
+  int FACTOR__SET_CONSTUCTOR = TERM_FEATURE_COUNT + 6;
 
   /**
 	 * The feature id for the '<em><b>Type Ref</b></em>' containment reference.
@@ -2432,7 +2441,7 @@ public interface DelphiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int FACTOR__TYPE_REF = TERM_FEATURE_COUNT + 6;
+  int FACTOR__TYPE_REF = TERM_FEATURE_COUNT + 7;
 
   /**
 	 * The number of structural features of the '<em>factor</em>' class.
@@ -2441,7 +2450,7 @@ public interface DelphiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int FACTOR_FEATURE_COUNT = TERM_FEATURE_COUNT + 7;
+  int FACTOR_FEATURE_COUNT = TERM_FEATURE_COUNT + 8;
 
   /**
 	 * The meta object id for the '{@link org.xtext.example.delphi.delphi.impl.relOpImpl <em>rel Op</em>}' class.
@@ -5776,6 +5785,15 @@ public interface DelphiPackage extends EPackage
   int SIMPLE_FACTOR__STRING = FACTOR__STRING;
 
   /**
+	 * The feature id for the '<em><b>Nested Exp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SIMPLE_FACTOR__NESTED_EXP = FACTOR__NESTED_EXP;
+
+  /**
 	 * The feature id for the '<em><b>Exp</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -7799,6 +7817,17 @@ public interface DelphiPackage extends EPackage
 	 * @generated
 	 */
   EAttribute getfactor_String();
+
+  /**
+	 * Returns the meta object for the containment reference '{@link org.xtext.example.delphi.delphi.factor#getNestedExp <em>Nested Exp</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Nested Exp</em>'.
+	 * @see org.xtext.example.delphi.delphi.factor#getNestedExp()
+	 * @see #getfactor()
+	 * @generated
+	 */
+  EReference getfactor_NestedExp();
 
   /**
 	 * Returns the meta object for the containment reference '{@link org.xtext.example.delphi.delphi.factor#getExp <em>Exp</em>}'.
@@ -11424,6 +11453,14 @@ public interface DelphiPackage extends EPackage
 		 * @generated
 		 */
     EAttribute FACTOR__STRING = eINSTANCE.getfactor_String();
+
+    /**
+		 * The meta object literal for the '<em><b>Nested Exp</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EReference FACTOR__NESTED_EXP = eINSTANCE.getfactor_NestedExp();
 
     /**
 		 * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.

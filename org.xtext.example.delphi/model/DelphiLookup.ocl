@@ -3,29 +3,6 @@ import  as : 'astm.ecore#/'
 import 'Lookup.ecore'
 import 'DelphiHelpers.ocl'
 
-package ocl
-
--- Domain specific default functionality
-context OclElement
-def : unqualified_env_VariableDefinition() : lookup::LookupEnvironment[1] =
-	_unqualified_env_VariableDefinition(null)
-def : unqualified_env_FunctionDefinition() : lookup::LookupEnvironment[1] =
-	_unqualified_env_FunctionDefinition(null)
-
-def : _unqualified_env_VariableDefinition(child : OclElement) : lookup::LookupEnvironment[1] =
-	parentEnv_VariableDefinition()
-def : _unqualified_env_FunctionDefinition(child : OclElement) : lookup::LookupEnvironment[1] =
-	parentEnv_FunctionDefinition()
-
-def : parentEnv_VariableDefinition() : lookup::LookupEnvironment[1] =
-	let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_VariableDefinition(self) endif
-def : parentEnv_FunctionDefinition() : lookup::LookupEnvironment[1] =
-	let parent = oclContainer() in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_FunctionDefinition(self) endif
-
-
--- End of domain specific default functionality
-endpackage 
-
 package lookup
 -- Some common lookup functionality
 context LookupEnvironment
@@ -37,6 +14,26 @@ def : nestedEnv() : LookupEnvironment[1] =
 endpackage
 
 package as
+
+-- Domain specific default functionality
+context Visitable
+def : unqualified_env_VariableDefinition() : lookup::LookupEnvironment[1] =
+	_unqualified_env_VariableDefinition(null)
+def : unqualified_env_FunctionDefinition() : lookup::LookupEnvironment[1] =
+	_unqualified_env_FunctionDefinition(null)
+
+def : _unqualified_env_VariableDefinition(child : Visitable) : lookup::LookupEnvironment[1] =
+	parentEnv_VariableDefinition()
+def : _unqualified_env_FunctionDefinition(child : Visitable) : lookup::LookupEnvironment[1] =
+	parentEnv_FunctionDefinition()
+
+def : parentEnv_VariableDefinition() : lookup::LookupEnvironment[1] =
+	let parent = oclContainer().oclAsType(Visitable) in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_VariableDefinition(self) endif
+def : parentEnv_FunctionDefinition() : lookup::LookupEnvironment[1] =
+	let parent = oclContainer().oclAsType(Visitable) in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_FunctionDefinition(self) endif
+
+
+-- End of domain specific default functionality
 
 context Visitable
 -- VariableDefinition unqualified lookup
@@ -83,20 +80,20 @@ def : lookupFunctionDefinition(fName : String) : FunctionDefinition[?] =
 -- End of FunctionDefinition unqualified lookup 
    
 context CompilationUnit
-def : _unqualified_env_VariableDefinition(child : ocl::OclElement) : lookup::LookupEnvironment =
+def : _unqualified_env_VariableDefinition(child : Visitable) : lookup::LookupEnvironment =
    parentEnv_VariableDefinition().nestedEnv()
       .addElements(fragments->selectByKind(VariableDefinition))
       
-def : _unqualified_env_FunctionDefinition(child : ocl::OclElement) : lookup::LookupEnvironment =
+def : _unqualified_env_FunctionDefinition(child : Visitable) : lookup::LookupEnvironment =
    parentEnv_FunctionDefinition().nestedEnv()
       .addElements(fragments->selectByKind(FunctionDefinition))
       
 context DelphiBlockStatement
-def : _unqualified_env_VariableDefinition(child : ocl::OclElement) : lookup::LookupEnvironment =
+def : _unqualified_env_VariableDefinition(child : Visitable) : lookup::LookupEnvironment =
    parentEnv_VariableDefinition().nestedEnv()
       .addElements(declarations->selectByKind(VariableDefinition))
       
-def : _unqualified_env_FunctionDefinition(child : ocl::OclElement) : lookup::LookupEnvironment =
+def : _unqualified_env_FunctionDefinition(child : Visitable) : lookup::LookupEnvironment =
    parentEnv_FunctionDefinition().nestedEnv()
       .addElements(declarations->selectByKind(FunctionDefinition))
 
@@ -105,6 +102,6 @@ endpackage
 package cs
 context cs::designator
 def : getDefinition() :astm::Definition =
-	let method  = ast.lookupFunctionDefinition(subpart.part.id)
-	in if method <> null then method else ast.lookupVariableDefinition(subpart.part.id) endif
+	let method  = ast.oclAsType(astm::NameReference).lookupFunctionDefinition(subpart.part.id)
+	in if method <> null then method else ast.oclAsType(astm::NameReference).lookupVariableDefinition(subpart.part.id) endif
 endpackage

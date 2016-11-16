@@ -4404,17 +4404,17 @@ rulefactor returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFactorAccess().getExpExpressionParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getFactorAccess().getNestedExpExpressionParserRuleCall_6_1_0());
 					}
-					lv_exp_14_0=ruleexpression
+					lv_nestedExp_14_0=ruleexpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFactorRule());
 						}
 						set(
 							$current,
-							"exp",
-							lv_exp_14_0,
+							"nestedExp",
+							lv_nestedExp_14_0,
 							"org.xtext.example.delphi.Delphi.expression");
 						afterParserOrEnumRuleCall();
 					}

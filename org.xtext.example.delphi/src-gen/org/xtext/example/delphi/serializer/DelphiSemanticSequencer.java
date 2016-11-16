@@ -1043,7 +1043,7 @@ public class DelphiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         (designator=designator expList=exprList) | 
 	 *         number=number | 
 	 *         string=string | 
-	 *         exp=expression | 
+	 *         nestedExp=expression | 
 	 *         exp=factor | 
 	 *         setConstuctor=setConstructor | 
 	 *         (typeRef=typeId exp=expression)

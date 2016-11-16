@@ -31,6 +31,7 @@ import org.xtext.example.delphi.delphi.typeId;
  *   <li>{@link org.xtext.example.delphi.delphi.impl.factorImpl#getExpList <em>Exp List</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.impl.factorImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.impl.factorImpl#getString <em>String</em>}</li>
+ *   <li>{@link org.xtext.example.delphi.delphi.impl.factorImpl#getNestedExp <em>Nested Exp</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.impl.factorImpl#getExp <em>Exp</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.impl.factorImpl#getSetConstuctor <em>Set Constuctor</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.impl.factorImpl#getTypeRef <em>Type Ref</em>}</li>
@@ -99,6 +100,16 @@ public class factorImpl extends termImpl implements factor
 	 * @ordered
 	 */
   protected String string = STRING_EDEFAULT;
+
+  /**
+	 * The cached value of the '{@link #getNestedExp() <em>Nested Exp</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getNestedExp()
+	 * @generated
+	 * @ordered
+	 */
+  protected expression nestedExp;
 
   /**
 	 * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
@@ -294,6 +305,52 @@ public class factorImpl extends termImpl implements factor
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public expression getNestedExp()
+  {
+		return nestedExp;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public NotificationChain basicSetNestedExp(expression newNestedExp, NotificationChain msgs)
+  {
+		expression oldNestedExp = nestedExp;
+		nestedExp = newNestedExp;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DelphiPackage.FACTOR__NESTED_EXP, oldNestedExp, newNestedExp);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public void setNestedExp(expression newNestedExp)
+  {
+		if (newNestedExp != nestedExp) {
+			NotificationChain msgs = null;
+			if (nestedExp != null)
+				msgs = ((InternalEObject)nestedExp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FACTOR__NESTED_EXP, null, msgs);
+			if (newNestedExp != null)
+				msgs = ((InternalEObject)newNestedExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DelphiPackage.FACTOR__NESTED_EXP, null, msgs);
+			msgs = basicSetNestedExp(newNestedExp, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DelphiPackage.FACTOR__NESTED_EXP, newNestedExp, newNestedExp));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public expression getExp()
   {
 		return exp;
@@ -440,6 +497,8 @@ public class factorImpl extends termImpl implements factor
 				return basicSetDesignator(null, msgs);
 			case DelphiPackage.FACTOR__EXP_LIST:
 				return basicSetExpList(null, msgs);
+			case DelphiPackage.FACTOR__NESTED_EXP:
+				return basicSetNestedExp(null, msgs);
 			case DelphiPackage.FACTOR__EXP:
 				return basicSetExp(null, msgs);
 			case DelphiPackage.FACTOR__SET_CONSTUCTOR:
@@ -467,6 +526,8 @@ public class factorImpl extends termImpl implements factor
 				return getNumber();
 			case DelphiPackage.FACTOR__STRING:
 				return getString();
+			case DelphiPackage.FACTOR__NESTED_EXP:
+				return getNestedExp();
 			case DelphiPackage.FACTOR__EXP:
 				return getExp();
 			case DelphiPackage.FACTOR__SET_CONSTUCTOR:
@@ -497,6 +558,9 @@ public class factorImpl extends termImpl implements factor
 				return;
 			case DelphiPackage.FACTOR__STRING:
 				setString((String)newValue);
+				return;
+			case DelphiPackage.FACTOR__NESTED_EXP:
+				setNestedExp((expression)newValue);
 				return;
 			case DelphiPackage.FACTOR__EXP:
 				setExp((expression)newValue);
@@ -532,6 +596,9 @@ public class factorImpl extends termImpl implements factor
 			case DelphiPackage.FACTOR__STRING:
 				setString(STRING_EDEFAULT);
 				return;
+			case DelphiPackage.FACTOR__NESTED_EXP:
+				setNestedExp((expression)null);
+				return;
 			case DelphiPackage.FACTOR__EXP:
 				setExp((expression)null);
 				return;
@@ -562,6 +629,8 @@ public class factorImpl extends termImpl implements factor
 				return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
 			case DelphiPackage.FACTOR__STRING:
 				return STRING_EDEFAULT == null ? string != null : !STRING_EDEFAULT.equals(string);
+			case DelphiPackage.FACTOR__NESTED_EXP:
+				return nestedExp != null;
 			case DelphiPackage.FACTOR__EXP:
 				return exp != null;
 			case DelphiPackage.FACTOR__SET_CONSTUCTOR:

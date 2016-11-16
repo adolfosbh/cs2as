@@ -517,7 +517,7 @@ public class DelphiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('+' | '-')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '(' exp=expression
+	 *     (rule start) (ambiguity) '(' nestedExp=expression
 	 *     (rule start) (ambiguity) '@' designator=designator
 	 *     (rule start) (ambiguity) 'nil' (rule start)
 	 *     (rule start) (ambiguity) 'not' exp=factor

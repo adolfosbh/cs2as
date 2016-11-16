@@ -12714,7 +12714,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefactor"
-    // InternalDelphi.g:4217:1: rulefactor returns [EObject current=null] : ( ( ( (lv_designator_0_0= ruledesignator ) ) otherlv_1= '(' ( (lv_expList_2_0= ruleexprList ) ) otherlv_3= ')' ) | ( () ( (lv_designator_5_0= ruledesignator ) ) ) | (otherlv_6= '@' () ( (lv_designator_8_0= ruledesignator ) ) ) | ( (lv_number_9_0= rulenumber ) ) | ( (lv_string_10_0= rulestring ) ) | ( () otherlv_12= 'nil' ) | (otherlv_13= '(' ( (lv_exp_14_0= ruleexpression ) ) otherlv_15= ')' ) | (otherlv_16= 'not' ( (lv_exp_17_0= rulefactor ) ) ) | ( (lv_setConstuctor_18_0= rulesetConstructor ) ) | ( ( (lv_typeRef_19_0= ruletypeId ) ) otherlv_20= '(' ( (lv_exp_21_0= ruleexpression ) ) otherlv_22= ')' ) ) ;
+    // InternalDelphi.g:4217:1: rulefactor returns [EObject current=null] : ( ( ( (lv_designator_0_0= ruledesignator ) ) otherlv_1= '(' ( (lv_expList_2_0= ruleexprList ) ) otherlv_3= ')' ) | ( () ( (lv_designator_5_0= ruledesignator ) ) ) | (otherlv_6= '@' () ( (lv_designator_8_0= ruledesignator ) ) ) | ( (lv_number_9_0= rulenumber ) ) | ( (lv_string_10_0= rulestring ) ) | ( () otherlv_12= 'nil' ) | (otherlv_13= '(' ( (lv_nestedExp_14_0= ruleexpression ) ) otherlv_15= ')' ) | (otherlv_16= 'not' ( (lv_exp_17_0= rulefactor ) ) ) | ( (lv_setConstuctor_18_0= rulesetConstructor ) ) | ( ( (lv_typeRef_19_0= ruletypeId ) ) otherlv_20= '(' ( (lv_exp_21_0= ruleexpression ) ) otherlv_22= ')' ) ) ;
     public final EObject rulefactor() throws RecognitionException {
         EObject current = null;
         int rulefactor_StartIndex = input.index();
@@ -12739,7 +12739,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         AntlrDatatypeRuleToken lv_string_10_0 = null;
 
-        EObject lv_exp_14_0 = null;
+        EObject lv_nestedExp_14_0 = null;
 
         EObject lv_exp_17_0 = null;
 
@@ -12755,10 +12755,10 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 110) ) { return current; }
-            // InternalDelphi.g:4223:2: ( ( ( ( (lv_designator_0_0= ruledesignator ) ) otherlv_1= '(' ( (lv_expList_2_0= ruleexprList ) ) otherlv_3= ')' ) | ( () ( (lv_designator_5_0= ruledesignator ) ) ) | (otherlv_6= '@' () ( (lv_designator_8_0= ruledesignator ) ) ) | ( (lv_number_9_0= rulenumber ) ) | ( (lv_string_10_0= rulestring ) ) | ( () otherlv_12= 'nil' ) | (otherlv_13= '(' ( (lv_exp_14_0= ruleexpression ) ) otherlv_15= ')' ) | (otherlv_16= 'not' ( (lv_exp_17_0= rulefactor ) ) ) | ( (lv_setConstuctor_18_0= rulesetConstructor ) ) | ( ( (lv_typeRef_19_0= ruletypeId ) ) otherlv_20= '(' ( (lv_exp_21_0= ruleexpression ) ) otherlv_22= ')' ) ) )
-            // InternalDelphi.g:4224:2: ( ( ( (lv_designator_0_0= ruledesignator ) ) otherlv_1= '(' ( (lv_expList_2_0= ruleexprList ) ) otherlv_3= ')' ) | ( () ( (lv_designator_5_0= ruledesignator ) ) ) | (otherlv_6= '@' () ( (lv_designator_8_0= ruledesignator ) ) ) | ( (lv_number_9_0= rulenumber ) ) | ( (lv_string_10_0= rulestring ) ) | ( () otherlv_12= 'nil' ) | (otherlv_13= '(' ( (lv_exp_14_0= ruleexpression ) ) otherlv_15= ')' ) | (otherlv_16= 'not' ( (lv_exp_17_0= rulefactor ) ) ) | ( (lv_setConstuctor_18_0= rulesetConstructor ) ) | ( ( (lv_typeRef_19_0= ruletypeId ) ) otherlv_20= '(' ( (lv_exp_21_0= ruleexpression ) ) otherlv_22= ')' ) )
+            // InternalDelphi.g:4223:2: ( ( ( ( (lv_designator_0_0= ruledesignator ) ) otherlv_1= '(' ( (lv_expList_2_0= ruleexprList ) ) otherlv_3= ')' ) | ( () ( (lv_designator_5_0= ruledesignator ) ) ) | (otherlv_6= '@' () ( (lv_designator_8_0= ruledesignator ) ) ) | ( (lv_number_9_0= rulenumber ) ) | ( (lv_string_10_0= rulestring ) ) | ( () otherlv_12= 'nil' ) | (otherlv_13= '(' ( (lv_nestedExp_14_0= ruleexpression ) ) otherlv_15= ')' ) | (otherlv_16= 'not' ( (lv_exp_17_0= rulefactor ) ) ) | ( (lv_setConstuctor_18_0= rulesetConstructor ) ) | ( ( (lv_typeRef_19_0= ruletypeId ) ) otherlv_20= '(' ( (lv_exp_21_0= ruleexpression ) ) otherlv_22= ')' ) ) )
+            // InternalDelphi.g:4224:2: ( ( ( (lv_designator_0_0= ruledesignator ) ) otherlv_1= '(' ( (lv_expList_2_0= ruleexprList ) ) otherlv_3= ')' ) | ( () ( (lv_designator_5_0= ruledesignator ) ) ) | (otherlv_6= '@' () ( (lv_designator_8_0= ruledesignator ) ) ) | ( (lv_number_9_0= rulenumber ) ) | ( (lv_string_10_0= rulestring ) ) | ( () otherlv_12= 'nil' ) | (otherlv_13= '(' ( (lv_nestedExp_14_0= ruleexpression ) ) otherlv_15= ')' ) | (otherlv_16= 'not' ( (lv_exp_17_0= rulefactor ) ) ) | ( (lv_setConstuctor_18_0= rulesetConstructor ) ) | ( ( (lv_typeRef_19_0= ruletypeId ) ) otherlv_20= '(' ( (lv_exp_21_0= ruleexpression ) ) otherlv_22= ')' ) )
             {
-            // InternalDelphi.g:4224:2: ( ( ( (lv_designator_0_0= ruledesignator ) ) otherlv_1= '(' ( (lv_expList_2_0= ruleexprList ) ) otherlv_3= ')' ) | ( () ( (lv_designator_5_0= ruledesignator ) ) ) | (otherlv_6= '@' () ( (lv_designator_8_0= ruledesignator ) ) ) | ( (lv_number_9_0= rulenumber ) ) | ( (lv_string_10_0= rulestring ) ) | ( () otherlv_12= 'nil' ) | (otherlv_13= '(' ( (lv_exp_14_0= ruleexpression ) ) otherlv_15= ')' ) | (otherlv_16= 'not' ( (lv_exp_17_0= rulefactor ) ) ) | ( (lv_setConstuctor_18_0= rulesetConstructor ) ) | ( ( (lv_typeRef_19_0= ruletypeId ) ) otherlv_20= '(' ( (lv_exp_21_0= ruleexpression ) ) otherlv_22= ')' ) )
+            // InternalDelphi.g:4224:2: ( ( ( (lv_designator_0_0= ruledesignator ) ) otherlv_1= '(' ( (lv_expList_2_0= ruleexprList ) ) otherlv_3= ')' ) | ( () ( (lv_designator_5_0= ruledesignator ) ) ) | (otherlv_6= '@' () ( (lv_designator_8_0= ruledesignator ) ) ) | ( (lv_number_9_0= rulenumber ) ) | ( (lv_string_10_0= rulestring ) ) | ( () otherlv_12= 'nil' ) | (otherlv_13= '(' ( (lv_nestedExp_14_0= ruleexpression ) ) otherlv_15= ')' ) | (otherlv_16= 'not' ( (lv_exp_17_0= rulefactor ) ) ) | ( (lv_setConstuctor_18_0= rulesetConstructor ) ) | ( ( (lv_typeRef_19_0= ruletypeId ) ) otherlv_20= '(' ( (lv_exp_21_0= ruleexpression ) ) otherlv_22= ')' ) )
             int alt75=10;
             alt75 = dfa75.predict(input);
             switch (alt75) {
@@ -13111,10 +13111,10 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalDelphi.g:4399:3: (otherlv_13= '(' ( (lv_exp_14_0= ruleexpression ) ) otherlv_15= ')' )
+                    // InternalDelphi.g:4399:3: (otherlv_13= '(' ( (lv_nestedExp_14_0= ruleexpression ) ) otherlv_15= ')' )
                     {
-                    // InternalDelphi.g:4399:3: (otherlv_13= '(' ( (lv_exp_14_0= ruleexpression ) ) otherlv_15= ')' )
-                    // InternalDelphi.g:4400:4: otherlv_13= '(' ( (lv_exp_14_0= ruleexpression ) ) otherlv_15= ')'
+                    // InternalDelphi.g:4399:3: (otherlv_13= '(' ( (lv_nestedExp_14_0= ruleexpression ) ) otherlv_15= ')' )
+                    // InternalDelphi.g:4400:4: otherlv_13= '(' ( (lv_nestedExp_14_0= ruleexpression ) ) otherlv_15= ')'
                     {
                     otherlv_13=(Token)match(input,17,FOLLOW_23); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -13122,19 +13122,19 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_13, grammarAccess.getFactorAccess().getLeftParenthesisKeyword_6_0());
                       			
                     }
-                    // InternalDelphi.g:4404:4: ( (lv_exp_14_0= ruleexpression ) )
-                    // InternalDelphi.g:4405:5: (lv_exp_14_0= ruleexpression )
+                    // InternalDelphi.g:4404:4: ( (lv_nestedExp_14_0= ruleexpression ) )
+                    // InternalDelphi.g:4405:5: (lv_nestedExp_14_0= ruleexpression )
                     {
-                    // InternalDelphi.g:4405:5: (lv_exp_14_0= ruleexpression )
-                    // InternalDelphi.g:4406:6: lv_exp_14_0= ruleexpression
+                    // InternalDelphi.g:4405:5: (lv_nestedExp_14_0= ruleexpression )
+                    // InternalDelphi.g:4406:6: lv_nestedExp_14_0= ruleexpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getFactorAccess().getExpExpressionParserRuleCall_6_1_0());
+                      						newCompositeNode(grammarAccess.getFactorAccess().getNestedExpExpressionParserRuleCall_6_1_0());
                       					
                     }
                     pushFollow(FOLLOW_5);
-                    lv_exp_14_0=ruleexpression();
+                    lv_nestedExp_14_0=ruleexpression();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -13145,8 +13145,8 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
                       						}
                       						set(
                       							current,
-                      							"exp",
-                      							lv_exp_14_0,
+                      							"nestedExp",
+                      							lv_nestedExp_14_0,
                       							"org.xtext.example.delphi.Delphi.expression");
                       						afterParserOrEnumRuleCall();
                       					
@@ -34895,7 +34895,7 @@ public class InternalDelphiParser extends AbstractInternalAntlrParser {
             this.transition = dfa_49;
         }
         public String getDescription() {
-            return "4224:2: ( ( ( (lv_designator_0_0= ruledesignator ) ) otherlv_1= '(' ( (lv_expList_2_0= ruleexprList ) ) otherlv_3= ')' ) | ( () ( (lv_designator_5_0= ruledesignator ) ) ) | (otherlv_6= '@' () ( (lv_designator_8_0= ruledesignator ) ) ) | ( (lv_number_9_0= rulenumber ) ) | ( (lv_string_10_0= rulestring ) ) | ( () otherlv_12= 'nil' ) | (otherlv_13= '(' ( (lv_exp_14_0= ruleexpression ) ) otherlv_15= ')' ) | (otherlv_16= 'not' ( (lv_exp_17_0= rulefactor ) ) ) | ( (lv_setConstuctor_18_0= rulesetConstructor ) ) | ( ( (lv_typeRef_19_0= ruletypeId ) ) otherlv_20= '(' ( (lv_exp_21_0= ruleexpression ) ) otherlv_22= ')' ) )";
+            return "4224:2: ( ( ( (lv_designator_0_0= ruledesignator ) ) otherlv_1= '(' ( (lv_expList_2_0= ruleexprList ) ) otherlv_3= ')' ) | ( () ( (lv_designator_5_0= ruledesignator ) ) ) | (otherlv_6= '@' () ( (lv_designator_8_0= ruledesignator ) ) ) | ( (lv_number_9_0= rulenumber ) ) | ( (lv_string_10_0= rulestring ) ) | ( () otherlv_12= 'nil' ) | (otherlv_13= '(' ( (lv_nestedExp_14_0= ruleexpression ) ) otherlv_15= ')' ) | (otherlv_16= 'not' ( (lv_exp_17_0= rulefactor ) ) ) | ( (lv_setConstuctor_18_0= rulesetConstructor ) ) | ( ( (lv_typeRef_19_0= ruletypeId ) ) otherlv_20= '(' ( (lv_exp_21_0= ruleexpression ) ) otherlv_22= ')' ) )";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;

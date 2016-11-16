@@ -183,6 +183,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Delphi.ecore#//factor/expList"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Delphi.ecore#//factor/number"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Delphi.ecore#//factor/string"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Delphi.ecore#//factor/nestedExp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Delphi.ecore#//factor/exp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Delphi.ecore#//factor/setConstuctor"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Delphi.ecore#//factor/typeRef"/>

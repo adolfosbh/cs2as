@@ -17,6 +17,7 @@ package org.xtext.example.delphi.delphi;
  *   <li>{@link org.xtext.example.delphi.delphi.factor#getExpList <em>Exp List</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.factor#getNumber <em>Number</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.factor#getString <em>String</em>}</li>
+ *   <li>{@link org.xtext.example.delphi.delphi.factor#getNestedExp <em>Nested Exp</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.factor#getExp <em>Exp</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.factor#getSetConstuctor <em>Set Constuctor</em>}</li>
  *   <li>{@link org.xtext.example.delphi.delphi.factor#getTypeRef <em>Type Ref</em>}</li>
@@ -131,6 +132,32 @@ public interface factor extends term
 	 * @generated
 	 */
   void setString(String value);
+
+  /**
+	 * Returns the value of the '<em><b>Nested Exp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Nested Exp</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nested Exp</em>' containment reference.
+	 * @see #setNestedExp(expression)
+	 * @see org.xtext.example.delphi.delphi.DelphiPackage#getfactor_NestedExp()
+	 * @model containment="true"
+	 * @generated
+	 */
+  expression getNestedExp();
+
+  /**
+	 * Sets the value of the '{@link org.xtext.example.delphi.delphi.factor#getNestedExp <em>Nested Exp</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nested Exp</em>' containment reference.
+	 * @see #getNestedExp()
+	 * @generated
+	 */
+  void setNestedExp(expression value);
 
   /**
 	 * Returns the value of the '<em><b>Exp</b></em>' containment reference.
