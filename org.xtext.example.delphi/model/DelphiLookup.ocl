@@ -28,9 +28,9 @@ def : _unqualified_env_FunctionDefinition(child : Visitable) : lookup::LookupEnv
 	parentEnv_FunctionDefinition()
 
 def : parentEnv_VariableDefinition() : lookup::LookupEnvironment[1] =
-	let parent = oclContainer().oclAsType(Visitable) in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_VariableDefinition(self) endif
+	let parent = oclContainer()?.oclAsType(Visitable) in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_VariableDefinition(self) endif
 def : parentEnv_FunctionDefinition() : lookup::LookupEnvironment[1] =
-	let parent = oclContainer().oclAsType(Visitable) in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_FunctionDefinition(self) endif
+	let parent = oclContainer()?.oclAsType(Visitable) in if parent = null then lookup::LookupEnvironment { } else parent._unqualified_env_FunctionDefinition(self) endif
 
 
 -- End of domain specific default functionality
