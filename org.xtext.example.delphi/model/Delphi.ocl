@@ -120,7 +120,7 @@ as::astm::FunctionDefinition {
 context block
 def : ast() : as::astm::DelphiBlockStatement =
 as::astm::DelphiBlockStatement {
-   declarations = declSect?->collect(getFragments()),
+   declarations = declSect->asSequence()?->collect(getFragments()),
    subStatements = OrderedSet{compound.ast()}
 }
 
@@ -151,13 +151,13 @@ def : ast() : as::astm::ExpressionStatement =
 as::astm::ExpressionStatement {
 	expression = astm::FunctionCallExpression {
 				calledFunction = self.designator.ast(),
-				actualParams = args?->collect(createActualParams())
+				actualParams = args->asSequence()?->collect(createActualParams())
 			} 
 }
 context withStmt
 def : ast() : as::astm::DelphiWithStatement =
 as::astm::DelphiWithStatement {
-	withs = _vars.ids.ast(),  
+	withs = getDefinitions(),  
 subStatements = OrderedSet{stmt.ast()} 
 }
 context ifStmt
@@ -185,9 +185,31 @@ context tryStmt
 def : ast() : as::astm::TryStatement =
 as::astm::TryStatement {
 	guardedStatement = as::astm::BlockStatement{subStatements = self.stmtList.statments.ast()},
-	finalStatement = if final = null then null else final.statments->first().ast() endif
+	finalStatement = if final = null then null else final.statments->first().ast() endif,
+	catchBlocks = OrderedSet{exception.ast()}
 }
- 
+
+context exceptionBlock 
+def : ast() : as::astm::CatchBlock =
+	as::astm::CatchBlock {
+		_body = as::astm::BlockStatement{
+			subStatements = self.elseStmts.statments.ast()
+		} 
+	}
+
+--context forStmt
+--def : ast() : as::astm::ForStatement =
+--	as::astm::ForStatement {
+--		initBody = astm::BinaryExpression {
+--					leftOperand = self.varId.id,
+--						operator = astm::Assign {},
+--							rightOperand = varInit
+--						}, 
+--		condition = condition.ast(),
+--		_body =  stmt.ast()
+--	
+--	}
+	
 context designator
 def : ast() : as::astm::NameReference =
 if isIdentifierRef()
@@ -211,16 +233,6 @@ else
 	endif
 endif
 
-context CSTrace
-def : ast() : as::astm::Visitable =
-	null -- to override
-	
-context ident
-def : ast() : as::astm::DefinitionObject =
-let parent = oclContainer().oclAsType(CSTrace).ast,
-    method  = parent.lookupFunctionDefinition(self.extract())
-in if method <> null then method else parent.lookupVariableDefinition(self.extract()) endif
-
 context relExp
 def : ast() : as::astm::BinaryExpression =
 as::astm::BinaryExpression {
@@ -235,6 +247,7 @@ as::astm::BinaryExpression {
 context simpleFactor
 def : ast() : as::astm::Expression =
 	self.designator.ast()
+	
 context factor
 def : ast() : as::astm::Expression =
 if isANumber()

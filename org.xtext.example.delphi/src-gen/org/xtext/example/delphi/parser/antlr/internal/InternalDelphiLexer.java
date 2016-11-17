@@ -3390,37 +3390,26 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_DQVALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10630:14: ( RULE_DOUBLEQUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) ) )* RULE_DOUBLEQUOTE )
-            // InternalDelphi.g:10630:16: RULE_DOUBLEQUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) ) )* RULE_DOUBLEQUOTE
+            // InternalDelphi.g:10630:14: ( RULE_DOUBLEQUOTE (~ ( RULE_DOUBLEQUOTE ) )* RULE_DOUBLEQUOTE )
+            // InternalDelphi.g:10630:16: RULE_DOUBLEQUOTE (~ ( RULE_DOUBLEQUOTE ) )* RULE_DOUBLEQUOTE
             {
             mRULE_DOUBLEQUOTE(); 
-            // InternalDelphi.g:10630:33: ( '\\\\' . | ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) ) )*
+            // InternalDelphi.g:10630:33: (~ ( RULE_DOUBLEQUOTE ) )*
             loop2:
             do {
-                int alt2=3;
+                int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0=='\\') ) {
+                if ( ((LA2_0>='\u0000' && LA2_0<='!')||(LA2_0>='#' && LA2_0<='\uFFFF')) ) {
                     alt2=1;
-                }
-                else if ( ((LA2_0>='\u0000' && LA2_0<='!')||(LA2_0>='#' && LA2_0<='[')||(LA2_0>=']' && LA2_0<='\uFFFF')) ) {
-                    alt2=2;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalDelphi.g:10630:34: '\\\\' .
+            	    // InternalDelphi.g:10630:33: ~ ( RULE_DOUBLEQUOTE )
             	    {
-            	    match('\\'); 
-            	    matchAny(); 
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // InternalDelphi.g:10630:41: ~ ( ( '\\\\' | RULE_DOUBLEQUOTE ) )
-            	    {
-            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
+            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
 
             	    }
@@ -3455,37 +3444,26 @@ public class InternalDelphiLexer extends Lexer {
         try {
             int _type = RULE_QVALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDelphi.g:10632:13: ( RULE_QUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_QUOTE ) ) )* RULE_QUOTE )
-            // InternalDelphi.g:10632:15: RULE_QUOTE ( '\\\\' . | ~ ( ( '\\\\' | RULE_QUOTE ) ) )* RULE_QUOTE
+            // InternalDelphi.g:10632:13: ( RULE_QUOTE (~ ( RULE_QUOTE ) )* RULE_QUOTE )
+            // InternalDelphi.g:10632:15: RULE_QUOTE (~ ( RULE_QUOTE ) )* RULE_QUOTE
             {
             mRULE_QUOTE(); 
-            // InternalDelphi.g:10632:26: ( '\\\\' . | ~ ( ( '\\\\' | RULE_QUOTE ) ) )*
+            // InternalDelphi.g:10632:26: (~ ( RULE_QUOTE ) )*
             loop3:
             do {
-                int alt3=3;
+                int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0=='\\') ) {
+                if ( ((LA3_0>='\u0000' && LA3_0<='&')||(LA3_0>='(' && LA3_0<='\uFFFF')) ) {
                     alt3=1;
-                }
-                else if ( ((LA3_0>='\u0000' && LA3_0<='&')||(LA3_0>='(' && LA3_0<='[')||(LA3_0>=']' && LA3_0<='\uFFFF')) ) {
-                    alt3=2;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalDelphi.g:10632:27: '\\\\' .
+            	    // InternalDelphi.g:10632:26: ~ ( RULE_QUOTE )
             	    {
-            	    match('\\'); 
-            	    matchAny(); 
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // InternalDelphi.g:10632:34: ~ ( ( '\\\\' | RULE_QUOTE ) )
-            	    {
-            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
+            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
 
             	    }

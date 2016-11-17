@@ -23,7 +23,7 @@ import org.xtext.example.delphi.delphi.DelphiPackage;
 
 public class DelphiTester {
 	
-	private static final String[] MODEL_NAMES = new String[]{"test.delphi", "untClArchivo.delphi", "untClAux.delphi", "untClFormatos.delphi"};
+	private static final String[] MODEL_NAMES = new String[]{"untClArchivo.delphi", "untClAux.delphi", "untClFormatos.delphi"};
 	
 	public static void main(String[] args) throws Exception {
 		

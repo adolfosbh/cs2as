@@ -101,7 +101,13 @@ endpackage
 
 package cs
 context cs::designator
-def : getDefinition() :astm::Definition =
+def : getDefinition() : astm::Definition =
 	let method  = ast.oclAsType(astm::NameReference).lookupFunctionDefinition(subpart.part.id)
 	in if method <> null then method else ast.oclAsType(astm::NameReference).lookupVariableDefinition(subpart.part.id) endif
+
+context cs::withStmt
+def : getDefinitions() : Sequence(astm::Definition) =
+	self._vars.ids->collect(x |
+   		let method  = ast.oclAsType(astm::DelphiWithStatement).lookupFunctionDefinition(x.extract())
+		in if method <> null then method else ast.oclAsType(astm::DelphiWithStatement).lookupVariableDefinition(x.extract()) endif)->excluding(null)
 endpackage

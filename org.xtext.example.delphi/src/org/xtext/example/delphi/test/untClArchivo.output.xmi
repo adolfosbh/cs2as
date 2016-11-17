@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:astm="http://modelum.es/modernization/astm">
-  <astm:ExpressionStatement>
-    <expression xsi:type="astm:BinaryExpression">
-      <operator xsi:type="astm:Assign"/>
-      <leftOperand xsi:type="astm:IdentifierReference">
-        <name nameString="result"/>
-      </leftOperand>
-      <rightOperand xsi:type="astm:IntegerLiteral" value="6"/>
-    </expression>
-  </astm:ExpressionStatement>
   <astm:IntegerLiteral value="0"/>
   <astm:IntegerLiteral value="0"/>
   <astm:IntegerLiteral value="0"/>
@@ -46,15 +37,15 @@
               <subStatements xsi:type="astm:ExpressionStatement">
                 <expression xsi:type="astm:BinaryExpression">
                   <operator xsi:type="astm:Assign"/>
-                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/5/@files.0/@implementation/@fragments.1/@body.0/@declarations.1">
+                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.1/@body.0/@declarations.1">
                     <name nameString="pInfo"/>
                   </leftOperand>
-                  <rightOperand xsi:type="astm:IdentifierReference" refersTo="/5/@files.0/@implementation/@fragments.1/@body.0/@declarations.0">
+                  <rightOperand xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.1/@body.0/@declarations.0">
                     <name nameString="Info"/>
                   </rightOperand>
                 </expression>
               </subStatements>
-              <subStatements xsi:type="astm:DelphiWithStatement">
+              <subStatements xsi:type="astm:DelphiWithStatement" withs="/4/@files.0/@implementation/@fragments.1/@body.0/@declarations.0">
                 <subStatements xsi:type="astm:BlockStatement">
                   <subStatements xsi:type="astm:ExpressionStatement">
                     <expression xsi:type="astm:BinaryExpression">
@@ -67,7 +58,7 @@
                           <name nameString="SizeOf"/>
                         </calledFunction>
                         <actualParams xsi:type="astm:ActualParameterExpression">
-                          <value xsi:type="astm:IdentifierReference" refersTo="/5/@files.0/@implementation/@fragments.1/@body.0/@declarations.0">
+                          <value xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.1/@body.0/@declarations.0">
                             <name nameString="Info"/>
                           </value>
                         </actualParams>
@@ -185,7 +176,7 @@
                     <name nameString="ShellExecuteEx"/>
                   </calledFunction>
                   <actualParams xsi:type="astm:ActualParameterExpression">
-                    <value xsi:type="astm:IdentifierReference" refersTo="/5/@files.0/@implementation/@fragments.1/@body.0/@declarations.1">
+                    <value xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.1/@body.0/@declarations.1">
                       <name nameString="pInfo"/>
                     </value>
                   </actualParams>
@@ -235,7 +226,7 @@
               <subStatements xsi:type="astm:ExpressionStatement">
                 <expression xsi:type="astm:BinaryExpression">
                   <operator xsi:type="astm:Assign"/>
-                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/5/@files.0/@implementation/@fragments.3/@body.0/@declarations.0">
+                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.3/@body.0/@declarations.0">
                     <name nameString="f"/>
                   </leftOperand>
                   <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
@@ -256,7 +247,7 @@
                   <subStatements xsi:type="astm:IfStatement">
                     <condition xsi:type="astm:BinaryExpression">
                       <operator xsi:type="astm:Equal"/>
-                      <leftOperand xsi:type="astm:QualifiedOverData" refersTo="/5/@files.0/@implementation/@fragments.3/@body.0/@declarations.0">
+                      <leftOperand xsi:type="astm:QualifiedOverData" refersTo="/4/@files.0/@implementation/@fragments.3/@body.0/@declarations.0">
                         <name nameString="f"/>
                         <member>
                           <name nameString="ShowModal"/>
@@ -273,7 +264,7 @@
                           <leftOperand xsi:type="astm:IdentifierReference">
                             <name nameString="idruta"/>
                           </leftOperand>
-                          <rightOperand xsi:type="astm:QualifiedOverData" refersTo="/5/@files.0/@implementation/@fragments.3/@body.0/@declarations.0">
+                          <rightOperand xsi:type="astm:QualifiedOverData" refersTo="/4/@files.0/@implementation/@fragments.3/@body.0/@declarations.0">
                             <name nameString="f"/>
                             <member>
                               <name nameString="ruta"/>
@@ -287,7 +278,7 @@
                           <leftOperand xsi:type="astm:IdentifierReference">
                             <name nameString="nombre"/>
                           </leftOperand>
-                          <rightOperand xsi:type="astm:QualifiedOverData" refersTo="/5/@files.0/@implementation/@fragments.3/@body.0/@declarations.0">
+                          <rightOperand xsi:type="astm:QualifiedOverData" refersTo="/4/@files.0/@implementation/@fragments.3/@body.0/@declarations.0">
                             <name nameString="f"/>
                             <member>
                               <name nameString="fichero"/>
@@ -300,7 +291,7 @@
                 </guardedStatement>
                 <finalStatement xsi:type="astm:ExpressionStatement">
                   <expression xsi:type="astm:FunctionCallExpression">
-                    <calledFunction xsi:type="astm:QualifiedOverData" refersTo="/5/@files.0/@implementation/@fragments.3/@body.0/@declarations.0">
+                    <calledFunction xsi:type="astm:QualifiedOverData" refersTo="/4/@files.0/@implementation/@fragments.3/@body.0/@declarations.0">
                       <name nameString="f"/>
                       <member>
                         <name nameString="Free"/>
@@ -870,7 +861,7 @@
                               <subStatements xsi:type="astm:ExpressionStatement">
                                 <expression xsi:type="astm:BinaryExpression">
                                   <operator xsi:type="astm:Assign"/>
-                                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/5/@files.0/@implementation/@fragments.9/@body.0/@declarations.0">
+                                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.9/@body.0/@declarations.0">
                                     <name nameString="res"/>
                                   </leftOperand>
                                   <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
@@ -934,13 +925,26 @@
                                     <leftOperand xsi:type="astm:IdentifierReference">
                                       <name nameString="result"/>
                                     </leftOperand>
-                                    <rightOperand xsi:type="astm:IdentifierReference" refersTo="/5/@files.0/@implementation/@fragments.9/@body.0/@declarations.0">
+                                    <rightOperand xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.9/@body.0/@declarations.0">
                                       <name nameString="res"/>
                                     </rightOperand>
                                   </expression>
                                 </elseBody>
                               </subStatements>
                             </guardedStatement>
+                            <catchBlocks>
+                              <body xsi:type="astm:BlockStatement">
+                                <subStatements xsi:type="astm:ExpressionStatement">
+                                  <expression xsi:type="astm:BinaryExpression">
+                                    <operator xsi:type="astm:Assign"/>
+                                    <leftOperand xsi:type="astm:IdentifierReference">
+                                      <name nameString="result"/>
+                                    </leftOperand>
+                                    <rightOperand xsi:type="astm:IntegerLiteral" value="6"/>
+                                  </expression>
+                                </subStatements>
+                              </body>
+                            </catchBlocks>
                           </subStatements>
                         </thenBody>
                         <elseBody xsi:type="astm:ExpressionStatement">

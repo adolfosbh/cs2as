@@ -1,45 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:astm="http://modelum.es/modernization/astm">
-  <astm:ExpressionStatement>
-    <expression xsi:type="astm:FunctionCallExpression">
-      <calledFunction xsi:type="astm:IdentifierReference">
-        <name nameString="GetFileVersionInfo"/>
-      </calledFunction>
-      <actualParams xsi:type="astm:ActualParameterExpression">
-        <value xsi:type="astm:IntegerLiteral" value="0"/>
-      </actualParams>
-      <actualParams xsi:type="astm:ActualParameterExpression">
-        <value xsi:type="astm:IdentifierReference">
-          <name nameString="Pt"/>
-        </value>
-      </actualParams>
-      <actualParams xsi:type="astm:ActualParameterExpression">
-        <value xsi:type="astm:DelphiFunctionCallExpression">
-          <calledFunction xsi:type="astm:IdentifierReference">
-            <name nameString="PChar"/>
-          </calledFunction>
-          <actualParams xsi:type="astm:ActualParameterExpression">
-            <value xsi:type="astm:IdentifierReference">
-              <name nameString="Rut"/>
-            </value>
-          </actualParams>
-        </value>
-      </actualParams>
-      <actualParams xsi:type="astm:ActualParameterExpression">
-        <value xsi:type="astm:IdentifierReference">
-          <name nameString="Size"/>
-        </value>
-      </actualParams>
-    </expression>
-  </astm:ExpressionStatement>
-  <astm:ExpressionStatement>
-    <expression xsi:type="astm:FunctionCallExpression">
-      <calledFunction xsi:type="astm:IdentifierReference">
-        <name nameString="Pt"/>
-      </calledFunction>
-    </expression>
-  </astm:ExpressionStatement>
   <astm:IntegerLiteral value="0"/>
+  <astm:IntegerLiteral value="3"/>
+  <astm:IntegerLiteral value="0"/>
+  <astm:IntegerLiteral value="1"/>
+  <astm:IntegerLiteral value="2"/>
   <astm:IntegerLiteral value="3"/>
   <astm:Project>
     <files xsi:type="astm:DelphiUnit" language="Delphi">
@@ -69,7 +34,7 @@
               <subStatements xsi:type="astm:ExpressionStatement">
                 <expression xsi:type="astm:BinaryExpression">
                   <operator xsi:type="astm:Assign"/>
-                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.0/@body.0/@declarations.1">
+                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.0">
                     <name nameString="Size"/>
                   </leftOperand>
                   <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
@@ -98,7 +63,7 @@
               </subStatements>
               <subStatements xsi:type="astm:IfStatement">
                 <condition xsi:type="astm:BinaryExpression">
-                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.0/@body.0/@declarations.1">
+                  <leftOperand xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.0">
                     <name nameString="Size"/>
                   </leftOperand>
                   <rightOperand xsi:type="astm:IntegerLiteral" value="0"/>
@@ -110,75 +75,191 @@
                         <name nameString="GetMem"/>
                       </calledFunction>
                       <actualParams xsi:type="astm:ActualParameterExpression">
-                        <value xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.0/@body.0/@declarations.1">
-                          <name nameString="Size"/>
-                        </value>
-                      </actualParams>
-                      <actualParams xsi:type="astm:ActualParameterExpression">
-                        <value xsi:type="astm:IdentifierReference" refersTo="/4/@files.0/@implementation/@fragments.0/@body.0/@declarations.0">
+                        <value xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.1">
                           <name nameString="Pt"/>
                         </value>
                       </actualParams>
+                      <actualParams xsi:type="astm:ActualParameterExpression">
+                        <value xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.0">
+                          <name nameString="Size"/>
+                        </value>
+                      </actualParams>
                     </expression>
                   </subStatements>
-                  <subStatements xsi:type="astm:TryStatement"/>
-                  <subStatements xsi:type="astm:ExpressionStatement">
-                    <expression xsi:type="astm:FunctionCallExpression">
-                      <calledFunction xsi:type="astm:IdentifierReference">
-                        <name nameString="Desea"/>
-                      </calledFunction>
-                    </expression>
+                  <subStatements xsi:type="astm:TryStatement">
+                    <guardedStatement xsi:type="astm:BlockStatement">
+                      <subStatements xsi:type="astm:ExpressionStatement">
+                        <expression xsi:type="astm:FunctionCallExpression">
+                          <calledFunction xsi:type="astm:IdentifierReference">
+                            <name nameString="GetFileVersionInfo"/>
+                          </calledFunction>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:DelphiFunctionCallExpression">
+                              <calledFunction xsi:type="astm:IdentifierReference">
+                                <name nameString="PChar"/>
+                              </calledFunction>
+                              <actualParams xsi:type="astm:ActualParameterExpression">
+                                <value xsi:type="astm:IdentifierReference">
+                                  <name nameString="Rut"/>
+                                </value>
+                              </actualParams>
+                            </value>
+                          </actualParams>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:IntegerLiteral" value="0"/>
+                          </actualParams>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.0">
+                              <name nameString="Size"/>
+                            </value>
+                          </actualParams>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.1">
+                              <name nameString="Pt"/>
+                            </value>
+                          </actualParams>
+                        </expression>
+                      </subStatements>
+                      <subStatements xsi:type="astm:ExpressionStatement">
+                        <expression xsi:type="astm:FunctionCallExpression">
+                          <calledFunction xsi:type="astm:IdentifierReference">
+                            <name nameString="VerQueryValue"/>
+                          </calledFunction>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.1">
+                              <name nameString="Pt"/>
+                            </value>
+                          </actualParams>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:StringLiteral" value="'\'"/>
+                          </actualParams>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:IdentifierReference">
+                              <name nameString="Pt2"/>
+                            </value>
+                          </actualParams>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:IdentifierReference">
+                              <name nameString="Size2"/>
+                            </value>
+                          </actualParams>
+                        </expression>
+                      </subStatements>
+                      <subStatements xsi:type="astm:DelphiWithStatement"/>
+                      <subStatements xsi:type="astm:ExpressionStatement">
+                        <expression xsi:type="astm:FunctionCallExpression">
+                          <calledFunction xsi:type="astm:IdentifierReference">
+                            <name nameString="Pt2"/>
+                          </calledFunction>
+                        </expression>
+                      </subStatements>
+                    </guardedStatement>
                   </subStatements>
-                  <subStatements xsi:type="astm:ExpressionStatement">
-                    <expression xsi:type="astm:FunctionCallExpression">
-                      <calledFunction xsi:type="astm:IdentifierReference">
-                        <name nameString="buscar"/>
-                      </calledFunction>
-                    </expression>
-                  </subStatements>
-                  <subStatements xsi:type="astm:ExpressionStatement">
-                    <expression xsi:type="astm:FunctionCallExpression">
-                      <calledFunction xsi:type="astm:IdentifierReference">
-                        <name nameString="actualizaciones"/>
-                      </calledFunction>
-                    </expression>
-                  </subStatements>
-                  <subStatements xsi:type="astm:ExpressionStatement">
-                    <expression xsi:type="astm:FunctionCallExpression">
-                      <calledFunction xsi:type="astm:IdentifierReference">
-                        <name nameString="para"/>
-                      </calledFunction>
-                    </expression>
-                  </subStatements>
-                  <subStatements xsi:type="astm:ExpressionStatement">
-                    <expression xsi:type="astm:FunctionCallExpression">
-                      <calledFunction xsi:type="astm:IdentifierReference">
-                        <name nameString="el"/>
-                      </calledFunction>
-                    </expression>
-                  </subStatements>
-                  <subStatements xsi:type="astm:ExpressionStatement">
-                    <expression xsi:type="astm:FunctionCallExpression">
-                      <calledFunction xsi:type="astm:IdentifierReference">
-                        <name nameString="programa"/>
-                      </calledFunction>
-                    </expression>
+                  <subStatements xsi:type="astm:BlockStatement">
+                    <subStatements xsi:type="astm:ExpressionStatement">
+                      <expression xsi:type="astm:BinaryExpression">
+                        <operator xsi:type="astm:Assign"/>
+                        <leftOperand xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.2">
+                          <name nameString="vers"/>
+                        </leftOperand>
+                        <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+                          <calledFunction xsi:type="astm:IdentifierReference">
+                            <name nameString="HiWord"/>
+                          </calledFunction>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:IdentifierReference">
+                              <name nameString="dwFileVersionMS"/>
+                            </value>
+                          </actualParams>
+                        </rightOperand>
+                      </expression>
+                    </subStatements>
+                    <subStatements xsi:type="astm:ExpressionStatement">
+                      <expression xsi:type="astm:BinaryExpression">
+                        <operator xsi:type="astm:Assign"/>
+                        <leftOperand xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.2">
+                          <name nameString="vers"/>
+                        </leftOperand>
+                        <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+                          <calledFunction xsi:type="astm:IdentifierReference">
+                            <name nameString="LoWord"/>
+                          </calledFunction>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:IdentifierReference">
+                              <name nameString="dwFileVersionMS"/>
+                            </value>
+                          </actualParams>
+                        </rightOperand>
+                      </expression>
+                    </subStatements>
+                    <subStatements xsi:type="astm:ExpressionStatement">
+                      <expression xsi:type="astm:BinaryExpression">
+                        <operator xsi:type="astm:Assign"/>
+                        <leftOperand xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.2">
+                          <name nameString="vers"/>
+                        </leftOperand>
+                        <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+                          <calledFunction xsi:type="astm:IdentifierReference">
+                            <name nameString="HiWord"/>
+                          </calledFunction>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:IdentifierReference">
+                              <name nameString="dwFileVersionLS"/>
+                            </value>
+                          </actualParams>
+                        </rightOperand>
+                      </expression>
+                    </subStatements>
+                    <subStatements xsi:type="astm:ExpressionStatement">
+                      <expression xsi:type="astm:BinaryExpression">
+                        <operator xsi:type="astm:Assign"/>
+                        <leftOperand xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.2">
+                          <name nameString="vers"/>
+                        </leftOperand>
+                        <rightOperand xsi:type="astm:DelphiFunctionCallExpression">
+                          <calledFunction xsi:type="astm:IdentifierReference">
+                            <name nameString="LoWord"/>
+                          </calledFunction>
+                          <actualParams xsi:type="astm:ActualParameterExpression">
+                            <value xsi:type="astm:IdentifierReference">
+                              <name nameString="dwFileVersionLS"/>
+                            </value>
+                          </actualParams>
+                        </rightOperand>
+                      </expression>
+                    </subStatements>
                   </subStatements>
                 </thenBody>
               </subStatements>
               <subStatements xsi:type="astm:ExpressionStatement">
                 <expression xsi:type="astm:FunctionCallExpression">
                   <calledFunction xsi:type="astm:IdentifierReference">
-                    <name nameString="Actualizador"/>
+                    <name nameString="FreeMem"/>
                   </calledFunction>
+                  <actualParams xsi:type="astm:ActualParameterExpression">
+                    <value xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.1">
+                      <name nameString="Pt"/>
+                    </value>
+                  </actualParams>
+                </expression>
+              </subStatements>
+              <subStatements xsi:type="astm:ExpressionStatement">
+                <expression xsi:type="astm:BinaryExpression">
+                  <operator xsi:type="astm:Assign"/>
+                  <leftOperand xsi:type="astm:IdentifierReference">
+                    <name nameString="result"/>
+                  </leftOperand>
+                  <rightOperand xsi:type="astm:IdentifierReference" refersTo="/6/@files.0/@implementation/@fragments.0/@body.0/@declarations.2">
+                    <name nameString="vers"/>
+                  </rightOperand>
                 </expression>
               </subStatements>
             </subStatements>
             <declarations xsi:type="astm:VariableDefinition" isMutable="true">
-              <identifierName nameString="Pt"/>
+              <identifierName nameString="Size"/>
             </declarations>
             <declarations xsi:type="astm:VariableDefinition" isMutable="true">
-              <identifierName nameString="Size"/>
+              <identifierName nameString="Pt"/>
             </declarations>
             <declarations xsi:type="astm:VariableDefinition" isMutable="true">
               <identifierName nameString="vers"/>

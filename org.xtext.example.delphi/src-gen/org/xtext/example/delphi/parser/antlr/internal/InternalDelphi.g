@@ -10627,9 +10627,9 @@ RULE_ID : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'$'|'#'|RULE_S
 
 fragment RULE_DOUBLEQUOTE : '"';
 
-RULE_DQVALUE : RULE_DOUBLEQUOTE ('\\' .|~(('\\'|RULE_DOUBLEQUOTE)))* RULE_DOUBLEQUOTE;
+RULE_DQVALUE : RULE_DOUBLEQUOTE ~(RULE_DOUBLEQUOTE)* RULE_DOUBLEQUOTE;
 
-RULE_QVALUE : RULE_QUOTE ('\\' .|~(('\\'|RULE_QUOTE)))* RULE_QUOTE;
+RULE_QVALUE : RULE_QUOTE ~(RULE_QUOTE)* RULE_QUOTE;
 
 RULE_HEX : ('+'|'-')? '0' ('x'|'X') ('0'..'9'|'a'..'f'|'A'..'F')+;
 
