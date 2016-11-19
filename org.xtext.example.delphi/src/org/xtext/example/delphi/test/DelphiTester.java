@@ -23,7 +23,7 @@ import org.xtext.example.delphi.delphi.DelphiPackage;
 
 public class DelphiTester {
 	
-	private static final String[] MODEL_NAMES = new String[]{"untClArchivo.delphi", "untClAux.delphi", "untClFormatos.delphi"};
+	private static final String[] MODEL_NAMES = new String[]{"untClFormatos.delphi", "untClAux.delphi", "untClArchivo.delphi", "untClArchivoMod.delphi","untClArchivoMod2.delphi","untClArchivoMod3.delphi"};
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -37,11 +37,11 @@ public class DelphiTester {
 		CompleteOCLStandaloneSetup.doSetup();
 		DelphiStandaloneSetup.doSetup();
 		
-//		// warmup with model 2
-//		System.out.println("* Running Warmup *");
-//		for (int i=0; i < 3000 ; i++) {
-//			execute_CG(baseURI, "test.delphi");
-//		}
+		// warmup with model 2
+		System.out.println("* Running Warmup *");
+		for (int i=0; i < 3000 ; i++) {
+			execute_CG(baseURI, "untClFormatos.delphi");
+		}
 		
 		printMemory();
         
