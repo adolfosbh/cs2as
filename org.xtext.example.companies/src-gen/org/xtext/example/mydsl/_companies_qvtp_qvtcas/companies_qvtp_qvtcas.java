@@ -313,29 +313,6 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	protected final @NonNull CACHE_OclElement_parentEnv_Employee INSTANCE_OclElement_parentEnv_Employee = new CACHE_OclElement_parentEnv_Employee();
 
 	/**
-	 * ocl::OclElement::_unqualified_env_Employee(child : OclElement[?]) : lookup::LookupEnvironment[1]
-	 *
-	 * parentEnv_Employee()
-	 */
-	public class CACHE_OclElement__unqualified_env_Employee extends AbstractEvaluationOperation
-	{
-		@Override
-		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Object self_2 = (/*@NonInvalid*/ @NonNull Object)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @Nullable Object child = (/*@NonInvalid*/ @Nullable Object)sourceAndArgumentValues[1];
-			final /*@Thrown*/ @NonNull LookupEnvironment parentEnv_Employee = INSTANCE_OclElement_parentEnv_Employee.evaluate(self_2);
-			return parentEnv_Employee;
-		}
-
-		@SuppressWarnings("null")
-		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_2, final /*@NonInvalid*/ @Nullable Object child) {
-			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_2, child});
-		}
-	}
-
-	protected final @NonNull CACHE_OclElement__unqualified_env_Employee INST_OclElement__unqualified_env_Employee = new CACHE_OclElement__unqualified_env_Employee();
-
-	/**
 	 * company::Department::getEmployees() : Set(company::Employee)
 	 *
 	 *
@@ -400,16 +377,16 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	{
 		@Override
 		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
-			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Company self_4 = (/*@NonInvalid*/ @NonNull Company)sourceAndArgumentValues[0];
-			final /*@NonInvalid*/ @Nullable Object child_0 = (/*@NonInvalid*/ @Nullable Object)sourceAndArgumentValues[1];
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Company self_2 = (/*@NonInvalid*/ @NonNull Company)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @Nullable Object child = (/*@NonInvalid*/ @Nullable Object)sourceAndArgumentValues[1];
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @NonNull LookupEnvironment self_6 = INSTANCE_OclElement_parentEnv_Employee.evaluate(self_4);
+			final /*@Thrown*/ @NonNull LookupEnvironment self_6 = INSTANCE_OclElement_parentEnv_Employee.evaluate(self_2);
 			final /*@NonInvalid*/ @NonNull Property CTORid_parentEnv = idResolver.getProperty(PROPid_parentEnv);
 			final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_lookup_c_c_LookupEnvironment_0 = idResolver.getClass(CLSSid_LookupEnvironment, null);
 			final /*@Thrown*/ @NonNull LookupEnvironment symbol_0 = (LookupEnvironment)TYP_lookup_c_c_LookupEnvironment_0.createInstance();
 			CTORid_parentEnv.initValue(symbol_0, self_6);
 			@SuppressWarnings("null")
-			final /*@Thrown*/ @NonNull List<Department> depts = self_4.getDepts();
+			final /*@Thrown*/ @NonNull List<Department> depts = self_2.getDepts();
 			final /*@Thrown*/ @NonNull SetValue BOXED_depts = idResolver.createSetOfAll(SET_CLSSid_Department, depts);
 			/*@Thrown*/ BagValue.@NonNull Accumulator accumulator = ValueUtil.createBagAccumulatorValue(BAG_CLSSid_Employee);
 			@NonNull Iterator<Object> ITERATOR__1 = BOXED_depts.iterator();
@@ -437,12 +414,35 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return addElements;
 		}
 
-		public LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Company self_4, final /*@NonInvalid*/ @Nullable Object child_0) {
-			return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_4, child_0});
+		public LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Company self_2, final /*@NonInvalid*/ @Nullable Object child) {
+			return (LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_2, child});
 		}
 	}
 
 	protected final @NonNull CACHE_Company__unqualified_env_Employee INST_Company__unqualified_env_Employee = new CACHE_Company__unqualified_env_Employee();
+
+	/**
+	 * ocl::OclElement::_unqualified_env_Employee(child : OclElement[?]) : lookup::LookupEnvironment[1]
+	 *
+	 * parentEnv_Employee()
+	 */
+	public class CACHE_OclElement__unqualified_env_Employee extends AbstractEvaluationOperation
+	{
+		@Override
+		public @Nullable Object basicEvaluate(@NonNull Executor executor, @NonNull TypedElement caller, @Nullable Object @NonNull [] sourceAndArgumentValues) {
+			@SuppressWarnings("null") final /*@NonInvalid*/ @NonNull Object self_4 = (/*@NonInvalid*/ @NonNull Object)sourceAndArgumentValues[0];
+			final /*@NonInvalid*/ @Nullable Object child_0 = (/*@NonInvalid*/ @Nullable Object)sourceAndArgumentValues[1];
+			final /*@Thrown*/ @NonNull LookupEnvironment parentEnv_Employee = INSTANCE_OclElement_parentEnv_Employee.evaluate(self_4);
+			return parentEnv_Employee;
+		}
+
+		@SuppressWarnings("null")
+		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_4, final /*@NonInvalid*/ @Nullable Object child_0) {
+			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_4, child_0});
+		}
+	}
+
+	protected final @NonNull CACHE_OclElement__unqualified_env_Employee INST_OclElement__unqualified_env_Employee = new CACHE_OclElement__unqualified_env_Employee();
 
 	/**
 	 * ocl::OclElement::env_Employee() : lookup::LookupEnvironment[1]
@@ -469,13 +469,13 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	protected class VCACHE_OclElement__unqualified_env_Employee extends AbstractDispatchOperation
 	{
 		private VCACHE_OclElement__unqualified_env_Employee() {
-			install(Object.class, INST_OclElement__unqualified_env_Employee);
 			install(Company.class, INST_Company__unqualified_env_Employee);
+			install(Object.class, INST_OclElement__unqualified_env_Employee);
 		}
 
 		@SuppressWarnings("null")
-		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_2, final /*@NonInvalid*/ @Nullable Object child) {
-			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_2, child});
+		public @NonNull LookupEnvironment evaluate(final /*@NonInvalid*/ @NonNull Object self_4, final /*@NonInvalid*/ @Nullable Object child_0) {
+			return (@NonNull LookupEnvironment)evaluationCache.getCachedEvaluationResult(this, caller, new @Nullable Object[]{self_4, child_0});
 		}
 	}
 

@@ -12,7 +12,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.ccompany_2_Company" name="ccompany_2_Company">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.ccompany_2_Company.leftCS.guard.lCompany" name="lCompany" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.ccompany_2_Company.leftCS.guard.lCompany" name="lCompany"
+                type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -33,7 +34,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.cdepartment_2_Department" name="cdepartment_2_Department">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.cdepartment_2_Department.leftCS.guard.lDepartment" name="lDepartment" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.cdepartment_2_Department.leftCS.guard.lDepartment"
+                name="lDepartment" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -55,7 +57,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.cemployee_2_Employee" name="cemployee_2_Employee">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.cemployee_2_Employee.leftCS.guard.lEmployee" name="lEmployee" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.cemployee_2_Employee.leftCS.guard.lEmployee" name="lEmployee"
+                type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -76,7 +79,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.ucompany_2_Company_name" name="ucompany_2_Company_name">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.ucompany_2_Company_name.leftCS.guard.lCompany" name="lCompany" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.ucompany_2_Company_name.leftCS.guard.lCompany" name="lCompany"
+                type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -105,7 +109,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.ucompany_2_Company_depts" name="ucompany_2_Company_depts">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.ucompany_2_Company_depts.leftCS.guard.lCompany" name="lCompany" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.ucompany_2_Company_depts.leftCS.guard.lCompany"
+                name="lCompany" type="pivot:Class generated/Companies.ecore.oclas#T.companies.company"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -130,7 +135,8 @@
                 <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                     referredType="pivot:Class Company.ecore.oclas#T.company.Department"/>
               </ownedBody>
-              <ownedIterators name="1_" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
+              <ownedIterators xsi:type="pivot:IteratorVariable" name="1_" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                  isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
             </value>
             <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Company" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
@@ -145,7 +151,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.udepartment_2_Department_name" name="udepartment_2_Department_name">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_name.leftCS.guard.lDepartment" name="lDepartment" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_name.leftCS.guard.lDepartment"
+                name="lDepartment" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -174,8 +181,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.udepartment_2_Department_subdepts" name="udepartment_2_Department_subdepts">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_subdepts.leftCS.guard.lDepartment" name="lDepartment"
-                type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_subdepts.leftCS.guard.lDepartment"
+                name="lDepartment" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -200,7 +207,8 @@
                 <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                     referredType="pivot:Class Company.ecore.oclas#T.company.Department"/>
               </ownedBody>
-              <ownedIterators name="1_" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department" isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
+              <ownedIterators xsi:type="pivot:IteratorVariable" name="1_" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"
+                  isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
             </value>
             <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
@@ -215,8 +223,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.udepartment_2_Department_manager" name="udepartment_2_Department_manager">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.leftCS.guard.lDepartment" name="lDepartment"
-                type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_manager.leftCS.guard.lDepartment"
+                name="lDepartment" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -254,8 +262,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.udepartment_2_Department_employees" name="udepartment_2_Department_employees">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees.leftCS.guard.lDepartment" name="lDepartment"
-                type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.udepartment_2_Department_employees.leftCS.guard.lDepartment"
+                name="lDepartment" type="pivot:Class generated/Companies.ecore.oclas#T.companies.department"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -283,7 +291,8 @@
                 <ownedArguments xsi:type="pivot:TypeExp" type="pivot:Class http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.Class"
                     referredType="pivot:Class Company.ecore.oclas#T.company.Employee"/>
               </ownedBody>
-              <ownedIterators name="1_" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee" isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
+              <ownedIterators xsi:type="pivot:IteratorVariable" name="1_" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"
+                  isImplicit="true" representedParameter="http://www.eclipse.org/ocl/2015/Library.oclas#i0i.ocl.OrderedSet.collect..T"/>
             </value>
             <slotExpression xsi:type="pivot:OperationCallExp" type="pivot:Class Company.ecore.oclas#T.company.Department" referredOperation="http://www.eclipse.org/ocl/2015/Library.oclas#o.ocl.OclAny.oclAsType..TT">
               <ownedSource xsi:type="pivot:PropertyCallExp" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#T.ecore.EObject"
@@ -298,7 +307,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.uemployee_2_Employee_name" name="uemployee_2_Employee_name">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_name.leftCS.guard.lEmployee" name="lEmployee" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_name.leftCS.guard.lEmployee"
+                name="lEmployee" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -327,7 +337,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.uemployee_2_Employee_address" name="uemployee_2_Employee_address">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_address.leftCS.guard.lEmployee" name="lEmployee" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_address.leftCS.guard.lEmployee"
+                name="lEmployee" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -356,7 +367,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.uemployee_2_Employee_salary" name="uemployee_2_Employee_salary">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_salary.leftCS.guard.lEmployee" name="lEmployee" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_salary.leftCS.guard.lEmployee"
+                name="lEmployee" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
@@ -385,7 +397,8 @@
       <rule xsi:type="qvtc:Mapping" xmi:id="m..companies_qvtp_qvtcas.uemployee_2_Employee_mentor" name="uemployee_2_Employee_mentor">
         <domain xsi:type="qvtc:CoreDomain" isCheckable="true" typedModel="#qT..companies_qvtp_qvtcas.leftCS">
           <guardPattern>
-            <variable xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee" name="lEmployee" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
+            <variable xsi:type="qvtc:GuardVariable" xmi:id="qV..companies_qvtp_qvtcas.uemployee_2_Employee_mentor.leftCS.guard.lEmployee"
+                name="lEmployee" type="pivot:Class generated/Companies.ecore.oclas#T.companies.employee"/>
           </guardPattern>
           <bottomPattern/>
         </domain>
