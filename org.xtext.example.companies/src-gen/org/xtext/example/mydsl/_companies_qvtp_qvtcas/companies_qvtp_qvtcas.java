@@ -27,7 +27,6 @@ import org.eclipse.ocl.pivot.ids.NsURIPackageId;
 import org.eclipse.ocl.pivot.ids.PropertyId;
 import org.eclipse.ocl.pivot.ids.RootPackageId;
 import org.eclipse.ocl.pivot.ids.TypeId;
-import org.eclipse.ocl.pivot.internal.library.UnboxedCompositionProperty;
 import org.eclipse.ocl.pivot.internal.library.executor.AbstractDispatchOperation;
 import org.eclipse.ocl.pivot.internal.library.executor.AbstractEvaluationOperation;
 import org.eclipse.ocl.pivot.library.classifier.ClassifierOclContainerOperation;
@@ -106,7 +105,6 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_Employee = TypeId.ORDERED_SET.getSpecializedId(CLSSid_Employee);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_department = TypeId.ORDERED_SET.getSpecializedId(CLSSid_department);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId ORD_CLSSid_employee = TypeId.ORDERED_SET.getSpecializedId(CLSSid_employee);
-	public static final /*@NonInvalid*/ @NonNull PropertyId PROPid_department_manager = CLSSid_employee.getPropertyId("department_manager");
 	public static final /*@NonInvalid*/ @NonNull PropertyId PROPid_parentEnv = CLSSid_LookupEnvironment.getPropertyId("parentEnv");
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId SEQ_CLSSid_Department = TypeId.SEQUENCE.getSpecializedId(CLSSid_Department);
 	public static final /*@NonInvalid*/ @NonNull CollectionTypeId SEQ_CLSSid_Employee = TypeId.SEQUENCE.getSpecializedId(CLSSid_Employee);
@@ -491,7 +489,7 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   ;
 	 * ::ji_department : companies::department[1]var _'\u00ABemployee\u00BB' : Set(companies::employee) := leftCS.objectsOfKind(companies::employee)
 	 *   ;
-	 * ::ji_employee : companies::employee[1]::ji_employee_1 : companies::employee[1]install m_Company_company {
+	 * ::ji_employee : companies::employee[1]install m_Company_company {
 	 * lCompany consumes ::ji_company : companies::company[1];
 	 * }
 	 *   install m_Department_department {
@@ -503,24 +501,14 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *   install m_company_ast_deparment {
 	 * lCompany consumes ::ji_company : companies::company[1];
 	 * }
-	 *   install m_company_ast_name {
-	 * lCompany consumes ::ji_company : companies::company[1];
-	 * }
 	 *   install m_department_ast_department__employees {
 	 * lDepartment consumes ::ji_department : companies::department[1];
 	 * }
 	 *   install m_department_ast_department__manager {
 	 * lDepartment consumes ::ji_department : companies::department[1];
-	 * lEmployee consumes ::ji_employee_1 : companies::employee[1];
-	 * }
-	 *   install m_department_ast_name {
-	 * lDepartment consumes ::ji_department : companies::department[1];
 	 * }
 	 *   install m_department_ast_deparment {
 	 * lDepartment consumes ::ji_department : companies::department[1];
-	 * }
-	 *   install m_employee_ast_name_salary {
-	 * lEmployee consumes ::ji_employee : companies::employee[1];
 	 * }
 	 *   install m_employee_ast_mentor {
 	 * lEmployee consumes ::ji_employee : companies::employee[1];
@@ -548,66 +536,30 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 			for (@NonNull employee iterator_1 : ValueUtil.typedIterable(employee.class, objectsOfKind_1)) {
 				ji_employee.append(iterator_1);
 			}
-			final @NonNull Connection ji_employee_1 = createConnection("ji_employee_1", CLSSid_employee, false);
-			/*@Thrown*/ SetValue.@NonNull Accumulator accumulator = ValueUtil.createSetAccumulatorValue(SET_CLSSid_employee);
-			@NonNull Iterator<Object> ITERATOR_i = objectsOfKind_1.iterator();
-			/*@Thrown*/ @NonNull SetValue select;
-			while (true) {
-				if (!ITERATOR_i.hasNext()) {
-					select = accumulator;
-					break;
-				}
-				@SuppressWarnings("null")
-				/*@NonInvalid*/ @NonNull employee i = (employee)ITERATOR_i.next();
-				/**
-				 * i.department_manager <> null
-				 */
-				final /*@NonInvalid*/ @NonNull UnboxedCompositionProperty IMPPROPid_department_manager = new UnboxedCompositionProperty("employee");
-				final /*@Thrown*/ @Nullable department_manager department_manager = (department_manager)IMPPROPid_department_manager.evaluate(executor, CLSSid_department_manager, i);
-				final /*@Thrown*/ boolean symbol_12 = department_manager != null;
-				//
-				if (symbol_12 == ValueUtil.TRUE_VALUE) {
-					accumulator.add(i);
-				}
-			}
-			for (@NonNull employee iterator_2 : ValueUtil.typedIterable(employee.class, select)) {
-				ji_employee_1.append(iterator_2);
-			}
 			// mapping statements
+			for (@NonNull company lCompany_1 : ji_company.typedIterable(company.class)) {
+				MAP_m_Company_company(lCompany_1);
+			}
+			for (@NonNull department lDepartment_3 : ji_department.typedIterable(department.class)) {
+				MAP_m_Department_department(lDepartment_3);
+			}
+			for (@NonNull employee lEmployee_1 : ji_employee.typedIterable(employee.class)) {
+				MAP_m_Employee_employee(lEmployee_1);
+			}
 			for (@NonNull company lCompany_2 : ji_company.typedIterable(company.class)) {
-				MAP_m_Company_company(lCompany_2);
+				MAP_m_company_ast_deparment(lCompany_2);
 			}
 			for (@NonNull department lDepartment_4 : ji_department.typedIterable(department.class)) {
-				MAP_m_Department_department(lDepartment_4);
-			}
-			for (@NonNull employee lEmployee_3 : ji_employee.typedIterable(employee.class)) {
-				MAP_m_Employee_employee(lEmployee_3);
-			}
-			for (@NonNull company lCompany_3 : ji_company.typedIterable(company.class)) {
-				MAP_m_company_ast_deparment(lCompany_3);
-			}
-			for (@NonNull company lCompany_4 : ji_company.typedIterable(company.class)) {
-				MAP_m_company_ast_name(lCompany_4);
+				MAP_m_department_ast_department__employees(lDepartment_4);
 			}
 			for (@NonNull department lDepartment_5 : ji_department.typedIterable(department.class)) {
-				MAP_m_department_ast_department__employees(lDepartment_5);
+				MAP_m_department_ast_department__manager(lDepartment_5);
 			}
 			for (@NonNull department lDepartment_6 : ji_department.typedIterable(department.class)) {
-				for (@NonNull employee lEmployee_4 : ji_employee_1.typedIterable(employee.class)) {
-					MAP_m_department_ast_department__manager(lDepartment_6, lEmployee_4);
-				}
+				MAP_m_department_ast_deparment(lDepartment_6);
 			}
-			for (@NonNull department lDepartment_7 : ji_department.typedIterable(department.class)) {
-				MAP_m_department_ast_name(lDepartment_7);
-			}
-			for (@NonNull department lDepartment_8 : ji_department.typedIterable(department.class)) {
-				MAP_m_department_ast_deparment(lDepartment_8);
-			}
-			for (@NonNull employee lEmployee_5 : ji_employee.typedIterable(employee.class)) {
-				MAP_m_employee_ast_name_salary(lEmployee_5);
-			}
-			for (@NonNull employee lEmployee_6 : ji_employee.typedIterable(employee.class)) {
-				MAP_m_employee_ast_mentor(lEmployee_6);
+			for (@NonNull employee lEmployee_2 : ji_employee.typedIterable(employee.class)) {
+				MAP_m_employee_ast_mentor(lEmployee_2);
 			}
 			final /*@Thrown*/ @Nullable Boolean __root__ = ValueUtil.TRUE_VALUE;
 			return __root__;
@@ -620,18 +572,25 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *
 	 * map m_Company_company in companies_qvtp_qvtcas {
 	 * guard:leftCS lCompany  : companies::company[1];
+	 * var name : String[?] := lCompany.name;
 	 * new:rightAS rCompany : company::Company[1];
 	 * set lCompany.ast := rCompany;
+	 * set rCompany.name := name;
 	 *
 	 */
 	protected boolean MAP_m_Company_company(final /*@NonInvalid*/ @NonNull company lCompany)  {
 		try {
+			final /*@Thrown*/ @Nullable String name = lCompany.getName();
 			// creations
 			final /*@Thrown*/ @Nullable Company rCompany = CompanyFactory.eINSTANCE.createCompany();
 			assert rCompany != null;
 			models[1/*rightAS*/].add(rCompany);
 			// mapping statements
 			lCompany.setAst(rCompany);
+			if (name == null) {
+				throw throwNull(lCompany, "Null value for company::Company::name assignment");
+			}
+			rCompany.setName(name);
 			final /*@Thrown*/ @Nullable Boolean m_Company_company = ValueUtil.TRUE_VALUE;
 			return m_Company_company;
 		} catch (Throwable e) {
@@ -643,18 +602,25 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *
 	 * map m_Department_department in companies_qvtp_qvtcas {
 	 * guard:leftCS lDepartment  : companies::department[1];
+	 * var name : String[?] := lDepartment.name;
 	 * new:rightAS rDepartment : company::Department[1];
 	 * set lDepartment.ast := rDepartment;
+	 * set rDepartment.name := name;
 	 *
 	 */
 	protected boolean MAP_m_Department_department(final /*@NonInvalid*/ @NonNull department lDepartment)  {
 		try {
+			final /*@Thrown*/ @Nullable String name = lDepartment.getName();
 			// creations
 			final /*@Thrown*/ @Nullable Department rDepartment = CompanyFactory.eINSTANCE.createDepartment();
 			assert rDepartment != null;
 			models[1/*rightAS*/].add(rDepartment);
 			// mapping statements
 			lDepartment.setAst(rDepartment);
+			if (name == null) {
+				throw throwNull(lDepartment, "Null value for company::Department::name assignment");
+			}
+			rDepartment.setName(name);
 			final /*@Thrown*/ @Nullable Boolean m_Department_department = ValueUtil.TRUE_VALUE;
 			return m_Department_department;
 		} catch (Throwable e) {
@@ -666,18 +632,36 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 *
 	 * map m_Employee_employee in companies_qvtp_qvtcas {
 	 * guard:leftCS lEmployee  : companies::employee[1];
+	 * var address : String[?] := lEmployee.address;
+	 * var name : String[?] := lEmployee.name;
+	 * var salary : ecore::EDouble[?] := lEmployee.salary;
 	 * new:rightAS rEmployee : company::Employee[1];
 	 * set lEmployee.ast := rEmployee;
+	 * set rEmployee.address := address;
+	 * set rEmployee.name := name;
+	 * set rEmployee.salary := salary;
 	 *
 	 */
 	protected boolean MAP_m_Employee_employee(final /*@NonInvalid*/ @NonNull employee lEmployee)  {
 		try {
+			final /*@Thrown*/ @Nullable String address = lEmployee.getAddress();
+			final /*@Thrown*/ @Nullable String name = lEmployee.getName();
+			final /*@Thrown*/ double salary = lEmployee.getSalary();
 			// creations
 			final /*@Thrown*/ @Nullable Employee rEmployee = CompanyFactory.eINSTANCE.createEmployee();
 			assert rEmployee != null;
 			models[1/*rightAS*/].add(rEmployee);
 			// mapping statements
 			lEmployee.setAst(rEmployee);
+			if (address == null) {
+				throw throwNull(lEmployee, "Null value for company::Employee::address assignment");
+			}
+			rEmployee.setAddress(address);
+			if (name == null) {
+				throw throwNull(lEmployee, "Null value for company::Employee::name assignment");
+			}
+			rEmployee.setName(name);
+			rEmployee.setSalary(salary);
 			final /*@Thrown*/ @Nullable Boolean m_Employee_employee = ValueUtil.TRUE_VALUE;
 			return m_Employee_employee;
 		} catch (Throwable e) {
@@ -745,47 +729,6 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 			return raw_ast;
 		} catch (Throwable e) {
 			return handleExecutionFailure("MAP_m_company_ast_deparment", e);
-		}
-	}
-
-	/**
-	 *
-	 * map m_company_ast_name in companies_qvtp_qvtcas {
-	 *
-	 *   guard:leftCS lCompany  : companies::company[1];
-	 * var ast : ecore::EObject[1] := lCompany.ast;
-	 * var name : String[?] := lCompany.name;
-	 * var aCompany : company::Company[1] := ast.oclAsType(company::Company);
-	 * set aCompany.name := name;
-	 *
-	 */
-	protected boolean MAP_m_company_ast_name(final /*@NonInvalid*/ @NonNull company lCompany_1)  {
-		try {
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable EObject ast = lCompany_1.getAst();
-			final /*@Thrown*/ boolean symbol_0 = ast != null;
-			/*@Thrown*/ @Nullable Boolean raw_ast;
-			if (symbol_0) {
-				if (ast == null) {
-					throw throwNull(lCompany_1, "Null where non-null value required");
-				}
-				final /*@Thrown*/ @Nullable String name = lCompany_1.getName();
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_company_c_c_Company_0 = idResolver.getClass(CLSSid_Company, null);
-				final /*@Thrown*/ @NonNull Company oclAsType = ClassUtil.nonNullState((Company)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_company_c_c_Company_0));
-				// mapping statements
-				if (name == null) {
-					throw throwNull(lCompany_1, "Null value for company::Company::name assignment");
-				}
-				oclAsType.setName(name);
-				final /*@Thrown*/ @Nullable Boolean m_company_ast_name = ValueUtil.TRUE_VALUE;
-				raw_ast = m_company_ast_name;
-			}
-			else {
-				raw_ast = ValueUtil.FALSE_VALUE;
-			}
-			return raw_ast;
-		} catch (Throwable e) {
-			return handleExecutionFailure("MAP_m_company_ast_name", e);
 		}
 	}
 
@@ -862,88 +805,50 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * map m_department_ast_department__manager in companies_qvtp_qvtcas {
 	 *
 	 *   guard:leftCS lDepartment  : companies::department[1];
-	 * guard:leftCS lEmployee  : companies::employee[1];
-	 * var ast : ecore::EObject[?] := lEmployee.ast;
-	 * var ast1 : ecore::EObject[1] := lDepartment.ast;
-	 * var aDepartment : company::Department[1] := ast1.oclAsType(company::Department)
+	 * var ast : ecore::EObject[1] := lDepartment.ast;
+	 * var department_manager1 : companies::department_manager[?] := lDepartment.department_manager;
+	 * var aDepartment : company::Department[1] := ast.oclAsType(company::Department)
 	 *   ;
-	 * var aEmployee : company::Employee[1] := ast.oclAsType(company::Employee);
-	 * set aEmployee.address := lEmployee.address;
+	 * var employee1 : companies::employee[?] := department_manager1.employee;
+	 * var ast1 : ecore::EObject[?] := employee1.ast;
+	 * var aEmployee : company::Employee[1] := ast1.oclAsType(company::Employee);
 	 * set aDepartment.manager := aEmployee;
 	 *
 	 */
-	protected boolean MAP_m_department_ast_department__manager(final /*@NonInvalid*/ @NonNull department lDepartment_1, final /*@NonInvalid*/ @NonNull employee lEmployee_0)  {
+	protected boolean MAP_m_department_ast_department__manager(final /*@NonInvalid*/ @NonNull department lDepartment_1)  {
 		try {
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable EObject ast = lEmployee_0.getAst();
-			final /*@Thrown*/ @Nullable EObject ast_0 = lDepartment_1.getAst();
-			final /*@Thrown*/ boolean symbol_0 = ast_0 != null;
-			/*@Thrown*/ @Nullable Boolean raw_ast1;
-			if (symbol_0) {
-				if (ast_0 == null) {
-					throw throwNull(lDepartment_1, "Null where non-null value required");
-				}
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_company_c_c_Department_0 = idResolver.getClass(CLSSid_Department, null);
-				final /*@Thrown*/ @NonNull Department oclAsType = ClassUtil.nonNullState((Department)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast_0, TYP_company_c_c_Department_0));
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_company_c_c_Employee_0 = idResolver.getClass(CLSSid_Employee, null);
-				final /*@Thrown*/ @NonNull Employee oclAsType_0 = ClassUtil.nonNullState((Employee)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_company_c_c_Employee_0));
-				// mapping statements
-				final /*@Thrown*/ @Nullable String address = lEmployee_0.getAddress();
-				if (address == null) {
-					throw throwNull(lDepartment_1, "Null value for company::Employee::address assignment");
-				}
-				oclAsType_0.setAddress(address);
-				oclAsType.setManager(oclAsType_0);
-				final /*@Thrown*/ @Nullable Boolean m_department_ast_department__manager = ValueUtil.TRUE_VALUE;
-				raw_ast1 = m_department_ast_department__manager;
-			}
-			else {
-				raw_ast1 = ValueUtil.FALSE_VALUE;
-			}
-			return raw_ast1;
-		} catch (Throwable e) {
-			return handleExecutionFailure("MAP_m_department_ast_department__manager", e);
-		}
-	}
-
-	/**
-	 *
-	 * map m_department_ast_name in companies_qvtp_qvtcas {
-	 *
-	 *   guard:leftCS lDepartment  : companies::department[1];
-	 * var ast : ecore::EObject[1] := lDepartment.ast;
-	 * var name : String[?] := lDepartment.name;
-	 * var aDepartment : company::Department[1] := ast.oclAsType(company::Department);
-	 * set aDepartment.name := name;
-	 *
-	 */
-	protected boolean MAP_m_department_ast_name(final /*@NonInvalid*/ @NonNull department lDepartment_2)  {
-		try {
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable EObject ast = lDepartment_2.getAst();
+			final /*@Thrown*/ @Nullable EObject ast = lDepartment_1.getAst();
 			final /*@Thrown*/ boolean symbol_0 = ast != null;
 			/*@Thrown*/ @Nullable Boolean raw_ast;
 			if (symbol_0) {
 				if (ast == null) {
-					throw throwNull(lDepartment_2, "Null where non-null value required");
+					throw throwNull(lDepartment_1, "Null where non-null value required");
 				}
-				final /*@Thrown*/ @Nullable String name = lDepartment_2.getName();
+				final /*@Thrown*/ @Nullable department_manager department_manager = lDepartment_1.getDepartment_manager();
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_company_c_c_Department_0 = idResolver.getClass(CLSSid_Department, null);
 				final /*@Thrown*/ @NonNull Department oclAsType = ClassUtil.nonNullState((Department)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_company_c_c_Department_0));
-				// mapping statements
-				if (name == null) {
-					throw throwNull(lDepartment_2, "Null value for company::Department::name assignment");
+				if (department_manager == null) {
+					throw throwNull(lDepartment_1, "Null source for \'\'http://www.xtext.org/example/mydsl/Companies\'::department_manager::employee\'");
 				}
-				oclAsType.setName(name);
-				final /*@Thrown*/ @Nullable Boolean m_department_ast_name = ValueUtil.TRUE_VALUE;
-				raw_ast = m_department_ast_name;
+				final /*@Thrown*/ @Nullable employee employee = department_manager.getEmployee();
+				if (employee == null) {
+					throw throwNull(lDepartment_1, "Null source for \'\'http://www.xtext.org/example/mydsl/Companies\'::traceable::ast\'");
+				}
+				final /*@Thrown*/ @Nullable EObject ast_0 = employee.getAst();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_company_c_c_Employee_0 = idResolver.getClass(CLSSid_Employee, null);
+				final /*@Thrown*/ @NonNull Employee oclAsType_0 = ClassUtil.nonNullState((Employee)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast_0, TYP_company_c_c_Employee_0));
+				// mapping statements
+				oclAsType.setManager(oclAsType_0);
+				final /*@Thrown*/ @Nullable Boolean m_department_ast_department__manager = ValueUtil.TRUE_VALUE;
+				raw_ast = m_department_ast_department__manager;
 			}
 			else {
 				raw_ast = ValueUtil.FALSE_VALUE;
 			}
 			return raw_ast;
 		} catch (Throwable e) {
-			return handleExecutionFailure("MAP_m_department_ast_name", e);
+			return handleExecutionFailure("MAP_m_department_ast_department__manager", e);
 		}
 	}
 
@@ -961,18 +866,18 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * set aDepartment.subdepts := _'\u00ABcollect\u00BB';
 	 *
 	 */
-	protected boolean MAP_m_department_ast_deparment(final /*@NonInvalid*/ @NonNull department lDepartment_3)  {
+	protected boolean MAP_m_department_ast_deparment(final /*@NonInvalid*/ @NonNull department lDepartment_2)  {
 		try {
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable EObject ast = lDepartment_3.getAst();
+			final /*@Thrown*/ @Nullable EObject ast = lDepartment_2.getAst();
 			final /*@Thrown*/ boolean symbol_0 = ast != null;
 			/*@Thrown*/ @Nullable Boolean raw_ast;
 			if (symbol_0) {
 				if (ast == null) {
-					throw throwNull(lDepartment_3, "Null where non-null value required");
+					throw throwNull(lDepartment_2, "Null where non-null value required");
 				}
 				@SuppressWarnings("null")
-				final /*@Thrown*/ @NonNull List<department> deparment = lDepartment_3.getDeparment();
+				final /*@Thrown*/ @NonNull List<department> deparment = lDepartment_2.getDeparment();
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_company_c_c_Department_0 = idResolver.getClass(CLSSid_Department, null);
 				final /*@Thrown*/ @NonNull Department oclAsType = ClassUtil.nonNullState((Department)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_company_c_c_Department_0));
 				final /*@Thrown*/ @NonNull OrderedSetValue BOXED_deparment = idResolver.createOrderedSetOfAll(ORD_CLSSid_department, deparment);
@@ -1011,49 +916,6 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 
 	/**
 	 *
-	 * map m_employee_ast_name_salary in companies_qvtp_qvtcas {
-	 *
-	 *   guard:leftCS lEmployee  : companies::employee[1];
-	 * var ast : ecore::EObject[1] := lEmployee.ast;
-	 * var aEmployee : company::Employee[1] := ast.oclAsType(company::Employee);
-	 * set aEmployee.name := lEmployee.name;
-	 * set aEmployee.salary := lEmployee.salary;
-	 *
-	 */
-	protected boolean MAP_m_employee_ast_name_salary(final /*@NonInvalid*/ @NonNull employee lEmployee_1)  {
-		try {
-			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable EObject ast = lEmployee_1.getAst();
-			final /*@Thrown*/ boolean symbol_0 = ast != null;
-			/*@Thrown*/ @Nullable Boolean raw_ast;
-			if (symbol_0) {
-				if (ast == null) {
-					throw throwNull(lEmployee_1, "Null where non-null value required");
-				}
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_company_c_c_Employee_0 = idResolver.getClass(CLSSid_Employee, null);
-				final /*@Thrown*/ @NonNull Employee oclAsType = ClassUtil.nonNullState((Employee)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_company_c_c_Employee_0));
-				// mapping statements
-				final /*@Thrown*/ @Nullable String name = lEmployee_1.getName();
-				if (name == null) {
-					throw throwNull(lEmployee_1, "Null value for company::Employee::name assignment");
-				}
-				oclAsType.setName(name);
-				final /*@Thrown*/ double salary = lEmployee_1.getSalary();
-				oclAsType.setSalary(salary);
-				final /*@Thrown*/ @Nullable Boolean m_employee_ast_name_salary = ValueUtil.TRUE_VALUE;
-				raw_ast = m_employee_ast_name_salary;
-			}
-			else {
-				raw_ast = ValueUtil.FALSE_VALUE;
-			}
-			return raw_ast;
-		} catch (Throwable e) {
-			return handleExecutionFailure("MAP_m_employee_ast_name_salary", e);
-		}
-	}
-
-	/**
-	 *
 	 * map m_employee_ast_mentor in companies_qvtp_qvtcas {
 	 *
 	 *   guard:leftCS lEmployee  : companies::employee[1];
@@ -1065,17 +927,17 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 	 * set aEmployee.mentor := lookupEmployee;
 	 *
 	 */
-	protected boolean MAP_m_employee_ast_mentor(final /*@NonInvalid*/ @NonNull employee lEmployee_2)  {
+	protected boolean MAP_m_employee_ast_mentor(final /*@NonInvalid*/ @NonNull employee lEmployee_0)  {
 		try {
 			final /*@NonInvalid*/ @NonNull IdResolver idResolver = executor.getIdResolver();
-			final /*@Thrown*/ @Nullable EObject ast = lEmployee_2.getAst();
+			final /*@Thrown*/ @Nullable EObject ast = lEmployee_0.getAst();
 			final /*@Thrown*/ boolean symbol_0 = ast != null;
 			/*@Thrown*/ @Nullable Boolean raw_ast;
 			if (symbol_0) {
 				if (ast == null) {
-					throw throwNull(lEmployee_2, "Null where non-null value required");
+					throw throwNull(lEmployee_0, "Null where non-null value required");
 				}
-				final /*@Thrown*/ @Nullable String mentor = lEmployee_2.getMentor();
+				final /*@Thrown*/ @Nullable String mentor = lEmployee_0.getMentor();
 				final /*@NonInvalid*/ org.eclipse.ocl.pivot.@NonNull Class TYP_company_c_c_Employee_0 = idResolver.getClass(CLSSid_Employee, null);
 				final /*@Thrown*/ @NonNull Employee oclAsType = ClassUtil.nonNullState((Employee)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, ast, TYP_company_c_c_Employee_0));
 				final /*@Thrown*/ boolean eq = mentor == null;
