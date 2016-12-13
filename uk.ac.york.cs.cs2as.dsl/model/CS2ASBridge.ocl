@@ -8,83 +8,84 @@ import 'CS2ASBridgeLookup.ocl'
 
 package cs2as_dsl
 
-context Model
-def : ast() : ocl::Model = 	
-	ocl::Model {
-		ownedPackages = 
-			ocl::Package {
-				name = csDecl.metamodels.ast().importedNamespace.name,
-				ownedClasses = mappingSect.mappings->select(unambiguous() or ambiguousFirst())->collect(ast())
-			},
-		ownedImports =  csDecl.metamodels.ast()->includingAll(
-					    asDecl.metamodels.ast())
-	}
-
-context ClassMap
-def : ast() : ocl::Class =
-	ocl::Class {
-			name = from,
-			ownedOperations = 
-				ocl::Operation {
-					name = 'ast',
-					type = ast().lookupClass(to),
-					bodyExpression = ocl::ExpressionInOCL {
-										ownedBody = if unambiguous() then createShadowExp(self)
-													else if ambiguousFirst() then createNestedIfExp(mappingsSameFrom())
-													else invalid  -- should not happen
-													endif endif,
-										ownedContext = ocl::Variable {
-											name = 'self',
-											type = ast().lookupClass(from)
-										}
-					}
-				}
-		}
-	
-def : unambiguous() : Boolean = 
-	rule = null 
-	
-def : ambiguousFirst() : Boolean =
-	rule <> null and 
-	mappingsSameFrom()->first() = self
-		
-def : mappingsSameFrom() : OrderedSet(ClassMap) = 
-	oclContainer().oclAsType(MappingSect).mappings
-		->select(x | x.from = self.from)
-def : createShadowExp(mapping : ClassMap) : ocl::ShadowExp = 
-	ocl::ShadowExp {
-		ownedParts = createSuperClassesShadowParts()->includingAll(mapping.statements.ast())
-	}
-	
-def : createNestedIfExp(mappings : OrderedSet(ClassMap) ) : ocl::IfExp =
-	let firstMapping : ClassMap = mappings->first(),
-		remainingMappings : OrderedSet(ClassMap) = mappings->excluding(firstMapping) 
-	in ocl::IfExp {
-		ownedCondition = ocl::OperationCallExp {
-			name = firstMapping.rule,
-			referredOperation = ast().lookupOperation(firstMapping.rule)
-		},
-		ownedThen = createShadowExp(firstMapping),
-		ownedElse = if remainingMappings->isEmpty() 
-					then ocl::InvalidLiteralExp  {}
-					else createNestedIfExp(remainingMappings)
-					endif
-	}
-	
-def : createSuperClassesShadowParts() : Sequence (ocl::ShadowPart) =
-	Sequence{} -- TODO
-
-context ClassMapStmnt
-def : ast() : ocl::ShadowPart =
-	invalid -- to be overriden
- 
-context PropertyMap
-def : ast() : ocl::ShadowPart =
-	ocl::ShadowPart {
-		name = propName,		
-		ownedInit = propInit.ast(),
-		referredProperty = ast().lookupProperty(propName)
-	}
+-- TODO align with last grammar version
+--context Model
+--def : ast() : ocl::Model = 	
+--	ocl::Model {
+--		ownedPackages = 
+--			ocl::Package {
+--				name = csDecl.metamodels.ast().importedNamespace.name,
+--				ownedClasses = mappingSect.mappings->select(unambiguous() or ambiguousFirst())->collect(ast())
+--			},
+--		ownedImports =  csDecl.metamodels.ast()->includingAll(
+--					    asDecl.metamodels.ast())
+--	}
+--
+--context ClassMap
+--def : ast() : ocl::Class =
+--	ocl::Class {
+--			name = from,
+--			ownedOperations = 
+--				ocl::Operation {
+--					name = 'ast',
+--					type = ast().lookupClass(to),
+--					bodyExpression = ocl::ExpressionInOCL {
+--										ownedBody = if unambiguous() then createShadowExp(self)
+--													else if ambiguousFirst() then createNestedIfExp(mappingsSameFrom())
+--													else invalid  -- should not happen
+--													endif endif,
+--										ownedContext = ocl::Variable {
+--											name = 'self',
+--											type = ast().lookupClass(from)
+--										}
+--					}
+--				}
+--		}
+--	
+--def : unambiguous() : Boolean = 
+--	rule = null 
+--	
+--def : ambiguousFirst() : Boolean =
+--	rule <> null and 
+--	mappingsSameFrom()->first() = self
+--		
+--def : mappingsSameFrom() : OrderedSet(ClassMap) = 
+--	oclContainer().oclAsType(MappingSect).mappings
+--		->select(x | x.from = self.from)
+--def : createShadowExp(mapping : ClassMap) : ocl::ShadowExp = 
+--	ocl::ShadowExp {
+--		ownedParts = createSuperClassesShadowParts()->includingAll(mapping.statements.ast())
+--	}
+--	
+--def : createNestedIfExp(mappings : OrderedSet(ClassMap) ) : ocl::IfExp =
+--	let firstMapping : ClassMap = mappings->first(),
+--		remainingMappings : OrderedSet(ClassMap) = mappings->excluding(firstMapping) 
+--	in ocl::IfExp {
+--		ownedCondition = ocl::OperationCallExp {
+--			name = firstMapping.rule,
+--			referredOperation = ast().lookupOperation(firstMapping.rule)
+--		},
+--		ownedThen = createShadowExp(firstMapping),
+--		ownedElse = if remainingMappings->isEmpty() 
+--					then ocl::InvalidLiteralExp  {}
+--					else createNestedIfExp(remainingMappings)
+--					endif
+--	}
+--	
+--def : createSuperClassesShadowParts() : Sequence (ocl::ShadowPart) =
+--	Sequence{} -- TODO
+--
+--context ClassMapStmnt
+--def : ast() : ocl::ShadowPart =
+--	invalid -- to be overriden
+-- 
+--context PropertyMap
+--def : ast() : ocl::ShadowPart =
+--	ocl::ShadowPart {
+--		name = propName,		
+--		ownedInit = propInit.ast(),
+--		referredProperty = ast().lookupProperty(propName)
+--	}
 	
 context TraceExpCS
 def : ast() : ocl::OperationCallExp =

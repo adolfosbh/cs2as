@@ -27,9 +27,10 @@ import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import org.eclipse.ocl.pivot.values.SetValue;
-import org.eclipse.ocl.xtext.base.cs2as.tx.AbstractCS2ASTransformer;
 import org.eclipse.ocl.xtext.basecs.BaseCSPackage;
 import org.eclipse.ocl.xtext.basecs.ImportCS;
+import org.eclipse.qvtd.runtime.evaluation.TransformationExecutor;
+import org.eclipse.qvtd.runtime.internal.cs2as.AbstractCS2ASTransformer;
 
 /**
  * The CS2ASBridge_qvtp_qvtias transformation:
@@ -72,7 +73,7 @@ public class CS2ASBridge_qvtp_qvtias extends AbstractCS2ASTransformer
     };
     
     
-    public CS2ASBridge_qvtp_qvtias(final /*@NonNull*/ Executor executor) throws ReflectiveOperationException {
+    public CS2ASBridge_qvtp_qvtias(final /*@NonNull*/ TransformationExecutor executor) throws ReflectiveOperationException {
         super(executor, new String[] {"leftCS", "rightAS"}, null, classIndex2classId, classIndex2allClassIndexes);
     }
     

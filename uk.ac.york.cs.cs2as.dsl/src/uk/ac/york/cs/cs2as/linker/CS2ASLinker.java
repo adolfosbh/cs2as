@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.pivot.utilities.OCL;
-import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASDiagnostic;
-import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASException;
-import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASTransformationExecutor;
-import org.eclipse.ocl.xtext.base.cs2as.tx.CS2ASTransformer;
 import org.eclipse.qvtd.cs2as.xtext.runtime.CS2ASExceptionDiagnostic;
+import org.eclipse.qvtd.runtime.internal.cs2as.CS2ASDiagnostic;
+import org.eclipse.qvtd.runtime.internal.cs2as.CS2ASException;
+import org.eclipse.qvtd.runtime.internal.cs2as.CS2ASTransformationExecutor;
+import org.eclipse.qvtd.runtime.internal.cs2as.CS2ASTransformer;
 import org.eclipse.xtext.diagnostics.ExceptionDiagnostic;
 import org.eclipse.xtext.diagnostics.IDiagnosticConsumer;
 import org.eclipse.xtext.linking.impl.XtextLinkingDiagnostic;
@@ -62,7 +62,7 @@ public class CS2ASLinker extends LazyLinker
 							outputResource = rSet.createResource(asModelURI);
 						}
 						outputResource.getContents().clear();
-						outputResource.getContents().addAll(tx.getRootObjects("rightAS"));
+						outputResource.getContents().addAll(tx.getRootEObjects("rightAS"));
 						outputResource.save(null);
 					}
 				}
