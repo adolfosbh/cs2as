@@ -19,7 +19,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Lookup -->
       <package
-            uri="http://xtext.eclipse.org/example/companies"
+            uri="http://xtext.eclipse.org/example/delphi/lookup"
             class="org.xtext.example.delphi.astm.lookup.LookupPackage"
             genModel="model/Lookup.genmodel"/>
    </extension>
