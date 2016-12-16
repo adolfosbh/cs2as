@@ -37,6 +37,7 @@ public interface Company extends EObject, Visitable {
 	 * @see #setName(String)
 	 * @see org.xtext.example.company.CompanyPackage#getCompany_Name()
 	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.company.com!Company!name'"
 	 * @generated
 	 */
 	String getName();
@@ -63,6 +64,7 @@ public interface Company extends EObject, Visitable {
 	 * @return the value of the '<em>Depts</em>' containment reference list.
 	 * @see org.xtext.example.company.CompanyPackage#getCompany_Depts()
 	 * @model containment="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.company.com!Company!depts'"
 	 * @generated
 	 */
 	EList<Department> getDepts();

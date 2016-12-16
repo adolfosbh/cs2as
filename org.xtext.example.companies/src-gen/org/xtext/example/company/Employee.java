@@ -37,6 +37,7 @@ public interface Employee extends EObject, Visitable {
 	 * @see #setName(String)
 	 * @see org.xtext.example.company.CompanyPackage#getEmployee_Name()
 	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.company.com!Employee!name'"
 	 * @generated
 	 */
 	String getName();
@@ -63,6 +64,7 @@ public interface Employee extends EObject, Visitable {
 	 * @see #setAddress(String)
 	 * @see org.xtext.example.company.CompanyPackage#getEmployee_Address()
 	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.company.com!Employee!address'"
 	 * @generated
 	 */
 	String getAddress();
@@ -89,6 +91,7 @@ public interface Employee extends EObject, Visitable {
 	 * @see #setSalary(double)
 	 * @see org.xtext.example.company.CompanyPackage#getEmployee_Salary()
 	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.company.com!Employee!salary'"
 	 * @generated
 	 */
 	double getSalary();
@@ -114,7 +117,7 @@ public interface Employee extends EObject, Visitable {
 	 * @return the value of the '<em>Mentor</em>' reference.
 	 * @see #setMentor(Employee)
 	 * @see org.xtext.example.company.CompanyPackage#getEmployee_Mentor()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.company.com!Employee!mentor'"
 	 * @generated
 	 */
 	Employee getMentor();

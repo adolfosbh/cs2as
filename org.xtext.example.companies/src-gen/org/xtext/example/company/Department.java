@@ -39,6 +39,7 @@ public interface Department extends EObject, Visitable {
 	 * @see #setName(String)
 	 * @see org.xtext.example.company.CompanyPackage#getDepartment_Name()
 	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.company.com!Department!name'"
 	 * @generated
 	 */
 	String getName();
@@ -65,6 +66,7 @@ public interface Department extends EObject, Visitable {
 	 * @see #setManager(Employee)
 	 * @see org.xtext.example.company.CompanyPackage#getDepartment_Manager()
 	 * @model containment="true" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.company.com!Department!manager'"
 	 * @generated
 	 */
 	Employee getManager();
@@ -91,6 +93,7 @@ public interface Department extends EObject, Visitable {
 	 * @return the value of the '<em>Subdepts</em>' containment reference list.
 	 * @see org.xtext.example.company.CompanyPackage#getDepartment_Subdepts()
 	 * @model containment="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.company.com!Department!subdepts'"
 	 * @generated
 	 */
 	EList<Department> getSubdepts();
@@ -107,6 +110,7 @@ public interface Department extends EObject, Visitable {
 	 * @return the value of the '<em>Employees</em>' containment reference list.
 	 * @see org.xtext.example.company.CompanyPackage#getDepartment_Employees()
 	 * @model containment="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.company.com!Department!employees'"
 	 * @generated
 	 */
 	EList<Employee> getEmployees();

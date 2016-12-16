@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.company.Company;
 import org.xtext.example.company.CompanyPackage;
 import org.xtext.example.company.Department;
@@ -225,7 +226,7 @@ public class CompanyImpl extends MinimalEObjectImpl.Container implements Company
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitCompany(this);
 	}
 

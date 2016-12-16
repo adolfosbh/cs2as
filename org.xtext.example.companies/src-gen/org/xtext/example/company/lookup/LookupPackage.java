@@ -21,8 +21,6 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.xtext.example.company.lookup.LookupFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/OCL/Import target='platform:/resource/org.xtext.example.companies/model/Company.ecore'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface LookupPackage extends EPackage {
@@ -40,7 +38,7 @@ public interface LookupPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://xtext.eclipse.org/example/companies";
+	String eNS_URI = "http://xtext.eclipse.org/example/companies/lookup";
 
 	/**
 	 * The package namespace name.

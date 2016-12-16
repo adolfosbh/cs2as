@@ -23,7 +23,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Lookup -->
       <package
-            uri="http://xtext.eclipse.org/example/companies"
+            uri="http://xtext.eclipse.org/example/companies/lookup"
             class="org.xtext.example.company.lookup.LookupPackage"
             genModel="model/Lookup.genmodel"/>
    </extension>

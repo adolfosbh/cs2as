@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.jdt.annotation.NonNull;
 import org.xtext.example.company.CompanyPackage;
 import org.xtext.example.company.Employee;
 import org.xtext.example.company.util.Visitor;
@@ -335,7 +336,7 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 	 * @generated
 	 */
 	@Override
-	public <R> R accept(Visitor<R> visitor) {
+	public <R> R accept(@NonNull Visitor<R> visitor) {
 		return visitor.visitEmployee(this);
 	}
 
