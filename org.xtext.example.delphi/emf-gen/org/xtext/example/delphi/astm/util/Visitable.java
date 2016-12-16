@@ -31,6 +31,6 @@ public interface Visitable
 	 * @return the result of the visit.
 	 */
 	<R> R accept(org.xtext.example.delphi.astm.util.@NonNull Visitor<R> visitor);
-	
+
 	EClass eClass();
 }

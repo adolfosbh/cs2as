@@ -38,7 +38,7 @@ public interface LookupPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://xtext.eclipse.org/example/companies";
+	String eNS_URI = "http://xtext.eclipse.org/example/delphi/lookup";
 
 	/**
 	 * The package namespace name.

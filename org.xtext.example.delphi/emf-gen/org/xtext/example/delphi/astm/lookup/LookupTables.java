@@ -61,10 +61,10 @@ public class LookupTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId COL_PRIMid_OclAny = org.eclipse.ocl.pivot.ids.TypeId.COLLECTION.getSpecializedId(org.eclipse.ocl.pivot.ids.TypeId.OCL_ANY);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId COL_TMPLid_ = org.eclipse.ocl.pivot.ids.TypeId.COLLECTION.getSpecializedId(org.eclipse.ocl.pivot.ids.IdManager.getTemplateParameterId(0));
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull NsURIPackageId PACKid_http_c_s_s_modelum_es_s_modernization_s_astm = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://modelum.es/modernization/astm", null, org.xtext.example.delphi.astm.AstmPackage.eINSTANCE);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull NsURIPackageId PACKid_http_c_s_s_xtext_eclipse_org_s_example_s_companies = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://xtext.eclipse.org/example/companies", null, org.xtext.example.delphi.astm.lookup.LookupPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull NsURIPackageId PACKid_http_c_s_s_xtext_eclipse_org_s_example_s_delphi_s_lookup = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://xtext.eclipse.org/example/delphi/lookup", null, org.xtext.example.delphi.astm.lookup.LookupPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull ClassId CLSSid_Definition = org.xtext.example.delphi.astm.lookup.LookupTables.PACKid_http_c_s_s_modelum_es_s_modernization_s_astm.getClassId("Definition", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull ClassId CLSSid_Executor = org.xtext.example.delphi.astm.lookup.LookupTables.PACKid_http_c_s_s_xtext_eclipse_org_s_example_s_companies.getClassId("Executor", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull ClassId CLSSid_LookupEnvironment = org.xtext.example.delphi.astm.lookup.LookupTables.PACKid_http_c_s_s_xtext_eclipse_org_s_example_s_companies.getClassId("LookupEnvironment", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull ClassId CLSSid_Executor = org.xtext.example.delphi.astm.lookup.LookupTables.PACKid_http_c_s_s_xtext_eclipse_org_s_example_s_delphi_s_lookup.getClassId("Executor", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull ClassId CLSSid_LookupEnvironment = org.xtext.example.delphi.astm.lookup.LookupTables.PACKid_http_c_s_s_xtext_eclipse_org_s_example_s_delphi_s_lookup.getClassId("LookupEnvironment", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId BAG_CLSSid_LookupEnvironment = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.xtext.example.delphi.astm.lookup.LookupTables.CLSSid_LookupEnvironment);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull CollectionTypeId ORD_CLSSid_Definition = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.xtext.example.delphi.astm.lookup.LookupTables.CLSSid_Definition);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.@org.eclipse.jdt.annotation.NonNull PropertyId PROPid_namedElements = org.xtext.example.delphi.astm.lookup.LookupTables.CLSSid_LookupEnvironment.getPropertyId("namedElements");
@@ -377,8 +377,7 @@ public class LookupTables
 
 		private static final @NonNull ExecutorProperty @NonNull [] _LookupEnvironment = {
 			LookupTables.Properties._LookupEnvironment__namedElements,
-			LookupTables.Properties._LookupEnvironment__parentEnv,
-			LookupTables.Properties._LookupEnvironment__LookupEnvironment__parentEnv
+			LookupTables.Properties._LookupEnvironment__parentEnv
 		};
 
 		/**

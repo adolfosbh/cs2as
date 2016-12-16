@@ -42,7 +42,7 @@ public interface LookupEnvironment extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Named Elements</em>' reference list.
 	 * @see org.xtext.example.delphi.astm.lookup.LookupPackage#getLookupEnvironment_NamedElements()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://xtext.eclipse.org/example/companies!LookupEnvironment!namedElements'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://xtext.eclipse.org/example/delphi/lookup!LookupEnvironment!namedElements'"
 	 * @generated
 	 */
 	EList<Definition> getNamedElements();
@@ -58,7 +58,7 @@ public interface LookupEnvironment extends EObject {
 	 * @return the value of the '<em>Parent Env</em>' reference.
 	 * @see #setParentEnv(LookupEnvironment)
 	 * @see org.xtext.example.delphi.astm.lookup.LookupPackage#getLookupEnvironment_ParentEnv()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://xtext.eclipse.org/example/companies!LookupEnvironment!parentEnv'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://xtext.eclipse.org/example/delphi/lookup!LookupEnvironment!parentEnv'"
 	 * @generated
 	 */
 	LookupEnvironment getParentEnv();

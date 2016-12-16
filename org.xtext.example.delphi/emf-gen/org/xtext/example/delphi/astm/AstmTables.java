@@ -13988,84 +13988,34 @@ public class AstmTables
 
 		private static final @NonNull ExecutorProperty @NonNull [] _AccessKind = {};
 
-		private static final @NonNull ExecutorProperty @NonNull [] _ActualParameter = {
-			AstmTables.Properties._ActualParameter__FunctionCallExpression__actualParams
-		};
+		private static final @NonNull ExecutorProperty @NonNull [] _ActualParameter = {};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ActualParameterExpression = {
-			AstmTables.Properties._ActualParameterExpression__value,
-			AstmTables.Properties._ActualParameter__FunctionCallExpression__actualParams
+			AstmTables.Properties._ActualParameterExpression__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Add = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _AddressOf = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _AggregateExpression = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _AggregateScope = {
 			AstmTables.Properties._Scope__childScope,
-			AstmTables.Properties._Scope__definitionObject,
-			AstmTables.Properties._AggregateScope__AggregateType__opensScope,
-			AstmTables.Properties._Scope__Scope__childScope
+			AstmTables.Properties._Scope__definitionObject
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _AggregateType = {
@@ -14075,11 +14025,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._AggregateType__members,
 			AstmTables.Properties._AggregateType__opensScope,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._AggregateType__AggregateTypeDefinition__aggregateType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _AggregateTypeDefinition = {
@@ -14087,30 +14033,13 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._TypeDefinition__name,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._TypeDefinition__NamedTypeReference__type,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _And = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _AnnotationExpression = {
@@ -14119,39 +14048,7 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._AnnotationExpression__memberValues,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._AnnotationExpression__GASTMSyntaxObject__annotations,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _AnnotationType = {
@@ -14161,11 +14058,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._AggregateType__members,
 			AstmTables.Properties._AggregateType__opensScope,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._AggregateType__AggregateTypeDefinition__aggregateType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ArrayAccess = {
@@ -14174,38 +14067,7 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._ArrayAccess__subscripts
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ArrayType = {
@@ -14215,23 +14077,13 @@ public class AstmTables
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._ArrayType__ranks,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._ArrayType__ranks
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Assign = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BinaryExpression = {
@@ -14241,64 +14093,19 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._BinaryExpression__operator,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._BinaryExpression__rightOperand
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BinaryOperator = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BitAnd = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BitFieldDefinition = {
@@ -14313,31 +14120,13 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._Definition__Declaration__defRef,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject,
-			AstmTables.Properties._DataDefinition__VariableCatchBlock__exceptionVariable
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BitLeftShift = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BitLiteral = {
@@ -14345,97 +14134,36 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Literal__value,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._Literal__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BitNot = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BitOr = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BitRightShift = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BitXor = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BlockScope = {
 			AstmTables.Properties._Scope__childScope,
-			AstmTables.Properties._Scope__definitionObject,
-			AstmTables.Properties._BlockScope__BlockStatement__opensScope,
-			AstmTables.Properties._Scope__Scope__childScope
+			AstmTables.Properties._Scope__definitionObject
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BlockStatement = {
@@ -14443,19 +14171,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._BlockStatement__opensScope,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._BlockStatement__subStatements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._BlockStatement__subStatements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Boolean = {
@@ -14464,10 +14180,7 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BooleanLiteral = {
@@ -14475,62 +14188,18 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Literal__value,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._Literal__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _BreakStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._BreakStatement__target,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._BreakStatement__target
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ByReferenceActualParameterExpression = {
-			AstmTables.Properties._ActualParameterExpression__value,
-			AstmTables.Properties._ActualParameter__FunctionCallExpression__actualParams
+			AstmTables.Properties._ActualParameterExpression__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ByReferenceFormalParameterType = {
@@ -14539,16 +14208,11 @@ public class AstmTables
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._FormalParameterType__type,
-			AstmTables.Properties._FormalParameterType__FunctionType__parameterTypes,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._FormalParameterType__type
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ByValueActualParameterExpression = {
-			AstmTables.Properties._ActualParameterExpression__value,
-			AstmTables.Properties._ActualParameter__FunctionCallExpression__actualParams
+			AstmTables.Properties._ActualParameterExpression__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ByValueFormalParameterType = {
@@ -14557,11 +14221,7 @@ public class AstmTables
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._FormalParameterType__type,
-			AstmTables.Properties._FormalParameterType__FunctionType__parameterTypes,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._FormalParameterType__type
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Byte = {
@@ -14570,10 +14230,7 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _CaseBlock = {
@@ -14581,15 +14238,7 @@ public class AstmTables
 			AstmTables.Properties._SwitchCase__body,
 			AstmTables.Properties._CaseBlock__caseExpressions,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._SwitchCase__SwitchStatement__cases,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _CastExpression = {
@@ -14598,53 +14247,14 @@ public class AstmTables
 			AstmTables.Properties._CastExpression__expression,
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _CatchBlock = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._CatchBlock__body,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._CatchBlock__TryStatement__catchBlocks,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _CharLiteral = {
@@ -14652,38 +14262,7 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Literal__value,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._Literal__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Character = {
@@ -14692,10 +14271,7 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ClassType = {
@@ -14706,11 +14282,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._AggregateType__members,
 			AstmTables.Properties._AggregateType__opensScope,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._AggregateType__AggregateTypeDefinition__aggregateType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _CollectionType = {
@@ -14719,18 +14291,14 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Comment = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Comment__text,
-			AstmTables.Properties._PreprocessorElement__GASTMSyntaxObject__preProcessorElements
+			AstmTables.Properties._Comment__text
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _CompilationUnit = {
@@ -14739,15 +14307,7 @@ public class AstmTables
 			AstmTables.Properties._CompilationUnit__language,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._CompilationUnit__opensScope,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._CompilationUnit__Project__files,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ConditionalExpression = {
@@ -14757,38 +14317,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._ConditionalExpression__onFalseOperand,
 			AstmTables.Properties._ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ConstructedType = {
@@ -14797,29 +14326,14 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ContinueStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._ContinueStatement__target,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._ContinueStatement__target
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DataDefinition = {
@@ -14833,18 +14347,7 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._Definition__Declaration__defRef,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject,
-			AstmTables.Properties._DataDefinition__VariableCatchBlock__exceptionVariable
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DataType = {
@@ -14852,10 +14355,7 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Declaration = {
@@ -14868,16 +14368,7 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DeclarationOrDefinition = {
@@ -14887,63 +14378,27 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DeclarationOrDefinitionStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._DeclarationOrDefinitionStatement__declOrDefn,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Decrement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DefaultBlock = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._SwitchCase__body,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._SwitchCase__SwitchStatement__cases,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Definition = {
@@ -14955,51 +14410,20 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._Definition__Declaration__defRef,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DefinitionObject = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DeleteStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._DeleteStatement__operand,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DelphiBlockStatement = {
@@ -15009,19 +14433,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._BlockStatement__opensScope,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._BlockStatement__subStatements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._BlockStatement__subStatements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DelphiFunctionCallExpression = {
@@ -15031,38 +14443,7 @@ public class AstmTables
 			AstmTables.Properties._FunctionCallExpression__calledFunction,
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DelphiImplementationSection = {
@@ -15073,16 +14454,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._CompilationUnit__opensScope,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DelphiImplementationSection__uses,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DelphiImplementationSection__DelphiUnit__implementation,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._CompilationUnit__Project__files,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._DelphiImplementationSection__uses
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DelphiInterfaceSection = {
@@ -15092,16 +14464,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._CompilationUnit__opensScope,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DelphiInterfaceSection__uses,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DelphiInterfaceSection__DelphiUnit__interface,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._CompilationUnit__Project__files,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._DelphiInterfaceSection__uses
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DelphiUnit = {
@@ -15113,15 +14476,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._DelphiUnit__name,
 			AstmTables.Properties._CompilationUnit__opensScope,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._CompilationUnit__Project__files,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DelphiWithStatement = {
@@ -15130,32 +14485,13 @@ public class AstmTables
 			AstmTables.Properties._BlockStatement__opensScope,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
 			AstmTables.Properties._BlockStatement__subStatements,
-			AstmTables.Properties._DelphiWithStatement__withs,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._DelphiWithStatement__withs
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Deref = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DerivesFrom = {
@@ -15164,15 +14500,7 @@ public class AstmTables
 			AstmTables.Properties._DerivesFrom__className,
 			AstmTables.Properties._DerivesFrom__isVirtual,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._DerivesFrom__ClassType__derivesFrom,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Dimension = {
@@ -15180,28 +14508,13 @@ public class AstmTables
 			AstmTables.Properties._Dimension__highBound,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._Dimension__lowBound,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Dimension__ArrayType__ranks,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Divide = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _DoWhileStatement = {
@@ -15209,19 +14522,7 @@ public class AstmTables
 			AstmTables.Properties._LoopStatement__body,
 			AstmTables.Properties._LoopStatement__condition,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Double = {
@@ -15230,28 +14531,13 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _EmptyStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _EntryDefinition = {
@@ -15265,17 +14551,7 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._Definition__Declaration__defRef,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _EnumLiteralDefinition = {
@@ -15288,18 +14564,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
 			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._EnumLiteralDefinition__value,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._Definition__Declaration__defRef,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._EnumLiteralDefinition__EnumType__enumLiterals,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._EnumLiteralDefinition__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _EnumType = {
@@ -15308,23 +14573,13 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Equal = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ExceptionType = {
@@ -15332,80 +14587,27 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Exponent = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Expression = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ExpressionStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._ExpressionStatement__expression,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _External = {};
@@ -15418,10 +14620,7 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ForCheckAfterStatement = {
@@ -15431,19 +14630,7 @@ public class AstmTables
 			AstmTables.Properties._ForStatement__initBody,
 			AstmTables.Properties._ForStatement__iterationBody,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ForCheckBeforeStatement = {
@@ -15453,19 +14640,7 @@ public class AstmTables
 			AstmTables.Properties._ForStatement__initBody,
 			AstmTables.Properties._ForStatement__iterationBody,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ForStatement = {
@@ -15475,19 +14650,7 @@ public class AstmTables
 			AstmTables.Properties._ForStatement__initBody,
 			AstmTables.Properties._ForStatement__iterationBody,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FormalParameterDeclaration = {
@@ -15500,17 +14663,7 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._FormalParameterDeclaration__FunctionDeclaration__formalParameters,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FormalParameterDefinition = {
@@ -15524,20 +14677,7 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._Definition__Declaration__defRef,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._FormalParameterDefinition__EntryDefinition__formalParameters,
-			AstmTables.Properties._FormalParameterDefinition__FunctionDefinition__formalParameters,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject,
-			AstmTables.Properties._DataDefinition__VariableCatchBlock__exceptionVariable
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FormalParameterType = {
@@ -15546,11 +14686,7 @@ public class AstmTables
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._FormalParameterType__type,
-			AstmTables.Properties._FormalParameterType__FunctionType__parameterTypes,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._FormalParameterType__type
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FunctionCallExpression = {
@@ -15559,38 +14695,7 @@ public class AstmTables
 			AstmTables.Properties._FunctionCallExpression__calledFunction,
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FunctionDeclaration = {
@@ -15606,16 +14711,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
 			AstmTables.Properties._FunctionDeclaration__returnType,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FunctionDefinition = {
@@ -15632,48 +14728,27 @@ public class AstmTables
 			AstmTables.Properties._FunctionDefinition__opensScope,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
 			AstmTables.Properties._FunctionDefinition__returnType,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._Definition__Declaration__defRef,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FunctionMemberAttribute = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FunctionMemberAttributes = {
 			AstmTables.Properties._FunctionMemberAttributes__isFriend,
 			AstmTables.Properties._FunctionMemberAttributes__isInline,
 			AstmTables.Properties._FunctionMemberAttributes__isThisConst,
-			AstmTables.Properties._FunctionMemberAttributes__virtualSpecifier,
-			AstmTables.Properties._FunctionMemberAttributes__FunctionDeclaration__functionMemberAttributes,
-			AstmTables.Properties._FunctionMemberAttributes__FunctionDefinition__functionMemberAttributes
+			AstmTables.Properties._FunctionMemberAttributes__virtualSpecifier
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FunctionPersistent = {};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FunctionScope = {
 			AstmTables.Properties._Scope__childScope,
-			AstmTables.Properties._Scope__definitionObject,
-			AstmTables.Properties._FunctionScope__FunctionDefinition__opensScope,
-			AstmTables.Properties._Scope__Scope__childScope
+			AstmTables.Properties._Scope__definitionObject
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _FunctionType = {
@@ -15683,10 +14758,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._FunctionType__parameterTypes,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._FunctionType__returnType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._FunctionType__returnType
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _GASTMObject = {};
@@ -15703,22 +14775,13 @@ public class AstmTables
 
 		private static final @NonNull ExecutorProperty @NonNull [] _GlobalScope = {
 			AstmTables.Properties._Scope__childScope,
-			AstmTables.Properties._Scope__definitionObject,
-			AstmTables.Properties._GlobalScope__Project__outerScope,
-			AstmTables.Properties._Scope__Scope__childScope
+			AstmTables.Properties._Scope__definitionObject
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Greater = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _IdentifierReference = {
@@ -15727,40 +14790,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._NameReference__name,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._NameReference__refersTo,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._IdentifierReference__QualifiedIdentifierReference__member,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._IdentifierReference__TypeQualifiedIdentifierReference__member,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._NameReference__refersTo
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _IfStatement = {
@@ -15769,40 +14799,20 @@ public class AstmTables
 			AstmTables.Properties._IfStatement__elseBody,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._IfStatement__thenBody,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._IfStatement__thenBody
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _IncludeUnit = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._IncludeUnit__file,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._PreprocessorElement__GASTMSyntaxObject__preProcessorElements
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Increment = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Integer = {
@@ -15811,10 +14821,7 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _IntegerLiteral = {
@@ -15822,57 +14829,14 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Literal__value,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._Literal__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _JumpStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._JumpStatement__target,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._JumpStatement__target
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _LabelAccess = {
@@ -15881,40 +14845,7 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._LabelAccess__name,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._LabelAccess__BreakStatement__target,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._LabelAccess__ContinueStatement__target,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _LabelDefinition = {
@@ -15922,18 +14853,7 @@ public class AstmTables
 			AstmTables.Properties._LabelDefinition__labelName,
 			AstmTables.Properties._LabelDefinition__labelType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._LabelDefinition__LabelAccess__definition,
-			AstmTables.Properties._LabelDefinition__LabeledStatement__label,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _LabelType = {
@@ -15941,11 +14861,7 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._LabelType__LabelDefinition__labelType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _LabeledStatement = {
@@ -15953,32 +14869,13 @@ public class AstmTables
 			AstmTables.Properties._LabeledStatement__label,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._LabeledStatement__statement,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._LabeledStatement__statement
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Less = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Literal = {
@@ -15986,38 +14883,7 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Literal__value,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._Literal__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _LongDouble = {
@@ -16026,10 +14892,7 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _LongInteger = {
@@ -16038,10 +14901,7 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _LoopStatement = {
@@ -16049,27 +14909,14 @@ public class AstmTables
 			AstmTables.Properties._LoopStatement__body,
 			AstmTables.Properties._LoopStatement__condition,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _MacroCall = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._MacroCall__refersTo,
-			AstmTables.Properties._PreprocessorElement__GASTMSyntaxObject__preProcessorElements
+			AstmTables.Properties._MacroCall__refersTo
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _MacroDefinition = {
@@ -16077,62 +14924,28 @@ public class AstmTables
 			AstmTables.Properties._MacroDefinition__body,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._MacroDefinition__macroName,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._PreprocessorElement__GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._MacroDefinition__MacroCall__refersTo
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
-		private static final @NonNull ExecutorProperty @NonNull [] _MissingActualParameter = {
-			AstmTables.Properties._ActualParameter__FunctionCallExpression__actualParams
-		};
+		private static final @NonNull ExecutorProperty @NonNull [] _MissingActualParameter = {};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Modulus = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Multiply = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Name = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._Name__nameString,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._Name__Declaration__identifierName,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._Name__Definition__identifierName,
-			AstmTables.Properties._Name__DelphiUnit__name,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._Name__LabelAccess__name,
-			AstmTables.Properties._Name__LabelDefinition__labelName,
-			AstmTables.Properties._Name__NameReference__name,
-			AstmTables.Properties._Name__NameSpaceDefinition__nameSpace,
-			AstmTables.Properties._Name__NamedTypeReference__name,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._Name__TypeDefinition__name,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NameReference = {
@@ -16141,38 +14954,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._NameReference__name,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._NameReference__refersTo,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._NameReference__refersTo
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NameSpaceDefinition = {
@@ -16181,16 +14963,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._NameSpaceDefinition__nameSpace,
 			AstmTables.Properties._NameSpaceDefinition__nameSpaceType,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NameSpaceType = {
@@ -16198,11 +14971,7 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._NameSpaceType__NameSpaceDefinition__nameSpaceType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NamedType = {
@@ -16211,12 +14980,7 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._NamedType__DerivesFrom__className,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._NamedType__NamedTypeDefinition__definitionType,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NamedTypeDefinition = {
@@ -16224,17 +14988,7 @@ public class AstmTables
 			AstmTables.Properties._NamedTypeDefinition__definitionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._TypeDefinition__name,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._TypeDefinition__NamedTypeReference__type,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NamedTypeReference = {
@@ -16244,39 +14998,13 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._NamedTypeReference__name,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._NamedTypeReference__type,
-			AstmTables.Properties._TypeReference__AnnotationExpression__annotationType,
-			AstmTables.Properties._TypeReference__CastExpression__castType,
-			AstmTables.Properties._TypeReference__ConstructedType__baseType,
-			AstmTables.Properties._TypeReference__Declaration__declarationType,
-			AstmTables.Properties._TypeReference__Definition__definitionType,
-			AstmTables.Properties._NamedTypeReference__DelphiBlockStatement__exports,
-			AstmTables.Properties._NamedTypeReference__DelphiImplementationSection__exports,
-			AstmTables.Properties._NamedTypeReference__DelphiImplementationSection__uses,
-			AstmTables.Properties._NamedTypeReference__DelphiInterfaceSection__uses,
-			AstmTables.Properties._TypeReference__Expression__expressionType,
-			AstmTables.Properties._TypeReference__FormalParameterType__type,
-			AstmTables.Properties._TypeReference__FunctionDeclaration__returnType,
-			AstmTables.Properties._TypeReference__FunctionDefinition__returnType,
-			AstmTables.Properties._TypeReference__FunctionType__returnType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._TypeReference__NewExpression__newType,
-			AstmTables.Properties._TypeReference__TypeQualifiedIdentifierReference__aggregateType,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._NamedTypeReference__type
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Negate = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NewExpression = {
@@ -16285,38 +15013,7 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._NewExpression__newType,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NoDef = {};
@@ -16324,120 +15021,56 @@ public class AstmTables
 		private static final @NonNull ExecutorProperty @NonNull [] _NonVirtual = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._VirtualSpecification__FunctionMemberAttributes__virtualSpecifier,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Not = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NotEqual = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NotGreater = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _NotLess = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Operator = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _OperatorAssign = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._OperatorAssign__operator,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Or = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _OtherSyntaxObject = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _PerClassMember = {};
@@ -16448,43 +15081,25 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _PostDecrement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _PostIncrement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _PreprocessorElement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._PreprocessorElement__GASTMSyntaxObject__preProcessorElements
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _PrimitiveType = {
@@ -16493,19 +15108,14 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Private = {};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ProgramScope = {
 			AstmTables.Properties._Scope__childScope,
-			AstmTables.Properties._Scope__definitionObject,
-			AstmTables.Properties._ProgramScope__CompilationUnit__opensScope,
-			AstmTables.Properties._Scope__Scope__childScope
+			AstmTables.Properties._Scope__definitionObject
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Project = {
@@ -16520,15 +15130,7 @@ public class AstmTables
 		private static final @NonNull ExecutorProperty @NonNull [] _PureVirtual = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._VirtualSpecification__FunctionMemberAttributes__virtualSpecifier,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _QualifiedIdentifierReference = {
@@ -16539,38 +15141,7 @@ public class AstmTables
 			AstmTables.Properties._NameReference__name,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
 			AstmTables.Properties._QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._NameReference__refersTo,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._NameReference__refersTo
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _QualifiedOverData = {
@@ -16581,38 +15152,7 @@ public class AstmTables
 			AstmTables.Properties._NameReference__name,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
 			AstmTables.Properties._QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._NameReference__refersTo,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._NameReference__refersTo
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _QualifiedOverPointer = {
@@ -16623,38 +15163,7 @@ public class AstmTables
 			AstmTables.Properties._NameReference__name,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
 			AstmTables.Properties._QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._NameReference__refersTo,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._NameReference__refersTo
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _RangeExpression = {
@@ -16663,38 +15172,7 @@ public class AstmTables
 			AstmTables.Properties._RangeExpression__fromExpression,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._RangeExpression__toExpression
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _RangeType = {
@@ -16703,10 +15181,7 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _RealLiteral = {
@@ -16714,38 +15189,7 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Literal__value,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._Literal__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ReferenceType = {
@@ -16754,35 +15198,19 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ReturnStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._ReturnStatement__returnValue,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._ReturnStatement__returnValue
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Scope = {
 			AstmTables.Properties._Scope__childScope,
-			AstmTables.Properties._Scope__definitionObject,
-			AstmTables.Properties._Scope__Scope__childScope
+			AstmTables.Properties._Scope__definitionObject
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ShortInteger = {
@@ -16791,16 +15219,11 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SourceFile = {
-			AstmTables.Properties._SourceFile__pathName,
-			AstmTables.Properties._SourceFile__IncludeUnit__file,
-			AstmTables.Properties._SourceFile__SourceLocation__inSourceFile
+			AstmTables.Properties._SourceFile__pathName
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SourceLocation = {
@@ -16808,91 +15231,43 @@ public class AstmTables
 			AstmTables.Properties._SourceLocation__endLine,
 			AstmTables.Properties._SourceLocation__inSourceFile,
 			AstmTables.Properties._SourceLocation__startColumn,
-			AstmTables.Properties._SourceLocation__startLine,
-			AstmTables.Properties._SourceLocation__GASTMSyntaxObject__locationInfo
+			AstmTables.Properties._SourceLocation__startLine
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SpecificConcatString = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SpecificGreaterEqual = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SpecificIn = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SpecificLessEqual = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SpecificLike = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SpecificSelectStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SpecificTriggerDefinition = {
@@ -16905,35 +15280,13 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._Definition__Declaration__defRef,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Statement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _StorageSpecification = {};
@@ -16944,10 +15297,7 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _StringLiteral = {
@@ -16955,38 +15305,7 @@ public class AstmTables
 			AstmTables.Properties._Expression__expressionType,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Literal__value,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._Literal__value
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _StructureType = {
@@ -16996,39 +15315,20 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._AggregateType__members,
 			AstmTables.Properties._AggregateType__opensScope,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._AggregateType__AggregateTypeDefinition__aggregateType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Subtract = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SwitchCase = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._SwitchCase__body,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._SwitchCase__SwitchStatement__cases,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _SwitchStatement = {
@@ -17036,56 +15336,20 @@ public class AstmTables
 			AstmTables.Properties._SwitchStatement__cases,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._SwitchStatement__switchExpression,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._SwitchStatement__switchExpression
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _TerminateStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _ThrowStatement = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._ThrowStatement__exception,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _TryStatement = {
@@ -17094,19 +15358,7 @@ public class AstmTables
 			AstmTables.Properties._TryStatement__finalStatement,
 			AstmTables.Properties._TryStatement__guardedStatement,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Type = {
@@ -17114,27 +15366,14 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _TypeDefinition = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._TypeDefinition__name,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._TypeDefinition__NamedTypeReference__type,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _TypeQualifiedIdentifierReference = {
@@ -17145,38 +15384,7 @@ public class AstmTables
 			AstmTables.Properties._TypeQualifiedIdentifierReference__member,
 			AstmTables.Properties._NameReference__name,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._NameReference__refersTo,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._NameReference__refersTo
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _TypeReference = {
@@ -17184,22 +15392,7 @@ public class AstmTables
 			AstmTables.Properties._Type__isConst,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._TypeReference__AnnotationExpression__annotationType,
-			AstmTables.Properties._TypeReference__CastExpression__castType,
-			AstmTables.Properties._TypeReference__ConstructedType__baseType,
-			AstmTables.Properties._TypeReference__Declaration__declarationType,
-			AstmTables.Properties._TypeReference__Definition__definitionType,
-			AstmTables.Properties._TypeReference__Expression__expressionType,
-			AstmTables.Properties._TypeReference__FormalParameterType__type,
-			AstmTables.Properties._TypeReference__FunctionDeclaration__returnType,
-			AstmTables.Properties._TypeReference__FunctionDefinition__returnType,
-			AstmTables.Properties._TypeReference__FunctionType__returnType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._TypeReference__NewExpression__newType,
-			AstmTables.Properties._TypeReference__TypeQualifiedIdentifierReference__aggregateType,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _TypesCatchBlock = {
@@ -17207,15 +15400,7 @@ public class AstmTables
 			AstmTables.Properties._CatchBlock__body,
 			AstmTables.Properties._TypesCatchBlock__exceptions,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._CatchBlock__TryStatement__catchBlocks,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _UnaryExpression = {
@@ -17224,64 +15409,19 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._UnaryExpression__operand,
 			AstmTables.Properties._UnaryExpression__operator,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Expression__ActualParameterExpression__value,
-			AstmTables.Properties._Expression__AnnotationExpression__memberValues,
-			AstmTables.Properties._Expression__ArrayAccess__arrayName,
-			AstmTables.Properties._Expression__ArrayAccess__subscripts,
-			AstmTables.Properties._Expression__BinaryExpression__leftOperand,
-			AstmTables.Properties._Expression__BinaryExpression__rightOperand,
-			AstmTables.Properties._Expression__BitFieldDefinition__bitFieldSize,
-			AstmTables.Properties._Expression__CaseBlock__caseExpressions,
-			AstmTables.Properties._Expression__CastExpression__expression,
-			AstmTables.Properties._Expression__ConditionalExpression__condition,
-			AstmTables.Properties._Expression__ConditionalExpression__onFalseOperand,
-			AstmTables.Properties._Expression__ConditionalExpression__onTrueOperand,
-			AstmTables.Properties._Expression__DataDefinition__initialValue,
-			AstmTables.Properties._Expression__DeleteStatement__operand,
-			AstmTables.Properties._Expression__Dimension__highBound,
-			AstmTables.Properties._Expression__Dimension__lowBound,
-			AstmTables.Properties._Expression__EnumLiteralDefinition__value,
-			AstmTables.Properties._Expression__ExpressionStatement__expression,
-			AstmTables.Properties._Expression__ForStatement__initBody,
-			AstmTables.Properties._Expression__ForStatement__iterationBody,
-			AstmTables.Properties._Expression__FunctionCallExpression__calledFunction,
-			AstmTables.Properties._Expression__IfStatement__condition,
-			AstmTables.Properties._Expression__JumpStatement__target,
-			AstmTables.Properties._Expression__LoopStatement__condition,
-			AstmTables.Properties._Expression__QualifiedIdentifierReference__qualifiers,
-			AstmTables.Properties._Expression__RangeExpression__fromExpression,
-			AstmTables.Properties._Expression__RangeExpression__toExpression,
-			AstmTables.Properties._Expression__ReturnStatement__returnValue,
-			AstmTables.Properties._Expression__SwitchStatement__switchExpression,
-			AstmTables.Properties._Expression__ThrowStatement__exception,
-			AstmTables.Properties._Expression__UnaryExpression__operand
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _UnaryOperator = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _UnaryPlus = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _UnionType = {
@@ -17291,11 +15431,7 @@ public class AstmTables
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._AggregateType__members,
 			AstmTables.Properties._AggregateType__opensScope,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._AggregateType__AggregateTypeDefinition__aggregateType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _UnnamedTypeReference = {
@@ -17304,22 +15440,7 @@ public class AstmTables
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._UnnamedTypeReference__type,
-			AstmTables.Properties._TypeReference__AnnotationExpression__annotationType,
-			AstmTables.Properties._TypeReference__CastExpression__castType,
-			AstmTables.Properties._TypeReference__ConstructedType__baseType,
-			AstmTables.Properties._TypeReference__Declaration__declarationType,
-			AstmTables.Properties._TypeReference__Definition__definitionType,
-			AstmTables.Properties._TypeReference__Expression__expressionType,
-			AstmTables.Properties._TypeReference__FormalParameterType__type,
-			AstmTables.Properties._TypeReference__FunctionDeclaration__returnType,
-			AstmTables.Properties._TypeReference__FunctionDefinition__returnType,
-			AstmTables.Properties._TypeReference__FunctionType__returnType,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._TypeReference__NewExpression__newType,
-			AstmTables.Properties._TypeReference__TypeQualifiedIdentifierReference__aggregateType,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._UnnamedTypeReference__type
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _VariableCatchBlock = {
@@ -17327,15 +15448,7 @@ public class AstmTables
 			AstmTables.Properties._CatchBlock__body,
 			AstmTables.Properties._VariableCatchBlock__exceptionVariable,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._CatchBlock__TryStatement__catchBlocks,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _VariableDeclaration = {
@@ -17349,16 +15462,7 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _VariableDefinition = {
@@ -17372,46 +15476,19 @@ public class AstmTables
 			AstmTables.Properties._DeclarationOrDefinition__linkageSpecifier,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
 			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._DefinitionObject__AggregateType__members,
-			AstmTables.Properties._DefinitionObject__CompilationUnit__fragments,
-			AstmTables.Properties._Definition__Declaration__defRef,
-			AstmTables.Properties._DefinitionObject__DeclarationOrDefinitionStatement__declOrDefn,
-			AstmTables.Properties._DefinitionObject__DelphiBlockStatement__declarations,
-			AstmTables.Properties._DefinitionObject__DelphiFunctionCallExpression__applyTo,
-			AstmTables.Properties._DefinitionObject__DelphiWithStatement__withs,
-			AstmTables.Properties._DefinitionObject__NameReference__refersTo,
-			AstmTables.Properties._DefinitionObject__NameSpaceDefinition__body,
-			AstmTables.Properties._DefinitionObject__Scope__definitionObject,
-			AstmTables.Properties._DataDefinition__VariableCatchBlock__exceptionVariable
+			AstmTables.Properties._DeclarationOrDefinition__storageSpecifiers
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Virtual = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._VirtualSpecification__FunctionMemberAttributes__virtualSpecifier,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _VirtualSpecification = {
 			AstmTables.Properties._GASTMSyntaxObject__annotations,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._OtherSyntaxObject__BinaryExpression__operator,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__accessKind,
-			AstmTables.Properties._OtherSyntaxObject__DeclarationOrDefinition__storageSpecifiers,
-			AstmTables.Properties._OtherSyntaxObject__DerivesFrom__accessKind,
-			AstmTables.Properties._VirtualSpecification__FunctionMemberAttributes__virtualSpecifier,
-			AstmTables.Properties._OtherSyntaxObject__NewExpression__actualParams,
-			AstmTables.Properties._OtherSyntaxObject__OperatorAssign__operator,
-			AstmTables.Properties._OtherSyntaxObject__UnaryExpression__operator
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _Visitable = {};
@@ -17422,10 +15499,7 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _WhileStatement = {
@@ -17433,19 +15507,7 @@ public class AstmTables
 			AstmTables.Properties._LoopStatement__body,
 			AstmTables.Properties._LoopStatement__condition,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Statement__BlockStatement__subStatements,
-			AstmTables.Properties._Statement__CatchBlock__body,
-			AstmTables.Properties._Statement__EntryDefinition__body,
-			AstmTables.Properties._Statement__FunctionDefinition__body,
-			AstmTables.Properties._Statement__IfStatement__elseBody,
-			AstmTables.Properties._Statement__IfStatement__thenBody,
-			AstmTables.Properties._Statement__LabeledStatement__statement,
-			AstmTables.Properties._Statement__LoopStatement__body,
-			AstmTables.Properties._Statement__SpecificTriggerDefinition__body,
-			AstmTables.Properties._Statement__SwitchCase__body,
-			AstmTables.Properties._Statement__TryStatement__finalStatement,
-			AstmTables.Properties._Statement__TryStatement__guardedStatement
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		private static final @NonNull ExecutorProperty @NonNull [] _WideCharacter = {
@@ -17454,10 +15516,7 @@ public class AstmTables
 			AstmTables.Properties._PrimitiveType__isSigned,
 			AstmTables.Properties._Type__isVolatile,
 			AstmTables.Properties._GASTMSyntaxObject__locationInfo,
-			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements,
-			AstmTables.Properties._Type__NamedType__body,
-			AstmTables.Properties._Type__TypesCatchBlock__exceptions,
-			AstmTables.Properties._Type__UnnamedTypeReference__type
+			AstmTables.Properties._GASTMSyntaxObject__preProcessorElements
 		};
 
 		/**
