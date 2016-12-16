@@ -32,7 +32,7 @@ Workflow {
     //  Generate the CS2AS CGed transformation
      component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
     	script = "org.xtext.example.companies.build.GenerateCS2AST"
-    	fromProject = "../../org.eclipse.qvtd-master/plugins/org.eclipse.qvtd.runtime/src"
+    	fromProject = "../../org.eclipse.qvtd/plugins/org.eclipse.qvtd.runtime/src"
     	toProject = "../org.xtext.example.companies/src-gen"
     	packageCopy = {
     		from = "org.eclipse.qvtd.runtime.internal.cs2as"
@@ -80,7 +80,7 @@ Workflow {
     
      component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
     	script = "org.xtext.example.companies.build.GenerateCS2ASTx"
-    	fromProject = "../../org.eclipse.qvtd-master/plugins/org.eclipse.qvtd.cs2as.xtext.runtime/src"
+    	fromProject = "../../org.eclipse.qvtd/plugins/org.eclipse.qvtd.cs2as.xtext.runtime/src"
     	toProject = "../org.xtext.example.companies/src-gen"
     	packageCopy = {
     		from = "org.eclipse.qvtd.cs2as.xtext.runtime"
