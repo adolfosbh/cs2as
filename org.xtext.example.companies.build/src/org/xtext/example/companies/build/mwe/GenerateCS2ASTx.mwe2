@@ -29,6 +29,23 @@ Workflow {
     }
     bean = EcoreGenModelSetup { resourceSet = resourceSet }
     
+    // We inject the CS trace property
+	component = org.eclipse.qvtd.cs2as.build.mwe.CSTracePropertyInjector {
+		resourceSet = resourceSet
+		cSTraceInfo = org.eclipse.qvtd.cs2as.build.mwe.CSTracePropertyInjector.CSTraceInfo {
+			targetGenModel = "platform:/resource/org.xtext.example.companies/model/generated/Companies.genmodel"	
+		}
+		aSTraceType = org.eclipse.qvtd.cs2as.build.mwe.CSTracePropertyInjector.ASTraceInfo {
+			targetGenModel = "platform:/resource/org.xtext.example.companies/model/Company.genmodel"
+			targetTypeName = "Visitable"
+		}
+	}
+	
+	// We regenerate the CS model
+	component = org.eclipse.ocl.examples.build.utilities.GenerateModel { resourceSet = resourceSet
+		genModel = "/org.xtext.example.companies/model/generated/Companies.genmodel"
+	}
+	
     //  Generate the CS2AS CGed transformation
      component = org.eclipse.ocl.examples.build.utilities.CopyAndRename {
     	script = "org.xtext.example.companies.build.GenerateCS2AST"
