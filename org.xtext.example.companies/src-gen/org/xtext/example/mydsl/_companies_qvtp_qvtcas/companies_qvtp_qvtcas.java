@@ -55,7 +55,6 @@ import org.xtext.example.company.Department;
 import org.xtext.example.company.Employee;
 import org.xtext.example.company.lookup.LookupEnvironment;
 import org.xtext.example.company.lookup.LookupPackage;
-import org.xtext.example.company.lookup.util.CompanyLookupSolver;
 import org.xtext.example.company.util.Visitable;
 import org.xtext.example.mydsl.companies.CompaniesPackage;
 import org.xtext.example.mydsl.companies.company;
@@ -127,7 +126,6 @@ public class companies_qvtp_qvtcas extends AbstractCS2ASTransformer
 		{2}                           // 2 : employee -> {employee}
 	};
 
-	private final CompanyLookupSolver lookupSolver = new CompanyLookupSolver(executor);
 
 	public companies_qvtp_qvtcas(final @NonNull TransformationExecutor executor) {
 		super(executor, new @NonNull String[] {"leftCS", "rightAS"}, null, classIndex2classId, classIndex2allClassIndexes);

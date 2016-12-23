@@ -114,7 +114,9 @@ Workflow {
 		// FIXME the following only works if the output project are in the same FS folder. Better use a projectName and improve generator 
 		javaFolder = "../org.xtext.example.companies/src-gen"
 		javaPackage = "org.xtext.example.mydsl"
-		lookupResolverClassName = "org.xtext.example.company.lookup.util.CompanyLookupSolver"
-		lookupResultItfName = "org.xtext.example.company.lookup.util.CompanyLookupResult"
+		lookupResolverClassName = ""
+		lookupResultItfName = ""
+		//lookupResolverClassName = "org.xtext.example.company.lookup.util.CompanyLookupSolver"
+		//lookupResultItfName = "org.xtext.example.company.lookup.util.CompanyLookupResult"
 	}
 }
