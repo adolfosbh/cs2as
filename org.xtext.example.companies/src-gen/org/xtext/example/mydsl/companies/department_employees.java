@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface department_employees extends traceable
+public interface department_employees extends CSTrace
 {
   /**
 	 * Returns the value of the '<em><b>Employee</b></em>' containment reference list.

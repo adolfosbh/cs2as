@@ -65,7 +65,6 @@ public class CompaniesFactoryImpl extends EFactoryImpl implements CompaniesFacto
 			case CompaniesPackage.DEPARTMENT_MANAGER: return createdepartment_manager();
 			case CompaniesPackage.DEPARTMENT_EMPLOYEES: return createdepartment_employees();
 			case CompaniesPackage.EMPLOYEE: return createemployee();
-			case CompaniesPackage.TRACEABLE: return createtraceable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -127,16 +126,6 @@ public class CompaniesFactoryImpl extends EFactoryImpl implements CompaniesFacto
 	}
 
   /**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public traceable createtraceable() {
-		traceableImpl traceable = new traceableImpl();
-		return traceable;
-	}
-
-		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

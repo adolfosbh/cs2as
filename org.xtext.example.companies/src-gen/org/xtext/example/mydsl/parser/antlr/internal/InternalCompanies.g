@@ -95,7 +95,7 @@ rulecompany returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"STRING");
+        		"org.xtext.example.mydsl.Companies.STRING");
 	    }
 
 )
@@ -116,7 +116,7 @@ rulecompany returns [EObject current=null]
        			$current, 
        			"deparment",
         		lv_deparment_3_0, 
-        		"department");
+        		"org.xtext.example.mydsl.Companies.department");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -164,7 +164,7 @@ ruledepartment returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"STRING");
+        		"org.xtext.example.mydsl.Companies.STRING");
 	    }
 
 )
@@ -185,7 +185,7 @@ ruledepartment returns [EObject current=null]
        			$current, 
        			"department_manager",
         		lv_department_manager_3_0, 
-        		"department_manager");
+        		"org.xtext.example.mydsl.Companies.department_manager");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -203,7 +203,7 @@ ruledepartment returns [EObject current=null]
        			$current, 
        			"department_employees",
         		lv_department_employees_4_0, 
-        		"department_employees");
+        		"org.xtext.example.mydsl.Companies.department_employees");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -221,7 +221,7 @@ ruledepartment returns [EObject current=null]
        			$current, 
        			"deparment",
         		lv_deparment_5_0, 
-        		"department");
+        		"org.xtext.example.mydsl.Companies.department");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -268,7 +268,7 @@ ruledepartment_manager returns [EObject current=null]
        			$current, 
        			"employee",
         		lv_employee_1_0, 
-        		"employee");
+        		"org.xtext.example.mydsl.Companies.employee");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -317,7 +317,7 @@ ruledepartment_employees returns [EObject current=null]
        			$current, 
        			"employee",
         		lv_employee_2_0, 
-        		"employee");
+        		"org.xtext.example.mydsl.Companies.employee");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -357,7 +357,7 @@ ruleemployee returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"STRING");
+        		"org.xtext.example.mydsl.Companies.STRING");
 	    }
 
 )
@@ -383,7 +383,7 @@ ruleemployee returns [EObject current=null]
        			$current, 
        			"address",
         		lv_address_3_0, 
-        		"STRING");
+        		"org.xtext.example.mydsl.Companies.STRING");
 	    }
 
 )
@@ -405,7 +405,7 @@ ruleemployee returns [EObject current=null]
        			$current, 
        			"salary",
         		lv_salary_5_0, 
-        		"FLOAT");
+        		"org.xtext.example.mydsl.Companies.FLOAT");
 	    }
 
 )
@@ -427,7 +427,7 @@ ruleemployee returns [EObject current=null]
        			$current, 
        			"mentor",
         		lv_mentor_7_0, 
-        		"STRING");
+        		"org.xtext.example.mydsl.Companies.STRING");
 	    }
 
 )

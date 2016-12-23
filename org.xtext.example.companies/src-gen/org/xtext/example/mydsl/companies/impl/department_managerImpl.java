@@ -28,7 +28,7 @@ import org.xtext.example.mydsl.companies.employee;
  *
  * @generated
  */
-public class department_managerImpl extends traceableImpl implements department_manager
+public class department_managerImpl extends CSTraceImpl implements department_manager
 {
   /**
 	 * The cached value of the '{@link #getEmployee() <em>Employee</em>}' containment reference.

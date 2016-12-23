@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.jdt.annotation.Nullable;
 import org.xtext.example.mydsl.companies.*;
 
 /**
@@ -68,8 +69,8 @@ public class CompaniesAdapterFactory extends AdapterFactoryImpl
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected CompaniesSwitch<Adapter> modelSwitch =
-    new CompaniesSwitch<Adapter>() {
+  protected CompaniesSwitch<@Nullable Adapter> modelSwitch =
+    new CompaniesSwitch<@Nullable Adapter>() {
 			@Override
 			public Adapter casecompany(company object) {
 				return createcompanyAdapter();
@@ -91,8 +92,8 @@ public class CompaniesAdapterFactory extends AdapterFactoryImpl
 				return createemployeeAdapter();
 			}
 			@Override
-			public Adapter casetraceable(traceable object) {
-				return createtraceableAdapter();
+			public Adapter caseCSTrace(CSTrace object) {
+				return createCSTraceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -191,16 +192,16 @@ public class CompaniesAdapterFactory extends AdapterFactoryImpl
 	}
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.companies.traceable <em>traceable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.companies.CSTrace <em>CS Trace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.xtext.example.mydsl.companies.traceable
+	 * @see org.xtext.example.mydsl.companies.CSTrace
 	 * @generated
 	 */
-	public Adapter createtraceableAdapter() {
+	public Adapter createCSTraceAdapter() {
 		return null;
 	}
 

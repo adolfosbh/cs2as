@@ -28,7 +28,7 @@ import org.xtext.example.mydsl.companies.employee;
  *
  * @generated
  */
-public class employeeImpl extends traceableImpl implements employee
+public class employeeImpl extends CSTraceImpl implements employee
 {
   /**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.

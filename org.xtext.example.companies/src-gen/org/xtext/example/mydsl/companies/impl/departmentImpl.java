@@ -39,7 +39,7 @@ import org.xtext.example.mydsl.companies.department_manager;
  *
  * @generated
  */
-public class departmentImpl extends traceableImpl implements department
+public class departmentImpl extends CSTraceImpl implements department
 {
   /**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.

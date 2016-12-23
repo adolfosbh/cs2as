@@ -1,6 +1,6 @@
 /*******************************************************************************
  * <copyright>
- * 
+ *
  * </copyright>
  *
  * This code is auto-generated
@@ -31,6 +31,6 @@ public interface Visitable
 	 * @return the result of the visit.
 	 */
 	<R> R accept(org.xtext.example.company.util.@NonNull Visitor<R> visitor);
-	
+
 	EClass eClass();
 }

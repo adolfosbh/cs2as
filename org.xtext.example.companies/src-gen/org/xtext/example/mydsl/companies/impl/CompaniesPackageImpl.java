@@ -9,6 +9,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.example.company.CompanyPackage;
+import org.xtext.example.mydsl.companies.CSTrace;
 import org.xtext.example.mydsl.companies.CompaniesFactory;
 import org.xtext.example.mydsl.companies.CompaniesPackage;
 import org.xtext.example.mydsl.companies.company;
@@ -16,7 +18,6 @@ import org.xtext.example.mydsl.companies.department;
 import org.xtext.example.mydsl.companies.department_employees;
 import org.xtext.example.mydsl.companies.department_manager;
 import org.xtext.example.mydsl.companies.employee;
-import org.xtext.example.mydsl.companies.traceable;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,7 +67,7 @@ public class CompaniesPackageImpl extends EPackageImpl implements CompaniesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass traceableEClass = null;
+	private EClass csTraceEClass = null;
 
 		/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -112,9 +113,13 @@ public class CompaniesPackageImpl extends EPackageImpl implements CompaniesPacka
 		if (isInited) return (CompaniesPackage)EPackage.Registry.INSTANCE.getEPackage(CompaniesPackage.eNS_URI);
 
 		// Obtain or create and register package
-		CompaniesPackageImpl theCompaniesPackage = (CompaniesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CompaniesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CompaniesPackageImpl());
+		Object ePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		CompaniesPackageImpl theCompaniesPackage = (CompaniesPackageImpl)(ePackage instanceof CompaniesPackageImpl ? ePackage : new CompaniesPackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		CompanyPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theCompaniesPackage.createPackageContents();
@@ -306,8 +311,8 @@ public class CompaniesPackageImpl extends EPackageImpl implements CompaniesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass gettraceable() {
-		return traceableEClass;
+	public EClass getCSTrace() {
+		return csTraceEClass;
 	}
 
 		/**
@@ -315,8 +320,8 @@ public class CompaniesPackageImpl extends EPackageImpl implements CompaniesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference gettraceable_Ast() {
-		return (EReference)traceableEClass.getEStructuralFeatures().get(0);
+	public EReference getCSTrace_Ast() {
+		return (EReference)csTraceEClass.getEStructuralFeatures().get(0);
 	}
 
 		/**
@@ -371,8 +376,8 @@ public class CompaniesPackageImpl extends EPackageImpl implements CompaniesPacka
 		createEAttribute(employeeEClass, EMPLOYEE__SALARY);
 		createEAttribute(employeeEClass, EMPLOYEE__MENTOR);
 
-		traceableEClass = createEClass(TRACEABLE);
-		createEReference(traceableEClass, TRACEABLE__AST);
+		csTraceEClass = createEClass(CS_TRACE);
+		createEReference(csTraceEClass, CS_TRACE__AST);
 	}
 
   /**
@@ -399,16 +404,19 @@ public class CompaniesPackageImpl extends EPackageImpl implements CompaniesPacka
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		CompanyPackage theCompanyPackage = (CompanyPackage)EPackage.Registry.INSTANCE.getEPackage(CompanyPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		companyEClass.getESuperTypes().add(this.gettraceable());
-		departmentEClass.getESuperTypes().add(this.gettraceable());
-		department_managerEClass.getESuperTypes().add(this.gettraceable());
-		department_employeesEClass.getESuperTypes().add(this.gettraceable());
-		employeeEClass.getESuperTypes().add(this.gettraceable());
+		companyEClass.getESuperTypes().add(this.getCSTrace());
+		departmentEClass.getESuperTypes().add(this.getCSTrace());
+		department_managerEClass.getESuperTypes().add(this.getCSTrace());
+		department_employeesEClass.getESuperTypes().add(this.getCSTrace());
+		employeeEClass.getESuperTypes().add(this.getCSTrace());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(companyEClass, company.class, "company", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -433,8 +441,8 @@ public class CompaniesPackageImpl extends EPackageImpl implements CompaniesPacka
 		initEAttribute(getemployee_Salary(), ecorePackage.getEDouble(), "salary", null, 0, 1, employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getemployee_Mentor(), ecorePackage.getEString(), "mentor", null, 0, 1, employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(traceableEClass, traceable.class, "traceable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(gettraceable_Ast(), ecorePackage.getEObject(), null, "ast", null, 0, 1, traceable.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(csTraceEClass, CSTrace.class, "CSTrace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCSTrace_Ast(), theCompanyPackage.getVisitable(), null, "ast", null, 0, 1, CSTrace.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

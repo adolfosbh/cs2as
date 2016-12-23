@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface department_manager extends traceable
+public interface department_manager extends CSTrace
 {
   /**
 	 * Returns the value of the '<em><b>Employee</b></em>' containment reference.

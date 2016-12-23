@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.eclipse.jdt.annotation.Nullable;
+
 import org.xtext.example.company.*;
 
 /**

@@ -11,8 +11,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.jdt.annotation.NonNull;
+
 import org.xtext.example.company.CompanyPackage;
 import org.xtext.example.company.Employee;
+
 import org.xtext.example.company.util.Visitor;
 
 /**

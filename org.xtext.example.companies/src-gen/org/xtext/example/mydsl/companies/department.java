@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface department extends traceable
+public interface department extends CSTrace
 {
   /**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -33,7 +33,7 @@ import org.xtext.example.mydsl.companies.employee;
  *
  * @generated
  */
-public class department_employeesImpl extends traceableImpl implements department_employees
+public class department_employeesImpl extends CSTraceImpl implements department_employees
 {
   /**
 	 * The cached value of the '{@link #getEmployee() <em>Employee</em>}' containment reference list.

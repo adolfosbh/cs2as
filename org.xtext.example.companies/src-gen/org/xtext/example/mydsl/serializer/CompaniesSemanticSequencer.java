@@ -4,17 +4,15 @@
 package org.xtext.example.mydsl.serializer;
 
 import com.google.inject.Inject;
-import com.google.inject.Provider;
+import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Parameter;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.companies.CompaniesPackage;
 import org.xtext.example.mydsl.companies.company;
@@ -31,8 +29,13 @@ public class CompaniesSemanticSequencer extends AbstractDelegatingSemanticSequen
 	private CompaniesGrammarAccess grammarAccess;
 	
 	@Override
-	public void createSequence(EObject context, EObject semanticObject) {
-		if(semanticObject.eClass().getEPackage() == CompaniesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+	public void sequence(ISerializationContext context, EObject semanticObject) {
+		EPackage epackage = semanticObject.eClass().getEPackage();
+		ParserRule rule = context.getParserRule();
+		Action action = context.getAssignedAction();
+		Set<Parameter> parameters = context.getEnabledBooleanParameters();
+		if (epackage == CompaniesPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
 			case CompaniesPackage.COMPANY:
 				sequence_company(context, (company) semanticObject); 
 				return; 
@@ -49,57 +52,74 @@ public class CompaniesSemanticSequencer extends AbstractDelegatingSemanticSequen
 				sequence_employee(context, (employee) semanticObject); 
 				return; 
 			}
-		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+		if (errorAcceptor != null)
+			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
+	 * Contexts:
+	 *     company returns company
+	 *
 	 * Constraint:
 	 *     (name=STRING deparment+=department*)
 	 */
-	protected void sequence_company(EObject context, company semanticObject) {
+	protected void sequence_company(ISerializationContext context, company semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     department returns department
+	 *
 	 * Constraint:
 	 *     (name=STRING department_manager=department_manager department_employees=department_employees deparment+=department*)
 	 */
-	protected void sequence_department(EObject context, department semanticObject) {
+	protected void sequence_department(ISerializationContext context, department semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     department_employees returns department_employees
+	 *
 	 * Constraint:
-	 *     (employee+=employee*)
+	 *     employee+=employee*
 	 */
-	protected void sequence_department_employees(EObject context, department_employees semanticObject) {
+	protected void sequence_department_employees(ISerializationContext context, department_employees semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     department_manager returns department_manager
+	 *
 	 * Constraint:
 	 *     employee=employee
 	 */
-	protected void sequence_department_manager(EObject context, department_manager semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CompaniesPackage.Literals.DEPARTMENT_MANAGER__EMPLOYEE) == ValueTransient.YES)
+	protected void sequence_department_manager(ISerializationContext context, department_manager semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CompaniesPackage.Literals.DEPARTMENT_MANAGER__EMPLOYEE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompaniesPackage.Literals.DEPARTMENT_MANAGER__EMPLOYEE));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDepartment_managerAccess().getEmployeeEmployeeParserRuleCall_1_0(), semanticObject.getEmployee());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     employee returns employee
+	 *
 	 * Constraint:
 	 *     (name=STRING address=STRING salary=FLOAT mentor=STRING?)
 	 */
-	protected void sequence_employee(EObject context, employee semanticObject) {
+	protected void sequence_employee(ISerializationContext context, employee semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
+	
+	
 }

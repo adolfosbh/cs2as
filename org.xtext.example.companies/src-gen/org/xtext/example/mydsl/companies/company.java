@@ -4,6 +4,8 @@ package org.xtext.example.mydsl.companies;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>company</b></em>'.
@@ -21,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface company extends traceable
+public interface company extends CSTrace
 {
   /**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

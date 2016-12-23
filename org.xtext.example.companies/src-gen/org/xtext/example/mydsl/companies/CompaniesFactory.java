@@ -68,15 +68,6 @@ public interface CompaniesFactory extends EFactory
   employee createemployee();
 
   /**
-	 * Returns a new object of class '<em>traceable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>traceable</em>'.
-	 * @generated
-	 */
-	traceable createtraceable();
-
-		/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -37,15 +37,15 @@ public class InternalCompaniesLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g"; }
+    public String getGrammarFileName() { return "InternalCompanies.g"; }
 
     // $ANTLR start "T__7"
     public final void mT__7() throws RecognitionException {
         try {
             int _type = T__7;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:11:6: ( 'company' )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:11:8: 'company'
+            // InternalCompanies.g:11:6: ( 'company' )
+            // InternalCompanies.g:11:8: 'company'
             {
             match("company"); 
 
@@ -65,8 +65,8 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = T__8;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:12:6: ( '{' )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:12:8: '{'
+            // InternalCompanies.g:12:6: ( '{' )
+            // InternalCompanies.g:12:8: '{'
             {
             match('{'); 
 
@@ -85,8 +85,8 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = T__9;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:13:6: ( '}' )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:13:8: '}'
+            // InternalCompanies.g:13:6: ( '}' )
+            // InternalCompanies.g:13:8: '}'
             {
             match('}'); 
 
@@ -105,8 +105,8 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = T__10;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:14:7: ( 'department' )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:14:9: 'department'
+            // InternalCompanies.g:14:7: ( 'department' )
+            // InternalCompanies.g:14:9: 'department'
             {
             match("department"); 
 
@@ -126,8 +126,8 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:15:7: ( 'manager' )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:15:9: 'manager'
+            // InternalCompanies.g:15:7: ( 'manager' )
+            // InternalCompanies.g:15:9: 'manager'
             {
             match("manager"); 
 
@@ -147,8 +147,8 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:16:7: ( 'employee' )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:16:9: 'employee'
+            // InternalCompanies.g:16:7: ( 'employee' )
+            // InternalCompanies.g:16:9: 'employee'
             {
             match("employee"); 
 
@@ -168,8 +168,8 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:17:7: ( 'address' )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:17:9: 'address'
+            // InternalCompanies.g:17:7: ( 'address' )
+            // InternalCompanies.g:17:9: 'address'
             {
             match("address"); 
 
@@ -189,8 +189,8 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:18:7: ( 'salary' )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:18:9: 'salary'
+            // InternalCompanies.g:18:7: ( 'salary' )
+            // InternalCompanies.g:18:9: 'salary'
             {
             match("salary"); 
 
@@ -210,8 +210,8 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:19:7: ( 'mentor' )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:19:9: 'mentor'
+            // InternalCompanies.g:19:7: ( 'mentor' )
+            // InternalCompanies.g:19:9: 'mentor'
             {
             match("mentor"); 
 
@@ -231,11 +231,11 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:445:13: ( '\"' (~ ( '\"' ) )* '\"' )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:445:15: '\"' (~ ( '\"' ) )* '\"'
+            // InternalCompanies.g:445:13: ( '\"' (~ ( '\"' ) )* '\"' )
+            // InternalCompanies.g:445:15: '\"' (~ ( '\"' ) )* '\"'
             {
             match('\"'); 
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:445:19: (~ ( '\"' ) )*
+            // InternalCompanies.g:445:19: (~ ( '\"' ) )*
             loop1:
             do {
                 int alt1=2;
@@ -248,7 +248,7 @@ public class InternalCompaniesLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:445:19: ~ ( '\"' )
+            	    // InternalCompanies.g:445:19: ~ ( '\"' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -285,10 +285,10 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = RULE_FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:447:12: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )? )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:447:14: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )?
+            // InternalCompanies.g:447:12: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )? )
+            // InternalCompanies.g:447:14: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )?
             {
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:447:14: ( '0' .. '9' )+
+            // InternalCompanies.g:447:14: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -302,7 +302,7 @@ public class InternalCompaniesLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:447:15: '0' .. '9'
+            	    // InternalCompanies.g:447:15: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -318,7 +318,7 @@ public class InternalCompaniesLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:447:26: ( '.' ( '0' .. '9' )+ )?
+            // InternalCompanies.g:447:26: ( '.' ( '0' .. '9' )+ )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -327,10 +327,10 @@ public class InternalCompaniesLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:447:27: '.' ( '0' .. '9' )+
+                    // InternalCompanies.g:447:27: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:447:31: ( '0' .. '9' )+
+                    // InternalCompanies.g:447:31: ( '0' .. '9' )+
                     int cnt3=0;
                     loop3:
                     do {
@@ -344,7 +344,7 @@ public class InternalCompaniesLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:447:32: '0' .. '9'
+                    	    // InternalCompanies.g:447:32: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -382,10 +382,10 @@ public class InternalCompaniesLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:449:9: ( ( ' ' | ( '\\r' )? '\\n' | '\\t' )+ )
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:449:11: ( ' ' | ( '\\r' )? '\\n' | '\\t' )+
+            // InternalCompanies.g:449:9: ( ( ' ' | ( '\\r' )? '\\n' | '\\t' )+ )
+            // InternalCompanies.g:449:11: ( ' ' | ( '\\r' )? '\\n' | '\\t' )+
             {
-            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:449:11: ( ' ' | ( '\\r' )? '\\n' | '\\t' )+
+            // InternalCompanies.g:449:11: ( ' ' | ( '\\r' )? '\\n' | '\\t' )+
             int cnt6=0;
             loop6:
             do {
@@ -412,16 +412,16 @@ public class InternalCompaniesLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:449:12: ' '
+            	    // InternalCompanies.g:449:12: ' '
             	    {
             	    match(' '); 
 
             	    }
             	    break;
             	case 2 :
-            	    // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:449:16: ( '\\r' )? '\\n'
+            	    // InternalCompanies.g:449:16: ( '\\r' )? '\\n'
             	    {
-            	    // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:449:16: ( '\\r' )?
+            	    // InternalCompanies.g:449:16: ( '\\r' )?
             	    int alt5=2;
             	    int LA5_0 = input.LA(1);
 
@@ -430,7 +430,7 @@ public class InternalCompaniesLexer extends Lexer {
             	    }
             	    switch (alt5) {
             	        case 1 :
-            	            // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:449:16: '\\r'
+            	            // InternalCompanies.g:449:16: '\\r'
             	            {
             	            match('\r'); 
 
@@ -444,7 +444,7 @@ public class InternalCompaniesLexer extends Lexer {
             	    }
             	    break;
             	case 3 :
-            	    // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:449:27: '\\t'
+            	    // InternalCompanies.g:449:27: '\\t'
             	    {
             	    match('\t'); 
 
@@ -472,89 +472,89 @@ public class InternalCompaniesLexer extends Lexer {
     // $ANTLR end "RULE_WS"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:8: ( T__7 | T__8 | T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | RULE_STRING | RULE_FLOAT | RULE_WS )
+        // InternalCompanies.g:1:8: ( T__7 | T__8 | T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | RULE_STRING | RULE_FLOAT | RULE_WS )
         int alt7=12;
         alt7 = dfa7.predict(input);
         switch (alt7) {
             case 1 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:10: T__7
+                // InternalCompanies.g:1:10: T__7
                 {
                 mT__7(); 
 
                 }
                 break;
             case 2 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:15: T__8
+                // InternalCompanies.g:1:15: T__8
                 {
                 mT__8(); 
 
                 }
                 break;
             case 3 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:20: T__9
+                // InternalCompanies.g:1:20: T__9
                 {
                 mT__9(); 
 
                 }
                 break;
             case 4 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:25: T__10
+                // InternalCompanies.g:1:25: T__10
                 {
                 mT__10(); 
 
                 }
                 break;
             case 5 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:31: T__11
+                // InternalCompanies.g:1:31: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 6 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:37: T__12
+                // InternalCompanies.g:1:37: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 7 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:43: T__13
+                // InternalCompanies.g:1:43: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 8 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:49: T__14
+                // InternalCompanies.g:1:49: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 9 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:55: T__15
+                // InternalCompanies.g:1:55: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 10 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:61: RULE_STRING
+                // InternalCompanies.g:1:61: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 11 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:73: RULE_FLOAT
+                // InternalCompanies.g:1:73: RULE_FLOAT
                 {
                 mRULE_FLOAT(); 
 
                 }
                 break;
             case 12 :
-                // ../org.xtext.example.companies/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalCompanies.g:1:84: RULE_WS
+                // InternalCompanies.g:1:84: RULE_WS
                 {
                 mRULE_WS(); 
 
@@ -576,14 +576,11 @@ public class InternalCompaniesLexer extends Lexer {
     static final String DFA7_maxS =
         "\1\175\4\uffff\1\145\10\uffff";
     static final String DFA7_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\4\1\uffff\1\6\1\7\1\10\1\12\1\13\1\14\1"+
-        "\5\1\11";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\uffff\1\6\1\7\1\10\1\12\1\13\1\14\1\5\1\11";
     static final String DFA7_specialS =
         "\16\uffff}>";
     static final String[] DFA7_transitionS = {
-            "\2\13\2\uffff\1\13\22\uffff\1\13\1\uffff\1\11\15\uffff\12\12"+
-            "\47\uffff\1\7\1\uffff\1\1\1\4\1\6\7\uffff\1\5\5\uffff\1\10\7"+
-            "\uffff\1\2\1\uffff\1\3",
+            "\2\13\2\uffff\1\13\22\uffff\1\13\1\uffff\1\11\15\uffff\12\12\47\uffff\1\7\1\uffff\1\1\1\4\1\6\7\uffff\1\5\5\uffff\1\10\7\uffff\1\2\1\uffff\1\3",
             "",
             "",
             "",

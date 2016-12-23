@@ -19,9 +19,11 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.jdt.annotation.NonNull;
+
 import org.xtext.example.company.CompanyPackage;
 import org.xtext.example.company.Department;
 import org.xtext.example.company.Employee;
+
 import org.xtext.example.company.util.Visitor;
 
 /**

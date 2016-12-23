@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.eclipse.jdt.annotation.Nullable;
 import org.xtext.example.mydsl.companies.*;
 
 /**
@@ -22,7 +23,7 @@ import org.xtext.example.mydsl.companies.*;
  * @see org.xtext.example.mydsl.companies.CompaniesPackage
  * @generated
  */
-public class CompaniesSwitch<T> extends Switch<T>
+public class CompaniesSwitch<@Nullable T> extends Switch<T>
 {
   /**
 	 * The cached model package
@@ -73,41 +74,41 @@ public class CompaniesSwitch<T> extends Switch<T>
 			case CompaniesPackage.COMPANY: {
 				company company = (company)theEObject;
 				T result = casecompany(company);
-				if (result == null) result = casetraceable(company);
+				if (result == null) result = caseCSTrace(company);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CompaniesPackage.DEPARTMENT: {
 				department department = (department)theEObject;
 				T result = casedepartment(department);
-				if (result == null) result = casetraceable(department);
+				if (result == null) result = caseCSTrace(department);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CompaniesPackage.DEPARTMENT_MANAGER: {
 				department_manager department_manager = (department_manager)theEObject;
 				T result = casedepartment_manager(department_manager);
-				if (result == null) result = casetraceable(department_manager);
+				if (result == null) result = caseCSTrace(department_manager);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CompaniesPackage.DEPARTMENT_EMPLOYEES: {
 				department_employees department_employees = (department_employees)theEObject;
 				T result = casedepartment_employees(department_employees);
-				if (result == null) result = casetraceable(department_employees);
+				if (result == null) result = caseCSTrace(department_employees);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CompaniesPackage.EMPLOYEE: {
 				employee employee = (employee)theEObject;
 				T result = caseemployee(employee);
-				if (result == null) result = casetraceable(employee);
+				if (result == null) result = caseCSTrace(employee);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CompaniesPackage.TRACEABLE: {
-				traceable traceable = (traceable)theEObject;
-				T result = casetraceable(traceable);
+			case CompaniesPackage.CS_TRACE: {
+				CSTrace csTrace = (CSTrace)theEObject;
+				T result = caseCSTrace(csTrace);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -196,17 +197,17 @@ public class CompaniesSwitch<T> extends Switch<T>
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>traceable</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>CS Trace</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>traceable</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>CS Trace</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casetraceable(traceable object) {
+	public T caseCSTrace(CSTrace object) {
 		return null;
 	}
 

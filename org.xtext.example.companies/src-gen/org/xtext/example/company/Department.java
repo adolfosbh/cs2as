@@ -5,6 +5,7 @@ package org.xtext.example.company;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.xtext.example.company.util.Visitable;
 
 /**

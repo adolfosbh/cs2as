@@ -6,12 +6,15 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.xtext.example.company.Company;
 import org.xtext.example.company.CompanyFactory;
 import org.xtext.example.company.CompanyPackage;
 import org.xtext.example.company.Department;
 import org.xtext.example.company.Employee;
+
 import org.xtext.example.company.util.Visitable;
 
 /**

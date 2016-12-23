@@ -1,6 +1,6 @@
 /*******************************************************************************
  * <copyright>
- * 
+ *
  * </copyright>
  *
  * This code is auto-generated
@@ -25,12 +25,12 @@ public abstract class AbstractExtendingVisitor<R, C>
 {
 	/**
 	 * Initializes me with an initial value for my result.
-	 * 
+	 *
 	 * @param context my initial result value
 	 */
 	protected AbstractExtendingVisitor(C context) {
 		super(context);
-	}	
+	}
 
 	@Override
 	public R visitCompany(org.xtext.example.company.@NonNull Company object) {

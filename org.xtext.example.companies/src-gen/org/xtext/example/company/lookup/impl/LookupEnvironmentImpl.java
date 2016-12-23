@@ -5,16 +5,13 @@ package org.xtext.example.company.lookup.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.WrappedException;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -23,12 +20,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.eclipse.jdt.annotation.NonNull;
+
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
 import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+
 import org.eclipse.ocl.pivot.library.collection.CollectionIncludingAllOperation;
 import org.eclipse.ocl.pivot.library.collection.CollectionIncludingOperation;
+
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
+
 import org.xtext.example.company.Employee;
 
 import org.xtext.example.company.lookup.LookupEnvironment;
@@ -182,7 +183,7 @@ public class LookupEnvironmentImpl extends MinimalEObjectImpl.Container implemen
 		final /*@Thrown*/ java.util.@NonNull List<Employee> namedElements = this.getNamedElements();
 		final /*@Thrown*/ org.eclipse.ocl.pivot.values.@NonNull OrderedSetValue BOXED_namedElements = idResolver.createOrderedSetOfAll(LookupTables.ORD_CLSSid_Employee, namedElements);
 		final /*@Thrown*/ org.eclipse.ocl.pivot.values.@NonNull OrderedSetValue including = (OrderedSetValue)CollectionIncludingOperation.INSTANCE.evaluate(BOXED_namedElements, element);
-		final List<Employee> UNBOXED_including = including.asEcoreObjects(idResolver, Employee.class);
+		final List<Employee> UNBOXED_including = including.asEcoreObjects(idResolver, org.xtext.example.company.Employee.class);
 		assert UNBOXED_including != null;
 		CTORid_namedElements.initValue(symbol_0, UNBOXED_including);
 		return symbol_0;
@@ -297,5 +298,6 @@ public class LookupEnvironmentImpl extends MinimalEObjectImpl.Container implemen
 		}
 		return super.eInvoke(operationID, arguments);
 	}
+
 
 } //LookupEnvironmentImpl

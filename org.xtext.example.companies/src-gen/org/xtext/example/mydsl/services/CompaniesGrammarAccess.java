@@ -18,7 +18,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class CompanyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "company");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Companies.company");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCompanyKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -29,13 +29,13 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//company:
-		//	"company" name=STRING "{" deparment+=department* "}";
+		//	'company' name=STRING '{' deparment+=department* '}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//"company" name=STRING "{" deparment+=department* "}"
+		//'company' name=STRING '{' deparment+=department* '}'
 		public Group getGroup() { return cGroup; }
 
-		//"company"
+		//'company'
 		public Keyword getCompanyKeyword_0() { return cCompanyKeyword_0; }
 
 		//name=STRING
@@ -44,7 +44,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//deparment+=department*
@@ -53,12 +53,12 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		//department
 		public RuleCall getDeparmentDepartmentParserRuleCall_3_0() { return cDeparmentDepartmentParserRuleCall_3_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class DepartmentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "department");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Companies.department");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDepartmentKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -73,15 +73,18 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//department:
-		//	"department" name=STRING "{" department_manager=department_manager department_employees=department_employees
-		//	deparment+=department* "}";
+		//	'department' name=STRING '{'
+		//	department_manager=department_manager
+		//	department_employees=department_employees
+		//	deparment+=department*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//"department" name=STRING "{" department_manager=department_manager department_employees=department_employees
-		//deparment+=department* "}"
+		//'department' name=STRING '{' department_manager=department_manager department_employees=department_employees
+		//deparment+=department* '}'
 		public Group getGroup() { return cGroup; }
 
-		//"department"
+		//'department'
 		public Keyword getDepartmentKeyword_0() { return cDepartmentKeyword_0; }
 
 		//name=STRING
@@ -90,7 +93,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//department_manager=department_manager
@@ -111,25 +114,25 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		//department
 		public RuleCall getDeparmentDepartmentParserRuleCall_5_0() { return cDeparmentDepartmentParserRuleCall_5_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class Department_managerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "department_manager");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Companies.department_manager");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cManagerKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cEmployeeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cEmployeeEmployeeParserRuleCall_1_0 = (RuleCall)cEmployeeAssignment_1.eContents().get(0);
 		
 		//department_manager:
-		//	"manager" employee=employee;
+		//	'manager' employee=employee;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"manager" employee=employee
+		//'manager' employee=employee
 		public Group getGroup() { return cGroup; }
 
-		//"manager"
+		//'manager'
 		public Keyword getManagerKeyword_0() { return cManagerKeyword_0; }
 
 		//employee=employee
@@ -140,7 +143,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class Department_employeesElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "department_employees");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Companies.department_employees");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDepartment_employeesAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -149,19 +152,19 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEmployeeEmployeeParserRuleCall_1_1_0 = (RuleCall)cEmployeeAssignment_1_1.eContents().get(0);
 		
 		//department_employees:
-		//	{department_employees} ("employee" employee+=employee)*;
+		//	{department_employees} ('employee' employee+=employee)*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{department_employees} ("employee" employee+=employee)*
+		//{department_employees} ('employee' employee+=employee)*
 		public Group getGroup() { return cGroup; }
 
 		//{department_employees}
 		public Action getDepartment_employeesAction_0() { return cDepartment_employeesAction_0; }
 
-		//("employee" employee+=employee)*
+		//('employee' employee+=employee)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"employee"
+		//'employee'
 		public Keyword getEmployeeKeyword_1_0() { return cEmployeeKeyword_1_0; }
 
 		//employee+=employee
@@ -172,7 +175,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class EmployeeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "employee");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Companies.employee");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameSTRINGTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
@@ -190,10 +193,13 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//employee:
-		//	name=STRING "{" "address" address=STRING "salary" salary=FLOAT ("mentor" mentor=STRING)? "}";
+		//	name=STRING '{'
+		//	'address' address=STRING
+		//	'salary' salary=FLOAT ('mentor' mentor=STRING)?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//name=STRING "{" "address" address=STRING "salary" salary=FLOAT ("mentor" mentor=STRING)? "}"
+		//name=STRING '{' 'address' address=STRING 'salary' salary=FLOAT ('mentor' mentor=STRING)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//name=STRING
@@ -202,10 +208,10 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_0_0() { return cNameSTRINGTerminalRuleCall_0_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
-		//"address"
+		//'address'
 		public Keyword getAddressKeyword_2() { return cAddressKeyword_2; }
 
 		//address=STRING
@@ -214,7 +220,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAddressSTRINGTerminalRuleCall_3_0() { return cAddressSTRINGTerminalRuleCall_3_0; }
 
-		//"salary"
+		//'salary'
 		public Keyword getSalaryKeyword_4() { return cSalaryKeyword_4; }
 
 		//salary=FLOAT
@@ -223,10 +229,10 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		//FLOAT
 		public RuleCall getSalaryFLOATTerminalRuleCall_5_0() { return cSalaryFLOATTerminalRuleCall_5_0; }
 
-		//("mentor" mentor=STRING)?
+		//('mentor' mentor=STRING)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"mentor"
+		//'mentor'
 		public Keyword getMentorKeyword_6_0() { return cMentorKeyword_6_0; }
 
 		//mentor=STRING
@@ -235,7 +241,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getMentorSTRINGTerminalRuleCall_6_1_0() { return cMentorSTRINGTerminalRuleCall_6_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	
@@ -259,9 +265,9 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDepartment_manager = new Department_managerElements();
 		this.pDepartment_employees = new Department_employeesElements();
 		this.pEmployee = new EmployeeElements();
-		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING");
-		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "FLOAT");
-		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
+		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Companies.STRING");
+		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Companies.FLOAT");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Companies.WS");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -288,7 +294,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//company:
-	//	"company" name=STRING "{" deparment+=department* "}";
+	//	'company' name=STRING '{' deparment+=department* '}';
 	public CompanyElements getCompanyAccess() {
 		return pCompany;
 	}
@@ -298,8 +304,11 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//department:
-	//	"department" name=STRING "{" department_manager=department_manager department_employees=department_employees
-	//	deparment+=department* "}";
+	//	'department' name=STRING '{'
+	//	department_manager=department_manager
+	//	department_employees=department_employees
+	//	deparment+=department*
+	//	'}';
 	public DepartmentElements getDepartmentAccess() {
 		return pDepartment;
 	}
@@ -309,7 +318,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//department_manager:
-	//	"manager" employee=employee;
+	//	'manager' employee=employee;
 	public Department_managerElements getDepartment_managerAccess() {
 		return pDepartment_manager;
 	}
@@ -319,7 +328,7 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//department_employees:
-	//	{department_employees} ("employee" employee+=employee)*;
+	//	{department_employees} ('employee' employee+=employee)*;
 	public Department_employeesElements getDepartment_employeesAccess() {
 		return pDepartment_employees;
 	}
@@ -329,7 +338,10 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//employee:
-	//	name=STRING "{" "address" address=STRING "salary" salary=FLOAT ("mentor" mentor=STRING)? "}";
+	//	name=STRING '{'
+	//	'address' address=STRING
+	//	'salary' salary=FLOAT ('mentor' mentor=STRING)?
+	//	'}';
 	public EmployeeElements getEmployeeAccess() {
 		return pEmployee;
 	}
@@ -339,19 +351,19 @@ public class CompaniesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal STRING:
-	//	"\"" !"\""* "\"";
+	//	'"' !'"'* '"';
 	public TerminalRule getSTRINGRule() {
 		return tSTRING;
 	} 
 
 	//terminal FLOAT returns ecore::EDouble:
-	//	"0".."9"+ ("." "0".."9"+)?;
+	//	'0'..'9'+ ('.' '0'..'9'+)?;
 	public TerminalRule getFLOATRule() {
 		return tFLOAT;
 	} 
 
 	//terminal WS:
-	//	(" " | "\r"? "\n" | "\t")+;
+	//	' ' | '\r'? '\n' | '\t'+;
 	public TerminalRule getWSRule() {
 		return tWS;
 	} 

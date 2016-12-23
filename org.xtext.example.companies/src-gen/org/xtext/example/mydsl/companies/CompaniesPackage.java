@@ -57,6 +57,34 @@ public interface CompaniesPackage extends EPackage
   CompaniesPackage eINSTANCE = org.xtext.example.mydsl.companies.impl.CompaniesPackageImpl.init();
 
   /**
+	 * The meta object id for the '{@link org.xtext.example.mydsl.companies.impl.CSTraceImpl <em>CS Trace</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.xtext.example.mydsl.companies.impl.CSTraceImpl
+	 * @see org.xtext.example.mydsl.companies.impl.CompaniesPackageImpl#getCSTrace()
+	 * @generated
+	 */
+	int CS_TRACE = 5;
+
+		/**
+	 * The feature id for the '<em><b>Ast</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS_TRACE__AST = 0;
+
+		/**
+	 * The number of structural features of the '<em>CS Trace</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS_TRACE_FEATURE_COUNT = 1;
+
+		/**
 	 * The meta object id for the '{@link org.xtext.example.mydsl.companies.impl.companyImpl <em>company</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -65,6 +93,42 @@ public interface CompaniesPackage extends EPackage
 	 * @generated
 	 */
   int COMPANY = 0;
+
+  /**
+	 * The feature id for the '<em><b>Ast</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPANY__AST = CS_TRACE__AST;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int COMPANY__NAME = CS_TRACE_FEATURE_COUNT + 0;
+
+  /**
+	 * The feature id for the '<em><b>Deparment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int COMPANY__DEPARMENT = CS_TRACE_FEATURE_COUNT + 1;
+
+  /**
+	 * The number of structural features of the '<em>company</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int COMPANY_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 2;
 
   /**
 	 * The meta object id for the '{@link org.xtext.example.mydsl.companies.impl.departmentImpl <em>department</em>}' class.
@@ -77,6 +141,60 @@ public interface CompaniesPackage extends EPackage
   int DEPARTMENT = 1;
 
   /**
+	 * The feature id for the '<em><b>Ast</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTMENT__AST = CS_TRACE__AST;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DEPARTMENT__NAME = CS_TRACE_FEATURE_COUNT + 0;
+
+  /**
+	 * The feature id for the '<em><b>Department manager</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DEPARTMENT__DEPARTMENT_MANAGER = CS_TRACE_FEATURE_COUNT + 1;
+
+  /**
+	 * The feature id for the '<em><b>Department employees</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DEPARTMENT__DEPARTMENT_EMPLOYEES = CS_TRACE_FEATURE_COUNT + 2;
+
+  /**
+	 * The feature id for the '<em><b>Deparment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DEPARTMENT__DEPARMENT = CS_TRACE_FEATURE_COUNT + 3;
+
+  /**
+	 * The number of structural features of the '<em>department</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DEPARTMENT_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 4;
+
+  /**
 	 * The meta object id for the '{@link org.xtext.example.mydsl.companies.impl.department_managerImpl <em>department manager</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -85,6 +203,33 @@ public interface CompaniesPackage extends EPackage
 	 * @generated
 	 */
   int DEPARTMENT_MANAGER = 2;
+
+  /**
+	 * The feature id for the '<em><b>Ast</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTMENT_MANAGER__AST = CS_TRACE__AST;
+
+		/**
+	 * The feature id for the '<em><b>Employee</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DEPARTMENT_MANAGER__EMPLOYEE = CS_TRACE_FEATURE_COUNT + 0;
+
+  /**
+	 * The number of structural features of the '<em>department manager</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DEPARTMENT_MANAGER_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 1;
 
   /**
 	 * The meta object id for the '{@link org.xtext.example.mydsl.companies.impl.department_employeesImpl <em>department employees</em>}' class.
@@ -97,6 +242,33 @@ public interface CompaniesPackage extends EPackage
   int DEPARTMENT_EMPLOYEES = 3;
 
   /**
+	 * The feature id for the '<em><b>Ast</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTMENT_EMPLOYEES__AST = CS_TRACE__AST;
+
+		/**
+	 * The feature id for the '<em><b>Employee</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DEPARTMENT_EMPLOYEES__EMPLOYEE = CS_TRACE_FEATURE_COUNT + 0;
+
+  /**
+	 * The number of structural features of the '<em>department employees</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DEPARTMENT_EMPLOYEES_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 1;
+
+  /**
 	 * The meta object id for the '{@link org.xtext.example.mydsl.companies.impl.employeeImpl <em>employee</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -107,41 +279,13 @@ public interface CompaniesPackage extends EPackage
   int EMPLOYEE = 4;
 
   /**
-	 * The meta object id for the '{@link org.xtext.example.mydsl.companies.impl.traceableImpl <em>traceable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.xtext.example.mydsl.companies.impl.traceableImpl
-	 * @see org.xtext.example.mydsl.companies.impl.CompaniesPackageImpl#gettraceable()
-	 * @generated
-	 */
-	int TRACEABLE = 5;
-
-		/**
 	 * The feature id for the '<em><b>Ast</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACEABLE__AST = 0;
-
-		/**
-	 * The number of structural features of the '<em>traceable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACEABLE_FEATURE_COUNT = 1;
-
-		/**
-	 * The feature id for the '<em><b>Ast</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPANY__AST = TRACEABLE__AST;
+	int EMPLOYEE__AST = CS_TRACE__AST;
 
 		/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -150,190 +294,46 @@ public interface CompaniesPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int COMPANY__NAME = TRACEABLE_FEATURE_COUNT + 0;
+  int EMPLOYEE__NAME = CS_TRACE_FEATURE_COUNT + 0;
 
-		/**
-	 * The feature id for the '<em><b>Deparment</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int COMPANY__DEPARMENT = TRACEABLE_FEATURE_COUNT + 1;
-
-		/**
-	 * The number of structural features of the '<em>company</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int COMPANY_FEATURE_COUNT = TRACEABLE_FEATURE_COUNT + 2;
-
-		/**
-	 * The feature id for the '<em><b>Ast</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT__AST = TRACEABLE__AST;
-
-		/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int DEPARTMENT__NAME = TRACEABLE_FEATURE_COUNT + 0;
-
-		/**
-	 * The feature id for the '<em><b>Department manager</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int DEPARTMENT__DEPARTMENT_MANAGER = TRACEABLE_FEATURE_COUNT + 1;
-
-		/**
-	 * The feature id for the '<em><b>Department employees</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int DEPARTMENT__DEPARTMENT_EMPLOYEES = TRACEABLE_FEATURE_COUNT + 2;
-
-		/**
-	 * The feature id for the '<em><b>Deparment</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int DEPARTMENT__DEPARMENT = TRACEABLE_FEATURE_COUNT + 3;
-
-		/**
-	 * The number of structural features of the '<em>department</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int DEPARTMENT_FEATURE_COUNT = TRACEABLE_FEATURE_COUNT + 4;
-
-		/**
-	 * The feature id for the '<em><b>Ast</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT_MANAGER__AST = TRACEABLE__AST;
-
-		/**
-	 * The feature id for the '<em><b>Employee</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int DEPARTMENT_MANAGER__EMPLOYEE = TRACEABLE_FEATURE_COUNT + 0;
-
-		/**
-	 * The number of structural features of the '<em>department manager</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int DEPARTMENT_MANAGER_FEATURE_COUNT = TRACEABLE_FEATURE_COUNT + 1;
-
-		/**
-	 * The feature id for the '<em><b>Ast</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT_EMPLOYEES__AST = TRACEABLE__AST;
-
-		/**
-	 * The feature id for the '<em><b>Employee</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int DEPARTMENT_EMPLOYEES__EMPLOYEE = TRACEABLE_FEATURE_COUNT + 0;
-
-		/**
-	 * The number of structural features of the '<em>department employees</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int DEPARTMENT_EMPLOYEES_FEATURE_COUNT = TRACEABLE_FEATURE_COUNT + 1;
-
-		/**
-	 * The feature id for the '<em><b>Ast</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPLOYEE__AST = TRACEABLE__AST;
-
-		/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int EMPLOYEE__NAME = TRACEABLE_FEATURE_COUNT + 0;
-
-		/**
+  /**
 	 * The feature id for the '<em><b>Address</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int EMPLOYEE__ADDRESS = TRACEABLE_FEATURE_COUNT + 1;
+  int EMPLOYEE__ADDRESS = CS_TRACE_FEATURE_COUNT + 1;
 
-		/**
+  /**
 	 * The feature id for the '<em><b>Salary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int EMPLOYEE__SALARY = TRACEABLE_FEATURE_COUNT + 2;
+  int EMPLOYEE__SALARY = CS_TRACE_FEATURE_COUNT + 2;
 
-		/**
+  /**
 	 * The feature id for the '<em><b>Mentor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int EMPLOYEE__MENTOR = TRACEABLE_FEATURE_COUNT + 3;
+  int EMPLOYEE__MENTOR = CS_TRACE_FEATURE_COUNT + 3;
 
-		/**
+  /**
 	 * The number of structural features of the '<em>employee</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int EMPLOYEE_FEATURE_COUNT = TRACEABLE_FEATURE_COUNT + 4;
+  int EMPLOYEE_FEATURE_COUNT = CS_TRACE_FEATURE_COUNT + 4;
 
 
-		/**
+  /**
 	 * Returns the meta object for class '{@link org.xtext.example.mydsl.companies.company <em>company</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -516,25 +516,25 @@ public interface CompaniesPackage extends EPackage
   EAttribute getemployee_Mentor();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.example.mydsl.companies.traceable <em>traceable</em>}'.
+	 * Returns the meta object for class '{@link org.xtext.example.mydsl.companies.CSTrace <em>CS Trace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>traceable</em>'.
-	 * @see org.xtext.example.mydsl.companies.traceable
+	 * @return the meta object for class '<em>CS Trace</em>'.
+	 * @see org.xtext.example.mydsl.companies.CSTrace
 	 * @generated
 	 */
-	EClass gettraceable();
+	EClass getCSTrace();
 
 		/**
-	 * Returns the meta object for the reference '{@link org.xtext.example.mydsl.companies.traceable#getAst <em>Ast</em>}'.
+	 * Returns the meta object for the reference '{@link org.xtext.example.mydsl.companies.CSTrace#getAst <em>Ast</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Ast</em>'.
-	 * @see org.xtext.example.mydsl.companies.traceable#getAst()
-	 * @see #gettraceable()
+	 * @see org.xtext.example.mydsl.companies.CSTrace#getAst()
+	 * @see #getCSTrace()
 	 * @generated
 	 */
-	EReference gettraceable_Ast();
+	EReference getCSTrace_Ast();
 
 		/**
 	 * Returns the factory that creates the instances of the model.
@@ -706,14 +706,14 @@ public interface CompaniesPackage extends EPackage
     EAttribute EMPLOYEE__MENTOR = eINSTANCE.getemployee_Mentor();
 
 				/**
-		 * The meta object literal for the '{@link org.xtext.example.mydsl.companies.impl.traceableImpl <em>traceable</em>}' class.
+		 * The meta object literal for the '{@link org.xtext.example.mydsl.companies.impl.CSTraceImpl <em>CS Trace</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.xtext.example.mydsl.companies.impl.traceableImpl
-		 * @see org.xtext.example.mydsl.companies.impl.CompaniesPackageImpl#gettraceable()
+		 * @see org.xtext.example.mydsl.companies.impl.CSTraceImpl
+		 * @see org.xtext.example.mydsl.companies.impl.CompaniesPackageImpl#getCSTrace()
 		 * @generated
 		 */
-		EClass TRACEABLE = eINSTANCE.gettraceable();
+		EClass CS_TRACE = eINSTANCE.getCSTrace();
 
 				/**
 		 * The meta object literal for the '<em><b>Ast</b></em>' reference feature.
@@ -721,7 +721,7 @@ public interface CompaniesPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRACEABLE__AST = eINSTANCE.gettraceable_Ast();
+		EReference CS_TRACE__AST = eINSTANCE.getCSTrace_Ast();
 
   }
 
